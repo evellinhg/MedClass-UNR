@@ -8,6 +8,7 @@ import {
   Coins,
   Medal,
   MessageSquare,
+  Stethoscope,
   type LucideIcon,
 } from "lucide-react"
 
@@ -35,6 +36,15 @@ export const navigation: NavItem[] = [
     children: [
       { name: "Histórico", href: "/dashboard/desempenho/historico" },
       { name: "Estatísticas", href: "/dashboard/desempenho/estatisticas" },
+    ],
+  },
+  {
+    name: "Desafios Clínicos",
+    href: "/dashboard/desafios-clinicos",
+    icon: Stethoscope,
+    children: [
+      { name: "Estudar", href: "/dashboard/desafios-clinicos" },
+      { name: "Desempenho", href: "/dashboard/desafios-clinicos/desempenho" },
     ],
   },
   { name: "Ranking", href: "/dashboard/ranking", icon: Trophy },

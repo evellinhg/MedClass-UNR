@@ -27,7 +27,16 @@ export interface NavItem {
 export const navigation: NavItem[] = [
   { name: "Início", href: "/dashboard", icon: Home },
   { name: "Cronograma", href: "/dashboard/cronograma", icon: CalendarDays },
-  { name: "Materiais", href: "/dashboard/materiais", icon: BookOpen },
+  {
+    name: "Materiais",
+    href: "/dashboard/materiais",
+    icon: BookOpen,
+    children: [
+      { name: "Videoaulas", href: "/dashboard/materiais?tab=videoaulas" },
+      { name: "Resumos", href: "/dashboard/materiais?tab=resumos" },
+      { name: "Flashcards", href: "/dashboard/materiais?tab=flashcards" },
+    ],
+  },
   { name: "Simulados", href: "/dashboard/simulados", icon: ClipboardCheck },
   {
     name: "Desempenho",

@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { DashboardLayout } from "@/components/dashboard-layout"
 import { MateriaisContent } from "@/components/materiais-content"
 
@@ -17,7 +18,9 @@ export default function MateriaisPage() {
           </p>
         </div>
 
-        <MateriaisContent />
+        <Suspense fallback={null}>
+          <MateriaisContent />
+        </Suspense>
       </div>
     </DashboardLayout>
   )

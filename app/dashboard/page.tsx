@@ -4,11 +4,14 @@ import { ActionCards } from "@/components/action-cards"
 import { RankingWidget } from "@/components/ranking-widget"
 import { DesempenhoWidget } from "@/components/desempenho-widget"
 import { MedCoinsWidget } from "@/components/medcoins-widget"
+import { DailyTipHeader } from "@/components/daily-tip-header"
 
 export default function HomePage() {
   return (
     <DashboardLayout>
       <div className="space-y-8">
+        <DailyTipHeader />
+
         <div>
           <h2 className="text-2xl font-bold text-foreground mb-6">Seu Progresso</h2>
           <HomeStats />

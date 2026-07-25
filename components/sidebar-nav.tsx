@@ -9,7 +9,14 @@ import { navigation } from "@/lib/navigation"
 import { supabase } from "@/lib/supabase"
 import { isAdminEmail } from "@/lib/admin-config"
 import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
+import { STUDY_TIPS } from "@/lib/study-tips"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+
+function dayOfYear(date: Date) {
+  const start = new Date(date.getFullYear(), 0, 0)
+  const diff = date.getTime() - start.getTime()
+  return Math.floor(diff / (1000 * 60 * 60 * 24))
+}
 
 interface SidebarNavProps {
   onNavigate?: () => void
@@ -35,6 +42,7 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
   const router = useRouter()
   const [isAdmin, setIsAdmin] = useState(false)
   const [planStatus, setPlanStatus] = useState<PlanStatus | null>(null)
+  const dailyTip = STUDY_TIPS[dayOfYear(new Date()) % STUDY_TIPS.length]
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -153,9 +161,7 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
       {/* Daily tip */}
       <div className="mx-3 mb-4 rounded-lg border border-sidebar-border bg-gradient-to-br from-sidebar-accent to-sidebar p-3">
         <p className="text-xs font-semibold text-sidebar-accent-foreground">Dica do dia</p>
-        <p className="mt-2 text-xs leading-relaxed text-sidebar-foreground">
-          Revisar conceitos 24h após o aprendizado aumenta a retenção em 90%.
-        </p>
+        <p className="mt-2 text-xs leading-relaxed text-sidebar-foreground">{dailyTip}</p>
       </div>
 
       {/* User footer */}

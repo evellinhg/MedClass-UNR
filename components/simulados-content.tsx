@@ -117,7 +117,7 @@ export function SimuladosContent() {
       return
     }
 
-    let query = supabase.from("questoes").select("id").limit(500)
+    let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
     if (selectedAreas.length > 0) query = query.in("area", selectedAreas)
     if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
     if (prova) query = query.eq("prova", prova)

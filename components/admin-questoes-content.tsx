@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
+import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
@@ -37,6 +38,7 @@ interface Questao {
   mecanismo_pergunta: string | null
   mecanismo_opcoes: string[] | null
   mecanismo_indice_correta: number | null
+  ativo: boolean
   created_at: string
 }
 
@@ -179,6 +181,11 @@ export function AdminQuestoesContent() {
     load()
   }
 
+  const handleToggleAtivo = async (q: Questao) => {
+    setQuestoes((prev) => prev.map((p) => (p.id === q.id ? { ...p, ativo: !p.ativo } : p)))
+    await supabase.from("questoes").update({ ativo: !q.ativo }).eq("id", q.id)
+  }
+
   const handleDelete = async (id: string) => {
     if (!confirm("Excluir esta questão? Essa ação não pode ser desfeita.")) return
     const { error } = await supabase.from("questoes").delete().eq("id", id)
@@ -244,7 +251,11 @@ export function AdminQuestoesContent() {
                     ))}
                   </ul>
                 </div>
-                <div className="flex shrink-0 items-center gap-1">
+                <div className="flex shrink-0 items-center gap-2">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-xs text-muted-foreground">Ativa</span>
+                    <Switch checked={q.ativo} onCheckedChange={() => handleToggleAtivo(q)} />
+                  </div>
                   <Button size="icon-sm" variant="ghost" onClick={() => openEdit(q)} aria-label="Editar">
                     <Pencil className="h-4 w-4" />
                   </Button>

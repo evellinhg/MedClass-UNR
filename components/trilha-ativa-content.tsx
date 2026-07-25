@@ -123,7 +123,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
       return
     }
 
-    let query = supabase.from("questoes").select("id").limit(500)
+    let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
     if (etapa.area) query = query.eq("area", etapa.area)
     if (etapa.dificuldade) query = query.eq("dificuldade", etapa.dificuldade)
     if (etapa.prova) query = query.eq("prova", etapa.prova)

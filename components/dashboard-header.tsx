@@ -1,13 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Bell, Menu, Search } from "lucide-react"
+import { Bell, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SidebarNav } from "@/components/sidebar-nav"
 import { UserDropdown } from "@/components/user-dropdown"
+import { GlobalSearch } from "@/components/global-search"
 import { getPlanStatus } from "@/lib/plan-status"
 
 export function DashboardHeader() {
@@ -50,14 +50,7 @@ export function DashboardHeader() {
       </div>
 
       {/* Search */}
-      <div className="relative ml-auto hidden w-full max-w-xs md:block">
-        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-        <Input
-          placeholder="Buscar matérias, aulas..."
-          className="bg-secondary pl-9 focus-visible:bg-card"
-          aria-label="Buscar"
-        />
-      </div>
+      <GlobalSearch />
 
       <div className="ml-auto flex items-center gap-1 md:ml-0">
         <ThemeToggle />

@@ -170,7 +170,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         return
       }
 
-      let query = supabase.from("questoes").select(selectCols).limit(200)
+      let query = supabase.from("questoes").select(selectCols).eq("ativo", true).limit(200)
       if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
       if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
       if (config.prova) query = query.eq("prova", config.prova)

@@ -69,7 +69,7 @@ export function PracticeLauncher({ onStart }: PracticeLauncherProps) {
 
   const handleVerify = async () => {
     setChecking(true)
-    let query = supabase.from("questoes").select("id", { count: "exact", head: true })
+    let query = supabase.from("questoes").select("id", { count: "exact", head: true }).eq("ativo", true)
     if (selectedAreas.length > 0 && selectedAreas.length < AREAS.length) query = query.in("area", selectedAreas)
     if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
     if (prova) query = query.eq("prova", prova)

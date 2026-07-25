@@ -33,6 +33,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# copia antiga do repo (tinha seu proprio .git desatualizado)
-/MedClass/

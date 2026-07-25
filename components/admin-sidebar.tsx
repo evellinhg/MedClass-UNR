@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import Image from "next/image"
-import { LayoutDashboard, Users, Database, BookOpen, Coins, LogOut, ArrowLeft } from "lucide-react"
+import { LayoutDashboard, Users, Database, BookOpen, Coins, Medal, LogOut, ArrowLeft } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
 interface AdminNavItem {
@@ -18,6 +18,7 @@ const adminNavigation: AdminNavItem[] = [
   { name: "Dados", href: "/admin/dados", icon: Database },
   { name: "Banco de Questões", href: "/admin/questoes", icon: BookOpen },
   { name: "MedCoins", href: "/admin/medcoins", icon: Coins },
+  { name: "Medalhas", href: "/admin/medalhas", icon: Medal },
 ]
 
 export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {

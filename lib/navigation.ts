@@ -6,6 +6,7 @@ import {
   BarChart3,
   Trophy,
   Coins,
+  Medal,
   MessageSquare,
   type LucideIcon,
 } from "lucide-react"
@@ -38,5 +39,6 @@ export const navigation: NavItem[] = [
   },
   { name: "Ranking", href: "/dashboard/ranking", icon: Trophy },
   { name: "MedCoins", href: "/dashboard/medcoins", icon: Coins },
+  { name: "Conquistas", href: "/dashboard/conquistas", icon: Medal },
   { name: "Feedback", href: "/dashboard/feedback", icon: MessageSquare },
 ]

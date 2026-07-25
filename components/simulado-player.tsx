@@ -50,6 +50,8 @@ export interface SimuladoConfig {
   prova?: string
   timerEnabled?: boolean
   mode?: "individual" | "simulado"
+  questionIds?: string[]
+  simuladoId?: string
 }
 
 function formatElapsed(seconds: number) {
@@ -140,28 +142,40 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
           ? Math.min(config.count, FREE_SIMULADO_MAX_QUESTIONS)
           : Math.min(config.count, status.questoesRemaining)
 
-      let query = supabase
-        .from("questoes")
-        .select(
-          "id, enunciado, opcoes, indice_correta, materia, area, justificativa, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
-        )
-        .limit(200)
+      const selectCols =
+        "id, enunciado, opcoes, indice_correta, materia, area, justificativa, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
+
+      const applyResult = (pool: Questao[], ordered: boolean) => {
+        const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
+        setQuestions(chosen)
+        setAnswers(new Array(chosen.length).fill(null))
+        setEliminated(chosen.map(() => new Set<number>()))
+        setPhase(chosen.length === 0 ? "empty" : "playing")
+
+        if (chosen.length > 0 && !status.hasFullAccess) {
+          incrementTrialUsage(mode === "simulado" ? "simulado" : "questao", mode === "simulado" ? 1 : chosen.length)
+        }
+      }
+
+      if (config.questionIds && config.questionIds.length > 0) {
+        supabase
+          .from("questoes")
+          .select(selectCols)
+          .in("id", config.questionIds)
+          .then(({ data }) => {
+            const byId = new Map(((data as Questao[]) ?? []).map((q) => [q.id, q]))
+            const ordered = config.questionIds!.map((id) => byId.get(id)).filter((q): q is Questao => !!q)
+            applyResult(ordered, true)
+          })
+        return
+      }
+
+      let query = supabase.from("questoes").select(selectCols).limit(200)
       if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
       if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
       if (config.prova) query = query.eq("prova", config.prova)
 
-      query.then(({ data }) => {
-        const pool = (data as Questao[]) ?? []
-        const shuffled = shuffle(pool).slice(0, effectiveCount)
-        setQuestions(shuffled)
-        setAnswers(new Array(shuffled.length).fill(null))
-        setEliminated(shuffled.map(() => new Set<number>()))
-        setPhase(shuffled.length === 0 ? "empty" : "playing")
-
-        if (shuffled.length > 0 && !status.hasFullAccess) {
-          incrementTrialUsage(mode === "simulado" ? "simulado" : "questao", mode === "simulado" ? 1 : shuffled.length)
-        }
-      })
+      query.then(({ data }) => applyResult((data as Questao[]) ?? [], false))
     })
   }, [open, config])
 
@@ -264,7 +278,14 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         wrong_count: wrong,
         duration_seconds: durationSeconds,
         points,
+        simulado_id: config?.simuladoId ?? null,
       })
+      if (config?.simuladoId) {
+        await supabase
+          .from("simulados")
+          .update({ finished_at: new Date().toISOString() })
+          .eq("id", config.simuladoId)
+      }
     }
     setSaving(false)
     setResult({ points, correct, wrong, answered: answeredCount })

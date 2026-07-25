@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
@@ -30,6 +30,8 @@ interface Props {
 
 export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const router = useRouter()
+  const searchParams = useSearchParams()
+  const origemEtapaId = searchParams.get("origemEtapaId")
   const [desafio, setDesafio] = useState<DesafioClinico | null>(null)
   const [perguntas, setPerguntas] = useState<DesafioClinicoPergunta[]>([])
   const [loading, setLoading] = useState(true)
@@ -102,6 +104,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
         acertos: acertosAtuais,
         total: perguntas.length,
         duracao_segundos: elapsed,
+        origem_trilha_etapa_id: origemEtapaId,
       })
     }
     setSalvando(false)

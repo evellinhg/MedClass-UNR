@@ -3,6 +3,7 @@ import { HomeStats } from "@/components/home-stats"
 import { ActionCards } from "@/components/action-cards"
 import { RankingWidget } from "@/components/ranking-widget"
 import { DesempenhoWidget } from "@/components/desempenho-widget"
+import { MedCoinsWidget } from "@/components/medcoins-widget"
 
 export default function HomePage() {
   return (
@@ -21,6 +22,10 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-2">
           <DesempenhoWidget />
           <RankingWidget />
+        </div>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          <MedCoinsWidget />
         </div>
       </div>
     </DashboardLayout>

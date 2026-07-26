@@ -2,10 +2,22 @@
 
 import { useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
-import { Trash2, Play, Plus, Loader2, CheckCircle2 } from "lucide-react"
+import {
+  ArrowRight,
+  BookOpen,
+  CheckCircle2,
+  Loader2,
+  Play,
+  RotateCcw,
+  Target,
+  Trash2,
+} from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
+import { getAreaColor } from "@/lib/area-colors"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import {
   Dialog,
   DialogContent,
@@ -13,6 +25,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { Switch } from "@/components/ui/switch"
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import { PracticeLauncher } from "@/components/practice-launcher"
 
@@ -26,12 +39,22 @@ interface Simulado {
   questao_ids: string[]
   finished_at: string | null
   created_at: string
+  modo: "individual" | "simulado"
+  timer_segundos_por_questao: number | null
+  modo_estrito: boolean
+  respostas: (number | null)[] | null
+  progresso_index: number | null
 }
 
 const QUANTIDADES = [10, 20, 30, 50]
+const TEMPOS_POR_QUESTAO = [30, 60, 90, 120, 180]
 
 function shuffle<T>(arr: T[]): T[] {
   return [...arr].sort(() => Math.random() - 0.5)
+}
+
+function temProgresso(s: Simulado) {
+  return (s.progresso_index ?? 0) > 0 || (s.respostas ?? []).some((a) => a !== null)
 }
 
 export function SimuladosContent() {
@@ -39,6 +62,7 @@ export function SimuladosContent() {
   const [simulados, setSimulados] = useState<Simulado[]>([])
   const [loading, setLoading] = useState(true)
   const [open, setOpen] = useState(false)
+  const [practiceOpen, setPracticeOpen] = useState(false)
 
   useEffect(() => {
     if (searchParams.get("novo") === "true") setOpen(true)
@@ -52,6 +76,8 @@ export function SimuladosContent() {
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [prova, setProva] = useState<string>("")
   const [quantidade, setQuantidade] = useState(20)
+  const [modoEstrito, setModoEstrito] = useState(false)
+  const [tempoPorQuestao, setTempoPorQuestao] = useState(90)
   const [creating, setCreating] = useState(false)
   const [createError, setCreateError] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
@@ -86,8 +112,12 @@ export function SimuladosContent() {
       label: s.nome,
       count: s.quantidade_questoes,
       questionIds: s.questao_ids,
-      mode: "simulado",
+      mode: s.modo,
       simuladoId: s.id,
+      modoEstrito: s.modo_estrito,
+      tempoPorQuestaoSegundos: s.timer_segundos_por_questao ?? undefined,
+      respostasIniciais: s.respostas ?? undefined,
+      progressoInicial: s.progresso_index ?? undefined,
     })
   }
 
@@ -101,6 +131,8 @@ export function SimuladosContent() {
     setDificuldade("aleatorio")
     setProva("")
     setQuantidade(20)
+    setModoEstrito(false)
+    setTempoPorQuestao(90)
     setCreateError(null)
   }
 
@@ -145,6 +177,9 @@ export function SimuladosContent() {
       prova: prova || null,
       quantidade_questoes: quantidade,
       questao_ids: questaoIds,
+      modo: "simulado",
+      modo_estrito: modoEstrito,
+      timer_segundos_por_questao: modoEstrito ? tempoPorQuestao : null,
     })
 
     setCreating(false)
@@ -168,238 +203,316 @@ export function SimuladosContent() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-gradient-brand">Simulados</h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Crie e resolva simulados personalizados
-          </p>
-        </div>
-        <Dialog
-          open={open}
-          onOpenChange={(v) => {
-            setOpen(v)
-            if (!v) resetForm()
-          }}
-        >
-          <DialogTrigger asChild>
-            <Button variant="gradient">
-              <Plus className="mr-2 h-4 w-4" />
-              Novo Simulado
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="max-w-md">
-            <DialogHeader>
-              <DialogTitle>Criar Novo Simulado</DialogTitle>
-            </DialogHeader>
-
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="mb-1 block text-sm font-medium text-foreground">
-                  Nome do Simulado
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  value={nome}
-                  onChange={(e) => setNome(e.target.value)}
-                  placeholder="Ex: Clínica Médica - Revisão"
-                  className="w-full rounded-lg border border-border bg-card px-3 py-2 text-foreground placeholder-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                />
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">
-                  Área (nenhuma selecionada = todas)
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {AREAS.map((area) => (
-                    <button
-                      key={area}
-                      type="button"
-                      onClick={() => toggleArea(area)}
-                      className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                        selectedAreas.includes(area)
-                          ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
-                          : "border border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {area}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">Nível</label>
-                <div className="flex flex-wrap gap-2">
-                  {DIFFICULTIES.map((d) => (
-                    <button
-                      key={d.value}
-                      type="button"
-                      onClick={() => setDificuldade(d.value)}
-                      className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                        dificuldade === d.value
-                          ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
-                          : "border border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {d.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">Prova</label>
-                <div className="flex gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setProva("")}
-                    className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                      prova === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                    }`}
-                  >
-                    Qualquer
-                  </button>
-                  {PROVAS.map((p) => (
-                    <button
-                      key={p}
-                      type="button"
-                      onClick={() => setProva(p)}
-                      className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                        prova === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {p}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">
-                  Quantidade de Questões
-                </label>
-                <div className="flex flex-wrap gap-2">
-                  {QUANTIDADES.map((q) => (
-                    <button
-                      key={q}
-                      type="button"
-                      onClick={() => setQuantidade(q)}
-                      className={`h-9 w-12 rounded-lg border text-sm font-medium transition-colors ${
-                        quantidade === q
-                          ? "border-primary bg-primary/10 text-primary"
-                          : "border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {q}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {createError && <p className="text-xs text-destructive">{createError}</p>}
-
-              <div className="flex gap-2 pt-2">
-                <Button type="submit" variant="gradient" className="flex-1 gap-1.5" disabled={creating || !nome.trim()}>
-                  {creating && <Loader2 className="h-4 w-4 animate-spin" />}
-                  Criar Simulado
-                </Button>
-                <Button type="button" variant="outline" onClick={() => setOpen(false)} className="flex-1">
-                  Cancelar
-                </Button>
-              </div>
-            </form>
-          </DialogContent>
-        </Dialog>
+      <div>
+        <h2 className="text-2xl font-bold text-gradient-brand">Treinamentos</h2>
+        <p className="mt-1 text-sm text-muted-foreground">Escolha como quer treinar hoje</p>
       </div>
 
-      {/* Quick-start: random question practice (distinct from a full simulado) */}
-      <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-foreground">Praticar agora</h3>
-        <p className="-mt-2 text-xs text-muted-foreground">
-          Treino rápido com questões aleatórias, separado dos seus simulados abaixo.
-        </p>
-        <PracticeLauncher onStart={startPlayer} />
+      {/* Entry points: Modo Estudo x Simulados */}
+      <div className="grid gap-4 md:grid-cols-2">
+        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#7c3aed] to-[#4338ca] p-6 text-white">
+          <div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+              <BookOpen className="h-5 w-5" />
+            </div>
+            <h3 className="mt-4 text-lg font-bold">Modo Estudo</h3>
+            <p className="text-sm text-white/80">Aprenda no seu ritmo</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/90">
+              <li>• Feedback imediato com explicação de cada questão</li>
+              <li>• Escolha área, dificuldade e prova livremente</li>
+              <li>• Sem pressão de tempo — cronômetro é opcional</li>
+            </ul>
+          </div>
+          <Button
+            variant="secondary"
+            className="mt-6 w-full justify-between bg-white/15 text-white hover:bg-white/25"
+            onClick={() => setPracticeOpen(true)}
+          >
+            Iniciar Estudo
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </Card>
+
+        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#8b5cf6] to-[#6366f1] p-6 text-white">
+          <div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+              <Target className="h-5 w-5" />
+            </div>
+            <h3 className="mt-4 text-lg font-bold">Simulados</h3>
+            <p className="text-sm text-white/80">Treine como se fosse a prova real</p>
+            <ul className="mt-4 space-y-2 text-sm text-white/90">
+              <li>• Tempo máximo por questão no modo estrito</li>
+              <li>• Questões fixas — pause e retome quando quiser</li>
+              <li>• Pontuação para acompanhar sua evolução</li>
+            </ul>
+          </div>
+          <Dialog
+            open={open}
+            onOpenChange={(v) => {
+              setOpen(v)
+              if (!v) resetForm()
+            }}
+          >
+            <DialogTrigger asChild>
+              <Button variant="secondary" className="mt-6 w-full justify-between bg-white/15 text-white hover:bg-white/25">
+                Criar Simulado
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md">
+              <DialogHeader>
+                <DialogTitle>Criar Novo Simulado</DialogTitle>
+              </DialogHeader>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="mb-1 block text-sm font-medium text-foreground">
+                    Nome do Simulado
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    value={nome}
+                    onChange={(e) => setNome(e.target.value)}
+                    placeholder="Ex: Clínica Médica - Revisão"
+                    className="w-full rounded-lg border border-border bg-card px-3 py-2 text-foreground placeholder-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  />
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">
+                    Área (nenhuma selecionada = todas)
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {AREAS.map((area) => {
+                      const cor = getAreaColor(area)
+                      const ativo = selectedAreas.includes(area)
+                      return (
+                        <button
+                          key={area}
+                          type="button"
+                          onClick={() => toggleArea(area)}
+                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                            ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                          }`}
+                        >
+                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                          {area}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">Nível</label>
+                  <div className="flex flex-wrap gap-2">
+                    {DIFFICULTIES.map((d) => (
+                      <button
+                        key={d.value}
+                        type="button"
+                        onClick={() => setDificuldade(d.value)}
+                        className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                          dificuldade === d.value
+                            ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                            : "border border-input text-foreground hover:bg-accent"
+                        }`}
+                      >
+                        {d.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">Prova</label>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setProva("")}
+                      className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                        prova === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                      }`}
+                    >
+                      Qualquer
+                    </button>
+                    {PROVAS.map((p) => (
+                      <button
+                        key={p}
+                        type="button"
+                        onClick={() => setProva(p)}
+                        className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                          prova === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                        }`}
+                      >
+                        {p}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">
+                    Quantidade de Questões
+                  </label>
+                  <div className="flex flex-wrap gap-2">
+                    {QUANTIDADES.map((q) => (
+                      <button
+                        key={q}
+                        type="button"
+                        onClick={() => setQuantidade(q)}
+                        className={`h-9 w-12 rounded-lg border text-sm font-medium transition-colors ${
+                          quantidade === q
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-input text-foreground hover:bg-accent"
+                        }`}
+                      >
+                        {q}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-3 rounded-lg border border-border p-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-foreground">Modo estrito</p>
+                      <p className="text-xs text-muted-foreground">Tempo por questão. Não é possível voltar.</p>
+                    </div>
+                    <Switch checked={modoEstrito} onCheckedChange={setModoEstrito} />
+                  </div>
+                  {modoEstrito && (
+                    <div>
+                      <label className="mb-2 block text-xs font-medium text-foreground">Tempo por questão</label>
+                      <div className="flex flex-wrap gap-2">
+                        {TEMPOS_POR_QUESTAO.map((t) => (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => setTempoPorQuestao(t)}
+                            className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
+                              tempoPorQuestao === t
+                                ? "border-primary bg-primary/10 text-primary"
+                                : "border-input text-foreground hover:bg-accent"
+                            }`}
+                          >
+                            {t}s
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {createError && <p className="text-xs text-destructive">{createError}</p>}
+
+                <div className="flex gap-2 pt-2">
+                  <Button type="submit" variant="gradient" className="flex-1 gap-1.5" disabled={creating || !nome.trim()}>
+                    {creating && <Loader2 className="h-4 w-4 animate-spin" />}
+                    Criar Simulado
+                  </Button>
+                  <Button type="button" variant="outline" onClick={() => setOpen(false)} className="flex-1">
+                    Cancelar
+                  </Button>
+                </div>
+              </form>
+            </DialogContent>
+          </Dialog>
+        </Card>
       </div>
 
       {/* Simulados List */}
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-foreground">Meus simulados</h3>
+        <h3 className="text-sm font-semibold text-foreground">Meus treinamentos</h3>
         {loading ? (
           <div className="flex items-center justify-center gap-2 py-10 text-sm text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
-            Carregando simulados...
+            Carregando treinamentos...
           </div>
         ) : simulados.length === 0 ? (
           <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
             <p className="text-muted-foreground">
-              Nenhum simulado criado ainda. Crie um novo para começar a praticar.
+              Nenhum treinamento criado ainda. Escolha o Modo Estudo ou crie um Simulado para começar.
             </p>
           </div>
         ) : (
-          simulados.map((simulado) => (
-            <div
-              key={simulado.id}
-              className="flex items-center justify-between rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/50"
-            >
-              <div className="flex-1">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-foreground">{simulado.nome}</h3>
-                  {simulado.finished_at && (
-                    <span className="flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-medium text-success">
-                      <CheckCircle2 className="h-3 w-3" />
-                      Concluído
-                    </span>
-                  )}
+          simulados.map((simulado) => {
+            const emAndamento = !simulado.finished_at && temProgresso(simulado)
+            return (
+              <div
+                key={simulado.id}
+                className="flex items-center justify-between rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/50"
+              >
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="font-medium text-foreground">{simulado.nome}</h3>
+                    <Badge variant="secondary">{simulado.modo === "simulado" ? "Simulado" : "Estudo"}</Badge>
+                    {simulado.finished_at && (
+                      <span className="flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-medium text-success">
+                        <CheckCircle2 className="h-3 w-3" />
+                        Concluído
+                      </span>
+                    )}
+                    {emAndamento && (
+                      <span className="flex items-center gap-1 rounded-full bg-warning/15 px-2 py-0.5 text-[11px] font-medium text-warning">
+                        <RotateCcw className="h-3 w-3" />
+                        Em andamento
+                      </span>
+                    )}
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {(simulado.areas.length > 0 ? simulado.areas : ["Todas as áreas"]).map((area) => (
+                      <span
+                        key={area}
+                        className="inline-flex items-center rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-medium text-primary"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
+                    <span>{simulado.quantidade_questoes} questões</span>
+                    {simulado.prova && <span>{simulado.prova}</span>}
+                    {simulado.modo_estrito && simulado.timer_segundos_por_questao && (
+                      <span>{simulado.timer_segundos_por_questao}s por questão</span>
+                    )}
+                    <span>Criado em {new Date(simulado.created_at).toLocaleDateString("pt-BR")}</span>
+                  </div>
                 </div>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {(simulado.areas.length > 0 ? simulado.areas : ["Todas as áreas"]).map((area) => (
-                    <span
-                      key={area}
-                      className="inline-flex items-center rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-medium text-primary"
-                    >
-                      {area}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
-                  <span>{simulado.quantidade_questoes} questões</span>
-                  {simulado.prova && <span>{simulado.prova}</span>}
-                  <span>Criado em {new Date(simulado.created_at).toLocaleDateString("pt-BR")}</span>
-                </div>
-              </div>
 
-              <div className="ml-4 flex items-center gap-2">
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  className="text-primary hover:bg-primary/10"
-                  aria-label="Iniciar simulado"
-                  onClick={() => playSimulado(simulado)}
-                >
-                  <Play className="h-4 w-4" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="ghost"
-                  onClick={() => handleDelete(simulado.id)}
-                  disabled={deletingId === simulado.id}
-                  className="text-destructive hover:bg-destructive/10"
-                  aria-label="Deletar simulado"
-                >
-                  {deletingId === simulado.id ? (
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                  ) : (
-                    <Trash2 className="h-4 w-4" />
-                  )}
-                </Button>
+                <div className="ml-4 flex items-center gap-2">
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="gap-1.5 text-primary hover:bg-primary/10"
+                    aria-label={emAndamento ? "Retomar treinamento" : "Iniciar treinamento"}
+                    onClick={() => playSimulado(simulado)}
+                  >
+                    {emAndamento ? <RotateCcw className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                    {emAndamento ? "Retomar" : simulado.finished_at ? "Rever" : "Iniciar"}
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => handleDelete(simulado.id)}
+                    disabled={deletingId === simulado.id}
+                    className="text-destructive hover:bg-destructive/10"
+                    aria-label="Excluir treinamento"
+                  >
+                    {deletingId === simulado.id ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      <Trash2 className="h-4 w-4" />
+                    )}
+                  </Button>
+                </div>
               </div>
-            </div>
-          ))
+            )
+          })
         )}
       </div>
+
+      <PracticeLauncher open={practiceOpen} onOpenChange={setPracticeOpen} onStart={startPlayer} />
 
       <SimuladoPlayer
         open={playerOpen}

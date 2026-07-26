@@ -52,6 +52,10 @@ export interface SimuladoConfig {
   mode?: "individual" | "simulado"
   questionIds?: string[]
   simuladoId?: string
+  modoEstrito?: boolean
+  tempoPorQuestaoSegundos?: number
+  respostasIniciais?: (number | null)[]
+  progressoInicial?: number
 }
 
 function formatElapsed(seconds: number) {
@@ -73,6 +77,7 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 const BONUS_POINTS = 10
+const TIMEOUT_SENTINEL = -1
 
 export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerProps) {
   const [phase, setPhase] = useState<Phase>("loading")
@@ -100,6 +105,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     null
   )
   const [blockedStatus, setBlockedStatus] = useState<PlanStatus | null>(null)
+  const [questionTimeLeft, setQuestionTimeLeft] = useState<number | null>(null)
 
   useEffect(() => {
     if (!open || !config) return
@@ -148,8 +154,16 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       const applyResult = (pool: Questao[], ordered: boolean) => {
         const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
         setQuestions(chosen)
-        setAnswers(new Array(chosen.length).fill(null))
+        const savedAnswers = config.respostasIniciais
+        setAnswers(
+          savedAnswers && savedAnswers.length === chosen.length ? savedAnswers : new Array(chosen.length).fill(null)
+        )
         setEliminated(chosen.map(() => new Set<number>()))
+        if (savedAnswers && savedAnswers.length === chosen.length && config.progressoInicial) {
+          const idx = Math.max(0, Math.min(chosen.length - 1, config.progressoInicial))
+          setCurrentIndex(idx)
+          setMechanismStage(savedAnswers[idx] !== null ? "resolved" : "hidden")
+        }
         setPhase(chosen.length === 0 ? "empty" : "playing")
 
         if (chosen.length > 0 && !status.hasFullAccess) {
@@ -186,6 +200,46 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     }, 1000)
     return () => clearInterval(interval)
   }, [open, config?.timerEnabled, phase, startedAt])
+
+  // Persist progress so the training can be resumed later if closed before finishing
+  useEffect(() => {
+    if (phase !== "playing" || !config?.simuladoId) return
+    supabase
+      .from("simulados")
+      .update({ respostas: answers, progresso_index: currentIndex })
+      .eq("id", config.simuladoId)
+      .then(() => {})
+  }, [answers, currentIndex, phase, config?.simuladoId])
+
+  // Modo estrito: countdown per question, resets when moving to a new (unanswered) question
+  useEffect(() => {
+    const limit = config?.modoEstrito ? config?.tempoPorQuestaoSegundos : undefined
+    if (!open || phase !== "playing" || !limit || answers[currentIndex] != null) {
+      setQuestionTimeLeft(null)
+      return
+    }
+    setQuestionTimeLeft(limit)
+    const interval = setInterval(() => {
+      setQuestionTimeLeft((prev) => (prev === null || prev <= 1 ? 0 : prev - 1))
+    }, 1000)
+    return () => clearInterval(interval)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, phase, config?.modoEstrito, config?.tempoPorQuestaoSegundos, currentIndex])
+
+  useEffect(() => {
+    if (questionTimeLeft !== 0) return
+    if (pendingAnswer !== null) {
+      confirmAnswer()
+    } else {
+      setAnswers((prev) => {
+        const next = [...prev]
+        next[currentIndex] = TIMEOUT_SENTINEL
+        return next
+      })
+      goTo(currentIndex + 1)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [questionTimeLeft])
 
   const current = questions[currentIndex]
   const currentAnswer = answers[currentIndex] ?? null
@@ -241,16 +295,19 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   }
 
   const goTo = (index: number) => {
-    setCurrentIndex(Math.max(0, Math.min(questions.length - 1, index)))
+    const clamped = Math.max(0, Math.min(questions.length - 1, index))
+    if (config?.modoEstrito && clamped < currentIndex) return
+    setCurrentIndex(clamped)
     setConfirmingFinish(false)
     setPendingAnswer(null)
-    setMechanismStage(answers[index] !== null ? "resolved" : "hidden")
+    setMechanismStage(answers[clamped] !== null ? "resolved" : "hidden")
     setMechanismAnswer(null)
   }
 
   const skip = () => {
     const next = answers.findIndex((a, i) => a === null && i > currentIndex)
     if (next !== -1) return goTo(next)
+    if (config?.modoEstrito) return goTo(currentIndex + 1)
     const fromStart = answers.findIndex((a) => a === null)
     if (fromStart !== -1) return goTo(fromStart)
     goTo(currentIndex + 1)
@@ -283,7 +340,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       if (config?.simuladoId) {
         await supabase
           .from("simulados")
-          .update({ finished_at: new Date().toISOString() })
+          .update({ finished_at: new Date().toISOString(), respostas: null, progresso_index: null })
           .eq("id", config.simuladoId)
       }
     }
@@ -322,12 +379,24 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         <DialogHeader>
           <div className="flex items-center justify-between gap-3">
             <DialogTitle>{config?.label ?? "Simulado"}</DialogTitle>
-            {config?.timerEnabled && phase === "playing" && (
-              <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
-                <Timer className="h-3.5 w-3.5" />
-                {formatElapsed(elapsed)}
-              </span>
-            )}
+            <div className="flex items-center gap-2">
+              {questionTimeLeft !== null && phase === "playing" && (
+                <span
+                  className={`flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${
+                    questionTimeLeft <= 5 ? "bg-destructive/15 text-destructive" : "bg-warning/15 text-warning"
+                  }`}
+                >
+                  <Timer className="h-3.5 w-3.5" />
+                  {questionTimeLeft}s
+                </span>
+              )}
+              {config?.timerEnabled && phase === "playing" && (
+                <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
+                  <Timer className="h-3.5 w-3.5" />
+                  {formatElapsed(elapsed)}
+                </span>
+              )}
+            </div>
           </div>
         </DialogHeader>
 
@@ -553,7 +622,12 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
             )}
 
             <div className="flex items-center gap-2 pt-1">
-              <Button variant="outline" size="icon" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => goTo(currentIndex - 1)}
+                disabled={currentIndex === 0 || !!config?.modoEstrito}
+              >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
               <Button variant="outline" className="gap-1.5" onClick={skip}>

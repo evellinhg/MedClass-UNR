@@ -1,9 +1,10 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CheckCircle2, Loader2, Search, Timer, Zap } from "lucide-react"
+import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
+import { getAreaColor } from "@/lib/area-colors"
 import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -14,19 +15,24 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import { PlanRestrictedNotice } from "@/components/plan-restricted-notice"
 import type { SimuladoConfig } from "@/components/simulado-player"
 
 interface PracticeLauncherProps {
+  open: boolean
+  onOpenChange: (open: boolean) => void
   onStart: (config: SimuladoConfig) => void
 }
 
 const QUANTITIES = [5, 10, 20, 30, 50]
 
-export function PracticeLauncher({ onStart }: PracticeLauncherProps) {
-  const [open, setOpen] = useState(false)
+function shuffle<T>(arr: T[]): T[] {
+  return [...arr].sort(() => Math.random() - 0.5)
+}
+
+export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
+  const [starting, setStarting] = useState(false)
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [selectedAreas, setSelectedAreas] = useState<string[]>([])
   const [prova, setProva] = useState(PROVAS[0])
@@ -82,36 +88,62 @@ export function PracticeLauncher({ onStart }: PracticeLauncherProps) {
     setAvailable(null)
   }, [dificuldade, prova])
 
-  const handleStart = () => {
+  const handleStart = async () => {
     const label =
       selectedAreas.length === 0 || selectedAreas.length === AREAS.length
         ? `Questões aleatórias · ${prova}`
         : `${selectedAreas.join(", ")} · ${prova}`
 
+    setStarting(true)
+    const { data: userData } = await supabase.auth.getUser()
+    const areasFiltro = selectedAreas.length > 0 && selectedAreas.length < AREAS.length ? selectedAreas : undefined
+
+    let questionIds: string[] | undefined
+    let simuladoId: string | undefined
+
+    if (userData.user) {
+      let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
+      if (areasFiltro) query = query.in("area", areasFiltro)
+      if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
+      if (prova) query = query.eq("prova", prova)
+      const { data: pool } = await query
+      const chosen = shuffle((pool as { id: string }[] | null) ?? []).slice(0, count)
+      questionIds = chosen.map((q) => q.id)
+
+      const { data: inserted } = await supabase
+        .from("simulados")
+        .insert({
+          user_id: userData.user.id,
+          nome: label,
+          areas: areasFiltro ?? [],
+          dificuldade: dificuldade !== "aleatorio" ? dificuldade : null,
+          prova: prova || null,
+          quantidade_questoes: questionIds.length,
+          questao_ids: questionIds,
+          modo: "individual",
+        })
+        .select("id")
+        .single()
+      simuladoId = inserted?.id
+    }
+
+    setStarting(false)
     onStart({
       label,
       count,
-      areas: selectedAreas.length > 0 && selectedAreas.length < AREAS.length ? selectedAreas : undefined,
+      areas: areasFiltro,
       dificuldade,
       prova,
       timerEnabled,
       mode: "individual",
+      questionIds,
+      simuladoId,
     })
-    setOpen(false)
+    onOpenChange(false)
   }
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <div className="cursor-pointer rounded-lg border border-border bg-card p-5 transition-colors hover:border-primary/50">
-          <Zap className="h-5 w-5 text-primary" />
-          <p className="mt-2 font-medium text-foreground">Praticar Agora</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Responda questões aleatórias — configure nível, área e prova
-          </p>
-        </div>
-      </DialogTrigger>
-
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>Configurar treino de questões</DialogTitle>
@@ -159,19 +191,22 @@ export function PracticeLauncher({ onStart }: PracticeLauncherProps) {
           <div className="space-y-2">
             <Label>Área (nenhuma selecionada = todas as 5 juntas)</Label>
             <div className="flex flex-wrap gap-2">
-              {AREAS.map((area) => (
-                <button
-                  key={area}
-                  onClick={() => toggleArea(area)}
-                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                    selectedAreas.includes(area)
-                      ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
-                      : "border border-input text-foreground hover:bg-accent"
-                  }`}
-                >
-                  {area}
-                </button>
-              ))}
+              {AREAS.map((area) => {
+                const cor = getAreaColor(area)
+                const ativo = selectedAreas.includes(area)
+                return (
+                  <button
+                    key={area}
+                    onClick={() => toggleArea(area)}
+                    className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                      ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                    }`}
+                  >
+                    <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                    {area}
+                  </button>
+                )
+              })}
             </div>
           </div>
 
@@ -249,11 +284,12 @@ export function PracticeLauncher({ onStart }: PracticeLauncherProps) {
         )}
 
         <DialogFooter>
-          <Button variant="outline" onClick={() => setOpen(false)}>
+          <Button variant="outline" onClick={() => onOpenChange(false)}>
             {isBlocked ? "Fechar" : "Cancelar"}
           </Button>
           {!isBlocked && !planLoading && (
-            <Button variant="gradient" onClick={handleStart} disabled={quantityOptions.length === 0}>
+            <Button variant="gradient" onClick={handleStart} disabled={quantityOptions.length === 0 || starting} className="gap-1.5">
+              {starting && <Loader2 className="h-4 w-4 animate-spin" />}
               Iniciar Treino
             </Button>
           )}

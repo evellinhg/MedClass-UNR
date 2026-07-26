@@ -38,6 +38,7 @@ const GLOW = {
 } as const
 
 type ChartType = "line" | "bar" | "pie"
+type GroupBy = "tentativa" | "semana" | "mes"
 
 interface Attempt {
   id: string
@@ -79,7 +80,7 @@ function AttemptTooltip({ active, payload, label }: any) {
   const pct = total > 0 ? Math.round((row.acertos / total) * 100) : 0
   return (
     <div className="min-w-[10rem] rounded-lg border border-purple-500/30 bg-[#170f2e] p-3 text-xs shadow-[0_0_20px_rgba(139,92,246,0.25)]">
-      <p className="mb-2 font-semibold text-white">Tentativa {label}</p>
+      <p className="mb-2 font-semibold text-white">{label}</p>
       <div className="space-y-1">
         <p className="flex items-center justify-between gap-4">
           <span className="flex items-center gap-1.5 text-emerald-400">
@@ -145,6 +146,7 @@ export function DesempenhoEstatisticasContent() {
   const [attempts, setAttempts] = useState<Attempt[]>([])
   const [loading, setLoading] = useState(true)
   const [chartType, setChartType] = useState<ChartType>("line")
+  const [groupBy, setGroupBy] = useState<GroupBy>("tentativa")
   const [activePieIndex, setActivePieIndex] = useState(0)
 
   useEffect(() => {
@@ -165,18 +167,58 @@ export function DesempenhoEstatisticasContent() {
     })
   }, [])
 
-  const chartData = useMemo(
-    () =>
-      attempts.map((a, i) => ({
-        label: `#${i + 1}`,
-        date: new Date(a.created_at).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" }),
+  const chartData = useMemo(() => {
+    if (groupBy === "tentativa") {
+      return attempts.map((a, i) => ({
+        label: `Treinamento ${i + 1}`,
         acertos: a.correct_count,
         erros: a.wrong_count,
         pendentes: Math.max(0, a.total_questions - a.correct_count - a.wrong_count),
         pontos: a.points,
-      })),
-    [attempts]
-  )
+      }))
+    }
+
+    const startOfWeek = (d: Date) => {
+      const date = new Date(d)
+      const day = date.getDay()
+      const diff = (day === 0 ? -6 : 1) - day
+      date.setDate(date.getDate() + diff)
+      date.setHours(0, 0, 0, 0)
+      return date
+    }
+
+    const groups = new Map<
+      string,
+      { label: string; sortKey: number; acertos: number; erros: number; pendentes: number; pontos: number }
+    >()
+
+    for (const a of attempts) {
+      const date = new Date(a.created_at)
+      let key: string
+      let label: string
+      let sortKey: number
+
+      if (groupBy === "semana") {
+        const start = startOfWeek(date)
+        key = start.toISOString().slice(0, 10)
+        label = `Sem ${start.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}`
+        sortKey = start.getTime()
+      } else {
+        key = `${date.getFullYear()}-${date.getMonth()}`
+        label = date.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
+        sortKey = date.getFullYear() * 12 + date.getMonth()
+      }
+
+      const existing = groups.get(key) ?? { label, sortKey, acertos: 0, erros: 0, pendentes: 0, pontos: 0 }
+      existing.acertos += a.correct_count
+      existing.erros += a.wrong_count
+      existing.pendentes += Math.max(0, a.total_questions - a.correct_count - a.wrong_count)
+      existing.pontos += a.points
+      groups.set(key, existing)
+    }
+
+    return Array.from(groups.values()).sort((a, b) => a.sortKey - b.sortKey)
+  }, [attempts, groupBy])
 
   const pieData = useMemo(() => {
     const totalAcertos = attempts.reduce((s, a) => s + a.correct_count, 0)
@@ -231,6 +273,12 @@ export function DesempenhoEstatisticasContent() {
     { type: "pie", label: "Pizza", icon: PieChartIcon, color: RED },
   ]
 
+  const GROUP_TOGGLES: { value: GroupBy; label: string }[] = [
+    { value: "tentativa", label: "Por treinamento" },
+    { value: "semana", label: "Semanal" },
+    { value: "mes", label: "Mensal" },
+  ]
+
   return (
     <div className="space-y-6">
       {/* Super chart: desempenho por tentativa */}
@@ -266,12 +314,31 @@ export function DesempenhoEstatisticasContent() {
           </div>
         </div>
 
-        <div key={chartType} className="relative h-80 w-full animate-in fade-in zoom-in-95 duration-500">
+        {chartType !== "pie" && (
+          <div className="relative mb-4 flex items-center gap-2">
+            {GROUP_TOGGLES.map(({ value, label }) => (
+              <button
+                key={value}
+                type="button"
+                onClick={() => setGroupBy(value)}
+                className={`rounded-full border px-3 py-1 text-[11px] font-medium transition-all hover:shadow-[0_0_14px_rgba(139,92,246,0.5)] ${
+                  groupBy === value
+                    ? "border-primary bg-primary/20 text-white"
+                    : "border-white/10 text-white/50 hover:text-white"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div key={`${chartType}-${groupBy}`} className="relative h-80 w-full animate-in fade-in zoom-in-95 duration-500">
           <ResponsiveContainer width="100%" height="100%">
             {chartType === "line" ? (
               <LineChart data={chartData} margin={{ left: 8, right: 8, top: 8, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
-                <XAxis dataKey="label" stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} fontSize={12} />
+                <XAxis dataKey="label" stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} fontSize={11} angle={-20} textAnchor="end" height={50} interval={0} />
                 <YAxis stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} width={28} fontSize={12} />
                 <Line
                   type="monotone"
@@ -312,7 +379,7 @@ export function DesempenhoEstatisticasContent() {
             ) : chartType === "bar" ? (
               <BarChart data={chartData} margin={{ left: 8, right: 8, top: 8, bottom: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" vertical={false} />
-                <XAxis dataKey="label" stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} fontSize={12} />
+                <XAxis dataKey="label" stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} fontSize={11} angle={-20} textAnchor="end" height={50} interval={0} />
                 <YAxis stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} width={28} fontSize={12} />
                 <Bar
                   dataKey="acertos"

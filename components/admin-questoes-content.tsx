@@ -39,6 +39,7 @@ interface Questao {
   mecanismo_opcoes: string[] | null
   mecanismo_indice_correta: number | null
   ativo: boolean
+  tags: string[]
   created_at: string
 }
 
@@ -57,6 +58,14 @@ const emptyForm = {
   mecanismoPergunta: "",
   mecanismoOpcoes: ["", ""],
   mecanismoIndiceCorreta: 0,
+  tags: "",
+}
+
+function parseTags(input: string): string[] {
+  return input
+    .split(",")
+    .map((t) => t.trim())
+    .filter(Boolean)
 }
 
 export function AdminQuestoesContent() {
@@ -86,7 +95,8 @@ export function AdminQuestoesContent() {
       (q) =>
         q.enunciado.toLowerCase().includes(term) ||
         (q.area ?? "").toLowerCase().includes(term) ||
-        (q.materia ?? "").toLowerCase().includes(term)
+        (q.materia ?? "").toLowerCase().includes(term) ||
+        (q.tags ?? []).some((tag) => tag.toLowerCase().includes(term))
     )
   }, [questoes, search])
 
@@ -110,6 +120,7 @@ export function AdminQuestoesContent() {
       mecanismoPergunta: q.mecanismo_pergunta ?? "",
       mecanismoOpcoes: q.mecanismo_opcoes?.length ? q.mecanismo_opcoes : ["", ""],
       mecanismoIndiceCorreta: q.mecanismo_indice_correta ?? 0,
+      tags: (q.tags ?? []).join(", "),
     })
     setDialogOpen(true)
   }
@@ -166,6 +177,7 @@ export function AdminQuestoesContent() {
       mecanismo_pergunta: hasMecanismo ? form.mecanismoPergunta.trim() : null,
       mecanismo_opcoes: hasMecanismo ? mecanismoOpcoesLimpa : null,
       mecanismo_indice_correta: hasMecanismo ? Math.min(form.mecanismoIndiceCorreta, mecanismoOpcoesLimpa.length - 1) : null,
+      tags: parseTags(form.tags),
     }
 
     const { error } = editingId
@@ -202,7 +214,7 @@ export function AdminQuestoesContent() {
         <div className="relative w-full max-w-sm">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="Buscar por enunciado, área ou matéria..."
+            placeholder="Buscar por enunciado, área, matéria ou tag..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="pl-9"
@@ -237,6 +249,18 @@ export function AdminQuestoesContent() {
                     {q.mecanismo_pergunta && <Badge variant="outline">+ mecanismo</Badge>}
                   </div>
                   <p className="font-medium text-foreground">{q.enunciado}</p>
+                  {q.tags?.length > 0 && (
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {q.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <ul className="mt-2 space-y-1">
                     {q.opcoes?.map((op, idx) => (
                       <li
@@ -309,6 +333,16 @@ export function AdminQuestoesContent() {
                   onChange={(e) => setForm((p) => ({ ...p, materia: e.target.value }))}
                 />
               </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="tags">Tags (separadas por vírgula)</Label>
+              <Input
+                id="tags"
+                value={form.tags}
+                onChange={(e) => setForm((p) => ({ ...p, tags: e.target.value }))}
+                placeholder="Ex: pneumonia, infecção respiratória, clínica médica"
+              />
             </div>
 
             <div className="grid grid-cols-2 gap-3">

@@ -5,6 +5,8 @@ import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
+import { getDifficultyColor } from "@/lib/difficulty-colors"
+import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -38,6 +40,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const [prova, setProva] = useState(PROVAS[0])
   const [count, setCount] = useState(10)
   const [timerEnabled, setTimerEnabled] = useState(false)
+  const [apenasIneditas, setApenasIneditas] = useState(true)
   const [available, setAvailable] = useState<number | null>(null)
   const [checking, setChecking] = useState(false)
   const [planStatus, setPlanStatus] = useState<PlanStatus | null>(null)
@@ -75,18 +78,28 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
   const handleVerify = async () => {
     setChecking(true)
-    let query = supabase.from("questoes").select("id", { count: "exact", head: true }).eq("ativo", true)
+    let query = supabase.from("questoes").select("id").eq("ativo", true)
     if (selectedAreas.length > 0 && selectedAreas.length < AREAS.length) query = query.in("area", selectedAreas)
     if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
     if (prova) query = query.eq("prova", prova)
-    const { count: total } = await query
-    setAvailable(total ?? 0)
+    const { data: pool } = await query
+
+    let ids = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
+    if (apenasIneditas) {
+      const { data: userData } = await supabase.auth.getUser()
+      if (userData.user) {
+        const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
+        ids = ids.filter((id) => !jaRespondidas.has(id))
+      }
+    }
+
+    setAvailable(ids.length)
     setChecking(false)
   }
 
   useEffect(() => {
     setAvailable(null)
-  }, [dificuldade, prova])
+  }, [dificuldade, prova, apenasIneditas])
 
   const handleStart = async () => {
     const label =
@@ -107,8 +120,12 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
       if (prova) query = query.eq("prova", prova)
       const { data: pool } = await query
-      const chosen = shuffle((pool as { id: string }[] | null) ?? []).slice(0, count)
-      questionIds = chosen.map((q) => q.id)
+      let poolIds = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
+      if (apenasIneditas) {
+        const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
+        poolIds = poolIds.filter((id) => !jaRespondidas.has(id))
+      }
+      questionIds = shuffle(poolIds).slice(0, count)
 
       const { data: inserted } = await supabase
         .from("simulados")
@@ -172,25 +189,47 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           <div className="space-y-2">
             <Label>Nível</Label>
             <div className="flex flex-wrap gap-2">
-              {DIFFICULTIES.map((d) => (
-                <button
-                  key={d.value}
-                  onClick={() => setDificuldade(d.value)}
-                  className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                    dificuldade === d.value
-                      ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
-                      : "border border-input text-foreground hover:bg-accent"
-                  }`}
-                >
-                  {d.label}
-                </button>
-              ))}
+              {DIFFICULTIES.map((d) => {
+                const cor = getDifficultyColor(d.value)
+                const ativo = dificuldade === d.value
+                const isEspecifica = d.value !== "aleatorio"
+                return (
+                  <button
+                    key={d.value}
+                    onClick={() => setDificuldade(d.value)}
+                    className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
+                      isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(139,92,246,0.45)]"
+                    } ${
+                      ativo
+                        ? isEspecifica
+                          ? `${cor.activeBg} border-transparent text-white`
+                          : "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                        : isEspecifica
+                          ? `${cor.borderSoft} text-foreground hover:bg-accent`
+                          : "border border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
+                    {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
+                    {d.label}
+                  </button>
+                )
+              })}
             </div>
           </div>
 
           <div className="space-y-2">
             <Label>Área (nenhuma selecionada = todas as 5 juntas)</Label>
             <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
+                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(139,92,246,0.45)] ${
+                  selectedAreas.length === AREAS.length
+                    ? "border-transparent bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                    : "border-input text-foreground hover:bg-accent"
+                }`}
+              >
+                Todas
+              </button>
               {AREAS.map((area) => {
                 const cor = getAreaColor(area)
                 const ativo = selectedAreas.includes(area)
@@ -207,6 +246,30 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                   </button>
                 )
               })}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label>Questões</Label>
+            <div className="flex gap-2">
+              <button
+                type="button"
+                onClick={() => setApenasIneditas(true)}
+                className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                  apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                }`}
+              >
+                Excluir já respondidas
+              </button>
+              <button
+                type="button"
+                onClick={() => setApenasIneditas(false)}
+                className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                  !apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                }`}
+              >
+                Todas as questões
+              </button>
             </div>
           </div>
 

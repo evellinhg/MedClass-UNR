@@ -7,7 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Loader2,
-  MessageCircleQuestion,
+  MessageSquareWarning,
   SkipForward,
   Strikethrough,
   Timer,
@@ -17,6 +17,7 @@ import {
 import { supabase } from "@/lib/supabase"
 import { calculatePoints } from "@/lib/scoring"
 import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type PlanStatus } from "@/lib/plan-status"
+import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
@@ -36,6 +37,7 @@ interface Questao {
   indice_correta: number
   materia: string | null
   area: string | null
+  dificuldade: string | null
   justificativa: string | null
   mecanismo_pergunta: string | null
   mecanismo_opcoes: string[] | null
@@ -56,7 +58,16 @@ export interface SimuladoConfig {
   tempoPorQuestaoSegundos?: number
   respostasIniciais?: (number | null)[]
   progressoInicial?: number
+  readOnly?: boolean
 }
+
+type FeedbackTipo = "erro" | "duvida" | "sugestao"
+
+const FEEDBACK_TIPOS: { value: FeedbackTipo; label: string }[] = [
+  { value: "erro", label: "Reportar Erro" },
+  { value: "duvida", label: "Dúvida" },
+  { value: "sugestao", label: "Sugestão" },
+]
 
 function formatElapsed(seconds: number) {
   const m = Math.floor(seconds / 60)
@@ -80,6 +91,7 @@ const BONUS_POINTS = 10
 const TIMEOUT_SENTINEL = -1
 
 export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerProps) {
+  const readOnly = !!config?.readOnly
   const [phase, setPhase] = useState<Phase>("loading")
   const [questions, setQuestions] = useState<Questao[]>([])
   const [answers, setAnswers] = useState<(number | null)[]>([])
@@ -96,7 +108,8 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   const [mechanismCorrectByQuestion, setMechanismCorrectByQuestion] = useState<Record<number, boolean>>({})
   const [bonusPoints, setBonusPoints] = useState(0)
 
-  const [feedbackOpen, setFeedbackOpen] = useState(false)
+  const [feedbackModalOpen, setFeedbackModalOpen] = useState(false)
+  const [feedbackTipo, setFeedbackTipo] = useState<FeedbackTipo>("duvida")
   const [feedbackText, setFeedbackText] = useState("")
   const [feedbackSent, setFeedbackSent] = useState(false)
   const [sendingFeedback, setSendingFeedback] = useState(false)
@@ -121,11 +134,64 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     setMechanismAnswer(null)
     setMechanismCorrectByQuestion({})
     setBonusPoints(0)
-    setFeedbackOpen(false)
+    setFeedbackModalOpen(false)
     setFeedbackSent(false)
     setBlockedStatus(null)
 
     const mode = config.mode ?? "individual"
+    const isReadOnly = !!config.readOnly
+
+    const selectCols =
+      "id, enunciado, opcoes, indice_correta, materia, area, dificuldade, justificativa, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
+
+    const applyResult = (pool: Questao[], ordered: boolean, effectiveCount: number, skipTrialUsage: boolean) => {
+      const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
+      setQuestions(chosen)
+      const savedAnswers = config.respostasIniciais
+      setAnswers(
+        savedAnswers && savedAnswers.length === chosen.length ? savedAnswers : new Array(chosen.length).fill(null)
+      )
+      setEliminated(chosen.map(() => new Set<number>()))
+      if (isReadOnly) {
+        setMechanismStage("resolved")
+      } else if (savedAnswers && savedAnswers.length === chosen.length && config.progressoInicial) {
+        const idx = Math.max(0, Math.min(chosen.length - 1, config.progressoInicial))
+        setCurrentIndex(idx)
+        setMechanismStage(savedAnswers[idx] !== null ? "resolved" : "hidden")
+      }
+      setPhase(chosen.length === 0 ? "empty" : "playing")
+
+      if (!skipTrialUsage && chosen.length > 0) {
+        incrementTrialUsage(mode === "simulado" ? "simulado" : "questao", mode === "simulado" ? 1 : chosen.length)
+      }
+    }
+
+    const loadQuestions = (effectiveCount: number, skipTrialUsage: boolean) => {
+      if (config.questionIds && config.questionIds.length > 0) {
+        supabase
+          .from("questoes")
+          .select(selectCols)
+          .in("id", config.questionIds)
+          .then(({ data }) => {
+            const byId = new Map(((data as Questao[]) ?? []).map((q) => [q.id, q]))
+            const ordered = config.questionIds!.map((id) => byId.get(id)).filter((q): q is Questao => !!q)
+            applyResult(ordered, true, effectiveCount, skipTrialUsage)
+          })
+        return
+      }
+
+      let query = supabase.from("questoes").select(selectCols).eq("ativo", true).limit(200)
+      if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
+      if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
+      if (config.prova) query = query.eq("prova", config.prova)
+
+      query.then(({ data }) => applyResult((data as Questao[]) ?? [], false, effectiveCount, skipTrialUsage))
+    }
+
+    if (isReadOnly) {
+      loadQuestions(config.count, true)
+      return
+    }
 
     getPlanStatus().then((status) => {
       if (!status) return
@@ -148,72 +214,31 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
           ? Math.min(config.count, FREE_SIMULADO_MAX_QUESTIONS)
           : Math.min(config.count, status.questoesRemaining)
 
-      const selectCols =
-        "id, enunciado, opcoes, indice_correta, materia, area, justificativa, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
-
-      const applyResult = (pool: Questao[], ordered: boolean) => {
-        const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
-        setQuestions(chosen)
-        const savedAnswers = config.respostasIniciais
-        setAnswers(
-          savedAnswers && savedAnswers.length === chosen.length ? savedAnswers : new Array(chosen.length).fill(null)
-        )
-        setEliminated(chosen.map(() => new Set<number>()))
-        if (savedAnswers && savedAnswers.length === chosen.length && config.progressoInicial) {
-          const idx = Math.max(0, Math.min(chosen.length - 1, config.progressoInicial))
-          setCurrentIndex(idx)
-          setMechanismStage(savedAnswers[idx] !== null ? "resolved" : "hidden")
-        }
-        setPhase(chosen.length === 0 ? "empty" : "playing")
-
-        if (chosen.length > 0 && !status.hasFullAccess) {
-          incrementTrialUsage(mode === "simulado" ? "simulado" : "questao", mode === "simulado" ? 1 : chosen.length)
-        }
-      }
-
-      if (config.questionIds && config.questionIds.length > 0) {
-        supabase
-          .from("questoes")
-          .select(selectCols)
-          .in("id", config.questionIds)
-          .then(({ data }) => {
-            const byId = new Map(((data as Questao[]) ?? []).map((q) => [q.id, q]))
-            const ordered = config.questionIds!.map((id) => byId.get(id)).filter((q): q is Questao => !!q)
-            applyResult(ordered, true)
-          })
-        return
-      }
-
-      let query = supabase.from("questoes").select(selectCols).eq("ativo", true).limit(200)
-      if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
-      if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
-      if (config.prova) query = query.eq("prova", config.prova)
-
-      query.then(({ data }) => applyResult((data as Questao[]) ?? [], false))
+      loadQuestions(effectiveCount, status.hasFullAccess)
     })
   }, [open, config])
 
   useEffect(() => {
-    if (!open || !config?.timerEnabled || phase !== "playing") return
+    if (!open || !config?.timerEnabled || phase !== "playing" || readOnly) return
     const interval = setInterval(() => {
       setElapsed(Math.round((Date.now() - startedAt) / 1000))
     }, 1000)
     return () => clearInterval(interval)
-  }, [open, config?.timerEnabled, phase, startedAt])
+  }, [open, config?.timerEnabled, phase, startedAt, readOnly])
 
   // Persist progress so the training can be resumed later if closed before finishing
   useEffect(() => {
-    if (phase !== "playing" || !config?.simuladoId) return
+    if (phase !== "playing" || !config?.simuladoId || readOnly) return
     supabase
       .from("simulados")
       .update({ respostas: answers, progresso_index: currentIndex })
       .eq("id", config.simuladoId)
       .then(() => {})
-  }, [answers, currentIndex, phase, config?.simuladoId])
+  }, [answers, currentIndex, phase, config?.simuladoId, readOnly])
 
   // Modo estrito: countdown per question, resets when moving to a new (unanswered) question
   useEffect(() => {
-    const limit = config?.modoEstrito ? config?.tempoPorQuestaoSegundos : undefined
+    const limit = !readOnly && config?.modoEstrito ? config?.tempoPorQuestaoSegundos : undefined
     if (!open || phase !== "playing" || !limit || answers[currentIndex] != null) {
       setQuestionTimeLeft(null)
       return
@@ -224,7 +249,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     }, 1000)
     return () => clearInterval(interval)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, phase, config?.modoEstrito, config?.tempoPorQuestaoSegundos, currentIndex])
+  }, [open, phase, config?.modoEstrito, config?.tempoPorQuestaoSegundos, currentIndex, readOnly])
 
   useEffect(() => {
     if (questionTimeLeft !== 0) return
@@ -247,6 +272,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   const currentEliminated = eliminated[currentIndex] ?? new Set<number>()
 
   const selectPending = (optionIdx: number) => {
+    if (readOnly) return
     if (currentAnswer !== null) return
     if (currentEliminated.has(optionIdx)) return
     setPendingAnswer(optionIdx)
@@ -254,6 +280,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   const toggleEliminate = (optionIdx: number, e: React.MouseEvent) => {
     e.stopPropagation()
+    if (readOnly) return
     if (currentAnswer !== null) return
     setEliminated((prev) => {
       const next = [...prev]
@@ -269,6 +296,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   }
 
   const confirmAnswer = () => {
+    if (readOnly) return
     if (pendingAnswer === null || !current) return
     setAnswers((prev) => {
       const next = [...prev]
@@ -287,6 +315,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   }
 
   const answerMechanism = (idx: number) => {
+    if (readOnly) return
     if (mechanismAnswer !== null || !current) return
     setMechanismAnswer(idx)
     const isCorrect = idx === current.mecanismo_indice_correta
@@ -296,11 +325,11 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   const goTo = (index: number) => {
     const clamped = Math.max(0, Math.min(questions.length - 1, index))
-    if (config?.modoEstrito && clamped < currentIndex) return
+    if (!readOnly && config?.modoEstrito && clamped < currentIndex) return
     setCurrentIndex(clamped)
     setConfirmingFinish(false)
     setPendingAnswer(null)
-    setMechanismStage(answers[clamped] !== null ? "resolved" : "hidden")
+    setMechanismStage(readOnly ? "resolved" : answers[clamped] !== null ? "resolved" : "hidden")
     setMechanismAnswer(null)
   }
 
@@ -340,7 +369,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       if (config?.simuladoId) {
         await supabase
           .from("simulados")
-          .update({ finished_at: new Date().toISOString(), respostas: null, progresso_index: null })
+          .update({ finished_at: new Date().toISOString(), progresso_index: null })
           .eq("id", config.simuladoId)
       }
     }
@@ -354,9 +383,11 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     setSendingFeedback(true)
     const { data: userData } = await supabase.auth.getUser()
     if (userData.user) {
+      // Roteado apenas para administradores: RLS de question_feedback restringe SELECT/UPDATE a admins.
       await supabase.from("question_feedback").insert({
         question_id: current.id,
         user_id: userData.user.id,
+        tipo: feedbackTipo,
         message: feedbackText.trim(),
       })
     }
@@ -372,13 +403,21 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   const isCorrect = current && currentAnswer !== null && currentAnswer === current.indice_correta
   const showingExplanation = currentAnswer !== null && mechanismStage === "resolved"
+  const dificuldadeCor = current?.dificuldade ? getDifficultyColor(current.dificuldade) : null
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-xl">
-        <DialogHeader>
+      <DialogContent className="flex max-h-[88vh] flex-col overflow-hidden sm:max-w-xl">
+        <DialogHeader className="shrink-0">
           <div className="flex items-center justify-between gap-3">
-            <DialogTitle>{config?.label ?? "Simulado"}</DialogTitle>
+            <DialogTitle className="flex items-center gap-2">
+              {config?.label ?? "Simulado"}
+              {readOnly && (
+                <Badge variant="secondary" className="font-normal">
+                  Somente leitura
+                </Badge>
+              )}
+            </DialogTitle>
             <div className="flex items-center gap-2">
               {questionTimeLeft !== null && phase === "playing" && (
                 <span
@@ -390,7 +429,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                   {questionTimeLeft}s
                 </span>
               )}
-              {config?.timerEnabled && phase === "playing" && (
+              {config?.timerEnabled && phase === "playing" && !readOnly && (
                 <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary">
                   <Timer className="h-3.5 w-3.5" />
                   {formatElapsed(elapsed)}
@@ -428,229 +467,240 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         )}
 
         {phase === "playing" && current && (
-          <div className="space-y-4">
-            {/* Navigator */}
-            <div className="flex flex-wrap gap-1.5">
-              {questions.map((q, i) => {
-                const answered = answers[i] !== null
-                const correct = answered && answers[i] === q.indice_correta
-                return (
-                  <button
-                    key={q.id}
-                    onClick={() => goTo(i)}
-                    className={`flex h-7 w-7 items-center justify-center rounded-md text-xs font-medium transition-colors ${
-                      i === currentIndex ? "ring-2 ring-primary" : ""
-                    } ${
-                      !answered
-                        ? "border border-border text-muted-foreground hover:bg-accent"
-                        : correct
-                          ? "bg-success/20 text-success"
-                          : "bg-destructive/20 text-destructive"
-                    }`}
-                  >
-                    {i + 1}
-                  </button>
-                )
-              })}
-            </div>
-
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <span>
-                Questão {currentIndex + 1} de {questions.length} · {answeredCount} respondida(s)
-                {bonusPoints > 0 && <span className="ml-2 text-primary">+{bonusPoints} bônus</span>}
-              </span>
-              {current.area && <Badge variant="secondary">{current.area}</Badge>}
-            </div>
-
-            {/* Mechanism follow-up question */}
-            {mechanismStage === "asking" && current.mecanismo_pergunta && current.mecanismo_opcoes ? (
-              <div className="space-y-4 rounded-lg border border-primary/30 bg-primary/5 p-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                    Prova que não foi sorte!
-                  </p>
-                  <p className="mt-1 text-sm font-medium text-foreground">{current.mecanismo_pergunta}</p>
-                </div>
-                <div className="space-y-2">
-                  {current.mecanismo_opcoes.map((opcao, idx) => {
-                    const isSelected = mechanismAnswer === idx
-                    const isCorrectOption = idx === current.mecanismo_indice_correta
-                    const showState = mechanismAnswer !== null
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => answerMechanism(idx)}
-                        disabled={mechanismAnswer !== null}
-                        className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
-                          showState && isCorrectOption
-                            ? "border-success bg-success/10 text-foreground"
-                            : showState && isSelected
-                              ? "border-destructive bg-destructive/10 text-foreground"
-                              : "border-border bg-card hover:bg-accent"
-                        }`}
-                      >
-                        <span>{opcao}</span>
-                        {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />}
-                      </button>
-                    )
-                  })}
-                </div>
-                {mechanismAnswer !== null && (
-                  <div
-                    className={`rounded-lg p-3 text-sm ${
-                      mechanismCorrectByQuestion[currentIndex]
-                        ? "bg-success/10 text-success"
-                        : "bg-muted text-muted-foreground"
-                    }`}
-                  >
-                    {mechanismCorrectByQuestion[currentIndex]
-                      ? `Perfeito! 🎯 Você realmente domina esse conceito! +${BONUS_POINTS} pontos bônus`
-                      : "Quase! O mecanismo correto está destacado acima."}
-                  </div>
-                )}
-                <Button
-                  variant="gradient"
-                  className="w-full"
-                  disabled={mechanismAnswer === null}
-                  onClick={() => setMechanismStage("resolved")}
-                >
-                  Continuar
-                </Button>
+          <div className="flex min-h-0 flex-1 flex-col gap-4">
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1">
+              {/* Navigator */}
+              <div className="flex flex-wrap gap-1.5">
+                {questions.map((q, i) => {
+                  const answered = answers[i] !== null
+                  const correct = answered && answers[i] === q.indice_correta
+                  return (
+                    <button
+                      key={q.id}
+                      onClick={() => goTo(i)}
+                      className={`flex h-7 w-7 items-center justify-center rounded-md text-xs font-medium transition-colors ${
+                        i === currentIndex ? "ring-2 ring-primary" : ""
+                      } ${
+                        !answered
+                          ? "border border-border text-muted-foreground hover:bg-accent"
+                          : correct
+                            ? "bg-success/20 text-success"
+                            : "bg-destructive/20 text-destructive"
+                      }`}
+                    >
+                      {i + 1}
+                    </button>
+                  )
+                })}
               </div>
-            ) : (
-              <>
-                <HighlightableText text={current.enunciado} />
 
-                <div className="space-y-2">
-                  {current.opcoes.map((opcao, idx) => {
-                    const isPending = pendingAnswer === idx
-                    const isSelected = currentAnswer === idx
-                    const isCorrectOption = idx === current.indice_correta
-                    const showState = currentAnswer !== null
-                    const isElim = currentEliminated.has(idx)
-                    return (
-                      <div
-                        key={idx}
-                        onClick={() => selectPending(idx)}
-                        className={`flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
-                          showState && isCorrectOption
-                            ? "border-success bg-success/10 text-foreground"
-                            : showState && isSelected
-                              ? "border-destructive bg-destructive/10 text-foreground"
-                              : isPending
-                                ? "border-primary bg-primary/10 text-foreground"
-                                : isElim
-                                  ? "border-border bg-muted/50 text-muted-foreground opacity-60"
-                                  : "border-border hover:bg-accent"
-                        } ${currentAnswer !== null ? "cursor-default" : ""}`}
-                      >
-                        <span className={isElim ? "line-through" : ""}>{opcao}</span>
-                        <div className="flex shrink-0 items-center gap-1.5">
-                          {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 text-success" />}
-                          {showState && isSelected && !isCorrectOption && (
-                            <XCircle className="h-4 w-4 text-destructive" />
-                          )}
-                          {!showState && (
-                            <button
-                              onClick={(e) => toggleEliminate(idx, e)}
-                              aria-label="Riscar alternativa"
-                              className={`rounded-md border p-1.5 transition-colors ${
-                                isElim
-                                  ? "border-destructive/50 text-destructive"
-                                  : "border-border text-muted-foreground hover:bg-accent"
-                              }`}
-                            >
-                              <Strikethrough className="h-3.5 w-3.5" />
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-
-                {currentAnswer === null && (
-                  <Button variant="gradient" className="w-full" disabled={pendingAnswer === null} onClick={confirmAnswer}>
-                    Confirmar
-                  </Button>
-                )}
-
-                {showingExplanation && (
-                  <div
-                    className={`rounded-lg border p-3 text-sm ${
-                      isCorrect
-                        ? "border-success/30 bg-success/10 text-foreground"
-                        : "border-warning/30 bg-warning/10 text-foreground"
-                    }`}
-                  >
-                    <p className="font-semibold">
-                      {isCorrect ? "🎉 Muito bem! Resposta correta." : "❌ Essa alternativa não está correta."}
-                    </p>
-                    {current.justificativa && <p className="mt-1 text-muted-foreground">{current.justificativa}</p>}
-                  </div>
-                )}
-              </>
-            )}
-
-            {confirmingFinish && (
-              <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+              <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
                 <span>
-                  Ainda há {questions.length - answeredCount} questão(ões) não respondida(s). Finalizar mesmo assim?
+                  Questão {currentIndex + 1} de {questions.length} · {answeredCount} respondida(s)
+                  {bonusPoints > 0 && <span className="ml-2 text-primary">+{bonusPoints} bônus</span>}
                 </span>
+                <div className="flex items-center gap-1.5">
+                  {dificuldadeCor && current.dificuldade && (
+                    <span
+                      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[11px] font-medium ${dificuldadeCor.borderSoft} ${dificuldadeCor.text}`}
+                    >
+                      <span className={`h-1.5 w-1.5 rounded-full ${dificuldadeCor.dot}`} />
+                      {current.dificuldade}
+                    </span>
+                  )}
+                  {current.area && <Badge variant="secondary">{current.area}</Badge>}
+                </div>
               </div>
-            )}
 
-            {feedbackOpen && (
-              <div className="space-y-2 rounded-lg border border-border bg-muted/40 p-3">
-                {feedbackSent ? (
-                  <p className="text-sm text-success">Dúvida enviada! Nossa equipe vai revisar essa questão.</p>
-                ) : (
-                  <>
-                    <Textarea
-                      placeholder="Descreva sua dúvida ou o erro encontrado nesta questão..."
-                      value={feedbackText}
-                      onChange={(e) => setFeedbackText(e.target.value)}
-                      className="min-h-16"
-                    />
-                    <Button size="sm" variant="outline" onClick={sendFeedback} disabled={sendingFeedback || !feedbackText.trim()}>
-                      {sendingFeedback ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : "Enviar"}
+              {/* Mechanism follow-up question */}
+              {mechanismStage === "asking" && current.mecanismo_pergunta && current.mecanismo_opcoes ? (
+                <div className="space-y-4 rounded-lg border border-primary/30 bg-primary/5 p-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+                      Prova que não foi sorte!
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-foreground">{current.mecanismo_pergunta}</p>
+                  </div>
+                  <div className="space-y-2">
+                    {current.mecanismo_opcoes.map((opcao, idx) => {
+                      const isSelected = mechanismAnswer === idx
+                      const isCorrectOption = idx === current.mecanismo_indice_correta
+                      const showState = mechanismAnswer !== null
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => answerMechanism(idx)}
+                          disabled={mechanismAnswer !== null}
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
+                            showState && isCorrectOption
+                              ? "border-success bg-success/10 text-foreground"
+                              : showState && isSelected
+                                ? "border-destructive bg-destructive/10 text-foreground"
+                                : "border-border bg-card hover:bg-accent"
+                          }`}
+                        >
+                          <span>{opcao}</span>
+                          {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />}
+                        </button>
+                      )
+                    })}
+                  </div>
+                  {mechanismAnswer !== null && (
+                    <div
+                      className={`rounded-lg p-3 text-sm ${
+                        mechanismCorrectByQuestion[currentIndex]
+                          ? "bg-success/10 text-success"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                    >
+                      {mechanismCorrectByQuestion[currentIndex]
+                        ? `Perfeito! 🎯 Você realmente domina esse conceito! +${BONUS_POINTS} pontos bônus`
+                        : "Quase! O mecanismo correto está destacado acima."}
+                    </div>
+                  )}
+                  <Button
+                    variant="gradient"
+                    className="w-full"
+                    disabled={mechanismAnswer === null}
+                    onClick={() => setMechanismStage("resolved")}
+                  >
+                    Continuar
+                  </Button>
+                </div>
+              ) : (
+                <>
+                  <HighlightableText text={current.enunciado} />
+
+                  <div className="space-y-2">
+                    {current.opcoes.map((opcao, idx) => {
+                      const isPending = pendingAnswer === idx
+                      const isSelected = currentAnswer === idx
+                      const isCorrectOption = idx === current.indice_correta
+                      const showState = currentAnswer !== null
+                      const isElim = currentEliminated.has(idx)
+                      return (
+                        <div
+                          key={idx}
+                          onClick={() => selectPending(idx)}
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
+                            readOnly ? "" : "cursor-pointer"
+                          } ${
+                            showState && isCorrectOption
+                              ? "border-success bg-success/10 text-foreground"
+                              : showState && isSelected
+                                ? "border-destructive bg-destructive/10 text-foreground"
+                                : isPending
+                                  ? "border-primary bg-primary/10 text-foreground"
+                                  : isElim
+                                    ? "border-border bg-muted/50 text-muted-foreground opacity-60"
+                                    : "border-border hover:bg-accent"
+                          } ${currentAnswer !== null ? "cursor-default" : ""}`}
+                        >
+                          <span className={isElim ? "line-through" : ""}>{opcao}</span>
+                          <div className="flex shrink-0 items-center gap-1.5">
+                            {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 text-success" />}
+                            {showState && isSelected && !isCorrectOption && (
+                              <XCircle className="h-4 w-4 text-destructive" />
+                            )}
+                            {!showState && !readOnly && (
+                              <button
+                                onClick={(e) => toggleEliminate(idx, e)}
+                                aria-label="Riscar alternativa"
+                                className={`rounded-md border p-1.5 transition-colors ${
+                                  isElim
+                                    ? "border-destructive/50 text-destructive"
+                                    : "border-border text-muted-foreground hover:bg-accent"
+                                }`}
+                              >
+                                <Strikethrough className="h-3.5 w-3.5" />
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {!readOnly && currentAnswer === null && (
+                    <Button variant="gradient" className="w-full" disabled={pendingAnswer === null} onClick={confirmAnswer}>
+                      Confirmar
                     </Button>
-                  </>
-                )}
-              </div>
-            )}
+                  )}
 
-            <div className="flex items-center gap-2 pt-1">
+                  {readOnly && currentAnswer === null && (
+                    <p className="rounded-lg border border-border bg-muted/40 p-3 text-sm text-muted-foreground">
+                      Esta questão não foi respondida.
+                    </p>
+                  )}
+
+                  {showingExplanation && currentAnswer !== null && (
+                    <div
+                      className={`rounded-lg border p-3 text-sm ${
+                        isCorrect
+                          ? "border-success/30 bg-success/10 text-foreground"
+                          : "border-warning/30 bg-warning/10 text-foreground"
+                      }`}
+                    >
+                      <p className="font-semibold">
+                        {isCorrect ? "🎉 Muito bem! Resposta correta." : "❌ Essa alternativa não está correta."}
+                      </p>
+                      {current.justificativa && <p className="mt-1 text-muted-foreground">{current.justificativa}</p>}
+                    </div>
+                  )}
+                </>
+              )}
+
+              {confirmingFinish && (
+                <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                  <span>
+                    Ainda há {questions.length - answeredCount} questão(ões) não respondida(s). Finalizar mesmo assim?
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {/* Action bar — always visible, never pushed off-screen */}
+            <div className="flex shrink-0 items-center gap-2 border-t border-border pt-3">
               <Button
                 variant="outline"
                 size="icon"
                 onClick={() => goTo(currentIndex - 1)}
-                disabled={currentIndex === 0 || !!config?.modoEstrito}
+                disabled={currentIndex === 0 || (!readOnly && !!config?.modoEstrito)}
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
-              <Button variant="outline" className="gap-1.5" onClick={skip}>
-                <SkipForward className="h-4 w-4" />
-                Pular
-              </Button>
+              {!readOnly && (
+                <Button variant="outline" className="gap-1.5" onClick={skip}>
+                  <SkipForward className="h-4 w-4" />
+                  Pular
+                </Button>
+              )}
               <Button variant="outline" size="icon" onClick={() => goTo(currentIndex + 1)} disabled={currentIndex === questions.length - 1}>
                 <ChevronRight className="h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
-                size="icon"
-                aria-label="Enviar dúvida ou feedback"
+                className="gap-1.5"
                 onClick={() => {
-                  setFeedbackOpen((v) => !v)
+                  setFeedbackModalOpen(true)
                   setFeedbackSent(false)
+                  setFeedbackText("")
+                  setFeedbackTipo("duvida")
                 }}
               >
-                <MessageCircleQuestion className="h-4 w-4" />
+                <MessageSquareWarning className="h-4 w-4" />
+                Feedback
               </Button>
-              <Button variant="gradient" className="ml-auto flex-1" onClick={finish} disabled={saving}>
-                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : confirmingFinish ? "Finalizar mesmo assim" : "Finalizar"}
-              </Button>
+              {readOnly ? (
+                <Button variant="gradient" className="ml-auto flex-1" onClick={() => onOpenChange(false)}>
+                  Fechar
+                </Button>
+              ) : (
+                <Button variant="gradient" className="ml-auto flex-1" onClick={finish} disabled={saving}>
+                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : confirmingFinish ? "Finalizar mesmo assim" : "Finalizar"}
+                </Button>
+              )}
             </div>
           </div>
         )}
@@ -673,6 +723,51 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
           </div>
         )}
       </DialogContent>
+
+      {/* Feedback modal */}
+      <Dialog open={feedbackModalOpen} onOpenChange={setFeedbackModalOpen}>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>Enviar feedback sobre a questão</DialogTitle>
+          </DialogHeader>
+          {feedbackSent ? (
+            <p className="text-sm text-success">Enviado! Nossa equipe de administradores vai revisar essa questão.</p>
+          ) : (
+            <div className="space-y-3">
+              <div className="flex gap-2">
+                {FEEDBACK_TIPOS.map((t) => (
+                  <button
+                    key={t.value}
+                    type="button"
+                    onClick={() => setFeedbackTipo(t.value)}
+                    className={`flex-1 rounded-lg border px-2 py-2 text-xs font-medium transition-colors ${
+                      feedbackTipo === t.value
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+              <Textarea
+                placeholder="Descreva o erro, dúvida ou sugestão sobre esta questão..."
+                value={feedbackText}
+                onChange={(e) => setFeedbackText(e.target.value)}
+                className="min-h-24"
+              />
+              <Button
+                className="w-full"
+                variant="gradient"
+                onClick={sendFeedback}
+                disabled={sendingFeedback || !feedbackText.trim()}
+              >
+                {sendingFeedback ? <Loader2 className="h-4 w-4 animate-spin" /> : "Enviar"}
+              </Button>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </Dialog>
   )
 }

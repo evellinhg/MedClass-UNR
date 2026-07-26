@@ -6,6 +6,7 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
+  Eye,
   Loader2,
   Play,
   RotateCcw,
@@ -15,6 +16,8 @@ import {
 import { supabase } from "@/lib/supabase"
 import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
+import { getDifficultyColor } from "@/lib/difficulty-colors"
+import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -25,7 +28,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { Switch } from "@/components/ui/switch"
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import { PracticeLauncher } from "@/components/practice-launcher"
 
@@ -76,8 +78,8 @@ export function SimuladosContent() {
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [prova, setProva] = useState<string>("")
   const [quantidade, setQuantidade] = useState(20)
-  const [modoEstrito, setModoEstrito] = useState(false)
   const [tempoPorQuestao, setTempoPorQuestao] = useState(90)
+  const [apenasIneditas, setApenasIneditas] = useState(true)
   const [creating, setCreating] = useState(false)
   const [createError, setCreateError] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
@@ -121,6 +123,17 @@ export function SimuladosContent() {
     })
   }
 
+  const reviewSimulado = (s: Simulado) => {
+    startPlayer({
+      label: s.nome,
+      count: s.quantidade_questoes,
+      questionIds: s.questao_ids,
+      mode: s.modo,
+      readOnly: true,
+      respostasIniciais: s.respostas ?? undefined,
+    })
+  }
+
   const toggleArea = (area: string) => {
     setSelectedAreas((prev) => (prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area]))
   }
@@ -131,8 +144,8 @@ export function SimuladosContent() {
     setDificuldade("aleatorio")
     setProva("")
     setQuantidade(20)
-    setModoEstrito(false)
     setTempoPorQuestao(90)
+    setApenasIneditas(true)
     setCreateError(null)
   }
 
@@ -155,11 +168,16 @@ export function SimuladosContent() {
     if (prova) query = query.eq("prova", prova)
 
     const { data: questoesDisponiveis } = await query
-    const pool = (questoesDisponiveis as { id: string }[] | null) ?? []
+    let pool = (questoesDisponiveis as { id: string }[] | null) ?? []
+
+    if (apenasIneditas) {
+      const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
+      pool = pool.filter((q) => !jaRespondidas.has(q.id))
+    }
 
     if (pool.length < quantidade) {
       setCreateError(
-        `Só há ${pool.length} questão(ões) disponível(is) para esse filtro — reduza a quantidade ou amplie os filtros.`
+        `Só há ${pool.length} questão(ões) disponível(is) para esse filtro — reduza a quantidade, amplie os filtros ou inclua questões já respondidas.`
       )
       setCreating(false)
       return
@@ -178,8 +196,8 @@ export function SimuladosContent() {
       quantidade_questoes: quantidade,
       questao_ids: questaoIds,
       modo: "simulado",
-      modo_estrito: modoEstrito,
-      timer_segundos_por_questao: modoEstrito ? tempoPorQuestao : null,
+      modo_estrito: true,
+      timer_segundos_por_questao: tempoPorQuestao,
     })
 
     setCreating(false)
@@ -241,7 +259,7 @@ export function SimuladosContent() {
             <h3 className="mt-4 text-lg font-bold">Simulados</h3>
             <p className="text-sm text-white/80">Treine como se fosse a prova real</p>
             <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>• Tempo máximo por questão no modo estrito</li>
+              <li>• Tempo por questão — sempre ativo, como na prova real</li>
               <li>• Questões fixas — pause e retome quando quiser</li>
               <li>• Pontuação para acompanhar sua evolução</li>
             </ul>
@@ -284,6 +302,17 @@ export function SimuladosContent() {
                     Área (nenhuma selecionada = todas)
                   </label>
                   <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
+                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(139,92,246,0.45)] ${
+                        selectedAreas.length === AREAS.length
+                          ? "border-transparent bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                          : "border-input text-foreground hover:bg-accent"
+                      }`}
+                    >
+                      Todas
+                    </button>
                     {AREAS.map((area) => {
                       const cor = getAreaColor(area)
                       const ativo = selectedAreas.includes(area)
@@ -307,20 +336,56 @@ export function SimuladosContent() {
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">Nível</label>
                   <div className="flex flex-wrap gap-2">
-                    {DIFFICULTIES.map((d) => (
-                      <button
-                        key={d.value}
-                        type="button"
-                        onClick={() => setDificuldade(d.value)}
-                        className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
-                          dificuldade === d.value
-                            ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
-                            : "border border-input text-foreground hover:bg-accent"
-                        }`}
-                      >
-                        {d.label}
-                      </button>
-                    ))}
+                    {DIFFICULTIES.map((d) => {
+                      const cor = getDifficultyColor(d.value)
+                      const ativo = dificuldade === d.value
+                      const isEspecifica = d.value !== "aleatorio"
+                      return (
+                        <button
+                          key={d.value}
+                          type="button"
+                          onClick={() => setDificuldade(d.value)}
+                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
+                            isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(139,92,246,0.45)]"
+                          } ${
+                            ativo
+                              ? isEspecifica
+                                ? `${cor.activeBg} border-transparent text-white`
+                                : "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                              : isEspecifica
+                                ? `${cor.borderSoft} text-foreground hover:bg-accent`
+                                : "border-input text-foreground hover:bg-accent"
+                          }`}
+                        >
+                          {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
+                          {d.label}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-foreground">Questões</label>
+                  <div className="flex gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setApenasIneditas(true)}
+                      className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                        apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                      }`}
+                    >
+                      Excluir já respondidas
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setApenasIneditas(false)}
+                      className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                        !apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                      }`}
+                    >
+                      Todas as questões
+                    </button>
                   </div>
                 </div>
 
@@ -373,35 +438,29 @@ export function SimuladosContent() {
                   </div>
                 </div>
 
-                <div className="space-y-3 rounded-lg border border-border p-3">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-foreground">Modo estrito</p>
-                      <p className="text-xs text-muted-foreground">Tempo por questão. Não é possível voltar.</p>
-                    </div>
-                    <Switch checked={modoEstrito} onCheckedChange={setModoEstrito} />
+                <div className="space-y-2 rounded-lg border border-border p-3">
+                  <div>
+                    <p className="text-sm font-medium text-foreground">Tempo Por Questão</p>
+                    <p className="text-xs text-muted-foreground">
+                      Todo simulado tem tempo limite por questão. Não é possível voltar às anteriores.
+                    </p>
                   </div>
-                  {modoEstrito && (
-                    <div>
-                      <label className="mb-2 block text-xs font-medium text-foreground">Tempo por questão</label>
-                      <div className="flex flex-wrap gap-2">
-                        {TEMPOS_POR_QUESTAO.map((t) => (
-                          <button
-                            key={t}
-                            type="button"
-                            onClick={() => setTempoPorQuestao(t)}
-                            className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
-                              tempoPorQuestao === t
-                                ? "border-primary bg-primary/10 text-primary"
-                                : "border-input text-foreground hover:bg-accent"
-                            }`}
-                          >
-                            {t}s
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <div className="flex flex-wrap gap-2">
+                    {TEMPOS_POR_QUESTAO.map((t) => (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => setTempoPorQuestao(t)}
+                        className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
+                          tempoPorQuestao === t
+                            ? "border-primary bg-primary/10 text-primary"
+                            : "border-input text-foreground hover:bg-accent"
+                        }`}
+                      >
+                        {t}s
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 {createError && <p className="text-xs text-destructive">{createError}</p>}
@@ -485,11 +544,11 @@ export function SimuladosContent() {
                     size="sm"
                     variant="ghost"
                     className="gap-1.5 text-primary hover:bg-primary/10"
-                    aria-label={emAndamento ? "Retomar treinamento" : "Iniciar treinamento"}
-                    onClick={() => playSimulado(simulado)}
+                    aria-label={emAndamento ? "Retomar treinamento" : simulado.finished_at ? "Ver correção" : "Iniciar treinamento"}
+                    onClick={() => (simulado.finished_at ? reviewSimulado(simulado) : playSimulado(simulado))}
                   >
-                    {emAndamento ? <RotateCcw className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                    {emAndamento ? "Retomar" : simulado.finished_at ? "Rever" : "Iniciar"}
+                    {emAndamento ? <RotateCcw className="h-4 w-4" /> : simulado.finished_at ? <Eye className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                    {emAndamento ? "Retomar" : simulado.finished_at ? "Ver Correção" : "Iniciar"}
                   </Button>
                   <Button
                     size="sm"

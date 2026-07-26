@@ -37,7 +37,7 @@ export const navigation: NavItem[] = [
       { name: "Flashcards", href: "/dashboard/materiais?tab=flashcards" },
     ],
   },
-  { name: "Simulados", href: "/dashboard/simulados", icon: ClipboardCheck },
+  { name: "Treinamentos", href: "/dashboard/simulados", icon: ClipboardCheck },
   {
     name: "Desempenho",
     href: "/dashboard/desempenho/estatisticas",
@@ -57,7 +57,15 @@ export const navigation: NavItem[] = [
     ],
   },
   { name: "Ranking", href: "/dashboard/ranking", icon: Trophy },
-  { name: "MedCoins", href: "/dashboard/medcoins", icon: Coins },
+  {
+    name: "MedCoins",
+    href: "/dashboard/medcoins",
+    icon: Coins,
+    children: [
+      { name: "Loja MedCoins", href: "/dashboard/medcoins/loja" },
+      { name: "Extrato", href: "/dashboard/medcoins" },
+    ],
+  },
   { name: "Conquistas", href: "/dashboard/conquistas", icon: Medal },
   { name: "Feedback", href: "/dashboard/feedback", icon: MessageSquare },
 ]

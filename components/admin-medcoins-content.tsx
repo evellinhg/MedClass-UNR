@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Check, Coins, Loader2, Save, Search } from "lucide-react"
+import Link from "next/link"
+import { Check, ChevronRight, Coins, Gift, Loader2, Save, Search } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -170,6 +171,21 @@ export function AdminMedCoinsContent() {
           {savedMsg}
         </div>
       )}
+
+      <Link href="/admin/medcoins/loja">
+        <Card className="flex items-center justify-between border border-border bg-card p-5 transition-colors hover:border-primary/50">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+              <Gift className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <p className="font-semibold text-foreground">Loja MedCoins</p>
+              <p className="text-sm text-muted-foreground">Produtos e resgates com MedCoins</p>
+            </div>
+          </div>
+          <ChevronRight className="h-4 w-4 text-muted-foreground" />
+        </Card>
+      </Link>
 
       <Card className="border border-border bg-card p-5">
         <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">

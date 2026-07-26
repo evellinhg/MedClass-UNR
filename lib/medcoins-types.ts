@@ -39,3 +39,29 @@ export interface MedcoinsRegra {
   created_at: string
   updated_at: string
 }
+
+export type MedcoinsRewardTipo = "digital" | "fisico"
+
+export interface MedcoinsReward {
+  id: string
+  nome: string
+  descricao: string | null
+  tipo: MedcoinsRewardTipo
+  custo_medcoins: number
+  estoque: number | null
+  imagem_url: string | null
+  ativo: boolean
+  created_at: string
+}
+
+export type MedcoinsRedemptionStatus = "pendente" | "concluido" | "cancelado"
+
+export interface MedcoinsRedemption {
+  id: string
+  user_id: string
+  reward_id: string
+  custo_pago: number
+  status: MedcoinsRedemptionStatus
+  observacao: string | null
+  created_at: string
+}

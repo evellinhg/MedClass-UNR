@@ -1,24 +1,24 @@
 import Link from "next/link"
-import { Zap, Plus } from "lucide-react"
+import { ArrowRight, Zap, Plus } from "lucide-react"
 
 export function ActionCards() {
   return (
     <div className="grid gap-6 grid-cols-1 lg:grid-cols-2">
       {/* Praticar */}
       <Link href="/dashboard/simulados" className="group">
-        <div className="relative overflow-hidden rounded-lg border border-border bg-gradient-to-br from-purple-900/20 to-indigo-900/20 p-8 hover:border-primary/50 transition-colors">
-          <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-purple-500/10 blur-2xl group-hover:bg-purple-500/20 transition-colors" />
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#7c3aed] to-[#4338ca] p-8 text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(124,58,237,0.55)]">
+          <div className="absolute -right-6 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl transition-opacity duration-300 group-hover:opacity-80" />
           <div className="relative">
-            <div className="mb-4 inline-flex rounded-lg bg-purple-500/20 p-3">
-              <Zap className="h-6 w-6 text-primary" />
+            <div className="mb-4 inline-flex rounded-lg bg-white/15 p-3">
+              <Zap className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Praticar Agora</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <h3 className="text-2xl font-bold text-white">Praticar Agora</h3>
+            <p className="mt-2 text-sm text-white/80">
               Resolva questões selecionadas para consolidar seu aprendizado.
             </p>
-            <div className="mt-6 inline-flex items-center text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
+            <div className="mt-6 inline-flex items-center text-sm font-medium text-white transition-transform group-hover:translate-x-1">
               Iniciar sessão
-              <span className="ml-2">→</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
             </div>
           </div>
         </div>
@@ -26,19 +26,19 @@ export function ActionCards() {
 
       {/* Criar Simulado */}
       <Link href="/dashboard/simulados?novo=true" className="group">
-        <div className="relative overflow-hidden rounded-lg border border-border bg-gradient-to-br from-indigo-900/20 to-blue-900/20 p-8 hover:border-primary/50 transition-colors">
-          <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-indigo-500/10 blur-2xl group-hover:bg-indigo-500/20 transition-colors" />
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#8b5cf6] to-[#6366f1] p-8 text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(99,102,241,0.55)]">
+          <div className="absolute -right-6 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl transition-opacity duration-300 group-hover:opacity-80" />
           <div className="relative">
-            <div className="mb-4 inline-flex rounded-lg bg-indigo-500/20 p-3">
-              <Plus className="h-6 w-6 text-primary" />
+            <div className="mb-4 inline-flex rounded-lg bg-white/15 p-3">
+              <Plus className="h-6 w-6 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-foreground">Criar Simulado</h3>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <h3 className="text-2xl font-bold text-white">Criar Simulado</h3>
+            <p className="mt-2 text-sm text-white/80">
               Monte um simulado personalizado com as matérias que precisa estudar.
             </p>
-            <div className="mt-6 inline-flex items-center text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
+            <div className="mt-6 inline-flex items-center text-sm font-medium text-white transition-transform group-hover:translate-x-1">
               Criar novo
-              <span className="ml-2">→</span>
+              <ArrowRight className="ml-2 h-4 w-4" />
             </div>
           </div>
         </div>

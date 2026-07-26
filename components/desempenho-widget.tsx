@@ -1,15 +1,19 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
-import { ArrowUpRight, BarChart3, Loader2, Target, TrendingUp } from "lucide-react"
+import { Line, LineChart, ResponsiveContainer } from "recharts"
+import { ArrowUpRight, BarChart3, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
+import { MiniDonut } from "@/components/ui/mini-donut"
 
 interface Attempt {
   correct_count: number
   wrong_count: number
+  total_questions: number
   points: number
+  created_at: string
 }
 
 export function DesempenhoWidget() {
@@ -24,8 +28,9 @@ export function DesempenhoWidget() {
       }
       supabase
         .from("simulado_attempts")
-        .select("correct_count, wrong_count, points")
+        .select("correct_count, wrong_count, total_questions, points, created_at")
         .eq("user_id", data.user.id)
+        .order("created_at", { ascending: true })
         .then(({ data: rows }) => {
           setAttempts((rows as Attempt[]) ?? [])
           setLoading(false)
@@ -37,6 +42,15 @@ export function DesempenhoWidget() {
   const totalWrong = attempts.reduce((sum, a) => sum + a.wrong_count, 0)
   const totalPoints = attempts.reduce((sum, a) => sum + a.points, 0)
   const accuracy = totalCorrect + totalWrong > 0 ? Math.round((totalCorrect / (totalCorrect + totalWrong)) * 100) : 0
+
+  const sparklineData = useMemo(() => {
+    let cumulative = 0
+    const points = attempts.map((a) => {
+      cumulative += a.total_questions
+      return { total: cumulative }
+    })
+    return points.slice(-10)
+  }, [attempts])
 
   return (
     <Card className="border border-border bg-card p-6">
@@ -65,20 +79,40 @@ export function DesempenhoWidget() {
         </p>
       ) : (
         <div className="grid grid-cols-3 gap-3">
-          <div className="rounded-lg bg-emerald-500/10 p-3 text-center">
-            <Target className="mx-auto h-4 w-4 text-emerald-500" />
-            <p className="mt-1.5 text-lg font-bold text-foreground">{accuracy}%</p>
+          <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-emerald-500/10 p-3 text-center">
+            <MiniDonut percentage={accuracy} color="#22c55e" size={52} strokeWidth={5} />
             <p className="text-[11px] text-muted-foreground">Aproveitamento</p>
           </div>
-          <div className="rounded-lg bg-blue-500/10 p-3 text-center">
-            <TrendingUp className="mx-auto h-4 w-4 text-blue-500" />
-            <p className="mt-1.5 text-lg font-bold text-foreground">{totalCorrect + totalWrong}</p>
-            <p className="text-[11px] text-muted-foreground">Questões feitas</p>
+          <div className="flex flex-col items-center justify-between gap-1.5 rounded-lg bg-blue-500/10 p-3 text-center">
+            <div>
+              <p className="text-lg font-bold text-foreground">{totalCorrect + totalWrong}</p>
+              <p className="text-[11px] text-muted-foreground">Questões feitas</p>
+            </div>
+            {sparklineData.length >= 2 ? (
+              <div className="h-8 w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={sparklineData} margin={{ top: 2, right: 2, bottom: 2, left: 2 }}>
+                    <Line
+                      type="monotone"
+                      dataKey="total"
+                      stroke="#3b82f6"
+                      strokeWidth={2}
+                      dot={false}
+                      isAnimationActive={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            ) : (
+              <div className="h-8" />
+            )}
           </div>
-          <div className="rounded-lg bg-purple-500/10 p-3 text-center">
-            <BarChart3 className="mx-auto h-4 w-4 text-primary" />
-            <p className="mt-1.5 text-lg font-bold text-foreground">{totalPoints}</p>
-            <p className="text-[11px] text-muted-foreground">Pontos</p>
+          <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-purple-500/10 p-3 text-center">
+            <BarChart3 className="h-4 w-4 text-primary" />
+            <div>
+              <p className="text-lg font-bold text-foreground">{totalPoints}</p>
+              <p className="text-[11px] text-muted-foreground">Pontos</p>
+            </div>
           </div>
         </div>
       )}

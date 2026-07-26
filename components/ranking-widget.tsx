@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { ArrowUpRight, Loader2, Medal, Trophy } from "lucide-react"
+import { ArrowUpRight, Crown, Loader2, Medal, Trophy } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,7 +14,11 @@ interface LeaderboardRow {
   total_simulados: number
 }
 
-const medalColors = ["text-yellow-500", "text-slate-400", "text-amber-700"]
+const positionStyles = [
+  { ring: "from-amber-400 to-yellow-500", icon: Crown, iconColor: "text-white" },
+  { ring: "from-slate-300 to-slate-400", icon: Medal, iconColor: "text-white" },
+  { ring: "from-amber-700 to-amber-800", icon: Medal, iconColor: "text-white" },
+]
 
 export function RankingWidget() {
   const [rows, setRows] = useState<LeaderboardRow[]>([])
@@ -62,24 +66,30 @@ export function RankingWidget() {
           Ninguém pontuou ainda. Resolva um simulado para aparecer aqui!
         </p>
       ) : (
-        <div className="space-y-2">
-          {top3.map((row, idx) => (
-            <div
-              key={row.user_id}
-              className={`flex items-center gap-3 rounded-lg p-2.5 ${
-                row.user_id === currentUserId ? "bg-primary/10" : ""
-              }`}
-            >
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold">
-                <Medal className={`h-4 w-4 ${medalColors[idx]}`} />
+        <div className="space-y-1.5">
+          {top3.map((row, idx) => {
+            const style = positionStyles[idx]
+            const PositionIcon = style.icon
+            return (
+              <div
+                key={row.user_id}
+                className={`flex items-center gap-3 rounded-lg p-2.5 transition-colors ${
+                  row.user_id === currentUserId ? "bg-primary/10" : "hover:bg-accent"
+                }`}
+              >
+                <div
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-sm ${style.ring}`}
+                >
+                  <PositionIcon className={`h-4 w-4 ${style.iconColor}`} strokeWidth={2.25} />
+                </div>
+                <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">{row.display_name}</p>
+                <span className="text-sm font-bold text-foreground">{row.total_points}</span>
               </div>
-              <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">{row.display_name}</p>
-              <span className="text-sm font-bold text-foreground">{row.total_points}</span>
-            </div>
-          ))}
+            )
+          })}
           {me && (
             <div className="flex items-center gap-3 rounded-lg bg-primary/10 p-2.5">
-              <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold text-foreground">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/15 text-xs font-semibold text-primary">
                 {myPosition + 1}
               </div>
               <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">

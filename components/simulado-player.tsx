@@ -39,6 +39,7 @@ interface Questao {
   area: string | null
   dificuldade: string | null
   justificativa: string | null
+  opcoes_comentario: string[] | null
   mecanismo_pergunta: string | null
   mecanismo_opcoes: string[] | null
   mecanismo_indice_correta: number | null
@@ -142,7 +143,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     const isReadOnly = !!config.readOnly
 
     const selectCols =
-      "id, enunciado, opcoes, indice_correta, materia, area, dificuldade, justificativa, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
+      "id, enunciado, opcoes, indice_correta, materia, area, dificuldade, justificativa, opcoes_comentario, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
 
     const applyResult = (pool: Questao[], ordered: boolean, effectiveCount: number, skipTrialUsage: boolean) => {
       const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
@@ -645,6 +646,39 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                         {isCorrect ? "🎉 Muito bem! Resposta correta." : "❌ Essa alternativa não está correta."}
                       </p>
                       {current.justificativa && <p className="mt-1 text-muted-foreground">{current.justificativa}</p>}
+                    </div>
+                  )}
+
+                  {showingExplanation && current.opcoes_comentario && current.opcoes_comentario.length > 0 && (
+                    <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                        Comentários por alternativa
+                      </p>
+                      {current.opcoes.map((opcao, idx) => {
+                        const comentario = current.opcoes_comentario?.[idx]
+                        if (!comentario) return null
+                        const isCorrectOption = idx === current.indice_correta
+                        const isSelected = currentAnswer === idx
+                        return (
+                          <div
+                            key={idx}
+                            className={`rounded-md border p-2 text-xs ${
+                              isCorrectOption
+                                ? "border-success/40 bg-success/5"
+                                : isSelected && !isCorrectOption
+                                  ? "border-destructive/40 bg-destructive/5"
+                                  : "border-border bg-card"
+                            }`}
+                          >
+                            <div className="flex items-start gap-2">
+                              <span className={`mt-0.5 shrink-0 font-semibold ${isCorrectOption ? "text-success" : isSelected ? "text-destructive" : "text-muted-foreground"}`}>
+                                {String.fromCharCode(65 + idx)}.
+                              </span>
+                              <p className="text-muted-foreground">{comentario}</p>
+                            </div>
+                          </div>
+                        )
+                      })}
                     </div>
                   )}
                 </>

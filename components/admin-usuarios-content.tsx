@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { AlertTriangle, Check, Copy, KeyRound, Loader2 } from "lucide-react"
+import { AlertTriangle, Check, Copy, KeyRound, Loader2, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -36,6 +36,63 @@ interface AdminUser {
   last_sign_in_at: string | null
 }
 
+interface UserActivity {
+  summary: {
+    simulados_total: number
+    simulados_finalizados: number
+    simulados_abandonados: number
+    tentativas_total: number
+    feedback_total: number
+    desafios_total: number
+  }
+  simulados: {
+    id: string
+    nome: string | null
+    areas: string[] | null
+    prova: string | null
+    quantidade_questoes: number | null
+    modo: string | null
+    created_at: string
+    finished_at: string | null
+  }[]
+  simulado_attempts: {
+    id: string
+    simulado_id: string | null
+    subject: string | null
+    total_questions: number
+    correct_count: number
+    wrong_count: number
+    duration_seconds: number | null
+    points: number | null
+    created_at: string
+  }[]
+  question_feedback: {
+    id: string
+    question_id: string
+    tipo: string | null
+    message: string
+    status: string
+    created_at: string
+  }[]
+  desafios_clinicos: {
+    id: string
+    desafio_id: string
+    acertos: number
+    total: number
+    duracao_segundos: number | null
+    created_at: string
+  }[]
+  medcoins_ledger: {
+    id: string
+    tipo: string
+    valor: number
+    origem_tipo: string | null
+    origem_id: string | null
+    descricao: string | null
+    created_at: string
+  }[]
+}
+
 function formatDate(value: string | null) {
   if (!value) return "Nunca"
   return new Date(value).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })
@@ -52,6 +109,166 @@ async function authedFetch(input: string, init: RequestInit = {}) {
       "Content-Type": "application/json",
     },
   })
+}
+
+function ActivityPanel({ userId }: { userId: string }) {
+  const [activity, setActivity] = useState<UserActivity | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    setError(null)
+    authedFetch(`/api/admin/users/${userId}/activity`).then(async (res) => {
+      if (cancelled) return
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}))
+        setError(body.error ?? "Erro ao carregar atividade do usuário.")
+        setLoading(false)
+        return
+      }
+      setActivity(await res.json())
+      setLoading(false)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [userId])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center gap-2 p-8 text-sm text-muted-foreground">
+        <Loader2 className="h-4 w-4 animate-spin" />
+        Carregando atividade...
+      </div>
+    )
+  }
+
+  if (error || !activity) {
+    return (
+      <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
+        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+        <span>{error ?? "Nenhum dado disponível."}</span>
+      </div>
+    )
+  }
+
+  const { summary } = activity
+
+  return (
+    <div className="max-h-[60vh] space-y-4 overflow-y-auto pr-1">
+      <div className="grid grid-cols-3 gap-2 text-center">
+        <div className="rounded-lg border border-border p-2">
+          <p className="text-lg font-semibold text-foreground">{summary.simulados_finalizados}</p>
+          <p className="text-[11px] text-muted-foreground">Finalizados</p>
+        </div>
+        <div className="rounded-lg border border-border p-2">
+          <p className="text-lg font-semibold text-warning">{summary.simulados_abandonados}</p>
+          <p className="text-[11px] text-muted-foreground">Desistências</p>
+        </div>
+        <div className="rounded-lg border border-border p-2">
+          <p className="text-lg font-semibold text-foreground">{summary.feedback_total}</p>
+          <p className="text-[11px] text-muted-foreground">Erros reportados</p>
+        </div>
+      </div>
+
+      <section className="space-y-2">
+        <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase text-muted-foreground">
+          <ClipboardList className="h-3.5 w-3.5" /> Treinamentos / simulados
+        </h4>
+        {activity.simulados.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Nenhum treinamento iniciado.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {activity.simulados.map((s) => (
+              <div key={s.id} className="rounded-lg border border-border p-2 text-xs">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-medium text-foreground">{s.nome ?? "Sem nome"}</span>
+                  <Badge variant={s.finished_at ? "default" : "outline"} className="shrink-0">
+                    {s.finished_at ? "Finalizado" : "Desistiu"}
+                  </Badge>
+                </div>
+                <p className="mt-1 break-all text-muted-foreground">ID: {s.id}</p>
+                <p className="text-muted-foreground">
+                  {s.quantidade_questoes ?? "?"} questões · {s.modo ?? "—"} · iniciado em {formatDate(s.created_at)}
+                  {s.finished_at ? ` · finalizado em ${formatDate(s.finished_at)}` : ""}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="space-y-2">
+        <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase text-muted-foreground">
+          <Swords className="h-3.5 w-3.5" /> Desafios clínicos
+        </h4>
+        {activity.desafios_clinicos.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Nenhum desafio realizado.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {activity.desafios_clinicos.map((d) => (
+              <div key={d.id} className="rounded-lg border border-border p-2 text-xs">
+                <p className="text-muted-foreground">ID desafio: {d.desafio_id}</p>
+                <p className="text-muted-foreground">
+                  {d.acertos}/{d.total} acertos · {d.duracao_segundos ?? "?"}s · {formatDate(d.created_at)}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="space-y-2">
+        <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase text-muted-foreground">
+          <MessageSquareWarning className="h-3.5 w-3.5" /> Feedback / erros reportados em questões
+        </h4>
+        {activity.question_feedback.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Nenhum erro reportado por esse usuário.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {activity.question_feedback.map((f) => (
+              <div key={f.id} className="rounded-lg border border-border p-2 text-xs">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="secondary">{f.tipo ?? "feedback"}</Badge>
+                  <Badge variant={f.status === "pending" ? "outline" : "default"}>{f.status}</Badge>
+                </div>
+                <p className="mt-1 text-foreground">{f.message}</p>
+                <p className="mt-1 break-all text-muted-foreground">
+                  Questão: {f.question_id} · {formatDate(f.created_at)}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="space-y-2">
+        <h4 className="flex items-center gap-1.5 text-xs font-semibold uppercase text-muted-foreground">
+          <Coins className="h-3.5 w-3.5" /> MedCoins (extrato recente)
+        </h4>
+        {activity.medcoins_ledger.length === 0 ? (
+          <p className="text-xs text-muted-foreground">Sem movimentações.</p>
+        ) : (
+          <div className="space-y-1.5">
+            {activity.medcoins_ledger.map((m) => (
+              <div key={m.id} className="flex items-center justify-between rounded-lg border border-border p-2 text-xs">
+                <div>
+                  <p className="text-foreground">{m.descricao ?? m.origem_tipo ?? "Movimentação"}</p>
+                  <p className="text-muted-foreground">{formatDate(m.created_at)}</p>
+                </div>
+                <span className={m.tipo === "credito" ? "font-medium text-success" : "font-medium text-destructive"}>
+                  {m.tipo === "credito" ? "+" : "-"}
+                  {m.valor}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
+  )
 }
 
 function UserDetailDialog({
@@ -73,6 +290,9 @@ function UserDetailDialog({
   const [resetting, setResetting] = useState(false)
   const [newPassword, setNewPassword] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
+  const [confirmingDelete, setConfirmingDelete] = useState(false)
+  const [deleting, setDeleting] = useState(false)
+  const [reactivating, setReactivating] = useState(false)
 
   useEffect(() => {
     if (user) {
@@ -81,10 +301,43 @@ function UserDetailDialog({
       setPlan(user.plan)
       setNewPassword(null)
       setError(null)
+      setConfirmingDelete(false)
     }
   }, [user])
 
   if (!user) return null
+
+  const handleDeleteAccount = async () => {
+    setDeleting(true)
+    setError(null)
+    const res = await authedFetch(`/api/admin/users/${user.id}`, { method: "DELETE" })
+    setDeleting(false)
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}))
+      setError(body.error ?? "Erro ao excluir conta.")
+      return
+    }
+    setConfirmingDelete(false)
+    onSaved()
+    onOpenChange(false)
+  }
+
+  const handleReactivateAccount = async () => {
+    setReactivating(true)
+    setError(null)
+    const res = await authedFetch(`/api/admin/users/${user.id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ status: "active" }),
+    })
+    setReactivating(false)
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}))
+      setError(body.error ?? "Erro ao reativar conta.")
+      return
+    }
+    onSaved()
+    onOpenChange(false)
+  }
 
   const handleSave = async () => {
     setSaving(true)
@@ -117,105 +370,186 @@ function UserDetailDialog({
     setNewPassword(body.password)
   }
 
+  const isDeleted = user.status === "deleted"
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-2xl">
         <DialogHeader>
           <DialogTitle>Detalhes do usuário</DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-4 py-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <Badge variant="secondary">{user.provider === "google" ? "Login com Google" : "E-mail e senha"}</Badge>
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant="secondary">{user.provider === "google" ? "Login com Google" : "E-mail e senha"}</Badge>
+          {isDeleted ? (
+            <Badge variant="destructive">Conta excluída</Badge>
+          ) : (
             <Badge variant={user.status === "pending" ? "outline" : "default"}>
               {user.status === "pending" ? "Pendente" : "Ativo"}
             </Badge>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 text-xs text-muted-foreground">
-            <div>
-              <p className="font-medium text-foreground">Criado em</p>
-              <p>{formatDate(user.created_at)}</p>
-            </div>
-            <div>
-              <p className="font-medium text-foreground">Último acesso</p>
-              <p>{formatDate(user.last_sign_in_at)}</p>
-            </div>
-          </div>
-
-          <div className="space-y-1.5">
-            <Label>Nome</Label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-
-          <div className="space-y-1.5">
-            <Label>E-mail</Label>
-            <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </div>
-
-          <div className="space-y-1.5">
-            <Label>Plano</Label>
-            <Select value={plan} onValueChange={setPlan}>
-              <SelectTrigger className="w-full">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="gratis">Gratuito (teste 24h)</SelectItem>
-                <SelectItem value="mensal">Mensal</SelectItem>
-                <SelectItem value="trimestral">Trimestral</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {error && (
-            <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-              <span>{error}</span>
-            </div>
           )}
+        </div>
 
-          <div className="rounded-lg border border-border p-3">
-            <div className="flex items-center justify-between gap-3">
+        {error && (
+          <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+            <span>{error}</span>
+          </div>
+        )}
+
+        <Tabs defaultValue="detalhes" className="gap-4">
+          <TabsList>
+            <TabsTrigger value="detalhes">Detalhes</TabsTrigger>
+            <TabsTrigger value="atividade">Atividade</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="detalhes" className="space-y-4">
+            <div className="grid grid-cols-2 gap-3 text-xs text-muted-foreground">
               <div>
-                <p className="text-sm font-medium text-foreground">Redefinir senha</p>
-                <p className="text-xs text-muted-foreground">
-                  Gera uma senha aleatória para o cliente entrar e depois trocar no perfil dele.
-                </p>
+                <p className="font-medium text-foreground">Criado em</p>
+                <p>{formatDate(user.created_at)}</p>
               </div>
-              <Button size="sm" variant="outline" className="shrink-0 gap-1.5" onClick={handleResetPassword} disabled={resetting}>
-                {resetting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <KeyRound className="h-3.5 w-3.5" />}
-                Gerar nova
-              </Button>
+              <div>
+                <p className="font-medium text-foreground">Último acesso</p>
+                <p>{formatDate(user.last_sign_in_at)}</p>
+              </div>
             </div>
-            {newPassword && (
-              <div className="mt-3 flex items-center gap-2 rounded-lg bg-muted p-2">
-                <code className="flex-1 select-all font-mono text-sm text-foreground">{newPassword}</code>
+
+            <div className="space-y-1.5">
+              <Label>Nome</Label>
+              <Input value={name} onChange={(e) => setName(e.target.value)} disabled={isDeleted} />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>E-mail</Label>
+              <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} disabled={isDeleted} />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Plano</Label>
+              <Select value={plan} onValueChange={setPlan} disabled={isDeleted}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="gratis">Gratuito (teste 24h)</SelectItem>
+                  <SelectItem value="mensal">Mensal</SelectItem>
+                  <SelectItem value="trimestral">Trimestral</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className="rounded-lg border border-border p-3">
+              <div className="flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-sm font-medium text-foreground">Redefinir senha</p>
+                  <p className="text-xs text-muted-foreground">
+                    Gera uma senha aleatória para o cliente entrar e depois trocar no perfil dele.
+                  </p>
+                </div>
                 <Button
-                  size="icon-sm"
-                  variant="ghost"
-                  onClick={() => {
-                    navigator.clipboard.writeText(newPassword)
-                    setCopied(true)
-                    setTimeout(() => setCopied(false), 1500)
-                  }}
+                  size="sm"
+                  variant="outline"
+                  className="shrink-0 gap-1.5"
+                  onClick={handleResetPassword}
+                  disabled={resetting || isDeleted}
                 >
-                  {copied ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+                  {resetting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <KeyRound className="h-3.5 w-3.5" />}
+                  Gerar nova
                 </Button>
               </div>
-            )}
-            {newPassword && (
-              <p className="mt-2 text-[11px] text-muted-foreground">
-                Copie e envie ao cliente agora — essa senha não fica salva em nenhum lugar visível depois.
-              </p>
-            )}
-          </div>
-        </div>
+              {newPassword && (
+                <div className="mt-3 flex items-center gap-2 rounded-lg bg-muted p-2">
+                  <code className="flex-1 select-all font-mono text-sm text-foreground">{newPassword}</code>
+                  <Button
+                    size="icon-sm"
+                    variant="ghost"
+                    onClick={() => {
+                      navigator.clipboard.writeText(newPassword)
+                      setCopied(true)
+                      setTimeout(() => setCopied(false), 1500)
+                    }}
+                  >
+                    {copied ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
+                  </Button>
+                </div>
+              )}
+              {newPassword && (
+                <p className="mt-2 text-[11px] text-muted-foreground">
+                  Copie e envie ao cliente agora — essa senha não fica salva em nenhum lugar visível depois.
+                </p>
+              )}
+            </div>
+
+            <div className="rounded-lg border border-destructive/30 p-3">
+              {isDeleted ? (
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-medium text-foreground">Conta excluída</p>
+                    <p className="text-xs text-muted-foreground">
+                      Login bloqueado. O histórico do usuário continua disponível na aba Atividade.
+                    </p>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="shrink-0 gap-1.5"
+                    onClick={handleReactivateAccount}
+                    disabled={reactivating}
+                  >
+                    {reactivating ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RotateCcw className="h-3.5 w-3.5" />}
+                    Reativar conta
+                  </Button>
+                </div>
+              ) : !confirmingDelete ? (
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-medium text-foreground">Excluir conta</p>
+                    <p className="text-xs text-muted-foreground">
+                      Bloqueia o login e marca a conta como excluída. O histórico é mantido e a ação pode ser revertida.
+                    </p>
+                  </div>
+                  <Button
+                    size="sm"
+                    variant="destructive"
+                    className="shrink-0 gap-1.5"
+                    onClick={() => setConfirmingDelete(true)}
+                  >
+                    <Trash2 className="h-3.5 w-3.5" />
+                    Excluir conta
+                  </Button>
+                </div>
+              ) : (
+                <div className="space-y-2">
+                  <p className="text-sm font-medium text-foreground">
+                    Confirma a exclusão da conta de {user.full_name ?? user.email}?
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    O login será bloqueado imediatamente. Você pode reativar depois por aqui.
+                  </p>
+                  <div className="flex justify-end gap-2">
+                    <Button size="sm" variant="outline" onClick={() => setConfirmingDelete(false)} disabled={deleting}>
+                      Cancelar
+                    </Button>
+                    <Button size="sm" variant="destructive" onClick={handleDeleteAccount} disabled={deleting}>
+                      {deleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : "Confirmar exclusão"}
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="atividade">
+            <ActivityPanel userId={user.id} />
+          </TabsContent>
+        </Tabs>
 
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)}>
             Fechar
           </Button>
-          <Button variant="gradient" onClick={handleSave} disabled={saving}>
+          <Button variant="gradient" onClick={handleSave} disabled={saving || isDeleted}>
             {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Salvar alterações"}
           </Button>
         </DialogFooter>
@@ -308,8 +642,9 @@ export function AdminUsuariosContent() {
     )
   }
 
-  const active = users.filter((u) => u.status !== "pending")
+  const active = users.filter((u) => u.status !== "pending" && u.status !== "deleted")
   const pending = users.filter((u) => u.status === "pending")
+  const deleted = users.filter((u) => u.status === "deleted")
 
   return (
     <>
@@ -317,6 +652,7 @@ export function AdminUsuariosContent() {
         <TabsList>
           <TabsTrigger value="ativos">Ativos ({active.length})</TabsTrigger>
           <TabsTrigger value="pendentes">Pendentes ({pending.length})</TabsTrigger>
+          <TabsTrigger value="excluidos">Excluídos ({deleted.length})</TabsTrigger>
         </TabsList>
 
         <TabsContent value="ativos">
@@ -328,6 +664,12 @@ export function AdminUsuariosContent() {
         <TabsContent value="pendentes">
           <Card className="border border-border bg-card p-0">
             <UsersTable users={pending} onSelect={handleSelect} />
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="excluidos">
+          <Card className="border border-border bg-card p-0">
+            <UsersTable users={deleted} onSelect={handleSelect} />
           </Card>
         </TabsContent>
       </Tabs>

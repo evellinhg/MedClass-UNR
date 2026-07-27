@@ -14,3 +14,5 @@ export const DIFFICULTIES = [
 ]
 
 export const PROVAS = ["ENAMED", "REVALIDA"]
+
+export const EDICOES = ["2024/1"]

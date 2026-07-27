@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
+import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
@@ -38,6 +38,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [selectedAreas, setSelectedAreas] = useState<string[]>([])
   const [prova, setProva] = useState(PROVAS[0])
+  const [edicao, setEdicao] = useState("")
   const [count, setCount] = useState(10)
   const [timerEnabled, setTimerEnabled] = useState(false)
   const [apenasIneditas, setApenasIneditas] = useState(true)
@@ -82,6 +83,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     if (selectedAreas.length > 0 && selectedAreas.length < AREAS.length) query = query.in("area", selectedAreas)
     if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
     if (prova) query = query.eq("prova", prova)
+    if (edicao) query = query.eq("edicao", edicao)
     const { data: pool } = await query
 
     let ids = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
@@ -99,7 +101,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
   useEffect(() => {
     setAvailable(null)
-  }, [dificuldade, prova, apenasIneditas])
+  }, [dificuldade, prova, edicao, apenasIneditas])
 
   const handleStart = async () => {
     const label =
@@ -119,6 +121,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       if (areasFiltro) query = query.in("area", areasFiltro)
       if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
       if (prova) query = query.eq("prova", prova)
+      if (edicao) query = query.eq("edicao", edicao)
       const { data: pool } = await query
       let poolIds = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
       if (apenasIneditas) {
@@ -151,6 +154,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       areas: areasFiltro,
       dificuldade,
       prova,
+      edicao: edicao || undefined,
       timerEnabled,
       mode: "individual",
       questionIds,
@@ -281,6 +285,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                   key={p}
                   onClick={() => {
                     setProva(p)
+                    setEdicao("")
                     setAvailable(null)
                   }}
                   className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
@@ -294,6 +299,43 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
               ))}
             </div>
           </div>
+
+          {prova === "REVALIDA" && (
+            <div className="space-y-2">
+              <Label>Edição</Label>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => {
+                    setEdicao("")
+                    setAvailable(null)
+                  }}
+                  className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                    edicao === ""
+                      ? "border-primary bg-primary/10 text-primary"
+                      : "border-input text-foreground hover:bg-accent"
+                  }`}
+                >
+                  Qualquer
+                </button>
+                {EDICOES.map((e) => (
+                  <button
+                    key={e}
+                    onClick={() => {
+                      setEdicao(e)
+                      setAvailable(null)
+                    }}
+                    className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                      edicao === e
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
+                    {e}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="space-y-2">
             <Label>Quantidade de questões</Label>

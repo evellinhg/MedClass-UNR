@@ -14,7 +14,7 @@ import {
   Trash2,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS, DIFFICULTIES, PROVAS } from "@/lib/quiz-config"
+import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
@@ -77,6 +77,7 @@ export function SimuladosContent() {
   const [selectedAreas, setSelectedAreas] = useState<string[]>([])
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [prova, setProva] = useState<string>("")
+  const [edicao, setEdicao] = useState<string>("")
   const [quantidade, setQuantidade] = useState(20)
   const [tempoPorQuestao, setTempoPorQuestao] = useState(90)
   const [apenasIneditas, setApenasIneditas] = useState(true)
@@ -143,6 +144,7 @@ export function SimuladosContent() {
     setSelectedAreas([])
     setDificuldade("aleatorio")
     setProva("")
+    setEdicao("")
     setQuantidade(20)
     setTempoPorQuestao(90)
     setApenasIneditas(true)
@@ -166,6 +168,7 @@ export function SimuladosContent() {
     if (selectedAreas.length > 0) query = query.in("area", selectedAreas)
     if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
     if (prova) query = query.eq("prova", prova)
+    if (edicao) query = query.eq("edicao", edicao)
 
     const { data: questoesDisponiveis } = await query
     let pool = (questoesDisponiveis as { id: string }[] | null) ?? []
@@ -394,7 +397,10 @@ export function SimuladosContent() {
                   <div className="flex gap-2">
                     <button
                       type="button"
-                      onClick={() => setProva("")}
+                      onClick={() => {
+                        setProva("")
+                        setEdicao("")
+                      }}
                       className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                         prova === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                       }`}
@@ -405,7 +411,10 @@ export function SimuladosContent() {
                       <button
                         key={p}
                         type="button"
-                        onClick={() => setProva(p)}
+                        onClick={() => {
+                          setProva(p)
+                          setEdicao("")
+                        }}
                         className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                           prova === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                         }`}
@@ -415,6 +424,35 @@ export function SimuladosContent() {
                     ))}
                   </div>
                 </div>
+
+                {prova === "REVALIDA" && (
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-foreground">Edição</label>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setEdicao("")}
+                        className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                          edicao === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                        }`}
+                      >
+                        Qualquer
+                      </button>
+                      {EDICOES.map((e) => (
+                        <button
+                          key={e}
+                          type="button"
+                          onClick={() => setEdicao(e)}
+                          className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
+                            edicao === e ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                          }`}
+                        >
+                          {e}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">

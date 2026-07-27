@@ -51,6 +51,7 @@ export interface SimuladoConfig {
   areas?: string[]
   dificuldade?: string
   prova?: string
+  edicao?: string
   timerEnabled?: boolean
   mode?: "individual" | "simulado"
   questionIds?: string[]
@@ -185,6 +186,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
       if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
       if (config.prova) query = query.eq("prova", config.prova)
+      if (config.edicao) query = query.eq("edicao", config.edicao)
 
       query.then(({ data }) => applyResult((data as Questao[]) ?? [], false, effectiveCount, skipTrialUsage))
     }

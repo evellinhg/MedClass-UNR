@@ -136,7 +136,36 @@ de71553  feat: raca condition fix + analytics
 - Vercel: variáveis de ambiente configuradas
 
 ### Pendente (futuro)
-- Push manual dos commits (git credentials)
 - Implementar visualização de analytics no painel do aluno (apenas admin tem)
 - Considerar Google Analytics / Vercel Analytics para métricas de página
 - Service Worker: considerar cache de questoes para modo offline real
+
+---
+
+## Sessão 2 (2026-07-28): Otimizações de escalabilidade (portadas do MedClass Prático)
+
+### Contexto
+O usuário pediu para replicar aqui a mesma auditoria/otimização de escalabilidade feita no projeto irmão MedClass Prático (repo e Supabase separados, `dskukjeynbebthgithcb`). Antes de implementar, foi confirmado que nada disso existia neste projeto ainda — só os commits de correção de login/PKCE e as 16 tarefas da Sessão 1 (paginação, notifications, analytics etc.) tinham sido feitos.
+
+### Achado principal
+A tabela `questoes` (95 questões REVALIDA 2024/1, conteúdo estático — igual para todo mundo) era buscada **sem cache, direto do Supabase, em 4 fluxos de leitura diferentes**: `practice-launcher.tsx` (2x — verificar disponibilidade e iniciar treino), `simulados-content.tsx` (criar simulado customizado), `trilha-ativa-content.tsx` (iniciar etapa de trilha) e `simulado-player.tsx` (pool de questões ao abrir treino livre sem IDs fixos). Cada combinação de filtro (área/dificuldade/prova/edição) disparava uma query nova.
+
+### O que foi implementado
+1. **`lib/questoes-cache.ts`** — busca única de todas as questões `ativo=true` (TTL 10min), com os filtros de área/dificuldade/prova/edição aplicados em memória no cliente (`filtrarPoolIds()`) em vez de uma nova query por combinação de filtro.
+   - **Deliberadamente não cacheado:** o fluxo de retomar um simulado já criado (`.in("id", questionIds)` em `simulado-player.tsx`) — um simulado antigo pode referenciar uma questão desativada depois, e filtrar pelo cache de `ativo=true` esconderia essa questão silenciosamente.
+   - **Deliberadamente não cacheado:** `admin-questoes-content.tsx` e `admin-overview-content.tsx` — telas de admin, baixo tráfego, risco de mostrar dado desatualizado logo após uma edição.
+2. **Rate limiting no `middleware.ts`** — mesmo padrão do Prático (Map em memória, best-effort por instância, com limpeza periódica).
+3. **SSG na landing page** (`app/page.tsx`, `revalidate = 3600`).
+4. **`docs/database-indexes.sql`** — 25 índices. Diferente do que aconteceu no Prático, aqui todas as 17 tabelas referenciadas pelo código já existiam de verdade (confirmado via `information_schema.tables` antes de rodar) — nenhum nome fantasma. Executados com sucesso no Supabase de produção (`dskukjeynbebthgithcb`).
+5. **`leaderboard` confirmada como `VIEW` comum** (mesma situação de `practico_ranking_geral` no Prático) — não indexada diretamente.
+
+### Commit desta sessão
+```
+f432bc5  perf: otimizacoes de escalabilidade (cache de questoes, rate limit, indices)
+```
+Pushado para `origin/main` pelo usuário (esta sessão de terminal não tinha credenciais de git configuradas para este repo).
+
+### Estado final
+- Build (`next build`): ✅ passando
+- Índices: ✅ executados no Supabase de produção
+- Ver `docs/SCALABILITY-OPTIMIZATIONS.md` para o detalhamento completo item a item

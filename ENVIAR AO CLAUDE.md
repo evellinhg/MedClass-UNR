@@ -83,10 +83,21 @@ Projeto: **MedClass Teórico** — plataforma de estudos para o Exame Nacional d
   - Pacote `@supabase/ssr` instalado para cookie-based session management
 - **Supabase Dashboard:** Redirect URL configurada como `https://med-class-one.vercel.app/auth/callback`
 
+## 18. Otimizações de Escalabilidade (portadas do MedClass Prático, 2026-07-28)
+- **Achado:** `questoes` (95 questões estáticas) era buscada sem cache em 4 fluxos (`practice-launcher.tsx` ×2, `simulados-content.tsx`, `trilha-ativa-content.tsx`, `simulado-player.tsx`) — query nova a cada combinação de filtro
+- `lib/questoes-cache.ts`: pool `ativo=true` cacheado (TTL 10min), filtro de área/dificuldade/prova/edição em memória via `filtrarPoolIds()`
+- Não cacheado de propósito: retomada de simulado (`.in("id", questionIds)` — questão pode ter sido desativada depois) e telas de admin (risco de dado desatualizado)
+- Rate limiting em `middleware.ts` (Map em memória, best-effort por instância, limpeza periódica)
+- SSG na landing page (`app/page.tsx`, `revalidate = 3600`)
+- `docs/database-indexes.sql`: 25 índices, verificados contra `information_schema.tables` antes de rodar, executados no Supabase de produção
+- `leaderboard` confirmada como `VIEW` comum (não indexável diretamente)
+- Detalhe completo em `docs/SCALABILITY-OPTIMIZATIONS.md` e `HISTORICO_CONVERSA.md` (Sessão 2)
+
 ---
 
 ## Commits Realizados
 ```
+f432bc5  perf: otimizacoes de escalabilidade (cache de questoes, rate limit, indices)
 c038d1e  fix: ativar PKCE flow + middleware server-side auth
 b1cc1d0  fix: middleware desabilitado - flow implicito nao permite protecao server-side
 0d5fbb9  fix: login Google funcional - middleware reativado + limpeza
@@ -124,6 +135,9 @@ de71553  feat: raca condition fix + analytics
 | `components/simulado-player.tsx` | timers, comments, tracking |
 | `components/practice-launcher.tsx` | filtro edição, tracking |
 | `components/admin-questoes-content.tsx` | rewrite completo |
+| `lib/questoes-cache.ts` | cache de questões ativas + filtro em memória |
+| `docs/database-indexes.sql` | 25 índices, executados no Supabase |
+| `docs/SCALABILITY-OPTIMIZATIONS.md` | documentação das otimizações de escalabilidade |
 
 ## Variáveis de Ambiente (Vercel)
 | Variável | Uso |

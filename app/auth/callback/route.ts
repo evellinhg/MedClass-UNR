@@ -7,6 +7,8 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get("next") ?? "/dashboard"
 
   if (code) {
+    let authResponse: NextResponse | null = null
+
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -19,6 +21,15 @@ export async function GET(request: NextRequest) {
             cookiesToSet.forEach(({ name, value, options }) => {
               request.cookies.set({ name, value, ...options })
             })
+            authResponse = NextResponse.redirect(new URL(next, origin))
+            cookiesToSet.forEach(({ name, value, options }) => {
+              authResponse!.cookies.set(name, value, {
+                ...options,
+                secure: true,
+                sameSite: "lax",
+                path: "/",
+              })
+            })
           },
         },
       }
@@ -26,18 +37,8 @@ export async function GET(request: NextRequest) {
 
     const { error } = await supabase.auth.exchangeCodeForSession(code)
 
-    if (!error) {
-      const response = NextResponse.redirect(new URL(next, origin))
-      for (const { name, value } of request.cookies.getAll()) {
-        response.cookies.set(name, value, {
-          path: "/",
-          maxAge: 60 * 60 * 24 * 7,
-          sameSite: "lax",
-          httpOnly: true,
-          secure: true,
-        })
-      }
-      return response
+    if (!error && authResponse) {
+      return authResponse
     }
   }
 

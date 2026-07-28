@@ -7,6 +7,7 @@ import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy } from "lu
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
+import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 
 const CATEGORIA_LABELS: Record<DesafioCategoria, string> = {
@@ -105,6 +106,12 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
         total: perguntas.length,
         duracao_segundos: elapsed,
         origem_trilha_etapa_id: origemEtapaId,
+      })
+      trackEvent("desafio_finalizado", {
+        desafio_id: desafioId,
+        acertos: acertosAtuais,
+        total: perguntas.length,
+        duracao_segundos: elapsed,
       })
     }
     setSalvando(false)

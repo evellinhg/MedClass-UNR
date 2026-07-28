@@ -40,6 +40,7 @@ const adminNavigation: AdminNavItem[] = [
   { name: "Videoaulas", href: "/admin/videoaulas", icon: PlayCircle },
   { name: "Resumos", href: "/admin/resumos", icon: FileText },
   { name: "Flashcards", href: "/admin/flashcards", icon: Layers },
+  { name: "Analytics", href: "/admin/analytics", icon: BarChart3 },
 ]
 
 export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {

@@ -19,6 +19,7 @@ import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { shuffle } from "@/lib/utils"
+import { trackEvent } from "@/lib/analytics"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -202,6 +203,15 @@ export function SimuladosContent() {
       modo_estrito: true,
       timer_segundos_por_questao: tempoPorQuestao,
     })
+
+    if (!error) {
+      trackEvent("simulado_iniciado", {
+        nome: nome.trim(),
+        areas: selectedAreas,
+        quantidade_questoes: quantidade,
+        modo: "simulado",
+      })
+    }
 
     setCreating(false)
     if (error) {

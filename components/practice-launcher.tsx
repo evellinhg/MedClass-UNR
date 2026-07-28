@@ -8,6 +8,7 @@ import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
+import { trackEvent } from "@/lib/analytics"
 import { shuffle } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
@@ -142,6 +143,14 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
         .select("id")
         .single()
       simuladoId = inserted?.id
+
+      if (inserted) {
+        trackEvent("treino_iniciado", {
+          nome: label,
+          areas: areasFiltro ?? [],
+          quantidade_questoes: questionIds.length,
+        })
+      }
     }
 
     setStarting(false)

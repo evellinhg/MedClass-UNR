@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import {
   AlertTriangle,
   CheckCircle2,
@@ -19,6 +19,7 @@ import { calculatePoints } from "@/lib/scoring"
 import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type PlanStatus } from "@/lib/plan-status"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { shuffle } from "@/lib/utils"
+import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
@@ -118,6 +119,13 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   )
   const [blockedStatus, setBlockedStatus] = useState<PlanStatus | null>(null)
   const [questionTimeLeft, setQuestionTimeLeft] = useState<number | null>(null)
+
+  const pendingAnswerRef = useRef<number | null>(null)
+  const currentIndexRef = useRef(0)
+  const currentRef = useRef<Questao | null>(null)
+
+  useEffect(() => { pendingAnswerRef.current = pendingAnswer }, [pendingAnswer])
+  useEffect(() => { currentIndexRef.current = currentIndex }, [currentIndex])
 
   useEffect(() => {
     if (!open || !config) return
@@ -253,20 +261,37 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   useEffect(() => {
     if (questionTimeLeft !== 0) return
-    if (pendingAnswer !== null) {
-      confirmAnswer()
+    const idx = currentIndexRef.current
+    const pend = pendingAnswerRef.current
+    const q = questions[idx]
+    if (!q) return
+    if (pend !== null) {
+      setAnswers((prev) => {
+        const next = [...prev]
+        next[idx] = pend
+        return next
+      })
+      setPendingAnswer(null)
+      const isCorrect = pend === q.indice_correta
+      if (isCorrect && q.mecanismo_pergunta && q.mecanismo_opcoes?.length) {
+        setMechanismStage("asking")
+        setMechanismAnswer(null)
+      } else {
+        setMechanismStage("resolved")
+      }
     } else {
       setAnswers((prev) => {
         const next = [...prev]
-        next[currentIndex] = TIMEOUT_SENTINEL
+        next[idx] = TIMEOUT_SENTINEL
         return next
       })
-      goTo(currentIndex + 1)
+      goTo(idx + 1)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [questionTimeLeft])
 
   const current = questions[currentIndex]
+  currentRef.current = current ?? null
   const currentAnswer = answers[currentIndex] ?? null
   const answeredCount = answers.filter((a) => a !== null).length
   const currentEliminated = eliminated[currentIndex] ?? new Set<number>()
@@ -376,6 +401,15 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     setSaving(false)
     setResult({ points, correct, wrong, answered: answeredCount })
     setPhase("finished")
+    if (config) {
+      trackEvent(config.mode === "simulado" ? "simulado_finalizado" : "treino_finalizado", {
+        correct,
+        wrong,
+        answered: answeredCount,
+        points,
+        durationSeconds,
+      })
+    }
   }
 
   const sendFeedback = async () => {

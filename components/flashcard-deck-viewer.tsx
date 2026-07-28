@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { getAreaIcon } from "@/lib/area-icons"
 import type { Flashcard, FlashcardDeck } from "@/lib/flashcards-types"
+import { trackEvent } from "@/lib/analytics"
 
 const NIVEL_COLORS: Record<number, string> = {
   0: "#EF4444",
@@ -95,6 +96,8 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
         { user_id: userId, flashcard_id: currentCard.id, nivel, respondido_em: new Date().toISOString() },
         { onConflict: "user_id,flashcard_id" }
       )
+
+    trackEvent("flashcard_revisado", { flashcard_id: currentCard.id, nivel, deck_id: deckId })
 
     const novoMap = { ...progressoMap, [currentCard.id]: nivel }
     setProgressoMap(novoMap)

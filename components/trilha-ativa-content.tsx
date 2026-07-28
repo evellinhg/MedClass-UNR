@@ -6,6 +6,7 @@ import { Loader2, Stethoscope } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getAreaIcon } from "@/lib/area-icons"
 import { shuffle } from "@/lib/utils"
+import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { TrilhaPath, type TrilhaPathUnidade } from "@/components/trilha-path"
@@ -21,6 +22,15 @@ interface UnidadeRow {
 
 interface EtapaComDesafio extends CronogramaTrilhaEtapa {
   desafio_clinico: { titulo: string; icone: string } | null
+}
+
+async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
+  const pool = (data as QuestaoCacheada[] | null) ?? []
+  setCachedQuestoesAtivas(pool)
+  return pool
 }
 
 export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onSair: () => void }) {
@@ -120,21 +130,21 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
       return
     }
 
-    let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
-    if (etapa.area) query = query.eq("area", etapa.area)
-    if (etapa.dificuldade) query = query.eq("dificuldade", etapa.dificuldade)
-    if (etapa.prova) query = query.eq("prova", etapa.prova)
-    const { data: questoesDisponiveis } = await query
-    const pool = (questoesDisponiveis as { id: string }[] | null) ?? []
+    const activePool = await getQuestoesAtivasPool()
+    const poolIds = filtrarPoolIds(activePool, {
+      areas: etapa.area ? [etapa.area] : undefined,
+      dificuldade: etapa.dificuldade ?? undefined,
+      prova: etapa.prova ?? undefined,
+    })
     const quantidade = etapa.quantidade_questoes ?? 10
 
-    if (pool.length < quantidade) {
-      alert(`Só há ${pool.length} questão(ões) disponível(is) para esta etapa. Avise a equipe MedClass.`)
+    if (poolIds.length < quantidade) {
+      alert(`Só há ${poolIds.length} questão(ões) disponível(is) para esta etapa. Avise a equipe MedClass.`)
       setIniciando(null)
       return
     }
 
-    const questaoIds = shuffle(pool).slice(0, quantidade).map((q) => q.id)
+    const questaoIds = shuffle(poolIds).slice(0, quantidade)
 
     const { data, error } = await supabase
       .from("simulados")

@@ -18,6 +18,7 @@ import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
+import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
 import { Badge } from "@/components/ui/badge"
@@ -56,6 +57,15 @@ const TEMPOS_POR_QUESTAO = [30, 60, 90, 120, 180]
 
 function temProgresso(s: Simulado) {
   return (s.progresso_index ?? 0) > 0 || (s.respostas ?? []).some((a) => a !== null)
+}
+
+async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
+  const pool = (data as QuestaoCacheada[] | null) ?? []
+  setCachedQuestoesAtivas(pool)
+  return pool
 }
 
 export function SimuladosContent() {
@@ -165,31 +175,28 @@ export function SimuladosContent() {
       return
     }
 
-    let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
-    if (selectedAreas.length > 0) query = query.in("area", selectedAreas)
-    if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
-    if (prova) query = query.eq("prova", prova)
-    if (edicao) query = query.eq("edicao", edicao)
-
-    const { data: questoesDisponiveis } = await query
-    let pool = (questoesDisponiveis as { id: string }[] | null) ?? []
+    const activePool = await getQuestoesAtivasPool()
+    let poolIds = filtrarPoolIds(activePool, {
+      areas: selectedAreas.length > 0 ? selectedAreas : undefined,
+      dificuldade,
+      prova,
+      edicao,
+    })
 
     if (apenasIneditas) {
       const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
-      pool = pool.filter((q) => !jaRespondidas.has(q.id))
+      poolIds = poolIds.filter((id) => !jaRespondidas.has(id))
     }
 
-    if (pool.length < quantidade) {
+    if (poolIds.length < quantidade) {
       setCreateError(
-        `Só há ${pool.length} questão(ões) disponível(is) para esse filtro — reduza a quantidade, amplie os filtros ou inclua questões já respondidas.`
+        `Só há ${poolIds.length} questão(ões) disponível(is) para esse filtro — reduza a quantidade, amplie os filtros ou inclua questões já respondidas.`
       )
       setCreating(false)
       return
     }
 
-    const questaoIds = shuffle(pool)
-      .slice(0, quantidade)
-      .map((q) => q.id)
+    const questaoIds = shuffle(poolIds).slice(0, quantidade)
 
     const { error } = await supabase.from("simulados").insert({
       user_id: userData.user.id,

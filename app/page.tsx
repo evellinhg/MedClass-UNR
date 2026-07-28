@@ -7,6 +7,8 @@ import { Pricing } from "@/components/pricing"
 import { Footer } from "@/components/footer"
 import { WhatsappFloatButton } from "@/components/whatsapp-float-button"
 
+export const revalidate = 3600 // Revalidar a cada hora
+
 export default function Page() {
   return (
     <main className="bg-[#0a0a0a]">

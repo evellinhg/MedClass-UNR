@@ -20,6 +20,7 @@ import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type P
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
+import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
@@ -72,6 +73,15 @@ const FEEDBACK_TIPOS: { value: FeedbackTipo; label: string }[] = [
   { value: "duvida", label: "Dúvida" },
   { value: "sugestao", label: "Sugestão" },
 ]
+
+async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
+  const pool = (data as QuestaoCacheada[] | null) ?? []
+  setCachedQuestoesAtivas(pool)
+  return pool
+}
 
 function formatElapsed(seconds: number) {
   const m = Math.floor(seconds / 60)
@@ -187,13 +197,17 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         return
       }
 
-      let query = supabase.from("questoes").select(selectCols).eq("ativo", true).limit(200)
-      if (config.areas && config.areas.length > 0) query = query.in("area", config.areas)
-      if (config.dificuldade && config.dificuldade !== "aleatorio") query = query.eq("dificuldade", config.dificuldade)
-      if (config.prova) query = query.eq("prova", config.prova)
-      if (config.edicao) query = query.eq("edicao", config.edicao)
-
-      query.then(({ data }) => applyResult((data as Questao[]) ?? [], false, effectiveCount, skipTrialUsage))
+      getQuestoesAtivasPool().then((activePool) => {
+        const ids = new Set(
+          filtrarPoolIds(activePool, {
+            areas: config.areas && config.areas.length > 0 ? config.areas : undefined,
+            dificuldade: config.dificuldade,
+            prova: config.prova,
+            edicao: config.edicao,
+          })
+        )
+        applyResult(activePool.filter((q) => ids.has(q.id)) as Questao[], false, effectiveCount, skipTrialUsage)
+      })
     }
 
     if (isReadOnly) {

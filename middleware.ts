@@ -1,7 +1,37 @@
 import { createServerClient } from "@supabase/ssr"
 import { type NextRequest, NextResponse } from "next/server"
 
+const rateLimit = new Map<string, { count: number; resetTime: number }>()
+
+function checkRateLimit(ip: string, limit: number = 100, windowMs: number = 60000): boolean {
+  const now = Date.now()
+
+  // limpeza esporádica: evita que o Map cresça sem limite na vida da instância
+  if (Math.random() < 0.01) {
+    for (const [key, entry] of rateLimit) {
+      if (now > entry.resetTime) rateLimit.delete(key)
+    }
+  }
+
+  const record = rateLimit.get(ip)
+
+  if (!record || now > record.resetTime) {
+    rateLimit.set(ip, { count: 1, resetTime: now + windowMs })
+    return true
+  }
+
+  if (record.count >= limit) return false
+  record.count++
+  return true
+}
+
 export async function middleware(request: NextRequest) {
+  const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown"
+
+  if (!checkRateLimit(ip)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 })
+  }
+
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(

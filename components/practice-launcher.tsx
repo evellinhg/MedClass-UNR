@@ -7,6 +7,7 @@ import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
+import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
 import { trackEvent } from "@/lib/analytics"
 import { shuffle } from "@/lib/utils"
@@ -30,6 +31,15 @@ interface PracticeLauncherProps {
 }
 
 const QUANTITIES = [5, 10, 20, 30, 50]
+
+async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
+  const pool = (data as QuestaoCacheada[] | null) ?? []
+  setCachedQuestoesAtivas(pool)
+  return pool
+}
 
 export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
   const [starting, setStarting] = useState(false)
@@ -77,14 +87,13 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
   const handleVerify = async () => {
     setChecking(true)
-    let query = supabase.from("questoes").select("id").eq("ativo", true)
-    if (selectedAreas.length > 0 && selectedAreas.length < AREAS.length) query = query.in("area", selectedAreas)
-    if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
-    if (prova) query = query.eq("prova", prova)
-    if (edicao) query = query.eq("edicao", edicao)
-    const { data: pool } = await query
-
-    let ids = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
+    const pool = await getQuestoesAtivasPool()
+    let ids = filtrarPoolIds(pool, {
+      areas: selectedAreas.length > 0 && selectedAreas.length < AREAS.length ? selectedAreas : undefined,
+      dificuldade,
+      prova,
+      edicao,
+    })
     if (apenasIneditas) {
       const { data: userData } = await supabase.auth.getUser()
       if (userData.user) {
@@ -115,13 +124,8 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     let simuladoId: string | undefined
 
     if (userData.user) {
-      let query = supabase.from("questoes").select("id").eq("ativo", true).limit(500)
-      if (areasFiltro) query = query.in("area", areasFiltro)
-      if (dificuldade !== "aleatorio") query = query.eq("dificuldade", dificuldade)
-      if (prova) query = query.eq("prova", prova)
-      if (edicao) query = query.eq("edicao", edicao)
-      const { data: pool } = await query
-      let poolIds = ((pool as { id: string }[] | null) ?? []).map((q) => q.id)
+      const pool = await getQuestoesAtivasPool()
+      let poolIds = filtrarPoolIds(pool, { areas: areasFiltro, dificuldade, prova, edicao })
       if (apenasIneditas) {
         const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
         poolIds = poolIds.filter((id) => !jaRespondidas.has(id))

@@ -28,7 +28,8 @@ Projeto: **MedClass Teórico** — plataforma de estudos para o Exame Nacional d
 - `lib/supabase.js` renomeado para `lib/supabase.ts` com non-null assertions
 
 ## 6. Route Protection — Middleware
-- `middleware.ts` criado: proteção server-side para `/dashboard`, `/admin`, `/questoes` com verificação de sessão Supabase + ADMIN_EMAILS para admin
+- `middleware.ts` criado: proteção server-side para `/dashboard`, `/admin`, `/questoes` com verificação de sessão Supabase via `@supabase/ssr`
+- Usa `createServerClient` do `@supabase/ssr` com `getUser()` para validar sessão server-side
 
 ## 7. Error Boundaries
 - `app/dashboard/error.tsx`, `app/admin/error.tsx`, `app/login/error.tsx`, `app/global-error.tsx` — tratamento de erros gracefully
@@ -71,25 +72,48 @@ Projeto: **MedClass Teórico** — plataforma de estudos para o Exame Nacional d
 ## 16. Limpeza
 - Migrations SQL (`migration_notifications.sql`, `migration_analytics.sql`) deletados após execução
 
+## 17. Login Google/Apple — PKCE Flow + Server-Side Auth
+- **Problema original:** Login Google retornava erro "não foi possível acessar o site"
+- **Causa raiz:** Supabase usava flow implícito (tokens no hash fragment `#access_token=`), invisível pro servidor
+- **Solução completa:**
+  - `lib/supabase.ts`: configurado `flowType: 'pkce'` + `detectSessionInUrl: true`
+  - `app/auth/callback/route.ts`: server-side callback que recebe `?code=`, troca por sessão via `exchangeCodeForSession()`, seta cookies com `secure: true`
+  - `middleware.ts`: reativado com `@supabase/ssr` — valida sessão server-side via `getUser()`
+  - `components/login-form.tsx`: `redirectTo` aponta para `/auth/callback`
+  - Pacote `@supabase/ssr` instalado para cookie-based session management
+- **Supabase Dashboard:** Redirect URL configurada como `https://med-class-one.vercel.app/auth/callback`
+
 ---
 
 ## Commits Realizados
 ```
+c038d1e  fix: ativar PKCE flow + middleware server-side auth
+b1cc1d0  fix: middleware desabilitado - flow implicito nao permite protecao server-side
+0d5fbb9  fix: login Google funcional - middleware reativado + limpeza
+9409b65  fix: auth callback como pagina client-side para flow implicito
+e7f62ab  debug: middleware desabilitado + callback simplificado
+e4e1cd5  debug: auth callback redireciona para /api/debug-auth
+b5d854c  fix: auth callback com secure cookies + middleware async
+336d6ea  fix: corrigir login Google OAuth - criar auth callback route
+e68fb39  fix: auth callback com secure cookies + middleware async com getUser
 5f90c64  feat: edicao + pagination + admin edicao
 de71553  feat: raca condition fix + analytics
 263fc8d  feat: middleware + error boundaries + service worker
 32d2181  feat: notifications + mobile nav + shuffle refactor
 4f1a83d  feat: analytics de comportamento do usuario
 40db3c2  chore: remover migrations SQL ja executadas
+89922e4  docs: historico completo da conversa para referencia futura
+7fe69e5  docs: resumo da sessao para envio ao claude
 ```
 
 ## Arquivos Chave Criados/Modificados
 | Arquivo | Função |
 |---------|--------|
-| `middleware.ts` | Route protection server-side |
+| `middleware.ts` | Route protection server-side via @supabase/ssr |
+| `app/auth/callback/route.ts` | Server-side OAuth callback (PKCE exchangeCodeForSession) |
+| `lib/supabase.ts` | Cliente Supabase com PKCE flow |
 | `lib/analytics.ts` | Tracking de eventos |
 | `lib/utils.ts` | `cn()` + `shuffle()` |
-| `lib/supabase.ts` | Cliente Supabase (renomeado de .js) |
 | `lib/notifications.ts` | CRUD de notificações |
 | `lib/quiz-config.ts` | AREAS, EDICOES |
 | `public/sw.js` | Service Worker offline |
@@ -108,6 +132,11 @@ de71553  feat: raca condition fix + analytics
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Chave pública Supabase |
 | `SUPABASE_SERVICE_ROLE_KEY` | Chave admin (imports, API routes) |
 | `ADMIN_EMAILS` | Emails de admin separados por vírgula |
+
+## Pacotes NPM Adicionais
+| Pacote | Uso |
+|--------|-----|
+| `@supabase/ssr` | Cookie-based session management para middleware + callback server-side |
 
 ## Banco de Dados (Tabelas Principais)
 - `questoes` — 95 questões REVALIDA 2024/1 com campos `edicao`, `opcoes_comentario`, `comentario`

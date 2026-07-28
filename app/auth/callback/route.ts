@@ -7,8 +7,6 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get("next") ?? "/dashboard"
 
   if (code) {
-    let authCookies: { name: string; value: string }[] = []
-
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -18,9 +16,8 @@ export async function GET(request: NextRequest) {
             return request.cookies.getAll()
           },
           setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value }) => {
-              request.cookies.set({ name, value })
-              authCookies.push({ name, value })
+            cookiesToSet.forEach(({ name, value, options }) => {
+              request.cookies.set({ name, value, ...options })
             })
           },
         },
@@ -31,14 +28,15 @@ export async function GET(request: NextRequest) {
 
     if (!error) {
       const response = NextResponse.redirect(new URL(next, origin))
-      authCookies.forEach(({ name, value }) => {
+      for (const { name, value } of request.cookies.getAll()) {
         response.cookies.set(name, value, {
           path: "/",
           maxAge: 60 * 60 * 24 * 7,
           sameSite: "lax",
           httpOnly: true,
+          secure: true,
         })
-      })
+      }
       return response
     }
   }

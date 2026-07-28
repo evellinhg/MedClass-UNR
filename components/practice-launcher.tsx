@@ -8,6 +8,7 @@ import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
+import { shuffle } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
@@ -28,10 +29,6 @@ interface PracticeLauncherProps {
 }
 
 const QUANTITIES = [5, 10, 20, 30, 50]
-
-function shuffle<T>(arr: T[]): T[] {
-  return [...arr].sort(() => Math.random() - 0.5)
-}
 
 export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
   const [starting, setStarting] = useState(false)

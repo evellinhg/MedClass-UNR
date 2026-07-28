@@ -5,6 +5,7 @@ import { Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import {
   Select,
   SelectContent,
@@ -34,6 +35,7 @@ export function DesempenhoHistoricoContent() {
   const [attempts, setAttempts] = useState<Attempt[]>([])
   const [loading, setLoading] = useState(true)
   const [subjectFilter, setSubjectFilter] = useState("Todas")
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -77,7 +79,7 @@ export function DesempenhoHistoricoContent() {
       <Card className="border border-border bg-card p-4">
         <div className="flex flex-wrap items-center gap-3">
           <span className="text-sm font-medium text-muted-foreground">Filtrar por área:</span>
-          <Select value={subjectFilter} onValueChange={setSubjectFilter}>
+          <Select value={subjectFilter} onValueChange={(v) => { setSubjectFilter(v); setPage(1) }}>
             <SelectTrigger className="w-56">
               <SelectValue placeholder="Área" />
             </SelectTrigger>
@@ -99,47 +101,56 @@ export function DesempenhoHistoricoContent() {
               ? "Você ainda não resolveu nenhum simulado ou questão."
               : "Nenhuma tentativa encontrada para esse filtro."}
           </p>
-        ) : (
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Data</TableHead>
-                <TableHead>Área</TableHead>
-                <TableHead className="text-right">Acertos</TableHead>
-                <TableHead className="text-right">Erros</TableHead>
-                <TableHead className="text-right">Pontos</TableHead>
-                <TableHead className="text-right">Status</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filtered.map((attempt) => {
-                const accuracy =
-                  attempt.total_questions > 0
-                    ? Math.round((attempt.correct_count / attempt.total_questions) * 100)
-                    : 0
-                const status = statusFor(accuracy)
-                return (
-                  <TableRow key={attempt.id}>
-                    <TableCell className="text-muted-foreground">
-                      {new Date(attempt.created_at).toLocaleDateString("pt-BR")}
-                    </TableCell>
-                    <TableCell className="font-medium text-foreground">{attempt.subject ?? "—"}</TableCell>
-                    <TableCell className="text-right font-semibold text-success">
-                      {attempt.correct_count}
-                    </TableCell>
-                    <TableCell className="text-right font-semibold text-destructive">
-                      {attempt.wrong_count}
-                    </TableCell>
-                    <TableCell className="text-right font-semibold text-foreground">{attempt.points}</TableCell>
-                    <TableCell className="text-right">
-                      <Badge className={`border-0 ${status.className}`}>{status.label}</Badge>
-                    </TableCell>
+        ) : (() => {
+          const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+          const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+          return (
+            <>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Data</TableHead>
+                    <TableHead>Área</TableHead>
+                    <TableHead className="text-right">Acertos</TableHead>
+                    <TableHead className="text-right">Erros</TableHead>
+                    <TableHead className="text-right">Pontos</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
                   </TableRow>
-                )
-              })}
-            </TableBody>
-          </Table>
-        )}
+                </TableHeader>
+                <TableBody>
+                  {paginated.map((attempt) => {
+                    const accuracy =
+                      attempt.total_questions > 0
+                        ? Math.round((attempt.correct_count / attempt.total_questions) * 100)
+                        : 0
+                    const status = statusFor(accuracy)
+                    return (
+                      <TableRow key={attempt.id}>
+                        <TableCell className="text-muted-foreground">
+                          {new Date(attempt.created_at).toLocaleDateString("pt-BR")}
+                        </TableCell>
+                        <TableCell className="font-medium text-foreground">{attempt.subject ?? "—"}</TableCell>
+                        <TableCell className="text-right font-semibold text-success">
+                          {attempt.correct_count}
+                        </TableCell>
+                        <TableCell className="text-right font-semibold text-destructive">
+                          {attempt.wrong_count}
+                        </TableCell>
+                        <TableCell className="text-right font-semibold text-foreground">{attempt.points}</TableCell>
+                        <TableCell className="text-right">
+                          <Badge className={`border-0 ${status.className}`}>{status.label}</Badge>
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
+              <div className="border-t border-border">
+                <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+              </div>
+            </>
+          )
+        })()}
       </Card>
     </div>
   )

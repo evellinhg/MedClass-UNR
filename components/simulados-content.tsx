@@ -18,6 +18,7 @@ import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
 import { getAreaColor } from "@/lib/area-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
+import { shuffle } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -30,6 +31,7 @@ import {
 } from "@/components/ui/dialog"
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import { PracticeLauncher } from "@/components/practice-launcher"
+import { Pagination, PAGE_SIZE } from "@/components/pagination"
 
 interface Simulado {
   id: string
@@ -50,10 +52,6 @@ interface Simulado {
 
 const QUANTIDADES = [10, 20, 30, 50]
 const TEMPOS_POR_QUESTAO = [30, 60, 90, 120, 180]
-
-function shuffle<T>(arr: T[]): T[] {
-  return [...arr].sort(() => Math.random() - 0.5)
-}
 
 function temProgresso(s: Simulado) {
   return (s.progresso_index ?? 0) > 0 || (s.respostas ?? []).some((a) => a !== null)
@@ -84,6 +82,7 @@ export function SimuladosContent() {
   const [creating, setCreating] = useState(false)
   const [createError, setCreateError] = useState<string | null>(null)
   const [deletingId, setDeletingId] = useState<string | null>(null)
+  const [simuladosPage, setSimuladosPage] = useState(1)
 
   const loadSimulados = async () => {
     setLoading(true)
@@ -98,6 +97,7 @@ export function SimuladosContent() {
       .eq("user_id", userData.user.id)
       .order("created_at", { ascending: false })
     setSimulados((data as Simulado[]) ?? [])
+    setSimuladosPage(1)
     setLoading(false)
   }
 
@@ -532,8 +532,13 @@ export function SimuladosContent() {
               Nenhum treinamento criado ainda. Escolha o Modo Estudo ou crie um Simulado para começar.
             </p>
           </div>
-        ) : (
-          simulados.map((simulado) => {
+        ) : (() => {
+          const totalPages = Math.ceil(simulados.length / PAGE_SIZE)
+          const paginated = simulados.slice((simuladosPage - 1) * PAGE_SIZE, simuladosPage * PAGE_SIZE)
+          return (
+            <>
+              <div className="space-y-3">
+                {paginated.map((simulado) => {
             const emAndamento = !simulado.finished_at && temProgresso(simulado)
             return (
               <div
@@ -605,8 +610,12 @@ export function SimuladosContent() {
                 </div>
               </div>
             )
-          })
-        )}
+          })}
+              </div>
+              <Pagination page={simuladosPage} totalPages={totalPages} onPageChange={setSimuladosPage} />
+            </>
+          )
+        })()}
       </div>
 
       <PracticeLauncher open={practiceOpen} onOpenChange={setPracticeOpen} onStart={startPlayer} />

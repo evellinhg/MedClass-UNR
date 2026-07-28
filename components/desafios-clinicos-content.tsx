@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Loader2, CheckCircle2, XCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
+import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import type { DesafioClinico } from "@/lib/desafios-types"
 
 interface HistoricoItem {
@@ -32,6 +33,7 @@ export function DesafiosClinicosContent() {
   const [desafios, setDesafios] = useState<DesafioClinico[]>([])
   const [historico, setHistorico] = useState<HistoricoItem[]>([])
   const [loading, setLoading] = useState(true)
+  const [histPage, setHistPage] = useState(1)
 
   useEffect(() => {
     async function load() {
@@ -41,12 +43,11 @@ export function DesafiosClinicosContent() {
       const [{ data: desafiosData }, historicoRes] = await Promise.all([
         supabase.from("desafios_clinicos").select("*").eq("ativo", true).order("created_at", { ascending: true }),
         userId
-          ? supabase
+          ?           supabase
               .from("desafios_clinicos_historico")
               .select("id, acertos, total, created_at, desafio:desafios_clinicos(id, titulo, icone)")
               .eq("user_id", userId)
               .order("created_at", { ascending: false })
-              .limit(10)
           : Promise.resolve({ data: [] }),
       ])
 
@@ -109,41 +110,48 @@ export function DesafiosClinicosContent() {
           <p className="mt-2 text-sm text-muted-foreground">
             Você ainda não estudou nenhum desafio clínico. Comece por um dos casos acima.
           </p>
-        ) : (
-          <div className="mt-3 divide-y divide-border rounded-lg border border-border bg-card">
-            {historico.map((item) => {
-              const Icon = getDesafioIcon(item.desafio?.icone ?? "")
-              const passou = item.total > 0 && item.acertos / item.total >= 0.6
-              return (
-                <div key={item.id} className="flex items-center gap-3 p-4">
-                  <div
-                    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gradient-to-br ${coverGradientFor(
-                      item.desafio?.id ?? item.id
-                    )}`}
-                  >
-                    <Icon className="h-4 w-4 text-white" />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-medium text-foreground">
-                      {item.desafio?.titulo ?? "Desafio removido"}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {new Date(item.created_at).toLocaleDateString("pt-BR")}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-sm font-medium">
-                    {passou ? (
-                      <CheckCircle2 className="h-4 w-4 text-emerald-500" />
-                    ) : (
-                      <XCircle className="h-4 w-4 text-red-500" />
-                    )}
-                    {item.acertos}/{item.total}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        )}
+        ) : (() => {
+          const totalPages = Math.ceil(historico.length / PAGE_SIZE)
+          const paginated = historico.slice((histPage - 1) * PAGE_SIZE, histPage * PAGE_SIZE)
+          return (
+            <>
+              <div className="mt-3 divide-y divide-border rounded-lg border border-border bg-card">
+                {paginated.map((item) => {
+                  const Icon = getDesafioIcon(item.desafio?.icone ?? "")
+                  const passou = item.total > 0 && item.acertos / item.total >= 0.6
+                  return (
+                    <div key={item.id} className="flex items-center gap-3 p-4">
+                      <div
+                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-gradient-to-br ${coverGradientFor(
+                          item.desafio?.id ?? item.id
+                        )}`}
+                      >
+                        <Icon className="h-4 w-4 text-white" />
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium text-foreground">
+                          {item.desafio?.titulo ?? "Desafio removido"}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {new Date(item.created_at).toLocaleDateString("pt-BR")}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-sm font-medium">
+                        {passou ? (
+                          <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                        ) : (
+                          <XCircle className="h-4 w-4 text-red-500" />
+                        )}
+                        {item.acertos}/{item.total}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+              <Pagination page={histPage} totalPages={totalPages} onPageChange={setHistPage} />
+            </>
+          )
+        })()}
       </div>
     </div>
   )

@@ -37,6 +37,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { Pagination, PAGE_SIZE } from "@/components/pagination"
 
 interface Questao {
   id: string
@@ -98,6 +99,7 @@ export function AdminQuestoesContent() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [filterArea, setFilterArea] = useState<string>("todas")
   const [filterEdicao, setFilterEdicao] = useState<string>("todas")
+  const [page, setPage] = useState(1)
 
   const load = async () => {
     setLoading(true)
@@ -133,6 +135,9 @@ export function AdminQuestoesContent() {
       return matchSearch && matchArea && matchEdicao
     })
   }, [questoes, search, filterArea, filterEdicao])
+
+  const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
+  const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
 
   const stats = useMemo(() => {
     const total = filtered.length
@@ -328,11 +333,11 @@ export function AdminQuestoesContent() {
           <Input
             placeholder="Buscar por enunciado, área, matéria ou tag..."
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => { setSearch(e.target.value); setPage(1) }}
             className="pl-9"
           />
         </div>
-        <Select value={filterArea} onValueChange={setFilterArea}>
+        <Select value={filterArea} onValueChange={(v) => { setFilterArea(v); setPage(1) }}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Área" />
           </SelectTrigger>
@@ -345,7 +350,7 @@ export function AdminQuestoesContent() {
             ))}
           </SelectContent>
         </Select>
-        <Select value={filterEdicao} onValueChange={setFilterEdicao}>
+        <Select value={filterEdicao} onValueChange={(v) => { setFilterEdicao(v); setPage(1) }}>
           <SelectTrigger className="w-[150px]">
             <SelectValue placeholder="Edição" />
           </SelectTrigger>
@@ -372,7 +377,7 @@ export function AdminQuestoesContent() {
         </Card>
       ) : (
         <div className="space-y-3">
-          {filtered.map((q) => {
+          {paginated.map((q) => {
             const isExpanded = expandedId === q.id
             return (
               <Card key={q.id} className="border border-border bg-card p-4">
@@ -525,6 +530,8 @@ export function AdminQuestoesContent() {
           })}
         </div>
       )}
+
+      <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
 
       {/* ============================================================ */}
       {/* DIALOG DE CRIAÇÃO/EDIÇÃO */}

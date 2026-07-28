@@ -18,6 +18,7 @@ import { supabase } from "@/lib/supabase"
 import { calculatePoints } from "@/lib/scoring"
 import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type PlanStatus } from "@/lib/plan-status"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
+import { shuffle } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
@@ -84,10 +85,6 @@ interface SimuladoPlayerProps {
 }
 
 type Phase = "loading" | "playing" | "empty" | "finished" | "blocked"
-
-function shuffle<T>(arr: T[]): T[] {
-  return [...arr].sort(() => Math.random() - 0.5)
-}
 
 const BONUS_POINTS = 10
 const TIMEOUT_SENTINEL = -1

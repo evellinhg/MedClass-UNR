@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ArrowDownCircle, ArrowUpCircle, Coins, Loader2, Settings2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
+import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import type { MedcoinsLedgerEntry, MedcoinsWallet } from "@/lib/medcoins-types"
 
 function formatDate(iso: string) {
@@ -26,6 +27,7 @@ export function MedCoinsContent() {
   const [wallet, setWallet] = useState<MedcoinsWallet | null>(null)
   const [ledger, setLedger] = useState<MedcoinsLedgerEntry[]>([])
   const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     supabase.auth.getUser().then(async ({ data: userData }) => {
@@ -41,8 +43,7 @@ export function MedCoinsContent() {
           .from("medcoins_ledger")
           .select("*")
           .eq("user_id", userId)
-          .order("created_at", { ascending: false })
-          .limit(50),
+          .order("created_at", { ascending: false }),
       ])
 
       setWallet(walletRow as MedcoinsWallet | null)
@@ -93,31 +94,38 @@ export function MedCoinsContent() {
               Nenhuma movimentação ainda. Finalize um simulado ou treino de questões para ganhar MedCoins.
             </p>
           </div>
-        ) : (
-          <div className="divide-y divide-border rounded-lg border border-border bg-card">
-            {ledger.map((entry) => {
-              const Icon = tipoIcon[entry.tipo]
-              const positive = entry.tipo !== "debito"
-              return (
-                <div key={entry.id} className="flex items-center justify-between gap-3 p-4">
-                  <div className="flex items-center gap-3">
-                    <Icon className={`h-5 w-5 ${positive ? "text-success" : "text-destructive"}`} />
-                    <div>
-                      <p className="text-sm font-medium text-foreground">
-                        {entry.descricao || tipoLabel[entry.tipo]}
-                      </p>
-                      <p className="text-xs text-muted-foreground">{formatDate(entry.created_at)}</p>
+        ) : (() => {
+          const totalPages = Math.ceil(ledger.length / PAGE_SIZE)
+          const paginated = ledger.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+          return (
+            <>
+              <div className="divide-y divide-border rounded-lg border border-border bg-card">
+                {paginated.map((entry) => {
+                  const Icon = tipoIcon[entry.tipo]
+                  const positive = entry.tipo !== "debito"
+                  return (
+                    <div key={entry.id} className="flex items-center justify-between gap-3 p-4">
+                      <div className="flex items-center gap-3">
+                        <Icon className={`h-5 w-5 ${positive ? "text-success" : "text-destructive"}`} />
+                        <div>
+                          <p className="text-sm font-medium text-foreground">
+                            {entry.descricao || tipoLabel[entry.tipo]}
+                          </p>
+                          <p className="text-xs text-muted-foreground">{formatDate(entry.created_at)}</p>
+                        </div>
+                      </div>
+                      <span className={`text-sm font-bold ${positive ? "text-success" : "text-destructive"}`}>
+                        {positive ? "+" : "-"}
+                        {Math.abs(entry.valor).toFixed(0)}
+                      </span>
                     </div>
-                  </div>
-                  <span className={`text-sm font-bold ${positive ? "text-success" : "text-destructive"}`}>
-                    {positive ? "+" : "-"}
-                    {Math.abs(entry.valor).toFixed(0)}
-                  </span>
-                </div>
-              )
-            })}
-          </div>
-        )}
+                  )
+                })}
+              </div>
+              <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+            </>
+          )
+        })()}
       </div>
     </div>
   )

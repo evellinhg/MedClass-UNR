@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Loader2, Stethoscope } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getAreaIcon } from "@/lib/area-icons"
+import { shuffle } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { TrilhaPath, type TrilhaPathUnidade } from "@/components/trilha-path"
@@ -20,10 +21,6 @@ interface UnidadeRow {
 
 interface EtapaComDesafio extends CronogramaTrilhaEtapa {
   desafio_clinico: { titulo: string; icone: string } | null
-}
-
-function shuffle<T>(arr: T[]): T[] {
-  return [...arr].sort(() => Math.random() - 0.5)
 }
 
 export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onSair: () => void }) {

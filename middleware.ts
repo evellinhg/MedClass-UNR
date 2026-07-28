@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 const PROTECTED_ROUTES = ["/dashboard", "/admin", "/questoes"]
-const PUBLIC_ROUTES = ["/login", "/"]
+const PUBLIC_ROUTES = ["/login", "/", "/auth"]
 
 function hasSupabaseAuthCookie(request: NextRequest): boolean {
   return request.cookies.getAll().some((cookie) => cookie.name.startsWith("sb-") && cookie.name.endsWith("-auth-token"))

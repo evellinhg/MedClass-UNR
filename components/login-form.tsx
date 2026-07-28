@@ -47,7 +47,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         setLoading(null)
         return
       }
-      router.push("/dashboard")
+      window.location.href = "/dashboard"
       return
     }
 
@@ -58,7 +58,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
       return
     }
     if (data.session) {
-      router.push("/dashboard")
+      window.location.href = "/dashboard"
     } else {
       setInfo("Conta criada! Verifique seu e-mail para confirmar o cadastro antes de entrar.")
     }

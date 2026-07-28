@@ -7,13 +7,17 @@ export const metadata: Metadata = {
   description: "Acesse sua conta MedClass",
 }
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ error?: string }>
+}) {
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-12">
       <div className="absolute right-4 top-4">
         <ThemeToggle />
       </div>
-      <LoginForm />
+      <LoginForm initialError={searchParams?.error} />
     </div>
   )
 }

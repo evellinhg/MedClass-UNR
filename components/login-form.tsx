@@ -11,13 +11,13 @@ import { GoogleIcon, AppleIcon } from "@/components/social-icons"
 
 type Mode = "signin" | "signup"
 
-export function LoginForm() {
+export function LoginForm({ initialError }: { initialError?: string }) {
   const router = useRouter()
   const [mode, setMode] = useState<Mode>("signin")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState<"google" | "apple" | "email" | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(initialError ?? null)
   const [info, setInfo] = useState<string | null>(null)
 
   const handleOAuth = async (provider: "google" | "apple") => {

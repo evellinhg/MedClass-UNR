@@ -4,10 +4,9 @@ import { NextResponse, type NextRequest } from "next/server"
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url)
   const code = searchParams.get("code")
+  const next = searchParams.get("next") ?? "/dashboard"
 
   if (code) {
-    let authResponse: NextResponse | null = null
-
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -17,20 +16,9 @@ export async function GET(request: NextRequest) {
             return request.cookies.getAll()
           },
           setAll(cookiesToSet) {
-            cookiesToSet.forEach(({ name, value, options }) => {
-              request.cookies.set({ name, value, ...options })
-            })
-            authResponse = NextResponse.redirect(
-              new URL("/api/debug-auth", origin)
+            cookiesToSet.forEach(({ name, value }) =>
+              request.cookies.set(name, value)
             )
-            cookiesToSet.forEach(({ name, value, options }) => {
-              authResponse!.cookies.set(name, value, {
-                ...options,
-                secure: true,
-                sameSite: "lax",
-                path: "/",
-              })
-            })
           },
         },
       }
@@ -38,12 +26,22 @@ export async function GET(request: NextRequest) {
 
     const { error } = await supabase.auth.exchangeCodeForSession(code)
 
-    if (!error && authResponse) {
-      return authResponse
+    if (!error) {
+      const response = NextResponse.redirect(new URL(next, origin))
+      for (const cookie of request.cookies.getAll()) {
+        response.cookies.set(cookie.name, cookie.value, {
+          path: "/",
+          maxAge: 60 * 60 * 24 * 7,
+          sameSite: "lax",
+          httpOnly: true,
+          secure: true,
+        })
+      }
+      return response
     }
 
     return NextResponse.redirect(
-      new URL(`/login?error=${encodeURIComponent(error?.message ?? "unknown")}`, origin)
+      new URL(`/login?error=${encodeURIComponent(error.message)}`, origin)
     )
   }
 

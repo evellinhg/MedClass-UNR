@@ -1,13 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Bell, Menu } from "lucide-react"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SidebarNav } from "@/components/sidebar-nav"
 import { UserDropdown } from "@/components/user-dropdown"
 import { GlobalSearch } from "@/components/global-search"
+import { NotificationsPanel } from "@/components/notifications-panel"
 import { getPlanStatus } from "@/lib/plan-status"
 
 export function DashboardHeader() {
@@ -55,10 +56,7 @@ export function DashboardHeader() {
       <div className="ml-auto flex items-center gap-1 md:ml-0">
         <ThemeToggle />
 
-        <Button variant="ghost" size="icon" className="relative text-muted-foreground hover:text-foreground" aria-label="Notificações">
-          <Bell className="h-5 w-5" />
-          <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-destructive ring-2 ring-card" />
-        </Button>
+        <NotificationsPanel />
 
         <div className="ml-1">
           <UserDropdown name={fullName || "Minha conta"} email={email} />

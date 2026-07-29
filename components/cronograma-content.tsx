@@ -167,7 +167,7 @@ export function CronogramaContent() {
   return (
     <div className="space-y-8">
       {trilhasDisponiveis.length > 0 && (
-        <Card className="border border-primary/20 bg-gradient-to-br from-[#8b5cf6]/5 to-[#6366f1]/5 p-5">
+        <Card className="border border-primary/20 bg-gradient-to-br from-[#c6ff3a]/5 to-[#84cc16]/5 p-5">
           <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-foreground">
             <Route className="h-5 w-5 text-primary" />
             Trilhas da equipe MedClass
@@ -261,7 +261,7 @@ export function CronogramaContent() {
                       onClick={() => toggleDay(day)}
                       className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                         selectedDays.includes(day)
-                          ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                          ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
                           : "border border-input bg-background text-foreground hover:bg-accent"
                       }`}
                     >

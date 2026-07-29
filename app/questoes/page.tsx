@@ -13,7 +13,7 @@ export default async function QuestoesPage() {
       ) : (
         <ul className="space-y-4">
           {questoes.map((q) => (
-            <li key={q.id} className="p-4 border border-purple-500 rounded-lg">
+            <li key={q.id} className="p-4 border border-[#c6ff3a] rounded-lg">
               <h2 className="font-bold">{q.enunciado}</h2>
               <p className="text-sm text-gray-400">Matéria: {q.materia}</p>
             </li>

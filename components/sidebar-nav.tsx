@@ -117,7 +117,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                   aria-current={isActive ? "page" : undefined}
                   className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] shadow-sm"
                       : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                   }`}
                 >
@@ -138,7 +138,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                     compact ? "justify-center px-0" : "px-3"
                   } ${
                     isActive
-                      ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white shadow-sm"
+                      ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] shadow-sm"
                       : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                   }`}
                 >
@@ -190,7 +190,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
               compact ? "justify-center px-0" : "px-3"
             } ${
               pathname.startsWith("/admin")
-                ? "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white shadow-sm"
+                ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] shadow-sm"
                 : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
             }`}
           >

@@ -79,7 +79,7 @@ function AttemptTooltip({ active, payload, label }: any) {
   const total = row.acertos + row.erros + row.pendentes
   const pct = total > 0 ? Math.round((row.acertos / total) * 100) : 0
   return (
-    <div className="min-w-[10rem] rounded-lg border border-purple-500/30 bg-[#170f2e] p-3 text-xs shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+    <div className="min-w-[10rem] rounded-lg border border-[#c6ff3a]/30 bg-[#170f2e] p-3 text-xs shadow-[0_0_20px_rgba(198,255,58,0.25)]">
       <p className="mb-2 font-semibold text-white">{label}</p>
       <div className="space-y-1">
         <p className="flex items-center justify-between gap-4">
@@ -112,7 +112,7 @@ function PieTooltip({ active, payload }: any) {
   if (!active || !payload?.length) return null
   const item = payload[0]
   return (
-    <div className="rounded-lg border border-purple-500/30 bg-[#170f2e] px-3 py-2 text-xs shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+    <div className="rounded-lg border border-[#c6ff3a]/30 bg-[#170f2e] px-3 py-2 text-xs shadow-[0_0_20px_rgba(198,255,58,0.25)]">
       <p className="flex items-center gap-1.5 font-medium text-white">
         <span className="h-2 w-2 rounded-full" style={{ backgroundColor: item.payload.fill }} />
         {item.name}
@@ -282,10 +282,10 @@ export function DesempenhoEstatisticasContent() {
   return (
     <div className="space-y-6">
       {/* Super chart: desempenho por tentativa */}
-      <Card className="relative overflow-hidden border border-purple-800/40 bg-gradient-to-br from-[#1c1333] via-[#241246] to-[#0e0a1f] p-6">
+      <Card className="relative overflow-hidden border border-[#c6ff3a]/20 bg-gradient-to-br from-[#0f1a06] via-[#16260a] to-[#080c04] p-6">
         <GlowDefs />
-        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-purple-600/20 blur-3xl" />
-        <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-fuchsia-600/10 blur-3xl" />
+        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#c6ff3a]/20 blur-3xl" />
+        <div className="absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-[#84cc16]/10 blur-3xl" />
 
         <div className="relative mb-5 flex flex-wrap items-center justify-between gap-3">
           <div>
@@ -321,7 +321,7 @@ export function DesempenhoEstatisticasContent() {
                 key={value}
                 type="button"
                 onClick={() => setGroupBy(value)}
-                className={`rounded-full border px-3 py-1 text-[11px] font-medium transition-all hover:shadow-[0_0_14px_rgba(139,92,246,0.5)] ${
+                className={`rounded-full border px-3 py-1 text-[11px] font-medium transition-all hover:shadow-[0_0_14px_rgba(198,255,58,0.5)] ${
                   groupBy === value
                     ? "border-primary bg-primary/20 text-white"
                     : "border-white/10 text-white/50 hover:text-white"

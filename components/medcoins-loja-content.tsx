@@ -68,7 +68,7 @@ export function MedCoinsLojaContent() {
 
   return (
     <div className="space-y-8">
-      <Card className="border border-border bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] p-6 text-white">
+      <Card className="border border-border bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
         <p className="text-sm text-white/80">Saldo disponível para resgate</p>
         <p className="mt-1 text-3xl font-bold">
           {saldo.toFixed(0)} <span className="text-lg font-medium text-white/80">{config?.simbolo ?? "MC"}</span>

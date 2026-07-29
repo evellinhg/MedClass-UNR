@@ -109,15 +109,15 @@ function PerformancePanel() {
       <div className="mb-4">
         <div className="mb-2 flex items-center justify-between">
           <p className="text-xs font-medium text-white/40">Evolução por simulado</p>
-          <span className="text-[11px] text-indigo-300/70">Meta: {META}%</span>
+          <span className="text-[11px] text-[#bef264]/70">Meta: {META}%</span>
         </div>
         <div className="h-24 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={evolution} margin={{ top: 8, right: 4, left: -24, bottom: 0 }}>
               <defs>
                 <linearGradient id="scoreFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.4} />
-                  <stop offset="100%" stopColor="#6366f1" stopOpacity={0} />
+                  <stop offset="0%" stopColor="#c6ff3a" stopOpacity={0.4} />
+                  <stop offset="100%" stopColor="#84cc16" stopOpacity={0} />
                 </linearGradient>
               </defs>
               <XAxis
@@ -134,7 +134,7 @@ function PerformancePanel() {
                 width={44}
                 tickFormatter={(v) => `${v}%`}
               />
-              <Tooltip content={<ChartTooltip />} cursor={{ stroke: "rgba(139,92,246,0.3)" }} />
+              <Tooltip content={<ChartTooltip />} cursor={{ stroke: "rgba(198,255,58,0.3)" }} />
               <Area
                 type="monotone"
                 dataKey="score"
@@ -174,7 +174,7 @@ function PerformancePanel() {
                 <motion.div
                   className={`h-full rounded-full ${
                     aboveTarget
-                      ? "bg-gradient-to-r from-indigo-500 to-violet-500"
+                      ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16]"
                       : "bg-gradient-to-r from-amber-500/80 to-orange-500/80"
                   }`}
                   initial={{ width: 0 }}
@@ -207,7 +207,7 @@ function SimuladoPanel() {
             <ListChecks className="h-3.5 w-3.5" />
             <span className="text-[11px]">Prova</span>
           </div>
-          <p className="text-sm font-bold text-white">ENAMED</p>
+          <p className="text-sm font-bold text-white">UNR</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
@@ -234,7 +234,7 @@ function SimuladoPanel() {
               key={area.name}
               className={
                 area.selected
-                  ? "rounded-full border border-indigo-400/40 bg-indigo-500/15 px-3 py-1.5 text-xs font-medium text-indigo-200"
+                  ? "rounded-full border border-[#c6ff3a]/40 bg-[#c6ff3a]/15 px-3 py-1.5 text-xs font-medium text-[#0a1f00]"
                   : "rounded-full border border-white/10 bg-white/[0.02] px-3 py-1.5 text-xs text-white/30"
               }
             >
@@ -248,11 +248,11 @@ function SimuladoPanel() {
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between text-xs">
           <span className="text-white/40">Montando seu simulado</span>
-          <span className="text-indigo-300/70">3 áreas · 30 questões</span>
+          <span className="text-[#bef264]/70">3 áreas · 30 questões</span>
         </div>
         <div className="h-2 w-full overflow-hidden rounded-full bg-white/5">
           <motion.div
-            className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
+            className="h-full rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16]"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: 1.4, ease: "easeOut" }}
@@ -260,7 +260,7 @@ function SimuladoPanel() {
         </div>
       </div>
 
-      <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20">
+      <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] py-3 text-sm font-semibold text-[#0a1f00] shadow-lg shadow-[#c6ff3a]/20">
         Iniciar Simulado
         <ArrowRight className="h-4 w-4" />
       </button>
@@ -287,7 +287,7 @@ function RankingPanel() {
             >
               {RankIcon ? <RankIcon className="h-4 w-4" /> : student.rank}
             </div>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-[11px] font-semibold text-white">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] text-[11px] font-semibold text-[#0a1f00]">
               {student.name
                 .split(" ")
                 .map((p) => p[0])
@@ -297,7 +297,7 @@ function RankingPanel() {
               <p className="truncate text-xs font-medium text-white/80">{student.name}</p>
               <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                 <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-violet-500"
+                  className="h-full rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16]"
                   initial={{ width: 0 }}
                   animate={{ width: `${(student.points / top) * 100}%` }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -371,7 +371,7 @@ export function StudyDashboard() {
           {/* Header */}
           <div className="mb-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]">
                 <Icon className="h-5 w-5" />
               </div>
               <div>
@@ -397,7 +397,7 @@ export function StudyDashboard() {
             aria-label={s.title}
             onClick={() => setIndex(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === index ? "w-6 bg-indigo-400" : "w-1.5 bg-white/15 hover:bg-white/30"
+              i === index ? "w-6 bg-[#c6ff3a]" : "w-1.5 bg-white/15 hover:bg-white/30"
             }`}
           />
         ))}

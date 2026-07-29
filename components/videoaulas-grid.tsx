@@ -50,7 +50,7 @@ export function VideoaulasGrid() {
             key={videoaula.id}
             className={`group overflow-hidden border p-0 transition-all ${cor.borderSoft} bg-card ${cor.hoverBorder} ${cor.hoverGlow}`}
           >
-            <div className="flex h-28 items-center justify-center bg-gradient-to-br from-[#8b5cf6]/15 to-[#6366f1]/15">
+            <div className="flex h-28 items-center justify-center bg-gradient-to-br from-[#c6ff3a]/15 to-[#84cc16]/15">
               <PlayCircle className="h-9 w-9 text-primary transition-transform group-hover:scale-110" />
             </div>
             <div className="space-y-2 p-4">

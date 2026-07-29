@@ -26,7 +26,7 @@ export function ActionCards() {
 
       {/* Criar Simulado */}
       <Link href="/dashboard/simulados?novo=true" className="group">
-        <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#8b5cf6] to-[#6366f1] p-8 text-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(99,102,241,0.55)]">
+        <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-8 text-[#0a1f00] shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_-8px_rgba(198,255,58,0.55)]">
           <div className="absolute -right-6 -top-10 h-40 w-40 rounded-full bg-white/10 blur-3xl transition-opacity duration-300 group-hover:opacity-80" />
           <div className="relative">
             <div className="mb-4 inline-flex rounded-lg bg-white/15 p-3">

@@ -67,7 +67,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
   return (
     <div className="w-full max-w-sm">
       <div className="mb-8 text-center">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#8b5cf6] to-[#6366f1] text-lg font-bold text-white">
+        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] text-lg font-bold text-[#0a1f00]">
           M
         </div>
         <h1 className="text-2xl font-bold text-gradient-brand">

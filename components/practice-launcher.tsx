@@ -212,12 +212,12 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                     key={d.value}
                     onClick={() => setDificuldade(d.value)}
                     className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                      isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(139,92,246,0.45)]"
+                      isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(198,255,58,0.45)]"
                     } ${
                       ativo
                         ? isEspecifica
                           ? `${cor.activeBg} border-transparent text-white`
-                          : "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                          : "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
                         : isEspecifica
                           ? `${cor.borderSoft} text-foreground hover:bg-accent`
                           : "border border-input text-foreground hover:bg-accent"
@@ -236,9 +236,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(139,92,246,0.45)] ${
+                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
                   selectedAreas.length === AREAS.length
-                    ? "border-transparent bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                    ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
                     : "border-input text-foreground hover:bg-accent"
                 }`}
               >

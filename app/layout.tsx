@@ -9,8 +9,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'MedClass Teórico',
-  description: 'A melhor plataforma de estudos para a sua aprovação no Revalida.',
+  title: 'MedClass UNR',
+  description: 'Resúmenes, banco de preguntas y videoclases para aprobar en la UNR.',
   icons: {
     icon: '/logo-icon.png',
     apple: '/logo-icon.png',

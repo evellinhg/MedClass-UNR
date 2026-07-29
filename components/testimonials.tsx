@@ -2,36 +2,17 @@
 
 import { motion } from "framer-motion"
 import { Stethoscope, HeartPulse, Activity } from "lucide-react"
+import { useLanguage } from "@/lib/i18n"
 
-const testimonials = [
-  {
-    quote:
-      "O que mais me impressionou foi a curadoria das questões. Estudar pelo que realmente cai nas provas de revalidação me poupou meses de tempo perdido com conteúdo irrelevante. Consegui meu CRM na primeira tentativa!",
-    author: "Dr. Lucas Ferreira",
-    role: "Aprovado no Revalida",
-    icon: Stethoscope,
-  },
-  {
-    quote:
-      "As estatísticas de desempenho foram um divisor de águas. Eu achava que era bom em Clínica Médica, mas a plataforma me mostrou que meus erros eram na verdade em temas específicos de Endocrinologia. Ajustei meu foco e fui aprovado.",
-    author: "Dra. Mariana Souza",
-    role: "Residente em Clínica Médica",
-    icon: HeartPulse,
-  },
-  {
-    quote:
-      "A facilidade de criar simulados personalizados com o cronômetro na tela me deu a segurança que eu precisava. O AprovaLab não me deu apenas questões, me deu estratégia de prova.",
-    author: "Dr. Gabriel Oliveira",
-    role: "Aprovado no Enamed",
-    icon: Activity,
-  },
-]
+const icons = [Stethoscope, HeartPulse, Activity]
 
 export function Testimonials() {
+  const { t } = useLanguage()
+
   return (
     <section id="testimonials" className="relative bg-[#0a0a0a] py-24">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#c6ff3a]/5 via-transparent to-transparent" />
 
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Header */}
@@ -42,24 +23,24 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="mb-4 inline-block rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-sm text-indigo-400">
-            Depoimentos
+          <span className="mb-4 inline-block rounded-full border border-[#c6ff3a]/20 bg-[#c6ff3a]/10 px-4 py-1.5 text-sm text-[#c6ff3a]">
+            {t.testimonials.badge}
           </span>
           <h2 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Aprovados que confiam na{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              nossa metodologia
+            {t.testimonials.titleLead}{" "}
+            <span className="bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] bg-clip-text text-transparent">
+              {t.testimonials.titleHighlight}
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/50">
-            Médicos que transformaram sua preparação com o AprovaLab.
+            {t.testimonials.subtitle}
           </p>
         </motion.div>
 
         {/* Testimonials grid */}
         <div className="grid gap-6 md:grid-cols-3">
-          {testimonials.map((testimonial, i) => {
-            const Icon = testimonial.icon
+          {t.testimonials.items.map((testimonial, i) => {
+            const Icon = icons[i]
             return (
               <motion.div
                 key={testimonial.author}
@@ -71,7 +52,7 @@ export function Testimonials() {
               >
                 {/* Quote icon */}
                 <svg
-                  className="absolute -right-2 -top-2 h-24 w-24 text-indigo-500/5"
+                  className="absolute -right-2 -top-2 h-24 w-24 text-[#c6ff3a]/5"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
@@ -84,7 +65,7 @@ export function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-indigo-500/20 bg-indigo-500/10 text-indigo-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#c6ff3a]/20 bg-[#c6ff3a]/10 text-[#bef264]">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>

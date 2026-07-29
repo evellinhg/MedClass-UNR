@@ -107,7 +107,7 @@ export function DesempenhoWidget() {
               <div className="h-8" />
             )}
           </div>
-          <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-purple-500/10 p-3 text-center">
+          <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-primary/10 p-3 text-center">
             <BarChart3 className="h-4 w-4 text-primary" />
             <div>
               <p className="text-lg font-bold text-foreground">{totalPoints}</p>

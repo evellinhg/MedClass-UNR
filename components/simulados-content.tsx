@@ -271,7 +271,7 @@ export function SimuladosContent() {
           </Button>
         </Card>
 
-        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#8b5cf6] to-[#6366f1] p-6 text-white">
+        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
           <div>
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
               <Target className="h-5 w-5" />
@@ -325,9 +325,9 @@ export function SimuladosContent() {
                     <button
                       type="button"
                       onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
-                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(139,92,246,0.45)] ${
+                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
                         selectedAreas.length === AREAS.length
-                          ? "border-transparent bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                          ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
                           : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
@@ -366,12 +366,12 @@ export function SimuladosContent() {
                           type="button"
                           onClick={() => setDificuldade(d.value)}
                           className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                            isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(139,92,246,0.45)]"
+                            isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(198,255,58,0.45)]"
                           } ${
                             ativo
                               ? isEspecifica
                                 ? `${cor.activeBg} border-transparent text-white`
-                                : "bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] text-white"
+                                : "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
                               : isEspecifica
                                 ? `${cor.borderSoft} text-foreground hover:bg-accent`
                                 : "border-input text-foreground hover:bg-accent"
@@ -583,7 +583,7 @@ export function SimuladosContent() {
                     {(simulado.areas.length > 0 ? simulado.areas : ["Todas as áreas"]).map((area) => (
                       <span
                         key={area}
-                        className="inline-flex items-center rounded-full bg-purple-500/20 px-2.5 py-0.5 text-xs font-medium text-primary"
+                        className="inline-flex items-center rounded-full bg-[#c6ff3a]/20 px-2.5 py-0.5 text-xs font-medium text-primary"
                       >
                         {area}
                       </span>

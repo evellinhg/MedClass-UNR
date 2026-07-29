@@ -21,7 +21,7 @@ export function DailyTipHeader() {
   if (!tip) return null
 
   return (
-    <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 p-5 shadow-sm sm:p-6">
+    <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] p-5 shadow-sm sm:p-6">
       <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-white/10 blur-2xl" />
       <div className="relative flex items-start gap-3">
         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/15">

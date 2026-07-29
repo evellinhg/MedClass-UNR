@@ -259,7 +259,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
   return (
     <div className="grid gap-6 lg:grid-cols-[320px_1fr] lg:items-start">
       <div className="space-y-4 lg:sticky lg:top-6 lg:self-start">
-        <Card className="border border-primary/20 bg-gradient-to-br from-[#8b5cf6]/5 to-[#6366f1]/5 p-4">
+        <Card className="border border-primary/20 bg-gradient-to-br from-[#c6ff3a]/5 to-[#84cc16]/5 p-4">
           <p className="text-xs font-medium uppercase tracking-wide text-primary">Trilha de treinamento</p>
           <h2 className="text-lg font-bold leading-tight text-foreground">{trilha.nome}</h2>
           {trilha.descricao && <p className="mt-1 text-xs text-muted-foreground">{trilha.descricao}</p>}

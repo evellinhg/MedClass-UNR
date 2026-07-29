@@ -70,7 +70,7 @@ export function ConquistasContent() {
         </p>
       </div>
 
-      <Card className="border border-border bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] p-6 text-white">
+      <Card className="border border-border bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
         <div className="flex items-center gap-3">
           <Trophy className="h-8 w-8" />
           <div>

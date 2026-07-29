@@ -1,68 +1,48 @@
 "use client"
 
 import { motion } from "framer-motion"
-
-const steps = [
-  {
-    number: "01",
-    title: "Decida seu Futuro",
-    description: "Defina seu foco no Enamed ou Revalida e prepare-se para transformar sua carreira médica."
-  },
-  {
-    number: "02",
-    title: "Escolha seu Plano",
-    description: "Adquira acesso à plataforma completa e desbloqueie o banco de questões mais atualizado do mercado."
-  },
-  {
-    number: "03",
-    title: "Treinamento Intensivo",
-    description: "Mergulhe em simulados inteligentes e veja seu desempenho evoluir dia após dia com nosso motor de IA."
-  },
-  {
-    number: "04",
-    title: "A Aprovação e seu CRM",
-    description: "Comemore a tão sonhada aprovação e receba o registro profissional que você sempre buscou."
-  }
-]
+import { useLanguage } from "@/lib/i18n"
 
 export function HowItWorks() {
+  const { t } = useLanguage()
+
   return (
     <section id="how-it-works" className="relative bg-[#0a0a0a] py-24">
       {/* Gradient accent */}
-      <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
-      
+      <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#c6ff3a]/50 to-transparent" />
+
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="mb-4 inline-block rounded-full border border-indigo-500/20 bg-indigo-500/10 px-4 py-1.5 text-sm text-indigo-400">
-            Como funciona
+          <span className="mb-4 inline-block rounded-full border border-[#c6ff3a]/20 bg-[#c6ff3a]/10 px-4 py-1.5 text-sm text-[#c6ff3a]">
+            {t.howItWorks.badge}
           </span>
           <h2 className="text-balance text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Sua trajetória rumo ao CRM em{" "}
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              4 passos simples
+            {t.howItWorks.titleLead}{" "}
+            <span className="bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] bg-clip-text text-transparent">
+              {t.howItWorks.titleHighlight}
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/50">
-            Do seu objetivo à aprovação: um caminho estruturado, focado e inteligente.
+            {t.howItWorks.subtitle}
           </p>
         </motion.div>
 
         {/* Steps */}
         <div className="relative">
           {/* Connection line */}
-          <div className="absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-indigo-500/50 via-purple-500/50 to-transparent lg:left-1/2 lg:block lg:-translate-x-px" />
-          
+          <div className="absolute left-8 top-0 hidden h-full w-px bg-gradient-to-b from-[#c6ff3a]/50 via-[#84cc16]/50 to-transparent lg:left-1/2 lg:block lg:-translate-x-px" />
+
           <div className="space-y-12 lg:space-y-24">
-            {steps.map((step, i) => (
+            {t.howItWorks.steps.map((step, i) => (
               <motion.div
-                key={step.number}
+                key={step.title}
                 className={`relative flex flex-col gap-8 lg:flex-row lg:items-center ${
                   i % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
@@ -73,9 +53,9 @@ export function HowItWorks() {
               >
                 {/* Number marker */}
                 <div className="absolute left-0 flex h-16 w-16 items-center justify-center lg:left-1/2 lg:-translate-x-1/2">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-indigo-500/30 bg-[#0a0a0a]">
-                    <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-xl font-bold text-transparent">
-                      {step.number}
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#c6ff3a]/30 bg-[#0a0a0a]">
+                    <span className="bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] bg-clip-text text-xl font-bold text-transparent">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
                 </div>

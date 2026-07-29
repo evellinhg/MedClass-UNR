@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { Plus, Trash2, Clock, CalendarDays, Loader2, Route, LogIn } from "lucide-react"
+import { useRouter } from "next/navigation"
+import { Plus, Trash2, CalendarDays, Loader2, Route, LogIn, Play, ListChecks } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
@@ -9,9 +10,22 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Calendar } from "@/components/ui/calendar"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { TrilhaAtivaContent } from "@/components/trilha-ativa-content"
 import type { CronogramaRotina, CronogramaTrilha } from "@/lib/cronograma-types"
+import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
+import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { shuffle } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
+
+async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
+  const pool = (data as QuestaoCacheada[] | null) ?? []
+  setCachedQuestoesAtivas(pool)
+  return pool
+}
 
 const QUANTIDADES = [10, 20, 30, 50]
 
@@ -37,10 +51,13 @@ function colorForArea(area: string) {
 
 export function CronogramaContent() {
   const { t } = useLanguage()
+  const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [trilhaAtivaId, setTrilhaAtivaId] = useState<string | null>(null)
   const [trilhasDisponiveis, setTrilhasDisponiveis] = useState<CronogramaTrilha[]>([])
   const [entrandoTrilha, setEntrandoTrilha] = useState<string | null>(null)
+  const [iniciandoSessaoId, setIniciandoSessaoId] = useState<string | null>(null)
+  const [apagandoTodas, setApagandoTodas] = useState(false)
 
   const [routines, setRoutines] = useState<CronogramaRotina[]>([])
   const [ano, setAno] = useState<AnoKey>(ANO_KEYS[0])
@@ -119,6 +136,64 @@ export function CronogramaContent() {
     setRoutines((prev) => prev.filter((r) => r.id !== id))
   }
 
+  const handleRemoveAllRoutines = async () => {
+    if (!confirm(t.cronograma.apagarTodasConfirm)) return
+    setApagandoTodas(true)
+    const { data: userData } = await supabase.auth.getUser()
+    if (userData.user) {
+      await supabase.from("cronograma_rotinas").delete().eq("user_id", userData.user.id)
+    }
+    setRoutines([])
+    setApagandoTodas(false)
+  }
+
+  const handleIniciarSessao = async (routine: CronogramaRotina) => {
+    setIniciandoSessaoId(routine.id)
+    const { data: userData } = await supabase.auth.getUser()
+    if (!userData.user) {
+      setIniciandoSessaoId(null)
+      return
+    }
+
+    const pool = await getQuestoesAtivasPool()
+    let poolIds = filtrarPoolIds(pool, { materias: [routine.area], parcial: routine.parcial })
+
+    const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
+    const ineditas = poolIds.filter((id) => !jaRespondidas.has(id))
+    if (ineditas.length >= routine.quantidade_questoes) poolIds = ineditas
+
+    if (poolIds.length === 0) {
+      alert(t.cronograma.semQuestoesRotina)
+      setIniciandoSessaoId(null)
+      return
+    }
+
+    const questaoIds = shuffle(poolIds).slice(0, routine.quantidade_questoes)
+    const label = t.cronograma.materiaLabel[routine.area] ?? routine.area
+
+    const { data: inserted, error } = await supabase
+      .from("simulados")
+      .insert({
+        user_id: userData.user.id,
+        nome: `${label} · Cronograma`,
+        areas: [routine.area],
+        parcial: routine.parcial,
+        quantidade_questoes: questaoIds.length,
+        questao_ids: questaoIds,
+        modo: "individual",
+      })
+      .select("id")
+      .single()
+
+    setIniciandoSessaoId(null)
+    if (error || !inserted) {
+      alert(t.cronograma.erroIniciarTreinamento)
+      return
+    }
+
+    router.push(`/dashboard/simulados?play=${inserted.id}`)
+  }
+
   const handleEntrarTrilha = async (trilha: CronogramaTrilha) => {
     if (!confirm(t.cronograma.entrarTrilhaConfirm(trilha.nome))) return
     setEntrandoTrilha(trilha.id)
@@ -129,6 +204,80 @@ export function CronogramaContent() {
       return
     }
     setTrilhaAtivaId(trilha.id)
+  }
+
+  const todayKey = DAY_KEY_BY_GETDAY[new Date().getDay()]
+  const tomorrowKey = DAY_KEY_BY_GETDAY[(new Date().getDay() + 1) % 7]
+  const todaySessions = routines.filter((r) => r.dias_semana.includes(todayKey))
+  const tomorrowSessions = routines.filter((r) => r.dias_semana.includes(tomorrowKey))
+
+  const renderSessaoButton = (routine: CronogramaRotina) => {
+    const cor = colorForArea(routine.area)
+    const carregando = iniciandoSessaoId === routine.id
+    const anoKey = anoDaMateria(routine.area)
+    return (
+      <div key={routine.id} className="flex w-full items-center justify-between rounded-lg border border-border p-3">
+        <div className="flex items-center gap-2">
+          <span className={`h-2 w-2 shrink-0 rounded-full ${cor.dot}`} />
+          <div>
+            <p className="text-sm font-medium text-foreground">{t.cronograma.materiaLabel[routine.area] ?? routine.area}</p>
+            <p className="text-xs text-muted-foreground">
+              {anoKey ? `${t.cronograma.anoLabel[anoKey]} · ` : ""}
+              {routine.quantidade_questoes} {t.cronograma.questoesPorSessaoLabel} · {routine.horario}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            disabled={iniciandoSessaoId !== null}
+            onClick={() => handleIniciarSessao(routine)}
+            className="rounded-lg p-2 text-primary transition-colors hover:bg-primary/10 disabled:cursor-wait disabled:opacity-50"
+            aria-label={t.cronograma.iniciarTreinamentoAria}
+          >
+            {carregando ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
+          </button>
+          <button
+            type="button"
+            onClick={() => handleRemoveRoutine(routine.id)}
+            className="rounded-lg p-2 text-destructive transition-colors hover:bg-destructive/10"
+            aria-label={t.cronograma.removerRotinaAria}
+          >
+            <Trash2 className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  const renderSessaoInfo = (routine: CronogramaRotina) => {
+    const cor = colorForArea(routine.area)
+    const anoKey = anoDaMateria(routine.area)
+    return (
+      <div
+        key={routine.id}
+        className="flex w-full items-center justify-between rounded-lg border border-dashed border-border p-3 opacity-80"
+      >
+        <div className="flex items-center gap-2">
+          <span className={`h-2 w-2 shrink-0 rounded-full ${cor.dot}`} />
+          <div>
+            <p className="text-sm font-medium text-foreground">{t.cronograma.materiaLabel[routine.area] ?? routine.area}</p>
+            <p className="text-xs text-muted-foreground">
+              {anoKey ? `${t.cronograma.anoLabel[anoKey]} · ` : ""}
+              {routine.quantidade_questoes} {t.cronograma.questoesPorSessaoLabel} · {routine.horario}
+            </p>
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={() => handleRemoveRoutine(routine.id)}
+          className="rounded-lg p-2 text-destructive transition-colors hover:bg-destructive/10"
+          aria-label={t.cronograma.removerRotinaAria}
+        >
+          <Trash2 className="h-4 w-4" />
+        </button>
+      </div>
+    )
   }
 
   const upcomingSessions = useMemo(() => {
@@ -329,63 +478,79 @@ export function CronogramaContent() {
             </div>
           </Card>
 
-          <div>
-            <h2 className="mb-4 text-lg font-semibold text-foreground">{t.cronograma.rotinasCadastradas}</h2>
-            {routines.length === 0 ? (
-              <Card className="border border-border bg-card p-8 text-center">
-                <p className="text-muted-foreground">{t.cronograma.nenhumaRotina}</p>
-              </Card>
-            ) : (
-              <div className="space-y-3">
-                {routines.map((routine) => {
-                  const cor = colorForArea(routine.area)
-                  const anoKey = anoDaMateria(routine.area)
-                  return (
-                    <Card key={routine.id} className="border border-border bg-card p-4 transition-shadow hover:shadow-md">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className={`h-2.5 w-2.5 rounded-full ${cor.dot}`} />
-                            <h3 className="font-semibold text-foreground">
-                              {t.cronograma.materiaLabel[routine.area] ?? routine.area}
-                            </h3>
+          <Card className="border border-border bg-card p-5">
+            <div className="mb-4 flex items-center justify-between gap-2">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                <CalendarDays className="h-4 w-4 text-primary" />
+                {t.cronograma.rotinaDeHoje}
+              </h3>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="flex items-center gap-1.5 text-xs font-medium text-primary hover:underline"
+                  >
+                    <ListChecks className="h-3.5 w-3.5" />
+                    {t.cronograma.verTodasAsRotinas}
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>{t.cronograma.rotinasCadastradas}</DialogTitle>
+                  </DialogHeader>
+                  {routines.length === 0 ? (
+                    <p className="py-4 text-center text-sm text-muted-foreground">{t.cronograma.nenhumaRotina}</p>
+                  ) : (
+                    <>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full gap-1.5 text-destructive hover:text-destructive"
+                        disabled={apagandoTodas}
+                        onClick={handleRemoveAllRoutines}
+                      >
+                        {apagandoTodas ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Trash2 className="h-3.5 w-3.5" />}
+                        {t.cronograma.apagarTodas}
+                      </Button>
+                      <div className="max-h-[60vh] space-y-3 overflow-y-auto py-1">
+                        {routines.map((routine) => (
+                          <div key={routine.id}>
+                            {renderSessaoButton(routine)}
+                            <div className="mt-1.5 flex flex-wrap gap-1.5 px-1">
+                              {routine.dias_semana.map((day) => (
+                                <span
+                                  key={day}
+                                  className="inline-block rounded-full bg-accent px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
+                                >
+                                  {t.cronograma.diasSemanaLabel[day] ?? day}
+                                </span>
+                              ))}
+                            </div>
                           </div>
-                          <p className="mt-0.5 text-xs text-muted-foreground">
-                            {anoKey ? t.cronograma.anoLabel[anoKey] : null}
-                            {anoKey ? " · " : ""}
-                            {t.cronograma.parcialLabel[routine.parcial] ?? routine.parcial}
-                          </p>
-                          <div className="mt-2 flex items-center gap-4 text-sm text-muted-foreground">
-                            <span className="flex items-center gap-1.5">
-                              <Clock className="h-4 w-4" />
-                              {routine.horario}
-                            </span>
-                            <span>{routine.quantidade_questoes} {t.cronograma.questoesPorSessaoLabel}</span>
-                          </div>
-                          <div className="mt-3 flex flex-wrap gap-2">
-                            {routine.dias_semana.map((day) => (
-                              <span
-                                key={day}
-                                className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${cor.badge} ${cor.text}`}
-                              >
-                                {t.cronograma.diasSemanaLabel[day] ?? day}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                        <button
-                          onClick={() => handleRemoveRoutine(routine.id)}
-                          className="rounded-lg p-2 text-destructive transition-colors hover:bg-destructive/10"
-                        >
-                          <Trash2 className="h-5 w-5" />
-                        </button>
+                        ))}
                       </div>
-                    </Card>
-                  )
-                })}
-              </div>
+                    </>
+                  )}
+                </DialogContent>
+              </Dialog>
+            </div>
+            {todaySessions.length === 0 ? (
+              <p className="text-sm text-muted-foreground">{t.cronograma.nenhumaSessaoHoje}</p>
+            ) : (
+              <div className="space-y-3">{todaySessions.map(renderSessaoButton)}</div>
             )}
-          </div>
+          </Card>
+
+          {tomorrowSessions.length > 0 && (
+            <Card className="border border-border bg-card p-5">
+              <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
+                <CalendarDays className="h-4 w-4 text-primary" />
+                {t.cronograma.rotinaDeAmanha}
+              </h3>
+              <p className="mb-4 text-xs text-muted-foreground">{t.cronograma.rotinaDeAmanhaInfo}</p>
+              <div className="space-y-3">{tomorrowSessions.map(renderSessaoInfo)}</div>
+            </Card>
+          )}
         </div>
 
         <div className="space-y-6">

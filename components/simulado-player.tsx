@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
+import confetti from "canvas-confetti"
 import {
   AlertTriangle,
   CheckCircle2,
@@ -95,6 +96,7 @@ type Phase = "loading" | "playing" | "empty" | "finished" | "blocked"
 
 const BONUS_POINTS = 10
 const TIMEOUT_SENTINEL = -1
+const NOTA_CORTE_APROVACAO = 60
 
 export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerProps) {
   const { t } = useLanguage()
@@ -450,6 +452,21 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     return Math.round((result.correct / result.answered) * 100)
   }, [result])
 
+  const aprovado = accuracy >= NOTA_CORTE_APROVACAO
+
+  useEffect(() => {
+    if (phase !== "finished" || !result || !aprovado) return
+    const duration = 2000
+    const end = Date.now() + duration
+    const frame = () => {
+      confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ["#c6ff3a", "#84cc16", "#0a1f00"] })
+      confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ["#c6ff3a", "#84cc16", "#0a1f00"] })
+      if (Date.now() < end) requestAnimationFrame(frame)
+    }
+    frame()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, result, aprovado])
+
   const isCorrect = current && currentAnswer !== null && currentAnswer === current.indice_correta
   const showingExplanation = currentAnswer !== null && mechanismStage === "resolved"
   const dificuldadeCor = current?.dificuldade ? getDifficultyColor(current.dificuldade) : null
@@ -789,14 +806,24 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
         {phase === "finished" && result && (
           <div className="space-y-4 py-2 text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-              <Trophy className="h-7 w-7 text-primary" />
+            <div
+              className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${
+                aprovado ? "bg-success/10" : "bg-destructive/10"
+              }`}
+            >
+              <Trophy className={`h-7 w-7 ${aprovado ? "text-success" : "text-destructive"}`} />
             </div>
             <div>
-              <p className="text-3xl font-bold text-gradient-brand">{result.points} pts</p>
+              <p className={`text-2xl font-extrabold ${aprovado ? "text-success" : "text-destructive"}`}>
+                {aprovado ? t.simuladoPlayer.aprovado : t.simuladoPlayer.reprovado}
+              </p>
+              <p className="mt-1 text-3xl font-bold text-gradient-brand">{result.points} pts</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 {t.simuladoPlayer.acertosErros(result.correct, result.wrong, accuracy)}
                 {bonusPoints > 0 && t.simuladoPlayer.bonusExtra(bonusPoints)}
+              </p>
+              <p className="mt-3 text-sm text-foreground">
+                {aprovado ? t.simuladoPlayer.mensagemAprovado : t.simuladoPlayer.mensagemReprovado}
               </p>
             </div>
             <Button variant="gradient" className="w-full" onClick={() => onOpenChange(false)}>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import {
   ArrowRight,
   BookOpen,
@@ -15,7 +15,7 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { DIFFICULTIES } from "@/lib/quiz-config"
-import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type ParcialKey } from "@/lib/unr-curriculum"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
@@ -73,6 +73,8 @@ async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
 
 export function SimuladosContent() {
   const { t } = useLanguage()
+  const router = useRouter()
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const [simulados, setSimulados] = useState<Simulado[]>([])
   const [loading, setLoading] = useState(true)
@@ -88,6 +90,7 @@ export function SimuladosContent() {
 
   const [nome, setNome] = useState("")
   const [selectedMaterias, setSelectedMaterias] = useState<string[]>([])
+  const [filtroAno, setFiltroAno] = useState<AnoKey | null>(null)
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [parcial, setParcial] = useState<ParcialKey | "">("")
   const [quantidade, setQuantidade] = useState(20)
@@ -149,6 +152,16 @@ export function SimuladosContent() {
     })
   }
 
+  useEffect(() => {
+    if (loading) return
+    const playId = searchParams.get("play")
+    if (!playId) return
+    const alvo = simulados.find((s) => s.id === playId)
+    if (alvo) playSimulado(alvo)
+    router.replace(pathname)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading, simulados, searchParams])
+
   const toggleMateria = (materia: string) => {
     setSelectedMaterias((prev) => (prev.includes(materia) ? prev.filter((m) => m !== materia) : [...prev, materia]))
   }
@@ -156,6 +169,7 @@ export function SimuladosContent() {
   const resetForm = () => {
     setNome("")
     setSelectedMaterias([])
+    setFiltroAno(null)
     setDificuldade("aleatorio")
     setParcial("")
     setQuantidade(20)
@@ -252,7 +266,7 @@ export function SimuladosContent() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
               <BookOpen className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.treinamentoLivreTitulo}</h3>
+            <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.treinamentoLivreTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.treinamentoLivreSubtitulo}</p>
             <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">
               <li>• {t.treinamentos.treinamentoLivreItem1}</li>
@@ -275,7 +289,7 @@ export function SimuladosContent() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
               <Target className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.simuladosTitulo}</h3>
+            <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.simuladosTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.simuladosSubtitulo}</p>
             <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">
               <li>• {t.treinamentos.simuladosItem1}</li>
@@ -331,34 +345,46 @@ export function SimuladosContent() {
                   >
                     {t.treinamentos.todas}
                   </button>
-                  <div className="space-y-2">
-                    {ANO_KEYS.map((ano) => (
-                      <div key={ano}>
-                        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                  <div className="flex flex-wrap gap-2">
+                    {ANO_KEYS.map((ano) => {
+                      const ativo = filtroAno === ano
+                      return (
+                        <button
+                          key={ano}
+                          type="button"
+                          onClick={() => setFiltroAno((prev) => (prev === ano ? null : ano))}
+                          className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
+                            ativo
+                              ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
+                              : "border-input text-foreground hover:bg-accent"
+                          }`}
+                        >
                           {t.cronograma.anoLabel[ano]}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {MATERIA_KEYS_BY_ANO[ano].map((materia) => {
-                            const cor = getMateriaColor(materia)
-                            const ativo = selectedMaterias.includes(materia)
-                            return (
-                              <button
-                                key={materia}
-                                type="button"
-                                onClick={() => toggleMateria(materia)}
-                                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
-                                  ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
-                                }`}
-                              >
-                                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                                {t.cronograma.materiaLabel[materia]}
-                              </button>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    ))}
+                        </button>
+                      )
+                    })}
                   </div>
+                  {filtroAno && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {MATERIA_KEYS_BY_ANO[filtroAno].map((materia) => {
+                        const cor = getMateriaColor(materia)
+                        const ativo = selectedMaterias.includes(materia)
+                        return (
+                          <button
+                            key={materia}
+                            type="button"
+                            onClick={() => toggleMateria(materia)}
+                            className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                              ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                            }`}
+                          >
+                            <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                            {t.cronograma.materiaLabel[materia]}
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -417,32 +443,34 @@ export function SimuladosContent() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.parcial}</label>
-                  <div className="flex gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setParcial("")}
-                      className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                        parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {t.treinamentos.qualquer}
-                    </button>
-                    {PARCIAL_KEYS.map((p) => (
+                {selectedMaterias.length > 0 && (
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.parcial}</label>
+                    <div className="flex gap-2">
                       <button
-                        key={p}
                         type="button"
-                        onClick={() => setParcial(p)}
+                        onClick={() => setParcial("")}
                         className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                          parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                          parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                         }`}
                       >
-                        {t.cronograma.parcialLabel[p]}
+                        {t.treinamentos.qualquer}
                       </button>
-                    ))}
+                      {PARCIAL_KEYS.map((p) => (
+                        <button
+                          key={p}
+                          type="button"
+                          onClick={() => setParcial(p)}
+                          className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                            parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                          }`}
+                        >
+                          {t.cronograma.parcialLabel[p]}
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { DIFFICULTIES } from "@/lib/quiz-config"
-import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type ParcialKey } from "@/lib/unr-curriculum"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
@@ -49,6 +49,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const [starting, setStarting] = useState(false)
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [selectedMaterias, setSelectedMaterias] = useState<string[]>([])
+  const [filtroAno, setFiltroAno] = useState<AnoKey | null>(null)
   const [parcial, setParcial] = useState<ParcialKey | "">("")
   const [count, setCount] = useState(10)
   const [timerEnabled, setTimerEnabled] = useState(false)
@@ -240,33 +241,45 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             >
               {t.treinamentos.todas}
             </button>
-            <div className="space-y-2">
-              {ANO_KEYS.map((ano) => (
-                <div key={ano}>
-                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+            <div className="flex flex-wrap gap-2">
+              {ANO_KEYS.map((ano) => {
+                const ativo = filtroAno === ano
+                return (
+                  <button
+                    key={ano}
+                    type="button"
+                    onClick={() => setFiltroAno((prev) => (prev === ano ? null : ano))}
+                    className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
+                      ativo
+                        ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
+                        : "border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
                     {t.cronograma.anoLabel[ano]}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {MATERIA_KEYS_BY_ANO[ano].map((materia) => {
-                      const cor = getMateriaColor(materia)
-                      const ativo = selectedMaterias.includes(materia)
-                      return (
-                        <button
-                          key={materia}
-                          onClick={() => toggleMateria(materia)}
-                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
-                            ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
-                          }`}
-                        >
-                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                          {t.cronograma.materiaLabel[materia]}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              ))}
+                  </button>
+                )
+              })}
             </div>
+            {filtroAno && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {MATERIA_KEYS_BY_ANO[filtroAno].map((materia) => {
+                  const cor = getMateriaColor(materia)
+                  const ativo = selectedMaterias.includes(materia)
+                  return (
+                    <button
+                      key={materia}
+                      onClick={() => toggleMateria(materia)}
+                      className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                        ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                      }`}
+                    >
+                      <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                      {t.cronograma.materiaLabel[materia]}
+                    </button>
+                  )
+                })}
+              </div>
+            )}
           </div>
 
           <div className="space-y-2">
@@ -293,30 +306,32 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             </div>
           </div>
 
-          <div className="space-y-2">
-            <Label>{t.treinamentos.parcial}</Label>
-            <div className="flex gap-2">
-              <button
-                onClick={() => setParcial("")}
-                className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                  parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                }`}
-              >
-                {t.treinamentos.qualquer}
-              </button>
-              {PARCIAL_KEYS.map((p) => (
+          {selectedMaterias.length > 0 && (
+            <div className="space-y-2">
+              <Label>{t.treinamentos.parcial}</Label>
+              <div className="flex gap-2">
                 <button
-                  key={p}
-                  onClick={() => setParcial(p)}
+                  onClick={() => setParcial("")}
                   className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                    parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                    parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                   }`}
                 >
-                  {t.cronograma.parcialLabel[p]}
+                  {t.treinamentos.qualquer}
                 </button>
-              ))}
+                {PARCIAL_KEYS.map((p) => (
+                  <button
+                    key={p}
+                    onClick={() => setParcial(p)}
+                    className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                      parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
+                    {t.cronograma.parcialLabel[p]}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="space-y-2">
             <Label>{t.treinamentos.quantidadeDeQuestoes}</Label>

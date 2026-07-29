@@ -9,8 +9,10 @@ import { UserDropdown } from "@/components/user-dropdown"
 import { GlobalSearch } from "@/components/global-search"
 import { NotificationsPanel } from "@/components/notifications-panel"
 import { getPlanStatus } from "@/lib/plan-status"
+import { useLanguage } from "@/lib/i18n"
 
 export function DashboardHeader() {
+  const { t } = useLanguage()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [firstName, setFirstName] = useState("")
   const [fullName, setFullName] = useState("")
@@ -31,12 +33,12 @@ export function DashboardHeader() {
       {/* Mobile menu */}
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Abrir menu">
+          <Button variant="ghost" size="icon" className="lg:hidden" aria-label={t.dashboardNav.abrirMenu}>
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-72 border-sidebar-border p-0">
-          <SheetTitle className="sr-only">Menu de navegação</SheetTitle>
+          <SheetTitle className="sr-only">{t.dashboardNav.menuNavegacao}</SheetTitle>
           <SidebarNav onNavigate={() => setMobileOpen(false)} />
         </SheetContent>
       </Sheet>
@@ -44,9 +46,9 @@ export function DashboardHeader() {
       {/* Greeting */}
       <div className="hidden min-w-0 sm:block">
         <h1 className="truncate text-lg font-semibold text-foreground">
-          Bem-vindo de volta{firstName ? `, ${firstName}` : ""}
+          {t.dashboardNav.bemVindoDeVolta}{firstName ? `, ${firstName}` : ""}
         </h1>
-        <p className="truncate text-xs text-muted-foreground">Continue seu progresso nos estudos.</p>
+        <p className="truncate text-xs text-muted-foreground">{t.dashboardNav.continueProgresso}</p>
       </div>
 
       {/* Search */}
@@ -56,7 +58,7 @@ export function DashboardHeader() {
         <NotificationsPanel />
 
         <div className="ml-1">
-          <UserDropdown name={fullName || "Minha conta"} email={email} />
+          <UserDropdown name={fullName || t.dashboardNav.minhaConta} email={email} />
         </div>
       </div>
     </header>

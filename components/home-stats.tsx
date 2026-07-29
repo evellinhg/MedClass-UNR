@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { TrendingUp, BookOpen, Clock, Target } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { useLanguage } from "@/lib/i18n"
 
 interface AttemptRow {
   correct_count: number
@@ -20,6 +21,7 @@ function formatDuracao(totalSeconds: number): string {
 }
 
 export function HomeStats() {
+  const { t } = useLanguage()
   const [rows, setRows] = useState<AttemptRow[]>([])
 
   useEffect(() => {
@@ -45,25 +47,25 @@ export function HomeStats() {
 
   const stats = [
     {
-      label: "Taxa de Acerto",
+      label: t.homeStats.taxaAcerto,
       value: rows.length > 0 ? `${taxaAcerto}%` : "—",
       icon: Target,
       bgColor: "bg-purple-500/10",
     },
     {
-      label: "Questões Feitas",
+      label: t.homeStats.questoesFeitas,
       value: String(totalQuestoes),
       icon: BookOpen,
       bgColor: "bg-blue-500/10",
     },
     {
-      label: "Tempo de Estudo",
+      label: t.homeStats.tempoDeEstudo,
       value: formatDuracao(totalTempo),
       icon: Clock,
       bgColor: "bg-pink-500/10",
     },
     {
-      label: "Simulados Esta Semana",
+      label: t.homeStats.simuladosSemana,
       value: String(estaSemana),
       icon: TrendingUp,
       bgColor: "bg-emerald-500/10",

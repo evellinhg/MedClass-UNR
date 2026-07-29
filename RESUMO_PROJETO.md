@@ -1,6 +1,6 @@
 # MedClass UNR — Resumo do Projeto
 
-_Última atualização: 29/07/2026 (sessão 2)_
+_Última atualização: 29/07/2026 (sessão 3)_
 
 ## A ideia
 
@@ -65,14 +65,28 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 
 **Tradução do dashboard do aluno: concluída** (dashboard, cronograma, materiais, desempenho). Não há mais pendência de tradução nessa frente, a menos que o usuário peça para reativar e traduzir Ranking/MedCoins/Conquistas/Desafios Clínicos no futuro.
 
+### Pendência crítica — rodar antes de usar o Cronograma em produção
+- **Migração pendente no Supabase (`zimplxuoxigbexfemqkd`)**: a tabela `cronograma_rotinas` precisa de uma coluna nova `parcial` (a coluna `area` já existe e passou a guardar a chave canônica da matéria, ex. `"nutricao"`, em vez do nome da especialidade brasileira antiga). Rodar no SQL Editor:
+  ```sql
+  alter table cronograma_rotinas add column if not exists parcial text;
+  ```
+  Não consegui rodar isso sozinho porque a sessão do Supabase Studio no navegador expirou no meio da sessão e login é uma ação que não posso fazer por você. Sem essa coluna, criar uma rotina no Cronograma vai falhar com erro de coluna inexistente.
+
+### Recursos novos (2026-07-29)
+- **Cronograma com filtros Ano → Matéria → Parcial**: o formulário "Criar Rotina de Estudo" trocou o dropdown único de "Área" (que ainda tinha as especialidades brasileiras copiadas do Teórico — Pediatria, Cirurgia etc., sem nenhuma relação com a grade curricular real da UNR) por três selects em cascata: **Ano** (1º a 5º), **Matéria** (filtrada pelo ano escolhido, lista completa em `lib/unr-curriculum.ts`) e **Parcial** (Primeira/Segunda). Chaves canônicas language-neutral (`ano1..ano5`, `crescimento_desenvolvimento`, `parcial1`/`parcial2` etc.) com rótulos bilíngues PT/ES em `lib/i18n.tsx` (`t.cronograma.anoLabel/materiaLabel/parcialLabel`) — mesmo padrão já usado para os dias da semana. **Pendente**: rodar a migração acima antes de testar.
+- **Seção de instalação do PWA na landing page**: banner flutuante mobile (`pwa-install-banner.tsx`, aparece na parte inferior, dispensável por 7 dias), seção de destaque no meio da página (`pwa-install-section.tsx`, entre "Como funciona" e depoimentos) e um botão secundário logo abaixo do CTA principal do Hero — todos usando `lib/use-pwa-install.ts` (detecta `beforeinstallprompt` do Chrome/Android, iOS via `navigator.standalone`) e um modal de instruções manuais (`pwa-install-instructions-dialog.tsx`) para quando o navegador não oferece o prompt nativo (principalmente iOS Safari). Copy bilíngue em `t.pwaInstall`.
+- Bandeira do seletor de idioma corrigida: ES agora usa 🇦🇷 (Argentina) em vez de 🇪🇸 (Espanha) — faz mais sentido pro público-alvo real (UNR fica na Argentina).
+
 ### Pendências conhecidas
 - `QuizDemo` (demo interativo na landing) tem perguntas fixas só em português — decidir se traduz para reativar na landing, ou deixa desativado.
-- Confirmar visualmente o dashboard logado com uma conta real (não foi possível screenshot autenticado nas sessões até agora — login em si já foi confirmado funcionando via automação, e o tema/contraste foram corrigidos, mas vale um olhar humano).
 - `lib/phase-urls.ts` (conceito de "Primeira Fase"/"Segunda Fase" do MedClass original) foi removido do navbar/pricing da landing por não fazer sentido num produto standalone — não deve ser reintroduzido.
-- Configurar PWA (manifest, ícones) — ficou combinado no início do projeto, ainda não foi feito.
-- App mobile (decisão anterior: começar com PWA, não app nativo).
+- App mobile: decisão de começar com PWA (não app nativo) — **PWA configurado em 2026-07-29** (`public/manifest.json` + ícones 192x192/512x512 gerados de `logo-icon.png`, `theme-color`/`manifest` ligados em `app/layout.tsx`, service worker já existia). Depois de subir no Vercel, dá pra "Adicionar à tela inicial" no celular e abre em modo standalone (`start_url: /dashboard`).
 - Admin panels (`/admin/*`) continuam só em português — fora do escopo combinado ("só telas do aluno"), só o próprio usuário acessa essas telas.
 - Páginas do aluno fora do escopo original que ainda não foram tocadas: `/dashboard/simulados` (Treinamentos), `/dashboard/feedback`, `/dashboard/perfil`, `/dashboard/configuracoes`, `/dashboard/personagem` — confirmar com o usuário se entram no escopo antes de traduzir.
+
+### Correções feitas em 2026-07-29 (retomada após pausa)
+- Confirmado visualmente pelo usuário: contraste ilegível (texto branco sobre fundo verde neon) no card "Criar Simulado" (`action-cards.tsx`) e no banner "Dica do dia" (`daily-tip-header.tsx`) — corrigido para `#0a1f00` (mesmo padrão já usado em `trilha-path.tsx`/`sidebar-nav.tsx`). Resto das telas verificado, sem outras ocorrências.
+- Seletor de idioma PT/ES só existia na navbar da landing (componente local). Extraído para `components/language-switcher.tsx` e adicionado também no `dashboard-header.tsx`.
 
 ## Convenções e decisões importantes (não repetir perguntas já respondidas)
 

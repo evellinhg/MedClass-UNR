@@ -4,7 +4,7 @@ import { useLanguage, type Lang } from "@/lib/i18n"
 
 const OPTIONS: { code: Lang; flag: string; label: string }[] = [
   { code: "pt", flag: "🇧🇷", label: "PT" },
-  { code: "es", flag: "🇪🇸", label: "ES" },
+  { code: "es", flag: "🇦🇷", label: "ES" },
 ]
 
 export function LanguageSwitcher() {

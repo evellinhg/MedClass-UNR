@@ -1,15 +1,28 @@
 "use client"
 
+import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { BookOpenCheck, Star } from "lucide-react"
+import { BookOpenCheck, Smartphone, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StudyDashboard } from "./study-dashboard"
 import { AmbientBackground } from "./ambient-background"
 import { useLanguage } from "@/lib/i18n"
+import { usePwaInstall } from "@/lib/use-pwa-install"
+import { PwaInstallInstructionsDialog } from "@/components/pwa-install-instructions-dialog"
 
 export function Hero() {
   const { t } = useLanguage()
+  const { canPromptNatively, isStandalone, isIos, promptInstall } = usePwaInstall()
+  const [showInstructions, setShowInstructions] = useState(false)
+
+  const handleInstall = async () => {
+    if (canPromptNatively) {
+      await promptInstall()
+    } else {
+      setShowInstructions(true)
+    }
+  }
 
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#12140f]">
@@ -105,6 +118,24 @@ export function Hero() {
             </Button>
           </motion.div>
 
+          {/* Install App CTA */}
+          {!isStandalone && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55, duration: 0.6 }}
+            >
+              <button
+                type="button"
+                onClick={handleInstall}
+                className="animate-pwa-pulse mt-4 flex items-center gap-2 rounded-full border border-[#c6ff3a]/30 bg-[#c6ff3a]/10 px-6 py-2.5 text-sm font-semibold text-[#c6ff3a] transition-colors hover:bg-[#c6ff3a]/15"
+              >
+                <Smartphone className="h-4 w-4" />
+                {t.pwaInstall.ctaInstall}
+              </button>
+            </motion.div>
+          )}
+
           {/* Social proof */}
           <motion.div 
             className="mt-10 flex items-center gap-3"
@@ -131,6 +162,8 @@ export function Hero() {
           <StudyDashboard />
         </motion.div>
       </div>
+
+      <PwaInstallInstructionsDialog open={showInstructions} onOpenChange={setShowInstructions} isIos={isIos} />
     </section>
   )
 }

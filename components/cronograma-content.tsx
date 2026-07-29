@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Plus, Trash2, Clock, CalendarDays, Loader2, Route, LogIn } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS } from "@/lib/quiz-config"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -43,7 +43,9 @@ export function CronogramaContent() {
   const [entrandoTrilha, setEntrandoTrilha] = useState<string | null>(null)
 
   const [routines, setRoutines] = useState<CronogramaRotina[]>([])
-  const [area, setArea] = useState(AREAS[0])
+  const [ano, setAno] = useState<AnoKey>(ANO_KEYS[0])
+  const [materia, setMateria] = useState(MATERIA_KEYS_BY_ANO[ANO_KEYS[0]][0])
+  const [parcial, setParcial] = useState<ParcialKey>(PARCIAL_KEYS[0])
   const [horario, setHorario] = useState("")
   const [quantidade, setQuantidade] = useState(20)
   const [selectedDays, setSelectedDays] = useState<string[]>([])
@@ -80,8 +82,13 @@ export function CronogramaContent() {
     setSelectedDays((prev) => (prev.includes(day) ? prev.filter((d) => d !== day) : [...prev, day]))
   }
 
+  const handleAnoChange = (novoAno: AnoKey) => {
+    setAno(novoAno)
+    setMateria(MATERIA_KEYS_BY_ANO[novoAno][0])
+  }
+
   const handleAddRoutine = async () => {
-    if (!area || !horario || selectedDays.length === 0) return
+    if (!materia || !parcial || !horario || selectedDays.length === 0) return
     setSaving(true)
     const { data: userData } = await supabase.auth.getUser()
     if (!userData.user) {
@@ -90,7 +97,8 @@ export function CronogramaContent() {
     }
     const { error } = await supabase.from("cronograma_rotinas").insert({
       user_id: userData.user.id,
-      area,
+      area: materia,
+      parcial,
       horario,
       dias_semana: selectedDays,
       quantidade_questoes: quantidade,
@@ -215,15 +223,47 @@ export function CronogramaContent() {
 
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-foreground">{t.cronograma.area}</label>
-                <Select value={area} onValueChange={setArea}>
+                <label className="text-sm font-medium text-foreground">{t.cronograma.ano}</label>
+                <Select value={ano} onValueChange={(v) => handleAnoChange(v as AnoKey)}>
                   <SelectTrigger className="mt-2 w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {AREAS.map((a) => (
+                    {ANO_KEYS.map((a) => (
                       <SelectItem key={a} value={a}>
-                        {a}
+                        {t.cronograma.anoLabel[a] ?? a}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium text-foreground">{t.cronograma.area}</label>
+                <Select value={materia} onValueChange={setMateria}>
+                  <SelectTrigger className="mt-2 w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {MATERIA_KEYS_BY_ANO[ano].map((m) => (
+                      <SelectItem key={m} value={m}>
+                        {t.cronograma.materiaLabel[m] ?? m}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium text-foreground">{t.cronograma.parcial}</label>
+                <Select value={parcial} onValueChange={(v) => setParcial(v as ParcialKey)}>
+                  <SelectTrigger className="mt-2 w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {PARCIAL_KEYS.map((p) => (
+                      <SelectItem key={p} value={p}>
+                        {t.cronograma.parcialLabel[p] ?? p}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -291,14 +331,22 @@ export function CronogramaContent() {
               <div className="space-y-3">
                 {routines.map((routine) => {
                   const cor = colorForArea(routine.area)
+                  const anoKey = anoDaMateria(routine.area)
                   return (
                     <Card key={routine.id} className="border border-border bg-card p-4 transition-shadow hover:shadow-md">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
                             <span className={`h-2.5 w-2.5 rounded-full ${cor.dot}`} />
-                            <h3 className="font-semibold text-foreground">{routine.area}</h3>
+                            <h3 className="font-semibold text-foreground">
+                              {t.cronograma.materiaLabel[routine.area] ?? routine.area}
+                            </h3>
                           </div>
+                          <p className="mt-0.5 text-xs text-muted-foreground">
+                            {anoKey ? t.cronograma.anoLabel[anoKey] : null}
+                            {anoKey ? " · " : ""}
+                            {t.cronograma.parcialLabel[routine.parcial] ?? routine.parcial}
+                          </p>
                           <div className="mt-2 flex items-center gap-4 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1.5">
                               <Clock className="h-4 w-4" />
@@ -349,7 +397,7 @@ export function CronogramaContent() {
                   return (
                     <span key={a} className="flex items-center gap-1.5 text-xs text-muted-foreground">
                       <span className={`h-2 w-2 rounded-full ${cor.dot}`} />
-                      {a}
+                      {t.cronograma.materiaLabel[a] ?? a}
                     </span>
                   )
                 })}
@@ -376,7 +424,9 @@ export function CronogramaContent() {
                       <div className="flex items-center gap-2">
                         <span className={`h-2 w-2 shrink-0 rounded-full ${cor.dot}`} />
                         <div>
-                          <p className="text-sm font-medium text-foreground">{session.routine.area}</p>
+                          <p className="text-sm font-medium text-foreground">
+                            {t.cronograma.materiaLabel[session.routine.area] ?? session.routine.area}
+                          </p>
                           <p className="text-xs text-muted-foreground">
                             {session.date.toLocaleDateString(t.cronograma.localeData, {
                               weekday: "short",

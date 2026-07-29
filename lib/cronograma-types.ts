@@ -2,6 +2,7 @@ export interface CronogramaRotina {
   id: string
   user_id: string
   area: string
+  parcial: string
   horario: string
   dias_semana: string[]
   quantidade_questoes: number

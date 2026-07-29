@@ -8,6 +8,7 @@ import { SidebarNav } from "@/components/sidebar-nav"
 import { UserDropdown } from "@/components/user-dropdown"
 import { GlobalSearch } from "@/components/global-search"
 import { NotificationsPanel } from "@/components/notifications-panel"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import { getPlanStatus } from "@/lib/plan-status"
 import { useLanguage } from "@/lib/i18n"
 
@@ -54,7 +55,8 @@ export function DashboardHeader() {
       {/* Search */}
       <GlobalSearch />
 
-      <div className="ml-auto flex items-center gap-1 md:ml-0">
+      <div className="ml-auto flex items-center gap-2 md:ml-0">
+        <LanguageSwitcher />
         <NotificationsPanel />
 
         <div className="ml-1">

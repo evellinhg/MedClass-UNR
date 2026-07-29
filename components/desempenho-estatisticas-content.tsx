@@ -323,7 +323,7 @@ export function DesempenhoEstatisticasContent() {
                 onClick={() => setGroupBy(value)}
                 className={`rounded-full border px-3 py-1 text-[11px] font-medium transition-all hover:shadow-[0_0_14px_rgba(198,255,58,0.5)] ${
                   groupBy === value
-                    ? "border-primary bg-primary/20 text-white"
+                    ? "border-primary bg-primary/20 text-[#bef264]"
                     : "border-white/10 text-white/50 hover:text-white"
                 }`}
               >

@@ -77,7 +77,7 @@ export function TrilhaPath({ unidades }: { unidades: TrilhaPathUnidade[] }) {
                             node.estado === "concluida"
                               ? "bg-emerald-500 text-white"
                               : node.estado === "atual"
-                                ? "bg-primary text-white"
+                                ? "bg-primary text-primary-foreground"
                                 : "bg-muted-foreground/80 text-white"
                           }`}
                         >

@@ -112,18 +112,25 @@ const raw = JSON.parse(readFileSync(inputPath, "utf-8"))
 const lista = raw.preguntas ?? raw.questoes ?? raw
 const mapeadas = lista.map(mapQuestao)
 
-const { data: existentes, error: erroExistentes } = await supabase.from("questoes").select("materia, enunciado")
+const { data: existentes, error: erroExistentes } = await supabase.from("questoes").select("materia, enunciado, opcoes")
 if (erroExistentes) {
   console.error("Erro ao verificar questões existentes:", erroExistentes.message)
   process.exit(1)
 }
 
-const chavesExistentes = new Set(existentes.map((q) => `${q.materia}|${normalizar(q.enunciado)}`))
+// Chave inclui as alternativas: mesmo enunciado com respostas diferentes NÃO é duplicata,
+// só bloqueia quando pergunta E alternativas são idênticas.
+function chaveQuestao(materia, enunciado, opcoes) {
+  const opcoesNorm = [...opcoes].map(normalizar).sort().join("||")
+  return `${materia}|${normalizar(enunciado)}|${opcoesNorm}`
+}
+
+const chavesExistentes = new Set(existentes.map((q) => chaveQuestao(q.materia, q.enunciado, q.opcoes)))
 const payload = []
 const ignoradas = []
 
 for (const q of mapeadas) {
-  const chave = `${q.materia}|${normalizar(q.enunciado)}`
+  const chave = chaveQuestao(q.materia, q.enunciado, q.opcoes)
   if (chavesExistentes.has(chave)) {
     ignoradas.push(q.enunciado)
     continue

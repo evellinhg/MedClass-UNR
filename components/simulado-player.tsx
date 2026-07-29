@@ -32,6 +32,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { useLanguage } from "@/lib/i18n"
 
 interface Questao {
   id: string
@@ -68,11 +69,7 @@ export interface SimuladoConfig {
 
 type FeedbackTipo = "erro" | "duvida" | "sugestao"
 
-const FEEDBACK_TIPOS: { value: FeedbackTipo; label: string }[] = [
-  { value: "erro", label: "Reportar Erro" },
-  { value: "duvida", label: "Dúvida" },
-  { value: "sugestao", label: "Sugestão" },
-]
+const FEEDBACK_TIPOS: FeedbackTipo[] = ["erro", "duvida", "sugestao"]
 
 async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
   const cached = getCachedQuestoesAtivas()
@@ -101,6 +98,12 @@ const BONUS_POINTS = 10
 const TIMEOUT_SENTINEL = -1
 
 export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerProps) {
+  const { t } = useLanguage()
+  const feedbackTipoLabel: Record<FeedbackTipo, string> = {
+    erro: t.simuladoPlayer.reportarErro,
+    duvida: t.simuladoPlayer.duvida,
+    sugestao: t.simuladoPlayer.sugestao,
+  }
   const readOnly = !!config?.readOnly
   const [phase, setPhase] = useState<Phase>("loading")
   const [questions, setQuestions] = useState<Questao[]>([])
@@ -459,10 +462,10 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         <DialogHeader className="shrink-0">
           <div className="flex items-center justify-between gap-3">
             <DialogTitle className="flex items-center gap-2">
-              {config?.label ?? "Simulado"}
+              {config?.label ?? t.treinamentos.badgeSimulado}
               {readOnly && (
                 <Badge variant="secondary" className="font-normal">
-                  Somente leitura
+                  {t.simuladoPlayer.somenteLeitura}
                 </Badge>
               )}
             </DialogTitle>
@@ -490,27 +493,27 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         {phase === "loading" && (
           <div className="flex items-center justify-center gap-2 py-12 text-sm text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
-            Preparando questões...
+            {t.simuladoPlayer.preparando}
           </div>
         )}
 
         {phase === "blocked" && (
           <PlanRestrictedNotice
             tone={blockedStatus?.isTrialExpired ? "expired" : "limit"}
-            title={blockedStatus?.isTrialExpired ? "Seu plano gratuito expirou" : "Limite do plano gratuito atingido"}
+            title={blockedStatus?.isTrialExpired ? t.simuladoPlayer.tituloExpirado : t.simuladoPlayer.tituloLimite}
             description={
               blockedStatus?.isTrialExpired
-                ? "Para continuar treinando e seguir rumo à sua aprovação, escolha um dos nossos planos disponíveis."
+                ? t.simuladoPlayer.descExpirado
                 : (config?.mode ?? "individual") === "simulado"
-                  ? "O plano gratuito permite até 2 simulados de até 10 questões. Assine um plano para simulados ilimitados."
-                  : "O plano gratuito permite até 10 questões individuais. Assine um plano para praticar sem limites."
+                  ? t.simuladoPlayer.descLimiteSimulado
+                  : t.simuladoPlayer.descLimiteIndividual
             }
           />
         )}
 
         {phase === "empty" && (
           <div className="py-8 text-center text-sm text-muted-foreground">
-            Ainda não há questões suficientes cadastradas no banco de questões para essa opção.
+            {t.simuladoPlayer.semQuestoesSuficientes}
           </div>
         )}
 
@@ -544,8 +547,8 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
                 <span>
-                  Questão {currentIndex + 1} de {questions.length} · {answeredCount} respondida(s)
-                  {bonusPoints > 0 && <span className="ml-2 text-primary">+{bonusPoints} bônus</span>}
+                  {t.simuladoPlayer.questaoXdeY(currentIndex + 1, questions.length)} · {answeredCount} {t.simuladoPlayer.respondidas}
+                  {bonusPoints > 0 && <span className="ml-2 text-primary">+{bonusPoints} {t.simuladoPlayer.bonusLabel}</span>}
                 </span>
                 <div className="flex items-center gap-1.5">
                   {dificuldadeCor && current.dificuldade && (
@@ -565,7 +568,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                 <div className="space-y-4 rounded-lg border border-primary/30 bg-primary/5 p-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-                      Prova que não foi sorte!
+                      {t.simuladoPlayer.provaQueNaoFoiSorte}
                     </p>
                     <p className="mt-1 text-sm font-medium text-foreground">{current.mecanismo_pergunta}</p>
                   </div>
@@ -602,8 +605,8 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                       }`}
                     >
                       {mechanismCorrectByQuestion[currentIndex]
-                        ? `Perfeito! 🎯 Você realmente domina esse conceito! +${BONUS_POINTS} pontos bônus`
-                        : "Quase! O mecanismo correto está destacado acima."}
+                        ? t.simuladoPlayer.perfeitoBonus(BONUS_POINTS)
+                        : t.simuladoPlayer.quaseMecanismo}
                     </div>
                   )}
                   <Button
@@ -612,7 +615,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                     disabled={mechanismAnswer === null}
                     onClick={() => setMechanismStage("resolved")}
                   >
-                    Continuar
+                    {t.simuladoPlayer.continuar}
                   </Button>
                 </div>
               ) : (
@@ -653,7 +656,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                             {!showState && !readOnly && (
                               <button
                                 onClick={(e) => toggleEliminate(idx, e)}
-                                aria-label="Riscar alternativa"
+                                aria-label={t.simuladoPlayer.riscarAlternativa}
                                 className={`rounded-md border p-1.5 transition-colors ${
                                   isElim
                                     ? "border-destructive/50 text-destructive"
@@ -671,13 +674,13 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
                   {!readOnly && currentAnswer === null && (
                     <Button variant="gradient" className="w-full" disabled={pendingAnswer === null} onClick={confirmAnswer}>
-                      Confirmar
+                      {t.simuladoPlayer.confirmar}
                     </Button>
                   )}
 
                   {readOnly && currentAnswer === null && (
                     <p className="rounded-lg border border-border bg-muted/40 p-3 text-sm text-muted-foreground">
-                      Esta questão não foi respondida.
+                      {t.simuladoPlayer.naoRespondida}
                     </p>
                   )}
 
@@ -690,7 +693,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                       }`}
                     >
                       <p className="font-semibold">
-                        {isCorrect ? "🎉 Muito bem! Resposta correta." : "❌ Essa alternativa não está correta."}
+                        {isCorrect ? t.simuladoPlayer.respostaCorreta : t.simuladoPlayer.respostaIncorreta}
                       </p>
                       {current.justificativa && <p className="mt-1 text-muted-foreground">{current.justificativa}</p>}
                     </div>
@@ -699,7 +702,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                   {showingExplanation && current.opcoes_comentario && current.opcoes_comentario.length > 0 && (
                     <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                        Comentários por alternativa
+                        {t.simuladoPlayer.comentariosPorAlternativa}
                       </p>
                       {current.opcoes.map((opcao, idx) => {
                         const comentario = current.opcoes_comentario?.[idx]
@@ -734,9 +737,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
               {confirmingFinish && (
                 <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
                   <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>
-                    Ainda há {questions.length - answeredCount} questão(ões) não respondida(s). Finalizar mesmo assim?
-                  </span>
+                  <span>{t.simuladoPlayer.aindaHaQuestoes(questions.length - answeredCount)}</span>
                 </div>
               )}
             </div>
@@ -754,7 +755,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
               {!readOnly && (
                 <Button variant="outline" className="gap-1.5" onClick={skip}>
                   <SkipForward className="h-4 w-4" />
-                  Pular
+                  {t.simuladoPlayer.pular}
                 </Button>
               )}
               <Button variant="outline" size="icon" onClick={() => goTo(currentIndex + 1)} disabled={currentIndex === questions.length - 1}>
@@ -771,15 +772,15 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                 }}
               >
                 <MessageSquareWarning className="h-4 w-4" />
-                Feedback
+                {t.simuladoPlayer.feedbackBtn}
               </Button>
               {readOnly ? (
                 <Button variant="gradient" className="ml-auto flex-1" onClick={() => onOpenChange(false)}>
-                  Fechar
+                  {t.simuladoPlayer.fechar}
                 </Button>
               ) : (
                 <Button variant="gradient" className="ml-auto flex-1" onClick={finish} disabled={saving}>
-                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : confirmingFinish ? "Finalizar mesmo assim" : "Finalizar"}
+                  {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : confirmingFinish ? t.simuladoPlayer.finalizarMesmoAssim : t.simuladoPlayer.finalizar}
                 </Button>
               )}
             </div>
@@ -794,12 +795,12 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
             <div>
               <p className="text-3xl font-bold text-gradient-brand">{result.points} pts</p>
               <p className="mt-1 text-sm text-muted-foreground">
-                {result.correct} acertos, {result.wrong} erros — {accuracy}% de aproveitamento
-                {bonusPoints > 0 && ` · +${bonusPoints} de bônus`}
+                {t.simuladoPlayer.acertosErros(result.correct, result.wrong, accuracy)}
+                {bonusPoints > 0 && t.simuladoPlayer.bonusExtra(bonusPoints)}
               </p>
             </div>
             <Button variant="gradient" className="w-full" onClick={() => onOpenChange(false)}>
-              Fechar
+              {t.simuladoPlayer.fechar}
             </Button>
           </div>
         )}
@@ -809,30 +810,30 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       <Dialog open={feedbackModalOpen} onOpenChange={setFeedbackModalOpen}>
         <DialogContent className="sm:max-w-sm">
           <DialogHeader>
-            <DialogTitle>Enviar feedback sobre a questão</DialogTitle>
+            <DialogTitle>{t.simuladoPlayer.enviarFeedbackTitulo}</DialogTitle>
           </DialogHeader>
           {feedbackSent ? (
-            <p className="text-sm text-success">Enviado! Nossa equipe de administradores vai revisar essa questão.</p>
+            <p className="text-sm text-success">{t.simuladoPlayer.enviadoAviso}</p>
           ) : (
             <div className="space-y-3">
               <div className="flex gap-2">
-                {FEEDBACK_TIPOS.map((t) => (
+                {FEEDBACK_TIPOS.map((tipo) => (
                   <button
-                    key={t.value}
+                    key={tipo}
                     type="button"
-                    onClick={() => setFeedbackTipo(t.value)}
+                    onClick={() => setFeedbackTipo(tipo)}
                     className={`flex-1 rounded-lg border px-2 py-2 text-xs font-medium transition-colors ${
-                      feedbackTipo === t.value
+                      feedbackTipo === tipo
                         ? "border-primary bg-primary/10 text-primary"
                         : "border-input text-foreground hover:bg-accent"
                     }`}
                   >
-                    {t.label}
+                    {feedbackTipoLabel[tipo]}
                   </button>
                 ))}
               </div>
               <Textarea
-                placeholder="Descreva o erro, dúvida ou sugestão sobre esta questão..."
+                placeholder={t.simuladoPlayer.feedbackPlaceholder}
                 value={feedbackText}
                 onChange={(e) => setFeedbackText(e.target.value)}
                 className="min-h-24"
@@ -843,7 +844,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                 onClick={sendFeedback}
                 disabled={sendingFeedback || !feedbackText.trim()}
               >
-                {sendingFeedback ? <Loader2 className="h-4 w-4 animate-spin" /> : "Enviar"}
+                {sendingFeedback ? <Loader2 className="h-4 w-4 animate-spin" /> : t.simuladoPlayer.enviar}
               </Button>
             </div>
           )}

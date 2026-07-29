@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/dialog"
 import { PlanRestrictedNotice } from "@/components/plan-restricted-notice"
 import type { SimuladoConfig } from "@/components/simulado-player"
+import { useLanguage } from "@/lib/i18n"
 
 interface PracticeLauncherProps {
   open: boolean
@@ -42,6 +43,7 @@ async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
 }
 
 export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
+  const { t } = useLanguage()
   const [starting, setStarting] = useState(false)
   const [dificuldade, setDificuldade] = useState("aleatorio")
   const [selectedAreas, setSelectedAreas] = useState<string[]>([])
@@ -113,8 +115,8 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const handleStart = async () => {
     const label =
       selectedAreas.length === 0 || selectedAreas.length === AREAS.length
-        ? `Questões aleatórias · ${prova}`
-        : `${selectedAreas.join(", ")} · ${prova}`
+        ? t.practiceLauncher.labelAleatorias(prova)
+        : `${selectedAreas.map((a) => t.treinamentos.areaLabel[a] ?? a).join(", ")} · ${prova}`
 
     setStarting(true)
     const { data: userData } = await supabase.auth.getUser()
@@ -177,7 +179,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Configurar treino de questões</DialogTitle>
+          <DialogTitle>{t.practiceLauncher.dialogTitulo}</DialogTitle>
         </DialogHeader>
 
         {planLoading ? (
@@ -187,21 +189,13 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
         ) : isBlocked ? (
           <PlanRestrictedNotice
             tone={planStatus?.isTrialExpired ? "expired" : "limit"}
-            title={
-              planStatus?.isTrialExpired
-                ? "Seu plano gratuito expirou"
-                : "Limite de questões individuais atingido"
-            }
-            description={
-              planStatus?.isTrialExpired
-                ? "Para continuar treinando e seguir rumo à sua aprovação, escolha um dos nossos planos disponíveis."
-                : "O plano gratuito permite até 10 questões individuais. Assine um plano para praticar sem limites."
-            }
+            title={planStatus?.isTrialExpired ? t.practiceLauncher.planExpiradoTitulo : t.practiceLauncher.limiteAtingidoTitulo}
+            description={planStatus?.isTrialExpired ? t.practiceLauncher.planExpiradoDesc : t.practiceLauncher.limiteDesc}
           />
         ) : (
         <div className="space-y-4 py-2">
           <div className="space-y-2">
-            <Label>Nível</Label>
+            <Label>{t.treinamentos.nivel}</Label>
             <div className="flex flex-wrap gap-2">
               {DIFFICULTIES.map((d) => {
                 const cor = getDifficultyColor(d.value)
@@ -224,7 +218,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                     }`}
                   >
                     {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
-                    {d.label}
+                    {t.treinamentos.dificuldadeLabel[d.value] ?? d.label}
                   </button>
                 )
               })}
@@ -232,7 +226,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           </div>
 
           <div className="space-y-2">
-            <Label>Área (nenhuma selecionada = todas as 5 juntas)</Label>
+            <Label>{t.practiceLauncher.areaLabelTodas5}</Label>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
@@ -242,7 +236,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                     : "border-input text-foreground hover:bg-accent"
                 }`}
               >
-                Todas
+                {t.treinamentos.todas}
               </button>
               {AREAS.map((area) => {
                 const cor = getAreaColor(area)
@@ -256,7 +250,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                     }`}
                   >
                     <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                    {area}
+                    {t.treinamentos.areaLabel[area] ?? area}
                   </button>
                 )
               })}
@@ -264,7 +258,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           </div>
 
           <div className="space-y-2">
-            <Label>Questões</Label>
+            <Label>{t.treinamentos.questoesLabel}</Label>
             <div className="flex gap-2">
               <button
                 type="button"
@@ -273,7 +267,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                   apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                 }`}
               >
-                Excluir já respondidas
+                {t.treinamentos.excluirJaRespondidas}
               </button>
               <button
                 type="button"
@@ -282,13 +276,13 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                   !apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                 }`}
               >
-                Todas as questões
+                {t.treinamentos.todasAsQuestoes}
               </button>
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label>Prova</Label>
+            <Label>{t.treinamentos.prova}</Label>
             <div className="flex gap-2">
               {PROVAS.map((p) => (
                 <button
@@ -312,7 +306,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
           {prova === "REVALIDA" && (
             <div className="space-y-2">
-              <Label>Edição</Label>
+              <Label>{t.treinamentos.edicao}</Label>
               <div className="flex gap-2">
                 <button
                   onClick={() => {
@@ -325,7 +319,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                       : "border-input text-foreground hover:bg-accent"
                   }`}
                 >
-                  Qualquer
+                  {t.treinamentos.qualquer}
                 </button>
                 {EDICOES.map((e) => (
                   <button
@@ -348,7 +342,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           )}
 
           <div className="space-y-2">
-            <Label>Quantidade de questões</Label>
+            <Label>{t.treinamentos.quantidadeDeQuestoes}</Label>
             <div className="flex flex-wrap gap-2">
               {quantityOptions.map((q) => (
                 <button
@@ -366,8 +360,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             </div>
             {planStatus && !planStatus.hasFullAccess && (
               <p className="text-xs text-muted-foreground">
-                Plano gratuito: {planStatus.questoesRemaining} de {FREE_QUESTOES_LIMIT} questões individuais
-                restantes.
+                {t.practiceLauncher.questoesPlanoGratuito(planStatus.questoesRemaining, FREE_QUESTOES_LIMIT)}
               </p>
             )}
           </div>
@@ -376,8 +369,8 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             <div className="flex items-center gap-2">
               <Timer className="h-4 w-4 text-primary" />
               <div>
-                <p className="text-sm font-medium text-foreground">Cronômetro</p>
-                <p className="text-xs text-muted-foreground">Mostra o tempo decorrido durante o treino</p>
+                <p className="text-sm font-medium text-foreground">{t.practiceLauncher.cronometro}</p>
+                <p className="text-xs text-muted-foreground">{t.practiceLauncher.cronometroDesc}</p>
               </div>
             </div>
             <Switch checked={timerEnabled} onCheckedChange={setTimerEnabled} />
@@ -386,12 +379,12 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           <div className="flex items-center gap-2">
             <Button type="button" variant="outline" size="sm" className="gap-1.5" onClick={handleVerify} disabled={checking}>
               {checking ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Search className="h-3.5 w-3.5" />}
-              Verificar
+              {t.practiceLauncher.verificar}
             </Button>
             {available !== null && (
               <span className="flex items-center gap-1.5 text-xs font-medium text-success">
                 <CheckCircle2 className="h-3.5 w-3.5" />
-                {available} questões disponíveis
+                {t.practiceLauncher.questoesDisponiveis(available)}
               </span>
             )}
           </div>
@@ -400,12 +393,12 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
         <DialogFooter>
           <Button variant="outline" onClick={() => onOpenChange(false)}>
-            {isBlocked ? "Fechar" : "Cancelar"}
+            {isBlocked ? t.practiceLauncher.fechar : t.treinamentos.cancelar}
           </Button>
           {!isBlocked && !planLoading && (
             <Button variant="gradient" onClick={handleStart} disabled={quantityOptions.length === 0 || starting} className="gap-1.5">
               {starting && <Loader2 className="h-4 w-4 animate-spin" />}
-              Iniciar Treino
+              {t.practiceLauncher.iniciarTreino}
             </Button>
           )}
         </DialogFooter>

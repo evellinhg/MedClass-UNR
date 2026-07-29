@@ -34,6 +34,7 @@ import {
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import { PracticeLauncher } from "@/components/practice-launcher"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
+import { useLanguage } from "@/lib/i18n"
 
 interface Simulado {
   id: string
@@ -69,6 +70,7 @@ async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
 }
 
 export function SimuladosContent() {
+  const { t } = useLanguage()
   const searchParams = useSearchParams()
   const [simulados, setSimulados] = useState<Simulado[]>([])
   const [loading, setLoading] = useState(true)
@@ -170,7 +172,7 @@ export function SimuladosContent() {
 
     const { data: userData } = await supabase.auth.getUser()
     if (!userData.user) {
-      setCreateError("Sessão expirada — atualize a página e faça login novamente.")
+      setCreateError(t.treinamentos.sessaoExpirada)
       setCreating(false)
       return
     }
@@ -189,9 +191,7 @@ export function SimuladosContent() {
     }
 
     if (poolIds.length < quantidade) {
-      setCreateError(
-        `Só há ${poolIds.length} questão(ões) disponível(is) para esse filtro — reduza a quantidade, amplie os filtros ou inclua questões já respondidas.`
-      )
+      setCreateError(t.treinamentos.semQuestoesErro(poolIds.length))
       setCreating(false)
       return
     }
@@ -222,7 +222,7 @@ export function SimuladosContent() {
 
     setCreating(false)
     if (error) {
-      setCreateError("Não foi possível criar o simulado. Tente novamente.")
+      setCreateError(t.treinamentos.criarErro)
       return
     }
 
@@ -242,8 +242,8 @@ export function SimuladosContent() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h2 className="text-2xl font-bold text-gradient-brand">Treinamentos</h2>
-        <p className="mt-1 text-sm text-muted-foreground">Escolha como quer treinar hoje</p>
+        <h2 className="text-2xl font-bold text-gradient-brand">{t.treinamentos.headerTitulo}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{t.treinamentos.headerSubtitulo}</p>
       </div>
 
       {/* Entry points: Modo Estudo x Simulados */}
@@ -253,12 +253,12 @@ export function SimuladosContent() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
               <BookOpen className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 text-lg font-bold">Modo Estudo</h3>
-            <p className="text-sm text-white/80">Aprenda no seu ritmo</p>
+            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.modoEstudoTitulo}</h3>
+            <p className="text-sm text-white/80">{t.treinamentos.modoEstudoSubtitulo}</p>
             <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>• Feedback imediato com explicação de cada questão</li>
-              <li>• Escolha área, dificuldade e prova livremente</li>
-              <li>• Sem pressão de tempo — cronômetro é opcional</li>
+              <li>• {t.treinamentos.modoEstudoItem1}</li>
+              <li>• {t.treinamentos.modoEstudoItem2}</li>
+              <li>• {t.treinamentos.modoEstudoItem3}</li>
             </ul>
           </div>
           <Button
@@ -266,22 +266,22 @@ export function SimuladosContent() {
             className="mt-6 w-full justify-between bg-white/15 text-white hover:bg-white/25"
             onClick={() => setPracticeOpen(true)}
           >
-            Iniciar Estudo
+            {t.treinamentos.iniciarEstudo}
             <ArrowRight className="h-4 w-4" />
           </Button>
         </Card>
 
         <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
               <Target className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 text-lg font-bold">Simulados</h3>
-            <p className="text-sm text-white/80">Treine como se fosse a prova real</p>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>• Tempo por questão — sempre ativo, como na prova real</li>
-              <li>• Questões fixas — pause e retome quando quiser</li>
-              <li>• Pontuação para acompanhar sua evolução</li>
+            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.simuladosTitulo}</h3>
+            <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.simuladosSubtitulo}</p>
+            <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">
+              <li>• {t.treinamentos.simuladosItem1}</li>
+              <li>• {t.treinamentos.simuladosItem2}</li>
+              <li>• {t.treinamentos.simuladosItem3}</li>
             </ul>
           </div>
           <Dialog
@@ -292,34 +292,34 @@ export function SimuladosContent() {
             }}
           >
             <DialogTrigger asChild>
-              <Button variant="secondary" className="mt-6 w-full justify-between bg-white/15 text-white hover:bg-white/25">
-                Criar Simulado
+              <Button variant="secondary" className="mt-6 w-full justify-between bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15">
+                {t.treinamentos.criarSimulado}
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-md">
               <DialogHeader>
-                <DialogTitle>Criar Novo Simulado</DialogTitle>
+                <DialogTitle>{t.treinamentos.criarNovoSimulado}</DialogTitle>
               </DialogHeader>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="mb-1 block text-sm font-medium text-foreground">
-                    Nome do Simulado
+                    {t.treinamentos.nomeDoSimulado}
                   </label>
                   <input
                     id="name"
                     type="text"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
-                    placeholder="Ex: Clínica Médica - Revisão"
+                    placeholder={t.treinamentos.nomePlaceholder}
                     className="w-full rounded-lg border border-border bg-card px-3 py-2 text-foreground placeholder-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   />
                 </div>
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">
-                    Área (nenhuma selecionada = todas)
+                    {t.treinamentos.areaLabelNenhuma}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     <button
@@ -331,7 +331,7 @@ export function SimuladosContent() {
                           : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
-                      Todas
+                      {t.treinamentos.todas}
                     </button>
                     {AREAS.map((area) => {
                       const cor = getAreaColor(area)
@@ -346,7 +346,7 @@ export function SimuladosContent() {
                           }`}
                         >
                           <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                          {area}
+                          {t.treinamentos.areaLabel[area] ?? area}
                         </button>
                       )
                     })}
@@ -354,7 +354,7 @@ export function SimuladosContent() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">Nível</label>
+                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.nivel}</label>
                   <div className="flex flex-wrap gap-2">
                     {DIFFICULTIES.map((d) => {
                       const cor = getDifficultyColor(d.value)
@@ -378,7 +378,7 @@ export function SimuladosContent() {
                           }`}
                         >
                           {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
-                          {d.label}
+                          {t.treinamentos.dificuldadeLabel[d.value] ?? d.label}
                         </button>
                       )
                     })}
@@ -386,7 +386,7 @@ export function SimuladosContent() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">Questões</label>
+                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.questoesLabel}</label>
                   <div className="flex gap-2">
                     <button
                       type="button"
@@ -395,7 +395,7 @@ export function SimuladosContent() {
                         apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
-                      Excluir já respondidas
+                      {t.treinamentos.excluirJaRespondidas}
                     </button>
                     <button
                       type="button"
@@ -404,13 +404,13 @@ export function SimuladosContent() {
                         !apenasIneditas ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
-                      Todas as questões
+                      {t.treinamentos.todasAsQuestoes}
                     </button>
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">Prova</label>
+                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.prova}</label>
                   <div className="flex gap-2">
                     <button
                       type="button"
@@ -422,7 +422,7 @@ export function SimuladosContent() {
                         prova === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
-                      Qualquer
+                      {t.treinamentos.qualquer}
                     </button>
                     {PROVAS.map((p) => (
                       <button
@@ -444,7 +444,7 @@ export function SimuladosContent() {
 
                 {prova === "REVALIDA" && (
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-foreground">Edição</label>
+                    <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.edicao}</label>
                     <div className="flex gap-2">
                       <button
                         type="button"
@@ -453,7 +453,7 @@ export function SimuladosContent() {
                           edicao === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                         }`}
                       >
-                        Qualquer
+                        {t.treinamentos.qualquer}
                       </button>
                       {EDICOES.map((e) => (
                         <button
@@ -473,7 +473,7 @@ export function SimuladosContent() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">
-                    Quantidade de Questões
+                    {t.treinamentos.quantidadeDeQuestoes}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {QUANTIDADES.map((q) => (
@@ -495,24 +495,22 @@ export function SimuladosContent() {
 
                 <div className="space-y-2 rounded-lg border border-border p-3">
                   <div>
-                    <p className="text-sm font-medium text-foreground">Tempo Por Questão</p>
-                    <p className="text-xs text-muted-foreground">
-                      Todo simulado tem tempo limite por questão. Não é possível voltar às anteriores.
-                    </p>
+                    <p className="text-sm font-medium text-foreground">{t.treinamentos.tempoPorQuestao}</p>
+                    <p className="text-xs text-muted-foreground">{t.treinamentos.tempoPorQuestaoDesc}</p>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    {TEMPOS_POR_QUESTAO.map((t) => (
+                    {TEMPOS_POR_QUESTAO.map((seg) => (
                       <button
-                        key={t}
+                        key={seg}
                         type="button"
-                        onClick={() => setTempoPorQuestao(t)}
+                        onClick={() => setTempoPorQuestao(seg)}
                         className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition-colors ${
-                          tempoPorQuestao === t
+                          tempoPorQuestao === seg
                             ? "border-primary bg-primary/10 text-primary"
                             : "border-input text-foreground hover:bg-accent"
                         }`}
                       >
-                        {t}s
+                        {seg}s
                       </button>
                     ))}
                   </div>
@@ -523,10 +521,10 @@ export function SimuladosContent() {
                 <div className="flex gap-2 pt-2">
                   <Button type="submit" variant="gradient" className="flex-1 gap-1.5" disabled={creating || !nome.trim()}>
                     {creating && <Loader2 className="h-4 w-4 animate-spin" />}
-                    Criar Simulado
+                    {t.treinamentos.criarSimulado}
                   </Button>
                   <Button type="button" variant="outline" onClick={() => setOpen(false)} className="flex-1">
-                    Cancelar
+                    {t.treinamentos.cancelar}
                   </Button>
                 </div>
               </form>
@@ -537,17 +535,15 @@ export function SimuladosContent() {
 
       {/* Simulados List */}
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-foreground">Meus treinamentos</h3>
+        <h3 className="text-sm font-semibold text-foreground">{t.treinamentos.meusTreinamentos}</h3>
         {loading ? (
           <div className="flex items-center justify-center gap-2 py-10 text-sm text-muted-foreground">
             <Loader2 className="h-4 w-4 animate-spin" />
-            Carregando treinamentos...
+            {t.treinamentos.carregandoTreinamentos}
           </div>
         ) : simulados.length === 0 ? (
           <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
-            <p className="text-muted-foreground">
-              Nenhum treinamento criado ainda. Escolha o Modo Estudo ou crie um Simulado para começar.
-            </p>
+            <p className="text-muted-foreground">{t.treinamentos.nenhumTreinamento}</p>
           </div>
         ) : (() => {
           const totalPages = Math.ceil(simulados.length / PAGE_SIZE)
@@ -565,37 +561,37 @@ export function SimuladosContent() {
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <h3 className="font-medium text-foreground">{simulado.nome}</h3>
-                    <Badge variant="secondary">{simulado.modo === "simulado" ? "Simulado" : "Estudo"}</Badge>
+                    <Badge variant="secondary">{simulado.modo === "simulado" ? t.treinamentos.badgeSimulado : t.treinamentos.badgeEstudo}</Badge>
                     {simulado.finished_at && (
                       <span className="flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 text-[11px] font-medium text-success">
                         <CheckCircle2 className="h-3 w-3" />
-                        Concluído
+                        {t.treinamentos.concluido}
                       </span>
                     )}
                     {emAndamento && (
                       <span className="flex items-center gap-1 rounded-full bg-warning/15 px-2 py-0.5 text-[11px] font-medium text-warning">
                         <RotateCcw className="h-3 w-3" />
-                        Em andamento
+                        {t.treinamentos.emAndamento}
                       </span>
                     )}
                   </div>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {(simulado.areas.length > 0 ? simulado.areas : ["Todas as áreas"]).map((area) => (
+                    {(simulado.areas.length > 0 ? simulado.areas : [t.treinamentos.todasAsAreas]).map((area) => (
                       <span
                         key={area}
                         className="inline-flex items-center rounded-full bg-[#c6ff3a]/20 px-2.5 py-0.5 text-xs font-medium text-primary"
                       >
-                        {area}
+                        {t.treinamentos.areaLabel[area] ?? area}
                       </span>
                     ))}
                   </div>
                   <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
-                    <span>{simulado.quantidade_questoes} questões</span>
+                    <span>{simulado.quantidade_questoes} {t.treinamentos.questoesCount}</span>
                     {simulado.prova && <span>{simulado.prova}</span>}
                     {simulado.modo_estrito && simulado.timer_segundos_por_questao && (
-                      <span>{simulado.timer_segundos_por_questao}s por questão</span>
+                      <span>{simulado.timer_segundos_por_questao}{t.treinamentos.segundosPorQuestao}</span>
                     )}
-                    <span>Criado em {new Date(simulado.created_at).toLocaleDateString("pt-BR")}</span>
+                    <span>{t.treinamentos.criadoEm} {new Date(simulado.created_at).toLocaleDateString(t.treinamentos.localeData)}</span>
                   </div>
                 </div>
 
@@ -604,11 +600,11 @@ export function SimuladosContent() {
                     size="sm"
                     variant="ghost"
                     className="gap-1.5 text-primary hover:bg-primary/10"
-                    aria-label={emAndamento ? "Retomar treinamento" : simulado.finished_at ? "Ver correção" : "Iniciar treinamento"}
+                    aria-label={emAndamento ? t.treinamentos.ariaRetomar : simulado.finished_at ? t.treinamentos.ariaVerCorrecao : t.treinamentos.ariaIniciar}
                     onClick={() => (simulado.finished_at ? reviewSimulado(simulado) : playSimulado(simulado))}
                   >
                     {emAndamento ? <RotateCcw className="h-4 w-4" /> : simulado.finished_at ? <Eye className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                    {emAndamento ? "Retomar" : simulado.finished_at ? "Ver Correção" : "Iniciar"}
+                    {emAndamento ? t.treinamentos.retomar : simulado.finished_at ? t.treinamentos.verCorrecao : t.treinamentos.iniciar}
                   </Button>
                   <Button
                     size="sm"
@@ -616,7 +612,7 @@ export function SimuladosContent() {
                     onClick={() => handleDelete(simulado.id)}
                     disabled={deletingId === simulado.id}
                     className="text-destructive hover:bg-destructive/10"
-                    aria-label="Excluir treinamento"
+                    aria-label={t.treinamentos.ariaExcluir}
                   >
                     {deletingId === simulado.id ? (
                       <Loader2 className="h-4 w-4 animate-spin" />

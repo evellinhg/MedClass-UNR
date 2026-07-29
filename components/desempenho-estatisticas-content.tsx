@@ -26,6 +26,7 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
+import { useLanguage } from "@/lib/i18n"
 
 const GREEN = "#22c55e" // Acertos / concluído
 const RED = "#ef4444" // Erros / atenção
@@ -72,7 +73,7 @@ function GlowDefs() {
   )
 }
 
-function AttemptTooltip({ active, payload, label }: any) {
+function AttemptTooltip({ active, payload, label, t }: any) {
   if (!active || !payload?.length) return null
   const row = payload[0]?.payload
   if (!row) return null
@@ -84,31 +85,31 @@ function AttemptTooltip({ active, payload, label }: any) {
       <div className="space-y-1">
         <p className="flex items-center justify-between gap-4">
           <span className="flex items-center gap-1.5 text-emerald-400">
-            <span className="h-2 w-2 rounded-full bg-emerald-400" /> Acertos
+            <span className="h-2 w-2 rounded-full bg-emerald-400" /> {t.desempenhoEstatisticas.acertos}
           </span>
           <span className="font-mono font-medium text-white">{row.acertos}</span>
         </p>
         <p className="flex items-center justify-between gap-4">
           <span className="flex items-center gap-1.5 text-red-400">
-            <span className="h-2 w-2 rounded-full bg-red-400" /> Erros
+            <span className="h-2 w-2 rounded-full bg-red-400" /> {t.desempenhoEstatisticas.erros}
           </span>
           <span className="font-mono font-medium text-white">{row.erros}</span>
         </p>
         <p className="flex items-center justify-between gap-4">
           <span className="flex items-center gap-1.5 text-orange-400">
-            <span className="h-2 w-2 rounded-full bg-orange-400" /> Pendentes
+            <span className="h-2 w-2 rounded-full bg-orange-400" /> {t.desempenhoEstatisticas.pendentes}
           </span>
           <span className="font-mono font-medium text-white">{row.pendentes}</span>
         </p>
       </div>
       <div className="mt-2 border-t border-white/10 pt-2 text-white/70">
-        {row.pontos} pts · {pct}% de aproveitamento
+        {row.pontos} pts · {pct}% {t.desempenhoEstatisticas.aproveitamento}
       </div>
     </div>
   )
 }
 
-function PieTooltip({ active, payload }: any) {
+function PieTooltip({ active, payload, t }: any) {
   if (!active || !payload?.length) return null
   const item = payload[0]
   return (
@@ -118,7 +119,7 @@ function PieTooltip({ active, payload }: any) {
         {item.name}
       </p>
       <p className="mt-1 text-white/70">
-        {item.value} questões · {item.payload.pct}%
+        {item.value} {t.desempenhoEstatisticas.questoes} · {item.payload.pct}%
       </p>
     </div>
   )
@@ -143,6 +144,7 @@ function renderActivePieShape(props: any) {
 }
 
 export function DesempenhoEstatisticasContent() {
+  const { t } = useLanguage()
   const [attempts, setAttempts] = useState<Attempt[]>([])
   const [loading, setLoading] = useState(true)
   const [chartType, setChartType] = useState<ChartType>("line")
@@ -170,7 +172,7 @@ export function DesempenhoEstatisticasContent() {
   const chartData = useMemo(() => {
     if (groupBy === "tentativa") {
       return attempts.map((a, i) => ({
-        label: `Treinamento ${i + 1}`,
+        label: `${t.desempenhoEstatisticas.tentativaLabel} ${i + 1}`,
         acertos: a.correct_count,
         erros: a.wrong_count,
         pendentes: Math.max(0, a.total_questions - a.correct_count - a.wrong_count),
@@ -201,11 +203,11 @@ export function DesempenhoEstatisticasContent() {
       if (groupBy === "semana") {
         const start = startOfWeek(date)
         key = start.toISOString().slice(0, 10)
-        label = `Sem ${start.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" })}`
+        label = `${t.desempenhoEstatisticas.semanaLabel} ${start.toLocaleDateString(t.desempenhoEstatisticas.localeData, { day: "2-digit", month: "2-digit" })}`
         sortKey = start.getTime()
       } else {
         key = `${date.getFullYear()}-${date.getMonth()}`
-        label = date.toLocaleDateString("pt-BR", { month: "short", year: "numeric" })
+        label = date.toLocaleDateString(t.desempenhoEstatisticas.localeData, { month: "short", year: "numeric" })
         sortKey = date.getFullYear() * 12 + date.getMonth()
       }
 
@@ -218,7 +220,7 @@ export function DesempenhoEstatisticasContent() {
     }
 
     return Array.from(groups.values()).sort((a, b) => a.sortKey - b.sortKey)
-  }, [attempts, groupBy])
+  }, [attempts, groupBy, t])
 
   const pieData = useMemo(() => {
     const totalAcertos = attempts.reduce((s, a) => s + a.correct_count, 0)
@@ -227,16 +229,16 @@ export function DesempenhoEstatisticasContent() {
     const totalPendentes = Math.max(0, totalQuestoes - totalAcertos - totalErros)
     const total = totalAcertos + totalErros + totalPendentes || 1
     return [
-      { name: "Acertos", value: totalAcertos, fill: GREEN, pct: Math.round((totalAcertos / total) * 100) },
-      { name: "Erros", value: totalErros, fill: RED, pct: Math.round((totalErros / total) * 100) },
-      { name: "Pendentes", value: totalPendentes, fill: ORANGE, pct: Math.round((totalPendentes / total) * 100) },
+      { name: t.desempenhoEstatisticas.acertos, value: totalAcertos, fill: GREEN, pct: Math.round((totalAcertos / total) * 100) },
+      { name: t.desempenhoEstatisticas.erros, value: totalErros, fill: RED, pct: Math.round((totalErros / total) * 100) },
+      { name: t.desempenhoEstatisticas.pendentes, value: totalPendentes, fill: ORANGE, pct: Math.round((totalPendentes / total) * 100) },
     ]
-  }, [attempts])
+  }, [attempts, t])
 
   const bySubject = useMemo(() => {
     const map = new Map<string, { correct: number; total: number }>()
     for (const a of attempts) {
-      const key = a.subject ?? "Geral"
+      const key = a.subject ?? t.desempenhoEstatisticas.geral
       const current = map.get(key) ?? { correct: 0, total: 0 }
       current.correct += a.correct_count
       current.total += a.total_questions
@@ -245,7 +247,7 @@ export function DesempenhoEstatisticasContent() {
     return Array.from(map.entries())
       .map(([name, v]) => ({ name, percentage: v.total > 0 ? Math.round((v.correct / v.total) * 100) : 0 }))
       .sort((a, b) => b.percentage - a.percentage)
-  }, [attempts])
+  }, [attempts, t])
 
   const topSubjects = bySubject.slice(0, 3)
   const weakestSubjects = [...bySubject].reverse().slice(0, 3)
@@ -254,7 +256,7 @@ export function DesempenhoEstatisticasContent() {
     return (
       <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando estatísticas...
+        {t.desempenhoEstatisticas.carregando}
       </div>
     )
   }
@@ -262,21 +264,21 @@ export function DesempenhoEstatisticasContent() {
   if (attempts.length === 0) {
     return (
       <Card className="border border-border bg-card p-10 text-center text-sm text-muted-foreground">
-        Você ainda não resolveu nenhum simulado ou questão. Resolva alguns para ver suas estatísticas aqui!
+        {t.desempenhoEstatisticas.vazio}
       </Card>
     )
   }
 
   const TOGGLES: { type: ChartType; label: string; icon: typeof LineChartIcon; color: string }[] = [
-    { type: "line", label: "Linhas", icon: LineChartIcon, color: GREEN },
-    { type: "bar", label: "Barras", icon: BarChart3, color: ORANGE },
-    { type: "pie", label: "Pizza", icon: PieChartIcon, color: RED },
+    { type: "line", label: t.desempenhoEstatisticas.linhas, icon: LineChartIcon, color: GREEN },
+    { type: "bar", label: t.desempenhoEstatisticas.barras, icon: BarChart3, color: ORANGE },
+    { type: "pie", label: t.desempenhoEstatisticas.pizza, icon: PieChartIcon, color: RED },
   ]
 
   const GROUP_TOGGLES: { value: GroupBy; label: string }[] = [
-    { value: "tentativa", label: "Por treinamento" },
-    { value: "semana", label: "Semanal" },
-    { value: "mes", label: "Mensal" },
+    { value: "tentativa", label: t.desempenhoEstatisticas.porTreinamento },
+    { value: "semana", label: t.desempenhoEstatisticas.semanal },
+    { value: "mes", label: t.desempenhoEstatisticas.mensal },
   ]
 
   return (
@@ -289,8 +291,8 @@ export function DesempenhoEstatisticasContent() {
 
         <div className="relative mb-5 flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h3 className="font-semibold text-white">Desempenho por Tentativa</h3>
-            <p className="text-xs text-white/60">Acertos, erros e pendências — a mesma informação, três visões.</p>
+            <h3 className="font-semibold text-white">{t.desempenhoEstatisticas.tituloGrafico}</h3>
+            <p className="text-xs text-white/60">{t.desempenhoEstatisticas.subtituloGrafico}</p>
           </div>
           <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 p-1">
             {TOGGLES.map(({ type, label, icon: Icon, color }) => (
@@ -343,7 +345,7 @@ export function DesempenhoEstatisticasContent() {
                 <Line
                   type="monotone"
                   dataKey="acertos"
-                  name="Acertos"
+                  name={t.desempenhoEstatisticas.acertos}
                   stroke={GREEN}
                   strokeWidth={3}
                   dot={{ r: 4, fill: GREEN, strokeWidth: 0 }}
@@ -354,7 +356,7 @@ export function DesempenhoEstatisticasContent() {
                 <Line
                   type="monotone"
                   dataKey="erros"
-                  name="Erros"
+                  name={t.desempenhoEstatisticas.erros}
                   stroke={RED}
                   strokeWidth={3}
                   dot={{ r: 4, fill: RED, strokeWidth: 0 }}
@@ -365,7 +367,7 @@ export function DesempenhoEstatisticasContent() {
                 <Line
                   type="monotone"
                   dataKey="pendentes"
-                  name="Pendentes"
+                  name={t.desempenhoEstatisticas.pendentes}
                   stroke={ORANGE}
                   strokeWidth={3}
                   dot={{ r: 4, fill: ORANGE, strokeWidth: 0 }}
@@ -373,8 +375,8 @@ export function DesempenhoEstatisticasContent() {
                   isAnimationActive
                   animationDuration={700}
                 />
-                
-                <Tooltip content={<AttemptTooltip />} />
+
+                <Tooltip content={<AttemptTooltip t={t} />} />
               </LineChart>
             ) : chartType === "bar" ? (
               <BarChart data={chartData} margin={{ left: 8, right: 8, top: 8, bottom: 0 }}>
@@ -383,7 +385,7 @@ export function DesempenhoEstatisticasContent() {
                 <YAxis stroke="rgba(255,255,255,0.5)" tickLine={false} axisLine={false} width={28} fontSize={12} />
                 <Bar
                   dataKey="acertos"
-                  name="Acertos"
+                  name={t.desempenhoEstatisticas.acertos}
                   fill={GREEN}
                   radius={[6, 6, 0, 0]}
                   maxBarSize={22}
@@ -393,7 +395,7 @@ export function DesempenhoEstatisticasContent() {
                 />
                 <Bar
                   dataKey="erros"
-                  name="Erros"
+                  name={t.desempenhoEstatisticas.erros}
                   fill={RED}
                   radius={[6, 6, 0, 0]}
                   maxBarSize={22}
@@ -403,7 +405,7 @@ export function DesempenhoEstatisticasContent() {
                 />
                 <Bar
                   dataKey="pendentes"
-                  name="Pendentes"
+                  name={t.desempenhoEstatisticas.pendentes}
                   fill={ORANGE}
                   radius={[6, 6, 0, 0]}
                   maxBarSize={22}
@@ -411,8 +413,8 @@ export function DesempenhoEstatisticasContent() {
                   animationDuration={700}
                   activeBar={{ filter: GLOW[ORANGE], stroke: ORANGE, strokeWidth: 1 }}
                 />
-                
-                <Tooltip content={<AttemptTooltip />} cursor={{ fill: "rgba(255,255,255,0.04)" }} />
+
+                <Tooltip content={<AttemptTooltip t={t} />} cursor={{ fill: "rgba(255,255,255,0.04)" }} />
               </BarChart>
             ) : (
               <PieChart>
@@ -435,8 +437,8 @@ export function DesempenhoEstatisticasContent() {
                     <Cell key={entry.name} fill={entry.fill} stroke="rgba(0,0,0,0.2)" />
                   ))}
                 </Pie>
-                
-                <Tooltip content={<PieTooltip />} />
+
+                <Tooltip content={<PieTooltip t={t} />} />
               </PieChart>
             )}
           </ResponsiveContainer>
@@ -445,15 +447,15 @@ export function DesempenhoEstatisticasContent() {
         <div className="relative mt-4 flex flex-wrap items-center justify-center gap-6 text-xs">
           <span className="flex items-center gap-1.5 text-white/70">
             <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: GREEN, boxShadow: `0 0 8px ${GREEN}` }} />
-            Acertos / Concluído
+            {t.desempenhoEstatisticas.legendaAcertos}
           </span>
           <span className="flex items-center gap-1.5 text-white/70">
             <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: RED, boxShadow: `0 0 8px ${RED}` }} />
-            Erros / Atenção
+            {t.desempenhoEstatisticas.legendaErros}
           </span>
           <span className="flex items-center gap-1.5 text-white/70">
             <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: ORANGE, boxShadow: `0 0 8px ${ORANGE}` }} />
-            Pendentes / Em andamento
+            {t.desempenhoEstatisticas.legendaPendentes}
           </span>
         </div>
       </Card>
@@ -463,7 +465,7 @@ export function DesempenhoEstatisticasContent() {
         <Card className="border border-success/30 bg-success/5 p-6">
           <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
             <TrendingUp className="h-5 w-5 text-success" />
-            O que você manda bem
+            {t.desempenhoEstatisticas.mandaBem}
           </h3>
           <div className="space-y-4">
             {topSubjects.map((subject) => (
@@ -486,7 +488,7 @@ export function DesempenhoEstatisticasContent() {
         <Card className="border border-warning/30 bg-warning/5 p-6">
           <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
             <TrendingDown className="h-5 w-5 text-warning" />
-            Precisa Melhorar
+            {t.desempenhoEstatisticas.precisaMelhorar}
           </h3>
           <div className="space-y-4">
             {weakestSubjects.map((subject) => (

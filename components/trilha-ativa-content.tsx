@@ -132,9 +132,8 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
 
     const activePool = await getQuestoesAtivasPool()
     const poolIds = filtrarPoolIds(activePool, {
-      areas: etapa.area ? [etapa.area] : undefined,
+      materias: etapa.area ? [etapa.area] : undefined,
       dificuldade: etapa.dificuldade ?? undefined,
-      prova: etapa.prova ?? undefined,
     })
     const quantidade = etapa.quantidade_questoes ?? 10
 

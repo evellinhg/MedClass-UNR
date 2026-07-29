@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react"
 import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
-import { getAreaColor } from "@/lib/area-colors"
+import { DIFFICULTIES } from "@/lib/quiz-config"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type ParcialKey } from "@/lib/unr-curriculum"
+import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
@@ -32,6 +33,7 @@ interface PracticeLauncherProps {
 }
 
 const QUANTITIES = [5, 10, 20, 30, 50]
+const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
 async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
   const cached = getCachedQuestoesAtivas()
@@ -46,9 +48,8 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const { t } = useLanguage()
   const [starting, setStarting] = useState(false)
   const [dificuldade, setDificuldade] = useState("aleatorio")
-  const [selectedAreas, setSelectedAreas] = useState<string[]>([])
-  const [prova, setProva] = useState(PROVAS[0])
-  const [edicao, setEdicao] = useState("")
+  const [selectedMaterias, setSelectedMaterias] = useState<string[]>([])
+  const [parcial, setParcial] = useState<ParcialKey | "">("")
   const [count, setCount] = useState(10)
   const [timerEnabled, setTimerEnabled] = useState(false)
   const [apenasIneditas, setApenasIneditas] = useState(true)
@@ -82,19 +83,21 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           ? [planStatus.questoesRemaining]
           : []
 
-  const toggleArea = (area: string) => {
-    setSelectedAreas((prev) => (prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area]))
+  const toggleMateria = (materia: string) => {
+    setSelectedMaterias((prev) => (prev.includes(materia) ? prev.filter((m) => m !== materia) : [...prev, materia]))
     setAvailable(null)
   }
+
+  const materiasFiltro = () =>
+    selectedMaterias.length > 0 && selectedMaterias.length < ALL_MATERIAS.length ? selectedMaterias : undefined
 
   const handleVerify = async () => {
     setChecking(true)
     const pool = await getQuestoesAtivasPool()
     let ids = filtrarPoolIds(pool, {
-      areas: selectedAreas.length > 0 && selectedAreas.length < AREAS.length ? selectedAreas : undefined,
+      materias: materiasFiltro(),
       dificuldade,
-      prova,
-      edicao,
+      parcial: parcial || undefined,
     })
     if (apenasIneditas) {
       const { data: userData } = await supabase.auth.getUser()
@@ -110,24 +113,23 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
 
   useEffect(() => {
     setAvailable(null)
-  }, [dificuldade, prova, edicao, apenasIneditas])
+  }, [dificuldade, parcial, apenasIneditas])
 
   const handleStart = async () => {
-    const label =
-      selectedAreas.length === 0 || selectedAreas.length === AREAS.length
-        ? t.practiceLauncher.labelAleatorias(prova)
-        : `${selectedAreas.map((a) => t.treinamentos.areaLabel[a] ?? a).join(", ")} · ${prova}`
+    const materiasSelecionadas = materiasFiltro()
+    const label = materiasSelecionadas
+      ? materiasSelecionadas.map((m) => t.cronograma.materiaLabel[m] ?? m).join(", ")
+      : t.practiceLauncher.labelAleatorias
 
     setStarting(true)
     const { data: userData } = await supabase.auth.getUser()
-    const areasFiltro = selectedAreas.length > 0 && selectedAreas.length < AREAS.length ? selectedAreas : undefined
 
     let questionIds: string[] | undefined
     let simuladoId: string | undefined
 
     if (userData.user) {
       const pool = await getQuestoesAtivasPool()
-      let poolIds = filtrarPoolIds(pool, { areas: areasFiltro, dificuldade, prova, edicao })
+      let poolIds = filtrarPoolIds(pool, { materias: materiasSelecionadas, dificuldade, parcial: parcial || undefined })
       if (apenasIneditas) {
         const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
         poolIds = poolIds.filter((id) => !jaRespondidas.has(id))
@@ -139,9 +141,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
         .insert({
           user_id: userData.user.id,
           nome: label,
-          areas: areasFiltro ?? [],
+          areas: materiasSelecionadas ?? [],
           dificuldade: dificuldade !== "aleatorio" ? dificuldade : null,
-          prova: prova || null,
+          parcial: parcial || null,
           quantidade_questoes: questionIds.length,
           questao_ids: questionIds,
           modo: "individual",
@@ -153,7 +155,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       if (inserted) {
         trackEvent("treino_iniciado", {
           nome: label,
-          areas: areasFiltro ?? [],
+          areas: materiasSelecionadas ?? [],
           quantidade_questoes: questionIds.length,
         })
       }
@@ -163,10 +165,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     onStart({
       label,
       count,
-      areas: areasFiltro,
+      materias: materiasSelecionadas,
       dificuldade,
-      prova,
-      edicao: edicao || undefined,
+      parcial: parcial || undefined,
       timerEnabled,
       mode: "individual",
       questionIds,
@@ -193,7 +194,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             description={planStatus?.isTrialExpired ? t.practiceLauncher.planExpiradoDesc : t.practiceLauncher.limiteDesc}
           />
         ) : (
-        <div className="space-y-4 py-2">
+        <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto pr-1">
           <div className="space-y-2">
             <Label>{t.treinamentos.nivel}</Label>
             <div className="flex flex-wrap gap-2">
@@ -226,34 +227,45 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           </div>
 
           <div className="space-y-2">
-            <Label>{t.practiceLauncher.areaLabelTodas5}</Label>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
-                className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
-                  selectedAreas.length === AREAS.length
-                    ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
-                    : "border-input text-foreground hover:bg-accent"
-                }`}
-              >
-                {t.treinamentos.todas}
-              </button>
-              {AREAS.map((area) => {
-                const cor = getAreaColor(area)
-                const ativo = selectedAreas.includes(area)
-                return (
-                  <button
-                    key={area}
-                    onClick={() => toggleArea(area)}
-                    className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
-                      ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
-                    }`}
-                  >
-                    <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                    {t.treinamentos.areaLabel[area] ?? area}
-                  </button>
-                )
-              })}
+            <Label>{t.practiceLauncher.materiaLabelTodas}</Label>
+            <button
+              onClick={() =>
+                setSelectedMaterias((prev) => (prev.length === ALL_MATERIAS.length ? [] : [...ALL_MATERIAS]))
+              }
+              className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
+                selectedMaterias.length === ALL_MATERIAS.length
+                  ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
+                  : "border-input text-foreground hover:bg-accent"
+              }`}
+            >
+              {t.treinamentos.todas}
+            </button>
+            <div className="space-y-2">
+              {ANO_KEYS.map((ano) => (
+                <div key={ano}>
+                  <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                    {t.cronograma.anoLabel[ano]}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {MATERIA_KEYS_BY_ANO[ano].map((materia) => {
+                      const cor = getMateriaColor(materia)
+                      const ativo = selectedMaterias.includes(materia)
+                      return (
+                        <button
+                          key={materia}
+                          onClick={() => toggleMateria(materia)}
+                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                            ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                          }`}
+                        >
+                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                          {t.cronograma.materiaLabel[materia]}
+                        </button>
+                      )
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -282,64 +294,29 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           </div>
 
           <div className="space-y-2">
-            <Label>{t.treinamentos.prova}</Label>
+            <Label>{t.treinamentos.parcial}</Label>
             <div className="flex gap-2">
-              {PROVAS.map((p) => (
+              <button
+                onClick={() => setParcial("")}
+                className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                  parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                }`}
+              >
+                {t.treinamentos.qualquer}
+              </button>
+              {PARCIAL_KEYS.map((p) => (
                 <button
                   key={p}
-                  onClick={() => {
-                    setProva(p)
-                    setEdicao("")
-                    setAvailable(null)
-                  }}
+                  onClick={() => setParcial(p)}
                   className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                    prova === p
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-input text-foreground hover:bg-accent"
+                    parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                   }`}
                 >
-                  {p}
+                  {t.cronograma.parcialLabel[p]}
                 </button>
               ))}
             </div>
           </div>
-
-          {prova === "REVALIDA" && (
-            <div className="space-y-2">
-              <Label>{t.treinamentos.edicao}</Label>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => {
-                    setEdicao("")
-                    setAvailable(null)
-                  }}
-                  className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
-                    edicao === ""
-                      ? "border-primary bg-primary/10 text-primary"
-                      : "border-input text-foreground hover:bg-accent"
-                  }`}
-                >
-                  {t.treinamentos.qualquer}
-                </button>
-                {EDICOES.map((e) => (
-                  <button
-                    key={e}
-                    onClick={() => {
-                      setEdicao(e)
-                      setAvailable(null)
-                    }}
-                    className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
-                      edicao === e
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-input text-foreground hover:bg-accent"
-                    }`}
-                  >
-                    {e}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
           <div className="space-y-2">
             <Label>{t.treinamentos.quantidadeDeQuestoes}</Label>

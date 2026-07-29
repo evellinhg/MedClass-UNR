@@ -314,7 +314,15 @@ export function CronogramaContent() {
                 </div>
               </div>
 
-              <Button variant="gradient" onClick={handleAddRoutine} disabled={saving} className="w-full gap-2">
+              {(!horario || selectedDays.length === 0) && (
+                <p className="text-xs text-warning">{t.cronograma.preencherCamposObrigatorios}</p>
+              )}
+              <Button
+                variant="gradient"
+                onClick={handleAddRoutine}
+                disabled={saving || !horario || selectedDays.length === 0}
+                className="w-full gap-2"
+              >
                 {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
                 {t.cronograma.adicionarRotina}
               </Button>

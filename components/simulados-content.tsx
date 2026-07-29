@@ -14,8 +14,9 @@ import {
   Trash2,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS, DIFFICULTIES, PROVAS, EDICOES } from "@/lib/quiz-config"
-import { getAreaColor } from "@/lib/area-colors"
+import { DIFFICULTIES } from "@/lib/quiz-config"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type ParcialKey } from "@/lib/unr-curriculum"
+import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
@@ -41,7 +42,7 @@ interface Simulado {
   nome: string
   areas: string[]
   dificuldade: string | null
-  prova: string | null
+  parcial: string | null
   quantidade_questoes: number
   questao_ids: string[]
   finished_at: string | null
@@ -55,6 +56,7 @@ interface Simulado {
 
 const QUANTIDADES = [10, 20, 30, 50]
 const TEMPOS_POR_QUESTAO = [30, 60, 90, 120, 180]
+const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
 function temProgresso(s: Simulado) {
   return (s.progresso_index ?? 0) > 0 || (s.respostas ?? []).some((a) => a !== null)
@@ -85,10 +87,9 @@ export function SimuladosContent() {
   const [playerOpen, setPlayerOpen] = useState(false)
 
   const [nome, setNome] = useState("")
-  const [selectedAreas, setSelectedAreas] = useState<string[]>([])
+  const [selectedMaterias, setSelectedMaterias] = useState<string[]>([])
   const [dificuldade, setDificuldade] = useState("aleatorio")
-  const [prova, setProva] = useState<string>("")
-  const [edicao, setEdicao] = useState<string>("")
+  const [parcial, setParcial] = useState<ParcialKey | "">("")
   const [quantidade, setQuantidade] = useState(20)
   const [tempoPorQuestao, setTempoPorQuestao] = useState(90)
   const [apenasIneditas, setApenasIneditas] = useState(true)
@@ -148,16 +149,15 @@ export function SimuladosContent() {
     })
   }
 
-  const toggleArea = (area: string) => {
-    setSelectedAreas((prev) => (prev.includes(area) ? prev.filter((a) => a !== area) : [...prev, area]))
+  const toggleMateria = (materia: string) => {
+    setSelectedMaterias((prev) => (prev.includes(materia) ? prev.filter((m) => m !== materia) : [...prev, materia]))
   }
 
   const resetForm = () => {
     setNome("")
-    setSelectedAreas([])
+    setSelectedMaterias([])
     setDificuldade("aleatorio")
-    setProva("")
-    setEdicao("")
+    setParcial("")
     setQuantidade(20)
     setTempoPorQuestao(90)
     setApenasIneditas(true)
@@ -179,10 +179,9 @@ export function SimuladosContent() {
 
     const activePool = await getQuestoesAtivasPool()
     let poolIds = filtrarPoolIds(activePool, {
-      areas: selectedAreas.length > 0 ? selectedAreas : undefined,
+      materias: selectedMaterias.length > 0 ? selectedMaterias : undefined,
       dificuldade,
-      prova,
-      edicao,
+      parcial: parcial || undefined,
     })
 
     if (apenasIneditas) {
@@ -201,9 +200,9 @@ export function SimuladosContent() {
     const { error } = await supabase.from("simulados").insert({
       user_id: userData.user.id,
       nome: nome.trim(),
-      areas: selectedAreas,
+      areas: selectedMaterias,
       dificuldade: dificuldade !== "aleatorio" ? dificuldade : null,
-      prova: prova || null,
+      parcial: parcial || null,
       quantidade_questoes: quantidade,
       questao_ids: questaoIds,
       modo: "simulado",
@@ -214,7 +213,7 @@ export function SimuladosContent() {
     if (!error) {
       trackEvent("simulado_iniciado", {
         nome: nome.trim(),
-        areas: selectedAreas,
+        areas: selectedMaterias,
         quantidade_questoes: quantidade,
         modo: "simulado",
       })
@@ -246,27 +245,27 @@ export function SimuladosContent() {
         <p className="mt-1 text-sm text-muted-foreground">{t.treinamentos.headerSubtitulo}</p>
       </div>
 
-      {/* Entry points: Modo Estudo x Simulados */}
+      {/* Entry points: Treinamento Livre x Simulados */}
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#7c3aed] to-[#4338ca] p-6 text-white">
+        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/15">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
               <BookOpen className="h-5 w-5" />
             </div>
-            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.modoEstudoTitulo}</h3>
-            <p className="text-sm text-white/80">{t.treinamentos.modoEstudoSubtitulo}</p>
-            <ul className="mt-4 space-y-2 text-sm text-white/90">
-              <li>• {t.treinamentos.modoEstudoItem1}</li>
-              <li>• {t.treinamentos.modoEstudoItem2}</li>
-              <li>• {t.treinamentos.modoEstudoItem3}</li>
+            <h3 className="mt-4 text-lg font-bold">{t.treinamentos.treinamentoLivreTitulo}</h3>
+            <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.treinamentoLivreSubtitulo}</p>
+            <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">
+              <li>• {t.treinamentos.treinamentoLivreItem1}</li>
+              <li>• {t.treinamentos.treinamentoLivreItem2}</li>
+              <li>• {t.treinamentos.treinamentoLivreItem3}</li>
             </ul>
           </div>
           <Button
             variant="secondary"
-            className="mt-6 w-full justify-between bg-white/15 text-white hover:bg-white/25"
+            className="mt-6 w-full justify-between bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15"
             onClick={() => setPracticeOpen(true)}
           >
-            {t.treinamentos.iniciarEstudo}
+            {t.treinamentos.iniciarTreinamentoLivre}
             <ArrowRight className="h-4 w-4" />
           </Button>
         </Card>
@@ -302,7 +301,7 @@ export function SimuladosContent() {
                 <DialogTitle>{t.treinamentos.criarNovoSimulado}</DialogTitle>
               </DialogHeader>
 
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="max-h-[70vh] space-y-4 overflow-y-auto pr-1">
                 <div>
                   <label htmlFor="name" className="mb-1 block text-sm font-medium text-foreground">
                     {t.treinamentos.nomeDoSimulado}
@@ -319,37 +318,46 @@ export function SimuladosContent() {
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">
-                    {t.treinamentos.areaLabelNenhuma}
+                    {t.treinamentos.materiaLabelNenhuma}
                   </label>
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedAreas((prev) => (prev.length === AREAS.length ? [] : [...AREAS]))}
-                      className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
-                        selectedAreas.length === AREAS.length
-                          ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
-                          : "border-input text-foreground hover:bg-accent"
-                      }`}
-                    >
-                      {t.treinamentos.todas}
-                    </button>
-                    {AREAS.map((area) => {
-                      const cor = getAreaColor(area)
-                      const ativo = selectedAreas.includes(area)
-                      return (
-                        <button
-                          key={area}
-                          type="button"
-                          onClick={() => toggleArea(area)}
-                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
-                            ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
-                          }`}
-                        >
-                          <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
-                          {t.treinamentos.areaLabel[area] ?? area}
-                        </button>
-                      )
-                    })}
+                  <button
+                    type="button"
+                    onClick={() => setSelectedMaterias((prev) => (prev.length === ALL_MATERIAS.length ? [] : [...ALL_MATERIAS]))}
+                    className={`mb-2 rounded-full border px-3 py-1.5 text-xs font-medium transition-all hover:shadow-[0_0_18px_rgba(198,255,58,0.45)] ${
+                      selectedMaterias.length === ALL_MATERIAS.length
+                        ? "border-transparent bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
+                        : "border-input text-foreground hover:bg-accent"
+                    }`}
+                  >
+                    {t.treinamentos.todas}
+                  </button>
+                  <div className="space-y-2">
+                    {ANO_KEYS.map((ano) => (
+                      <div key={ano}>
+                        <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                          {t.cronograma.anoLabel[ano]}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {MATERIA_KEYS_BY_ANO[ano].map((materia) => {
+                            const cor = getMateriaColor(materia)
+                            const ativo = selectedMaterias.includes(materia)
+                            return (
+                              <button
+                                key={materia}
+                                type="button"
+                                onClick={() => toggleMateria(materia)}
+                                className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${cor.hoverGlow} ${
+                                  ativo ? `${cor.activeBg} border-transparent text-white` : `${cor.borderSoft} text-foreground hover:bg-accent`
+                                }`}
+                              >
+                                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />
+                                {t.cronograma.materiaLabel[materia]}
+                              </button>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
@@ -410,66 +418,31 @@ export function SimuladosContent() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.prova}</label>
+                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.parcial}</label>
                   <div className="flex gap-2">
                     <button
                       type="button"
-                      onClick={() => {
-                        setProva("")
-                        setEdicao("")
-                      }}
+                      onClick={() => setParcial("")}
                       className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                        prova === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                        parcial === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                       }`}
                     >
                       {t.treinamentos.qualquer}
                     </button>
-                    {PROVAS.map((p) => (
+                    {PARCIAL_KEYS.map((p) => (
                       <button
                         key={p}
                         type="button"
-                        onClick={() => {
-                          setProva(p)
-                          setEdicao("")
-                        }}
+                        onClick={() => setParcial(p)}
                         className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
-                          prova === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
+                          parcial === p ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
                         }`}
                       >
-                        {p}
+                        {t.cronograma.parcialLabel[p]}
                       </button>
                     ))}
                   </div>
                 </div>
-
-                {prova === "REVALIDA" && (
-                  <div>
-                    <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.edicao}</label>
-                    <div className="flex gap-2">
-                      <button
-                        type="button"
-                        onClick={() => setEdicao("")}
-                        className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
-                          edicao === "" ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                        }`}
-                      >
-                        {t.treinamentos.qualquer}
-                      </button>
-                      {EDICOES.map((e) => (
-                        <button
-                          key={e}
-                          type="button"
-                          onClick={() => setEdicao(e)}
-                          className={`flex-1 rounded-lg border px-3 py-2 text-xs font-medium transition-colors ${
-                            edicao === e ? "border-primary bg-primary/10 text-primary" : "border-input text-foreground hover:bg-accent"
-                          }`}
-                        >
-                          {e}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
                 <div>
                   <label className="mb-2 block text-sm font-medium text-foreground">
@@ -576,18 +549,18 @@ export function SimuladosContent() {
                     )}
                   </div>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {(simulado.areas.length > 0 ? simulado.areas : [t.treinamentos.todasAsAreas]).map((area) => (
+                    {(simulado.areas.length > 0 ? simulado.areas : [t.treinamentos.todasAsMaterias]).map((materia) => (
                       <span
-                        key={area}
+                        key={materia}
                         className="inline-flex items-center rounded-full bg-[#c6ff3a]/20 px-2.5 py-0.5 text-xs font-medium text-primary"
                       >
-                        {t.treinamentos.areaLabel[area] ?? area}
+                        {t.cronograma.materiaLabel[materia] ?? materia}
                       </span>
                     ))}
                   </div>
                   <div className="mt-2 flex items-center gap-4 text-xs text-muted-foreground">
                     <span>{simulado.quantidade_questoes} {t.treinamentos.questoesCount}</span>
-                    {simulado.prova && <span>{simulado.prova}</span>}
+                    {simulado.parcial && <span>{t.cronograma.parcialLabel[simulado.parcial] ?? simulado.parcial}</span>}
                     {simulado.modo_estrito && simulado.timer_segundos_por_questao && (
                       <span>{simulado.timer_segundos_por_questao}{t.treinamentos.segundosPorQuestao}</span>
                     )}

@@ -4,10 +4,8 @@ export interface QuestaoCacheada {
   opcoes: string[]
   indice_correta: number
   materia: string | null
-  area: string | null
+  parcial: string | null
   dificuldade: string | null
-  prova: string | null
-  edicao: string | null
   ativo: boolean
   justificativa: string | null
   opcoes_comentario: string[] | null
@@ -40,12 +38,11 @@ export function invalidateQuestoesCache() {
 
 export function filtrarPoolIds(
   pool: QuestaoCacheada[],
-  filtros: { areas?: string[]; dificuldade?: string; prova?: string; edicao?: string }
+  filtros: { materias?: string[]; dificuldade?: string; parcial?: string }
 ): string[] {
   return pool
-    .filter((q) => !filtros.areas || filtros.areas.includes(q.area ?? ""))
+    .filter((q) => !filtros.materias || filtros.materias.includes(q.materia ?? ""))
     .filter((q) => !filtros.dificuldade || filtros.dificuldade === "aleatorio" || q.dificuldade === filtros.dificuldade)
-    .filter((q) => !filtros.prova || q.prova === filtros.prova)
-    .filter((q) => !filtros.edicao || q.edicao === filtros.edicao)
+    .filter((q) => !filtros.parcial || q.parcial === filtros.parcial)
     .map((q) => q.id)
 }

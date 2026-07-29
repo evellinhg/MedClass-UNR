@@ -40,7 +40,7 @@ interface Questao {
   opcoes: string[]
   indice_correta: number
   materia: string | null
-  area: string | null
+  parcial: string | null
   dificuldade: string | null
   justificativa: string | null
   opcoes_comentario: string[] | null
@@ -52,10 +52,9 @@ interface Questao {
 export interface SimuladoConfig {
   label: string
   count: number
-  areas?: string[]
+  materias?: string[]
   dificuldade?: string
-  prova?: string
-  edicao?: string
+  parcial?: string
   timerEnabled?: boolean
   mode?: "individual" | "simulado"
   questionIds?: string[]
@@ -162,7 +161,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     const isReadOnly = !!config.readOnly
 
     const selectCols =
-      "id, enunciado, opcoes, indice_correta, materia, area, dificuldade, justificativa, opcoes_comentario, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
+      "id, enunciado, opcoes, indice_correta, materia, parcial, dificuldade, justificativa, opcoes_comentario, mecanismo_pergunta, mecanismo_opcoes, mecanismo_indice_correta"
 
     const applyResult = (pool: Questao[], ordered: boolean, effectiveCount: number, skipTrialUsage: boolean) => {
       const chosen = ordered ? pool.slice(0, effectiveCount) : shuffle(pool).slice(0, effectiveCount)
@@ -203,10 +202,9 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       getQuestoesAtivasPool().then((activePool) => {
         const ids = new Set(
           filtrarPoolIds(activePool, {
-            areas: config.areas && config.areas.length > 0 ? config.areas : undefined,
+            materias: config.materias && config.materias.length > 0 ? config.materias : undefined,
             dificuldade: config.dificuldade,
-            prova: config.prova,
-            edicao: config.edicao,
+            parcial: config.parcial,
           })
         )
         applyResult(activePool.filter((q) => ids.has(q.id)) as Questao[], false, effectiveCount, skipTrialUsage)
@@ -400,7 +398,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     if (userData.user && answeredCount > 0) {
       await supabase.from("simulado_attempts").insert({
         user_id: userData.user.id,
-        subject: config?.areas?.join(", ") ?? config?.label ?? null,
+        subject: config?.materias?.join(", ") ?? config?.label ?? null,
         total_questions: answeredCount,
         correct_count: correct,
         wrong_count: wrong,
@@ -559,7 +557,9 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                       {current.dificuldade}
                     </span>
                   )}
-                  {current.area && <Badge variant="secondary">{current.area}</Badge>}
+                  {current.materia && (
+                    <Badge variant="secondary">{t.cronograma.materiaLabel[current.materia] ?? current.materia}</Badge>
+                  )}
                 </div>
               </div>
 

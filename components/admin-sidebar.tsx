@@ -43,9 +43,19 @@ const adminNavigation: AdminNavItem[] = [
   { name: "Analytics", href: "/admin/analytics", icon: BarChart3 },
 ]
 
-export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
+interface AdminSidebarProps {
+  onNavigate?: () => void
+  role?: "admin" | "colaborador"
+}
+
+export function AdminSidebar({ onNavigate, role = "admin" }: AdminSidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
+
+  const navigation =
+    role === "colaborador"
+      ? adminNavigation.filter((item) => item.href === "/admin/questoes")
+      : adminNavigation
 
   const handleLogout = async () => {
     await supabase.auth.signOut()
@@ -71,7 +81,7 @@ export function AdminSidebar({ onNavigate }: { onNavigate?: () => void }) {
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto px-3 py-4" aria-label="Navegação administrativa">
-        {adminNavigation.map((item) => {
+        {navigation.map((item) => {
           const isActive = pathname === item.href
           return (
             <Link

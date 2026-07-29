@@ -7,7 +7,6 @@ import { ChevronDown, LogOut, ShieldCheck, Lock } from "lucide-react"
 import Image from "next/image"
 import { getNavigation } from "@/lib/navigation"
 import { supabase } from "@/lib/supabase"
-import { isAdminEmail } from "@/lib/admin-config"
 import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { useLanguage } from "@/lib/i18n"
@@ -37,8 +36,11 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
   const router = useRouter()
   const { t } = useLanguage()
   const navigation = getNavigation(t.dashboardNav)
-  const [isAdmin, setIsAdmin] = useState(false)
   const [planStatus, setPlanStatus] = useState<PlanStatus | null>(null)
+  const isAdmin = planStatus?.isAdmin ?? false
+  const isColaborador = planStatus?.isColaborador ?? false
+  const hasAdminAccess = isAdmin || isColaborador
+  const adminHref = isAdmin ? "/admin" : "/admin/questoes"
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
 
   const toggleExpanded = (name: string) => {
@@ -53,13 +55,10 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
   const basePath = (href: string) => href.split("?")[0]
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setIsAdmin(isAdminEmail(data.session?.user.email))
-    })
-    const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAdmin(isAdminEmail(session?.user.email))
-    })
     getPlanStatus().then(setPlanStatus)
+    const { data: subscription } = supabase.auth.onAuthStateChange(() => {
+      getPlanStatus().then(setPlanStatus)
+    })
     return () => subscription.subscription.unsubscribe()
   }, [])
 
@@ -183,9 +182,9 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
           )
         })}
 
-        {isAdmin && (
+        {hasAdminAccess && (
           <Link
-            href="/admin"
+            href={adminHref}
             onClick={onNavigate}
             aria-current={pathname.startsWith("/admin") ? "page" : undefined}
             title={compact ? t.dashboardNav.painelAdmin : undefined}

@@ -9,7 +9,16 @@ export async function requireAdmin(request: NextRequest) {
 
   const admin = createAdminClient()
   const { data, error } = await admin.auth.getUser(token)
-  if (error || !data.user || !isAdminEmail(data.user.email)) return null
+  if (error || !data.user) return null
+
+  const { data: profile } = await admin
+    .from('profiles')
+    .select('role')
+    .eq('id', data.user.id)
+    .maybeSingle()
+
+  const isAdmin = profile?.role === 'admin' || isAdminEmail(data.user.email)
+  if (!isAdmin) return null
 
   return data.user
 }

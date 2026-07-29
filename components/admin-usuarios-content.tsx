@@ -31,9 +31,24 @@ interface AdminUser {
   full_name: string | null
   plan: string
   status: string
+  role: string
+  access_expires_at: string | null
   provider: string
   created_at: string
   last_sign_in_at: string | null
+}
+
+const ROLE_LABEL: Record<string, string> = {
+  admin: "Admin",
+  aluno: "Aluno",
+  colaborador: "Colaborador",
+}
+
+function toDatetimeLocalValue(iso: string | null): string {
+  if (!iso) return ""
+  const d = new Date(iso)
+  const pad = (n: number) => String(n).padStart(2, "0")
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`
 }
 
 interface UserActivity {
@@ -285,6 +300,8 @@ function UserDetailDialog({
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [plan, setPlan] = useState("mensal")
+  const [role, setRole] = useState("aluno")
+  const [accessExpiresAt, setAccessExpiresAt] = useState("")
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [resetting, setResetting] = useState(false)
@@ -299,6 +316,8 @@ function UserDetailDialog({
       setName(user.full_name ?? "")
       setEmail(user.email)
       setPlan(user.plan)
+      setRole(user.role)
+      setAccessExpiresAt(toDatetimeLocalValue(user.access_expires_at))
       setNewPassword(null)
       setError(null)
       setConfirmingDelete(false)
@@ -344,7 +363,13 @@ function UserDetailDialog({
     setError(null)
     const res = await authedFetch(`/api/admin/users/${user.id}`, {
       method: "PATCH",
-      body: JSON.stringify({ email, full_name: name, plan }),
+      body: JSON.stringify({
+        email,
+        full_name: name,
+        plan,
+        role,
+        access_expires_at: accessExpiresAt ? new Date(accessExpiresAt).toISOString() : null,
+      }),
     })
     setSaving(false)
     if (!res.ok) {
@@ -387,6 +412,10 @@ function UserDetailDialog({
             <Badge variant={user.status === "pending" ? "outline" : "default"}>
               {user.status === "pending" ? "Pendente" : "Ativo"}
             </Badge>
+          )}
+          <Badge variant="outline">{ROLE_LABEL[user.role] ?? user.role}</Badge>
+          {user.access_expires_at && new Date(user.access_expires_at) < new Date() && (
+            <Badge variant="destructive">Acesso expirado</Badge>
           )}
         </div>
 
@@ -437,6 +466,38 @@ function UserDetailDialog({
                   <SelectItem value="trimestral">Trimestral</SelectItem>
                 </SelectContent>
               </Select>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Papel da conta</Label>
+              <Select value={role} onValueChange={setRole} disabled={isDeleted}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="aluno">Aluno</SelectItem>
+                  <SelectItem value="colaborador">Colaborador</SelectItem>
+                  <SelectItem value="admin">Admin</SelectItem>
+                </SelectContent>
+              </Select>
+              <p className="text-xs text-muted-foreground">
+                Admin tem acesso total. Colaborador tem acesso completo ao conteúdo e pode criar/editar o banco de
+                questões, mas não acessa contas de usuários. Aluno não tem acesso ao painel admin.
+              </p>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Data de expiração do acesso</Label>
+              <Input
+                type="datetime-local"
+                value={accessExpiresAt}
+                onChange={(e) => setAccessExpiresAt(e.target.value)}
+                disabled={isDeleted}
+              />
+              <p className="text-xs text-muted-foreground">
+                Opcional. Depois dessa data, o acesso da conta é bloqueado automaticamente, independente do plano ou
+                papel. Deixe em branco para não expirar.
+              </p>
             </div>
 
             <div className="rounded-lg border border-border p-3">
@@ -570,22 +631,32 @@ function UsersTable({ users, onSelect }: { users: AdminUser[]; onSelect: (u: Adm
           <TableHead>Nome</TableHead>
           <TableHead>E-mail</TableHead>
           <TableHead>Login</TableHead>
+          <TableHead>Papel</TableHead>
           <TableHead>Plano</TableHead>
           <TableHead>Último acesso</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        {users.map((user) => (
-          <TableRow key={user.id} className="cursor-pointer" onClick={() => onSelect(user)}>
-            <TableCell className="font-medium text-foreground">{user.full_name ?? "—"}</TableCell>
-            <TableCell className="text-muted-foreground">{user.email}</TableCell>
-            <TableCell>
-              <Badge variant="secondary">{user.provider === "google" ? "Google" : "E-mail"}</Badge>
-            </TableCell>
-            <TableCell className="capitalize">{user.plan}</TableCell>
-            <TableCell className="text-muted-foreground">{formatDate(user.last_sign_in_at)}</TableCell>
-          </TableRow>
-        ))}
+        {users.map((user) => {
+          const expired = !!user.access_expires_at && new Date(user.access_expires_at) < new Date()
+          return (
+            <TableRow key={user.id} className="cursor-pointer" onClick={() => onSelect(user)}>
+              <TableCell className="font-medium text-foreground">{user.full_name ?? "—"}</TableCell>
+              <TableCell className="text-muted-foreground">{user.email}</TableCell>
+              <TableCell>
+                <Badge variant="secondary">{user.provider === "google" ? "Google" : "E-mail"}</Badge>
+              </TableCell>
+              <TableCell>
+                <div className="flex items-center gap-1.5">
+                  <Badge variant="outline">{ROLE_LABEL[user.role] ?? user.role}</Badge>
+                  {expired && <Badge variant="destructive">Expirado</Badge>}
+                </div>
+              </TableCell>
+              <TableCell className="capitalize">{user.plan}</TableCell>
+              <TableCell className="text-muted-foreground">{formatDate(user.last_sign_in_at)}</TableCell>
+            </TableRow>
+          )
+        })}
       </TableBody>
     </Table>
   )
@@ -597,6 +668,7 @@ export function AdminUsuariosContent() {
   const [error, setError] = useState<string | null>(null)
   const [selected, setSelected] = useState<AdminUser | null>(null)
   const [dialogOpen, setDialogOpen] = useState(false)
+  const [roleFilter, setRoleFilter] = useState("todos")
 
   const load = async () => {
     setLoading(true)
@@ -642,12 +714,27 @@ export function AdminUsuariosContent() {
     )
   }
 
-  const active = users.filter((u) => u.status !== "pending" && u.status !== "deleted")
-  const pending = users.filter((u) => u.status === "pending")
-  const deleted = users.filter((u) => u.status === "deleted")
+  const byRole = roleFilter === "todos" ? users : users.filter((u) => u.role === roleFilter)
+  const active = byRole.filter((u) => u.status !== "pending" && u.status !== "deleted")
+  const pending = byRole.filter((u) => u.status === "pending")
+  const deleted = byRole.filter((u) => u.status === "deleted")
 
   return (
     <>
+      <div className="flex items-center justify-end">
+        <Select value={roleFilter} onValueChange={setRoleFilter}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Papel" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="todos">Todos os papéis</SelectItem>
+            <SelectItem value="aluno">Aluno</SelectItem>
+            <SelectItem value="colaborador">Colaborador</SelectItem>
+            <SelectItem value="admin">Admin</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <Tabs defaultValue="ativos" className="gap-6">
         <TabsList>
           <TabsTrigger value="ativos">Ativos ({active.length})</TabsTrigger>

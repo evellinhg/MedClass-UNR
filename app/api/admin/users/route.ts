@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
   const [{ data: authList, error: authError }, { data: profiles, error: profilesError }] =
     await Promise.all([
       supabase.auth.admin.listUsers({ perPage: 200 }),
-      supabase.from('profiles').select('id, plan, status, full_name, email'),
+      supabase.from('profiles').select('id, plan, status, full_name, email, role, access_expires_at'),
     ])
 
   if (authError) {
@@ -33,6 +33,8 @@ export async function GET(request: NextRequest) {
       full_name: profile?.full_name ?? u.user_metadata?.full_name ?? u.user_metadata?.name ?? null,
       plan: profile?.plan ?? 'gratis',
       status: profile?.status ?? 'active',
+      role: profile?.role ?? 'aluno',
+      access_expires_at: profile?.access_expires_at ?? null,
       provider: u.app_metadata?.provider ?? 'email',
       created_at: u.created_at,
       last_sign_in_at: u.last_sign_in_at,

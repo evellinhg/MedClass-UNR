@@ -5,8 +5,6 @@ import { Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 
-const prices = ["R$ 49,90", "R$ 129,90"]
-
 export function Pricing() {
   const { t } = useLanguage()
 
@@ -33,6 +31,7 @@ export function Pricing() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/50">
             {t.pricing.subtitle}
           </p>
+          <p className="mt-2 text-sm text-[#bef264]">{t.pricing.paymentNote}</p>
         </motion.div>
 
         {/* Pricing cards */}
@@ -62,7 +61,7 @@ export function Pricing() {
 
                 <h3 className="text-lg font-semibold text-white">{plan.name}</h3>
                 <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{prices[i]}</span>
+                  <span className="text-4xl font-bold text-white">{plan.price}</span>
                   {plan.period && <span className="text-white/50">{plan.period}</span>}
                 </div>
                 <p className="mt-2 text-sm text-white/50">{plan.description}</p>

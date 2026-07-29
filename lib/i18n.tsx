@@ -109,9 +109,11 @@ const pt = {
     titleLead: "Um investimento simples",
     titleHighlight: "para não travar em nenhuma prova",
     subtitle: "Cancele quando quiser, sem letras miúdas.",
+    paymentNote: "Pagamento via Pix.",
     plans: [
       {
         name: "Plano Mensal",
+        price: "R$ 19,90",
         period: "/mês",
         description: "Para quem quer testar a plataforma.",
         features: [
@@ -124,6 +126,7 @@ const pt = {
       },
       {
         name: "Plano Trimestral",
+        price: "R$ 49,90",
         period: "/trimestre",
         description: "Para quem quer estudar sem interrupção até a próxima final.",
         badge: "Melhor Custo-Benefício",
@@ -378,9 +381,11 @@ const es: typeof pt = {
     titleLead: "Una inversión simple",
     titleHighlight: "para no trabarte en ningún examen",
     subtitle: "Cancelá cuando quieras, sin letra chica.",
+    paymentNote: "Pago por transferencia (CBU/ALIAS).",
     plans: [
       {
         name: "Plan Mensual",
+        price: "$6.000 ARS",
         period: "/mes",
         description: "Para quienes quieren probar la plataforma.",
         features: [
@@ -393,6 +398,7 @@ const es: typeof pt = {
       },
       {
         name: "Plan Trimestral",
+        price: "$15.000 ARS",
         period: "/trimestre",
         description: "Para quienes quieren estudiar sin interrupciones hasta el próximo final.",
         badge: "Mejor Relación Precio-Beneficio",

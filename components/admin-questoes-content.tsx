@@ -15,7 +15,8 @@ import {
   XCircle,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS } from "@/lib/quiz-config"
+import { translations } from "@/lib/i18n"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -42,11 +43,9 @@ import { Pagination, PAGE_SIZE } from "@/components/pagination"
 interface Questao {
   id: string
   enunciado: string
-  area: string | null
   materia: string | null
+  parcial: string | null
   dificuldade: string
-  prova: string | null
-  edicao: string | null
   opcoes: string[]
   indice_correta: number
   justificativa: string | null
@@ -60,15 +59,21 @@ interface Questao {
 }
 
 const DIFFICULTIES = ["fácil", "médio", "difícil"]
-const PROVAS = ["ENAMED", "REVALIDA"]
+
+const anoLabel = translations.pt.cronograma.anoLabel
+const materiaLabel = translations.pt.cronograma.materiaLabel
+const parcialLabel = translations.pt.cronograma.parcialLabel
+
+const MATERIA_OPTIONS_FLAT = ANO_KEYS.flatMap((ano) =>
+  MATERIA_KEYS_BY_ANO[ano].map((m) => ({ key: m, label: `${anoLabel[ano]} · ${materiaLabel[m]}` }))
+)
 
 const emptyForm = {
   enunciado: "",
-  area: "",
-  materia: "",
+  ano: ANO_KEYS[0] as AnoKey,
+  materia: MATERIA_KEYS_BY_ANO[ANO_KEYS[0]][0],
+  parcial: PARCIAL_KEYS[0] as ParcialKey,
   dificuldade: "médio",
-  prova: "REVALIDA",
-  edicao: "",
   opcoes: ["", ""],
   opcoesComentario: ["", ""],
   indiceCorreta: 0,
@@ -97,8 +102,8 @@ export function AdminQuestoesContent() {
   const [saving, setSaving] = useState(false)
   const [form, setForm] = useState(emptyForm)
   const [expandedId, setExpandedId] = useState<string | null>(null)
-  const [filterArea, setFilterArea] = useState<string>("todas")
-  const [filterEdicao, setFilterEdicao] = useState<string>("todas")
+  const [filterMateria, setFilterMateria] = useState<string>("todas")
+  const [filterParcial, setFilterParcial] = useState<string>("todas")
   const [page, setPage] = useState(1)
 
   const load = async () => {
@@ -115,26 +120,20 @@ export function AdminQuestoesContent() {
     load()
   }, [])
 
-  const edicoes = useMemo(() => {
-    const set = new Set<string>()
-    questoes.forEach((q) => q.edicao && set.add(q.edicao))
-    return Array.from(set).sort().reverse()
-  }, [questoes])
-
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase()
     return questoes.filter((q) => {
       const matchSearch =
         !term ||
         q.enunciado.toLowerCase().includes(term) ||
-        (q.area ?? "").toLowerCase().includes(term) ||
         (q.materia ?? "").toLowerCase().includes(term) ||
+        (materiaLabel[q.materia ?? ""] ?? "").toLowerCase().includes(term) ||
         (q.tags ?? []).some((tag) => tag.toLowerCase().includes(term))
-      const matchArea = filterArea === "todas" || q.area === filterArea
-      const matchEdicao = filterEdicao === "todas" || q.edicao === filterEdicao
-      return matchSearch && matchArea && matchEdicao
+      const matchMateria = filterMateria === "todas" || q.materia === filterMateria
+      const matchParcial = filterParcial === "todas" || q.parcial === filterParcial
+      return matchSearch && matchMateria && matchParcial
     })
-  }, [questoes, search, filterArea, filterEdicao])
+  }, [questoes, search, filterMateria, filterParcial])
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
@@ -142,12 +141,7 @@ export function AdminQuestoesContent() {
   const stats = useMemo(() => {
     const total = filtered.length
     const ativas = filtered.filter((q) => q.ativo).length
-    const porArea: Record<string, number> = {}
-    filtered.forEach((q) => {
-      const a = q.area ?? "Sem área"
-      porArea[a] = (porArea[a] || 0) + 1
-    })
-    return { total, ativas, porArea }
+    return { total, ativas }
   }, [filtered])
 
   const openNew = () => {
@@ -156,15 +150,22 @@ export function AdminQuestoesContent() {
     setDialogOpen(true)
   }
 
+  const handleAnoChange = (novoAno: AnoKey) => {
+    setForm((p) => ({ ...p, ano: novoAno, materia: MATERIA_KEYS_BY_ANO[novoAno][0] }))
+  }
+
   const openEdit = (q: Questao) => {
+    const anoDerivado = (q.materia && anoDaMateria(q.materia)) || ANO_KEYS[0]
     setEditingId(q.id)
     setForm({
       enunciado: q.enunciado,
-      area: q.area ?? "",
-      materia: q.materia ?? "",
+      ano: anoDerivado,
+      materia:
+        q.materia && MATERIA_KEYS_BY_ANO[anoDerivado].includes(q.materia)
+          ? q.materia
+          : MATERIA_KEYS_BY_ANO[anoDerivado][0],
+      parcial: (q.parcial as ParcialKey) || PARCIAL_KEYS[0],
       dificuldade: q.dificuldade,
-      prova: q.prova ?? "REVALIDA",
-      edicao: q.edicao ?? "",
       opcoes: q.opcoes?.length ? [...q.opcoes] : ["", ""],
       opcoesComentario: q.opcoes_comentario?.length
         ? [...q.opcoes_comentario]
@@ -256,11 +257,9 @@ export function AdminQuestoesContent() {
     setSaving(true)
     const payload = {
       enunciado: form.enunciado.trim(),
-      area: form.area.trim() || null,
-      materia: form.materia.trim() || null,
+      materia: form.materia || null,
+      parcial: form.parcial || null,
       dificuldade: form.dificuldade,
-      prova: form.prova,
-      edicao: form.edicao.trim() || null,
       opcoes: opcoesLimpa,
       indice_correta: Math.min(form.indiceCorreta, opcoesLimpa.length - 1),
       justificativa: form.justificativa.trim() || null,
@@ -315,7 +314,7 @@ export function AdminQuestoesContent() {
             Banco de Questões
           </h2>
           <p className="text-sm text-muted-foreground">
-            {stats.total} questões{filterArea !== "todas" ? ` (${filterArea})` : ""}
+            {stats.total} questões{filterMateria !== "todas" ? ` (${materiaLabel[filterMateria] ?? filterMateria})` : ""}
             {" · "}
             {stats.ativas} ativas
           </p>
@@ -331,34 +330,34 @@ export function AdminQuestoesContent() {
         <div className="relative flex-1 min-w-[200px] max-w-sm">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
-            placeholder="Buscar por enunciado, área, matéria ou tag..."
+            placeholder="Buscar por enunciado, matéria ou tag..."
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1) }}
             className="pl-9"
           />
         </div>
-        <Select value={filterArea} onValueChange={(v) => { setFilterArea(v); setPage(1) }}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Área" />
+        <Select value={filterMateria} onValueChange={(v) => { setFilterMateria(v); setPage(1) }}>
+          <SelectTrigger className="w-[220px]">
+            <SelectValue placeholder="Matéria" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="todas">Todas as áreas</SelectItem>
-            {AREAS.map((a) => (
-              <SelectItem key={a} value={a}>
-                {a}
+            <SelectItem value="todas">Todas as matérias</SelectItem>
+            {MATERIA_OPTIONS_FLAT.map((m) => (
+              <SelectItem key={m.key} value={m.key}>
+                {m.label}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
-        <Select value={filterEdicao} onValueChange={(v) => { setFilterEdicao(v); setPage(1) }}>
+        <Select value={filterParcial} onValueChange={(v) => { setFilterParcial(v); setPage(1) }}>
           <SelectTrigger className="w-[150px]">
-            <SelectValue placeholder="Edição" />
+            <SelectValue placeholder="Parcial" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="todas">Todas edições</SelectItem>
-            {edicoes.map((e) => (
-              <SelectItem key={e} value={e}>
-                {e}
+            <SelectItem value="todas">Todos os parciais</SelectItem>
+            {PARCIAL_KEYS.map((p) => (
+              <SelectItem key={p} value={p}>
+                {parcialLabel[p]}
               </SelectItem>
             ))}
           </SelectContent>
@@ -385,17 +384,13 @@ export function AdminQuestoesContent() {
                   <div className="min-w-0 flex-1">
                     {/* Badges */}
                     <div className="mb-2 flex flex-wrap items-center gap-2">
-                      {q.area && <Badge variant="secondary">{q.area}</Badge>}
                       {q.materia && (
-                        <Badge variant="secondary">{q.materia}</Badge>
+                        <Badge variant="secondary">{materiaLabel[q.materia] ?? q.materia}</Badge>
+                      )}
+                      {q.parcial && (
+                        <Badge variant="outline">{parcialLabel[q.parcial] ?? q.parcial}</Badge>
                       )}
                       <Badge>{q.dificuldade}</Badge>
-                      {q.prova && (
-                        <Badge variant="outline">{q.prova}</Badge>
-                      )}
-                      {q.edicao && (
-                        <Badge variant="outline">Ed. {q.edicao}</Badge>
-                      )}
                       {q.mecanismo_pergunta && (
                         <Badge variant="outline">+ mecanismo</Badge>
                       )}
@@ -562,37 +557,41 @@ export function AdminQuestoesContent() {
             {/* ── CLASSIFICAÇÃO ── */}
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <Label>Área Médica</Label>
-                <Select
-                  value={form.area}
-                  onValueChange={(v) => setForm((p) => ({ ...p, area: v }))}
-                >
+                <Label>Ano</Label>
+                <Select value={form.ano} onValueChange={(v) => handleAnoChange(v as AnoKey)}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Selecione a área" />
+                    <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {AREAS.map((a) => (
+                    {ANO_KEYS.map((a) => (
                       <SelectItem key={a} value={a}>
-                        {a}
+                        {anoLabel[a]}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="materia">Matéria / Tema</Label>
-                <Input
-                  id="materia"
+                <Label>Matéria</Label>
+                <Select
                   value={form.materia}
-                  onChange={(e) =>
-                    setForm((p) => ({ ...p, materia: e.target.value }))
-                  }
-                  placeholder="Ex: Infecção Urinária"
-                />
+                  onValueChange={(v) => setForm((p) => ({ ...p, materia: v }))}
+                >
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {MATERIA_KEYS_BY_ANO[form.ano].map((m) => (
+                      <SelectItem key={m} value={m}>
+                        {materiaLabel[m]}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
                 <Label>Dificuldade</Label>
                 <Select
@@ -614,35 +613,22 @@ export function AdminQuestoesContent() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <Label>Prova</Label>
+                <Label>Parcial</Label>
                 <Select
-                  value={form.prova}
-                  onValueChange={(v) =>
-                    setForm((p) => ({ ...p, prova: v }))
-                  }
+                  value={form.parcial}
+                  onValueChange={(v) => setForm((p) => ({ ...p, parcial: v as ParcialKey }))}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {PROVAS.map((p) => (
+                    {PARCIAL_KEYS.map((p) => (
                       <SelectItem key={p} value={p}>
-                        {p}
+                        {parcialLabel[p]}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="edicao">Edição</Label>
-                <Input
-                  id="edicao"
-                  value={form.edicao}
-                  onChange={(e) =>
-                    setForm((p) => ({ ...p, edicao: e.target.value }))
-                  }
-                  placeholder="Ex: 2024.1"
-                />
               </div>
             </div>
 

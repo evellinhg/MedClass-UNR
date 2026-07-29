@@ -1,0 +1,108 @@
+==================================================================
+MEDCLASS UNR — TEMPLATE PARA CADASTRO DE QUESTÕES
+==================================================================
+Instruções de uso:
+- Copie o bloco "QUESTÃO #N" abaixo para cada questão nova.
+- Preencha todos os campos entre [colchetes].
+- Não apague as linhas de cabeçalho (ANO / MATÉRIA / PARCIAL / etc.),
+  elas são o que o Claude usa para separar e converter as questões.
+- Pode colocar quantas questões quiser no mesmo arquivo, uma após a
+  outra, numerando sequencialmente (QUESTÃO #1, QUESTÃO #2, ...).
+- Alternativas podem ser A/B/C/D ou A/B/C/D/E — não precisa ser
+  sempre 4.
+- MATÉRIA deve ser uma das opções da lista "MATÉRIAS VÁLIDAS POR
+  ANO" no final deste documento — é a mesma lista do dropdown no
+  painel admin, então usar esses nomes exatos evita retrabalho.
+- Quando terminar, envie o arquivo (.txt ou .docx) para o Claude
+  converter em JSON.
+==================================================================
+
+
+##################################################
+QUESTÃO #1
+##################################################
+
+ANO: [1º / 2º / 3º / 4º / 5º]
+MATÉRIA: [uma das opções da lista no final do documento]
+PARCIAL: [Primeiro Parcial / Segundo Parcial]
+DIFICULDADE: [Fácil / Médio / Difícil]
+TAGS: [palavras-chave separadas por vírgula, ex: anemia, ferropriva, hematologia]
+
+ENUNCIADO:
+[Cole aqui o texto completo do enunciado da questão]
+
+ALTERNATIVAS:
+A) [texto da alternativa A]
+B) [texto da alternativa B]
+C) [texto da alternativa C]
+D) [texto da alternativa D]
+
+RESPOSTA CORRETA: [letra da alternativa certa, ex: B]
+
+FEEDBACK DE CADA ALTERNATIVA:
+A) [Se for a correta: elogie o aluno e reforce o conceito.
+    Se for incorreta: explique detalhadamente por que está errada.]
+B) [idem]
+C) [idem]
+D) [idem]
+
+##################################################
+QUESTÃO #2
+##################################################
+
+ANO: [...]
+MATÉRIA: [...]
+PARCIAL: [...]
+DIFICULDADE: [...]
+TAGS: [...]
+
+ENUNCIADO:
+[...]
+
+ALTERNATIVAS:
+A) [...]
+B) [...]
+C) [...]
+D) [...]
+
+RESPOSTA CORRETA: [...]
+
+FEEDBACK DE CADA ALTERNATIVA:
+A) [...]
+B) [...]
+C) [...]
+D) [...]
+
+==================================================================
+(repita o bloco "QUESTÃO #N" quantas vezes precisar)
+==================================================================
+
+
+##################################################
+MATÉRIAS VÁLIDAS POR ANO (use exatamente estes nomes)
+##################################################
+
+1º Ano:
+- Crescimento e Desenvolvimento
+- Nutrição
+
+2º Ano:
+- Sexualidade, Gênero e Reprodução
+- Trabalho e Tempo Livre
+- Ser Humano e Seu Meio
+
+3º Ano:
+- Injúria
+- Defesa
+
+4º Ano:
+- Clínica Médica do 4º ano
+- Pediatria do 4º ano
+- Oftalmologia
+- Otorrinolaringologia
+- Farmacologia
+
+5º Ano:
+- Cirurgia do 5º ano
+- Pediatria do 5º ano
+- Clínica Médica do 5º ano

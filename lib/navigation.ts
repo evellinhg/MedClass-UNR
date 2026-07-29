@@ -11,6 +11,9 @@ import {
   Stethoscope,
   type LucideIcon,
 } from "lucide-react"
+import type { translations } from "@/lib/i18n"
+
+type DashboardNavLabels = (typeof translations)["pt"]["dashboardNav"]
 
 export interface NavChild {
   name: string
@@ -24,48 +27,50 @@ export interface NavItem {
   children?: NavChild[]
 }
 
-export const navigation: NavItem[] = [
-  { name: "Início", href: "/dashboard", icon: Home },
-  { name: "Cronograma", href: "/dashboard/cronograma", icon: CalendarDays },
-  {
-    name: "Materiais",
-    href: "/dashboard/materiais",
-    icon: BookOpen,
-    children: [
-      { name: "Videoaulas", href: "/dashboard/materiais?tab=videoaulas" },
-      { name: "Resumos", href: "/dashboard/materiais?tab=resumos" },
-      { name: "Flashcards", href: "/dashboard/materiais?tab=flashcards" },
-    ],
-  },
-  { name: "Treinamentos", href: "/dashboard/simulados", icon: ClipboardCheck },
-  {
-    name: "Desempenho",
-    href: "/dashboard/desempenho/estatisticas",
-    icon: BarChart3,
-    children: [
-      { name: "Histórico", href: "/dashboard/desempenho/historico" },
-      { name: "Estatísticas", href: "/dashboard/desempenho/estatisticas" },
-    ],
-  },
-  {
-    name: "Desafios Clínicos",
-    href: "/dashboard/desafios-clinicos",
-    icon: Stethoscope,
-    children: [
-      { name: "Estudar", href: "/dashboard/desafios-clinicos" },
-      { name: "Desempenho", href: "/dashboard/desafios-clinicos/desempenho" },
-    ],
-  },
-  { name: "Ranking", href: "/dashboard/ranking", icon: Trophy },
-  {
-    name: "MedCoins",
-    href: "/dashboard/medcoins",
-    icon: Coins,
-    children: [
-      { name: "Loja MedCoins", href: "/dashboard/medcoins/loja" },
-      { name: "Extrato", href: "/dashboard/medcoins" },
-    ],
-  },
-  { name: "Conquistas", href: "/dashboard/conquistas", icon: Medal },
-  { name: "Feedback", href: "/dashboard/feedback", icon: MessageSquare },
-]
+export function getNavigation(t: DashboardNavLabels): NavItem[] {
+  return [
+    { name: t.inicio, href: "/dashboard", icon: Home },
+    { name: t.cronograma, href: "/dashboard/cronograma", icon: CalendarDays },
+    {
+      name: t.materiais,
+      href: "/dashboard/materiais",
+      icon: BookOpen,
+      children: [
+        { name: t.videoaulas, href: "/dashboard/materiais?tab=videoaulas" },
+        { name: t.resumos, href: "/dashboard/materiais?tab=resumos" },
+        { name: t.flashcards, href: "/dashboard/materiais?tab=flashcards" },
+      ],
+    },
+    { name: t.treinamentos, href: "/dashboard/simulados", icon: ClipboardCheck },
+    {
+      name: t.desempenho,
+      href: "/dashboard/desempenho/estatisticas",
+      icon: BarChart3,
+      children: [
+        { name: t.historico, href: "/dashboard/desempenho/historico" },
+        { name: t.estatisticas, href: "/dashboard/desempenho/estatisticas" },
+      ],
+    },
+    {
+      name: t.desafiosClinicos,
+      href: "/dashboard/desafios-clinicos",
+      icon: Stethoscope,
+      children: [
+        { name: t.estudar, href: "/dashboard/desafios-clinicos" },
+        { name: t.desempenho, href: "/dashboard/desafios-clinicos/desempenho" },
+      ],
+    },
+    { name: t.ranking, href: "/dashboard/ranking", icon: Trophy },
+    {
+      name: t.medcoins,
+      href: "/dashboard/medcoins",
+      icon: Coins,
+      children: [
+        { name: t.lojaMedcoins, href: "/dashboard/medcoins/loja" },
+        { name: t.extrato, href: "/dashboard/medcoins" },
+      ],
+    },
+    { name: t.conquistas, href: "/dashboard/conquistas", icon: Medal },
+    { name: t.feedback, href: "/dashboard/feedback", icon: MessageSquare },
+  ]
+}

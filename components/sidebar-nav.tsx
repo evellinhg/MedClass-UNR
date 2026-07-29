@@ -5,35 +5,38 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { ChevronDown, LogOut, ShieldCheck, Lock } from "lucide-react"
 import Image from "next/image"
-import { navigation } from "@/lib/navigation"
+import { getNavigation } from "@/lib/navigation"
 import { supabase } from "@/lib/supabase"
 import { isAdminEmail } from "@/lib/admin-config"
 import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { useLanguage } from "@/lib/i18n"
 
 interface SidebarNavProps {
   onNavigate?: () => void
   compact?: boolean
 }
 
-function planLabel(status: PlanStatus): string {
-  if (status.isAdmin) return "Administrador"
-  if (status.plan === "mensal") return "Plano Mensal"
-  if (status.plan === "trimestral") return "Plano Trimestral"
-  if (status.isTrialExpired) return "Plano expirado"
+function planLabel(status: PlanStatus, t: ReturnType<typeof useLanguage>["t"]["dashboardNav"]): string {
+  if (status.isAdmin) return t.administrador
+  if (status.plan === "mensal") return t.planoMensal
+  if (status.plan === "trimestral") return t.planoTrimestral
+  if (status.isTrialExpired) return t.planoExpirado
   if (status.trialExpiresAt) {
     const hoursLeft = Math.max(
       0,
       Math.ceil((new Date(status.trialExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60))
     )
-    return `Teste grátis · ${hoursLeft}h restantes`
+    return `${t.testeGratis} · ${hoursLeft}h ${t.horasRestantes}`
   }
-  return "Plano gratuito"
+  return t.planoGratuito
 }
 
 export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
   const pathname = usePathname()
   const router = useRouter()
+  const { t } = useLanguage()
+  const navigation = getNavigation(t.dashboardNav)
   const [isAdmin, setIsAdmin] = useState(false)
   const [planStatus, setPlanStatus] = useState<PlanStatus | null>(null)
   const [expanded, setExpanded] = useState<Set<string>>(new Set())
@@ -99,7 +102,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
       {/* Navigation */}
       <nav
         className={`flex-1 space-y-1 overflow-y-auto overflow-x-hidden py-4 ${compact ? "px-2" : "px-3"}`}
-        aria-label="Navegação principal"
+        aria-label={t.dashboardNav.navegacaoPrincipal}
       >
         {navigation.map((item) => {
           const hasChildren = !!item.children?.length
@@ -123,8 +126,8 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                 >
                   <item.icon className="h-[18px] w-[18px] shrink-0" />
                   <span className="flex-1 text-left">{item.name}</span>
-                  {item.name === "Materiais" && materiaisLocked && (
-                    <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label="Recurso exclusivo dos planos pagos" />
+                  {item.name === t.dashboardNav.materiais && materiaisLocked && (
+                    <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label={t.dashboardNav.recursoExclusivo} />
                   )}
                   <ChevronDown className={`h-3.5 w-3.5 shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -146,8 +149,8 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                   {!compact && (
                     <>
                       <span className="flex-1">{item.name}</span>
-                      {item.name === "Materiais" && materiaisLocked && (
-                        <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label="Recurso exclusivo dos planos pagos" />
+                      {item.name === t.dashboardNav.materiais && materiaisLocked && (
+                        <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label={t.dashboardNav.recursoExclusivo} />
                       )}
                     </>
                   )}
@@ -185,7 +188,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
             href="/admin"
             onClick={onNavigate}
             aria-current={pathname.startsWith("/admin") ? "page" : undefined}
-            title={compact ? "Painel Admin" : undefined}
+            title={compact ? t.dashboardNav.painelAdmin : undefined}
             className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors ${
               compact ? "justify-center px-0" : "px-3"
             } ${
@@ -195,7 +198,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
             }`}
           >
             <ShieldCheck className="h-[18px] w-[18px] shrink-0" />
-            {!compact && "Painel Admin"}
+            {!compact && t.dashboardNav.painelAdmin}
           </Link>
         )}
       </nav>
@@ -211,20 +214,20 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
           {!compact && (
             <div className="min-w-0 flex-1 leading-tight">
               <p className="truncate text-sm font-medium text-sidebar-foreground">
-                {planStatus?.fullName || planStatus?.email || "Minha conta"}
+                {planStatus?.fullName || planStatus?.email || t.dashboardNav.minhaConta}
               </p>
               <p
                 className={`truncate text-xs ${
                   planStatus?.isTrialExpired ? "font-medium text-destructive" : "text-muted-foreground"
                 }`}
               >
-                {planStatus ? planLabel(planStatus) : "Carregando..."}
+                {planStatus ? planLabel(planStatus, t.dashboardNav) : t.dashboardNav.carregando}
               </p>
             </div>
           )}
           <button
-            aria-label="Sair"
-            title={compact ? "Sair" : undefined}
+            aria-label={t.dashboardNav.sair}
+            title={compact ? t.dashboardNav.sair : undefined}
             onClick={handleLogout}
             className="rounded-md p-1.5 text-sidebar-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
           >

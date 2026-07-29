@@ -7,24 +7,21 @@ import { Testimonials } from "@/components/testimonials"
 import { Pricing } from "@/components/pricing"
 import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
-import { LanguageProvider } from "@/lib/i18n"
 
 export const revalidate = 3600 // Revalidar a cada hora
 
 export default function Page() {
   return (
-    <LanguageProvider>
-      <main className="bg-[#0a0a0a]">
-        <Navbar />
-        <Hero />
-        <PainSection />
-        <Features />
-        <HowItWorks />
-        <Testimonials />
-        <Pricing />
-        <FaqSection />
-        <Footer />
-      </main>
-    </LanguageProvider>
+    <main className="bg-[#0a0a0a]">
+      <Navbar />
+      <Hero />
+      <PainSection />
+      <Features />
+      <HowItWorks />
+      <Testimonials />
+      <Pricing />
+      <FaqSection />
+      <Footer />
+    </main>
   )
 }

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Switch } from "@/components/ui/switch"
+import { useLanguage } from "@/lib/i18n"
 
 interface ToggleRow {
   key: string
@@ -10,51 +11,6 @@ interface ToggleRow {
   description: string
   defaultChecked: boolean
 }
-
-const notificationRows: ToggleRow[] = [
-  {
-    key: "push",
-    label: "Notificações push",
-    description: "Receba lembretes de estudo e novidades no navegador.",
-    defaultChecked: true,
-  },
-  {
-    key: "reminders",
-    label: "Lembretes de rotina",
-    description: "Avisos antes de cada sessão de estudo do cronograma.",
-    defaultChecked: true,
-  },
-]
-
-const emailRows: ToggleRow[] = [
-  {
-    key: "weekly-summary",
-    label: "Resumo semanal por e-mail",
-    description: "Receba um resumo do seu desempenho toda segunda-feira.",
-    defaultChecked: true,
-  },
-  {
-    key: "product-updates",
-    label: "Novidades da plataforma",
-    description: "Fique por dentro de novos recursos e conteúdos.",
-    defaultChecked: false,
-  },
-]
-
-const privacyRows: ToggleRow[] = [
-  {
-    key: "public-profile",
-    label: "Perfil público",
-    description: "Permitir que outros alunos vejam seu progresso no ranking.",
-    defaultChecked: false,
-  },
-  {
-    key: "share-progress",
-    label: "Compartilhar estatísticas",
-    description: "Exibir seu desempenho em comparações agregadas e anônimas.",
-    defaultChecked: true,
-  },
-]
 
 function ToggleGroup({ title, rows }: { title: string; rows: ToggleRow[] }) {
   const [state, setState] = useState<Record<string, boolean>>(
@@ -83,11 +39,26 @@ function ToggleGroup({ title, rows }: { title: string; rows: ToggleRow[] }) {
 }
 
 export function ConfiguracoesContent() {
+  const { t } = useLanguage()
+
+  const notificationRows: ToggleRow[] = [
+    { key: "push", ...t.configuracoes.push, defaultChecked: true },
+    { key: "reminders", ...t.configuracoes.reminders, defaultChecked: true },
+  ]
+  const emailRows: ToggleRow[] = [
+    { key: "weekly-summary", ...t.configuracoes.weeklySummary, defaultChecked: true },
+    { key: "product-updates", ...t.configuracoes.productUpdates, defaultChecked: false },
+  ]
+  const privacyRows: ToggleRow[] = [
+    { key: "public-profile", ...t.configuracoes.publicProfile, defaultChecked: false },
+    { key: "share-progress", ...t.configuracoes.shareProgress, defaultChecked: true },
+  ]
+
   return (
     <div className="max-w-2xl space-y-6">
-      <ToggleGroup title="Notificações" rows={notificationRows} />
-      <ToggleGroup title="Alertas por E-mail" rows={emailRows} />
-      <ToggleGroup title="Privacidade" rows={privacyRows} />
+      <ToggleGroup title={t.configuracoes.notificacoes} rows={notificationRows} />
+      <ToggleGroup title={t.configuracoes.alertasEmail} rows={emailRows} />
+      <ToggleGroup title={t.configuracoes.privacidade} rows={privacyRows} />
     </div>
   )
 }

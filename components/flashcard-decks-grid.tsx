@@ -10,6 +10,7 @@ import { Progress } from "@/components/ui/progress"
 import { getAreaIcon } from "@/lib/area-icons"
 import { getAreaColor } from "@/lib/area-colors"
 import type { FlashcardDeck } from "@/lib/flashcards-types"
+import { useLanguage } from "@/lib/i18n"
 
 interface DeckWithProgress extends FlashcardDeck {
   total: number
@@ -17,6 +18,7 @@ interface DeckWithProgress extends FlashcardDeck {
 }
 
 export function FlashcardDecksGrid() {
+  const { t } = useLanguage()
   const [decks, setDecks] = useState<DeckWithProgress[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -56,7 +58,7 @@ export function FlashcardDecksGrid() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando...
+        {t.flashcardsGrid.carregando}
       </div>
     )
   }
@@ -64,7 +66,7 @@ export function FlashcardDecksGrid() {
   if (decks.length === 0) {
     return (
       <Card className="border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">Nenhum baralho de flashcards disponível no momento.</p>
+        <p className="text-muted-foreground">{t.flashcardsGrid.vazio}</p>
       </Card>
     )
   }
@@ -90,7 +92,7 @@ export function FlashcardDecksGrid() {
                   <Icon className="h-5 w-5" style={{ color: deck.cor_hex }} />
                 </div>
                 {concluido && (
-                  <Badge className="bg-emerald-500 text-[10px] text-white hover:bg-emerald-500">Concluído</Badge>
+                  <Badge className="bg-emerald-500 text-[10px] text-white hover:bg-emerald-500">{t.flashcardsGrid.concluido}</Badge>
                 )}
               </div>
 
@@ -104,9 +106,9 @@ export function FlashcardDecksGrid() {
 
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
-                  <span>{deck.total} cartões</span>
+                  <span>{deck.total} {t.flashcardsGrid.cartoes}</span>
                   <span>
-                    {deck.respondidos}/{deck.total} respondidos
+                    {deck.respondidos}/{deck.total} {t.flashcardsGrid.respondidos}
                   </span>
                 </div>
                 <Progress value={pct} className="h-1.5" style={{ ["--progress-color" as string]: deck.cor_hex }} />

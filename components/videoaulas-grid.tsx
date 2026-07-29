@@ -7,8 +7,10 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { getAreaColor } from "@/lib/area-colors"
 import type { VideoaulaDB } from "@/lib/videoaulas-types"
+import { useLanguage } from "@/lib/i18n"
 
 export function VideoaulasGrid() {
+  const { t } = useLanguage()
   const [videoaulas, setVideoaulas] = useState<VideoaulaDB[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -28,7 +30,7 @@ export function VideoaulasGrid() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando...
+        {t.videoaulasGrid.carregando}
       </div>
     )
   }
@@ -36,7 +38,7 @@ export function VideoaulasGrid() {
   if (videoaulas.length === 0) {
     return (
       <Card className="border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">Nenhuma videoaula disponível no momento.</p>
+        <p className="text-muted-foreground">{t.videoaulasGrid.vazio}</p>
       </Card>
     )
   }

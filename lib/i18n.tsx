@@ -120,6 +120,35 @@ const pt = {
     proximasSessoes: "Próximas sessões",
     nenhumaSessao: "Nenhuma sessão agendada.",
   },
+  planRestricted: {
+    verPlanos: "Ver planos disponíveis",
+    materiaisTitulo: "Materiais é exclusivo dos planos pagos",
+    materiaisDescricao: "Videoaulas, resumos e flashcards ficam disponíveis para quem assina o plano mensal ou trimestral. Escolha um plano para desbloquear.",
+  },
+  materiais: {
+    carregando: "Carregando...",
+    videoaulas: "Videoaulas",
+    resumos: "Resumos",
+    flashcards: "Flashcards",
+    tituloPagina: "Materiais",
+    subtituloPagina: "Acesse suas videoaulas, resumos e flashcards",
+  },
+  resumosGrid: {
+    carregando: "Carregando...",
+    vazio: "Nenhum resumo disponível no momento.",
+    secoes: "seções",
+  },
+  videoaulasGrid: {
+    carregando: "Carregando...",
+    vazio: "Nenhuma videoaula disponível no momento.",
+  },
+  flashcardsGrid: {
+    carregando: "Carregando...",
+    vazio: "Nenhum baralho de flashcards disponível no momento.",
+    concluido: "Concluído",
+    cartoes: "cartões",
+    respondidos: "respondidos",
+  },
   hero: {
     badge: "Feito para alunos de Medicina da UNR",
     headline: "Pare de se afogar em apostilas. Comece a passar em Rosário.",
@@ -493,6 +522,35 @@ const es: typeof pt = {
     questoesPorSessaoLabel: "preguntas/sesión",
     proximasSessoes: "Próximas sesiones",
     nenhumaSessao: "No hay ninguna sesión programada.",
+  },
+  planRestricted: {
+    verPlanos: "Ver planes disponibles",
+    materiaisTitulo: "Materiales es exclusivo de los planes pagos",
+    materiaisDescricao: "Videoclases, resúmenes y flashcards están disponibles para quienes se suscriben al plan mensual o trimestral. Elegí un plan para desbloquear.",
+  },
+  materiais: {
+    carregando: "Cargando...",
+    videoaulas: "Videoclases",
+    resumos: "Resúmenes",
+    flashcards: "Flashcards",
+    tituloPagina: "Materiales",
+    subtituloPagina: "Accedé a tus videoclases, resúmenes y flashcards",
+  },
+  resumosGrid: {
+    carregando: "Cargando...",
+    vazio: "No hay ningún resumen disponible por el momento.",
+    secoes: "secciones",
+  },
+  videoaulasGrid: {
+    carregando: "Cargando...",
+    vazio: "No hay ninguna videoclase disponible por el momento.",
+  },
+  flashcardsGrid: {
+    carregando: "Cargando...",
+    vazio: "No hay ningún mazo de flashcards disponible por el momento.",
+    concluido: "Completado",
+    cartoes: "tarjetas",
+    respondidos: "respondidas",
   },
   hero: {
     badge: "Hecho para estudiantes de Medicina de la UNR",

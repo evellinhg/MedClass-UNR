@@ -9,10 +9,12 @@ import { PlanRestrictedNotice } from "@/components/plan-restricted-notice"
 import { VideoaulasGrid } from "@/components/videoaulas-grid"
 import { FlashcardDecksGrid } from "@/components/flashcard-decks-grid"
 import { ResumosGrid } from "@/components/resumos-grid"
+import { useLanguage } from "@/lib/i18n"
 
 const VALID_TABS = ["videoaulas", "resumos", "flashcards"]
 
 export function MateriaisContent() {
+  const { t } = useLanguage()
   const searchParams = useSearchParams()
   const tabParam = searchParams.get("tab")
   const initialTab = VALID_TABS.includes(tabParam ?? "") ? (tabParam as string) : "videoaulas"
@@ -35,7 +37,7 @@ export function MateriaisContent() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando...
+        {t.materiais.carregando}
       </div>
     )
   }
@@ -44,8 +46,8 @@ export function MateriaisContent() {
     return (
       <PlanRestrictedNotice
         tone="locked"
-        title="Materiais é exclusivo dos planos pagos"
-        description="Videoaulas, resumos e flashcards ficam disponíveis para quem assina o plano mensal ou trimestral. Escolha um plano para desbloquear."
+        title={t.planRestricted.materiaisTitulo}
+        description={t.planRestricted.materiaisDescricao}
       />
     )
   }
@@ -53,9 +55,9 @@ export function MateriaisContent() {
   return (
     <Tabs value={activeTab} onValueChange={setActiveTab} className="gap-6">
       <TabsList>
-        <TabsTrigger value="videoaulas">Videoaulas</TabsTrigger>
-        <TabsTrigger value="resumos">Resumos</TabsTrigger>
-        <TabsTrigger value="flashcards">Flashcards</TabsTrigger>
+        <TabsTrigger value="videoaulas">{t.materiais.videoaulas}</TabsTrigger>
+        <TabsTrigger value="resumos">{t.materiais.resumos}</TabsTrigger>
+        <TabsTrigger value="flashcards">{t.materiais.flashcards}</TabsTrigger>
       </TabsList>
 
       <TabsContent value="videoaulas">

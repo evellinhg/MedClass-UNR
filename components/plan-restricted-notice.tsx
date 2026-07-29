@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { AlertTriangle, Lock, TimerOff } from "lucide-react"
+import { useLanguage } from "@/lib/i18n"
 
 type Tone = "locked" | "expired" | "limit"
 
@@ -32,6 +33,7 @@ const TONE_STYLES: Record<Tone, { border: string; bg: string; text: string; icon
 }
 
 export function PlanRestrictedNotice({ tone, title, description, className }: PlanRestrictedNoticeProps) {
+  const { t } = useLanguage()
   const style = TONE_STYLES[tone]
   const Icon = style.icon
 
@@ -46,7 +48,7 @@ export function PlanRestrictedNotice({ tone, title, description, className }: Pl
         href="/#pricing"
         className="mt-5 inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] px-5 py-2.5 text-sm font-semibold text-[#0a1f00] transition-opacity hover:opacity-90"
       >
-        Ver planos disponíveis
+        {t.planRestricted.verPlanos}
       </Link>
     </div>
   )

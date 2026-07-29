@@ -9,8 +9,10 @@ import { getAreaIcon } from "@/lib/area-icons"
 import { getAreaColor } from "@/lib/area-colors"
 import { ResumoDialog } from "@/components/resumo-dialog"
 import type { Resumo } from "@/lib/resumos-types"
+import { useLanguage } from "@/lib/i18n"
 
 export function ResumosGrid() {
+  const { t } = useLanguage()
   const [resumos, setResumos] = useState<Resumo[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -31,7 +33,7 @@ export function ResumosGrid() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando...
+        {t.resumosGrid.carregando}
       </div>
     )
   }
@@ -39,7 +41,7 @@ export function ResumosGrid() {
   if (resumos.length === 0) {
     return (
       <Card className="border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">Nenhum resumo disponível no momento.</p>
+        <p className="text-muted-foreground">{t.resumosGrid.vazio}</p>
       </Card>
     )
   }
@@ -65,7 +67,7 @@ export function ResumosGrid() {
                   <h3 className="text-sm font-semibold leading-snug text-foreground">{resumo.titulo}</h3>
                   <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                     <FileText className="h-3.5 w-3.5" />
-                    {resumo.secoes.length} seções
+                    {resumo.secoes.length} {t.resumosGrid.secoes}
                   </div>
                 </div>
               </Card>

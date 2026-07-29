@@ -4,11 +4,7 @@ import {
   BookOpen,
   ClipboardCheck,
   BarChart3,
-  Trophy,
-  Coins,
-  Medal,
   MessageSquare,
-  Stethoscope,
   type LucideIcon,
 } from "lucide-react"
 import type { translations } from "@/lib/i18n"
@@ -27,6 +23,9 @@ export interface NavItem {
   children?: NavChild[]
 }
 
+// Ranking, MedCoins, Conquistas e Desafios Clínicos ficam ocultos do menu
+// por enquanto (recursos não usados nesta fase do MedClass UNR) — os
+// componentes e rotas continuam existindo para reativar no futuro.
 export function getNavigation(t: DashboardNavLabels): NavItem[] {
   return [
     { name: t.inicio, href: "/dashboard", icon: Home },
@@ -51,26 +50,6 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
         { name: t.estatisticas, href: "/dashboard/desempenho/estatisticas" },
       ],
     },
-    {
-      name: t.desafiosClinicos,
-      href: "/dashboard/desafios-clinicos",
-      icon: Stethoscope,
-      children: [
-        { name: t.estudar, href: "/dashboard/desafios-clinicos" },
-        { name: t.desempenho, href: "/dashboard/desafios-clinicos/desempenho" },
-      ],
-    },
-    { name: t.ranking, href: "/dashboard/ranking", icon: Trophy },
-    {
-      name: t.medcoins,
-      href: "/dashboard/medcoins",
-      icon: Coins,
-      children: [
-        { name: t.lojaMedcoins, href: "/dashboard/medcoins/loja" },
-        { name: t.extrato, href: "/dashboard/medcoins" },
-      ],
-    },
-    { name: t.conquistas, href: "/dashboard/conquistas", icon: Medal },
     { name: t.feedback, href: "/dashboard/feedback", icon: MessageSquare },
   ]
 }

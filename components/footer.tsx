@@ -8,7 +8,7 @@ export function Footer() {
   const { t } = useLanguage()
 
   return (
-    <footer className="border-t border-white/5 bg-[#0a0a0a]">
+    <footer className="border-t border-white/5 bg-[#12140f]">
       {/* CTA Section */}
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-r from-[#c6ff3a]/10 via-[#84cc16]/10 to-[#c6ff3a]/10 p-12 text-center">

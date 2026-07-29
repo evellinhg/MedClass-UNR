@@ -10,7 +10,7 @@ export function Testimonials() {
   const { t } = useLanguage()
 
   return (
-    <section id="testimonials" className="relative bg-[#0a0a0a] py-24">
+    <section id="testimonials" className="relative bg-[#12140f] py-24">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#c6ff3a]/5 via-transparent to-transparent" />
 

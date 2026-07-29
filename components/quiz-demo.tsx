@@ -126,7 +126,7 @@ export function QuizDemo() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-[#0a0a0a] py-24">
+    <section className="relative overflow-hidden bg-[#12140f] py-24">
       <AmbientBackground />
 
       <div className="relative mx-auto max-w-3xl px-6">

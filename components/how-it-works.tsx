@@ -7,7 +7,7 @@ export function HowItWorks() {
   const { t } = useLanguage()
 
   return (
-    <section id="how-it-works" className="relative bg-[#0a0a0a] py-24">
+    <section id="how-it-works" className="relative bg-[#12140f] py-24">
       {/* Gradient accent */}
       <div className="absolute left-1/2 top-0 h-px w-1/2 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#c6ff3a]/50 to-transparent" />
 
@@ -53,7 +53,7 @@ export function HowItWorks() {
               >
                 {/* Number marker */}
                 <div className="absolute left-0 flex h-16 w-16 items-center justify-center lg:left-1/2 lg:-translate-x-1/2">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#c6ff3a]/30 bg-[#0a0a0a]">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[#c6ff3a]/30 bg-[#12140f]">
                     <span className="bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] bg-clip-text text-xl font-bold text-transparent">
                       {String(i + 1).padStart(2, "0")}
                     </span>

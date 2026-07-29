@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { SidebarNav } from "@/components/sidebar-nav"
 import { UserDropdown } from "@/components/user-dropdown"
 import { GlobalSearch } from "@/components/global-search"
@@ -54,8 +53,6 @@ export function DashboardHeader() {
       <GlobalSearch />
 
       <div className="ml-auto flex items-center gap-1 md:ml-0">
-        <ThemeToggle />
-
         <NotificationsPanel />
 
         <div className="ml-1">

@@ -10,7 +10,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="relative bg-[#0a0a0a] py-24">
+    <section id="faq" className="relative bg-[#12140f] py-24">
       <div className="relative mx-auto max-w-3xl px-6">
         <motion.div
           className="mb-14 text-center"

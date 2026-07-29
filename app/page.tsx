@@ -12,7 +12,7 @@ export const revalidate = 3600 // Revalidar a cada hora
 
 export default function Page() {
   return (
-    <main className="bg-[#0a0a0a]">
+    <main className="bg-[#12140f]">
       <Navbar />
       <Hero />
       <PainSection />

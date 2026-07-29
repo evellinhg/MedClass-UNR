@@ -12,7 +12,7 @@ export function Hero() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a]">
+    <section className="relative min-h-screen w-full overflow-hidden bg-[#12140f]">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-20"
@@ -99,7 +99,7 @@ export function Hero() {
               asChild
               size="lg"
               variant="ghost"
-              className="h-12 border border-white/20 bg-white px-8 text-base font-semibold text-[#0a0a0a] hover:bg-white/90 hover:text-[#0a0a0a]"
+              className="h-12 border border-white/20 bg-white px-8 text-base font-semibold text-[#12140f] hover:bg-white/90 hover:text-[#12140f]"
             >
               <Link href="/login">{t.hero.ctaSecondary}</Link>
             </Button>

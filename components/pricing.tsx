@@ -9,7 +9,7 @@ export function Pricing() {
   const { t } = useLanguage()
 
   return (
-    <section id="pricing" className="relative bg-[#0a0a0a] py-24">
+    <section id="pricing" className="relative bg-[#12140f] py-24">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <motion.div

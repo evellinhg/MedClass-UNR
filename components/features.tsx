@@ -10,7 +10,7 @@ export function Features() {
   const { t } = useLanguage()
 
   return (
-    <section id="features" className="relative bg-[#0a0a0a] py-24">
+    <section id="features" className="relative bg-[#12140f] py-24">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-20"
         style={{

@@ -10,7 +10,7 @@ export function PainSection() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative bg-[#0a0a0a] py-24">
+    <section className="relative bg-[#12140f] py-24">
       <div className="relative mx-auto max-w-7xl px-6">
         <motion.div
           className="mb-16 text-center"

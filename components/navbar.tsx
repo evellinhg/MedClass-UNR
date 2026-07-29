@@ -109,7 +109,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
-          className="absolute inset-x-4 top-[calc(100%+0.5rem)] rounded-3xl border border-white/10 bg-[#0a0a0a]/95 px-6 py-4 shadow-2xl backdrop-blur-xl md:hidden"
+          className="absolute inset-x-4 top-[calc(100%+0.5rem)] rounded-3xl border border-white/10 bg-[#12140f]/95 px-6 py-4 shadow-2xl backdrop-blur-xl md:hidden"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >

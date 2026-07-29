@@ -6,6 +6,7 @@ import { ArrowUpRight, Crown, Loader2, Medal, Trophy } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useLanguage } from "@/lib/i18n"
 
 interface LeaderboardRow {
   user_id: string
@@ -21,6 +22,7 @@ const positionStyles = [
 ]
 
 export function RankingWidget() {
+  const { t } = useLanguage()
   const [rows, setRows] = useState<LeaderboardRow[]>([])
   const [currentUserId, setCurrentUserId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
@@ -45,13 +47,13 @@ export function RankingWidget() {
       <div className="mb-4 flex items-center justify-between">
         <h3 className="flex items-center gap-2 font-semibold text-foreground">
           <Trophy className="h-5 w-5 text-primary" />
-          Ranking
+          {t.rankingWidget.titulo}
         </h3>
         <Link
           href="/dashboard/ranking"
           className="flex items-center gap-1 text-xs font-medium text-primary hover:underline"
         >
-          Ver completo
+          {t.rankingWidget.verCompleto}
           <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
@@ -59,11 +61,11 @@ export function RankingWidget() {
       {loading ? (
         <div className="flex items-center justify-center gap-2 py-8 text-sm text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin" />
-          Carregando...
+          {t.rankingWidget.carregando}
         </div>
       ) : top3.length === 0 ? (
         <p className="py-4 text-center text-sm text-muted-foreground">
-          Ninguém pontuou ainda. Resolva um simulado para aparecer aqui!
+          {t.rankingWidget.vazio}
         </p>
       ) : (
         <div className="space-y-1.5">
@@ -93,7 +95,7 @@ export function RankingWidget() {
                 {myPosition + 1}
               </div>
               <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">
-                Você <Badge variant="secondary" className="ml-1 text-[10px]">Sua posição</Badge>
+                {t.rankingWidget.voce} <Badge variant="secondary" className="ml-1 text-[10px]">{t.rankingWidget.suaPosicao}</Badge>
               </p>
               <span className="text-sm font-bold text-foreground">{me.total_points}</span>
             </div>

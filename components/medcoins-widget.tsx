@@ -6,8 +6,10 @@ import { ArrowUpRight, Coins, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import type { MedcoinsWallet } from "@/lib/medcoins-types"
+import { useLanguage } from "@/lib/i18n"
 
 export function MedCoinsWidget() {
+  const { t } = useLanguage()
   const [wallet, setWallet] = useState<MedcoinsWallet | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -62,7 +64,7 @@ export function MedCoinsWidget() {
           href="/dashboard/medcoins"
           className="flex items-center gap-1 text-xs font-medium text-primary hover:underline"
         >
-          Ver extrato
+          {t.medcoinsWidget.verExtrato}
           <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
@@ -70,16 +72,16 @@ export function MedCoinsWidget() {
       {loading ? (
         <div className="flex items-center justify-center gap-2 py-8 text-sm text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin" />
-          Carregando...
+          {t.medcoinsWidget.carregando}
         </div>
       ) : (
         <div className="flex items-end justify-between">
           <div>
             <p className="text-3xl font-bold text-gradient-brand">{(wallet?.saldo ?? 0).toFixed(0)}</p>
-            <p className="mt-1 text-xs text-muted-foreground">Saldo disponível</p>
+            <p className="mt-1 text-xs text-muted-foreground">{t.medcoinsWidget.saldoDisponivel}</p>
           </div>
           <p className="text-xs text-muted-foreground">
-            {(wallet?.total_acumulado ?? 0).toFixed(0)} acumulados no total
+            {(wallet?.total_acumulado ?? 0).toFixed(0)} {t.medcoinsWidget.acumuladosNoTotal}
           </p>
         </div>
       )}

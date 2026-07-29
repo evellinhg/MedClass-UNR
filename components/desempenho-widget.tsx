@@ -7,6 +7,7 @@ import { ArrowUpRight, BarChart3, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { MiniDonut } from "@/components/ui/mini-donut"
+import { useLanguage } from "@/lib/i18n"
 
 interface Attempt {
   correct_count: number
@@ -17,6 +18,7 @@ interface Attempt {
 }
 
 export function DesempenhoWidget() {
+  const { t } = useLanguage()
   const [attempts, setAttempts] = useState<Attempt[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -57,13 +59,13 @@ export function DesempenhoWidget() {
       <div className="mb-4 flex items-center justify-between">
         <h3 className="flex items-center gap-2 font-semibold text-foreground">
           <BarChart3 className="h-5 w-5 text-primary" />
-          Seu Desempenho
+          {t.desempenhoWidget.titulo}
         </h3>
         <Link
           href="/dashboard/desempenho/estatisticas"
           className="flex items-center gap-1 text-xs font-medium text-primary hover:underline"
         >
-          Ver estatísticas
+          {t.desempenhoWidget.verEstatisticas}
           <ArrowUpRight className="h-3 w-3" />
         </Link>
       </div>
@@ -71,22 +73,22 @@ export function DesempenhoWidget() {
       {loading ? (
         <div className="flex items-center justify-center gap-2 py-8 text-sm text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin" />
-          Carregando...
+          {t.desempenhoWidget.carregando}
         </div>
       ) : attempts.length === 0 ? (
         <p className="py-4 text-center text-sm text-muted-foreground">
-          Você ainda não resolveu nenhum simulado. Que tal começar agora?
+          {t.desempenhoWidget.vazio}
         </p>
       ) : (
         <div className="grid grid-cols-3 gap-3">
           <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-emerald-500/10 p-3 text-center">
             <MiniDonut percentage={accuracy} color="#22c55e" size={52} strokeWidth={5} />
-            <p className="text-[11px] text-muted-foreground">Aproveitamento</p>
+            <p className="text-[11px] text-muted-foreground">{t.desempenhoWidget.aproveitamento}</p>
           </div>
           <div className="flex flex-col items-center justify-between gap-1.5 rounded-lg bg-blue-500/10 p-3 text-center">
             <div>
               <p className="text-lg font-bold text-foreground">{totalCorrect + totalWrong}</p>
-              <p className="text-[11px] text-muted-foreground">Questões feitas</p>
+              <p className="text-[11px] text-muted-foreground">{t.desempenhoWidget.questoesFeitas}</p>
             </div>
             {sparklineData.length >= 2 ? (
               <div className="h-8 w-full">
@@ -111,7 +113,7 @@ export function DesempenhoWidget() {
             <BarChart3 className="h-4 w-4 text-primary" />
             <div>
               <p className="text-lg font-bold text-foreground">{totalPoints}</p>
-              <p className="text-[11px] text-muted-foreground">Pontos</p>
+              <p className="text-[11px] text-muted-foreground">{t.desempenhoWidget.pontos}</p>
             </div>
           </div>
         </div>

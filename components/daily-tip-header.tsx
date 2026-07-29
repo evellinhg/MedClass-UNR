@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react"
 import { Lightbulb } from "lucide-react"
-import { STUDY_TIPS } from "@/lib/study-tips"
+import { STUDY_TIPS_BY_LANG } from "@/lib/study-tips"
+import { useLanguage } from "@/lib/i18n"
 
 function dayOfYear(date: Date) {
   const start = new Date(date.getFullYear(), 0, 0)
@@ -11,12 +12,14 @@ function dayOfYear(date: Date) {
 }
 
 export function DailyTipHeader() {
+  const { t, lang } = useLanguage()
   const [tip, setTip] = useState<string | null>(null)
 
   useEffect(() => {
-    const index = dayOfYear(new Date()) % STUDY_TIPS.length
-    setTip(STUDY_TIPS[index])
-  }, [])
+    const tips = STUDY_TIPS_BY_LANG[lang]
+    const index = dayOfYear(new Date()) % tips.length
+    setTip(tips[index])
+  }, [lang])
 
   if (!tip) return null
 
@@ -28,7 +31,7 @@ export function DailyTipHeader() {
           <Lightbulb className="h-5 w-5 text-white" />
         </div>
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-white/80">Dica do dia</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-white/80">{t.dailyTip.label}</p>
           <p className="mt-1 text-sm font-medium leading-relaxed text-white sm:text-base">{tip}</p>
         </div>
       </div>

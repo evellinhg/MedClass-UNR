@@ -1,0 +1,344 @@
+{
+  "preguntas": [
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Medio",
+      "tags": ["biología", "evolución", "especie", "taxonomía"],
+      "enunciado": "Una Especie es:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "un conjunto de individuos de una población que no se cruzan entre sí",
+          "correcta": false,
+          "feedback": "Incorrecta. Por definición, los individuos de una misma especie son capaces de cruzarse entre sí en la naturaleza."
+        },
+        {
+          "letra": "B",
+          "texto": "un conjunto de individuos de una población que no están aislados reproductivamente de otras poblaciones",
+          "correcta": false,
+          "feedback": "Incorrecta. El aislamiento reproductivo de otras poblaciones es un requisito fundamental para definir una especie separada (concepto biológico de especie)."
+        },
+        {
+          "letra": "C",
+          "texto": "un conjunto de individuos de una población que se cruzan entre sí y están aislados reproductivamente de otras poblaciones",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Muy bien! El concepto biológico de especie, propuesto por Ernst Mayr, define especie como un grupo de poblaciones naturales cuyos individuos se cruzan entre sí y producen descendencia fértil, estando aislados reproductivamente de otros grupos semejantes."
+        },
+        {
+          "letra": "D",
+          "texto": "ninguna es correcta",
+          "correcta": false,
+          "feedback": "Incorrecta. La alternativa C describe correctamente el concepto de especie."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Fácil",
+      "tags": ["biología", "evolución", "hominización", "bipedia"],
+      "enunciado": "La adquisición de la bipedia es la característica principal de:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Homo",
+          "correcta": false,
+          "feedback": "Incorrecta. Aunque el género Homo es bípedo, la adquisición inicial de la bipedia no es la principal característica que lo define y diferencia de sus antecesores, sino el aumento del tamaño cerebral."
+        },
+        {
+          "letra": "B",
+          "texto": "Australopithecus",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Excelente! La bipedia fue uno de los primeros grandes saltos evolutivos en el linaje de los homínidos y es la característica definitoria y principal del género Australopithecus (como se evidencia en el famoso fósil 'Lucy')."
+        },
+        {
+          "letra": "C",
+          "texto": "ambas",
+          "correcta": false,
+          "feedback": "Incorrecta. La bipedia es la principal marca evolutiva primaria de los Australopithecus, diferenciándolos de los simios anteriores, y no la característica central que separa al género Homo."
+        },
+        {
+          "letra": "D",
+          "texto": "ninguna",
+          "correcta": false,
+          "feedback": "Incorrecta. La alternativa B es la correcta."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Fácil",
+      "tags": ["biología", "evolución", "hominización", "cerebro", "homo"],
+      "enunciado": "La adquisición de gran tamaño cerebral es la característica principal de:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Homo",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Perfecto! El género Homo se distingue claramente de los homínidos primitivos por el significativo aumento del volumen craneal (encefalización) y el desarrollo de capacidades cognitivas superiores."
+        },
+        {
+          "letra": "B",
+          "texto": "Australopithecus",
+          "correcta": false,
+          "feedback": "Incorrecta. Los Australopithecus poseían un volumen craneal relativamente pequeño, más similar al de los grandes simios modernos."
+        },
+        {
+          "letra": "C",
+          "texto": "ambas",
+          "correcta": false,
+          "feedback": "Incorrecta. Solo el género Homo se caracteriza principalmente por la adquisición de un gran tamaño cerebral."
+        },
+        {
+          "letra": "D",
+          "texto": "ninguna",
+          "correcta": false,
+          "feedback": "Incorrecta. La alternativa A es la correcta."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Difícil",
+      "tags": ["biología", "evolución", "equilibrio puntuado", "teorías evolutivas"],
+      "enunciado": "El equilibrio puntuado:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "explica largos períodos de estasis evolutivo",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Exacto! La teoría del equilibrio puntuado (o saltacionismo), propuesta por Stephen Jay Gould y Niles Eldredge, sugiere que las especies pasan por largos períodos de estabilidad ('estasis') que son interrumpidos por raros y rápidos eventos de especiación."
+        },
+        {
+          "letra": "B",
+          "texto": "explica lenta acumulación de cambios en las poblaciones",
+          "correcta": false,
+          "feedback": "Incorrecta. La lenta y gradual acumulación de cambios en las poblaciones describe el 'gradualismo', que es el modelo evolutivo clásico del Neodarwinismo."
+        },
+        {
+          "letra": "C",
+          "texto": "ambas",
+          "correcta": false,
+          "feedback": "Incorrecta. Las afirmaciones son modelos evolutivos opuestos (estasis con saltos rápidos vs. cambios lentos y graduales)."
+        },
+        {
+          "letra": "D",
+          "texto": "ninguna",
+          "correcta": false,
+          "feedback": "Incorrecta. La alternativa A es la correcta."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Medio",
+      "tags": ["biología", "evolución", "selección natural", "darwinismo"],
+      "enunciado": "La selección natural es:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "la reproducción diferencial de los individuos portadores de distintos genotipos de una población, en interacción con su ambiente",
+          "correcta": false,
+          "feedback": "Incorrecta. La afirmación es verdadera y define la selección natural desde el punto de vista genético poblacional, pero no es la única correcta."
+        },
+        {
+          "letra": "B",
+          "texto": "el éxito reproductivo diferencial que resulta de la interacción entre los organismos y su ambiente",
+          "correcta": false,
+          "feedback": "Incorrecta. La afirmación también es verdadera y define la selección natural clásica, pero no es la única correcta."
+        },
+        {
+          "letra": "C",
+          "texto": "a+b son correctas",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Muy bien! Ambas alternativas (A y B) son formas válidas y complementarias de describir la selección natural. Esta actúa a través del éxito reproductivo diferencial basado en la interacción del genotipo/fenotipo con las presiones del ambiente."
+        },
+        {
+          "letra": "D",
+          "texto": "a+b son falsas",
+          "correcta": false,
+          "feedback": "Incorrecta. Las alternativas A y B son científicamente correctas."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Medio",
+      "tags": ["histología", "biología celular", "membrana plasmática", "sistema de endomembranas"],
+      "enunciado": "Las células secretoras de esteroides presentan al MET (Microscopio Electrónico de Transmisión):",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Abundante RER",
+          "correcta": false,
+          "feedback": "Incorrecta. El Retículo Endoplasmático Rugoso (RER) es abundante en células que sintetizan proteínas, no lípidos o esteroides. El Retículo Endoplasmático Liso (REL) es el que sería abundante aquí."
+        },
+        {
+          "letra": "B",
+          "texto": "Abundantes lisosomas y peroxisomas",
+          "correcta": false,
+          "feedback": "Incorrecta. Aunque poseen organelas variadas, los lisosomas y peroxisomas no son la característica principal que define a las células secretoras de esteroides en la microscopía."
+        },
+        {
+          "letra": "C",
+          "texto": "Abundantes ribosomas libres",
+          "correcta": false,
+          "feedback": "Incorrecta. Los ribosomas libres están relacionados con la síntesis de proteínas para uso en el propio citosol celular."
+        },
+        {
+          "letra": "D",
+          "texto": "Mitocondrias con crestas tubulares o longitudinales",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Excelente! Las células involucradas en la síntesis de hormonas esteroideas (como las células de Leydig o de la corteza suprarrenal) poseen un retículo endoplasmático liso muy desarrollado y mitocondrias con crestas tubulares características, adaptaciones cruciales para el metabolismo de lípidos y colesterol."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Medio",
+      "tags": ["histología", "biología celular", "lípidos de membrana", "sistema nervioso"],
+      "enunciado": "Los gangliósidos y cerebrósidos:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Se encuentran en membranas del sistema nervioso",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Muy bien! Los gangliósidos y cerebrósidos son esfingolípidos (más específicamente, glucolípidos) que desempeñan un papel estructural y funcional esencial, siendo particularmente abundantes en las membranas plasmáticas de las células del sistema nervioso."
+        },
+        {
+          "letra": "B",
+          "texto": "No tienen hidratos de carbono",
+          "correcta": false,
+          "feedback": "Incorrecta. Por el contrario, al ser glucolípidos, poseen residuos de carbohidratos (oligosacáridos) unidos a su estructura."
+        },
+        {
+          "letra": "C",
+          "texto": "Tienen P",
+          "correcta": false,
+          "feedback": "Incorrecta. A diferencia de los fosfolípidos y la esfingomielina, los cerebrósidos y gangliósidos no poseen un grupo fosfato (P)."
+        },
+        {
+          "letra": "D",
+          "texto": "No tiene ácidos grasos",
+          "correcta": false,
+          "feedback": "Incorrecta. Como esfingolípidos, contienen un ácido graso unido al grupo amino de la esfingosina."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Fácil",
+      "tags": ["histología", "biología celular", "membrana plasmática", "colesterol"],
+      "enunciado": "El colesterol de la membrana es importante para:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "La formación de bicapa lipídica",
+          "correcta": false,
+          "feedback": "Incorrecta. El elemento principal responsable de la formación estructural de la bicapa lipídica son los fosfolípidos anfipáticos, no el colesterol."
+        },
+        {
+          "letra": "B",
+          "texto": "El ingreso de partículas hidrosolubles al interior celular",
+          "correcta": false,
+          "feedback": "Incorrecta. El ingreso de partículas hidrosolubles está mediado por proteínas transmembrana (canales y transportadores), ya que los lípidos y el colesterol son barreras hidrofóbicas."
+        },
+        {
+          "letra": "C",
+          "texto": "La constitución de los fosfolipidos",
+          "correcta": false,
+          "feedback": "Incorrecta. El colesterol es un lípido esterol separado; no forma parte de la constitución química de las moléculas de fosfolípidos."
+        },
+        {
+          "letra": "D",
+          "texto": "La fluidez de la membrana",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Felicidades! El colesterol actúa como un regulador de la fluidez de la membrana plasmática. Impide que la membrana se cristalice a bajas temperaturas y evita que se vuelva excesivamente fluida a altas temperaturas."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Fácil",
+      "tags": ["histología", "biología celular", "membrana plasmática", "composición"],
+      "enunciado": "La Membrana celular está compuesta por:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Fosfolípidos que facilitan la difusión de moléculas sin carga o hidrófobas.",
+          "correcta": false,
+          "feedback": "Incorrecta. Aunque la afirmación sobre los fosfolípidos es verdadera, no es el único componente correcto enumerado."
+        },
+        {
+          "letra": "B",
+          "texto": "Proteínas que facilitan la difusión de moléculas con carga o hidrófilas.",
+          "correcta": false,
+          "feedback": "Incorrecta. La afirmación sobre las proteínas de transporte es verdadera, pero también hay otros componentes esenciales enumerados."
+        },
+        {
+          "letra": "C",
+          "texto": "Colesterol",
+          "correcta": false,
+          "feedback": "Incorrecta. El colesterol compone la membrana, pero no es el único componente."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas son correctas.",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Perfecto! La membrana celular se describe mediante el modelo de 'Mosaico Fluido' e incluye todos los componentes enumerados: fosfolípidos que actúan como barrera, proteínas que actúan en el transporte de sustancias hidrofílicas o con carga, y el colesterol que modula la fluidez."
+        }
+      ]
+    },
+    {
+      "anio": "1º Año",
+      "materia": "Crecimiento y Desarrollo",
+      "parcial": "Primer Parcial",
+      "dificultad": "Medio",
+      "tags": ["histología", "biología celular", "proteínas de membrana", "transporte"],
+      "enunciado": "Una proteína que transporta sustancias a través de una membrana debería:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Estar asociada a un glúcido",
+          "correcta": false,
+          "feedback": "Incorrecta. Muchas proteínas de membrana son glucoproteínas, pero estar asociada a un glúcido no es una condición obligatoria ni el factor que permite atravesar la membrana lipídica."
+        },
+        {
+          "letra": "B",
+          "texto": "Presentar alta proporción de Aa hidrofóbicos",
+          "correcta": true,
+          "feedback": "¡Correcta! ¡Muy bien! Para ser una proteína transmembrana y actuar como transportadora, sus segmentos que atraviesan la bicapa lipídica deben ser ricos en aminoácidos (Aa) hidrofóbicos para interactuar de forma estable con las colas hidrofóbicas de los fosfolípidos."
+        },
+        {
+          "letra": "C",
+          "texto": "Presentar alta proporción de Aa hidrofílicos",
+          "correcta": false,
+          "feedback": "Incorrecta. Si poseyera una alta proporción de aminoácidos hidrofílicos en la región transmembrana, la proteína sería repelida por el núcleo hidrofóbico de la bicapa lipídica."
+        },
+        {
+          "letra": "D",
+          "texto": "Ser una proteina periférica anclada al glicocaliz",
+          "correcta": false,
+          "feedback": "Incorrecta. Las proteínas de transporte necesitan atravesar la membrana entera (proteínas integrales transmembrana) para formar un canal o transportar sustancias de un lado a otro. Las proteínas periféricas no atraviesan la membrana."
+        }
+      ]
+    }
+  ]
+}

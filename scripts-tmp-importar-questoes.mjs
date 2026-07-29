@@ -93,6 +93,15 @@ function mapQuestao(q) {
   }
 }
 
+function normalizar(texto) {
+  return texto
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
 const inputPath = process.argv[2]
 if (!inputPath) {
   console.error("Uso: node scripts-tmp-importar-questoes.mjs <arquivo.json>")
@@ -101,7 +110,37 @@ if (!inputPath) {
 
 const raw = JSON.parse(readFileSync(inputPath, "utf-8"))
 const lista = raw.preguntas ?? raw.questoes ?? raw
-const payload = lista.map(mapQuestao)
+const mapeadas = lista.map(mapQuestao)
+
+const { data: existentes, error: erroExistentes } = await supabase.from("questoes").select("materia, enunciado")
+if (erroExistentes) {
+  console.error("Erro ao verificar questões existentes:", erroExistentes.message)
+  process.exit(1)
+}
+
+const chavesExistentes = new Set(existentes.map((q) => `${q.materia}|${normalizar(q.enunciado)}`))
+const payload = []
+const ignoradas = []
+
+for (const q of mapeadas) {
+  const chave = `${q.materia}|${normalizar(q.enunciado)}`
+  if (chavesExistentes.has(chave)) {
+    ignoradas.push(q.enunciado)
+    continue
+  }
+  chavesExistentes.add(chave) // também pega duplicadas dentro do próprio lote
+  payload.push(q)
+}
+
+if (ignoradas.length > 0) {
+  console.log(`${ignoradas.length} questão(ões) ignorada(s) por já existir(em) (duplicada):`)
+  ignoradas.forEach((enunciado, i) => console.log(`  ${i + 1}. ${enunciado.slice(0, 70)}...`))
+}
+
+if (payload.length === 0) {
+  console.log("Nenhuma questão nova para inserir.")
+  process.exit(0)
+}
 
 const { data, error } = await supabase.from("questoes").insert(payload).select("id, enunciado")
 

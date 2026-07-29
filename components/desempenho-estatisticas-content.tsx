@@ -28,6 +28,12 @@ import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { useLanguage } from "@/lib/i18n"
 
+interface MateriaStat {
+  materia: string
+  correct: number
+  total: number
+}
+
 const GREEN = "#22c55e" // Acertos / concluído
 const RED = "#ef4444" // Erros / atenção
 const ORANGE = "#f97316" // Pendentes / em andamento
@@ -146,26 +152,68 @@ function renderActivePieShape(props: any) {
 export function DesempenhoEstatisticasContent() {
   const { t } = useLanguage()
   const [attempts, setAttempts] = useState<Attempt[]>([])
+  const [materiaStats, setMateriaStats] = useState<MateriaStat[]>([])
   const [loading, setLoading] = useState(true)
   const [chartType, setChartType] = useState<ChartType>("line")
   const [groupBy, setGroupBy] = useState<GroupBy>("tentativa")
   const [activePieIndex, setActivePieIndex] = useState(0)
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(async ({ data }) => {
       if (!data.user) {
         setLoading(false)
         return
       }
-      supabase
-        .from("simulado_attempts")
-        .select("id, subject, total_questions, correct_count, wrong_count, points, created_at")
-        .eq("user_id", data.user.id)
-        .order("created_at", { ascending: true })
-        .then(({ data: rows }) => {
-          setAttempts((rows as Attempt[]) ?? [])
-          setLoading(false)
+
+      const [{ data: attemptRows }, { data: simuladoRows }] = await Promise.all([
+        supabase
+          .from("simulado_attempts")
+          .select("id, subject, total_questions, correct_count, wrong_count, points, created_at")
+          .eq("user_id", data.user.id)
+          .order("created_at", { ascending: true }),
+        supabase
+          .from("simulados")
+          .select("questao_ids, respostas")
+          .eq("user_id", data.user.id)
+          .not("finished_at", "is", null),
+      ])
+      setAttempts((attemptRows as Attempt[]) ?? [])
+
+      // Estatística por matéria é calculada questão a questão (join com a matéria real
+      // de cada questão), em vez de usar o campo "subject" da tentativa — esse campo
+      // costuma vir com um rótulo único/misturado por sessão, o que fazia "manda bem"
+      // e "precisa melhorar" mostrarem os mesmos poucos grupos com o mesmo valor.
+      const sessoes = (simuladoRows as { questao_ids: string[]; respostas: (number | null)[] | null }[] | null) ?? []
+      const questaoIds = Array.from(new Set(sessoes.flatMap((s) => s.questao_ids ?? [])))
+
+      let infoPorQuestao = new Map<string, { materia: string | null; indice_correta: number }>()
+      if (questaoIds.length > 0) {
+        const { data: questoesRows } = await supabase.from("questoes").select("id, materia, indice_correta").in("id", questaoIds)
+        infoPorQuestao = new Map(
+          ((questoesRows as { id: string; materia: string | null; indice_correta: number }[] | null) ?? []).map((q) => [
+            q.id,
+            { materia: q.materia, indice_correta: q.indice_correta },
+          ])
+        )
+      }
+
+      const acumulado = new Map<string, { correct: number; total: number }>()
+      for (const sessao of sessoes) {
+        const ids = sessao.questao_ids ?? []
+        const respostas = sessao.respostas ?? []
+        ids.forEach((id, i) => {
+          const resposta = respostas[i]
+          if (resposta === null || resposta === undefined) return
+          const info = infoPorQuestao.get(id)
+          if (!info || !info.materia) return
+          const atual = acumulado.get(info.materia) ?? { correct: 0, total: 0 }
+          atual.total += 1
+          if (resposta === info.indice_correta) atual.correct += 1
+          acumulado.set(info.materia, atual)
         })
+      }
+      setMateriaStats(Array.from(acumulado.entries()).map(([materia, v]) => ({ materia, ...v })))
+      setLoading(false)
     })
   }, [])
 
@@ -236,18 +284,15 @@ export function DesempenhoEstatisticasContent() {
   }, [attempts, t])
 
   const bySubject = useMemo(() => {
-    const map = new Map<string, { correct: number; total: number }>()
-    for (const a of attempts) {
-      const key = a.subject ?? t.desempenhoEstatisticas.geral
-      const current = map.get(key) ?? { correct: 0, total: 0 }
-      current.correct += a.correct_count
-      current.total += a.total_questions
-      map.set(key, current)
-    }
-    return Array.from(map.entries())
-      .map(([name, v]) => ({ name, percentage: v.total > 0 ? Math.round((v.correct / v.total) * 100) : 0 }))
-      .sort((a, b) => b.percentage - a.percentage)
-  }, [attempts, t])
+    return materiaStats
+      .map((m) => ({
+        name: t.cronograma.materiaLabel[m.materia] ?? m.materia,
+        percentage: m.total > 0 ? Math.round((m.correct / m.total) * 100) : 0,
+        correct: m.correct,
+        total: m.total,
+      }))
+      .sort((a, b) => b.percentage - a.percentage || b.total - a.total)
+  }, [materiaStats, t])
 
   const topSubjects = bySubject.slice(0, 3)
   const weakestSubjects = [...bySubject].reverse().slice(0, 3)
@@ -461,53 +506,69 @@ export function DesempenhoEstatisticasContent() {
       </Card>
 
       {/* Top vs weak areas */}
-      <div className="grid gap-6 lg:grid-cols-2">
-        <Card className="border border-success/30 bg-success/5 p-6">
-          <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
-            <TrendingUp className="h-5 w-5 text-success" />
-            {t.desempenhoEstatisticas.mandaBem}
-          </h3>
-          <div className="space-y-4">
-            {topSubjects.map((subject) => (
-              <div key={subject.name}>
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-sm font-medium text-foreground">{subject.name}</span>
-                  <span className="text-sm font-bold text-success">{subject.percentage}%</span>
-                </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full transition-all"
-                    style={{ width: `${subject.percentage}%`, backgroundColor: GREEN }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+      {bySubject.length === 0 ? (
+        <Card className="border border-border bg-card p-8 text-center text-sm text-muted-foreground">
+          {t.desempenhoEstatisticas.semDadosPorMateria}
         </Card>
+      ) : (
+        <div className="grid gap-6 lg:grid-cols-2">
+          <Card className="border border-success/30 bg-success/5 p-6">
+            <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
+              <TrendingUp className="h-5 w-5 text-success" />
+              {t.desempenhoEstatisticas.mandaBem}
+            </h3>
+            <div className="space-y-4">
+              {topSubjects.map((subject) => (
+                <div key={subject.name}>
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <span className="text-sm font-medium text-foreground">{subject.name}</span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground">
+                        {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
+                      </span>
+                      <span className="text-sm font-bold text-success">{subject.percentage}%</span>
+                    </span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full transition-all"
+                      style={{ width: `${subject.percentage}%`, backgroundColor: GREEN }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
 
-        <Card className="border border-warning/30 bg-warning/5 p-6">
-          <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
-            <TrendingDown className="h-5 w-5 text-warning" />
-            {t.desempenhoEstatisticas.precisaMelhorar}
-          </h3>
-          <div className="space-y-4">
-            {weakestSubjects.map((subject) => (
-              <div key={subject.name}>
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="text-sm font-medium text-foreground">{subject.name}</span>
-                  <span className="text-sm font-bold text-warning">{subject.percentage}%</span>
+          <Card className="border border-warning/30 bg-warning/5 p-6">
+            <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
+              <TrendingDown className="h-5 w-5 text-warning" />
+              {t.desempenhoEstatisticas.precisaMelhorar}
+            </h3>
+            <div className="space-y-4">
+              {weakestSubjects.map((subject) => (
+                <div key={subject.name}>
+                  <div className="mb-2 flex items-center justify-between gap-2">
+                    <span className="text-sm font-medium text-foreground">{subject.name}</span>
+                    <span className="flex items-center gap-2">
+                      <span className="text-xs text-muted-foreground">
+                        {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
+                      </span>
+                      <span className="text-sm font-bold text-warning">{subject.percentage}%</span>
+                    </span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+                    <div
+                      className="h-full rounded-full bg-warning transition-all"
+                      style={{ width: `${subject.percentage}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                  <div
-                    className="h-full rounded-full bg-warning transition-all"
-                    style={{ width: `${subject.percentage}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </Card>
-      </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   )
 }

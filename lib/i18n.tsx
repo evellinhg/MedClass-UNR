@@ -236,6 +236,8 @@ const pt = {
     mandaBem: "O que você manda bem",
     precisaMelhorar: "Precisa Melhorar",
     geral: "Geral",
+    acertosDeTotal: (correct: number, total: number) => `${correct}/${total} questões`,
+    semDadosPorMateria: "Ainda não há questões respondidas o suficiente para detalhar o desempenho por matéria.",
   },
   hero: {
     badge: "Feito para alunos de Medicina da UNR",
@@ -945,6 +947,8 @@ const es: typeof pt = {
     mandaBem: "Lo que hacés bien",
     precisaMelhorar: "Necesitás Mejorar",
     geral: "General",
+    acertosDeTotal: (correct: number, total: number) => `${correct}/${total} preguntas`,
+    semDadosPorMateria: "Todavía no hay suficientes preguntas respondidas para detallar el rendimiento por materia.",
   },
   hero: {
     badge: "Hecho para estudiantes de Medicina de la UNR",

@@ -65,14 +65,8 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 
 **Tradução do dashboard do aluno: concluída** (dashboard, cronograma, materiais, desempenho). Não há mais pendência de tradução nessa frente, a menos que o usuário peça para reativar e traduzir Ranking/MedCoins/Conquistas/Desafios Clínicos no futuro.
 
-### Pendência crítica — rodar antes de usar o Cronograma em produção
-- **Migração pendente no Supabase (`zimplxuoxigbexfemqkd`)**: a tabela `cronograma_rotinas` precisa de uma coluna nova `parcial` (a coluna `area` já existe e passou a guardar a chave canônica da matéria, ex. `"nutricao"`, em vez do nome da especialidade brasileira antiga). Rodar no SQL Editor:
-  ```sql
-  alter table cronograma_rotinas add column if not exists parcial text;
-  ```
-  Não consegui rodar isso sozinho porque a sessão do Supabase Studio no navegador expirou no meio da sessão e login é uma ação que não posso fazer por você. Sem essa coluna, criar uma rotina no Cronograma vai falhar com erro de coluna inexistente.
-
 ### Recursos novos (2026-07-29)
+- **Migração aplicada**: coluna `parcial` (text) adicionada em `cronograma_rotinas` no Supabase (`zimplxuoxigbexfemqkd`), confirmada via `information_schema.columns`. A coluna `area` passou a guardar a chave canônica da matéria (ex. `"nutricao"`) em vez do nome da especialidade brasileira antiga.
 - **Cronograma com filtros Ano → Matéria → Parcial**: o formulário "Criar Rotina de Estudo" trocou o dropdown único de "Área" (que ainda tinha as especialidades brasileiras copiadas do Teórico — Pediatria, Cirurgia etc., sem nenhuma relação com a grade curricular real da UNR) por três selects em cascata: **Ano** (1º a 5º), **Matéria** (filtrada pelo ano escolhido, lista completa em `lib/unr-curriculum.ts`) e **Parcial** (Primeira/Segunda). Chaves canônicas language-neutral (`ano1..ano5`, `crescimento_desenvolvimento`, `parcial1`/`parcial2` etc.) com rótulos bilíngues PT/ES em `lib/i18n.tsx` (`t.cronograma.anoLabel/materiaLabel/parcialLabel`) — mesmo padrão já usado para os dias da semana. **Pendente**: rodar a migração acima antes de testar.
 - **Seção de instalação do PWA na landing page**: banner flutuante mobile (`pwa-install-banner.tsx`, aparece na parte inferior, dispensável por 7 dias), seção de destaque no meio da página (`pwa-install-section.tsx`, entre "Como funciona" e depoimentos) e um botão secundário logo abaixo do CTA principal do Hero — todos usando `lib/use-pwa-install.ts` (detecta `beforeinstallprompt` do Chrome/Android, iOS via `navigator.standalone`) e um modal de instruções manuais (`pwa-install-instructions-dialog.tsx`) para quando o navegador não oferece o prompt nativo (principalmente iOS Safari). Copy bilíngue em `t.pwaInstall`.
 - Bandeira do seletor de idioma corrigida: ES agora usa 🇦🇷 (Argentina) em vez de 🇪🇸 (Espanha) — faz mais sentido pro público-alvo real (UNR fica na Argentina).

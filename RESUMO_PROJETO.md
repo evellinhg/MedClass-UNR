@@ -1,6 +1,6 @@
 # MedClass UNR — Resumo do Projeto
 
-_Última atualização: 29/07/2026_
+_Última atualização: 29/07/2026 (sessão 2)_
 
 ## A ideia
 
@@ -49,34 +49,30 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 5. **Login com Google**
    - Testado de ponta a ponta (redirect correto pro domínio de produção, sem erro de configuração).
 
-6. **Tradução do dashboard logado (em andamento, escopo: só telas do aluno, admin fica só em português por ora)**
-   - `LanguageProvider` movido do `app/page.tsx` para o layout raiz (`app/layout.tsx`) — agora `useLanguage()` funciona em qualquer página, incluindo dashboard e admin.
+6. **Tradução do dashboard logado — CONCLUÍDA para o escopo combinado (telas do aluno)**
+   - `LanguageProvider` movido do `app/page.tsx` para o layout raiz (`app/layout.tsx`) — `useLanguage()` funciona em qualquer página, incluindo dashboard e admin.
    - `lib/navigation.ts` convertido de array estático para função `getNavigation(t)`.
-   - **Já traduzidos**: menu lateral completo (`sidebar-nav.tsx`), cabeçalho do dashboard (`dashboard-header.tsx` — saudação, busca, menu mobile), página inicial do dashboard (`app/dashboard/page.tsx` — títulos de seção), `home-stats.tsx` (4 cards de métricas), `action-cards.tsx` (2 cards "Praticar Agora"/"Criar Simulado" — de brinde, corrigiu outro gradiente roxo que tinha escapado do rebrand, `#7c3aed`/`#4338ca` → verde-esmeralda).
+   - **Traduzidos PT/ES**: menu lateral (`sidebar-nav.tsx`), cabeçalho do dashboard (`dashboard-header.tsx`), home completa (`app/dashboard/page.tsx`, `home-stats.tsx`, `action-cards.tsx`, `daily-tip-header.tsx` com as 40 dicas de estudo reescritas para o contexto UNR em `lib/study-tips.ts`, `desempenho-widget.tsx`), Cronograma (`cronograma-content.tsx` — dias da semana agora usam chaves canônicas fixas `mon..sun` salvas no banco, com rótulo traduzido só na exibição), Materiais completo (abas, `resumos-grid.tsx`, `videoaulas-grid.tsx`, `flashcard-decks-grid.tsx`, `plan-restricted-notice.tsx`), Desempenho completo (Histórico e Estatísticas com os 3 tipos de gráfico).
+   - De brinde: corrigido outro gradiente roxo que tinha escapado do rebrand (`action-cards.tsx`, `#7c3aed`/`#4338ca` → verde-esmeralda) e dois casos de texto branco ilegível sobre verde neon (`trilha-path.tsx`, `desempenho-estatisticas-content.tsx`).
+   - Conteúdo que vem do banco (título/especialidade dos resumos, videoaulas, etc.) continua como está — só interface foi traduzida, não conteúdo.
+   - **Usuário pediu para não traduzir por enquanto**: Ranking, MedCoins, Conquistas, Desafios Clínicos (ver item 7 abaixo — foram ocultados, não faz sentido traduzir algo escondido).
+
+7. **Ranking, MedCoins, Conquistas e Desafios Clínicos ocultados**
+   - Removidos do menu lateral (`lib/navigation.ts`) e da home (`RankingWidget`/`MedCoinsWidget` não são mais renderizados em `app/dashboard/page.tsx`).
+   - Componentes, páginas e rotas **continuam existindo no código** — só sem link de acesso. Fácil reativar no futuro: basta voltar as entradas em `getNavigation()` e os widgets na home.
 
 ## Pendências para continuar
 
-### Tradução do dashboard (prioridade combinada com o usuário)
-Faltam, na mesma página inicial do dashboard:
-- `components/daily-tip-header.tsx`
-- `components/desempenho-widget.tsx`
-- `components/ranking-widget.tsx`
-- `components/medcoins-widget.tsx`
+**Tradução do dashboard do aluno: concluída** (dashboard, cronograma, materiais, desempenho). Não há mais pendência de tradução nessa frente, a menos que o usuário peça para reativar e traduzir Ranking/MedCoins/Conquistas/Desafios Clínicos no futuro.
 
-E as demais páginas do aluno (fora a home):
-- `/dashboard/cronograma` (`cronograma-content.tsx` — grande, tem busca de parceiro, calendário, trilhas)
-- `/dashboard/materiais` (`materiais-content.tsx` + `resumos-grid.tsx` + `videoaulas-grid.tsx` + flashcards)
-- `/dashboard/desempenho/*` (histórico e estatísticas)
-- Possivelmente `/dashboard/simulados`, `/dashboard/desafios-clinicos`, `/dashboard/ranking`, `/dashboard/medcoins`, `/dashboard/conquistas` — não entraram na lista original combinada, confirmar com o usuário se entram no escopo "telas do aluno".
-
-**Importante, confirmado pelo usuário**: as perguntas do banco de questões (conteúdo do banco de dados) ficam **sempre em espanhol**, nunca traduzidas. Só a interface (menus, botões, títulos, mensagens) é que deve ficar bilíngue.
-
-### Outras pendências conhecidas
+### Pendências conhecidas
 - `QuizDemo` (demo interativo na landing) tem perguntas fixas só em português — decidir se traduz para reativar na landing, ou deixa desativado.
-- Confirmar visualmente o dashboard logado com uma conta real (não foi possível screenshot autenticado nesta sessão — só o login foi confirmado via automação).
+- Confirmar visualmente o dashboard logado com uma conta real (não foi possível screenshot autenticado nas sessões até agora — login em si já foi confirmado funcionando via automação, e o tema/contraste foram corrigidos, mas vale um olhar humano).
 - `lib/phase-urls.ts` (conceito de "Primeira Fase"/"Segunda Fase" do MedClass original) foi removido do navbar/pricing da landing por não fazer sentido num produto standalone — não deve ser reintroduzido.
 - Configurar PWA (manifest, ícones) — ficou combinado no início do projeto, ainda não foi feito.
 - App mobile (decisão anterior: começar com PWA, não app nativo).
+- Admin panels (`/admin/*`) continuam só em português — fora do escopo combinado ("só telas do aluno"), só o próprio usuário acessa essas telas.
+- Páginas do aluno fora do escopo original que ainda não foram tocadas: `/dashboard/simulados` (Treinamentos), `/dashboard/feedback`, `/dashboard/perfil`, `/dashboard/configuracoes`, `/dashboard/personagem` — confirmar com o usuário se entram no escopo antes de traduzir.
 
 ## Convenções e decisões importantes (não repetir perguntas já respondidas)
 

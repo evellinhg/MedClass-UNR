@@ -11,10 +11,15 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Calendar } from "@/components/ui/calendar"
 import { TrilhaAtivaContent } from "@/components/trilha-ativa-content"
 import type { CronogramaRotina, CronogramaTrilha } from "@/lib/cronograma-types"
+import { useLanguage } from "@/lib/i18n"
 
-const DAYS_OF_WEEK = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"]
-const WEEKDAY_BY_GETDAY = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"]
 const QUANTIDADES = [10, 20, 30, 50]
+
+// Chaves canônicas dos dias da semana (o que fica salvo no banco).
+// A ordem aqui é a ordem de exibição (segunda a domingo).
+const DAY_KEYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+// getDay() do JS retorna 0=domingo..6=sábado — este array traduz esse índice para a chave canônica.
+const DAY_KEY_BY_GETDAY = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
 
 const PALETTE = [
   { dot: "bg-purple-500", badge: "bg-purple-500/15", text: "text-purple-600" },
@@ -31,6 +36,7 @@ function colorForArea(area: string) {
 }
 
 export function CronogramaContent() {
+  const { t } = useLanguage()
   const [loading, setLoading] = useState(true)
   const [trilhaAtivaId, setTrilhaAtivaId] = useState<string | null>(null)
   const [trilhasDisponiveis, setTrilhasDisponiveis] = useState<CronogramaTrilha[]>([])
@@ -91,7 +97,7 @@ export function CronogramaContent() {
     })
     setSaving(false)
     if (error) {
-      alert(`Erro ao salvar rotina: ${error.message}`)
+      alert(`${t.cronograma.erroSalvarRotina}: ${error.message}`)
       return
     }
     setHorario("")
@@ -106,13 +112,12 @@ export function CronogramaContent() {
   }
 
   const handleEntrarTrilha = async (trilha: CronogramaTrilha) => {
-    if (!confirm(`Entrar na trilha "${trilha.nome}"? Ela vai substituir sua rotina pessoal enquanto você a seguir.`))
-      return
+    if (!confirm(t.cronograma.entrarTrilhaConfirm(trilha.nome))) return
     setEntrandoTrilha(trilha.id)
     const { error } = await supabase.rpc("set_cronograma_trilha", { p_trilha_id: trilha.id })
     setEntrandoTrilha(null)
     if (error) {
-      alert(`Não foi possível entrar na trilha: ${error.message}`)
+      alert(`${t.cronograma.entrarTrilhaErro}: ${error.message}`)
       return
     }
     setTrilhaAtivaId(trilha.id)
@@ -125,8 +130,8 @@ export function CronogramaContent() {
     for (let offset = 0; offset < 14 && sessions.length < 6; offset++) {
       const date = new Date(today)
       date.setDate(date.getDate() + offset)
-      const label = WEEKDAY_BY_GETDAY[date.getDay()]
-      routines.filter((r) => r.dias_semana.includes(label)).forEach((routine) => sessions.push({ date, routine }))
+      const key = DAY_KEY_BY_GETDAY[date.getDay()]
+      routines.filter((r) => r.dias_semana.includes(key)).forEach((routine) => sessions.push({ date, routine }))
     }
     return sessions.slice(0, 6)
   }, [routines])
@@ -137,7 +142,7 @@ export function CronogramaContent() {
     const m: Record<string, (date: Date) => boolean> = {}
     areasUsadas.forEach((a) => {
       m[`area_${a}`] = (date: Date) =>
-        routines.some((r) => r.area === a && r.dias_semana.includes(WEEKDAY_BY_GETDAY[date.getDay()]))
+        routines.some((r) => r.area === a && r.dias_semana.includes(DAY_KEY_BY_GETDAY[date.getDay()]))
     })
     return m
   }, [areasUsadas, routines])
@@ -155,7 +160,7 @@ export function CronogramaContent() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando cronograma...
+        {t.cronograma.carregando}
       </div>
     )
   }
@@ -170,11 +175,9 @@ export function CronogramaContent() {
         <Card className="border border-primary/20 bg-gradient-to-br from-[#c6ff3a]/5 to-[#84cc16]/5 p-5">
           <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-foreground">
             <Route className="h-5 w-5 text-primary" />
-            Trilhas da equipe MedClass
+            {t.cronograma.trilhasTitulo}
           </h2>
-          <p className="mb-4 text-sm text-muted-foreground">
-            Siga uma trilha de treinamento montada pela equipe, em vez de criar seu próprio cronograma.
-          </p>
+          <p className="mb-4 text-sm text-muted-foreground">{t.cronograma.trilhasSubtitulo}</p>
           <div className="space-y-2">
             {trilhasDisponiveis.map((trilha) => (
               <div
@@ -197,7 +200,7 @@ export function CronogramaContent() {
                   ) : (
                     <LogIn className="h-3.5 w-3.5" />
                   )}
-                  Entrar
+                  {t.cronograma.entrar}
                 </Button>
               </div>
             ))}
@@ -208,11 +211,11 @@ export function CronogramaContent() {
       <div className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <div className="space-y-8">
           <Card className="border border-border bg-card p-6">
-            <h2 className="mb-6 text-lg font-semibold text-foreground">Criar Rotina de Estudo</h2>
+            <h2 className="mb-6 text-lg font-semibold text-foreground">{t.cronograma.criarRotinaTitulo}</h2>
 
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-foreground">Área</label>
+                <label className="text-sm font-medium text-foreground">{t.cronograma.area}</label>
                 <Select value={area} onValueChange={setArea}>
                   <SelectTrigger className="mt-2 w-full">
                     <SelectValue />
@@ -228,12 +231,12 @@ export function CronogramaContent() {
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground">Horário</label>
+                <label className="text-sm font-medium text-foreground">{t.cronograma.horario}</label>
                 <Input type="time" value={horario} onChange={(e) => setHorario(e.target.value)} className="mt-2" />
               </div>
 
               <div>
-                <label className="mb-2 block text-sm font-medium text-foreground">Questões por sessão</label>
+                <label className="mb-2 block text-sm font-medium text-foreground">{t.cronograma.questoesPorSessao}</label>
                 <div className="flex flex-wrap gap-2">
                   {QUANTIDADES.map((q) => (
                     <button
@@ -253,9 +256,9 @@ export function CronogramaContent() {
               </div>
 
               <div>
-                <label className="mb-3 block text-sm font-medium text-foreground">Dias da Semana</label>
+                <label className="mb-3 block text-sm font-medium text-foreground">{t.cronograma.diasDaSemana}</label>
                 <div className="flex flex-wrap gap-2">
-                  {DAYS_OF_WEEK.map((day) => (
+                  {DAY_KEYS.map((day) => (
                     <button
                       key={day}
                       onClick={() => toggleDay(day)}
@@ -265,7 +268,7 @@ export function CronogramaContent() {
                           : "border border-input bg-background text-foreground hover:bg-accent"
                       }`}
                     >
-                      {day}
+                      {t.cronograma.diasSemanaLabel[day]}
                     </button>
                   ))}
                 </div>
@@ -273,16 +276,16 @@ export function CronogramaContent() {
 
               <Button variant="gradient" onClick={handleAddRoutine} disabled={saving} className="w-full gap-2">
                 {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4" />}
-                Adicionar Rotina
+                {t.cronograma.adicionarRotina}
               </Button>
             </div>
           </Card>
 
           <div>
-            <h2 className="mb-4 text-lg font-semibold text-foreground">Rotinas Cadastradas</h2>
+            <h2 className="mb-4 text-lg font-semibold text-foreground">{t.cronograma.rotinasCadastradas}</h2>
             {routines.length === 0 ? (
               <Card className="border border-border bg-card p-8 text-center">
-                <p className="text-muted-foreground">Nenhuma rotina cadastrada ainda.</p>
+                <p className="text-muted-foreground">{t.cronograma.nenhumaRotina}</p>
               </Card>
             ) : (
               <div className="space-y-3">
@@ -301,7 +304,7 @@ export function CronogramaContent() {
                               <Clock className="h-4 w-4" />
                               {routine.horario}
                             </span>
-                            <span>{routine.quantidade_questoes} questões/sessão</span>
+                            <span>{routine.quantidade_questoes} {t.cronograma.questoesPorSessaoLabel}</span>
                           </div>
                           <div className="mt-3 flex flex-wrap gap-2">
                             {routine.dias_semana.map((day) => (
@@ -309,7 +312,7 @@ export function CronogramaContent() {
                                 key={day}
                                 className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${cor.badge} ${cor.text}`}
                               >
-                                {day}
+                                {t.cronograma.diasSemanaLabel[day] ?? day}
                               </span>
                             ))}
                           </div>
@@ -357,10 +360,10 @@ export function CronogramaContent() {
           <Card className="border border-border bg-card p-5">
             <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-foreground">
               <CalendarDays className="h-4 w-4 text-primary" />
-              Próximas sessões
+              {t.cronograma.proximasSessoes}
             </h3>
             {upcomingSessions.length === 0 ? (
-              <p className="text-sm text-muted-foreground">Nenhuma sessão agendada.</p>
+              <p className="text-sm text-muted-foreground">{t.cronograma.nenhumaSessao}</p>
             ) : (
               <div className="space-y-3">
                 {upcomingSessions.map((session, idx) => {
@@ -375,7 +378,7 @@ export function CronogramaContent() {
                         <div>
                           <p className="text-sm font-medium text-foreground">{session.routine.area}</p>
                           <p className="text-xs text-muted-foreground">
-                            {session.date.toLocaleDateString("pt-BR", {
+                            {session.date.toLocaleDateString(t.cronograma.localeData, {
                               weekday: "short",
                               day: "2-digit",
                               month: "short",

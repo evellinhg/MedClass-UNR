@@ -13,6 +13,12 @@ Instruções de uso:
 - MATÉRIA deve ser uma das opções da lista "MATÉRIAS VÁLIDAS POR
   ANO" no final deste documento — é a mesma lista do dropdown no
   painel admin, então usar esses nomes exatos evita retrabalho.
+- DISCIPLINA BASE é opcional (pode deixar em branco). Se souber a
+  ciência básica por trás da questão (Anatomia, Fisiologia etc.),
+  preencha com um dos nomes da lista "DISCIPLINAS BASE VÁLIDAS" no
+  final do documento — isso é o que alimenta o detalhamento por
+  disciplina no painel de Desempenho do aluno. Se deixar em branco,
+  a questão fica sem essa classificação (pode ser preenchida depois).
 - Quando terminar, envie o arquivo (.txt ou .docx) para o Claude
   converter em JSON.
 ==================================================================
@@ -23,9 +29,10 @@ QUESTÃO #1
 ##################################################
 
 ANO: [1º / 2º / 3º / 4º / 5º]
-MATÉRIA: [uma das opções da lista no final do documento]
+MATÉRIA: [uma das opções da lista "MATÉRIAS VÁLIDAS POR ANO" no final]
 PARCIAL: [Primeiro Parcial / Segundo Parcial]
 DIFICULDADE: [Fácil / Médio / Difícil]
+DISCIPLINA BASE: [opcional — uma das opções da lista "DISCIPLINAS BASE VÁLIDAS" no final, ou deixe em branco]
 TAGS: [palavras-chave separadas por vírgula, ex: anemia, ferropriva, hematologia]
 
 ENUNCIADO:
@@ -54,6 +61,7 @@ ANO: [...]
 MATÉRIA: [...]
 PARCIAL: [...]
 DIFICULDADE: [...]
+DISCIPLINA BASE: [...]
 TAGS: [...]
 
 ENUNCIADO:
@@ -106,3 +114,26 @@ MATÉRIAS VÁLIDAS POR ANO (use exatamente estes nomes)
 - Cirurgia do 5º ano
 - Pediatria do 5º ano
 - Clínica Médica do 5º ano
+
+
+##################################################
+DISCIPLINAS BASE VÁLIDAS (opcional, mesma lista para qualquer ano)
+##################################################
+
+- Anatomia
+- Histologia
+- Embriologia
+- Fisiologia
+- Bioquímica
+- Biofísica
+- Genética
+- Imunologia
+- Microbiologia
+- Parasitologia
+- Patologia
+- Farmacologia
+
+Obs: esta lista é fixa e não depende do ano/matéria — são as
+ciências básicas que atravessam qualquer módulo. Se a questão for
+puramente clínica ou de outra natureza (ex: saúde pública, semiologia)
+e não se encaixar em nenhuma delas, deixe o campo em branco.

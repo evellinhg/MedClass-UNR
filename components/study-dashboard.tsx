@@ -15,14 +15,7 @@ import {
   Layers,
   ArrowRight,
 } from "lucide-react"
-
-const subjects = [
-  { name: "Clínica Médica", score: 82, questions: 320 },
-  { name: "Cirurgia", score: 74, questions: 260 },
-  { name: "Pediatria", score: 91, questions: 210 },
-  { name: "Ginecologia", score: 68, questions: 180 },
-  { name: "Preventiva", score: 88, questions: 270 },
-]
+import { useLanguage } from "@/lib/i18n"
 
 const evolution = [
   { label: "Sim. 1", score: 58 },
@@ -36,25 +29,19 @@ const evolution = [
 
 const META = 70
 
-const simuladoAreas = [
-  { name: "Clínica Médica", selected: true },
-  { name: "Cirurgia", selected: true },
-  { name: "Pediatria", selected: true },
-  { name: "Ginecologia", selected: false },
-  { name: "Preventiva", selected: false },
-]
-
-function ChartTooltip({ active, payload, label }: any) {
+function ChartTooltip({ active, payload, label, suffix }: any) {
   if (!active || !payload?.length) return null
   return (
     <div className="rounded-lg border border-white/10 bg-[#0d0d14] px-3 py-2 shadow-xl">
       <p className="text-[10px] text-white/40">{label}</p>
-      <p className="text-xs font-semibold text-white">{payload[0].value}% de acerto</p>
+      <p className="text-xs font-semibold text-white">{payload[0].value}{suffix}</p>
     </div>
   )
 }
 
-function PerformancePanel() {
+type DashboardT = ReturnType<typeof useLanguage>["t"]["studyDashboard"]
+
+function PerformancePanel({ dt }: { dt: DashboardT }) {
   return (
     <>
       {/* Stat cards */}
@@ -62,38 +49,38 @@ function PerformancePanel() {
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Target className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Aproveit.</span>
+            <span className="text-[11px]">{dt.statAproveitamento}</span>
           </div>
           <p className="text-xl font-bold text-white">81%</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Resolvidas</span>
+            <span className="text-[11px]">{dt.statResolvidas}</span>
           </div>
           <p className="text-xl font-bold text-white">1.240</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Clock className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Tempo/questão</span>
+            <span className="text-[11px]">{dt.statTempo}</span>
           </div>
           <p className="text-xl font-bold text-white">1m18s</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Flame className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Sequência</span>
+            <span className="text-[11px]">{dt.statSequencia}</span>
           </div>
-          <p className="text-xl font-bold text-white">12 dias</p>
+          <p className="text-xl font-bold text-white">{dt.statSequenciaValor}</p>
         </div>
       </div>
 
       {/* Evolution area chart */}
       <div className="mb-4">
         <div className="mb-2 flex items-center justify-between">
-          <p className="text-xs font-medium text-white/40">Evolução por simulado</p>
-          <span className="text-[11px] text-[#bef264]/70">Meta: {META}%</span>
+          <p className="text-xs font-medium text-white/40">{dt.evolucaoTitulo}</p>
+          <span className="text-[11px] text-[#bef264]/70">{dt.metaLabel}: {META}%</span>
         </div>
         <div className="h-24 w-full">
           <ResponsiveContainer width="100%" height="100%">
@@ -118,7 +105,7 @@ function PerformancePanel() {
                 width={44}
                 tickFormatter={(v) => `${v}%`}
               />
-              <Tooltip content={<ChartTooltip />} cursor={{ stroke: "rgba(198,255,58,0.3)" }} />
+              <Tooltip content={<ChartTooltip suffix={dt.tooltipSufixo} />} cursor={{ stroke: "rgba(198,255,58,0.3)" }} />
               <Area
                 type="monotone"
                 dataKey="score"
@@ -135,8 +122,8 @@ function PerformancePanel() {
 
       {/* Bar chart by subject */}
       <div className="space-y-2">
-        <p className="text-xs font-medium text-white/40">Desempenho por área</p>
-        {subjects.slice(0, 4).map((subject, i) => {
+        <p className="text-xs font-medium text-white/40">{dt.desempenhoPorArea}</p>
+        {dt.subjects.slice(0, 4).map((subject, i) => {
           const aboveTarget = subject.score >= META
           return (
             <div key={subject.name} className="space-y-1">
@@ -174,7 +161,7 @@ function PerformancePanel() {
   )
 }
 
-function SimuladoPanel() {
+function SimuladoPanel({ dt }: { dt: DashboardT }) {
   return (
     <>
       {/* Config summary */}
@@ -182,38 +169,38 @@ function SimuladoPanel() {
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Layers className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Nível</span>
+            <span className="text-[11px]">{dt.nivel}</span>
           </div>
-          <p className="text-sm font-bold text-white">Aleatório</p>
+          <p className="text-sm font-bold text-white">{dt.aleatorio}</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <ListChecks className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Prova</span>
+            <span className="text-[11px]">{dt.prova}</span>
           </div>
           <p className="text-sm font-bold text-white">UNR</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Target className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Questões</span>
+            <span className="text-[11px]">{dt.questoesLabel}</span>
           </div>
-          <p className="text-sm font-bold text-white">30</p>
+          <p className="text-sm font-bold text-white">{dt.questoesValor}</p>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
             <Timer className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Cronômetro</span>
+            <span className="text-[11px]">{dt.cronometro}</span>
           </div>
-          <p className="text-sm font-bold text-white">Ativado</p>
+          <p className="text-sm font-bold text-white">{dt.ativado}</p>
         </div>
       </div>
 
       {/* Area selection chips */}
       <div className="mb-6">
-        <p className="mb-2 text-xs font-medium text-white/40">Áreas selecionadas</p>
+        <p className="mb-2 text-xs font-medium text-white/40">{dt.areasSelecionadas}</p>
         <div className="flex flex-wrap gap-2">
-          {simuladoAreas.map((area) => (
+          {dt.simuladoAreas.map((area) => (
             <span
               key={area.name}
               className={
@@ -231,8 +218,8 @@ function SimuladoPanel() {
       {/* Generating progress */}
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between text-xs">
-          <span className="text-white/40">Montando seu simulado</span>
-          <span className="text-[#bef264]/70">3 áreas · 30 questões</span>
+          <span className="text-white/40">{dt.montandoSimulado}</span>
+          <span className="text-[#bef264]/70">{dt.resumoContagem}</span>
         </div>
         <div className="h-2 w-full overflow-hidden rounded-full bg-white/5">
           <motion.div
@@ -245,33 +232,34 @@ function SimuladoPanel() {
       </div>
 
       <button className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] py-3 text-sm font-semibold text-[#0a1f00] shadow-lg shadow-[#c6ff3a]/20">
-        Iniciar Simulado
+        {dt.iniciarSimulado}
         <ArrowRight className="h-4 w-4" />
       </button>
     </>
   )
 }
 
-const slides = [
-  {
-    key: "performance",
-    icon: Stethoscope,
-    title: "Análise de Desempenho",
-    subtitle: "Enamed · Ciclo 2025",
-    badge: "+12%",
-    Panel: PerformancePanel,
-  },
-  {
-    key: "simulado",
-    icon: ListChecks,
-    title: "Crie seu Simulado",
-    subtitle: "Personalizado para você",
-    badge: "Novo",
-    Panel: SimuladoPanel,
-  },
-]
-
 export function StudyDashboard() {
+  const { t } = useLanguage()
+  const dt = t.studyDashboard
+
+  const slides = [
+    {
+      key: "performance",
+      icon: Stethoscope,
+      title: dt.slide1Title,
+      subtitle: dt.slide1Subtitle,
+      badge: dt.slide1Badge,
+    },
+    {
+      key: "simulado",
+      icon: ListChecks,
+      title: dt.slide2Title,
+      subtitle: dt.slide2Subtitle,
+      badge: dt.slide2Badge,
+    },
+  ]
+
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
 
@@ -279,11 +267,11 @@ export function StudyDashboard() {
     if (paused) return
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000)
     return () => clearInterval(id)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [paused])
 
   const slide = slides[index]
   const Icon = slide.icon
-  const Panel = slide.Panel
 
   return (
     <motion.div
@@ -317,7 +305,7 @@ export function StudyDashboard() {
             </span>
           </div>
 
-          <Panel />
+          {slide.key === "performance" ? <PerformancePanel dt={dt} /> : <SimuladoPanel dt={dt} />}
         </motion.div>
       </AnimatePresence>
 

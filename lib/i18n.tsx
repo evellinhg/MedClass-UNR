@@ -212,6 +212,7 @@ const pt = {
     concluido: "Concluído",
     cartoes: "cartões",
     respondidos: "respondidos",
+    semCategoria: "Outros",
   },
   desempenhoHistorico: {
     carregando: "Carregando histórico...",
@@ -992,6 +993,7 @@ const es: typeof pt = {
     concluido: "Completado",
     cartoes: "tarjetas",
     respondidos: "respondidas",
+    semCategoria: "Otros",
   },
   desempenhoHistorico: {
     carregando: "Cargando historial...",

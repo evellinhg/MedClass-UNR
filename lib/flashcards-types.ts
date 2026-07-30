@@ -1,7 +1,9 @@
 export interface FlashcardDeck {
   id: string
   titulo: string
-  especialidade: string
+  especialidade: string | null
+  materia: string | null
+  disciplina_base: string | null
   descricao: string | null
   cor_hex: string
   tags: string[]

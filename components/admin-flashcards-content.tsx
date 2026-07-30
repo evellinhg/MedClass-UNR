@@ -3,7 +3,15 @@
 import { useEffect, useMemo, useState } from "react"
 import { Layers, Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { AREAS } from "@/lib/quiz-config"
+import { translations } from "@/lib/i18n"
+import {
+  ANO_KEYS,
+  MATERIA_KEYS_BY_ANO,
+  DISCIPLINA_BASE_KEYS,
+  anoDaMateria,
+  type AnoKey,
+  type DisciplinaBaseKey,
+} from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -13,8 +21,12 @@ import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { getAreaColor } from "@/lib/area-colors"
+import { getDisciplinaColor } from "@/lib/disciplina-colors"
 import type { FlashcardDeck } from "@/lib/flashcards-types"
+
+const anoLabel = translations.pt.cronograma.anoLabel
+const materiaLabel = translations.pt.cronograma.materiaLabel
+const disciplinaBaseLabel = translations.pt.cronograma.disciplinaBaseLabel
 
 interface CardForm {
   id?: string
@@ -25,7 +37,9 @@ interface CardForm {
 
 interface DeckForm {
   titulo: string
-  especialidade: string
+  ano: AnoKey
+  materia: string
+  disciplinaBase: DisciplinaBaseKey | ""
   descricao: string
   ordem: number
   ativo: boolean
@@ -66,7 +80,9 @@ export function AdminFlashcardsContent() {
   function emptyForm(proximaOrdem: number): DeckForm {
     return {
       titulo: "",
-      especialidade: AREAS[0],
+      ano: ANO_KEYS[0],
+      materia: MATERIA_KEYS_BY_ANO[ANO_KEYS[0]][0],
+      disciplinaBase: "",
       descricao: "",
       ordem: proximaOrdem,
       ativo: true,
@@ -75,10 +91,19 @@ export function AdminFlashcardsContent() {
     }
   }
 
+  const handleAnoChange = (novoAno: AnoKey) => {
+    setForm((p) => ({ ...p, ano: novoAno, materia: MATERIA_KEYS_BY_ANO[novoAno][0] }))
+  }
+
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase()
     if (!term) return decks
-    return decks.filter((d) => d.titulo.toLowerCase().includes(term) || d.especialidade.toLowerCase().includes(term))
+    return decks.filter(
+      (d) =>
+        d.titulo.toLowerCase().includes(term) ||
+        (materiaLabel[d.materia ?? ""] ?? "").toLowerCase().includes(term) ||
+        (disciplinaBaseLabel[d.disciplina_base ?? ""] ?? "").toLowerCase().includes(term)
+    )
   }, [decks, search])
 
   const openNew = () => {
@@ -96,9 +121,15 @@ export function AdminFlashcardsContent() {
       .select("*")
       .eq("deck_id", deck.id)
       .order("ordem")
+    const anoDerivado = (deck.materia && anoDaMateria(deck.materia)) || ANO_KEYS[0]
     setForm({
       titulo: deck.titulo,
-      especialidade: deck.especialidade,
+      ano: anoDerivado,
+      materia:
+        deck.materia && MATERIA_KEYS_BY_ANO[anoDerivado].includes(deck.materia)
+          ? deck.materia
+          : MATERIA_KEYS_BY_ANO[anoDerivado][0],
+      disciplinaBase: (deck.disciplina_base as DisciplinaBaseKey) || "",
       descricao: deck.descricao ?? "",
       ordem: deck.ordem,
       ativo: deck.ativo,
@@ -153,10 +184,11 @@ export function AdminFlashcardsContent() {
     }
 
     setSaving(true)
-    const cor = getAreaColor(form.especialidade)
+    const cor = getDisciplinaColor(form.disciplinaBase || undefined)
     const deckPayload = {
       titulo: form.titulo.trim(),
-      especialidade: form.especialidade,
+      materia: form.materia || null,
+      disciplina_base: form.disciplinaBase || null,
       descricao: form.descricao.trim() || null,
       cor_hex: cor.hex,
       ordem: form.ordem,
@@ -240,7 +272,10 @@ export function AdminFlashcardsContent() {
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
                   <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <Badge variant="secondary">{deck.especialidade}</Badge>
+                    {deck.materia && <Badge variant="secondary">{materiaLabel[deck.materia] ?? deck.materia}</Badge>}
+                    {deck.disciplina_base && (
+                      <Badge variant="outline">{disciplinaBaseLabel[deck.disciplina_base] ?? deck.disciplina_base}</Badge>
+                    )}
                     <Badge variant="outline">Ordem {deck.ordem}</Badge>
                     <span className="flex items-center gap-1 text-xs text-muted-foreground">
                       <Layers className="h-3.5 w-3.5" />
@@ -313,21 +348,60 @@ export function AdminFlashcardsContent() {
 
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                 <div className="space-y-1.5">
-                  <Label>Especialidade</Label>
-                  <Select value={form.especialidade} onValueChange={(v) => setForm((p) => ({ ...p, especialidade: v }))}>
+                  <Label>Ano</Label>
+                  <Select value={form.ano} onValueChange={(v) => handleAnoChange(v as AnoKey)}>
                     <SelectTrigger className="w-full">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {AREAS.map((a) => (
+                      {ANO_KEYS.map((a) => (
                         <SelectItem key={a} value={a}>
-                          {a}
+                          {anoLabel[a]}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
-                  <p className="text-[11px] text-muted-foreground">A cor do baralho segue a especialidade escolhida.</p>
                 </div>
+                <div className="space-y-1.5">
+                  <Label>Matéria</Label>
+                  <Select value={form.materia} onValueChange={(v) => setForm((p) => ({ ...p, materia: v }))}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {MATERIA_KEYS_BY_ANO[form.ano].map((m) => (
+                        <SelectItem key={m} value={m}>
+                          {materiaLabel[m]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="space-y-1.5">
+                  <Label>Disciplina Base</Label>
+                  <Select
+                    value={form.disciplinaBase || "nenhuma"}
+                    onValueChange={(v) =>
+                      setForm((p) => ({ ...p, disciplinaBase: v === "nenhuma" ? "" : (v as DisciplinaBaseKey) }))
+                    }
+                  >
+                    <SelectTrigger className="w-full">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="nenhuma">Nenhuma</SelectItem>
+                      {DISCIPLINA_BASE_KEYS.map((d) => (
+                        <SelectItem key={d} value={d}>
+                          {disciplinaBaseLabel[d]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="text-[11px] text-muted-foreground">A cor do baralho segue a disciplina escolhida.</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-1.5">
                   <Label htmlFor="ordem">Ordem de exibição</Label>
                   <Input

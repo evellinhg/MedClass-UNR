@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { getAreaIcon } from "@/lib/area-icons"
+import { getDisciplinaIcon } from "@/lib/disciplina-icons"
 import type { Flashcard, FlashcardDeck } from "@/lib/flashcards-types"
 import { trackEvent } from "@/lib/analytics"
 
@@ -145,7 +146,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
     )
   }
 
-  const Icon = getAreaIcon(deck.especialidade)
+  const Icon = deck.disciplina_base ? getDisciplinaIcon(deck.disciplina_base) : getAreaIcon(deck.especialidade)
 
   if (showConcluido) {
     const niveis = cards.map((c) => progressoMap[c.id]).filter((n): n is number => n !== undefined)

@@ -1,0 +1,306 @@
+# Template para Geração de Flashcards — MedClass UNR
+
+## Instruções de uso
+
+1. Copie este documento completo e envie para uma IA (ChatGPT, Gemini, etc.)
+2. Peça para ela gerar flashcards no formato JSON descrito abaixo
+3. A IA deve preencher todos os campos usando as listas de valores válidos fornecidas
+4. Salve o JSON gerado em um arquivo (ex: `flashcards-import.json`)
+5. Envie esse arquivo para o Claude junto com as instruções de importação
+
+---
+
+## Formato do JSON
+
+O arquivo final deve ser um array de decks. Cada deck contém um array de cards.
+
+```json
+[
+  {
+    "titulo": "Anatomia do Sistema Cardiovascular",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Principais estruturas do coração e grandes vasos",
+    "tags": ["coracao", "vasos", "anatomia-cardiovascular"],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "Quantas camadas (túnicas) formam a parede do coração?",
+        "verso": "Três camadas: epicárdio (externa), miocárdio (média) e endocárdio (interna).",
+        "fontes": ["Moore, Anatomia Orientada para a Clínica, 8ª ed., Cap. 1"]
+      }
+    ]
+  }
+]
+```
+
+---
+
+## Estrutura dos Campos
+
+### Deck
+
+| Campo | Obrigatório | Descrição |
+|---|---|---|
+| `titulo` | Sim | Nome do deck (ex: "Anatomia do Sistema Cardiovascular") |
+| `ano` | Sim | Chave canônica do ano (ver tabela ANOS) |
+| `materia` | Sim | Chave canônica da matéria (ver tabela MATÉRIAS POR ANO) |
+| `parcial` | Sim | `"parcial1"` ou `"parcial2"` |
+| `disciplina_base` | Não | Chave canônica (ver DISCIPLINAS BASE) ou `null` |
+| `descricao` | Não | Texto descritivo do deck |
+| `tags` | Sim | Array de strings em **snake_case** (ex: `["coracao", "anatomia-cardiovascular"]`) |
+| `ordem` | Sim | Número inteiro para ordenação (1, 2, 3...) |
+| `cards` | Sim | Array de objetos card |
+
+### Card
+
+| Campo | Obrigatório | Descrição |
+|---|---|---|
+| `frente` | Sim | Pergunta ou termo (frente do flashcard) |
+| `verso` | Sim | Resposta ou definição (verso do flashcard) |
+| `fontes` | Não | Array de strings com referências bibliográficas |
+
+---
+
+## Valores Válidos
+
+### ANOS
+
+| Chave | Display |
+|---|---|
+| `ano1` | 1º Ano |
+| `ano2` | 2º Ano |
+| `ano3` | 3º Ano |
+| `ano4` | 4º Ano |
+| `ano5` | 5º Ano |
+
+### MATÉRIAS POR ANO
+
+**1º Ano:**
+| Chave | Display |
+|---|---|
+| `crescimento_desenvolvimento` | Crescimento e Desenvolvimento |
+| `nutricao` | Nutrição |
+
+**2º Ano:**
+| Chave | Display |
+|---|---|
+| `sexualidade_genero_reproducao` | Sexualidade, Gênero e Reprodução |
+| `trabalho_tempo_livre` | Trabalho e Tempo Livre |
+| `ser_humano_meio` | Ser Humano e Seu Meio |
+
+**3º Ano:**
+| Chave | Display |
+|---|---|
+| `injuria` | Injúria |
+| `defesa` | Defesa |
+
+**4º Ano:**
+| Chave | Display |
+|---|---|
+| `clinica_medica_4` | Clínica Médica do 4º ano |
+| `pediatria_4` | Pediatria do 4º ano |
+| `oftalmologia` | Oftalmologia |
+| `otorrinolaringologia` | Otorrinolaringologia |
+| `farmacologia` | Farmacologia |
+
+**5º Ano:**
+| Chave | Display |
+|---|---|
+| `cirurgia_5` | Cirurgia do 5º ano |
+| `pediatria_5` | Pediatria do 5º ano |
+| `clinica_medica_5` | Clínica Médica do 5º ano |
+
+### PARCIAIS
+
+| Chave | Display |
+|---|---|
+| `parcial1` | Primeira Parcial |
+| `parcial2` | Segunda Parcial |
+
+### DISCIPLINAS BASE
+
+| Chave | Display |
+|---|---|
+| `anatomia` | Anatomia |
+| `histologia` | Histologia |
+| `embriologia` | Embriologia |
+| `fisiologia` | Fisiologia |
+| `bioquimica` | Bioquímica |
+| `biofisica` | Biofísica |
+| `genetica` | Genética |
+| `imunologia` | Imunologia |
+| `microbiologia` | Microbiologia |
+| `parasitologia` | Parasitologia |
+| `patologia` | Patologia |
+| `farmacologia_base` | Farmacologia |
+
+---
+
+## Regras para Tags
+
+- Use **snake_case** (ex: `"reacoes-adversas"`, `"sistema-renina-angiotensina"`)
+- Prefixos úteis por disciplina base:
+  - anatomia: `"anatomia-"` (ex: `"anatomia-cardiovascular"`)
+  - fisiologia: `"fisiologia-"` (ex: `"fisiologia-renal"`)
+  - farmacologia_base: `"farmaco-"` (ex: `"farmaco-bloqueadores"`)
+  - patologia: `"patologia-"` (ex: `"patologia-inflamacao"`)
+- Para matérias clínicas (4º/5º ano), use o nome direto:
+  - `"hipertensao"`, `"dm-tipo-2"`, `"apendicite"`, etc.
+- Inclua sempre tags que ajudem na busca:
+  - Sistema/órgão envolvido (ex: `"sistema-cardiovascular"`, `"rins"`)
+  - Se aplicável, o nome da patologia (ex: `"insuficiencia-cardiaca"`)
+  - Classe de fármaco (ex: `"iec"`, `"beta-bloqueadores"`)
+- Máximo de 8 tags por deck
+
+---
+
+## Regras para o Conteúdo dos Cards
+
+1. **Frente** deve ser uma pergunta direta ou termo a ser definido
+2. **Verso** deve conter a resposta completa mas concisa
+3. **Dificuldade** deve ser adequada ao ano da matéria:
+   - 1º-2º ano: conceitos fundamentais, definições, estruturas
+   - 3º ano: mecanismos de doença e defesa, fisiopatologia
+   - 4º-5º ano: diagnóstico, tratamento, conduta clínica
+4. **Quantidade ideal** de cards por deck: 8-15 cards
+5. **Distribuição** ideal: criar múltiplos decks por matéria (não 1 deck gigante)
+   - Ex: "Farmacologia Cardiovascular" e "Farmacologia do SNA" em vez de "Farmacologia"
+
+---
+
+## Exemplo Completo
+
+```json
+[
+  {
+    "titulo": "Farmacologia Cardiovascular",
+    "ano": "ano4",
+    "materia": "farmacologia",
+    "parcial": "parcial1",
+    "disciplina_base": "farmacologia_base",
+    "descricao": "Anti-hipertensivos, antiarrítmicos e fármacos para insuficiência cardíaca",
+    "tags": ["sistema-cardiovascular", "anti-hipertensivos", "iec", "bra", "beta-bloqueadores"],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "Qual o mecanismo de ação dos IECA (Inibidores da Enzima Conversora de Angiotensina)?",
+        "verso": "Inibem a ECA, bloqueando a conversão de angiotensina I em angiotensina II. Reduzem vasoconstrição e secreção de aldosterona, ↓ PA.",
+        "fontes": ["Goodman & Gilman, As Bases Farmacológicas da Terapêutica, 14ª ed., Cap. 26"]
+      },
+      {
+        "frente": "Cite 3 indicações principais dos IECA.",
+        "verso": "1) Hipertensão arterial sistêmica\n2) Insuficiência cardíaca com fração de ejeção reduzida\n3) Nefropatia diabética (efeito renoprotetor)",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 26"]
+      },
+      {
+        "frente": "Qual a principal diferença entre IECA e BRA (bloqueadores do receptor AT1 da angiotensina II)?",
+        "verso": "IECA inibem a ECA (↓ angiotensina II e ↑ bradicinina). BRA bloqueiam diretamente o receptor AT1 (não afetam bradicinina). BRA são alternativa quando há tosse seca pelo IECA.",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 26"]
+      },
+      {
+        "frente": "Efeito colateral característico dos IECA, ausente nos BRA.",
+        "verso": "Tosse seca (devido ao acúmulo de bradicinina).",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 26"]
+      },
+      {
+        "frente": "Qual o mecanismo de ação dos betabloqueadores no tratamento da insuficiência cardíaca?",
+        "verso": "Bloqueiam receptores β₁-adrenérgicos no coração, reduzindo frequência cardíaca, contratilidade e consumo de O₂. Melhoram remodelamento ventricular a longo prazo.",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 24"]
+      }
+    ]
+  },
+  {
+    "titulo": "Farmacologia do Sistema Nervoso Autônomo",
+    "ano": "ano4",
+    "materia": "farmacologia",
+    "parcial": "parcial1",
+    "disciplina_base": "farmacologia_base",
+    "descricao": "Agonistas e antagonistas adrenérgicos e colinérgicos",
+    "tags": ["sna", "adrenergico", "colinergico", "simpatico", "parassimpatico"],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "Quais os tipos de receptores colinérgicos e suas localizações principais?",
+        "verso": "Nicotínicos (N): gânglios autônomos, placa motora, SNC.\nMuscarínicos (M1-M5): órgãos efetores (coração, músculo liso, glândulas).",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 9 e 10"]
+      },
+      {
+        "frente": "Efeito da atropina (antagonista muscarínico) no coração, olho e TGI.",
+        "verso": "Coração: ↑ FC (taquicardia). Olho: midríase e cicloplegia. TGI: ↓ motilidade (antiespasmódico).",
+        "fontes": ["Goodman & Gilman, 14ª ed., Cap. 10"]
+      }
+    ]
+  }
+]
+```
+
+---
+
+## Prompt para Enviar à IA Geradora
+
+Copie e cole este prompt:
+
+```
+Gere flashcards de medicina no formato JSON abaixo. Siga rigorosamente os valores válidos da grade curricular da UNR fornecidos.
+
+[METADADOS DO USUÁRIO - PREENCHER ANTES DE ENVIAR]
+- Ano alvo: [ex: ano1, ano2, ano3, ano4, ano5]
+- Matéria(s): [ex: todas, ou lista específica]
+- Parcial: [parcial1, parcial2, ou ambos]
+- Quantidade de decks: [ex: 5]
+- Tema geral: [ex: sistema cardiovascular, antibioticoterapia, etc.]
+
+FORMATO JSON (cada deck deve ser um objeto no array principal):
+[ré do formato JSON documentado acima]
+
+LISTA COMPLETA DE VALORES VÁLIDOS:
+[ré das tabelas ANOS, MATÉRIAS POR ANO, PARCIAIS, DISCIPLINAS BASE e REGRAS PARA TAGS documentadas acima]
+
+REGRAS:
+1. Cada deck deve ter 8-15 cards
+2. Frente em forma de pergunta; verso com resposta completa e concisa
+3. Conteúdo adequado ao ano (1º-2º: fundamentos; 3º: mecanismos; 4º-5º: clínica)
+4. Tags em snake_case
+5. Incluir fontes bibliográficas reais sempre que possível
+6. Não repetir conteúdo entre decks
+```
+
+---
+
+## Instruções para o Claude (Importação)
+
+Envie o `flashcards-import.json` para o Claude junto com este comando:
+
+```
+Tenho o arquivo flashcards-import.json com flashcards para o MedClass UNR no formato:
+
+[
+  {
+    "titulo": "...",
+    "ano": "anoX",
+    "materia": "chave_materia",
+    "parcial": "parcial1",
+    "disciplina_base": "chave_db",
+    "descricao": "...",
+    "tags": ["..."],
+    "ordem": 1,
+    "cards": [
+      { "frente": "...", "verso": "...", "fontes": ["..."] }
+    ]
+  }
+]
+
+O schema atual de materiais_flashcard_decks NÃO TEM as colunas ano, materia, parcial, disciplina_base. O schema atual tem: id, titulo, especialidade, descricao, cor_hex, tags, ordem, ativo, created_at.
+
+Passos a executar:
+1. Adicionar colunas no Supabase: ALTER TABLE materiais_flashcard_decks ADD COLUMN ano text; idem para materia, parcial, disciplina_base.
+2. Criar um script Node ESM para ler o JSON e importar para o Supabase usando service_role key. Para cada deck: INSERT em materiais_flashcard_decks (incluindo ano, materia, parcial, disciplina_base), depois INSERT dos cards em materiais_flashcards (com deck_id, frente, verso, fontes, ordem).
+3. Atualizar lib/flashcards-types.ts se necessário.
+4. Atualizar components/admin-flashcards-content.tsx para exibir/editar as novas colunas (ano, materia, parcial, disciplina_base).
+5. Atualizar components/flashcard-decks-grid.tsx para exibir ano+matéria em vez de especialidade nos cards da grid.
+
+O projeto está em /Users/Evelllin/Desktop/MedClass UNR, Supabase URL e keys estão em .env.local.
+```

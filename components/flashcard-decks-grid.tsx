@@ -101,7 +101,7 @@ function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof
           type="button"
           onClick={() => scrollByPage(-1)}
           aria-label="Rolar para a esquerda"
-          className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-md hover:bg-accent"
+          className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[#c6ff3a] text-[#0a1f00] shadow-md transition-colors hover:bg-[#84cc16]"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
@@ -120,7 +120,7 @@ function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof
           type="button"
           onClick={() => scrollByPage(1)}
           aria-label="Rolar para a direita"
-          className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-md hover:bg-accent"
+          className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[#c6ff3a] text-[#0a1f00] shadow-md transition-colors hover:bg-[#84cc16]"
         >
           <ChevronRight className="h-4 w-4" />
         </button>

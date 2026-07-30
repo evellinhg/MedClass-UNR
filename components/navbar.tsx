@@ -34,8 +34,8 @@ export function Navbar() {
           <Image
             src="/logo.png"
             alt="MedClass Logo"
-            width={1795}
-            height={631}
+            width={2000}
+            height={562}
             className="h-10 w-auto object-contain"
             priority
           />

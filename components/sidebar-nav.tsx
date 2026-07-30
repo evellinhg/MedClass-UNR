@@ -86,8 +86,8 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
           <Image
             src="/logo-icon.png"
             alt="MedClass Logo"
-            width={40}
-            height={40}
+            width={2000}
+            height={1848}
             className="h-full w-full object-contain"
           />
         </div>

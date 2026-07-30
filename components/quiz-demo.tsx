@@ -14,7 +14,7 @@ interface DemoQuestion {
   statement: string
   options: string[]
   correctIndex: number
-  explanation: string
+  explanations: string[]
 }
 
 const DEMO_QUESTION_COUNT = 5
@@ -59,7 +59,7 @@ export function QuizDemo() {
         statement: q.enunciado,
         options: q.opcoes,
         correctIndex: q.indice_correta,
-        explanation: q.opcoes_comentario?.[q.indice_correta] ?? "",
+        explanations: q.opcoes_comentario ?? [],
       }))
     )
   }
@@ -209,13 +209,13 @@ export function QuizDemo() {
                     })}
                   </div>
 
-                  {confirmed && question.explanation && (
+                  {confirmed && selected !== null && question.explanations[selected] && (
                     <motion.p
                       initial={{ opacity: 0, y: -8 }}
                       animate={{ opacity: 1, y: 0 }}
                       className="mt-4 text-pretty rounded-xl border border-white/5 bg-white/[0.02] p-4 text-sm leading-relaxed text-white/50"
                     >
-                      {question.explanation}
+                      {question.explanations[selected]}
                     </motion.p>
                   )}
 

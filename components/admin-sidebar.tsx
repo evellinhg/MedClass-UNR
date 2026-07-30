@@ -69,8 +69,8 @@ export function AdminSidebar({ onNavigate, role = "admin" }: AdminSidebarProps) 
           <Image
             src="/logo-icon.png"
             alt="MedClass Logo"
-            width={40}
-            height={40}
+            width={2000}
+            height={1848}
             className="h-full w-full object-contain"
           />
         </div>

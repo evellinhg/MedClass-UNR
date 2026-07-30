@@ -104,6 +104,7 @@ export function AdminQuestoesContent() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [filterMateria, setFilterMateria] = useState<string>("todas")
   const [filterParcial, setFilterParcial] = useState<string>("todas")
+  const [filterDificuldade, setFilterDificuldade] = useState<string>("todas")
   const [page, setPage] = useState(1)
 
   const load = async () => {
@@ -131,9 +132,10 @@ export function AdminQuestoesContent() {
         (q.tags ?? []).some((tag) => tag.toLowerCase().includes(term))
       const matchMateria = filterMateria === "todas" || q.materia === filterMateria
       const matchParcial = filterParcial === "todas" || q.parcial === filterParcial
-      return matchSearch && matchMateria && matchParcial
+      const matchDificuldade = filterDificuldade === "todas" || q.dificuldade === filterDificuldade
+      return matchSearch && matchMateria && matchParcial && matchDificuldade
     })
-  }, [questoes, search, filterMateria, filterParcial])
+  }, [questoes, search, filterMateria, filterParcial, filterDificuldade])
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
@@ -358,6 +360,19 @@ export function AdminQuestoesContent() {
             {PARCIAL_KEYS.map((p) => (
               <SelectItem key={p} value={p}>
                 {parcialLabel[p]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <Select value={filterDificuldade} onValueChange={(v) => { setFilterDificuldade(v); setPage(1) }}>
+          <SelectTrigger className="w-[150px]">
+            <SelectValue placeholder="Dificuldade" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="todas">Todas as dificuldades</SelectItem>
+            {DIFFICULTIES.map((d) => (
+              <SelectItem key={d} value={d}>
+                {d}
               </SelectItem>
             ))}
           </SelectContent>

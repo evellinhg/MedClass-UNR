@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 import { AlertCircle, Loader2, Lock, Mail } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
@@ -67,8 +68,15 @@ export function LoginForm({ initialError }: { initialError?: string }) {
   return (
     <div className="w-full max-w-sm">
       <div className="mb-8 text-center">
-        <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] text-lg font-bold text-[#0a1f00]">
-          M
+        <div className="mx-auto mb-4 flex items-center justify-center">
+          <Image
+            src="/logo.png"
+            alt="MedClass Logo"
+            width={2000}
+            height={562}
+            className="h-12 w-auto object-contain"
+            priority
+          />
         </div>
         <h1 className="text-2xl font-bold text-gradient-brand">
           {mode === "signin" ? "Entrar no MedClass" : "Criar sua conta"}

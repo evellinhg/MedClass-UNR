@@ -9,12 +9,10 @@ import {
   Target,
   CheckCircle2,
   Clock,
-  Trophy,
+  Flame,
   ListChecks,
   Timer,
   Layers,
-  Crown,
-  Medal,
   ArrowRight,
 } from "lucide-react"
 
@@ -45,20 +43,6 @@ const simuladoAreas = [
   { name: "Ginecologia", selected: false },
   { name: "Preventiva", selected: false },
 ]
-
-const ranking = [
-  { rank: 1, name: "Leonardo A.", area: "Clínica Médica", points: 1420 },
-  { rank: 2, name: "Mariana S.", area: "Pediatria", points: 1305 },
-  { rank: 3, name: "Gabriel O.", area: "Cirurgia", points: 1240 },
-  { rank: 4, name: "Camila R.", area: "Ginecologia", points: 1120 },
-  { rank: 5, name: "Rafael M.", area: "Preventiva", points: 1080 },
-]
-
-const rankStyles: Record<number, { bg: string; text: string; icon?: typeof Crown }> = {
-  1: { bg: "bg-amber-400/15", text: "text-amber-300", icon: Crown },
-  2: { bg: "bg-slate-300/15", text: "text-slate-200", icon: Medal },
-  3: { bg: "bg-orange-400/15", text: "text-orange-300", icon: Medal },
-}
 
 function ChartTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null
@@ -98,10 +82,10 @@ function PerformancePanel() {
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.02] p-3">
           <div className="mb-1 flex items-center gap-1.5 text-white/40">
-            <Trophy className="h-3.5 w-3.5" />
-            <span className="text-[11px]">Ranking</span>
+            <Flame className="h-3.5 w-3.5" />
+            <span className="text-[11px]">Sequência</span>
           </div>
-          <p className="text-xl font-bold text-white">Top 8%</p>
+          <p className="text-xl font-bold text-white">12 dias</p>
         </div>
       </div>
 
@@ -268,50 +252,6 @@ function SimuladoPanel() {
   )
 }
 
-function RankingPanel() {
-  const top = ranking[0].points
-  return (
-    <div className="space-y-3">
-      {ranking.map((student) => {
-        const style = rankStyles[student.rank]
-        const RankIcon = style?.icon
-        return (
-          <div
-            key={student.rank}
-            className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3"
-          >
-            <div
-              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                style ? `${style.bg} ${style.text}` : "bg-white/5 text-white/40"
-              }`}
-            >
-              {RankIcon ? <RankIcon className="h-4 w-4" /> : student.rank}
-            </div>
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] text-[11px] font-semibold text-[#0a1f00]">
-              {student.name
-                .split(" ")
-                .map((p) => p[0])
-                .join("")}
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="truncate text-xs font-medium text-white/80">{student.name}</p>
-              <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
-                <motion.div
-                  className="h-full rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16]"
-                  initial={{ width: 0 }}
-                  animate={{ width: `${(student.points / top) * 100}%` }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                />
-              </div>
-            </div>
-            <p className="shrink-0 text-sm font-bold text-white">{student.points}</p>
-          </div>
-        )
-      })}
-    </div>
-  )
-}
-
 const slides = [
   {
     key: "performance",
@@ -328,14 +268,6 @@ const slides = [
     subtitle: "Personalizado para você",
     badge: "Novo",
     Panel: SimuladoPanel,
-  },
-  {
-    key: "ranking",
-    icon: Trophy,
-    title: "Ranking dos Aprovados",
-    subtitle: "Melhores da semana",
-    badge: "Ao vivo",
-    Panel: RankingPanel,
   },
 ]
 

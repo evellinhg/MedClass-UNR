@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero"
 import { PainSection } from "@/components/pain-section"
 import { Features } from "@/components/features"
 import { HowItWorks } from "@/components/how-it-works"
+import { QuizDemo } from "@/components/quiz-demo"
 import { PwaInstallSection } from "@/components/pwa-install-section"
 import { Testimonials } from "@/components/testimonials"
 import { Pricing } from "@/components/pricing"
@@ -20,6 +21,7 @@ export default function Page() {
       <PainSection />
       <Features />
       <HowItWorks />
+      <QuizDemo />
       <PwaInstallSection />
       <Testimonials />
       <Pricing />

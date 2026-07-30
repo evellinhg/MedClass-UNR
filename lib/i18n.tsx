@@ -312,7 +312,7 @@ const pt = {
     subtitle: "Criado especificamente para o currículo da UNR — do ciclo básico ao clínico.",
     items: [
       { title: "Resumos Completos do Currículo UNR", description: "Direto ao ponto, organizados por matéria e por cátedra, para você estudar exatamente o que cai na sua prova." },
-      { title: "Banco de Questões para Praticar", description: "Centenas de questões estilo parcial e final, com correção comentada, para você treinar até dominar cada tema." },
+      { title: "Banco de Questões para Praticar", description: "Centenas de questões estilo parcial e final — todas com correção comentada, para você entender o porquê de cada resposta e treinar até dominar cada tema." },
       { title: "Videoaulas Didáticas e Objetivas", description: "Aulas curtas e diretas ao ponto, para revisar um tema complicado em minutos, não em horas." },
       { title: "Ciclo Básico e Clínico, sem lacunas", description: "De Anatomia e Fisiologia até as matérias clínicas, todo o material que você precisa numa jornada só." },
       { title: "Feito por quem entende a rotina da UNR", description: "Conteúdo pensado para a realidade do aluno brasileiro estudando fora, não uma tradução genérica de apostila." },
@@ -515,7 +515,7 @@ const pt = {
   quiz: {
     badge: "Teste Grátis",
     title: "Teste seus conhecimentos",
-    subtitle: "Experimente nossa plataforma com 5 questões de clínica médica, cirurgia e pediatria. Veja como funciona o sistema de simulados.",
+    subtitle: "Experimente nossa plataforma com 5 questões reais, sorteadas direto do nosso banco de questões. Veja como funciona o sistema de simulados.",
     questionLabel: "Questão",
     of: "de",
     confirm: "Confirmar",
@@ -526,6 +526,8 @@ const pt = {
     resultBad: "Bom começo! Com resumos organizados e questões comentadas, você fecha essas lacunas rapidinho.",
     restart: "Refazer teste",
     ctaFinal: "Quero estudar com o MedClass UNR",
+    loading: "Buscando questões...",
+    error: "Não foi possível carregar as questões agora. Tente novamente.",
   },
   treinamentos: {
     dificuldadeLabel: {
@@ -1023,7 +1025,7 @@ const es: typeof pt = {
     subtitle: "Creado específicamente para el programa de la UNR — del ciclo básico al clínico.",
     items: [
       { title: "Resúmenes Completos del Programa UNR", description: "Directo al punto, organizados por materia y por cátedra, para que estudies exactamente lo que toma tu examen." },
-      { title: "Banco de Preguntas para Practicar", description: "Cientos de preguntas estilo parcial y final, con corrección comentada, para entrenar hasta dominar cada tema." },
+      { title: "Banco de Preguntas para Practicar", description: "Cientos de preguntas estilo parcial y final — todas con corrección comentada, para que entiendas el porqué de cada respuesta y entrenes hasta dominar cada tema." },
       { title: "Videoclases Didácticas y Directas", description: "Clases cortas y al punto, para repasar un tema complicado en minutos, no en horas." },
       { title: "Ciclo Básico y Clínico, sin vacíos", description: "De Anatomía y Fisiología hasta las materias clínicas, todo el material que necesitás en un solo lugar." },
       { title: "Hecho por quienes conocen la UNR", description: "Contenido pensado para la realidad de quien estudia en la UNR, no una traducción genérica de apuntes." },
@@ -1226,7 +1228,7 @@ const es: typeof pt = {
   quiz: {
     badge: "Prueba Gratis",
     title: "Pon a prueba tus conocimientos",
-    subtitle: "Probá nuestra plataforma con 5 preguntas de medicina clínica, cirugía y pediatría. Mirá cómo funciona el sistema de simulacros.",
+    subtitle: "Probá nuestra plataforma con 5 preguntas reales, sorteadas directo de nuestro banco de preguntas. Mirá cómo funciona el sistema de simulacros.",
     questionLabel: "Pregunta",
     of: "de",
     confirm: "Confirmar",
@@ -1237,6 +1239,8 @@ const es: typeof pt = {
     resultBad: "¡Buen comienzo! Con resúmenes organizados y preguntas comentadas, cerrás esas brechas muy rápido.",
     restart: "Repetir prueba",
     ctaFinal: "Quiero estudiar con MedClass UNR",
+    loading: "Buscando preguntas...",
+    error: "No pudimos cargar las preguntas ahora. Intentá de nuevo.",
   },
   treinamentos: {
     dificuldadeLabel: {

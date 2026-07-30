@@ -11,6 +11,8 @@ export interface DesafioClinico {
   icone: string
   descricao_caso: string
   area: string | null
+  secao: string | null
+  imagem_url: string | null
   bibliografia: DesafioBibliografia[]
   ativo: boolean
   created_at: string

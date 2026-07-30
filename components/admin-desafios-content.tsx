@@ -4,7 +4,8 @@ import { useEffect, useMemo, useState } from "react"
 import { Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS } from "@/lib/quiz-config"
-import { getDesafioIcon } from "@/lib/desafio-icons"
+import { getDesafioIcon, DESAFIO_SECAO_KEYS } from "@/lib/desafio-icons"
+import { translations } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -17,6 +18,8 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 
 const ICONES = ["HeartPulse", "Thermometer", "Baby", "Stethoscope", "Brain", "Bone", "Eye", "Ear", "Pill", "Syringe", "Activity", "Microscope"]
+
+const desafioSecaoLabel = translations.pt.cronograma.desafioSecaoLabel
 
 const CATEGORIAS: { value: DesafioCategoria; label: string }[] = [
   { value: "anamnese", label: "Anamnese" },
@@ -50,6 +53,8 @@ interface DesafioForm {
   titulo: string
   icone: string
   area: string
+  secao: string
+  imagemUrl: string
   descricao_caso: string
   ativo: boolean
   bibliografia: BibliografiaForm[]
@@ -57,6 +62,7 @@ interface DesafioForm {
 }
 
 const SEM_AREA = "none"
+const SEM_SECAO = "none"
 
 const emptyAlternativas = (): AlternativaForm[] => [
   { texto: "", correta: true },
@@ -78,6 +84,8 @@ const emptyForm = (): DesafioForm => ({
   titulo: "",
   icone: ICONES[0],
   area: SEM_AREA,
+  secao: SEM_SECAO,
+  imagemUrl: "",
   descricao_caso: "",
   ativo: true,
   bibliografia: [emptyBibliografia()],
@@ -107,7 +115,12 @@ export function AdminDesafiosContent() {
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase()
     if (!term) return desafios
-    return desafios.filter((d) => d.titulo.toLowerCase().includes(term) || (d.area ?? "").toLowerCase().includes(term))
+    return desafios.filter(
+      (d) =>
+        d.titulo.toLowerCase().includes(term) ||
+        (d.area ?? "").toLowerCase().includes(term) ||
+        (desafioSecaoLabel[d.secao ?? ""] ?? "").toLowerCase().includes(term)
+    )
   }, [desafios, search])
 
   const openNew = () => {
@@ -128,6 +141,8 @@ export function AdminDesafiosContent() {
       titulo: desafio.titulo,
       icone: desafio.icone || ICONES[0],
       area: desafio.area ?? SEM_AREA,
+      secao: desafio.secao ?? SEM_SECAO,
+      imagemUrl: desafio.imagem_url ?? "",
       descricao_caso: desafio.descricao_caso ?? "",
       ativo: desafio.ativo,
       bibliografia: desafio.bibliografia.length
@@ -208,6 +223,8 @@ export function AdminDesafiosContent() {
       titulo: form.titulo.trim(),
       icone: form.icone,
       area: form.area === SEM_AREA ? null : form.area,
+      secao: form.secao === SEM_SECAO ? null : form.secao,
+      imagem_url: form.imagemUrl.trim() || null,
       descricao_caso: form.descricao_caso.trim(),
       ativo: form.ativo,
       bibliografia: form.bibliografia
@@ -304,6 +321,9 @@ export function AdminDesafiosContent() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="mb-2 flex flex-wrap items-center gap-2">
+                        {desafio.secao && (
+                          <Badge variant="outline">{desafioSecaoLabel[desafio.secao] ?? desafio.secao}</Badge>
+                        )}
                         {desafio.area && <Badge variant="secondary">{desafio.area}</Badge>}
                       </div>
                       <p className="font-medium text-foreground">{desafio.titulo}</p>
@@ -389,6 +409,40 @@ export function AdminDesafiosContent() {
                       ))}
                     </SelectContent>
                   </Select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1.5">
+                  <Label>Seção</Label>
+                  <Select value={form.secao} onValueChange={(v) => setForm((p) => ({ ...p, secao: v }))}>
+                    <SelectTrigger className="w-full">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value={SEM_SECAO}>Sem seção definida</SelectItem>
+                      {DESAFIO_SECAO_KEYS.map((s) => (
+                        <SelectItem key={s} value={s}>
+                          {desafioSecaoLabel[s]}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <p className="text-[11px] text-muted-foreground">
+                    Agrupamento por formato do caso (ex: Diagnóstico por Imagens), separado da área médica.
+                  </p>
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="imagemUrl">Imagem do caso (opcional)</Label>
+                  <Input
+                    id="imagemUrl"
+                    value={form.imagemUrl}
+                    onChange={(e) => setForm((p) => ({ ...p, imagemUrl: e.target.value }))}
+                    placeholder="/desafios-clinicos/caso-01.jpg"
+                  />
+                  <p className="text-[11px] text-muted-foreground">
+                    Mostrada ao aluno junto com a descrição do caso (ex: radiografia, ECG).
+                  </p>
                 </div>
               </div>
 

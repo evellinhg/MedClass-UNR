@@ -156,6 +156,9 @@ const pt = {
       patologia: "Patologia",
       farmacologia_base: "Farmacologia",
     } as Record<string, string>,
+    desafioSecaoLabel: {
+      diagnostico_imagens: "Diagnóstico por Imagem",
+    } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {
       parcial1: "Primeira Parcial",
@@ -936,6 +939,9 @@ const es: typeof pt = {
       parasitologia: "Parasitología",
       patologia: "Patología",
       farmacologia_base: "Farmacología",
+    } as Record<string, string>,
+    desafioSecaoLabel: {
+      diagnostico_imagens: "Diagnóstico por Imágenes",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {

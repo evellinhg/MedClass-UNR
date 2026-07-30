@@ -5,6 +5,7 @@ import {
   ClipboardCheck,
   BarChart3,
   MessageSquare,
+  Stethoscope,
   type LucideIcon,
 } from "lucide-react"
 import type { translations } from "@/lib/i18n"
@@ -23,9 +24,9 @@ export interface NavItem {
   children?: NavChild[]
 }
 
-// Ranking, MedCoins, Conquistas e Desafios Clínicos ficam ocultos do menu
-// por enquanto (recursos não usados nesta fase do MedClass UNR) — os
-// componentes e rotas continuam existindo para reativar no futuro.
+// Ranking, MedCoins e Conquistas ficam ocultos do menu por enquanto (recursos
+// não usados nesta fase do MedClass UNR) — os componentes e rotas continuam
+// existindo para reativar no futuro. Desafios Clínicos foi reativado.
 export function getNavigation(t: DashboardNavLabels): NavItem[] {
   return [
     { name: t.inicio, href: "/dashboard", icon: Home },
@@ -41,6 +42,7 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
       ],
     },
     { name: t.treinamentos, href: "/dashboard/simulados", icon: ClipboardCheck },
+    { name: t.desafiosClinicos, href: "/dashboard/desafios-clinicos", icon: Stethoscope },
     {
       name: t.desempenho,
       href: "/dashboard/desempenho/estatisticas",

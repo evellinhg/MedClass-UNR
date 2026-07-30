@@ -1,11 +1,12 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from "react"
+import Image from "next/image"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy } from "lucide-react"
+import confetti from "canvas-confetti"
 import { supabase } from "@/lib/supabase"
-import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
@@ -17,6 +18,8 @@ const CATEGORIA_LABELS: Record<DesafioCategoria, string> = {
   diagnostico: "Diagnóstico",
   conduta: "Conduta Terapêutica",
 }
+
+const NOTA_CORTE_APROVACAO = 60
 
 function formatTimer(totalSeconds: number): string {
   const h = Math.floor(totalSeconds / 3600)
@@ -88,6 +91,22 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     }, 0)
   }, [perguntas, respostas])
 
+  const accuracy = perguntas.length > 0 ? Math.round((acertosAtuais / perguntas.length) * 100) : 0
+  const aprovado = accuracy >= NOTA_CORTE_APROVACAO
+
+  useEffect(() => {
+    if (!finalizado || !aprovado) return
+    const duration = 2000
+    const end = Date.now() + duration
+    const frame = () => {
+      confetti({ particleCount: 3, angle: 60, spread: 55, origin: { x: 0 }, colors: ["#c6ff3a", "#84cc16", "#0a1f00"] })
+      confetti({ particleCount: 3, angle: 120, spread: 55, origin: { x: 1 }, colors: ["#c6ff3a", "#84cc16", "#0a1f00"] })
+      if (Date.now() < end) requestAnimationFrame(frame)
+    }
+    frame()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [finalizado, aprovado])
+
   function handleResponder() {
     if (!perguntaAtual || !selecaoAtual) return
     setRespostas((prev) => ({ ...prev, [perguntaAtual.id]: selecaoAtual }))
@@ -148,8 +167,6 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     )
   }
 
-  const Icon = getDesafioIcon(desafio.icone)
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -166,36 +183,48 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
         </div>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
-        <div className="lg:sticky lg:top-6 lg:self-start">
-          <div
-            className={`flex h-72 flex-col justify-end overflow-hidden rounded-lg bg-gradient-to-br ${coverGradientFor(
-              desafio.id
-            )} p-5`}
-          >
-            <Icon className="mb-auto mt-2 h-14 w-14 self-center text-white/90" strokeWidth={1.5} />
-            <h1 className="text-xl font-bold leading-tight text-white drop-shadow">{desafio.titulo}</h1>
-            {desafio.area && <p className="mt-1 text-sm text-white/80">{desafio.area}</p>}
-          </div>
-        </div>
+      <div>
+        <h1 className="text-xl font-bold leading-tight text-foreground">{desafio.titulo}</h1>
+        {desafio.area && <p className="mt-1 text-sm text-muted-foreground">{desafio.area}</p>}
+      </div>
 
-        <div className="space-y-6">
+      <div className="space-y-6">
           <div className="rounded-lg border border-border bg-card p-5">
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               Descrição do caso
             </h2>
             <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
+            {desafio.imagem_url && (
+              <div className="relative mt-4 aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]">
+                <Image src={desafio.imagem_url} alt="Imagem do caso clínico" fill className="object-contain" />
+              </div>
+            )}
           </div>
 
           {finalizado ? (
             <div className="space-y-6">
               <div className="rounded-lg border border-border bg-card p-8 text-center">
-                <Trophy className="mx-auto mb-3 h-10 w-10 text-amber-400" />
-                <h2 className="text-lg font-bold text-foreground">Estudo concluído!</h2>
+                <div
+                  className={`mx-auto flex h-14 w-14 items-center justify-center rounded-full ${
+                    aprovado ? "bg-success/10" : "bg-destructive/10"
+                  }`}
+                >
+                  <Trophy className={`h-7 w-7 ${aprovado ? "text-success" : "text-destructive"}`} />
+                </div>
+                <p className={`mt-3 text-2xl font-extrabold ${aprovado ? "text-success" : "text-destructive"}`}>
+                  {aprovado ? "Aprovado!" : "Reprovado"}
+                </p>
                 <p className="mt-1 text-3xl font-bold text-gradient-brand">
                   {acertosAtuais}/{perguntas.length}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">respostas corretas · tempo {formatTimer(elapsed)}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  respostas corretas ({accuracy}%) · tempo {formatTimer(elapsed)}
+                </p>
+                <p className="mt-3 text-sm text-foreground">
+                  {aprovado
+                    ? "Muito bem! Você demonstrou domínio sobre este caso clínico."
+                    : "Revise o resumo abaixo e tente novamente para fixar o conteúdo."}
+                </p>
                 <div className="mt-5 flex justify-center gap-3">
                   <Button variant="outline" onClick={handleEstudarNovamente} className="gap-1.5">
                     <RotateCcw className="h-4 w-4" />
@@ -353,7 +382,6 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             </div>
           )}
         </div>
-      </div>
     </div>
   )
 }

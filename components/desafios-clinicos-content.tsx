@@ -7,6 +7,7 @@ import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import type { DesafioClinico } from "@/lib/desafios-types"
+import { useLanguage } from "@/lib/i18n"
 
 interface HistoricoItem {
   id: string
@@ -30,6 +31,7 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
 }
 
 export function DesafiosClinicosContent() {
+  const { t } = useLanguage()
   const [desafios, setDesafios] = useState<DesafioClinico[]>([])
   const [historico, setHistorico] = useState<HistoricoItem[]>([])
   const [loading, setLoading] = useState(true)
@@ -91,8 +93,10 @@ export function DesafiosClinicosContent() {
             >
               <DesafioCover desafio={desafio} />
               <div className="space-y-1 p-4">
-                {desafio.area && (
-                  <p className="text-[11px] font-medium uppercase tracking-wide text-primary">{desafio.area}</p>
+                {(desafio.secao || desafio.area) && (
+                  <p className="text-[11px] font-medium uppercase tracking-wide text-primary">
+                    {(desafio.secao && t.cronograma.desafioSecaoLabel[desafio.secao]) ?? desafio.secao ?? desafio.area}
+                  </p>
                 )}
                 <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
                 <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">

@@ -33,6 +33,13 @@ export function getDesafioIcon(nome: string): LucideIcon {
   return DESAFIO_ICONS[nome] ?? Stethoscope
 }
 
+// Seções livres para agrupar desafios além da área médica (ex: formato do caso,
+// não especialidade). Chave canônica salva no banco — rótulo bilíngue em
+// lib/i18n.tsx (t.cronograma.desafioSecaoLabel). Cresce conforme novas seções
+// forem criadas no admin.
+export const DESAFIO_SECAO_KEYS = ["diagnostico_imagens"] as const
+export type DesafioSecaoKey = (typeof DESAFIO_SECAO_KEYS)[number]
+
 const COVER_GRADIENTS = [
   "from-rose-500 to-orange-400",
   "from-violet-500 to-indigo-500",

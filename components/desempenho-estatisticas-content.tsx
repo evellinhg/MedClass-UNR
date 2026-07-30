@@ -165,45 +165,55 @@ function SubjectRow({
   subject,
   expanded,
   onToggle,
+  alwaysOpen = false,
   t,
 }: {
   subject: ReturnType<typeof buildBySubject>[number]
   expanded: boolean
   onToggle: () => void
+  alwaysOpen?: boolean
   t: ReturnType<typeof useLanguage>["t"]
 }) {
   const aprovado = subject.percentage >= NOTA_CORTE
   const barClass = aprovado ? "bg-success" : "bg-destructive"
   const textClass = aprovado ? "text-success" : "text-destructive"
+  const isOpen = alwaysOpen || expanded
+
+  const headerContent = (
+    <>
+      <span className="flex items-center gap-1.5 text-sm font-medium text-foreground">
+        {!alwaysOpen &&
+          subject.disciplinas.length > 0 &&
+          (expanded ? (
+            <ChevronUp className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+          ) : (
+            <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+          ))}
+        {subject.name}
+      </span>
+      <span className="flex items-center gap-2">
+        <span className="text-xs text-muted-foreground">
+          {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
+        </span>
+        <span className={`text-sm font-bold ${textClass}`}>{subject.percentage}%</span>
+      </span>
+    </>
+  )
 
   return (
     <div>
-      <button
-        type="button"
-        onClick={onToggle}
-        className="flex w-full items-center justify-between gap-2 text-left"
-      >
-        <span className="flex items-center gap-1.5 text-sm font-medium text-foreground">
-          {subject.disciplinas.length > 0 &&
-            (expanded ? (
-              <ChevronUp className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-            ) : (
-              <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-            ))}
-          {subject.name}
-        </span>
-        <span className="flex items-center gap-2">
-          <span className="text-xs text-muted-foreground">
-            {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
-          </span>
-          <span className={`text-sm font-bold ${textClass}`}>{subject.percentage}%</span>
-        </span>
-      </button>
+      {alwaysOpen ? (
+        <div className="flex w-full items-center justify-between gap-2 text-left">{headerContent}</div>
+      ) : (
+        <button type="button" onClick={onToggle} className="flex w-full items-center justify-between gap-2 text-left">
+          {headerContent}
+        </button>
+      )}
       <div className="mb-2 mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
         <div className={`h-full rounded-full transition-all ${barClass}`} style={{ width: `${subject.percentage}%` }} />
       </div>
 
-      {expanded && subject.disciplinas.length > 0 && (
+      {isOpen && subject.disciplinas.length > 0 && (
         <div className="ml-5 mt-1 space-y-2 border-l border-border pl-4">
           {subject.disciplinas.map((d) => {
             const label =
@@ -410,20 +420,6 @@ export function DesempenhoEstatisticasContent() {
   const topSubjects = bySubject.filter((s) => s.percentage >= NOTA_CORTE)
   const weakestSubjects = bySubject.filter((s) => s.percentage < NOTA_CORTE)
 
-  const pontosDeAtencao = useMemo(
-    () =>
-      bySubject.flatMap((subject) =>
-        subject.disciplinas
-          .filter((d) => d.disciplina !== SEM_CATEGORIA && d.total > 0 && Math.round((d.correct / d.total) * 100) < NOTA_CORTE)
-          .map((d) => ({
-            materia: subject.materia,
-            disciplina: d.disciplina,
-            label: `${subject.name} - ${t.cronograma.disciplinaBaseLabel[d.disciplina] ?? d.disciplina}`,
-            percentage: Math.round((d.correct / d.total) * 100),
-          }))
-      ),
-    [bySubject, t]
-  )
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(new Set())
   const toggleMateria = (materia: string) =>
     setExpandedMaterias((prev) => {
@@ -687,6 +683,7 @@ export function DesempenhoEstatisticasContent() {
                       subject={subject}
                       expanded={expandedMaterias.has(subject.materia)}
                       onToggle={() => toggleMateria(subject.materia)}
+                      alwaysOpen
                       t={t}
                     />
                   ))}
@@ -694,25 +691,6 @@ export function DesempenhoEstatisticasContent() {
               )}
             </Card>
           </div>
-
-          <Card className="border border-destructive/30 bg-destructive/5 p-6">
-            <h3 className="font-semibold text-foreground">{t.desempenhoEstatisticas.pontosDeAtencao}</h3>
-            <p className="mb-4 text-xs text-muted-foreground">{t.desempenhoEstatisticas.pontosDeAtencaoDescricao}</p>
-            {pontosDeAtencao.length === 0 ? (
-              <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semPontosDeAtencao}</p>
-            ) : (
-              <div className="flex flex-wrap gap-2">
-                {pontosDeAtencao.map((p) => (
-                  <span
-                    key={`${p.materia}-${p.disciplina}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-destructive/30 bg-destructive/10 px-3 py-1 text-xs font-medium text-destructive"
-                  >
-                    [{p.label}] · {p.percentage}%
-                  </span>
-                ))}
-              </div>
-            )}
-          </Card>
         </>
       )}
     </div>

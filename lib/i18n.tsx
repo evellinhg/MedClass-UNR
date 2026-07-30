@@ -270,9 +270,6 @@ const pt = {
     notaCorte: "Nota de corte: 60% de acertos",
     semAprovadas: "Nenhuma matéria atingiu 60% de acertos ainda.",
     semPendencias: "Nenhuma matéria abaixo de 60% — continue assim!",
-    pontosDeAtencao: "Pontos de Atenção",
-    pontosDeAtencaoDescricao: "Disciplinas com menos de 60% de acertos, dentro de cada matéria.",
-    semPontosDeAtencao: "Nenhuma disciplina abaixo de 60% de acertos. Muito bem!",
   },
   hero: {
     badge: "Feito para alunos de Medicina da UNR",
@@ -1060,9 +1057,6 @@ const es: typeof pt = {
     notaCorte: "Nota de corte: 60% de aciertos",
     semAprovadas: "Ninguna materia alcanzó el 60% de aciertos todavía.",
     semPendencias: "Ninguna materia por debajo del 60% — ¡así se sigue!",
-    pontosDeAtencao: "Puntos de Atención",
-    pontosDeAtencaoDescricao: "Disciplinas con menos de 60% de aciertos, dentro de cada materia.",
-    semPontosDeAtencao: "Ninguna disciplina por debajo del 60% de aciertos. ¡Muy bien!",
   },
   hero: {
     badge: "Hecho para estudiantes de Medicina de la UNR",

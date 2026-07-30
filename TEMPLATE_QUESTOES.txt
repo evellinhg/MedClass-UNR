@@ -19,6 +19,15 @@ Instruções de uso:
   final do documento — isso é o que alimenta o detalhamento por
   disciplina no painel de Desempenho do aluno. Se deixar em branco,
   a questão fica sem essa classificação (pode ser preenchida depois).
+- IDIOMA: ENUNCIADO e ALTERNATIVAS devem estar em ESPANHOL (é o
+  idioma das questões na plataforma). O FEEDBACK de cada alternativa
+  também deve estar em espanhol.
+- FEEDBACK: nunca escreva só "Correcto." ou "Incorrecto." sem
+  explicação. Toda alternativa — certa ou errada — precisa de uma
+  explicação completa que ensine o porquê: para a correta, reforce o
+  conceito; para as erradas, explique especificamente por que aquela
+  alternativa está errada (não basta negar a afirmação, é preciso
+  justificar com o raciocínio/conceito correto).
 - Quando terminar, envie o arquivo (.txt ou .docx) para o Claude
   converter em JSON.
 ==================================================================
@@ -36,19 +45,21 @@ DISCIPLINA BASE: [opcional — uma das opções da lista "DISCIPLINAS BASE VÁLI
 TAGS: [palavras-chave separadas por vírgula, ex: anemia, ferropriva, hematologia]
 
 ENUNCIADO:
-[Cole aqui o texto completo do enunciado da questão]
+[Cole aqui o texto completo do enunciado da questão — EM ESPANHOL]
 
 ALTERNATIVAS:
-A) [texto da alternativa A]
-B) [texto da alternativa B]
-C) [texto da alternativa C]
-D) [texto da alternativa D]
+A) [texto da alternativa A — em espanhol]
+B) [texto da alternativa B — em espanhol]
+C) [texto da alternativa C — em espanhol]
+D) [texto da alternativa D — em espanhol]
 
 RESPOSTA CORRETA: [letra da alternativa certa, ex: B]
 
-FEEDBACK DE CADA ALTERNATIVA:
-A) [Se for a correta: elogie o aluno e reforce o conceito.
-    Se for incorreta: explique detalhadamente por que está errada.]
+FEEDBACK DE CADA ALTERNATIVA (em espanhol, explicação completa —
+nunca só "Correcto."/"Incorrecto." sem justificar):
+A) [Se for a correta: reforce o conceito, explicando por que está certa.
+    Se for incorreta: explique especificamente por que essa alternativa
+    está errada, com o raciocínio/conceito correto por trás.]
 B) [idem]
 C) [idem]
 D) [idem]

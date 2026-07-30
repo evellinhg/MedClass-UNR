@@ -18,6 +18,8 @@ import {
 } from "recharts"
 import {
   BarChart3,
+  ChevronDown,
+  ChevronUp,
   Loader2,
   LineChart as LineChartIcon,
   PieChart as PieChartIcon,
@@ -28,10 +30,19 @@ import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { useLanguage } from "@/lib/i18n"
 
+const SEM_CATEGORIA = "sem_categoria"
+
+interface DisciplinaStat {
+  disciplina: string
+  correct: number
+  total: number
+}
+
 interface MateriaStat {
   materia: string
   correct: number
   total: number
+  porDisciplina: Map<string, { correct: number; total: number }>
 }
 
 const GREEN = "#22c55e" // Acertos / concluído
@@ -149,6 +160,98 @@ function renderActivePieShape(props: any) {
   )
 }
 
+function SubjectRow({
+  subject,
+  variant,
+  expanded,
+  onToggle,
+  t,
+}: {
+  subject: ReturnType<typeof buildBySubject>[number]
+  variant: "success" | "warning"
+  expanded: boolean
+  onToggle: () => void
+  t: ReturnType<typeof useLanguage>["t"]
+}) {
+  const barClass = variant === "success" ? "bg-success" : "bg-warning"
+  const textClass = variant === "success" ? "text-success" : "text-warning"
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex w-full items-center justify-between gap-2 text-left"
+      >
+        <span className="flex items-center gap-1.5 text-sm font-medium text-foreground">
+          {subject.disciplinas.length > 0 &&
+            (expanded ? (
+              <ChevronUp className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+            ) : (
+              <ChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+            ))}
+          {subject.name}
+        </span>
+        <span className="flex items-center gap-2">
+          <span className="text-xs text-muted-foreground">
+            {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
+          </span>
+          <span className={`text-sm font-bold ${textClass}`}>{subject.percentage}%</span>
+        </span>
+      </button>
+      <div className="mb-2 mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
+        <div className={`h-full rounded-full transition-all ${barClass}`} style={{ width: `${subject.percentage}%` }} />
+      </div>
+
+      {expanded && subject.disciplinas.length > 0 && (
+        <div className="ml-5 mt-1 space-y-2 border-l border-border pl-4">
+          {subject.disciplinas.map((d) => {
+            const label =
+              d.disciplina === SEM_CATEGORIA
+                ? t.desempenhoEstatisticas.semCategoria
+                : t.cronograma.disciplinaBaseLabel[d.disciplina] ?? d.disciplina
+            const pct = d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0
+            return (
+              <div key={d.disciplina}>
+                <div className="mb-1 flex items-center justify-between gap-2">
+                  <span className="text-xs text-foreground">{label}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="text-[11px] text-muted-foreground">
+                      {t.desempenhoEstatisticas.acertosDeTotal(d.correct, d.total)}
+                    </span>
+                    <span className={`text-xs font-semibold ${textClass}`}>{pct}%</span>
+                  </span>
+                </div>
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                  <div className={`h-full rounded-full transition-all opacity-70 ${barClass}`} style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function buildBySubject(materiaStats: MateriaStat[], t: ReturnType<typeof useLanguage>["t"]) {
+  return materiaStats
+    .map((m) => {
+      const disciplinas: DisciplinaStat[] = Array.from(m.porDisciplina.entries())
+        .map(([disciplina, v]) => ({ disciplina, ...v }))
+        .sort((a, b) => b.correct / b.total - a.correct / a.total || b.total - a.total)
+      return {
+        materia: m.materia,
+        name: t.cronograma.materiaLabel[m.materia] ?? m.materia,
+        percentage: m.total > 0 ? Math.round((m.correct / m.total) * 100) : 0,
+        correct: m.correct,
+        total: m.total,
+        disciplinas,
+      }
+    })
+    .sort((a, b) => b.percentage - a.percentage || b.total - a.total)
+}
+
 export function DesempenhoEstatisticasContent() {
   const { t } = useLanguage()
   const [attempts, setAttempts] = useState<Attempt[]>([])
@@ -186,18 +289,25 @@ export function DesempenhoEstatisticasContent() {
       const sessoes = (simuladoRows as { questao_ids: string[]; respostas: (number | null)[] | null }[] | null) ?? []
       const questaoIds = Array.from(new Set(sessoes.flatMap((s) => s.questao_ids ?? [])))
 
-      let infoPorQuestao = new Map<string, { materia: string | null; indice_correta: number }>()
+      let infoPorQuestao = new Map<
+        string,
+        { materia: string | null; disciplina_base: string | null; indice_correta: number }
+      >()
       if (questaoIds.length > 0) {
-        const { data: questoesRows } = await supabase.from("questoes").select("id, materia, indice_correta").in("id", questaoIds)
+        const { data: questoesRows } = await supabase
+          .from("questoes")
+          .select("id, materia, disciplina_base, indice_correta")
+          .in("id", questaoIds)
         infoPorQuestao = new Map(
-          ((questoesRows as { id: string; materia: string | null; indice_correta: number }[] | null) ?? []).map((q) => [
-            q.id,
-            { materia: q.materia, indice_correta: q.indice_correta },
-          ])
+          (
+            (questoesRows as
+              | { id: string; materia: string | null; disciplina_base: string | null; indice_correta: number }[]
+              | null) ?? []
+          ).map((q) => [q.id, { materia: q.materia, disciplina_base: q.disciplina_base, indice_correta: q.indice_correta }])
         )
       }
 
-      const acumulado = new Map<string, { correct: number; total: number }>()
+      const acumulado = new Map<string, { correct: number; total: number; porDisciplina: Map<string, { correct: number; total: number }> }>()
       for (const sessao of sessoes) {
         const ids = sessao.questao_ids ?? []
         const respostas = sessao.respostas ?? []
@@ -206,9 +316,18 @@ export function DesempenhoEstatisticasContent() {
           if (resposta === null || resposta === undefined) return
           const info = infoPorQuestao.get(id)
           if (!info || !info.materia) return
-          const atual = acumulado.get(info.materia) ?? { correct: 0, total: 0 }
+          const acerto = resposta === info.indice_correta
+
+          const atual = acumulado.get(info.materia) ?? { correct: 0, total: 0, porDisciplina: new Map() }
           atual.total += 1
-          if (resposta === info.indice_correta) atual.correct += 1
+          if (acerto) atual.correct += 1
+
+          const disciplinaKey = info.disciplina_base ?? SEM_CATEGORIA
+          const atualDisciplina = atual.porDisciplina.get(disciplinaKey) ?? { correct: 0, total: 0 }
+          atualDisciplina.total += 1
+          if (acerto) atualDisciplina.correct += 1
+          atual.porDisciplina.set(disciplinaKey, atualDisciplina)
+
           acumulado.set(info.materia, atual)
         })
       }
@@ -283,19 +402,18 @@ export function DesempenhoEstatisticasContent() {
     ]
   }, [attempts, t])
 
-  const bySubject = useMemo(() => {
-    return materiaStats
-      .map((m) => ({
-        name: t.cronograma.materiaLabel[m.materia] ?? m.materia,
-        percentage: m.total > 0 ? Math.round((m.correct / m.total) * 100) : 0,
-        correct: m.correct,
-        total: m.total,
-      }))
-      .sort((a, b) => b.percentage - a.percentage || b.total - a.total)
-  }, [materiaStats, t])
+  const bySubject = useMemo(() => buildBySubject(materiaStats, t), [materiaStats, t])
 
   const topSubjects = bySubject.slice(0, 3)
   const weakestSubjects = [...bySubject].reverse().slice(0, 3)
+  const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(new Set())
+  const toggleMateria = (materia: string) =>
+    setExpandedMaterias((prev) => {
+      const next = new Set(prev)
+      if (next.has(materia)) next.delete(materia)
+      else next.add(materia)
+      return next
+    })
 
   if (loading) {
     return (
@@ -519,23 +637,14 @@ export function DesempenhoEstatisticasContent() {
             </h3>
             <div className="space-y-4">
               {topSubjects.map((subject) => (
-                <div key={subject.name}>
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-foreground">{subject.name}</span>
-                    <span className="flex items-center gap-2">
-                      <span className="text-xs text-muted-foreground">
-                        {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
-                      </span>
-                      <span className="text-sm font-bold text-success">{subject.percentage}%</span>
-                    </span>
-                  </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                    <div
-                      className="h-full rounded-full transition-all"
-                      style={{ width: `${subject.percentage}%`, backgroundColor: GREEN }}
-                    />
-                  </div>
-                </div>
+                <SubjectRow
+                  key={subject.materia}
+                  subject={subject}
+                  variant="success"
+                  expanded={expandedMaterias.has(subject.materia)}
+                  onToggle={() => toggleMateria(subject.materia)}
+                  t={t}
+                />
               ))}
             </div>
           </Card>
@@ -547,23 +656,14 @@ export function DesempenhoEstatisticasContent() {
             </h3>
             <div className="space-y-4">
               {weakestSubjects.map((subject) => (
-                <div key={subject.name}>
-                  <div className="mb-2 flex items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-foreground">{subject.name}</span>
-                    <span className="flex items-center gap-2">
-                      <span className="text-xs text-muted-foreground">
-                        {t.desempenhoEstatisticas.acertosDeTotal(subject.correct, subject.total)}
-                      </span>
-                      <span className="text-sm font-bold text-warning">{subject.percentage}%</span>
-                    </span>
-                  </div>
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                    <div
-                      className="h-full rounded-full bg-warning transition-all"
-                      style={{ width: `${subject.percentage}%` }}
-                    />
-                  </div>
-                </div>
+                <SubjectRow
+                  key={subject.materia}
+                  subject={subject}
+                  variant="warning"
+                  expanded={expandedMaterias.has(subject.materia)}
+                  onToggle={() => toggleMateria(subject.materia)}
+                  t={t}
+                />
               ))}
             </div>
           </Card>

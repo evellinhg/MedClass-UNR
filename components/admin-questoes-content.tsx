@@ -16,7 +16,16 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { translations } from "@/lib/i18n"
-import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
+import {
+  ANO_KEYS,
+  MATERIA_KEYS_BY_ANO,
+  PARCIAL_KEYS,
+  DISCIPLINA_BASE_KEYS,
+  anoDaMateria,
+  type AnoKey,
+  type ParcialKey,
+  type DisciplinaBaseKey,
+} from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -45,6 +54,7 @@ interface Questao {
   enunciado: string
   materia: string | null
   parcial: string | null
+  disciplina_base: string | null
   dificuldade: string
   opcoes: string[]
   indice_correta: number
@@ -63,6 +73,7 @@ const DIFFICULTIES = ["fácil", "médio", "difícil"]
 const anoLabel = translations.pt.cronograma.anoLabel
 const materiaLabel = translations.pt.cronograma.materiaLabel
 const parcialLabel = translations.pt.cronograma.parcialLabel
+const disciplinaBaseLabel = translations.pt.cronograma.disciplinaBaseLabel
 
 const MATERIA_OPTIONS_FLAT = ANO_KEYS.flatMap((ano) =>
   MATERIA_KEYS_BY_ANO[ano].map((m) => ({ key: m, label: `${anoLabel[ano]} · ${materiaLabel[m]}` }))
@@ -73,6 +84,7 @@ const emptyForm = {
   ano: ANO_KEYS[0] as AnoKey,
   materia: MATERIA_KEYS_BY_ANO[ANO_KEYS[0]][0],
   parcial: PARCIAL_KEYS[0] as ParcialKey,
+  disciplinaBase: "" as DisciplinaBaseKey | "",
   dificuldade: "médio",
   opcoes: ["", ""],
   opcoesComentario: ["", ""],
@@ -105,6 +117,7 @@ export function AdminQuestoesContent() {
   const [filterMateria, setFilterMateria] = useState<string>("todas")
   const [filterParcial, setFilterParcial] = useState<string>("todas")
   const [filterDificuldade, setFilterDificuldade] = useState<string>("todas")
+  const [filterDisciplinaBase, setFilterDisciplinaBase] = useState<string>("todas")
   const [page, setPage] = useState(1)
 
   const load = async () => {
@@ -133,9 +146,12 @@ export function AdminQuestoesContent() {
       const matchMateria = filterMateria === "todas" || q.materia === filterMateria
       const matchParcial = filterParcial === "todas" || q.parcial === filterParcial
       const matchDificuldade = filterDificuldade === "todas" || q.dificuldade === filterDificuldade
-      return matchSearch && matchMateria && matchParcial && matchDificuldade
+      const matchDisciplinaBase =
+        filterDisciplinaBase === "todas" ||
+        (filterDisciplinaBase === "sem_categoria" ? !q.disciplina_base : q.disciplina_base === filterDisciplinaBase)
+      return matchSearch && matchMateria && matchParcial && matchDificuldade && matchDisciplinaBase
     })
-  }, [questoes, search, filterMateria, filterParcial, filterDificuldade])
+  }, [questoes, search, filterMateria, filterParcial, filterDificuldade, filterDisciplinaBase])
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE)
   const paginated = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
@@ -167,6 +183,7 @@ export function AdminQuestoesContent() {
           ? q.materia
           : MATERIA_KEYS_BY_ANO[anoDerivado][0],
       parcial: (q.parcial as ParcialKey) || PARCIAL_KEYS[0],
+      disciplinaBase: (q.disciplina_base as DisciplinaBaseKey) || "",
       dificuldade: q.dificuldade,
       opcoes: q.opcoes?.length ? [...q.opcoes] : ["", ""],
       opcoesComentario: q.opcoes_comentario?.length
@@ -261,6 +278,7 @@ export function AdminQuestoesContent() {
       enunciado: form.enunciado.trim(),
       materia: form.materia || null,
       parcial: form.parcial || null,
+      disciplina_base: form.disciplinaBase || null,
       dificuldade: form.dificuldade,
       opcoes: opcoesLimpa,
       indice_correta: Math.min(form.indiceCorreta, opcoesLimpa.length - 1),
@@ -377,6 +395,20 @@ export function AdminQuestoesContent() {
             ))}
           </SelectContent>
         </Select>
+        <Select value={filterDisciplinaBase} onValueChange={(v) => { setFilterDisciplinaBase(v); setPage(1) }}>
+          <SelectTrigger className="w-[190px]">
+            <SelectValue placeholder="Disciplina Base" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="todas">Todas as disciplinas</SelectItem>
+            <SelectItem value="sem_categoria">Sem categoria</SelectItem>
+            {DISCIPLINA_BASE_KEYS.map((d) => (
+              <SelectItem key={d} value={d}>
+                {disciplinaBaseLabel[d]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Lista de questões */}
@@ -404,6 +436,9 @@ export function AdminQuestoesContent() {
                       )}
                       {q.parcial && (
                         <Badge variant="outline">{parcialLabel[q.parcial] ?? q.parcial}</Badge>
+                      )}
+                      {q.disciplina_base && (
+                        <Badge variant="outline">{disciplinaBaseLabel[q.disciplina_base] ?? q.disciplina_base}</Badge>
                       )}
                       <Badge>{q.dificuldade}</Badge>
                       {q.mecanismo_pergunta && (
@@ -645,6 +680,28 @@ export function AdminQuestoesContent() {
                   </SelectContent>
                 </Select>
               </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Disciplina Base</Label>
+              <Select
+                value={form.disciplinaBase || "nenhuma"}
+                onValueChange={(v) =>
+                  setForm((p) => ({ ...p, disciplinaBase: v === "nenhuma" ? "" : (v as DisciplinaBaseKey) }))
+                }
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="nenhuma">Nenhuma</SelectItem>
+                  {DISCIPLINA_BASE_KEYS.map((d) => (
+                    <SelectItem key={d} value={d}>
+                      {disciplinaBaseLabel[d]}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="space-y-1.5">

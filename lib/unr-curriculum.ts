@@ -15,6 +15,24 @@ export const MATERIA_KEYS_BY_ANO: Record<AnoKey, string[]> = {
 export const PARCIAL_KEYS = ["parcial1", "parcial2"] as const
 export type ParcialKey = (typeof PARCIAL_KEYS)[number]
 
+// Ciências básicas — lista fixa e global, não depende do módulo/ano.
+// Rótulos de exibição em lib/i18n.tsx (t.cronograma.disciplinaBaseLabel).
+export const DISCIPLINA_BASE_KEYS = [
+  "anatomia",
+  "histologia",
+  "embriologia",
+  "fisiologia",
+  "bioquimica",
+  "biofisica",
+  "genetica",
+  "imunologia",
+  "microbiologia",
+  "parasitologia",
+  "patologia",
+  "farmacologia_base",
+] as const
+export type DisciplinaBaseKey = (typeof DISCIPLINA_BASE_KEYS)[number]
+
 export function anoDaMateria(materiaKey: string): AnoKey | undefined {
   return (Object.keys(MATERIA_KEYS_BY_ANO) as AnoKey[]).find((ano) =>
     MATERIA_KEYS_BY_ANO[ano].includes(materiaKey)

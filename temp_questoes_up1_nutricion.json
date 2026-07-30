@@ -1,0 +1,1131 @@
+{
+  "preguntas": [
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Qué es lo que le confiere 'valor biológico' a las proteínas:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Sus AA esenciales",
+          "correcta": true,
+          "feedback": "¡Correcto! El valor biológico de una proteína está determinado por su perfil de aminoácidos esenciales. Una proteína con todos los AA esenciales en las proporciones adecuadas tiene alto valor biológico, como la clara de huevo (VB=100)."
+        },
+        {
+          "letra": "B",
+          "texto": "La cantidad de AA que las componen",
+          "correcta": false,
+          "feedback": "Incorrecto. La cantidad total de aminoácidos no determina el valor biológico. Lo relevante es la calidad y proporción de los aminoácidos esenciales presentes, no la mera cantidad de AA totales."
+        },
+        {
+          "letra": "C",
+          "texto": "Su función",
+          "correcta": false,
+          "feedback": "Incorrecto. La función de la proteína no determina su valor biológico. El VB se refiere a la eficiencia con que el organismo utiliza la proteína dietética, basada en su perfil de aminoácidos."
+        },
+        {
+          "letra": "D",
+          "texto": "B+c",
+          "correcta": false,
+          "feedback": "Incorrecto. Ni la cantidad de AA ni la función determinan el valor biológico. Depende exclusivamente de la presencia y proporción de aminoácidos esenciales."
+        }
+      ],
+      "tags": [
+        "valor-biologico",
+        "proteinas",
+        "aminoacidos-esenciales",
+        "nutricion"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "El pool de AA sirve para:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Síntesis de proteínas",
+          "correcta": false,
+          "feedback": "Incorrecto. Si bien la síntesis de proteínas es una función del pool, no es la única. El pool tiene múltiples destinos además de este."
+        },
+        {
+          "letra": "B",
+          "texto": "Síntesis de compuestos no proteicos",
+          "correcta": false,
+          "feedback": "Incorrecto. Es correcto que el pool aporta AA para compuestos no proteicos (hormonas, neurotransmisores), pero esta no es su única función."
+        },
+        {
+          "letra": "C",
+          "texto": "Degradación para obtención de energía",
+          "correcta": false,
+          "feedback": "Incorrecto. Los AA pueden ser degradados para energía, pero esta no es la función principal ni única del pool."
+        },
+        {
+          "letra": "D",
+          "texto": "Ciclo de la úrea",
+          "correcta": false,
+          "feedback": "Incorrecto. El ciclo de la urea es una vía de eliminación del nitrógeno de los AA, pero no es la única función del pool."
+        },
+        {
+          "letra": "E",
+          "texto": "A+b",
+          "correcta": false,
+          "feedback": "Incorrecto. Aunque A y B son funciones del pool, también incluye el ciclo de la urea para eliminar el exceso de nitrógeno."
+        },
+        {
+          "letra": "F",
+          "texto": "A+b+c",
+          "correcta": false,
+          "feedback": "Incorrecto. La degradación para energía (c) no es una función directa del pool de AA. El pool provee AA para síntesis proteica y compuestos no proteicos, y los AA en exceso se canalizan al ciclo de la urea."
+        },
+        {
+          "letra": "G",
+          "texto": "A+b+d",
+          "correcta": true,
+          "feedback": "¡Correcto! El pool de aminoácidos tiene tres destinos principales: síntesis de proteínas (a), síntesis de compuestos no proteicos como hormonas y neurotransmisores (b), y el ciclo de la urea para eliminar el grupo amino de los AA en exceso (d)."
+        }
+      ],
+      "tags": [
+        "pool-aa",
+        "aminoacidos",
+        "metabolismo-proteinas",
+        "ciclo-urea"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La energía:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Se transforma",
+          "correcta": true,
+          "feedback": "¡Correcto! La primera ley de la termodinámica establece que la energía no se crea ni se destruye, solo se transforma. En los sistemas biológicos, la energía química se transforma en calor, trabajo mecánico, etc."
+        },
+        {
+          "letra": "B",
+          "texto": "Se crea",
+          "correcta": false,
+          "feedback": "Incorrecto. La energía no se crea. Esto violaría la primera ley de la termodinámica (principio de conservación de la energía)."
+        },
+        {
+          "letra": "C",
+          "texto": "Se destruye",
+          "correcta": false,
+          "feedback": "Incorrecto. La energía no se destruye. Solo se transforma de una forma a otra, como de energía química a térmica o mecánica."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas",
+          "correcta": false,
+          "feedback": "Incorrecto. Solo la afirmación 'se transforma' es correcta. La energía no se crea ni se destruye según la primera ley de la termodinámica."
+        }
+      ],
+      "tags": [
+        "energia",
+        "primera-ley",
+        "termodinamica",
+        "conservacion-energia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La segunda ley de la termodinámica dice:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Que el universo aumenta su entropía",
+          "correcta": false,
+          "feedback": "Incorrecto. Si bien es cierto que la entropía del universo aumenta, esta no es la única afirmación correcta entre las opciones."
+        },
+        {
+          "letra": "B",
+          "texto": "Que los procesos espontáneos disminuyen la energía libre",
+          "correcta": false,
+          "feedback": "Incorrecto. Es correcto que los procesos espontáneos tienen ΔG < 0, pero hay más afirmaciones verdaderas."
+        },
+        {
+          "letra": "C",
+          "texto": "Que en un sistema aislado aumenta la entropía por reacciones espontáneas",
+          "correcta": false,
+          "feedback": "Incorrecto. Esta afirmación también es verdadera, pero hay más opciones correctas."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas",
+          "correcta": true,
+          "feedback": "¡Correcto! Las tres afirmaciones son verdaderas: (a) la entropía del universo siempre aumenta, (b) los procesos espontáneos disminuyen la energía libre (ΔG < 0), y (c) en sistemas aislados la entropía aumenta con reacciones espontáneas."
+        }
+      ],
+      "tags": [
+        "segunda-ley",
+        "entropia",
+        "energia-libre",
+        "termodinamica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Un sistema se halla en estado estacionario cuando:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "No hay procesos en el sistema",
+          "correcta": false,
+          "feedback": "Incorrecto. Un sistema sin procesos estaría en equilibrio, no en estado estacionario. El estado estacionario implica procesos activos."
+        },
+        {
+          "letra": "B",
+          "texto": "Mantiene constante sus variables sin aporte de energía",
+          "correcta": false,
+          "feedback": "Incorrecto. Mantener variables constantes sin energía es característico del equilibrio. El estado estacionario requiere aporte continuo de energía."
+        },
+        {
+          "letra": "C",
+          "texto": "Mantiene constante sus variables con aporte de energía",
+          "correcta": true,
+          "feedback": "¡Correcto! El estado estacionario se caracteriza porque las variables del sistema se mantienen constantes (estables) pero con un aporte continuo de energía. Es el caso de los seres vivos, que mantienen homeostasis con gasto energético constante."
+        },
+        {
+          "letra": "D",
+          "texto": "A+b",
+          "correcta": false,
+          "feedback": "Incorrecto. Ni A ni B describen correctamente el estado estacionario. La opción C es la definición correcta."
+        }
+      ],
+      "tags": [
+        "estado-estacionario",
+        "sistemas",
+        "termodinamica",
+        "homeostasis"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Las vitaminas liposolubles:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Se destruyen por cocción y se almacenan en la grasa",
+          "correcta": false,
+          "feedback": "Incorrecto. Las vitaminas liposolubles (A, D, E, K) NO se destruyen fácilmente por cocción. Son resistentes al calor, aunque se almacenan en grasa."
+        },
+        {
+          "letra": "B",
+          "texto": "No se destruyen por cocción y se acumulan en grasa",
+          "correcta": true,
+          "feedback": "¡Correcto! Las vitaminas liposolubles (A, D, E, K) son resistentes a la cocción y se acumulan en el tejido adiposo y el hígado. Por eso pueden causar toxicidad por hipervitaminosis si se consumen en exceso."
+        },
+        {
+          "letra": "C",
+          "texto": "No se destruyen por cocción y no se acumulan en grasa",
+          "correcta": false,
+          "feedback": "Incorrecto. Aunque es cierto que no se destruyen por cocción, SÍ se acumulan en el tejido graso. Esta capacidad de almacenamiento es una característica clave de las liposolubles."
+        },
+        {
+          "letra": "D",
+          "texto": "Se destruyen por cocción y no se almacenan en grasa",
+          "correcta": false,
+          "feedback": "Incorrecto. Ambas afirmaciones son falsas para las liposolubles: no se destruyen por cocción y SÍ se almacenan en grasa."
+        }
+      ],
+      "tags": [
+        "vitaminas-liposolubles",
+        "vitaminas",
+        "coccion",
+        "almacenamiento"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Las razones por las cuales diversas comunidades adquieren diferentes formas de consumo alimentario son:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Por cuestiones de gusto y sabor",
+          "correcta": false,
+          "feedback": "Incorrecto. El gusto es un factor, pero no el único. Hay múltiples razones que determinan los hábitos alimentarios de una comunidad."
+        },
+        {
+          "letra": "B",
+          "texto": "Por cuestiones de accesibilidad",
+          "correcta": false,
+          "feedback": "Incorrecto. La accesibilidad es importante pero no exclusiva. También influyen otros factores culturales y económicos."
+        },
+        {
+          "letra": "C",
+          "texto": "Por cuestiones de creencias atribuibles a los alimentos",
+          "correcta": false,
+          "feedback": "Incorrecto. Las creencias religiosas y culturales influyen, pero no son el único determinante de los patrones alimentarios."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas correctas",
+          "correcta": true,
+          "feedback": "¡Correcto! Las formas de consumo alimentario están determinadas por múltiples factores: gusto y sabor (preferencias organolépticas), accesibilidad (disponibilidad económica y geográfica), y creencias (religiosas, culturales, tabúes alimentarios)."
+        }
+      ],
+      "tags": [
+        "consumo-alimentario",
+        "antropologia-nutricion",
+        "habitos-alimentarios",
+        "cultura"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Un sistema aislado:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Intercambia materia, energía y/o información",
+          "correcta": false,
+          "feedback": "Incorrecto. Eso describe un sistema abierto, no aislado. Un sistema abierto intercambia materia y energía con el entorno."
+        },
+        {
+          "letra": "B",
+          "texto": "Intercambia energía e información pero no materia",
+          "correcta": false,
+          "feedback": "Incorrecto. Eso describe un sistema cerrado (intercambia energía pero no materia). El sistema aislado no intercambia nada."
+        },
+        {
+          "letra": "C",
+          "texto": "No intercambia nada",
+          "correcta": true,
+          "feedback": "¡Correcto! Un sistema aislado no intercambia ni materia ni energía ni información con su entorno. Es un concepto ideal porque en la práctica ningún sistema es perfectamente aislado, pero se aproxima con un termo."
+        },
+        {
+          "letra": "D",
+          "texto": "Intercambia información",
+          "correcta": false,
+          "feedback": "Incorrecto. Un sistema aislado no intercambia nada con el entorno, ni siquiera información."
+        }
+      ],
+      "tags": [
+        "sistema-aislado",
+        "sistemas",
+        "termodinamica",
+        "clasificacion-sistemas"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "En un proceso espontáneo disminuye:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Entropía",
+          "correcta": false,
+          "feedback": "Incorrecto. En un proceso espontáneo la entropía del universo AUMENTA, no disminuye. La entropía mide el desorden del sistema."
+        },
+        {
+          "letra": "B",
+          "texto": "Energía libre",
+          "correcta": true,
+          "feedback": "¡Correcto! En un proceso espontáneo la energía libre de Gibbs (G) disminuye (ΔG < 0). Esto indica que el proceso puede ocurrir sin aporte externo de energía. La entropía, por el contrario, aumenta."
+        },
+        {
+          "letra": "C",
+          "texto": "Ambas",
+          "correcta": false,
+          "feedback": "Incorrecto. La energía libre disminuye (ΔG < 0), pero la entropía aumenta. No pueden disminuir ambas simultáneamente en un proceso espontáneo."
+        },
+        {
+          "letra": "D",
+          "texto": "Ninguna",
+          "correcta": false,
+          "feedback": "Incorrecto. Sí disminuye la energía libre en procesos espontáneos (ΔG < 0). La entropía no disminuye, pero la energía libre sí."
+        }
+      ],
+      "tags": [
+        "proceso-espontaneo",
+        "energia-libre",
+        "entropia",
+        "termodinamica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "El ser humano ingiere alimentos, esto produce:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "No hay cambio en la entropía",
+          "correcta": false,
+          "feedback": "Incorrecto. Esta afirmación es correcta (los alimentos aportan energía que mantiene el orden interno), pero no es la única consecuencia."
+        },
+        {
+          "letra": "B",
+          "texto": "Disminuye la energía libre",
+          "correcta": false,
+          "feedback": "Incorrecto. Ingerir alimentos AUMENTA la energía libre disponible, no la disminuye. Los alimentos aportan energía química."
+        },
+        {
+          "letra": "C",
+          "texto": "Aumenta la energía libre",
+          "correcta": false,
+          "feedback": "Incorrecto. Esta afirmación es correcta (los alimentos aportan energía), pero no es la única consecuencia."
+        },
+        {
+          "letra": "D",
+          "texto": "A+c",
+          "correcta": true,
+          "feedback": "¡Correcto! Al ingerir alimentos: (a) la entropía del organismo no cambia significativamente porque el ser vivo mantiene su orden interno como sistema estacionario, y (c) la energía libre AUMENTA porque los nutrientes aportan energía química utilizable."
+        }
+      ],
+      "tags": [
+        "ingestion-alimentos",
+        "entropia",
+        "energia-libre",
+        "termodinamica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "En qué proceso se encuentra el ser vivo:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Estado de equilibrio",
+          "correcta": false,
+          "feedback": "Incorrecto. El equilibrio termodinámico implica máxima entropía y ausencia de gradientes. Un ser vivo en equilibrio estaría muerto."
+        },
+        {
+          "letra": "B",
+          "texto": "Estado estacionario",
+          "correcta": true,
+          "feedback": "¡Correcto! Los seres vivos son sistemas abiertos en estado estacionario: mantienen sus variables internas constantes (homeostasis) pero con un aporte continuo de energía (alimentos) y eliminación de desechos, lejos del equilibrio termodinámico."
+        },
+        {
+          "letra": "C",
+          "texto": "En máxima entropía",
+          "correcta": false,
+          "feedback": "Incorrecto. Máxima entropía significa máximo desorden y corresponde al equilibrio termodinámico (muerte). Los seres vivos mantienen baja entropía interna gracias al aporte constante de energía."
+        },
+        {
+          "letra": "D",
+          "texto": "En máxima entalpía",
+          "correcta": false,
+          "feedback": "Incorrecto. La entalpía máxima no es un concepto termodinámico relevante para describir el estado de un ser vivo. El concepto correcto es estado estacionario."
+        }
+      ],
+      "tags": [
+        "ser-vivo",
+        "estado-estacionario",
+        "homeostasis",
+        "termodinamica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La margarina:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Se obtiene por hidrogenación de aceite vegetal",
+          "correcta": true,
+          "feedback": "¡Correcto! La margarina se produce por hidrogenación parcial de aceites vegetales líquidos, convirtiendo ácidos grasos insaturados en saturados. Este proceso puede generar ácidos grasos trans, perjudiciales para la salud cardiovascular."
+        },
+        {
+          "letra": "B",
+          "texto": "Se obtiene por hidrogenación de origen animal",
+          "correcta": false,
+          "feedback": "Incorrecto. La margarina se obtiene de aceites vegetales, no de origen animal. La mantequilla sí es de origen animal. La hidrogenación se aplica a aceites vegetales líquidos."
+        },
+        {
+          "letra": "C",
+          "texto": "Se extrae el colesterol a los aceites vegetales",
+          "correcta": false,
+          "feedback": "Incorrecto. Los aceites vegetales no contienen colesterol (solo los productos animales tienen). La hidrogenación modifica la estructura de los AG, no extrae colesterol."
+        },
+        {
+          "letra": "D",
+          "texto": "A+c",
+          "correcta": false,
+          "feedback": "Incorrecto. Solo la opción A es correcta. La opción C es falsa porque los aceites vegetales no contienen colesterol."
+        }
+      ],
+      "tags": [
+        "margarina",
+        "hidrogenacion",
+        "aceites-vegetales",
+        "grasas-trans"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La primera ley de la termodinámica, establece la conservación de la energía:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Toda la energía en todas sus formas se mantiene constante",
+          "correcta": true,
+          "feedback": "¡Correcto! La primera ley establece que la energía total del universo se conserva. En un sistema, ΔU = Q - W, donde la variación de energía interna es igual al calor absorbido menos el trabajo realizado."
+        },
+        {
+          "letra": "B",
+          "texto": "Es mayor la energía que ingresa, que la que sale de un sistema",
+          "correcta": false,
+          "feedback": "Incorrecto. Esto violaría la primera ley. La energía que ingresa es igual a la que sale más la variación de energía interna del sistema (ΔU = Q - W)."
+        },
+        {
+          "letra": "C",
+          "texto": "Toda la energía en todas sus formas no se mantiene constante",
+          "correcta": false,
+          "feedback": "Incorrecto. La primera ley precisamente dice que la energía se conserva, tanto en cantidad total como en todas sus formas."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas son incorrectas",
+          "correcta": false,
+          "feedback": "Incorrecto. La opción A es correcta. La primera ley de la termodinámica es el principio de conservación de la energía."
+        }
+      ],
+      "tags": [
+        "primera-ley",
+        "conservacion-energia",
+        "termodinamica",
+        "energia-interna"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La tierra aprovecha para sus procesos vitales:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "1% de la energía solar",
+          "correcta": true,
+          "feedback": "¡Correcto! Solo aproximadamente el 1% de la energía solar que llega a la Tierra es captada por los organismos fotosintéticos (plantas, algas, cianobacterias) para ser convertida en energía química mediante la fotosíntesis."
+        },
+        {
+          "letra": "B",
+          "texto": "5-10% de la energía solar",
+          "correcta": false,
+          "feedback": "Incorrecto. Solo el 1% de la energía solar es aprovechada por la fotosíntesis. El 5-10% sería una sobreestimación del rendimiento real del proceso fotosintético a escala planetaria."
+        },
+        {
+          "letra": "C",
+          "texto": "Más del 10% de la energía solar",
+          "correcta": false,
+          "feedback": "Incorrecto. Menos del 1% de la energía solar es utilizada en la fotosíntesis. Más del 10% es una sobreestimación irreal."
+        },
+        {
+          "letra": "D",
+          "texto": "Menos del 1% de la energía solar",
+          "correcta": false,
+          "feedback": "Incorrecto. Aunque cercano, el valor aceptado es aproximadamente 1%, no 'menos del 1%'. Los productores captan cerca del 1% de la radiación solar incidente."
+        }
+      ],
+      "tags": [
+        "energia-solar",
+        "fotosintesis",
+        "productores",
+        "ecologia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Un heterótrofo es un:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ser que transforma energía solar en química",
+          "correcta": false,
+          "feedback": "Incorrecto. Eso describe a un autótrofo fotosintético (como las plantas), no a un heterótrofo. Los heterótrofos no pueden realizar fotosíntesis."
+        },
+        {
+          "letra": "B",
+          "texto": "Ser que sintetiza su propio alimento",
+          "correcta": false,
+          "feedback": "Incorrecto. Los organismos que sintetizan su propio alimento son autótrofos. Los heterótrofos dependen de otros organismos para obtener nutrientes."
+        },
+        {
+          "letra": "C",
+          "texto": "Ser que transforma moléculas inorgánicas en orgánicas",
+          "correcta": false,
+          "feedback": "Incorrecto. Eso describe a los autótrofos (fotosintéticos o quimiosintéticos). Los heterótrofos no pueden fijar CO₂ inorgánico en compuestos orgánicos."
+        },
+        {
+          "letra": "D",
+          "texto": "Ser que transforma moléculas orgánicas complejas en moléculas simples",
+          "correcta": true,
+          "feedback": "¡Correcto! Los heterótrofos (animales, hongos, muchas bacterias) degradan moléculas orgánicas complejas en moléculas simples mediante digestión y respiración celular, obteniendo energía y nutrientes."
+        }
+      ],
+      "tags": [
+        "heterotrofo",
+        "autotrofo",
+        "clasificacion-nutricion",
+        "ecologia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El primer nivel trófico corresponde a:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Consumidores primero",
+          "correcta": false,
+          "feedback": "Incorrecto. Los consumidores primarios (herbívoros) son el segundo nivel trófico, no el primero. Se alimentan de los productores."
+        },
+        {
+          "letra": "B",
+          "texto": "Herbívoros",
+          "correcta": false,
+          "feedback": "Incorrecto. Los herbívoros son consumidores primarios y ocupan el segundo nivel trófico. Se alimentan de los productores del primer nivel."
+        },
+        {
+          "letra": "C",
+          "texto": "Autótrofos",
+          "correcta": true,
+          "feedback": "¡Correcto! El primer nivel trófico está formado por los productores o autótrofos (plantas, algas, cianobacterias), que convierten la energía solar en energía química mediante fotosíntesis."
+        },
+        {
+          "letra": "D",
+          "texto": "Heterótrofos",
+          "correcta": false,
+          "feedback": "Incorrecto. Los heterótrofos son consumidores que ocupan niveles tróficos superiores (segundo, tercero, etc.), no el primer nivel."
+        }
+      ],
+      "tags": [
+        "nivel-trofico",
+        "autotrofos",
+        "productores",
+        "cadena-alimentaria"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El calor que cede un organismo puede provenir:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "De la actividad muscular",
+          "correcta": false,
+          "feedback": "Incorrecto. La actividad muscular produce calor (termogénesis por ejercicio), pero no es la única fuente de calor del organismo."
+        },
+        {
+          "letra": "B",
+          "texto": "De los procesos vitales",
+          "correcta": false,
+          "feedback": "Incorrecto. Los procesos metabólicos basales generan calor, pero no es la única fuente."
+        },
+        {
+          "letra": "C",
+          "texto": "De la combustión de alimentos",
+          "correcta": false,
+          "feedback": "Incorrecto. La oxidación de nutrientes genera calor (efecto termogénico de los alimentos), pero no es la única fuente."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas",
+          "correcta": true,
+          "feedback": "¡Correcto! El calor corporal proviene de tres fuentes principales: (a) actividad muscular (contracciones y ejercicio), (b) procesos vitales (metabolismo basal, funcionamiento de órganos), y (c) combustión de alimentos (termogénesis inducida por la dieta)."
+        }
+      ],
+      "tags": [
+        "calor-corporal",
+        "termogenesis",
+        "metabolismo",
+        "produccion-calor"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "En relación con las cadenas alimentarias:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "El hombre es omnívoro y puede estar en todos los niveles, con excepción del primero",
+          "correcta": true,
+          "feedback": "¡Correcto! El ser humano, como omnívoro, puede ocupar distintos niveles tróficos (consumidor primario, secundario, etc.), pero nunca el primer nivel, que corresponde exclusivamente a los productores (autótrofos)."
+        },
+        {
+          "letra": "B",
+          "texto": "Para el hombre es conveniente ubicarse en el último nivel trófico, porque en este es mayor su aprovechamiento energético",
+          "correcta": false,
+          "feedback": "Incorrecto. Es al revés: cuanto más alto en la cadena trófica, MENOR es el aprovechamiento energético (solo 10% de la energía pasa al siguiente nivel). Es más eficiente alimentarse en niveles bajos."
+        },
+        {
+          "letra": "C",
+          "texto": "El hombre es omnívoro y puede estar en todos los niveles tróficos",
+          "correcta": false,
+          "feedback": "Incorrecto. El hombre no puede estar en el primer nivel trófico porque no es autótrofo (no realiza fotosíntesis). Depende de otros organismos para obtener energía."
+        },
+        {
+          "letra": "D",
+          "texto": "A nivel genético, el consumo energético el hombre actual es distinto de los primeros Homo Sapiens",
+          "correcta": false,
+          "feedback": "Incorrecto. El metabolismo energético humano no ha cambiado significativamente a nivel genético desde los primeros Homo sapiens. Nuestras necesidades energéticas son similares."
+        }
+      ],
+      "tags": [
+        "cadenas-alimentarias",
+        "niveles-troficos",
+        "omnivoro",
+        "eficiencia-energetica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Con respecto a los sistemas cibernéticos:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Solo procesan entradas",
+          "correcta": false,
+          "feedback": "Incorrecto. Los sistemas cibernéticos no solo procesan entradas; también producen salidas y, crucialmente, utilizan la retroalimentación de las salidas."
+        },
+        {
+          "letra": "B",
+          "texto": "Procesan entradas y producen salidas",
+          "correcta": false,
+          "feedback": "Incorrecto. Aunque procesan entradas y producen salidas, esta definición es incompleta. Falta el elemento esencial de la cibernética: la retroalimentación."
+        },
+        {
+          "letra": "C",
+          "texto": "Procesan entradas, producen salidas y las salidas regulan la entrada",
+          "correcta": true,
+          "feedback": "¡Correcto! La cibernética se caracteriza por la retroalimentación (feedback): las salidas del sistema regulan las entradas, permitiendo la autorregulación y el control homeostático. Es el principio de los servomecanismos."
+        },
+        {
+          "letra": "D",
+          "texto": "No procesan entradas ni producen salidas",
+          "correcta": false,
+          "feedback": "Incorrecto. Esto describiría un sistema inerte o aislado, no un sistema cibernético. Los sistemas cibernéticos esencialmente procesan información y se autorregulan."
+        }
+      ],
+      "tags": [
+        "sistemas-ciberneticos",
+        "retroalimentacion",
+        "cibernetica",
+        "homeostasis"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El ATP:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Es un compuesto con alta entropía",
+          "correcta": false,
+          "feedback": "Incorrecto. El ATP es un compuesto con alta energía libre (baja entropía), no alta entropía. La hidrólisis del ATP libera energía porque los productos (ADP + Pi) tienen mayor entropía."
+        },
+        {
+          "letra": "B",
+          "texto": "Sirve como almacenamiento de energía útil",
+          "correcta": true,
+          "feedback": "¡Correcto! El ATP (adenosín trifosfato) es la principal 'moneda energética' de la célula. Almacena energía en sus enlaces fosfato de alta energía, que se libera al hidrolizarse a ADP + Pi para impulsar procesos celulares."
+        },
+        {
+          "letra": "C",
+          "texto": "Es utilizado para mantener el estado de equilibrio del ser vivo",
+          "correcta": false,
+          "feedback": "Incorrecto. El ATP mantiene el estado ESTACIONARIO, no de equilibrio. El equilibrio implicaría muerte. El ATP permite mantener gradientes y procesos lejos del equilibrio."
+        },
+        {
+          "letra": "D",
+          "texto": "Permite que las inhomogeneidades del organismo desaparezcan",
+          "correcta": false,
+          "feedback": "Incorrecto. El ATP hace lo contrario: permite MANTENER inhomogeneidades (gradientes iónicos, concentraciones diferenciales) que son esenciales para la vida. Sin ATP, los gradientes se disiparían (muerte)."
+        }
+      ],
+      "tags": [
+        "ATP",
+        "energia-celular",
+        "moneda-energetica",
+        "bioenergetica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El rendimiento termodinámico del ser humano como máquina es aproximadamente un 20%, eso implica:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Que de la energía consumida en dicho proceso, el 80% se elimina como calor",
+          "correcta": true,
+          "feedback": "¡Correcto! Con un rendimiento del 20%, solo el 20% de la energía química de los alimentos se convierte en trabajo útil. El 80% restante se disipa como calor. Esto explica por qué el ejercicio eleva la temperatura corporal."
+        },
+        {
+          "letra": "B",
+          "texto": "Que el trabajo realizado es 80% de la energía consumida en dicho proceso",
+          "correcta": false,
+          "feedback": "Incorrecto. Es al revés: el trabajo realizado es el 20%, no el 80%. El 80% se elimina como calor, en línea con la segunda ley de la termodinámica."
+        },
+        {
+          "letra": "C",
+          "texto": "Que de la energía consumida en dicho proceso, el 80% se absorbe como calor",
+          "correcta": false,
+          "feedback": "Incorrecto. El 80% se elimina (disipa) como calor, no se absorbe. El calor disipado se pierde para realizar trabajo útil."
+        },
+        {
+          "letra": "D",
+          "texto": "Que el ser humano únicamente realiza trabajo",
+          "correcta": false,
+          "feedback": "Incorrecto. El ser humano no solo realiza trabajo; también produce calor y realiza otras funciones metabólicas. El rendimiento del 20% indica que la mayor parte de la energía se disipa como calor."
+        }
+      ],
+      "tags": [
+        "rendimiento-termodinamico",
+        "eficiencia-energetica",
+        "calor",
+        "trabajo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Al poner las manos sobre una fogata, cómo se transmite la energía?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Radiación",
+          "correcta": true,
+          "feedback": "¡Correcto! Al poner las manos SOBRE una fogata (sin tocarla), el calor se transmite por radiación infrarroja. La radiación no requiere medio material y viaja en forma de ondas electromagnéticas."
+        },
+        {
+          "letra": "B",
+          "texto": "Conducción",
+          "correcta": false,
+          "feedback": "Incorrecto. La conducción requiere contacto directo entre los cuerpos. Si las manos están sobre la fogata sin tocarla, no hay conducción."
+        },
+        {
+          "letra": "C",
+          "texto": "Convección",
+          "correcta": false,
+          "feedback": "Incorrecto. La convección implica el movimiento de un fluido (aire o agua). Aunque el aire caliente asciende, la principal transferencia al poner las manos sobre el fuego es por radiación."
+        },
+        {
+          "letra": "D",
+          "texto": "Ninguna",
+          "correcta": false,
+          "feedback": "Incorrecto. Sí hay transmisión de energía, principalmente por radiación infrarroja proveniente del fuego."
+        }
+      ],
+      "tags": [
+        "transmision-calor",
+        "radiacion",
+        "conduccion",
+        "conveccion"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Una pava hirviendo, es un sistema:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Cerrado",
+          "correcta": false,
+          "feedback": "Incorrecto. Un sistema cerrado intercambia energía pero no materia. Una pava hirviendo libera vapor de agua (intercambia materia), por lo que no es cerrada."
+        },
+        {
+          "letra": "B",
+          "texto": "Aislado",
+          "correcta": false,
+          "feedback": "Incorrecto. Un sistema aislado no intercambia ni materia ni energía. Una pava hirviendo claramente intercambia calor (energía) y vapor (materia) con el entorno."
+        },
+        {
+          "letra": "C",
+          "texto": "Abierto",
+          "correcta": true,
+          "feedback": "¡Correcto! Una pava hirviendo es un sistema abierto porque intercambia tanto materia (vapor de agua que escapa) como energía (calor del fuego y pérdida de calor al ambiente)."
+        },
+        {
+          "letra": "D",
+          "texto": "No intercambia materia ni energía",
+          "correcta": false,
+          "feedback": "Incorrecto. Sí intercambia materia (vapor) y energía (calor). Un sistema que no intercambia nada sería aislado, como un termo ideal."
+        }
+      ],
+      "tags": [
+        "sistema-abierto",
+        "clasificacion-sistemas",
+        "termodinamica",
+        "pava-hirviendo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El trabajo desde la termodinámica es:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Proceso cíclico",
+          "correcta": false,
+          "feedback": "Incorrecto. Un proceso cíclico es aquel que vuelve al estado inicial, pero no define el trabajo. El trabajo puede ocurrir en procesos no cíclicos."
+        },
+        {
+          "letra": "B",
+          "texto": "Energía que entrega el sistema al entorno",
+          "correcta": true,
+          "feedback": "¡Correcto! En termodinámica, el trabajo es la energía transferida por el sistema hacia su entorno (o viceversa) a través de un cambio en las variables macroscópicas (como volumen, presión, desplazamiento)."
+        },
+        {
+          "letra": "C",
+          "texto": "La energía interna que posee un cuerpo",
+          "correcta": false,
+          "feedback": "Incorrecto. La energía interna (U) es la energía total contenida en el sistema, no el trabajo. El trabajo es una forma de transferencia de energía, no una propiedad almacenada."
+        },
+        {
+          "letra": "D",
+          "texto": "Todas",
+          "correcta": false,
+          "feedback": "Incorrecto. Solo la opción B define correctamente el trabajo termodinámico. A y C son definiciones incorrectas."
+        }
+      ],
+      "tags": [
+        "trabajo-termodinamica",
+        "energia-interna",
+        "transferencia-energia",
+        "termodinamica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Cuál de los siguientes nutrientes aporta más Kcal/g:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Glúcidos",
+          "correcta": false,
+          "feedback": "Incorrecto. Los glúcidos (carbohidratos) aportan 4 kcal/g, menos que los lípidos (9 kcal/g) y el alcohol (7 kcal/g)."
+        },
+        {
+          "letra": "B",
+          "texto": "Lípidos",
+          "correcta": true,
+          "feedback": "¡Correcto! Los lípidos (grasas) aportan 9 kcal/g, siendo la fuente más concentrada de energía. Le sigue el alcohol con 7 kcal/g, y luego proteínas y carbohidratos con 4 kcal/g."
+        },
+        {
+          "letra": "C",
+          "texto": "Vitaminas",
+          "correcta": false,
+          "feedback": "Incorrecto. Las vitaminas no aportan calorías. Son micronutrientes que participan como coenzimas en reacciones metabólicas pero no proporcionan energía directamente."
+        },
+        {
+          "letra": "D",
+          "texto": "Alcohol",
+          "correcta": false,
+          "feedback": "Incorrecto. El alcohol aporta 7 kcal/g, más que los glúcidos (4 kcal/g) pero menos que los lípidos (9 kcal/g). El etanol tiene un alto valor calórico pero sin valor nutricional."
+        }
+      ],
+      "tags": [
+        "kcal-por-gramo",
+        "lipidos",
+        "glucidos",
+        "alcohol",
+        "valor-energetico"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Las proteínas de origen vegetal:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Aportan menos Kcal/g que las de origen animal",
+          "correcta": false,
+          "feedback": "Incorrecto. Todas las proteínas (vegetales y animales) aportan 4 kcal/g. El valor calórico de las proteínas es constante independientemente de su origen."
+        },
+        {
+          "letra": "B",
+          "texto": "Tienen el mismo valor biológico que las de origen animal",
+          "correcta": false,
+          "feedback": "Incorrecto. Las proteínas vegetales generalmente tienen MENOR valor biológico que las animales porque son deficientes en uno o más aminoácidos esenciales."
+        },
+        {
+          "letra": "C",
+          "texto": "El organismo las sintetiza y no es necesaria ingerirlas",
+          "correcta": false,
+          "feedback": "Incorrecto. El organismo NO puede sintetizar los aminoácidos esenciales. Las proteínas deben ingerirse porque los AA esenciales deben provenir de la dieta."
+        },
+        {
+          "letra": "D",
+          "texto": "Son deficientes en ciertos AA esenciales, importantes para las funciones de crecimiento",
+          "correcta": true,
+          "feedback": "¡Correcto! Las proteínas vegetales suelen ser deficientes en aminoácidos esenciales como lisina (cereales) o metionina (legumbres). Por eso se recomienda la complementación de proteínas vegetales (ej. arroz + frijoles) para obtener todos los AA esenciales."
+        }
+      ],
+      "tags": [
+        "proteinas-vegetales",
+        "aminoacidos-esenciales",
+        "valor-biologico",
+        "complementacion"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "¿Cuál de las siguientes es correcta?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Los productores transforman energía lumínica en química",
+          "correcta": true,
+          "feedback": "¡Correcto! Los productores (autótrofos, principalmente plantas) realizan fotosíntesis, transformando la energía lumínica del sol en energía química almacenada en moléculas orgánicas (glucosa)."
+        },
+        {
+          "letra": "B",
+          "texto": "Los animales pueden emplear energía química o lumínica",
+          "correcta": false,
+          "feedback": "Incorrecto. Los animales solo pueden utilizar energía química (de los alimentos). No tienen la capacidad de usar directamente energía lumínica; eso es exclusivo de los organismos fotosintéticos."
+        },
+        {
+          "letra": "C",
+          "texto": "A través de la respiración celular, se transforma la energía solar en energía química",
+          "correcta": false,
+          "feedback": "Incorrecto. La respiración celular libera energía química de la glucosa en forma de ATP. La transformación de energía solar en química es la fotosíntesis, no la respiración."
+        },
+        {
+          "letra": "D",
+          "texto": "La biósfera recibe energía lumínica y devuelve energía química al espacio",
+          "correcta": false,
+          "feedback": "Incorrecto. La biósfera recibe energía lumínica y devuelve calor (energía térmica) al espacio, no energía química. La energía química se mantiene dentro del ecosistema."
+        }
+      ],
+      "tags": [
+        "productores",
+        "fotosintesis",
+        "energia-luminica",
+        "energia-quimica"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Dentro del ecosistema, la materia:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Fluye",
+          "correcta": false,
+          "feedback": "Incorrecto. La energía fluye (flujo unidireccional), pero la materia CICLA. La materia se reutiliza constantemente en los ecosistemas."
+        },
+        {
+          "letra": "B",
+          "texto": "Cicla",
+          "correcta": true,
+          "feedback": "¡Correcto! A diferencia de la energía (que fluye unidireccionalmente y se disipa como calor), la materia en los ecosistemas se recicla continuamente mediante los ciclos biogeoquímicos (carbono, nitrógeno, fósforo, agua)."
+        },
+        {
+          "letra": "C",
+          "texto": "Se disipa en cada transformación",
+          "correcta": false,
+          "feedback": "Incorrecto. Quien se disipa es la energía (como calor) en cada transformación, no la materia. La materia se conserva y recicla."
+        },
+        {
+          "letra": "D",
+          "texto": "Desaparece",
+          "correcta": false,
+          "feedback": "Incorrecto. La materia no desaparece (principio de conservación de la materia). Se transforma y recicla dentro del ecosistema a través de cadenas tróficas y ciclos biogeoquímicos."
+        },
+        {
+          "letra": "E",
+          "texto": "Ninguna",
+          "correcta": false,
+          "feedback": "Incorrecto. La opción B (la materia cicla) es correcta. La materia se recicla constantemente en los ecosistemas."
+        }
+      ],
+      "tags": [
+        "materia",
+        "ecosistema",
+        "ciclos-biogeoquimicos",
+        "flujo-energia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La fórmula calórica representa:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "El porcentaje de calorías aportado por proteínas, glúcidos y lípidos en una dieta",
+          "correcta": true,
+          "feedback": "¡Correcto! La fórmula calórica (o distribución de macronutrientes) expresa qué porcentaje del valor calórico total (VCT) de una dieta proviene de cada macronutriente: proteínas (10-15%), glúcidos (50-60%) y lípidos (30-35%)."
+        },
+        {
+          "letra": "B",
+          "texto": "El porcentaje de gramos aportados por proteínas, lípidos y glúcidos en una dieta",
+          "correcta": false,
+          "feedback": "Incorrecto. La fórmula calórica se expresa en porcentaje de CALORÍAS, no de gramos. Como cada macronutriente aporta diferente kcal/g, los porcentajes en gramos serían diferentes."
+        },
+        {
+          "letra": "C",
+          "texto": "La cantidad de proteínas, glúcidos y lípidos que se ingieren en un día promedio",
+          "correcta": false,
+          "feedback": "Incorrecto. Eso sería la ingesta diaria absoluta (en gramos), no la fórmula calórica. La fórmula calórica es una proporción, no una cantidad absoluta."
+        },
+        {
+          "letra": "D",
+          "texto": "El porcentaje de proteínas, lípidos y glúcidos en una dieta",
+          "correcta": false,
+          "feedback": "Incorrecto. Es ambigua: debe especificar que es el porcentaje CALÓRICO, no el porcentaje en peso o volumen. La opción A es más precisa."
+        }
+      ],
+      "tags": [
+        "formula-calorica",
+        "macronutrientes",
+        "vct",
+        "distribucion-calorica"
+      ]
+    }
+  ]
+}

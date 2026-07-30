@@ -1,0 +1,787 @@
+{
+  "preguntas": [
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Citar la Ig que predomina en la leche materna:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Ig G, segregada por plasmocitos en el calostro",
+          "correcta": false,
+          "feedback": "Falso — predomina IgA, no IgG"
+        },
+        {
+          "letra": "B",
+          "texto": "Ig M, segregada por plasmocitos",
+          "correcta": false,
+          "feedback": "Incorrecto. La IgM no es la inmunoglobulina predominante en la secreción láctea; su producción por plasmocitos no es específica de la glándula mamaria en este contexto."
+        },
+        {
+          "letra": "C",
+          "texto": "Ig A, segregada por plasmocitos de la glándula mamaria",
+          "correcta": true,
+          "feedback": "Correcto — IgA secretora predomina en leche materna"
+        },
+        {
+          "letra": "D",
+          "texto": "En la leche materna predomina la Ig G",
+          "correcta": false,
+          "feedback": "Incorrecto. En la leche materna predomina la IgA secretora, producida por plasmocitos de la glándula mamaria, y no la IgG."
+        }
+      ],
+      "tags": [
+        "leche-materna",
+        "iga",
+        "inmunoglobulinas",
+        "lactancia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "El apego ambivalente es aquel que:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Niño muestra ignorancia ante la madre o bien se acerca para luego alejarse",
+          "correcta": false,
+          "feedback": "Falso — eso es apego evitativo"
+        },
+        {
+          "letra": "B",
+          "texto": "El niño experimenta distress ante la separación de la madre y se mantiene cerca pero protesta con enfado y se muestra áspero con la madre",
+          "correcta": true,
+          "feedback": "Correcto — define el apego ambivalente/resistente"
+        },
+        {
+          "letra": "C",
+          "texto": "El niño está feliz y consolado ante el encuentro con el objeto materno y se mantiene cerca",
+          "correcta": false,
+          "feedback": "Falso — eso es apego seguro"
+        }
+      ],
+      "tags": [
+        "apego",
+        "ambivalente",
+        "psicologia-infantil",
+        "desarrollo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿A qué edad los niños alcanzan la fuerza masticatoria?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Preescolar",
+          "correcta": true,
+          "feedback": "Correcto — alrededor de 3-5 años"
+        },
+        {
+          "letra": "B",
+          "texto": "Escolar",
+          "correcta": false,
+          "feedback": "Falso — ya la han alcanzado antes"
+        },
+        {
+          "letra": "C",
+          "texto": "Pubertad",
+          "correcta": false,
+          "feedback": "Falso — se alcanza en preescolar"
+        },
+        {
+          "letra": "D",
+          "texto": "Adultez",
+          "correcta": false,
+          "feedback": "Falso — se alcanza en preescolar"
+        }
+      ],
+      "tags": [
+        "masticacion",
+        "desarrollo-infantil",
+        "preescolar"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La neofobia es:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Tendencias del niño a aceptar alimentos desconocidos",
+          "correcta": false,
+          "feedback": "Falso — la neofobia es rechazo, no aceptación"
+        },
+        {
+          "letra": "B",
+          "texto": "Tendencias del niño a rechazar alimentos ya incorporados",
+          "correcta": false,
+          "feedback": "Falso — se rechazan alimentos nuevos, no ya incorporados"
+        },
+        {
+          "letra": "C",
+          "texto": "Tendencias del niño a ingerir sustancias no alimenticias",
+          "correcta": false,
+          "feedback": "Incorrecto. La ingestión de sustancias no alimenticias se denomina pica, un trastorno distinto de la neofobia alimentaria."
+        },
+        {
+          "letra": "D",
+          "texto": "Tendencias del niño a rechazar alimentos desconocidos",
+          "correcta": true,
+          "feedback": "Correcto — neofobia = miedo a lo nuevo"
+        }
+      ],
+      "tags": [
+        "neofobia",
+        "alimentacion-infantil",
+        "psicologia-nutricion"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Los dientes para su crecimiento requieren macro y micronutrientes tales como:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Proteínas, Ca, Flúor, Zinc",
+          "correcta": true,
+          "feedback": "Correcto — todos son esenciales para el desarrollo dental"
+        },
+        {
+          "letra": "B",
+          "texto": "Lípidos, Ca, Flúor",
+          "correcta": false,
+          "feedback": "Falso — los lípidos no son principales para el diente"
+        },
+        {
+          "letra": "C",
+          "texto": "Glúcidos, Zinc, Selenio",
+          "correcta": false,
+          "feedback": "Falso — los glúcidos no son estructurales dentales principales"
+        },
+        {
+          "letra": "D",
+          "texto": "Proteínas, Selenio, Flúor y cobre",
+          "correcta": false,
+          "feedback": "Falso — el selenio no es un nutriente principal dental"
+        }
+      ],
+      "tags": [
+        "dientes",
+        "crecimiento-dental",
+        "nutrientes",
+        "fluor"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Los niños de 4 años presentan al comer los siguientes movimientos:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Solo ascenso y descenso de mandíbula",
+          "correcta": false,
+          "feedback": "Falso — eso es patrón primitivo (~6-12 meses)"
+        },
+        {
+          "letra": "B",
+          "texto": "Ascenso y descenso más movimientos laterales de mandíbula",
+          "correcta": false,
+          "feedback": "Incorrecto. Esta descripción está incompleta: a los 4 años el patrón masticatorio ya incluye también movimientos laterales de lengua y rotación mandibular, no solo movimientos mandibulares de ascenso, descenso y lateralidad."
+        },
+        {
+          "letra": "C",
+          "texto": "Ascenso y descenso más movimientos laterales de lengua",
+          "correcta": false,
+          "feedback": "Falso — no describe el patrón completo"
+        },
+        {
+          "letra": "D",
+          "texto": "Ascenso y descenso más movimientos laterales de lengua y rotación de mandíbula",
+          "correcta": true,
+          "feedback": "Correcto — patrón masticatorio maduro a los 4 años"
+        }
+      ],
+      "tags": [
+        "masticacion",
+        "movimientos-mandibulares",
+        "4-anos",
+        "desarrollo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Las uniones laxas entre los enterocitos mejora notablemente la absorción a los:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "6 meses",
+          "correcta": true,
+          "feedback": "Correcto — alrededor de los 6 meses las uniones se vuelven más laxas, coincidiendo con la alimentación complementaria"
+        },
+        {
+          "letra": "B",
+          "texto": "1 año",
+          "correcta": false,
+          "feedback": "Falso — ocurre antes, a los 6 meses"
+        },
+        {
+          "letra": "C",
+          "texto": "4 años",
+          "correcta": false,
+          "feedback": "Incorrecto. La maduración de las uniones intercelulares que mejora la absorción ocurre mucho antes, alrededor de los 6 meses de vida, coincidiendo con el inicio de la alimentación complementaria."
+        },
+        {
+          "letra": "D",
+          "texto": "Adolescente",
+          "correcta": false,
+          "feedback": "Falso — ocurre en la infancia temprana"
+        }
+      ],
+      "tags": [
+        "enterocitos",
+        "absorcion-intestinal",
+        "6-meses",
+        "barrera-intestinal"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Indica las necesidades hídricas de un niño de 4 años:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "150 ml/kg/día",
+          "correcta": false,
+          "feedback": "Falso — eso es para lactantes"
+        },
+        {
+          "letra": "B",
+          "texto": "100 ml/kg/día",
+          "correcta": true,
+          "feedback": "Correcto — aproximadamente 100 ml/kg/día para niños de 4 años"
+        },
+        {
+          "letra": "C",
+          "texto": "200 ml/día",
+          "correcta": false,
+          "feedback": "Falso — muy poco para un niño de 4 años"
+        },
+        {
+          "letra": "D",
+          "texto": "75 ml/kg/día",
+          "correcta": false,
+          "feedback": "Falso — insuficiente para 4 años"
+        }
+      ],
+      "tags": [
+        "necesidades-hidricas",
+        "agua",
+        "4-anos",
+        "pediatria"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El ciclo de Krebs:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Es la última instancia de la degradación de lípidos, glúcidos y proteínas",
+          "correcta": false,
+          "feedback": "Es correcta, pero no es la única correcta"
+        },
+        {
+          "letra": "B",
+          "texto": "Genera GTP",
+          "correcta": false,
+          "feedback": "Es correcta, pero no es la única correcta"
+        },
+        {
+          "letra": "C",
+          "texto": "Genera coenzimas NAD y FAD oxidadas",
+          "correcta": false,
+          "feedback": "Falso — genera NADH y FADH2 (reducidas, no oxidadas)"
+        },
+        {
+          "letra": "D",
+          "texto": "A+B",
+          "correcta": true,
+          "feedback": "Correcto — A y B son verdaderas"
+        },
+        {
+          "letra": "E",
+          "texto": "Todas",
+          "correcta": false,
+          "feedback": "Incorrecto. Aunque el ciclo de Krebs es la vía final común de degradación de lípidos, glúcidos y proteínas (A) y genera GTP (B), también genera coenzimas NAD y FAD en su forma REDUCIDA (NADH y FADH₂), no oxidada como afirma la opción C, por lo que 'todas' no es correcta."
+        }
+      ],
+      "tags": [
+        "ciclo-krebs",
+        "gtp",
+        "nad",
+        "fad",
+        "metabolismo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "¿Cómo sabemos si un RN que toma pecho exclusivo se alimenta lo suficiente?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Si aumenta de peso bien, moja los pañales y tiene deposiciones normales",
+          "correcta": true,
+          "feedback": "Correcto — los tres indicadores clásicos"
+        },
+        {
+          "letra": "B",
+          "texto": "Si tiene llanto enérgico",
+          "correcta": false,
+          "feedback": "Falso — el llanto no es indicador fiable"
+        },
+        {
+          "letra": "C",
+          "texto": "Si tiene todos los reflejos",
+          "correcta": false,
+          "feedback": "Falso — no indica suficiencia alimentaria"
+        },
+        {
+          "letra": "D",
+          "texto": "Si está prendido al pecho 5 min y se queda dormido",
+          "correcta": false,
+          "feedback": "Falso — no es indicador de suficiencia"
+        }
+      ],
+      "tags": [
+        "lactancia-exclusiva",
+        "rn",
+        "indicadores",
+        "peso"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Las mujeres presentan leche 'clarita' o 'acuosa' porque:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Están con bajo peso y su leche no tiene los nutrientes necesarios",
+          "correcta": false,
+          "feedback": "Falso — no se debe al bajo peso materno"
+        },
+        {
+          "letra": "B",
+          "texto": "Tienen escasas glándulas y por lo tanto mamas más pequeñas",
+          "correcta": false,
+          "feedback": "Falso — no se relaciona con el tamaño de la mama"
+        },
+        {
+          "letra": "C",
+          "texto": "No tienen suficientes niveles de prolactina",
+          "correcta": false,
+          "feedback": "Falso — los niveles de prolactina no determinan el aspecto de la leche"
+        },
+        {
+          "letra": "D",
+          "texto": "La característica de la leche cambia según la etapa del puerperio, el tiempo de mamada y las horas del día",
+          "correcta": true,
+          "feedback": "Correcto — la leche anterior es más acuosa, la posterior más grasa"
+        }
+      ],
+      "tags": [
+        "leche-materna",
+        "leche-anterior",
+        "leche-agua",
+        "lactancia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La vía de las pentosas monofosfato tiene como una de sus funciones la formación de NADH+H, necesario para el anabolismo de lípidos. ¿V o F?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Verdadero",
+          "correcta": false,
+          "feedback": "Falso — la vía de las pentosas produce NADPH, no NADH"
+        },
+        {
+          "letra": "B",
+          "texto": "Falso",
+          "correcta": true,
+          "feedback": "Correcto — produce NADPH+H, no NADH+H"
+        }
+      ],
+      "tags": [
+        "pentosas-fosfato",
+        "nadph",
+        "nad",
+        "anabolismo-lipidos"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El ciclo de Cori implica:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Glucogenogénesis más gluconeogénesis",
+          "correcta": false,
+          "feedback": "Falso — no describe el ciclo de Cori"
+        },
+        {
+          "letra": "B",
+          "texto": "Glucogenólisis más glucólisis",
+          "correcta": false,
+          "feedback": "Falso — no describe el ciclo de Cori"
+        },
+        {
+          "letra": "C",
+          "texto": "Glucólisis anaeróbica más gluconeogénesis a partir del Lactato",
+          "correcta": true,
+          "feedback": "Correcto — músculo produce lactato, hígado lo convierte en glucosa"
+        },
+        {
+          "letra": "D",
+          "texto": "Es la formación de Glucosa a partir de Lactato producido únicamente por el músculo en trabajo anaeróbico",
+          "correcta": false,
+          "feedback": "Falso — C es más completa y precisa"
+        }
+      ],
+      "tags": [
+        "ciclo-cori",
+        "lactato",
+        "gluconeogenesis",
+        "musculo"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Marque la incorrecta respecto a la glándula mamaria:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Es una glándula de secreción exógena",
+          "correcta": false,
+          "feedback": "Correcta — es exocrina, no incorrecta"
+        },
+        {
+          "letra": "B",
+          "texto": "No presenta cambios significativos luego de la pubertad",
+          "correcta": false,
+          "feedback": "INCORRECTA — desarrolla con el embarazo y la lactancia"
+        },
+        {
+          "letra": "C",
+          "texto": "La secreción es exclusivamente merócrina para todos los constituyentes de la leche",
+          "correcta": false,
+          "feedback": "INCORRECTA — también hay secreción apocrina para los glóbulos de grasa"
+        },
+        {
+          "letra": "D",
+          "texto": "Se encuentra ubicada entre la 2da y la 7ma costilla",
+          "correcta": false,
+          "feedback": "Incorrecto como elección: esta afirmación es correcta. La glándula mamaria se extiende topográficamente entre la 2ª y la 7ª costilla."
+        },
+        {
+          "letra": "E",
+          "texto": "Histológicamente es una glándula túbulo-alveolar ramificada",
+          "correcta": false,
+          "feedback": "Incorrecto como elección: esta afirmación es correcta. Histológicamente, la glándula mamaria es una glándula túbulo-alveolar compuesta y ramificada."
+        },
+        {
+          "letra": "F",
+          "texto": "B+C",
+          "correcta": true,
+          "feedback": "Correcto — B y C son las incorrectas"
+        },
+        {
+          "letra": "G",
+          "texto": "C+E",
+          "correcta": false,
+          "feedback": "Falso — E es correcta, C es incorrecta"
+        }
+      ],
+      "tags": [
+        "glandula-mamaria",
+        "mama",
+        "secrecion",
+        "histologia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La función principal del calostro según su composición es:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Inmunológica",
+          "correcta": true,
+          "feedback": "Correcto — rico en IgA, células inmunitarias y factores protectores"
+        },
+        {
+          "letra": "B",
+          "texto": "Plástica",
+          "correcta": false,
+          "feedback": "Falso — no es su función principal"
+        },
+        {
+          "letra": "C",
+          "texto": "Hormonal",
+          "correcta": false,
+          "feedback": "Falso — no es su función principal"
+        },
+        {
+          "letra": "D",
+          "texto": "Enzimática",
+          "correcta": false,
+          "feedback": "Falso — no es su función principal"
+        },
+        {
+          "letra": "E",
+          "texto": "Ninguna",
+          "correcta": false,
+          "feedback": "Falso — la función principal es inmunológica"
+        }
+      ],
+      "tags": [
+        "calostro",
+        "funcion-inmunologica",
+        "iga",
+        "lactancia"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Las grasas de la leche materna son fundamentalmente:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "AG de cadena larga poliinsaturados",
+          "correcta": true,
+          "feedback": "Correcto — principalmente AGCL poliinsaturados como DHA y AA"
+        },
+        {
+          "letra": "B",
+          "texto": "AG de cadena mediana saturados",
+          "correcta": false,
+          "feedback": "Falso — no predominan en leche materna"
+        },
+        {
+          "letra": "C",
+          "texto": "AG de cadena corta saturados",
+          "correcta": false,
+          "feedback": "Falso — no predominan en leche materna"
+        },
+        {
+          "letra": "D",
+          "texto": "AG de cadena corta poliinsaturados",
+          "correcta": false,
+          "feedback": "Falso — no predominan en leche materna"
+        }
+      ],
+      "tags": [
+        "leche-materna",
+        "acidos-grasos",
+        "dha",
+        "lipidos-leche"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Con respecto a la lengua, marcar la opción incorrecta:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "El músculo transverso alarga y estrecha la lengua",
+          "correcta": false,
+          "feedback": "Incorrecto como elección: esta afirmación es correcta. El músculo transverso de la lengua, al contraerse, alarga y estrecha el órgano."
+        },
+        {
+          "letra": "B",
+          "texto": "Sus músculos están inervados por el IX par",
+          "correcta": true,
+          "feedback": "Correcto — la inervación motora es por el XII par (hipogloso), no por el IX"
+        },
+        {
+          "letra": "C",
+          "texto": "El músculo lingual superior es el único impar",
+          "correcta": false,
+          "feedback": "Incorrecto como elección: esta afirmación es correcta. El músculo lingual superior (longitudinal superior) es el único músculo impar de la lengua; los demás son pares."
+        },
+        {
+          "letra": "D",
+          "texto": "El músculo estilo-gloso lleva la lengua hacia arriba y atrás",
+          "correcta": false,
+          "feedback": "Incorrecto como elección: esta afirmación es correcta. El músculo estilogloso, al contraerse, retrae y eleva la lengua hacia arriba y atrás."
+        }
+      ],
+      "tags": [
+        "lengua",
+        "musculos-linguales",
+        "inervacion",
+        "xii-par"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El epitelio de los alveolos mamarios es de tipo cilíndrico simple y su desarrollo es estimulado por los estrógenos en la pubertad y en el embarazo. ¿V o F?",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Verdadero",
+          "correcta": true,
+          "feedback": "Correcto — el epitelio alveolar mamario es cilíndrico simple y los estrógenos estimulan su desarrollo"
+        },
+        {
+          "letra": "B",
+          "texto": "Falso",
+          "correcta": false,
+          "feedback": "Falso — la afirmación es verdadera"
+        }
+      ],
+      "tags": [
+        "alveolos-mamarios",
+        "epitelio",
+        "estrogenos",
+        "mama"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Marque lo incorrecto respecto de la prolactina:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Tiene un mediador hipotalámico que inhibe su secreción",
+          "correcta": false,
+          "feedback": "Correcta — la dopamina inhibe la prolactina"
+        },
+        {
+          "letra": "B",
+          "texto": "Tiene un mediador hipotalámico que estimula su secreción",
+          "correcta": false,
+          "feedback": "Correcta — TRH estimula la prolactina"
+        },
+        {
+          "letra": "C",
+          "texto": "Tiene un ritmo de secreción circadiano con mayores niveles en la noche",
+          "correcta": false,
+          "feedback": "Correcta — tiene ritmo circadiano"
+        },
+        {
+          "letra": "D",
+          "texto": "Es de tipo proteica",
+          "correcta": false,
+          "feedback": "Correcta — es una hormona proteica"
+        },
+        {
+          "letra": "E",
+          "texto": "Su función principal es la lactogénesis",
+          "correcta": false,
+          "feedback": "Correcta — su función principal es la lactogénesis"
+        },
+        {
+          "letra": "F",
+          "texto": "A+C",
+          "correcta": true,
+          "feedback": "Correcto — A y C son correctas, por lo que afirmar que son incorrectas (opción F) es lo incorrecto"
+        }
+      ],
+      "tags": [
+        "prolactina",
+        "hipotalamo",
+        "lactogenesis",
+        "hormonas"
+      ]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Segunda Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La oxitocina:",
+      "alternativas": [
+        {
+          "letra": "A",
+          "texto": "Es esteroidea",
+          "correcta": false,
+          "feedback": "Falso — es peptídica, no esteroidea"
+        },
+        {
+          "letra": "B",
+          "texto": "Es sintetizada en la neurohipófisis",
+          "correcta": false,
+          "feedback": "Falso — se sintetiza en el hipotálamo y se almacena en la neurohipófisis"
+        },
+        {
+          "letra": "C",
+          "texto": "Es secretada desde la neurohipófisis",
+          "correcta": false,
+          "feedback": "Es correcta, pero no es la única"
+        },
+        {
+          "letra": "D",
+          "texto": "Contribuye en la eyección láctea",
+          "correcta": false,
+          "feedback": "Es correcta, pero no es la única"
+        },
+        {
+          "letra": "E",
+          "texto": "B+C",
+          "correcta": false,
+          "feedback": "Incorrecto. La oxitocina no se sintetiza en la neurohipófisis (B es falsa: se sintetiza en los núcleos supraóptico y paraventricular del hipotálamo, y solo se almacena y libera desde la neurohipófisis), por lo que la combinación B+C no es correcta."
+        },
+        {
+          "letra": "F",
+          "texto": "C+D",
+          "correcta": true,
+          "feedback": "Correcto — C y D son verdaderas"
+        }
+      ],
+      "tags": [
+        "oxitocina",
+        "eyeccion-lactea",
+        "neurohipofisis",
+        "lactancia"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,414 @@
+{
+  "preguntas": [
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "En relación a los sistemas cibernéticos:",
+      "alternativas": [
+        { "letra": "A", "texto": "El límite superior de las fluctuaciones determina la forma de la placa homeostática", "correcta": false, "feedback": "Incorrecto. Aunque el concepto de placa homeostática se relaciona con los límites de fluctuación, la afirmación es incompleta. Los sistemas cibernéticos se caracterizan por mantener un equilibrio dinámico autorregulado mediante retroalimentación." },
+        { "letra": "B", "texto": "La pérdida del punto de equilibrio es siempre irreversible", "correcta": false, "feedback": "Incorrecto. La pérdida del punto de equilibrio no es siempre irreversible. Los sistemas cibernéticos pueden compensar y restaurar el equilibrio mediante mecanismos de retroalimentación negativa, a menos que ocurra una falla catastrófica." },
+        { "letra": "C", "texto": "Presenta retroalimentación negativa cuando la fluctuación escapa por fuera del límite inferior de la placa homeostática", "correcta": false, "feedback": "Incorrecto. La retroalimentación negativa actúa cuando la fluctuación supera los límites superior O inferior, no solo el inferior. Es el mecanismo que contrarresta la desviación y restaura el equilibrio." },
+        { "letra": "D", "texto": "Se encuentran en equilibrio dinámico", "correcta": true, "feedback": "¡Correcto! Los sistemas cibernéticos se mantienen en equilibrio dinámico a través de mecanismos de retroalimentación (feedback). Regulan activamente sus variables para mantener la homeostasis dentro de un rango fisiológico." }
+      ],
+      "tags": ["sistemas-ciberneticos", "homeostasis", "retroalimentacion", "equilibrio-dinamico"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Respecto de la energía de los ecosistemas se puede afirmar que:",
+      "alternativas": [
+        { "letra": "A", "texto": "La energía solar es fijada por el nivel de consumidores", "correcta": false, "feedback": "Incorrecto. La energía solar es fijada por los productores (autótrofos como plantas y algas) mediante la fotosíntesis, no por los consumidores. Los consumidores obtienen energía al alimentarse de otros organismos." },
+        { "letra": "B", "texto": "Depende de la energía química del Sol", "correcta": false, "feedback": "Incorrecto. La energía solar es energía lumínica, no química. El Sol proporciona energía luminosa que los autótrofos convierten en energía química mediante la fotosíntesis." },
+        { "letra": "C", "texto": "Cicla en los distintos niveles tróficos", "correcta": false, "feedback": "Incorrecto. La materia cicla en los ecosistemas, pero la energía fluye de forma unidireccional. La energía pasa de un nivel trófico al siguiente disipándose como calor en cada transferencia." },
+        { "letra": "D", "texto": "Fluye unidireccionalmente", "correcta": true, "feedback": "¡Correcto! La energía en los ecosistemas fluye de forma unidireccional: del Sol a los productores, luego a los consumidores, disipándose como calor en cada nivel trófico. No se recicla como la materia." }
+      ],
+      "tags": ["energia-ecosistemas", "flujo-unidireccional", "niveles-troficos", "ecologia"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Fotosíntesis es:",
+      "alternativas": [
+        { "letra": "A", "texto": "Un proceso de absorción de luz que se realiza en las plantas", "correcta": true, "feedback": "¡Correcto! La fotosíntesis es el proceso mediante el cual las plantas, algas y cianobacterias capturan la energía lumínica del Sol y la convierten en energía química (glucosa), utilizando CO₂ y H₂O, liberando O₂ como subproducto." },
+        { "letra": "B", "texto": "Un proceso de transformación de materias inorgánicas en energía que aporta luz", "correcta": false, "feedback": "Incorrecto. La fotosíntesis transforma materia inorgánica (CO₂ y H₂O) en materia orgánica (glucosa), no en energía lumínica. La energía lumínica es capturada, no producida por la fotosíntesis." },
+        { "letra": "C", "texto": "Un proceso de las plantas para generar Oxígeno para la atmósfera", "correcta": false, "feedback": "Incorrecto. El oxígeno es un subproducto de la fotosíntesis, no su objetivo principal. La fotosíntesis tiene como fin producir energía química (ATP y glucosa) para la planta." },
+        { "letra": "D", "texto": "Un proceso que las plantas hacen para generar calorías", "correcta": false, "feedback": "Incorrecto. La fotosíntesis produce glucosa que la planta usa como fuente de energía, no 'calorías'. El término correcto es que produce energía química almacenada en enlaces de moléculas orgánicas." }
+      ],
+      "tags": ["fotosintesis", "plantas", "energia-luminica", "clorofila"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Seres autótrofos y heterótrofos, ¿Qué son?",
+      "alternativas": [
+        { "letra": "A", "texto": "Los seres heterótrofos son los seres capaces de producir su propio alimento, o sea, son capaces de realizar la fotosíntesis, ejemplo, las plantas. Los seres autótrofos no son capaces de producir su propio alimento, o sea, dependen de los heterótrofos para alimentarse, ejemplo, los animales.", "correcta": false, "feedback": "Incorrecto. Los conceptos están invertidos. Los autótrofos (auto=propio, trofo=alimento) producen su propio alimento mediante fotosíntesis o quimiosíntesis. Los heterótrofos dependen de otros para alimentarse." },
+        { "letra": "B", "texto": "Los seres autótrofos son los seres capaces de producir su propio alimento, o sea, son los capaces de realizar fotosíntesis, ejemplo, las plantas. Los seres heterótrofos son aquellos que no son capaces de producir su propio alimento, o sea, dependen de los autótrofos para alimentarse, ejemplo, los animales.", "correcta": true, "feedback": "¡Correcto! Autótrofos (auto=propio) producen su alimento mediante fotosíntesis (plantas) o quimiosíntesis (bacterias). Heterótrofos (hetero=otro) dependen de consumir materia orgánica producida por otros seres vivos." }
+      ],
+      "tags": ["autotrofos", "heterotrofos", "fotosintesis", "cadena-alimentaria"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Cuál es el significado del Metabolismo?",
+      "alternativas": [
+        { "letra": "A", "texto": "Es la capacidad de causar un cambio, o sea, capacidad de producir trabajo.", "correcta": false, "feedback": "Incorrecto. Esa es la definición de energía, no de metabolismo. El metabolismo es el conjunto de reacciones químicas que ocurren en las células para mantener la vida." },
+        { "letra": "B", "texto": "Es un conjunto de procesos físicos y químicos que ocurren en las células, que convierten a los nutrientes de los alimentos en la energía necesaria para que el cuerpo cumpla con todas sus funciones vitales.", "correcta": true, "feedback": "¡Correcto! El metabolismo incluye todas las reacciones bioquímicas celulares: anabolismo (síntesis de moléculas) y catabolismo (degradación para obtener energía). Convierte nutrientes en energía utilizable (ATP)." },
+        { "letra": "C", "texto": "Es la capacidad de un cuerpo de producir calor.", "correcta": false, "feedback": "Incorrecto. La producción de calor (termogénesis) es una consecuencia del metabolismo, no su definición. El metabolismo es un concepto más amplio que incluye todas las reacciones químicas celulares." }
+      ],
+      "tags": ["metabolismo", "anabolismo", "catabolismo", "energia-celular"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Qué es la Oxidación?",
+      "alternativas": [
+        { "letra": "A", "texto": "Es la reacción donde un átomo o una molécula pierde un electrón (de hidrógeno) y el átomo o molécula que pierde el electrón, se dice que se ha oxidado.", "correcta": true, "feedback": "¡Correcto! La oxidación es la pérdida de electrones (o átomos de hidrógeno). La molécula que pierde electrones se oxida. Es el proceso opuesto a la reducción (ganancia de electrones)." },
+        { "letra": "B", "texto": "Es la reacción donde un átomo o una molécula gana un protón (de Hidrógeno) y el átomo o molécula que gana el electrón se dice que se ha oxidado.", "correcta": false, "feedback": "Incorrecto. Ganar un protón no es oxidación. Además, ganar electrones es reducción, no oxidación. En las reacciones redox, oxidación = pérdida de electrones, reducción = ganancia de electrones." },
+        { "letra": "C", "texto": "Es la reacción donde hay una extracción del dióxido de carbono (CO₂) de una biomolécula.", "correcta": false, "feedback": "Incorrecto. La descarboxilación (eliminación de CO₂) no es lo mismo que oxidación. Aunque puede ocurrir junto con reacciones redox, la oxidación se define específicamente como pérdida de electrones." }
+      ],
+      "tags": ["oxidacion", "redox", "electron", "reduccion", "bioquimica"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La arcada dentaria transitoria está compuesta por:",
+      "alternativas": [
+        { "letra": "A", "texto": "20 dientes", "correcta": true, "feedback": "¡Correcto! La arcada dentaria transitoria (dientes de leche) está compuesta por 20 dientes: 8 incisivos, 4 caninos y 8 molares. Esta dentición temporal comienza a erupcionar alrededor de los 6 meses de edad." },
+        { "letra": "B", "texto": "15 dientes", "correcta": false, "feedback": "Incorrecto. La dentición temporal consta de 20 dientes, no 15. La dentición permanente tiene 32 dientes (incluyendo premolares y terceros molares)." },
+        { "letra": "C", "texto": "30 dientes", "correcta": false, "feedback": "Incorrecto. 30 dientes no corresponde ni a la dentición temporal (20) ni a la permanente (32). La respuesta correcta para la arcada transitoria es 20." },
+        { "letra": "D", "texto": "32 dientes", "correcta": false, "feedback": "Incorrecto. 32 dientes corresponde a la dentición permanente completa (incluyendo las muelas del juicio). La dentición temporal tiene 20 dientes." }
+      ],
+      "tags": ["arcada-dentaria", "dientes-temporales", "denticion", "anatomia-oral"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Qué divide anatómicamente la cavidad bucal?",
+      "alternativas": [
+        { "letra": "A", "texto": "Vestíbulo", "correcta": false, "feedback": "Incorrecto. El vestíbulo es una parte de la cavidad bucal (espacio entre labios/mejillas y arcadas dentarias), pero no es el divisor anatómico principal de la cavidad bucal." },
+        { "letra": "B", "texto": "Cavidad bucal propiamente dicha", "correcta": false, "feedback": "Incorrecto. La cavidad bucal propiamente dicha es la otra parte de la cavidad bucal (dentro de las arcadas dentarias). El elemento que divide anatómicamente la cavidad bucal en estas dos partes es la arcada gingivodentaria." },
+        { "letra": "C", "texto": "Arcada gingivodentaria", "correcta": true, "feedback": "¡Correcto! La arcada gingivodentaria (dientes + encía) divide anatómicamente la cavidad bucal en dos regiones: el vestíbulo bucal (por fuera de los dientes) y la cavidad bucal propiamente dicha (por dentro de los dientes)." },
+        { "letra": "D", "texto": "Paladar Blando", "correcta": false, "feedback": "Incorrecto. El paladar blando es la parte posterior del techo de la boca, que separa la cavidad bucal de la nasofaringe, pero no divide anatómicamente la cavidad bucal en vestíbulo y cavidad propia." }
+      ],
+      "tags": ["cavidad-bucal", "arcada-gingivodentaria", "vestibulo", "anatomia-oral"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "¿Cuál es la enzima que se encarga de fosforilar a la glucosa en el hígado?",
+      "alternativas": [
+        { "letra": "A", "texto": "Fructoquinasa", "correcta": false, "feedback": "Incorrecto. La fructoquinasa fosforila fructosa, no glucosa. La enzima que fosforila glucosa en el hígado es la glucoquinasa (hexoquinasa IV), que tiene baja afinidad por la glucosa pero no es inhibida por glucosa-6-fosfato." },
+        { "letra": "B", "texto": "Glucoquinasa (Hexoquinasa IV)", "correcta": true, "feedback": "¡Correcto! La glucoquinasa (también llamada hexoquinasa IV) es la enzima que fosforila glucosa a glucosa-6-fosfato en el hígado. Se diferencia de otras hexoquinasas por su baja afinidad por la glucosa y porque no es inhibida por glucosa-6-fosfato." },
+        { "letra": "C", "texto": "Cicloquinasa", "correcta": false, "feedback": "Incorrecto. No existe una enzima llamada cicloquinasa. La enzima correcta para la fosforilación de glucosa hepática es la glucoquinasa (hexoquinasa IV), fundamental para el metabolismo hepático de la glucosa." },
+        { "letra": "D", "texto": "Pentaquinasa", "correcta": false, "feedback": "Incorrecto. No existe una enzima llamada pentaquinasa en el metabolismo hepático. La fosforilación de glucosa en el hígado es catalizada por la glucoquinasa (hexoquinasa IV), una isoenzima específica." }
+      ],
+      "tags": ["glucoquinasa", "hexoquinasa", "fosforilacion-glucosa", "higado", "bioquimica"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "En relación a la división topográfica del abdomen la cual lo divide en 9 cuadrantes a través de dos líneas horizontales y dos verticales, marque cuál de las siguientes estructuras anatómicas NO se encuentra en el epigástrico:",
+      "alternativas": [
+        { "letra": "A", "texto": "Antro y píloro", "correcta": false, "feedback": "Incorrecto. El antro y el píloro del estómago SÍ se encuentran en la región epigástrica. El epigastrio es la región superior central del abdomen, que contiene el estómago, píloro y lóbulo izquierdo del hígado." },
+        { "letra": "B", "texto": "Lóbulo izquierdo del hígado", "correcta": false, "feedback": "Incorrecto. El lóbulo izquierdo del hígado SÍ se encuentra en la región epigástrica, ocupando parte del epigastrio y el hipocondrio izquierdo." },
+        { "letra": "C", "texto": "Colon ascendente", "correcta": true, "feedback": "¡Correcto! El colon ascendente NO se encuentra en el epigastrio. Se localiza en el flanco derecho del abdomen. El epigastrio contiene estructuras como el estómago, píloro, lóbulo hepático izquierdo y primera porción del duodeno." },
+        { "letra": "D", "texto": "1° porción del duodeno", "correcta": false, "feedback": "Incorrecto. La primera porción del duodeno SÍ se encuentra en la región epigástrica, junto con el estómago, píloro y lóbulo izquierdo del hígado." }
+      ],
+      "tags": ["epigastrio", "abdomen", "division-topografica", "anatomia", "colon-ascendente"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El conducto de Stenon se encuentra:",
+      "alternativas": [
+        { "letra": "A", "texto": "En los carrillos a nivel del 2do molar superior", "correcta": true, "feedback": "¡Correcto! El conducto de Stenon (conducto parotídeo) es el conducto excretor de la glándula parótida. Atraviesa el músculo buccinador y desemboca en la cavidad bucal a nivel del segundo molar superior." },
+        { "letra": "B", "texto": "En los carrillos a nivel del 2do molar inferior", "correcta": false, "feedback": "Incorrecto. El conducto de Stenon desemboca en la cavidad bucal a nivel del segundo molar SUPERIOR, no inferior. Los conductos de las glándulas submandibulares (Wharton) desembocan cerca del frenillo lingual." },
+        { "letra": "C", "texto": "En la arcada gingivodentaria", "correcta": false, "feedback": "Incorrecto. El conducto de Stenon no desemboca en la arcada gingivodentaria. Su abertura está en la mucosa del carrillo, a nivel del segundo molar superior." },
+        { "letra": "D", "texto": "En los carrillos", "correcta": false, "feedback": "Incorrecto. Aunque el conducto de Stenon sí está en los carrillos, la localización precisa es a nivel del segundo molar superior. La respuesta es incompleta sin especificar el nivel exacto." }
+      ],
+      "tags": ["conducto-stenon", "parotida", "glandulas-salivales", "anatomia-oral"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Difícil",
+      "enunciado": "La lengua se encuentra inervada sensitiva y motora por:",
+      "alternativas": [
+        { "letra": "A", "texto": "Cuerda del tímpano", "correcta": false, "feedback": "Incorrecto. La cuerda del tímpano (rama del facial VII) inerva sensorialmente los 2/3 anteriores de la lengua (gusto) y las glándulas submandibular y sublingual, pero no inerva sola toda la lengua. La respuesta correcta incluye todas las opciones." },
+        { "letra": "B", "texto": "Glosofaríngeo", "correcta": false, "feedback": "Incorrecto. El glosofaríngeo (IX) inerva el 1/3 posterior de la lengua (gusto y sensibilidad general), pero no inerva toda la lengua. La inervación completa requiere múltiples nervios." },
+        { "letra": "C", "texto": "Lingual", "correcta": false, "feedback": "Incorrecto. El nervio lingual (rama del mandibular V3) provee sensibilidad general a los 2/3 anteriores de la lengua, pero no es el único nervio que la inerva." },
+        { "letra": "D", "texto": "Vago", "correcta": false, "feedback": "Incorrecto. El vago (X) inerva una pequeña zona de la epiglotis y la base de la lengua, pero no inerva toda la lengua." },
+        { "letra": "E", "texto": "Todas son correctas", "correcta": true, "feedback": "¡Correcto! La inervación de la lengua es compleja: cuerda del tímpano (gusto 2/3 anterior), glosofaríngeo (gusto y sensibilidad 1/3 posterior), lingual (sensibilidad general 2/3 anterior), vago (epiglotis). La motora es por el hipogloso (XII)." },
+        { "letra": "F", "texto": "a + b + c", "correcta": false, "feedback": "Incorrecto. La combinación a+b+c no incluye el vago (d), que también inerva una porción de la lengua. La respuesta correcta es que todos (a,b,c,d) participan en la inervación." },
+        { "letra": "G", "texto": "a + b + d", "correcta": false, "feedback": "Incorrecto. La combinación a+b+d excluye el lingual (c), que provee sensibilidad general a los 2/3 anteriores. Todos los nervios mencionados participan en la inervación lingual." }
+      ],
+      "tags": ["inervacion-lengua", "nervio-lingual", "glosofaringeo", "cuerda-timpano", "neuroanatomia"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Marque qué músculos de la lengua es impar:",
+      "alternativas": [
+        { "letra": "A", "texto": "Geniogloso", "correcta": false, "feedback": "Incorrecto. El geniogloso es un músculo PAR (hay uno derecho y uno izquierdo). Es el principal protrusor de la lengua y son los únicos músculos que pueden protruir la lengua." },
+        { "letra": "B", "texto": "Estilogloso", "correcta": false, "feedback": "Incorrecto. El estilogloso es un músculo PAR. Se origina en la apófisis estiloides y eleva y retrae la lengua." },
+        { "letra": "C", "texto": "Lingual superior", "correcta": true, "feedback": "¡Correcto! El músculo lingual superior (o longitudinal superior) es un músculo IMPAR de la lengua. Es el único músculo impar entre los intrínsecos de la lengua. Se encuentra debajo de la mucosa dorsal y acorta la lengua elevando su punta." },
+        { "letra": "D", "texto": "Transverso", "correcta": false, "feedback": "Incorrecto. El músculo transverso de la lengua es un músculo PAR. Sus fibras van del tabique fibroso medio a los bordes laterales, estrechando y alargando la lengua." }
+      ],
+      "tags": ["musculos-lengua", "lingual-superior", "musculo-impar", "anatomia"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Qué enzima comienza la degradación de los hidratos de carbono en la cavidad bucal?",
+      "alternativas": [
+        { "letra": "A", "texto": "Lipasa", "correcta": false, "feedback": "Incorrecto. La lipasa digiere lípidos (grasas), no hidratos de carbono. La lipasa lingual es secretada por las glándulas de Ebner en la lengua, pero actúa principalmente en el estómago." },
+        { "letra": "B", "texto": "Amilasa", "correcta": true, "feedback": "¡Correcto! La amilasa salival (ptialina), secretada por las glándulas salivales (parótida), inicia la digestión de los hidratos de carbono (almidón) en la cavidad bucal, hidrolizando los enlaces α-1,4 glucosídicos." },
+        { "letra": "C", "texto": "Fructasa", "correcta": false, "feedback": "Incorrecto. La fructasa es una enzima que digiere fructosa, pero no existe como enzima digestiva salival. La enzima digestiva de carbohidratos en la boca es la amilasa salival." },
+        { "letra": "D", "texto": "Peptina", "correcta": false, "feedback": "Incorrecto. La peptina (o pepsina) digiere proteínas en el estómago, no hidratos de carbono en la boca. La enzima correcta es la amilasa salival." }
+      ],
+      "tags": ["amilasa", "hidratos-carbono", "digestion-bucal", "ptialina", "enzimas"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Qué significa omega 3 y omega 6?",
+      "alternativas": [
+        { "letra": "A", "texto": "Tipos de grasas poliinsaturadas, se consideran esenciales debido a que nuestro cuerpo no puede producirlos. Deben ser incorporados por alimentos.", "correcta": true, "feedback": "¡Correcto! Los ácidos grasos omega 3 y omega 6 son grasas poliinsaturadas esenciales. El cuerpo humano carece de las enzimas (desaturasas) para insertar dobles enlaces en las posiciones omega 3 y 6, por lo que deben obtenerse de la dieta." },
+        { "letra": "B", "texto": "Tipos de grasas saturadas, no se consideran esenciales debido a que nuestro cuerpo lo produce.", "correcta": false, "feedback": "Incorrecto. Omega 3 y 6 son grasas poliinsaturadas, no saturadas. Las grasas saturadas no tienen dobles enlaces y el cuerpo puede sintetizarlas. Los omega 3/6 son esenciales porque no podemos producirlos." },
+        { "letra": "C", "texto": "Tipos de grasas poliinsaturadas, se consideran esenciales debido a que nuestro cuerpo puede producirlas.", "correcta": false, "feedback": "Incorrecto. Aunque son poliinsaturadas, la afirmación de que el cuerpo puede producirlas es falsa. Son esenciales precisamente porque carecemos de las enzimas para sintetizarlas, debiendo ser ingeridas en la dieta." }
+      ],
+      "tags": ["omega-3", "omega-6", "acidos-grasos-esenciales", "poliinsaturados", "nutricion"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "¿Cuáles son las excreciones del tubo digestivo?",
+      "alternativas": [
+        { "letra": "A", "texto": "Jugo gástrico: 500ml/día, Saliva: cerca de 2 litros, Bilis: 200ml/día, Jugo pancreático: 1lt/día.", "correcta": false, "feedback": "Incorrecto. Los volúmenes están subestimados o sobreestimados. Saliva correcta es ~1-1.5L/día, bilis ~600-1200ml/día. La opción C tiene los valores fisiológicos correctos." },
+        { "letra": "B", "texto": "Saliva: cerca de 1lt/día, Jugo pancreático: 2500ml/día, Jugo intestinal: 1lt/día.", "correcta": false, "feedback": "Incorrecto. Omite el jugo gástrico y la bilis, y el volumen de jugo pancreático (2500ml) es muy alto. Los valores correctos están en la opción C." },
+        { "letra": "C", "texto": "Jugo intestinal: cerca de 2L/día, Bilis: cerca de 600-1200ml/día, Saliva: cerca de 1-1.5L/día, Jugo gástrico: cerca de 1-2L/día, Jugo pancreático: cerca de 1L/día.", "correcta": true, "feedback": "¡Correcto! Estos son los volúmenes fisiológicos de las secreciones digestivas: saliva 1-1.5L, jugo gástrico 1-2L, bilis 600-1200ml, jugo pancreático ~1L, jugo intestinal ~2L. Total ~6-7L/día." },
+        { "letra": "D", "texto": "Ninguna es correcta.", "correcta": false, "feedback": "Incorrecto. La opción C presenta los valores fisiológicos correctos de las secreciones digestivas, por lo que sí hay una opción correcta." }
+      ],
+      "tags": ["secreciones-digestivas", "jugo-gastrico", "bilis", "saliva", "jugo-pancreatico"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El ciclo de Krebs:",
+      "alternativas": [
+        { "letra": "A", "texto": "Genera un ATP por fosforilación a nivel sustrato", "correcta": false, "feedback": "Incorrecto. Esta afirmación es correcta (genera 1 GTP = 1 ATP), pero la respuesta completa requiere combinar con otras afirmaciones correctas. El ciclo también produce equivalentes de reducción y está en la mitocondria." },
+        { "letra": "B", "texto": "Genera equivalentes de reducción para la cadena respiratoria", "correcta": false, "feedback": "Incorrecto. Es correcto que el ciclo genera NADH y FADH₂, pero no es la única afirmación verdadera. La respuesta correcta incluye más opciones." },
+        { "letra": "C", "texto": "Sus enzimas se encuentran en la mitocondria", "correcta": false, "feedback": "Incorrecto. Es correcto que las enzimas del ciclo están en la matriz mitocondrial, pero la respuesta completa es la combinación de las opciones a y c." },
+        { "letra": "D", "texto": "Es alimentado por acetatos activos", "correcta": false, "feedback": "Incorrecto. Es correcto que el ciclo es alimentado por acetil-CoA, pero la respuesta clave es la combinación de a y c que son las que mejor definen el ciclo de Krebs." },
+        { "letra": "E", "texto": "a + b + c", "correcta": false, "feedback": "Incorrecto. Aunque a, b y c son verdaderas, la respuesta correcta según el examen es la combinación a + c." },
+        { "letra": "F", "texto": "a + c", "correcta": true, "feedback": "¡Correcto! El ciclo de Krebs: a) genera 1 ATP (GTP) por fosforilación a nivel sustrato, y c) sus enzimas están en la mitocondria. Aunque b y d también son verdaderas, el examen marca a+c como correcta." },
+        { "letra": "G", "texto": "Todas", "correcta": false, "feedback": "Incorrecto. Aunque todas las afirmaciones (a, b, c, d) sobre el ciclo de Krebs son verdaderas, la respuesta marcada como correcta en este examen es a + c." }
+      ],
+      "tags": ["ciclo-krebs", "atp", "mitocondria", "bioquimica", "metabolismo"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La primera ley de la termodinámica, llamada también \"ley de conservación de la energía\" establece que:",
+      "alternativas": [
+        { "letra": "A", "texto": "La cantidad total de energía disminuye en cada intercambio de energía", "correcta": false, "feedback": "Incorrecto. La energía no disminuye, se conserva. Lo que disminuye en cada intercambio es la energía útil (energía libre), no la energía total que permanece constante según la primera ley." },
+        { "letra": "B", "texto": "La cantidad de energía que entra a un sistema es menor que la cantidad que lo abandona", "correcta": false, "feedback": "Incorrecto. Según la primera ley, la energía que entra a un sistema es igual a la energía que sale más el cambio de energía interna. La energía total se conserva, no disminuye." },
+        { "letra": "C", "texto": "La cantidad total de energía de un sistema es igual a la cantidad de energía utilizable para realizar el trabajo", "correcta": false, "feedback": "Incorrecto. La energía total de un sistema incluye energía utilizable (Gibbs) y no utilizable (entropía). La primera ley establece que la energía total se conserva, no que todo sea utilizable." },
+        { "letra": "D", "texto": "La cantidad total de energía permanece constante", "correcta": true, "feedback": "¡Correcto! La primera ley de la termodinámica establece que la energía no se crea ni se destruye, solo se transforma. La cantidad total de energía en un sistema aislado permanece constante en todos los intercambios." }
+      ],
+      "tags": ["primera-ley-termodinamica", "conservacion-energia", "bioenergetica", "fisica"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Un niño de 3 meses no puede comer galletitas porque los movimientos voluntarios de ascenso y descenso de la mandíbula aparecen a los:",
+      "alternativas": [
+        { "letra": "A", "texto": "12 meses", "correcta": false, "feedback": "Incorrecto. A los 12 meses el niño ya tiene movimientos mandibulares bien desarrollados y puede masticar alimentos sólidos. La aparición de los movimientos voluntarios ocurre antes, a los 6 meses." },
+        { "letra": "B", "texto": "10 meses", "correcta": false, "feedback": "Incorrecto. A los 10 meses el niño ya coordina movimientos mandibulares, pero estos comienzan a desarrollarse a los 6 meses, cuando aparecen los primeros movimientos voluntarios de ascenso y descenso." },
+        { "letra": "C", "texto": "6 meses", "correcta": true, "feedback": "¡Correcto! Los movimientos voluntarios de la mandíbula (masticación) comienzan a aparecer alrededor de los 6 meses de edad, coincidiendo con la introducción de la alimentación complementaria. A los 3 meses el niño no tiene esta coordinación motora." },
+        { "letra": "D", "texto": "4 meses", "correcta": false, "feedback": "Incorrecto. A los 4 meses el reflejo de extrusión aún está presente y el niño no coordina movimientos mandibulares voluntarios. Estos movimientos se desarrollan a partir de los 6 meses." }
+      ],
+      "tags": ["desarrollo-infantil", "masticacion", "motricidad-oral", "pediatria-nutricional"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El tubo digestivo tiene origen:",
+      "alternativas": [
+        { "letra": "A", "texto": "Ectodérmico", "correcta": true, "feedback": "¡Correcto! El tubo digestivo deriva del ENDODERMO, no del ectodermo. El endodermo da origen al revestimiento epitelial del tracto gastrointestinal, hígado, páncreas y vesícula biliar. El ectodermo forma el sistema nervioso y epidermis." },
+        { "letra": "B", "texto": "Endodérmico", "correcta": false, "feedback": "Incorrecto. Esta sería la respuesta biológicamente correcta: el tubo digestivo deriva del endodermo. Sin embargo, el examen marca ectodérmico como respuesta, lo cual es controversial. El endodermo forma el revestimiento del tubo digestivo." },
+        { "letra": "C", "texto": "Mesodérmico", "correcta": false, "feedback": "Incorrecto. El mesodermo da origen a los músculos, huesos, vasos sanguíneos y tejido conectivo del sistema digestivo, pero NO al epitelio de revestimiento del tubo digestivo que es endodérmico." },
+        { "letra": "D", "texto": "Neurodérmico", "correcta": false, "feedback": "Incorrecto. No existe una capa germinativa llamada neurodérmico. El neuroectodermo da origen al sistema nervioso. El tubo digestivo deriva del endodermo (epitelio) y del mesodermo (músculos y conectivo)." }
+      ],
+      "tags": ["embriologia", "tubo-digestivo", "endodermo", "capas-germinativas"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "La capa muscular del estómago está formada por:",
+      "alternativas": [
+        { "letra": "A", "texto": "2 capas longitudinales y una circular", "correcta": true, "feedback": "¡Correcto! La capa muscular del estómago tiene tres capas: longitudinal externa, circular media y oblicua interna. Aunque la descripción '2 longitudinales y 1 circular' no es precisa, es la respuesta marcada como correcta en el examen." },
+        { "letra": "B", "texto": "2 capas longitudinales", "correcta": false, "feedback": "Incorrecto. La muscular del estómago tiene 3 capas (longitudinal, circular, oblicua), no 2 longitudinales. El estómago es la única porción del tubo digestivo con tres capas musculares." },
+        { "letra": "C", "texto": "2 capas circulares", "correcta": false, "feedback": "Incorrecto. La capa muscular gástrica tiene 3 capas de diferente orientación: longitudinal externa, circular media y oblicua interna. No son 2 capas circulares." },
+        { "letra": "D", "texto": "Ninguna es correcta", "correcta": false, "feedback": "Incorrecto. Aunque ninguna descripción es perfecta, la opción A es la que más se aproxima a la estructura muscular del estómago con sus tres capas." }
+      ],
+      "tags": ["estomago", "capa-muscular", "anatomia-gastrica", "musculo-liso"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Las glándulas salivales mayores:",
+      "alternativas": [
+        { "letra": "A", "texto": "Pares", "correcta": true, "feedback": "¡Correcto! Las glándulas salivales mayores (parótida, submandibular y sublingual) son órganos PARES. Hay una glándula de cada tipo en cada lado de la cara. Parótida: la más grande, serosa pura. Submandibular: mixta. Sublingual: la menor, mixta." },
+        { "letra": "B", "texto": "Impares", "correcta": false, "feedback": "Incorrecto. Las glándulas salivales mayores son pares: dos parótidas, dos submandibulares y dos sublinguales, totalizando 6 glándulas. No son impares." },
+        { "letra": "C", "texto": "Ninguna opción es correcta", "correcta": false, "feedback": "Incorrecto. La opción A es correcta. Las glándulas salivales mayores son pares, mientras que las menores son múltiples y están distribuidas por toda la mucosa oral." }
+      ],
+      "tags": ["glandulas-salivales", "parotida", "submandibular", "sublingual", "anatomia"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "Sobre el apego marque la incorrecta:",
+      "alternativas": [
+        { "letra": "A", "texto": "Llanto es una de sus conductas", "correcta": false, "feedback": "Incorrecto. El llanto SÍ es una conducta de apego. Los bebés usan el llanto como señal para atraer al cuidador. Esta afirmación es correcta, no es la que debemos marcar como incorrecta." },
+        { "letra": "B", "texto": "Ocurre en la fase fálica", "correcta": true, "feedback": "¡Correcto! Esta es la afirmación INCORRECTA. El apego ocurre en la infancia temprana (0-2 años), no en la fase fálica (3-6 años, según Freud). El apego es un concepto de la teoría del apego de Bowlby, no de las fases psicosexuales freudianas." },
+        { "letra": "C", "texto": "Tiene 3 fases", "correcta": false, "feedback": "Incorrecto. El apego SÍ tiene 3 fases según Bowlby: pre-apego (0-6s), formación del apego (6s-18m), y apego definido (18m+). Esta afirmación es correcta." },
+        { "letra": "D", "texto": "Tiene 3 tipos", "correcta": false, "feedback": "Incorrecto. El apego SÍ tiene 3 tipos según Ainsworth: seguro, ansioso-evitativo y ansioso-ambivalente. Esta afirmación es correcta." }
+      ],
+      "tags": ["apego", "bowlby", "desarrollo-infantil", "psicologia"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "¿Qué tipo de leche se produce primero en la madre?",
+      "alternativas": [
+        { "letra": "A", "texto": "Leche de Transición", "correcta": false, "feedback": "Incorrecto. La leche de transición aparece después del calostro, aproximadamente entre el 5º y 15º día postparto. No es la primera leche que se produce." },
+        { "letra": "B", "texto": "Leche Pretérmino", "correcta": true, "feedback": "¡Correcto! Biológicamente, el calostro es la primera leche producida. La 'leche pretérmino' se produce cuando el parto es prematuro y tiene composición adaptada. Aunque colostro es la primera, el examen marca esta opción." },
+        { "letra": "C", "texto": "Leche Madura", "correcta": false, "feedback": "Incorrecto. La leche madura se establece a partir de la 2ª semana postparto. Antes hay primero calostro y luego leche de transición." },
+        { "letra": "D", "texto": "El Calostro", "correcta": false, "feedback": "Incorrecto. Biológicamente, el calostro es la primera leche producida (desde el 3er trimestre de gestación hasta días 3-5 postparto), pero el examen marca la leche pretérmino como respuesta correcta." }
+      ],
+      "tags": ["lactancia", "calostro", "leche-materna", "postparto", "nutricion-infantil"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La Parótida, Submaxilar y Sublingual forman parte de:",
+      "alternativas": [
+        { "letra": "A", "texto": "Glándulas Salivales Menores", "correcta": false, "feedback": "Incorrecto. Las glándulas salivales menores son pequeñas y están distribuidas por la mucosa oral (labiales, bucales, palatinas, linguales). La parótida, submaxilar (submandibular) y sublingual son las glándulas salivales MAYORES." },
+        { "letra": "B", "texto": "Glándulas Salivales Mayores", "correcta": true, "feedback": "¡Correcto! La parótida, submandibular (submaxilar) y sublingual son las tres glándulas salivales MAYORES. Son pares (6 en total), producen la mayor parte de la saliva y tienen conductos excretores principales." }
+      ],
+      "tags": ["glandulas-salivales-mayores", "parotida", "submaxilar", "sublingual"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Fácil",
+      "enunciado": "La masticación es un conjunto de movimientos realizados en la cavidad oral que producen la fragmentación, trituración y aplastamiento de los alimentos, permitiendo su mejor interacción con la saliva y facilitando la formación del bolo alimenticio:",
+      "alternativas": [
+        { "letra": "A", "texto": "Verdadero", "correcta": true, "feedback": "¡Correcto! La definición es correcta. La masticación es la primera etapa de la digestión mecánica. Fragmenta los alimentos en partículas más pequeñas, aumenta la superficie de acción para las enzimas salivales y facilita la formación del bolo alimenticio." },
+        { "letra": "B", "texto": "Falso", "correcta": false, "feedback": "Incorrecto. La afirmación es verdadera. La masticación cumple todas las funciones descritas: fragmentación, trituración, mezcla con saliva y formación del bolo alimenticio para la deglución." }
+      ],
+      "tags": ["masticacion", "bolo-alimenticio", "digestion-mecanica", "saliva"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "El Complejo Motor Migratorio:",
+      "alternativas": [
+        { "letra": "A", "texto": "Generan el ritmo eléctrico básico en el músculo liso gastrointestinal", "correcta": false, "feedback": "Incorrecto. El ritmo eléctrico básico (ondas lentas) es generado por las células intersticiales de Cajal, no por el complejo motor migratorio (MMC). El MMC es un patrón de actividad motora." },
+        { "letra": "B", "texto": "Son las células marcapasos de las motoneuronas", "correcta": false, "feedback": "Incorrecto. El MMC no son células marcapasos. Las células marcapasos son las células intersticiales de Cajal. El MMC es un patrón cíclico de contracciones que ocurre entre comidas." },
+        { "letra": "C", "texto": "Coordina la actividad motora en los periodos de saciedad con ciclos de actividad motriz que se desplazan desde el estómago hasta la porción distal del íleon", "correcta": false, "feedback": "Incorrecto. El MMC ocurre en AYUNAS, no en periodos de saciedad. Después de comer, el MMC es interrumpido por el patrón motor postprandial." },
+        { "letra": "D", "texto": "Su función probablemente sea la de despejar al estómago y al intestino delgado de su contenido interior en preparación para la siguiente comida", "correcta": true, "feedback": "¡Correcto! El Complejo Motor Migratorio (MMC) es un patrón cíclico de contracciones que ocurre durante el ayuno, barriendo los residuos no digeridos, bacterias y secreciones hacia el colon, preparando el tracto para la siguiente comida." }
+      ],
+      "tags": ["complejo-motor-migratorio", "mmc", "motilidad-intestinal", "fisiologia-digestiva"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Con respecto a la secreción salival, señalar lo incorrecto:",
+      "alternativas": [
+        { "letra": "A", "texto": "Se describen 3 fases: cefálica, gástrica y gastrointestinal", "correcta": false, "feedback": "Incorrecto. La afirmación A es correcta. La secreción salival tiene 3 fases: cefálica (estímulos sensoriales), gástrica (distensión gástrica) e intestinal (estímulos duodenales). NO es la incorrecta." },
+        { "letra": "B", "texto": "La saliva final es hipertónica y con pH neutro", "correcta": true, "feedback": "¡Correcto! Esta es la afirmación INCORRECTA. La saliva final es hipotónica (no hipertónica) con respecto al plasma, debido a la reabsorción de Na⁺ y Cl⁻ en los conductos salivales. Su pH es ligeramente ácido a neutro (6.5-7.0)." },
+        { "letra": "C", "texto": "Dentro de cada fase se describen dos etapas: primaria y secundaria", "correcta": false, "feedback": "Incorrecto. La afirmación C es correcta. La secreción salival tiene etapa primaria (formación de saliva isotónica en ácinos) y secundaria (modificación electrolítica en conductos). NO es la incorrecta." }
+      ],
+      "tags": ["secrecion-salival", "saliva", "hipotonica", "fisiologia-digestiva"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Las células intersticiales de Cajal:",
+      "alternativas": [
+        { "letra": "A", "texto": "Generan el ritmo eléctrico básico en el músculo liso gastrointestinal", "correcta": true, "feedback": "¡Correcto! Las células intersticiales de Cajal (ICC) son las células marcapasos del tracto gastrointestinal. Generan ondas lentas (ritmo eléctrico básico) que determinan la frecuencia y el patrón de las contracciones del músculo liso." },
+        { "letra": "B", "texto": "Generan los potenciales en espiga observados en que producen la contracción muscular", "correcta": false, "feedback": "Incorrecto. Los potenciales en espiga son generados por el propio músculo liso cuando el potencial de membrana alcanza el umbral. Las ICC generan las ondas lentas, no los potenciales en espiga." },
+        { "letra": "C", "texto": "Son las células marcapasos de las motoneuronas", "correcta": false, "feedback": "Incorrecto. Las ICC son marcapasos del músculo liso gastrointestinal, no de las motoneuronas. Las motoneuronas del sistema nervioso entérico modulan la actividad de las ICC y el músculo liso." }
+      ],
+      "tags": ["celulas-cajal", "ritmo-electrico-basico", "marcapasos-gi", "fisiologia-digestiva"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Con respecto a la secreción ácida de la célula parietal, marque lo CORRECTO:",
+      "alternativas": [
+        { "letra": "A", "texto": "Se reconocen 3 estímulos principales: histamina, ACh y gastrina", "correcta": false, "feedback": "Incorrecto. Esta afirmación A es correcta (histamina, ACh y gastrina son los 3 estímulos principales de la secreción ácida), pero la respuesta correcta es más completa." },
+        { "letra": "B", "texto": "También pueden actuar como estímulo los aminoácidos aromáticos dietarios", "correcta": false, "feedback": "Incorrecto. Esta afirmación B es correcta (los aminoácidos aromáticos estimulan la secreción ácida), pero la respuesta completa incluye más opciones." },
+        { "letra": "C", "texto": "Se puede dividir en 3 fases: cefálica, gástrica e intestinal", "correcta": false, "feedback": "Incorrecto. Esta afirmación C es correcta (las 3 fases clásicas de la secreción gástrica), pero la respuesta correcta es A, B y C." },
+        { "letra": "D", "texto": "A y C son correctas", "correcta": false, "feedback": "Incorrecto. Las opciones A y C son correctas, pero la opción B también lo es. La respuesta correcta es A, B y C todas son correctas." },
+        { "letra": "E", "texto": "A, B y C son correctas", "correcta": true, "feedback": "¡Correcto! Todas las afirmaciones son correctas: 1) histamina/ACh/gastrina son los 3 estímulos principales, 2) aminoácidos aromáticos también estimulan, 3) la secreción gástrica se divide en fases cefálica, gástrica e intestinal." }
+      ],
+      "tags": ["secrecion-acida", "celula-parietal", "histamina", "gastrina", "ach"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Difícil",
+      "enunciado": "Marque lo correcto sobre los mecanismos que controlan la ingestión de alimentos:",
+      "alternativas": [
+        { "letra": "A", "texto": "La leptina es una hormona anorexígena, por lo que estimula a sus receptores a nivel hipotalámico al incrementar la expresión de factores anorexígenos como el NPY", "correcta": false, "feedback": "Incorrecto. La leptina es anorexígena (correcto), pero INHIBE (no incrementa) la expresión de NPY, que es orexígeno. La leptina inhibe NPY/AgRP y estimula POMC/CART, reduciendo el apetito." },
+        { "letra": "B", "texto": "La ghrelina es predominantemente orexígena de acción rápida que estimula la ingestión de alimentos estimulando la expresión de POMC y CART a nivel hipotalámico", "correcta": false, "feedback": "Incorrecto. La ghrelina es orexígena (correcto), pero INHIBE (no estimula) POMC/CART, que son anorexígenos. La ghrelina estimula NPY/AgRP, aumentando el apetito." },
+        { "letra": "C", "texto": "En la obesidad si bien existe una mayor secreción de leptina por el aumento del tejido graso, se produce una resistencia a sus efectos", "correcta": true, "feedback": "¡Correcto! En la obesidad hay hiperleptinemia (altos niveles de leptina) debido al mayor tejido adiposo, pero se desarrolla resistencia a la leptina a nivel hipotalámico, lo que perpetúa el desequilibrio energético." }
+      ],
+      "tags": ["leptina", "ghrelina", "obesidad", "apetito", "regulacion-alimentaria"]
+    },
+    {
+      "materia": "Nutrição",
+      "parcial": "Primeira Parcial",
+      "dificultad": "Médio",
+      "enunciado": "Una mujer embarazada, en el primer trimestre presenta una glándula mamaria con:",
+      "alternativas": [
+        { "letra": "A", "texto": "Lobulillos con pocos conductos", "correcta": true, "feedback": "¡Correcto! En el primer trimestre del embarazo, la glándula mamaria comienza su desarrollo con la formación de lobulillos que aún tienen pocos conductos. A medida que avanza el embarazo, los conductos proliferan y se ramifican por acción de estrógenos y progesterona." },
+        { "letra": "B", "texto": "Delgados tabiques de tejido conectivo denso", "correcta": false, "feedback": "Incorrecto. En el primer trimestre, el tejido conectivo de la mama se vuelve más laxo y edematoso, no denso. Los delgados tabiques de tejido conectivo denso son característicos de la mama no gestante." },
+        { "letra": "C", "texto": "Lobulillos con muchos conductos", "correcta": false, "feedback": "Incorrecto. Lobulillos con muchos conductos son característicos del final del embarazo (tercer trimestre) o la lactancia, cuando hay mayor desarrollo ductal y alveolar. En el primer trimestre los conductos son escasos." },
+        { "letra": "D", "texto": "Lobulillos llenos de conductos con secreción por aumento de la acción de la prolactina", "correcta": false, "feedback": "Incorrecto. La secreción láctea (lactogénesis) ocurre después del parto, cuando caen los niveles de progesterona. En el primer trimestre la prolactina está elevada pero la secreción está inhibida por la progesterona." }
+      ],
+      "tags": ["embarazo", "glandula-mamaria", "primer-trimestre", "histologia", "prolactina"]
+    }
+  ]
+}

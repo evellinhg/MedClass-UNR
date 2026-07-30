@@ -68,19 +68,16 @@ export function LoginForm({ initialError }: { initialError?: string }) {
   return (
     <div className="w-full max-w-sm">
       <div className="mb-8 text-center">
-        <div className="mx-auto mb-4 flex items-center justify-center">
+        <div className="mx-auto mt-4 mb-4 flex items-center justify-center">
           <Image
             src="/logo.png"
             alt="MedClass Logo"
             width={2000}
             height={562}
-            className="h-12 w-auto object-contain"
+            className="h-16 w-auto object-contain"
             priority
           />
         </div>
-        <h1 className="text-2xl font-bold text-gradient-brand">
-          {mode === "signin" ? "Entrar no MedClass" : "Criar sua conta"}
-        </h1>
         <p className="mt-1 text-sm text-muted-foreground">
           {mode === "signin"
             ? "Acesse seu painel de estudos"

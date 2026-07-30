@@ -29,9 +29,11 @@ function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof us
   const cor = deck.disciplina_base ? getDisciplinaColor(deck.disciplina_base) : getAreaColor(deck.especialidade ?? "")
   const pct = deck.total > 0 ? Math.round((deck.respondidos / deck.total) * 100) : 0
   const concluido = deck.total > 0 && deck.respondidos === deck.total
+  const disciplinaLabel =
+    deck.disciplina_base && (t.cronograma.disciplinaBaseLabel[deck.disciplina_base] ?? deck.disciplina_base)
 
   return (
-    <Link href={`/dashboard/materiais/flashcards/${deck.id}`}>
+    <Link href={`/dashboard/materiais/flashcards/${deck.id}`} className="w-64 shrink-0 sm:w-72">
       <Card
         className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${cor.borderSoft} bg-card ${cor.hoverBorder} ${cor.hoverGlow}`}
       >
@@ -48,7 +50,12 @@ function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof us
         </div>
 
         <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-semibold leading-snug text-foreground">{deck.titulo}</h3>
+          {disciplinaLabel && (
+            <span className="text-[11px] font-medium uppercase tracking-wide" style={{ color: deck.cor_hex }}>
+              {disciplinaLabel}
+            </span>
+          )}
+          <h3 className="mt-0.5 text-sm font-semibold leading-snug text-foreground">{deck.titulo}</h3>
           {deck.descricao && <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{deck.descricao}</p>}
         </div>
 
@@ -105,27 +112,25 @@ export function FlashcardDecksGrid() {
   }, [])
 
   const bySection = useMemo(() => {
-    const porMateria = new Map<string, Map<string, DeckWithProgress[]>>()
+    const porMateria = new Map<string, DeckWithProgress[]>()
     for (const deck of decks) {
       const materiaKey = deck.materia ?? SEM_CATEGORIA
-      const disciplinaKey = deck.disciplina_base ?? SEM_CATEGORIA
-      if (!porMateria.has(materiaKey)) porMateria.set(materiaKey, new Map())
-      const porDisciplina = porMateria.get(materiaKey)!
-      if (!porDisciplina.has(disciplinaKey)) porDisciplina.set(disciplinaKey, [])
-      porDisciplina.get(disciplinaKey)!.push(deck)
+      if (!porMateria.has(materiaKey)) porMateria.set(materiaKey, [])
+      porMateria.get(materiaKey)!.push(deck)
+    }
+
+    const ordemDisciplina = [...DISCIPLINA_BASE_KEYS, SEM_CATEGORIA]
+    const rankDisciplina = (d: DeckWithProgress) => {
+      const idx = ordemDisciplina.indexOf(d.disciplina_base ?? SEM_CATEGORIA)
+      return idx === -1 ? ordemDisciplina.length : idx
     }
 
     const ordemMateria = [...MATERIA_ORDER, SEM_CATEGORIA]
     return ordemMateria
       .filter((m) => porMateria.has(m))
       .map((materiaKey) => {
-        const porDisciplina = porMateria.get(materiaKey)!
-        const ordemDisciplina = [...DISCIPLINA_BASE_KEYS, SEM_CATEGORIA]
-        const disciplinas = ordemDisciplina
-          .filter((d) => porDisciplina.has(d))
-          .map((disciplinaKey) => ({ disciplinaKey, decks: porDisciplina.get(disciplinaKey)! }))
-        const total = disciplinas.reduce((s, d) => s + d.decks.length, 0)
-        return { materiaKey, disciplinas, total }
+        const decksDaMateria = [...porMateria.get(materiaKey)!].sort((a, b) => rankDisciplina(a) - rankDisciplina(b))
+        return { materiaKey, decks: decksDaMateria }
       })
   }, [decks])
 
@@ -156,7 +161,7 @@ export function FlashcardDecksGrid() {
 
   return (
     <div className="space-y-8">
-      {bySection.map(({ materiaKey, disciplinas, total }) => {
+      {bySection.map(({ materiaKey, decks: decksDaMateria }) => {
         const isOpen = !collapsed.has(materiaKey)
         const materiaTitulo =
           materiaKey === SEM_CATEGORIA
@@ -172,7 +177,7 @@ export function FlashcardDecksGrid() {
             >
               <span className="flex items-center gap-2">
                 <h2 className="text-lg font-semibold text-foreground">{materiaTitulo}</h2>
-                <Badge variant="secondary" className="text-[11px]">{total}</Badge>
+                <Badge variant="secondary" className="text-[11px]">{decksDaMateria.length}</Badge>
               </span>
               {isOpen ? (
                 <ChevronUp className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -182,20 +187,9 @@ export function FlashcardDecksGrid() {
             </button>
 
             {isOpen && (
-              <div className="space-y-6">
-                {disciplinas.map(({ disciplinaKey, decks: decksDaDisciplina }) => (
-                  <div key={disciplinaKey}>
-                    <h3 className="mb-3 text-sm font-medium text-muted-foreground">
-                      {disciplinaKey === SEM_CATEGORIA
-                        ? t.flashcardsGrid.semCategoria
-                        : t.cronograma.disciplinaBaseLabel[disciplinaKey] ?? disciplinaKey}
-                    </h3>
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                      {decksDaDisciplina.map((deck) => (
-                        <DeckCard key={deck.id} deck={deck} t={t} />
-                      ))}
-                    </div>
-                  </div>
+              <div className="-mx-1 flex gap-4 overflow-x-auto px-1 pb-2">
+                {decksDaMateria.map((deck) => (
+                  <DeckCard key={deck.id} deck={deck} t={t} />
                 ))}
               </div>
             )}

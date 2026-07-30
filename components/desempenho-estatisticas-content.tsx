@@ -31,6 +31,7 @@ import { Card } from "@/components/ui/card"
 import { useLanguage } from "@/lib/i18n"
 
 const SEM_CATEGORIA = "sem_categoria"
+const NOTA_CORTE = 60
 
 interface DisciplinaStat {
   disciplina: string
@@ -162,19 +163,18 @@ function renderActivePieShape(props: any) {
 
 function SubjectRow({
   subject,
-  variant,
   expanded,
   onToggle,
   t,
 }: {
   subject: ReturnType<typeof buildBySubject>[number]
-  variant: "success" | "warning"
   expanded: boolean
   onToggle: () => void
   t: ReturnType<typeof useLanguage>["t"]
 }) {
-  const barClass = variant === "success" ? "bg-success" : "bg-warning"
-  const textClass = variant === "success" ? "text-success" : "text-warning"
+  const aprovado = subject.percentage >= NOTA_CORTE
+  const barClass = aprovado ? "bg-success" : "bg-destructive"
+  const textClass = aprovado ? "text-success" : "text-destructive"
 
   return (
     <div>
@@ -211,6 +211,9 @@ function SubjectRow({
                 ? t.desempenhoEstatisticas.semCategoria
                 : t.cronograma.disciplinaBaseLabel[d.disciplina] ?? d.disciplina
             const pct = d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0
+            const disciplinaAprovada = pct >= NOTA_CORTE
+            const dBarClass = disciplinaAprovada ? "bg-success" : "bg-destructive"
+            const dTextClass = disciplinaAprovada ? "text-success" : "text-destructive"
             return (
               <div key={d.disciplina}>
                 <div className="mb-1 flex items-center justify-between gap-2">
@@ -219,11 +222,11 @@ function SubjectRow({
                     <span className="text-[11px] text-muted-foreground">
                       {t.desempenhoEstatisticas.acertosDeTotal(d.correct, d.total)}
                     </span>
-                    <span className={`text-xs font-semibold ${textClass}`}>{pct}%</span>
+                    <span className={`text-xs font-semibold ${dTextClass}`}>{pct}%</span>
                   </span>
                 </div>
                 <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                  <div className={`h-full rounded-full transition-all opacity-70 ${barClass}`} style={{ width: `${pct}%` }} />
+                  <div className={`h-full rounded-full transition-all opacity-70 ${dBarClass}`} style={{ width: `${pct}%` }} />
                 </div>
               </div>
             )
@@ -404,8 +407,23 @@ export function DesempenhoEstatisticasContent() {
 
   const bySubject = useMemo(() => buildBySubject(materiaStats, t), [materiaStats, t])
 
-  const topSubjects = bySubject.slice(0, 3)
-  const weakestSubjects = [...bySubject].reverse().slice(0, 3)
+  const topSubjects = bySubject.filter((s) => s.percentage >= NOTA_CORTE)
+  const weakestSubjects = bySubject.filter((s) => s.percentage < NOTA_CORTE)
+
+  const pontosDeAtencao = useMemo(
+    () =>
+      bySubject.flatMap((subject) =>
+        subject.disciplinas
+          .filter((d) => d.disciplina !== SEM_CATEGORIA && d.total > 0 && Math.round((d.correct / d.total) * 100) < NOTA_CORTE)
+          .map((d) => ({
+            materia: subject.materia,
+            disciplina: d.disciplina,
+            label: `${subject.name} - ${t.cronograma.disciplinaBaseLabel[d.disciplina] ?? d.disciplina}`,
+            percentage: Math.round((d.correct / d.total) * 100),
+          }))
+      ),
+    [bySubject, t]
+  )
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(new Set())
   const toggleMateria = (materia: string) =>
     setExpandedMaterias((prev) => {
@@ -629,45 +647,73 @@ export function DesempenhoEstatisticasContent() {
           {t.desempenhoEstatisticas.semDadosPorMateria}
         </Card>
       ) : (
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Card className="border border-success/30 bg-success/5 p-6">
-            <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
-              <TrendingUp className="h-5 w-5 text-success" />
-              {t.desempenhoEstatisticas.mandaBem}
-            </h3>
-            <div className="space-y-4">
-              {topSubjects.map((subject) => (
-                <SubjectRow
-                  key={subject.materia}
-                  subject={subject}
-                  variant="success"
-                  expanded={expandedMaterias.has(subject.materia)}
-                  onToggle={() => toggleMateria(subject.materia)}
-                  t={t}
-                />
-              ))}
-            </div>
-          </Card>
+        <>
+          <p className="text-center text-xs text-muted-foreground">{t.desempenhoEstatisticas.notaCorte}</p>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Card className="border border-success/30 bg-success/5 p-6">
+              <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
+                <TrendingUp className="h-5 w-5 text-success" />
+                {t.desempenhoEstatisticas.mandaBem}
+              </h3>
+              {topSubjects.length === 0 ? (
+                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semAprovadas}</p>
+              ) : (
+                <div className="space-y-4">
+                  {topSubjects.map((subject) => (
+                    <SubjectRow
+                      key={subject.materia}
+                      subject={subject}
+                      expanded={expandedMaterias.has(subject.materia)}
+                      onToggle={() => toggleMateria(subject.materia)}
+                      t={t}
+                    />
+                  ))}
+                </div>
+              )}
+            </Card>
 
-          <Card className="border border-warning/30 bg-warning/5 p-6">
-            <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
-              <TrendingDown className="h-5 w-5 text-warning" />
-              {t.desempenhoEstatisticas.precisaMelhorar}
-            </h3>
-            <div className="space-y-4">
-              {weakestSubjects.map((subject) => (
-                <SubjectRow
-                  key={subject.materia}
-                  subject={subject}
-                  variant="warning"
-                  expanded={expandedMaterias.has(subject.materia)}
-                  onToggle={() => toggleMateria(subject.materia)}
-                  t={t}
-                />
-              ))}
-            </div>
+            <Card className="border border-destructive/30 bg-destructive/5 p-6">
+              <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
+                <TrendingDown className="h-5 w-5 text-destructive" />
+                {t.desempenhoEstatisticas.precisaMelhorar}
+              </h3>
+              {weakestSubjects.length === 0 ? (
+                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semPendencias}</p>
+              ) : (
+                <div className="space-y-4">
+                  {weakestSubjects.map((subject) => (
+                    <SubjectRow
+                      key={subject.materia}
+                      subject={subject}
+                      expanded={expandedMaterias.has(subject.materia)}
+                      onToggle={() => toggleMateria(subject.materia)}
+                      t={t}
+                    />
+                  ))}
+                </div>
+              )}
+            </Card>
+          </div>
+
+          <Card className="border border-destructive/30 bg-destructive/5 p-6">
+            <h3 className="font-semibold text-foreground">{t.desempenhoEstatisticas.pontosDeAtencao}</h3>
+            <p className="mb-4 text-xs text-muted-foreground">{t.desempenhoEstatisticas.pontosDeAtencaoDescricao}</p>
+            {pontosDeAtencao.length === 0 ? (
+              <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semPontosDeAtencao}</p>
+            ) : (
+              <div className="flex flex-wrap gap-2">
+                {pontosDeAtencao.map((p) => (
+                  <span
+                    key={`${p.materia}-${p.disciplina}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-destructive/30 bg-destructive/10 px-3 py-1 text-xs font-medium text-destructive"
+                  >
+                    [{p.label}] · {p.percentage}%
+                  </span>
+                ))}
+              </div>
+            )}
           </Card>
-        </div>
+        </>
       )}
     </div>
   )

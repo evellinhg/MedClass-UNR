@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
-import { ChevronDown, ChevronUp, Loader2 } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -70,6 +70,62 @@ function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof us
         </div>
       </Card>
     </Link>
+  )
+}
+
+function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof useLanguage>["t"] }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateArrows = () => {
+    const el = scrollRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 4)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }
+
+  useEffect(() => {
+    updateArrows()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [decks])
+
+  const scrollByPage = (direction: 1 | -1) => {
+    scrollRef.current?.scrollBy({ left: direction * scrollRef.current.clientWidth * 0.85, behavior: "smooth" })
+  }
+
+  return (
+    <div className="relative">
+      {canScrollLeft && (
+        <button
+          type="button"
+          onClick={() => scrollByPage(-1)}
+          aria-label="Rolar para a esquerda"
+          className="absolute -left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-md hover:bg-accent"
+        >
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+      )}
+      <div
+        ref={scrollRef}
+        onScroll={updateArrows}
+        className="-mx-1 flex gap-4 overflow-x-auto scroll-smooth px-1 pb-2"
+      >
+        {decks.map((deck) => (
+          <DeckCard key={deck.id} deck={deck} t={t} />
+        ))}
+      </div>
+      {canScrollRight && (
+        <button
+          type="button"
+          onClick={() => scrollByPage(1)}
+          aria-label="Rolar para a direita"
+          className="absolute -right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card shadow-md hover:bg-accent"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      )}
+    </div>
   )
 }
 
@@ -186,13 +242,7 @@ export function FlashcardDecksGrid() {
               )}
             </button>
 
-            {isOpen && (
-              <div className="-mx-1 flex gap-4 overflow-x-auto px-1 pb-2">
-                {decksDaMateria.map((deck) => (
-                  <DeckCard key={deck.id} deck={deck} t={t} />
-                ))}
-              </div>
-            )}
+            {isOpen && <DeckRow decks={decksDaMateria} t={t} />}
           </section>
         )
       })}

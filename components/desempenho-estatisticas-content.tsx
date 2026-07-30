@@ -265,6 +265,41 @@ function buildBySubject(materiaStats: MateriaStat[], t: ReturnType<typeof useLan
     .sort((a, b) => b.percentage - a.percentage || b.total - a.total)
 }
 
+function disciplinaPct(d: DisciplinaStat) {
+  return d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0
+}
+
+// Uma mesma matéria pode aparecer nos dois lados: em "manda bem" só entram
+// as disciplinas com >=60% de acertos (e o percentual do cabeçalho reflete
+// só essas), em "precisa melhorar" só as com <60%. Matérias sem disciplina
+// própria (sem_categoria) usam o percentual geral da matéria para decidir
+// o lado, já que não há o que separar.
+function splitBySide(bySubject: ReturnType<typeof buildBySubject>, side: "good" | "bad") {
+  return bySubject.flatMap((subject) => {
+    if (subject.disciplinas.length === 0) {
+      const belongs = side === "good" ? subject.percentage >= NOTA_CORTE : subject.percentage < NOTA_CORTE
+      return belongs ? [subject] : []
+    }
+
+    const filtered = subject.disciplinas.filter((d) =>
+      side === "good" ? disciplinaPct(d) >= NOTA_CORTE : disciplinaPct(d) < NOTA_CORTE
+    )
+    if (filtered.length === 0) return []
+
+    const correct = filtered.reduce((s, d) => s + d.correct, 0)
+    const total = filtered.reduce((s, d) => s + d.total, 0)
+    return [
+      {
+        ...subject,
+        disciplinas: filtered,
+        correct,
+        total,
+        percentage: total > 0 ? Math.round((correct / total) * 100) : 0,
+      },
+    ]
+  })
+}
+
 export function DesempenhoEstatisticasContent() {
   const { t } = useLanguage()
   const [attempts, setAttempts] = useState<Attempt[]>([])
@@ -417,8 +452,8 @@ export function DesempenhoEstatisticasContent() {
 
   const bySubject = useMemo(() => buildBySubject(materiaStats, t), [materiaStats, t])
 
-  const topSubjects = bySubject.filter((s) => s.percentage >= NOTA_CORTE)
-  const weakestSubjects = bySubject.filter((s) => s.percentage < NOTA_CORTE)
+  const topSubjects = splitBySide(bySubject, "good")
+  const weakestSubjects = splitBySide(bySubject, "bad")
 
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(new Set())
   const toggleMateria = (materia: string) =>
@@ -661,6 +696,7 @@ export function DesempenhoEstatisticasContent() {
                       subject={subject}
                       expanded={expandedMaterias.has(subject.materia)}
                       onToggle={() => toggleMateria(subject.materia)}
+                      alwaysOpen
                       t={t}
                     />
                   ))}

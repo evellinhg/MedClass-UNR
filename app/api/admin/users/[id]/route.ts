@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase-admin'
 import { requireAdmin } from '@/lib/require-admin'
+import { logAdminAction } from '@/lib/admin-audit'
 
 export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const admin = await requireAdmin(request)
@@ -55,6 +56,14 @@ export async function PATCH(request: NextRequest, { params }: { params: Promise<
     }
   }
 
+  await logAdminAction({
+    adminId: admin.id,
+    adminEmail: admin.email,
+    action: 'update_user',
+    targetUserId: id,
+    metadata: profileUpdate,
+  })
+
   return NextResponse.json({ ok: true })
 }
 
@@ -84,6 +93,13 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
   if (profileError) {
     return NextResponse.json({ error: profileError.message }, { status: 400 })
   }
+
+  await logAdminAction({
+    adminId: admin.id,
+    adminEmail: admin.email,
+    action: 'delete_user',
+    targetUserId: id,
+  })
 
   return NextResponse.json({ ok: true })
 }

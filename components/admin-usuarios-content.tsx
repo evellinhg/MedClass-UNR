@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { AlertTriangle, Check, Copy, KeyRound, Loader2, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
+import { AlertTriangle, Check, KeyRound, Loader2, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -305,8 +305,7 @@ function UserDetailDialog({
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [resetting, setResetting] = useState(false)
-  const [newPassword, setNewPassword] = useState<string | null>(null)
-  const [copied, setCopied] = useState(false)
+  const [resetSent, setResetSent] = useState(false)
   const [confirmingDelete, setConfirmingDelete] = useState(false)
   const [deleting, setDeleting] = useState(false)
   const [reactivating, setReactivating] = useState(false)
@@ -318,7 +317,7 @@ function UserDetailDialog({
       setPlan(user.plan)
       setRole(user.role)
       setAccessExpiresAt(toDatetimeLocalValue(user.access_expires_at))
-      setNewPassword(null)
+      setResetSent(false)
       setError(null)
       setConfirmingDelete(false)
     }
@@ -391,8 +390,7 @@ function UserDetailDialog({
       setError(body.error ?? "Erro ao redefinir senha.")
       return
     }
-    const body = await res.json()
-    setNewPassword(body.password)
+    setResetSent(true)
   }
 
   const isDeleted = user.status === "deleted"
@@ -505,7 +503,7 @@ function UserDetailDialog({
                 <div>
                   <p className="text-sm font-medium text-foreground">Redefinir senha</p>
                   <p className="text-xs text-muted-foreground">
-                    Gera uma senha aleatória para o cliente entrar e depois trocar no perfil dele.
+                    Envia um email para o cliente definir uma nova senha.
                   </p>
                 </div>
                 <Button
@@ -516,29 +514,14 @@ function UserDetailDialog({
                   disabled={resetting || isDeleted}
                 >
                   {resetting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <KeyRound className="h-3.5 w-3.5" />}
-                  Gerar nova
+                  Enviar email
                 </Button>
               </div>
-              {newPassword && (
-                <div className="mt-3 flex items-center gap-2 rounded-lg bg-muted p-2">
-                  <code className="flex-1 select-all font-mono text-sm text-foreground">{newPassword}</code>
-                  <Button
-                    size="icon-sm"
-                    variant="ghost"
-                    onClick={() => {
-                      navigator.clipboard.writeText(newPassword)
-                      setCopied(true)
-                      setTimeout(() => setCopied(false), 1500)
-                    }}
-                  >
-                    {copied ? <Check className="h-4 w-4 text-success" /> : <Copy className="h-4 w-4" />}
-                  </Button>
+              {resetSent && (
+                <div className="mt-3 flex items-center gap-2 rounded-lg bg-success/10 p-2 text-sm text-success">
+                  <Check className="h-4 w-4 shrink-0" />
+                  Email de redefinição enviado.
                 </div>
-              )}
-              {newPassword && (
-                <p className="mt-2 text-[11px] text-muted-foreground">
-                  Copie e envie ao cliente agora — essa senha não fica salva em nenhum lugar visível depois.
-                </p>
               )}
             </div>
 

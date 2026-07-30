@@ -1,0 +1,668 @@
+[
+  {
+    "documento": "SIMIL 1 PARCIAL TTL tema 4 2023",
+    "total_questoes": 30,
+    "questoes": [
+      {
+        "QUESTAO": "1",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "trabajo material, trabajo mental, trabajo psíquico",
+        "ENUNCIADO": "El médico y la enfermera realizan trabajo material",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. El trabajo material se refiere al trabajo que transforma la naturaleza mediante el uso de materia prima y herramientas. El médico y la enfermera realizan principalmente trabajo mental y psíquico, no material, ya que su labor se centra en el conocimiento, la toma de decisiones y el manejo de emociones, no en la producción de objetos materiales.",
+          "B": "Correcto. El médico y la enfermera no realizan trabajo material, sino trabajo mental (cognitivo) y psíquico (emocional). El trabajo material implica la transformación de materia prima en un objeto, lo cual no corresponde a las profesiones sanitarias."
+        }
+      },
+      {
+        "QUESTAO": "2",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo material, salud mental, salud ocupacional",
+        "ENUNCIADO": "Las enfermedades relacionadas con el trabajo material pertenecen al campo de la salud mental",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las enfermedades relacionadas con el trabajo material no pertenecen al campo de la salud mental, sino al campo de la salud física u ocupacional. El trabajo material implica desgaste físico, lesiones musculoesqueléticas, exposición a agentes tóxicos, etc. La salud mental se relaciona más con el trabajo psíquico y mental.",
+          "B": "Correcto. Las enfermedades derivadas del trabajo material son principalmente de carácter físico (traumatismos, intoxicaciones, enfermedades respiratorias, etc.) y no pertenecen al campo de la salud mental. La salud mental se vincula con el trabajo psíquico y las condiciones psicosociales laborales."
+        }
+      },
+      {
+        "QUESTAO": "3",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo psíquico, trabajo manual, aparato psíquico",
+        "ENUNCIADO": "El trabajo psíquico utiliza trabajo manual.",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. El trabajo psíquico no utiliza trabajo manual. El trabajo psíquico se refiere al procesamiento de emociones, pulsiones y afectos por parte del aparato psíquico. Es un trabajo interno, inconsciente, que no requiere actividad manual.",
+          "B": "Correcto. El trabajo psíquico es una actividad del aparato psíquico que procesa emociones, pulsiones y deseos. No implica trabajo manual ni actividad física. Es un trabajo interno, muchas veces inconsciente, que realizamos para tramitar las exigencias de la realidad, el superyó y el ello."
+        }
+      },
+      {
+        "QUESTAO": "4",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo material, materia prima, producción",
+        "ENUNCIADO": "El trabajo material implica materia prima y un objeto a producir",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "A",
+        "FEEDBACK": {
+          "A": "Correcto. El trabajo material se define justamente por involucrar materia prima que es transformada mediante herramientas para producir un objeto. Es la forma clásica de trabajo descrita por Marx, donde el ser humano actúa sobre la naturaleza para transformarla y obtener bienes materiales.",
+          "B": "Incorrecto. El trabajo material sí implica materia prima y un objeto a producir. Esa es su característica fundamental: tomar elementos de la naturaleza (materia prima) y transformarlos mediante el trabajo en un producto útil. Es el tipo de trabajo típico de la industria, la agricultura y la construcción."
+        }
+      },
+      {
+        "QUESTAO": "5",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo mental, cognición, conciencia",
+        "ENUNCIADO": "El trabajo mental:",
+        "ALTERNATIVAS": {
+          "A": "Es permanente",
+          "B": "Se da igual en todos los trabajadores",
+          "C": "Es inconsciente",
+          "D": "Ninguna"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto. El trabajo mental no es permanente, sino discontinuo. Se realiza en momentos específicos de actividad cognitiva y requiere concentración. No podemos mantener la actividad mental intensa de forma permanente.",
+          "B": "Incorrecto. El trabajo mental no se da igual en todos los trabajadores. Varía según la profesión, la tarea específica y las capacidades cognitivas de cada persona. Un trabajador manual realiza menos trabajo mental que un profesional de la salud o un programador.",
+          "C": "Incorrecto. El trabajo mental no es inconsciente, sino consciente y voluntario. Se refiere a las funciones cognitivas superiores como el razonamiento, el análisis, la toma de decisiones y la resolución de problemas, que requieren conciencia y atención.",
+          "D": "Correcto. Ninguna de las opciones anteriores es correcta. El trabajo mental es consciente, voluntario, discontinuo y varía según el tipo de trabajo y trabajador. Se caracteriza por ser inmaterial y estar vinculado a las funciones cognitivas superiores."
+        }
+      },
+      {
+        "QUESTAO": "6",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo psíquico, aparato psíquico, emociones",
+        "ENUNCIADO": "El trabajo psíquico:",
+        "ALTERNATIVAS": {
+          "A": "Se refiere a las emociones",
+          "B": "No se relaciona con el funcionamiento del aparato psíquico",
+          "C": "Se da en simultáneo con el trabajo mental",
+          "D": "Es permanente en cuanto a su funcionamiento"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto pero incompleto. Si bien el trabajo psíquico incluye el procesamiento de emociones, no se limita solo a ellas. También incluye el trabajo de sueño, el duelo, las pulsiones y otros procesos del aparato psíquico. La opción D es más precisa porque señala su carácter permanente.",
+          "B": "Incorrecto. El trabajo psíquico se relaciona directamente con el funcionamiento del aparato psíquico. Es una actividad fundamental del psiquismo que procesa pulsiones, afectos y representaciones.",
+          "C": "Incorrecto. El trabajo psíquico y el trabajo mental no se dan necesariamente en simultáneo. El trabajo psíquico es muchas veces inconsciente y permanente, mientras que el mental es consciente y discontinuo. Pueden superponerse pero no son simultáneos por definición.",
+          "D": "Correcto. El trabajo psíquico es permanente en cuanto a su funcionamiento. El aparato psíquico está constantemente procesando pulsiones, deseos, emociones y representaciones, incluso durante el sueño (trabajo de sueño). Es una actividad continua e inconsciente."
+        }
+      },
+      {
+        "QUESTAO": "7",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Histología",
+        "TAGS": "músculo liso, hipertrofia, hiperplasia",
+        "ENUNCIADO": "Las células del músculo liso aumentan en tamaño y número.",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las células del músculo liso no aumentan en número (hiperplasia) en condiciones normales en el adulto. Tienen capacidad limitada de mitosis. Pueden aumentar de tamaño (hipertrofia) pero no de número significativamente.",
+          "B": "Correcto. Las células del músculo liso pueden hipertrofiarse (aumentar de tamaño) pero no hiperplasiarse (aumentar en número) de manera significativa en el adulto. Esto contrasta con el músculo esquelético, que tampoco aumenta el número de fibras, y con algunos tipos de músculo liso que sí pueden presentar cierta hiperplasia en situaciones específicas como el útero durante el embarazo."
+        }
+      },
+      {
+        "QUESTAO": "8",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Bioquímica",
+        "TAGS": "miosina, ATPasa, contracción muscular",
+        "ENUNCIADO": "¿Cuál de estas proteínas tiene actividad ATPasa tanto en el músculo esquelético como en el cardíaco?",
+        "ALTERNATIVAS": {
+          "A": "Actina",
+          "B": "Miosina",
+          "C": "Troponina",
+          "D": "Tropomiosina"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. La actina es una proteína filamentosa que forma los filamentos delgados del sarcómero. No posee actividad ATPasa. Su función es servir como sitio de unión para la miosina durante la contracción muscular.",
+          "B": "Correcto. La miosina es la proteína con actividad ATPasa tanto en el músculo esquelético como en el cardíaco. La cabeza de la miosina hidroliza ATP para obtener la energía necesaria para el movimiento de los puentes cruzados y la contracción muscular. Esta actividad es fundamental en ambos tipos musculares.",
+          "C": "Incorrecto. La troponina es un complejo proteico regulador (formado por TnC, TnI y TnT) que participa en la regulación de la contracción al unirse al calcio. No posee actividad ATPasa.",
+          "D": "Incorrecto. La tropomiosina es una proteína filamentosa que cubre los sitios activos de la actina en reposo, impidiendo la unión de la miosina. No tiene actividad catalítica ni hidroliza ATP."
+        }
+      },
+      {
+        "QUESTAO": "9",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "juego, Piaget, desarrollo infantil",
+        "ENUNCIADO": "Las nenas de la UP2 están girando, imitando personajes de un programa televisivo. ¿Qué clase de juego realizan?",
+        "ALTERNATIVAS": {
+          "A": "Sensoriomotor",
+          "B": "Reglado",
+          "C": "Simbólico-representativo",
+          "D": "Ninguno"
+        },
+        "RESPOSTA_CORRETA": "C",
+        "FEEDBACK": {
+          "A": "Incorrecto. El juego sensoriomotor es característico del estadio sensoriomotor de Piaget (0-2 años), donde el niño explora el mundo a través de los sentidos y el movimiento. Imitar personajes televisivos implica representación y simbolismo, no solo actividad sensoriomotriz.",
+          "B": "Incorrecto. El juego reglado implica la aceptación y seguimiento de reglas establecidas. Las nenas que giran imitando personajes están realizando un juego de ficción y representación, no un juego con reglas formales.",
+          "C": "Correcto. El juego simbólico-representativo o juego de ficción es característico del estadio preoperatorio (2-7 años) según Piaget. Las niñas imitan personajes, lo que implica capacidad de representación mental, simbolismo y ficción. Están en la etapa del 'como si', donde un objeto o acción representa otra cosa.",
+          "D": "Incorrecto. La opción correcta es el juego simbólico-representativo, ya que las niñas están usando su imaginación para representar personajes, lo que es una forma de juego claramente identificable dentro de la teoría de Piaget."
+        }
+      },
+      {
+        "QUESTAO": "10",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "Piaget, estadio preoperatorio, juego simbólico",
+        "ENUNCIADO": "Los niños del problema de la UP2 están todos en la etapa del \"como si\".",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. No todos los niños están en la etapa del 'como si'. Dependiendo de la edad y el estadio de desarrollo, algunos niños pueden estar en estadios previos (sensoriomotor) o posteriores (operaciones concretas). La etapa del 'como si' corresponde al juego simbólico del estadio preoperatorio.",
+          "B": "Correcto. No todos los niños se encuentran en la misma etapa de desarrollo cognitivo. La etapa del 'como si' (juego simbólico) es característica del estadio preoperatorio según Piaget, pero niños de diferentes edades pueden estar en diferentes estadios. El problema UP2 presenta niños de distintas edades, por lo que no todos están en la misma etapa."
+        }
+      },
+      {
+        "QUESTAO": "11",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Difícil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "motoneurona superior, reflejo miotático, parálisis",
+        "ENUNCIADO": "Señale la opción correcta:",
+        "ALTERNATIVAS": {
+          "A": "Las aferencias sensitivas resultan en la abolición del reflejo miotático y de la motilidad voluntaria",
+          "B": "En el miembro afectado, la lesión de la motoneurona superior resulta en la abolición del movimiento voluntario",
+          "C": "La raíz posterior segmentaria resulta en la abolición del reflejo miotático y de la motilidad voluntaria",
+          "D": "La motoneurona superior resulta en la abolición de los reflejos miotáticos"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las aferencias sensitivas son necesarias para el reflejo miotático (arco reflejo monosináptico) y para la motilidad voluntaria (información propioceptiva consciente). Su lesión afecta ambas funciones, pero no las abole completamente en todos los casos.",
+          "B": "Correcto. La lesión de la motoneurona superior (neurona del tracto corticoespinal que va desde la corteza motora hasta la médula espinal) produce parálisis del movimiento voluntario en el miembro afectado. Sin embargo, los reflejos miotáticos se mantienen o incluso se exacerban (espasticidad).",
+          "C": "Incorrecto. La lesión de la raíz posterior (sensitiva) abole el reflejo miotático porque interrumpe la vía aferente del arco reflejo, pero no afecta directamente la motilidad voluntaria, aunque sí la información sensitiva consciente.",
+          "D": "Incorrecto. La lesión de la motoneurona superior NO abole los reflejos miotáticos. Por el contrario, estos reflejos se mantienen y suelen estar aumentados (hiperreflexia y espasticidad), ya que la vía inhibitoria descendente está dañada."
+        }
+      },
+      {
+        "QUESTAO": "12",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "presión arterial, arteriolas, resistencia vascular",
+        "ENUNCIADO": "La mayor caída de presión en el circuito circulatorio se encuentra a nivel:",
+        "ALTERNATIVAS": {
+          "A": "Arterial, por el importante espesor de la pared",
+          "B": "Arteriolar, por contar con músculo liso en su pared",
+          "C": "Capilar, debido al gran número y ausencia de pared",
+          "D": "Venoso, por poseer válvulas"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las arterias tienen pared gruesa y elástica que les permite soportar altas presiones, pero la caída de presión a su nivel no es la mayor. Su función es conducir la sangre y amortiguar la presión del pulso.",
+          "B": "Correcto. La mayor caída de presión en el circuito circulatorio ocurre a nivel arteriolar. Las arteriolas son los vasos de resistencia del sistema circulatorio gracias al músculo liso de su pared, que permite regular el diámetro del vaso y, por tanto, la resistencia vascular periférica. Esta resistencia es responsable de la mayor caída de presión.",
+          "C": "Incorrecto. Los capilares tienen una pared muy fina (endotelio) que permite el intercambio de gases y nutrientes, y aunque son numerosos, la caída de presión a su nivel no es la mayor. La presión capilar es relativamente baja y constante.",
+          "D": "Incorrecto. Las venas tienen baja resistencia al flujo y la presión en su interior es baja. Las válvulas evitan el reflujo pero no generan una caída significativa de presión. La presión venosa central es cercana a 0 mmHg."
+        }
+      },
+      {
+        "QUESTAO": "13",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Difícil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "resistencia vascular, circuitos en paralelo, hemodinámica",
+        "ENUNCIADO": "Muchos de los lechos vasculares se encuentran distribuidos en paralelo, situación que significa:",
+        "ALTERNATIVAS": {
+          "A": "Todos tienen el mismo caudal",
+          "B": "Cuando se suma un lecho, la resistencia total aumenta",
+          "C": "La diferencia de presión que mueve la sangre es la misma para todos",
+          "D": "Todos ejercen la misma resistencia parcial"
+        },
+        "RESPOSTA_CORRETA": "C",
+        "FEEDBACK": {
+          "A": "Incorrecto. En paralelo, los caudales pueden ser diferentes en cada lecho vascular, dependiendo de la resistencia de cada uno. Lo que se conserva es el caudal total (suma de todos los caudales parciales), no el caudal individual.",
+          "B": "Incorrecto. En un circuito en paralelo, cuando se agrega un nuevo lecho vascular, la resistencia total DISMINUYE, no aumenta. Esto se debe a que se agrega una nueva vía para el flujo sanguíneo.",
+          "C": "Correcto. En los circuitos dispuestos en paralelo, la diferencia de presión (ΔP) es la misma para todos los lechos vasculares. Esto se debe a que todos están conectados al mismo punto de entrada (arterias) y al mismo punto de salida (venas). La presión de perfusión es compartida.",
+          "D": "Incorrecto. En paralelo, las resistencias parciales no necesariamente son iguales. Cada lecho vascular tiene su propia resistencia determinada por el grado de vasoconstricción o vasodilatación local. Lo que se cumple es que la resistencia equivalente es menor que la menor de las resistencias parciales."
+        }
+      },
+      {
+        "QUESTAO": "14",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Difícil",
+        "DISCIPLINA_BASE": "Embriología",
+        "TAGS": "circulación fetal, comunicación interventricular, embriología cardiaca",
+        "ENUNCIADO": "Antes del nacimiento se cierra:",
+        "ALTERNATIVAS": {
+          "A": "El conducto arterioso",
+          "B": "La comunicación interventricular",
+          "C": "La comunicación auriculoventricular",
+          "D": "La comunicación interauricular"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. El conducto arterioso (que conecta la arteria pulmonar con la aorta) se cierra después del nacimiento, generalmente en las primeras horas o días de vida, no antes del nacimiento. Durante la vida fetal es necesario para derivar la sangre de los pulmones.",
+          "B": "Correcto. La comunicación interventricular (CIV) se cierra antes del nacimiento, hacia el final del período fetal. El tabique interventricular se forma y se cierra completamente durante la vida intrauterina. Una CIV persistente después del nacimiento es una anomalía congénita.",
+          "C": "Incorrecto. La comunicación auriculoventricular (canal AV) normalmente se cierra durante el desarrollo embrionario temprano (primera mitad del embarazo) cuando el tabique AV divide el canal en las válvulas mitral y tricúspide. No es algo que ocurra justo 'antes del nacimiento'.",
+          "D": "Incorrecto. La comunicación interauricular (CIA), específicamente el foramen oval, se cierra después del nacimiento, cuando la presión en la aurícula izquierda supera a la de la derecha. Durante la vida fetal, el foramen oval está abierto para permitir el paso de sangre oxigenada de la aurícula derecha a la izquierda."
+        }
+      },
+      {
+        "QUESTAO": "15",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "postcarga, impedancia aórtica, función ventricular",
+        "ENUNCIADO": "La postcarga ventricular izquierda se relaciona en forma directa con:",
+        "ALTERNATIVAS": {
+          "A": "La relajación miocárdica",
+          "B": "El retorno venoso",
+          "C": "La impedancia aórtica",
+          "D": "El volumen de fin de diástole"
+        },
+        "RESPOSTA_CORRETA": "C",
+        "FEEDBACK": {
+          "A": "Incorrecto. La relajación miocárdica (lusitropía) es una propiedad del miocardio que influye en la diástole, no en la postcarga. La postcarga es la carga contra la cual el ventrículo debe contraerse para eyectar sangre.",
+          "B": "Incorrecto. El retorno venoso determina la precarga (volumen telediastólico), no la postcarga. La precarga es el grado de estiramiento de las fibras miocárdicas antes de la contracción, mientras que la postcarga es la tensión que debe generar el ventrículo para eyectar la sangre.",
+          "C": "Correcto. La postcarga ventricular izquierda se relaciona directamente con la impedancia aórtica, que es la resistencia y complacencia que ofrece la aorta a la eyección ventricular. A mayor impedancia aórtica (mayor presión aórtica, mayor resistencia), mayor postcarga y más trabajo debe realizar el ventrículo izquierdo.",
+          "D": "Incorrecto. El volumen de fin de diástole o volumen telediastólico es el determinante principal de la precarga, no de la postcarga. Es el volumen de sangre en el ventrículo al final de la diástole, que determina el estiramiento de las fibras miocárdicas."
+        }
+      },
+      {
+        "QUESTAO": "16",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "velocidad lineal, caudal, ecuación de continuidad",
+        "ENUNCIADO": "En una obstrucción vascular se observa que la velocidad lineal media de la sangre aumenta porque:",
+        "ALTERNATIVAS": {
+          "A": "Disminuye la resistencia al flujo",
+          "B": "Se favorece la oxigenación a los tejidos",
+          "C": "Aumenta la energía total de la sangre",
+          "D": "El caudal permanece constante"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto. En una obstrucción vascular la resistencia al flujo aumenta (por la reducción del diámetro del vaso), no disminuye. La velocidad aumenta por otro mecanismo.",
+          "B": "Incorrecto. La obstrucción vascular dificulta la oxigenación de los tejidos porque reduce el flujo sanguíneo. El aumento de velocidad en el punto de obstrucción no favorece la oxigenación.",
+          "C": "Incorrecto. La energía total de la sangre no aumenta en una obstrucción. De hecho, según el principio de Bernoulli, cuando aumenta la velocidad puede disminuir la presión lateral, lo que no implica un aumento de la energía total.",
+          "D": "Correcto. En una obstrucción vascular, para que el caudal (gasto) permanezca constante, la velocidad lineal media debe aumentar en el punto de estrechamiento. Esto se explica por la ecuación de continuidad: Q = A × v, donde Q es constante, el área (A) disminuye, por lo que la velocidad (v) debe aumentar para mantener el mismo caudal."
+        }
+      },
+      {
+        "QUESTAO": "17",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Anatomía",
+        "TAGS": "ventrículo derecho, anatomía cardíaca, paredes ventriculares",
+        "ENUNCIADO": "En relación al Ventrículo Derecho señale lo correcto con respecto a sus paredes:",
+        "ALTERNATIVAS": {
+          "A": "Pared anterior: corresponde a la cara anteroexterna del corazón. Es ligeramente cóncava. Pared inferior: corresponde a la cara diafragmática del corazón. Pared interna: convexa, formada por el tabique interventricular.",
+          "B": "Pared interna: corresponde a la cara anteroexterna del corazón. Pared inferior: corresponde a la cara diafragmática del corazón. Pared anterior: convexa, formada por el tabique interventricular.",
+          "C": "Pared inferior: corresponde a la cara anteroexterna del corazón. Pared anterior: corresponde a la cara diafragmática del corazón. Pared interna: convexa, formada por el tabique interventricular.",
+          "D": "Pared anterior: corresponde a la cara anteroexterna del corazón. Pared interna: corresponde a la cara diafragmática del corazón. Pared inferior: convexa, formada por el tabique interventricular."
+        },
+        "RESPOSTA_CORRETA": "A",
+        "FEEDBACK": {
+          "A": "Correcto. La pared anterior del ventrículo derecho corresponde a la cara anteroexterna del corazón y es ligeramente cóncava. La pared inferior corresponde a la cara diafragmática. La pared interna es convexa y está formada por el tabique interventricular, que separa el ventrículo derecho del izquierdo.",
+          "B": "Incorrecto. La descripción es errónea: la pared interna no es la anteroexterna, la pared anterior no es el tabique interventricular. Se han intercambiado las descripciones de las paredes.",
+          "C": "Incorrecto. La pared inferior no corresponde a la cara anteroexterna ni la pared anterior a la diafragmática. La descripción invierte las relaciones anatómicas correctas.",
+          "D": "Incorrecto. La pared interna no corresponde a la cara diafragmática ni la pared inferior es el tabique interventricular. Las paredes descritas no coinciden con la anatomía del ventrículo derecho."
+        }
+      },
+      {
+        "QUESTAO": "18",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Difícil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "diástole, ciclo cardíaco, llenado ventricular",
+        "ENUNCIADO": "Indique cuál es el orden correcto en el que se suceden los siguientes eventos durante la diástole:",
+        "ALTERNATIVAS": {
+          "A": "Apertura de las válvulas AV > fase isovolumétrica diastólica > llenado ventricular pasivo > sístole auricular",
+          "B": "Apertura de las válvulas AV > fase isovolumétrica diastólica > sístole auricular > llenado ventricular pasivo",
+          "C": "Fase isovolumétrica diastólica > apertura de las válvulas AV > llenado ventricular pasivo > sístole auricular",
+          "D": "Apertura de las válvulas AV > llenado ventricular pasivo > sístole auricular > fase isovolumétrica diastólica"
+        },
+        "RESPOSTA_CORRETA": "C",
+        "FEEDBACK": {
+          "A": "Incorrecto. La fase isovolumétrica diastólica ocurre antes de la apertura de las válvulas AV, no después. Además, la sístole auricular es el último evento de la diástole.",
+          "B": "Incorrecto. La fase isovolumétrica diastólica precede a la apertura valvular. El llenado pasivo ocurre inmediatamente después de la apertura de las válvulas AV. La sístole auricular es el evento final.",
+          "C": "Correcto. La diástole comienza con la fase isovolumétrica diastólica (relajación ventricular con válvulas cerradas), luego se abren las válvulas AV y ocurre el llenado ventricular pasivo (rápido y lento), y finalmente la sístole auricular completa el llenado ventricular activo.",
+          "D": "Incorrecto. La fase isovolumétrica diastólica no es el último evento de la diástole sino el primero. El orden correcto comienza con la relajación isovolumétrica."
+        }
+      },
+      {
+        "QUESTAO": "19",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "ley de continuidad, velocidad lineal, área seccional",
+        "ENUNCIADO": "Teniendo en cuenta los conceptos de la ley de continuidad de flujo, podemos afirmar que:",
+        "ALTERNATIVAS": {
+          "A": "La velocidad lineal media es mayor a nivel capilar que en los grandes vasos",
+          "B": "La velocidad lineal media aumenta al disminuir el diámetro de los vasos",
+          "C": "La velocidad lineal media es constante a lo largo de todo el circuito vascular",
+          "D": "La velocidad lineal media aumenta al disminuir el área seccional transversal total"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto. En los capilares el área seccional total es enorme (mayor que en cualquier otro sector), por lo que la velocidad lineal media es la menor de todo el circuito circulatorio, no la mayor.",
+          "B": "Incorrecto. Aunque puede parecer intuitivo que en un vaso individual la velocidad aumenta al disminuir su diámetro, en el sistema circulatorio hay que considerar el área seccional total. En los capilares, individualmente pequeños, el área total combinada es máxima.",
+          "C": "Incorrecto. La velocidad lineal media no es constante a lo largo del circuito. Varía inversamente con el área seccional total: es máxima en la aorta, mínima en los capilares, y aumenta nuevamente en las venas.",
+          "D": "Correcto. Según la ecuación de continuidad (Q = A × v), para un caudal constante, la velocidad lineal media (v) es inversamente proporcional al área seccional transversal total (A). Donde el área total es menor (aorta), la velocidad es mayor; donde el área total es mayor (capilares), la velocidad es menor."
+        }
+      },
+      {
+        "QUESTAO": "20",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Anatomía",
+        "TAGS": "cuerdas tendinosas, válvulas cardíacas, músculos papilares",
+        "ENUNCIADO": "En relación a las cuerdas tendinosas que se desprenden del vértice de las Columnas de 1er orden, señale lo correcto:",
+        "ALTERNATIVAS": {
+          "A": "Se fijan en la cara parietal",
+          "B": "Se fijan en el borde adherente de la válvula",
+          "C": "Se fijan en el borde libre de la válvula",
+          "D": "Son eminencias de tejido muscular de la pared ventricular"
+        },
+        "RESPOSTA_CORRETA": "C",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las cuerdas tendinosas no se fijan en la cara parietal (pared del ventrículo). Se fijan en las valvas de las válvulas auriculoventriculares.",
+          "B": "Incorrecto. Las cuerdas tendinosas no se fijan en el borde adherente (base) de la válvula, sino en el borde libre (margen) de las valvas, donde evitan el prolapso valvular durante la sístole.",
+          "C": "Correcto. Las cuerdas tendinosas de 1er orden se desprenden del vértice de los músculos papilares (columnas de 1er orden) y se fijan en el borde libre de las valvas auriculoventriculares, impidiendo que las valvas se prolapsen hacia las aurículas durante la sístole ventricular.",
+          "D": "Incorrecto. Las eminencias de tejido muscular de la pared ventricular son los propios músculos papilares (columnas de 1er orden), no las cuerdas tendinosas. Las cuerdas tendinosas son estructuras fibrosas que conectan los músculos papilares con las valvas."
+        }
+      },
+      {
+        "QUESTAO": "21",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Biofísica",
+        "TAGS": "Poiseuille, resistencia, radio, viscosidad",
+        "ENUNCIADO": "Con respecto a la ley de Poiseuille, indicar la correcta:",
+        "ALTERNATIVAS": {
+          "A": "Longitud y viscosidad son directamente proporcionales a la resistencia y el radio es inversamente proporcional",
+          "B": "Longitud y viscosidad son inversamente proporcionales a la resistencia y el radio es directamente proporcional",
+          "C": "Longitud y radio son directamente proporcionales a la resistencia y la viscosidad es inversamente proporcional",
+          "D": "Longitud, radio y viscosidad son directamente proporcionales"
+        },
+        "RESPOSTA_CORRETA": "A",
+        "FEEDBACK": {
+          "A": "Correcto. Según la ley de Poiseuille, R = (8 × η × L) / (π × r⁴), donde la resistencia (R) es directamente proporcional a la viscosidad (η) y a la longitud del tubo (L), e inversamente proporcional al radio elevado a la cuarta potencia (r⁴). Esto significa que pequeños cambios en el radio producen grandes cambios en la resistencia.",
+          "B": "Incorrecto. La viscosidad y la longitud son directamente proporcionales a la resistencia, no inversamente. El radio es inversamente proporcional a la resistencia (elevado a la cuarta potencia), no directamente.",
+          "C": "Incorrecto. El radio es inversamente proporcional a la resistencia, no directamente. Además, la viscosidad es directamente proporcional a la resistencia, no inversamente.",
+          "D": "Incorrecto. El radio no es directamente proporcional a la resistencia. De hecho, la resistencia es inversamente proporcional al radio⁴, lo que significa que a mayor radio, menor resistencia."
+        }
+      },
+      {
+        "QUESTAO": "22",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "PAM, PVC, presión arterial media",
+        "ENUNCIADO": "Para que la diferencia de presión en el circuito mayor o sistémico sea igual a la PAM:",
+        "ALTERNATIVAS": {
+          "A": "La PVC debe ser de -20 mmHg",
+          "B": "La PVC debe ser de 0 mmHg",
+          "C": "La PVC debe ser de 10 mmHg",
+          "D": "La PVC debe ser de 100 mmHg"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. La PVC normalmente no es negativa en condiciones fisiológicas. Una PVC de -20 mmHg no es compatible con la vida y no es necesaria para que la ΔP sea igual a la PAM.",
+          "B": "Correcto. La diferencia de presión en el circuito sistémico se calcula como ΔP = PAM - PVC (presión venosa central). Para que ΔP = PAM, la PVC debe ser 0 mmHg. Esto se acerca a la situación real, donde la PVC normal es aproximadamente 0-2 mmHg, por lo que la ΔP es prácticamente igual a la PAM.",
+          "C": "Incorrecto. Si la PVC fuera de 10 mmHg, la ΔP sería PAM - 10, que es menor que la PAM. Valores elevados de PVC indican insuficiencia cardíaca derecha o sobrecarga de volumen.",
+          "D": "Incorrecto. Una PVC de 100 mmHg no es fisiológica y sería incompatible con la vida. La PVC normal es cercana a 0-2 mmHg."
+        }
+      },
+      {
+        "QUESTAO": "23",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "triple desgaste, trabajo infantil",
+        "ENUNCIADO": "Los chicos que trabajan están sometidos a un \"triple desgaste\", que consiste en lo siguiente, excepto:",
+        "ALTERNATIVAS": {
+          "A": "Desgaste por concurrir a la escuela",
+          "B": "Desgaste por los deportes que realiza el niño",
+          "C": "Desgaste por el trabajo que realiza el niño",
+          "D": "Desgaste por trabajo invisible o doméstico"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. El desgaste por concurrir a la escuela SÍ forma parte del triple desgaste del niño trabajador. Asistir a la escuela después de haber trabajado implica un esfuerzo adicional que afecta su rendimiento y descanso.",
+          "B": "Correcto. El desgaste por deportes NO forma parte del concepto de triple desgaste. Los deportes son actividades recreativas y voluntarias que promueven la salud. El triple desgaste incluye: el trabajo mismo, la escuela y el trabajo invisible/doméstico.",
+          "C": "Incorrecto. El desgaste por el trabajo que realiza el niño SÍ es uno de los tres componentes del triple desgaste. Es la causa principal del agotamiento físico y mental.",
+          "D": "Incorrecto. El desgaste por trabajo invisible o doméstico SÍ forma parte del triple desgaste. Muchos niños, especialmente niñas, realizan tareas domésticas que se suman al trabajo y la escuela."
+        }
+      },
+      {
+        "QUESTAO": "24",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "trabajo infantil, pobreza, derechos del niño",
+        "ENUNCIADO": "Respecto del trabajo infantil:",
+        "ALTERNATIVAS": {
+          "A": "Las personas entre 16 y 18 años no están habilitadas por la ley argentina para trabajar bajo ningún concepto",
+          "B": "Se considera que la pobreza es una de las principales causas de la existencia del mismo en nuestra sociedad",
+          "C": "No tiene repercusiones en la salud del niño",
+          "D": "En la medida en que no ponga en riesgo la escolaridad, es deseable que los niños trabajen ya que favorece un desarrollo saludable"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. En Argentina, la ley permite trabajar a partir de los 16 años bajo ciertas condiciones de protección, y de los 14 a 16 años con autorización especial. No es cierto que no estén habilitados.",
+          "B": "Correcto. La pobreza es considerada una de las principales causas del trabajo infantil. Las familias en situación de vulnerabilidad económica recurren al trabajo de los niños como estrategia de supervivencia. Esto crea un ciclo de pobreza y exclusión.",
+          "C": "Incorrecto. El trabajo infantil tiene graves repercusiones en la salud física y mental del niño: afecta el crecimiento, expone a riesgos laborales, produce fatiga crónica, afecta la escolaridad y el desarrollo psicosocial.",
+          "D": "Incorrecto. El trabajo infantil no es deseable aunque no ponga en riesgo la escolaridad. La Convención de los Derechos del Niño establece que los niños tienen derecho a ser protegidos del trabajo y a disfrutar de su infancia, juego y educación."
+        }
+      },
+      {
+        "QUESTAO": "25",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "resistencia vías aéreas, radio, Poiseuille",
+        "ENUNCIADO": "La resistencia de las vías aéreas aumenta cuando:",
+        "ALTERNATIVAS": {
+          "A": "Disminuye su longitud y su radio",
+          "B": "Aumenta su radio",
+          "C": "Aumenta su longitud y su radio",
+          "D": "Disminuye el radio"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto. Si disminuye la longitud, la resistencia disminuiría (son directamente proporcionales). Disminuir el radio sí aumenta la resistencia, pero el efecto combinado no es correcto porque la longitud y la resistencia tienen relación directa.",
+          "B": "Incorrecto. Aumentar el radio disminuye la resistencia, no la aumenta. La resistencia es inversamente proporcional al radio⁴ según la ley de Poiseuille.",
+          "C": "Incorrecto. Aumentar la longitud aumenta la resistencia (relación directa), pero aumentar el radio la disminuye (relación inversa con r⁴). El efecto neto no es un aumento claro de la resistencia.",
+          "D": "Correcto. La resistencia de las vías aéreas aumenta cuando disminuye el radio. Según la ley de Poiseuille, R ∝ 1/r⁴, por lo que pequeñas disminuciones del radio producen grandes aumentos de la resistencia. Esto es clínicamente relevante en enfermedades como el asma o la EPOC."
+        }
+      },
+      {
+        "QUESTAO": "26",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Difícil",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "resistencia vías aéreas, vías grandes, vías pequeñas",
+        "ENUNCIADO": "La resistencia total de las vías aéreas:",
+        "ALTERNATIVAS": {
+          "A": "Las vías aéreas de mayor calibre tienen poca influencia sobre la resistencia",
+          "B": "Es en su mayoría debido a las vías aéreas menores de 2 mm de diámetro",
+          "C": "La conexión en serie permite disminuir la resistencia total del sistema",
+          "D": "La mayor parte de esta resistencia es atribuible a las vías aéreas mayores"
+        },
+        "RESPOSTA_CORRETA": "D",
+        "FEEDBACK": {
+          "A": "Incorrecto. Las vías aéreas de mayor calibre (tráquea, bronquios principales) SÍ tienen gran influencia sobre la resistencia total, a pesar de su mayor diámetro.",
+          "B": "Incorrecto. Contrariamente a lo que se podría pensar, las vías aéreas menores de 2 mm (bronquiolos) contribuyen con menos del 20% de la resistencia total debido a que están dispuestas en paralelo y tienen un área seccional total enorme.",
+          "C": "Incorrecto. La conexión en serie aumenta la resistencia total (las resistencias en serie se suman). La conexión en paralelo es la que disminuye la resistencia total.",
+          "D": "Correcto. Aunque las vías aéreas mayores son menos numerosas, su disposición en serie hace que su resistencia sea la principal contribuyente a la resistencia total de las vías aéreas. Las vías aéreas pequeñas, al estar en paralelo y ser muy numerosas, contribuyen menos individualmente."
+        }
+      },
+      {
+        "QUESTAO": "27",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Fácil",
+        "DISCIPLINA_BASE": "",
+        "TAGS": "adolescencia, identificación, pares, identidad",
+        "ENUNCIADO": "Un adolescente se identifica:",
+        "ALTERNATIVAS": {
+          "A": "Con sus padres",
+          "B": "Con sus pares",
+          "C": "Con sus docentes"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. Durante la adolescencia, los padres dejan de ser la principal referencia identificatoria. La identificación con los padres es característica de la infancia. En la adolescencia se produce un proceso de separación y cuestionamiento de las figuras parentales.",
+          "B": "Correcto. Durante la adolescencia, la identificación principal se desplaza de los padres hacia los pares (grupo de iguales). Los adolescentes buscan pertenencia, aceptación y validación en su grupo de amigos, que se convierte en el principal referente para la construcción de su identidad.",
+          "C": "Incorrecto. Los docentes pueden ser figuras significativas pero no son la principal referencia identificatoria del adolescente. El grupo de pares es el que tiene mayor influencia en la formación de la identidad adolescente."
+        }
+      },
+      {
+        "QUESTAO": "28",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "circulación pulmonar, circulación sistémica, comparación",
+        "ENUNCIADO": "En relación a la comparación entre las circulaciones pulmonar y sistémica, marcar la opción correcta:",
+        "ALTERNATIVAS": {
+          "A": "El volumen en la circulación pulmonar y sistémica es diferente",
+          "B": "La presión en ambas circulaciones es igual",
+          "C": "La presión es diferente, pero las resistencias son iguales",
+          "D": "El flujo es diferente pero las presiones son iguales"
+        },
+        "RESPOSTA_CORRETA": "A",
+        "FEEDBACK": {
+          "A": "Correcto. El volumen sanguíneo en la circulación sistémica es mayor que en la pulmonar. Aproximadamente el 84% del volumen sanguíneo total está en la circulación sistémica y el 16% en la pulmonar en condiciones normales.",
+          "B": "Incorrecto. Las presiones en ambas circulaciones son muy diferentes. La circulación sistémica tiene presiones mucho más altas (PAM ~90-100 mmHg) que la pulmonar (PAP ~15-25 mmHg).",
+          "C": "Incorrecto. Las resistencias también son diferentes. La resistencia vascular sistémica es mucho mayor que la resistencia vascular pulmonar, que es muy baja para facilitar el flujo a través de los pulmones.",
+          "D": "Incorrecto. El flujo sanguíneo (gasto cardíaco) es aproximadamente el mismo en ambas circulaciones (ambos ventrículos eyectan el mismo volumen por minuto, salvo en situaciones patológicas). Ambos circuitos están en serie."
+        }
+      },
+      {
+        "QUESTAO": "29",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "fracción molar, PO2, altitud, alveolo",
+        "ENUNCIADO": "La fracción molar de O2 en el aire disminuye significativamente:",
+        "ALTERNATIVAS": {
+          "A": "A 3000 metros de altitud",
+          "B": "Al pasar de la atmósfera a los alvéolos",
+          "C": "En ambas",
+          "D": "La fracción molar nunca se modifica"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. La fracción molar de O2 NO disminuye con la altitud. La composición del aire (fracciones molares de O2, N2, etc.) permanece constante hasta unos 100 km de altura. Lo que disminuye con la altitud es la presión barométrica total, y por tanto la presión parcial de O2 (PO2 = fracción molar × P total).",
+          "B": "Correcto. La fracción molar de O2 disminuye al pasar del aire atmosférico al alvéolo porque en el alvéolo hay mezcla de gases que incluye CO2 y vapor de agua (H2O). El aire alveolar tiene aproximadamente 14% de O2, 5.3% de CO2, 74% de N2 y 6.2% de H2O.",
+          "C": "Incorrecto. Solo se modifica al pasar al alvéolo, no con la altitud. La altitud afecta la presión parcial pero no la fracción molar.",
+          "D": "Incorrecto. La fracción molar de O2 sí se modifica al pasar del aire atmosférico al alvéolo debido a la humidificación del aire y al intercambio gaseoso."
+        }
+      },
+      {
+        "QUESTAO": "30",
+        "ANO": "2º",
+        "MATERIA": "Trabajo y Tiempo Libre",
+        "PARCIAL": "Primer Parcial",
+        "DIFICULDADE": "Médio",
+        "DISCIPLINA_BASE": "Fisiología",
+        "TAGS": "presión parcial O2, altitud, presión atmosférica",
+        "ENUNCIADO": "Si un individuo se encuentra a 5000 metros por debajo del nivel del mar, disminuye la presión parcial de oxígeno:",
+        "ALTERNATIVAS": {
+          "A": "Verdadero",
+          "B": "Falso"
+        },
+        "RESPOSTA_CORRETA": "B",
+        "FEEDBACK": {
+          "A": "Incorrecto. A 5000 metros por DEBAJO del nivel del mar (es decir, bajo el agua o en una mina profunda), la presión total es mayor, por lo que la presión parcial de O2 aumenta, no disminuye. La presión parcial es Px = Fx × Ptotal, y la Ptotal aumenta por debajo del nivel del mar debido al peso adicional de la columna de aire/agua.",
+          "B": "Correcto. A 5000 metros por debajo del nivel del mar, la presión total es mayor que a nivel del mar, por lo que la presión parcial de O2 AUMENTA, no disminuye. La presión atmosférica aumenta al descender por debajo del nivel del mar debido al mayor peso de la columna de aire."
+        }
+      }
+    ]
+  }
+]

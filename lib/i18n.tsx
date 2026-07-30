@@ -55,6 +55,13 @@ const pt = {
     seuProgresso: "Seu Progresso",
     oQueFazerAgora: "O Que Fazer Agora",
   },
+  planBanner: {
+    freeText:
+      "Você está em uma conta gratuita e por isso tem acesso a apenas 10 questões de teste. Para treinar sem limites, escolha um dos nossos planos disponíveis.",
+    expiredText:
+      "Seu plano gratuito expirou. Para continuar treinando e seguir rumo à sua aprovação, escolha um dos nossos planos disponíveis.",
+    cta: "Ver planos e continuar estudando",
+  },
   homeStats: {
     taxaAcerto: "Taxa de Acerto",
     questoesFeitas: "Questões Feitas",
@@ -811,6 +818,13 @@ const es: typeof pt = {
     continueProgresso: "Continuá tu progreso en el estudio.",
     seuProgresso: "Tu Progreso",
     oQueFazerAgora: "Qué Hacer Ahora",
+  },
+  planBanner: {
+    freeText:
+      "Estás en una cuenta gratuita y por eso tenés acceso a solo 10 preguntas de prueba. Para entrenar sin límites, elegí uno de nuestros planes disponibles.",
+    expiredText:
+      "Tu plan gratuito venció. Para seguir entrenando y encaminarte hacia tu aprobación, elegí uno de nuestros planes disponibles.",
+    cta: "Ver planes y seguir estudiando",
   },
   homeStats: {
     taxaAcerto: "Tasa de Acierto",

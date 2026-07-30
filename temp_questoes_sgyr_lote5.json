@@ -1,0 +1,1406 @@
+[
+  {
+    "QUESTAO": 1,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "1-¿Qué descubrimiento importante hizo Freud acerca de la sexualidad?",
+    "ALTERNATIVAS": {
+      "A": "Que la sexualidad solo es relevante en la adultez.",
+      "B": "Que la sexualidad infantil juega un papel crucial en el desarrollo humano.",
+      "C": "Que la sexualidad es irrelevante para el psicoanálisis.",
+      "D": "Que las personas adultas no experimentan sexualidad."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Que la sexualidad infantil juega un papel crucial en el desarrollo humano.. Freud revolucionó la comprensión de la sexualidad al demostrar que existe desde la infancia, no solo en la adultez.\n\n❌ A) Que la sexualidad solo es relevante en la adultez.. La sexualidad es relevante desde la infancia según Freud.\n❌ C) Que la sexualidad es irrelevante para el psicoanálisis.. La sexualidad es central para el psicoanálisis.\n❌ D) Que las personas adultas no experimentan sexualidad.. Las personas adultas sí experimentan sexualidad, pero Freud se centró en la sexualidad infantil como fundacional."
+  },
+  {
+    "QUESTAO": 2,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "2-Según el psicoanálisis, ¿qué son las zonas erógenas?",
+    "ALTERNATIVAS": {
+      "A": "Áreas del cerebro que controlan el comportamiento sexual.",
+      "B": "Partes del cuerpo que proporcionan placer específico, como la boca, la piel, el ano y los genitales.",
+      "C": "Órganos reproductivos exclusivamente.",
+      "D": "Zonas del cuerpo que solo se activan durante la pubertad."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Partes del cuerpo que proporcionan placer específico, como la boca, la piel, el ano y los genitales.. Freud definió las zonas erógenas como partes del cuerpo (boca, piel, ano, genitales) que proporcionan placer específico en diferentes etapas del desarrollo.\n\n❌ A) Áreas del cerebro que controlan el comportamiento sexual.. Las zonas erógenas son corporales, no cerebrales.\n❌ C) Órganos reproductivos exclusivamente.. No son exclusivamente los órganos reproductivos.\n❌ D) Zonas del cuerpo que solo se activan durante la pubertad.. Las zonas erógenas están activas desde la infancia, no solo en la pubertad."
+  },
+  {
+    "QUESTAO": 3,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "3-¿Cómo afecta la relación con los padres a la búsqueda de placer según el psicoanálisis?",
+    "ALTERNATIVAS": {
+      "A": "Los niños intentan reemplazar a sus padres con sus amistades.",
+      "B": "La relación con los padres no tiene impacto en la búsqueda de placer.",
+      "C": "Los niños tienden a orientarse hacia el padre del sexo opuesto y rechazar al del mismo sexo en sus primeras búsquedas de satisfacción.",
+      "D": "Los niños prefieren la compañía de extraños para su desarrollo emocional."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Los niños tienden a orientarse hacia el padre del sexo opuesto y rechazar al del mismo sexo en sus primeras búsquedas de satisfacción.. En el complejo de Edipo, el niño se orienta hacia el progenitor del sexo opuesto y rechaza al del mismo sexo en sus primeras búsquedas de satisfacción.\n\n❌ A) Los niños intentan reemplazar a sus padres con sus amistades.. No intentan reemplazar a los padres con amistades; la relación edípica es con los padres.\n❌ B) La relación con los padres no tiene impacto en la búsqueda de placer.. La relación con los padres tiene un impacto fundamental.\n❌ D) Los niños prefieren la compañía de extraños para su desarrollo emocional.. La preferencia por extraños no es parte de la teoría freudiana clásica."
+  },
+  {
+    "QUESTAO": 4,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "4-¿Cuál es el enfoque del psicoanálisis hacia la sexualidad en adultos?",
+    "ALTERNATIVAS": {
+      "A": "Centrarse exclusivamente en la sexualidad genital adulta.",
+      "B": "Ignorar cualquier aspecto de la sexualidad en la terapia.",
+      "C": "Trabajar sobre la sexualidad concreta del adulto solo si es el motivo de consulta o afecta otras áreas de su vida.",
+      "D": "Promover la abstinencia como ideal de salud psicológica."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Trabajar sobre la sexualidad concreta del adulto solo si es el motivo de consulta o afecta otras áreas de su vida.. Esta es la respuesta correcta.\n\n❌ A) Centrarse exclusivamente en la sexualidad genital adulta.. Esta alternativa no es correcta.\n❌ B) Ignorar cualquier aspecto de la sexualidad en la terapia.. Esta alternativa no es correcta.\n❌ D) Promover la abstinencia como ideal de salud psicológica.. Esta alternativa no es correcta."
+  },
+  {
+    "QUESTAO": 5,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "5-¿Qué papel juega la relación de amor-hostilidad-identificación con los padres en el desarrollo según el psicoanálisis?",
+    "ALTERNATIVAS": {
+      "A": "Es fundamental para el desarrollo emocional y sexual.",
+      "B": "Define únicamente las relaciones laborales del individuo.",
+      "C": "Puede afectar significativamente las relaciones laborales, amistosas y amorosas si no se resuelve adecuadamente.",
+      "D": "Solo afecta la elección de pareja en la adultez."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Puede afectar significativamente las relaciones laborales, amistosas y amorosas si no se resuelve adecuadamente.. Esta es la respuesta correcta.\n\n❌ A) Es fundamental para el desarrollo emocional y sexual.. Esta alternativa no es correcta.\n❌ B) Define únicamente las relaciones laborales del individuo.. Esta alternativa no es correcta.\n❌ D) Solo afecta la elección de pareja en la adultez.. Esta alternativa no es correcta."
+  },
+  {
+    "QUESTAO": 6,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "6-Según el psicoanálisis, ¿qué importancia tienen las zonas erógenas en el desarrollo humano?",
+    "ALTERNATIVAS": {
+      "A": "Son irrelevantes una vez que el individuo alcanza la pubertad.",
+      "B": "Juegan un papel crucial en las etapas iniciales del desarrollo, influenciando las formas de buscar placer.",
+      "C": "Solo se activan durante actividades sexuales en la adultez.",
+      "D": "Son un concepto desacreditado y ya no se utilizan en el psicoanálisis moderno. temas secundarios y"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Juegan un papel crucial en las etapas iniciales del desarrollo, influenciando las formas de buscar placer.. Esta es la respuesta correcta.\n\n❌ A) Son irrelevantes una vez que el individuo alcanza la pubertad.. Esta alternativa no es correcta.\n❌ C) Solo se activan durante actividades sexuales en la adultez.. Esta alternativa no es correcta.\n❌ D) Son un concepto desacreditado y ya no se utilizan en el psicoanálisis moderno. temas secundarios y. Esta alternativa no es correcta."
+  },
+  {
+    "QUESTAO": 7,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "7-¿Qué papel juegan los conflictos de amor, hostilidad e identificación con los padres en el tratamiento psicoanalítico?",
+    "ALTERNATIVAS": {
+      "A": "Se consideran temas secundarios y raramente se abordan.",
+      "B": "Son el foco principal, independientemente de los problemas presentados por el paciente.",
+      "C": "Se exploran como parte de entender cómo afectan las relaciones actuales del individuo.",
+      "D": "El psicoanálisis moderno los ignora en favor de técnicas más científicas."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Se exploran como parte de entender cómo afectan las relaciones actuales del individuo.. Esta es la respuesta correcta.\n\n❌ A) Se consideran temas secundarios y raramente se abordan.. Esta alternativa no es correcta.\n❌ B) Son el foco principal, independientemente de los problemas presentados por el paciente.. Esta alternativa no es correcta.\n❌ D) El psicoanálisis moderno los ignora en favor de técnicas más científicas.. Esta alternativa no es correcta."
+  },
+  {
+    "QUESTAO": 8,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "8-¿Cuál es el término que utiliza el psicoanálisis para referirse a las áreas del cuerpo que proporcionan placer en la infancia?",
+    "ALTERNATIVAS": {
+      "A": "Zonas de satisfacción.",
+      "B": "Zonas sensitivas.",
+      "C": "Zonas de placer.",
+      "D": "Zonas erógenas."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Zonas erógenas.. Freud denominó \"zonas erógenas\" a las áreas del cuerpo que proporcionan placer en la infancia.\n\n❌ A) Zonas de satisfacción.. \"Zonas de satisfacción\" no es el término freudiano.\n❌ B) Zonas sensitivas.. \"Zonas sensitivas\" no es el término técnico.\n❌ C) Zonas de placer.. \"Zonas de placer\" es descriptivo pero no el término freudiano específico."
+  },
+  {
+    "QUESTAO": 9,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "9-¿Qué diferencia la sexualidad humana de la sexualidad de otros animales?",
+    "ALTERNATIVAS": {
+      "A": "La sexualidad humana es puramente instintiva.",
+      "B": "La sexualidad humana está mediada por la cultura y el lenguaje.",
+      "C": "La sexualidad humana tiene componentes emocionales.",
+      "D": "La sexualidad humana está determinada genéticamente. sexualidad humana no tiene"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) La sexualidad humana está mediada por la cultura y el lenguaje.. La sexualidad humana está mediada por la cultura y el lenguaje, a diferencia de otros animales donde es puramente instintiva.\n\n❌ A) La sexualidad humana es puramente instintiva.. La sexualidad humana no es puramente instintiva; está mediada por la cultura.\n❌ C) La sexualidad humana tiene componentes emocionales.. Sí tiene componentes emocionales, pero la diferencia clave es la mediación cultural y lingüística.\n❌ D) La sexualidad humana está determinada genéticamente. sexualidad humana no tiene. No está determinada genéticamente exclusivamente."
+  },
+  {
+    "QUESTAO": 10,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "10-¿Cómo describió Freud la esencia de la sexualidad humana?",
+    "ALTERNATIVAS": {
+      "A": "Como exclusivamente relacionada con la genitalidad.",
+      "B": "Como una combinación de elementos biológicos y sociales.",
+      "C": "Como un comportamiento instintivo.",
+      "D": "Como una conducta puramente emocional."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Como una combinación de elementos biológicos y sociales.. Freud describió la sexualidad humana como una combinación de elementos biológicos y sociales, integrando lo innato con lo adquirido.\n\n❌ A) Como exclusivamente relacionada con la genitalidad.. No es exclusivamente genital; incluye aspectos sociales y emocionales.\n❌ C) Como un comportamiento instintivo.. No es solo un comportamiento instintivo.\n❌ D) Como una conducta puramente emocional.. No es puramente una conducta emocional."
+  },
+  {
+    "QUESTAO": 11,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "11-¿Qué entiende el psicoanálisis por \"libido\"?",
+    "ALTERNATIVAS": {
+      "A": "Energía de las pulsiones relacionadas con el amor.",
+      "B": "Energía de las pulsiones sexuales exclusivamente.",
+      "C": "Energía de las pulsiones relacionadas con la alimentación.",
+      "D": "Energía de las pulsiones relacionadas con el sueño. las pulsiones sexuales"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": "✅ A) Energía de las pulsiones relacionadas con el amor.. La libido es la energía de las pulsiones relacionadas con el amor, concepto central en la teoría psicoanalítica.\n\n❌ B) Energía de las pulsiones sexuales exclusivamente.. No es exclusivamente sexual; incluye todas las pulsiones amorosas.\n❌ C) Energía de las pulsiones relacionadas con la alimentación.. La alimentación se relaciona con pulsiones de autoconservación.\n❌ D) Energía de las pulsiones relacionadas con el sueño. las pulsiones sexuales. El sueño no está relacionado con la libido."
+  },
+  {
+    "QUESTAO": 12,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "12-¿Cuál es la perspectiva de género en el enfoque de género?",
+    "ALTERNATIVAS": {
+      "A": "Considera los roles de género como determinados por la biología.",
+      "B": "Busca alcanzar la equidad entre los géneros en todas las áreas.",
+      "C": "Niega la existencia de diferencias entre los géneros.",
+      "D": "No tiene en cuenta las relaciones de poder entre los géneros."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Busca alcanzar la equidad entre los géneros en todas las áreas.. La perspectiva de género busca alcanzar la equidad entre los géneros en todas las áreas, reconociendo las desigualdades históricas.\n\n❌ A) Considera los roles de género como determinados por la biología.. Los roles de género no son determinados exclusivamente por la biología.\n❌ C) Niega la existencia de diferencias entre los géneros.. No niega las diferencias entre géneros, busca equidad.\n❌ D) No tiene en cuenta las relaciones de poder entre los géneros.. Sí tiene en cuenta las relaciones de poder entre géneros."
+  },
+  {
+    "QUESTAO": 13,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "13-¿Qué aborda la Declaración Universal de Derechos Sexuales?",
+    "ALTERNATIVAS": {
+      "A": "Garantiza el derecho a la reproducción sin restricciones.",
+      "B": "Protege los derechos de las personas intersexuales exclusivamente.",
+      "C": "Promueve la salud sexual y reproductiva como parte de los derechos humanos.",
+      "D": "Establece normativas sobre la práctica de la anticoncepción. APS"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Promueve la salud sexual y reproductiva como parte de los derechos humanos.. La Declaración Universal de Derechos Sexuales promueve la salud sexual y reproductiva como parte de los derechos humanos fundamentales.\n\n❌ A) Garantiza el derecho a la reproducción sin restricciones.. No garantiza la reproducción sin restricciones.\n❌ B) Protege los derechos de las personas intersexuales exclusivamente.. No protege exclusivamente a personas intersexuales.\n❌ D) Establece normativas sobre la práctica de la anticoncepción. APS. No se limita a establecer normativas sobre anticoncepción."
+  },
+  {
+    "QUESTAO": 14,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "14-¿Qué propuso la estrategia de APS según Alma ATA en 1978?",
+    "ALTERNATIVAS": {
+      "A": "La implementación de sistemas de salud únicos en América Latina.",
+      "B": "Mejorar las condiciones de salud solo en países subdesarrollados.",
+      "C": "Transformar los sistemas de salud y mejorar las condiciones de salud en general.",
+      "D": "Compensar a grupos vulnerables con programas de emergencia."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Transformar los sistemas de salud y mejorar las condiciones de salud en general.. La estrategia de APS según Alma ATA (1978) buscaba transformar los sistemas de salud y mejorar las condiciones de salud en general.\n\n❌ A) La implementación de sistemas de salud únicos en América Latina.. No se limitaba a sistemas únicos en América Latina.\n❌ B) Mejorar las condiciones de salud solo en países subdesarrollados.. No era solo para países subdesarrollados.\n❌ D) Compensar a grupos vulnerables con programas de emergencia.. No se trataba de programas de emergencia compensatorios."
+  },
+  {
+    "QUESTAO": 15,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "15-¿Qué obstaculizó la implementación integral de la APS según el texto?",
+    "ALTERNATIVAS": {
+      "A": "La falta de recursos financieros.",
+      "B": "La falta de discusión política y los costos excesivos.",
+      "C": "El dominio de la perspectiva neoliberal en América Latina.",
+      "D": "La ausencia de programas de salud compensadores."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) La falta de discusión política y los costos excesivos.. La falta de discusión política y los costos excesivos obstaculizaron la implementación integral de la APS.\n\n❌ A) La falta de recursos financieros.. La falta de recursos fue un factor, pero no el principal.\n❌ C) El dominio de la perspectiva neoliberal en América Latina.. El neoliberalismo influyó pero no fue el único obstáculo.\n❌ D) La ausencia de programas de salud compensadores.. La ausencia de programas compensadores no fue el obstáculo principal."
+  },
+  {
+    "QUESTAO": 16,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "16-¿Cuál es uno de los principios de la APS renovada según la OMS y OPS?",
+    "ALTERNATIVAS": {
+      "A": "Individualismo y competencia.",
+      "B": "Solidaridad y equidad.",
+      "C": "Exclusión y segregación.",
+      "D": "Jerarquía y autoridad."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Solidaridad y equidad.. La APS renovada según la OMS y OPS se basa en los principios de solidaridad y equidad.\n\n❌ A) Individualismo y competencia.. Individualismo y competencia no son principios de la APS.\n❌ C) Exclusión y segregación.. Exclusión y segregación son contrarios a la APS.\n❌ D) Jerarquía y autoridad.. Jerarquía y autoridad no son principios de la APS renovada."
+  },
+  {
+    "QUESTAO": 17,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "17-¿Cuál es la diferencia fundamental entre la Atención Primaria de la Salud (APS) propuesta en Alma ATA en 1978 y la APS renovada propuesta por la OMS y OPS en 2007?",
+    "ALTERNATIVAS": {
+      "A": "La APS original se centraba en la atención de enfermedades crónicas, mientras que la renovada se enfoca en la prevención de enfermedades.",
+      "B": "La APS original priorizaba la atención de grupos vulnerables, mientras que la renovada busca la equidad y solidaridad en la atención.",
+      "C": "La APS original se basaba en la intervención del Estado en los sistemas de salud, mientras que la renovada promueve la participación intersectorial.",
+      "D": "La APS original buscaba la cobertura universal de servicios de salud, mientras que la renovada prioriza la atención individualizada."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) La APS original se basaba en la intervención del Estado en los sistemas de salud, mientras que la renovada promueve la participación intersectorial.. La APS original se basaba en la intervención del Estado, mientras que la renovada promueve la participación intersectorial.\n\n❌ A) La APS original se centraba en la atención de enfermedades crónicas, mientras que la renovada se enfoca en la prevención de enfermedades.. La APS original no se centraba en enfermedades crónicas.\n❌ B) La APS original priorizaba la atención de grupos vulnerables, mientras que la renovada busca la equidad y solidaridad en la atención.. Ambas buscan equidad; la diferencia clave es la intervención estatal vs. intersectorialidad.\n❌ D) La APS original buscaba la cobertura universal de servicios de salud, mientras que la renovada prioriza la atención individualizada.. La cobertura universal es un objetivo de ambas."
+  },
+  {
+    "QUESTAO": 18,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "18-¿Qué papel desempeñó la perspectiva neoliberal en la implementación de la APS?",
+    "ALTERNATIVAS": {
+      "A": "Favoreció la adopción de políticas de salud integrales en América Latina. para atención",
+      "B": "Contribuyó al surgimiento de programas de grupos primaria vulnerables.",
+      "C": "Obstaculizó la implementación de la APS integral, promoviendo programas selectivos para poblaciones pobres.",
+      "D": "Facilitó la asignación de recursos financieros para la APS. la discusión política y"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Obstaculizó la implementación de la APS integral, promoviendo programas selectivos para poblaciones pobres.. La perspectiva neoliberal obstaculizó la APS integral, promoviendo programas selectivos enfocados en poblaciones pobres.\n\n❌ A) Favoreció la adopción de políticas de salud integrales en América Latina. para atención. No favoreció políticas de salud integrales.\n❌ B) Contribuyó al surgimiento de programas de grupos primaria vulnerables.. Los programas selectivos no representan una contribución positiva.\n❌ D) Facilitó la asignación de recursos financieros para la APS. la discusión política y. No facilitó la asignación de recursos para la APS integral."
+  },
+  {
+    "QUESTAO": 19,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Sexualidad",
+    "ENUNCIADO": "19-¿Qué implica la renovación de la APS?",
+    "ALTERNATIVAS": {
+      "A": "Enfoque exclusivo en la atención individual de la salud.",
+      "B": "Mayor énfasis en enfermedades crónicas.",
+      "C": "Compromiso con la equidad, la participación y la intersectorialidad en la atención de la salud.",
+      "D": "Implementación de sistemas de salud únicos en todos los países. la atención de equidad, la"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Compromiso con la equidad, la participación y la intersectorialidad en la atención de la salud.. La renovación de la APS implica un compromiso con la equidad, la participación y la intersectorialidad en la atención de la salud.\n\n❌ A) Enfoque exclusivo en la atención individual de la salud.. No es un enfoque exclusivo en la atención individual.\n❌ B) Mayor énfasis en enfermedades crónicas.. No se limita a mayor énfasis en enfermedades crónicas.\n❌ D) Implementación de sistemas de salud únicos en todos los países. la atención de equidad, la. No busca sistemas de salud únicos en todos los países."
+  },
+  {
+    "QUESTAO": 20,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "20-Cuál es uno de los derechos esenciales del paciente según el artículo 2º de la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "Derecho a la gratuidad en el acceso a la atención médica.",
+      "B": "Derecho a la publicación de su historia clínica en línea.",
+      "C": "Derecho a recibir un trato digno y respetuoso.",
+      "D": "Derecho a recibir medicamentos gratuitos."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Derecho a recibir un trato digno y respetuoso.. Según el artículo 2º de la ley 26.529, el paciente tiene derecho a recibir un trato digno y respetuoso.\n\n❌ A) Derecho a la gratuidad en el acceso a la atención médica.. La gratuidad no es un derecho establecido en ese artículo.\n❌ B) Derecho a la publicación de su historia clínica en línea.. La publicación de la historia clínica en línea no es un derecho.\n❌ D) Derecho a recibir medicamentos gratuitos.. No se limita a recibir medicamentos gratuitos."
+  },
+  {
+    "QUESTAO": 21,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "21-¿Qué establece el artículo 3º de la ley 26.529 sobre la información sanitaria?",
+    "ALTERNATIVAS": {
+      "A": "Debe ser brindada únicamente de manera oral.",
+      "B": "Debe ser clara, suficiente y adecuada a la capacidad de comprensión del paciente.",
+      "C": "Debe ser restringida a familiares directos del paciente.",
+      "D": "Debe ser proporcionada solo a médicos especialistas. se requiere para que la"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Debe ser clara, suficiente y adecuada a la capacidad de comprensión del paciente.. La información sanitaria debe ser clara, suficiente y adecuada a la capacidad de comprensión del paciente según el artículo 3º.\n\n❌ A) Debe ser brindada únicamente de manera oral.. No debe ser solo oral; puede ser también escrita.\n❌ C) Debe ser restringida a familiares directos del paciente.. No debe ser restringida a familiares directos.\n❌ D) Debe ser proporcionada solo a médicos especialistas. se requiere para que la. Debe ser proporcionada al paciente, no solo a médicos."
+  },
+  {
+    "QUESTAO": 22,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "22-¿Qué se requiere para que la información sanitaria pueda ser brindada a terceras personas según el artículo 4º de la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "Autorización del paciente.",
+      "B": "Autorización del médico tratante.",
+      "C": "Autorización de la obra social del paciente.",
+      "D": "Autorización del gobierno nacional. la obra social del sobre"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": "✅ A) Autorización del paciente.. Se requiere autorización del paciente para brindar información sanitaria a terceros según el artículo 4º.\n\n❌ B) Autorización del médico tratante.. La autorización del médico no es suficiente.\n❌ C) Autorización de la obra social del paciente.. La obra social no puede autorizar sin el consentimiento del paciente.\n❌ D) Autorización del gobierno nacional. la obra social del sobre. El gobierno nacional no tiene esa atribución."
+  },
+  {
+    "QUESTAO": 23,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "23-¿Qué establece el artículo 6º de la ley 26.529 sobre el consentimiento informado?",
+    "ALTERNATIVAS": {
+      "A": "Debe ser solicitado por escrito en todos los casos.",
+      "B": "No es necesario en situaciones de emergencia.",
+      "C": "Es obligatorio para toda actuación profesional en el ámbito médico-sanitario.",
+      "D": "Solo es requerido para procedimientos quirúrgicos. toda actuación es de"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Es obligatorio para toda actuación profesional en el ámbito médico-sanitario.. El consentimiento informado es obligatorio para toda actuación profesional en el ámbito médico-sanitario según el artículo 6º.\n\n❌ A) Debe ser solicitado por escrito en todos los casos.. No siempre debe ser por escrito; puede ser verbal en algunos casos.\n❌ B) No es necesario en situaciones de emergencia.. Sí es necesario en emergencias si es posible.\n❌ D) Solo es requerido para procedimientos quirúrgicos. toda actuación es de. Es requerido para toda actuación, no solo procedimientos quirúrgicos."
+  },
+  {
+    "QUESTAO": 24,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "24-¿Cuál es el plazo mínimo de prescripción de la acción liberatoria para los depositarios de la historia clínica según el artículo 18 de la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "Cinco años.",
+      "B": "Diez años.",
+      "C": "Veinte años.",
+      "D": "No hay plazo especificado."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Diez años.. El plazo mínimo de prescripción es de diez años según el artículo 18 de la ley 26.529.\n\n❌ A) Cinco años.. Cinco años es incorrecto.\n❌ C) Veinte años.. Veinte años es incorrecto.\n❌ D) No hay plazo especificado.. Sí hay plazo especificado: diez años."
+  },
+  {
+    "QUESTAO": 25,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "25-¿Cuál de las siguientes opciones mejor describe el principio de autonomía de la voluntad según la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "El derecho del paciente a tratamiento médico sin discriminación.",
+      "B": "El derecho del paciente a aceptar o rechazar tratamientos médicos con o sin expresión de causa.",
+      "C": "El deber del profesional de la salud de proporcionar información sanitaria necesaria recibir al paciente.",
+      "D": "El derecho del paciente a recibir un trato digno y los profesionales de la salud. respetuoso por parte de asistencial"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) El derecho del paciente a aceptar o rechazar tratamientos médicos con o sin expresión de causa.. El principio de autonomía de la voluntad implica el derecho del paciente a aceptar o rechazar tratamientos médicos con o sin expresión de causa.\n\n❌ A) El derecho del paciente a tratamiento médico sin discriminación.. Recibir tratamiento sin discriminación es el principio de no discriminación.\n❌ C) El deber del profesional de la salud de proporcionar información sanitaria necesaria recibir al paciente.. El deber del profesional de informar es parte del consentimiento informado.\n❌ D) El derecho del paciente a recibir un trato digno y los profesionales de la salud. respetuoso por parte de asistencial. Recibir trato digno es un derecho pero no define la autonomía de la voluntad."
+  },
+  {
+    "QUESTAO": 26,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "26-¿Qué medida específica debe tomar un establecimiento para garantizar la integridad de la historia clínica según la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "Permitir el acceso libre a la historia clínica por parte de cualquier persona que lo solicite.",
+      "B": "Utilizar sistemas de almacenamiento de datos no reescribibles para preservar la integridad de la información.",
+      "C": "Eliminar la necesidad de una clave uniforme para identificar al paciente en la historia clínica.",
+      "D": "Permitir que los profesionales de la salud compartan información médica del paciente con terceros sin su consentimiento."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Utilizar sistemas de almacenamiento de datos no reescribibles para preservar la integridad de la información.. Deben utilizarse sistemas de almacenamiento de datos no reescribibles para preservar la integridad de la historia clínica.\n\n❌ A) Permitir el acceso libre a la historia clínica por parte de cualquier persona que lo solicite.. No se permite el acceso libre a cualquier persona.\n❌ C) Eliminar la necesidad de una clave uniforme para identificar al paciente en la historia clínica.. Se requiere una clave uniforme para identificar al paciente.\n❌ D) Permitir que los profesionales de la salud compartan información médica del paciente con terceros sin su consentimiento.. No se puede compartir información sin consentimiento."
+  },
+  {
+    "QUESTAO": 27,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "27-¿Qué situación justifica la exención del consentimiento de requerimiento informado según la ley 26.529?",
+    "ALTERNATIVAS": {
+      "A": "Cuando el paciente presente una enfermedad irreversible o incurable. la salud",
+      "B": "Cuando el profesional de considere que el paciente no la tiene capacidad de comprender la información proporcionada.",
+      "C": "Cuando exista un grave peligro para la salud pública.",
+      "D": "Cuando el paciente esté incapacitado para dar su consentimiento debido a su estado físico o psíquico. la ley 26.529, ¿quién tiene la historia"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Cuando exista un grave peligro para la salud pública.. El grave peligro para la salud pública justifica la exención del consentimiento informado según la ley 26.529.\n\n❌ A) Cuando el paciente presente una enfermedad irreversible o incurable. la salud. Enfermedad irreversible no exime del consentimiento.\n❌ B) Cuando el profesional de considere que el paciente no la tiene capacidad de comprender la información proporcionada.. La opinión del profesional no es suficiente para eximir.\n❌ D) Cuando el paciente esté incapacitado para dar su consentimiento debido a su estado físico o psíquico. la ley 26.529, ¿quién tiene la historia. La incapacidad del paciente no exime; requiere representante legal."
+  },
+  {
+    "QUESTAO": 28,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "28-Según la ley 26.529, ¿quién tiene legitimidad para solicitar la historia clínica de un paciente?",
+    "ALTERNATIVAS": {
+      "A": "Únicamente el paciente o su representante legal.",
+      "B": "El paciente, su representante legal o cualquier persona que conviva con él.",
+      "C": "Solo los médicos y otros profesionales de la salud.",
+      "D": "Los médicos, siempre que cuenten con la autorización del paciente o su representante legal. ESI DERECHOS SGyR"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Los médicos, siempre que cuenten con la autorización del paciente o su representante legal. ESI DERECHOS SGyR. Los médicos pueden solicitar la historia clínica siempre que cuenten con autorización del paciente o su representante legal.\n\n❌ A) Únicamente el paciente o su representante legal.. No solo el paciente y su representante legal.\n❌ B) El paciente, su representante legal o cualquier persona que conviva con él.. Cualquier persona que conviva con él no tiene legitimidad.\n❌ C) Solo los médicos y otros profesionales de la salud.. Los médicos NO pueden sin autorización."
+  },
+  {
+    "QUESTAO": 29,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "29-¿Cuál de las siguientes afirmaciones es verdadera según lo establecido después de la Conferencia Mundial de Derechos Humanos en Viena?",
+    "ALTERNATIVAS": {
+      "A": "Los derechos humanos deben ser garantizados solo por el Estado.",
+      "B": "Los derechos humanos son discrecionales y pueden ser selectivamente aplicados.",
+      "C": "Los derechos humanos de las mujeres tienen prioridad sobre la soberanía estatal.",
+      "D": "Los derechos sexuales se refieren únicamente a la reproducción biológica."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Los derechos humanos de las mujeres tienen prioridad sobre la soberanía estatal.. Los derechos humanos de las mujeres tienen prioridad sobre la soberanía estatal según lo establecido después de la Conferencia de Viena.\n\n❌ A) Los derechos humanos deben ser garantizados solo por el Estado.. Los derechos humanos deben ser garantizados por todos los actores, no solo el Estado.\n❌ B) Los derechos humanos son discrecionales y pueden ser selectivamente aplicados.. Los derechos humanos no son discrecionales ni selectivos.\n❌ D) Los derechos sexuales se refieren únicamente a la reproducción biológica.. Los derechos sexuales van más allá de la reproducción biológica."
+  },
+  {
+    "QUESTAO": 30,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "30-¿Qué objetivo tenía la Ley Nacional N.° 26.150 sancionada en 2006 en Argentina?",
+    "ALTERNATIVAS": {
+      "A": "Promover estereotipos de género.",
+      "B": "Garantizar la educación sexual integral en todos los establecimientos educativos.",
+      "C": "Limitar el acceso a la información sobre métodos anticonceptivos.",
+      "D": "Excluir la sexualidad de los contenidos educativos. y"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Garantizar la educación sexual integral en todos los establecimientos educativos.. La Ley 26.150 buscaba garantizar la educación sexual integral en todos los establecimientos educativos del país.\n\n❌ A) Promover estereotipos de género.. No buscaba promover estereotipos de género, sino romperlos.\n❌ C) Limitar el acceso a la información sobre métodos anticonceptivos.. No buscaba limitar el acceso a información sobre anticonceptivos.\n❌ D) Excluir la sexualidad de los contenidos educativos. y. No buscaba excluir la sexualidad de los contenidos educativos."
+  },
+  {
+    "QUESTAO": 31,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "31-¿Cuál de las siguientes NO es una de las cinco ejes conceptuales establecidos en la Resolución del CFE N° 340/18 para la educación sexual integral?",
+    "ALTERNATIVAS": {
+      "A": "Fomentar la equidad de género.",
+      "B": "Respetar la diversidad.",
+      "C": "Promover la exclusión y discriminación.",
+      "D": "Ejercer nuestros derechos."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Promover la exclusión y discriminación.. \"Promover la exclusión y discriminación\" NO es uno de los cinco ejes de la ESI; los ejes promueven inclusión y respeto.\n\n❌ A) Fomentar la equidad de género.. Fomentar la equidad de género SÍ es un eje.\n❌ B) Respetar la diversidad.. Respetar la diversidad SÍ es un eje.\n❌ D) Ejercer nuestros derechos.. Ejercer nuestros derechos SÍ es un eje."
+  },
+  {
+    "QUESTAO": 32,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, ESI, Educación Sexual Integral, Legislación",
+    "ENUNCIADO": "32-¿Qué derechos garantiza la Ley 27.610 de Interrupción Voluntaria del Embarazo?",
+    "ALTERNATIVAS": {
+      "A": "Solo el derecho a acceder a la interrupción voluntaria del embarazo en cualquier momento.",
+      "B": "El derecho a acceder a la interrupción voluntaria del embarazo solo en casos de violación.",
+      "C": "El derecho a acceder a la interrupción voluntaria del embarazo hasta la semana catorce y en casos específicos después de la semana quince.",
+      "D": "Ninguna de las anteriores."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) El derecho a acceder a la interrupción voluntaria del embarazo hasta la semana catorce y en casos específicos después de la semana quince.. La Ley 27.610 garantiza el acceso a la IVE hasta la semana 14 y en casos específicos (violación, riesgo de salud) después de la semana 15.\n\n❌ A) Solo el derecho a acceder a la interrupción voluntaria del embarazo en cualquier momento.. No es en cualquier momento del embarazo.\n❌ B) El derecho a acceder a la interrupción voluntaria del embarazo solo en casos de violación.. No es solo en casos de violación.\n❌ D) Ninguna de las anteriores.. Sí hay derechos específicos garantizados (opción C es correcta)."
+  },
+  {
+    "QUESTAO": 33,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "33-¿Cuál de las siguientes áreas NO está incluida en los temas abordados por la Educación Sexual Integral según el texto?",
+    "ALTERNATIVAS": {
+      "A": "Prevención y atención VIH.",
+      "B": "Técnicas de Reproducción Asistida.",
+      "C": "Violencia de Género.",
+      "D": "Métodos de crianza tradicionales. la discriminación"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Métodos de crianza tradicionales. la discriminación. \"Métodos de crianza tradicionales\" NO está incluido en los temas de ESI según el texto.\n\n❌ A) Prevención y atención VIH.. Prevención y atención VIH SÍ está incluido.\n❌ B) Técnicas de Reproducción Asistida.. Técnicas de Reproducción Asistida SÍ está incluido.\n❌ C) Violencia de Género.. Violencia de Género SÍ está incluido."
+  },
+  {
+    "QUESTAO": 34,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "34-¿Cuáles son los principales objetivos de la Ley Nacional N.° 26.150 y cómo se relacionan con la educación sexual integral en Argentina?",
+    "ALTERNATIVAS": {
+      "A": "Garantizar el acceso a métodos anticonceptivos y promover la exclusión de ciertos temas relacionados con la sexualidad en el ámbito educativo.",
+      "B": "Promover la equidad de género y romper la estereotipos, además de garantizar los todos educación sexual niveles educativos.",
+      "C": "Limitar la educación sexual integral a los establecimientos educativos privados y mantener el enfoque tradicional en la enseñanza.",
+      "D": "Desarrollar estrategias para implementar la educación sexual integral solo en el nivel inicial y primario. tradicional en integral en educación sexual"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Promover la equidad de género y romper la estereotipos, además de garantizar los todos educación sexual niveles educativos.. La Ley 26.150 promueve la equidad de género, rompe estereotipos y garantiza la educación sexual integral en todos los niveles educativos.\n\n❌ A) Garantizar el acceso a métodos anticonceptivos y promover la exclusión de ciertos temas relacionados con la sexualidad en el ámbito educativo.. No busca excluir temas ni limitarse a anticonceptivos.\n❌ C) Limitar la educación sexual integral a los establecimientos educativos privados y mantener el enfoque tradicional en la enseñanza.. No limita la ESI a establecimientos privados.\n❌ D) Desarrollar estrategias para implementar la educación sexual integral solo en el nivel inicial y primario. tradicional en integral en educación sexual. No se limita al nivel inicial y primario."
+  },
+  {
+    "QUESTAO": 35,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "35-¿Cómo influye la Resolución del CFE N° 340/18 en la implementación de la educación sexual integral en Argentina y cuáles son los cinco ejes conceptuales que aborda?",
+    "ALTERNATIVAS": {
+      "A": "La resolución garantiza la exclusión de ciertos temas sensibles y aborda únicamente la biología humana en la educación sexual.",
+      "B": "La resolución establece la obligatoriedad de la educación sexual integral en todos los niveles educativos y aborda cinco ejes conceptuales, incluyendo la prevención de infecciones de transmisión sexual y la promoción del respeto por la diversidad.",
+      "C": "La resolución no tiene impacto en la la educación sexual implementación de integral y no aborda ningún eje conceptual.",
+      "D": "La resolución limita la educación sexual integral a ciertos grupos demográficos y no aborda ningún eje conceptual específico. la"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) La resolución establece la obligatoriedad de la educación sexual integral en todos los niveles educativos y aborda cinco ejes conceptuales, incluyendo la prevención de infecciones de transmisión sexual y la promoción del respeto por la diversidad.. La Resolución establece la obligatoriedad de la ESI en todos los niveles educativos con cinco ejes: equidad, diversidad, derechos, cuidado del cuerpo y prevención de ITS.\n\n❌ A) La resolución garantiza la exclusión de ciertos temas sensibles y aborda únicamente la biología humana en la educación sexual.. No garantiza exclusión de temas ni se limita a biología.\n❌ C) La resolución no tiene impacto en la la educación sexual implementación de integral y no aborda ningún eje conceptual.. Sí tiene impacto en la implementación de la ESI.\n❌ D) La resolución limita la educación sexual integral a ciertos grupos demográficos y no aborda ningún eje conceptual específico. la. No limita la ESI a ciertos grupos."
+  },
+  {
+    "QUESTAO": 36,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "36-¿Por qué se considera que la Ley 27.610 de Interrupción Voluntaria del Embarazo es un avance significativo en materia de derechos reproductivos en Argentina y cuáles son los derechos que garantiza?",
+    "ALTERNATIVAS": {
+      "A": "Porque otorga a las personas gestantes el derecho a acceder a interrupción voluntaria del embarazo únicamente en casos de violación.",
+      "B": "Porque amplía el acceso a la interrupción voluntaria del embarazo hasta la semana catorce y en casos específicos después de la semana quince, garantizando también servicios de atención integral de salud.",
+      "C": "Porque limita el acceso a la interrupción voluntaria del embarazo solo a servicios públicos de salud y no garantiza servicios de atención integral de salud.",
+      "D": "Porque excluye a ciertos grupos demográficos del acceso a la interrupción voluntaria del embarazo y no garantiza servicios de atención integral de salud. garantizando"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Porque amplía el acceso a la interrupción voluntaria del embarazo hasta la semana catorce y en casos específicos después de la semana quince, garantizando también servicios de atención integral de salud.. La Ley 27.610 amplía el acceso a la IVE hasta la semana 14 (causal tiempo) y después por causales (violación, riesgo de salud), garantizando atención integral.\n\n❌ A) Porque otorga a las personas gestantes el derecho a acceder a interrupción voluntaria del embarazo únicamente en casos de violación.. No es únicamente en casos de violación.\n❌ C) Porque limita el acceso a la interrupción voluntaria del embarazo solo a servicios públicos de salud y no garantiza servicios de atención integral de salud.. No limita el acceso a servicios públicos.\n❌ D) Porque excluye a ciertos grupos demográficos del acceso a la interrupción voluntaria del embarazo y no garantiza servicios de atención integral de salud. garantizando. No excluye a ciertos grupos demográficos."
+  },
+  {
+    "QUESTAO": 37,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "37-¿Cómo contribuye la Ley 25.929 de Parto Humanizado al desarrollo de políticas de salud materno-infantil en Argentina y cuáles son sus puntos principales?",
+    "ALTERNATIVAS": {
+      "A": "La ley no contribuye significativamente al desarrollo de políticas de salud materno- infantil y no establece ningún punto principal.",
+      "B": "La ley amplía el acceso a servicios de salud durante el embarazo, el parto y el puerperio, garantizando también la provisión gratuita de productos esenciales y la extensión de beneficios económicos a personas gestantes.",
+      "C": "La ley limita el acceso a servicios de salud durante el embarazo, el parto y el puerperio, grupos demográficos y no garantizando la provisión gratuita de productos esenciales.",
+      "D": "La ley garantiza únicamente el acceso a servicios de salud durante el embarazo, el parto y el puerperio para personas de ciertas clases sociales y no establece ningún punto principal. excluyendo ciertos los principales"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) La ley amplía el acceso a servicios de salud durante el embarazo, el parto y el puerperio, garantizando también la provisión gratuita de productos esenciales y la extensión de beneficios económicos a personas gestantes.. La Ley 25.929 amplía el acceso a servicios de salud durante el embarazo, parto y puerperio, garantizando provisión gratuita de productos esenciales y extensión de beneficios económicos.\n\n❌ A) La ley no contribuye significativamente al desarrollo de políticas de salud materno- infantil y no establece ningún punto principal.. La ley SÍ contribuye significativamente.\n❌ C) La ley limita el acceso a servicios de salud durante el embarazo, el parto y el puerperio, grupos demográficos y no garantizando la provisión gratuita de productos esenciales.. No limita el acceso ni excluye grupos.\n❌ D) La ley garantiza únicamente el acceso a servicios de salud durante el embarazo, el parto y el puerperio para personas de ciertas clases sociales y no establece ningún punto principal. excluyendo ciertos los principales. No garantiza solo para ciertas clases sociales."
+  },
+  {
+    "QUESTAO": 38,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "38-¿Cuál es uno de los principales enfoques de la educación sexual integral en Argentina?",
+    "ALTERNATIVAS": {
+      "A": "Promover la abstinencia sexual como única opción.",
+      "B": "Fomentar roles de género tradicionales.",
+      "C": "Romper con los estereotipos de género preestablecidos.",
+      "D": "Restringir el acceso a la información sobre anticoncepción. estereotipos de género roles de género los es uno de"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Romper con los estereotipos de género preestablecidos.. Uno de los enfoques principales de la ESI es romper con los estereotipos de género preestablecidos.\n\n❌ A) Promover la abstinencia sexual como única opción.. No promueve la abstinencia como única opción.\n❌ B) Fomentar roles de género tradicionales.. No fomenta roles de género tradicionales, los cuestiona.\n❌ D) Restringir el acceso a la información sobre anticoncepción. estereotipos de género roles de género los es uno de. No restringe el acceso a información sobre anticoncepción."
+  },
+  {
+    "QUESTAO": 39,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "39-¿Cuál es uno de los derechos garantizados por la Ley 27.610 sobre la interrupción voluntaria del embarazo?",
+    "ALTERNATIVAS": {
+      "A": "Acceso gratuito a la interrupción del embarazo en cualquier etapa del embarazo.",
+      "B": "Limitación del acceso a la interrupción del embarazo a casos específicos de violación.",
+      "C": "Prohibición total de la interrupción del embarazo.",
+      "D": "Acceso a la interrupción del embarazo hasta la semana catorce y en casos específicos después de la semana quince."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Acceso a la interrupción del embarazo hasta la semana catorce y en casos específicos después de la semana quince.. La Ley 27.610 garantiza el acceso a la interrupción del embarazo hasta la semana 14 y en casos específicos después de la semana 15.\n\n❌ A) Acceso gratuito a la interrupción del embarazo en cualquier etapa del embarazo.. No es gratuito en cualquier etapa.\n❌ B) Limitación del acceso a la interrupción del embarazo a casos específicos de violación.. No se limita a casos de violación.\n❌ C) Prohibición total de la interrupción del embarazo.. No hay prohibición total."
+  },
+  {
+    "QUESTAO": 40,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "40-¿Qué papel desempeña la Resolución del CFE N° 340/18 en relación con la Ley Nacional N.° 26.150?",
+    "ALTERNATIVAS": {
+      "A": "Anula los principios establecidos en la ley.",
+      "B": "Proporciona la orientación para la implementación efectiva de la educación sexual integral.",
+      "C": "Establece restricciones adicionales a la educación instituciones educativas.",
+      "D": "Limita el acceso a la educación sexual en escuelas públicas. orientación sexual para en"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Proporciona la orientación para la implementación efectiva de la educación sexual integral.. La Resolución CFE N° 340/18 proporciona la orientación para la implementación efectiva de la ESI en todo el país.\n\n❌ A) Anula los principios establecidos en la ley.. No anula los principios de la ley.\n❌ C) Establece restricciones adicionales a la educación instituciones educativas.. No establece restricciones adicionales.\n❌ D) Limita el acceso a la educación sexual en escuelas públicas. orientación sexual para en. No limita el acceso en escuelas públicas."
+  },
+  {
+    "QUESTAO": 41,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "41-¿Cuál es la principal afirmación respecto al género?",
+    "ALTERNATIVAS": {
+      "A": "El género es un concepto exclusivamente biológico.",
+      "B": "El género es una construcción cultural que va más allá de las diferencias biológicas.",
+      "C": "El género se determina únicamente por las características genitales al nacer.",
+      "D": "El género es un fenómeno natural que define las relaciones de poder entre los géneros. la idea de interseccionalidad"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) El género es una construcción cultural que va más allá de las diferencias biológicas.. El género es una construcción cultural que va más allá de las diferencias biológicas, distinguiéndose del sexo biológico.\n\n❌ A) El género es un concepto exclusivamente biológico.. No es exclusivamente biológico.\n❌ C) El género se determina únicamente por las características genitales al nacer.. No se determina únicamente por los genitales al nacer.\n❌ D) El género es un fenómeno natural que define las relaciones de poder entre los géneros. la idea de interseccionalidad. El género no define necesariamente las relaciones de poder."
+  },
+  {
+    "QUESTAO": 42,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "42-¿Qué describe mejor la idea de interseccionalidad?",
+    "ALTERNATIVAS": {
+      "A": "La interseccionalidad se enfoca únicamente en la relación entre género y edad.",
+      "B": "La interseccionalidad reconoce la influencia de múltiples estructuras de poder en la vida de las personas.",
+      "C": "La interseccionalidad se limita a analizar las desigualdades de género en un contexto histórico específico. refiere",
+      "D": "La interseccionalidad se refiere exclusivamente a la relación entre género y clase social."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) La interseccionalidad reconoce la influencia de múltiples estructuras de poder en la vida de las personas.. La interseccionalidad reconoce la influencia de múltiples estructuras de poder (género, raza, clase, etc.) en la vida de las personas.\n\n❌ A) La interseccionalidad se enfoca únicamente en la relación entre género y edad.. No se limita a la relación entre género y edad.\n❌ C) La interseccionalidad se limita a analizar las desigualdades de género en un contexto histórico específico. refiere. No se limita a analizar desigualdades en un contexto histórico.\n❌ D) La interseccionalidad se refiere exclusivamente a la relación entre género y clase social.. No se refiere exclusivamente a género y clase social."
+  },
+  {
+    "QUESTAO": 43,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Legislación, Derechos del Paciente, Ley 26.529",
+    "ENUNCIADO": "43-¿Cuál es el papel del lenguaje en la asignación del género?",
+    "ALTERNATIVAS": {
+      "A": "El lenguaje solo se utiliza para nombrar los genitales al nacer, sin influir en la construcción del género.",
+      "B": "El lenguaje es fundamental, ya que marca y significa el sexo, inaugurando así el género.",
+      "C": "El lenguaje no tiene impacto en la asignación del género, que se basa únicamente en características biológicas.",
+      "D": "El lenguaje solo se utiliza para identificar a las personas como hombres o mujeres en la vida cotidiana."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) El lenguaje es fundamental, ya que marca y significa el sexo, inaugurando así el género.. El lenguaje es fundamental en la asignación del género, ya que marca y significa el sexo, inaugurando el género.\n\n❌ A) El lenguaje solo se utiliza para nombrar los genitales al nacer, sin influir en la construcción del género.. El lenguaje influye más allá de nombrar genitales.\n❌ C) El lenguaje no tiene impacto en la asignación del género, que se basa únicamente en características biológicas.. El lenguaje sí tiene impacto en la asignación del género.\n❌ D) El lenguaje solo se utiliza para identificar a las personas como hombres o mujeres en la vida cotidiana.. El lenguaje no solo identifica, sino que construye."
+  },
+  {
+    "QUESTAO": 44,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "44-¿Definición de salud mental según la OMS?",
+    "ALTERNATIVAS": {
+      "A": "Ausencia de enfermedad física y mental.",
+      "B": "Estado de completo bienestar físico, psíquico y social.",
+      "C": "Equilibrio entre los aspectos biológicos y sociales.",
+      "D": "Preservación exclusiva de los derechos humanos y sociales."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Estado de completo bienestar físico, psíquico y social.. La OMS define la salud mental como un estado de completo bienestar físico, psíquico y social, no solo la ausencia de enfermedad.\n\n❌ A) Ausencia de enfermedad física y mental.. No es solo ausencia de enfermedad.\n❌ C) Equilibrio entre los aspectos biológicos y sociales.. No es solo equilibrio biológico-social.\n❌ D) Preservación exclusiva de los derechos humanos y sociales.. No es solo preservación de derechos."
+  },
+  {
+    "QUESTAO": 45,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "45-Según la Ley Nacional de Salud Mental Nº 26657, ¿cuál de las siguientes no es una base exclusiva para realizar un diagnóstico en el campo de la salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Status político o socioeconómico.",
+      "B": "Demandas laborales o familiares.",
+      "C": "Elección o identidad sexual.",
+      "D": "Presencia de antecedentes de tratamiento u hospitalización."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Elección o identidad sexual.. Según la Ley 26.657, la elección o identidad sexual no es base exclusiva para realizar un diagnóstico en salud mental.\n\n❌ A) Status político o socioeconómico.. Status político NO es base exclusiva para diagnóstico.\n❌ B) Demandas laborales o familiares.. Demandas laborales NO son base exclusiva.\n❌ D) Presencia de antecedentes de tratamiento u hospitalización.. Antecedentes de tratamiento NO son base exclusiva (pero la pregunta dice cuál NO es exclusiva, y la C es la correcta porque la elección sexual no debe ser base de diagnóstico)."
+  },
+  {
+    "QUESTAO": 46,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "46-¿Cuál es el objeto de la salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Exclusivamente el individuo.",
+      "B": "Las relaciones comunitarias y sociales.",
+      "C": "El equilibrio psicológico.",
+      "D": "La prevención de enfermedades mentales."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Las relaciones comunitarias y sociales.. El objeto de la salud mental no es solo el individuo, sino también las relaciones comunitarias y sociales.\n\n❌ A) Exclusivamente el individuo.. No es exclusivamente el individuo.\n❌ C) El equilibrio psicológico.. El equilibrio psicológico es parte pero no el único objeto.\n❌ D) La prevención de enfermedades mentales.. La prevención es un objetivo, no el objeto."
+  },
+  {
+    "QUESTAO": 47,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "47-¿Cuál es una característica del campo de la salud mental en la actualidad?",
+    "ALTERNATIVAS": {
+      "A": "Mayor atención en el diagnóstico individual.",
+      "B": "Derecho a conocer y preservar su identidad y su historia.",
+      "C": "Derecho a ser objeto de investigaciones clínicas sin consentimiento.",
+      "D": "Derecho a recibir un tratamiento personalizado con respeto a su intimidad."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Derecho a recibir un tratamiento personalizado con respeto a su intimidad.. La salud mental actual se caracteriza por el derecho a recibir un tratamiento personalizado con respeto a la intimidad.\n\n❌ A) Mayor atención en el diagnóstico individual.. No se limita al diagnóstico individual.\n❌ B) Derecho a conocer y preservar su identidad y su historia.. Ese derecho corresponde a otra ley.\n❌ C) Derecho a ser objeto de investigaciones clínicas sin consentimiento.. No se permite investigaciones sin consentimiento."
+  },
+  {
+    "QUESTAO": 48,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "48-¿Qué implica el concepto de vulnerabilidad en salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Mayor fragilidad en la obtención de bienestar físico.",
+      "B": "Dependencia exclusiva de la atención médica.",
+      "C": "Sensibilidad a factores sociales y personales que afectan la salud mental.",
+      "D": "Ausencia de riesgo en determinadas poblaciones. factores sociales y"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Sensibilidad a factores sociales y personales que afectan la salud mental.. La vulnerabilidad en salud mental implica sensibilidad a factores sociales y personales que afectan el bienestar mental.\n\n❌ A) Mayor fragilidad en la obtención de bienestar físico.. No es solo fragilidad para obtener bienestar físico.\n❌ B) Dependencia exclusiva de la atención médica.. No implica dependencia exclusiva de atención médica.\n❌ D) Ausencia de riesgo en determinadas poblaciones. factores sociales y. Sí implica riesgo en determinadas poblaciones."
+  },
+  {
+    "QUESTAO": 49,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "49-¿Cuál es un indicador clave de salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Incidencia y prevalencia de enfermedades mentales.",
+      "B": "Participación activa del individuo y la comunidad en su bienestar.",
+      "C": "Nivel de dependencia de la atención médica.",
+      "D": "Evaluación exclusiva del estado físico del individuo. a"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Participación activa del individuo y la comunidad en su bienestar.. Un indicador clave de salud mental es la participación activa del individuo y la comunidad en su bienestar.\n\n❌ A) Incidencia y prevalencia de enfermedades mentales.. Incidencia de enfermedades mide patología, no salud.\n❌ C) Nivel de dependencia de la atención médica.. Dependencia médica no es indicador de salud.\n❌ D) Evaluación exclusiva del estado físico del individuo. a. Evaluación del estado físico no mide salud mental."
+  },
+  {
+    "QUESTAO": 50,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "50-¿Cuál de los siguientes derechos NO es reconocido a las personas con padecimiento mental según la Ley Nacional de Salud Mental Nº 26657?",
+    "ALTERNATIVAS": {
+      "A": "Derecho a recibir atención sanitaria y social integral.",
+      "B": "Derecho a conocer y preservar su identidad y su historia.",
+      "C": "Derecho a ser objeto de investigaciones clínicas sin consentimiento.",
+      "D": "Derecho a recibir un tratamiento personalizado con respeto a su intimidad."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Derecho a ser objeto de investigaciones clínicas sin consentimiento.. El derecho a ser objeto de investigaciones clínicas sin consentimiento NO es reconocido por la Ley de Salud Mental.\n\n❌ A) Derecho a recibir atención sanitaria y social integral.. Sí es reconocido.\n❌ B) Derecho a conocer y preservar su identidad y su historia.. Sí es reconocido.\n❌ D) Derecho a recibir un tratamiento personalizado con respeto a su intimidad.. Sí es reconocido."
+  },
+  {
+    "QUESTAO": 51,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "51-Según la definición de Vicente Galli, ¿cuál es la característica central del estado de salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Equilibrio psíquico.",
+      "B": "Integración social.",
+      "C": "Ausencia de enfermedad.",
+      "D": "Participación pasiva del individuo. el de concepto"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Integración social.. Para Vicente Galli, la característica central de la salud mental es la integración social del individuo.\n\n❌ A) Equilibrio psíquico.. Equilibrio psíquico es parte pero no la característica central según Galli.\n❌ C) Ausencia de enfermedad.. Ausencia de enfermedad es una definición negativa.\n❌ D) Participación pasiva del individuo. el de concepto. La participación no es pasiva sino activa."
+  },
+  {
+    "QUESTAO": 52,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "52-¿Cuál es uno de los objetivos principales del abordaje en salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Aislamiento del individuo.",
+      "B": "Parcialización de los problemas.",
+      "C": "Comprensión de las dinámicas individuales y sociales.",
+      "D": "Exclusión de la comunidad en la atención."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Comprensión de las dinámicas individuales y sociales.. Un objetivo principal del abordaje en salud mental es la comprensión de las dinámicas individuales y sociales.\n\n❌ A) Aislamiento del individuo.. No busca el aislamiento.\n❌ B) Parcialización de los problemas.. No busca la parcialización de los problemas.\n❌ D) Exclusión de la comunidad en la atención.. No excluye a la comunidad de la atención."
+  },
+  {
+    "QUESTAO": 53,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "53-¿Qué cambios significativos ha experimentado el campo de la salud mental en los últimos años?",
+    "ALTERNATIVAS": {
+      "A": "Mayor enfoque en la psiquiatría clásica.",
+      "B": "Limitación de comunitarias.",
+      "C": "Desvinculación de las prácticas de salud mental de las políticas sociales.",
+      "D": "Transición de una atención hospitalaria a una prevención generalizada de riesgos."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Transición de una atención hospitalaria a una prevención generalizada de riesgos.. Ha habido una transición de la atención hospitalaria a una prevención generalizada de riesgos en salud mental.\n\n❌ A) Mayor enfoque en la psiquiatría clásica.. No hay mayor enfoque en psiquiatría clásica.\n❌ B) Limitación de comunitarias.. No hay limitación de intervenciones comunitarias.\n❌ C) Desvinculación de las prácticas de salud mental de las políticas sociales.. Hay mayor vinculación con políticas sociales."
+  },
+  {
+    "QUESTAO": 54,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "54-¿Por qué es esencial la noción de riesgo en el abordaje de la salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Porque permite identificar individuos con problemas de salud mental.",
+      "B": "Porque ayuda a establecer diagnósticos precisos.",
+      "C": "Porque considera la complejidad de factores sociales y personales que afectan la salud mental.",
+      "D": "Porque simplifica la comprensión de los problemas de salud mental."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Porque considera la complejidad de factores sociales y personales que afectan la salud mental.. La noción de riesgo es esencial porque considera la complejidad de factores sociales y personales que afectan la salud mental.\n\n❌ A) Porque permite identificar individuos con problemas de salud mental.. No solo permite identificar individuos con problemas.\n❌ B) Porque ayuda a establecer diagnósticos precisos.. No se limita a establecer diagnósticos.\n❌ D) Porque simplifica la comprensión de los problemas de salud mental.. No simplifica la comprensión."
+  },
+  {
+    "QUESTAO": 55,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Ciencias Sociales",
+    "TAGS": "Sexualidad, Género, Reproducción, Salud Mental",
+    "ENUNCIADO": "55-¿Cuál es el principal indicador de salud mental?",
+    "ALTERNATIVAS": {
+      "A": "Incidencia de enfermedades mentales.",
+      "B": "Participación activa del individuo y la comunidad en su bienestar.",
+      "C": "Nivel de dependencia de la atención médica.",
+      "D": "Evaluación del estado individuo. físico del"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Participación activa del individuo y la comunidad en su bienestar.. El principal indicador de salud mental es la participación activa del individuo y la comunidad en su bienestar.\n\n❌ A) Incidencia de enfermedades mentales.. Incidencia mide enfermedad, no salud.\n❌ C) Nivel de dependencia de la atención médica.. Dependencia médica no es indicador de salud.\n❌ D) Evaluación del estado individuo. físico del. Evaluación física no mide salud mental."
+  },
+  {
+    "QUESTAO": 56,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "56-¿Qué supone un \"Sistema de Salud\"?",
+    "ALTERNATIVAS": {
+      "A": "Una red de instituciones y recursos que solo se enfocan en el tratamiento de enfermedades.",
+      "B": "Una respuesta social organizada para mejorar la salud de la población.",
+      "C": "Un conjunto de políticas económicas para regular el sector sanitario.",
+      "D": "Una estrategia para priorizar los avances tecnológicos sobre la cobertura universal. en influyen aspectos la"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Una respuesta social organizada para mejorar la salud de la población.. Un sistema de salud supone una respuesta social organizada para mejorar la salud de la población.\n\n❌ A) Una red de instituciones y recursos que solo se enfocan en el tratamiento de enfermedades.. No es solo una red para tratamiento de enfermedades.\n❌ C) Un conjunto de políticas económicas para regular el sector sanitario.. No es solo un conjunto de políticas económicas.\n❌ D) Una estrategia para priorizar los avances tecnológicos sobre la cobertura universal. en influyen aspectos la. No prioriza avances tecnológicos sobre cobertura universal."
+  },
+  {
+    "QUESTAO": 57,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "57-¿Qué aspectos influyen en la configuración y funcionamiento de un sistema de salud específico?",
+    "ALTERNATIVAS": {
+      "A": "Aspectos políticos, técnicos.",
+      "B": "Aspectos demográficos, geográficos y culturales.",
+      "C": "Aspectos administrativos, financieros.",
+      "D": "Aspectos sociales, educativos y laborales. económicos y legales y"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": "✅ A) Aspectos políticos, técnicos.. Aspectos políticos, económicos y técnicos influyen en la configuración y funcionamiento del sistema de salud.\n\n❌ B) Aspectos demográficos, geográficos y culturales.. Los aspectos demográficos y culturales son secundarios.\n❌ C) Aspectos administrativos, financieros.. Los aspectos administrativos y legales derivan de los políticos/económicos.\n❌ D) Aspectos sociales, educativos y laborales. económicos y legales y. Los aspectos sociales y educativos son influencias indirectas."
+  },
+  {
+    "QUESTAO": 58,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "58-¿Cuál es uno de los modelos de financiación del sistema de salud mencionados?",
+    "ALTERNATIVAS": {
+      "A": "Financiación exclusiva a los modelos de salud sistema de través de mediante seguros privados.",
+      "B": "Financiación exclusivamente estatales.",
+      "C": "Financiación a través de impuestos y seguros de salud.",
+      "D": "Financiación exclusivamente a través de donaciones y voluntariado. aportes"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Financiación a través de impuestos y seguros de salud.. La financiación del sistema de salud puede ser a través de impuestos y seguros de salud (modelo mixto).\n\n❌ A) Financiación exclusiva a los modelos de salud sistema de través de mediante seguros privados.. No es exclusiva a través de seguros privados.\n❌ B) Financiación exclusivamente estatales.. No es exclusivamente estatal.\n❌ D) Financiación exclusivamente a través de donaciones y voluntariado. aportes. No es exclusivamente a través de donaciones."
+  },
+  {
+    "QUESTAO": 59,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "59-¿Cuál es uno de los principales roles del Estado en el sistema de salud argentino?",
+    "ALTERNATIVAS": {
+      "A": "Administrar exclusivamente los fondos para las Obras Sociales.",
+      "B": "Proveer atención médica directa a la población sin recursos.",
+      "C": "Ejercer la Rectoría y coordinar diversos organismos de salud.",
+      "D": "Financiar el sector privado para garantizar una cobertura total. los principales"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Ejercer la Rectoría y coordinar diversos organismos de salud.. Un rol principal del Estado es ejercer la Rectoría y coordinar diversos organismos de salud.\n\n❌ A) Administrar exclusivamente los fondos para las Obras Sociales.. No solo administra fondos para Obras Sociales.\n❌ B) Proveer atención médica directa a la población sin recursos.. Proveer atención directa es parte pero no el único rol.\n❌ D) Financiar el sector privado para garantizar una cobertura total. los principales. No financia al sector privado para cobertura total."
+  },
+  {
+    "QUESTAO": 60,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "60-¿Cuál es uno de los principales desafíos del sistema de salud argentino?",
+    "ALTERNATIVAS": {
+      "A": "Aumentar la fragmentación del sistema de salud.",
+      "B": "Reducir los costos asociados a la atomización financiera.",
+      "C": "Garantizar la priorización de avances tecnológicos sobre la cobertura universal.",
+      "D": "Implementar sistemas de salud provinciales sin coordinación nacional."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Reducir los costos asociados a la atomización financiera.. Un desafío es reducir los costos asociados a la atomización financiera del sistema de salud.\n\n❌ A) Aumentar la fragmentación del sistema de salud.. No busca aumentar la fragmentación.\n❌ C) Garantizar la priorización de avances tecnológicos sobre la cobertura universal.. No prioriza tecnología sobre cobertura universal.\n❌ D) Implementar sistemas de salud provinciales sin coordinación nacional.. No busca implementar sistemas sin coordinación nacional."
+  },
+  {
+    "QUESTAO": 61,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "61-¿Cuál es la relación entre los aspectos políticos, económicos y técnicos en la configuración y funcionamiento de un sistema de salud?",
+    "ALTERNATIVAS": {
+      "A": "Los aspectos políticos prevalecen sobre los económicos y técnicos en la toma de decisiones.",
+      "B": "Los aspectos técnicos son independientes la los políticos y económicos en de organización del sistema de salud.",
+      "C": "Los aspectos políticos, económicos y y técnicos determinan la estructura y funcionamiento interrelacionados están del sistema de salud.",
+      "D": "Los aspectos económicos son los más relevantes en la determinación de la política de salud pública. se sector público través de"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Los aspectos políticos, económicos y y técnicos determinan la estructura y funcionamiento interrelacionados están del sistema de salud.. Los aspectos políticos, económicos y técnicos están interrelacionados y determinan la estructura y funcionamiento del sistema de salud.\n\n❌ A) Los aspectos políticos prevalecen sobre los económicos y técnicos en la toma de decisiones.. Los políticos no prevalecen siempre sobre los económicos.\n❌ B) Los aspectos técnicos son independientes la los políticos y económicos en de organización del sistema de salud.. No son independientes.\n❌ D) Los aspectos económicos son los más relevantes en la determinación de la política de salud pública. se sector público través de. No son solo los económicos los más relevantes."
+  },
+  {
+    "QUESTAO": 62,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Salud Pública",
+    "TAGS": "Sexualidad, Género, Reproducción, Sistema de Salud, Argentina",
+    "ENUNCIADO": "62-¿Cuáles son las principales diferencias entre el sector público y las Obras Sociales en cuanto a la financiación y la prestación de servicios de salud en Argentina?",
+    "ALTERNATIVAS": {
+      "A": "El sector público se financia exclusivamente a través de impuestos, mientras que las Obras Sociales se financian mediante aportes de los trabajadores.",
+      "B": "El sector público ofrece atención gratuita a toda la población, mientras que las Obras Sociales cubren a los trabajadores y sus familias mediante contribuciones salariales.",
+      "C": "El sector público administra los fondos de manera descentralizada, mientras que las lo hacen de manera Obras Sociales centralizada.",
+      "D": "El sector público prioriza los servicios de alta complejidad, mientras que las Obras Sociales se centran en la atención primaria."
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) El sector público ofrece atención gratuita a toda la población, mientras que las Obras Sociales cubren a los trabajadores y sus familias mediante contribuciones salariales.. El sector público ofrece atención gratuita a toda la población, mientras que las Obras Sociales cubren a trabajadores y familias mediante contribuciones salariales.\n\n❌ A) El sector público se financia exclusivamente a través de impuestos, mientras que las Obras Sociales se financian mediante aportes de los trabajadores.. El sector público no se financia exclusivamente de impuestos.\n❌ C) El sector público administra los fondos de manera descentralizada, mientras que las lo hacen de manera Obras Sociales centralizada.. Ambos pueden tener gestión descentralizada.\n❌ D) El sector público prioriza los servicios de alta complejidad, mientras que las Obras Sociales se centran en la atención primaria.. El sector público no prioriza alta complejidad."
+  },
+  {
+    "QUESTAO": 63,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "63-¿Cuál de las siguientes afirmaciones sobre la Promoción de la Salud es FALSA?",
+    "ALTERNATIVAS": {
+      "A": "La Promoción de la Salud se caracteriza por su complejidad y su enfoque vago pero poderoso.",
+      "B": "La carta de Ottawa (1986) define la Promoción de la Salud como la provisión de medios necesarios para mejorar la salud y ejercer un mayor control sobre ella.",
+      "C": "La Promoción de la Salud se limita al sector de la salud y no trasciende a otras áreas.",
+      "D": "La Promoción de la Salud abarca todo el continuo biológico, desde la concepción hasta la muerte. responsables de"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) La Promoción de la Salud se limita al sector de la salud y no trasciende a otras áreas.. La Promoción de la Salud NO se limita al sector salud, trasciende a otras áreas (educación, vivienda, trabajo).\n\n❌ A) La Promoción de la Salud se caracteriza por su complejidad y su enfoque vago pero poderoso.. Es verdad que es compleja y de enfoque amplio.\n❌ B) La carta de Ottawa (1986) define la Promoción de la Salud como la provisión de medios necesarios para mejorar la salud y ejercer un mayor control sobre ella.. La carta de Ottawa es correcta como definición.\n❌ D) La Promoción de la Salud abarca todo el continuo biológico, desde la concepción hasta la muerte. responsables de. Es verdad que abarca todo el continuo biológico."
+  },
+  {
+    "QUESTAO": 64,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "64-¿Cuál es el papel de los equipos de salud de Atención Primaria en la Promoción de la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Tienen un papel secundario y no son fundamentales en la defensa y facilitación de la Promoción de la Salud.",
+      "B": "Son estrategias de promoción de únicamente a nivel individual.",
+      "C": "Desempeñan un papel fundamental en la defensa y facilitación de la Promoción de la Salud.",
+      "D": "No están involucrados en la Promoción de la Salud ya que su enfoque es puramente curativo. implementar la salud responsabilidad de la Salud es los"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Desempeñan un papel fundamental en la defensa y facilitación de la Promoción de la Salud.. Los equipos de APS desempeñan un papel fundamental en la defensa y facilitación de la Promoción de la Salud.\n\n❌ A) Tienen un papel secundario y no son fundamentales en la defensa y facilitación de la Promoción de la Salud.. No tienen un papel secundario.\n❌ B) Son estrategias de promoción de únicamente a nivel individual.. No implementan estrategias solo a nivel individual.\n❌ D) No están involucrados en la Promoción de la Salud ya que su enfoque es puramente curativo. implementar la salud responsabilidad de la Salud es los. Sí están involucrados en Promoción de la Salud."
+  },
+  {
+    "QUESTAO": 65,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "65-¿Cuál de las siguientes afirmaciones sobre la Educación para la Salud es VERDADERA?",
+    "ALTERNATIVAS": {
+      "A": "La Educación para la Salud es responsabilidad exclusiva de los servicios de salud.",
+      "B": "La información por sí sola garantiza cambios significativos en el comportamiento de las personas.",
+      "C": "Los medios de comunicación suelen presentar información objetiva y clara sobre temas de salud.",
+      "D": "Estimular y reforzar el libre ejercicio de los derechos individuales en materia de salud."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Estimular y reforzar el libre ejercicio de los derechos individuales en materia de salud.. La Educación para la Salud busca estimular y reforzar el libre ejercicio de los derechos individuales en materia de salud.\n\n❌ A) La Educación para la Salud es responsabilidad exclusiva de los servicios de salud.. No es responsabilidad exclusiva de servicios de salud.\n❌ B) La información por sí sola garantiza cambios significativos en el comportamiento de las personas.. La información sola no garantiza cambios de comportamiento.\n❌ C) Los medios de comunicación suelen presentar información objetiva y clara sobre temas de salud.. Los medios no siempre presentan información objetiva."
+  },
+  {
+    "QUESTAO": 66,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "66-¿Por qué se afirma que las intervenciones hacia los cambios de comportamientos individuales podrían no ser un camino correcto?",
+    "ALTERNATIVAS": {
+      "A": "Porque las políticas de los gobiernos no tienen capacidad para las decisiones individuales.",
+      "B": "Porque estas intervenciones deben estar influir en planificadas a nivel global o colectivo.",
+      "C": "Porque la Educación para la Salud no es efectiva cambios individuales.",
+      "D": "Porque la Promoción de la Salud se limita únicamente a acciones individuales. promover para"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Porque estas intervenciones deben estar influir en planificadas a nivel global o colectivo.. Las intervenciones individuales deben estar planificadas a nivel global o colectivo para ser efectivas.\n\n❌ A) Porque las políticas de los gobiernos no tienen capacidad para las decisiones individuales.. Las políticas pueden influir en decisiones individuales.\n❌ C) Porque la Educación para la Salud no es efectiva cambios individuales.. La Educación para la Salud puede ser efectiva a nivel individual.\n❌ D) Porque la Promoción de la Salud se limita únicamente a acciones individuales. promover para. La Promoción de la Salud no se limita a acciones individuales."
+  },
+  {
+    "QUESTAO": 67,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "67-¿Qué se destaca como una estrategia efectiva para fortalecer la Promoción de la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Centrarse exclusivamente en cambios de comportamiento individuales.",
+      "B": "Desarrollar campañas informativas sin otras estrategias complementarias.",
+      "C": "Fomentar la participación comunitaria y coordinar políticas públicas.",
+      "D": "Limitar la intervención a nivel local y no buscar cambios globales."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Fomentar la participación comunitaria y coordinar políticas públicas.. Fomentar la participación comunitaria y coordinar políticas públicas son estrategias efectivas para fortalecer la Promoción de la Salud.\n\n❌ A) Centrarse exclusivamente en cambios de comportamiento individuales.. No debe centrarse exclusivamente en cambios individuales.\n❌ B) Desarrollar campañas informativas sin otras estrategias complementarias.. No se limita a campañas informativas.\n❌ D) Limitar la intervención a nivel local y no buscar cambios globales.. No debe limitarse a nivel local."
+  },
+  {
+    "QUESTAO": 68,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "68-¿Cuál es una de las definiciones de Promoción de la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Proporcionar niveles de vida saludables, buenas condiciones de trabajo, educación, medios de descanso y recreación.",
+      "B": "Exigir a los individuos o grupos la selección de opciones que conduzcan al bienestar del individuo y del colectivo.",
+      "C": "Limitar su ámbito de acción al individuo y la familia.",
+      "D": "No trascender al sector salud en sus intervenciones. principios fundamentales"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": "✅ A) Proporcionar niveles de vida saludables, buenas condiciones de trabajo, educación, medios de descanso y recreación.. Una definición de Promoción de la Salud es proporcionar niveles de vida saludables, buenas condiciones de trabajo, educación, medios de descanso y recreación.\n\n❌ B) Exigir a los individuos o grupos la selección de opciones que conduzcan al bienestar del individuo y del colectivo.. No se trata de exigir, sino de facilitar opciones.\n❌ C) Limitar su ámbito de acción al individuo y la familia.. No limita su ámbito al individuo y la familia.\n❌ D) No trascender al sector salud en sus intervenciones. principios fundamentales. Sí trasciende al sector salud."
+  },
+  {
+    "QUESTAO": 69,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "69-¿Qué principios fundamentales destacan en la Promoción de la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Afecta solo a grupos específicos de la población.",
+      "B": "No pretende actuar sobre los determinantes de la salud.",
+      "C": "Combina metodologías contradictorias y no complementarias.",
+      "D": "Pretende lograr la participación concreta y específica de la población."
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Pretende lograr la participación concreta y específica de la población.. La Promoción de la Salud pretende lograr la participación concreta y específica de la población.\n\n❌ A) Afecta solo a grupos específicos de la población.. Afecta a toda la población, no solo grupos específicos.\n❌ B) No pretende actuar sobre los determinantes de la salud.. Sí pretende actuar sobre los determinantes de la salud.\n❌ C) Combina metodologías contradictorias y no complementarias.. Las metodologías son complementarias, no contradictorias."
+  },
+  {
+    "QUESTAO": 70,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "70-¿Cuál es uno de los objetivos de la Educación para la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Limitar el acceso a la información sobre salud.",
+      "B": "Persuadir a la población para tomar decisiones específicas.",
+      "C": "Presentar información de manera subjetiva y confusa.",
+      "D": "Informar, estimular, fomentar el juicio independiente y crítico. información de manera la"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) Informar, estimular, fomentar el juicio independiente y crítico. información de manera la. Un objetivo de la Educación para la Salud es informar, estimular y fomentar el juicio independiente y crítico.\n\n❌ A) Limitar el acceso a la información sobre salud.. No busca limitar el acceso a la información.\n❌ B) Persuadir a la población para tomar decisiones específicas.. No busca persuadir para decisiones específicas.\n❌ C) Presentar información de manera subjetiva y confusa.. La información debe ser clara, no subjetiva y confusa."
+  },
+  {
+    "QUESTAO": 71,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "71-¿Qué papel desempeñan los medios de comunicación en el proceso de Educación para la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Presentar información objetiva y clara.",
+      "B": "Manipular la información para defender intereses comerciales.",
+      "C": "Colaborar con la difusión de mensajes sanitarios precisos.",
+      "D": "Reforzar el libre ejercicio de los derechos de la población."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Colaborar con la difusión de mensajes sanitarios precisos.. Los medios de comunicación colaboran con la difusión de mensajes sanitarios precisos.\n\n❌ A) Presentar información objetiva y clara.. No siempre presentan información objetiva.\n❌ B) Manipular la información para defender intereses comerciales.. No todos manipulan la información.\n❌ D) Reforzar el libre ejercicio de los derechos de la población.. Reforzar derechos es objetivo de la Educación para la Salud."
+  },
+  {
+    "QUESTAO": 72,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción",
+    "ENUNCIADO": "72-¿Cuál es una estrategia sugerida para fortalecer la Promoción de la Salud?",
+    "ALTERNATIVAS": {
+      "A": "Centrarse exclusivamente en cambios de comportamiento individuales.",
+      "B": "Desarrollar campañas informativas sin otras estrategias complementarias.",
+      "C": "Fomentar la participación comunitaria y coordinar políticas públicas.",
+      "D": "Limitar la intervención a nivel local y no buscar cambios globales."
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Fomentar la participación comunitaria y coordinar políticas públicas.. Fomentar la participación comunitaria y coordinar políticas públicas son estrategias sugeridas.\n\n❌ A) Centrarse exclusivamente en cambios de comportamiento individuales.. No centrarse solo en cambios individuales.\n❌ B) Desarrollar campañas informativas sin otras estrategias complementarias.. No limitarse a campañas informativas.\n❌ D) Limitar la intervención a nivel local y no buscar cambios globales.. No limitar la intervención a nivel local."
+  },
+  {
+    "QUESTAO": 73,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "73-¿Cómo describe Freud la sexualidad infantil en su libro \"Tres ensayos para una teoría sexual\"?",
+    "ALTERNATIVAS": {
+      "A": "Como innata y genética",
+      "B": "Como autoerótica y relacionada con funciones fisiológicas vitales.",
+      "C": "Como exclusivamente relacionada con el Otro y el lenguaje",
+      "D": "Como desordenada y sin conexión entre las pulsiones la sexualidad"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Como autoerótica y relacionada con funciones fisiológicas vitales.. Freud describe la sexualidad infantil como autoerótica y relacionada con funciones fisiológicas vitales (succión, excreción).\n\n❌ A) Como innata y genética. No es solo innata y genética.\n❌ C) Como exclusivamente relacionada con el Otro y el lenguaje. No es exclusivamente relacional con el Otro.\n❌ D) Como desordenada y sin conexión entre las pulsiones la sexualidad. No es desordenada; tiene una organización propia."
+  },
+  {
+    "QUESTAO": 74,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "74-¿Qué significa que la sexualidad infantil sea \"autoerótica\" según Freud?",
+    "ALTERNATIVAS": {
+      "A": "Que se basa en el placer proporcionado por el cuerpo del otro",
+      "B": "Que se origina en la interacción con el lenguaje y el Otro",
+      "C": "Que la satisfacción se obtiene en el propio cuerpo sin la participación del cuerpo del otro",
+      "D": "Que su fin sexual está determinado por una única zona erógena"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Que la satisfacción se obtiene en el propio cuerpo sin la participación del cuerpo del otro. Autoerótica significa que la satisfacción se obtiene en el propio cuerpo sin necesidad del cuerpo del otro.\n\n❌ A) Que se basa en el placer proporcionado por el cuerpo del otro. No se basa en el placer del cuerpo del otro.\n❌ B) Que se origina en la interacción con el lenguaje y el Otro. No se origina en la interacción con el lenguaje.\n❌ D) Que su fin sexual está determinado por una única zona erógena. No tiene un fin sexual determinado por una única zona erógena."
+  },
+  {
+    "QUESTAO": 75,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "75-¿Cuál es el momento decisivo en el que culmina la sexualidad infantil?",
+    "ALTERNATIVAS": {
+      "A": "El descubrimiento de las diferencias anatómicas",
+      "B": "La interpretación del discurso sexual",
+      "C": "La elección del sujeto de una posición sexuada",
+      "D": "La adolescencia como momento privilegiado para la elección de un objeto de amor exogámico"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": "✅ D) La adolescencia como momento privilegiado para la elección de un objeto de amor exogámico. La adolescencia es el momento privilegiado para la elección de un objeto de amor exogámico, culminando la sexualidad infantil.\n\n❌ A) El descubrimiento de las diferencias anatómicas. El descubrimiento de diferencias anatómicas es parte del proceso.\n❌ B) La interpretación del discurso sexual. La interpretación del discurso sexual no es el momento decisivo.\n❌ C) La elección del sujeto de una posición sexuada. La elección de posición sexuada es parte del proceso."
+  },
+  {
+    "QUESTAO": 76,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "76-¿Qué características describe Freud de la sexualidad infantil?",
+    "ALTERNATIVAS": {
+      "A": "Innata y genética",
+      "B": "Autoerótica, relacionada con funciones fisiológicas vitales y con un fin sexual dominado por una zona erógena",
+      "C": "Exclusivamente relacionada con el Otro y el lenguaje",
+      "D": "Desordenada y sin conexión entre las pulsiones"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Autoerótica, relacionada con funciones fisiológicas vitales y con un fin sexual dominado por una zona erógena. Freud describe la sexualidad infantil como autoerótica, relacionada con funciones fisiológicas vitales y con un fin sexual dominado por una zona erógena.\n\n❌ A) Innata y genética. No es solo innata y genética.\n❌ C) Exclusivamente relacionada con el Otro y el lenguaje. No es exclusivamente relacional con el Otro.\n❌ D) Desordenada y sin conexión entre las pulsiones. No es desordenada y sin conexión entre pulsiones."
+  },
+  {
+    "QUESTAO": 77,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "77-Cuál es la función del complejo de Edipo en el desarrollo de la sexualidad?",
+    "ALTERNATIVAS": {
+      "A": "Iniciar el proceso de sexuación",
+      "B": "Organizar el devenir humano en torno a la diferencia de sexos y generaciones",
+      "C": "Determinar la anatomía del individuo.",
+      "D": "Decidir el futuro de la sexualidad y personalidad adultas"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": "✅ B) Organizar el devenir humano en torno a la diferencia de sexos y generaciones. El complejo de Edipo organiza el devenir humano en torno a la diferencia de sexos y generaciones.\n\n❌ A) Iniciar el proceso de sexuación. No inicia el proceso de sexuación.\n❌ C) Determinar la anatomía del individuo.. No determina la anatomía del individuo.\n❌ D) Decidir el futuro de la sexualidad y personalidad adultas. No decide el futuro de la sexualidad y personalidad adultas."
+  },
+  {
+    "QUESTAO": 79,
+    "ANO": "2024",
+    "MATERIA": "Sexualidad, Gênero y Reproducción",
+    "PARCIAL": "1",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Biología",
+    "TAGS": "Sexualidad, Género, Reproducción, Psicoanálisis",
+    "ENUNCIADO": "79-¿Cuál es la importancia del respeto por la singularidad en el proceso de sexuación?",
+    "ALTERNATIVAS": {
+      "A": "Es irrelevante para la ética de la práctica médica",
+      "B": "No tiene impacto en las dificultades y vacilaciones del sujeto",
+      "C": "Es clave para la ética de la práctica médica y el tratamiento de las consultas relacionadas con el proceso de sexuación",
+      "D": "Puede generar desacuerdos y conflictos entre los profesionales del campo de la salud como Freud describe"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": "✅ C) Es clave para la ética de la práctica médica y el tratamiento de las consultas relacionadas con el proceso de sexuación. El respeto por la singularidad es clave para la ética de la práctica médica y el tratamiento de consultas relacionadas con el proceso de sexuación.\n\n❌ A) Es irrelevante para la ética de la práctica médica. No es irrelevante para la ética médica.\n❌ B) No tiene impacto en las dificultades y vacilaciones del sujeto. Sí tiene impacto en las dificultades del sujeto.\n❌ D) Puede generar desacuerdos y conflictos entre los profesionales del campo de la salud como Freud describe. No debe generar conflictos entre profesionales."
+  }
+]

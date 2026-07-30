@@ -92,3 +92,30 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 - Push para o GitHub: usuário faz manualmente (GitHub Desktop, conta `evellinhg`) — Claude não tem permissão de escrita direta no repo.
 - Preços e forma de pagamento por idioma já definidos (ver tabela acima) — não perguntar de novo.
 - Público bilíngue confirmado — não é "escolher um idioma", é PT **e** ES desde o início.
+
+### Sessão de 2026-07-29/30 — landing page, logo novo, login e banner de conta gratuita
+
+1. **Landing page**
+   - Bullet do Banco de Questões (`lib/i18n.tsx`, `features.items[1]`) reescrito para deixar explícito que **todas** as questões têm correção comentada.
+   - Animação lateral do Hero (`study-dashboard.tsx`) perdeu o painel de Ranking (removido `RankingPanel`, dados de ranking e ícones associados; substituído por card de "Sequência" com ícone `Flame`) e ganhou tradução completa PT/ES via novo namespace `t.studyDashboard` em `lib/i18n.tsx` — o componente agora recebe `dt` (dashboard translations) como prop em vez de textos fixos.
+   - `QuizDemo` (`components/quiz-demo.tsx`) voltou a ser renderizado em `app/page.tsx` (antes só existia no código, sem uso) e passou a buscar questões reais e aleatórias do banco (`supabase.from("questoes")...`) em vez do array mockado em português — 5 perguntas sorteadas por carregamento, com loading/erro tratados.
+   - **Bug corrigido no QuizDemo**: ao confirmar uma alternativa errada, o feedback exibido era sempre o da alternativa **correta** (`opcoes_comentario[indice_correta]` hardcoded). Corrigido para guardar `explanations: string[]` completo e exibir `explanations[selected]` — feedback agora corresponde à opção realmente marcada.
+
+2. **Logo novo em todo o site**
+   - Arquivos enviados pelo usuário (`public/logomednovo.png`, `public/logomednovo1.png`, canvas 2000×2000 majoritariamente transparente) foram recortados via Python/Pillow (bbox do conteúdo real + padding) e usados para substituir `public/logo.png` (2000×562, logo horizontal completo) e `public/logo-icon.png` (2000×1848, símbolo/ícone) — mantendo os arquivos originais intactos e commitados à parte, a pedido do usuário.
+   - `icon-192.png`/`icon-512.png` regenerados centralizando o novo ícone em canvas transparente quadrado (mesmo padrão dos ícones antigos).
+   - Componentes atualizados para as novas proporções: `navbar.tsx`, `sidebar-nav.tsx`, `admin-sidebar.tsx` (todos `next/image` com `width`/`height` corrigidos). `resumo-dialog.tsx` e `app/layout.tsx`/`manifest.json` não precisaram de mudança (carregam os arquivos dinamicamente/por nome, já pegam o conteúdo novo).
+
+3. **Página de login (`components/login-form.tsx`)**
+   - Badge placeholder "M" (texto num quadrado com gradiente) substituído pela logo real (`/logo.png`).
+   - Título "Entrar no MedClass"/"Criar sua conta" removido; logo aumentada (`h-16`) e reposicionada para ocupar o lugar do título, com o subtítulo permanecendo abaixo.
+
+4. **Verificação do cadastro por e-mail/senha**
+   - Usuário suspeitava que o signup por e-mail/senha nunca tinha sido testado e talvez não criasse o perfil no banco. **Testado de ponta a ponta** com conta descartável: `supabase.auth.signUp()` dispara o mesmo trigger Postgres (`on_auth_user_created`) que o login Google, criando corretamente a linha em `profiles` (plan `gratis`, `trial_expires_at`, contadores zerados). Confirmação de e-mail é exigida (sem `session` até confirmar) — comportamento já previsto no código (`login-form.tsx`). **Nenhum bug encontrado**, nada foi alterado no fluxo de auth.
+
+5. **Banner de conta gratuita no dashboard (novo)**
+   - `components/free-plan-banner.tsx`: banner vermelho no topo do dashboard (mesmo padrão visual do já existente `plan-expired-banner.tsx`) exibido para contas gratuitas **ainda não expiradas** (`!hasFullAccess && !isTrialExpired && !accessExpired`), avisando do limite de 10 questões de teste (`FREE_QUESTOES_LIMIT`, já existia em `lib/plan-status.ts`) com botão para `/#pricing`.
+   - Renderizado em `dashboard-layout.tsx` logo abaixo do `PlanExpiredBanner` (nunca aparecem juntos, são estados mutuamente exclusivos).
+   - **Ambos os banners foram migrados para o sistema de i18n** (novo namespace `t.planBanner` em `lib/i18n.tsx`, chaves `freeText`/`expiredText`/`cta`) — antes o texto estava fixo em português mesmo com o app em espanhol, inconsistência percebida pelo usuário e corrigida.
+
+6. **Gotcha de dev descoberto**: reiniciar o `next dev` (Turbopack) enquanto o navegador tem o **service worker do PWA** (`sw.js`, cache `medclass-v1`) ativo pode causar `ChunkLoadError`/tela de erro mesmo depois de hard reload (`cmd+shift+r`) — o service worker serve chunks antigos do cache. Solução: `navigator.serviceWorker.getRegistrations()` → `unregister()` + `caches.delete()` via devtools/console antes de recarregar. Isso só afeta o ambiente de desenvolvimento local; não é um bug de produção.

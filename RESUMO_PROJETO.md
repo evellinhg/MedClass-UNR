@@ -1,6 +1,6 @@
 # MedClass UNR — Resumo do Projeto
 
-_Última atualização: 29/07/2026 (sessão 3)_
+_Última atualização: 31/07/2026 (sessão 4)_
 
 ## A ideia
 
@@ -21,7 +21,7 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 | Origem do código | Cópia do MedClass Teórico (mesma stack Next.js/Supabase) |
 | GitHub | `github.com/evellinhg/MedClass-UNR` (conta separada, `evellinhg`) |
 | Supabase | Projeto novo, ref `zimplxuoxigbexfemqkd` |
-| Deploy | Vercel — `med-class-unr2026.vercel.app` |
+| Deploy | Vercel — domínio próprio `medclass.com.ar` (redirecionado do Vercel; `med-class-unr2026.vercel.app` continua ativo como alias) |
 | Google OAuth | Reaproveita o mesmo Client OAuth do MedClass original (Client ID `11218223865-...`), com o redirect URI do Supabase novo adicionado |
 
 **Atenção**: o GitHub Desktop do usuário estava logado como `leoozimalves2` mas o repo é da conta `evellinhg` — isso já causou um erro de "fork" uma vez. Confirmar sempre qual conta está ativa antes de pedir push.
@@ -117,5 +117,15 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
    - `components/free-plan-banner.tsx`: banner vermelho no topo do dashboard (mesmo padrão visual do já existente `plan-expired-banner.tsx`) exibido para contas gratuitas **ainda não expiradas** (`!hasFullAccess && !isTrialExpired && !accessExpired`), avisando do limite de 10 questões de teste (`FREE_QUESTOES_LIMIT`, já existia em `lib/plan-status.ts`) com botão para `/#pricing`.
    - Renderizado em `dashboard-layout.tsx` logo abaixo do `PlanExpiredBanner` (nunca aparecem juntos, são estados mutuamente exclusivos).
    - **Ambos os banners foram migrados para o sistema de i18n** (novo namespace `t.planBanner` em `lib/i18n.tsx`, chaves `freeText`/`expiredText`/`cta`) — antes o texto estava fixo em português mesmo com o app em espanhol, inconsistência percebida pelo usuário e corrigida.
+
+### Sessão de 2026-07-30/31 — domínio próprio, feedbacks, plano VIP
+
+1. **Domínio próprio `medclass.com.ar`**: usuário registrou o domínio e redirecionou o Vercel para ele. Isso quebrou o login com Google no dispositivo onde o app estava instalado a partir do novo domínio — erro do Supabase "Requested path is invalid" (o `redirect_to` do OAuth aponta para `window.location.origin + /auth/callback`, e o Supabase só aceita redirects que batem com a allow-list). **Corrigido**: adicionado `https://medclass.com.ar/**` e `https://www.medclass.com.ar/**` em Authentication > URL Configuration > Redirect URLs no Supabase Dashboard, e a Site URL trocada de `med-class-unr2026.vercel.app` para `https://medclass.com.ar`. Testado ponta a ponta (login Google completo) e confirmado funcionando. O domínio antigo `med-class-unr2026.vercel.app` continua na allow-list e ainda funciona.
+2. **Provedor Apple continua desabilitado no Supabase** (Authentication > Sign In/Providers) apesar do botão "Continuar com Apple" existir na tela de login — para ativar precisa de conta paga Apple Developer Program (Services ID + Team ID + Key ID + chave `.p8`), que só o usuário pode gerar.
+3. **Feature "Histórico de Feedbacks"** implementada do zero (não existia, só era mock): tabela `feedbacks` com RLS, rotas admin `/api/admin/feedbacks`, tela admin nova, componente do aluno com status Pendente/Respondido.
+4. **Bug de integridade corrigido**: `admin-questoes-content.tsx` usava `.select("*")` sem paginação — Supabase corta em 1000 linhas e a tabela já passa de 3600. Agora pagina via `.range()`.
+5. **Crash "falso positivo" do Chrome Translate corrigido na raiz**: `app/layout.tsx` tinha `lang="en"` num site 100% PT/ES; trocado para `lang="es"` + `translate="no"` + meta `notranslate`.
+6. **Plano VIP** (sem expiração) adicionado em `lib/plan-status.ts`/`admin-usuarios-content.tsx`, com filtro por plano e exclusão em massa (checkboxes + confirmação) no admin de usuários.
+7. Vermelho de alerta (banner de conta grátis, "Precisa Melhorar") trocado para `#ff3b3b` neon. Opção de 60 questões adicionada em Treinamento Livre e Simulado.
 
 6. **Gotcha de dev descoberto**: reiniciar o `next dev` (Turbopack) enquanto o navegador tem o **service worker do PWA** (`sw.js`, cache `medclass-v1`) ativo pode causar `ChunkLoadError`/tela de erro mesmo depois de hard reload (`cmd+shift+r`) — o service worker serve chunks antigos do cache. Solução: `navigator.serviceWorker.getRegistrations()` → `unregister()` + `caches.delete()` via devtools/console antes de recarregar. Isso só afeta o ambiente de desenvolvimento local; não é um bug de produção.

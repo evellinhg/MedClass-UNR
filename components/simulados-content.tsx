@@ -54,7 +54,7 @@ interface Simulado {
   progresso_index: number | null
 }
 
-const QUANTIDADES = [10, 20, 30, 50]
+const QUANTIDADES = [10, 20, 30, 50, 60]
 const TEMPOS_POR_QUESTAO = [30, 60, 90, 120, 180]
 const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 

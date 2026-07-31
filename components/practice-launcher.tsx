@@ -32,7 +32,7 @@ interface PracticeLauncherProps {
   onStart: (config: SimuladoConfig) => void
 }
 
-const QUANTITIES = [5, 10, 20, 30, 50]
+const QUANTITIES = [5, 10, 20, 30, 50, 60]
 const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
 async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {

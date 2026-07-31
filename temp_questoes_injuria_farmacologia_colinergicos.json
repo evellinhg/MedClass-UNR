@@ -1,0 +1,382 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "acetilcolina",
+      "muscarínico",
+      "miosis",
+      "cicloplejía",
+      "acomodación"
+    ],
+    "enunciado": "¿Cuál de estos efectos no es producido por la Acetilcolina?",
+    "opcoes": [
+      "Miosis",
+      "Parálisis de la acomodación",
+      "Bradicardia",
+      "Bronquio-constricción"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La miosis SÍ es producida por la acetilcolina: al estimular los receptores muscarínicos M3 del ojo contrae el músculo constrictor (esfínter) del iris, con lo cual la pupila se contrae. Por ser un efecto colinérgico, no es lo que la pregunta busca.",
+      "✅ Correcto (este es el efecto NO producido). La parálisis de la acomodación (cicloplejía) es un efecto ANTICOLINÉRGICO típico de la atropina: al relajar el músculo ciliar, el cristalino queda aplanado y el ojo pierde la acomodación para la visión cercana. La acetilcolina, por el contrario, CONTRATA el músculo ciliar y produce acomodación para la visión próxima; nunca la paraliza.",
+      "❌ Incorrecto. La bradicardia SÍ es producida por la acetilcolina: al activar los receptores muscarínicos M2 cardíacos (efecto vagal) reduce la frecuencia cardíaca. No es el efecto que se busca.",
+      "❌ Incorrecto. La bronquioconstricción SÍ es producida por la acetilcolina: contrae el músculo liso bronquial vía receptores M3 (por eso los anticolinérgicos como el ipratropio producen broncodilatación). No es el efecto que se busca."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "anticolinérgicos",
+      "amonio cuaternario",
+      "ipratropio",
+      "atropina",
+      "escopolamina"
+    ],
+    "enunciado": "¿Cuál de los siguientes fármacos anticolinérgicos son de derivados de N4?",
+    "opcoes": [
+      "Atropina",
+      "Escopolamina",
+      "Ipratropio"
+    ],
+    "indice_correta": 2,
+    "justificativa": "La fuente escribe \"derivados de N4\" en lugar de \"derivados de amonio cuaternario\"; el concepto es el mismo: la respuesta es el ipratropio.",
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina es un alcaloide de la belladona de AMINA TERCIARIA (nitrógeno terciario, sin carga): por eso atraviesa la barrera hematoencefálica y produce efectos centrales (delirio, midriasis, boca seca). No es un derivado de amonio cuaternario.",
+      "❌ Incorrecto. La escopolamina, al igual que la atropina, es una AMINA TERCIARIA: atraviesa la BHE y tiene efectos centrales (sedación, amnesia, cine ta de movimiento o cinetosis). No es un derivado de amonio cuaternario.",
+      "✅ Correcto. El ipratropio es un derivado de AMONIO CUATERNARIO (nitrógeno cuaternario con carga positiva): no atraviesa la barrera hematoencefálica, se usa por vía inhalatoria como broncodilatador anticolinérgico (EPOC/asma) y tiene mínimos efectos sistémicos y centrales. (La fuente escribe \"N4\" en lugar de amonio cuaternario.)"
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "organofosforados",
+      "atropina",
+      "antídoto",
+      "intoxicación",
+      "acetilcolinesterasa"
+    ],
+    "enunciado": "Un paciente de 50 años concurre a la emergencia con signo de intoxicación por organofosforados, presenta sudoración profusa, lagrimeo excesivo, salivación abundante y dificultad respiratoria. ¿Cuál es el mejor medicamento para revertir esa intoxicación?",
+    "opcoes": [
+      "Tiotropio",
+      "Arecolina",
+      "Atropina",
+      "Pilocarpina"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El tiotropio es un anticolinérgico inhalado de acción prolongada usado en la EPOC y el asma; no se emplea en la emergencia por organofosforados, donde se necesita un antagonista muscarínico potente, de acción rápida y a dosis altas.",
+      "❌ Incorrecto. La arecolina es un AGONISTA muscarínico (alcaloide de la nuez de betel). En la intoxicación por organofosforados ya existe un exceso de acetilcolina; administrar un agonista muscarínico agravaría la crisis colinérgica.",
+      "✅ Correcto. La atropina es el antídoto de primera línea: antagoniza de forma competitiva los receptores MUSCARÍNICOS y revierte el síndrome colinérgico periférico: disminuye la sudoración, el lagrimeo, la salivación y la broncorrea, y corrige la bradicardia y la broncoconstricción. (Debe administrarse a dosis altas, hasta lograr la atropinización, junto con pralidoxima para reactivar la enzima.)",
+      "❌ Incorrecto. La pilocarpina es un AGONISTA muscarínico (se usa en xerostomía y glaucoma). En la intoxicación por organofosforados potenciaría los síntomas muscarínicos (secreciones, broncoespasmo), por lo que está contraindicada."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "miastenia gravis",
+      "neostigmina",
+      "acetilcolinesterasa",
+      "unión neuromuscular",
+      "acetilcolina"
+    ],
+    "enunciado": "Una mujer de 30 años es diagnosticada con miastenia gravis, presenta debilidad muscular progresiva, principalmente después de la actividad física. Después de la evaluación exhaustiva, se recomienda el tratamiento con un fármaco que aumente la biodisponibilidad de acetilcolina en la unión neuromuscular. ¿Cuál?",
+    "opcoes": [
+      "Atropina",
+      "Pilocarpina",
+      "Neostigmina",
+      "Escopolamina"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina es un ANTAGONISTA muscarínico: bloquea la acción de la acetilcolina, no aumenta su disponibilidad en la placa motora. Además, la miastenia gravis se trata con fármacos que AUMENTAN la acetilcolina, no que la bloqueen.",
+      "❌ Incorrecto. La pilocarpina es un AGONISTA muscarínico: activa los receptores muscarínicos de los órganos efectores (secreciones, miosis, bradicardia) pero no actúa sobre la unión neuromuscular nicotínica ni aumenta la acetilcolina, por lo que no mejora la fuerza muscular.",
+      "✅ Correcto. La neostigmina es un INHIBIDOR DE LA ACETILCOLINESTERASA: bloquea la enzima que degrada la acetilcolina, con lo que la ACh se acumula en la hendidura sináptica de la unión neuromuscular y estimula más receptores nicotínicos, mejorando la fuerza muscular. Es el fármaco de primera línea en la miastenia gravis.",
+      "❌ Incorrecto. La escopolamina es un ANTAGONISTA muscarínico (amina terciaria, con efectos centrales). Al igual que la atropina, no aumenta la acetilcolina y empeoraría la debilidad muscular."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "atropina",
+      "atropinización",
+      "organofosforados",
+      "intoxicación",
+      "inhibidores de la acetilcolinesterasa"
+    ],
+    "enunciado": "En relación al uso de atropina por intoxicación con inhibidores de la acetilcolinesterasa, ¿cuál es correcta?",
+    "opcoes": [
+      "Debe administrarse hasta conseguir signos de hemi intoxicación atropínica",
+      "Actúa predominantemente sobre los síntomas nicotínicos",
+      "El delirio atropínico se produce sin relación con el incremento de la concentración sanguínea de la misma",
+      "Todas son correctas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La pauta clásica del manejo de la intoxicación por organofosforados es administrar atropina en dosis altas y repetidas HASTA lograr la \"atropinización\" completa (boca y mucosas secas, midriasis, taquicardia, rubor, piel seca), signos que indican que se superó el bloqueo muscarínico del exceso de acetilcolina. (La fuente escribe \"hemi intoxicación atropínica\" refiriéndose a esos signos de atropinización.)",
+      "❌ Incorrecto. La atropina antagoniza los receptores MUSCARÍNICOS (secreciones, bradicardia, broncoespasmo). Los síntomas NICOTÍNICOS de la intoxicación (fasciculaciones, debilidad y parálisis muscular, taquicardia inicial) NO se revierten con atropina; requieren pralidoxima, que reactiva la acetilcolinesterasa.",
+      "❌ Incorrecto. El delirio atropínico (síndrome anticolinérgico central: confusión, alucinaciones, agitación) ES dependiente de la dosis y de la concentración sanguínea de atropina: aparece cuando las dosis altas hacen que la atropina atraviese la barrera hematoencefálica y bloquee los receptores muscarínicos centrales.",
+      "❌ Incorrecto. No \"todas\" son correctas: las opciones B y C son falsas (la atropina actúa sobre síntomas muscarínicos, no nicotínicos, y el delirio sí se relaciona con el incremento de la concentración sanguínea)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "atropina",
+      "síndrome anticolinérgico",
+      "delirio",
+      "efectos adversos",
+      "anticolinérgico"
+    ],
+    "enunciado": "¿Cuál de estos siguientes efectos pueden ser producidos por atropina?",
+    "opcoes": [
+      "Aumento de las secreciones bronquiales",
+      "Micción involuntaria",
+      "Fasciculación involuntaria",
+      "Delirio"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina DISMINUYE las secreciones (es un anticolinérgico): produce boca seca, sequedad bronquial y reducción de la sudoración. Aumentar las secreciones bronquiales es exactamente lo contrario de su efecto.",
+      "❌ Incorrecto. La atropina produce RETENCIÓN urinaria: relaja el músculo detrusor de la vejiga y reduce el tono del músculo liso, dificultando la micción. La \"micción involuntaria\" (incontinencia) es un efecto colinérgico, no anticolinérgico.",
+      "❌ Incorrecto. Las fasciculaciones musculares son un efecto NICOTÍNICO del exceso de acetilcolina (por ejemplo, en la intoxicación por organofosforados). La atropina es antagonista muscarínico y no produce fasciculaciones; incluso no corrige las de origen nicotínico.",
+      "✅ Correcto. A dosis altas, la atropina atraviesa la barrera hematoencefálica y produce el SÍNDROME ANTICOLINÉRGICO CENTRAL: delirio, agitación, alucinaciones, desorientación y amnesia, que se suman a los efectos periféricos (midriasis, boca seca, piel caliente y rubicunda, taquicardia, retención urinaria, íleo)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "atropina",
+      "antagonista muscarínico",
+      "competitivo",
+      "mecanismo de acción"
+    ],
+    "enunciado": "¿Cuál es el principal mecanismo de acción de la atropina?",
+    "opcoes": [
+      "Agonista de los receptores muscarínicos",
+      "Antagonista de los receptores muscarínicos de tipo irreversible",
+      "Inhibidor de la acetilcolinesterasa",
+      "Antagonista de los receptores muscarínicos de tipo competitivo"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina es un ANTAGONISTA de los receptores muscarínicos: se une a ellos y BLOQUEA la acción de la acetilcolina. No es un agonista (no activa los receptores).",
+      "❌ Incorrecto. El bloqueo de la atropina es REVERSIBLE y competitivo: se puede superar aumentando la concentración de acetilcolina (por eso en la intoxicación por organofosforados, con exceso de ACh, hay que usar dosis altas de atropina). Un antagonista irreversible sería, por ejemplo, la toxina botulínica en otro nivel o los bloqueadores alquilantes de receptores.",
+      "❌ Incorrecto. Los inhibidores de la acetilcolinesterasa son otros fármacos (neostigmina, fisostigmina) o tóxicos (organofosforados) que AUMENTAN la acetilcolina. La atropina no inhibe la enzima; bloquea los receptores donde actúa la ACh.",
+      "✅ Correcto. La atropina es un ANTAGONISTA COMPETITIVO y reversible de los receptores muscarínicos: compite con la acetilcolina por el mismo sitio de unión sin activar el receptor, y su bloqueo cede cuando aumenta la concentración de acetilcolina. Esa es la base de todos sus efectos (miosis/midriasis, secreciones, ritmo cardíaco, motilidad)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "atropina",
+      "bradicardia",
+      "indicaciones",
+      "antiarrítmico"
+    ],
+    "enunciado": "¿Cuál de las siguientes condiciones clínicas es una indicación para el uso de atropina?",
+    "opcoes": [
+      "Glaucoma",
+      "Hipertensión",
+      "Bradicardia",
+      "Epilepsia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El glaucoma es una CONTRAINDICACIÓN relativa/absoluta: la midriasis atropínica obstruye el drenaje del humor acuoso (ángulo iridocorneal) y puede precipitar o agravar un glaucoma de ángulo cerrado.",
+      "❌ Incorrecto. La atropina no es un antihipertensivo: no tiene indicación en la hipertensión arterial. Sus efectos cardiovasculares (taquicardia por bloqueo vagal) tampoco la hacen útil para la hipertensión.",
+      "✅ Correcto. La atropina está indicada en la BRADICARDIA SINTOMÁTICA (bloquea los receptores M2 cardíacos del vago y aumenta la frecuencia cardíaca). Otras indicaciones: preanestesia (disminuye las secreciones), intoxicación por organofosforados, y en oftalmología para producir midriasis/cicloplejía.",
+      "❌ Incorrecto. La atropina no tiene efecto antiepiléptico y no está indicada en la epilepsia; dosis altas pueden incluso producir convulsiones por su efecto central anticolinérgico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "tiotropio",
+      "anticolinérgico",
+      "receptores M1",
+      "receptores M3",
+      "broncodilatador"
+    ],
+    "enunciado": "Señale la opción correcta en relación al Tiotropio:",
+    "opcoes": [
+      "Tiene una acción de corta duración",
+      "Incrementa la liberación de acetilcolina",
+      "Se disocia lentamente de los receptores M1 y M3 y rápidamente de los M2",
+      "Todas son correctas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El tiotropio es de acción PROLONGADA (dura aproximadamente 24 horas, se administra una vez al día). El anticolinérgico de acción corta es el ipratropio.",
+      "❌ Incorrecto. El tiotropio es un ANTAGONISTA muscarínico: BLOQUEA la acción de la acetilcolina sobre los receptores M3 del músculo liso bronquial (y M1); no incrementa la liberación de acetilcolina.",
+      "✅ Correcto. La característica distintiva del tiotropio es su CINÉTICA de disociación selectiva: se disocia LENTAMENTE de los receptores M1 y M3 (los que median la broncoconstricción), lo que explica su broncodilatación prolongada, y se disocia RÁPIDAMENTE de los M2 (autorreceptores presinápticos que frenan la liberación de acetilcolina), evitando que se potencie la liberación de ACh y se acorte el efecto.",
+      "❌ Incorrecto. No \"todas\" son correctas porque las opciones A y B son falsas (el tiotropio es de acción prolongada y bloquea, no aumenta, la acetilcolina)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "pralidoxima",
+      "organofosforados",
+      "envejecimiento",
+      "reactivador",
+      "acetilcolinesterasa"
+    ],
+    "enunciado": "Señale la opción correcta en relación a la Pralidoxima:",
+    "opcoes": [
+      "Es un compuesto por baja afinidad por el fósforo",
+      "Debe administrarse en las primeras 12 horas de intoxicación",
+      "La misma no atraviesa la barrera hematoencefálica",
+      "Se debe administrar por vía oral"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La pralidoxima tiene ALTA afinidad por el fósforo: es una oxima nucleofílica que se une al átomo de fósforo del organofosforado unido a la acetilcolinesterasa y \"desfosforila\" la enzima, reactivándola. Esa es justamente su acción principal.",
+      "✅ Correcto. La pralidoxima debe administrarse PRECOZMENTE, idealmente dentro de las primeras 12 horas de la intoxicación, porque la enzima fosforilada sufre \"ENVEJECIMIENTO\" (aging): con el tiempo el enlace enzima-organofosforado se hace irreversible y el reactivador ya no puede actuar. Después de ese período pierde eficacia.",
+      "❌ Incorrecto. La pralidoxima es un compuesto de amonio cuaternario con penetración central LIMITADA (cruza escasamente la barrera hematoencefálica, por lo que no revierte bien los síntomas centrales), pero esa afirmación absoluta no es el dato decisivo de su uso: lo esencial es administrarla precozmente, antes del envejecimiento enzimático (opción B).",
+      "❌ Incorrecto. La pralidoxima se administra por vía INTRAVENOSA o intramuscular: por ser un compuesto de amonio cuaternario se absorbe poco por vía oral y no alcanza concentraciones eficaces por esa vía."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "nicotina",
+      "intoxicación",
+      "tratamiento sintomático",
+      "respiración asistida",
+      "toxicología"
+    ],
+    "enunciado": "En relación a la intoxicación aguda por nicotina, señale la opción correcta:",
+    "opcoes": [
+      "La dosis mortal es de 6 mg",
+      "Los signos aparecen tardíamente y se caracterizan por sequedad bucal y constipación",
+      "El tratamiento es fundamentalmente sintomático y puede ser necesaria la utilización de respiración asistida",
+      "Todas son correctas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La dosis letal de nicotina en el adulto es de aproximadamente 40-60 mg (0,5-1 mg/kg). La cifra de 6 mg corresponde a la cantidad aproximada de nicotina presente en un cigarrillo (de la cual sólo se absorbe alrededor de 1 mg); no es la dosis mortal.",
+      "❌ Incorrecto. Los signos de la intoxicación aguda por nicotina aparecen RÁPIDAMENTE y corresponden a un exceso colinérgico: náuseas, vómitos, diarrea, salivación, sudoración, bradicardia o taquicardia, hipertensión, fasciculaciones, luego depresión central y parálisis. La sequedad bucal y la constipación son efectos ANTICOLINÉRGICOS, no de la nicotina.",
+      "✅ Correcto. No existe antídoto específico para la nicotina: el tratamiento es de SOPORTE y SINTOMÁTICO (lavado gástrico, carbón activado precoz, control de arritmias y convulsiones). Como la dosis alta produce bloqueo despolarizante de la placa motora con parálisis de la musculatura respiratoria, puede ser necesaria la RESPIRACIÓN ASISTIDA.",
+      "❌ Incorrecto. No \"todas\" son correctas: la opción A (dosis mortal de 6 mg) y la opción B (signos tardíos con sequedad bucal y constipación) son falsas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "nicotina",
+      "alcaloide",
+      "tabaco",
+      "bloqueo ganglionar",
+      "inotrópico"
+    ],
+    "enunciado": "En relación a la nicotina, señale la opción correcta:",
+    "opcoes": [
+      "Es un alcaloide natural que se obtiene de las hojas de Nicotiana tabacum",
+      "En altas dosis produce bloqueo ganglionar",
+      "Produce efecto inotrópico y cronotrópico positivo",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto (afirmación verdadera). La nicotina es un ALCALOIDE natural extraído de las hojas de la planta de tabaco (Nicotiana tabacum), de la cual deriva su nombre.",
+      "✅ Correcto (afirmación verdadera). A dosis bajas la nicotina ESTIMULA los ganglios autónomos (receptores nicotínicos); a dosis ALTAS produce un BLOQUEO DESPOLARIZANTE persistente del ganglio (primero estimula y luego paraliza la transmisión ganglionar), similar al mecanismo de los bloqueadores neuromusculares despolarizantes.",
+      "✅ Correcto (afirmación verdadera). Al estimular los ganglios simpáticos y la médula suprarrenal, la nicotina libera catecolaminas que producen taquicardia (cronotropismo positivo) y aumento de la fuerza de contracción (inotropismo positivo), efectos que se observan en la fase aguda de estimulación.",
+      "✅ Correcto. Las tres afirmaciones anteriores (A, B y C) son verdaderas, por lo que \"todas son correctas\" es la respuesta válida."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "pilocarpina",
+      "xerostomía",
+      "agonista muscarínico",
+      "glaucoma"
+    ],
+    "enunciado": "¿Cuál de las siguientes condiciones clínicas es una indicación para el uso de pilocarpina?",
+    "opcoes": [
+      "Diarrea",
+      "Asma",
+      "Bradicardia",
+      "Xerostomía"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La pilocarpina no está indicada en la diarrea: como agonista muscarínico aumenta la motilidad intestinal y las secreciones, es decir, la produce o la agrava como efecto adverso.",
+      "❌ Incorrecto. El asma es una contraindicación: la activación de los receptores muscarínicos M3 bronquiales produce BRONCOCONSTRICCIÓN y empeora el broncoespasmo. (En el asma se usan anticolinérgicos, no agonistas.)",
+      "❌ Incorrecto. La pilocarpina produce BRADICARDIA (por estimulación de los receptores M2 cardíacos); no es una indicación terapéutica sino un efecto adverso. Para la bradicardia se usa la atropina.",
+      "✅ Correcto. La pilocarpina es un agonista muscarínico que estimula las glándulas salivales (receptores M3) y está indicada en la XEROSTOMÍA (boca seca por radioterapia de cabeza y cuello o síndrome de Sjögren). También se usa en oftalmología para el glaucoma (produce miosis y facilita el drenaje del humor acuoso)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "succinilcolina",
+      "bloqueador neuromuscular",
+      "despolarizante",
+      "relajante muscular"
+    ],
+    "enunciado": "En relación al mecanismo de acción de los bloqueadores neuromusculares, ¿cuál de los siguientes bloqueadores actúa como un bloqueador neuromuscular despolarizante?",
+    "opcoes": [
+      "Succinilcolina"
+    ],
+    "indice_correta": 0,
+    "justificativa": "La fuente sólo muestra la opción a) Succinilcolina (el PDF está cortado); es la respuesta correcta, ya que es el único bloqueador neuromuscular despolarizante.",
+    "opcoes_comentario": [
+      "✅ Correcto. La succinilcolina (suxametonio) es el único bloqueador neuromuscular DESPOLARIZANTE en uso clínico: actúa como un AGONISTA persistente del receptor nicotínico de la placa motora, manteniendo la despolarización de la membrana y produciendo una parálisis flácida que se inicia con fasciculaciones. Los demás bloqueadores neuromusculares (tubocurarina, pancuronio, atracurio, rocuronio, vecuronio) son NO despolarizantes (competitivos)."
+    ]
+  }
+]

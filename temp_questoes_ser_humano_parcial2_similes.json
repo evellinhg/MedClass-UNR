@@ -1,0 +1,2548 @@
+[
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "angiotensina"
+    ],
+    "enunciado": "La conversión de angiotensina I en angiotensina II se produce fundamentalmente:",
+    "opcoes": [
+      "En el riñón por acción de la enzima convertidora",
+      "En el hígado a través de la renina",
+      "En el pulmón por acción de la renina",
+      "En el pulmón por acción de la enzima convertidora"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La enzima convertidora (ECA) actúa preferentemente en el lecho capilar pulmonar, no en el riñón; el riñón es el sitio donde se libera la renina que inicia el sistema.",
+      "❌ Incorrecta. La renina actúa en la sangre sobre el angiotensinógeno (producido por el hígado) para generar angiotensina I; no interviene en la conversión a angiotensina II.",
+      "❌ Incorrecta. En el pulmón actúa la enzima convertidora de angiotensina (ECA), no la renina; la renina cataliza el paso de angiotensinógeno a angiotensina I.",
+      "✅ Correcta. La enzima convertidora de angiotensina (ECA) se localiza fundamentalmente en el endotelio del pulmón y es allí donde convierte angiotensina I en angiotensina II (potente vasoconstrictor y estimulador de aldosterona)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "clearance de agua libre"
+    ],
+    "enunciado": "En relación al clearance de agua libre (ClH2O) señale la afirmación correcta.",
+    "opcoes": [
+      "El Cl H2O es negativo cuando la orina es hipertónica y positivo cuando es hipotónica.",
+      "Es la cantidad de agua necesaria para excretar la carga osmótica en una orina que sea isotónica con el plasma.",
+      "Su valor normal es de 120 ml/min.",
+      "Su valor normal varía de 1 a 3 mosmoles/min."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. El clearance de agua libre (ClH2O = V − Cosm) es negativo cuando el riñón conserva agua (orina hipertónica, concentrada) y positivo cuando excreta agua (orina hipotónica, diluida). Refleja así la acción de la HAD/vasopresina.",
+      "❌ Incorrecta. Eso es la definición de clearance osmolar (Cosm), que es el volumen de orina hipotética que, isotónica con el plasma, arrastraría la carga osmótica excretada.",
+      "❌ Incorrecta. 120 ml/min es un valor típico del clearance de creatinina (o del flujo plasmático renal), no del clearance de agua libre.",
+      "❌ Incorrecta. 1 a 3 mosmoles/min corresponde a la osmolaridad urinaria excretada o a la carga osmótica (Cosm), no al ClH2O que se expresa en ml/min."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "renina",
+      "angiotensina"
+    ],
+    "enunciado": "La conversión de angiotensinógeno en angiotensina I se produce fundamentalmente:",
+    "opcoes": [
+      "En el riñón por acción de la enzima convertidora",
+      "En la sangre por acción de la renina",
+      "En el pulmón por acción de la enzima convertidora",
+      "En el hígado a través de la renina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La enzima convertidora convierte angiotensina I en II, no angiotensinógeno en angiotensina I; y su sitio principal es el pulmón.",
+      "✅ Correcta. La renina, liberada por el aparato yuxtaglomerular del riñón, actúa en la sangre (plasma) sobre el angiotensinógeno —proteína de origen hepático— y lo convierte en angiotensina I.",
+      "❌ Incorrecta. En el pulmón actúa la ECA sobre la angiotensina I (no sobre el angiotensinógeno) para generar angiotensina II.",
+      "❌ Incorrecta. El hígado produce el angiotensinógeno, pero la renina (que actúa en la sangre) no se origina en el hígado sino en el riñón."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "reabsorcion",
+      "sodio"
+    ],
+    "enunciado": "El mayor porcentaje de la carga filtrada de Na se reabsorbe en:",
+    "opcoes": [
+      "El segmento descendente del asa de Henle",
+      "El segmento ascendente del asa de Henle",
+      "El túbulo contorneado distal",
+      "El túbulo contorneado proximal"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento descendente del asa es relativamente impermeable al sodio; su función principal es reabsorber agua (por ser permeable a ella) y concentrar el líquido tubular.",
+      "❌ Incorrecta. El segmento ascendente grueso reabsorbe sodio por el cotransportador Na+/K+/2Cl-, pero solo alrededor de un 25% de la carga filtrada.",
+      "❌ Incorrecta. El túbulo contorneado distal reabsorbe una pequeña fracción del sodio filtrado (alrededor del 5-8%), aunque es regulada finamente por aldosterona.",
+      "✅ Correcta. El túbulo contorneado proximal reabsorbe aproximadamente el 65-70% de la carga filtrada de sodio, siendo el segmento que reabsorbe el mayor porcentaje."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "reabsorcion",
+      "calcio"
+    ],
+    "enunciado": "El mayor porcentaje de la carga filtrada de Ca se reabsorbe en:",
+    "opcoes": [
+      "El segmento descendente del asa de Henle",
+      "El segmento ascendente del asa de Henle",
+      "El túbulo contorneado distal",
+      "El túbulo contorneado proximal"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento descendente del asa de Henle no es el sitio principal de reabsorción de calcio; es casi impermeable a los iones y solo deja pasar el agua.",
+      "❌ Incorrecta. El segmento ascendente grueso reabsorbe calcio (en parte por vía paracelular favorecida por el gradiente positivo), pero reabsorbe menos que el túbulo proximal (alrededor del 20-25%).",
+      "❌ Incorrecta. El túbulo contorneado distal reabsorbe calcio en forma regulada por PTH, pero solo cerca del 8-10% de la carga filtrada.",
+      "✅ Correcta. El túbulo contorneado proximal reabsorbe aproximadamente el 60-70% de la carga filtrada de calcio, la mayor parte en forma pasiva junto al sodio y el agua."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "reabsorcion",
+      "potasio"
+    ],
+    "enunciado": "El mayor porcentaje de la carga filtrada de K se reabsorbe en:",
+    "opcoes": [
+      "El segmento descendente del asa de Henle",
+      "El segmento ascendente del asa de Henle",
+      "El túbulo contorneado distal",
+      "El túbulo contorneado proximal"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento descendente del asa es prácticamente impermeable al potasio; allí solo se reabsorbe agua.",
+      "❌ Incorrecta. El segmento ascendente grueso reabsorbe K+ (el cotransportador Na+/K+/2Cl- lo ingresa), pero es el túbulo proximal el que reabsorbe la mayor proporción.",
+      "❌ Incorrecta. En el túbulo contorneado distal (y colector) el potasio es principalmente SECRETADO (regulado por aldosterona), no reabsorbido; allí no se recupera la mayor parte del K+ filtrado.",
+      "✅ Correcta. El túbulo contorneado proximal reabsorbe aproximadamente el 65-70% del potasio filtrado por vía paracelular (siguiendo el agua y el sodio), el mayor porcentaje de todo el nefrón."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "reabsorcion",
+      "magnesio"
+    ],
+    "enunciado": "El mayor porcentaje de la carga filtrada de Mg se reabsorbe en:",
+    "opcoes": [
+      "El segmento descendente del asa de Henle",
+      "El segmento ascendente del asa de Henle",
+      "El túbulo contorneado distal",
+      "El túbulo contorneado proximal"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento descendente del asa es impermeable al magnesio; su principal función es la reabsorción de agua.",
+      "✅ Correcta. El segmento ascendente grueso del asa de Henle reabsorbe aproximadamente el 50-60% del magnesio filtrado (en parte por vía paracelular), siendo el sitio donde se recupera el mayor porcentaje. A diferencia de Na, K y Ca, el Mg se reabsorbe sobre todo en el asa y no en el túbulo proximal.",
+      "❌ Incorrecta. El túbulo contorneado distal reabsorbe una fracción pequeña del magnesio (alrededor del 5-10%), aunque finamente regulada por PTH y calcitonina.",
+      "❌ Incorrecta. El túbulo contorneado proximal reabsorbe solo el 15-25% del magnesio filtrado (menos que los demás cationes), por lo que no es el segmento principal."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "reabsorcion",
+      "fosforo"
+    ],
+    "enunciado": "El mayor porcentaje de la carga filtrada de P se reabsorbe en:",
+    "opcoes": [
+      "El segmento descendente del asa de Henle",
+      "El segmento ascendente del asa de Henle",
+      "El túbulo contorneado distal",
+      "El túbulo contorneado proximal"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento descendente del asa de Henle es prácticamente impermeable al fosfato.",
+      "❌ Incorrecta. El asa de Henle reabsorbe apenas una pequeña porción del fosfato filtrado.",
+      "❌ Incorrecta. El túbulo contorneado distal reabsorbe solo una fracción menor del fósforo; su regulación principal (PTH) se ejerce sobre el túbulo proximal.",
+      "✅ Correcta. El túbulo contorneado proximal reabsorbe aproximadamente el 80% de la carga filtrada de fosfato (cotransporte dependiente de sodio), siendo el sitio principal; la PTH inhibe esta reabsorción aumentando la fosfaturia."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "aldosterona"
+    ],
+    "enunciado": "La aldosterona, a nivel del túbulo contorneado distal, incrementa la reabsorción",
+    "opcoes": [
+      "de K+ y la secreción de Na+ y H+",
+      "de Na+ y la secreción de K+ y H+",
+      "de K+ y H+ y la secreción de Na+",
+      "de Na+ y H+ y la secreción de K+"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La aldosterona no reabsorbe K+ ni secreta Na+; su acción clásica es la reabsorción de Na+ y la secreción de K+ (y H+).",
+      "✅ Correcta. La aldosterona (hormona mineralocorticoide de la corteza suprarrenal) actúa en el túbulo contorneado distal y colector estimulando la reabsorción de Na+ (bomba Na+/K+ ATPasa basal, ENaC apical) y la secreción de K+ y de H+.",
+      "❌ Incorrecta. La aldosterona no incrementa la reabsorción de K+ ni de H+, ni la secreción de Na+; invierte el sentido real de su acción sobre el Na+ y el K+.",
+      "❌ Incorrecta. Aunque reabsorbe Na+, la aldosterona no reabsorbe H+; por el contrario, estimula su secreción junto con la de K+. El texto invierte el sentido del flujo de protones."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "vasopresina"
+    ],
+    "enunciado": "La secreción de vasopresina es estimulada por:",
+    "opcoes": [
+      "Una caída del 10% o más de la presión arterial media",
+      "Un aumento del 10% o más del volumen plasmático",
+      "Una disminución en el 5% o más de la osmolaridad plasmática",
+      "Un aumento marcado en la excreción de sodio"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La HAD/vasopresina se secreta en respuesta a (1) el aumento de la osmolaridad plasmática (osmorreceptores) y (2) la caída del volumen o de la presión arterial (barorreceptores); una caída del 10% o más de la presión arterial media estimula su liberación para conservar agua.",
+      "❌ Incorrecta. El aumento del volumen plasmático (y de la presión) INHIBE la secreción de vasopresina, ya que el organismo no necesita retener más agua.",
+      "❌ Incorrecta. La DISMINUCIÓN de la osmolaridad plasmática inhibe la secreción de vasopresina; es el aumento de la osmolaridad el que la estimula.",
+      "❌ Incorrecta. El aumento de la excreción de sodio (p. ej. por el péptido natriurético atrial) no es el estímulo directo de la vasopresina; la hormona se secreta frente a hiperosmolaridad o hipovolemia/hipotensión."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "aldosterona"
+    ],
+    "enunciado": "Estimulan la secreción de aldosterona:",
+    "opcoes": [
+      "La disminución de los niveles de renina",
+      "El aumento de los niveles del factor natriurético atrial",
+      "La hiperkalemia",
+      "La hipokalemia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La DISMINUCIÓN de renina implica menos angiotensina II, y por lo tanto MENOS secreción de aldosterona (la angiotensina II es su principal estímulo).",
+      "❌ Incorrecta. El péptido natriurético atrial (PNA/ANP) INHIBE la secreción de aldosterona; su aumento se asocia a hipervolemia y natriuresis.",
+      "✅ Correcta. La hiperkalemia estimula directamente la secreción de aldosterona (además de la angiotensina II), que a su vez aumenta la secreción renal de K+ para corregir el exceso. La hipokalemia, en cambio, la inhibe.",
+      "❌ Incorrecta. La hipokalemia disminuye la secreción de aldosterona (al revés: es la hiperkalemia la que la estimula), ya que no se necesita secretar más potasio."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "filtracion glomerular"
+    ],
+    "enunciado": "La fracción de filtración es el porcentaje del volumen:",
+    "opcoes": [
+      "Plasmático renal filtrado por los glomérulos y alcanza un 50%",
+      "Minuto que pasa por los riñones y alcanza un 50%",
+      "Sanguíneo renal filtrado por los glomérulos y alcanza el 20%",
+      "Plasmático renal filtrado por los glomérulos y alcanza el 20%"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La fracción de filtración se calcula sobre el flujo PLASMÁTICO renal (no total), pero su valor es del 20%, no del 50%.",
+      "❌ Incorrecta. No se refiere al 'volumen minuto' que pasa por los riñones ni alcanza el 50%; mezcla los conceptos de flujo sanguíneo renal y fracción de filtración.",
+      "❌ Incorrecta. La fracción de filtración se refiere al volumen PLASMÁTICO (no sanguíneo total); el 20% del plasma renal filtrado, no de la sangre completa.",
+      "✅ Correcta. La fracción de filtración (FF) es el cociente entre la filtración glomerular (120 ml/min) y el flujo plasmático renal (600 ml/min), es decir aproximadamente el 20% del plasma que llega a los riñones se filtra por los glomérulos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "vasopresina"
+    ],
+    "enunciado": "A nivel renal, los receptores de vasopresina se encuentran fundamentalmente:",
+    "opcoes": [
+      "En el segmento inicial del túbulo contorneado distal",
+      "En el túbulo contorneado distal",
+      "En el túbulo colector",
+      "En el asa de Henle"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El segmento inicial del túbulo distal no es el sitio principal de receptores de vasopresina.",
+      "❌ Incorrecta. El túbulo contorneado distal es solo moderadamente sensible a la HAD; la mayor concentración de receptores se localiza más abajo en la nefrona.",
+      "✅ Correcta. Los receptores de vasopresina (V2) se localizan fundamentalmente en el túbulo colector (células principales), donde la hormona induce la inserción de acuaporinas 2 y la reabsorción de agua (antidiuresis).",
+      "❌ Incorrecta. El asa de Henle (especialmente el segmento descendente) es permeable al agua por acuaporinas 1, pero NO es el sitio donde la vasopresina ejerce su acción principal."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "angiotensina"
+    ],
+    "enunciado": "La angiotensina II:",
+    "opcoes": [
+      "Es un potente vasoconstrictor arteriolar",
+      "Es sintetizada y liberada por el hígado",
+      "Inhibe la secreción de aldosterona",
+      "Es un potente vasodilatador arteriolar"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La angiotensina II es uno de los vasoconstrictores más potentes del organismo (vasoconstricción arteriolar sistémica y especialmente de la arteriola eferente renal), además de estimular aldosterona, sed y liberación de HAD.",
+      "❌ Incorrecta. El hígado sintetiza el ANGIO-TENSINÓGENO (sustrato), pero la angiotensina II se genera en el plasma/pulmón por acción de la ECA sobre la angiotensina I.",
+      "❌ Incorrecta. La angiotensina II ESTIMULA la secreción de aldosterona (eje renina-angiotensina-aldosterona), no la inhibe.",
+      "❌ Incorrecta. La angiotensina II es un vasoconstrictor, no un vasodilatador; el efecto opuesto (vasodilatación) corresponde a sustancias como las cininas o el óxido nítrico."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "renina"
+    ],
+    "enunciado": "La secreción de renina es incrementada por:",
+    "opcoes": [
+      "El aumento de la carga filtrada de sodio",
+      "El aumento de la presión en la arteria renal",
+      "La estimulación simpática",
+      "El aumento de los niveles de la hormona natriurética auricular"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El aumento de la carga filtrada de sodio en la mácula densa INHIBE la secreción de renina; es la DISMINUCIÓN de la carga de Na+ la que la estimula (mecanismo tubuloglomerular).",
+      "❌ Incorrecta. El aumento de la presión (o del estiramiento) en la arteriola aferente INHIBE la secreción de renina (barorreceptores renales); la caída de la presión la estimula.",
+      "✅ Correcta. La estimulación simpática (vía receptores beta-1 adrenérgicos sobre las células yuxtaglomerulares) incrementa la secreción de renina, junto con la hipotensión renal y la baja carga de Na+ en la mácula densa.",
+      "❌ Incorrecta. El péptido natriurético atrial (ANP) INHIBE la secreción de renina; su aumento acompaña a la hipervolemia, situación en la que se suprime el eje renina-angiotensina."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "vasopresina",
+      "acuaporinas"
+    ],
+    "enunciado": "La vasopresina actúa permitiendo la polimerización de acuaporinas:",
+    "opcoes": [
+      "De tipo 1 en el TCP",
+      "De tipo 2 en el TCP",
+      "De tipo 1 en el túbulo colector",
+      "De tipo 2 en el túbulo colector"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Las acuaporinas 1 son constitutivas (no reguladas por HAD) y se localizan en el túbulo proximal y en el segmento descendente del asa, no en el TCP.",
+      "❌ Incorrecta. Las acuaporinas 2 son reguladas por vasopresina, pero se insertan en el TÚBULO COLECTOR, no en el túbulo contorneado proximal.",
+      "❌ Incorrecta. Las AQP1 son constitutivas y no responden a la HAD; la vasopresina actúa sobre las AQP2 en el túbulo colector.",
+      "✅ Correcta. La vasopresina (HAD) se une a receptores V2 en el túbulo colector y promueve la inserción de acuaporinas 2 (AQP2) en la membrana apical, que se polimerizan formando canales que permiten la reabsorción de agua."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "aldosterona",
+      "receptores"
+    ],
+    "enunciado": "La aldosterona se une principalmente:",
+    "opcoes": [
+      "A receptores de membrana acoplados a la proteína G",
+      "A receptores de membrana de tipo tirosina quinasa",
+      "A receptores citoplásmicos",
+      "A receptores nucleares"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los receptores acoplados a proteína G son típicos de hormonas peptídicas (hidrosolubles) como la vasopresina; la aldosterona es esteroidea y liposoluble.",
+      "❌ Incorrecta. Los receptores tirosina quinasa corresponden a factores de crecimiento e insulina; no son el mecanismo de las hormonas esteroideas.",
+      "✅ Correcta. La aldosterona, por ser liposoluble, atraviesa la membrana y se une a receptores CITOPLÁSMICOS (mineralocorticoide). El complejo hormona-receptor migra al núcleo y actúa sobre el ADN modificando la transcripción génica (efecto lento).",
+      "❌ Incorrecta. La hormona se une primero al receptor citoplásmico y recién el complejo se transloca al núcleo; no se une directamente a receptores nucleares. Además, la pregunta pide el sitio principal de unión."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "urea",
+      "HAD"
+    ],
+    "enunciado": "Los canales de urea sensibles a la HAD son de tipo:",
+    "opcoes": [
+      "UTA-1 y se encuentran en el TCP",
+      "UTA-2 y se encuentran en el TCP",
+      "UTA-1 y se encuentran en el túbulo colector",
+      "UTA-2 y se encuentran en el túbulo colector"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los transportadores UT-A1 son regulados por HAD, pero se localizan en el túbulo COLECTOR (segmentos medulares), no en el TCP.",
+      "❌ Incorrecta. En el túbulo proximal la urea se reabsorbe por mecanismos basales sin transporte específico sensible a HAD (allí actúan UT-A2); además UT-A2 no es el canal sensible a la vasopresina.",
+      "✅ Correcta. Los transportadores de urea UT-A1, ubicados en el túbulo colector medular interno, son estimulados por la HAD: la vasopresina aumenta su expresión, permitiendo reabsorber urea y así mantener la hiperosmolaridad medular.",
+      "❌ Incorrecta. UT-A2 es un transportador constitutivo del túbulo proximal (y del asa), no regulado por vasopresina; el sensible a HAD es el UT-A1 del túbulo colector."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "contracorriente"
+    ],
+    "enunciado": "El mecanismo de contracorriente permite generar:",
+    "opcoes": [
+      "Un intersticio hiposmolar mientras que el líquido del asa se mantiene isotónico",
+      "Un intersticio isosmolar mientras que el líquido del asa se hace hipotónico",
+      "Un intersticio hiperosmolar mientras que el líquido del asa se hace hipertónico",
+      "Un intersticio hiperosmolar mientras que el líquido del asa se hace hipotónico"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El intersticio medular se vuelve HIPERosmolar (no hipo-isosmolar) gracias a la contracorriente; un intersticio hiposmolar impediría la concentración de la orina.",
+      "❌ Incorrecta. El asa de Henle, por la reabsorción de agua en la rama descendente y de solutos en la ascendente, NO mantiene un intersticio isosmolar; la médula se hace hiperosmótica.",
+      "❌ Incorrecta. El líquido del asa al salir de la rama ascendente (que reabsorbe solutos y es impermeable al agua) se vuelve HIPOTÓNICO, no hipertónico; el intersticio sí es hiperosmolar.",
+      "✅ Correcta. El intercambio a contracorriente del asa de Henle (con reabsorción de NaCl y urea en la médula) genera un intersticio cada vez más hiperosmolar hacia la papila, mientras que el líquido que abandona el asa en el segmento ascendente es hipotónico."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "glucosa",
+      "TCP"
+    ],
+    "enunciado": "Los mecanismos de reabsorción de glucosa en el TCP:",
+    "opcoes": [
+      "Presentan cinética de saturación",
+      "Son directamente proporcionales a la [glucosa] plasmática en todo su rango",
+      "Se hacen acoplados al ingreso de aniones por cotransporte",
+      "No requieren energía química"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La reabsorción de glucosa en el TCP se realiza por cotransportadores SGLT2/SGLT1 con saturación (transporte máximo Tm): al superarse el umbral, la glucosa que no puede ser transportada se excreta por la orina (glucosuria).",
+      "❌ Incorrecta. No es proporcional en 'todo su rango': una vez alcanzado el Tm, aunque suba más la glicemia la reabsorción se mantiene constante y el exceso se elimina por orina (comportamiento con saturación).",
+      "❌ Incorrecta. La glucosa se cotransporta con SODIO (ión catión) mediante el gradiente del Na+ (simporte Na+/glucosa), no con el ingreso de aniones.",
+      "❌ Incorrecta. Es un transporte activo secundario que depende de la energía química provista por el gradiente de Na+ (mantenido por la bomba Na+/K+ ATPasa); sin energía no se reabsorbe."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "secrecion tubular"
+    ],
+    "enunciado": "La secreción de ácidos orgánicos en el TCP se realiza por:",
+    "opcoes": [
+      "Mecanismos activos latero-basales y apicales",
+      "Mecanismos activos latero-basales y pasivos apicales",
+      "Mecanismos pasivos latero-basales y activos apicales",
+      "Mecanismos pasivos latero-basales y apicales"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En el polo apical la salida del ácido orgánico hacia la luz tubular se realiza por difusión/transporte pasivo (a favor del gradiente), no por un mecanismo activo.",
+      "✅ Correcta. Los ácidos orgánicos (y bases) se secretan en el túbulo proximal por un transporte ACTIVO en la membrana latero-basal (ingreso a la célula, vía transportador OAT dependiente del gradiente de α-cetoglutarato) y PASIVO en la membrana apical (salida hacia la luz tubular).",
+      "❌ Incorrecta. El ingreso latero-basal del ácido orgánico es activo (dependiente del gradiente), mientras que la salida apical es pasiva; la opción invierte los mecanismos.",
+      "❌ Incorrecta. El paso latero-basal no es pasivo: requiere transporte activo para concentrar el ácido orgánico dentro de la célula y secretarlo contra gradiente."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "asa de Henle"
+    ],
+    "enunciado": "Durante el cotransporte Na+/K+/2Cl- de la rama ascendente gruesa del asa:",
+    "opcoes": [
+      "Se genera un gradiente transepitelial positivo que favorece la reabsorción de cationes por vía paracelular",
+      "Se genera un gradiente transepitelial negativo que favorece la reabsorción de cationes por vía paracelular",
+      "Se genera un gradiente transepitelial positivo que favorece la reabsorción de aniones por vía paracelular",
+      "Se genera un gradiente transepitelial negativo que favorece la reabsorción de aniones por vía paracelular"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En la rama ascendente gruesa el cotransportador NKCC2 ingresa 1Na+/1K+/2Cl- (el K+ luego sale por canales hacia la luz), lo que genera una luz tubular POSITIVA (gradiente transepitelial positivo). Ese potencial favorece la reabsorción PARACELULAR de cationes (Ca2+, Mg2+, Na+) hacia el intersticio.",
+      "❌ Incorrecta. El gradiente transepitelial generado es POSITIVO, no negativo. Un gradiente negativo en la luz no empujaría cationes hacia el intersticio.",
+      "❌ Incorrecta. Un gradiente positivo en la luz tubular favorece la reabsorción de CATIONES (no aniones) por la vía paracelular.",
+      "❌ Incorrecta. Ni el signo del gradiente (es positivo, no negativo) ni el ión (el positivo favorece cationes, no aniones) coinciden con lo que ocurre en la rama ascendente gruesa."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "clearance osmolar"
+    ],
+    "enunciado": "El clearance osmolar representa:",
+    "opcoes": [
+      "El flujo urinario hipotético para una orina hipotónica",
+      "El flujo urinario hipotético para una orina hipertónica",
+      "El flujo urinario hipotético para una orina isotónica",
+      "El flujo urinario real (diuresis)"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. No es el flujo para una orina hipotónica: el clearance osmolar es el volumen hipotético que tendría la orina si fuera ISOTÓNICA con el plasma.",
+      "❌ Incorrecta. La orina de referencia es ISOTÓNICA con el plasma, no hipertónica.",
+      "✅ Correcta. El clearance osmolar (Cosm = Uosm·V/Posm) es el flujo urinario hipotético que se necesitaría para eliminar la carga osmótica si toda la orina fuera ISOTÓNICA con el plasma; la diferencia entre la diuresis real y el Cosm es el clearance de agua libre.",
+      "❌ Incorrecta. El clearance osmolar no es la diuresis real (V); es un volumen 'virtual' calculado con la osmolaridad para analizar la excreción de solutos y de agua libre."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "excrecion fraccionada"
+    ],
+    "enunciado": "La excreción fraccionada de sodio:",
+    "opcoes": [
+      "Puede calcularse si se conocen las concentraciones plasmáticas y urinarias de Na y la diuresis",
+      "Puede calcularse si se conocen las concentraciones plasmáticas y urinarias de Na y PAH",
+      "Puede calcularse si se conocen las concentraciones plasmáticas y urinarias de Na y creatinina",
+      "Puede calcularse si se conocen las concentraciones plasmáticas y urinarias de Na y K"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Con las concentraciones de Na y la diuresis se puede calcular la excreción absoluta de sodio, pero para la excreción FRACCIONADA (FeNa) se necesita además un marcador de filtración como la creatinina.",
+      "❌ Incorrecta. La PAH se usa para medir el flujo plasmático renal (clearance de PAH), no para la excreción fraccionada de sodio.",
+      "✅ Correcta. La excreción fraccionada de sodio se calcula como FeNa = (Na urinario × creatinina plasmática)/(Na plasmático × creatinina urinaria) × 100; por eso se requieren las concentraciones de Na y creatinina en plasma y orina.",
+      "❌ Incorrecta. El potasio no interviene en la fórmula de la FeNa; el parámetro de referencia debe ser la creatinina (marcador de la filtración glomerular)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fisiologia renal",
+      "potasio",
+      "GTTK"
+    ],
+    "enunciado": "El gradiente transtubular de potasio (GTTK):",
+    "opcoes": [
+      "Si es mayor a 4 indica presencia de aldosterona",
+      "Si es menor a 4 indica presencia de aldosterona",
+      "Si es mayor a 7 indica presencia de aldosterona",
+      "Si es menor a 7 indica presencia de aldosterona"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El punto de corte habitual del GTTK es 7 (no 4): valores elevados por encima de 7 traducen secreción activa de potasio mediada por aldosterona. Un GTTK > 4 no es indicador.",
+      "❌ Incorrecta. El GTTK menor a 4 sugiere SECRECIÓN reducida de K+ (p. ej. hipoaldosteronismo); un valor bajo no indica presencia de aldosterona.",
+      "✅ Correcta. El gradiente transtubular de potasio (GTTK = (K urinario × Osm plasmática)/(K plasmático × Osm urinaria)) mayor a 7 indica que la secreción distal de K+ está estimulada, es decir, hay efecto de la aldosterona.",
+      "❌ Incorrecta. El GTTK menor a 7 indica secreción distal de potasio no estimulada (ausencia de aldosterona), no presencia de aldosterona."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "mezclas reguladoras"
+    ],
+    "enunciado": "En la mezcla reguladora del (HCO3)- / H2CO3:",
+    "opcoes": [
+      "La presión parcial del CO2 no aparece en la ecuación de Henderson-Hasselbach",
+      "El pH a regular es similar al pKa del ácido-base",
+      "El aparato respiratorio es el principal responsable de su eficacia",
+      "Se produce la menor eficacia para tamponar un desequilibrio"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La pCO2 sí aparece en la ecuación de Henderson-Hasselbalch: pH = 6,1 + log ([HCO3-] / 0,03 × pCO2), ya que el H2CO3 se forma a partir del CO2.",
+      "❌ Incorrecta. El pKa de la mezcla HCO3-/H2CO3 es 6,1 y el pH fisiológico del plasma es 7,4; justamente el sistema es eficaz pese a la distancia entre pH y pKa (lo que no coincide con esta afirmación).",
+      "✅ Correcta. El sistema HCO3-/H2CO3 es un sistema ABIERTO: el CO2 (componente ácido) es regulado continuamente por el aparato respiratorio y el HCO3- por el riñón. Es esa participación respiratoria la que hace eficaz a esta mezcla, la más importante del plasma.",
+      "❌ Incorrecta. El sistema bicarbonato es el tampón fisiológico MÁS eficaz del plasma (junto con la regulación respiratoria y renal), no el de menor eficacia."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis metabolica"
+    ],
+    "enunciado": "Cuál de los siguientes conjuntos de valores corresponde a una alcalosis metabólica primaria (deficiencia primaria de ácido no volátil) con compensación respiratoria parcial?",
+    "opcoes": [
+      "pH: 7,52; PC02 (mmHg) 25; EB (mmoles/l) 18",
+      "pH: 7,54; PC02 (mmHg) 11; EB (mmoles/l) 8",
+      "pH: 7,55; PC02 (mmHg) 27; EB (mmoles/l) 0",
+      "pH: 7,55; PC02 (mmHg) 40; EB (mmoles/l) 22"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Según la clave del examen no es la respuesta buscada: presenta un EB elevado (+18) con pH alcalémico, pero la pCO2 está DISMINUIDA (25), lo que va en el sentido de la compensación respiratoria que el examen NO considera para esta mezcla.",
+      "❌ Incorrecta. La pCO2 de 11 mmHg es extremadamente baja y el EB es +8; este patrón no es el de la alcalosis metabólica primaria con compensación que plantea la consigna.",
+      "✅ Correcta. Según la clave del examen, esta es la respuesta: pH alcalémico (7,55) con una pCO2 relativamente baja (27) y un EB en 0. (Nota: desde la fisiología clásica del diagrama de Davenport, la compensación respiratoria de una alcalosis metabólica se acompaña de RETENCIÓN de CO2, por lo que este ítem es discutible; se respeta la clave oficial.)",
+      "❌ Incorrecta. Muestra pH alcalémico con EB muy elevado (+22) pero la pCO2 en 40 mmHg (valor normal), es decir una alcalosis metabólica sin la modificación respiratoria que la consigna pide; además la clave del examen indica otra opción."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "buffers"
+    ],
+    "enunciado": "Las soluciones amortiguadoras (buffers):",
+    "opcoes": [
+      "Son aquellas que mantienen el pH en torno a un valor neutro.",
+      "Impiden cambios marcados de pH cuando se agregan ácidos o hidróxidos.",
+      "Son aquellas con pH alto.",
+      "Su capacidad buffer es la misma en todo el rango de pH."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Un buffer no mantiene el pH 'en torno a un valor neutro'; lo mantiene cerca del pKa de la mezcla reguladora y resiste cambios frente a ácidos o bases.",
+      "✅ Correcta. Una solución amortiguadora es aquella capaz de OPONERSE a cambios marcados de pH cuando se agregan ácidos (H+) o bases (hidróxidos), gracias a la presencia de un ácido débil y su base conjugada.",
+      "❌ Incorrecta. Que una solución tenga pH alto (alcalino) no la convierte en buffer; lo que define al amortiguador es su capacidad de resistir las variaciones de pH.",
+      "❌ Incorrecta. La capacidad buffer es MÁXIMA cuando el pH se acerca al pKa de la mezcla y disminuye al alejarse; no es constante en todo el rango de pH."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 se verá modificada con un aumento"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la acidosis metabólica el exceso de bases (EB) SÍ se modifica: se hace negativo (déficit de bases), reflejando el déficit de bicarbonato.",
+      "✅ Correcta. En la acidosis metabólica hay ganancia de protones o pérdida de bicarbonato, por lo que el pH plasmático desciende por debajo de 7,0 (acidemia).",
+      "❌ Incorrecta. Para compensar el EXCESO de protones los sistemas buffers se CONSUMEN (disminuyen), pero la consigna se resuelve por el pH; además la opción que describe la baja de buffers acompaña al déficit de protones, no al exceso. La respuesta clave es la del pH bajo.",
+      "❌ Incorrecta. El trastorno es metabólico: la pCO2 no se modifica (en el marco conceptual de esta asignatura la pCO2 corresponde al trastorno respiratorio); un AUMENTO de pCO2 sería acidosis respiratoria, no metabólica."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el déficit de protones",
+      "La presión parcial de CO2 se verá modificada con un aumento"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En la acidosis metabólica el parámetro metabólico por excelencia, el exceso de bases (EB), SE MODIFICA y se vuelve negativo (déficit de bases buffer, caída del bicarbonato).",
+      "❌ Incorrecta. En la acidosis metabólica el pH está por DEBAJO de 7,0 (acidemia), no por arriba.",
+      "❌ Incorrecta. Frente al exceso de protones (acidosis) los buffers se consumen y DISMINUYEN; la opción habla de 'déficit de protones', que no corresponde a una acidosis. Además la respuesta clave es la modificación del EB.",
+      "❌ Incorrecta. La pCO2 pertenece al componente respiratorio y no se modifica en un trastorno metabólico puro; el AUMENTO de pCO2 correspondería a una acidosis respiratoria."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 no se modifica"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la acidosis metabólica el EB sí se modifica (se vuelve negativo); la opción 'no se modifica' corresponde al EB en los trastornos respiratorios.",
+      "❌ Incorrecta. En la acidosis el pH está por debajo de 7,0, no por arriba.",
+      "❌ Incorrecta. La disminución de los buffers sí acompaña a la acidosis (se consumen frente al exceso de protones), pero la respuesta clave del examen es la de la pCO2 no modificada, que caracteriza al trastorno metabólico.",
+      "✅ Correcta. En el esquema conceptual de esta asignatura, en la acidosis METABÓLICA el parámetro que se modifica es el metabólico (EB); la presión parcial de CO2, que corresponde al componente respiratorio, NO se modifica."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el déficit de protones",
+      "La presión parcial de CO2 se verá modificada con una disminución"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la acidosis respiratoria el EB no es el parámetro modificado; lo que cambia es la pCO2 (aumentada).",
+      "✅ Correcta. En la acidosis respiratoria la retención de CO2 (que actúa como ácido) genera exceso de protones, por lo que el pH plasmático desciende por debajo de 7,0 (acidemia).",
+      "❌ Incorrecta. Frente a un exceso (no déficit) de protones los buffers se consumen y disminuyen; además la clave del examen apunta al pH bajo.",
+      "❌ Incorrecta. En la acidosis respiratoria la pCO2 está AUMENTADA (retención de CO2), no disminuida; la disminución de pCO2 caracteriza a la alcalosis respiratoria."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá un aumento de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 se verá modificada con una disminución"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En la acidosis RESPIRATORIA el componente metabólico no se modifica en forma primaria: el exceso de bases (EB) permanece sin modificarse; el trastorno se origina en el CO2.",
+      "❌ Incorrecta. En la acidosis el pH está por debajo de 7,0, no por arriba.",
+      "❌ Incorrecta. Los buffers no 'aumentan'; frente al exceso de protones se consumen y disminuyen. Además la respuesta clave es la del EB no modificado.",
+      "❌ Incorrecta. En la acidosis respiratoria la pCO2 está AUMENTADA (hipoventilación/retensión), no disminuida."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de acidosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá un aumento de los sistemas buffers para compensar el déficit de protones",
+      "La presión parcial de CO2 se verá modificada con un aumento"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El EB es el parámetro metabólico y en la acidosis respiratoria no se modifica; se modifica la pCO2.",
+      "❌ Incorrecta. En la acidosis el pH está por debajo de 7,0 (acidemia), no por arriba.",
+      "❌ Incorrecta. No hay 'aumento' de buffers frente a un déficit de protones; en la acidosis los buffers se consumen (disminuyen) para compensar el exceso de H+. La clave es la pCO2 aumentada.",
+      "✅ Correcta. En la acidosis respiratoria hay retención de CO2 (hipoventilación alveolar, por ejemplo), por lo que la presión parcial de CO2 se ve modificada con un AUMENTO, y el pH baja."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 se verá modificada con un aumento"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la alcalosis metabólica el EB sí se modifica (se vuelve positivo, exceso de bases).",
+      "✅ Correcta. La alcalosis metabólica (ganancia de bases o pérdida de ácidos no volátiles, p. ej. vómitos) produce pH plasmático POR ARRIBA de 7,0 (alcalemia).",
+      "❌ Incorrecta. No hay 'exceso de protones' en una alcalosis: hay DÉFICIT de protones; los buffers no disminuyen para compensar un exceso inexistente.",
+      "❌ Incorrecta. La pCO2 corresponde al componente respiratorio y no se modifica en el trastorno metabólico puro (en el marco conceptual de la asignatura); el aumento de pCO2 es propio de la acidosis respiratoria."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 se verá modificada con un aumento"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En la alcalosis metabólica se modifica el parámetro metabólico: el exceso de bases (EB) se hace POSITIVO (aumento de las bases buffer, del bicarbonato).",
+      "❌ Incorrecta. En la alcalosis el pH está por ARRIBA de 7,0, no por debajo.",
+      "❌ Incorrecta. En la alcalosis no hay exceso de protones (hay déficit), por lo que la disminución de buffers no corresponde; además la respuesta clave es la modificación del EB.",
+      "❌ Incorrecta. El aumento de la pCO2 pertenece a la acidosis respiratoria; en un trastorno metabólico la pCO2 no se modifica (según el esquema de la asignatura)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis metabolica"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis metabólica, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá un aumento de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 no se modifica"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la alcalosis metabólica el EB sí se modifica (se vuelve positivo).",
+      "❌ Incorrecta. En la alcalosis el pH está por arriba de 7,0, no por debajo.",
+      "❌ Incorrecta. En la alcalosis hay déficit de protones (no exceso), por lo que la opción del aumento de buffers para 'exceso de protones' no tiene sentido; la respuesta clave es la pCO2 no modificada.",
+      "✅ Correcta. En el esquema conceptual de la asignatura, en la alcalosis METABÓLICA el parámetro que se modifica es el EB (aumenta); la presión parcial de CO2, componente respiratorio, NO se modifica."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por arriba de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 no se modifica"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En la alcalosis respiratoria el EB (componente metabólico) no se modifica; se modifica la pCO2 (disminuye).",
+      "✅ Correcta. En la alcalosis respiratoria (hiperventilación con baja de CO2) el pH plasmático se eleva POR ARRIBA de 7,0 (alcalemia), ya que el CO2 bajo funciona como pérdida de ácido.",
+      "❌ Incorrecta. En la alcalosis no hay exceso de protones (hay déficit), por lo que la disminución de buffers para 'exceso de protones' no corresponde.",
+      "❌ Incorrecta. En la alcalosis respiratoria la pCO2 sí se modifica: DISMINUYE (es el origen del trastorno)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases no se modifica",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 no se modifica"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En la alcalosis RESPIRATORIA el parámetro metabólico no se modifica en forma primaria: el exceso de bases (EB) permanece sin cambios; el trastorno se origina en la baja de CO2.",
+      "❌ Incorrecta. En la alcalosis el pH está por ARRIBA de 7,0, no por debajo.",
+      "❌ Incorrecta. En la alcalosis hay déficit de protones, no exceso; la opción describe un mecanismo de acidosis.",
+      "❌ Incorrecta. En la alcalosis respiratoria la pCO2 sí se modifica (disminuye); es la característica distintiva del cuadro."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "alcalosis respiratoria"
+    ],
+    "enunciado": "Si pensamos en un caso de alcalosis respiratoria, podemos suponer que:",
+    "opcoes": [
+      "El exceso de bases se modificará",
+      "El pH plasmático estará por debajo de 7,0",
+      "Habrá una disminución de los sistemas buffers para compensar el exceso de protones",
+      "La presión parcial de CO2 se verá modificada con una disminución"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El EB es el parámetro metabólico y en la alcalosis respiratoria no se modifica.",
+      "❌ Incorrecta. En la alcalosis el pH está por arriba de 7,0 (alcalemia), no por debajo.",
+      "❌ Incorrecta. En la alcalosis no hay exceso de protones; los buffers no disminuyen para compensar un exceso inexistente.",
+      "✅ Correcta. La alcalosis respiratoria se produce por HIPERVENTILACIÓN que elimina demasiado CO2, por lo que la presión parcial de CO2 se ve modificada con una DISMINUCIÓN y el pH se eleva."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "hemoglobina"
+    ],
+    "enunciado": "Considerando aspectos constitutivos y funcionales de los sistemas buffers de la hemoglobina, podemos afirmar que:",
+    "opcoes": [
+      "Deberíamos hacer referencia a un solo sistema de la Hb dado que depende del contenido intraeritrocitario de la misma",
+      "Son considerados sistemas abiertos por la capacidad de modificar sus concentraciones",
+      "La unión de la Hb con el oxígeno modifica su comportamiento como mezcla reguladora",
+      "La eficacia de ambos sistemas depende exclusivamente de los pKa que les da origen"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La hemoglobina posee más de un sistema buffer (por el grupo imidazol de la histidina y por su unión al CO2 formando carbaminohemoglobina); no debe hablarse de un sistema único.",
+      "❌ Incorrecta. La característica de 'sistema abierto' por poder modificar sus concentraciones se destaca para el sistema HCO3-/CO2 (que depende del pulmón y del riñón), no para los buffers de la hemoglobina.",
+      "✅ Correcta. La unión de la Hb con el oxígeno MODIFICA su comportamiento como mezcla reguladora: la oxihemoglobina es un ácido más fuerte que la desoxihemoglobina (efecto Haldane), lo que le permite transportar CO2 y H+ de los tejidos al pulmón.",
+      "❌ Incorrecta. La eficacia de los sistemas de la Hb no depende exclusivamente de sus pKa; depende también de su concentración intraeritrocitaria, de la saturación de oxígeno y de la participación de los gases (O2 y CO2)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "hemoglobina"
+    ],
+    "enunciado": "En relación a los sistemas buffer de la hemoglobina podemos afirmar que:",
+    "opcoes": [
+      "Son dos diferentes, uno para el circuito mayor y otro para el menor",
+      "Las bases buffer de la hemoglobina tienen un carácter débil",
+      "La presencia de gases (O2 y CO2) no tiene participación en la acción reguladora",
+      "Son sistemas abiertos intracelulares"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. No existe un sistema para el 'circuito mayor' y otro para el 'circuito menor'; los sistemas de la Hb funcionan en el eritrocito y participan en ambos sentidos (arterial y venoso) de la circulación.",
+      "❌ Incorrecta. El carácter débil o fuerte de las bases no es la particularidad que define a los sistemas buffer de la hemoglobina.",
+      "❌ Incorrecta. Los gases O2 y CO2 SÍ tienen participación: la unión de la Hb con O2 cambia su acidez (efecto Haldane) y el CO2 se transporta como carbaminohemoglobina.",
+      "✅ Correcta. Los sistemas buffer de la hemoglobina son sistemas ABIERTOS INTRACELULARES: se encuentran dentro del glóbulo rojo y sus concentraciones pueden modificarse (sistema abierto), con intercambio de H+, Cl- y CO2 con el plasma."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "centro respiratorio"
+    ],
+    "enunciado": "El centro respiratorio es estimulado cuando:",
+    "opcoes": [
+      "Aumenta el pH sanguíneo",
+      "Aumenta la presión parcial de dióxido de carbono en la sangre",
+      "Aumenta el pH en el líquido cefalorraquídeo",
+      "Disminuye la presión parcial de dióxido de carbono en la sangre"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El AUMENTO del pH sanguíneo (alcalemia) INHIBE la ventilación; el estímulo es la acidosis (disminución del pH).",
+      "✅ Correcta. El centro respiratorio es estimulado principalmente por el AUMENTO de la pCO2 en sangre: el CO2 difunde al líquido cefalorraquídeo, baja el pH y activa los quimiorreceptores centrales, aumentando la ventilación.",
+      "❌ Incorrecta. El aumento del pH del LCR INHIBE la ventilación; es la DISMINUCIÓN del pH del LCR (por el CO2) la que la estimula.",
+      "❌ Incorrecta. La disminución de la pCO2 (como en la hiperventilación) reduce el estímulo del centro respiratorio; es el aumento el que lo estimula."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "buffers"
+    ],
+    "enunciado": "El tampón fisiológico más importante del organismo es:",
+    "opcoes": [
+      "El de las proteínas",
+      "El del bicarbonato",
+      "El del amoníaco",
+      "El de la hemoglobina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Las proteínas participan como buffers (especialmente en el interior celular), pero no constituyen el tampón más importante del organismo.",
+      "✅ Correcta. El sistema bicarbonato/ácido carbónico (HCO3-/H2CO3) es el tampón fisiológico MÁS IMPORTANTE porque es un sistema abierto regulado por el pulmón (CO2) y el riñón (HCO3-), con una enorme capacidad para el líquido extracelular.",
+      "❌ Incorrecta. El sistema amoníaco/amonio es relevante para la regulación renal de la acidosis, pero no es el tampón más importante del organismo.",
+      "❌ Incorrecta. La hemoglobina es el buffer más importante INTRACELULAR (transporte de CO2 y H+ en el glóbulo rojo), pero el tampón más importante del organismo en su conjunto es el del bicarbonato."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "pH",
+      "mezclas reguladoras"
+    ],
+    "enunciado": "El pH de una mezcla reguladora fisiológica:",
+    "opcoes": [
+      "Es inversamente proporcional a la concentración de protones",
+      "Contempla la relación entre concentración de sustancia dadora y sustancia receptora de protones",
+      "Tiene en cuenta el grado de disociación de la sal",
+      "Define su grado de eficacia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El pH es el logaritmo negativo de la [H+] (por eso sube cuando baja la concentración de protones), pero la definición específica del pH de una MEZCLA REGULADORA es la relación de la ecuación de Henderson-Hasselbalch.",
+      "✅ Correcta. El pH de una mezcla reguladora se expresa por Henderson-Hasselbalch: pH = pKa + log ([base conjugada]/[ácido]); es decir, contempla la relación entre la concentración de la sustancia dadora de protones (ácido) y la receptora de protones (base conjugada).",
+      "❌ Incorrecta. No interviene el grado de disociación de la sal; la ecuación depende del pKa y de la relación entre las concentraciones de la base y del ácido.",
+      "❌ Incorrecta. El pH no define la eficacia; la eficacia del buffer es máxima cuando el pH es cercano al pKa de la mezcla, no es el pH el que la determina."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "estado acido-base"
+    ],
+    "enunciado": "El pH que forma parte del estado ácido-base sanguíneo (EAB):",
+    "opcoes": [
+      "Mantiene un valor de equilibrio entre la sangre arterial y venosa",
+      "Está influenciado por la presión parcial de O2",
+      "Se obtiene a partir de la ecuación de Henderson-Hasselbach (mezclas reguladoras)",
+      "Es igual a 7,30 +/- 0,02"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El pH no 'mantiene un valor de equilibrio' entre sangre arterial y venosa; es un valor puntual que depende de la mezcla reguladora y difiere levemente entre ambos lechos.",
+      "❌ Incorrecta. El pH del EAB depende del CO2 y del bicarbonato (componente ácido y base), no de la presión parcial de O2.",
+      "✅ Correcta. El pH del estado ácido-base sanguíneo se obtiene a partir de la ecuación de Henderson-Hasselbalch aplicada a las mezclas reguladoras (pH = 6,1 + log [HCO3-]/(0,03·pCO2)), vinculando los componentes metabólico y respiratorio.",
+      "❌ Incorrecta. El valor normal del pH plasmático es 7,40 ± 0,02 (no 7,30)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "fosfatos"
+    ],
+    "enunciado": "Una particularidad del sistema buffer de los fosfatos puede destacarse como:",
+    "opcoes": [
+      "La relación sal/ácido se invierte según consideremos el compartimiento sangre u orina",
+      "Constituye una mezcla reguladora a partir de compuestos orgánicos",
+      "Su naturaleza inorgánica le permite actuar tanto en el medio extracelular como en el intracelular",
+      "Al ser el ácido fosfórico un ácido poliprótico le permite generar tres mezclas reguladoras fisiológicas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En el plasma la relación sal/ácido del fosfato es de 4:1 (predomina la sal HPO4=), mientras que en la orina ácida la relación se INVIERTE (predomina el ácido H2PO4-); esto le permite al riñón excretar protones titulando los fosfatos urinarios.",
+      "❌ Incorrecta. El sistema fosfato está formado por compuestos INORGÁNICOS, no orgánicos.",
+      "❌ Incorrecta. Su participación más importante es intracelular y en la orina; en el plasma extracelular la concentración de fosfato es baja y su rol es secundario frente al bicarbonato.",
+      "❌ Incorrecta. Si bien el ácido fosfórico es poliprótico, en condiciones fisiológicas solo es relevante la mezcla HPO4=/H2PO4- (pKa 6,8); las otras mezclas no tienen significado fisiológico."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "acidosis respiratoria"
+    ],
+    "enunciado": "¿Cuándo se produce la acidosis respiratoria?",
+    "opcoes": [
+      "Ocurre cuando los riñones no están eliminando dióxido de carbono del organismo",
+      "Ocurre cuando el cuerpo produce demasiado ácido o cuando los riñones no están eliminándolo",
+      "Se presenta cuando hay demasiado dióxido de carbono (un ácido) en el cuerpo",
+      "Es ocasionada por los niveles bajos de dióxido de carbono en la sangre"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El CO2 no se elimina por los riñones sino por el pulmón; la incapacidad renal de eliminar ácidos fijos corresponde a la acidosis metabólica.",
+      "❌ Incorrecta. Esa situación (exceso de producción de ácidos o falla renal de eliminación) describe la acidosis metabólica, no la respiratoria.",
+      "✅ Correcta. La acidosis respiratoria se produce cuando hay demasiado dióxido de carbono (CO2, que actúa como ácido) en el cuerpo, por hipoventilación o falla del intercambio gaseoso.",
+      "❌ Incorrecta. Los niveles BAJOS de CO2 en sangre producen alcalosis respiratoria (por hiperventilación), no acidosis."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "buffers"
+    ],
+    "enunciado": "Las soluciones amortiguadoras (buffers):",
+    "opcoes": [
+      "Su capacidad buffer es la misma en todo el rango de pH",
+      "Son aquellas con pH alto",
+      "Son aquellas que mantienen el pH en torno a un valor neutro",
+      "Impiden cambios marcados de pH cuando se agregan ácidos o hidróxidos"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La capacidad buffer NO es constante: es máxima cuando el pH se acerca al pKa de la mezcla y disminuye al alejarse.",
+      "❌ Incorrecta. Tener pH alto no define a un buffer; lo que lo define es su capacidad de resistir cambios de pH.",
+      "❌ Incorrecta. El buffer no mantiene el pH 'en torno a un valor neutro'; lo mantiene alrededor de su pKa, resistiendo cambios frente a ácidos o bases.",
+      "✅ Correcta. Las soluciones amortiguadoras son aquellas que IMPIDEN cambios marcados de pH cuando se agregan ácidos o hidróxidos, por la presencia de un par ácido débil/base conjugada."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "Henderson-Hasselbalch"
+    ],
+    "enunciado": "El pH plasmático de un paciente que presenta una pCO2 de 50 mmHg y una [HCO3-] de 20 mEq/L (pKa:6,1) es:",
+    "opcoes": [
+      "Normal o fisiológico",
+      "7,22",
+      "Incompatible con la vida",
+      "Compatible con alcalosis"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El valor calculado (7,22) está por debajo de 7,35-7,45, por lo que no es un pH fisiológico.",
+      "✅ Correcta. Por Henderson-Hasselbalch: pH = 6,1 + log ([HCO3-]/(0,03 × pCO2)) = 6,1 + log (20/1,5) = 6,1 + log 13,3 = 6,1 + 1,12 = 7,22. Corresponde a una acidosis.",
+      "❌ Incorrecta. Un pH de 7,22 es compatible con la vida (los límites son 6,8-7,8); es una acidosis moderada, no incompatible.",
+      "❌ Incorrecta. El pH 7,22 indica ACIDEMIA; la alcalosis correspondería a un pH mayor de 7,45."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "exceso de bases"
+    ],
+    "enunciado": "El exceso de bases puede definirse como:",
+    "opcoes": [
+      "La diferencia entre los sistemas buffer normales y los sistemas buffer reales",
+      "La diferencia entre las bases buffer normales y las bases buffer reales",
+      "Las bases que tiene el paciente más las que debería tener en condiciones normales",
+      "La suma de las bases bicarbonato más las bases no bicarbonato"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La definición se refiere específicamente a las BASES buffer (no a los sistemas buffer en general): EB = bases buffer reales − bases buffer normales.",
+      "✅ Correcta. El exceso de bases (EB) es la DIFERENCIA entre las bases buffer reales del paciente y las bases buffer normales esperadas (para pH 7,40 y pCO2 40 mmHg). Un EB negativo indica déficit de bases (acidosis metabólica) y uno positivo exceso (alcalosis metabólica).",
+      "❌ Incorrecta. No es una suma ('las que tiene más las que debería tener'), sino una diferencia entre el valor real y el normal.",
+      "❌ Incorrecta. Esa suma describe el total de bases buffer, no el exceso de bases (que es una diferencia respecto de la normalidad)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "desequilibrios"
+    ],
+    "enunciado": "En relación a los desequilibrios del estado ácido-base, podemos afirmar que:",
+    "opcoes": [
+      "El pH plasmático es el parámetro prioritario a ser corregido",
+      "En caso de una alcalosis respiratoria, el riñón eliminará mayor cantidad de protones",
+      "Las bases buffer son las primeras responsables de tamponar los desequilibrios",
+      "El aparato respiratorio interviene sólo en los casos de acidosis metabólica"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En los desequilibrios ácido-base el parámetro PRIORITARIO es el pH plasmático: su corrección es el objetivo terapéutico central, ya que los límites compatibles con la vida son estrechos (6,8-7,8).",
+      "❌ Incorrecta. En la alcalosis respiratoria el riñón compensa RETENIENDO protones (eliminando MENOS H+), lo inverso de lo que dice la opción.",
+      "❌ Incorrecta. Las primeras responsables de tamponar son los buffers del líquido extracelular (bicarbonato), que actúan en segundos; las bases buffer se modifican como consecuencia del desequilibrio.",
+      "❌ Incorrecta. El aparato respiratorio interviene en todos los desequilibrios: regula la pCO2 en la compensación de los trastornos metabólicos y es el origen del trastorno en los respiratorios."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "bicarbonato"
+    ],
+    "enunciado": "El sistema buffer HCO3-/CO2:",
+    "opcoes": [
+      "Tiene un pKa de 7",
+      "Es un sistema cerrado",
+      "El más importante del plasma",
+      "Eficaz por su óptima relación sal/ácido"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El pKa del sistema HCO3-/H2CO3 es de aproximadamente 6,1, no 7.",
+      "❌ Incorrecta. Es un sistema ABIERTO: el CO2 se elimina por el pulmón y el HCO3- se regula por el riñón, permitiendo modificar sus concentraciones.",
+      "✅ Correcta. El sistema bicarbonato/CO2 es el buffer MÁS IMPORTANTE del plasma (y del líquido extracelular), gracias a ser un sistema abierto con regulación respiratoria y renal.",
+      "❌ Incorrecta. Su eficacia no se debe a una óptima relación sal/ácido (que es de 20:1, lejos del rango ideal), sino a que es un sistema abierto regulado por pulmón y riñón."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "amortiguadores"
+    ],
+    "enunciado": "Son sustancias que estabilizan el pH corporal, así como son capaces de enlazar o liberar H+ en una solución, con lo que mantiene el pH relativamente constante pese a la adición de grandes cantidades de compuestos ácidos o básicos:",
+    "opcoes": [
+      "Amortiguadores",
+      "Electrolitos",
+      "Ácidos fuertes",
+      "Bases fuertes"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Esa es la definición de AMORTIGUADORES (buffers): sustancias capaces de enlazar o liberar H+ para mantener el pH relativamente constante frente a la adición de ácidos o bases.",
+      "❌ Incorrecta. Los electrolitos son sustancias que se disocian en iones (Na+, K+, Cl-, etc.); no definen la estabilización del pH.",
+      "❌ Incorrecta. Los ácidos fuertes liberan todos sus H+ y no amortiguan; por el contrario, producen grandes cambios de pH.",
+      "❌ Incorrecta. Las bases fuertes liberan OH- y tampoco tienen capacidad amortiguadora; un buffer requiere un par ácido débil/base conjugada."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "equilibrio acido-base",
+      "Henderson-Hasselbalch"
+    ],
+    "enunciado": "Se puede calcular el pH plasmático de un paciente a partir de:",
+    "opcoes": [
+      "Calcular el exceso de bases y la pCO2",
+      "Conocer la bicarbonatemia y la presión parcial de CO2",
+      "Conocer las concentraciones de los componentes de un sistema buffer de la hemoglobina y sus correspondientes pKa",
+      "Valor en el diagrama de Davenport de parámetros correspondientes"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Con el EB y la pCO2 se puede ubicar un punto en el diagrama de Davenport, pero el pH se CALCULA con la ecuación de Henderson-Hasselbalch a partir del bicarbonato y la pCO2.",
+      "✅ Correcta. El pH plasmático se calcula por Henderson-Hasselbalch: pH = 6,1 + log ([HCO3-]/(0,03 × pCO2)), es decir conociendo la bicarbonatemia y la presión parcial de CO2.",
+      "❌ Incorrecta. Los buffers de la hemoglobina son intracelulares y no intervienen en el cálculo del pH plasmático, que depende del sistema extracelular bicarbonato/CO2.",
+      "❌ Incorrecta. En el diagrama de Davenport el pH se LEE gráficamente, pero para CALCULARLO se requiere la ecuación de Henderson-Hasselbalch (bicarbonato y pCO2)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "arteria renal"
+    ],
+    "enunciado": "Responda lo correcto a la arteria renal derecha:",
+    "opcoes": [
+      "Termina dando ramos superiores e inferiores",
+      "Pasa por detrás de la vena cava inferior",
+      "Mide de 6 a 10 cm de longitud",
+      "Se origina de la aorta abdominal a nivel de la 12° vértebra dorsal"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La arteria renal termina dando ramos anterior y posterior (y estos en ramos segmentarios), no ramos 'superiores e inferiores'.",
+      "✅ Correcta. La arteria renal DERECHA pasa por DETRÁS de la vena cava inferior (retrocava) para alcanzar el hilio renal, a diferencia de la izquierda que no la cruza.",
+      "❌ Incorrecta. La arteria renal mide aproximadamente de 4 a 6 cm de longitud (no 6 a 10 cm), siendo más larga la izquierda que la derecha.",
+      "❌ Incorrecta. La arteria renal se origina de la aorta abdominal a nivel de la 1° vértebra lumbar (o el disco entre L1-L2), no a nivel de la 12° vértebra dorsal."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vena cava inferior"
+    ],
+    "enunciado": "El origen de la vena cava inferior se da a nivel de:",
+    "opcoes": [
+      "12° vértebra torácica",
+      "3° vértebra lumbar",
+      "5° vértebra lumbar",
+      "2° vértebra sacra"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La 12° vértebra torácica está por encima del diafragma; la vena cava inferior se forma mucho más abajo, en el abdomen.",
+      "❌ Incorrecta. A nivel de la 3° vértebra lumbar la vena cava inferior ya está formada y asciende por delante de las vértebras; no es su origen.",
+      "✅ Correcta. La vena cava inferior se origina en el abdomen, a nivel de la 5° vértebra lumbar, por la unión de las dos venas ilíacas primitivas (convergen a la derecha de la línea media).",
+      "❌ Incorrecta. La 2° vértebra sacra está en la pelvis; las ilíacas primitivas se unen por encima de ella, a nivel de L5."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "plexo solar"
+    ],
+    "enunciado": "¿Cuál de los siguientes NO es aferencia del plexo solar?",
+    "opcoes": [
+      "Neumogástrico izquierdo",
+      "Esplácnico mayor",
+      "Esplácnico menor",
+      "Nervio frénico"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. El neumogástrico (vago) izquierdo desciende por la cara anterior del esófago y del estómago, pero NO es una aferencia del plexo celíaco (solar); el vago derecho sí pasa por detrás. Las aferencias del plexo solar son los esplácnicos y el frénico.",
+      "❌ Incorrecta. El esplácnico MAYOR SÍ es una aferencia del plexo solar (celíaco); proviene de los ganglios torácicos 5-9.",
+      "❌ Incorrecta. El esplácnico MENOR SÍ es una aferencia del plexo solar; proviene de los ganglios torácicos 10-11.",
+      "❌ Incorrecta. El nervio FRÉNICO (derecho) también se relaciona con el plexo celíaco, participando de sus conexiones, por lo que no es la respuesta buscada (la consigna pide lo que NO es aferencia)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon"
+    ],
+    "enunciado": "Con respecto a los riñones, marque lo incorrecto:",
+    "opcoes": [
+      "Su consistencia es firme y de color rojo-violáceo",
+      "Mide unos 12 cm de largo, 6 cm de ancho y 3 cm de espesor",
+      "El eje mayor es oblicuo hacia abajo y adentro",
+      "La cápsula renal penetra en el hilio donde se invagina en contacto de los vasos renales"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es un dato verdadero: el riñón tiene consistencia firme y color rojo-violáceo.",
+      "❌ Correcta. Es un dato verdadero: el riñón mide aproximadamente 12 cm de largo, 6 cm de ancho y 3 cm de espesor.",
+      "✅ Incorrecta. Es la opción FALSA: el eje mayor del riñón es OBlicuo hacia ARRIBA y AFUERA (y de atrás adelante), no hacia abajo y adentro. La consigna pide marcar lo incorrecto.",
+      "❌ Correcta. Es un dato verdadero: la cápsula propia penetra en el hilio y se invagina formando la vaina de los vasos renales."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon"
+    ],
+    "enunciado": "Con respecto a los riñones, señale lo incorrecto:",
+    "opcoes": [
+      "La zona cortical contiene a los glomérulos renales",
+      "La zona medular donde se dibujan las pirámides de Malpighi, con base hacia los cálices y vértice hacia la periferia",
+      "Las columnas de Bertin son prolongaciones de la corteza",
+      "Las pirámides de Malpighi hacen saliente con el seno del riñón a través de las papilas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es un dato verdadero: en la zona cortical se alojan los corpúsculos de Malpighi (glomérulos).",
+      "✅ Incorrecta. Es la opción FALSA: las pirámides de Malpighi tienen la base hacia la PERIFERIA (corteza) y el vértice (papila) hacia los CÁLICES, al revés de lo enunciado. La consigna pide lo incorrecto.",
+      "❌ Correcta. Es un dato verdadero: las columnas de Bertin son prolongaciones de la sustancia cortical entre las pirámides.",
+      "❌ Correcta. Es un dato verdadero: las pirámides terminan en papilas que hacen saliente en el seno renal vertiendo en los cálices."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon",
+      "fascia renal"
+    ],
+    "enunciado": "Con respecto a los riñones, señale lo incorrecto:",
+    "opcoes": [
+      "Están separados de los órganos vecinos por una envoltura fibrosa, la cápsula o vaina fibroadiposa",
+      "En el borde externo del riñón, ese tejido se condensa y se desdobla en dos hojas, una parietal y retrorrenal",
+      "La hoja prerrenal (fascia de Zuckerkandl), delgada, está reforzada adelante por la fascia de adosamiento del peritoneo parietal posterior; la hoja posterior constituye la fascia de Gerota, la cual es más espesa y resistente",
+      "Arriba, las dos hojas pasan por delante y por detrás de las glándulas suprarrenales y se fijan en el diafragma"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es un dato verdadero: el riñón está envuelto por la cápsula fibrosa (vaina fibroadiposa) que lo separa de los órganos vecinos.",
+      "✅ Incorrecta. Es la opción FALSA: el desdoblamiento de la vaina fibroadiposa en dos hojas (prerrenal y retrorrenal) se produce en el borde EXTERNO del riñón, no en el borde interno; la opción enuncia además 'una parietal y retrorrenal' como hojas, cuando en realidad son la fascia de Zuckerkandl y la de Gerota. La consigna pide lo incorrecto.",
+      "❌ Correcta. Es un dato verdadero: la hoja anterior (fascia de Zuckerkandl) es delgada y está reforzada por la fascia de adosamiento del peritoneo; la hoja posterior (fascia de Gerota) es más espesa y resistente.",
+      "❌ Correcta. Es un dato verdadero: arriba las dos hojas pasan por delante y por detrás de las suprarrenales y se fijan en el diafragma."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon",
+      "relaciones"
+    ],
+    "enunciado": "Con respecto a los riñones, señale lo correcto:",
+    "opcoes": [
+      "Las relaciones posteriores son diferentes a la derecha y a la izquierda",
+      "Las relaciones torácicas corresponden al tercio superior del riñón derecho y a los dos tercios superiores del riñón izquierdo, que se aplican aquí sobre el diafragma",
+      "Las relaciones lumbares corresponden al músculo psoas con la fascia ilíaca, luego el cuadrado lumbar, detrás y por fuera la aponeurosis del músculo transverso del abdomen",
+      "Los nervios y vasos que cruzan la cara anterior del riñón son los abdómino-genitales mayor y menor",
+      "B + C",
+      "B + C + D"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Las relaciones posteriores de los riñones son IGUALES a derecha e izquierda (ambos se relacionan con diafragma, psoas, cuadrado lumbar, transverso); las que difieren son las ANTERIORES.",
+      "✅ Correcta. Es verdadero: las relaciones torácicas corresponden al tercio superior del riñón derecho y a los dos tercios superiores del izquierdo, que se apoyan sobre el diafragma.",
+      "✅ Correcta. Es verdadero: las relaciones lumbares incluyen el psoas con la fascia ilíaca, el cuadrado lumbar y la aponeurosis del transverso del abdomen.",
+      "❌ Incorrecta. Los nervios abdómino-genitales (iliohipogástrico e ilioinguinal) cruzan la cara POSTERIOR del riñón (en el plano lumbar), no la cara anterior; por eso D no es correcta.",
+      "✅ Correcta. Como B y C son correctas, la respuesta es E (B + C).",
+      "❌ Incorrecta. D es incorrecta (los abdómino-genitales cruzan la cara posterior), por lo que 'B + C + D' no puede ser la respuesta."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon derecho",
+      "relaciones"
+    ],
+    "enunciado": "Con respecto a los riñones, señale lo correcto:",
+    "opcoes": [
+      "El ángulo derecho del colon corresponde a la parte inferior del riñón derecho",
+      "El hígado cubre los dos tercios superiores del riñón derecho",
+      "La segunda porción del duodeno se aplica sobre el borde interno del riñón derecho, contra el hilio y el pedículo renal",
+      "El duodeno está separado por la fascia de adosamiento de Treitz",
+      "A + B + C son correctas",
+      "Todas son correctas"
+    ],
+    "indice_correta": 5,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Es verdadero: el ángulo derecho del colon se relaciona con la parte inferior de la cara anterior del riñón derecho.",
+      "✅ Correcta. Es verdadero: el hígado (cara visceral, área desnuda) cubre los dos tercios superiores del riñón derecho.",
+      "✅ Correcta. Es verdadero: la segunda porción del duodeno se aplica sobre el borde interno del riñón derecho, a la altura del hilio y del pedículo renal.",
+      "✅ Correcta. Es verdadero: el duodeno se separa del riñón por la fascia de adosamiento (fascia de Treitz).",
+      "❌ Incorrecta. Como D también es correcta, 'A + B + C' es incompleta.",
+      "✅ Correcta. Todas las afirmaciones (A, B, C y D) son verdaderas, por lo que la respuesta es 'Todas son correctas' (F)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "rinon izquierdo",
+      "relaciones"
+    ],
+    "enunciado": "Señale lo incorrecto respecto a la cara anterior del riñón izquierdo:",
+    "opcoes": [
+      "La inserción oblicua arriba y a la izquierda del mesocolon transverso, por delante del riñón, divide sus relaciones en tres pisos",
+      "El supramesocólico corresponde al bazo",
+      "Por dentro del bazo, la cola del páncreas y el pedículo esplénico separan a este nivel el riñón izquierdo de la transcavidad de los epiplones",
+      "El piso medio, colomesocólico, corresponde a la parte izquierda del colon transverso",
+      "El piso inferior, inframesocólico, por intermedio de la cápsula fibrosa, la fascia de Toldt y del mesocolon que contiene los vasos cólicos superiores izquierdos, el riñón responde a la cavidad peritoneal y a las asas delgadas",
+      "Su vena es corta y pasa por detrás de la aorta abdominal"
+    ],
+    "indice_correta": 5,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es verdadero: el mesocolon transverso divide las relaciones anteriores del riñón izquierdo en tres pisos.",
+      "❌ Correcta. Es verdadero: el piso supramesocólico corresponde al bazo.",
+      "❌ Correcta. Es verdadero: por dentro del bazo, la cola del páncreas y el pedículo esplénico separan el riñón izquierdo de la transcavidad de los epiplones.",
+      "❌ Correcta. Es verdadero: el piso medio (colomesocólico) corresponde a la parte izquierda del colon transverso.",
+      "❌ Correcta. Es verdadero: el piso inframesocólico relaciona el riñón con la cavidad peritoneal y las asas delgadas, por intermedio de la fascia de Toldt y el mesocolon.",
+      "✅ Incorrecta. Es la opción FALSA: la vena renal IZQUIERDA es LARGA y pasa por DELANTE de la aorta abdominal (no por detrás) para alcanzar la vena cava inferior. La consigna pide lo incorrecto."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "ureter"
+    ],
+    "enunciado": "Con respecto al uréter, señale lo correcto:",
+    "opcoes": [
+      "Presenta 3 estrechamientos fisiológicos",
+      "Su porción lumbar se apoya sobre la fascia ilíaca que cubre el psoas",
+      "Los vasos gonadales lo cruzan por delante",
+      "En la porción sacro-ilíaca, el derecho cruza el origen de la ilíaca externa, mientras que el izquierdo cruza la terminación de la ilíaca primitiva",
+      "En la porción pelviana del varón, el uréter es subperitoneal y está situado entre la pared lateral del recto adentro y la pared pelviana afuera",
+      "A + B + C",
+      "A + B + C + D",
+      "Todas son correctas"
+    ],
+    "indice_correta": 7,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Es verdadero: el uréter presenta tres estrechamientos (en el origen pélvico, al cruzar los vasos ilíacos y en el intramural).",
+      "✅ Correcta. Es verdadero: la porción lumbar se apoya sobre la fascia ilíaca que cubre el músculo psoas.",
+      "✅ Correcta. Es verdadero: los vasos gonadales (espermáticos u ováricos) cruzan el uréter por delante.",
+      "✅ Correcta. Es verdadero: en la porción sacro-ilíaca el uréter derecho cruza el origen de la ilíaca externa y el izquierdo la terminación de la ilíaca primitiva.",
+      "✅ Correcta. Es verdadero: en la pelvis del varón el uréter es subperitoneal, entre la pared lateral del recto y la pared pelviana.",
+      "❌ Incorrecta. Como D y E también son correctas, 'A + B + C' es incompleta.",
+      "❌ Incorrecta. Como E también es correcta, 'A + B + C + D' es incompleta.",
+      "✅ Correcta. Todas las afirmaciones (A, B, C, D y E) son verdaderas; la respuesta es 'Todas son correctas' (H)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "ureter"
+    ],
+    "enunciado": "Responda lo correcto sobre el uréter:",
+    "opcoes": [
+      "Los vasos gonadales pasan habitualmente por su cara posterior",
+      "El uréter derecho tiene dos estrechamientos más que el izquierdo",
+      "Mide de 30 a 35 cm de longitud en el adulto",
+      "Presenta 2 túnicas: muscular y mucosa"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los vasos gonadales cruzan el uréter por su cara ANTERIOR, no por la posterior.",
+      "❌ Incorrecta. Ambos uréteres presentan los mismos tres estrechamientos fisiológicos; no hay diferencia de número entre derecho e izquierdo.",
+      "✅ Correcta. El uréter en el adulto mide aproximadamente de 30 a 35 cm de longitud (25-30 cm según algunas obras, pero el rango esperado por la cátedra es 30-35 cm).",
+      "❌ Incorrecta. El uréter presenta TRES túnicas: adventicia (conectiva), muscular y mucosa, no dos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "ureter pelviano",
+      "mujer"
+    ],
+    "enunciado": "Con respecto al uréter pelviano en la mujer, señale lo correcto:",
+    "opcoes": [
+      "El segmento retroligamentoso corresponde al segmento parietal, aplicado contra los vasos hipogástricos, que es cruzado por fuera por la arteria uterina",
+      "En el segmento infraligamentoso el uréter penetra en el ligamento ancho, penetra en el parametrio a 2 o 3 cm del piso de la pelvis, contenido en un tejido celular dependiente de la vaina hipogástrica",
+      "El segmento preligamentoso es yuxtavesical, marcado por un cambio de dirección del uréter hacia delante y adentro. Después de haber seguido el fondo de saco lateral de la vagina, se desplaza en el tabique vésico-vaginal",
+      "Todas son correctas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. En el segmento retroligamentoso la arteria uterina cruza el uréter por DELANTE (o por fuera), pero el enunciado describe la posición del segmento preligamentoso; además el cruce clásico es anterior. La opción no es la correcta según la clave.",
+      "❌ Incorrecta. El ingreso del uréter en el parametrio ocurre a poca distancia del piso pelviano (aproximadamente 2 cm), pero la descripción y la ubicación correspondiente a la clave la hacen incorrecta.",
+      "✅ Correcta. El segmento PRELIGAMENTOSO es el segmento yuxtavesical: tras seguir el fondo de saco lateral de la vagina, el uréter cambia de dirección hacia delante y adentro y se desplaza en el tabique vésico-vaginal para alcanzar la vejiga.",
+      "❌ Incorrecta. Como A y B no son correctas, 'Todas son correctas' no es la respuesta; la clave señala la opción C."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "ureter intramural"
+    ],
+    "enunciado": "Con respecto al uréter intramural, marque lo incorrecto:",
+    "opcoes": [
+      "El trayecto del uréter en la pared vesical es oblicuo hacia abajo y afuera",
+      "Atraviesa un hiato que existe en la cara póstero-lateral de la pared vesical",
+      "Se abre en la mucosa por un orificio llamado meato ureteral",
+      "El triángulo o trígono vesical de Lieutaud está formado por los dos orificios uretrales con el orificio uretral y el cuello vesical",
+      "La barra de Mercier (interureteral) está formada por las fibras longitudinales de ambos uréteres que se entrecruzan para pasar hacia la zona media a medida que el uréter intravesical cursa desde el hiato vesical hasta su meato"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Incorrecta. Es la opción FALSA: el trayecto del uréter en la pared vesical es oblicuo hacia abajo y ADENTRO (hacia la línea media), no hacia afuera. La consigna pide lo incorrecto.",
+      "❌ Correcta. Es verdadero: el uréter atraviesa un hiato en la cara póstero-lateral de la pared vesical.",
+      "❌ Correcta. Es verdadero: se abre en la mucosa por el meato ureteral.",
+      "❌ Correcta. Es verdadero: el trígono de Lieutaud está formado por los dos orificios uretrales, el orificio uretral interno y el cuello vesical.",
+      "❌ Correcta. Es verdadero: la barra de Mercier (interureteral) está formada por las fibras longitudinales de ambos uréteres que se entrecruzan en la zona media."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vejiga"
+    ],
+    "enunciado": "La base de la vejiga en la mujer se relaciona con:",
+    "opcoes": [
+      "El recto al cual contacta",
+      "La pared lateral e inferior de la excavación pelviana",
+      "El ligamento redondo y los ganglios linfáticos",
+      "El istmo del útero y luego con la vagina"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El recto se relaciona con la vejiga a través del fondo de saco de Douglas (y con la cara posterior), pero no es la relación de la BASE de la vejiga en la mujer.",
+      "❌ Incorrecta. La pared lateral e inferior de la excavación pelviana se relaciona con la cara INFERIOR/anterolateral de la vejiga, no con su base.",
+      "❌ Incorrecta. El ligamento redondo y los ganglios se relacionan con la cara superior o con los bordes laterales, no con la base vesical.",
+      "✅ Correcta. En la mujer, la base (cara postero-inferior) de la vejiga se relaciona con el istmo del útero (cuello uterino) y, por debajo, con la pared anterior de la vagina."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vejiga"
+    ],
+    "enunciado": "Respecto a la vejiga, señale lo incorrecto:",
+    "opcoes": [
+      "Es un reservorio músculo-membranoso donde se acumula la orina y realiza la expulsión de esta hacia la uretra durante las micciones",
+      "En el recién nacido es más vertical y está en posición pelviana",
+      "Cuando se encuentra vacía es un órgano puramente abdominal",
+      "El espacio prevesical, o espacio de Retzius, contiene grasa, elementos arteriales y las venas del plexo retropubiano de Santorini",
+      "La base de la vejiga es la parte móvil",
+      "B + C + E son incorrectas",
+      "Todas menos A son incorrectas"
+    ],
+    "indice_correta": 6,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es un dato verdadero: la vejiga es un reservorio músculo-membranoso que acumula la orina y la expulsa por la uretra durante la micción.",
+      "❌ Incorrecta. Es un dato FALSO: en el recién nacido la vejiga es más vertical y está en posición ABDOMINAL (más alta), no pelviana.",
+      "❌ Incorrecta. Es un dato FALSO: la vejiga vacía es un órgano puramente PÉLVICO, no abdominal.",
+      "❌ Incorrecta. Es un dato FALSO (para la clave): el espacio prevesical de Retzius contiene tejido celuloadiposo y el plexo venoso vesical; el 'plexo de Santorini' es retropubiano y se describe clásicamente alrededor de la próstata en el varón, por lo que la afirmación no es correcta.",
+      "❌ Incorrecta. Es un dato FALSO: la base (fondo) de la vejiga es la parte FIJA, mientras que la parte móvil es el vértice/uréter superior.",
+      "❌ Incorrecta. B, C y E son incorrectas, pero D también lo es, por lo que esta combinación es incompleta.",
+      "✅ Correcta. Solo A es correcta; B, C, D y E son incorrectas, por lo que la respuesta es 'Todas menos A son incorrectas' (G)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vejiga",
+      "relaciones"
+    ],
+    "enunciado": "Con respecto a las relaciones de la vejiga, señale lo correcto:",
+    "opcoes": [
+      "La cara póstero-superior es la cara peritoneal de la vejiga",
+      "La cara póstero-superior se relaciona con las asas delgadas y el colon sigmoide",
+      "En la mujer la vejiga está separada del ligamento ancho y del útero por el fondo de saco vésico-uterino",
+      "La aponeurosis próstato-peritoneal, o fascia de Denonvilliers, se encuentra en la cara anterior del recto por un lado y las vesículas seminales junto a la próstata por el otro",
+      "A + B + C",
+      "Todas son correctas"
+    ],
+    "indice_correta": 5,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Es verdadero: la cara póstero-superior de la vejiga es la cara peritoneal (cubierta por peritoneo).",
+      "✅ Correcta. Es verdadero: la cara póstero-superior se relaciona con las asas delgadas y el colon sigmoide.",
+      "✅ Correcta. Es verdadero: en la mujer, la vejiga se separa del ligamento ancho y del útero por el fondo de saco vésico-uterino.",
+      "✅ Correcta. Es verdadero: la fascia de Denonvilliers (aponeurosis próstato-peritoneal) se encuentra entre la cara anterior del recto y las vesículas seminales con la próstata.",
+      "❌ Incorrecta. Como D también es correcta, 'A + B + C' es incompleta.",
+      "✅ Correcta. Todas las afirmaciones son verdaderas; la respuesta es 'Todas son correctas' (F)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vejiga",
+      "linfaticos"
+    ],
+    "enunciado": "Con respecto a las relaciones de la vejiga, señale lo correcto:",
+    "opcoes": [
+      "Los linfáticos vesicales toman su origen a partir de la capa muscular y de la mucosa",
+      "Los de la capa posterior drenan en los ganglios prevesicales y luego en los iliacos primitivos",
+      "Los laterales en los ganglios hipogástricos",
+      "Los anteriores en los ganglios del promontorio"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los linfáticos vesicales se originan en la capa mucosa y en la MUSCULAR, pero la clave considera que el origen descripto no es el correcto tal como se enuncia; la afirmación que corresponde a la respuesta correcta es la de los linfáticos laterales.",
+      "❌ Incorrecta. Los linfáticos de la cara posterior drenan hacia los ganglios ilíacos EXTERNOS o ilíacos primitivos, pero no por vía de los ganglios prevesicales (que corresponden a la cara anterior).",
+      "✅ Correcta. Los linfáticos LATERALES de la vejiga drenan en los ganglios hipogástricos (ilíacos internos).",
+      "❌ Incorrecta. Los linfáticos anteriores drenan en los ganglios PREVESICALES (y luego iliacos externos), no en los ganglios del promontorio."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra masculina"
+    ],
+    "enunciado": "Con respecto a la uretra masculina, señale lo correcto:",
+    "opcoes": [
+      "En el hombre adulto mide 10 cm en término medio",
+      "Se extiende desde el cuello vesical hasta la próstata",
+      "Tiene 3 porciones: prostática, membranosa y esponjosa",
+      "Las porciones prostáticas y esponjosa constituyen la llamada uretra posterior"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La uretra masculina mide aproximadamente de 16 a 18 cm en el adulto, no 10 cm.",
+      "❌ Incorrecta. Esa descripción corresponde solo a la porción prostática; la uretra se extiende desde el cuello vesical hasta el meato externo en el glande.",
+      "✅ Correcta. La uretra masculina tiene 3 porciones: prostática, membranosa y esponjosa (o pencana).",
+      "❌ Incorrecta. La uretra POSTERIOR está formada por las porciones prostática y MEMBRANOSA; la esponjosa pertenece a la uretra anterior."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra prostatica"
+    ],
+    "enunciado": "La uretra prostática presenta:",
+    "opcoes": [
+      "En su cara anterior presenta una saliente alargada, llamada veru montanum o colículo seminal",
+      "En el centro del veru se excava el utrículo prostático o vagina masculina, vestigio de los canales de Müller",
+      "Por debajo del veru montanum desembocan los dos orificios de los conductos eyaculadores",
+      "Mide aproximadamente 8 cm"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El veru montanum (colículo seminal) se encuentra en la cara POSTERIOR de la uretra prostática, no en la anterior.",
+      "✅ Correcta. En el centro del veru montanum se excava el utrículo prostático (vagina masculina), vestigio embrionario de los canales de Müller, donde desembocan los conductos eyaculadores.",
+      "❌ Incorrecta. Los conductos eyaculadores desembocan a los LADOS (o en la base) del veru montanum, no 'por debajo' de él.",
+      "❌ Incorrecta. La uretra prostática mide aproximadamente 3 cm, no 8 cm (los 8 cm podrían confundirse con la longitud de la próstata, también incorrecta)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra membranosa"
+    ],
+    "enunciado": "La uretra membranosa:",
+    "opcoes": [
+      "Presenta 2 segmentos: uno corto correspondiente al esfínter estriado y otro más largo que corresponde a la aponeurosis perineal media",
+      "Presenta pliegues verticales y múltiples orificios por donde drenan las glándulas de Cowper",
+      "Se relaciona por delante con el recto perineal",
+      "Se relaciona por detrás con el paquete vasculo-nervioso pudendo externo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La uretra membranosa presenta dos segmentos: uno corto (intrapélvico) donde se encuentra el esfínter estriado, y otro más largo que atraviesa la aponeurosis perineal media.",
+      "❌ Incorrecta. Las glándulas de Cowper drenan en la uretra ESPONJOSA (bulbar), no en la membranosa; además los pliegues y orificios corresponden a la mucosa esponjosa.",
+      "❌ Incorrecta. La uretra membranosa se relaciona por DETRÁS con el recto (vía fascia de Denonvilliers) y por delante con la sínfisis del pubis; 'por delante con el recto' es incorrecto.",
+      "❌ Incorrecta. El paquete vasculonervioso pudendo se relaciona con la cara anterior/lateral, no por detrás; además la relación posterior de la membranosa es con el recto."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra esponjosa"
+    ],
+    "enunciado": "La uretra esponjosa:",
+    "opcoes": [
+      "Es el segmento más corto de la uretra",
+      "Su parte distal presenta el segmento más dilatado que se denomina 'Bulbo uretral'",
+      "En su segmento proximal describe una curva cóncava hacia adelante hasta alcanzar la sínfisis pubiana",
+      "Su superficie externa está surcada por los pliegues longitudinales y excavada por depresiones, las lagunas de Morgagni"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La uretra esponjosa es el segmento MÁS LARGO de la uretra; el más corto es la membranosa.",
+      "❌ Incorrecta. El bulbo uretral (segmento más dilatado) se encuentra en la parte PROXIMAL de la uretra esponjosa, no en la distal.",
+      "✅ Correcta. En su segmento proximal la uretra esponjosa describe una curva con concavidad hacia delante (curva infrapúbica) hasta alcanzar la sínfisis pubiana.",
+      "❌ Incorrecta. Las lagunas de Morgagni se encuentran en la MUCOSA (superficie interna) de la uretra esponjosa, no en su superficie externa."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra"
+    ],
+    "enunciado": "La uretra está formada por:",
+    "opcoes": [
+      "Dos túnicas concéntricas: una mucosa y otra vascular",
+      "Tiene dos esfínteres: uno liso y uno estriado",
+      "Está inervada por el plexo solar",
+      "Los linfáticos de la uretra anterior desembocan en los ganglios del promontorio"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La uretra posee una túnica mucosa y una capa muscular/esponjosa, pero no se describe como 'dos túnicas concéntricas, mucosa y vascular'.",
+      "✅ Correcta. La uretra presenta dos esfínteres: uno liso (esfínter liso del cuello vesical) y uno estriado (esfínter estriado de la uretra membranosa, regulado voluntariamente).",
+      "❌ Incorrecta. La uretra está inervada por el plexo HIPOGÁSTRICO y el plexo pudendo (sacro), no por el plexo solar.",
+      "❌ Incorrecta. Los linfáticos de la uretra anterior drenan en los ganglios INGUINALES, no en los del promontorio."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra femenina"
+    ],
+    "enunciado": "La uretra femenina:",
+    "opcoes": [
+      "Mide entre ocho y diez cm",
+      "Es un conducto cilíndrico, exclusivamente urinario, y se extiende desde el cuello de la vejiga hasta la vulva",
+      "Realiza un trayecto horizontal por debajo de la vejiga antes de desembocar en la vulva",
+      "Está en relación hacia adelante con los músculos elevadores del ano"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La uretra femenina mide aproximadamente de 3 a 4 cm, no 8 a 10 cm (ese valor corresponde a la uretra masculina).",
+      "✅ Correcta. La uretra femenina es un conducto cilíndrico, exclusivamente urinario (a diferencia del masculino), que se extiende desde el cuello de la vejiga hasta la vulva (meato uretral).",
+      "❌ Incorrecta. La uretra femenina desciende por delante de la vagina con un trayecto oblicuo (hacia abajo y adelante), no horizontal.",
+      "❌ Incorrecta. Se relaciona por detrás con la vagina y por delante con la sínfisis del pubis; los músculos elevadores del ano se relacionan lateralmente, no hacia adelante."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "uretra femenina"
+    ],
+    "enunciado": "La uretra femenina:",
+    "opcoes": [
+      "Está irrigada arterialmente por ramas de las arterias hipogástricas y algunas ramas de la arteria pudenda interna",
+      "Las venas drenan en las voluminosas venas retrosinfisarias que constituyen el plexo venoso de Auerbach",
+      "Los linfáticos se vuelcan en los ganglios de la cadena ilíaca primitiva exclusivamente",
+      "Los nervios provienen del plexo pudendo externo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La uretra femenina está irrigada por ramas de las arterias hipogástricas (vesicales) y por ramas de la arteria pudenda interna.",
+      "❌ Incorrecta. El 'plexo de Auerbach' es el plexo mientérico del tubo digestivo; las venas de la uretra drenan en el plexo venoso vesical y en las venas hipogástricas.",
+      "❌ Incorrecta. Los linfáticos de la uretra femenina drenan en los ganglios ilíacos (primitivos y externos) e inguinales, no exclusivamente en la cadena ilíaca primitiva.",
+      "❌ Incorrecta. Los nervios provienen del plexo hipogástrico y del pudendo (plexo sacro), no de un 'plexo pudendo externo'."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia",
+      "vejiga",
+      "detrusor"
+    ],
+    "enunciado": "El músculo detrusor:",
+    "opcoes": [
+      "Se contrae voluntariamente por estímulo simpático",
+      "Se contrae involuntariamente por estímulo simpático",
+      "Se contrae voluntariamente por estímulo parasimpático",
+      "Se contrae involuntariamente por estímulo parasimpático"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El detrusor no se contrae voluntariamente ni por estímulo simpático; el simpático (vía hipogástrico) RELAJA el detrusor y contrae el esfínter interno.",
+      "❌ Incorrecta. Es involuntario, pero el estímulo es PARASIMPÁTICO, no simpático.",
+      "❌ Incorrecta. El detrusor es INVOLUNTARIO; la contracción voluntaria corresponde al esfínter estriado (esqueleto).",
+      "✅ Correcta. El músculo detrusor de la vejiga es involuntario y se contrae por estímulo PARASIMPÁTICO (nervios erectores/pélvicos, acetilcolina sobre receptores muscarínicos), produciendo la micción."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "psicosocial",
+      "crisis vitales"
+    ],
+    "enunciado": "Las crisis vitales:",
+    "opcoes": [
+      "Constituyen un proceso que obstaculiza la comprensión del cambio",
+      "Requieren mantener los acuerdos relacionales y las reglas en la cotidianeidad de los intercambios entre los miembros del sistema",
+      "Son situaciones necesarias e inevitables que ocurren en los ciclos que atraviesan las personas",
+      "Se producen cuando una tensión afecta un sistema y demanda un cambio"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Las crisis vitales no 'obstaculizan' la comprensión del cambio: al contrario, son oportunidades para elaborar y comprender las transiciones del ciclo vital.",
+      "❌ Incorrecta. Mantener los acuerdos y las reglas corresponde a la homeostasis/rigidez del sistema; la crisis implica justamente la necesidad de modificar reglas para atravesar el cambio.",
+      "✅ Correcta. Las crisis vitales (o del desarrollo) son situaciones necesarias e inevitables que ocurren en los ciclos que atraviesan las personas (nacimiento, adolescencia, adultez, envejecimiento, etc.), ligadas a las transiciones entre etapas.",
+      "❌ Incorrecta. Esa definición corresponde a la crisis ACCIDENTAL (o situacional), que se produce cuando una tensión afecta a un sistema y demanda un cambio; la consigna pregunta por las crisis vitales (del desarrollo)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "psicosocial",
+      "crisis vitales"
+    ],
+    "enunciado": "En relación a las crisis vitales, marcar la opción INCORRECTA:",
+    "opcoes": [
+      "Cuando la tensión se define con claridad, se puede conversar sobre ella, se hace tangible y específica, señala el camino hacia el cambio",
+      "El momento de transición de una etapa a otra es un momento de crisis",
+      "Cada crisis es única para la familia y sus miembros",
+      "Las crisis del desarrollo son imprevisibles"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Correcta. Es una afirmación verdadera: definir y nombrar la tensión la vuelve tangible y permite el camino hacia el cambio.",
+      "❌ Correcta. Es una afirmación verdadera: los momentos de transición entre etapas del ciclo vital son momentos de crisis.",
+      "❌ Correcta. Es una afirmación verdadera: cada crisis es única para cada familia y cada uno de sus miembros.",
+      "✅ Incorrecta. Es la opción FALSA: las crisis del desarrollo son PREVISIBLES (esperables), porque se vinculan a etapas normales del ciclo vital; las imprevisibles son las crisis accidentales. La consigna pide lo incorrecto."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "psicosocial",
+      "riesgo",
+      "salud mental"
+    ],
+    "enunciado": "En relación a la noción de riesgo en salud mental:",
+    "opcoes": [
+      "Consiste en la presencia de varios factores asociados de orden médico y de orden social",
+      "No implica una actuación integrada y coordinada de los enfermos y sus familias, desde una perspectiva multisectorial",
+      "La APS no incluye la detección de factores de riesgo",
+      "Es la detección de situaciones de vulnerabilidad"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La noción de riesgo en salud mental consiste en la presencia de varios factores asociados, tanto de orden médico como de orden social, que aumentan la probabilidad de enfermar.",
+      "❌ Incorrecta. La intervención sobre el riesgo SÍ implica una actuación integrada y coordinada de los enfermos y sus familias, desde una perspectiva multisectorial; la opción lo niega.",
+      "❌ Incorrecta. La Atención Primaria de la Salud (APS) SÍ incluye la detección de factores de riesgo; es uno de sus pilares preventivos.",
+      "❌ Incorrecta. 'Detección de situaciones de vulnerabilidad' es una parte de la noción de riesgo, pero no es la definición completa que da la cátedra; la opción A es la respuesta correcta."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "psicosocial",
+      "felicidad",
+      "psicoanalisis"
+    ],
+    "enunciado": "Los hombres en su aspiración a la 'felicidad':",
+    "opcoes": [
+      "Se apartan con éxito de la realidad",
+      "Satisfacen de manera ilimitada todas sus necesidades",
+      "Poseen una disposición a gozar de toda situación anhelada que permanece estable",
+      "Buscan experimentar intensas sensaciones placenteras como así también evitar el dolor y el displacer"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los hombres no se apartan 'con éxito' de la realidad; el principio de realidad exige adaptarse, y el placer pleno es irrealizable.",
+      "❌ Incorrecta. La satisfacción de las necesidades no es ilimitada; las pulsiones se regulan y la satisfacción plena es imposible por estructura.",
+      "❌ Incorrecta. La disposición a gozar no permanece estable; es transitoria y la economía libidinal es compleja (el goce se alterna con displacer).",
+      "✅ Correcta. En la aspiración a la felicidad, los hombres buscan experimentar intensas sensaciones placenteras y a la vez evitar el dolor y el displacer (programa del principio del placer, que rige la vida anímica)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "psicosocial",
+      "felicidad",
+      "malestar"
+    ],
+    "enunciado": "¿Cuál de los siguientes enunciados es incorrecto?",
+    "opcoes": [
+      "La felicidad es independiente de un problema de economía libidinal del sujeto",
+      "El malestar es estructural y por eso no puede ser eliminado en su totalidad",
+      "El principio del placer como tal es irrealizable; sin embargo no se puede abandonar los esfuerzos para acercarse de cualquier modo a su realización. Cada uno debe buscar por sí mismo la manera en que pueda ser 'feliz'",
+      "Las condiciones de la vida humana impiden una adaptación armoniosa al medio y completo bienestar en el ser humano"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Incorrecta. Es la opción FALSA: la felicidad NO es independiente de la economía libidinal del sujeto; por el contrario, depende de cómo el sujeto distribuye y regula sus investiduras libidinales (recursos pulsionales, posiciones subjetivas, elección de objeto). La consigna pide lo incorrecto.",
+      "❌ Correcta. Es una afirmación verdadera (freudiana): el malestar es estructural (malestar en la cultura) y no puede eliminarse por completo.",
+      "❌ Correcta. Es una afirmación verdadera: el principio del placer es irrealizable en su plenitud, pero se sostienen esfuerzos de aproximación; cada quien busca su propia vía a la felicidad.",
+      "❌ Correcta. Es una afirmación verdadera: las condiciones de la vida humana impiden una adaptación armoniosa completa y el bienestar pleno."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminacion"
+    ],
+    "enunciado": "La contaminación biológica es la provocada por:",
+    "opcoes": [
+      "Medicamentos caducados",
+      "Exceso de CO2",
+      "Microorganismos",
+      "Energía"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los medicamentos caducados son un contaminante químico (farmacológico), no biológico.",
+      "❌ Incorrecta. El exceso de CO2 es un contaminante físico/químico (gaseoso), no biológico.",
+      "✅ Correcta. La contaminación biológica es la provocada por microorganismos (bacterias, virus, parásitos, hongos) presentes en el medio.",
+      "❌ Incorrecta. La energía (calor, radiaciones, ruido) produce contaminación física, no biológica."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "xenobioticos"
+    ],
+    "enunciado": "Los contaminantes sintéticos que han sido generados por el hombre y no existen de manera natural se denominan:",
+    "opcoes": [
+      "Xenobióticos",
+      "No naturales",
+      "Industriales"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Los contaminantes sintéticos creados por el hombre que no existen en la naturaleza se denominan XENOBIÓTICOS (sustancias extrañas al organismo o al medio natural).",
+      "❌ Incorrecta. 'No naturales' es un término descriptivo, pero no es la denominación técnica correcta.",
+      "❌ Incorrecta. 'Industriales' describe el origen de muchos de ellos, pero la denominación correcta es xenobióticos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "salud publica",
+      "APS",
+      "OMS"
+    ],
+    "enunciado": "Según la OMS, la atención primaria de la salud:",
+    "opcoes": [
+      "Es una estrategia de alto costo y baja eficacia",
+      "Es otro modo de referirse al concepto de Salud",
+      "Es un programa para atender a la población de menos recursos",
+      "Es una estrategia para garantizar el derecho a la salud"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La APS es una estrategia de BAJO costo y ALTA eficacia (eficiencia), lo opuesto a lo enunciado.",
+      "❌ Incorrecta. La APS no es 'otro modo de referirse al concepto de Salud'; es una ESTRATEGIA para alcanzar la salud para todos.",
+      "❌ Incorrecta. La APS no es un programa asistencial para los más pobres; es una estrategia universal de organización del sistema de salud.",
+      "✅ Correcta. Según la OMS (Declaración de Alma Ata, 1978), la Atención Primaria de la Salud es una ESTRATEGIA para garantizar el derecho a la salud, con participación comunitaria, equidad y promoción/prevención."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "agua"
+    ],
+    "enunciado": "Sobre el agua:",
+    "opcoes": [
+      "Para que sea considerada potable debe estar exenta de sustancias como minerales y microorganismos",
+      "El flúor en altas dosis es útil para desinfectarla",
+      "Si no se hierve tapada se corre el riesgo de concentrar sustancias químicas que pueden ser perjudiciales",
+      "Para que sea apta para consumo humano no debe contener ningún tipo de microorganismo"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El agua potable puede contener minerales (en concentraciones permitidas); lo que se controla es la presencia de sustancias tóxicas y microorganismos patógenos.",
+      "❌ Incorrecta. El flúor se usa para prevenir caries en dosis adecuadas; NO es un desinfectante y en altas dosis es tóxico.",
+      "✅ Correcta. Al hervir el agua TAPADA se evita la evaporación/concentración de sustancias químicas disueltas (sales, nitratos, etc.) que podrían resultar perjudiciales.",
+      "❌ Incorrecta. El agua apta para consumo no debe contener microorganismos PATÓGENOS, pero puede contener microorganismos no patógenos; la exigencia absoluta de la opción es incorrecta."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminacion"
+    ],
+    "enunciado": "Según el sustrato afectado, la contaminación ambiental se puede clasificar en:",
+    "opcoes": [
+      "Biológica, física y química",
+      "Natural y antropogénica",
+      "Del agua, suelo, aire y de los alimentos"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Biológica, física y química es una clasificación según el AGENTE o tipo de contaminante, no según el sustrato.",
+      "❌ Incorrecta. Natural y antropogénica es una clasificación según el ORIGEN de la contaminación.",
+      "✅ Correcta. Según el SUSTRATO afectado, la contaminación ambiental se clasifica en contaminación del agua, del suelo, del aire y de los alimentos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "salud publica",
+      "promocion de la salud"
+    ],
+    "enunciado": "La promoción de la salud:",
+    "opcoes": [
+      "Incluye tanto la educación para la salud como la participación comunitaria y la generación de políticas públicas saludables",
+      "Se ocupa de enfermedades específicas tratando de evitar su aparición",
+      "Corresponde solo a acciones de divulgación de información para la salud",
+      "Solo contempla intervenciones vinculadas a la medicina general"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La promoción de la salud es un proceso amplio que incluye la educación para la salud, la participación comunitaria y la generación de políticas públicas saludables (Carta de Ottawa).",
+      "❌ Incorrecta. Ocuparse de enfermedades específicas evitando su aparición corresponde a la PREVENCIÓN (especialmente primaria), no a la promoción.",
+      "❌ Incorrecta. No se limita a la divulgación de información; implica empoderamiento, participación comunitaria y políticas públicas.",
+      "❌ Incorrecta. No se limita a la medicina general; involucra todos los sectores (intersectorialidad) y niveles."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "salud publica",
+      "promocion de la salud"
+    ],
+    "enunciado": "La promoción de la salud se propone fortalecer la capacidad individual y colectiva para lidiar con los determinantes de la salud.",
+    "opcoes": [
+      "Verdadero",
+      "Falso"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Es VERDADERO: la promoción de la salud busca fortalecer la capacidad individual y colectiva (empoderamiento) para actuar sobre los determinantes sociales y ambientales de la salud.",
+      "❌ Incorrecta. La afirmación es correcta y describe el objetivo central de la promoción de la salud."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "agua"
+    ],
+    "enunciado": "Sobre el agua:",
+    "opcoes": [
+      "El cloro sería un método eficaz para la desinfección del agua si no fuera por su elevado costo",
+      "La ebullición es un procedimiento satisfactorio para destruir los microorganismos factibles de producir enfermedad en las personas",
+      "El agua de fuentes superficiales es más dura que la de fuentes subterráneas debido a las formaciones calcáreas de los suelos",
+      "Para que sea considerada potable debe contener al menos 13 mg% de arsénico y 0,5 mg% de plomo"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El cloro es un método eficaz de desinfección y de BAJO costo (no 'si no fuera por su elevado costo').",
+      "✅ Correcta. La ebullición (hervir el agua) es un procedimiento satisfactorio y accesible para destruir los microorganismos capaces de producir enfermedad en las personas.",
+      "❌ Incorrecta. Es al revés: el agua de fuentes SUBTERRÁNEAS suele ser más DURA (mayor contenido de sales de calcio y magnesio) por su contacto con formaciones calcáreas.",
+      "❌ Incorrecta. El agua potable NO debe contener arsénico ni plomo (son tóxicos); los valores citados son absurdos y peligrosos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminacion"
+    ],
+    "enunciado": "Los repelentes para insectos pueden causar contaminación:",
+    "opcoes": [
+      "Natural",
+      "Física",
+      "Xenobiótica",
+      "Química"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. Los repelentes son sustancias sintéticas producidas por el hombre, por lo que no generan contaminación natural.",
+      "❌ Incorrecta. La contaminación física es la producida por energía (calor, ruido, radiaciones), no por sustancias químicas como los repelentes.",
+      "✅ Correcta. Los repelentes para insectos son compuestos SINTÉTICOS (creados por el hombre, no existentes en la naturaleza), por lo que su presencia en el ambiente constituye contaminación XENOBIÓTICA.",
+      "❌ Incorrecta. Aunque son sustancias químicas, la clasificación que corresponde a una sustancia sintética ajena al medio natural es la xenobiótica."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "plaguicidas"
+    ],
+    "enunciado": "Los plaguicidas pueden alterar el proceso reproductivo al:",
+    "opcoes": [
+      "Alterar el sistema endócrino u hormonal",
+      "Alterar la gametogénesis",
+      "Afectar la implantación del óvulo",
+      "Todos ellos"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Es verdadero: muchos plaguicidas actúan como disruptores endócrinos alterando el sistema hormonal.",
+      "✅ Correcta. Es verdadero: pueden alterar la gametogénesis (producción de espermatozoides y óvulos).",
+      "✅ Correcta. Es verdadero: pueden afectar la implantación del óvulo y la fertilidad.",
+      "✅ Correcta. Como A, B y C son verdaderas, la respuesta correcta es 'Todos ellos' (D)."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminantes quimicos"
+    ],
+    "enunciado": "Responda con respecto a los contaminantes químicos:",
+    "opcoes": [
+      "Es toda aquella contaminación provocada por energía",
+      "De alguno de ellos se sabe muy poco de sus potenciales consecuencias a largo plazo",
+      "No tienen importancia sus consecuencias a largo plazo",
+      "Es la consecuencia de las radiaciones y las ondas electromagnéticas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La contaminación provocada por energía corresponde a la contaminación FÍSICA, no a la química.",
+      "✅ Correcta. De muchos contaminantes químicos (p. ej., algunos plaguicidas y compuestos industriales) se sabe MUY POCO sobre sus potenciales consecuencias a largo plazo, lo que genera incertidumbre y justifica el principio precautorio.",
+      "❌ Incorrecta. Las consecuencias a largo plazo de los contaminantes químicos son muy importantes (carcinogénesis, toxicidad crónica, bioacumulación).",
+      "❌ Incorrecta. Las radiaciones y ondas electromagnéticas producen contaminación física, no química."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "salud publica",
+      "saneamiento"
+    ],
+    "enunciado": "El saneamiento ambiental:",
+    "opcoes": [
+      "Tiene importancia para el confort de la población, aunque no tiene relación con la salud",
+      "Se refiere exclusivamente a la eliminación de excretas",
+      "Incluye tanto el abastecimiento de agua potable como la adecuada eliminación de excretas, entre otros aspectos",
+      "Se refiere exclusivamente a la atención de los problemas de salud que derivan de la contaminación del medioambiente"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El saneamiento ambiental tiene directa relación con la salud (previene enfermedades de transmisión hídrica y fecal), no es solo una cuestión de confort.",
+      "❌ Incorrecta. No se limita a la eliminación de excretas; abarca múltiples componentes.",
+      "✅ Correcta. El saneamiento ambiental incluye el abastecimiento de agua potable, la adecuada eliminación de excretas, el manejo de residuos sólidos, el control de vectores, entre otros aspectos.",
+      "❌ Incorrecta. No es 'exclusivamente' la atención de los problemas de salud derivados de la contaminación; es el conjunto de acciones de saneamiento que PREVIENEN esos problemas."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminacion"
+    ],
+    "enunciado": "La contaminación ocurre:",
+    "opcoes": [
+      "Solo en sistemas abiertos",
+      "Solo en sistemas cerrados",
+      "Tanto en sistemas abiertos como cerrados"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Según la cátedra (ecología y química ambiental), la contaminación ocurre SOLO en sistemas ABIERTOS, porque requiere el ingreso de una sustancia exógena al sistema; en un sistema cerrado no hay intercambio con el medio exterior que introduzca contaminantes.",
+      "❌ Incorrecta. En los sistemas cerrados no se produce contaminación según este enfoque, porque no hay entrada de sustancias desde el exterior.",
+      "❌ Incorrecta. La opción 'ambos' es incorrecta para esta cátedra: la contaminación solo se da en sistemas abiertos."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "medio ambiente",
+      "contaminacion"
+    ],
+    "enunciado": "Desde el punto de vista de la ecología y de la química ambiental se denomina contaminación (marque lo INCORRECTO):",
+    "opcoes": [
+      "A la sustancia o agente dañino que se encuentra presente en un medio",
+      "A la alteración de un hábitat por la aparición de una nueva sustancia en un sistema natural",
+      "Al aumento de la concentración de una sustancia del sistema superando las variaciones típicas",
+      "A la alteración de los factores bióticos y abióticos de un determinado lugar por nuevas sustancias"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Incorrecta. Es la opción FALSA: la contaminación es la ALTERACIÓN de un sistema (hábitat, medio) por la aparición o exceso de sustancias; NO es la 'sustancia o agente dañino' en sí mismo. La consigna pide lo incorrecto.",
+      "❌ Correcta. Es una definición correcta: contaminación es la alteración de un hábitat por la aparición de una nueva sustancia en un sistema natural.",
+      "❌ Correcta. Es una definición correcta: la contaminación puede ser el aumento de la concentración de una sustancia superando las variaciones típicas del sistema.",
+      "❌ Correcta. Es una definición correcta: la alteración de los factores bióticos y abióticos de un lugar por nuevas sustancias constituye contaminación."
+    ]
+  },
+  {
+    "materia": "ser_humano_meio",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": [
+      "toxicologia",
+      "dosis letal 50"
+    ],
+    "enunciado": "La dosis letal 50 se define como:",
+    "opcoes": [
+      "El 50% de la dosis requerida para causar la muerte de la población expuesta",
+      "El valor estadístico del número de miligramos del tóxico por unidad de peso requerido para matar el 50% de una gran población de animales de laboratorio expuestos",
+      "El valor estadístico del número de miligramos del tóxico por unidad de peso requerido para matar el 50% de una gran población de animales expuestos en su medio natural",
+      "El valor estadístico del número de miligramos del tóxico por unidad de superficie corporal requerido para matar el 50% de una gran población de animales de laboratorio expuestos"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. No es 'el 50% de la dosis' (eso sería la mitad de una dosis), sino la dosis que mata al 50% de la población experimental.",
+      "✅ Correcta. La DL50 es un valor estadístico: la cantidad de tóxico en miligramos por unidad de peso (mg/kg) necesaria para MATAR al 50% de una gran población de animales de laboratorio expuestos; es un índice de toxicidad aguda.",
+      "❌ Incorrecta. La DL50 se determina en animales de LABORATORIO (condiciones controladas), no en animales en su medio natural.",
+      "❌ Incorrecta. La DL50 se expresa por unidad de PESO (mg/kg), no por unidad de superficie corporal."
+    ]
+  }
+]

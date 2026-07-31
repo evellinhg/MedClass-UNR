@@ -5,111 +5,168 @@ import { Loader2, Medal, Trophy } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Pagination, PAGE_SIZE } from "@/components/pagination"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useLanguage } from "@/lib/i18n"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO } from "@/lib/unr-curriculum"
 
-interface LeaderboardRow {
-  user_id: string
-  display_name: string
-  total_points: number
-  total_questions: number
-  total_correct: number
-  total_wrong: number
-  total_simulados: number
-}
+const TODAS_MATERIAS = "__todas__"
+const TOP_N = 5
+
+const MATERIA_KEYS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
 const medalColors = ["text-yellow-500", "text-slate-400", "text-amber-700"]
 
+interface RankingRow {
+  posicao: number
+  user_id: string
+  display_name: string
+  correct: number
+  total: number
+  points: number
+}
+
+interface MinhaPosicao {
+  posicao: number
+  correct: number
+  total: number
+  points: number
+  total_participantes: number
+}
+
 export function RankingContent() {
-  const [rows, setRows] = useState<LeaderboardRow[]>([])
+  const { t } = useLanguage()
+  const [materiaFiltro, setMateriaFiltro] = useState(TODAS_MATERIAS)
+  const [rows, setRows] = useState<RankingRow[]>([])
+  const [minhaPosicao, setMinhaPosicao] = useState<MinhaPosicao | null>(null)
   const [currentUserId, setCurrentUserId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
-  const [page, setPage] = useState(1)
 
   useEffect(() => {
-    Promise.all([
-      supabase.from("leaderboard").select("*").order("total_points", { ascending: false }),
-      supabase.auth.getUser(),
-    ]).then(([{ data }, { data: userData }]) => {
-      setRows((data as LeaderboardRow[]) ?? [])
-      setCurrentUserId(userData.user?.id ?? null)
+    let cancelled = false
+    setLoading(true)
+    const materiaParam = materiaFiltro === TODAS_MATERIAS ? null : materiaFiltro
+
+    supabase.auth.getUser().then(async ({ data: userData }) => {
+      const userId = userData.user?.id ?? null
+
+      const [{ data: rankingData }, posicaoResult] = await Promise.all([
+        supabase.rpc("get_ranking_por_materia", { materia_filtro: materiaParam, limite: TOP_N }),
+        userId
+          ? supabase.rpc("get_minha_posicao_ranking", { materia_filtro: materiaParam, alvo_user_id: userId })
+          : Promise.resolve({ data: null }),
+      ])
+
+      if (cancelled) return
+      setCurrentUserId(userId)
+      setRows((rankingData as RankingRow[]) ?? [])
+      const posicaoData = (posicaoResult.data as MinhaPosicao[] | null) ?? []
+      setMinhaPosicao(posicaoData[0] ?? null)
       setLoading(false)
     })
-  }, [])
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
-        <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando ranking...
-      </div>
-    )
-  }
+    return () => {
+      cancelled = true
+    }
+  }, [materiaFiltro])
 
-  const ranked = rows.filter((r) => r.total_simulados > 0)
-  const unranked = rows.filter((r) => r.total_simulados === 0)
+  const estouNoTop = currentUserId ? rows.some((r) => r.user_id === currentUserId) : false
 
   return (
     <div className="space-y-6">
+      <div>
+        <h1 className="text-xl font-bold text-foreground">{t.ranking.titulo}</h1>
+        <p className="mt-1 text-sm text-muted-foreground">{t.ranking.subtitulo}</p>
+      </div>
+
+      <div className="max-w-xs">
+        <label className="mb-1.5 block text-xs font-medium text-muted-foreground">{t.ranking.filtroMateria}</label>
+        <Select value={materiaFiltro} onValueChange={setMateriaFiltro}>
+          <SelectTrigger className="w-full">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={TODAS_MATERIAS}>{t.ranking.todasAsMaterias}</SelectItem>
+            {MATERIA_KEYS.map((m) => (
+              <SelectItem key={m} value={m}>
+                {t.cronograma.materiaLabel[m] ?? m}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
       <Card className="border border-border bg-card p-4 text-sm text-muted-foreground">
-        <p className="font-medium text-foreground">Como pontuar</p>
-        <p className="mt-1">
-          +10 pontos por acerto, -3 por erro, +1 por questão respondida, e um bônus de até 20 pontos por
-          velocidade (responder rápido). Resolva simulados e questões para subir no ranking!
-        </p>
+        <p className="font-medium text-foreground">{t.ranking.comoPontuarTitulo}</p>
+        <p className="mt-1">{t.ranking.comoPontuarTexto}</p>
       </Card>
 
-      {ranked.length === 0 ? (
+      {loading ? (
+        <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
+          <Loader2 className="h-4 w-4 animate-spin" />
+          {t.ranking.carregando}
+        </div>
+      ) : rows.length === 0 ? (
         <Card className="border border-border bg-card p-10 text-center text-sm text-muted-foreground">
-          Ninguém pontuou ainda. Resolva um simulado para aparecer no ranking!
+          {t.ranking.vazio}
         </Card>
-      ) : (() => {
-        const totalPages = Math.ceil(ranked.length / PAGE_SIZE)
-        const paginated = ranked.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
-        return (
-          <>
-            <div className="space-y-2">
-              {paginated.map((row, idx) => {
-                const globalIdx = (page - 1) * PAGE_SIZE + idx
-                const isMe = row.user_id === currentUserId
-                const accuracy =
-                  row.total_correct + row.total_wrong > 0
-                    ? Math.round((row.total_correct / (row.total_correct + row.total_wrong)) * 100)
-                    : 0
-                return (
-                  <Card
-                    key={row.user_id}
-                    className={`flex items-center gap-4 border p-4 ${
-                      isMe ? "border-primary bg-primary/5" : "border-border bg-card"
-                    }`}
-                  >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-muted font-semibold text-foreground">
-                      {globalIdx < 3 ? <Medal className={`h-5 w-5 ${medalColors[globalIdx]}`} /> : globalIdx + 1}
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-medium text-foreground">
-                        {row.display_name} {isMe && <Badge variant="secondary" className="ml-1">Você</Badge>}
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        {row.total_simulados} simulado(s) · {row.total_questions} questões · {accuracy}% de acerto
-                      </p>
-                    </div>
-                    <div className="flex shrink-0 items-center gap-1.5 text-right">
-                      <Trophy className="h-4 w-4 text-primary" />
-                      <span className="text-lg font-bold text-foreground">{row.total_points}</span>
-                    </div>
-                  </Card>
-                )
-              })}
-            </div>
-            <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
-          </>
-        )
-      })()}
+      ) : (
+        <div className="space-y-2">
+          {rows.map((row) => {
+            const isMe = row.user_id === currentUserId
+            return (
+              <Card
+                key={row.user_id}
+                className={`flex items-center gap-4 border p-4 ${
+                  isMe ? "border-primary bg-primary/5" : "border-border bg-card"
+                }`}
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-muted font-semibold text-foreground">
+                  {row.posicao <= 3 ? (
+                    <Medal className={`h-5 w-5 ${medalColors[row.posicao - 1]}`} />
+                  ) : (
+                    row.posicao
+                  )}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium text-foreground">
+                    {row.display_name} {isMe && <Badge variant="secondary" className="ml-1">{t.ranking.voce}</Badge>}
+                  </p>
+                  <p className="text-xs text-muted-foreground">{t.ranking.acertos(row.correct, row.total)}</p>
+                </div>
+                <div className="flex shrink-0 items-center gap-1.5 text-right">
+                  <Trophy className="h-4 w-4 text-primary" />
+                  <span className="text-lg font-bold text-foreground">{row.points}</span>
+                </div>
+              </Card>
+            )
+          })}
+        </div>
+      )}
 
-      {unranked.length > 0 && (
-        <p className="text-center text-xs text-muted-foreground">
-          {unranked.length} usuário(s) ainda não resolveram nenhum simulado.
-        </p>
+      {!loading && currentUserId && !estouNoTop && (
+        <Card className="border border-primary/40 bg-primary/5 p-4">
+          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            {t.ranking.suaPosicaoTitulo}
+          </p>
+          {minhaPosicao ? (
+            <div className="mt-2 flex items-center justify-between">
+              <div>
+                <p className="text-sm text-foreground">
+                  {t.ranking.suaPosicaoFora(minhaPosicao.posicao, minhaPosicao.total_participantes)}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  {t.ranking.acertos(minhaPosicao.correct, minhaPosicao.total)}
+                </p>
+              </div>
+              <div className="flex shrink-0 items-center gap-1.5 text-right">
+                <Trophy className="h-4 w-4 text-primary" />
+                <span className="text-lg font-bold text-foreground">{minhaPosicao.points}</span>
+              </div>
+            </div>
+          ) : (
+            <p className="mt-2 text-sm text-muted-foreground">{t.ranking.aindaNaoRespondeu}</p>
+          )}
+        </Card>
       )}
     </div>
   )

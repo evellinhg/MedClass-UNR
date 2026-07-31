@@ -10,14 +10,7 @@ import { supabase } from "@/lib/supabase"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
-
-const CATEGORIA_LABELS: Record<DesafioCategoria, string> = {
-  anamnese: "Anamnese",
-  exame_fisico: "Exame Físico",
-  exames_complementares: "Exames Complementares",
-  diagnostico: "Diagnóstico",
-  conduta: "Conduta Terapêutica",
-}
+import { useLanguage } from "@/lib/i18n"
 
 const NOTA_CORTE_APROVACAO = 60
 
@@ -33,6 +26,7 @@ interface Props {
 }
 
 export function DesafioClinicoEstudoContent({ desafioId }: Props) {
+  const { t } = useLanguage()
   const router = useRouter()
   const searchParams = useSearchParams()
   const origemEtapaId = searchParams.get("origemEtapaId")
@@ -47,6 +41,14 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const [finalizado, setFinalizado] = useState(false)
   const [salvando, setSalvando] = useState(false)
   const startRef = useRef<number | null>(null)
+
+  const CATEGORIA_LABELS: Record<DesafioCategoria, string> = {
+    anamnese: t.desafiosClinicos.categoria.anamnese,
+    exame_fisico: t.desafiosClinicos.categoria.exameFisico,
+    exames_complementares: t.desafiosClinicos.categoria.examesComplementares,
+    diagnostico: t.desafiosClinicos.categoria.diagnostico,
+    conduta: t.desafiosClinicos.categoria.conduta,
+  }
 
   useEffect(() => {
     async function load() {
@@ -151,7 +153,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando desafio...
+        {t.desafiosClinicos.carregandoDesafio}
       </div>
     )
   }
@@ -159,9 +161,9 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   if (!desafio) {
     return (
       <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
-        <p className="text-muted-foreground">Desafio clínico não encontrado.</p>
+        <p className="text-muted-foreground">{t.desafiosClinicos.desafioNaoEncontrado}</p>
         <Link href="/dashboard/desafios-clinicos" className="mt-3 inline-block text-sm text-primary">
-          Voltar aos desafios
+          {t.desafiosClinicos.voltarAosDesafios}
         </Link>
       </div>
     )
@@ -175,10 +177,10 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
           className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Voltar
+          {t.desafiosClinicos.voltar}
         </Link>
         <div>
-          <p className="text-right text-xs text-muted-foreground">Desafio Clínico</p>
+          <p className="text-right text-xs text-muted-foreground">{t.desafiosClinicos.tituloPagina}</p>
           <p className="text-right font-mono text-sm font-medium text-foreground">{formatTimer(elapsed)}</p>
         </div>
       </div>
@@ -191,12 +193,12 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
       <div className="space-y-6">
           <div className="rounded-lg border border-border bg-card p-5">
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-              Descrição do caso
+              {t.desafiosClinicos.descricaoCaso}
             </h2>
             <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
             {desafio.imagem_url && (
               <div className="relative mt-4 aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]">
-                <Image src={desafio.imagem_url} alt="Imagem do caso clínico" fill className="object-contain" />
+                <Image src={desafio.imagem_url} alt={t.desafiosClinicos.imagemCasoAlt} fill className="object-contain" />
               </div>
             )}
           </div>
@@ -212,31 +214,31 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                   <Trophy className={`h-7 w-7 ${aprovado ? "text-success" : "text-destructive"}`} />
                 </div>
                 <p className={`mt-3 text-2xl font-extrabold ${aprovado ? "text-success" : "text-destructive"}`}>
-                  {aprovado ? "Aprovado!" : "Reprovado"}
+                  {aprovado ? t.desafiosClinicos.aprovado : t.desafiosClinicos.reprovado}
                 </p>
                 <p className="mt-1 text-3xl font-bold text-gradient-brand">
                   {acertosAtuais}/{perguntas.length}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  respostas corretas ({accuracy}%) · tempo {formatTimer(elapsed)}
+                  {t.desafiosClinicos.respostasCorretas} ({accuracy}%) · {t.desafiosClinicos.tempoLabel} {formatTimer(elapsed)}
                 </p>
                 <p className="mt-3 text-sm text-foreground">
-                  {aprovado
-                    ? "Muito bem! Você demonstrou domínio sobre este caso clínico."
-                    : "Revise o resumo abaixo e tente novamente para fixar o conteúdo."}
+                  {aprovado ? t.desafiosClinicos.mensagemAprovado : t.desafiosClinicos.mensagemReprovado}
                 </p>
                 <div className="mt-5 flex justify-center gap-3">
                   <Button variant="outline" onClick={handleEstudarNovamente} className="gap-1.5">
                     <RotateCcw className="h-4 w-4" />
-                    Estudar novamente
+                    {t.desafiosClinicos.estudarNovamente}
                   </Button>
-                  <Button onClick={() => router.push("/dashboard/desafios-clinicos")}>Voltar aos desafios</Button>
+                  <Button onClick={() => router.push("/dashboard/desafios-clinicos")}>
+                    {t.desafiosClinicos.voltarAosDesafios}
+                  </Button>
                 </div>
               </div>
 
               <div className="rounded-lg border border-border bg-card p-5">
                 <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                  Resumo detalhado das perguntas
+                  {t.desafiosClinicos.resumoDetalhado}
                 </h2>
                 <div className="space-y-5">
                   {perguntas.map((pergunta, index) => {
@@ -256,16 +258,20 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                           <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
                             {CATEGORIA_LABELS[pergunta.categoria]}
                           </span>
-                          <span className="text-xs text-muted-foreground">Pergunta {index + 1}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {t.desafiosClinicos.perguntaLabel(index + 1)}
+                          </span>
                         </div>
                         <p className="mb-2 text-sm font-medium text-foreground">{pergunta.enunciado}</p>
                         <div className="space-y-1 text-xs">
                           <p className={acertou ? "text-emerald-500" : "text-red-500"}>
-                            Sua resposta:{" "}
-                            {pergunta.alternativas.find((a) => a.id === respostaId)?.texto ?? "Não respondida"}
+                            {t.desafiosClinicos.suaResposta}{" "}
+                            {pergunta.alternativas.find((a) => a.id === respostaId)?.texto ?? t.desafiosClinicos.naoRespondida}
                           </p>
                           {!acertou && (
-                            <p className="text-emerald-500">Resposta correta: {respostaCorreta?.texto}</p>
+                            <p className="text-emerald-500">
+                              {t.desafiosClinicos.respostaCorretaLabel} {respostaCorreta?.texto}
+                            </p>
                           )}
                         </div>
                         {pergunta.explicacao && (
@@ -282,7 +288,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
               {desafio.bibliografia.length > 0 && (
                 <div className="rounded-lg border border-border bg-card p-5">
                   <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                    Referências bibliográficas
+                    {t.desafiosClinicos.referenciasBibliograficas}
                   </h2>
                   <ul className="space-y-1.5">
                     {desafio.bibliografia.map((ref) => (
@@ -312,7 +318,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                   {CATEGORIA_LABELS[perguntaAtual.categoria]}
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  Pergunta {currentIndex + 1} de {perguntas.length}
+                  {t.desafiosClinicos.perguntaXdeY(currentIndex + 1, perguntas.length)}
                 </span>
               </div>
 
@@ -359,26 +365,26 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                   disabled={currentIndex === 0}
                   onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
                 >
-                  Anterior
+                  {t.desafiosClinicos.anterior}
                 </Button>
 
                 {!jaRespondida ? (
                   <Button disabled={!selecaoAtual} onClick={handleResponder}>
-                    Responder
+                    {t.desafiosClinicos.responder}
                   </Button>
                 ) : currentIndex < perguntas.length - 1 ? (
-                  <Button onClick={() => setCurrentIndex((i) => i + 1)}>Próxima</Button>
+                  <Button onClick={() => setCurrentIndex((i) => i + 1)}>{t.desafiosClinicos.proxima}</Button>
                 ) : (
                   <Button disabled={salvando} onClick={handleFinalizar} className="gap-1.5">
                     {salvando && <Loader2 className="h-4 w-4 animate-spin" />}
-                    Finalizar
+                    {t.desafiosClinicos.finalizar}
                   </Button>
                 )}
               </div>
             </div>
           ) : (
             <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
-              <p className="text-muted-foreground">Este desafio ainda não possui perguntas cadastradas.</p>
+              <p className="text-muted-foreground">{t.desafiosClinicos.desafioSemPerguntas}</p>
             </div>
           )}
         </div>

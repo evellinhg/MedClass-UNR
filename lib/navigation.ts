@@ -6,6 +6,7 @@ import {
   BarChart3,
   MessageSquare,
   Stethoscope,
+  Trophy,
   type LucideIcon,
 } from "lucide-react"
 import type { translations } from "@/lib/i18n"
@@ -24,9 +25,10 @@ export interface NavItem {
   children?: NavChild[]
 }
 
-// Ranking, MedCoins e Conquistas ficam ocultos do menu por enquanto (recursos
-// não usados nesta fase do MedClass UNR) — os componentes e rotas continuam
-// existindo para reativar no futuro. Desafios Clínicos foi reativado.
+// MedCoins e Conquistas ficam ocultos do menu por enquanto (recursos não
+// usados nesta fase do MedClass UNR) — os componentes e rotas continuam
+// existindo para reativar no futuro. Desafios Clínicos e Ranking (com
+// pontuação por matéria) foram reativados.
 export function getNavigation(t: DashboardNavLabels): NavItem[] {
   return [
     { name: t.inicio, href: "/dashboard", icon: Home },
@@ -52,6 +54,7 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
         { name: t.estatisticas, href: "/dashboard/desempenho/estatisticas" },
       ],
     },
+    { name: t.ranking, href: "/dashboard/ranking", icon: Trophy },
     { name: t.feedback, href: "/dashboard/feedback", icon: MessageSquare },
   ]
 }

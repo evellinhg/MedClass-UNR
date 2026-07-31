@@ -12,6 +12,7 @@ import { Card } from "@/components/ui/card"
 import { TrilhaPath, type TrilhaPathUnidade } from "@/components/trilha-path"
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import type { CronogramaTrilha, CronogramaTrilhaEtapa } from "@/lib/cronograma-types"
+import { useLanguage } from "@/lib/i18n"
 
 interface UnidadeRow {
   id: string
@@ -34,6 +35,7 @@ async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
 }
 
 export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onSair: () => void }) {
+  const { t } = useLanguage()
   const router = useRouter()
   const [trilha, setTrilha] = useState<CronogramaTrilha | null>(null)
   const [unidades, setUnidades] = useState<UnidadeRow[]>([])
@@ -138,7 +140,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
     const quantidade = etapa.quantidade_questoes ?? 10
 
     if (poolIds.length < quantidade) {
-      alert(`Só há ${poolIds.length} questão(ões) disponível(is) para esta etapa. Avise a equipe MedClass.`)
+      alert(t.cronograma.etapaQuestoesInsuficientes(poolIds.length))
       setIniciando(null)
       return
     }
@@ -162,7 +164,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
 
     setIniciando(null)
     if (error || !data) {
-      alert("Não foi possível iniciar a etapa. Tente novamente.")
+      alert(t.cronograma.erroIniciarEtapa)
       return
     }
 
@@ -209,10 +211,14 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
             }
             const label =
               etapa.tipo === "simulado"
-                ? `${etapa.area ?? "Todas as áreas"}`
-                : etapa.desafio_clinico?.titulo ?? "Desafio clínico"
+                ? etapa.area
+                  ? t.cronograma.materiaLabel[etapa.area] ?? etapa.area
+                  : t.cronograma.todasAsAreas
+                : etapa.desafio_clinico?.titulo ?? t.cronograma.desafioClinicoLabel
             const sublabel =
-              etapa.tipo === "simulado" ? `${etapa.quantidade_questoes ?? 10} questões` : "Desafio clínico"
+              etapa.tipo === "simulado"
+                ? `${etapa.quantidade_questoes ?? 10} ${t.cronograma.questoesSufixo}`
+                : t.cronograma.desafioClinicoLabel
             return {
               id: etapa.id,
               label,
@@ -231,7 +237,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
   const concluidas = etapas.filter(isConcluida).length
 
   const handleSair = async () => {
-    if (!confirm("Sair desta trilha? Seu cronograma pessoal voltará a ficar disponível.")) return
+    if (!confirm(t.cronograma.sairTrilhaConfirm)) return
     setSaindo(true)
     await supabase.rpc("set_cronograma_trilha", { p_trilha_id: null })
     setSaindo(false)
@@ -242,7 +248,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando trilha...
+        {t.cronograma.carregandoTrilha}
       </div>
     )
   }
@@ -250,7 +256,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
   if (!trilha) {
     return (
       <Card className="border border-border bg-card/50 p-8 text-center">
-        <p className="text-muted-foreground">Trilha não encontrada.</p>
+        <p className="text-muted-foreground">{t.cronograma.trilhaNaoEncontrada}</p>
       </Card>
     )
   }
@@ -259,14 +265,12 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
     <div className="grid gap-6 lg:grid-cols-[320px_1fr] lg:items-start">
       <div className="space-y-4 lg:sticky lg:top-6 lg:self-start">
         <Card className="border border-primary/20 bg-gradient-to-br from-[#c6ff3a]/5 to-[#84cc16]/5 p-4">
-          <p className="text-xs font-medium uppercase tracking-wide text-primary">Trilha de treinamento</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-primary">{t.cronograma.trilhaDeTreinamento}</p>
           <h2 className="text-lg font-bold leading-tight text-foreground">{trilha.nome}</h2>
           {trilha.descricao && <p className="mt-1 text-xs text-muted-foreground">{trilha.descricao}</p>}
-          <p className="mt-2 text-xs text-muted-foreground">
-            {concluidas} de {total} etapas concluídas
-          </p>
+          <p className="mt-2 text-xs text-muted-foreground">{t.cronograma.etapasConcluidas(concluidas, total)}</p>
           <Button variant="outline" size="sm" onClick={handleSair} disabled={saindo} className="mt-3 w-full">
-            {saindo ? <Loader2 className="h-4 w-4 animate-spin" /> : "Sair da trilha"}
+            {saindo ? <Loader2 className="h-4 w-4 animate-spin" /> : t.cronograma.sairDaTrilha}
           </Button>
         </Card>
       </div>
@@ -274,7 +278,7 @@ export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onS
       <div className="lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto lg:pr-2">
         {total === 0 ? (
           <Card className="border border-border bg-card/50 p-8 text-center">
-            <p className="text-muted-foreground">Esta trilha ainda não possui etapas cadastradas.</p>
+            <p className="text-muted-foreground">{t.cronograma.trilhaSemEtapas}</p>
           </Card>
         ) : (
           <TrilhaPath unidades={unidadesPath} />

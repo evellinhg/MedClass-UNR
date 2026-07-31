@@ -64,7 +64,7 @@ export function DesafiosClinicosContent() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando desafios...
+        {t.desafiosClinicos.carregandoDesafios}
       </div>
     )
   }
@@ -72,16 +72,13 @@ export function DesafiosClinicosContent() {
   return (
     <div className="space-y-8">
       <div>
-        <h2 className="text-2xl font-bold text-gradient-brand">Novo estudo</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Escolha um desafio clínico para estudar: um caso de paciente seguido de perguntas de anamnese,
-          exame físico, exames complementares, diagnóstico e conduta terapêutica.
-        </p>
+        <h2 className="text-2xl font-bold text-gradient-brand">{t.desafiosClinicos.novoEstudoTitulo}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{t.desafiosClinicos.novoEstudoDescricao}</p>
       </div>
 
       {desafios.length === 0 ? (
         <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
-          <p className="text-muted-foreground">Nenhum desafio clínico disponível no momento.</p>
+          <p className="text-muted-foreground">{t.desafiosClinicos.nenhumDesafioDisponivel}</p>
         </div>
       ) : (
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -100,7 +97,7 @@ export function DesafiosClinicosContent() {
                 )}
                 <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
                 <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  Estudar →
+                  {t.desafiosClinicos.estudarCta} →
                 </p>
               </div>
             </Link>
@@ -109,11 +106,9 @@ export function DesafiosClinicosContent() {
       )}
 
       <div>
-        <h2 className="text-xl font-bold text-foreground">Estudos anteriores</h2>
+        <h2 className="text-xl font-bold text-foreground">{t.desafiosClinicos.estudosAnteriores}</h2>
         {historico.length === 0 ? (
-          <p className="mt-2 text-sm text-muted-foreground">
-            Você ainda não estudou nenhum desafio clínico. Comece por um dos casos acima.
-          </p>
+          <p className="mt-2 text-sm text-muted-foreground">{t.desafiosClinicos.semEstudosAnteriores}</p>
         ) : (() => {
           const totalPages = Math.ceil(historico.length / PAGE_SIZE)
           const paginated = historico.slice((histPage - 1) * PAGE_SIZE, histPage * PAGE_SIZE)
@@ -134,10 +129,10 @@ export function DesafiosClinicosContent() {
                       </div>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-medium text-foreground">
-                          {item.desafio?.titulo ?? "Desafio removido"}
+                          {item.desafio?.titulo ?? t.desafiosClinicos.desafioRemovido}
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          {new Date(item.created_at).toLocaleDateString("pt-BR")}
+                          {new Date(item.created_at).toLocaleDateString(t.desafiosClinicos.localeData)}
                         </p>
                       </div>
                       <div className="flex items-center gap-1.5 text-sm font-medium">

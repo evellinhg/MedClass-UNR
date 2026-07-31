@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Loader2, Target, Trophy, Clock, ListChecks, CheckCircle2, XCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
+import { useLanguage } from "@/lib/i18n"
 
 interface HistoricoRow {
   id: string
@@ -23,6 +24,7 @@ function formatDuracao(seconds: number | null): string {
 }
 
 export function DesafiosClinicosDesempenhoContent() {
+  const { t } = useLanguage()
   const [historico, setHistorico] = useState<HistoricoRow[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -65,7 +67,7 @@ export function DesafiosClinicosDesempenhoContent() {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando desempenho...
+        {t.desafiosClinicos.carregandoDesempenho}
       </div>
     )
   }
@@ -73,50 +75,48 @@ export function DesafiosClinicosDesempenhoContent() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-gradient-brand">Desempenho — Desafios Clínicos</h2>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Estatísticas exclusivas dos seus estudos de casos clínicos, separadas do desempenho dos simulados.
-        </p>
+        <h2 className="text-2xl font-bold text-gradient-brand">{t.desafiosClinicos.desempenhoTitulo}</h2>
+        <p className="mt-1 text-sm text-muted-foreground">{t.desafiosClinicos.desempenhoDescricao}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="flex items-center gap-2 text-muted-foreground">
             <ListChecks className="h-4 w-4" />
-            <span className="text-xs">Desafios estudados</span>
+            <span className="text-xs">{t.desafiosClinicos.desafiosEstudados}</span>
           </div>
           <p className="mt-2 text-2xl font-bold text-foreground">{stats.estudados}</p>
         </div>
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Target className="h-4 w-4" />
-            <span className="text-xs">Aproveitamento médio</span>
+            <span className="text-xs">{t.desafiosClinicos.aproveitamentoMedio}</span>
           </div>
           <p className="mt-2 text-2xl font-bold text-foreground">{stats.mediaPct}%</p>
         </div>
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Trophy className="h-4 w-4" />
-            <span className="text-xs">Melhor resultado</span>
+            <span className="text-xs">{t.desafiosClinicos.melhorResultado}</span>
           </div>
           <p className="mt-2 text-2xl font-bold text-foreground">{stats.melhorPct}%</p>
         </div>
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Clock className="h-4 w-4" />
-            <span className="text-xs">Tempo total estudado</span>
+            <span className="text-xs">{t.desafiosClinicos.tempoTotalEstudado}</span>
           </div>
           <p className="mt-2 text-2xl font-bold text-foreground">{formatDuracao(stats.tempoTotal)}</p>
         </div>
       </div>
 
       <div>
-        <h3 className="mb-3 text-lg font-semibold text-foreground">Histórico de estudos</h3>
+        <h3 className="mb-3 text-lg font-semibold text-foreground">{t.desafiosClinicos.historicoEstudos}</h3>
         {historico.length === 0 ? (
           <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
-            <p className="text-muted-foreground">Você ainda não estudou nenhum desafio clínico.</p>
+            <p className="text-muted-foreground">{t.desafiosClinicos.semHistoricoEstudos}</p>
             <Link href="/dashboard/desafios-clinicos" className="mt-2 inline-block text-sm text-primary">
-              Ver desafios disponíveis
+              {t.desafiosClinicos.verDesafiosDisponiveis}
             </Link>
           </div>
         ) : (
@@ -136,10 +136,10 @@ export function DesafiosClinicosDesempenhoContent() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-medium text-foreground">
-                      {item.desafio?.titulo ?? "Desafio removido"}
+                      {item.desafio?.titulo ?? t.desafiosClinicos.desafioRemovido}
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      {new Date(item.created_at).toLocaleDateString("pt-BR")} · {formatDuracao(item.duracao_segundos)}
+                      {new Date(item.created_at).toLocaleDateString(t.desafiosClinicos.localeData)} · {formatDuracao(item.duracao_segundos)}
                     </p>
                   </div>
                   <div className="flex items-center gap-1.5 text-sm font-medium">

@@ -48,7 +48,7 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
   const accessExpired = !!accessExpiresAt && new Date(accessExpiresAt) < new Date()
 
   const plan = profile?.plan ?? "gratis"
-  const isPaid = plan === "mensal" || plan === "trimestral"
+  const isPaid = plan === "mensal" || plan === "trimestral" || plan === "vip"
   const hasFullAccess = !accessExpired && (admin || isColaborador || isPaid)
 
   const trialExpiresAt = profile?.trial_expires_at ?? null

@@ -18,6 +18,7 @@ interface SidebarNavProps {
 
 function planLabel(status: PlanStatus, t: ReturnType<typeof useLanguage>["t"]["dashboardNav"]): string {
   if (status.isAdmin) return t.administrador
+  if (status.plan === "vip") return t.planoVip
   if (status.plan === "mensal") return t.planoMensal
   if (status.plan === "trimestral") return t.planoTrimestral
   if (status.isTrialExpired) return t.planoExpirado

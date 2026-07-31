@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { AlertTriangle, Check, KeyRound, Loader2, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
+import { Checkbox } from "@/components/ui/checkbox"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -42,6 +43,13 @@ const ROLE_LABEL: Record<string, string> = {
   admin: "Admin",
   aluno: "Aluno",
   colaborador: "Colaborador",
+}
+
+const PLAN_LABEL: Record<string, string> = {
+  gratis: "Gratuito",
+  mensal: "Mensal",
+  trimestral: "Trimestral",
+  vip: "VIP",
 }
 
 function toDatetimeLocalValue(iso: string | null): string {
@@ -454,7 +462,14 @@ function UserDetailDialog({
 
             <div className="space-y-1.5">
               <Label>Plano</Label>
-              <Select value={plan} onValueChange={setPlan} disabled={isDeleted}>
+              <Select
+                value={plan}
+                onValueChange={(v) => {
+                  setPlan(v)
+                  if (v === "vip") setAccessExpiresAt("")
+                }}
+                disabled={isDeleted}
+              >
                 <SelectTrigger className="w-full">
                   <SelectValue />
                 </SelectTrigger>
@@ -462,8 +477,12 @@ function UserDetailDialog({
                   <SelectItem value="gratis">Gratuito (teste 24h)</SelectItem>
                   <SelectItem value="mensal">Mensal</SelectItem>
                   <SelectItem value="trimestral">Trimestral</SelectItem>
+                  <SelectItem value="vip">VIP (sem expiração)</SelectItem>
                 </SelectContent>
               </Select>
+              <p className="text-xs text-muted-foreground">
+                VIP dá acesso completo e permanente, sem data de expiração.
+              </p>
             </div>
 
             <div className="space-y-1.5">
@@ -490,7 +509,7 @@ function UserDetailDialog({
                 type="datetime-local"
                 value={accessExpiresAt}
                 onChange={(e) => setAccessExpiresAt(e.target.value)}
-                disabled={isDeleted}
+                disabled={isDeleted || plan === "vip"}
               />
               <p className="text-xs text-muted-foreground">
                 Opcional. Depois dessa data, o acesso da conta é bloqueado automaticamente, independente do plano ou
@@ -602,15 +621,37 @@ function UserDetailDialog({
   )
 }
 
-function UsersTable({ users, onSelect }: { users: AdminUser[]; onSelect: (u: AdminUser) => void }) {
+function UsersTable({
+  users,
+  onSelect,
+  selectedIds,
+  onToggleOne,
+  onToggleAll,
+}: {
+  users: AdminUser[]
+  onSelect: (u: AdminUser) => void
+  selectedIds: Set<string>
+  onToggleOne: (id: string, checked: boolean) => void
+  onToggleAll: (checked: boolean) => void
+}) {
   if (users.length === 0) {
     return <div className="p-10 text-center text-sm text-muted-foreground">Nenhum usuário aqui ainda.</div>
   }
+
+  const allSelected = users.length > 0 && users.every((u) => selectedIds.has(u.id))
 
   return (
     <Table>
       <TableHeader>
         <TableRow>
+          <TableHead className="w-10">
+            <Checkbox
+              checked={allSelected}
+              onCheckedChange={(checked) => onToggleAll(checked === true)}
+              aria-label="Selecionar todos"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </TableHead>
           <TableHead>Nome</TableHead>
           <TableHead>E-mail</TableHead>
           <TableHead>Login</TableHead>
@@ -624,6 +665,13 @@ function UsersTable({ users, onSelect }: { users: AdminUser[]; onSelect: (u: Adm
           const expired = !!user.access_expires_at && new Date(user.access_expires_at) < new Date()
           return (
             <TableRow key={user.id} className="cursor-pointer" onClick={() => onSelect(user)}>
+              <TableCell onClick={(e) => e.stopPropagation()}>
+                <Checkbox
+                  checked={selectedIds.has(user.id)}
+                  onCheckedChange={(checked) => onToggleOne(user.id, checked === true)}
+                  aria-label={`Selecionar ${user.email}`}
+                />
+              </TableCell>
               <TableCell className="font-medium text-foreground">{user.full_name ?? "—"}</TableCell>
               <TableCell className="text-muted-foreground">{user.email}</TableCell>
               <TableCell>
@@ -635,7 +683,11 @@ function UsersTable({ users, onSelect }: { users: AdminUser[]; onSelect: (u: Adm
                   {expired && <Badge variant="destructive">Expirado</Badge>}
                 </div>
               </TableCell>
-              <TableCell className="capitalize">{user.plan}</TableCell>
+              <TableCell>
+                <Badge variant={user.plan === "vip" ? "default" : "outline"}>
+                  {PLAN_LABEL[user.plan] ?? user.plan}
+                </Badge>
+              </TableCell>
               <TableCell className="text-muted-foreground">{formatDate(user.last_sign_in_at)}</TableCell>
             </TableRow>
           )
@@ -652,6 +704,11 @@ export function AdminUsuariosContent() {
   const [selected, setSelected] = useState<AdminUser | null>(null)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [roleFilter, setRoleFilter] = useState("todos")
+  const [planFilter, setPlanFilter] = useState("todos")
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set())
+  const [bulkDeleting, setBulkDeleting] = useState(false)
+  const [confirmingBulkDelete, setConfirmingBulkDelete] = useState(false)
+  const [bulkError, setBulkError] = useState<string | null>(null)
 
   const load = async () => {
     setLoading(true)
@@ -677,6 +734,43 @@ export function AdminUsuariosContent() {
     setDialogOpen(true)
   }
 
+  const toggleOne = (id: string, checked: boolean) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev)
+      if (checked) next.add(id)
+      else next.delete(id)
+      return next
+    })
+  }
+
+  const toggleAll = (list: AdminUser[]) => (checked: boolean) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev)
+      for (const u of list) {
+        if (checked) next.add(u.id)
+        else next.delete(u.id)
+      }
+      return next
+    })
+  }
+
+  const handleBulkDelete = async () => {
+    setBulkDeleting(true)
+    setBulkError(null)
+    const ids = Array.from(selectedIds)
+    const results = await Promise.all(
+      ids.map((id) => authedFetch(`/api/admin/users/${id}`, { method: "DELETE" }))
+    )
+    setBulkDeleting(false)
+    const failed = results.filter((r) => !r.ok).length
+    if (failed > 0) {
+      setBulkError(`${failed} de ${ids.length} conta(s) não puderam ser excluídas (ex: a própria conta do admin).`)
+    }
+    setConfirmingBulkDelete(false)
+    setSelectedIds(new Set())
+    load()
+  }
+
   if (loading) {
     return (
       <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
@@ -698,13 +792,26 @@ export function AdminUsuariosContent() {
   }
 
   const byRole = roleFilter === "todos" ? users : users.filter((u) => u.role === roleFilter)
-  const active = byRole.filter((u) => u.status !== "pending" && u.status !== "deleted")
-  const pending = byRole.filter((u) => u.status === "pending")
-  const deleted = byRole.filter((u) => u.status === "deleted")
+  const byPlan = planFilter === "todos" ? byRole : byRole.filter((u) => u.plan === planFilter)
+  const active = byPlan.filter((u) => u.status !== "pending" && u.status !== "deleted")
+  const pending = byPlan.filter((u) => u.status === "pending")
+  const deleted = byPlan.filter((u) => u.status === "deleted")
 
   return (
     <>
-      <div className="flex items-center justify-end">
+      <div className="flex flex-wrap items-center justify-end gap-3">
+        <Select value={planFilter} onValueChange={setPlanFilter}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Plano" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="todos">Todos os planos</SelectItem>
+            <SelectItem value="gratis">Gratuito</SelectItem>
+            <SelectItem value="mensal">Mensal</SelectItem>
+            <SelectItem value="trimestral">Trimestral</SelectItem>
+            <SelectItem value="vip">VIP</SelectItem>
+          </SelectContent>
+        </Select>
         <Select value={roleFilter} onValueChange={setRoleFilter}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Papel" />
@@ -718,6 +825,47 @@ export function AdminUsuariosContent() {
         </Select>
       </div>
 
+      {selectedIds.size > 0 && (
+        <Card className="flex flex-wrap items-center justify-between gap-3 border border-destructive/30 bg-destructive/5 p-3">
+          <p className="text-sm text-foreground">
+            {selectedIds.size} conta(s) selecionada(s)
+          </p>
+          <div className="flex items-center gap-2">
+            <Button size="sm" variant="outline" onClick={() => setSelectedIds(new Set())}>
+              Limpar seleção
+            </Button>
+            {!confirmingBulkDelete ? (
+              <Button
+                size="sm"
+                variant="destructive"
+                className="gap-1.5"
+                onClick={() => setConfirmingBulkDelete(true)}
+              >
+                <Trash2 className="h-3.5 w-3.5" />
+                Excluir selecionadas
+              </Button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-foreground">Confirma a exclusão?</span>
+                <Button size="sm" variant="outline" onClick={() => setConfirmingBulkDelete(false)} disabled={bulkDeleting}>
+                  Cancelar
+                </Button>
+                <Button size="sm" variant="destructive" onClick={handleBulkDelete} disabled={bulkDeleting}>
+                  {bulkDeleting ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : "Confirmar"}
+                </Button>
+              </div>
+            )}
+          </div>
+        </Card>
+      )}
+
+      {bulkError && (
+        <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>{bulkError}</span>
+        </div>
+      )}
+
       <Tabs defaultValue="ativos" className="gap-6">
         <TabsList>
           <TabsTrigger value="ativos">Ativos ({active.length})</TabsTrigger>
@@ -727,19 +875,37 @@ export function AdminUsuariosContent() {
 
         <TabsContent value="ativos">
           <Card className="border border-border bg-card p-0">
-            <UsersTable users={active} onSelect={handleSelect} />
+            <UsersTable
+              users={active}
+              onSelect={handleSelect}
+              selectedIds={selectedIds}
+              onToggleOne={toggleOne}
+              onToggleAll={toggleAll(active)}
+            />
           </Card>
         </TabsContent>
 
         <TabsContent value="pendentes">
           <Card className="border border-border bg-card p-0">
-            <UsersTable users={pending} onSelect={handleSelect} />
+            <UsersTable
+              users={pending}
+              onSelect={handleSelect}
+              selectedIds={selectedIds}
+              onToggleOne={toggleOne}
+              onToggleAll={toggleAll(pending)}
+            />
           </Card>
         </TabsContent>
 
         <TabsContent value="excluidos">
           <Card className="border border-border bg-card p-0">
-            <UsersTable users={deleted} onSelect={handleSelect} />
+            <UsersTable
+              users={deleted}
+              onSelect={handleSelect}
+              selectedIds={selectedIds}
+              onToggleOne={toggleOne}
+              onToggleAll={toggleAll(deleted)}
+            />
           </Card>
         </TabsContent>
       </Tabs>

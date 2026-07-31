@@ -1,0 +1,666 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a la Historia Clínica (HC), marque lo correcto:",
+    "opcoes": [
+      "El motivo de consulta es la narración del episodio que motivó la consulta médica",
+      "El motivo de consulta es la razón (signo o síntoma) que impulsa al paciente a buscar ayuda",
+      "El motivo de consulta debe ser extenso y describir todos los síntomas por los cuales consulta el paciente",
+      "El orden lógico de la HC es: motivo de consulta, datos básicos, enfermedad actual, lista de problemas, antecedentes personales, noción de foco"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. El motivo de consulta no es la narración extensa del episodio (eso corresponde más bien a la enfermedad actual); es una expresión breve y concreta.",
+      "Correcta. El motivo de consulta se define como la razón puntual, expresada habitualmente con las propias palabras del paciente, que lo lleva a buscar atención médica: el signo o síntoma principal por el cual consulta.",
+      "Incorrecta. El motivo de consulta debe ser breve y conciso (idealmente en pocas palabras o una frase corta), no extenso; la descripción detallada de los síntomas corresponde a la enfermedad actual.",
+      "Incorrecta. El orden lógico habitual de la historia clínica comienza con los datos personales/básicos del paciente, seguido del motivo de consulta y luego la enfermedad actual, no en el orden aquí propuesto."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a la Historia Clínica (HC), marque la correcta:",
+    "opcoes": [
+      "Es el registro completo de la información obtenida a través del interrogatorio, del examen físico y de los estudios complementarios del paciente",
+      "Aporta datos para construir el razonamiento médico",
+      "Cumple función legal",
+      "El paciente puede requerirla en cualquier circunstancia",
+      "Todas están correctas"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta (pero incompleta como respuesta). La HC efectivamente reúne de forma sistemática los datos del interrogatorio, el examen físico y los estudios complementarios.",
+      "Es una afirmación correcta (pero incompleta como respuesta). La HC constituye la base de datos sobre la cual el médico construye su razonamiento diagnóstico y terapéutico.",
+      "Es una afirmación correcta (pero incompleta como respuesta). La HC es un documento con valor legal, pudiendo ser requerida en procesos judiciales o auditorías.",
+      "Es una afirmación correcta (pero incompleta como respuesta). El paciente tiene derecho a solicitar y acceder a su historia clínica en cualquier momento.",
+      "Correcta. Todas las afirmaciones anteriores describen funciones y características verdaderas de la Historia Clínica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "El sonido mate a la percusión se caracteriza por ser:",
+    "opcoes": [
+      "Suave, apagado, de timbre alto, frecuencia mediana-alta, duración corta",
+      "De baja frecuencia, tono grave, prolongado",
+      "Muy intenso, de baja frecuencia",
+      "Suave, de timbre bajo, duración prolongada"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta (gabarito original marcaba la opción B, corregido). El sonido mate, obtenido al percutir sobre una estructura densa o sólida (como el hígado o el muslo), se caracteriza por ser de baja intensidad, apagado, de tono relativamente agudo y de corta duración, en contraste con el sonido claro pulmonar o el timpanismo.",
+      "Incorrecta. Un sonido de baja frecuencia (tono grave) y prolongado es más característico del sonido claro pulmonar normal o del timpanismo, no del sonido mate.",
+      "Incorrecta. El sonido mate se caracteriza por ser de baja intensidad, no muy intenso.",
+      "Incorrecta. El sonido mate es de corta duración, no prolongada; un sonido de timbre bajo y duración prolongada es más propio del timpanismo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La diarrea osmótica se caracteriza por:",
+    "opcoes": [
+      "Volumen de las heces menor a 1 L/día",
+      "La diarrea no cede con el ayuno",
+      "Tiene baja osmolaridad",
+      "B y C son correctas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La diarrea osmótica, causada por la presencia de solutos no absorbibles en la luz intestinal, suele presentar un volumen de deposiciones moderado (habitualmente menor a 1 litro por día), a diferencia de la diarrea secretora, que puede alcanzar volúmenes mucho mayores.",
+      "Incorrecta. Es al revés: una de las características distintivas de la diarrea osmótica es que CEDE con el ayuno, ya que al suspender la ingesta del soluto no absorbible causante, se detiene el efecto osmótico; esto la diferencia de la diarrea secretora, que persiste a pesar del ayuno.",
+      "Incorrecta. La diarrea osmótica se caracteriza por un aumento del gap o brecha osmótica en las heces (diferencia entre la osmolaridad medida y la calculada a partir de electrolitos), no por una 'baja osmolaridad' de las heces en sí.",
+      "Incorrecta. Como B y C son ambas incorrectas, esta combinación tampoco lo es."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La hemoptisis es:",
+    "opcoes": [
+      "Eliminación de sangre con el vómito",
+      "Eliminación de sangre proveniente del aparato respiratorio",
+      "La sangre es roja, brillante y espumosa",
+      "La sangre es oscura y va precedida de tos",
+      "B+C correctas"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. La eliminación de sangre con el vómito describe la hematemesis (de origen digestivo), no la hemoptisis.",
+      "Es una afirmación correcta (pero incompleta como respuesta). La hemoptisis es, en efecto, la eliminación de sangre proveniente del aparato respiratorio.",
+      "Es una afirmación correcta (pero incompleta como respuesta). La sangre expulsada en la hemoptisis es característicamente roja, brillante (rutilante) y espumosa, por estar mezclada con aire y secreciones respiratorias.",
+      "Incorrecta. Esta descripción (sangre oscura, precedida de tos) no es la característica típica de la hemoptisis; además, la hemoptisis se acompaña de tos, pero la sangre es roja y espumosa, no oscura como en la hematemesis.",
+      "Correcta. La hemoptisis se define como la eliminación de sangre proveniente del aparato respiratorio (B), característicamente roja, brillante y espumosa por su mezcla con aire (C), a diferencia de la hematemesis, de origen digestivo y con sangre oscura tipo 'borra de café'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a la disnea, marque lo correcto:",
+    "opcoes": [
+      "Es un signo que aparece en insuficiencia respiratoria",
+      "Es la sensación subjetiva de falta de aire",
+      "Su causa puede ser cardíaca o respiratoria",
+      "A+B",
+      "Todas son correctas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es parcialmente correcta pero incompleta: la disnea puede aparecer en la insuficiencia respiratoria, pero clasificarla únicamente como un 'signo' (objetivable por el examinador) no es preciso, ya que se trata fundamentalmente de una experiencia subjetiva del paciente.",
+      "Correcta. La disnea se define, ante todo, como la sensación subjetiva y desagradable de falta de aire o dificultad para respirar, percibida por el propio paciente.",
+      "Es una afirmación correcta en sí misma (la disnea puede tener origen cardíaco o respiratorio, entre otras causas), pero no es la opción elegida como la definición central de disnea en este ítem.",
+      "Incorrecta. Como A describe a la disnea de forma imprecisa (como 'signo' en lugar de síntoma subjetivo), la combinación A+B no es la mejor respuesta.",
+      "Incorrecta. Dado que A no es la definición más precisa de disnea, no todas las afirmaciones son igualmente correctas como definición central."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Los rales crepitantes:",
+    "opcoes": [
+      "Son de origen alveolar, se auscultan al final de la inspiración y no se modifican con la tos",
+      "Son de origen alveolar, se auscultan al final de la inspiración y se modifican con la tos",
+      "Son de origen bronquiolar, se auscultan en inspiración y se modifican con la tos"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Los rales crepitantes se originan en los alvéolos (por la apertura brusca de alvéolos colapsados o con líquido), se auscultan característicamente al final de la inspiración y, a diferencia de los ruidos originados en la vía aérea con secreciones, NO se modifican con la tos.",
+      "Incorrecta. Es una característica distintiva de los rales crepitantes que NO se modifiquen con la tos, justamente por su origen alveolar y no por secreciones movilizables en la vía aérea.",
+      "Incorrecta. Los rales crepitantes son de origen alveolar, no bronquiolar; los ruidos que se modifican con la tos son típicamente aquellos originados por secreciones en la vía aérea (como los roncus)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Una anciana de 78 años presenta signos y síntomas de gripe. Señale lo correcto:",
+    "opcoes": [
+      "La vacunación no previene de forma completa los cuadros gripales",
+      "El síndrome gripal está producido por el virus influenza y hay un único serotipo mundial",
+      "La gripe es una enfermedad viral más común en la época estival y el paciente no presenta complicaciones"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La vacuna antigripal, si bien reduce significativamente el riesgo de enfermar y de presentar formas graves, no ofrece una protección del 100%, por lo que los cuadros gripales pueden igualmente presentarse en personas vacunadas, aunque habitualmente de forma más leve.",
+      "Incorrecta. Existen múltiples subtipos y cepas del virus influenza (A, B, C, con variaciones antigénicas continuas), no un único serotipo mundial.",
+      "Incorrecta. La gripe es característicamente más frecuente en la época invernal (no estival), y en una persona anciana de 78 años el riesgo de complicaciones (como neumonía) es elevado, no ausente."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Un lactante de 3 meses presenta un cuadro respiratorio agudo con fiebre y disnea. Con el diagnóstico presuntivo de bronquiolitis, ¿cómo haría para certificar el diagnóstico?",
+    "opcoes": [
+      "Solicitaría búsqueda de antígeno de VSR en aspirado nasofaríngeo",
+      "Solicitaría búsqueda de anticuerpos IgM anticoronavirus en suero del paciente",
+      "Solicitaría búsqueda de antígeno específico de adenovirus en suero del paciente"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La detección de antígeno del virus sincicial respiratorio (VSR) en una muestra de aspirado nasofaríngeo es el método estándar y de elección para confirmar la etiología de la bronquiolitis, cuya causa más frecuente es justamente el VSR.",
+      "Incorrecta. La búsqueda de IgM anticoronavirus en suero no es el método diagnóstico habitual ni de elección para la bronquiolitis del lactante, cuya causa principal es el VSR, no el coronavirus.",
+      "Incorrecta. La detección de antígenos virales respiratorios se realiza sobre secreciones respiratorias (como el aspirado nasofaríngeo), no en suero; además, el adenovirus no es la causa más frecuente de bronquiolitis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Un bebé de 6 meses presenta un cuadro respiratorio agudo con fiebre y disnea. Con el diagnóstico presuntivo de bronquiolitis, ¿cómo haría para certificar dicho diagnóstico?",
+    "opcoes": [
+      "Solicitaría búsqueda de anticuerpos IgG anti-VSR en suero",
+      "Solicitaría búsqueda de antígeno de VSR en aspirado nasofaríngeo",
+      "Solicitaría hemograma completo con plaquetas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta (gabarito original marcaba esta opción, corregido). La determinación de IgG en suero refleja exposición pasada o inmunidad, no resulta útil para el diagnóstico de una infección aguda, y además es un método demasiado lento para la certificación diagnóstica en un cuadro agudo.",
+      "Correcta. La detección de antígeno del VSR en aspirado nasofaríngeo es el método rápido y de elección para confirmar la etiología de la bronquiolitis aguda del lactante.",
+      "Incorrecta. El hemograma completo puede aportar datos generales de orientación (por ejemplo, sugerir etiología viral si hay leucopenia con linfocitosis), pero no es un método específico para certificar el diagnóstico etiológico de bronquiolitis por VSR."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "En relación a los virus respiratorios, marque la afirmación correcta:",
+    "opcoes": [
+      "El virus del sarampión causa una enfermedad exantemática febril de la infancia. Las manchas de Koplik son patognomónicas de la enfermedad",
+      "El virus de la parotiditis presenta únicamente receptores específicos para infectar las glándulas parótidas",
+      "Los virus parainfluenza A y B producen cuadros respiratorios fácilmente distinguibles desde el punto de vista clínico de los causados por el virus Influenza",
+      "El VSR es la segunda causa más frecuente de bronquiolitis del lactante, después del virus de la Gripe"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El sarampión es una enfermedad exantemática febril típica de la infancia, y las manchas de Koplik (lesiones blanquecinas en la mucosa yugal) son un signo patognomónico que aparece antes del exantema cutáneo característico.",
+      "Incorrecta. El virus de la parotiditis no infecta exclusivamente las glándulas parótidas; puede afectar otras glándulas salivales y otros órganos (como testículos, páncreas o sistema nervioso central), causando orquitis, pancreatitis o meningitis, entre otras complicaciones.",
+      "Incorrecta. Los cuadros respiratorios causados por virus parainfluenza y por el virus Influenza suelen ser clínicamente similares e indistinguibles entre sí sin estudios virológicos específicos.",
+      "Incorrecta. El VSR es, de hecho, la causa MÁS frecuente de bronquiolitis del lactante (no la segunda después de la gripe), siendo responsable de la gran mayoría de los casos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La hemoptisis se caracteriza porque:",
+    "opcoes": [
+      "La sangre es roja, brillante y espumosa",
+      "Se elimina sangre con el vómito",
+      "La sangre es oscura y va precedida por tos"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La sangre eliminada en la hemoptisis es característicamente roja, brillante (rutilante) y espumosa, por su origen en la vía respiratoria y su mezcla con aire.",
+      "Incorrecta. La eliminación de sangre junto con el vómito corresponde a la hematemesis, de origen digestivo, no a la hemoptisis.",
+      "Incorrecta. La sangre oscura es más característica de la hematemesis (por el contacto con el ácido gástrico, adquiriendo aspecto de 'borra de café'); en la hemoptisis la sangre es roja y brillante, y sí va precedida de tos, pero el color oscuro no es correcto."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La cianosis (central) debe buscarse principalmente en:",
+    "opcoes": [
+      "Lengua, labios, pabellones auriculares, nariz",
+      "Conjuntiva y escleras",
+      "Palmas y plantas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La cianosis central se busca característicamente en zonas de piel y mucosas bien vascularizadas y de piel fina, como la lengua, los labios, los pabellones auriculares y la nariz, donde es más fácilmente visible.",
+      "Incorrecta. La conjuntiva y las escleras son los sitios clásicos para buscar ictericia (coloración amarillenta), no cianosis.",
+      "Incorrecta. La cianosis en palmas y plantas es más sugestiva de cianosis periférica (por vasoconstricción o mala perfusión distal), no del signo clásico de cianosis central buscado en mucosas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a las fuentes de información asequibles al médico, podemos afirmar que:",
+    "opcoes": [
+      "Entre dos tercios y tres cuartos de los ensayos clínicos publicados en las principales revistas están patrocinados por la industria farmacéutica",
+      "La publicación de artículos en revistas de prestigio asegura que la información provista es imparcial y que no existen conflictos de interés con la industria farmacéutica",
+      "Ambas son correctas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Se estima que entre dos tercios y tres cuartos de los ensayos clínicos publicados en las revistas médicas de mayor prestigio cuentan con financiamiento de la industria farmacéutica, un dato relevante a la hora de evaluar críticamente la literatura médica.",
+      "Incorrecta. Publicar en una revista de prestigio (incluso con revisión por pares) no garantiza por sí solo la ausencia de sesgos o de conflictos de interés con la industria; el financiamiento y los intereses comerciales pueden influir en el diseño, análisis o interpretación de los resultados.",
+      "Incorrecta. Como la segunda afirmación es falsa, no ambas pueden ser correctas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Los sistemas indexados (Index Medicus, bases de datos) pertenecen a:",
+    "opcoes": [
+      "Fuentes secundarias de información",
+      "Fuentes primarias de información",
+      "Fuentes terciarias de información"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Los sistemas indexados y bases de datos bibliográficas (como el Index Medicus o PubMed) son fuentes secundarias de información: no generan conocimiento original, sino que organizan, clasifican y facilitan el acceso a las fuentes primarias (los artículos originales).",
+      "Incorrecta. Las fuentes primarias de información son los estudios originales en sí mismos (artículos de investigación, ensayos clínicos), no los sistemas que los indexan.",
+      "Incorrecta. Las fuentes terciarias son materiales que resumen y sintetizan el conocimiento existente (como libros de texto o revisiones), un nivel distinto al de los sistemas indexados, que son herramientas de búsqueda de fuentes primarias."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "El sulfato de bario es un medio de contraste utilizado por vía:",
+    "opcoes": [
+      "Oral",
+      "Endovenosa",
+      "Oral o endovenosa, indistintamente"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El sulfato de bario es un medio de contraste radiopaco utilizado por vía oral (o rectal) para el estudio del tracto gastrointestinal, ya que no se absorbe y recubre la mucosa digestiva.",
+      "Incorrecta. El sulfato de bario NO debe administrarse por vía endovenosa: su paso a la circulación sanguínea (por ejemplo, en caso de perforación intestinal) puede causar complicaciones graves, como embolismo.",
+      "Incorrecta. El sulfato de bario está contraindicado por vía endovenosa; solo se utiliza por vía enteral (oral o rectal)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a la medicina nuclear, es correcto afirmar que:",
+    "opcoes": [
+      "Utiliza radioisótopos por diferentes vías de administración",
+      "Es el método diagnóstico por imágenes más empleado en la práctica médica",
+      "La captación normal se denomina fotón"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La medicina nuclear se basa en la administración de radiofármacos (radioisótopos unidos a moléculas biológicamente activas) por diferentes vías (habitualmente endovenosa, pero también oral o inhalatoria según el estudio) para obtener imágenes funcionales.",
+      "Incorrecta. La medicina nuclear es un método de uso más selectivo y menos frecuente en la práctica diaria en comparación con métodos como la radiografía simple o la ecografía, que son los más ampliamente utilizados.",
+      "Incorrecta. 'Fotón' es la partícula de radiación electromagnética detectada por los equipos (por ejemplo, en la gammagrafía), no el término que designa la captación normal de un radiofármaco en un estudio."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "histologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Las células productoras de surfactante pulmonar se llaman:",
+    "opcoes": [
+      "Neumocitos tipo II",
+      "Células en cepillo (tipo I)",
+      "Células neumoendocrinas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Los neumocitos tipo II son las células del epitelio alveolar responsables de la síntesis y secreción del surfactante pulmonar, la sustancia tensoactiva que reduce la tensión superficial alveolar y evita el colapso de los alvéolos.",
+      "Incorrecta. Las células en cepillo son un tipo celular minoritario del epitelio respiratorio con función quimiorreceptora propuesta, no las productoras de surfactante.",
+      "Incorrecta. Las células neumoendocrinas (o células de Kulchitsky) forman parte del sistema neuroendocrino difuso pulmonar y secretan sustancias como serotonina o péptidos, no surfactante."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "histologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Señale la opción que describe correctamente las capas de la barrera alveolocapilar, en el orden desde la luz alveolar hacia el capilar:",
+    "opcoes": [
+      "Endotelio capilar, membrana basal del capilar, membrana basal del neumocito, neumocito, surfactante",
+      "Neumocito II, surfactante, endotelio capilar",
+      "Surfactante, neumocito I, membrana basal del neumocito I, membrana basal del endotelio, endotelio"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. Este orden está invertido respecto del recorrido estándar descripto desde la luz alveolar hacia el capilar, que comienza en el surfactante, no en el endotelio.",
+      "Incorrecta. Este listado omite capas intermedias (las membranas basales) y no respeta el orden anatómico completo de la barrera alveolocapilar.",
+      "Correcta. El orden clásicamente descripto de las capas de la barrera alveolocapilar, desde la luz alveolar hacia la luz del capilar, es: capa de surfactante, neumocito tipo I (epitelio alveolar), membrana basal del neumocito, membrana basal del endotelio, y endotelio capilar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Señale en qué lugar desemboca el conducto lacrimonasal:",
+    "opcoes": [
+      "Meato inferior",
+      "Meato superior",
+      "Meato medio"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El conducto lacrimonasal (o nasolagrimal) desemboca en el meato inferior de las fosas nasales, drenando allí las lágrimas hacia la cavidad nasal.",
+      "Incorrecta. El meato superior recibe el drenaje de las celdillas etmoidales posteriores, no del conducto lacrimonasal.",
+      "Incorrecta. El meato medio recibe el drenaje de los senos frontal, maxilar y celdillas etmoidales anteriores, no del conducto lacrimonasal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "En la difusión alveolocapilar del oxígeno intervienen, entre otros, los siguientes factores:",
+    "opcoes": [
+      "Espesor de la membrana, presión alveolar de O2, superficie de intercambio",
+      "Afinidad del O2 por la hemoglobina sanguínea, volumen de espacio muerto, superficie de intercambio",
+      "Presión aórtica de O2, capacidad vital, superficie de intercambio"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Según los principios que rigen la difusión de gases (ley de Fick), la difusión alveolocapilar de O2 depende del espesor de la membrana (a menor espesor, mayor difusión), del gradiente de presión (presión alveolar de O2) y de la superficie de intercambio disponible.",
+      "Incorrecta. La afinidad de la hemoglobina por el O2 influye en el transporte sanguíneo del oxígeno una vez que ya difundió, y el espacio muerto se relaciona con la ventilación, no con los factores físicos que determinan directamente la velocidad de difusión a través de la membrana.",
+      "Incorrecta. La presión aórtica de O2 y la capacidad vital no son factores que determinen directamente la velocidad de difusión a través de la membrana alveolocapilar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Las fosas nasales están irrigadas por:",
+    "opcoes": [
+      "Ambos sistemas (carotídeo interno y externo)",
+      "Sistema carotídeo externo exclusivamente",
+      "Sistema carotídeo interno exclusivamente"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Las fosas nasales reciben irrigación de ramas de ambos sistemas carotídeos: del sistema carotídeo externo (por ejemplo, a través de la arteria esfenopalatina, rama de la maxilar) y del sistema carotídeo interno (por ejemplo, a través de las arterias etmoidales, ramas de la oftálmica).",
+      "Incorrecta. La irrigación no proviene exclusivamente del sistema carotídeo externo; también recibe aporte del sistema carotídeo interno mediante las arterias etmoidales.",
+      "Incorrecta. La irrigación no proviene exclusivamente del sistema carotídeo interno; también recibe un aporte importante del sistema carotídeo externo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La capacidad vital está constituida por la suma de los siguientes volúmenes:",
+    "opcoes": [
+      "Volumen corriente, volumen de reserva espiratorio, volumen de reserva inspiratorio",
+      "Volumen residual, volumen corriente, volumen de reserva inspiratorio",
+      "Volumen residual, volumen de reserva espiratorio, volumen de reserva inspiratorio"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La capacidad vital se define como la suma del volumen corriente (VC), el volumen de reserva espiratorio (VRE) y el volumen de reserva inspiratorio (VRI); representa el máximo volumen de aire que se puede movilizar con una inspiración y espiración forzadas, excluyendo el volumen residual.",
+      "Incorrecta. La capacidad vital excluye por definición al volumen residual (el aire que queda en el pulmón tras una espiración máxima y que no puede ser movilizado voluntariamente).",
+      "Incorrecta. La capacidad vital excluye al volumen residual y sí incluye al volumen corriente, que no figura en esta combinación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a las resistencias ventilatorias totales, es correcto afirmar que:",
+    "opcoes": [
+      "Están determinadas por la elasticidad del pulmón y el tórax, y por las resistencias friccionales",
+      "Se deben principalmente a las resistencias de las vías aéreas de menor calibre",
+      "Se deben principalmente a la resistencia friccional de los tejidos"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Las resistencias ventilatorias totales (el trabajo respiratorio total) incluyen tanto el componente elástico (dado por la elasticidad del pulmón y de la caja torácica) como el componente friccional o resistivo (dado principalmente por la resistencia al flujo de aire en la vía aérea y, en menor medida, por la fricción de los tejidos).",
+      "Incorrecta. Si bien las vías aéreas de mediano calibre son las que más contribuyen a la resistencia al flujo aéreo específicamente (no las de menor calibre, que en conjunto tienen gran área transversal total y baja resistencia), esta opción de todos modos no contempla el componente elástico, por lo que es incompleta como descripción de la resistencia ventilatoria TOTAL.",
+      "Incorrecta. La resistencia friccional de los tejidos es solo un componente menor de la resistencia total, que también incluye de forma importante la resistencia de la vía aérea y el componente elástico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Con respecto a la ictericia patológica, marque lo correcto:",
+    "opcoes": [
+      "Cuando la bilirrubina atraviesa la barrera hematoencefálica produce daño cerebral",
+      "No requiere determinación de niveles séricos de bilirrubina",
+      "Se produce exclusivamente por el exceso de bilirrubina directa"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Cuando los niveles de bilirrubina (especialmente la indirecta o no conjugada, liposoluble) son suficientemente elevados como para atravesar la barrera hematoencefálica, puede depositarse en los núcleos basales del cerebro y producir daño neurológico, cuadro conocido como kernícterus o encefalopatía bilirrubínica.",
+      "Incorrecta. La determinación de los niveles séricos de bilirrubina (total, directa e indirecta) es fundamental para evaluar la severidad de la ictericia y decidir la conducta terapéutica.",
+      "Incorrecta. La ictericia patológica puede deberse tanto a un exceso de bilirrubina indirecta (por ejemplo, en la hemólisis) como directa (por ejemplo, en la obstrucción biliar), no exclusivamente a la directa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "La ictericia prehepática, dependiendo de la causa, puede presentar:",
+    "opcoes": [
+      "Aumento de la bilirrubina indirecta",
+      "Presencia de palidez y anemia",
+      "Presencia de esplenomegalia",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta (pero incompleta como respuesta). La ictericia prehepática (habitualmente por hemólisis) se caracteriza por el aumento de la bilirrubina indirecta o no conjugada, ya que el hígado recibe una sobrecarga de bilirrubina que supera su capacidad de conjugación.",
+      "Es una afirmación correcta (pero incompleta como respuesta). Al tratarse frecuentemente de un proceso hemolítico, puede acompañarse de palidez y anemia por la destrucción de glóbulos rojos.",
+      "Es una afirmación correcta (pero incompleta como respuesta). La esplenomegalia puede presentarse por el aumento de la actividad del sistema reticuloendotelial esplénico en la destrucción de glóbulos rojos.",
+      "Correcta. Las tres manifestaciones mencionadas (aumento de bilirrubina indirecta, palidez/anemia y esplenomegalia) pueden presentarse en la ictericia prehepática, según la causa y magnitud del proceso hemolítico subyacente."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "Marque la opción correcta respecto de los conceptos de hipoxemia e hipoxia:",
+    "opcoes": [
+      "Hipoxemia es un signo de trastorno de la oxigenación tisular (disminución de la PO2 en la sangre arterial por debajo de 60mmHg)",
+      "Hipoxemia es el déficit de oxígeno a nivel tisular",
+      "Hipoxia es la caída de la presión parcial de oxígeno en la sangre arterial",
+      "Hipoxia es el déficit de oxígeno a nivel tisular (disminución de la difusión en los tejidos)"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta sobre la hipoxemia en sí misma (la disminución de la PO2 arterial por debajo de 60mmHg es, en efecto, la definición de hipoxemia), pero en este ítem la respuesta elegida es la que define correctamente el término 'hipoxia'.",
+      "Incorrecta. Esta definición corresponde en realidad a la hipoxia, no a la hipoxemia; la hipoxemia se define específicamente por la disminución del oxígeno en la sangre arterial, no a nivel tisular.",
+      "Incorrecta. Esta definición corresponde en realidad a la hipoxemia (caída de la presión parcial de O2 en sangre arterial), no a la hipoxia.",
+      "Correcta. La hipoxia se define como el déficit de oxígeno a nivel tisular (independientemente de la causa: puede deberse a hipoxemia, a una alteración de la difusión, del transporte o de la utilización del oxígeno por los tejidos), a diferencia de la hipoxemia, que específicamente refiere a la disminución del oxígeno en la sangre arterial."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "En la Historia Clínica, el orden correcto de la anamnesis es el siguiente:",
+    "opcoes": [
+      "Motivo de consulta, datos personales, enfermedad actual",
+      "Enfermedad actual, datos personales, motivo de consulta",
+      "Datos personales, motivo de consulta, enfermedad actual"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. El orden correcto comienza por los datos personales del paciente, no por el motivo de consulta.",
+      "Incorrecta. Este orden invierte la secuencia lógica habitual; la enfermedad actual se desarrolla después de establecer el motivo de consulta, no antes.",
+      "Correcta. El orden habitual de la anamnesis es: primero los datos personales (identificación del paciente), luego el motivo de consulta, y finalmente el desarrollo de la enfermedad actual."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "semiologia"
+    ],
+    "enunciado": "En relación a la palpación de hígado (maniobra del borde cubital), marque lo correcto:",
+    "opcoes": [
+      "Se realiza desde la fosa ilíaca derecha hacia el hipocondrio derecho, avanzando en inspiración",
+      "Se realiza desde la fosa ilíaca derecha hacia el hipocondrio derecho, avanzando en espiración",
+      "Se realiza desde el flanco derecho hacia el hipocondrio derecho, avanzando en inspiración",
+      "Se realiza desde el flanco derecho hacia el hipocondrio derecho, avanzando en espiración"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La maniobra del borde cubital para la palpación hepática se inicia en la fosa ilíaca derecha y se va desplazando progresivamente hacia el hipocondrio derecho, pidiendo al paciente que inspire profundamente en cada intento, ya que durante la inspiración el diafragma desciende y empuja el borde hepático hacia la mano del examinador.",
+      "Incorrecta. La maniobra se realiza avanzando durante la INSPIRACIÓN, no la espiración, ya que es en la inspiración cuando el hígado desciende y se hace palpable contra la mano del examinador.",
+      "Incorrecta. El punto de inicio clásico de la maniobra es la fosa ilíaca derecha, no el flanco derecho.",
+      "Incorrecta. El punto de inicio es la fosa ilíaca derecha (no el flanco) y el avance debe realizarse en inspiración (no en espiración)."
+    ]
+  }
+]

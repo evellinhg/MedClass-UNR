@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Send, Check } from "lucide-react"
+import { Send, Check, Loader2, MessageSquare } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 import { MATERIA_KEYS_BY_ANO, ANO_KEYS } from "@/lib/unr-curriculum"
+import { supabase } from "@/lib/supabase"
 
 type FeedbackTipoKey = "duvida" | "sugestao" | "erro"
 
@@ -18,6 +19,8 @@ interface FeedbackEntry {
   tipo: FeedbackTipoKey
   materia: string
   mensagem: string
+  status: "pendente" | "respondido"
+  respostaAdmin: string | null
   createdAt: Date
 }
 
@@ -45,34 +48,79 @@ function getTypeIcon(tipo: FeedbackTipoKey) {
 
 export function FeedbackContent() {
   const { t } = useLanguage()
-  const [feedbacks, setFeedbacks] = useState<FeedbackEntry[]>(
-    t.feedback.mockEntries.map((e) => ({
-      id: e.id,
-      tipo: e.tipo,
-      materia: e.materia,
-      mensagem: e.mensagem,
-      createdAt: new Date(e.data),
-    }))
-  )
+  const [feedbacks, setFeedbacks] = useState<FeedbackEntry[]>([])
+  const [loading, setLoading] = useState(true)
   const [tipo, setTipo] = useState<FeedbackTipoKey>("duvida")
   const [materia, setMateria] = useState("")
   const [mensagem, setMensagem] = useState("")
+  const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
   const materiaDisplay = (m: string) => t.cronograma.materiaLabel[m] ?? (m === OUTRO_KEY ? t.feedback.outro : m)
 
-  const handleSubmit = () => {
-    if (!materia || !mensagem) return
+  const load = async () => {
+    setLoading(true)
+    const { data: userData } = await supabase.auth.getUser()
+    const userId = userData.user?.id
+    if (!userId) {
+      setLoading(false)
+      return
+    }
+    const { data } = await supabase
+      .from("feedbacks")
+      .select("*")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false })
 
-    const newFeedback: FeedbackEntry = {
-      id: Date.now().toString(),
-      tipo,
-      materia,
-      mensagem,
-      createdAt: new Date(),
+    setFeedbacks(
+      (data ?? []).map((f) => ({
+        id: f.id,
+        tipo: f.tipo,
+        materia: f.materia,
+        mensagem: f.mensagem,
+        status: f.status,
+        respostaAdmin: f.resposta_admin,
+        createdAt: new Date(f.created_at),
+      }))
+    )
+    setLoading(false)
+  }
+
+  useEffect(() => {
+    load()
+  }, [])
+
+  const handleSubmit = async () => {
+    if (!materia || !mensagem) return
+    const { data: userData } = await supabase.auth.getUser()
+    const userId = userData.user?.id
+    if (!userId) return
+
+    setSubmitting(true)
+    const { data, error } = await supabase
+      .from("feedbacks")
+      .insert({ user_id: userId, tipo, materia, mensagem })
+      .select()
+      .single()
+    setSubmitting(false)
+
+    if (error || !data) {
+      alert("Erro ao enviar feedback. Tente novamente.")
+      return
     }
 
-    setFeedbacks([newFeedback, ...feedbacks])
+    setFeedbacks((prev) => [
+      {
+        id: data.id,
+        tipo: data.tipo,
+        materia: data.materia,
+        mensagem: data.mensagem,
+        status: data.status,
+        respostaAdmin: data.resposta_admin,
+        createdAt: new Date(data.created_at),
+      },
+      ...prev,
+    ])
     setTipo("duvida")
     setMateria("")
     setMensagem("")
@@ -135,10 +183,12 @@ export function FeedbackContent() {
 
           <Button
             onClick={handleSubmit}
-            disabled={!materia || !mensagem}
+            disabled={!materia || !mensagem || submitting}
             className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
           >
-            {submitted ? (
+            {submitting ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : submitted ? (
               <>
                 <Check className="h-4 w-4" />
                 {t.feedback.feedbackEnviado}
@@ -157,7 +207,12 @@ export function FeedbackContent() {
       <div>
         <h2 className="mb-4 text-lg font-semibold text-foreground">{t.feedback.historicoTitulo}</h2>
 
-        {feedbacks.length === 0 ? (
+        {loading ? (
+          <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            {t.dashboardNav.carregando}
+          </div>
+        ) : feedbacks.length === 0 ? (
           <Card className="border border-border bg-card p-8 text-center">
             <p className="text-muted-foreground">{t.feedback.nenhumFeedback}</p>
           </Card>
@@ -173,12 +228,21 @@ export function FeedbackContent() {
                     {getTypeIcon(feedback.tipo)}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex flex-wrap items-center gap-3 mb-1">
                       <h3 className="font-semibold text-foreground">{materiaDisplay(feedback.materia)}</h3>
                       <span
                         className={`inline-block rounded-full px-3 py-1 text-xs font-medium border ${getTypeColor(feedback.tipo)}`}
                       >
                         {t.feedback.tipoLabel[feedback.tipo]}
+                      </span>
+                      <span
+                        className={`inline-block rounded-full px-3 py-1 text-xs font-medium border ${
+                          feedback.status === "respondido"
+                            ? "border-success/20 bg-success/10 text-success"
+                            : "border-border bg-muted text-muted-foreground"
+                        }`}
+                      >
+                        {feedback.status === "respondido" ? t.feedback.statusRespondido : t.feedback.statusPendente}
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground mb-2">{feedback.mensagem}</p>
@@ -189,6 +253,16 @@ export function FeedbackContent() {
                         day: "numeric",
                       })}
                     </p>
+
+                    {feedback.status === "respondido" && feedback.respostaAdmin && (
+                      <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3">
+                        <p className="mb-1 flex items-center gap-1.5 text-xs font-semibold text-primary">
+                          <MessageSquare className="h-3.5 w-3.5" />
+                          {t.feedback.respostaEquipe}
+                        </p>
+                        <p className="text-sm text-foreground">{feedback.respostaAdmin}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>

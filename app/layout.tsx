@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     icon: '/logo-icon.png',
     apple: '/apple-touch-icon.png',
   },
+  other: {
+    google: 'notranslate',
+  },
 }
 
 export const viewport: Viewport = {
@@ -28,8 +31,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="font-sans antialiased">
+    <html lang="es" className="dark" translate="no">
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <LanguageProvider>{children}</LanguageProvider>
         <ServiceWorkerRegistration />
         <Analytics />

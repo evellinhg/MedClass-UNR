@@ -1,0 +1,1676 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bilirrubina conjugada",
+      "bilirrubina directa",
+      "glucurónido",
+      "hidrosolubilidad",
+      "ictericia"
+    ],
+    "enunciado": "Respecto a la bilirrubina conjugada:",
+    "opcoes": [
+      "Es un compuesto insoluble en agua",
+      "Es un compuesto soluble en agua",
+      "Es la llamada bilirrubina indirecta",
+      "Es la forma predominante en el plasma normal"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La bilirrubina CONJUGADA es HIDROSOLUBLE porque se encuentra unida al ácido glucurónico (diglucurónido). La forma insoluble en agua es la bilirrubina NO conjugada (indirecta), que viaja en plasma unida a la albúmina.",
+      "✅ Correcto. La bilirrubina conjugada (directa) es SOLUBLE EN AGUA porque se ha unido al ácido glucurónico en el retículo endoplasmático del hepatocito. Gracias a esa hidrosolubilidad puede ser excretada por la bilis y eliminada por la orina (coluria) cuando se eleva en sangre.",
+      "❌ Incorrecto. La bilirrubina INDIRECTA es la bilirrubina NO conjugada (insoluble, transportada unida a albúmina). La conjugada corresponde a la bilirrubina DIRECTA; son conceptos opuestos.",
+      "❌ Incorrecto. En el plasma NORMAL predomina la bilirrubina NO conjugada (indirecta), que es la que se genera continuamente por el catabolismo del hemo. La conjugada se excreta rápidamente por la bilis y su concentración plasmática es muy baja."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "ferritina",
+      "hierro",
+      "apoferritina",
+      "Fe3+",
+      "almacenamiento"
+    ],
+    "enunciado": "La unión del hierro a la ferritina en las células permite:",
+    "opcoes": [
+      "Mantener al hierro en estado ferroso (Fe2+)",
+      "Regular la excreción de hierro en el organismo",
+      "Evitar los efectos tóxicos del hierro inorgánico libre",
+      "Modular la absorción del hierro en los enterocitos"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La ferritina almacena el hierro en estado FÉRRICO (Fe3+), no ferroso. El hierro ferroso (Fe2+) es la forma absorbible y transportable; al ser captado por la apoferritina se oxida y se deposita como hidróxido férrico en el núcleo de la ferritina.",
+      "❌ Incorrecto. El organismo humano no posee un mecanismo eficaz de excreción de hierro; la homeostasis se logra regulando la ABSORCIÓN (mediada por hepcidina). La ferritina es un depósito de almacenamiento, no regula la excreción.",
+      "✅ Correcto. La ferritina (apoferritina + núcleo de hierro férrico) almacena el hierro en una forma biológica NO TÓXICA, evitando los efectos dañinos del hierro inorgánico libre, que cataliza la formación de radicales libres mediante la reacción de Fenton. Constituye el depósito intracelular de hierro.",
+      "❌ Incorrecto. La absorción del hierro en los enterocitos está regulada por la hepcidina y por proteínas de transporte (DMT1, ferroportina), no por la ferritina. La ferritina participa en el almacenamiento, no en la modulación de la absorción."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "hemólisis",
+      "bilirrubina",
+      "hematocrito",
+      "anemia hemolítica",
+      "ictericia"
+    ],
+    "enunciado": "Ante un caso de hemólisis exagerada podemos encontrar:",
+    "opcoes": [
+      "Aumento del hematocrito y disminución de la bilirrubinemia",
+      "Disminución de la bilirrubinemia y del hematocrito",
+      "Aumento de la bilirrubinemia y disminución del hematocrito",
+      "Aumento de la bilirrubinemia y del hematocrito"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. En la hemólisis los glóbulos rojos se DESTRUYEN, por lo que el hematocrito DISMINUYE (no aumenta) y la bilirrubina AUMENTA por el mayor catabolismo del hemo liberado.",
+      "❌ Incorrecto. La bilirrubinemia aumenta en la hemólisis (por la mayor destrucción de eritrocitos y catabolismo del hemo). El hematocrito sí disminuye, pero no la bilirrubina.",
+      "✅ Correcto. La hemólisis exagerada destruye los eritrocitos: disminuye el hematocrito (anemia hemolítica) y libera gran cantidad de hemo, que es degradado a bilirrubina NO conjugada, lo que produce AUMENTO de la bilirrubinemia (ictericia hemolítica).",
+      "❌ Incorrecto. El hematocrito no aumenta en la hemólisis; por el contrario, disminuye por la destrucción de glóbulos rojos. El aumento de bilirrubina sí es correcto, pero la combinación es falsa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "imunologia",
+    "tags": [
+      "transfusión",
+      "grupo sanguíneo",
+      "factor Rh",
+      "compatibilidad",
+      "A+"
+    ],
+    "enunciado": "Si un paciente ingresa a la guardia con una hemorragia severa. Se conoce su grupo y factor Rh (A+). ¿Cuál de los siguientes 4 donantes podría donarle sangre?",
+    "opcoes": [
+      "Donante 1: Grupo A Rh-",
+      "Donante 2: Grupo B Rh+",
+      "Donante 3: Grupo AB Rh+",
+      "Donante 4: Grupo AB Rh-"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El paciente A+ puede recibir sangre del grupo A (mismo sistema ABO) con cualquier factor Rh; la sangre Rh- no posee antígeno D, por lo que es perfectamente compatible con un receptor Rh+ (no genera inmunización).",
+      "❌ Incorrecto. El grupo B posee antígenos B, contra los cuales el paciente A (con anticuerpos anti-B) reaccionaría, produciendo una reacción transfusional hemolítica. Es incompatible por el sistema ABO.",
+      "❌ Incorrecto. El grupo AB posee antígenos A y B. El paciente A tiene anticuerpos anti-B, que atacarían los antígenos B presentes en la sangre AB. Es incompatible.",
+      "❌ Incorrecto. Aunque sea Rh-, el grupo AB posee antígenos A y B; el anti-B del receptor A+ reaccionaría contra los antígenos B. Es incompatible por ABO."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "eritrocitos",
+      "hemólisis extravascular",
+      "macrófagos",
+      "eritrocitos senescentes",
+      "bilirrubina"
+    ],
+    "enunciado": "Señale la opción correcta:",
+    "opcoes": [
+      "La Na-K ATPasa eritrocitaria es más activa en los eritrocitos envejecidos, causando su ruptura",
+      "El principal producto de la destrucción eritrocitaria es la bilirrubina directa",
+      "Los eritrocitos senescentes son removidos de la circulación por los macrófagos del hígado, médula ósea y bazo",
+      "El principal sitio de destrucción eritrocitaria es intravascular"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. En los eritrocitos ENVEJECIDOS la actividad de la Na-K-ATPasa DISMINUYE (por agotamiento del ATP y alteraciones de la membrana), lo que favorece su rigidez y su reconocimiento para su remoción; no es más activa y no es la causa directa de la ruptura.",
+      "❌ Incorrecto. El principal producto del catabolismo del hemo es la bilirrubina NO conjugada (indirecta). La bilirrubina directa (conjugada) se forma después, en el hepatocito.",
+      "✅ Correcto. Los eritrocitos senescentes (envejecidos, con pérdida de flexibilidad y de la señal inhibitoria CD47) son FAGOCITADOS por los macrófagos del sistema fagocítico mononuclear: células de Kupffer del hígado, médula ósea y bazo. Esta hemólisis EXTRAVASCULAR es la vía predominante.",
+      "❌ Incorrecto. La destrucción eritrocitaria principal es EXTRAvascular (fagocitosis por macrófagos). La hemólisis intravascular (ruptura dentro del torrente) es minoritaria y se ve en situaciones graves (incompatibilidad ABO, hemólisis por complemento, toxinas)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "etanol",
+      "cinética",
+      "absorción",
+      "barrera placentaria",
+      "metabolismo"
+    ],
+    "enunciado": "Respecto de la cinética del etanol señale lo INCORRECTO:",
+    "opcoes": [
+      "La absorción intestinal es la más importante, rápida e independiente de la presencia de alimentos",
+      "No atraviesa la barrera placentaria",
+      "A dosis equivalentes de etanol la mujer adquiere niveles más altos en sangre que el varón",
+      "5 a 10% se excreta sin metabolizar por vía renal, respiratoria y sudor"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación correcta). El etanol se absorbe rápidamente en el estómago y, sobre todo, en el intestino delgado; la absorción intestinal es rápida y la presencia de alimentos (que retrasa el vaciamiento gástrico) la modifica, pero el dato 'la absorción intestinal es la más importante y rápida' es correcto.",
+      "✅ Correcto (es la afirmación INCORRECTA que se pide). El etanol SÍ ATRAVIESA la barrera placentaria con facilidad, por lo que la afirmación 'no atraviesa la barrera placentaria' es FALSA. El consumo materno expone directamente al feto y se asocia al síndrome alcohólico fetal.",
+      "❌ Incorrecto (es una afirmación correcta). Las mujeres, a dosis equivalentes, alcanzan niveles sanguíneos más altos que los varones porque tienen menor agua corporal total y menor actividad de alcohol deshidrogenasa en la mucosa gástrica.",
+      "❌ Incorrecto (es una afirmación correcta). Solo el 5-10% del etanol se elimina sin metabolizar por orina, aire espirado y sudor; el resto se metaboliza principalmente en el hígado por la vía de la alcohol deshidrogenasa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "desnutrición secundaria",
+      "malabsorción",
+      "utilización de nutrientes",
+      "pérdidas excesivas"
+    ],
+    "enunciado": "En la desnutrición secundaria la ingesta diaria de nutrientes es adecuada, pero la desnutrición es debida a: (marque la correcta)",
+    "opcoes": [
+      "Malabsorción",
+      "Alteración de la utilización o conservación de los nutrientes",
+      "Pérdidas excesivas o necesidad aumentada de nutrientes",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una causa válida, pero incompleta). La malabsorción (enfermedad celíaca, pancreatitis, resección intestinal) es una causa de desnutrición secundaria, pero no la única.",
+      "❌ Incorrecto (es una causa válida, pero incompleta). La alteración de la utilización o conservación de los nutrientes (hipertiroidismo, diabetes, enfermedades hepáticas) también produce desnutrición secundaria, pero no es la única.",
+      "❌ Incorrecto (es una causa válida, pero incompleta). Las pérdidas excesivas (fístulas, diarreas, hemorragias) o la necesidad aumentada (síndromes de hipercatabolismo, embarazo, infecciones) son otra causa, pero no la única.",
+      "✅ Correcto. En la desnutrición SECUNDARIA la ingesta es adecuada pero la desnutrición se produce por cualquiera de los mecanismos enumerados: malabsorción, alteración de la utilización o conservación de nutrientes, o pérdidas excesivas/necesidad aumentada. Por eso 'todas son correctas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "vitamina D",
+      "raquitismo",
+      "osteomalacia",
+      "calcio",
+      "deficiencia"
+    ],
+    "enunciado": "El déficit de vitamina D produce:",
+    "opcoes": [
+      "Escorbuto",
+      "Raquitismo/osteomalacia",
+      "Anemia perniciosa",
+      "Todas son correctas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El escorbuto es consecuencia del déficit de VITAMINA C (ácido ascórbico), que altera la síntesis de colágeno. No se relaciona con la vitamina D.",
+      "✅ Correcto. El déficit de vitamina D produce RAQUITISMO en el niño (alteración de la mineralización del hueso en crecimiento: genu varo, rosario costal) y OSTEOMALACIA en el adulto (desmineralización con dolor óseo y fracturas), porque la vitamina D regula la absorción de calcio y fosfato y la mineralización ósea.",
+      "❌ Incorrecto. La anemia perniciosa es consecuencia del déficit de VITAMINA B12 (cianocobalamina) por déficit de factor intrínseco, con anemia megaloblástica y compromiso neurológico. No se relaciona con la vitamina D.",
+      "❌ Incorrecto. No todas son correctas: solo el raquitismo/osteomalacia es consecuencia del déficit de vitamina D."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "exudado fibrino-purulento",
+      "neumonía",
+      "neutrófilos",
+      "fibrina",
+      "inflamación aguda"
+    ],
+    "enunciado": "En una biopsia de pulmón se observa: luces alveolares ocupadas por un fluido denso, rosado y amorfo con abundantes leucocitos polimorfonucleares neutrófilos y algunos macrófagos y detritus. Señale la opción correcta:",
+    "opcoes": [
+      "Se trata de un exudado seroso",
+      "Se trata de un exudado fibrinoso",
+      "Se trata de un exudado fibrino-purulento",
+      "Se trata de edema alveolar"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El exudado seroso es un líquido claro, con bajo contenido proteico y CELULARIDAD ESCASA (típico de las inflamaciones leves, como el de las serosas o la flictena). No corresponde a un fluido denso con abundantes neutrófilos.",
+      "❌ Incorrecto. El exudado fibrinoso es rico en FIBRINA (fluido rosado/amorfo) pero tiene pocos leucocitos; se observa en la pericarditis, pleuritis o meningitis fibrinosa. La presencia de ABUNDANTES neutrófilos no es característica.",
+      "✅ Correcto. El cuadro describe un EXUDADO FIBRINO-PURULENTO: el fluido denso y rosado corresponde a la fibrina, y los abundantes polimorfonucleares neutrófilos al componente purulento. Es típico de la neumonía bacteriana aguda (hepatización roja/gris).",
+      "❌ Incorrecto. El edema alveolar es un trasudado: líquido claro con bajo contenido proteico y escasas células (en insuficiencia cardíaca congestiva). No presenta abundantes neutrófilos ni detritus celulares."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "alcohol etílico",
+      "depresor del SNC",
+      "vasodilatación",
+      "secreciones gástricas"
+    ],
+    "enunciado": "Indique la afirmación incorrecta respecto del alcohol etílico:",
+    "opcoes": [
+      "Es estimulante del SNC",
+      "Causa rubor y aumento de temperatura cutánea por su efecto vasodilatador",
+      "Estimula la producción de secreciones gástricas y salivales",
+      "Provoca depresión de la reacción ventilatoria al dióxido de carbono"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto (es la afirmación INCORRECTA que se pide). El etanol es un DEPRESOR del sistema nervioso central, no un estimulante. La aparente 'euforia' inicial se debe a la depresión de los mecanismos inhibitorios y de los centros superiores, que libera conductas desinhibidas, pero a nivel central su efecto neto es depresor.",
+      "❌ Incorrecto (es una afirmación correcta). El etanol produce vasodilatación cutánea, que se manifiesta como rubor facial y sensación de calor (pérdida de calor por la piel). Es un efecto real del alcohol.",
+      "❌ Incorrecto (es una afirmación correcta). El etanol, en bajas concentraciones, estimula la secreción gástrica y salival por su acción local y vagal; a altas concentraciones, por el contrario, irrita la mucosa gástrica.",
+      "❌ Incorrecto (es una afirmación correcta). El alcohol deprime el centro respiratorio y reduce la respuesta ventilatoria al CO2, lo que puede agravar la depresión respiratoria en la intoxicación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "inflamación aguda",
+      "exudado seroso",
+      "infección viral",
+      "tipos de exudado"
+    ],
+    "enunciado": "La respuesta inflamatoria aguda gatillada por virus cursa con:",
+    "opcoes": [
+      "Exudado seroso",
+      "Exudado fibrinoso",
+      "Exudado purulento",
+      "Ninguna es correcta"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La inflamación aguda de etiología VIRAL típicamente produce un EXUDADO SEROSO: líquido claro y de baja celularidad, con predominio de linfocitos y células mononucleares (respuesta celular mononuclear propia de los virus).",
+      "❌ Incorrecto. El exudado fibrinoso (rico en fibrina) se asocia a infecciones por bacterias productoras de toxinas (p. ej., difteria, shigelosis) o a inflamaciones de serosas; no es el patrón característico de las infecciones virales.",
+      "❌ Incorrecto. El exudado purulento (pus) es característico de las infecciones por BACTERIAS PIÓGENAS (estafilococos, estreptococos, neumococos), no de las virales.",
+      "❌ Incorrecto. Sí hay una opción correcta: el exudado seroso es el patrón típico de la inflamación aguda viral."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "curación por primera intención",
+      "herida quirúrgica",
+      "tejido de granulación",
+      "reparación"
+    ],
+    "enunciado": "El tipo de curación de heridas denominada por 'primera intención':",
+    "opcoes": [
+      "Cursa con gran cantidad de tejido de granulación",
+      "Es la que ocurre en la herida quirúrgica limpia no infectada, suturada",
+      "Es una forma de curación que involucra una respuesta inflamatoria intensa",
+      "Es el tipo de curación que ocurre en una úlcera"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La gran cantidad de tejido de granulación es característica de la curación por SEGUNDA intención (heridas abiertas con pérdida de sustancia que cicatrizan de adentro hacia afuera), no de la primera intención.",
+      "✅ Correcto. La curación por PRIMERA intención es la que ocurre en la herida quirúrgica limpia, NO infectada y SUTURADA (o con bordes bien aproximados). El defecto es pequeño, hay escaso tejido de granulación y mínima cicatriz.",
+      "❌ Incorrecto. La primera intención se caracteriza por una respuesta inflamatoria LEVE y de corta duración (por la pequeña cantidad de tejido a reparar); la respuesta inflamatoria intensa corresponde a la segunda intención.",
+      "❌ Incorrecto. La úlcera (pérdida de sustancia con bordes abiertos) cicatriza por SEGUNDA intención, no por primera intención."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "esteatosis",
+      "triglicéridos",
+      "células parenquimatosas",
+      "hígado graso",
+      "degeneración grasa"
+    ],
+    "enunciado": "Cuando hablamos de esteatosis hacemos referencia a:",
+    "opcoes": [
+      "Acúmulo anormal de triglicéridos en células parenquimatosas",
+      "Infiltración del tejido glandular pancreático por células adiposas maduras",
+      "Un proceso irreversible",
+      "Un macrófago cuyo citoplasma se encuentra cargado de grasas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La ESTEATOSIS (degeneración grasa) es el ACÚMULO ANORMAL de TRIGLICÉRIDOS en el citoplasma de las CÉLULAS PARENQUIMATOSAS, especialmente hepatocitos, pero también en corazón, riñón y músculo. Es la alteración más frecuente por etanol, toxinas y diabetes.",
+      "❌ Incorrecto. La infiltración del páncreas por células adiposas maduras no es esteatosis, sino una sustitución del parénquima por tejido adiposo (lipomatosis); no es la definición de esteatosis.",
+      "❌ Incorrecto. La esteatosis es un proceso REVERSIBLE: si se elimina la causa (p. ej., abstinencia alcohólica), los triglicéridos pueden ser removidos y la célula recuperarse. Se vuelve irreversible cuando progresa a esteatohepatitis y fibrosis.",
+      "❌ Incorrecto. El macrófago cargado de grasas se denomina célula ESPUMOSA o lipófago (en ateromas, esteatohepatitis). No es la definición de esteatosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "obesidad",
+      "hipertensión",
+      "diabetes tipo II",
+      "ateroesclerosis",
+      "factores de riesgo"
+    ],
+    "enunciado": "La obesidad se la considera como un peligro para la salud porque predispone a:",
+    "opcoes": [
+      "Hipertensión",
+      "Diabetes tipo II",
+      "Ateroesclerosis",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es un efecto real, pero incompleto). La obesidad predispone a hipertensión arterial por aumento del volumen intravascular, activación del sistema renina-angiotensina-aldosterona e hiperactividad simpática.",
+      "❌ Incorrecto (es un efecto real, pero incompleto). La obesidad predispone a diabetes tipo II por insulinorresistencia asociada al exceso de tejido adiposo visceral.",
+      "❌ Incorrecto (es un efecto real, pero incompleto). La obesidad predispone a ateroesclerosis por la dislipemia, la inflamación crónica de bajo grado y el estrés oxidativo que genera.",
+      "✅ Correcto. La obesidad es un factor de riesgo que predispone simultáneamente a HIPERTENSIÓN, DIABETES TIPO II y ATEROESCLEROSIS (además de dislipemia, apnea del sueño, enfermedades articulares y algunos cánceres). Por eso 'todas son correctas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "reactantes de fase aguda",
+      "proteínas de fase aguda",
+      "inflamación sistémica",
+      "PCR",
+      "fiebre"
+    ],
+    "enunciado": "Las reacciones 'sistémicas' de fase aguda en la inflamación incluyen:",
+    "opcoes": [
+      "Hipotermia y neutrofilia",
+      "Insomnio",
+      "Polifagia",
+      "Aumento de proteínas de fase aguda"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La respuesta sistémica de fase aguda cursa con FIEBRE (hipertermia, no hipotermia) mediada por pirógenos endógenos (IL-1, TNF, IL-6), y con neutrofilia/leucocitosis. La hipotermia no es una reacción de fase aguda.",
+      "❌ Incorrecto. En la fase aguda hay somnolencia y astenia (por la acción de las citocinas sobre el SNC), no insomnio como reacción característica.",
+      "❌ Incorrecto. En la fase aguda se produce ANOREXIA (no polifagia), junto con astenia, somnolencia y malestar general, mediados por las citocinas proinflamatorias.",
+      "✅ Correcto. La reacción sistémica de fase aguda incluye el AUMENTO de las PROTEÍNAS DE FASE AGUDA (PCR, amiloide A sérico, fibrinógeno, haptoglobina, ceruloplasmina), sintetizadas por el hígado bajo el estímulo de la IL-6, además de fiebre, leucocitosis y alteraciones metabólicas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "atropina",
+      "anticolinérgico",
+      "antimuscarínico",
+      "delirio",
+      "efectos adversos"
+    ],
+    "enunciado": "¿Cuál de los siguientes efectos puede ser producido por la atropina?",
+    "opcoes": [
+      "Aumento de las secreciones bronquiales",
+      "Micción involuntaria",
+      "Delirio",
+      "Fasciculaciones musculares"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina es un ANTAGONISTA muscarínico y DISMINUYE las secreciones (boca seca, menos secreción bronquial, anhidrosis); no las aumenta. El aumento de secreciones es un efecto muscarínico agonista.",
+      "❌ Incorrecto. La atropina produce RETENCIÓN urinaria (relaja el músculo detrusor y aumenta el tono del esfínter), no micción involuntaria. La micción es facilitada por el tono colinérgico que la atropina bloquea.",
+      "✅ Correcto. La atropina en dosis altas produce DELIRIO (síndrome anticolinérgico central): agitación, confusión, alucinaciones, desorientación. Es un efecto tóxico típico por su acción antagonista sobre los receptores muscarínicos del SNC (y por eso los pacientes intoxicados 'recogen pelusas' del aire).",
+      "❌ Incorrecto. Las fasciculaciones musculares son un efecto de los agonistas NICOTÍNICOS (como la nicotina o los organofosforados que acumulan ACh a nivel de la placa motora). La atropina no produce fasciculaciones."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "anticolinérgicos",
+      "amonio cuaternario",
+      "ipratropio",
+      "atropina",
+      "permeabilidad al SNC"
+    ],
+    "enunciado": "¿Cuál de los siguientes fármacos anticolinérgicos son derivados de amonio cuaternario?",
+    "opcoes": [
+      "Ipratropio",
+      "Atropina",
+      "Escopolamina",
+      "Trihexifenidilo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El IPRATROPIO es un derivado de AMONIO CUATERNARIO: por su carga positiva permanente es muy poco liposoluble, no atraviesa la barrera hematoencefálica ni las mucosas, y se usa por inhalación en EPOC/asma (con escasos efectos centrales).",
+      "❌ Incorrecto. La atropina es una AMINA TERCIARIA, liposoluble, que atraviesa la barrera hematoencefálica y produce efectos centrales (delirio anticolinérgico). No es un amonio cuaternario.",
+      "❌ Incorrecto. La escopolamina (hioscina) también es una amina terciaria que atraviesa el SNC; por eso causa sedación y amnesia. No es un amonio cuaternario.",
+      "❌ Incorrecto. El trihexifenidilo es una amina terciaria antiparkinsoniano que atraviesa la barrera hematoencefálica; no es un derivado de amonio cuaternario."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "organofosforados",
+      "atropina",
+      "intoxicación",
+      "antídoto",
+      "anticolinesterasa"
+    ],
+    "enunciado": "Un paciente de 50 años acude a la sala de emergencias con signos de intoxicación por organofosforados. Presenta sudoración profusa, lagrimeo excesivo, salivación abundante y dificultad respiratoria. ¿Cuál de los siguientes medicamentos sería el más apropiado para revertir los efectos de la intoxicación?",
+    "opcoes": [
+      "Atropina",
+      "Pilocarpina",
+      "Arecolina",
+      "Tiotropio"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La ATROPINA es el antídoto de primera línea en la intoxicación por organofosforados: bloquea los receptores muscarínicos y revierte los efectos colinérgicos periféricos (sudoración, lagrimeo, salivación, broncoconstricción, bradicardia). Se administra a altas dosis, junto con pralidoxima (para reactivar la colinesterasa) y medidas de soporte.",
+      "❌ Incorrecto. La pilocarpina es un AGONISTA muscarínico (parasimpaticomimético), que AUMENTARÍA la salivación, el lagrimeo y la broncosecreción; empeoraría la intoxicación colinérgica. Está contraindicada.",
+      "❌ Incorrecto. La arecolina es un agonista muscarínico (alcaloide de la nuez de betel) que también aumentaría las secreciones; es exactamente lo contrario de lo que se necesita.",
+      "❌ Incorrecto. El tiotropio es un antagonista muscarínico de amonio cuaternario usado por inhalación en EPOC, pero es poco potente, de acción local y no es el fármaco indicado como antídoto sistémico de la intoxicación por organofosforados."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "selectividad",
+      "potencia",
+      "afinidad",
+      "especificidad",
+      "farmacodinamia"
+    ],
+    "enunciado": "La capacidad que tiene un fármaco de producir un efecto particular con preferencia sobre otros efectos define la:",
+    "opcoes": [
+      "Potencia",
+      "Selectividad",
+      "Afinidad",
+      "Especificidad"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La POTENCIA es la cantidad de fármaco (dosis o concentración) necesaria para producir un efecto dado; se mide por la posición de la curva dosis-respuesta (CE50). No se refiere a la preferencia por un efecto sobre otros.",
+      "✅ Correcto. La SELECTIVIDAD es la capacidad de un fármaco de PRODUCIR UN EFECTO PARTICULAR CON PREFERENCIA sobre otros efectos. Un fármaco selectivo produce pocos efectos colaterales (p. ej., la fenilefrina es selectiva por efectos alfa-adrenérgicos).",
+      "❌ Incorrecto. La AFINIDAD es la fuerza de unión entre el fármaco y su receptor, es decir, la tendencia del fármaco a unirse a un receptor. No define la preferencia por un efecto sobre otros.",
+      "❌ Incorrecto. La ESPECIFICIDAD se relaciona con la capacidad de un fármaco de actuar sobre UN solo tipo de receptor, mientras que la selectividad se refiere a la preferencia de un efecto farmacológico particular (según el texto, la respuesta buscada es selectividad)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "afinidad",
+      "receptor",
+      "unión reversible",
+      "farmacodinamia",
+      "fármaco-receptor"
+    ],
+    "enunciado": "¿Qué es la afinidad entre un fármaco y su receptor?",
+    "opcoes": [
+      "La fuerza de la interacción irreversible entre un fármaco y su receptor",
+      "La fuerza de la interacción reversible entre un fármaco y su receptor",
+      "La capacidad de un fármaco para generar respuestas nuevas en el organismo",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La afinidad se refiere a la unión REVERSIBLE (no covalente, por puentes de hidrógeno, fuerzas de van der Waals, interacciones hidrofóbicas) entre fármaco y receptor. La unión irreversible es excepcional (p. ej., aspirina sobre COX) y no es la definición de afinidad.",
+      "✅ Correcto. La AFINIDAD es la FUERZA de la INTERACCIÓN REVERSIBLE entre un fármaco y su receptor: la tendencia del fármaco a unirse (relacionada con la constante de disociación Kd). Cuanto mayor la afinidad, menor la concentración necesaria para ocupar el receptor.",
+      "❌ Incorrecto. Generar respuestas en el organismo corresponde a la EFICACIA o actividad intrínseca (capacidad de activar la respuesta una vez unido al receptor), no a la afinidad.",
+      "❌ Incorrecto. Hay una opción correcta: la afinidad es la fuerza de la interacción reversible entre el fármaco y su receptor."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "agonista inverso",
+      "actividad intrínseca",
+      "antagonista",
+      "receptor",
+      "constitutivo"
+    ],
+    "enunciado": "Un fármaco que al unirse a un receptor provoca una respuesta opuesta al agonista se denomina actividad intrínseca (α) varía entre:",
+    "opcoes": [
+      "Agonista parcial / 0 < α < 1",
+      "Antagonista / α = 0",
+      "Agonista inverso / 0 < α < 1",
+      "Agonista inverso / -1 < α < 0"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El AGONISTA PARCIAL produce una respuesta menor que la del agonista pleno, pero en el MISMO sentido (actividad intrínseca entre 0 y 1), no una respuesta OPUESTA.",
+      "❌ Incorrecto. El ANTAGONISTA se une al receptor sin generar respuesta (actividad intrínseca α = 0): ocupa el receptor y bloquea el efecto del agonista, pero no provoca una respuesta opuesta.",
+      "❌ Incorrecto. La combinación es errónea: el agonista inverso tiene actividad intrínseca NEGATIVA (entre -1 y 0), no entre 0 y 1. El valor 0 < α < 1 corresponde al agonista parcial.",
+      "✅ Correcto. El AGONISTA INVERSO se une al receptor y estabiliza su estado INACTIVO, produciendo una respuesta OPUESTA a la del agonista (disminuye la actividad constitutiva del receptor). Su actividad intrínseca α es NEGATIVA, entre -1 y 0."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "cocaína",
+      "simpaticomimético indirecto",
+      "recaptación de noradrenalina",
+      "mecanismo de acción"
+    ],
+    "enunciado": "La cocaína es una droga simpaticomimética de acción:",
+    "opcoes": [
+      "Directa",
+      "Indirecta",
+      "Mixta",
+      "Ninguna"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los simpaticomiméticos de acción DIRECTA se unen y activan directamente los receptores adrenérgicos (noradrenalina, fenilefrina, isoproterenol). La cocaína no activa directamente los receptores.",
+      "✅ Correcto. La cocaína es un simpaticomimético de acción INDIRECTA: BLOQUEA la recaptación de noradrenalina (y dopamina) en la terminal presináptica, aumentando la concentración de neurotransmisor en la hendidura sináptica y potenciando la activación de los receptores por la noradrenalina endógena.",
+      "❌ Incorrecto. Los simpaticomiméticos de acción MIXTA combinan efecto directo sobre receptores e indirecto (liberación de noradrenalina), como la efedrina y la anfetamina. La cocaína es indirecta.",
+      "❌ Incorrecto. La cocaína SÍ es un simpaticomimético, de acción indirecta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "fenilefrina",
+      "agonista alfa1",
+      "descongestivo nasal",
+      "vasoconstricción",
+      "receptores adrenérgicos"
+    ],
+    "enunciado": "La fenilefrina es utilizada como descongestivo nasal, gracias a su acción en receptores adrenérgicos vasculares:",
+    "opcoes": [
+      "Beta 1",
+      "Alfa 1",
+      "Beta 2",
+      "Alfa 2"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los receptores BETA 1 son cardíacos (aumentan frecuencia, contractilidad y gasto cardíaco); no producen vasoconstricción de la mucosa nasal.",
+      "✅ Correcto. La fenilefrina es un AGONISTA ALFA 1 selectivo: activa los receptores α1 de la musculatura lisa vascular, produciendo VASOCONSTRICCIÓN de la mucosa nasal, lo que reduce la congestión. Por eso se usa como descongestivo nasal.",
+      "❌ Incorrecto. Los receptores BETA 2 producen BRONCOdilatación y vasodilatación (en músculo, por ejemplo); la fenilefrina no actúa sobre ellos y no producen descongestión nasal.",
+      "❌ Incorrecto. Los receptores ALFA 2 presinápticos modulan la liberación de noradrenalina (y producen algunos efectos centrales); los agonistas α2 (clonidina) se usan como antihipertensivos, no como descongestivos nasales."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "prazosina",
+      "antagonista alfa1",
+      "hipertensión",
+      "barorreceptor",
+      "precarga"
+    ],
+    "enunciado": "Indique la afirmación correcta:",
+    "opcoes": [
+      "Prazosina tiene poco o ningún efecto de bloqueo de los receptores α2",
+      "La prazosina aumenta la precarga cardíaca y tiene alto efecto sobre el gasto y la frecuencia cardíacos",
+      "La prazosina no afecta la función barorrefleja en pacientes hipertensos",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La PRAZOSINA es un antagonista selectivo de los receptores ALFA 1, con POCO O NINGÚN efecto sobre los receptores alfa 2. Esa selectividad es la base de su perfil farmacológico (no produce taquicardia por bloqueo de α2 presinápticos).",
+      "❌ Incorrecto. La prazosina produce VASODILATACIÓN, que DISMINUYE la precarga (y la poscarga), y tiene POCA repercusión sobre el gasto y la frecuencia cardíaca (a diferencia de los antagonistas α no selectivos). La afirmación invierte los efectos.",
+      "❌ Incorrecto. La prazosina SÍ afecta la función barorrefleja: al descender la presión puede desencadenar hipotensión ortostática (efecto de primera dosis), mareos y síncope, especialmente al iniciar el tratamiento.",
+      "❌ Incorrecto. Hay una opción correcta: la prazosina tiene poco o ningún efecto de bloqueo de los receptores α2."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "tamsulosina",
+      "antagonista alfa1A",
+      "hiperplasia prostática",
+      "selectividad",
+      "subtipo alfa"
+    ],
+    "enunciado": "La Tamsulosina:",
+    "opcoes": [
+      "Es un antagonista del receptor α1 con cierta selectividad por los subtipos α1A",
+      "Es un antagonista del receptor α2 con cierta selectividad por los subtipos α2A",
+      "Es un agonista del receptor α1",
+      "Es un agonista beta 1"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La TAMSULOSINA es un ANTAGONISTA del receptor ALFA 1 con cierta selectividad por el subtipo α1A, predominante en la próstata y el cuello vesical. Por eso relaja la musculatura prostática y mejora la micción en la hiperplasia prostática benigna, con menos efectos cardiovasculares.",
+      "❌ Incorrecto. La tamsulosina es antagonista α1 (no α2), y su selectividad es por los subtipos α1 (especialmente α1A), no por los α2A.",
+      "❌ Incorrecto. La tamsulosina es un ANTAGONISTA (bloquea el receptor), no un agonista del receptor α1.",
+      "❌ Incorrecto. La tamsulosina no tiene efecto agonista beta 1; su acción es antagonista alfa 1 selectiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "ETEC",
+      "diarrea del viajero",
+      "Escherichia coli enterotoxigénica",
+      "toxina",
+      "diarrea acuosa"
+    ],
+    "enunciado": "Un paciente presenta diarrea acuosa y escaso dolor abdominal durante un viaje. Se sospecha una infección bacteriana y se realiza un cultivo de heces. ¿Cuál de los siguientes patógenos es el más probable responsable de esta infección?",
+    "opcoes": [
+      "Escherichia coli enterohemorrágica",
+      "Escherichia coli enteroinvasiva",
+      "Escherichia coli enterotoxigénica",
+      "Escherichia coli enteropatógena"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La E. coli ENTEROHEMORRÁGICA (EHEC, serotipo O157:H7) produce colitis hemorrágica (diarrea con sangre) y puede complicarse con síndrome urémico hemolítico; su diarrea es sanguinolenta, no acuosa sin dolor.",
+      "❌ Incorrecto. La E. coli ENTEROINVASIVA (EIEC) produce disentería: invade la mucosa del colon y causa diarrea con moco, pus y sangre, fiebre y dolor abdominal; no es una diarrea acuosa sin dolor.",
+      "✅ Correcto. La E. coli ENTEROTOXIGÉNICA (ETEC) es la causa más frecuente de DIARREA DEL VIAJERO: produce toxinas termolábil (LT) y termoestable (ST) que estimulan la secreción de agua y electrolitos, con diarrea acuosa abundante y escaso dolor abdominal.",
+      "❌ Incorrecto. La E. coli ENTEROPATÓGENA (EPEC) es causa de diarrea infantil en países en desarrollo (adhesión a enterocitos con destrucción de microvellosidades); no es la responsable típica de la diarrea acuosa del viajero."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "parasitologia",
+    "tags": [
+      "Giardia lamblia",
+      "diarrea pastosa",
+      "quistes",
+      "parasitosis intestinal",
+      "viajero"
+    ],
+    "enunciado": "Una persona que regresa de un viaje a un país tropical presenta síntomas de diarrea pastosa blanquecina y dolor abdominal. Los análisis de heces revelan la presencia de quistes en las muestras. ¿Cuál de los siguientes protozoarios es el más probable responsable?",
+    "opcoes": [
+      "Giardia lamblia",
+      "Entamoeba histolytica",
+      "Trichomonas vaginalis",
+      "Trypanosoma cruzi"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. GIARDIA LAMBLIA produce giardiasis: diarrea PASTOSA, esteatorreica y BLANQUECINA (grasosa, maloliente), con dolor y distensión abdominal, y en las heces se observan QUISTES y trofozoítos. Es una parasitosis intestinal frecuente en viajeros.",
+      "❌ Incorrecto. ENTAMOEBA HISTOLYTICA produce amebiasis invasiva (disentería amebiana con moco y sangre); los quistes también están presentes, pero el cuadro es disentérico, no una diarrea pastosa blanquecina.",
+      "❌ Incorrecto. TRICHOMONAS VAGINALIS es un protozoario GENITOURINARIO (vaginitis, uretritis), NO intestinal; no causa diarrea ni se detecta en heces.",
+      "❌ Incorrecto. TRYPANOSOMA CRUZI es el agente de la enfermedad de Chagas, transmitido por vinchucas, con afectación cardíaca y digestiva crónica (megacolon, megaesófago); no causa la diarrea aguda descrita."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis C",
+      "hemodiálisis",
+      "transmisión parenteral",
+      "anticuerpos",
+      "VHC"
+    ],
+    "enunciado": "Un trabajador de la salud del área de hemodiálisis presenta síntomas de hepatitis, incluyendo fatiga y pérdida de apetito. Los análisis de laboratorio revelan la presencia de anticuerpos contra un virus de la hepatitis. ¿Cuál de los siguientes virus es el agente más probable?",
+    "opcoes": [
+      "Virus de la hepatitis C",
+      "Virus de la hepatitis A",
+      "Virus de la hepatitis D",
+      "Virus de la hepatitis E"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El VIRUS DE LA HEPATITIS C (VHC) es el agente más probable en el contexto de HEMODIÁLISIS: se transmite por vía parenteral (sangre y hemoderivados) y el personal de diálisis tiene mayor exposición. La infección crónica asintomática explica el hallazgo de anticuerpos anti-VHC.",
+      "❌ Incorrecto. El virus de la hepatitis A se transmite por vía fecal-oral y no es propio del ambiente de hemodiálisis; además no es una hepatitis de transmisión parenteral crónica.",
+      "❌ Incorrecto. El virus de la hepatitis D (agente delta) es un virus defectivo que solo se replica en presencia del virus B; requiere coinfección o superinfección con VHB y no es el agente más probable en diálisis por sí solo.",
+      "❌ Incorrecto. El virus de la hepatitis E se transmite por vía entérica (fecal-oral, agua contaminada) y es endémico en regiones con saneamiento deficiente; no es el típico de la hemodiálisis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "rabia",
+      "cuerpos de Negri",
+      "murciélago",
+      "encefalitis",
+      "virus"
+    ],
+    "enunciado": "Un excursionista que fue mordido por un murciélago desarrolla parestesias, cefalea y confusión. Los análisis de laboratorio revelan la presencia de cuerpos de Negri en muestras del animal. ¿Cuál de los siguientes virus es el más probable responsable?",
+    "opcoes": [
+      "Coxsackievirus",
+      "Rabia",
+      "Rotavirus",
+      "Poliovirus"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los coxsackievirus causan enfermedades como herpangina, miocarditis, meningitis aséptica o enfermedad mano-pie-boca; no se transmiten por mordedura de murciélago ni producen cuerpos de Negri.",
+      "✅ Correcto. La RABIA es la enfermedad producida por el virus de la rabia (rhabdovirus), transmitida por la MORDEDURA de animales infectados (murciélagos, perros). Se caracteriza por encefalitis (parestesias, cefalea, confusión, hidrofobia) y se diagnostica por la presencia de CUERPOS DE NEGRI (inclusiones eosinófilas intraneuronales).",
+      "❌ Incorrecto. El rotavirus causa gastroenteritis aguda en niños (diarrea y vómitos); no se transmite por mordedura ni produce compromiso neurológico ni cuerpos de Negri.",
+      "❌ Incorrecto. El poliovirus causa poliomielitis (parálisis fláccida); se transmite por vía fecal-oral y no por mordedura de murciélago, y no produce cuerpos de Negri."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "parasitologia",
+    "tags": [
+      "miasis",
+      "larvas de moscas",
+      "Enterobius vermicularis",
+      "criptosporidiosis",
+      "triquinelosis"
+    ],
+    "enunciado": "Parásitos: marque lo correcto:",
+    "opcoes": [
+      "La miasis es la invasión de tejidos humanos, vivos o necróticos, por larvas de moscas no punzantes",
+      "El Cryptosporidium produce diarreas crónicas en pacientes inmunocompetentes",
+      "La hembra del Enterobius vermicularis deposita huevos embrionados en los márgenes del ano",
+      "La triquinelosis produce un discreto aumento de los eosinófilos en sangre"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La MIASIS es la invasión de los tejidos humanos, vivos o necróticos, por LARVAS DE MOSCAS (dípteros), que pueden colonizar heridas, mucosas o cavidades. Es una parasitación por formas larvarias de moscas.",
+      "❌ Incorrecto. El Cryptosporidium produce diarrea crónica y grave en pacientes INMUNOCOMPROMETIDOS (SIDA, inmunodeficiencias); en el paciente inmunocompetente produce una diarrea autolimitada, no crónica.",
+      "❌ Incorrecto. La hembra de Enterobius vermicularis deposita los huevos en los márgenes del ANO, pero estos NO están embrionados al ser depositados: embrionan (se vuelven infectantes) en pocas horas en el ambiente. Por eso el dato 'embrionados' es erróneo.",
+      "❌ Incorrecto. La triquinelosis (por Trichinella spiralis) produce un MARCADO (no discreto) aumento de los eosinófilos en sangre (eosinofilia), junto con mialgias, fiebre y edema periorbitario."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "S. epidermidis",
+      "infección de catéter",
+      "biopelícula",
+      "adherencia a plásticos",
+      "cocos gram positivos"
+    ],
+    "enunciado": "Un paciente comienza con fiebre y enrojecimiento de la piel en la zona de punción de un catéter implantable. Se aíslan cocos Gram (+) en grupo. Marque la respuesta correcta:",
+    "opcoes": [
+      "Puede ser S. epidermidis porque se adhieren a los plásticos",
+      "Puede ser S. aureus porque producen betalactamasas",
+      "Puede ser S. saprophyticus porque produce el síndrome de la piel escaldada",
+      "Puede ser Staphylococcus por poseer cápsula"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. S. EPIDERMIDIS es el agente más frecuente de infecciones asociadas a CATÉTERES y dispositivos implantables, porque tiene la capacidad de ADHERIRSE a los PLÁSTICOS y formar una biopelícula (biofilm) que lo protege de los antibióticos y de la fagocitosis.",
+      "❌ Incorrecto. S. aureus produce betalactamasas (resistencia a penicilina), es cierto, pero esta no es la característica que explica la infección de un catéter en particular; además la infección de catéter por cocos coagulasa negativos (S. epidermidis) es la más típica.",
+      "❌ Incorrecto. El SÍNDROME DE LA PIEL ESCALDADA es producido por la toxina exfoliatina de S. AUREUS, no por S. saprophyticus. S. saprophyticus es causa de infección urinaria en mujeres jóvenes.",
+      "❌ Incorrecto. Si bien los estafilococos tienen microcápsula en algunas cepas, la cápsula no es el mecanismo distintivo de la infección de catéteres; el factor clave es la adherencia a plásticos y la formación de biopelícula de S. epidermidis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "micosis superficiales",
+      "medio de Sabouraud",
+      "Microsporum",
+      "pie de atleta",
+      "dermatofitos"
+    ],
+    "enunciado": "Micosis superficiales. Marque lo correcto:",
+    "opcoes": [
+      "Los hongos productores de micosis superficiales desarrollan en medio de Sabouraud luego de 15 a 20 días de incubación a 25°C",
+      "Los Microsporum afectan piel y uñas",
+      "Los hongos productores de micosis superficiales pueden afectar también órganos profundos",
+      "El pie de atleta es producido por Microsporum canis"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. Los hongos de las micosis superficiales (dermatofitos) se cultivan en el medio de SABOURAUD (con antibióticos para inhibir bacterias y pH ácido), con incubación prolongada de 15 a 20 días a 25°C, temperatura a la que se desarrollan los hongos filamentosos.",
+      "❌ Incorrecto. Los MICROSPORUM afectan la piel y el PELO, no las uñas; son las especies de TRICHOPHYTON las que afectan también las uñas (onicomicosis). Microsporum canis produce tinea capitis.",
+      "❌ Incorrecto. Por definición, las micosis SUPERFICIALES afectan solo capas superficiales (piel, pelo, uñas) y NO invaden órganos profundos. Las micosis profundas o sistémicas son producidas por otros hongos (p. ej., histoplasmosis, coccidioidomicosis).",
+      "❌ Incorrecto. El PIE DE ATLETA (tinea pedis) es producido principalmente por Trichophyton rubrum y Trichophyton mentagrophytes, no por Microsporum canis (que afecta cuero cabelludo de niños)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "Clostridium tetani",
+      "tétanos",
+      "exotoxinas",
+      "tetanospasmina",
+      "bacilo gram positivo"
+    ],
+    "enunciado": "Clostridium tetani: marque lo correcto:",
+    "opcoes": [
+      "Son bacilos Gram (-) pequeños esporulados",
+      "Su hábitat natural es el agua de río contaminada",
+      "Se cultiva en medios simples",
+      "Produce dos exotoxinas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Clostridium tetani es un BACILO GRAM POSITIVO, anaerobio, ESPORULADO (espora terminal en 'palillo de tambor'), no Gram negativo.",
+      "❌ Incorrecto. El hábitat natural de C. tetani es la TIERRA (suelo), el polvo y el tubo digestivo de animales y humanos; el agua de río contaminada es más característica de otras bacterias (p. ej., leptospiras o Vibrio).",
+      "❌ Incorrecto. C. tetani es un anaerobio estricto que requiere medios de cultivo anaerobios y enriquecidos (agar sangre); no crece en medios simples en aerobiosis.",
+      "✅ Correcto. Clostridium tetani PRODUCE DOS EXOTOXINAS: la TETANOSPASMINA (toxina que actúa sobre el SNC y produce el espasmo muscular generalizado del tétanos, bloqueando la liberación de GABA y glicina) y la TETANOLISINA (hemolisina)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "herpes zoster",
+      "varicela zoster",
+      "vesículas",
+      "nervios intercostales",
+      "reactivación"
+    ],
+    "enunciado": "Un paciente de 30 años consulta por presentar una lesión vesiculosa y dolorosa en el hemitórax izquierdo que corresponde al recorrido de los nervios intercostales. Refiere haber tenido varicela en su niñez. Con estos datos, marque la respuesta correcta:",
+    "opcoes": [
+      "El agente causal es el virus Varicela Zoster",
+      "Haría el diagnóstico solicitando Ac IgM específica en el suero",
+      "La enfermedad actual no tiene relación con infecciones anteriores",
+      "La infección es causada por virus Herpes simple tipo I y II"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El cuadro describe un HERPES ZOSTER: reactivación del VIRUS VARICELA ZOSTER (VZV) latente en los ganglios de la raíz dorsal, que migra por el nervio y produce lesiones VESICULOSAS DOLOROSAS en un dermatoma (hemitórax izquierdo, nervios intercostales). El paciente tuvo varicela en la infancia, quedando el virus latente.",
+      "❌ Incorrecto. En el herpes zoster (reactivación) se detecta sobre todo anticuerpos IgG y no IgM; además el diagnóstico es clínico (distribución dermatómica). La IgM es más útil en la varicela primaria.",
+      "❌ Incorrecto. La enfermedad ACTUAL (herpes zoster) tiene relación directa con la varicela de la infancia: es la REACTIVACIÓN del mismo virus que permaneció latente en los ganglios.",
+      "❌ Incorrecto. El agente es el virus VARICELA-ZOSTER (VZV, herpesvirus 3), no el virus Herpes simple tipo I o II (HSV-1/2), que produce herpes labial o genital."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "Listeria monocytogenes",
+      "infección congénita",
+      "listeriosis",
+      "bacilo gram positivo",
+      "sepsis neonatal"
+    ],
+    "enunciado": "Listeria monocytogenes:",
+    "opcoes": [
+      "Pueden producir infecciones congénitas y connatales",
+      "Son bacilos esporulados ampliamente difundidos en la naturaleza",
+      "Se los aísla de aguas estancadas y piletas de natación",
+      "Se investigan en muestras de alimentos por titulación de IgG específica"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. LISTERIA MONOCYTOGENES es un patógeno capaz de atravesar la barrera placentaria y producir infecciones CONGÉNITAS y CONNATALES (listeriosis neonatal: sepsis, meningitis, granulomatosis infantiséptica). Es especialmente peligrosa en embarazadas, ancianos e inmunodeprimidos.",
+      "❌ Incorrecto. Listeria es un bacilo Gram positivo pero NO esporulado (no forma esporas). La capacidad de esporular es característica de Bacillus y Clostridium.",
+      "❌ Incorrecto. Listeria se aísla de alimentos contaminados (lácteos no pasteurizados, fiambres, vegetales crudos) y del suelo, no de aguas estancadas ni piletas (eso recuerda a otras bacterias como Pseudomonas).",
+      "❌ Incorrecto. El diagnóstico de listeriosis se realiza por CULTIVO y técnicas moleculares (PCR) a partir de sangre, líquido cefalorraquídeo o alimentos; no por titulación de IgG en muestras de alimentos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cólera",
+      "diarrea secretora",
+      "toxina colérica",
+      "AMPc",
+      "Vibrio cholerae"
+    ],
+    "enunciado": "La diarrea en el cólera es de tipo:",
+    "opcoes": [
+      "Osmótica",
+      "Motora",
+      "Inhibición de los mecanismos de absorción de iones",
+      "Secretora"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La diarrea OSMÓTICA se debe a solutos no absorbibles que retienen agua en la luz intestinal (p. ej., por déficit de lactasa, laxantes osmóticos); cesa con el ayuno. No es el mecanismo del cólera.",
+      "❌ Incorrecto. La diarrea MOTORA se produce por hiperperistaltismo que acorta el tiempo de contacto (p. ej., síndrome de intestino irritable); no es el mecanismo del cólera.",
+      "❌ Incorrecto. Aunque en el cólera también se afecta la absorción, el mecanismo fundamental es la SECRECIÓN ACTIVA de iones y agua inducida por la toxina; la opción 'inhibición de la absorción' describe solo parte del fenómeno.",
+      "✅ Correcto. La diarrea del cólera es de tipo SECRETORA: la toxina colérica activa la adenilato ciclasa (vía Gs → AMPc), aumentando la SECRECIÓN activa de agua y electrolitos hacia la luz intestinal, sin lesión de la mucosa. Produce diarrea acuosa masiva ('agua de arroz') que no cede con el ayuno."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "diarrea disentérica",
+      "disentería",
+      "moco y sangre",
+      "tenesmo",
+      "diarrea invasiva"
+    ],
+    "enunciado": "Marque lo INCORRECTO:",
+    "opcoes": [
+      "La diarrea disentérica se caracteriza por la presencia de moco, pus y sangre en las heces",
+      "La diarrea disentérica es una diarrea de tipo secretora",
+      "La diarrea disentérica se acompaña de dolor abdominal, pujo y tenesmo rectal",
+      "La disentería cursa con fiebre y dolor abdominal"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación correcta). La diarrea DISENTÉRICA se caracteriza por heces con MOCO, PUS y SANGRE, resultado de la invasión y destrucción de la mucosa colónica por bacterias invasivas (Shigella, EIEC, Salmonella, E. histolytica).",
+      "✅ Correcto (es la afirmación INCORRECTA que se pide). La diarrea disentérica es de tipo INVASIVA/EXUDATIVA (lesión de la mucosa con moco, pus y sangre), NO secretora. La diarrea secretora es la del cólera y la ETEC, con heces acuosas sin sangre.",
+      "❌ Incorrecto (es una afirmación correcta). La disentería se acompaña de dolor abdominal, PUJO (sensación de querer defecar) y TENESMO RECTAL (doloroso espasmo del recto), por la irritación del recto y el sigma.",
+      "❌ Incorrecto (es una afirmación correcta). La disentería cursa con fiebre y dolor abdominal, signos del compromiso sistémico de la infección invasiva de la mucosa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "deshidratación",
+      "signo del pliegue",
+      "hidratación de mucosas",
+      "pediatría",
+      "diarrea"
+    ],
+    "enunciado": "En un niño de 4 años con diarrea, ¿qué signos evaluaría para ver si presenta deshidratación?",
+    "opcoes": [
+      "Signos vitales",
+      "Hidratación de mucosa",
+      "Signo del pliegue",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es un dato válido, pero incompleto). Los signos vitales (frecuencia cardíaca, tensión arterial, respiración, pulso) son útiles para valorar deshidratación, pero no son los únicos signos a evaluar.",
+      "❌ Incorrecto (es un dato válido, pero incompleto). La hidratación de las mucosas (mucosa oral seca, ojos hundidos, fontanela deprimida en lactantes) es un signo clásico de deshidratación, pero no el único.",
+      "❌ Incorrecto (es un dato válido, pero incompleto). El signo del pliegue cutáneo (piel que queda plegada al pellizcarla) refleja pérdida de turgencia por deshidratación, pero no es el único signo.",
+      "✅ Correcto. Para evaluar la deshidratación se consideran TODOS los signos: signos vitales (taquicardia, hipotensión, taquipnea), hidratación de mucosas (sequedad, ojos hundidos, fontanela deprimida) y signo del pliegue cutáneo (pérdida de turgencia). Por eso 'todas son correctas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "examen físico abdominal",
+      "inspección",
+      "auscultación",
+      "palpación",
+      "abdomen agudo"
+    ],
+    "enunciado": "Paciente de 50 años consulta a la guardia por un cuadro de 24 h de evolución caracterizado por dolor abdominal intenso en el hipocondrio derecho. ¿En qué orden realizaría el examen físico? Marque la opción correcta:",
+    "opcoes": [
+      "Inspección, palpación del hígado, percusión y auscultación",
+      "Inspección, auscultación y puño percusión",
+      "Inspección, auscultación, percusión y palpación empezando por el lugar de mayor dolor para descartar cuadro de gravedad",
+      "Inspección, auscultación, percusión y palpación empezando por la región más lejana al dolor"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La palpación del hígado no es el primer paso y, sobre todo, la PALPACIÓN se realiza al FINAL del examen abdominal (después de inspección, auscultación y percusión), y la percusión antes de la palpación, no al revés.",
+      "❌ Incorrecto. La opción omite la percusión y la palpación del abdomen; el examen físico abdominal completo requiere las cuatro maniobras.",
+      "❌ Incorrecto. Comenzar la PALPACIÓN por el lugar de mayor dolor es un error: se debe palpar primero la región más lejana al dolor para no gatillar la defensa muscular y poder comparar, dejando la zona dolorosa para el final.",
+      "✅ Correcto. El examen físico abdominal se realiza en el orden: INSPECCIÓN, AUSCULTACIÓN (antes de la palpación, para no alterar los ruidos), PERCUSIÓN y, por último, PALPACIÓN, comenzando por la REGIÓN MÁS LEJANA al dolor y dejando la zona dolorosa para el final. Así se evita el dolor y la contractura muscular y se evalúa mejor."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "dolor visceral",
+      "dolor somático",
+      "mal localizado",
+      "órganos huecos",
+      "semiología abdominal"
+    ],
+    "enunciado": "Marque las características de un dolor visceral:",
+    "opcoes": [
+      "Proviene de la afectación de las vísceras, es bien localizado y genera abdomen en tabla",
+      "Proviene de la irritación del peritoneo visceral y es bien localizado. Se acompaña de síntomas neurovegetativos",
+      "Es mal localizado, puede generar dolor a la distancia, proviene de la afectación del peritoneo parietal",
+      "Se puede generar por la activación de receptores de la pared de órganos huecos. Es mal localizado"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El dolor visceral es MAL localizado (difuso) y no produce 'abdomen en tabla' (rigidez); la contractura en tabla es signo del compromiso del PERITONEO PARIETAL (dolor somático o visceral-parietal en peritonitis).",
+      "❌ Incorrecto. La irritación del PERITONEO VISCERAL produce un dolor difuso, mal localizado (visceral); el dolor BIEN localizado es el del peritoneo parietal. Los síntomas neurovegetativos sí acompañan al dolor visceral.",
+      "❌ Incorrecto. El dolor por afectación del PERITONEO PARIETAL es BIEN localizado y constante; el mal localizado con dolor a distancia corresponde al dolor visceral propiamente dicho.",
+      "✅ Correcto. El dolor VISCERAL se genera por la activación de los receptores (nociceptores) de la pared de ÓRGANOS HUECOS (distensión, estiramiento, isquemia o contracción) y se caracteriza por ser MAL LOCALIZADO (difuso, en la línea media), de carácter sordo o cólico, con síntomas neurovegetativos (náuseas, sudoración, palidez)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "vómito",
+      "vómito en chorro",
+      "hipertensión endocraneana",
+      "vómito central",
+      "semiología"
+    ],
+    "enunciado": "Con respecto a vómito. Marque la opción correcta:",
+    "opcoes": [
+      "El vómito central característicamente es precedido de náuseas",
+      "El vómito en chorro se presenta en la hipertensión endocraneana",
+      "El vómito periférico no se acompaña de náuseas",
+      "El vómito reflejo es en chorro y no se acompaña de náuseas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El vómito CENTRAL (por estimulación directa del centro del vómito en el bulbo, como en la hipertensión endocraneana o las intoxicaciones) característicamente NO es precedido de náuseas; aparece en forma brusca. Las náuseas preceden al vómito periférico (gastrointestinal).",
+      "✅ Correcto. El VÓMITO EN CHORRO (proyectivo, sin náuseas previas) se presenta en la HIPERTENSIÓN ENDOCRANEANA, en la irritación meníngea y en las lesiones del SNC: el aumento de la presión intracraneana estimula directamente el centro del vómito.",
+      "❌ Incorrecto. El vómito PERIFÉRICO (gastrointestinal, por irritación de la mucosa) se acompaña SIEMPRE de náuseas que lo preceden; el que no tiene náuseas previas es el central.",
+      "❌ Incorrecto. El vómito REFLEJO (periférico) no es en chorro y SÍ se acompaña de náuseas; el vómito en chorro sin náuseas es el central, propio de la hipertensión endocraneana."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "ictericia neonatal",
+      "eritroblastosis fetal",
+      "incompatibilidad Rh",
+      "kernicterus",
+      "bilirrubina"
+    ],
+    "enunciado": "Con respecto a ictericia neonatal, marque la opción correcta:",
+    "opcoes": [
+      "En la ictericia fisiológica del recién nacido aumenta la bilirrubina directa",
+      "La ictericia fisiológica del recién nacido se debe a una alteración en la excreción de la bilirrubina",
+      "En la eritroblastosis fetal hay hemólisis de eritrocitos por incompatibilidad Rh",
+      "El aumento mayor a 20 mg/dl de bilirrubina directa en el recién nacido puede producir kernicterus"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. En la ictericia FISIOLÓGICA del recién nacido aumenta la bilirrubina INDIRECTA (no conjugada), por la inmadurez de la glucuroniltransferasa hepática y el mayor recambio de glóbulos rojos; la directa no es la que se eleva.",
+      "❌ Incorrecto. La ictericia fisiológica se debe a la INMADUREZ de la CONJUGACIÓN hepática (menor actividad de la UDP-glucuroniltransferasa) y al aumento de la producción de bilirrubina por hemólisis fisiológica neonatal; no es una alteración de la EXCRECIÓN.",
+      "✅ Correcto. En la ERITROBLASTOSIS FETAL hay HEMÓLISIS de los eritrocitos fetales por INCOMPATIBILIDAD Rh: la madre Rh negativa desarrolla anticuerpos anti-D que atraviesan la placenta y destruyen los glóbulos rojos del feto Rh positivo, produciendo anemia hemolítica, eritroblastosis e ictericia grave.",
+      "❌ Incorrecto. El KERNICTERUS se produce por el aumento de la bilirrubina INDIRECTA (no conjugada), que es liposoluble y atraviesa la barrera hematoencefálica depositándose en los ganglios basales; la bilirrubina directa es hidrosoluble, no produce kernicterus."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "ictericia post-hepática",
+      "colestasis",
+      "fosfatasa alcalina",
+      "gamma glutamiltranspeptidasa",
+      "bilirrubina conjugada"
+    ],
+    "enunciado": "Las ictericias post-hepáticas de causa obstructiva (litiasis coledociana) al laboratorio presentan:",
+    "opcoes": [
+      "Alteración del tiempo de protrombina, colinesterasa elevada e hipoalbuminemia",
+      "Aumento de: fosfatasa alcalina, 5 nucleotidasa, gamma glutamiltranspeptidasa y bilirrubina conjugada",
+      "Aumento de fosfatasa alcalina, de bilirrubina indirecta y transaminasas leves",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La alteración del tiempo de protrombina, la colinesterasa baja (no elevada) y la hipoalbuminemia indican FALLO DE LA FUNCIÓN DE SÍNTESIS hepática, propio de la insuficiencia hepática crónica (cirrosis), no de una ictericia obstructiva aguda.",
+      "✅ Correcto. En la ictericia POST-HEPÁTICA OBSTRUCTIVA (litiasis coledociana) se eleva la COLESTASIS: aumento de FOSFATASA ALCALINA, 5'NUCLEOTIDASA y GAMMA GLUTAMILTRANSPEPTIDASA (GGT), junto con aumento de la BILIRRUBINA CONJUGADA (directa), que es la que queda retenida por el obstáculo en la vía biliar.",
+      "❌ Incorrecto. En la obstrucción biliar la bilirrubina que se eleva es la CONJUGADA (directa), no la indirecta; además las transaminasas pueden elevarse levemente, pero el patrón colestásico de la opción B es el característico.",
+      "❌ Incorrecto. Hay una opción correcta: la opción B describe el patrón colestásico de la ictericia obstructiva post-hepática."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "ictericia prehepática",
+      "hemólisis",
+      "acolia",
+      "esplenomegalia",
+      "anemia"
+    ],
+    "enunciado": "Los pacientes con ictericia prehepática pueden presentar todo lo siguiente EXCEPTO:",
+    "opcoes": [
+      "Palidez y astenia",
+      "Acolia",
+      "Esplenomegalia",
+      "Síntomas de anemia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (sí se presenta). La ictericia PREHEPÁTICA (hemolítica) cursa con anemia, que se manifiesta como PALIDEZ y ASTENIA por la disminución de la hemoglobina.",
+      "✅ Correcto (es la que NO corresponde). La ACOLIA (heces claras, sin pigmento biliar) NO se presenta en la ictericia PREHEPÁTICA: como la hemólisis no altera la vía biliar, la bilirrubina conjugada llega normalmente al intestino y las heces conservan su coloración. La acolia es típica de la ictericia OBSTRUCTIVA (post-hepática).",
+      "❌ Incorrecto (sí se presenta). En la ictericia prehepática hay ESPLENOMEGALIA, porque el bazo participa en la destrucción exagerada de eritrocitos (hemólisis extravascular).",
+      "❌ Incorrecto (sí se presenta). La ictericia prehepática se acompaña de SÍNTOMAS DE ANEMIA (astenia, palidez, disnea de esfuerzo), por la destrucción de los glóbulos rojos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "anemia megaloblástica",
+      "vitamina B12",
+      "ácido fólico",
+      "macrocitosis",
+      "síntomas neurológicos"
+    ],
+    "enunciado": "Marque lo correcto en relación a anemia megaloblástica:",
+    "opcoes": [
+      "Tiene macrocitosis",
+      "Es causada por déficit en la absorción de ácido fólico y vitamina B12",
+      "El paciente puede presentar síntomas neurológicos",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una característica real, pero incompleta). La anemia megaloblástica presenta MACROCITOSIS (VCM aumentado) con megaloblastos en médula ósea por alteración de la síntesis de ADN, pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una característica real, pero incompleta). El déficit de vitamina B12 o de ácido fólico (por malabsorción o carencia) es la causa de la anemia megaloblástica, pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una característica real, pero incompleta). El déficit de VITAMINA B12 produce síntomas NEUROLÓGICOS (parestesias, déficit de marcha, compromiso de cordones posteriores y corticoespinal), pero no es la única afirmación correcta.",
+      "✅ Correcto. La anemia MEGALOBLÁSTICA se caracteriza por MACROCITOSIS, es causada por DÉFICIT de ácido fólico o vitamina B12, y el paciente con déficit de B12 puede presentar síntomas NEUROLÓGICOS. Por eso 'todas son correctas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "anemia ferropénica",
+      "anemia hemolítica",
+      "reticulocitos",
+      "esferocitosis",
+      "macrocitosis"
+    ],
+    "enunciado": "En relación a anemias, marque la opción correcta:",
+    "opcoes": [
+      "Las anemias ferropénicas se acompañan de ictericia",
+      "Los reticulocitos se encuentran elevados en las anemias hemolíticas",
+      "La esferocitosis es un tipo de anemia megaloblástica",
+      "En las anemias ferropénicas los eritrocitos tienen macrocitosis e hipercromía"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La anemia FERROPÉNICA no se acompaña de ictericia; la ictericia es propia de las anemias HEMOLÍTICAS (por el aumento de bilirrubina indirecta). La ferropénica cursa con palidez y microcitosis.",
+      "✅ Correcto. En las anemias HEMOLÍTICAS los RETICULOCITOS se encuentran ELEVADOS (reticulocitosis): la médula ósea responde a la destrucción de glóbulos rojos produciendo más reticulocitos (eritrocitos jóvenes). Es la respuesta medular regenerativa.",
+      "❌ Incorrecto. La ESFEROCITOSIS es una anemia HEMOLÍTICA por defecto de membrana (déficit de espectrina/anquirina), no un tipo de anemia megaloblástica. En la esferocitosis hereditaria los eritrocitos son esféricos, con fragilidad osmótica aumentada.",
+      "❌ Incorrecto. En la anemia FERROPÉNICA los eritrocitos tienen MICROCITOSIS e HIPOCROMÍA (VCM y CHCM bajos), no macrocitosis e hipercromía. La macrocitosis es de la anemia megaloblástica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cinemática del trauma",
+      "mecanismo de lesión",
+      "traumatismo",
+      "lesiones ocultas",
+      "evaluación"
+    ],
+    "enunciado": "¿Por qué es importante la 'cinemática del trauma'?",
+    "opcoes": [
+      "Nos permite comprender los tipos y gravedad de lesiones, y sospechar sobre lesiones ocultas",
+      "Para determinar la secuencia de eventos durante el accidente y así identificar posibles factores de riesgo para futuros incidentes similares",
+      "Se refiere a la averiguación de registros de filmación que se puedan recabar de testigos o de cámaras de seguridad y/o de tránsito, para poder conocer la causa del accidente",
+      "Para determinar la posición exacta de los pacientes en el momento del accidente, facilitando así la reconstrucción de los hechos para propósitos legales"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La CINEMÁTICA DEL TRAUMA es el estudio del mecanismo del accidente (energía, velocidad, tipo de impacto, deformación) que permite COMPRENDER los TIPOS y la GRAVEDAD de las lesiones y SOSPECHAR lesiones ocultas que no son evidentes al inicio (p. ej., lesión aórtica, lesiones intraabdominales en accidentes de alta velocidad).",
+      "❌ Incorrecto. Determinar la secuencia de eventos para identificar factores de riesgo es un objetivo EPIDEMIOLÓGICO o pericial, no la utilidad clínica principal de la cinemática del trauma en la atención del paciente.",
+      "❌ Incorrecto. La recolección de filmaciones de cámaras o testimonios de testigos es una tarea de la investigación PERICIAL o policial del accidente, no el objetivo clínico de la cinemática del trauma.",
+      "❌ Incorrecto. Determinar la posición exacta para la reconstrucción legal es propio de la pericia forense; la cinemática del trauma en la práctica clínica busca comprender el mecanismo para orientar el diagnóstico de lesiones."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "ABCDE",
+      "evaluación primaria",
+      "vía aérea",
+      "trauma",
+      "reanimación"
+    ],
+    "enunciado": "Con respecto a la evaluación primaria (ABCDE), ¿qué se debe realizar en primer lugar?",
+    "opcoes": [
+      "Desvestir al paciente y revisión completa",
+      "Control de la tensión arterial",
+      "Evaluación y mantenimiento de la vía aérea",
+      "Control de la saturometría de pulso"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Desvestir al paciente para la revisión completa (exposición, E) es el ÚLTIMO paso del ABCDE; además, el paciente solo se desviste tras asegurar vía aérea, ventilación, circulación y neurológico.",
+      "❌ Incorrecto. El control de la tensión arterial forma parte de la 'C' (circulación), que se evalúa DESPUÉS de asegurar la vía aérea y la ventilación.",
+      "✅ Correcto. En la evaluación primaria (ABCDE) el PRIMER paso es la 'A' (AIRWAY): EVALUACIÓN y MANTENIMIENTO de la VÍA AÉREA con protección cervical. Sin una vía aérea permeable ninguna otra medida tiene sentido. Luego sigue B (ventilación), C (circulación), D (neurológico) y E (exposición).",
+      "❌ Incorrecto. La saturometría de pulso corresponde al monitoreo de la oxigenación, parte de la 'B' (breathing), que se realiza después de asegurar la vía aérea ('A')."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "secreto médico",
+      "ética médica",
+      "confidencialidad",
+      "consulta entre colegas",
+      "interconsulta"
+    ],
+    "enunciado": "Sobre secreto médico: mencione una de las situaciones prácticas y cotidianas en las que el profesional médico está habilitado a compartir información respecto de un paciente lúcido y no incurre en violación de secreto profesional (una sola es correcta):",
+    "opcoes": [
+      "La información fue solicitada por un familiar directo",
+      "La información la solicita la pareja del paciente",
+      "La información la comparto con un colega con el objeto de obtener información especializada",
+      "La información la comparto en el ámbito familiar porque se trata de un amigo de la familia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El secreto médico protege la información del paciente, que es el titular del secreto. Sin el consentimiento del paciente, NO se puede revelar información ni siquiera a un familiar directo.",
+      "❌ Incorrecto. La pareja del paciente no tiene derecho automático a la información clínica; la confidencialidad solo se cede por autorización expresa del paciente o por obligación legal.",
+      "✅ Correcto. Compartir la información con un COLEGA para obtener una opinión especializada (interconsulta o consulta profesional) es una práctica legítima que NO viola el secreto médico, siempre que sea en beneficio del paciente y dentro del ámbito de la atención. El secreto es compartido en el equipo de salud que trata al paciente.",
+      "❌ Incorrecto. Compartir información en el ámbito familiar o con amigos del paciente, sin su autorización, constituye una violación del secreto profesional."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "alcohol etílico",
+      "bebidas alcohólicas",
+      "etanol",
+      "metanol",
+      "toxicología"
+    ],
+    "enunciado": "Las bebidas con contenido alcohólico para consumo, ¿qué tipo de alcohol presentan?",
+    "opcoes": [
+      "Metílico",
+      "Isopropílico",
+      "Etílico",
+      "Glicoles"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El alcohol METÍLICO (metanol) es tóxico (produce acidosis metabólica grave y ceguera por ácido fórmico) y NO es el que contienen las bebidas de consumo; se encuentra en productos industriales.",
+      "❌ Incorrecto. El alcohol ISOPROPÍLICO se usa como antiséptico y solvente; es tóxico y no es apto para consumo humano.",
+      "✅ Correcto. Las bebidas alcohólicas de consumo humano contienen ETANOL (alcohol ETÍLICO, CH3-CH2-OH), el único alcohol apto para consumo (con las consecuencias de su toxicidad en exceso).",
+      "❌ Incorrecto. Los GLICOLES (etilenglicol, propilenglicol) son alcoholes industriales/anticongelantes, altamente tóxicos (acidosis, insuficiencia renal); no están presentes en las bebidas de consumo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "lactancia materna",
+      "promoción de la salud",
+      "práctica compleja",
+      "factores culturales"
+    ],
+    "enunciado": "La lactancia materna:",
+    "opcoes": [
+      "Es un acto exclusivamente biológico y debe orientarse en programas de promoción de la salud",
+      "Es una práctica que debe estimularse y no tiene distintos significados culturales",
+      "Es una práctica que debe acompañarse por su carácter complejo y su repercusión en la salud humana",
+      "Las representaciones familiares, comunitarias y profesionales siempre tienen correspondencia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La lactancia NO es un acto exclusivamente biológico: es una práctica compleja atravesada por factores culturales, sociales, económicos y psicológicos que condicionan su inicio y mantenimiento.",
+      "❌ Incorrecto. La lactancia SÍ tiene distintos significados culturales según las comunidades y familias; ignorarlos dificulta la promoción efectiva de la lactancia.",
+      "✅ Correcto. La lactancia materna es una PRÁCTICA COMPLEJA (biológica, social, cultural, psicológica) con gran REPERCUSIÓN EN LA SALUD HUMANA (beneficios nutricionales, inmunológicos y de vínculo), por lo que el equipo de salud debe ACOMPAÑARLA y apoyarla de manera integral.",
+      "❌ Incorrecto. Las representaciones familiares, comunitarias y profesionales NO siempre tienen correspondencia; pueden existir tensiones o divergencias entre lo que la familia cree, la comunidad sostiene y el equipo profesional recomienda."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "edadismo",
+      "discriminación por edad",
+      "violencia",
+      "ética",
+      "derechos"
+    ],
+    "enunciado": "La discriminación social por edades se llama edadismo y se hace más manifiesta en los extremos de la vida:",
+    "opcoes": [
+      "Puede ser activa o pasiva, por violencia manifiesta o por no reconocer derechos y condiciones de vida",
+      "Puede expresarse en forma material y/o simbólica",
+      "Identificarlas y evitarlas forma parte de las responsabilidades éticas y legales de todos los trabajadores de la salud",
+      "Todas son válidas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). El edadismo puede ser activo o pasivo, por violencia manifiesta o por la omisión de reconocer derechos y condiciones de vida, pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). El edadismo puede expresarse en forma material (exclusión, falta de recursos) y/o simbólica (estereotipos, menosprecio), pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). Identificar y evitar el edadismo forma parte de las responsabilidades éticas y legales de los trabajadores de la salud, pero no es la única afirmación correcta.",
+      "✅ Correcto. Las tres afirmaciones describen correctamente el EDADISMO: puede ser activo o pasivo (violencia manifiesta o no reconocimiento de derechos), expresarse en forma material y/o simbólica, y su identificación y prevención son responsabilidad ética y legal de los equipos de salud. Por eso 'todas son válidas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "siniestralidad vial",
+      "accidentes de tránsito",
+      "prevención",
+      "salud pública",
+      "factores sociales"
+    ],
+    "enunciado": "La siniestralidad vial es un fenómeno de relevancia sanitaria:",
+    "opcoes": [
+      "Que requiere políticas y prácticas preventivas por la gravedad de sus consecuencias",
+      "Necesita de equipos de salud eficientemente entrenados en prácticas que aborden intervenciones biomédicas y de salud mental",
+      "No presenta diferencias sustanciales en distintas clases sociales",
+      "A + B son válidas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). La siniestralidad vial requiere políticas y prácticas preventivas por la gravedad de sus consecuencias (muerte, discapacidad, costos), pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). Se necesitan equipos de salud entrenados en intervenciones biomédicas y de salud mental (atención del trauma, apoyo psicológico a víctimas y familiares), pero no es la única afirmación correcta.",
+      "❌ Incorrecto. La siniestralidad vial SÍ presenta diferencias sustanciales entre clases sociales: las poblaciones más vulnerables y de menores recursos tienen mayor riesgo y peores consecuencias.",
+      "✅ Correcto. Las afirmaciones A y B son válidas: la siniestralidad vial exige políticas y prácticas preventivas, y equipos de salud entrenados en intervenciones biomédicas y de salud mental. La opción C es falsa (sí hay diferencias de clase social). Por eso 'A + B son válidas'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "radiación ionizante",
+      "ionización",
+      "fotones",
+      "excitación",
+      "radicales libres"
+    ],
+    "enunciado": "En relación con la acción directa de la radiación ionizante sobre la materia, marque la correcta:",
+    "opcoes": [
+      "Las moléculas excitadas y/o ionizadas presentan un excedente de energía pero conservan su estabilidad",
+      "El excedente de energía siempre es expulsado",
+      "El excedente de energía puede ser expulsado por emisión de fotones",
+      "La escisión de la molécula en dos radicales es más probable en estados de excitación"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Las moléculas excitadas y/o ionizadas tienen un EXCEDENTE de energía y se encuentran en un estado INESTABLE, no conservan su estabilidad; por eso tienden a disipar el exceso o a romperse.",
+      "❌ Incorrecto. El excedente de energía NO siempre es expulsado: puede disiparse de distintas formas, pero no siempre (parte puede quedar y producir inestabilidad, formación de radicales o disociación).",
+      "✅ Correcto. El excedente de energía de una molécula excitada o ionizada PUEDE ser expulsado por EMISIÓN DE FOTONES (fluorescencia/fosforescencia), por liberación de calor, o produciendo ruptura molecular. La emisión de fotones es uno de los mecanismos de disipación del exceso energético.",
+      "❌ Incorrecto. La escisión de la molécula en dos radicales libres es más probable en estados de IONIZACIÓN (pérdida de un electrón), no en los estados de simple excitación, que tienden a disipar la energía como fotones o calor."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "grado de ionización",
+      "densidad atómica",
+      "LET",
+      "energía de la radiación",
+      "interacción"
+    ],
+    "enunciado": "El grado de ionización que sufre un determinado material depende de (marque la correcta):",
+    "opcoes": [
+      "Densidad atómica del material",
+      "La energía de la radiación: a menor energía mayor daño",
+      "La penetrabilidad de la radiación: a mayor transferencia lineal de energía (LET) mayor penetrabilidad",
+      "La eficacia biológica relativa"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El grado de IONIZACIÓN que sufre un material depende de su DENSIDAD ATÓMICA: a mayor densidad (mayor número de electrones por unidad de volumen), mayor probabilidad de interacción con la radiación y, por lo tanto, mayor grado de ionización del material irradiado.",
+      "❌ Incorrecto. La relación es inversa a la enunciada: a menor energía de la radiación, la ionización es MÁS DENTSA en la materia (mayor LET), pero la opción queda mal formulada como 'a menor energía mayor daño' en términos del grado de ionización del material; el determinante físico directo del grado de ionización es la densidad del material.",
+      "❌ Incorrecto. La afirmación es falsa: a mayor transferencia lineal de energía (LET) MENOR es la penetrabilidad (la radiación de alta LET deposita toda su energía en poco recorrido, como las partículas alfa), no mayor.",
+      "❌ Incorrecto. La EFICACIA BIOLÓGICA RELATIVA (EBR) es un concepto de radiobiología que compara el efecto biológico de distintas radiaciones; no es el determinante físico del grado de ionización del material."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "difícil",
+    "disciplina_base": "biofisica",
+    "tags": [
+      "radiosensibilización",
+      "índice mitótico",
+      "cisteína",
+      "hipoxia",
+      "LET"
+    ],
+    "enunciado": "En relación a las condiciones de radiosensibilización, ¿qué opción elegiría como correcta?",
+    "opcoes": [
+      "La presencia de cisteína",
+      "La condición de hipoxia celular",
+      "Los radiosensibilizadores son más eficaces con una radiación de alta LET",
+      "Alto índice mitótico del tejido a irradiar"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La CISTEÍNA (por sus grupos sulfhidrilo -SH) es un RADIOPROTECTOR, no un radiosensibilizante: capta radicales libres y protege a la célula del daño por radiación.",
+      "❌ Incorrecto. La HIPOXIA CELULAR es un factor de RADIO-RESISTENCIA (efecto del oxígeno): la falta de oxígeno reduce la formación de radicales libres y, por lo tanto, el daño radiológico. El oxígeno es un radiosensibilizante.",
+      "❌ Incorrecto. Los radiosensibilizadores (como el oxígeno) son más eficaces con radiación de BAJA LET; con radiación de alta LET el efecto del oxígeno es mínimo porque la ionización ya es muy densa.",
+      "✅ Correcto. El ALTO ÍNDICE MITÓTICO es una condición de RADIOSENSIBILIZACIÓN: los tejidos con mayor actividad mitótica (células que se dividen activamente) son los más sensibles a la radiación, porque la radiación daña el ADN durante la mitosis (ley de Bergonié-Tribondeau)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "sistema de recompensa",
+      "núcleo accumbens",
+      "adicciones",
+      "dopamina",
+      "vía mesolímbica"
+    ],
+    "enunciado": "Respecto al sistema de recompensa:",
+    "opcoes": [
+      "No resulta relevante en la fisiopatología de las adicciones, siendo estas mediadas principalmente por los lóbulos parietales",
+      "Es parte central en la fisiopatogenia de las adicciones y su núcleo principal es la amígdala",
+      "Es parte central en la fisiopatogenia de las adicciones y su núcleo principal es el núcleo accumbens",
+      "La dopamina no es relevante en el sistema de recompensa, el cual es principalmente serotoninérgico"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El sistema de recompensa es ALTAMENTE relevante en las adicciones, y no está mediado por los lóbulos parietales; la vía central es la dopaminérgica mesolímbica (área tegmental ventral → núcleo accumbens).",
+      "❌ Incorrecto. La AMÍGDALA participa en las emociones y en el condicionamiento, pero el NÚCLEO principal del sistema de recompensa es el NÚCLEO ACCUMBENS, no la amígdala.",
+      "✅ Correcto. El sistema de recompensa es PARTE CENTRAL en la fisiopatogenia de las ADICCIONES, y su núcleo principal es el NÚCLEO ACCUMBENS, que recibe la proyección dopaminérgica del área tegmental ventral (vía mesolímbica). Todas las drogas de abuso aumentan la dopamina en esta vía.",
+      "❌ Incorrecto. La DOPAMINA es el neurotransmisor CLAVE del sistema de recompensa (vía mesolímbica dopaminérgica); el sistema no es principalmente serotoninérgico (la serotonina participa en el control del humor y de la saciedad)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "agresión",
+      "amígdala",
+      "etología",
+      "conducta",
+      "neurociencias"
+    ],
+    "enunciado": "Con respecto a la agresión, señale la afirmación incorrecta:",
+    "opcoes": [
+      "Cumple funciones de defensa del territorio y satisfacción de necesidades",
+      "Es común tanto a animales como seres humanos",
+      "Tiene la intención de generar daño",
+      "La amígdala cumple un importante rol en las respuestas agresivas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación correcta). La agresión cumple funciones adaptativas: defensa del territorio, protección de la descendencia y satisfacción de necesidades vitales (alimentación, apareamiento).",
+      "❌ Incorrecto (es una afirmación correcta). La agresión es una conducta común a los animales y a los seres humanos (se enraíza en la evolución y en estructuras neurobiológicas compartidas).",
+      "✅ Correcto (es la afirmación INCORRECTA que se pide). La agresión NO se define por la 'intención de generar daño': es una conducta instintiva y adaptativa que cumple funciones biológicas (defensa del territorio, satisfacción de necesidades). La intencionalidad consciente de dañar no es el criterio que la define.",
+      "❌ Incorrecto (es una afirmación correcta). La AMÍGDALA desempeña un papel central en las respuestas agresivas y emocionales, junto con el hipotálamo, la corteza prefrontal y la sustancia gris periacueductal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "maternaje",
+      "estrés crónico",
+      "eje hipotálamo-hipófiso-adrenal",
+      "neurogénesis",
+      "hipocampo"
+    ],
+    "enunciado": "En situaciones de maternaje inadecuado y estrés crónico:",
+    "opcoes": [
+      "Se desinhibe el eje hipotálamo-hipófiso-adrenal pudiendo generar disminución en la tasa de neurogénesis y atrofia hipocampal",
+      "Se inhibe el eje hipotálamo-hipófiso-adrenal pudiendo generar atrofia hipocampal y disminución en la tasa de neurogénesis",
+      "Se inhibe el eje hipotálamo-hipófiso-adrenal pudiendo generar atrofia hipocampal y aumento en la tasa de neurogénesis",
+      "No existen cambios neuroendócrinos significativos"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El maternaje inadecuado y el ESTRÉS CRÓNICO producen una DESINHIBICIÓN (hiperactivación) del EJE HIPOTÁLAMO-HIPÓFISO-ADRENAL (mayor secreción de cortisol), y el exceso de glucocorticoides genera DISMINUCIÓN de la tasa de NEUROGÉNESIS y ATROFIA HIPOCAMPAL, con sus consecuencias cognitivas y emocionales.",
+      "❌ Incorrecto. El eje HHA se DESINHIBE (se hiperactiva) ante el estrés crónico, no se inhibe. La atrofia hipocampal y la disminución de la neurogénesis son consecuencias de esa hiperactivación (exceso de cortisol).",
+      "❌ Incorrecto. Son dos errores: el eje HHA se desinhibe (no se inhibe) y la tasa de NEUROGÉNESIS DISMINUYE (no aumenta) bajo el exceso de glucocorticoides.",
+      "❌ Incorrecto. SÍ existen cambios neuroendócrinos significativos: la hiperactivación del eje HHA con aumento del cortisol, que produce atrofia hipocampal y disminución de la neurogénesis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "abuso de sustancias",
+      "huésped",
+      "farmacocinética",
+      "ambiente",
+      "factores"
+    ],
+    "enunciado": "Señale la afirmación correcta:",
+    "opcoes": [
+      "Las características del huésped son relevantes en el abuso de sustancias",
+      "Las características farmacocinéticas y farmacodinámicas de la sustancia son relevantes en el potencial de abuso de una sustancia",
+      "El ambiente cumple un rol muy relevante en el desarrollo de problemáticas de consumo",
+      "Todas son correctas"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). Las características del huésped (genética, vulnerabilidad psicológica, edad, sexo, comorbilidades) son relevantes en el abuso de sustancias, pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). Las características farmacocinéticas (rapidez de llegada al cerebro, vida media) y farmacodinámicas (potencia de la recompensa) determinan el potencial de abuso de una sustancia, pero no es la única afirmación correcta.",
+      "❌ Incorrecto (es una afirmación válida, pero incompleta). El ambiente (contexto social, familiar, económico, disponibilidad de la sustancia) cumple un rol muy relevante en el desarrollo de problemáticas de consumo, pero no es la única afirmación correcta.",
+      "✅ Correcto. En el abuso de sustancias intervienen TODOS los factores: las características del HUÉSPED, las propiedades FARMACOCINÉTICAS y FARMACODINÁMICAS de la sustancia, y el AMBIENTE (modelo bio-psico-social). Por eso 'todas son correctas'."
+    ]
+  }
+]

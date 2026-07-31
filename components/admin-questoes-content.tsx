@@ -122,11 +122,27 @@ export function AdminQuestoesContent() {
 
   const load = async () => {
     setLoading(true)
-    const { data } = await supabase
-      .from("questoes")
-      .select("*")
-      .order("created_at", { ascending: false })
-    setQuestoes((data as Questao[]) ?? [])
+    // O Supabase limita cada select a 1000 linhas por padrão; com milhares
+    // de questões no banco, é preciso paginar com .range() até esgotar.
+    const PAGE = 1000
+    let allRows: Questao[] = []
+    let from = 0
+    while (true) {
+      const { data, error } = await supabase
+        .from("questoes")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .range(from, from + PAGE - 1)
+      if (error) {
+        console.error(error)
+        break
+      }
+      const rows = (data as Questao[]) ?? []
+      allRows = allRows.concat(rows)
+      if (rows.length < PAGE) break
+      from += PAGE
+    }
+    setQuestoes(allRows)
     setLoading(false)
   }
 
@@ -161,6 +177,30 @@ export function AdminQuestoesContent() {
     const ativas = filtered.filter((q) => q.ativo).length
     return { total, ativas }
   }, [filtered])
+
+  // Contagem de questões por matéria e por disciplina base (sobre o total,
+  // não sobre o filtrado, para servir de referência fixa nos selects).
+  const materiaCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    for (const q of questoes) {
+      if (!q.materia) continue
+      counts[q.materia] = (counts[q.materia] ?? 0) + 1
+    }
+    return counts
+  }, [questoes])
+
+  const disciplinaBaseCounts = useMemo(() => {
+    const counts: Record<string, number> = {}
+    let semCategoria = 0
+    for (const q of questoes) {
+      if (!q.disciplina_base) {
+        semCategoria += 1
+        continue
+      }
+      counts[q.disciplina_base] = (counts[q.disciplina_base] ?? 0) + 1
+    }
+    return { counts, semCategoria }
+  }, [questoes])
 
   const openNew = () => {
     setEditingId(null)
@@ -361,10 +401,10 @@ export function AdminQuestoesContent() {
             <SelectValue placeholder="Matéria" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="todas">Todas as matérias</SelectItem>
+            <SelectItem value="todas">Todas as matérias ({questoes.length})</SelectItem>
             {MATERIA_OPTIONS_FLAT.map((m) => (
               <SelectItem key={m.key} value={m.key}>
-                {m.label}
+                {m.label} ({materiaCounts[m.key] ?? 0})
               </SelectItem>
             ))}
           </SelectContent>
@@ -400,11 +440,13 @@ export function AdminQuestoesContent() {
             <SelectValue placeholder="Disciplina Base" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="todas">Todas as disciplinas</SelectItem>
-            <SelectItem value="sem_categoria">Sem categoria</SelectItem>
+            <SelectItem value="todas">Todas as disciplinas ({questoes.length})</SelectItem>
+            <SelectItem value="sem_categoria">
+              Sem categoria ({disciplinaBaseCounts.semCategoria})
+            </SelectItem>
             {DISCIPLINA_BASE_KEYS.map((d) => (
               <SelectItem key={d} value={d}>
-                {disciplinaBaseLabel[d]}
+                {disciplinaBaseLabel[d]} ({disciplinaBaseCounts.counts[d] ?? 0})
               </SelectItem>
             ))}
           </SelectContent>

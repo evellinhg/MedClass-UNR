@@ -1,0 +1,2525 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "hemostasia",
+      "flujo sanguíneo",
+      "coagulación",
+      "plaquetas",
+      "control"
+    ],
+    "enunciado": "¿Cuál es uno de los mecanismos principales de control de la hemostasia?",
+    "opcoes": [
+      "Flujo sanguíneo",
+      "Adhesión plaquetaria",
+      "Vasoconstricción",
+      "Formación de fibrina"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El FLUJO SANGUÍNEO es uno de los mecanismos principales de control de la hemostasia: su velocidad y su patrón (laminar o turbulento) determinan la llegada, la activación y la distribución de las plaquetas y de los factores de coagulación. Las zonas de flujo alterado o de estasis favorecen la trombosis, y el flujo normal limpia y diluye los factores activados.",
+      "❌ Incorrecto. La adhesión plaquetaria es un componente esencial del proceso hemostático (formación del tapón plaquetario), pero es una ETAPA dentro del mecanismo, no uno de los mecanismos principales de CONTROL de la hemostasia.",
+      "❌ Incorrecto. La vasoconstricción es una respuesta inicial que reduce el calibre del vaso lesionado y el flujo en la zona, pero no es el mecanismo principal de control del proceso hemostático en su conjunto.",
+      "❌ Incorrecto. La formación de fibrina consolida el tapón plaquetario y forma el coágulo definitivo, pero es la fase terminal de la coagulación, no el mecanismo principal de control de la hemostasia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "espasmo neurogénico",
+      "reflejo autonómico",
+      "vasoconstricción",
+      "hemostasia"
+    ],
+    "enunciado": "¿Qué tipo de respuesta es el espasmo neurogénico?",
+    "opcoes": [
+      "Respuesta refleja autonómica",
+      "Respuesta local directa del músculo",
+      "Respuesta hormonal",
+      "Respuesta inmunológica"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El espasmo neurogénico es una respuesta REFLEJA AUTONÓMICA: el traumatismo del vaso activa reflejos nerviosos simpáticos que producen la contracción de la musculatura lisa vascular (vasoconstricción refleja) en la zona lesionada, reduciendo la pérdida de sangre.",
+      "❌ Incorrecto. La respuesta local directa del músculo liso corresponde al espasmo MIÓGENO (contracción por estímulo directo de la pared vascular), que no depende de un arco reflejo nervioso como el espasmo neurogénico.",
+      "❌ Incorrecto. Una respuesta hormonal implicaría mediadores sistémicos circulantes (adrenalina, vasopresina, etc.); el espasmo neurogénico es inmediato y local, mediado por el sistema nervioso autónomo.",
+      "❌ Incorrecto. La respuesta inmunológica es mediada por células y citocinas del sistema inmune y no participa en la vasoconstricción refleja inmediata del espasmo neurogénico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fibrinógeno",
+      "fibrina",
+      "trombina",
+      "polímero",
+      "coagulación"
+    ],
+    "enunciado": "¿Cuál es el resultado de la conversión del fibrinógeno en fibrina?",
+    "opcoes": [
+      "Formación de tapón plaquetario",
+      "Formación de trombina",
+      "Formación de un polímero insoluble",
+      "Formación de agregados plaquetarios"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El tapón plaquetario se forma por la adhesión y agregación de las plaquetas en la zona de lesión endotelial, ANTES y de manera independiente de la conversión del fibrinógeno en fibrina.",
+      "❌ Incorrecto. La trombina es la ENZIMA que convierte el fibrinógeno en fibrina (proteólisis del fibrinógeno soluble); no es el producto de esa conversión.",
+      "✅ Correcto. Al ser transformado por la trombina, el fibrinógeno SOLUBLE se convierte en FIBRINA, que polimeriza formando un POLÍMERO INSOLUBLE (red de fibrina) que estabiliza el coágulo y atrapa plaquetas, glóbulos rojos y plasma.",
+      "❌ Incorrecto. Los agregados plaquetarios se forman por la unión entre plaquetas mediada por el fibrinógeno (receptor GPIIb/IIIa); no son el resultado de la conversión del fibrinógeno en fibrina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fibrinógeno",
+      "factor I",
+      "hígado",
+      "proteínas plasmáticas",
+      "300 mg/dl"
+    ],
+    "enunciado": "¿Qué proteína se sintetiza en el hígado y tiene una concentración de 300 mg/dl en plasma?",
+    "opcoes": [
+      "Trombina",
+      "Factor VII",
+      "Fibrinógeno",
+      "Factor XII"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La trombina es la enzima activa de la coagulación; circula como su precursor inactivo, la protrombina (factor II), en concentraciones del orden de microgramos por ml, muy por debajo de 300 mg/dl.",
+      "❌ Incorrecto. El factor VII es una proteína de la vía extrínseca que circula en concentraciones muy bajas (µg/ml); no alcanza los 300 mg/dl.",
+      "✅ Correcto. El FIBRINÓGENO (factor I) es sintetizado por el HÍGADO y es la proteína de la coagulación más abundante del plasma, con una concentración normal de aproximadamente 200-400 mg/dl (cerca de 300 mg/dl).",
+      "❌ Incorrecto. El factor XII (factor de Hageman) participa en la vía intrínseca y circula en concentraciones mínimas (µg/ml); no corresponde al valor de 300 mg/dl."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "fibrinólisis",
+      "plasmina",
+      "plasminógeno",
+      "D-dímero",
+      "fibrina"
+    ],
+    "enunciado": "¿Qué enzima es responsable de la fibrinólisis?",
+    "opcoes": [
+      "Trombina",
+      "Plasmina",
+      "Proteína C",
+      "Factor XIIIa"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La trombina es la enzima de la COAGULACIÓN: convierte el fibrinógeno en fibrina. No participa en la fibrinólisis.",
+      "✅ Correcto. La PLASMINA es la enzima responsable de la FIBRINÓLISIS: degrada la red de fibrina del coágulo en productos de degradación (PDF y D-dímero). Se forma a partir de su precursor inactivo, el plasminógeno, por acción de los activadores del plasminógeno (t-PA, u-PA).",
+      "❌ Incorrecto. La proteína C es un anticoagulante natural: inactiva los factores Va y VIIIa y regula la coagulación, pero no degrada la fibrina ya formada.",
+      "❌ Incorrecto. El factor XIIIa (factor estabilizador de la fibrina) crea enlaces cruzados entre las moléculas de fibrina, ESTABILIZANDO el coágulo; no tiene actividad fibrinolítica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "estafilococos",
+      "hábitat",
+      "piel",
+      "flora normal",
+      "Staphylococcus"
+    ],
+    "enunciado": "¿Cuál es el hábitat primario de los estafilococos?",
+    "opcoes": [
+      "Suelo",
+      "Piel de los mamíferos",
+      "Agua dulce",
+      "Superficie de plantas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El suelo es el hábitat de otros géneros bacterianos (por ejemplo, Bacillus y Clostridium); los estafilococos colonizan la piel y las mucosas de los mamíferos, no el suelo.",
+      "✅ Correcto. El hábitat primario de los estafilococos es la PIEL y las mucosas de los MAMÍFEROS (incluido el hombre), donde forman parte de la flora normal: S. epidermidis en la piel y S. aureus en las fosas nasales y otros sitios.",
+      "❌ Incorrecto. El agua dulce no es el hábitat primario de los estafilococos; pueden sobrevivir en el ambiente, pero están adaptados a vivir sobre la piel y las mucosas.",
+      "❌ Incorrecto. La superficie de las plantas no constituye su hábitat natural; los estafilococos son microorganismos comensales de piel y mucosas de los mamíferos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "S. saprophyticus",
+      "infección urinaria",
+      "mujeres jóvenes",
+      "cistitis",
+      "estafilococos"
+    ],
+    "enunciado": "¿Cuál de las siguientes especies de estafilococos se considera una causa común de infecciones del tracto urinario en mujeres jóvenes?",
+    "opcoes": [
+      "S. aureus",
+      "S. epidermidis",
+      "S. saprophyticus",
+      "S. hominis"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. S. aureus causa principalmente infecciones de piel y tejidos blandos, neumonía, endocarditis y bacteriemia; no es la causa clásica de ITU en mujeres jóvenes.",
+      "❌ Incorrecto. S. epidermidis es un comensal de la piel que causa infecciones asociadas a DISPOSITIVOS (catéteres, prótesis), no la ITU típica de la mujer joven.",
+      "✅ Correcto. S. SAPROPHYTICUS es la causa clásica de INFECCIONES DEL TRACTO URINARIO en MUJERES JÓVENES sexualmente activas (es el segundo agente de cistitis después de E. coli).",
+      "❌ Incorrecto. S. hominis es un estafilococo coagulasa negativo de la piel, asociado sobre todo a infecciones de dispositivos intravasculares; no es causa común de ITU."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "estafilococos",
+      "estructura antigénica",
+      "endotoxinas",
+      "gram positivos",
+      "proteína A"
+    ],
+    "enunciado": "¿Cuál de los siguientes componentes NO forma parte de la estructura antigénica de los estafilococos?",
+    "opcoes": [
+      "Polisacárido A",
+      "Proteína A",
+      "Endotoxinas",
+      "Polisacárido B"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El polisacárido A es un componente de la pared celular de los estafilococos (base de su antígeno específico de especie); al formar parte de la estructura antigénica, NO es la respuesta.",
+      "❌ Incorrecto. La proteína A es un componente de la pared celular de S. aureus que se une a la porción Fc de las IgG; tiene papel antigénico y de virulencia, por lo que forma parte de la estructura antigénica.",
+      "✅ Correcto. Las ENDOTOXINAS son lipopolisacáridos (LPS) de la pared de las bacterias GRAM NEGATIVAS. Los estafilococos son GRAM POSITIVOS y NO poseen endotoxinas (sus toxinas son exotoxinas: toxina alfa, exfoliatina, enterotoxinas, etc.). Por eso no forma parte de su estructura antigénica.",
+      "❌ Incorrecto. El polisacárido B, junto con el polisacárido A y la proteína A, forma parte de los componentes antigénicos de los estafilococos; por lo tanto, no es la respuesta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hialuronidasa",
+      "S. aureus",
+      "factor de difusión",
+      "ácido hialurónico",
+      "virulencia"
+    ],
+    "enunciado": "¿Qué enzima producida por S. aureus facilita la diseminación de la infección al hidrolizar ácidos hialurónicos?",
+    "opcoes": [
+      "Catalasa",
+      "Hialuronidasa",
+      "Coagulasa",
+      "Lipasa"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La catalasa descompone el peróxido de hidrógeno en agua y oxígeno (defensa frente al estrés oxidativo y prueba de identificación), pero no hidroliza el ácido hialurónico.",
+      "✅ Correcto. La HIALURONIDASA (llamada factor de difusión) hidroliza el ÁCIDO HIALURÓNICO del tejido conectivo, lo que permite que la bacteria se DISEMINE a través de los tejidos. Es un factor de virulencia de S. aureus.",
+      "❌ Incorrecto. La coagulasa convierte el fibrinógeno en fibrina, depositando una capa que protege a la bacteria de la fagocitosis; no hidroliza los ácidos hialurónicos ni favorece la difusión por ese mecanismo.",
+      "❌ Incorrecto. La lipasa hidroliza lípidos y actúa sobre el sebo de la piel (relevante en la foliculitis), pero no degrada el ácido hialurónico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "exfoliatina",
+      "piel escaldada",
+      "S. aureus",
+      "neonatos",
+      "toxinas"
+    ],
+    "enunciado": "¿Cuál de las siguientes toxinas de S. aureus causa cambios en la epidermis de los neonatos, caracterizados por una descamación intensa?",
+    "opcoes": [
+      "Alfa-toxina",
+      "Beta-toxina",
+      "Exfoliatina A",
+      "Enterotoxinas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La alfa-toxina es una toxina formadora de poros que produce lisis celular, necrosis y hemólisis; no produce la descamación epidérmica de los neonatos.",
+      "❌ Incorrecto. La beta-toxina es una esfingomielinasa C con actividad hemolítica (hemólisis en caliente-frío de los eritrocitos de oveja); no se relaciona con la descamación de la piel.",
+      "✅ Correcto. La EXFOLIATINA (toxina epidermolítica, tipos A y B) rompe los desmosomas de la capa granulosa de la epidermis (acantólisis) y causa el SÍNDROME DE LA PIEL ESCALDADA ESTAFILOCÓCICA (SSSS), típico de los NEONATOS y lactantes, con ampollas y descamación intensa.",
+      "❌ Incorrecto. Las enterotoxinas (A-E) producen intoxicación alimentaria (vómitos y diarrea) y actúan como superantígenos (también la toxina del síndrome de shock tóxico), pero no causan descamación epidérmica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "S. aureus",
+      "infección primaria",
+      "sepsis",
+      "impétigo",
+      "neumonía"
+    ],
+    "enunciado": "¿Cuál de las siguientes infecciones NO se considera una infección primaria causada por S. aureus?",
+    "opcoes": [
+      "Neumonía estafilocócica",
+      "Impétigo",
+      "Endocarditis",
+      "Sepsis"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La neumonía estafilocócica SÍ es una infección primaria de S. aureus (frecuente tras una gripe, sobre todo en lactantes y debilitados), por lo que no es la respuesta.",
+      "❌ Incorrecto. El impétigo SÍ es una infección cutánea primaria típica de S. aureus (y S. pyogenes), por lo que no es la respuesta.",
+      "❌ Incorrecto. La endocarditis SÍ puede ser una infección primaria por S. aureus (endocarditis aguda destructiva), especialmente en usuarios de drogas endovenosas y portadores de válvulas; no es la respuesta.",
+      "✅ Correcto. La SEPSIS es una infección SECUNDARIA: resulta de la diseminación hematógena de la bacteria desde un foco primario (piel, neumonía, catéteres, etc.). No se considera una infección primaria de S. aureus, y por eso es la respuesta correcta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "pitiriasis versicolor",
+      "KOH",
+      "Malassezia",
+      "diagnóstico",
+      "micosis superficial"
+    ],
+    "enunciado": "¿Cuál es el método recomendado para el diagnóstico de la pitiriasis versicolor?",
+    "opcoes": [
+      "Cultivo de muestra en agar sangre",
+      "Examen microscópico directo con KOH-tinta",
+      "Prueba de catalasa",
+      "Observación macroscópica de colonias"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El cultivo en agar sangre no es el método adecuado: Malassezia es una levadura lipófila que crece mal en medios habituales; el diagnóstico se realiza por examen directo.",
+      "✅ Correcto. El método recomendado es el EXAMEN MICROSCÓPICO DIRECTO de las escamas con KOH (hidróxido de potasio) y tinta (azul de metileno): se observan las agrupaciones características de levaduras y pseudomicelios cortos (aspecto de 'espaguetis con albóndigas').",
+      "❌ Incorrecto. La prueba de catalasa es una técnica de diferenciación bacteriana (distingue estafilococos de estreptococos); no se usa para diagnosticar micosis superficiales.",
+      "❌ Incorrecto. La observación macroscópica de colonias solo es posible tras el cultivo, que en Malassezia es lento y requiere medios con lípidos; no es el método recomendado para el diagnóstico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "piedra negra",
+      "micosis superficial",
+      "nódulos",
+      "pelos",
+      "Piedraia hortae"
+    ],
+    "enunciado": "¿Qué micosis superficial se caracteriza por la presencia de nódulos en los pelos del cuero cabelludo de color negro?",
+    "opcoes": [
+      "Pitiriasis versicolor",
+      "Tinea negra",
+      "Piedra negra",
+      "Dermatoficias"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La pitiriasis versicolor produce máculas hipo o hiperpigmentadas en el tronco y los brazos, no nódulos en los pelos.",
+      "❌ Incorrecto. La tinea negra es una micosis superficial de la PALMA DE LA MANO con máculas negras; no afecta los pelos del cuero cabelludo.",
+      "✅ Correcto. La PIEDRA NEGRA es una micosis superficial de los PELOS (cuero cabelludo, barba, pubis) caracterizada por NÓDULOS duros y oscuros (negros) adheridos al tallo piloso, causada por el hongo Piedraia hortae.",
+      "❌ Incorrecto. Las dermatoficias (tiñas) afectan la queratina de piel, uñas y pelo produciendo lesiones anulares y alopécicas, pero no forman los nódulos negros típicos de la piedra negra."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "tinea pedis",
+      "dermatofitos",
+      "pie de atleta",
+      "Trichophyton",
+      "micosis"
+    ],
+    "enunciado": "¿Cuál es el agente causal más frecuente de la tinea pedis?",
+    "opcoes": [
+      "Malassezia furfur",
+      "Trichosporon beigelii",
+      "Candida albicans",
+      "Dermatofitos"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Malassezia furfur es la levadura causante de la pitiriasis versicolor; no produce tinea pedis.",
+      "❌ Incorrecto. Trichosporon beigelii es el agente de la piedra blanca; no causa el pie de atleta.",
+      "❌ Incorrecto. Candida albicans produce candidiasis (intertrigo, onicomicosis, mucosas), pero la causa más frecuente de tinea pedis son los dermatofitos.",
+      "✅ Correcto. La TINEA PEDIS (pie de atleta) es causada en la mayoría de los casos por DERMATOFITOS, hongos queratinofílicos, principalmente Trichophyton rubrum, Trichophyton mentagrophytes y Epidermophyton floccosum."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "candidiasis mucocutánea crónica",
+      "síndrome endocrino-moniliásico",
+      "niños",
+      "inmunodeficiencia",
+      "Candida"
+    ],
+    "enunciado": "¿Cuál es la forma más común de presentación de la candidiasis mucocutánea crónica en niños con inmunodeficiencias?",
+    "opcoes": [
+      "Familiar",
+      "Difusa",
+      "Síndrome endocrino-moniliásico",
+      "De presentación tardía"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La forma familiar existe en la candidiasis mucocutánea crónica, pero no es la presentación más común en los niños con inmunodeficiencias.",
+      "❌ Incorrecto. La forma difusa es una de las variedades descritas de la CMC, pero no es la más frecuente en niños inmunodeficientes.",
+      "✅ Correcto. El SÍNDROME ENDOCRINO-MONILIÁSICO es la forma más común de candidiasis mucocutánea crónica en NIÑOS: combina la candidiasis persistente de piel y mucosas con ENDOCRINOPATÍAS (hipoparatiroidismo, insuficiencia suprarrenal, tiroiditis) y defectos de la inmunidad celular.",
+      "❌ Incorrecto. La presentación tardía corresponde a la CMC de inicio en la vida adulta; no es la forma típica de los niños con inmunodeficiencias."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "aspergilosis",
+      "Aspergillus",
+      "hongos",
+      "género",
+      "micosis"
+    ],
+    "enunciado": "¿Cuál es el género de hongos que produce la enfermedad conocida como aspergilosis?",
+    "opcoes": [
+      "Candida",
+      "Cryptococcus",
+      "Aspergillus",
+      "Malassezia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Candida es el género que produce la candidiasis, no la aspergilosis.",
+      "❌ Incorrecto. Cryptococcus es el género que produce la criptococosis, no la aspergilosis.",
+      "✅ Correcto. La ASPERGILOSIS es producida por hongos del género ASPERGILLUS, principalmente Aspergillus fumigatus.",
+      "❌ Incorrecto. Malassezia produce la pitiriasis versicolor y otras dermatosis; no es el agente de la aspergilosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "aspergilosis",
+      "aparato respiratorio",
+      "pulmón",
+      "conidios",
+      "hongos"
+    ],
+    "enunciado": "¿Qué sistema del cuerpo humano ataca principalmente la aspergilosis?",
+    "opcoes": [
+      "Sistema digestivo",
+      "Sistema nervioso central",
+      "Aparato respiratorio",
+      "Sistema urinario"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El sistema digestivo no es el blanco principal de la aspergilosis.",
+      "❌ Incorrecto. El SNC puede afectarse en la aspergilosis diseminada, pero no es el sistema que ataca principalmente (la criptococosis sí es la micosis meníngea clásica).",
+      "✅ Correcto. La aspergilosis ataca principalmente el APARATO RESPIRATORIO: los conidios de Aspergillus se INHALAN y las principales formas clínicas (alérgica, aspergiloma e invasiva) se localizan en el pulmón.",
+      "❌ Incorrecto. El sistema urinario no es el sistema afectado de forma principal por la aspergilosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "aspergilosis",
+      "formas clínicas",
+      "alérgica",
+      "intracavitaria",
+      "aspergiloma"
+    ],
+    "enunciado": "¿Qué tipo de formas clínicas de aspergilosis se pueden encontrar?",
+    "opcoes": [
+      "Alérgica e intracavitaria",
+      "Intravascular y cutánea",
+      "Sistémica y pulmonar",
+      "Invasiva y superficial"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. Según el texto, las formas clínicas de la aspergilosis son la ALÉRGICA (aspergilosis broncopulmonar alérgica) y la INTRACAVITARIA (aspergiloma o bola fúngica que crece en cavidades pulmonares preexistentes), además de la invasiva.",
+      "❌ Incorrecto. 'Intravascular y cutánea' no corresponde a la clasificación de las formas clínicas de la aspergilosis que describe el texto.",
+      "❌ Incorrecto. 'Sistémica y pulmonar' es una descripción parcial que no corresponde a la clasificación clásica de formas clínicas de la fuente.",
+      "❌ Incorrecto. 'Invasiva y superficial' no corresponde: la aspergilosis NO se clasifica como micosis superficial (sus formas son alérgica, intracavitaria e invasiva)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "aspergilosis",
+      "cultivo",
+      "Sabouraud",
+      "diagnóstico",
+      "micología"
+    ],
+    "enunciado": "¿Cuál es el método recomendado para el diagnóstico de la aspergilosis?",
+    "opcoes": [
+      "Cultivo en medio de Sabouraud",
+      "Observación macroscópica",
+      "Prueba de anticuerpos por inmunodifusión",
+      "Examen directo con KOH al 10%"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El método recomendado para el diagnóstico de la aspergilosis es el CULTIVO EN MEDIO DE SABOURAUD: las colonias de Aspergillus crecen bien en este medio y se identifica su morfología característica (cabeza aspergilar y conidióforos).",
+      "❌ Incorrecto. La observación macroscópica aislada no constituye el método diagnóstico; la identificación requiere cultivo y examen microscópico de las colonias.",
+      "❌ Incorrecto. La inmunodifusión se emplea para detectar anticuerpos (útil en el aspergiloma y la ABPA), pero no es el método de diagnóstico de primera línea recomendado por el texto.",
+      "❌ Incorrecto. El examen directo con KOH es propio de las micosis superficiales; en la aspergilosis el pilar del diagnóstico es el cultivo en Sabouraud."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "criptococosis",
+      "Cryptococcus neoformans",
+      "levadura capsulada",
+      "agente causal"
+    ],
+    "enunciado": "¿Qué agente causal está relacionado principalmente con la criptococosis?",
+    "opcoes": [
+      "Candida albicans",
+      "Cryptococcus neoformans",
+      "Aspergillus fumigatus",
+      "Malassezia furfur"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Candida albicans es el agente de la candidiasis, no de la criptococosis.",
+      "✅ Correcto. La CRIPTOCOCOSIS es causada por CRYPTOCOCCUS NEOFORMANS, una levadura con una gruesa cápsula polisacárida, característica que le confiere su virulencia.",
+      "❌ Incorrecto. Aspergillus fumigatus produce la aspergilosis, no la criptococosis.",
+      "❌ Incorrecto. Malassezia furfur produce la pitiriasis versicolor; no es el agente de la criptococosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "criptococosis",
+      "meningoencefalitis",
+      "síntomas neurológicos",
+      "inmunodeprimidos",
+      "levadura"
+    ],
+    "enunciado": "¿Cuál es la presentación clínica más común de la criptococosis?",
+    "opcoes": [
+      "Síntomas cutáneos",
+      "Síntomas gastrointestinales",
+      "Síntomas pulmonares",
+      "Síntomas neurológicos"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Pueden aparecer lesiones cutáneas en la criptococosis diseminada, pero no constituyen la presentación más común.",
+      "❌ Incorrecto. Los síntomas gastrointestinales no son la presentación típica de la criptococosis.",
+      "❌ Incorrecto. La puerta de entrada es pulmonar (inhalación), pero la forma clínica más frecuente y reconocible es la meníngea.",
+      "✅ Correcto. La presentación clínica más común de la criptococosis (sobre todo en pacientes inmunodeprimidos, como los que tienen SIDA) son los SÍNTOMAS NEUROLÓGICOS, por la MENINGOENCEFALITIS: cefalea, fiebre, rigidez de nuca, deterioro del sensorio y signos de hipertensión intracraneana."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "criptococosis",
+      "antígeno capsular",
+      "diagnóstico rápido",
+      "LCR",
+      "látex"
+    ],
+    "enunciado": "¿Cuál es el método de diagnóstico rápido recomendado para la criptococosis?",
+    "opcoes": [
+      "Observación macroscópica",
+      "Cultivo en medio de Sabouraud",
+      "Dosaje de antígeno capsular",
+      "Examen directo con KOH al 10%"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La observación macroscópica no es un método de diagnóstico de la criptococosis.",
+      "❌ Incorrecto. El cultivo en Sabouraud es útil y confirma el diagnóstico, pero es más lento; el método RÁPIDO es la detección del antígeno capsular.",
+      "✅ Correcto. El método de diagnóstico RÁPIDO recomendado para la criptococosis es el DOSAJE DEL ANTÍGENO CAPSULAR (aglutinación de látex) en suero o LCR: es rápido, sensible y específico, y permite detectar la infección incluso antes del cultivo.",
+      "❌ Incorrecto. El examen directo con KOH se usa para hongos superficiales; en la criptococosis el examen directo del LCR se hace con tinta china, y el texto señala el dosaje del antígeno capsular como el método rápido."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "tríada de Virchow",
+      "trombosis",
+      "lesión endotelial",
+      "hipercoagulabilidad",
+      "estasis"
+    ],
+    "enunciado": "¿Cuáles son las tres alteraciones primarias que ocasionan la formación de trombos según la tríada de Virchow?",
+    "opcoes": [
+      "Lesión endotelial, hipercoagulabilidad y estasis sanguínea",
+      "Lesión endotelial, estasis o flujo turbulento de la sangre, e hipercoagulabilidad",
+      "Hipercoagulabilidad, flujo laminar y lesión endotelial"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. Según la fuente, las tres alteraciones primarias de la tríada de Virchow son la LESIÓN ENDOTELIAL, la HIPERCOAGULABILIDAD y la ESTASIS SANGUÍNEA (que, junto con el flujo turbulento, componen las alteraciones del flujo sanguíneo). Es la opción marcada como respuesta del texto.",
+      "❌ Incorrecto. Esta opción describe la tríada de manera más completa (agrega el 'flujo turbulento' de la sangre), pero la fuente marca la opción A como la respuesta del texto.",
+      "❌ Incorrecto. El FLUJO LAMINAR es fisiológico y no forma parte de la tríada: lo que favorece la trombosis es la estasis o el flujo TURBULENTO, no el laminar. Además la opción omite el componente correcto de la tríada."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "turbulencia",
+      "flujo sanguíneo",
+      "lesión endotelial",
+      "trombosis",
+      "hemodinamia"
+    ],
+    "enunciado": "¿Qué puede causar la turbulencia en la circulación sanguínea según el texto?",
+    "opcoes": [
+      "Disfunciones cardíacas",
+      "Lesiones endoteliales",
+      "Disfunciones o lesiones endoteliales y contracorrientes locales"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Las disfunciones cardíacas por sí solas no explican la turbulencia local que describe el texto; la respuesta correcta combina las lesiones endoteliales y las contracorrientes.",
+      "❌ Incorrecto. Las lesiones endoteliales son parte del mecanismo, pero la opción C es la más completa, ya que también incluye las contracorrientes locales.",
+      "✅ Correcto. Según el texto, la turbulencia en la circulación puede ser causada por DISFUNCIONES O LESIONES ENDOTELIALES y por CONTRACORRIENTES LOCALES (por ejemplo, en las bifurcaciones vasculares), alterando el flujo laminar y favoreciendo la trombosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "hipercoagulabilidad",
+      "factor V",
+      "trombofilia",
+      "adquirida",
+      "hereditaria"
+    ],
+    "enunciado": "¿Cuál de las siguientes NO es una causa de hipercoagulabilidad adquirida?",
+    "opcoes": [
+      "Uso de anticonceptivos orales",
+      "Mutaciones genéticas en el factor V",
+      "Tabaquismo y obesidad"
+    ],
+    "indice_correta": 1,
+    "justificativa": "La fuente marca C (tabaquismo y obesidad), pero es incorrecta: el tabaquismo y la obesidad SÍ son factores de riesgo ADQUIRIDOS de hipercoagulabilidad/trombosis. Las mutaciones genéticas del factor V (factor V Leiden) son una causa HEREDITARIA (congénita), no adquirida. Por eso la respuesta correcta es B. Se corrige la respuesta.",
+    "opcoes_comentario": [
+      "❌ Incorrecto. El uso de anticonceptivos orales ES una causa ADQUIRIDA de hipercoagulabilidad (aumentan los factores procoagulantes y disminuyen los anticoagulantes naturales), por lo que no es la respuesta.",
+      "✅ Correcto (respuesta corregida). Las MUTACIONES GENÉTICAS EN EL FACTOR V (factor V Leiden, con resistencia a la proteína C activada) son una causa HEREDITARIA (congénita) de trombofilia, NO adquirida. Por eso es la opción que NO corresponde a la hipercoagulabilidad adquirida.",
+      "❌ Incorrecto (respuesta de la fuente corregida). El tabaquismo y la obesidad SÍ son factores de riesgo ADQUIRIDOS que favorecen el estado protrombótico (el tabaco daña el endotelio y aumenta la agregación plaquetaria; la obesidad eleva los estrógenos y los factores procoagulantes). No es la respuesta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "embolia pulmonar",
+      "trombosis venosa profunda",
+      "émbolos",
+      "TVP",
+      "tromboembolismo"
+    ],
+    "enunciado": "¿Cuál es el origen más común de los émbolos que causan embolia pulmonar?",
+    "opcoes": [
+      "Trombosis venosa profunda (TVP) de la pierna",
+      "Fragmentos de tumor",
+      "Burbujas de nitrógeno"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El origen más común de los émbolos que causan EMBOLIA PULMONAR es la TROMBOSIS VENOSA PROFUNDA (TVP) de las piernas (venas iliofemorales y poplíteas): el trombo se desprende y viaja por el corazón derecho hasta la arteria pulmonar.",
+      "❌ Incorrecto. Los fragmentos tumorales producen embolia neoplásica (poco frecuente); no son el origen más común de la embolia pulmonar.",
+      "❌ Incorrecto. Las burbujas de nitrógeno causan embolia gaseosa (enfermedad por descompresión en buceadores); no es el origen habitual de la embolia pulmonar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "shock",
+      "fase irreversible",
+      "lesiones tisulares",
+      "necrosis",
+      "falla multiorgánica"
+    ],
+    "enunciado": "¿Qué ocurre en la fase irreversible del shock según el texto?",
+    "opcoes": [
+      "Se activan mecanismos reflejos de compensación",
+      "Aparecen lesiones tisulares graves",
+      "Se producen hipotensión y taquicardia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La activación de los mecanismos reflejos de compensación (vasoconstricción, taquicardia) corresponde a la fase INICIAL/compensada del shock, no a la irreversible.",
+      "✅ Correcto. En la fase IRREVERSIBLE del shock aparecen LESIONES TISULARES GRAVES e irreversibles (necrosis de órganos vitales: riñón, miocardio, encéfalo), que persisten aunque se restablezca la perfusión, y que conducen a la falla multiorgánica y a la muerte.",
+      "❌ Incorrecto. La hipotensión y la taquicardia son hallazgos de la fase progresiva/descompensada; en la fase irreversible el dato central es el daño orgánico ya establecido."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "infarto",
+      "necrosis coagulativa",
+      "isquemia",
+      "histología"
+    ],
+    "enunciado": "¿Cuál es la característica histológica predominante del infarto según el texto?",
+    "opcoes": [
+      "Necrosis coagulativa isquémica",
+      "Fibrosis del tejido afectado",
+      "Presencia de células tumorales"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La característica histológica predominante del infarto es la NECROSIS COAGULATIVA ISQUÉMICA: la isquemia produce desnaturalización de las proteínas celulares con preservación transitoria del contorno celular. Es el patrón típico del infarto en la mayoría de los órganos sólidos (miocardio, riñón, bazo).",
+      "❌ Incorrecto. La fibrosis es la REPARACIÓN tardía (cicatriz) que sigue al infarto, semanas o meses después; no es la característica histológica del infarto agudo.",
+      "❌ Incorrecto. La presencia de células tumorales no tiene relación con la histología del infarto isquémico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "embolia séptica",
+      "endocarditis",
+      "vegetaciones",
+      "abscesos"
+    ],
+    "enunciado": "¿Qué tipo de embolia se produce cuando las vegetaciones cardíacas infectadas embolizan?",
+    "opcoes": [
+      "Embolia pulmonar",
+      "Embolia de grasa",
+      "Embolia séptica"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La embolia pulmonar se origina por trombos de las venas profundas, no por vegetaciones cardíacas (aunque en la endocarditis de cavidades derechas puede haber embolismos sépticos pulmonares, el término correcto es embolia séptica).",
+      "❌ Incorrecto. La embolia de grasa se origina en fracturas de huesos largos o en traumatismos del tejido adiposo, no en vegetaciones cardíacas.",
+      "✅ Correcto. Cuando las VEGETACIONES CARDÍACAS INFECTADAS (endocarditis) embolizan, se produce una EMBOLIA SÉPTICA: el émbolo contiene microorganismos y genera infartos infectados o abscesos en el órgano donde se aloja."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "hueso",
+      "calcio",
+      "fósforo",
+      "depósito",
+      "osteología"
+    ],
+    "enunciado": "¿Cuál es la principal función del hueso según el texto?",
+    "opcoes": [
+      "Almacenar oxígeno",
+      "Producir células sanguíneas",
+      "Servir de depósito para calcio y fósforo"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El hueso no almacena oxígeno (esa función corresponde a la hemoglobina de los eritrocitos).",
+      "❌ Incorrecto. Producir células sanguíneas (hematopoyesis en la médula ósea) es una función real del hueso, pero 'según el texto' la principal función destacada es la de depósito de calcio y fósforo.",
+      "✅ Correcto. Según el texto, la principal función del hueso es servir de DEPÓSITO (reservorio) de CALCIO y FÓSFORO, además de su papel de sostén y protección. El hueso regula la calcemia mediante el intercambio con el medio interno."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "shock",
+      "fase progresiva",
+      "hipoperfusión",
+      "acidosis láctica",
+      "trastornos circulatorios"
+    ],
+    "enunciado": "¿Qué ocurre durante la fase progresiva del shock?",
+    "opcoes": [
+      "Se activan mecanismos de compensación neurohumorales",
+      "Se produce hipoperfusión tisular y agravamiento de los trastornos circulatorios",
+      "La respiración aerobia se sustituye por la glucólisis anaerobia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los mecanismos de compensación neurohumorales (vasoconstricción, taquicardia, retención de líquidos) se activan en la fase INICIAL/compensada, no en la progresiva.",
+      "✅ Correcto. En la fase PROGRESIVA del shock se produce HIPOPERFUSIÓN TISULAR con AGRAVAMIENTO de los trastornos circulatorios: la hipoxia mantenida genera acidosis láctica y se instala un círculo vicioso que conduce al daño orgánico.",
+      "❌ Incorrecto. El paso de la respiración aerobia a la glucólisis anaerobia ocurre cuando la perfusión comienza a caer (fase inicial/compensada); no define la fase progresiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "oclusión vascular",
+      "aporte vascular",
+      "daño isquémico",
+      "circulación colateral",
+      "determinante"
+    ],
+    "enunciado": "¿Cuál es el principal determinante de los daños causados por una oclusión vascular según el texto?",
+    "opcoes": [
+      "Naturaleza del aporte vascular",
+      "Velocidad de desarrollo de la oclusión",
+      "Contenido de oxígeno en la sangre"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El principal determinante del daño por una oclusión vascular es la NATURALEZA DEL APORTE VASCULAR: si el territorio tiene circulación colateral (doble aporte) el daño será menor, mientras que en territorios de arteria terminal la oclusión provoca infarto.",
+      "❌ Incorrecto. La velocidad de desarrollo de la oclusión influye (una oclusión lenta permite desarrollar colaterales), pero no es el determinante principal del daño según el texto.",
+      "❌ Incorrecto. El contenido de oxígeno en la sangre (anemia, hipoxemia) agrava la lesión, pero no es el determinante principal del daño causado por la oclusión."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "historia clínica",
+      "anamnesis",
+      "evaluación del paciente",
+      "semiología",
+      "medicina legal"
+    ],
+    "enunciado": "¿Qué es lo primero en lo que un médico presta atención al evaluar a un paciente según el texto?",
+    "opcoes": [
+      "El estado de las mucosas",
+      "La historia clínica completa",
+      "Los síntomas sistémicos"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El estado de las mucosas es un dato del EXAMEN FÍSICO que aporta información sobre la hidratación y la perfusión, pero es un paso posterior: el médico comienza por la historia clínica.",
+      "✅ Correcto. Lo primero es la HISTORIA CLÍNICA COMPLETA: la anamnesis orienta el diagnóstico y guía el examen físico. Sin una historia clínica adecuada no se puede evaluar correctamente al paciente.",
+      "❌ Incorrecto. Los síntomas sistémicos forman parte del interrogatorio, pero se integran dentro de la historia clínica completa, que es el primer paso para evaluar al paciente."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "lupa",
+      "magnificación",
+      "lesiones cutáneas",
+      "dermatología",
+      "semiología"
+    ],
+    "enunciado": "¿Cuál es la magnificación aproximada recomendada para examinar las lesiones cutáneas con una lupa según el texto?",
+    "opcoes": [
+      "1,5",
+      "2,7",
+      "4,0"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La magnificación de 1,5 es insuficiente para apreciar con detalle las características de las lesiones cutáneas elementales; se recomienda una lupa con mayor aumento.",
+      "✅ Correcto. La magnificación recomendada para el examen de las lesiones cutáneas con lupa es de aproximadamente 2,7 aumentos, que permite observar la morfología y el detalle de las lesiones elementales.",
+      "❌ Incorrecto. La magnificación de 4,0 supera el aumento habitualmente recomendado para la inspección de lesiones cutáneas con lupa (≈2,7)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "lesiones elementales primarias",
+      "placa",
+      "dermatología",
+      "semiología"
+    ],
+    "enunciado": "¿Cuál de las siguientes lesiones elementales primarias tiene una consistencia sólida y un tamaño mayor de 0,5-1 cm con infiltración?",
+    "opcoes": [
+      "Pápula",
+      "Placa",
+      "Nódulo"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La pápula es una elevación sólida pero de MENOR tamaño (hasta 0,5-1 cm), de localización superficial; cuando crece por encima de ese tamaño o se acompaña de infiltración profunda se denomina placa o nódulo.",
+      "✅ Correcto. La placa es una lesión elemental primaria SÓLIDA, de superficie aplanada y de tamaño mayor de 0,5-1 cm, que se acompaña de infiltración de la piel.",
+      "❌ Incorrecto. El nódulo también es sólido y mayor de 0,5-1 cm, pero se caracteriza por localizarse en la DERMIS o HIPODERMIS (profundo) y por palparse más que verse; la descripción de la pregunta corresponde a la placa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "goma",
+      "nódulo",
+      "lesiones elementales",
+      "sífilis",
+      "dermatología"
+    ],
+    "enunciado": "¿Qué tipo de lesión es una goma según el texto?",
+    "opcoes": [
+      "Una elevación circunscrita de la piel",
+      "Una variedad de nódulo",
+      "Una neoformación no inflamatoria"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La elevación circunscrita de la piel es la definición genérica de pápula o de otras lesiones sobreelevadas; no describe específicamente la goma.",
+      "✅ Correcto. La goma es una VARIEDAD DE NÓDULO: una lesión inflamatoria que se reblandece y tiende a ulcerar, típica de procesos granulomatosos como la sífilis terciaria y la tuberculosis.",
+      "❌ Incorrecto. La goma es una lesión INFLAMATORIA (granulomatosa), no una neoformación no inflamatoria; las neoformaciones corresponden a tumores benignos o malignos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "pústula",
+      "lesiones elementales",
+      "dermatología",
+      "contenido purulento"
+    ],
+    "enunciado": "¿Cuál de las siguientes opciones describe una pústula según el texto?",
+    "opcoes": [
+      "Una cavidad de contenido líquido, de mayor tamaño (>5 mm)",
+      "Una elevación circunscrita de la piel, con contenido purulento desde su inicio",
+      "Laminillas de capa cornea que se desprenden espontáneamente de la superficie cutánea"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La cavidad de contenido líquido de mayor tamaño (>5 mm) corresponde a la definición de AMPOLLA o VEJIGA según su contenido, no a la pústula.",
+      "✅ Correcto. La pústula es una ELEVACIÓN CIRCUNSCRITA de la piel que contiene PUS (líquido purulento) desde su inicio; su contenido está formado por leucocitos y detritos celulares.",
+      "❌ Incorrecto. Las laminillas de capa córnea que se desprenden espontáneamente de la superficie cutánea corresponden a la ESCAMA, una lesión elemental secundaria, no a la pústula."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "violencia",
+      "golpeador",
+      "victimario",
+      "medicina legal",
+      "perpetrador"
+    ],
+    "enunciado": "¿Qué término se utiliza específicamente para referirse a un perpetrador que utiliza violencia física?",
+    "opcoes": [
+      "Agresor",
+      "Victimario",
+      "Golpeador"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El término 'agresor' es genérico y designa a quien realiza cualquier tipo de agresión (física, verbal, sexual); no especifica que la violencia sea física.",
+      "❌ Incorrecto. 'Victimario' es un sinónimo general de quien inflige un daño (el lado opuesto a la víctima), sin precisar el tipo de violencia empleada.",
+      "✅ Correcto. El término 'GOLPEADOR' se utiliza específicamente para designar al perpetrador que ejerce VIOLENCIA FÍSICA, distinguiéndolo del agresor verbal o de otras formas de maltrato."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "violencia",
+      "factores de riesgo",
+      "medicina legal",
+      "prevención"
+    ],
+    "enunciado": "¿Cuál de los siguientes no es un factor de riesgo de violencia según el texto?",
+    "opcoes": [
+      "Abuso de sustancias",
+      "Antecedentes familiares de abuso",
+      "Buena situación económica"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El abuso de sustancias (alcohol y drogas) es un factor de riesgo reconocido de violencia, ya que altera el juicio, aumenta la impulsividad y la agresividad.",
+      "❌ Incorrecto. Los antecedentes familiares de abuso constituyen un factor de riesgo de violencia: la exposición a la violencia en el hogar durante la infancia favorece su reproducción.",
+      "✅ Correcto. La buena situación económica NO es un factor de riesgo de violencia; de hecho, la pobreza y la precariedad socioeconómica son los factores asociados. La pregunta pide el factor que NO corresponde."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "fractura espontánea",
+      "fracturas",
+      "traumatología",
+      "patológica"
+    ],
+    "enunciado": "¿Qué tipo de fractura se produce cuando el traumatismo es tan leve que parece producida por un esfuerzo normal?",
+    "opcoes": [
+      "Traumática",
+      "Espontánea",
+      "Patológica"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La fractura traumática es consecuencia de un traumatismo evidente, de una intensidad desproporcionada para la resistencia del hueso; no se parece a un esfuerzo normal.",
+      "✅ Correcto. La fractura ESPONTÁNEA se produce por un traumatismo tan leve que parece un esfuerzo normal; el término subraya la desproporción entre la causa aparente y el resultado.",
+      "❌ Incorrecto. La fractura patológica es la que ocurre sobre un hueso previamente debilitado por una enfermedad (osteoporosis, tumor, infección); es un subtipo de fractura espontánea, no el término que define el mecanismo descrito."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "fractura indirecta",
+      "mecanismo indirecto",
+      "traumatología",
+      "fracturas"
+    ],
+    "enunciado": "¿Qué tipo de fractura se produce cuando la fractura se produce a distancia de la zona donde actuó la violencia?",
+    "opcoes": [
+      "Por mecanismo directo",
+      "Por mecanismo indirecto",
+      "Por mecanismo rotatorio"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. En el mecanismo directo la fractura se produce EXACTAMENTE en el lugar donde actuó el agente traumático (p. ej., un golpe sobre la cara anterior de la pierna fractura la tibia en ese punto).",
+      "✅ Correcto. La fractura por MECANISMO INDIRECTO se produce a DISTANCIA del punto donde se aplicó la violencia: la energía se transmite por el hueso o a través de las articulaciones (p. ej., caída sobre la palma de la mano que fractura la clavícula).",
+      "❌ Incorrecto. El mecanismo rotatorio (torsión) es un tipo específico de fuerza que produce fracturas en espiral; no define la fractura a distancia del punto de aplicación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "fractura por compresión",
+      "conminuta",
+      "mecanismo",
+      "traumatología"
+    ],
+    "enunciado": "¿Qué tipo de fractura se produce por compresión sobre el eje y resulta en fracturas conminutas?",
+    "opcoes": [
+      "Por flexión",
+      "Por mecanismo de cizallamiento",
+      "Por compresión sobre el eje"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La fractura por flexión se produce cuando el hueso se dobla hasta romperse (trazo transversal, con una cuña en el lado de la compresión); no es el mecanismo que da fracturas conminutas.",
+      "❌ Incorrecto. El mecanismo de cizallamiento produce trazos oblicuos por el desplazamiento de fuerzas paralelas en sentidos opuestos, no las fracturas conminutas del mecanismo descrito.",
+      "✅ Correcto. La COMPRESIÓN SOBRE EL EJE (carga axial) es el mecanismo que produce fracturas CONMINUTAS: el hueso se aplasta y se fragmenta en múltiples esquirlas (p. ej., en las vértebras o en la meseta tibial)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "fractura por estrés",
+      "osteoporosis",
+      "traumatología",
+      "causa"
+    ],
+    "enunciado": "¿Cuál es la principal causa de fracturas por estrés según el texto?",
+    "opcoes": [
+      "Traumatismo directo",
+      "Osteoporosis",
+      "Neoplasia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El traumatismo directo produce fracturas traumáticas agudas, no fracturas por estrés, que aparecen por sobrecarga repetida sobre un hueso debilitado o fatigado.",
+      "✅ Correcto. Según el texto, la OSTEOPOROSIS es la principal causa de fracturas por estrés: la pérdida de masa ósea debilita el hueso, que se fractura ante cargas que en condiciones normales serían toleradas.",
+      "❌ Incorrecto. La neoplasia puede debilitar el hueso y producir fracturas patológicas, pero no es la principal causa de fracturas por estrés."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "escama",
+      "lesiones secundarias",
+      "dermatología",
+      "semiología"
+    ],
+    "enunciado": "¿Cuál de las siguientes opciones describe una escama secundaria según el texto?",
+    "opcoes": [
+      "Laminillas de capa cornea que se desprenden espontáneamente de la superficie cutánea",
+      "El resultado de la desecación de una secreción (suero, pus o sangre)",
+      "Una solución de continuidad lineal sin pérdida de sustancia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Las laminillas de capa córnea que se desprenden espontáneamente de la superficie cutánea son la ESCAMA PRIMARIA; la pregunta se refiere a la escama SECUNDARIA.",
+      "✅ Correcto. La escama SECUNDARIA es el resultado de la DESECACIÓN de una secreción (suero, pus o sangre) que se desprende como láminas de la superficie de la piel.",
+      "❌ Incorrecto. La solución de continuidad lineal sin pérdida de sustancia corresponde a la EXCORIACIÓN o al arañazo, no a la escama."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "costra",
+      "lesiones secundarias",
+      "tejido necrosado",
+      "dermatología"
+    ],
+    "enunciado": "¿Qué tipo de lesión es una costra según el texto?",
+    "opcoes": [
+      "Una cavidad de contenido líquido y de pequeño tamaño",
+      "Una formación de tejido necrosado, delimitado de la piel sana por un surco",
+      "Una solución de continuidad lineal sin pérdida de sustancia"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La cavidad de contenido líquido y de pequeño tamaño corresponde a la VESÍCULA o AMPOLLA según su contenido y tamaño, no a la costra.",
+      "✅ Correcto. La COSTRA es una formación de TEJIDO NECROSADO, seca, que queda delimitada de la piel sana por un surco, y que termina por desprenderse dejando una cicatriz.",
+      "❌ Incorrecto. La solución de continuidad lineal sin pérdida de sustancia corresponde a la EXCORIACIÓN o al surco de la escoriación, no a la costra."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "postura",
+      "equilibrio",
+      "vestibular",
+      "propiocepción",
+      "sensibilidad profunda"
+    ],
+    "enunciado": "¿Qué sistemas participan en el mantenimiento de la postura equilibrada según el texto?",
+    "opcoes": [
+      "La vista, el aparato vestibular, y la corteza cerebral",
+      "La vista, el aparato vestibular, y la sensibilidad profunda de músculos y articulaciones",
+      "La vista, el aparato vestibular, y el sistema endocrino"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La corteza cerebral participa en la integración de la información, pero el texto destaca la sensibilidad profunda (propioceptiva) de músculos y articulaciones como uno de los tres sistemas, no la corteza en sí.",
+      "✅ Correcto. El mantenimiento de la postura equilibrada depende de la VISTA, del APARATO VESTIBULAR y de la SENSIBILIDAD PROFUNDA (propiocepción) de músculos y articulaciones, que informan continuamente de la posición y del tono.",
+      "❌ Incorrecto. El sistema endocrino regula procesos metabólicos y no participa directamente en la información sensitiva que mantiene la postura equilibrada."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "violencia",
+      "historia clínica",
+      "sospecha",
+      "medicina legal",
+      "maltrato"
+    ],
+    "enunciado": "¿Qué se debe colocar en la historia clínica si se sospecha violencia según el texto?",
+    "opcoes": [
+      "\"Posible maltrato\"",
+      "\"Posible agresión\"",
+      "\"Propenso a accidentes\""
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Escribir 'posible maltrato' o 'posible agresión' de forma explícita en la historia clínica puede generar conflictos legales y no es la recomendación del texto cuando existe la sospecha.",
+      "❌ Incorrecto. La mención directa de 'posible agresión' en la historia clínica es una afirmación comprometedora; la recomendación es registrar la situación de forma prudente.",
+      "✅ Correcto. Según el texto, ante la sospecha de violencia se debe consignar en la historia clínica que el paciente es 'PROPENSO A ACCIDENTES', una forma prudente de registrar la situación sin comprometer legalmente la atención ni generar conflictos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "radiografías",
+      "enfermedad articular",
+      "diagnóstico por imágenes",
+      "semiología"
+    ],
+    "enunciado": "¿Cuál es la utilidad principal de las radiografías en casos de sospecha de enfermedad articular?",
+    "opcoes": [
+      "Realizar una caracterización precisa de la enfermedad",
+      "Localizar y extender la lesión",
+      "Establecer un diagnóstico definitivo"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La radiografía no caracteriza con precisión la enfermedad articular (la RM y los estudios de laboratorio aportan esa precisión); su utilidad principal es más limitada.",
+      "✅ Correcto. La utilidad principal de las radiografías en la sospecha de enfermedad articular es LOCALIZAR la lesión y valorar su EXTENSIÓN, orientando los pasos diagnósticos posteriores.",
+      "❌ Incorrecto. La radiografía no establece por sí sola el diagnóstico definitivo de la mayoría de las enfermedades articulares; es un estudio inicial de orientación que debe complementarse."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "articulaciones",
+      "protocolo",
+      "radiografías",
+      "costos",
+      "sobreirradiación"
+    ],
+    "enunciado": "¿Cuál es el protocolo de estudio inicial propuesto para abaratar costos y no sobreirradiar al paciente en enfermedades de las articulaciones?",
+    "opcoes": [
+      "Realizar solo radiografías posteroanterior",
+      "Evaluar solo la articulación afectada",
+      "Evaluar ambas articulaciones con vistas específicas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Realizar solo radiografías posteroanterior limita demasiado la información (faltan las vistas lateral y oblicua) y no es el protocolo inicial propuesto.",
+      "❌ Incorrecto. Evaluar únicamente la articulación afectada impide la comparación con el lado sano, que es clave para reconocer alteraciones sutiles.",
+      "✅ Correcto. El protocolo inicial propuesto consiste en evaluar AMBAS articulaciones (la afectada y la contralateral sana) con vistas específicas, lo que permite comparar, abaratar costos y evitar la irradiación innecesaria."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "signo del festón",
+      "radiografía",
+      "artritis",
+      "erosion",
+      "muñeca"
+    ],
+    "enunciado": "¿Qué indica el signo del festón en una radiografía?",
+    "opcoes": [
+      "Ruptura del tendón extensor de los dedos",
+      "Erosión festoneada de la extremidad distal del radio",
+      "Una muesca en el canal del supinador"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La ruptura del tendón extensor de los dedos se manifiesta clínicamente por la deformidad en 'dedos en martillo', no por el signo radiológico del festón.",
+      "✅ Correcto. El signo del festón corresponde a la EROSIÓN FESTONEADA de la extremidad distal del RADIO, un hallazgo radiológico típico de la artritis (erosiones marginales).",
+      "❌ Incorrecto. La muesca en el canal del supinador es un hallazgo relacionado con la cabeza del radio en el codo, no con la erosión festoneada descrita por el signo del festón."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "espondilitis anquilosante",
+      "signos radiológicos",
+      "columna en caña de bambú",
+      "lápiz dentro de la copa"
+    ],
+    "enunciado": "¿Cuál de los siguientes no es un signo radiológico de la espondilitis anquilosante?",
+    "opcoes": [
+      "Columna en caña de bambú",
+      "Signo del lápiz dentro de la copa",
+      "Signo de orejas de ratón"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La 'columna en caña de bambú' es el signo radiológico clásico de la espondilitis anquilosante: osificación de los ligamentos paravertebrales que da aspecto de segmentación vertebral.",
+      "❌ Incorrecto. El signo del 'lápiz dentro de la copa' se observa en la espondilitis anquilosante por la remodelación y erosión de las articulaciones sacroilíacas y las cabezas metafisarias.",
+      "✅ Correcto. El signo de 'orejas de ratón' NO es un signo de espondilitis anquilosante; la pregunta pide el hallazgo que NO corresponde a esa enfermedad."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "resonancia magnética",
+      "enfermedades óseas",
+      "contraste",
+      "tejidos blandos",
+      "diagnóstico por imágenes"
+    ],
+    "enunciado": "¿Cuál es el propósito principal de la resonancia magnética en el diagnóstico de enfermedades óseas?",
+    "opcoes": [
+      "Evaluar la mineralización ósea",
+      "Proveer un excelente contraste entre los tejidos blandos, el hueso y el cartílago",
+      "Realizar una biopsia guiada"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La mineralización ósea se evalúa con DEXA o tomografía computarizada; la RM no cuantifica el contenido mineral.",
+      "✅ Correcto. La utilidad principal de la resonancia magnética es proveer un EXCELENTE CONTRASTE entre los tejidos blandos, el hueso y el cartílago, permitiendo caracterizar lesiones medulares, cartilaginosas y de partes blandas.",
+      "❌ Incorrecto. La biopsia guiada puede realizarse bajo guía ecográfica o tomográfica; no es el propósito principal de la RM en el diagnóstico óseo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "síntesis del hemo",
+      "ácido δ-aminolevulínico",
+      "ALA sintasa",
+      "porfirinas",
+      "punto de control"
+    ],
+    "enunciado": "¿Cuál es el principal sitio de control de la síntesis del hemo?",
+    "opcoes": [
+      "La formación de porfobilinógeno",
+      "La síntesis de ácido δ-aminolevulínico",
+      "La adición del hierro ferroso"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La formación de porfobilinógeno (por acción de la ALA deshidratasa) es una etapa intermedia que no constituye el paso limitante ni el punto de control de la síntesis.",
+      "✅ Correcto. El paso limitante y principal sitio de control es la síntesis de ÁCIDO δ-AMINOLEVULÍNICO, catalizada por la ALA-sintasa (regulada por el hemo por retroinhibición y en el nivel de transcripción).",
+      "❌ Incorrecto. La incorporación del hierro ferroso (ferroquelatasa) es la etapa final, pero no es el sitio principal de control de la síntesis del hemo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "catabolismo del hemo",
+      "bilirrubina",
+      "biliverdina",
+      "hemoglobina",
+      "degradación"
+    ],
+    "enunciado": "¿Cuál es el producto final de la fase inicial del catabolismo del hemo?",
+    "opcoes": [
+      "Biliverdina",
+      "Bilirrubina",
+      "Estercobilinógeno"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La biliverdina es un INTERMEDIARIO del catabolismo: el hemo es convertido por la hemo-oxigenasa en biliverdina, que luego es reducida a bilirrubina. No es el producto final de la fase inicial.",
+      "✅ Correcto. El producto final de la fase inicial (extrahepática) del catabolismo del hemo es la BILIRRUBINA, formada por reducción de la biliverdina en el bazo y el sistema fagocítico mononuclear.",
+      "❌ Incorrecto. El estercobilinógeno es un producto TARDÍO: la bilirrubina conjugada es excretada al intestino, donde las bacterias la reducen a urobilinógeno y estercobilinógeno."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "fosforilación oxidativa",
+      "ATP",
+      "cadena respiratoria",
+      "mitocondria",
+      "energía"
+    ],
+    "enunciado": "¿Cuál es el resultado final del proceso de fosforilación oxidativa?",
+    "opcoes": [
+      "La formación de ATP",
+      "La reducción de oxígeno",
+      "La oxidación de la coenzima Q"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El resultado final de la fosforilación oxidativa es la FORMACIÓN DE ATP: los electrones fluyen por la cadena respiratoria y el gradiente de protones generado impulsa la ATP-sintasa para fosforilar el ADP.",
+      "❌ Incorrecto. La reducción del oxígeno (que forma agua) es un paso del proceso, pero es un medio para mantener el flujo de electrones, no el resultado final buscado.",
+      "❌ Incorrecto. La oxidación de la coenzima Q es uno de los pasos del transporte electrónico, no el producto final de la fosforilación oxidativa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis A",
+      "HAV",
+      "transmisión",
+      "fecal-oral",
+      "picornavirus"
+    ],
+    "enunciado": "¿Cuál es la principal vía de transmisión de la hepatitis por virus A (HAV)?",
+    "opcoes": [
+      "Parenteral",
+      "Sexual",
+      "Entérica",
+      "Fecal-oral"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La vía parenteral no es la principal del HAV; corresponde más bien a la transmisión de los virus B y C.",
+      "❌ Incorrecto. La transmisión sexual no es característica del virus de la hepatitis A, sino de la hepatitis B.",
+      "❌ Incorrecto. 'Entérica' describe el sitio de replicación, pero la vía concreta de transmisión del HAV es la fecal-oral, que es la respuesta precisa.",
+      "✅ Correcto. La principal vía de transmisión del VHA es la FECAL-ORAL, a través de agua o alimentos contaminados con materia fecal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis A",
+      "HAV",
+      "infección entérica",
+      "picornavirus",
+      "mecanismo"
+    ],
+    "enunciado": "¿Cuál es el tipo de infección que generalmente produce la hepatitis por virus A (HAV) en el ser humano?",
+    "opcoes": [
+      "Respiratoria",
+      "Entérica",
+      "Cutánea",
+      "Ocular"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El HAV no produce infección respiratoria; esa vía corresponde a otros virus como los de la gripe o el SARS-CoV-2.",
+      "✅ Correcto. El HAV produce una infección ENTÉRICA: se replica inicialmente en el intestino tras la ingestión, y luego alcanza el hígado por vía portal, donde causa la hepatitis.",
+      "❌ Incorrecto. El HAV no produce infección cutánea; las manifestaciones cutáneas pueden ser secundarias a la ictericia pero no constituyen el sitio primario de infección.",
+      "❌ Incorrecto. El HAV no produce infección ocular; no existe replicación primaria en el ojo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis A",
+      "HAV",
+      "ARN",
+      "genoma",
+      "picornavirus"
+    ],
+    "enunciado": "¿Qué tipo de ácido nucleico tiene el virus de la hepatitis A (HAV)?",
+    "opcoes": [
+      "ADN bicatenario",
+      "ARN de cadena simple",
+      "ADN monocatenario",
+      "ARN de cadena doble"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El HAV no tiene ADN bicatenario; ese genoma corresponde a los adenovirus o papilomavirus.",
+      "✅ Correcto. El VHA es un picornavirus con genoma de ARN de CADENA SIMPLE y sentido positivo (ssRNA+).",
+      "❌ Incorrecto. El HAV no tiene ADN monocatenario; ese tipo de genoma es propio de los parvovirus.",
+      "❌ Incorrecto. El HAV no tiene ARN de cadena doble; el dsRNA es característico de los reovirus."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis B",
+      "HBV",
+      "transmisión",
+      "parenteral",
+      "sangre"
+    ],
+    "enunciado": "¿Cuál es la principal vía de transmisión del virus de la hepatitis B (HBV)?",
+    "opcoes": [
+      "Parenteral",
+      "Entérica",
+      "Respiratoria",
+      "Sexual"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La principal vía de transmisión del VHB es la PARENTERAL (contacto con sangre y derivados), además de la vía sexual y la transmisión vertical madre-hijo.",
+      "❌ Incorrecto. La vía entérica corresponde al VHA y al VHE, no al VHB.",
+      "❌ Incorrecto. El VHB no se transmite por vía respiratoria.",
+      "❌ Incorrecto. La vía sexual existe en el VHB (y es importante), pero la parenteral es la principal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis B",
+      "HBV",
+      "ADN",
+      "genoma",
+      "hepadnavirus"
+    ],
+    "enunciado": "¿Qué tipo de ácido nucleico tiene el virus de la hepatitis B (HBV)?",
+    "opcoes": [
+      "ARN de cadena doble",
+      "ARN de cadena simple",
+      "ADN de doble cadena incompleta",
+      "ADN de doble cadena completa"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El VHB no tiene genoma ARN; los virus ARN son el VHA, el VHC y el VHD.",
+      "❌ Incorrecto. El VHB no tiene ARN de cadena simple.",
+      "✅ Correcto. El VHB es un hepadnavirus con genoma de ADN DE DOBLE CADENA INCOMPLETA (parcialmente bicatenario circular), que completa su cadena durante la replicación mediante su transcriptasa inversa.",
+      "❌ Incorrecto. El genoma del VHB no es de doble cadena completa; presenta una región monocatenaria característica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis D",
+      "HDV",
+      "virus ARN",
+      "defectivo",
+      "delta"
+    ],
+    "enunciado": "¿Qué tipo de virus es el virus de la hepatitis D (HDV)?",
+    "opcoes": [
+      "Virus ADN",
+      "Virus ARN",
+      "Virus ARN y ADN",
+      "Retrovirus"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El VHD no es un virus ADN; es un virus ARN defectivo que requiere la cobertura del antígeno de superficie del VHB.",
+      "✅ Correcto. El VHD (agente delta) es un VIRUS ARN de cadena simple y circular, defectivo, que solo se replica en presencia del VHB.",
+      "❌ Incorrecto. Su genoma es exclusivamente ARN; no posee ambas clases de ácido nucleico.",
+      "❌ Incorrecto. No es un retrovirus (no presenta transcriptasa inversa ni ciclo retroviral como el VIH)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis C",
+      "VHC",
+      "incubación",
+      "flavivirus",
+      "evolución"
+    ],
+    "enunciado": "¿Cuál es el tiempo de incubación promedio para la hepatitis C?",
+    "opcoes": [
+      "1-2 semanas",
+      "4-8 semanas",
+      "2-4 meses",
+      "6-12 meses"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Un período de 1-2 semanas es demasiado corto para el VHC; corresponde más bien a infecciones de tipo entérico.",
+      "✅ Correcto. El período de incubación promedio de la hepatitis C es de 4-8 SEMANAS, con un rango habitual de 2 semanas a 6 meses.",
+      "❌ Incorrecto. Los períodos de 2-4 meses y más prolongados son menos habituales como promedio, aunque la hepatitis C puede presentar formas con incubación más larga.",
+      "❌ Incorrecto. Los 6-12 meses son muy largos para el promedio de la hepatitis C."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "hepatitis E",
+      "HEV",
+      "transmisión",
+      "entérica",
+      "fecal-oral"
+    ],
+    "enunciado": "¿Cuál es la principal vía de transmisión del virus de la hepatitis E (HEV)?",
+    "opcoes": [
+      "Parenteral",
+      "Sexual",
+      "Entérica",
+      "Respiratoria"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La vía parenteral no es la principal del VHE; corresponde a los virus B y C.",
+      "❌ Incorrecto. El VHE no se transmite por vía sexual.",
+      "✅ Correcto. La principal vía de transmisión del VHE es la ENTÉRICA (fecal-oral), a través de agua y alimentos contaminados; puede producir brotes epidémicos y es grave en embarazadas.",
+      "❌ Incorrecto. El VHE no se transmite por vía respiratoria."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "rabia",
+      "virus",
+      "estructura",
+      "cápside helicoidal",
+      "rhabdovirus"
+    ],
+    "enunciado": "¿Cuál es la estructura principal del virus de la rabia?",
+    "opcoes": [
+      "ARN de cadena simple",
+      "Capside helicoidal",
+      "Doble membrana lipoglicoproteica",
+      "Envoltura delgada de proteínas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. 'ARN de cadena simple' describe el genoma del virus (ssRNA de sentido negativo), no su estructura principal visible.",
+      "✅ Correcto. La estructura principal del virus de la rabia es su CÁPSIDE HELICOIDAL, característica de los rhabdovirus, que envuelve el genoma de ARN.",
+      "❌ Incorrecto. La doble membrana lipoglicoproteica no corresponde a la estructura del virus de la rabia; sí posee una envoltura lipídica con glicoproteína G, pero la característica estructural distintiva es la cápside helicoidal.",
+      "❌ Incorrecto. La envoltura delgada de proteínas no describe la estructura característica del virus de la rabia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "rabia",
+      "incubación",
+      "mordedura",
+      "rhabdovirus",
+      "período"
+    ],
+    "enunciado": "¿Qué periodo de incubación tiene la rabia después de la mordedura?",
+    "opcoes": [
+      "1-7 días",
+      "20-40 días",
+      "3-6 semanas",
+      "4-60 años"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los 1-7 días son demasiado cortos para la rabia; la incubación suele superar las dos semanas.",
+      "✅ Correcto. El período de incubación habitual de la rabia tras la mordedura es de 20-40 DÍAS, aunque puede variar según la localización de la mordedura y la carga viral.",
+      "❌ Incorrecto. Los períodos de 3-6 semanas están incluidos dentro del rango habitual, pero el valor promedio y más característico que maneja el texto es 20-40 días; la opción 3-6 semanas (21-42 días) también está en el rango, pero la respuesta esperada es la que explicita 20-40 días.",
+      "❌ Incorrecto. Los '4-60 años' son un error evidente; la rabia nunca tiene una incubación de años."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "sífilis",
+      "sífilis primaria",
+      "chancro",
+      "Treponema pallidum",
+      "manifestación"
+    ],
+    "enunciado": "¿Cuál es la manifestación clínica característica de la sífilis primaria?",
+    "opcoes": [
+      "Sifílides cutáneas simétricas",
+      "Aortitis",
+      "Queratitis intersticial",
+      "Chancro indurado"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Las sifílides cutáneas simétricas son propias de la sífilis SECUNDARIA, junto con adenopatías y lesiones de mucosas.",
+      "❌ Incorrecto. La aortitis es una manifestación de la sífilis TERCIARIA (cardiovascular), años después de la infección inicial.",
+      "❌ Incorrecto. La queratitis intersticial es un estigma de la sífilis congénita tardía, no de la forma primaria.",
+      "✅ Correcto. La manifestación característica de la sífilis primaria es el CHANCRO INDURADO: una úlcera indurada, indolora y de base limpia en el sitio de inoculación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "leptospira",
+      "reservorio",
+      "roedores",
+      "zoonosis",
+      "leptospirosis"
+    ],
+    "enunciado": "¿Cuál es el principal reservorio de las leptospiras patógenas?",
+    "opcoes": [
+      "Zorros",
+      "Murciélagos hematófagos",
+      "Roedores",
+      "Perros"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los zorros pueden participar en el ciclo selvático de algunas leptospiras, pero no son el principal reservorio.",
+      "❌ Incorrecto. Los murciélagos hematófagos son el reservorio de la RABIA, no de las leptospiras.",
+      "✅ Correcto. El principal reservorio de las leptospiras patógenas son los ROEDORES, que eliminan las espiroquetas por la orina sin enfermarse y contaminan el agua y el suelo.",
+      "❌ Incorrecto. Los perros pueden infectarse y eliminar leptospiras, pero el principal reservorio de la leptospirosis humana son los roedores."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "leptospirosis",
+      "incubación",
+      "período",
+      "zoonosis",
+      "espiroqueta"
+    ],
+    "enunciado": "¿Cuál es el periodo de incubación típico de la leptospirosis?",
+    "opcoes": [
+      "2-10 días",
+      "1-2 semanas",
+      "1-7 días",
+      "4-60 años"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los 2-10 días son algo más cortos que el período típico que maneja el texto.",
+      "✅ Correcto. El período de incubación típico de la leptospirosis es de 1-2 SEMANAS (de 4 a 19 días según las fuentes), tras la exposición al agua o suelo contaminados.",
+      "❌ Incorrecto. Los 1-7 días son demasiado cortos como promedio de la leptospirosis.",
+      "❌ Incorrecto. Los '4-60 años' son un valor absurdo para la leptospirosis, que es una enfermedad aguda."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "Lyme",
+      "Borrelia burgdorferi",
+      "espiroqueta",
+      "agente etiológico",
+      "garrapata"
+    ],
+    "enunciado": "¿Cuál es el agente etiológico de la enfermedad de Lyme?",
+    "opcoes": [
+      "Leptospira interrogans",
+      "Borrelia burgdorferi",
+      "Campylobacter jejuni",
+      "Treponema pallidum"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Leptospira interrogans es el agente de la leptospirosis, no de la enfermedad de Lyme.",
+      "✅ Correcto. El agente etiológico de la enfermedad de Lyme es BORRELIA BURGDORFERI, una espiroqueta transmitida por la picadura de garrapatas del género Ixodes.",
+      "❌ Incorrecto. Campylobacter jejuni es un bacilo curvado que produce gastroenteritis, no la enfermedad de Lyme.",
+      "❌ Incorrecto. Treponema pallidum es el agente de la sífilis, no de la enfermedad de Lyme."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "Vibrio cholerae",
+      "antígeno somático O",
+      "serogrupos",
+      "diferencias",
+      "cólera"
+    ],
+    "enunciado": "¿Qué tipo de antígeno es responsable de las diferencias entre especies en el Vibrio cholerae?",
+    "opcoes": [
+      "Antígeno somático O",
+      "Antígeno flagelar",
+      "Lipopolisacárido",
+      "Exotoxina"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El ANTÍGENO SOMÁTICO O es el responsable de las diferencias entre serogrupos del Vibrio cholerae (O1, O139, etc.); la cepa O1 El Tor es la epidémica clásica.",
+      "❌ Incorrecto. El antígeno flagelar H es compartido entre especies y no sirve para diferenciar los serogrupos de V. cholerae.",
+      "❌ Incorrecto. El lipopolisacárido está relacionado con el antígeno O (el antígeno O forma parte del LPS), pero la respuesta específica del texto es el antígeno somático O.",
+      "❌ Incorrecto. La exotoxina (toxina colérica) es el factor de virulencia que causa la diarrea, no el antígeno que diferencia las especies o serogrupos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "cólera",
+      "toxina colérica",
+      "AMPc",
+      "secreción de cloruro",
+      "diarrea"
+    ],
+    "enunciado": "¿Cuál es el mecanismo principal de acción de la toxina del Vibrio cholerae?",
+    "opcoes": [
+      "Destrucción de células intestinales",
+      "Aumento de la secreción de cloruro, bicarbonato y potasio",
+      "Invasión de tejidos",
+      "Producción de endotoxinas"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La toxina colérica NO destruye los enterocitos; el epitelio queda intacto, por eso la diarrea revierte al neutralizar la toxina.",
+      "✅ Correcto. La toxina del cólera activa la adenilato ciclasa (vía Gs-AMPc), lo que produce un AUMENTO de la SECRECIÓN DE CLORURO, BICARBONATO Y POTASIO hacia la luz intestinal y la consiguiente salida masiva de agua.",
+      "❌ Incorrecto. V. cholerae es un patógeno NO invasor; no invade tejidos, se multiplica en la luz del intestino.",
+      "❌ Incorrecto. No actúa por endotoxinas; el efecto es por su EXOTOXINA (toxina colérica)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "ictericia",
+      "bilirrubina",
+      "pigmento",
+      "coloración amarilla",
+      "hepatología"
+    ],
+    "enunciado": "¿Cuál es el principal pigmento responsable de la coloración amarilla en la ictericia?",
+    "opcoes": [
+      "Hemoglobina",
+      "Melanina",
+      "Bilirrubina",
+      "Clorofila"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La hemoglobina es la proteína de los glóbulos rojos que contiene el hemo; su acumulación en la piel no produce la coloración amarilla de la ictericia.",
+      "❌ Incorrecto. La melanina es el pigmento oscuro de la piel; su exceso produce hiperpigmentación, no ictericia.",
+      "✅ Correcto. El pigmento responsable de la coloración amarilla de la ictericia es la BILIRRUBINA, producto del catabolismo del hemo que se deposita en la piel, mucosas y escleróticas cuando se eleva en sangre.",
+      "❌ Incorrecto. La clorofila es un pigmento vegetal ajeno al organismo humano y no interviene en la ictericia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bilirrubina",
+      "ictericia clínica",
+      "concentración sérica",
+      "umbral",
+      "hepatología"
+    ],
+    "enunciado": "¿Qué concentración de bilirrubina sérica se considera clínicamente exteriorizada?",
+    "opcoes": [
+      "Menos de 0.3 mg/dL",
+      "Entre 1 y 2 mg/dL",
+      "Más de 2 mg/dL",
+      "Entre 0.5 y 1 mg/dL"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Menos de 0,3 mg/dL es un valor normal o incluso inferior a lo normal; no produce ictericia visible.",
+      "❌ Incorrecto. Entre 1 y 2 mg/dL suele ser la hiperbilirrubinemia subclínica; la ictericia se percibe por lo general cuando la bilirrubina supera los 2 mg/dL.",
+      "✅ Correcto. La ictericia se considera clínicamente exteriorizada cuando la bilirrubina sérica es MAYOR DE 2 mg/dL; por encima de ese umbral se tiñen la esclerótica y la piel.",
+      "❌ Incorrecto. Entre 0,5 y 1 mg/dL es un valor dentro del rango normal y no se exterioriza clínicamente."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bilirrubina",
+      "conjugación",
+      "hepatocito",
+      "reticulo endoplasmático",
+      "glucuronización"
+    ],
+    "enunciado": "¿En qué parte del hepatocito se produce la conjugación de la bilirrubina?",
+    "opcoes": [
+      "Citoplasma",
+      "Núcleo",
+      "Reticulo endoplasmático",
+      "Lisosoma"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La captación de bilirrubina ocurre en el citoplasma (con proteínas transportadoras), pero la CONJUGACIÓN propiamente dicha no se realiza allí.",
+      "❌ Incorrecto. El núcleo no interviene en el metabolismo de la bilirrubina.",
+      "✅ Correcto. La conjugación de la bilirrubina (unión al ácido glucurónico por la glucuroniltransferasa) se produce en el RETÍCULO ENDOPLASMÁTICO del hepatocito.",
+      "❌ Incorrecto. El lisosoma participa en la degradación intracelular de macromoléculas, no en la conjugación de la bilirrubina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "hipercarotenemia",
+      "carotenoides",
+      "ictericia",
+      "pseudoictericia",
+      "diagnóstico diferencial"
+    ],
+    "enunciado": "¿Qué causa principal se asocia a la hipercarotenemia en el contexto de la ictericia?",
+    "opcoes": [
+      "Insuficiencia renal crónica",
+      "Neoplasias avanzadas",
+      "Infecciones",
+      "Consumo excesivo de alimentos ricos en carotenoides"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La insuficiencia renal crónica produce un tinte amarillento por retención de urocromos, pero no es la causa de la hipercarotenemia.",
+      "❌ Incorrecto. Las neoplasias avanzadas pueden dar ictericia por metástasis hepáticas o compresión biliar, no hipercarotenemia.",
+      "❌ Incorrecto. Las infecciones no causan hipercarotenemia; la ictericia infecciosa es por lesión hepatocelular.",
+      "✅ Correcto. La hipercarotenemia se debe al CONSUMO EXCESIVO de alimentos ricos en CAROTENOIDES (zanahorias, calabaza, tomate), que tiñen la piel de amarillo-naranja y simulan una pseudoictericia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bilirrubina",
+      "bazo",
+      "producción",
+      "eritrocitos",
+      "metabolismo del hemo"
+    ],
+    "enunciado": "¿Qué órganos están involucrados en la producción de bilirrubina aparte del hígado?",
+    "opcoes": [
+      "Riñones",
+      "Bazo",
+      "Páncreas",
+      "Pulmones"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los riñones excretan la bilirrubina conjugada y la urobilina, pero no son sede principal de producción de bilirrubina.",
+      "✅ Correcto. El BAZO (junto con la médula ósea y los demás componentes del sistema fagocítico mononuclear) participa en la producción de bilirrubina al destruir los glóbulos rojos senescentes y catabolizar el hemo.",
+      "❌ Incorrecto. El páncreas no produce bilirrubina; su relación es con la vía biliar y la digestión.",
+      "❌ Incorrecto. Los pulmones no intervienen en la producción de bilirrubina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "coledocolitiasis",
+      "vesícula palpable",
+      "obstrucción biliar",
+      "signo de Courvoisier",
+      "hepatología"
+    ],
+    "enunciado": "¿Qué enfermedad se caracteriza por una vesícula palpable o visible como manifestación de obstrucción mecánica de la vía biliar?",
+    "opcoes": [
+      "Cirrosis hepática",
+      "Hepatitis viral",
+      "Coledocolitiasis",
+      "Hepatomegalia"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La cirrosis hepática no produce una vesícula biliar palpable; el hígado se palpa pequeño y nodular.",
+      "❌ Incorrecto. La hepatitis viral da hepatomegalia dolorosa, pero no una vesícula palpable por obstrucción.",
+      "✅ Correcto. La COLECOLITIASIS (litiasis del colédoco) puede producir obstrucción mecánica de la vía biliar y manifestarse con VESÍCULA PALPABLE o visible, junto con ictericia y coluria.",
+      "❌ Incorrecto. La hepatomegalia es un signo (aumento del hígado), no una enfermedad que curse con vesícula palpable por obstrucción biliar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "dolor abdominal",
+      "pancreatitis",
+      "dolor sordo",
+      "semiología",
+      "abdomen"
+    ],
+    "enunciado": "¿Qué tipo de dolor abdominal sugiere una patología pancreática?",
+    "opcoes": [
+      "Dolor cólico",
+      "Dolor sordo",
+      "Dolor punzante",
+      "Dolor urente"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El dolor cólico es propio de vísceras huecas (cólico biliar, intestinal o renal), con exacerbaciones en ondas.",
+      "✅ Correcto. El dolor de la patología PANCREÁTICA es típicamente un DOLOR SORDO, continuo, profundo y persistente, localizado en epigastrio con irradiación a la espalda.",
+      "❌ Incorrecto. El dolor punzante es típico del pericardio o de la pleura (dolor de tipo pleurítico), no del páncreas.",
+      "❌ Incorrecto. El dolor urente (tipo ardor) es característico de la enfermedad ácido-péptica (gastritis, úlcera, reflujo), no de la patología pancreática."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "colestasis",
+      "prurito",
+      "síndrome",
+      "ictericia",
+      "hepatología"
+    ],
+    "enunciado": "¿Qué síntoma es característico del síndrome de colestasis intra o extrahepática?",
+    "opcoes": [
+      "Prurito",
+      "Fiebre",
+      "Anorexia",
+      "Artromialgias"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. El PRURITO es el síntoma característico de la colestasis, por el depósito de ácidos biliares en la piel; se acompaña de ictericia, coluria, acolia y xantelasmas.",
+      "❌ Incorrecto. La fiebre puede acompañar a la colangitis (cuando hay infección), pero no es el síntoma característico del síndrome de colestasis.",
+      "❌ Incorrecto. La anorexia es inespecífica y se observa en muchas hepatopatías, no es el dato distintivo de la colestasis.",
+      "❌ Incorrecto. Las artromialgias son propias de las hepatitis virales en su fase prodrómica, no de la colestasis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "astenia",
+      "debilidad",
+      "manifestación clínica",
+      "semiología",
+      "síndrome"
+    ],
+    "enunciado": "¿Cuál es la principal manifestación clínica de la astenia?",
+    "opcoes": [
+      "Debilidad generalizada",
+      "Palidez de piel y mucosas",
+      "Pérdida de memoria",
+      "Taquicardia"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La astenia es el síndrome caracterizado por la DEBILIDAD GENERALIZADA y la sensación de cansancio o falta de fuerzas, que disminuye el rendimiento físico e intelectual.",
+      "❌ Incorrecto. La palidez de piel y mucosas es un signo de la anemia, no la manifestación principal de la astenia.",
+      "❌ Incorrecto. La pérdida de memoria es un síntoma neurocognitivo, no la manifestación cardinal de la astenia.",
+      "❌ Incorrecto. La taquicardia es un signo autonómico que puede acompañar a la astenia (p. ej., en hipertiroidismo), pero no es su manifestación principal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "astenia",
+      "hipotálamo",
+      "etiopatogenia",
+      "estructuras cerebrales",
+      "semiología"
+    ],
+    "enunciado": "¿Qué estructuras cerebrales participan en la astenia según su etiopatogenia?",
+    "opcoes": [
+      "Cerebelo",
+      "Hipotálamo",
+      "Corteza cerebral",
+      "Bulbo raquídeo"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El cerebelo participa en el equilibrio y la coordinación motora, no en la génesis de la astenia.",
+      "✅ Correcto. Según la etiopatogenia, el HIPOTÁLAMO es la estructura clave en la astenia: regula la homeostasis energética, el apetito, el sueño y la respuesta al estrés, y su disfunción se asocia a la fatiga.",
+      "❌ Incorrecto. La corteza cerebral se asocia más a funciones cognitivas superiores que al estado de fatiga generalizada de la astenia.",
+      "❌ Incorrecto. El bulbo raquídeo controla funciones vitales (respiración, presión) y no interviene directamente en la astenia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "astenia",
+      "enfermedades médicas",
+      "enfermedades psiquiátricas",
+      "causas",
+      "semiología"
+    ],
+    "enunciado": "¿Qué tipo de enfermedades pueden causar astenia como parte de su cuadro clínico?",
+    "opcoes": [
+      "Únicamente enfermedades neuromusculares",
+      "Únicamente enfermedades endocrinas",
+      "Tanto enfermedades médicas como psiquiátricas",
+      "Únicamente enfermedades infecciosas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La astenia no es exclusiva de las enfermedades neuromusculares; también se ve en endocrinopatías, infecciones, anemias y trastornos psiquiátricos.",
+      "❌ Incorrecto. Las enfermedades endocrinas (hipo e hipertiroidismo, insuficiencia suprarrenal) causan astenia, pero no son las únicas.",
+      "✅ Correcto. La astenia puede ser causada TANTO por enfermedades MÉDICAS (infecciosas, endocrinas, hematológicas, oncológicas, neuromusculares) COMO por enfermedades PSIQUIÁTRICAS (depresión, ansiedad, trastornos de somatización).",
+      "❌ Incorrecto. Las enfermedades infecciosas causan astenia, pero no son la única etiología posible."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "pérdida de peso",
+      "definición",
+      "5%",
+      "10%",
+      "semiología"
+    ],
+    "enunciado": "¿Cómo se define la pérdida de peso corporal?",
+    "opcoes": [
+      "Descenso del 5% del peso corporal en un año",
+      "Descenso del 10% del peso corporal en un año",
+      "Descenso del 15% del peso corporal en un año",
+      "Descenso del 20% del peso corporal en un año"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Un descenso del 5% en un año no es el umbral que define la pérdida de peso clínicamente significativa según el texto.",
+      "✅ Correcto. La pérdida de peso corporal se define como el DESCENSO DEL 10% DEL PESO CORPORAL EN UN AÑO (o de forma más rápida en un período más corto), un dato clave para orientar el estudio etiológico.",
+      "❌ Incorrecto. El 15% es un descenso mayor que el umbral establecido para definir la pérdida de peso.",
+      "❌ Incorrecto. El 20% supera ampliamente el umbral que define la pérdida de peso."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "obesidad androide",
+      "índice cintura-cadera",
+      "ICG",
+      "hombres",
+      "semiología"
+    ],
+    "enunciado": "¿Qué índice se considera obesidad androide en hombres?",
+    "opcoes": [
+      "Mayor a 0.9",
+      "Mayor a 1",
+      "Menor a 0.85",
+      "Menor a 0.75"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Un índice mayor a 0,9 es el punto de corte de obesidad androide en MUJERES, no en hombres.",
+      "✅ Correcto. La obesidad androide (central, en 'manzana') en el HOMBRE se define por un índice cintura-cadera MAYOR A 1.",
+      "❌ Incorrecto. Menor a 0,85 corresponde al límite considerado normal o al patrón ginoide (periférico) en mujeres.",
+      "❌ Incorrecto. Menor a 0,75 es un valor propio del patrón ginoide, no de la obesidad androide."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "alcoholismo",
+      "OMS",
+      "definición",
+      "gramos de alcohol",
+      "adicción"
+    ],
+    "enunciado": "¿Cuál es la definición de alcoholismo según la OMS?",
+    "opcoes": [
+      "Ingestión diaria de más de 70 g de alcohol en mujeres",
+      "Ingestión diaria de más de 50 g de alcohol en hombres",
+      "Ingestión diaria de más de 100 g de alcohol en mujeres",
+      "Ingestión diaria de más de 90 g de alcohol en hombres"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Más de 70 g diarios en mujeres no es el valor de la definición; el umbral femenino es menor que el masculino.",
+      "✅ Correcto. La OMS define el alcoholismo como la INGESTIÓN DIARIA DE MÁS DE 50 g DE ALCOHOL en el hombre (y valores menores en la mujer), además del consumo compulsivo y los problemas asociados.",
+      "❌ Incorrecto. Más de 100 g diarios en mujeres supera ampliamente el umbral de la definición.",
+      "❌ Incorrecto. Más de 90 g diarios en hombres es mayor que los 50 g que establece la definición de la OMS."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "alcohol",
+      "glúcidos",
+      "gluconeogénesis",
+      "utilización de glucosa",
+      "hipoglucemia"
+    ],
+    "enunciado": "¿Cuál es el efecto principal del alcohol en el metabolismo de los glúcidos?",
+    "opcoes": [
+      "Estimula la gluconeogénesis hepática",
+      "Inhibe la utilización periférica de glucosa",
+      "Disminuye la actividad de la fosforilasa",
+      "Incrementa la actividad de la UDP-glucosa isomerasa"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El alcohol INHIBE la gluconeogénesis hepática (por el aumento de NADH que bloquea la conversión del lactato y del glicerol), no la estimula.",
+      "✅ Correcto. El efecto principal del alcohol en el metabolismo de los glúcidos es INHIBIR la UTILIZACIÓN PERIFÉRICA de la GLUCOSA (y además reducir la gluconeogénesis), lo que contribuye a la hipoglucemia del alcohólico.",
+      "❌ Incorrecto. La actividad de la fosforilasa (glucogenólisis) no es el blanco principal del efecto del alcohol sobre los glúcidos.",
+      "❌ Incorrecto. La UDP-glucosa isomerasa no es una enzima relevante en el efecto del alcohol sobre el metabolismo de los hidratos de carbono."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "etanol",
+      "lípidos",
+      "cetogénesis",
+      "triacilgliceroles",
+      "hígado graso"
+    ],
+    "enunciado": "¿Qué efecto tiene la ingesta prolongada de etanol en el metabolismo de los lípidos?",
+    "opcoes": [
+      "Disminuye la producción de triacilgliceroles",
+      "Aumenta la concentración hepática de oxalacetato",
+      "Favorece la cetogénesis",
+      "Inhibe la formación de cuerpos cetónicos"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El etanol AUMENTA la producción de triacilgliceroles hepáticos (favorece la esteatosis o 'hígado graso'), no la disminuye.",
+      "❌ Incorrecto. El etanol reduce el oxalacetato disponible (desviado hacia lactato y aminoácidos), no lo aumenta.",
+      "✅ Correcto. La ingesta prolongada de etanol FAVORECE LA CETOGÉNESIS: el aumento de NADH desvía la acetil-CoA hacia la formación de cuerpos cetónicos (cetoacidosis alcohólica).",
+      "❌ Incorrecto. El etanol no inhibe la formación de cuerpos cetónicos; al contrario, la favorece."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "cocaína",
+      "sistema cardiovascular",
+      "hipertensión",
+      "vasoconstricción",
+      "efecto"
+    ],
+    "enunciado": "¿Qué efecto tiene la cocaína en el sistema cardiovascular?",
+    "opcoes": [
+      "Produce vasodilatación periférica",
+      "Disminuye la agregación plaquetaria",
+      "Incrementa la liberación de dopamina en el cerebro",
+      "Provoca hipertensión y vasoconstricción periférica"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La cocaína provoca VASOCONSTRICCIÓN periférica (bloqueo de la recaptación de catecolaminas), nunca vasodilatación.",
+      "❌ Incorrecto. La cocaína aumenta la agregación plaquetaria (riesgo trombótico), no la disminuye.",
+      "❌ Incorrecto. El aumento de dopamina en el cerebro es el efecto sobre el sistema nervioso central, no el efecto cardiovascular.",
+      "✅ Correcto. En el sistema cardiovascular, la cocaína PROVOCA HIPERTENSIÓN y VASOCONSTRICCIÓN PERIFÉRICA (por el exceso de noradrenalina y adrenalina), lo que puede producir taquicardia, isquemia e infarto."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "metanfetamina",
+      "serotonina",
+      "sistema nervioso central",
+      "efecto",
+      "anfetamina"
+    ],
+    "enunciado": "¿Cuál es el efecto principal de la metanfetamina en el sistema nervioso central?",
+    "opcoes": [
+      "Reducción del flujo sanguíneo cerebral",
+      "Inhibición de la neurotransmisión glutamatérgica",
+      "Incremento de la liberación de serotonina",
+      "Producción de crisis comiciales"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La metanfetamina no reduce el flujo sanguíneo cerebral como efecto principal; su acción central es fundamentalmente sobre los neurotransmisores monoamínicos.",
+      "❌ Incorrecto. La metanfetamina no inhibe la neurotransmisión glutamatérgica; actúa potenciando la transmisión monoaminérgica.",
+      "✅ Correcto. El efecto principal de la metanfetamina en el SNC es el INCREMENTO de la liberación de SEROTONINA (y de dopamina y noradrenalina) en las terminales nerviosas, lo que genera euforia, hiperactividad y psicosis.",
+      "❌ Incorrecto. Las crisis comiciales pueden ser una complicación del abuso, pero no son el efecto principal sobre el SNC."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "marihuana",
+      "cannabis",
+      "sistema respiratorio",
+      "moco",
+      "efecto agudo"
+    ],
+    "enunciado": "¿Cuál es el efecto agudo principal de fumar marihuana en el sistema respiratorio?",
+    "opcoes": [
+      "Broncodilatación",
+      "Incremento de la producción de moco",
+      "Reducción de la frecuencia cardiaca",
+      "Mejora de la coordinación motora"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Fumar marihuana produce broncodilatación aguda leve y transitoria, pero ese no es el efecto principal sobre las vías respiratorias.",
+      "✅ Correcto. El efecto agudo principal de fumar marihuana en el sistema respiratorio es el INCREMENTO DE LA PRODUCCIÓN DE MOCO y la irritación bronquial, con bronquitis crónica a largo plazo.",
+      "❌ Incorrecto. La marihuana produce aumento de la frecuencia cardíaca (taquicardia), no su reducción.",
+      "❌ Incorrecto. La marihuana afecta negativamente la coordinación motora (enlentece los reflejos), no la mejora."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "tabaquismo",
+      "embarazo",
+      "hipoxia fetal",
+      "RCIU",
+      "tabaco"
+    ],
+    "enunciado": "¿Cuál es el efecto del tabaquismo materno durante el embarazo?",
+    "opcoes": [
+      "Disminuye el riesgo de abortos espontáneos",
+      "Aumenta el flujo sanguíneo a la placenta",
+      "Provoca hipoxia fetal y retraso del crecimiento intrauterino",
+      "Mejora el desarrollo neurológico del feto"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El tabaquismo materno AUMENTA el riesgo de abortos espontáneos, parto prematuro y muerte fetal, no lo disminuye.",
+      "❌ Incorrecto. La nicotina produce vasoconstricción de los vasos placentarios y DISMINUYE el flujo sanguíneo placentario.",
+      "✅ Correcto. El tabaquismo materno PROVOCA HIPOXIA FETAL y RETRASO DEL CRECIMIENTO INTRAUTERINO, por el monóxido de carbono y la vasoconstricción placentaria que reducen la oxigenación del feto.",
+      "❌ Incorrecto. El tabaco perjudica el desarrollo neurológico del feto; no lo mejora."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "heroína",
+      "piel",
+      "abscesos",
+      "abuso",
+      "complicación"
+    ],
+    "enunciado": "¿Cuál es una complicación común asociada al abuso de heroína en la piel?",
+    "opcoes": [
+      "Abscesos",
+      "Amiloidosis",
+      "Granulomas de cuerpo extraño",
+      "Glomeruloesclerosis focal"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La complicación cutánea más común del abuso de heroína (inyectada por vía parenteral) son los ABSCESOS en los sitios de inyección, por la infección bacteriana secundaria.",
+      "❌ Incorrecto. La amiloidosis (depósito de proteína amiloide) es una complicación sistémica de la adicción a opiáceos, no una complicación específicamente cutánea.",
+      "❌ Incorrecto. Los granulomas de cuerpo extraño se asocian a la adicción intravenosa cuando se inyectan sustancias contaminantes o excipientes, pero no es la complicación cutánea más común.",
+      "❌ Incorrecto. La glomeruloesclerosis focal es una complicación renal de algunos consumos intravenosos, no una complicación de la piel."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": [
+      "cannabinoide endógeno",
+      "sistema endocrino",
+      "receptores CB",
+      "endocannabinoides",
+      "efecto"
+    ],
+    "enunciado": "¿Qué sistema del cuerpo humano se ve afectado por el sistema cannabinoide endógeno?",
+    "opcoes": [
+      "Sistema cardiovascular",
+      "Sistema respiratorio",
+      "Sistema nervioso central",
+      "Sistema endocrino"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El sistema cardiovascular recibe influencia de los cannabinoides (taquicardia, hipotensión), pero el sistema directamente modulado por el sistema endocannabinoide según el texto es el endocrino.",
+      "❌ Incorrecto. El sistema respiratorio no es el sistema blanco principal del sistema cannabinoide endógeno.",
+      "❌ Incorrecto. Aunque los receptores CB1 son abundantes en el SNC, la respuesta esperada según el texto señala el sistema endocrino.",
+      "✅ Correcto. Según el texto, el sistema endógeno canabinoide (receptores CB1 y CB2 y sus ligandos endógenos) afecta principalmente al SISTEMA ENDOCRINO, modulando la secreción hormonal (eje hipotálamo-hipófisis)."
+    ]
+  }
+]

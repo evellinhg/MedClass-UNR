@@ -1,0 +1,382 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "Los cornetes ubicados en las fosas nasales intervienen en:",
+    "opcoes": [
+      "Humedecer el aire inspirado",
+      "Calentar el aire inspirado debido a la turbulencia que generan",
+      "Ambas son correctas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (los cornetes, al aumentar la superficie mucosa expuesta, contribuyen a humedecer el aire inspirado), pero incompleta como respuesta.",
+      "Es una afirmación correcta en sí misma (la turbulencia generada por los cornetes favorece el contacto del aire con la mucosa vascularizada, calentándolo), pero incompleta como respuesta.",
+      "Correcta. Los cornetes nasales, al generar turbulencia en el flujo aéreo y aumentar la superficie de contacto con la mucosa nasal (muy vascularizada y con secreción mucosa), cumplen la doble función de calentar y humedecer el aire inspirado antes de que llegue a la vía aérea inferior."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "El complejo I de la cadena respiratoria mitocondrial:",
+    "opcoes": [
+      "Contiene FMN",
+      "Contiene FAD",
+      "Contiene centros de hierro-azufre",
+      "A+C",
+      "B+C"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). El complejo I (NADH deshidrogenasa) contiene efectivamente FMN (flavín mononucleótido) como grupo prostético.",
+      "Incorrecta. El FAD (flavín adenín dinucleótido) es el grupo prostético del complejo II (succinato deshidrogenasa), no del complejo I.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). El complejo I contiene, además del FMN, múltiples centros de hierro-azufre que participan en la transferencia de electrones.",
+      "Correcta. El complejo I de la cadena respiratoria contiene tanto FMN como centros de hierro-azufre, que en conjunto participan en la transferencia de electrones desde el NADH hacia la ubiquinona.",
+      "Incorrecta. El FAD no es un componente del complejo I (corresponde al complejo II), por lo que esta combinación es incorrecta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "Un paciente con diagnóstico previo de cardiopatía chagásica crónica concurre a la consulta con disnea a grandes esfuerzos, fatiga y nicturia. Señale cuál podría ser el hallazgo histopatológico más probable en sus pulmones:",
+    "opcoes": [
+      "Macrófagos cargados con moléculas de colesterol (células espumosas)",
+      "Ingurgitación capilar, edema (trasudado) intersticial y alveolar intenso",
+      "Tabiques interalveolares engrosados por ingurgitación capilar y fibrosis",
+      "Presencia abundante de fibrina y leucocitos en las luces alveolares"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. Los macrófagos cargados de colesterol (células espumosas) son característicos de las placas ateroscleróticas, no de la congestión pulmonar por insuficiencia cardíaca.",
+      "Correcta. La cardiopatía chagásica crónica puede evolucionar a insuficiencia cardíaca izquierda; el aumento retrógrado de la presión en el circuito pulmonar genera congestión pasiva aguda/subaguda, con ingurgitación de los capilares alveolares y edema (trasudado) intersticial y alveolar, hallazgo compatible con la clínica descripta (disnea, fatiga, nicturia).",
+      "Incorrecta. El engrosamiento de tabiques interalveolares por fibrosis junto con ingurgitación capilar es más característico de la congestión pasiva CRÓNICA de larga data (con hemosiderosis, 'células de la insuficiencia cardíaca'), un cuadro más avanzado que el descripto inicialmente en este paciente.",
+      "Incorrecta. La presencia de fibrina y leucocitos abundantes en las luces alveolares es característica de un proceso inflamatorio/infeccioso agudo (por ejemplo, neumonía), no de la congestión pasiva por insuficiencia cardíaca."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "El bronquio fuente derecho, comparado con el izquierdo, es:",
+    "opcoes": [
+      "Más horizontal",
+      "Más largo",
+      "Más vertical",
+      "De igual angulación",
+      "Más delgado"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. Es al revés: el bronquio fuente derecho es más vertical (menos horizontal) que el izquierdo respecto del eje de la tráquea.",
+      "Incorrecta. El bronquio fuente derecho es, en realidad, más corto que el izquierdo, no más largo.",
+      "Correcta. El bronquio fuente derecho es más corto, más ancho y más vertical (forma un ángulo menor con el eje traqueal) que el izquierdo, lo que explica por qué los cuerpos extraños aspirados tienden a alojarse con mayor frecuencia en el pulmón derecho.",
+      "Incorrecta. Los bronquios fuente derecho e izquierdo tienen angulaciones claramente distintas respecto de la tráquea, no similares.",
+      "Incorrecta. El bronquio fuente derecho es, en realidad, más ancho (de mayor calibre) que el izquierdo, no más delgado."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "Son características de las diarreas secretoras:",
+    "opcoes": [
+      "Volumen de heces menor a 1 L/día",
+      "La diarrea persiste a pesar del ayuno",
+      "El volumen de las heces es mayor a 1 L/día",
+      "A+B",
+      "B+C"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. Un volumen de heces menor a 1 L/día es más característico de la diarrea osmótica, no de la secretora, que puede alcanzar volúmenes mayores.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). En la diarrea secretora, al no depender de un soluto ingerido no absorbible, esta persiste a pesar del ayuno, a diferencia de la osmótica.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). La diarrea secretora puede alcanzar volúmenes mayores a 1 L/día (el ejemplo clásico es el cólera).",
+      "Incorrecta. Como el volumen de heces en la diarrea secretora no es característicamente menor a 1 L/día (opción A es falsa), esta combinación no es correcta.",
+      "Correcta. Las diarreas secretoras se caracterizan por persistir a pesar del ayuno (ya que no dependen de la ingesta de un soluto no absorbible) y por presentar habitualmente un volumen de heces mayor a 1 L/día, a diferencia de las diarreas osmóticas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "¿Cuál de los siguientes órganos se relaciona con la pleura en el mediastino posterior?",
+    "opcoes": [
+      "Esófago",
+      "Pericardio",
+      "Timo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El esófago es una estructura del mediastino posterior que se relaciona con la pleura mediastínica en su trayecto torácico.",
+      "Incorrecta. El pericardio y el corazón son estructuras del mediastino medio, no del posterior.",
+      "Incorrecta. El timo es una estructura del mediastino anterior (o superior), no del posterior."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "histologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "La mucosa del aparato respiratorio (tráquea y bronquios) presenta un epitelio:",
+    "opcoes": [
+      "Pseudoestratificado cilíndrico ciliado con células caliciformes",
+      "Cilíndrico simple con células caliciformes y microvellosidades",
+      "Estratificado plano"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La mucosa de la tráquea y los bronquios está revestida por epitelio pseudoestratificado cilíndrico ciliado con células caliciformes, característico de la vía aérea de conducción, que participa en la depuración mucociliar.",
+      "Incorrecta. El epitelio cilíndrico simple con microvellosidades es más característico de otras mucosas (como la intestinal), no del árbol traqueobronquial.",
+      "Incorrecta. El epitelio estratificado plano (escamoso) es característico de mucosas sometidas a fricción (como el esófago o la cavidad oral), no del árbol traqueobronquial normal; su aparición allí correspondería a una metaplasia patológica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "El tabique nasal está formado por:",
+    "opcoes": [
+      "Cartílago del tabique, etmoides y vómer",
+      "Cartílago del tabique y etmoides",
+      "Cartílago del tabique y hueso palatino"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El tabique nasal está constituido por el cartílago septal (cartílago del tabique) en su porción anterior, y por la lámina perpendicular del etmoides y el vómer en su porción posterior/ósea.",
+      "Incorrecta. Esta descripción es incompleta: omite al vómer, que junto con la lámina perpendicular del etmoides forma la porción ósea posterior del tabique nasal.",
+      "Incorrecta. El hueso palatino no forma parte del tabique nasal; contribuye al paladar duro y a la pared lateral de la fosa nasal, no a la formación del tabique."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "Mencione la única opción que produce un aumento de la resistencia bronquial:",
+    "opcoes": [
+      "Disminución del radio bronquial",
+      "Disminución de la longitud de la vía aérea",
+      "Disminución de la presión alveolar"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Según la ley de Poiseuille, la resistencia al flujo de un conducto es inversamente proporcional a la cuarta potencia de su radio; por lo tanto, una disminución del radio bronquial (broncoconstricción) provoca un marcado aumento de la resistencia bronquial.",
+      "Incorrecta. Es al revés: la resistencia es directamente proporcional a la longitud del conducto, por lo que una disminución de la longitud de la vía aérea disminuiría, no aumentaría, la resistencia.",
+      "Incorrecta. La presión alveolar no es un determinante directo de la resistencia bronquial según la ecuación de resistencia de la vía aérea; el determinante principal es el radio de la vía aérea."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "fisiologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "En una respiración en reposo de un individuo normal:",
+    "opcoes": [
+      "El régimen de flujo aéreo es laminar",
+      "El régimen de flujo aéreo se caracteriza por líneas de corriente entrecruzadas",
+      "El régimen de flujo aéreo es turbulento"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. En condiciones de reposo, con bajas velocidades de flujo, el aire circula por la vía aérea de conducción predominantemente en régimen laminar (líneas de corriente paralelas y ordenadas).",
+      "Incorrecta. Un régimen con líneas de corriente entrecruzadas describe más bien un flujo de transición, que se observa a mayores velocidades de flujo (por ejemplo, durante el ejercicio), no en la respiración de reposo normal.",
+      "Incorrecta. El flujo turbulento se produce a altas velocidades de flujo aéreo o en zonas de bifurcación/obstrucción de la vía aérea (por ejemplo, durante el ejercicio intenso o en la vía aérea superior), no característicamente durante la respiración tranquila de reposo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "En la respuesta vascular de la inflamación intervienen mediadores químicos de origen CELULAR, como:",
+    "opcoes": [
+      "Bradiquinina",
+      "Prostaglandinas",
+      "Fracciones del complemento",
+      "Elementos de la hemostasia",
+      "Ninguno de los anteriores"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. La bradicinina es un mediador de origen PLASMÁTICO (derivado del cininógeno por acción de la calicreína), no celular.",
+      "Correcta. Las prostaglandinas son mediadores químicos de origen CELULAR, sintetizadas a partir del ácido araquidónico de la membrana de células como mastocitos, plaquetas y leucocitos, e intervienen en la respuesta vascular de la inflamación (vasodilatación, entre otros efectos).",
+      "Incorrecta. Las fracciones del complemento son mediadores de origen PLASMÁTICO (sistema de proteínas plasmáticas), no celular.",
+      "Incorrecta. Los elementos del sistema de la hemostasia (cascada de coagulación, sistema fibrinolítico) son mediadores de origen PLASMÁTICO, no celular.",
+      "Incorrecta. Sí existe una opción correcta entre las anteriores (las prostaglandinas)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "Lo que diferencia fisicoquímicamente a un exudado de un trasudado es principalmente:",
+    "opcoes": [
+      "Su densidad (peso específico), que en el trasudado es característicamente baja (menor a 1010-1015)",
+      "La presencia de solutos de bajo peso molecular",
+      "La presencia de células que han migrado",
+      "La ausencia de ultrafiltrado del plasma",
+      "El descenso de la presión hidrostática por pasaje de proteínas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El parámetro fisicoquímico clásico que diferencia un trasudado de un exudado es la densidad o peso específico del líquido: el trasudado, al ser pobre en proteínas, tiene una densidad baja (habitualmente menor a 1010-1015), mientras que el exudado, rico en proteínas, presenta una densidad mayor.",
+      "Incorrecta. La presencia de solutos de bajo peso molecular no es el criterio fisicoquímico clásico utilizado para diferenciar exudado de trasudado; ambos pueden contener solutos de bajo peso molecular de forma similar, dado que estos difunden libremente independientemente del grado de permeabilidad vascular.",
+      "Incorrecta. La presencia de células migradas es un criterio más bien citológico/morfológico que fisicoquímico; el trasudado también puede contener algunas células, aunque en menor cantidad.",
+      "Incorrecta. Tanto el trasudado como el exudado derivan, en última instancia, de un proceso de filtración/pasaje desde el compartimento vascular; no es correcto afirmar que el trasudado carezca por completo de relación con el ultrafiltrado plasmático.",
+      "Incorrecta. Esta descripción invierte la relación fisiopatológica esperada y no constituye el criterio fisicoquímico clásico (densidad) utilizado para diferenciar ambos tipos de líquido."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "El rodamiento (rolling) leucocitario es favorecido por la intervención de selectinas endoteliales. ¿Cuál/es de las siguientes son selectinas?",
+    "opcoes": [
+      "L-selectina",
+      "PECAM-1",
+      "ICAM-1",
+      "E-selectina",
+      "A+D (L-selectina y E-selectina)"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (la L-selectina es efectivamente una selectina, expresada en el leucocito), pero incompleta como respuesta, ya que la E-selectina endotelial también participa en el rodamiento.",
+      "Incorrecta. El PECAM-1 (CD31) es una molécula de la superfamilia de las inmunoglobulinas, involucrada principalmente en la transmigración (diapédesis), no una selectina.",
+      "Incorrecta. El ICAM-1 es una molécula de adhesión de la superfamilia de las inmunoglobulinas, que media la adhesión firme (uniéndose a integrinas leucocitarias), no el rodamiento, y no es una selectina.",
+      "Es una afirmación correcta en sí misma (la E-selectina, expresada en el endotelio activado, participa en el rodamiento), pero incompleta como respuesta, ya que la L-selectina leucocitaria también interviene.",
+      "Correcta. Tanto la L-selectina (expresada en el leucocito) como la E-selectina (expresada en el endotelio activado) son selectinas que median las interacciones de baja afinidad responsables del fenómeno de rodamiento leucocitario, a diferencia de PECAM-1 e ICAM-1, que pertenecen a otra familia molecular y actúan en etapas posteriores de la extravasación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "El proceso inflamatorio del parénquima pulmonar que cursa con consolidación exudativa, focal o multifocal, se denomina:",
+    "opcoes": [
+      "Bronquiolitis aguda",
+      "Neumonitis intersticial o atípica",
+      "Empiema",
+      "Neumonía"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. La bronquiolitis aguda es un proceso inflamatorio centrado en los bronquiolos, típico de lactantes (habitualmente por VSR), y no se define por la consolidación exudativa del parénquima pulmonar.",
+      "Incorrecta. La neumonitis intersticial o atípica se caracteriza por un infiltrado predominantemente intersticial (no alveolar/exudativo), a diferencia de la consolidación exudativa descripta.",
+      "Incorrecta. El empiema es la acumulación de pus en el espacio pleural, no un proceso de consolidación del parénquima pulmonar en sí.",
+      "Correcta. La neumonía se define como el proceso inflamatorio del parénquima pulmonar que cursa con consolidación exudativa (llenado de los espacios alveolares con exudado inflamatorio), de distribución focal o multifocal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "En la división topográfica del abdomen, las líneas verticales de referencia corresponden clásicamente a:",
+    "opcoes": [
+      "Línea axilar anterior",
+      "Línea hemiclavicular (medioclavicular)",
+      "Línea paraesternal"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una línea vertical real utilizada en topografía torácica/abdominal, pero no es la línea vertical de referencia más clásicamente utilizada para dividir el abdomen en las nueve regiones estándar.",
+      "Correcta. La línea hemiclavicular (o medioclavicular), trazada desde el punto medio de la clavícula, es la línea vertical de referencia clásicamente utilizada (a ambos lados) para la división topográfica del abdomen en nueve regiones.",
+      "Es una línea vertical real utilizada en topografía torácica, pero no es la línea de referencia clásicamente empleada para la división topográfica estándar del abdomen en nueve regiones."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "anatomia"
+    ],
+    "enunciado": "La disnea de causa cardíaca puede presentarse como:",
+    "opcoes": [
+      "Ortopnea",
+      "Disnea paroxística nocturna",
+      "Ambas son correctas"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (la ortopnea, disnea que aparece o empeora en decúbito y mejora al sentarse, es una manifestación clásica de disnea cardíaca), pero incompleta como respuesta.",
+      "Es una afirmación correcta en sí misma (la disnea paroxística nocturna, que despierta al paciente por la noche, es otra manifestación clásica de disnea cardíaca), pero incompleta como respuesta.",
+      "Correcta. Tanto la ortopnea como la disnea paroxística nocturna son formas clásicas de presentación de la disnea de causa cardíaca, ambas relacionadas con la redistribución de líquido hacia el circuito pulmonar en decúbito, típica de la insuficiencia cardíaca izquierda."
+    ]
+  }
+]

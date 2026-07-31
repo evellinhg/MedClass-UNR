@@ -1,0 +1,442 @@
+[
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": ["uretritis", "gonorrea", "gota matinal", "secreción uretral"],
+    "enunciado": "En el caso de Cristian, la secreción amarillenta por la uretra que se presenta con más abundancia al levantarse (gota matinal) orienta el diagnóstico hacia:",
+    "opcoes": [
+      "Uretritis por Chlamydia trachomatis",
+      "Uretritis gonocócica por Neisseria gonorrhoeae",
+      "Infección por virus del herpes simple (VHS)",
+      "Candidiasis genital"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. La gota matinal (secreción purulenta amarillenta al despertar) es el síntoma clásico de la uretritis gonocócica. La clamidia suele dar secreción más escasa y mucoide, y con frecuencia es oligosintomática.",
+      "✅ Correcta. La secreción purulenta amarillenta que se hace evidente al levantarse (gota matinal) es la manifestación típica de la uretritis gonocócica por Neisseria gonorrhoeae. El diagnóstico se confirma con el Gram de la secreción (diplococos Gram negativos intracelulares) o con cultivo/PCR.",
+      "❌ Incorrecta. El herpes genital se caracteriza por vesículas dolorosas sobre base eritematosa que luego se ulceran, asociadas a dolor y ardor; no produce gota matinal.",
+      "❌ Incorrecta. La candidiasis genital en el varón (balanitis candidiásica) cursa con prurito, eritema y placas blanquecinas; no da secreción uretral purulenta."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis", "chancro", "chancro sifilítico", "úlcera genital"],
+    "enunciado": "La lesión ulcerada, indolora, de bordos netos y fondo limpio que Cristian presenta en el surco balano-prepucial corresponde típicamente a:",
+    "opcoes": [
+      "Chancro blando (chancroide) por Haemophilus ducreyi",
+      "Chancro sifilítico (chancro duro) por Treponema pallidum",
+      "Vesícula ulcerada de herpes genital",
+      "Linfogranuloma venéreo por Chlamydia trachomatis"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El chancro blando es doloroso, de fondo sucio (necrótico, purulento), bordos irregulares y se asocia a adenopatía inguinal dolorosa y supurativa. La lesión de Cristian es indolora, limpia y de bordos netos, característica opuesta.",
+      "✅ Correcta. El chancro sifilítico (chancro duro) es una úlcera generalmente única, indolora, de bordos netos y fondo limpio, que aparece 3-4 semanas después del contagio; es la lesión de la sífilis primaria. La coexistencia con la uretritis gonocócica hace muy probable la coinfección por T. pallidum y N. gonorrhoeae.",
+      "❌ Incorrecta. El herpes genital comienza con vesículas dolorosas sobre base eritematosa que luego se rompen formando úlceras superficiales y dolorosas; la lesión de Cristian es indolora, lo que no es compatible.",
+      "❌ Incorrecta. El linfogranuloma venéreo produce una lesión inicial pequeña e indolora poco llamativa (pápula/úlcera), seguida de linfadenopatía inguinal dolorosa y supurativa (bubón). La presentación de Cristian es típica del chancro sifilítico."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis", "campo oscuro", "diagnóstico", "Treponema pallidum"],
+    "enunciado": "La confirmación diagnóstica de la sífilis primaria en una lesión como la de Cristian se realiza mediante:",
+    "opcoes": [
+      "Cultivo de la lesión en agar de Thayer-Martin",
+      "Microscopía de campo oscuro del exudado de la lesión",
+      "Prueba rápida de antígeno en orina",
+      "Urocultivo"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecta. El agar de Thayer-Martin es el medio para aislar Neisseria gonorrhoeae (cultivo de la secreción uretral), no sirve para T. pallidum, que no se cultiva en medios convencionales.",
+      "✅ Correcta. En la sífilis primaria el diagnóstico de certeza se realiza observando los espiroquetas móviles (Treponema pallidum) al microscopio de campo oscuro en el exudado del chancro. Las serologías pueden ser negativas al inicio (período de ventana).",
+      "❌ Incorrecta. Las pruebas rápidas de antígeno en orina se usan para otras infecciones (p. ej. PCR de clamidia/gonococo), no para el diagnóstico del chancro sifilítico.",
+      "❌ Incorrecta. El urocultivo evalúa infecciones urinarias bacterianas; no tiene utilidad en el diagnóstico de la sífilis."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis", "serología", "VDRL", "RPR", "FTA-ABS"],
+    "enunciado": "Sobre las pruebas serológicas para el diagnóstico de sífilis, es correcto afirmar que:",
+    "opcoes": [
+      "Las pruebas no treponémicas (VDRL, RPR) detectan anticuerpos contra los lipoides liberados por el tejido dañado y se utilizan para el seguimiento del tratamiento",
+      "Las pruebas treponémicas (FTA-ABS, TPHA) se vuelven negativas tras el tratamiento exitoso",
+      "El VDRL suele positivizarse en la primera semana tras la aparición del chancro",
+      "La serología es siempre positiva desde el momento de la infección"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. VDRL y RPR son pruebas no treponémicas que detectan anticuerpos anticardiolipina (reaginas) liberados por la lesión tisular; sirven para tamizaje y, como el título se relaciona con la actividad de la enfermedad, para el seguimiento del tratamiento.",
+      "❌ Incorrecta. Las pruebas treponémicas (FTA-ABS, TPHA) quedan positivas de por vida, incluso después de un tratamiento adecuado; por eso no sirven para evaluar la respuesta al tratamiento, solo confirman el contacto con el treponema.",
+      "❌ Incorrecta. La serología no treponémica suele tardar 1 a 4 semanas después del chancro en positivizarse (período de ventana); por eso en la sífilis primaria temprana la serología puede ser negativa y el diagnóstico se confirma por campo oscuro.",
+      "❌ Incorrecta. Existe un período de ventana: las pruebas serológicas pueden ser negativas en las primeras semanas de la infección (sífilis primaria temprana)."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia",
+    "tags": ["gonorrea", "tratamiento", "ceftriaxona", "uretritis"],
+    "enunciado": "El tratamiento de elección de la uretritis gonocócica no complicada en un paciente como Cristian es:",
+    "opcoes": [
+      "Ceftriaxona 500 mg IM en dosis única (habitualmente asociada a azitromicina o doxiciclina por la frecuente coinfección con clamidia)",
+      "Amoxicilina 1 g VO cada 8 horas por 7 días",
+      "Metronidazol 500 mg VO cada 12 horas por 7 días",
+      "Fluconazol 150 mg VO en dosis única"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La gonorrea no complicada se trata con ceftriaxona 500 mg IM en dosis única. Como la coinfección con Chlamydia trachomatis es frecuente, las guías recomiendan asociar azitromicina 1 g VO (o doxiciclina 100 mg VO c/12 h por 7 días).",
+      "❌ Incorrecta. Neisseria gonorrhoeae es resistente a las penicilinas/amoxicilina por producción de betalactamasa; ese esquema no tiene actividad clínica contra el gonococo.",
+      "❌ Incorrecta. El metronidazol es antiparasitario/antianaerobio (tricomoniasis, vaginosis, giardiasis, abscesos) y no tiene actividad contra N. gonorrhoeae.",
+      "❌ Incorrecta. El fluconazol es un antifúngico usado en candidiasis; no tiene actividad contra la gonorrea."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia",
+    "tags": ["sífilis", "penicilina benzatina", "tratamiento", "sífilis precoz"],
+    "enunciado": "Para la sífilis primaria o secundaria (sífilis precoz), el tratamiento de elección es:",
+    "opcoes": [
+      "Penicilina G benzatina 2.400.000 UI IM en dosis única",
+      "Ceftriaxona 1 g EV cada 24 horas por 14 días",
+      "Doxiciclina 100 mg VO cada 12 horas por 30 días",
+      "Aciclovir 400 mg VO cada 8 horas por 10 días"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La sífilis precoz (primaria, secundaria o latente de menos de 1 año) se trata con penicilina G benzatina 2.400.000 UI IM en dosis única. Sigue siendo el fármaco de elección, salvo alergia confirmada.",
+      "❌ Incorrecta. La ceftriaxona puede ser una alternativa en casos seleccionados, pero no es el tratamiento de elección de la sífilis precoz; el esquema estándar es penicilina benzatina en dosis única.",
+      "❌ Incorrecta. La doxiciclina es una alternativa para la sífilis precoz en alérgicos a la penicilina (100 mg VO c/12 h por 14 días), no el tratamiento de elección. El esquema prolongado corresponde a la sífilis tardía.",
+      "❌ Incorrecta. El aciclovir es un antiviral contra el herpes; no tiene actividad contra Treponema pallidum."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia",
+    "tags": ["sífilis", "Jarisch-Herxheimer", "reacción", "penicilina"],
+    "enunciado": "Si horas después de aplicar la primera dosis de penicilina benzatina Cristian presenta fiebre, cefalea y mialgias, lo más probable es que se trate de:",
+    "opcoes": [
+      "Reacción de Jarisch-Herxheimer, reacción autolimitada por la lisis masiva de treponemas",
+      "Anafilaxia a la penicilina",
+      "Resistencia del treponema a la penicilina",
+      "Sobredosis de penicilina"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La reacción de Jarisch-Herxheimer aparece 2-24 h tras la primera dosis de un antibiótico treponemicida por la liberación masiva de antígenos de los treponemas lisados; cursa con fiebre, cefalea y mialgias y es autolimitada. No se suspende el tratamiento; se maneja con antipiréticos.",
+      "❌ Incorrecta. La anafilaxia cursa con urticaria, broncoespasmo, hipotensión y compromiso respiratorio en minutos (inmediata); no se manifiesta solo con fiebre y mialgias a las horas.",
+      "❌ Incorrecta. T. pallidum no presenta resistencia clínica relevante a la penicilina; además, la fiebre y las mialgias posteriores a la dosis no indican resistencia.",
+      "❌ Incorrecta. La penicilina benzatina en dosis única estándar no produce un cuadro de 'sobredosis' con fiebre y mialgias; la descripción corresponde a la reacción de Jarisch-Herxheimer."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": ["ITS", "VIH", "testeo", "prevención"],
+    "enunciado": "En la consulta de Cristian, además de tratar la ETS, la conducta correcta es:",
+    "opcoes": [
+      "Ofrecer testeo de VIH y otras ITS (hepatitis B/C), por compartir vías de transmisión",
+      "No indicar estudios porque ya tuvo gonorrea antes",
+      "Solo tratar al paciente y no preguntar por sus parejas",
+      "Indicar tratamiento solo si el paciente vuelve con síntomas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Toda persona con una ITS debe ser testada para VIH y otras ITS (hepatitis B y C), porque comparten la vía de transmisión sexual y las conductas de riesgo. El testeo de VIH debe ofrecerse siempre y ser consentido.",
+      "❌ Incorrecta. Haber tenido gonorrea no genera inmunidad protectora ni descarta otras ITS; la reinfección y la coinfección son frecuentes, por lo que el testeo es imprescindible.",
+      "❌ Incorrecta. El rastreo y tratamiento de las parejas sexuales es parte fundamental del control de las ITS (evita la reinfección y corta la cadena de transmisión).",
+      "❌ Incorrecta. El tratamiento debe indicarse en la primera consulta; esperar a que reaparezcan los síntomas permite la progresión y la transmisión a terceros."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": ["ITS", "rastreo de contactos", "parejas", "prevención"],
+    "enunciado": "Sobre el manejo de las parejas sexuales de un paciente con gonorrea/sífilis, es correcto:",
+    "opcoes": [
+      "Las parejas sexuales recientes deben ser examinadas, testadas y tratadas, aunque estén asintomáticas",
+      "No hace falta tratarlas si están asintomáticas",
+      "Solo se trata a las parejas si presentan síntomas evidentes",
+      "El tratamiento de la pareja se decide únicamente por el médico de la pareja"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Las parejas sexuales de los últimos 60 días (o la última pareja) deben ser evaluadas y tratadas aunque estén asintomáticas, porque una proporción importante cursa en forma asintomática y la reinfección es la causa más común de recurrencia.",
+      "❌ Incorrecta. Muchas ITS (en especial clamidia, gonorrea y sífilis latente) pueden ser asintomáticas; la ausencia de síntomas no excluye la infección ni la posibilidad de transmitirla.",
+      "❌ Incorrecta. Esperar a que aparezcan síntomas retrasa el control de la cadena de transmisión; el tratamiento presuntivo de los contactos asintomáticos es la conducta correcta.",
+      "❌ Incorrecta. El médico que atiende al paciente debe coordinar el estudio y tratamiento del contacto; aunque la pareja deba consultar, la estrategia de tratamiento presuntivo es válida para cortar la transmisión."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": ["gonorrea", "complicaciones", "epididimitis"],
+    "enunciado": "Una complicación de la uretritis gonocócica no tratada o mal tratada en el varón es:",
+    "opcoes": [
+      "Epididimitis",
+      "Enfermedad inflamatoria pélvica (EIP)",
+      "Carcinoma de pene",
+      "Cirrosis hepática"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La extensión del gonococo desde la uretra puede producir prostatitis, epididimitis y estenosis uretral; la epididimitis es una complicación clásica de la uretritis gonocócica no tratada.",
+      "❌ Incorrecta. La EIP es una complicación de las ITS en la mujer (salpingitis, anexitis, peritonitis pélvica), no en el varón con uretritis gonocócica.",
+      "❌ Incorrecta. El carcinoma de pene no es una complicación de la gonorrea; se asocia a infección por VPH, esmegma y tabaquismo, y tiene evolución prolongada.",
+      "❌ Incorrecta. La cirrosis hepática se asocia a hepatitis virales crónicas (B/C) y consumo de alcohol, no a la uretritis gonocócica."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis secundaria", "exantema", "condiloma lata", "clínica"],
+    "enunciado": "Si la sífilis de Cristian no se trata y progresa a sífilis secundaria, es esperable encontrar:",
+    "opcoes": [
+      "Exantema maculopapular generalizado que afecta palmas y plantas, condilomas planos (condiloma lata) y adenopatías generalizadas",
+      "Úlceras genitales múltiples y dolorosas",
+      "Goma y compromiso cardiovascular y neurológico",
+      "Ausencia total de manifestaciones clínicas"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La sífilis secundaria (4-10 semanas tras la infección) se manifiesta con exantema maculopapular diseminado que típicamente afecta palmas y plantas, condiloma lata (pápulas húmedas anogenitales), alopecia en 'clareira' y poliadénopatía.",
+      "❌ Incorrecta. Las úlceras genitales múltiples y dolorosas corresponden al herpes genital o al chancro blando; en la sífilis secundaria predominan las lesiones cutáneas diseminadas, no úlceras dolorosas.",
+      "❌ Incorrecta. Las gomas y el compromiso cardiovascular (aortitis) y neurológico (neurosífilis) son manifestaciones de la sífilis terciaria/tardía, que aparece años después sin tratamiento.",
+      "❌ Incorrecta. La sífilis secundaria es sintomática (exantema, adenopatías); la etapa asintomática con serología positiva corresponde a la sífilis latente, que sigue a la fase secundaria."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "difícil",
+    "disciplina_base": "",
+    "tags": ["sífilis", "seguimiento", "VDRL", "control"],
+    "enunciado": "Para el seguimiento del tratamiento de la sífilis precoz, el control se realiza mediante:",
+    "opcoes": [
+      "VDRL/RPR seriado, esperando un descenso del título de al menos 4 veces (dos diluciones) en 6 a 12 meses",
+      "FTA-ABS seriado, esperando que se vuelva negativo",
+      "Repetición del campo oscuro a los 6 meses",
+      "Ningún control si el paciente está asintomático"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. El seguimiento se hace con pruebas no treponémicas (VDRL/RPR) a los 3, 6 y 12 meses; se considera respuesta adecuada un descenso de al menos 4 veces (dos diluciones) el título inicial en 6-12 meses en la sífilis precoz.",
+      "❌ Incorrecta. El FTA-ABS (prueba treponémica) permanece positivo de por vida aunque el tratamiento haya sido exitoso; no sirve para el seguimiento.",
+      "❌ Incorrecta. El campo oscuro solo es útil cuando hay lesión activa (chancro); no sirve como control de curación en la fase sin lesiones.",
+      "❌ Incorrecta. Aunque el paciente esté asintomático, es obligatorio el control serológico seriado para confirmar la respuesta al tratamiento y detectar reinfecciones o falla terapéutica."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["gonorrea", "Gram", "diplococos", "diagnóstico"],
+    "enunciado": "En el Gram de la secreción uretral de Cristian, el hallazgo que confirma la uretritis gonocócica es:",
+    "opcoes": [
+      "Diplococos Gram negativos intracelulares (dentro de los neutrófilos)",
+      "Bacilos Gram positivos en cadenas",
+      "Levaduras en gemación",
+      "Espiroquetas móviles"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. El hallazgo de diplococos Gram negativos intracelulares en el Gram de la secreción uretral del varón es altamente sugestivo de N. gonorrhoeae y permite el diagnóstico presuntivo en la consulta.",
+      "❌ Incorrecta. Los bacilos Gram positivos en cadenas sugieren otros gérmenes (estreptococos, corinebacterias), no el gonococo.",
+      "❌ Incorrecta. Las levaduras en gemación orientan a candidiasis, no a uretritis gonocócica.",
+      "❌ Incorrecta. Los espiroquetas (T. pallidum) no se observan en el Gram convencional (no se tiñen bien); se buscan por campo oscuro y son la causa del chancro, no de la secreción purulenta."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": ["ITS", "factores de riesgo", "preservativo"],
+    "enunciado": "En la historia de Cristian, el factor de riesgo más directamente relacionado con la adquisición de la ETS es:",
+    "opcoes": [
+      "Relaciones sexuales con múltiples parejas y uso ocasional del preservativo",
+      "El tabaquismo de 15-20 cigarrillos diarios",
+      "La ingesta de cerveza los fines de semana",
+      "El horario corrido de trabajo con comida ligera al mediodía"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Las relaciones sin preservativo con múltiples parejas son el factor de riesgo central para adquirir ITS; el preservativo es la principal medida de prevención de la transmisión sexual.",
+      "❌ Incorrecta. El tabaquismo es factor de riesgo cardiovascular, respiratorio y oncológico, pero no se relaciona directamente con la adquisición de ITS.",
+      "❌ Incorrecta. El consumo de alcohol puede asociarse a conductas de riesgo, pero no es el factor determinante; la exposición sexual sin protección es el riesgo directo.",
+      "❌ Incorrecta. La alimentación del mediodía no guarda relación con la adquisición de ITS."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "",
+    "tags": ["APS", "atención primaria", "notificación", "ITS"],
+    "enunciado": "Desde la Atención Primaria de la Salud, ante un caso como el de Cristian, la conducta correcta es:",
+    "opcoes": [
+      "Tratar la uretritis y la sífilis en el mismo acto, ofrecer testeo de VIH, notificar el caso, orientar el rastreo de contactos y recomendar abstinencia sexual durante el tratamiento",
+      "Derivar al hospital solo si aparecen síntomas",
+      "Tratar y no registrar el caso porque es una cuestión privada",
+      "Iniciar tratamiento solo tras confirmar el diagnóstico por cultivo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Las ITS son enfermedades de notificación obligatoria. Se indica el tratamiento empírico inmediato (por Gram o sospecha clínica), se ofrece testeo de VIH, se hace rastreo de contactos y se recomienda abstinencia sexual hasta completar el tratamiento y controlar la respuesta.",
+      "❌ Incorrecta. La APS debe resolver el caso en el primer nivel; se deriva solo si hay criterios de complejidad (complicaciones, mala evolución, riesgo).",
+      "❌ Incorrecta. Las ITS son de notificación obligatoria al sistema de vigilancia epidemiológica; la confidencialidad del vínculo médico-paciente no impide la notificación del caso.",
+      "❌ Incorrecta. La sospecha clínica/epidemiológica y el Gram permiten iniciar el tratamiento sin esperar el cultivo; el retraso favorece complicaciones y transmisión."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "",
+    "tags": ["vacunación", "VPH", "hepatitis B", "ITS"],
+    "enunciado": "Sobre la vacunación en el contexto de las ITS, es correcto afirmar que:",
+    "opcoes": [
+      "Existen vacunas eficaces para hepatitis B y VPH, que deben ofrecerse; no hay vacuna contra la gonorrea ni contra la sífilis",
+      "La vacuna contra la hepatitis B protege también contra la gonorrea",
+      "La vacuna contra el VPH protege contra la sífilis",
+      "No hay ninguna vacuna relacionada con la prevención de ITS"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Las vacunas contra el VPH y la hepatitis B son las únicas disponibles para prevenir ITS virales. No existen vacunas contra la sífilis ni la gonorrea, por lo que su prevención depende del uso del preservativo.",
+      "❌ Incorrecta. La vacuna anti-hepatitis B previene solo la infección por VHB (una ITS viral); no protege contra la gonorrea ni contra otras ITS bacterianas.",
+      "❌ Incorrecta. La vacuna contra el VPH previene las lesiones por el virus del papiloma humano (verrugas, lesiones preneoplásicas y cáncer de cuello uterino, ano y ORL); no protege contra Treponema pallidum.",
+      "❌ Incorrecta. Sí existen vacunas para dos ITS: hepatitis B y VPH."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis", "transmisión", "vías"],
+    "enunciado": "Con respecto a la transmisión de la sífilis, es correcto:",
+    "opcoes": [
+      "Se transmite principalmente por contacto sexual; puede transmitirse por vía vertical (congénita) y por transfusión",
+      "Se transmite por el contacto casual o por compartir utensilios",
+      "Solo se transmite por transfusiones sanguíneas",
+      "No puede transmitirse de la madre al hijo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La vía principal es el contacto sexual (contacto directo con las lesiones infecciosas). También existe transmisión vertical (sífilis congénita) y hemática (transfusión, excepcional hoy por el tamizaje de bancos de sangre). No se transmite por fómites ni contacto casual.",
+      "❌ Incorrecta. La sífilis requiere contacto directo con lesiones infecciosas; no se transmite por abrazos, tos, utensilios ni el uso compartido de objetos.",
+      "❌ Incorrecta. La vía principal es la sexual; la transfusional es excepcional por el tamizaje de los bancos de sangre.",
+      "❌ Incorrecta. La transmisión vertical es una vía relevante: la sífilis congénita es una causa evitable de morbilidad fetal/neonatal grave y se previene tratando a la gestante."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": ["gonorrea", "reinfección", "coinfección", "inmunidad"],
+    "enunciado": "El antecedente de gonorrea tratada hace algunos años en Cristian:",
+    "opcoes": [
+      "No lo protege de la reinfección; la gonorrea y la sífilis pueden coexistir y deben tratarse ambas",
+      "Le confiere inmunidad permanente contra el gonococo",
+      "Indica que la lesión actual no puede ser una nueva ETS",
+      "Hace innecesario el tratamiento de la uretritis actual"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. Las ITS bacterianas no dejan inmunidad protectora (es posible reinfectarse) ni protegen contra otras ITS. Dado el chancro sifilítico, debe tratarse la coinfección gonococo + sífilis de forma simultánea.",
+      "❌ Incorrecta. La infección por N. gonorrhoeae no genera inmunidad duradera; la reinfección es frecuente.",
+      "❌ Incorrecta. Haber tenido una ETS previa es un marcador de exposición a conductas de riesgo y no descarta nuevas infecciones.",
+      "❌ Incorrecta. La secreción uretral actual exige tratamiento antibiótico, independientemente de la infección previa."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "difícil",
+    "disciplina_base": "microbiologia",
+    "tags": ["sífilis latente", "sífilis", "estadios"],
+    "enunciado": "Con respecto a la sífilis latente, es correcto:",
+    "opcoes": [
+      "Es la etapa asintomática posterior a la sífilis secundaria, con serología positiva y sin lesiones clínicas",
+      "Presenta el exantema palmoplantar típico",
+      "Es sinónimo de neurosífilis",
+      "Solo se diagnostica por campo oscuro"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. La sífilis latente es el período asintomático en el que las pruebas serológicas siguen positivas pero no hay manifestaciones clínicas. Se subdivide en latente precoz (menos de 1 año) y tardía (más de 1 año), lo que define el tratamiento.",
+      "❌ Incorrecta. El exantema palmoplantar corresponde a la sífilis secundaria; en la latente no hay lesiones.",
+      "❌ Incorrecta. La neurosífilis es el compromiso del sistema nervioso central (a menudo tardío); la sífilis latente es asintomática y no equivale a compromiso neurológico.",
+      "❌ Incorrecta. El campo oscuro solo es útil con lesiones activas; la sífilis latente se diagnostica por serología positiva (treponémica + no treponémica) sin signos clínicos."
+    ]
+  },
+  {
+    "materia": "clinica_medica_4",
+    "parcial": "parcial1",
+    "dificuldade": "difícil",
+    "disciplina_base": "farmacologia",
+    "tags": ["sífilis", "alergia a penicilina", "doxiciclina", "tratamiento"],
+    "enunciado": "Si Cristian presentara alergia confirmada a la penicilina, la alternativa de tratamiento para su sífilis precoz sería:",
+    "opcoes": [
+      "Doxiciclina 100 mg VO cada 12 horas por 14 días",
+      "Amoxicilina 500 mg VO cada 8 horas por 7 días",
+      "Ceftriaxona 2 g EV por 7 días como primera elección",
+      "No tratar la sífilis si hay alergia a la penicilina"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcta. En alergia a la penicilina, la sífilis precoz puede tratarse con doxiciclina 100 mg VO c/12 h por 14 días (en la gestante se prefiere la desensibilización y penicilina). La penicilina benzatina sigue siendo el fármaco de elección salvo contraindicación real.",
+      "❌ Incorrecta. La amoxicilina no es una alternativa validada para la sífilis y presenta alergia cruzada con la penicilina.",
+      "❌ Incorrecta. La ceftriaxona puede usarse en casos seleccionados, pero existe alergia cruzada con los betalactámicos y no es la primera opción recomendada en el alérgico; la doxiciclina es la alternativa clásica.",
+      "❌ Incorrecta. La sífilis debe tratarse siempre; la alergia a la penicilina tiene alternativas eficaces (doxiciclina) o, en la gestante, desensibilización."
+    ]
+  }
+]

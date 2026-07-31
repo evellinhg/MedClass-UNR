@@ -1,0 +1,278 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Las acumulaciones intracelulares de lípidos simples pueden producirse en:",
+    "opcoes": [
+      "Células musculares lisas (aterosclerosis)",
+      "Macrófagos (xantomas, inflamación y necrosis, colesterolosis)",
+      "Hepatocitos (cambio graso)",
+      "Todas las anteriores"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). Las células musculares lisas de la pared arterial pueden acumular lípidos en el contexto de la aterosclerosis.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). Los macrófagos pueden acumular lípidos en distintos contextos, como xantomas, inflamación/necrosis o colesterolosis.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). El hepatocito puede acumular lípidos simples (triglicéridos) en el fenómeno conocido como esteatosis o cambio graso hepático.",
+      "Correcta. Las tres estirpes celulares mencionadas (células musculares lisas, macrófagos y hepatocitos) pueden presentar acumulación intracelular de lípidos simples en diferentes contextos patológicos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "La tasa de mortalidad infantil (TMI) es uno de los indicadores más sensibles para explicar el desarrollo de una sociedad. Dicha tasa:",
+    "opcoes": [
+      "Se mantiene igual desde la década del 70",
+      "Muestra una tendencia persistente al ascenso, independientemente de las políticas de salud",
+      "Sufrió un incremento por las condiciones de vida desfavorables",
+      "Descendió de manera persistente por mejoras en las condiciones de vida"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. La tasa de mortalidad infantil no se ha mantenido estable; ha mostrado una tendencia descendente sostenida en las últimas décadas en la mayoría de los países.",
+      "Incorrecta. Es al revés: la tendencia histórica de la TMI ha sido decreciente, no ascendente, gracias a las políticas de salud pública y las mejoras socioeconómicas.",
+      "Incorrecta. La tendencia general de la TMI ha sido de descenso, no de incremento, reflejando mejoras generales (aunque persistan brechas según el contexto socioeconómico).",
+      "Correcta. La tasa de mortalidad infantil ha mostrado un descenso persistente a lo largo de las décadas, reflejo de las mejoras en las condiciones de vida, el acceso a la salud, la nutrición y el desarrollo de políticas sanitarias focalizadas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "El humo del cigarrillo produce cambios adaptativos tras muchos años de consumo, mediante procesos inflamatorios crónicos. Señale lo correcto:",
+    "opcoes": [
+      "El epitelio respiratorio cilíndrico ciliado pseudoestratificado con células caliciformes se transforma en un epitelio plano estratificado",
+      "El epitelio respiratorio cilíndrico ciliado pseudoestratificado con células caliciformes se transforma en un epitelio columnar simple",
+      "Las glándulas bronquiales de la submucosa se atrofian, con la consecuente ausencia de moco, siendo el sustrato anatómico de la bronquitis crónica",
+      "Ninguna es correcta"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Ante la irritación crónica del humo del cigarrillo, el epitelio respiratorio pseudoestratificado ciliado se reemplaza (metaplasia) por un epitelio plano estratificado, más resistente a la noxa, aunque a costa de la pérdida de la función mucociliar protectora.",
+      "Incorrecta. El cambio adaptativo descripto es una metaplasia hacia epitelio PLANO estratificado (no columnar simple), un tejido de la misma estirpe histogenética (epitelial) pero morfológicamente distinto, más resistente a la agresión crónica.",
+      "Incorrecta. Es al revés: en la bronquitis crónica las glándulas bronquiales de la submucosa se HIPERTROFIAN e HIPERPLASIAN, generando un AUMENTO (no ausencia) de la producción de moco, lo que constituye el sustrato anatómico de esta forma de EPOC.",
+      "Incorrecta. Sí existe una opción correcta entre las anteriores (la transformación metaplásica a epitelio plano estratificado)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "El cambio adaptativo que sufre el epitelio respiratorio por el humo del cigarrillo (transformación a epitelio plano estratificado) se denomina:",
+    "opcoes": [
+      "Metaplasia mieloide",
+      "Metaplasia glandular",
+      "Metaplasia escamosa",
+      "Metaplasia mesenquimática"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. La metaplasia mieloide se refiere a la aparición de tejido hematopoyético en localizaciones extramedulares, un fenómeno distinto y no relacionado con el epitelio respiratorio.",
+      "Incorrecta. La metaplasia glandular describe un cambio hacia epitelio glandular (por ejemplo, en el esófago de Barrett), no hacia epitelio plano como el descripto en la vía aérea del fumador.",
+      "Correcta. Se denomina metaplasia escamosa (también llamada epidermoide o pavimentosa) a la transformación de un epitelio hacia un epitelio plano estratificado, en alusión a los estratos celulares que se forman; es el cambio adaptativo clásico del epitelio respiratorio ante la irritación crónica del humo del cigarrillo.",
+      "Incorrecta. La metaplasia mesenquimática describe la transformación entre tejidos de estirpe mesenquimática (por ejemplo, tejido conectivo en tejido óseo u osteoide), no un cambio del epitelio respiratorio."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Al evaluar qué revista científica leer, ¿qué opción es verdadera?",
+    "opcoes": [
+      "Aquellas que tienen revisión por pares ofrecen mayor garantía de calidad",
+      "Todas las revistas científicas de calidad son gratuitas",
+      "El hecho de contener suplementos patrocinados garantiza mayor calidad"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La revisión por pares (peer review), aunque no es garantía absoluta, es un proceso de control de calidad reconocido que aumenta la confiabilidad de los artículos publicados en una revista científica.",
+      "Incorrecta. Muchas revistas científicas de alta calidad y prestigio requieren suscripción o pago por acceso; la gratuidad no es un indicador de calidad científica.",
+      "Incorrecta. Los suplementos patrocinados (frecuentemente financiados por la industria) pueden justamente introducir sesgos y conflictos de interés, no constituyen una garantía de mayor calidad científica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "El área de Kiesselbach es:",
+    "opcoes": [
+      "Un área de convergencia vascular de los sistemas carotídeo interno y externo",
+      "Un área de drenaje linfático",
+      "Un área de anastomosis de los nervios II y V"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El área (o plexo) de Kiesselbach, ubicada en la porción anteroinferior del tabique nasal, es una zona de rica convergencia vascular entre ramas del sistema carotídeo interno (arteria etmoidal anterior) y externo (arterias esfenopalatina, palatina mayor y labial superior), lo que la convierte en el sitio más frecuente de epistaxis anterior.",
+      "Incorrecta. El área de Kiesselbach es una zona de convergencia vascular arterial, no una zona de drenaje linfático.",
+      "Incorrecta. El área de Kiesselbach corresponde a una anastomosis vascular (arterial), no a una anastomosis entre los nervios óptico (II) y trigémino (V)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "¿Cuál es la toxina responsable del mecanismo toxigénico de Streptococcus pyogenes?",
+    "opcoes": [
+      "Estreptolisina",
+      "Hialuronidasa",
+      "Toxina eritrogénica",
+      "A + C"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). La estreptolisina (O y S) es una de las toxinas producidas por S. pyogenes, con efecto hemolítico y citotóxico.",
+      "Incorrecta. La hialuronidasa es una enzima que actúa como factor de dispersión tisular (facilita la propagación del microorganismo por los tejidos), no es la toxina responsable del mecanismo toxigénico propiamente dicho.",
+      "Es una afirmación correcta en sí misma (pero incompleta como respuesta). La toxina eritrogénica (pirogénica), producida por cepas lisogenizadas por un bacteriófago, es responsable del exantema característico de la escarlatina.",
+      "Correcta. Tanto la estreptolisina como la toxina eritrogénica son toxinas producidas por Streptococcus pyogenes que contribuyen a su mecanismo de patogenicidad toxigénica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "microbiologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Sobre la adherencia microbiana, marque la opción correcta:",
+    "opcoes": [
+      "Está ligada a estructuras superficiales denominadas fimbrias o pili",
+      "Está ligada a estructuras superficiales denominadas flagelos",
+      "No es un factor de virulencia"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. La adherencia microbiana a las células del huésped está mediada principalmente por estructuras superficiales especializadas denominadas fimbrias o pili (adhesinas), un paso inicial fundamental para el establecimiento de la infección.",
+      "Incorrecta. Los flagelos son estructuras responsables de la motilidad bacteriana, no las principales estructuras mediadoras de la adherencia (esa función corresponde a las fimbrias o pili).",
+      "Incorrecta. La adherencia es, por el contrario, uno de los principales factores de virulencia, ya que constituye el primer paso necesario para la colonización e infección del huésped."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Masa constituida por elementos formes de la sangre adherida al endotelio vascular:",
+    "opcoes": [
+      "Trombo",
+      "Coágulo postmortem",
+      "Coágulo in vitro",
+      "Émbolo"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. El trombo es, por definición, una masa sólida formada por elementos figurados de la sangre (plaquetas, fibrina, glóbulos) que se forma y se adhiere a la pared del vaso sanguíneo (endotelio) en un individuo vivo.",
+      "Incorrecta. El coágulo postmortem se forma después de la muerte, sin adherirse a la pared vascular, y no presenta la estructura característica del trombo (líneas de Zahn).",
+      "Incorrecta. El coágulo in vitro se forma fuera del organismo (por ejemplo, en un tubo de ensayo), sin relación con el endotelio vascular.",
+      "Incorrecta. El émbolo es una masa (que puede o no derivar de un trombo) que viaja libremente por el torrente circulatorio hasta impactar en un vaso de menor calibre; no está adherida al endotelio en el sitio de origen, a diferencia del trombo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "genetica",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Dados una madre con grupo sanguíneo A Rh- y un padre O Rh-, las asociaciones posibles en la descendencia serán:",
+    "opcoes": [
+      "No se puede calcular con precisión el grupo ABO de la descendencia, ya que es necesario conocer el genotipo de la madre (que podría ser AA o AO)",
+      "25% grupo A Rh+, 25% A Rh-, 25% O Rh+, 25% O Rh-",
+      "50% grupo A Rh+, 50% A Rh-",
+      "50% O Rh+, 50% O Rh-"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcta. Como el padre es O (genotipo homocigota OO), pero la madre, al ser fenotípicamente A, puede ser homocigota (AA) o heterocigota (AO), no es posible determinar con exactitud las proporciones de descendencia A y O sin conocer el genotipo materno; en cambio, para el factor Rh, al ser ambos progenitores Rh- (homocigotas recesivos, rr), toda la descendencia será Rh- de forma segura.",
+      "Incorrecta. Esta distribución no puede afirmarse con certeza sin conocer el genotipo ABO exacto de la madre, y además ningún descendiente podría ser Rh+, ya que ambos padres son homocigotas Rh- (rr).",
+      "Incorrecta. Esta proporción específica no puede afirmarse con certeza sin conocer si la madre es homocigota (AA, en cuyo caso el 100% de la descendencia sería A) o heterocigota (AO, en cuyo caso el 50% sería A y 50% O); además, ningún hijo podría ser Rh+.",
+      "Incorrecta. Ningún descendiente podría tener grupo O si la madre fuera homocigota AA (todos serían A); además, al ser ambos padres Rh- (rr), ningún hijo podría ser Rh+, por lo que la mención de 'O Rh+' es inconsistente."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "La congestión es:",
+    "opcoes": [
+      "El pasaje de líquido desde los vasos sanguíneos al tejido extracelular",
+      "La acumulación pasiva de sangre en los capilares y vénulas de un tejido u órgano",
+      "El pasaje de líquido desde el tejido extravascular hacia los vasos sanguíneos"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. El pasaje de líquido desde los vasos hacia el tejido extracelular describe la formación de edema, no la congestión.",
+      "Correcta. La congestión es la acumulación pasiva de sangre en los capilares y vénulas de un tejido u órgano, habitualmente secundaria a una dificultad en el drenaje venoso (congestión pasiva, como en la insuficiencia cardíaca) o a un aumento del aporte arterial (hiperemia activa).",
+      "Incorrecta. El pasaje de líquido desde el espacio extravascular hacia los vasos sanguíneos no corresponde a la definición de congestión, que se refiere específicamente a la acumulación de sangre dentro de los vasos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": null,
+    "tags": [
+      "crescimento_desenvolvimento_fonte"
+    ],
+    "enunciado": "Con respecto a los pasos del examen físico abdominal, marque el orden correcto:",
+    "opcoes": [
+      "Auscultación, inspección, palpación, percusión",
+      "Inspección, auscultación, percusión, palpación"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecta. El examen físico abdominal debe comenzar siempre por la inspección, no por la auscultación.",
+      "Correcta. A diferencia del examen de otros sistemas, en el examen abdominal la auscultación se realiza en segundo lugar (inmediatamente después de la inspección y antes de la percusión y la palpación), para evitar que la manipulación mecánica del abdomen altere los ruidos hidroaéreos intestinales."
+    ]
+  }
+]

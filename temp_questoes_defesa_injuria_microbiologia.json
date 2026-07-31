@@ -1,0 +1,2112 @@
+[
+  {
+    "QUESTAO": 1,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Haemophilus influenzae",
+      "meningitis",
+      "vacuna Hib",
+      "cuádruple bacteriana"
+    ],
+    "ENUNCIADO": "Hace 20 años atrás, las meningitis por Haemophilus influenza eran las más frecuentemente observadas en pediatra. En la actualidad es muy rara su presentación. Esto se debe a: b);",
+    "ALTERNATIVAS": {
+      "A": "La vacuna contra la gripe estacional",
+      "B": "La vacuna triple (difteria, tétanos, tos convulsa)",
+      "C": "La vacuna cuádruple (bacteria) (difteria, tétanos, tos convulsa, Haemophilus influenza",
+      "D": "La vacuna contra el virus H1N1",
+      "E": "La buena prescripción de antibiótico"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La vacuna antigripal (influenza) no protege contra Haemophilus influenzae. Son bacterias diferentes (H. influenzae es una bacteria, el virus de la gripe es Influenza). La vacuna que previene H. influenzae tipo b es la Hib (cuádruple bacteriana).",
+      "B": "❌ Incorrecto. La vacuna triple (DTP: difteria, tétanos, tos convulsa) no incluye Haemophilus influenzae. La vacuna que contiene el componente anti-Hib es la cuádruple bacteriana (DTP + Hib).",
+      "C": "✅ Correcto. La vacuna cuádruple bacteriana (DTP + Hib) incluye Haemophilus influenzae tipo b. Su introducción masiva en el calendario infantil redujo drásticamente la incidencia de meningitis por H. influenzae, que antes era la causa más frecuente de meningitis bacteriana en niños.",
+      "D": "❌ Incorrecto. La vacuna contra el virus H1N1 (influenza A) no protege contra Haemophilus influenzae. Son microorganismos distintos. H. influenzae es una bacteria que requiere la vacuna Hib específica.",
+      "E": "❌ Incorrecto. La buena prescripción de antibióticos no explica la reducción de casos. De hecho, el uso de antibióticos no previene infecciones. La disminución drástica se debe exclusivamente a la vacunación masiva con la vacuna conjugada anti-Hib."
+    }
+  },
+  {
+    "QUESTAO": 2,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "xenobióticos",
+      "metabolismo",
+      "fase I",
+      "fase II",
+      "hidroxilación",
+      "conjugación"
+    ],
+    "ENUNCIADO": "Los xenobióticos pueden ser:",
+    "ALTERNATIVAS": {
+      "A": "Conjugados con sulfato",
+      "B": "Hidroxilados",
+      "C": "Metabolizados para obtener energía",
+      "D": "A+B",
+      "E": "A+C",
+      "F": "B+C"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Es cierto que los xenobióticos pueden ser conjugados con sulfato (fase II), pero esta es solo una parte del metabolismo. También pueden ser hidroxilados (fase I). La respuesta correcta es A+B.",
+      "B": "❌ Incorrecto. Es cierto que los xenobióticos pueden ser hidroxilados (fase I), pero también pueden ser conjugados (fase II). La respuesta correcta incluye ambas.",
+      "C": "❌ Incorrecto. Los xenobióticos NO se metabolizan para obtener energía. El catabolismo de nutrientes (carbohidratos, grasas, proteínas) produce energía. Los xenobióticos se detoxifican mediante oxidación/reducción/hidrólisis y conjugación.",
+      "D": "✅ Correcto. Los xenobióticos (compuestos extraños al organismo) pueden ser metabolizados mediante reacciones de FASE I (hidroxilación por citocromo P450) y de FASE II (conjugación con sulfato, glucurónido, glutatión, etc.). NO se metabolizan para obtener energía.",
+      "E": "❌ Incorrecto. A+C es incorrecta porque la opción C es falsa (los xenobióticos no se metabolizan para obtener energía). La combinación correcta es A+B.",
+      "F": "❌ Incorrecto. B+C es incorrecta porque la opción C es falsa. La combinación correcta es A+B (conjugación con sulfato + hidroxilación)."
+    }
+  },
+  {
+    "QUESTAO": 3,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "infección urinaria",
+      "Enterococcus faecalis",
+      "cocos Gram positivos",
+      "anciano"
+    ],
+    "ENUNCIADO": "Paciente de sexo masculino de 75 años que refiere ardor y dolor miccional, tenesmo y poliquiuria. Al realizar el urocultivo se obtuvo desarrollo de cocos gran positivos en cadena. Usted piensa en:",
+    "ALTERNATIVAS": {
+      "A": "Streptococcus viridians",
+      "B": "Escherichia coli",
+      "C": "Neisseria gonorrheae",
+      "D": "Enterococcus faecallis",
+      "E": "Streptococcus pyogens"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Streptococcus viridans forma parte de la microbiota oral y causa endocarditis, pero no es causa frecuente de ITU en ancianos. E. faecalis es el enterococo más común en urocultivos.",
+      "B": "❌ Incorrecto. Escherichia coli es un bacilo Gram negativo, no un coco Gram positivo. El Gram describe cocos Gram positivos en cadena, lo que orienta a Enterococcus spp.",
+      "C": "❌ Incorrecto. Neisseria gonorrhoeae es un diplococo Gram negativo, no un coco Gram positivo en cadena. Causa uretritis, no se asocia a ITU en ancianos.",
+      "D": "✅ Correcto. Enterococcus faecalis es un coco Gram positivo que se dispone en cadenas cortas. Es causa frecuente de infecciones urinarias en ancianos, pacientes cateterizados y con instrumentación de vías urinarias. Son resistentes a muchos antibióticos.",
+      "E": "❌ Incorrecto. Streptococcus pyogenes (beta-hemolítico grupo A) forma cadenas pero causa principalmente faringitis, impétigo, escarlatina, no ITU en ancianos. E. faecalis es el más frecuente en urocultivos de ancianos."
+    }
+  },
+  {
+    "QUESTAO": 4,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Campylobacter jejuni",
+      "diarrea sanguinolenta",
+      "coprocultivo",
+      "pediatría"
+    ],
+    "ENUNCIADO": "¿Un niño de 3 años presenta diarrea sanguinolenta, con estos datos que estudios solicitaría para establecer el diagnóstico etiológico? Se debe solicitar un Gram de la materia fecal establecer el diagnostico etiológico.",
+    "ALTERNATIVAS": {
+      "A": "Se debe solicitar un coprocultivo buscando Campylobacter jejuni",
+      "B": "Se debe solicitar un coprocultivo buscando Escherichia coli enterotóxica",
+      "C": "Se debe administrar antibióticos sin incorporar sin importar el microorganismo causante",
+      "D": "Se debe buscar Salmonella typhi en hemocultivos"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Campylobacter jejuni es la causa bacteriana más frecuente de gastroenteritis en niños, especialmente con diarrea sanguinolenta. Se transmite por aves de corral, leche no pasteurizada y agua contaminada. El coprocultivo con medio selectivo es el método diagnóstico.",
+      "B": "❌ Incorrecto. Escherichia coli enterotoxigénica (ECET) causa diarrea acuosa (no sanguinolenta), típica de la \"diarrea del viajero\". No produce diarrea sanguinolenta característica de colitis.",
+      "C": "❌ Incorrecto. La administración empírica de antibióticos sin identificar el agente causal no es correcta. Se debe realizar coprocultivo para diagnóstico etiológico antes de decidir tratamiento.",
+      "D": "❌ Incorrecto. Salmonella typhi produce fiebre tifoidea (cuadro sistémico con fiebre prolongada), no diarrea sanguinolenta en niños. El coprocultivo para Campylobacter es la opción correcta para diarrea sanguinolenta infantil."
+    }
+  },
+  {
+    "QUESTAO": 5,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "diarrea",
+      "Escherichia coli",
+      "colitis",
+      "brote epidémico",
+      "autolimitado"
+    ],
+    "ENUNCIADO": "Señale las respuestas correctas: Escherichia coli; polimorfonucleares con conservación de la arquitectura de las criptas; ingestión de mayonesa casera;",
+    "ALTERNATIVAS": {
+      "A": "Si el alimento sospechoso fue una hamburguesa mal cocida puede tratarse de",
+      "B": "En una colitis infecciosa hay hiperemia de la mucosa y en el examen microscópico hay",
+      "C": "El niño debe continuar alimentándose e hidratándose por vía oral",
+      "D": "Si otros comensales tuvieron síntomas digestivos pudo tratarse de un brote epidémico",
+      "E": "La mayoría de los episodios diarreicos se autolimitan"
+    },
+    "RESPOSTA_CORRETA": "E",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Es cierto que E. coli puede transmitirse por hamburguesas mal cocidas, pero esta no es la única afirmación correcta. Todas las otras opciones también son correctas.",
+      "B": "❌ Incorrecto. Es cierto que en colitis infecciosa hay hiperemia y PMN con preservación de criptas, pero no es la única afirmación correcta. Revise todas las opciones.",
+      "C": "❌ Incorrecto. Continuar alimentación e hidratación oral es correcto. Pero las demás afirmaciones también son correctas.",
+      "D": "❌ Incorrecto. La mayonesa casera puede causar brote de Salmonella, pero todas las demás afirmaciones también son correctas.",
+      "E": "✅ Correcto. Todas las afirmaciones son correctas: la hamburguesa mal cocida puede transmitir E. coli O157:H7; en colitis infecciosa hay PMN con criptas conservadas; el niño debe continuar alimentación e hidratación; la mayonesa casera puede causar brote por Salmonella; y la mayoría de las diarreas agudas se autolimitan."
+    }
+  },
+  {
+    "QUESTAO": 6,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "prevención",
+      "infecciones respiratorias",
+      "vivienda",
+      "niños"
+    ],
+    "ENUNCIADO": "Señale medidas preventivas válidas para la prevención de problemas respiratorios del niño:",
+    "ALTERNATIVAS": {
+      "A": "Mejorar la vivienda de las poblaciones en extrema pobreza",
+      "B": "Dedicar mayor presupuesto para nuevos hospitales de alta complejidad",
+      "C": "Radicar las fábricas que emiten humo lejos de los centros poblados",
+      "D": "Adquisición de antibióticos",
+      "E": "Vacuna triple (tétanos, difteria, tos convulsa) a la embarazada"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Mejorar las condiciones de vivienda (hacinamiento, ventilación, humedad) en poblaciones en extrema pobreza es una medida preventiva fundamental para reducir infecciones respiratorias en niños. El hacinamiento favorece la transmisión de virus respiratorios.",
+      "B": "❌ Incorrecto. Dedicar mayor presupuesto a hospitales de alta complejidad es una medida curativa, no preventiva. La prevención primaria implica mejorar condiciones socioambientales para evitar que ocurran las enfermedades.",
+      "C": "❌ Incorrecto. Alejar fábricas contaminantes es una medida de salud ambiental general, pero no es la más directa para prevenir infecciones respiratorias específicas del niño. Mejorar la vivienda tiene mayor impacto.",
+      "D": "❌ Incorrecto. La adquisición de antibióticos es una medida curativa, no preventiva. El uso inapropiado de antibióticos contribuye a la resistencia bacteriana.",
+      "E": "❌ Incorrecto. La vacuna triple a la embarazada protege contra tétanos neonatal, pero no es la medida más directa para prevenir infecciones respiratorias del niño."
+    }
+  },
+  {
+    "QUESTAO": 7,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Clostridium difficile",
+      "diarrea post-antibiótica",
+      "nosocomial"
+    ],
+    "ENUNCIADO": "Un paciente de 16 años fue intervenido quirúrgicamente por un cuadro de apendicitis aguda supurada por lo cual recibió tratamiento con antimicrobianos. A los 5 días comienza con diarrea de 10 a 15 deposiciones por día de color verdoso. ¿En que microorganismo piensa? Marque la opción correcta.",
+    "ALTERNATIVAS": {
+      "A": "Bacillus anthracis",
+      "B": "Clostridum tetannis",
+      "C": "Clostridium difficile",
+      "D": "Lactobacillus spp",
+      "E": "Bacillus cereus"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Bacillus anthracis causa ántrax (cutáneo, inhalatorio, gastrointestinal), no diarrea post-antibiótica. No está asociado a tratamiento antimicrobiano previo.",
+      "B": "❌ Incorrecto. Clostridium tetani produce tétanos (toxina tetánica neurotrópica), no diarrea. No está relacionado con el uso de antibióticos.",
+      "C": "✅ Correcto. Clostridium difficile es la causa más frecuente de diarrea nosocomial post-antibiótica. El uso de antimicrobianos altera la microbiota intestinal, permitiendo el sobrecrecimiento de C. difficile que produce toxinas A y B, causando diarrea acuosa verdosa.",
+      "D": "❌ Incorrecto. Lactobacillus spp. forma parte de la microbiota normal y no es patógeno. De hecho, se usa como probiótico para prevenir diarrea asociada a antibióticos.",
+      "E": "❌ Incorrecto. Bacillus cereus produce intoxicación alimentaria (toxina emética o diarreica) por consumo de arroz recalentado, no es una complicación post-quirúrgica por antibióticos."
+    }
+  },
+  {
+    "QUESTAO": 8,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Pseudomonas aeruginosa",
+      "quemados",
+      "infección nosocomial",
+      "bacilo Gram negativo"
+    ],
+    "ENUNCIADO": "Un paciente quemado, a las 48h de estar internado presenta fiebre y en las lesiones se observa abundante secreción mucopurulenta. En el Gram se observan bacilos Gram negativos. ¿Con estos datos, cual puede ser el agente causal?",
+    "ALTERNATIVAS": {
+      "A": "Pseudomonas aeruginosa",
+      "B": "Klesiella pneumoniae",
+      "C": "Escherichia coli",
+      "D": "Brucella",
+      "E": "Salmonella"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Pseudomonas aeruginosa es el bacilo Gram negativo oportunista más frecuente en pacientes quemados. Forma biofilm, es resistente a múltiples antibióticos y produce infecciones nosocomiales graves en pacientes inmunocomprometidos.",
+      "B": "❌ Incorrecto. Klebsiella pneumoniae puede causar infecciones nosocomiales, pero no es el agente más característico en pacientes quemados. Pseudomonas aeruginosa es el más frecuente en este contexto.",
+      "C": "❌ Incorrecto. E. coli es causa común de ITU e infecciones intraabdominales, pero no es el agente más frecuente en infecciones de quemaduras. Pseudomonas tiene predilección por la piel dañada.",
+      "D": "❌ Incorrecto. Brucella spp. causa brucelosis (fiebre ondulante, zoonosis), no infecciones nosocomiales en pacientes quemados.",
+      "E": "❌ Incorrecto. Salmonella spp. causa gastroenteritis o fiebre entérica. No es un patógeno nosocomial típico en quemados."
+    }
+  },
+  {
+    "QUESTAO": 9,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Neisseria meningitidis",
+      "meningitis",
+      "diplococo Gram negativo",
+      "LCR"
+    ],
+    "ENUNCIADO": "Un niño de 6 años se presenta con un cuadro de meningitis. A los efectos de tomar una decisión urgente se efectúa una coloración de Gram del LCR. Se observa leucocitos y diplococos Gram negativos capsulados. ¿Cuál es el probable agente causante? en una gran cantidad de enfermedades);",
+    "ALTERNATIVAS": {
+      "A": "Escherichia coli",
+      "B": "Haemophilus influenzae",
+      "F": "Neisseria meninditidis (es el meningococo, Gram negativo, petequias puede aparecer",
+      "C": "Streptococcus pneumoniae",
+      "D": "Klesiella pneumoniae"
+    },
+    "RESPOSTA_CORRETA": "F",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Escherichia coli es un bacilo Gram negativo, no diplococo. Causa meningitis en recién nacidos (<3 meses), no en niños de 6 años donde el meningococo es más frecuente.",
+      "B": "❌ Incorrecto. Haemophilus influenzae tipo b es un cocobacilo Gram negativo capsulado. Causaba meningitis en niños antes de la vacuna Hib, pero el Gram típico es cocobacilo, no diplococo.",
+      "F": "✅ Correcto. Neisseria meningitidis (meningococo) es un diplococo Gram negativo capsulado que causa meningitis bacteriana aguda. En el Gram de LCR se observan diplococos Gram negativos intra y extracelulares. El meningococo también puede causar petequias por vasculitis.",
+      "C": "❌ Incorrecto. Streptococcus pneumoniae (neumococo) es un coco Gram positivo (no negativo) en parejas (diplococo) capsulado. Es causa de meningitis, pero el Gram sería Gram positivo, no negativo.",
+      "D": "❌ Incorrecto. Klebsiella pneumoniae es un bacilo Gram negativo, no diplococo. Causa neumonía e infecciones nosocomiales, no es causa típica de meningitis en niños inmunocompetentes."
+    }
+  },
+  {
+    "QUESTAO": 10,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Streptococcus agalactiae",
+      "sepsis neonatal",
+      "GBS",
+      "transmisión vertical"
+    ],
+    "ENUNCIADO": "¿Cuál bacteria puede causar sepsis del recién nacido si está presente en el flujo vaginal de la madre al momento del parto? Marque la opción correcta.",
+    "ALTERNATIVAS": {
+      "A": "Streptococcus beta hemolítico grupo B (S. agalactiae)",
+      "B": "Streptococcus grupo viridians",
+      "C": "Lactoacillus spp",
+      "D": "Gardnerella vaginalis",
+      "E": "Staphilococcus aureus"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Streptococcus agalactiae (estreptococo beta-hemolítico del grupo B - GBS) es la causa más frecuente de sepsis neonatal precoz. Se adquiere por transmisión vertical durante el parto desde el tracto genital materno colonizado.",
+      "B": "❌ Incorrecto. Streptococcus grupo viridans forma parte de la microbiota oral, no vaginal. No es causa de sepsis neonatal vertical.",
+      "C": "❌ Incorrecto. Lactobacillus spp. es parte de la microbiota vaginal normal y no es patógeno. No causa sepsis neonatal.",
+      "D": "❌ Incorrecto. Gardnerella vaginalis se asocia a vaginosis bacteriana, pero NO causa sepsis neonatal. Estreptococo grupo B es la principal causa.",
+      "E": "❌ Incorrecto. Staphylococcus aureus puede causar infecciones neonatales (nosocomiales), pero no es la causa más frecuente de sepsis neonatal por transmisión vertical desde flujo vaginal materno."
+    }
+  },
+  {
+    "QUESTAO": 11,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Staphylococcus aureus",
+      "abscesos",
+      "piógeno"
+    ],
+    "ENUNCIADO": "¿Cuál microorganismo puede causar abscesos supurados?",
+    "ALTERNATIVAS": {
+      "A": "Vibrio cholereae",
+      "B": "Neisseria spp",
+      "C": "Treponema palidum",
+      "D": "Corynebacterium difterae",
+      "E": "Staphylococcus aureus"
+    },
+    "RESPOSTA_CORRETA": "E",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Vibrio cholerae produce cólera (diarrea acuosa masiva), no abscesos supurados. No invade tejidos ni forma pus.",
+      "B": "❌ Incorrecto. Neisseria spp. (meningitidis, gonorrhoeae) produce meningitis y uretritis respectivamente, pero no abscesos supurados. No forma pus localizado con cápsula.",
+      "C": "❌ Incorrecto. Treponema pallidum produce sífilis (enfermedad sistémica con lesiones granulomatosas llamadas gomas), no abscesos supurados agudos.",
+      "D": "❌ Incorrecto. Corynebacterium diphtheriae produce difteria (toxina que causa pseudomembrana), no abscesos supurados. S. aureus es el clásico formador de abscesos.",
+      "E": "✅ Correcto. Staphylococcus aureus es la causa más frecuente de abscesos supurados. Produce coagulasa, leucocidina, hialuronidasa y otras enzimas que facilitan la formación de abscesos en piel, partes blandas, órganos internos. Es el piógeno por excelencia."
+    }
+  },
+  {
+    "QUESTAO": 12,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "virus influenza",
+      "serotipos",
+      "virus respiratorios"
+    ],
+    "ENUNCIADO": "Virus respiratorios: complicaciones bacterianas; protege durante toda la vida; i) Los virus parainfluenza presentan un solo serotipo; j) Es improbable la infección con VSR en Ñ menores de 2 años.",
+    "ALTERNATIVAS": {
+      "A": "El virus influenza posee distintos serotipos",
+      "B": "El virus infleunza causa epidemias estacionales y muta sus AG",
+      "C": "La meningitis es la complicacion más frecuente de la parotiditis urleana",
+      "D": "Las infecciones respiratorias por virus influenza pueden predisponer a",
+      "E": "Los adenovirus no se pueden transmitir vía fecal oral",
+      "F": "Los adenovirus causan infecciones solamente del aparato respiratorio",
+      "G": "La inmunidad natural que deja la infección por el virus del sarampión no los",
+      "H": "Los virus parainfluenza presentan un solo serotipo"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. El virus influenza posee distintos serotipos (A, B, C). El tipo A tiene subtipos según hemaglutinina (H1-H18) y neuraminidasa (N1-N11), y es responsable de pandemias por variación antigénica mayor (shift).",
+      "B": "❌ Incorrecto. Es cierto que el virus influenza causa epidemias estacionales y muta sus antígenos (deriva antigénica), pero la opción A es más completa y correcta.",
+      "C": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos.",
+      "D": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos.",
+      "E": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos.",
+      "F": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos.",
+      "G": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos.",
+      "H": "❌ Incorrecto. Esta afirmación sobre virus respiratorios contiene errores. La opción A es la respuesta correcta: el virus influenza posee distintos serotipos."
+    }
+  },
+  {
+    "QUESTAO": 13,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "gripe",
+      "vacunación",
+      "anciano",
+      "influenza"
+    ],
+    "ENUNCIADO": "Un anciano de 80 años presenta signos y síntomas de gripe. Señale lo correcto: completo con recuento de plaquetas;",
+    "ALTERNATIVAS": {
+      "A": "La vacunación debe repetirse todos los años en el otoño",
+      "B": "El síndrome gripal se diagnostica por alteraciones específicas en el hemograma",
+      "C": "El síndrome gripal está producido únicamente por el virus influenza"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La vacunación antigripal debe repetirse anualmente porque el virus influenza sufre deriva antigénica constante (mutaciones en HA y NA). La OMS recomienda la vacunación en otoño (antes de la temporada invernal) para ancianos y grupos de riesgo.",
+      "B": "❌ Incorrecto. El síndrome gripal se diagnostica por clínica (fiebre, mialgias, tos, cefalea), no por alteraciones específicas en el hemograma. El hemograma puede ser normal o inespecífico.",
+      "C": "❌ Incorrecto. El síndrome gripal (cuadro febril con mialgias, cefalea, tos) NO está producido únicamente por el virus influenza. También pueden causarlo otros virus respiratorios (VSR, adenovirus, parainfluenza, SARS-CoV-2)."
+    }
+  },
+  {
+    "QUESTAO": 14,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "gripe",
+      "vacunación",
+      "anciano",
+      "influenza",
+      "serotipos"
+    ],
+    "ENUNCIADO": "Una anciana de 78 años presenta signos y síntomas de gripe. Señale lo correcto: mundial; no presenta;",
+    "ALTERNATIVAS": {
+      "A": "La vacunación no previene de forma completa los cuadros gripales",
+      "B": "El síndrome gripal está producido por el virus influenza y hay un único serotipo",
+      "C": "La gripe es una enfermedad viral más común en la época estival y el paciente"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La vacuna antigripal no previene de forma COMPLETA los cuadros gripales porque la protección varía según la concordancia entre las cepas vacunales y las circulantes, y la respuesta inmune del anciano puede ser subóptima. Reduce severidad y complicaciones.",
+      "B": "❌ Incorrecto. El virus influenza tiene múltiples serotipos (A, B, C) y subtipos (H1N1, H3N2). NO existe un único serotipo mundial. La deriva antigénica genera nuevas variantes cada temporada.",
+      "C": "❌ Incorrecto. La gripe es más común en época INVERNAL (no estival). Además, los pacientes ancianos SÍ pueden presentar complicaciones graves como neumonía bacteriana sobreañadida."
+    }
+  },
+  {
+    "QUESTAO": 15,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "VSR",
+      "bronquiolitis",
+      "aspirado nasofaríngeo",
+      "lactante"
+    ],
+    "ENUNCIADO": "Un lactante de 3 meses presenta un cuadro respiratorio agudo con fiebre y disnea. Con el diagnostico presuntivo de bronquiolitis, ¿Cómo haría para certificar el diagnóstico?",
+    "ALTERNATIVAS": {
+      "A": "Solicitaría búsqueda de Ag de VSR en aspirado nasofaríngeo",
+      "B": "Solicitaría búsqueda de Ac IG m anticoronavirus en suero del paciente",
+      "C": "Solicitaría búsqueda de Ag específico de adenovirus en suero del paciente"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. El diagnóstico de bronquiolitis por VSR se confirma mediante detección de antígeno viral en aspirado nasofaríngeo (inmunofluorescencia directa o ELISA). Es rápido, sensible y específico. El VSR es la causa más frecuente de bronquiolitis.",
+      "B": "❌ Incorrecto. Los anticuerpos IgM anticoronavirus no sirven para certificar bronquiolitis. El VSR (Virus Sincicial Respiratorio) es el agente causal más frecuente y se diagnostica por detección de antígeno en aspirado nasofaríngeo.",
+      "C": "❌ Incorrecto. La búsqueda de antígeno de adenovirus en suero no es el método diagnóstico para bronquiolitis. Adenovirus es causa menos frecuente que VSR. El aspirado nasofaríngeo con detección de Ag VSR es el método estándar."
+    }
+  },
+  {
+    "QUESTAO": 17,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "VSR",
+      "bronquiolitis",
+      "aspirado nasofaríngeo",
+      "diagnóstico"
+    ],
+    "ENUNCIADO": "Un bebe de 6meses presenta un cuadro respiratorio agudo con fiebre y disnea. ¿Con el diagnostico presuntivo de bronquiolitis, como haría para certificar dicho diagnostico?",
+    "ALTERNATIVAS": {
+      "A": "Solicitaría búsqueda de anticuerpos IgG anti VSR en suero",
+      "B": "Solicitaría búsqueda de Ag de VSR en aspirado nasofaríngeo",
+      "C": "Solicitaría hemograma completo con plaquetas"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La IgG anti-VSR indica infección pasada o exposición previa. Para certificar bronquiolitis aguda se necesita detección del antígeno viral (o PCR) en secreciones respiratorias.",
+      "B": "✅ Correcto. El diagnóstico de bronquiolitis se certifica mediante detección de antígeno de VSR en aspirado nasofaríngeo, que es la técnica más rápida y sensible. La IgG anti-VSR indica infección pasada, no aguda.",
+      "C": "❌ Incorrecto. El hemograma con plaquetas es inespecífico y no confirma bronquiolitis. El diagnóstico etiológico requiere detección del virus en aspirado nasofaríngeo."
+    }
+  },
+  {
+    "QUESTAO": 18,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "sarampión",
+      "Koplik",
+      "virus respiratorios",
+      "parotiditis",
+      "VSR"
+    ],
+    "ENUNCIADO": "En relación a los virus respiratorios, marque la afirmación correcta: Las manchas de koplik son patognomónicas de la enfermedad; las glándulas parótidas; el punto de vista clínico de los causados por virus Influenza; virus de la Gripe.",
+    "ALTERNATIVAS": {
+      "A": "El virus del sarampión causa una enfermedad exantemática febril de la infancia",
+      "B": "El virus de la parotiditis presenta únicamente receptores específicos para infectar",
+      "C": "Parainfluenza A y B producen cuadros respiratorios fácilmente distinguibles desde",
+      "D": "VSR es la segunda causa más frecuente de bronquiolitis del lactante, después del"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. El sarampión (virus RNA, Paramyxoviridae) causa enfermedad exantemática febril. Las manchas de Koplik (puntos blancos en mucosa oral) son patognomónicas y aparecen antes del exantema, permitiendo diagnóstico temprano.",
+      "B": "❌ Incorrecto. El virus de la parotiditis (paperas) no infecta solo las parótidas. También puede afectar testículos (orquitis), ovarios, páncreas, SNC (meningitis) y glándulas salivales submaxilares.",
+      "C": "❌ Incorrecto. Parainfluenza e influenza producen cuadros respiratorios clínicamente SIMILARES, no fácilmente distinguibles. Ambos causan fiebre, tos, rinorrea. El diagnóstico diferencial requiere pruebas de laboratorio.",
+      "D": "❌ Incorrecto. El VSR (Virus Sincicial Respiratorio) es la PRIMERA causa de bronquiolitis en lactantes, no la segunda. La segunda causa es más frecuentemente rinovirus o metapneumovirus."
+    }
+  },
+  {
+    "QUESTAO": 19,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Proteus",
+      "infección urinaria",
+      "enterobacteria"
+    ],
+    "ENUNCIADO": "Proteus puede producir infecciones, las más frecuentes son:",
+    "ALTERNATIVAS": {
+      "A": "Respiratorias",
+      "B": "De la piel",
+      "C": "Urinarias",
+      "D": "Intestinales"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Proteus puede causar infecciones respiratorias en pacientes hospitalizados, pero no es la localización más frecuente. Las infecciones urinarias son las más comunes.",
+      "B": "❌ Incorrecto. Proteus no es causa frecuente de infecciones de piel. Las infecciones urinarias son su manifestación clínica más característica.",
+      "C": "✅ Correcto. Proteus mirabilis y Proteus vulgaris son bacilos Gram negativos de la familia Enterobacteriaceae. Son causa frecuente de infecciones urinarias, especialmente en pacientes con cateterización, litiasis urinaria o anomalías estructurales.",
+      "D": "❌ Incorrecto. Proteus no es causa frecuente de infecciones intestinales. Es más conocido por ITU, especialmente asociado a litiasis por ureasa."
+    }
+  },
+  {
+    "QUESTAO": 20,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "estafilococos coagulasa negativa",
+      "S. epidermidis",
+      "biofilm"
+    ],
+    "ENUNCIADO": "Marque lo INCORRECTO en relación a los estafilococos coagulasa negativa: partes blandas, endocarditis y artritis séptica. lo qué los aísla de las células del sistema inmunitario y antimicrobianos. menos virulentas y no producir enzima coagulasa.",
+    "ALTERNATIVAS": {
+      "A": "Son considerados patógenos primarios pudiendo causar infecciones de piel y",
+      "B": "Son capaces de crear una biopelícula/biofilm sobre materiales inertes (ej. prótesis)",
+      "C": "Numerosas especies pertenecen a este grupo. Se diferencian de S. aureus por ser"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Es INCORRECTO considerar a los estafilococos coagulasa negativa como \"patógenos primarios\". Son patógenos OPORTUNISTAS que causan infecciones principalmente en pacientes inmunocomprometidos, portadores de catéteres/prótesis. S. aureus es el patógeno primario.",
+      "B": "❌ Incorrecto. La afirmación sobre la capacidad de crear biofilm sobre materiales inertes es CORRECTA. S. epidermidis (coagulasa negativa) es conocido por formar biofilm en prótesis y catéteres.",
+      "C": "❌ Incorrecto. La afirmación es CORRECTA: numerosas especies pertenecen al grupo de estafilococos coagulasa negativa y se diferencian de S. aureus por ser menos virulentas y no producir coagulasa."
+    }
+  },
+  {
+    "QUESTAO": 21,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "cápside viral",
+      "protección",
+      "material genético",
+      "virus"
+    ],
+    "ENUNCIADO": "¿Cuáles de las siguientes son características propias de la cápside viral? (Marque todas las opciones que considere correctas).",
+    "ALTERNATIVAS": {
+      "A": "Protege el material genético",
+      "B": "Puede tener diferente conformación espacial",
+      "C": "Es idéntica en todos los virus"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La cápside viral protege el material genético (ADN o ARN) del virus contra nucleasas y otros factores ambientales. También participa en la unión a receptores celulares y en la antigenicidad viral.",
+      "B": "❌ Incorrecto. Es cierto que la cápside puede tener diferentes conformaciones espaciales (icosaédrica, helicoidal, compleja), pero la opción A (protege el material genético) también es una característica propia de la cápside.",
+      "C": "❌ Incorrecto. La cápside NO es idéntica en todos los virus. Diferentes virus tienen cápsides con distintas estructuras, composición proteica y antigenicidad. La cápside es específica de cada familia viral."
+    }
+  },
+  {
+    "QUESTAO": 22,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Legionella",
+      "intracelular",
+      "agua",
+      "torres refrigeración"
+    ],
+    "ENUNCIADO": "Marque las afirmaciones correctas acerca de Legionella: acondicionados y cañerías de agua.",
+    "ALTERNATIVAS": {
+      "A": "Suele estar presente en reservas naturales de agua",
+      "B": "Puede crecer intracelularmente",
+      "C": "Suelen estar presentes en torres de refrigeración, condensadores de aire",
+      "D": "Es un coco"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Legionella pneumophila es una bacteria que habita en reservas naturales de agua (ríos, lagos) y puede colonizar sistemas artificiales de agua (torres de refrigeración, aire acondicionado, cañerías). Es un bacilo Gram negativo intracelular facultativo.",
+      "B": "❌ Incorrecto. Es cierto que Legionella puede crecer intracelularmente (en macrófagos alveolares), pero la opción A también es correcta y es la afirmación más amplia sobre la bacteria.",
+      "C": "❌ Incorrecto. Es cierto que Legionella está presente en torres de refrigeración, condensadores y cañerías, pero la opción A es más general y correcta.",
+      "D": "❌ Incorrecto. Legionella NO es un coco, es un bacilo Gram negativo. Esta afirmación es falsa."
+    }
+  },
+  {
+    "QUESTAO": 23,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "virus hepatitis B",
+      "ADN",
+      "genoma",
+      "hepatotropos"
+    ],
+    "ENUNCIADO": "¿Cuál de los siguientes virus hepatotropos no posee un genoma constituido por ARN?",
+    "ALTERNATIVAS": {
+      "A": "VHC",
+      "B": "VHB",
+      "C": "VHA",
+      "D": "VHE",
+      "E": "VHD"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. El VHC (virus hepatitis C) tiene genoma ARN monocatenario lineal de polaridad positiva. Pertenece a la familia Flaviviridae.",
+      "B": "✅ Correcto. El VHB (virus de la hepatitis B) NO posee genoma ARN. Es un virus ADN de doble cadena parcial (hepadnavirus). Todos los demás virus hepatotropos mencionados (VHC, VHA, VHE, VHD) tienen genoma ARN.",
+      "C": "❌ Incorrecto. El VHA (virus hepatitis A) tiene genoma ARN monocatenario de polaridad positiva. Pertenece a la familia Picornaviridae.",
+      "D": "❌ Incorrecto. El VHE (virus hepatitis E) tiene genoma ARN monocatenario de polaridad positiva. Pertenece a la familia Hepeviridae.",
+      "E": "❌ Incorrecto. El VHD (virus hepatitis D) es un virus ARN defectivo que requiere co-infección con VHB. Tiene genoma ARN circular de polaridad negativa."
+    }
+  },
+  {
+    "QUESTAO": 24,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Streptococcus",
+      "Staphylococcus",
+      "Enterococcus",
+      "disposición"
+    ],
+    "ENUNCIADO": "Marque la/la opción/es CORRECTA/AS:",
+    "ALTERNATIVAS": {
+      "A": "Género Streptococcus → Racimos",
+      "B": "Género Staphylococcus → Cadenas",
+      "C": "Género Enterococcus → Diplococos o cadena corta"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. El género Streptococcus se dispone en CADENAS, no en racimos. Los racimos son característicos de Staphylococcus.",
+      "B": "❌ Incorrecto. El género Staphylococcus se dispone en RACIMOS (en forma de uvas), no en cadenas. La disposición en cadenas corresponde a Streptococcus.",
+      "C": "✅ Correcto. Enterococcus se dispone en diplococos o cadenas cortas. En cambio: Streptococcus forma CADENAS (no racimos), y Staphylococcus forma RACIMOS (no cadenas). La disposición es clave para la identificación bacteriana."
+    }
+  },
+  {
+    "QUESTAO": 25,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "S. pyogenes",
+      "estreptolisina",
+      "toxina eritrogénica",
+      "escarlatina"
+    ],
+    "ENUNCIADO": "¿Cuál es la toxina responsable del mecanismo toxigénico de S. pyogenes?",
+    "ALTERNATIVAS": {
+      "A": "Estreptolisina",
+      "B": "Hialuronidasa",
+      "C": "Eritrogénica",
+      "D": "A + C"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La estreptolisina es una toxina de S. pyogenes, pero no es la única. También produce la toxina eritrogénica. La combinación A+C es correcta.",
+      "B": "❌ Incorrecto. La hialuronidasa es una ENZIMA (factor de diseminación), no una toxina. Degrada ácido hialurónico y facilita la invasión tisular.",
+      "C": "❌ Incorrecto. La toxina eritrogénica (toxina pirogénica estreptocócica) es la responsable de la escarlatina, pero la estreptolisina también es parte del mecanismo toxigénico. La respuesta correcta es A+C.",
+      "D": "✅ Correcto. S. pyogenes produce estreptolisina (toxina hemolítica: estreptolisina O y S) y toxina eritrogénica (toxina pirogénica estreptocócica, causante del exantema en escarlatina). Ambas contribuyen a su mecanismo toxigénico."
+    }
+  },
+  {
+    "QUESTAO": 26,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Salmonella typhi",
+      "fiebre tifoidea",
+      "patogenia",
+      "diseminación"
+    ],
+    "ENUNCIADO": "¿Qué microorganismo tiene una patogenia de ingestión, infección de vasos linfáticos y ganglios mesentéricos, diseminación a bazo, riñón, hígado y vesícula; excreción?",
+    "ALTERNATIVAS": {
+      "A": "Salmonella typhi",
+      "B": "Vibrio cholerae",
+      "C": "Shigella dysenteriae",
+      "D": "Escherichia coli"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Salmonella typhi sigue esta patogenia típica: ingestión → infección de vasos linfáticos y ganglios mesentéricos → diseminación hematógena a bazo, hígado, médula ósea → colonización de vesícula biliar → excreción en heces. Causa fiebre tifoidea.",
+      "B": "❌ Incorrecto. Vibrio cholerae no tiene esta patogenia. El cólera actúa mediante toxina colérica en el intestino delgado, causando diarrea acuosa masiva sin diseminación sistémica ni invasión de ganglios.",
+      "C": "❌ Incorrecto. Shigella dysenteriae invade la mucosa del colon distal causando disentería. No tiene diseminación sistémica a bazo, hígado y vesícula. Su patogenia es local invasiva.",
+      "D": "❌ Incorrecto. E. coli enterotoxigénica (ECET) actúa en intestino delgado mediante toxinas, sin invasión de ganglios ni diseminación sistémica. La patogenia descrita corresponde a Salmonella typhi."
+    }
+  },
+  {
+    "QUESTAO": 27,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "gripe",
+      "incubación",
+      "período",
+      "complicaciones",
+      "influenza"
+    ],
+    "ENUNCIADO": "La infección por virus de la gripe se caracteriza por 3 de las siguientes opciones, marque la INCORRECTA: neumonías bacterianas sobreañadidas;",
+    "ALTERNATIVAS": {
+      "A": "Periodo de incubación largo (15-21 días)",
+      "B": "Una de las principales complicaciones y causa de muerte por gripe son las",
+      "C": "Cuadro febril con cefalea, mialgias, afectación del estado general y tos",
+      "D": "Puede cursar con cuadros graves en los extremos de la vida"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Es INCORRECTO que la gripe tenga período de incubación largo (15-21 días). El período de incubación de la gripe es CORTO: 1-4 días (promedio 2 días). El período de incubación largo corresponde a otras enfermedades como hepatitis B (60-120 días).",
+      "B": "❌ Incorrecto. Esta afirmación es CORRECTA, no incorrecta. Las neumonías bacterianas sobreañadidas (S. pneumoniae, S. aureus, H. influenzae) son una complicación grave y causa frecuente de muerte en la gripe.",
+      "C": "❌ Incorrecto. Esta afirmación es CORRECTA. La gripe se presenta con fiebre alta, cefalea, mialgias intensas, afectación del estado general y tos seca. Es un cuadro de inicio brusco.",
+      "D": "❌ Incorrecto. Esta afirmación es CORRECTA. Los extremos de la vida (niños pequeños y ancianos) tienen mayor riesgo de formas graves y complicaciones por gripe."
+    }
+  },
+  {
+    "QUESTAO": 28,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "período de incubación",
+      "hepatitis",
+      "rabia",
+      "sarampión",
+      "gripe"
+    ],
+    "ENUNCIADO": "El período de incubación:",
+    "ALTERNATIVAS": {
+      "A": "Es muy corto en la rabia (1 día)",
+      "B": "Es muy prolongado en el sarampión (más de 200 días)",
+      "C": "Puede ser muy extenso en la hepatitis (más de 60 días)",
+      "D": "Puede ser muy extenso en la gripe (más de 100 días)"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La rabia tiene un período de incubación MUY prolongado (semanas a meses, promedio 20-90 días), no corto. Un día sería extremadamente inusual.",
+      "B": "❌ Incorrecto. El sarampión tiene un período de incubación de 7-14 días (promedio 10 días), no más de 200 días. Eso sería más característico de enfermedades como la rabia.",
+      "C": "✅ Correcto. La hepatitis B puede tener un período de incubación muy extenso, de 60 a 120 días (hasta 180 días). Es el período de incubación más prolongado entre las hepatitis virales.",
+      "D": "❌ Incorrecto. La gripe tiene período de incubación CORTO (1-4 días), no extenso. La hepatitis B (>60 días) es la que tiene período de incubación extenso."
+    }
+  },
+  {
+    "QUESTAO": 29,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "toxina tetánica",
+      "neurotoxina",
+      "Clostridium tetani"
+    ],
+    "ENUNCIADO": "¿Cuál de las siguientes es una neurotoxina?",
+    "ALTERNATIVAS": {
+      "A": "Colérica",
+      "B": "TSST-1 producida por Staphylococcus aureus",
+      "C": "Fosfolipasa C",
+      "D": "Tetánica"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La toxina colérica (producida por Vibrio cholerae) es una enterotoxina que activa la adenilato ciclasa en enterocitos, causando diarrea acuosa. No es una neurotoxina.",
+      "B": "❌ Incorrecto. TSST-1 (Toxic Shock Syndrome Toxin-1) de S. aureus es una superantígeno que causa síndrome de shock tóxico, no es una neurotoxina. Actúa activando masivamente linfocitos T.",
+      "C": "❌ Incorrecto. La fosfolipasa C (producida por Clostridium perfringens) es una toxina que degrada membranas celulares causando necrosis, pero no es específicamente una neurotoxina. Actúa sobre membranas lipídicas.",
+      "D": "✅ Correcto. La toxina tetánica producida por Clostridium tetani es una neurotoxina (tetanospasmina). Impide la liberación de GABA y glicina en las sinapsis inhibitorias del SNC, causando espasticidad muscular generalizada (tétanos)."
+    }
+  },
+  {
+    "QUESTAO": 30,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "S. pyogenes",
+      "faringitis",
+      "Gram",
+      "cultivo",
+      "ASO"
+    ],
+    "ENUNCIADO": "Niño de 6 años es traído a la consulta por su madre, refiere fiebre alta de 5 horas de evolución y disfagia. Usted sospecha en faringitis por S. pyogenes. ¿Qué prueba solicitaría para confirmar su diagnóstico? PCR;",
+    "ALTERNATIVAS": {
+      "A": "Gram, cultivo e identificación de exudado faríngeo",
+      "B": "Toma de muestra mediante aspirado nasofaríngeo y diagnóstico directo mediante",
+      "C": "Diagnóstico indirecto mediante dosaje de ASO en plasma"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. El diagnóstico de faringitis por S. pyogenes se confirma mediante Gram (cocos Gram+ en cadena), cultivo en agar sangre con identificación (beta-hemólisis, bacitracina sensible) y tipificación del exudado faríngeo. Es el estándar de oro.",
+      "B": "❌ Incorrecto. La PCR en aspirado nasofaríngeo no es el método de elección para faringitis estreptocócica. El aspirado nasofaríngeo se usa para virus respiratorios. La muestra correcta es exudado faríngeo.",
+      "C": "❌ Incorrecto. El dosaje de ASO (antiestreptolisina O) es un método INDIRECTO que detecta anticuerpos, útil para diagnóstico retrospectivo de fiebre reumática, no para faringitis aguda. El diagnóstico directo (cultivo) es el indicado."
+    }
+  },
+  {
+    "QUESTAO": 31,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "influenza A",
+      "hemaglutinina",
+      "neuraminidasa",
+      "deriva antigénica"
+    ],
+    "ENUNCIADO": "Con respecto a los virus de la gripe /A, B y C), marque todas las opciones correctas: envoltura lipídica. Estas le permiten interactuar con las células del epitelio respiratorio; pandemias; antigénicos mayores, aunque sí suficiente deriva antigénica como para que la cepa circulante pueda ser la causante de epidemias; contra infecciones futuras.",
+    "ALTERNATIVAS": {
+      "A": "El virus Influenza A presenta hemaglutininas y neuraminidasas insertas en su",
+      "B": "Las variaciones antigénicas son comunes en el virus Influenza tipo B, responsable de",
+      "C": "El virus Influenza B, es un virus únicamente humano y no experimenta cambios",
+      "D": "La memoria inmunológica desencadenada por la infección de estos virus no sirve"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. El virus Influenza A tiene hemaglutinina (HA) y neuraminidasa (NA) en su envoltura lipídica. La HA se une a receptores de ácido siálico en células respiratorias. La NA libera viriones hijos de la célula infectada.",
+      "B": "❌ Incorrecto. Las variaciones antigénicas mayores (shift) son típicas de Influenza A, no B. Influenza B sufre solo deriva antigénica (drift) y no causa pandemias.",
+      "C": "❌ Incorrecto. Es cierto que Influenza B es principalmente humano y experimenta deriva antigénica, pero la opción A es la más completa y correcta.",
+      "D": "❌ Incorrecto. La memoria inmunológica SÍ sirve contra reinfección con la misma cepa, pero la deriva antigénica genera nuevas variantes que escapan a la inmunidad previa."
+    }
+  },
+  {
+    "QUESTAO": 32,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Enterobacteriaceae",
+      "bacilos Gram negativos",
+      "Enterococcus"
+    ],
+    "ENUNCIADO": "Dentro de los BG- se destaca la familia Enterobacteriaceae, caracterizadas por ser aerobias y anaerobias facultativas, crecer bien en medios de cultivos usuales y fermentar la glucosa. Marque la opción INCORRECTA en relación a los géneros que pertenecen a esta familia:",
+    "ALTERNATIVAS": {
+      "A": "Salmonella, Shigella, Klebsiella, Serratia",
+      "B": "Yersinia, Escherichia, Enterobacter, Salmonella",
+      "C": "Escherichia, Proteus, Enterococcus, Yersinia",
+      "D": "Proteus, Morganella, Shigella, Klebsiella"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Salmonella, Shigella, Klebsiella y Serratia SÍ son todos géneros de Enterobacteriaceae. Esta opción es correcta, no incorrecta.",
+      "B": "❌ Incorrecto. Yersinia, Escherichia, Enterobacter y Salmonella SÍ son enterobacterias. Yersinia pestis es enterobacteria a pesar de ser atípica.",
+      "C": "✅ Correcto. Enterococcus NO pertenece a la familia Enterobacteriaceae. Enterococcus es un coco Gram positivo (familia Enterococcaceae). Enterobacteriaceae son bacilos Gram negativos. La opción C incluye Enterococcus erróneamente como enterobacteria.",
+      "D": "❌ Incorrecto. Proteus, Morganella, Shigella y Klebsiella SÍ son enterobacterias. Esta opción es correcta."
+    }
+  },
+  {
+    "QUESTAO": 33,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "esterilización",
+      "desinfección",
+      "antisepsia",
+      "bacteriostático"
+    ],
+    "ENUNCIADO": "Un agente físico o químico que elimina todos los microorganismos se puede denominar:",
+    "ALTERNATIVAS": {
+      "A": "Esterilizante",
+      "B": "Bacteriostático",
+      "C": "Antiséptico",
+      "D": "Desinfectante"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Un agente ESTERILIZANTE elimina TODAS las formas de vida microbiana, incluyendo bacterias, virus, hongos y esporas. Ejemplos: autoclave (vapor a presión), óxido de etileno, radiación gamma.",
+      "B": "❌ Incorrecto. Bacteriostático inhibe el crecimiento bacteriano pero NO elimina los microorganismos. Al retirar el agente, las bacterias pueden volver a crecer.",
+      "C": "❌ Incorrecto. Antiséptico reduce la carga microbiana en tejidos vivos, pero no elimina TODOS los microorganismos (especialmente esporas).",
+      "D": "❌ Incorrecto. Desinfectante elimina microorganismos en superficies inertes, pero puede no eliminar esporas bacterianas. No es esterilizante."
+    }
+  },
+  {
+    "QUESTAO": 34,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Salmonella",
+      "enteropatías",
+      "alimentos contaminados",
+      "zoonosis"
+    ],
+    "ENUNCIADO": "Dentro de las enterobacterias, existen especies patógenas primarias y oportunistas. Elija la opción correcta en relación a Salmonella spp. comporta como patógeno oportunista; alimentos contaminados de origen animal (principalmente huevos, carne, aves de corral y leche) o consumo de agua contaminada; numerosos animales. En el hombre se comportan como patógenos primarios, causando cuadros de diarrea no disenteriforme; typhi y paratyphi. Su único reservorio es el hombre.",
+    "ALTERNATIVAS": {
+      "A": "Salmonella enteritidis forma parte del microbiota intestinal del hombre, donde se",
+      "B": "Las personas contraen la enfermedad a través del consumo de quistes presentes en",
+      "C": "Todas las especies de Salmonella tienen como reservorio el tubo digestivo de",
+      "D": "Existen varios serotipos de Salmonelas entéricas, entre los cuales se destacan S"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Salmonella enteritidis NO forma parte de la microbiota intestinal humana normal. Es un patógeno que se adquiere por alimentos contaminados. Las enterobacterias comensales son E. coli, no Salmonella.",
+      "B": "✅ Correcto. La salmonelosis (no tifoidea) se adquiere por consumo de alimentos contaminados de origen animal: huevos (S. enteritidis), aves, carne, leche. Los quistes NO son la forma de transmisión (las bacterias no forman quistes).",
+      "C": "❌ Incorrecto. Salmonella NO tiene como reservorio principal el tubo digestivo de animales para todas las especies. S. typhi es específicamente humana (único reservorio). Y no todas causan diarrea no disenteriforme.",
+      "D": "❌ Incorrecto. Es cierto que S. typhi y paratyphi tienen reservorio humano, pero esta no es la opción más correcta sobre Salmonella spp. en general. La opción B describe correctamente la transmisión de Salmonella no tifoidea."
+    }
+  },
+  {
+    "QUESTAO": 35,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "medio de cultivo",
+      "selectivo",
+      "antibióticos",
+      "microbiología"
+    ],
+    "ENUNCIADO": "Un medio de cultivo al que se le agregan antibióticos es un medio:",
+    "ALTERNATIVAS": {
+      "A": "De conservación",
+      "B": "Selectivo",
+      "C": "De transporte",
+      "D": "Diferencial"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Un medio de conservación mantiene viables los microorganismos por tiempo prolongado, no contiene necesariamente antibióticos.",
+      "B": "✅ Correcto. Un medio SELECTIVO contiene sustancias (antibióticos, colorantes, sales biliares) que inhiben el crecimiento de ciertos microorganismos y permiten el crecimiento selectivo de otros. Ej: agar MacConkey (sales biliares + cristal violeta).",
+      "C": "❌ Incorrecto. Un medio de TRANSPORTE mantiene la viabilidad de la muestra durante el traslado al laboratorio, no necesariamente contiene antibióticos.",
+      "D": "❌ Incorrecto. Un medio DIFERENCIAL permite distinguir grupos bacterianos por características metabólicas (ej: lactosa en MacConkey), no contiene necesariamente antibióticos."
+    }
+  },
+  {
+    "QUESTAO": 36,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "medio de transporte",
+      "conservación",
+      "muestra",
+      "laboratorio"
+    ],
+    "ENUNCIADO": "¿Cómo conservaría una muestra microbiana hasta llevarla al laboratorio?",
+    "ALTERNATIVAS": {
+      "A": "Al aire libre",
+      "B": "En agua estéril",
+      "C": "Congelándola",
+      "D": "En un medio de transporte"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Al aire libre la muestra se deseca, se contamina y los microorganismos pierden viabilidad. No es una forma adecuada de conservación.",
+      "B": "❌ Incorrecto. En agua estéril los microorganismos pueden lisarse por shock osmótico y no se mantienen viables adecuadamente. Se requiere un medio de transporte.",
+      "C": "❌ Incorrecto. La congelación puede dañar las células bacterianas por formación de cristales de hielo. El método correcto es usar un medio de transporte y mantener a 4°C.",
+      "D": "✅ Correcto. Un medio de transporte (como Stuart, Cary-Blair, Amies) mantiene la viabilidad de los microorganismos sin permitir su proliferación, preservando la muestra hasta su procesamiento en el laboratorio."
+    }
+  },
+  {
+    "QUESTAO": 37,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "S. aureus",
+      "enzimas",
+      "piel",
+      "partes blandas",
+      "invasivo"
+    ],
+    "ENUNCIADO": "S. aureus puede formar parte del microbiota habitual de piel y fosas nasales. Marque lo correcto en relación a los procesos patológicos que causa: escarlatina; tóxico (TSS), puede desencadenar una respuesta inflamatoria sistémica; partes blandas. Estas son localizadas y es muy raro que invadan la sangre causando bacteriemias;",
+    "ALTERNATIVAS": {
+      "A": "Mediante su mecanismo toxigénico, causan principalmente gastroenteritis y",
+      "B": "Por el mecanismo inmunopatológico, gracias a la producción de toxina del shock",
+      "C": "A través de su mecanismo invasivo (producción de enzimas) causa infecciones piel y"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. S. aureus produce gastroenteritis por toxina estafilocócica (intoxicación alimentaria), y la toxina TSST-1 causa shock tóxico, NO escarlatina. La escarlatina es por toxina eritrogénica de S. pyogenes.",
+      "B": "❌ Incorrecto. TSST-1 (Toxic Shock Syndrome Toxin) es un superantígeno que activa masivamente linfocitos T, causando SÍNDROME DE SHOCK TÓXICO. No es exactamente \"inmunopatológico\", sino toxigénico. Y la opción C es más correcta.",
+      "C": "✅ Correcto. S. aureus produce enzimas (coagulasa, hialuronidasa, lipasa, nucleasa) que le permiten invadir tejidos. Causa infecciones de piel y partes blandas (foliculitis, forúnculo, ántrax, impétigo) que pueden extenderse localmente y causar bacteriemia."
+    }
+  },
+  {
+    "QUESTAO": 38,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "adenovirus",
+      "serotipos",
+      "infecciones",
+      "virus desnudo"
+    ],
+    "ENUNCIADO": "Marque lo INCORRECTO en relación a Adenovirus: vía fecal-oral;",
+    "ALTERNATIVAS": {
+      "A": "Los serotipos 40 y 41 causan diarrea en niños",
+      "B": "Se transmiten por gotas respiratorias, contacto directo con agua, toallas, fomites o",
+      "C": "Son virus desnudos, resistentes y persistentes en el ambiente",
+      "D": "Todos los serotipos causan únicamente infecciones respiratorias"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Esta afirmación es CORRECTA. Los serotipos 40 y 41 de adenovirus son causa frecuente de gastroenteritis viral en niños (diarrea).",
+      "B": "❌ Incorrecto. Esta afirmación es CORRECTA. Los adenovirus se transmiten por gotas respiratorias, contacto directo con fomites, agua contaminada y vía fecal-oral (especialmente serotipos entéricos).",
+      "C": "❌ Incorrecto. Esta afirmación es CORRECTA. Los adenovirus son virus desnudos (sin envoltura), lo que los hace resistentes a detergentes, pH ácido y persistencia en el ambiente.",
+      "D": "✅ Correcto. Es INCORRECTO decir que TODOS los serotipos de adenovirus causan únicamente infecciones respiratorias. Los adenovirus causan también conjuntivitis, gastroenteritis, cistitis, hepatitis y enfermedad diseminada. Los serotipos 40 y 41 causan diarrea."
+    }
+  },
+  {
+    "QUESTAO": 39,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Corynebacterium diphtheriae",
+      "difteria",
+      "fago lisogénico",
+      "toxina"
+    ],
+    "ENUNCIADO": "Con respecto a Corynebacterium diphteriae, marque la opción correcta:",
+    "ALTERNATIVAS": {
+      "A": "No existe inmunoprofilaxis",
+      "B": "Las cepas portadoras de un fago lisogénico son las que causan difteria",
+      "C": "Todas las cepas causan difteria"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. SÍ existe inmunoprofilaxis contra la difteria. La vacuna DTP (triple bacteriana) o la vacuna antidiftérica (toxoide) están incluidas en el calendario infantil. La inmunización es efectiva.",
+      "B": "✅ Correcto. Corynebacterium diphtheriae solo causa difteria cuando está lisogenizado por un bacteriófago (fago β) que porta el gen tox (toxina diftérica). La toxina es una ADP-ribosiltransferasa que inhibe la síntesis proteica.",
+      "C": "❌ Incorrecto. NO todas las cepas de C. diphtheriae causan difteria. Solo las cepas lisogenizadas por el fago β que expresa la toxina diftérica son patógenas. Cepas no toxigénicas pueden colonizar sin causar enfermedad."
+    }
+  },
+  {
+    "QUESTAO": 40,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "microaerófilos",
+      "oxígeno",
+      "Campylobacter",
+      "crecimiento"
+    ],
+    "ENUNCIADO": "Los microorganismos que crecen mejor a una concentración de oxígeno inferior a la atmosférica se denominan:",
+    "ALTERNATIVAS": {
+      "A": "Aerobios obligados",
+      "B": "Aerobios estrictos",
+      "C": "Aerobios facultativos",
+      "D": "Anaerobios facultativos",
+      "E": "Microaerófilos"
+    },
+    "RESPOSTA_CORRETA": "E",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Los aerobios obligados requieren O2 atmosférico (21%) para crecer, no concentraciones inferiores. Mycobacterium tuberculosis, Pseudomonas aeruginosa son aerobios obligados.",
+      "B": "❌ Incorrecto. Aerobios estrictos = aerobios obligados. Requieren O2 atmosférico, no concentraciones inferiores.",
+      "C": "❌ Incorrecto. Los aerobios facultativos pueden crecer con o sin O2, prefieren O2 pero crecen en anaerobiosis. No requieren concentraciones inferiores a la atmosférica.",
+      "D": "❌ Incorrecto. Anaerobios facultativos = aerobios facultativos (crecen con o sin O2). No se definen por crecer mejor a baja concentración de O2.",
+      "E": "✅ Correcto. Los microaerófilos crecen mejor a concentraciones de oxígeno REDUCIDAS (5-10% O2), inferiores a la atmosférica (~21%). Ejemplos: Campylobacter jejuni, Helicobacter pylori. Requieren O2 pero en baja concentración."
+    }
+  },
+  {
+    "QUESTAO": 41,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Bacteroides",
+      "anaerobio",
+      "intestino",
+      "infecciones"
+    ],
+    "ENUNCIADO": "Respecto a Bacteroides:",
+    "ALTERNATIVAS": {
+      "A": "Es un microorganismo anaerobio estricto",
+      "B": "Es el microorganismo anaerobio mayoritario del intestino humano",
+      "C": "Pueden producir infecciones",
+      "D": "Todas las anteriores"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Es cierto que Bacteroides es anaerobio estricto, pero también es correcto que es mayoritario en intestino y que puede producir infecciones. Todas las opciones son correctas.",
+      "B": "❌ Incorrecto. Es cierto que Bacteroides es el anaerobio más abundante del intestino, pero las otras afirmaciones también son correctas.",
+      "C": "❌ Incorrecto. Es cierto que Bacteroides puede producir infecciones (endógenas, por ruptura de barrera intestinal), pero las otras afirmaciones también son correctas.",
+      "D": "✅ Correcto. Todas las afirmaciones son correctas: Bacteroides es un anaerobio estricto (muere en presencia de O2), es el género anaerobio más abundante en el intestino humano (10¹¹ UFC/g), y puede causar infecciones (peritonitis, abscesos) cuando sale del intestino."
+    }
+  },
+  {
+    "QUESTAO": 42,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "colonización",
+      "infección",
+      "enfermedad",
+      "huésped"
+    ],
+    "ENUNCIADO": "¿Cuál de los siguientes es el grado mínimo de infección sin respuesta del huésped?",
+    "ALTERNATIVAS": {
+      "A": "Colonización",
+      "B": "Infección inaparente",
+      "C": "Enfermedad infecciosa",
+      "D": "Todas las anteriores",
+      "E": "Ninguna de las anteriores"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La COLONIZACIÓN es la presencia de microorganismos en un tejido sin invasión ni respuesta inflamatoria del huésped. Es el grado mínimo de interacción huésped-microorganismo sin enfermedad. Ej: S. aureus en fosas nasales.",
+      "B": "❌ Incorrecto. La infección inaparente (subclínica) SÍ genera respuesta inmune (anticuerpos), aunque no haya síntomas. La colonización es el grado mínimo, SIN respuesta del huésped.",
+      "C": "❌ Incorrecto. La enfermedad infecciosa es el grado máximo de interacción, con síntomas y signos clínicos. No es el grado mínimo.",
+      "D": "❌ Incorrecto. No \"todas las anteriores\". Solo la colonización es el grado mínimo de infección sin respuesta del huésped.",
+      "E": "❌ Incorrecto. SÍ existe una opción correcta: la colonización."
+    }
+  },
+  {
+    "QUESTAO": 43,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "enterovirus",
+      "echovirus",
+      "picornavirus",
+      "rotavirus"
+    ],
+    "ENUNCIADO": "¿Cuáles de los siguientes virus son enterovirus?",
+    "ALTERNATIVAS": {
+      "A": "Echo virus",
+      "B": "Rotavirus",
+      "C": "Virus de la poliomielitis",
+      "D": "Coxsackie A"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Los Echo virus (Enteric Cytopathic Human Orphan) pertenecen a la familia Picornaviridae, género Enterovirus. Enterovirus incluye: poliovirus, coxsackievirus A y B, echovirus y enterovirus numerados. Rotavirus NO es enterovirus.",
+      "B": "❌ Incorrecto. Rotavirus NO es un enterovirus. Pertenece a la familia Reoviridae, género Rotavirus. Aunque causa gastroenteritis, no está clasificado como enterovirus.",
+      "C": "❌ Incorrecto. El virus de la poliomielitis SÍ es un enterovirus (Picornaviridae), pero la pregunta piene cuáles de estos son enterovirus y echovirus también lo es. Echo virus es la única opción entre las listadas que es enterovirus (junto con poliovirus y coxsackie, pero el enunciado tiene una estructura diferente).",
+      "D": "❌ Incorrecto. Coxsackie A es un enterovirus, pero echo virus también lo es. La opción A (Echo virus) es la respuesta más directa."
+    }
+  },
+  {
+    "QUESTAO": 44,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "adherencia",
+      "fimbrias",
+      "pili",
+      "factor de virulencia"
+    ],
+    "ENUNCIADO": "Sobre la adherencia microbiana, marque la opción correcta:",
+    "ALTERNATIVAS": {
+      "A": "Está ligado a estructuras superficiales denominadas fimbrias o Pili",
+      "B": "Está ligado a estructuras superficiales denominadas flagelos",
+      "C": "No es un factor de virulencia"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La adherencia microbiana a las células del huésped es un factor de virulencia fundamental. Está mediada por estructuras superficiales como las fimbrias (pili), que son apéndices proteicos que reconocen receptores específicos en la célula huésped.",
+      "B": "❌ Incorrecto. Los flagelos son estructuras de MOTILIDAD, no de adherencia. Permiten el desplazamiento bacteriano (quimiotaxis) pero no la adhesión a células del huésped.",
+      "C": "❌ Incorrecto. La adherencia SÍ es un factor de virulencia esencial. Sin adherencia, las bacterias no pueden colonizar tejidos ni resistir mecanismos de arrastre (orina, moco, flujo)."
+    }
+  },
+  {
+    "QUESTAO": 45,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "mastocitos",
+      "granulaciones metacromáticas",
+      "tejido conectivo",
+      "histamina"
+    ],
+    "ENUNCIADO": "Correlacione: (G) Posee granulaciones metacromáticas en su citoplasma (F) Abunda en lisosomas secundarios y vesículas endocíticas al MET (B) Al MET tiene abundancia de RER núcleo excéntrico con cromatina de disposición típica (A) Produce moléculas de tropocolágeno 1 (E) Sintetiza y exocita sodio tropocolágeno 3",
+    "ALTERNATIVAS": {
+      "A": "Fibroblastos",
+      "B": "Plasmocitos",
+      "C": "Adipocitos",
+      "D": "Macrófagos inactivos",
+      "E": "Células reticulares",
+      "F": "Macrófagos",
+      "G": "Mastocitos",
+      "H": "Células mesenquimales indiferenciadas"
+    },
+    "RESPOSTA_CORRETA": "G",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "B": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "C": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "D": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "E": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "F": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas).",
+      "G": "✅ Correcto. Los mastocitos (células cebadas) poseen granulaciones metacromáticas en su citoplasma, visibles con colorantes como azul de toluidina. Contienen histamina, heparina y otras sustancias. Son células del tejido conectivo involucradas en alergia e inflamación.",
+      "H": "❌ Incorrecto. Las granulaciones metacromáticas son características de los MASTOCITOS (célula G). Las otras células tienen otras características: fibroblastos (colágeno), plasmocitos (RER), macrófagos (lisosomas)."
+    }
+  },
+  {
+    "QUESTAO": 46,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Giardia",
+      "disentería",
+      "protozoario",
+      "diarrea"
+    ],
+    "ENUNCIADO": "Giardia duodenales suele producir disentería y úlceras intestinales",
+    "ALTERNATIVAS": {
+      "A": "Verdadero",
+      "B": "Falso"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Es FALSO. Giardia NO produce disentería (diarrea con sangre y moco) ni úlceras. La disentería es causada por Entamoeba histolytica o Shigella. Giardia causa diarrea acuosa sin sangre.",
+      "B": "✅ Correcto. Es FALSO. Giardia duodenalis (lamblia) NO produce disentería ni úlceras intestinales. Causa diarrea acuosa, esteatorrea, dolor abdominal y malabsorción. No invade la mucosa (es no invasiva), actúa por bloqueo de la superficie absortiva."
+    }
+  },
+  {
+    "QUESTAO": 47,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Entamoeba histolytica",
+      "absceso hepático",
+      "amebiasis"
+    ],
+    "ENUNCIADO": "Entamoeba hystolitica puede producir afectación hepática.",
+    "ALTERNATIVAS": {
+      "A": "Verdadero",
+      "B": "Falso"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. VERDADERO. Entamoeba histolytica puede causar afectación hepática (absceso hepático amebiano). Los trofozoítos invaden la mucosa intestinal, llegan a la circulación portal y alcanzan el hígado, donde forman abscesos.",
+      "B": "❌ Incorrecto. SÍ puede producir afectación hepática. Entamoeba histolytica es capaz de diseminarse por vía portal y causar abscesos hepáticos amebianos, que son una complicación extraintestinal clásica."
+    }
+  },
+  {
+    "QUESTAO": 48,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "coccidiosis",
+      "inmunosuprimido",
+      "Cryptosporidium"
+    ],
+    "ENUNCIADO": "La coccidiosis intestinal afecta más a inmunosuprimidos que a inmunocompetentes:",
+    "ALTERNATIVAS": {
+      "A": "Verdadero",
+      "B": "Falso"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. VERDADERO. La coccidiosis intestinal (Cryptosporidium, Cyclospora, Isospora, Sarcocystis) afecta más a pacientes inmunosuprimidos (VIH/SIDA, trasplantados, desnutridos) que a inmunocompetentes. En inmunocompetentes suele ser autolimitada.",
+      "B": "❌ Incorrecto. Es VERDADERO que la coccidiosis afecta más a inmunosuprimidos. Los inmunocompetentes pueden tener infección asintomática o autolimitada, mientras que en VIH puede causar diarrea crónica severa."
+    }
+  },
+  {
+    "QUESTAO": 49,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "protozoarios",
+      "tamaño",
+      "microscopio",
+      "parásitos"
+    ],
+    "ENUNCIADO": "Algunos protozoarios tienen un tamaño que permite verlos a simple vista:",
+    "ALTERNATIVAS": {
+      "A": "Verdadero",
+      "B": "Falso"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. VERDADERO. Algunos protozoarios son lo suficientemente grandes para ser vistos a simple vista. Por ejemplo: Balantidium coli (50-70 μm), algunos trofozoítos de Entamoeba histolytica. Los parásitos macroscópicos incluyen helmintos adultos.",
+      "B": "❌ Incorrecto. Es VERDADERO. Aunque la mayoría de los protozoarios requieren microscopio, algunos son visibles macroscopicamente, como los trofozoítos grandes de ciertas especies."
+    }
+  },
+  {
+    "QUESTAO": 50,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Trichomonas vaginalis",
+      "flujo vaginal",
+      "diagnóstico",
+      "protozoario"
+    ],
+    "ENUNCIADO": "El flujo vaginal debe enviarse rápidamente al laboratorio para detectar la Trichomonas vaginalis:",
+    "ALTERNATIVAS": {
+      "A": "Verdadero",
+      "B": "Falso"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. VERDADERO. Trichomonas vaginalis es un protozoario flagelado muy frágil que debe enviarse rápidamente al laboratorio porque pierde movilidad y muere fuera del hospedero. La muestra debe procesarse en 30-60 minutos.",
+      "B": "❌ Incorrecto. Es VERDADERO. Trichomonas vaginalis no forma quistes, solo existe como trofozoíto y es muy sensible a la desecación, cambios de temperatura y pH. Rápido procesamiento es esencial."
+    }
+  },
+  {
+    "QUESTAO": 51,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "E. coli enteroinvasiva",
+      "apendicitis",
+      "infección herida",
+      "bacilo Gram negativo"
+    ],
+    "ENUNCIADO": "Un joven de 8años que fue operado de urgencia por una apendicitis aguda a las 48h presenta tumefacción de la herida y fiebre. Se realiza toma de muestra por punción de la herida. En coloración de Gram se observan abundantes leucocitos y abundantes bacilos Gram negativos. Cultivo bacteriológico en curso. Con esos datos, ¿cuál puede ser el agente causal?",
+    "ALTERNATIVAS": {
+      "A": "Shigella spp",
+      "B": "Klebsiella pneumoniae",
+      "C": "Escherichia coli enteroinvasiva"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Shigella spp. es un bacilo Gram negativo que causa disentería, pero no es el agente causal típico de infección de herida post-apendicectomía. E. coli enteroinvasiva es parte de la microbiota intestinal.",
+      "B": "❌ Incorrecto. Klebsiella pneumoniae puede causar infecciones nosocomiales, pero en una apendicitis aguda supurada, el agente más frecuente es E. coli (enteroinvasiva) de la microbiota intestinal.",
+      "C": "✅ Correcto. Escherichia coli enteroinvasiva (ECEI) es causa de infección intraabdominal post-apendicitis. Es un bacilo Gram negativo que invade células epiteliales del colon, causando diarrea sanguinolenta. En apendicitis complicada, puede causar peritonitis e infección de herida."
+    }
+  },
+  {
+    "QUESTAO": 52,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "sarampión",
+      "inmunidad",
+      "parainfluenza",
+      "serotipos"
+    ],
+    "ENUNCIADO": "Virus respiratorios: La correcta. protege durante toda la vida;",
+    "ALTERNATIVAS": {
+      "A": "La inmunidad natural que deja a infección por el virus del sarampión no los",
+      "B": "Los virus parainfluenza presenta un solo serotipo"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La inmunidad inducida por la VACUNA contra el sarampión puede disminuir con el tiempo (años), a diferencia de la inmunidad por infección natural que es de por vida. Esta afirmación se refiere a que la protección vacunal no siempre es lifelong.",
+      "B": "❌ Incorrecto. Los virus parainfluenza presentan 4 serotipos (1, 2, 3, 4), no uno solo. El serotipo 3 es el más frecuente en bronquiolitis y neumonía en lactantes."
+    }
+  },
+  {
+    "QUESTAO": 53,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Staphylococcus",
+      "catalasa",
+      "cocos Gram positivos",
+      "piel"
+    ],
+    "ENUNCIADO": "En el microbiota habitual de piel podemos encontrar distintas especies de Staphilococcus (S aureus en 30% de la población). La correcta:",
+    "ALTERNATIVAS": {
+      "A": "S aureus segrega biofilm o slime que recubren cateteres y prótesis",
+      "B": "S saprophyticus produce la enfermedad mediante toxinas",
+      "C": "Todos tienen la catalasa y son cocos Gram positivos en racimos"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Todos los estafilococos (S. aureus, S. epidermidis, S. saprophyticus) son catalasa-positivos y cocos Gram positivos dispuestos en racimos. La catalasa diferencia estafilococos (positivos) de estreptococos (negativos).",
+      "B": "❌ Incorrecto. S. aureus segrega biofilm/slime, pero S. EPIDERMIDIS (no S. aureus) es el más conocido por formar biofilm en catéteres y prótesis. S. aureus no es el principal productor de slime en dispositivos.",
+      "C": "❌ Incorrecto. S. saprophyticus produce infecciones urinarias en mujeres jóvenes, pero lo hace por adherencia al uroepitelio, no principalmente por toxinas. Su mecanismo es más invasivo (colonización) que toxigénico."
+    }
+  },
+  {
+    "QUESTAO": 54,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "hongos",
+      "eucariotas",
+      "membrana nuclear",
+      "levaduras",
+      "mohos"
+    ],
+    "ENUNCIADO": "Hongos. La correcta:",
+    "ALTERNATIVAS": {
+      "A": "Todos los hongos poseen membrana nuclear",
+      "B": "Todos los hongos son aerobios estrictos",
+      "C": "Todos los hongos son unicelulares"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Todos los hongos son eucariotas y poseen membrana nuclear verdadera (con envoltura nuclear). Esto los diferencia de las bacterias (procariotas sin núcleo). Los hongos pueden ser unicelulares (levaduras) o pluricelulares (mohos).",
+      "B": "❌ Incorrecto. NO todos los hongos son aerobios estrictos. Las levaduras (Saccharomyces) son anaerobias facultativas. Algunos hongos filamentosos son aerobios, pero hay especies con metabolismo fermentativo.",
+      "C": "❌ Incorrecto. NO todos los hongos son unicelulares. Levaduras son unicelulares, pero los mohos (hongos filamentosos) son pluricelulares con hifas. Los hongos dimorfos pueden cambiar de forma según la temperatura."
+    }
+  },
+  {
+    "QUESTAO": 55,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "gripe",
+      "vacunación",
+      "anciano",
+      "influenza"
+    ],
+    "ENUNCIADO": "Una anciana de 78años presenta signos y síntomas de gripe. Señale la correcta: no presenta complicaciones; nivel mundial.",
+    "ALTERNATIVAS": {
+      "A": "La vacunación no previene de forma completa los cuadros gripales",
+      "B": "La gripe es una enfermedad viral más común en la época estival y el paciente",
+      "C": "El síndrome gripal esta producido por el virus influenza y hay un único serotipo a"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La vacunación antigripal no previene de forma COMPLETA los cuadros gripales (eficacia 40-60%), especialmente en ancianos por inmunosenescencia. Reduce la severidad, hospitalizaciones y complicaciones, pero no garantiza protección total.",
+      "B": "❌ Incorrecto. La gripe es más común en INVIERNO, no en verano. Tampoco es correcto que no presente complicaciones: los ancianos tienen alto riesgo de neumonía, descompensación cardíaca y muerte.",
+      "C": "❌ Incorrecto. No hay un único serotipo mundial. Influenza tiene tipos A, B, C y múltiples subtipos circulantes que varían geográfica y estacionalmente."
+    }
+  },
+  {
+    "QUESTAO": 56,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "celulitis",
+      "anaerobios",
+      "Clostridium",
+      "polimicrobiano"
+    ],
+    "ENUNCIADO": "Un paciente de 35años presenta una celulitis de miembro inferior. Se le realiza punción de la zona afectada. Se solicita directo, cultivo aeróbico y anaeróbico. En la coloración de Gram del material de la herida se observan abundantes leucocitos, abundantes bacilos Gram positivos en cadenas y regulares bacilos Gram positivos esporulados. Cultivo bacteriológico en aerobiosis: negativo a las 24h. ¿Cuál es la respuesta correcta?",
+    "ALTERNATIVAS": {
+      "A": "La patología es polimicrobiana producida por bacterias anaerobias",
+      "B": "La toma de muestra debió hacerse por hisopado",
+      "C": "Los bacilos Gram positivos que se observan perden ser Corynebacterium spp"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La presencia de bacilos Gram+ esporulados y cocos Gram+ en cadena, con cultivo aerobio NEGATIVO, indica que los agentes son ANAEROBIOS. La celulitis es polimicrobiana, típicamente por Clostridium spp. (bacilos esporulados) y Peptostreptococcus (cocos anaerobios).",
+      "B": "❌ Incorrecto. La punción es el método adecuado, mejor que el hisopado superficial. La muestra de absceso debe obtenerse por punción para evitar contaminación de piel y obtener material representativo.",
+      "C": "❌ Incorrecto. Los bacilos Gram positivos esporulados son CLOSTRIDIUM (anaerobios), no Corynebacterium (que son aerobios no esporulados). La presencia de esporas es característica de Clostridium."
+    }
+  },
+  {
+    "QUESTAO": 57,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "infección post-quirúrgica",
+      "anaerobios",
+      "Clostridium",
+      "cirugía colónica"
+    ],
+    "ENUNCIADO": "Um paciente de 75años luego de una cirugía colónica de urgencia por obstrucción comienza con fiebres en picos, la herida presenta signos de flogosis. EN la coloración de Gram del material de la herida se observan abundantes leucocitos, abundantes bacilos Gram positivos en cadena y regulares bacilos Gram positivos esporulados. Cultivo en aerobiosis: negativo en 24h. Con estos datos, ¿cuál la respuesta correcta?",
+    "ALTERNATIVAS": {
+      "A": "La toma de muestra debió hacerse por hisopado",
+      "B": "La muestra debe conservarse en heladera hasta su procesamiento",
+      "C": "Los agentes causantes pueden ser bacterias anaerobias"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La toma de muestra por punción es correcta. El hisopado no es adecuado para muestras de heridas profundas, pero no es el error principal aquí.",
+      "B": "❌ Incorrecto. Las muestras para cultivo anaerobio NO deben conservarse en heladera (el frío daña anaerobios). Deben procesarse rápidamente o usar medios de transporte para anaerobios.",
+      "C": "✅ Correcto. La cirugía colónica, bacilos Gram+ esporulados, cultivo aerobio negativo a 24h → los agentes causales son bacterias ANAEROBIAS (Clostridium spp., Peptostreptococcus). Las infecciones postquirúrgicas abdominales suelen ser polimicrobianas aerobias-anaerobias."
+    }
+  },
+  {
+    "QUESTAO": 58,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "rabia",
+      "virus envuelto",
+      "neurotropo",
+      "rhabdovirus"
+    ],
+    "ENUNCIADO": "Rabia. La correcta:",
+    "ALTERNATIVAS": {
+      "A": "La encefalitis ráica es una complicación banal",
+      "B": "Es un virus envuelto y neurotropo",
+      "C": "Se debe vacunar a los humanos para prevenir la infección"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. La encefalitis rábica NO es una complicación banal. Es GRAVE y casi siempre MORTAL una vez que aparecen los síntomas. La rabia tiene letalidad cercana al 100%.",
+      "B": "✅ Correcto. El virus de la rabia (Rhabdoviridae, género Lyssavirus) es un virus envuelto (con envoltura lipídica) y NEUTRÓTROPO (con afinidad por el tejido nervioso). Migra desde el sitio de inoculación hasta el SNC por axones.",
+      "C": "❌ Incorrecto. La vacunación en humanos es POST-EXPOSICIÓN (profilaxis post-exposición: vacuna + inmunoglobulina), no preventiva universal. Se vacuna a humanos solo con riesgo laboral o después de mordedura. La prevención principal es vacunar animales (perros)."
+    }
+  },
+  {
+    "QUESTAO": 59,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Giardia lamblia",
+      "diarrea infantil",
+      "parásito",
+      "agua contaminada"
+    ],
+    "ENUNCIADO": "El parásito más frecuente que causa diarrea en infantes es:",
+    "ALTERNATIVAS": {
+      "A": "Criptosporidium hominis",
+      "B": "Giardia lamblia",
+      "C": "Entamoeba histolitica",
+      "D": "Todos son frecuentes",
+      "E": "Ninguno afecta a los niños"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Cryptosporidium hominis causa diarrea en niños, pero NO es el más frecuente. Giardia es la causa más común de diarrea parasitaria infantil a nivel global.",
+      "B": "✅ Correcto. Giardia lamblia (duodenalis) es el parásito más frecuente que causa diarrea en infantes en todo el mundo. Se transmite por agua contaminada, causa diarrea aguda y crónica con esteatorrea y malabsorción.",
+      "C": "❌ Incorrecto. Entamoeba histolytica es menos frecuente que Giardia como causa de diarrea infantil. Además, E. histolytica causa disentería (con sangre), no diarrea simple.",
+      "D": "❌ Incorrecto. No \"todos son frecuentes\". Giardia es significativamente más frecuente que Cryptosporidium y Entamoeba en niños.",
+      "E": "❌ Incorrecto. Sí afectan a los niños. Giardia es especialmente prevalente en niños de 1-4 años, en guarderías y regiones con saneamiento deficiente."
+    }
+  },
+  {
+    "QUESTAO": 60,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "impétigo",
+      "S. pyogenes",
+      "piel",
+      "piodermitis"
+    ],
+    "ENUNCIADO": "El impétigo es principalmente causado por:",
+    "ALTERNATIVAS": {
+      "A": "Streptococcus pyogenes",
+      "B": "Staphylococcus aureus",
+      "C": "Streptococcus agalactiae"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Streptococcus pyogenes (estreptococo beta-hemolítico del grupo A) es la causa principal de impétigo, especialmente el impétigo contagioso (no ampollar). Causa lesiones costrosas amarillentas en cara y extremidades.",
+      "B": "❌ Incorrecto. Staphylococcus aureus es la causa principal del impétigo AMPOLLAR (buloso), mientras que S. pyogenes es la causa principal del impétigo COSTROSO (no ampollar). S. pyogenes es globalmente la causa más frecuente de impétigo.",
+      "C": "❌ Incorrecto. Streptococcus agalactiae (GBS) es causa de sepsis neonatal y vaginitis, no de impétigo en niños. No es un agente causal de impétigo."
+    }
+  },
+  {
+    "QUESTAO": 61,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "infección viral",
+      "linfocitos",
+      "inflamación",
+      "respuesta inmune"
+    ],
+    "ENUNCIADO": "Ante una infección viral, se produce un proceso inflamatorio a predominio de:",
+    "ALTERNATIVAS": {
+      "A": "Neutrófilos",
+      "B": "Eosinófilos",
+      "C": "Linfocitos",
+      "D": "Basófilos"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Los neutrófilos predominan en infecciones bacterianas agudas (respuesta innata), no en virales. En virus, la respuesta es predominantemente linfocitaria.",
+      "B": "❌ Incorrecto. Los eosinófilos predominan en infecciones parasitarias y reacciones alérgicas, no en infecciones virales.",
+      "C": "✅ Correcto. En las infecciones virales, la respuesta inflamatoria predominante es a base de LINFOCITOS (respuesta inmune adaptativa celular). Los linfocitos T citotóxicos eliminan células infectadas, y los linfocitos B producen anticuerpos.",
+      "D": "❌ Incorrecto. Los basófilos participan en reacciones alérgicas e hipersensibilidad, no son característicos de infecciones virales. La respuesta antiviral es linfocitaria."
+    }
+  },
+  {
+    "QUESTAO": 62,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "norovirus",
+      "VSR",
+      "rotavirus",
+      "parainfluenza",
+      "infante"
+    ],
+    "ENUNCIADO": "¿Cuál de estos microorganismos NO es causante de un cuadro clínico grave en un infante?",
+    "ALTERNATIVAS": {
+      "A": "Virus sincicial respiratorio",
+      "B": "Rotavirus",
+      "C": "Norovirus",
+      "D": "Parainfluenza"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. VSR (Virus Sincicial Respiratorio) SÍ causa cuadro clínico grave en lactantes (bronquiolitis, neumonía), siendo la primera causa de hospitalización por infección respiratoria en <2 años.",
+      "B": "❌ Incorrecto. Rotavirus SÍ causa cuadro grave en infantes (diarrea severa, vómitos, deshidratación), siendo una de las principales causas de muerte por diarrea en niños <5 años.",
+      "C": "✅ Correcto. Norovirus causa gastroenteritis aguda autolimitada (vómitos y diarrea), generalmente no grave. NO suele causar cuadro clínico grave en infantes. En cambio, VSR (bronquiolitis), Rotavirus (diarrea grave con deshidratación) y Parainfluenza (crup, bronquiolitis) SÍ pueden ser graves.",
+      "D": "❌ Incorrecto. Parainfluenza (especialmente tipo 3) SÍ causa cuadros graves en lactantes (bronquiolitis, neumonía, crup)."
+    }
+  },
+  {
+    "QUESTAO": 63,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Taenia solium",
+      "reproducción sexual",
+      "parásito",
+      "helminto"
+    ],
+    "ENUNCIADO": "Cual de estos parásitos se reproducen de manera sexual:",
+    "ALTERNATIVAS": {
+      "A": "Taenia Solium",
+      "B": "Taenia Saginata",
+      "C": "Ascaris Lumbricoides",
+      "D": "Trichomona Vaginalis"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Taenia solium es un parásito hermafrodita que se reproduce de manera sexual en el hospedador definitivo (humano), produciendo proglótidos y huevos. Los parásitos platelmintos (tenias) tienen reproducción sexual.",
+      "B": "❌ Incorrecto. Taenia saginata también se reproduce sexualmente como Taenia solium (ambas son tenias), pero la opción A es la respuesta correcta. La pregunta específica \"cual de estos\" en singular.",
+      "C": "❌ Incorrecto. Ascaris lumbricoides (nematodo) se reproduce sexualmente (tiene sexos separados), pero no es la opción que busca la pregunta específicamente.",
+      "D": "❌ Incorrecto. Trichomonas vaginalis se reproduce por FISIÓN BINARIA (reproducción asexual), no sexual. Es un protozoario flagelado."
+    }
+  },
+  {
+    "QUESTAO": 64,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "vacuna hepatitis A",
+      "vacuna hepatitis B",
+      "prevención",
+      "VHA",
+      "VHB"
+    ],
+    "ENUNCIADO": "Los virus de la hepatitis que se pueden prevenir mediante vacunas son:",
+    "ALTERNATIVAS": {
+      "A": "Solo el virus de la hepatitis A",
+      "B": "Solo el virus de la hepatitis B",
+      "C": "Solo el virus de la hepatitis C",
+      "D": "Solo el virus de la hepatitis D",
+      "E": "Solo el virus de la hepatitis E",
+      "F": "Virus de la hepatitis A y B",
+      "G": "Virus de la hepatitis A, B y C",
+      "H": "Los 5 tipos son prevenibles"
+    },
+    "RESPOSTA_CORRETA": "F",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. No solo hepatitis A es prevenible con vacuna. Hepatitis B también tiene vacuna (recombinante) disponible y efectiva.",
+      "B": "❌ Incorrecto. No solo hepatitis B. Hepatitis A también tiene vacuna (inactivada) disponible y recomendada en varios países.",
+      "C": "❌ Incorrecto. No hay vacuna para hepatitis C, D ni E. Solo hepatitis A y B tienen vacunas disponibles.",
+      "D": "❌ Incorrecto. No hay vacuna para hepatitis C, D ni E. Solo hepatitis A y B tienen vacunas disponibles.",
+      "E": "❌ Incorrecto. No hay vacuna para hepatitis C, D ni E. Solo hepatitis A y B tienen vacunas disponibles.",
+      "F": "✅ Correcto. Los virus de hepatitis A (VHA) y B (VHB) son prevenibles mediante VACUNACIÓN. Existe vacuna eficaz para VHA (virus RNA, inactivada) y VHB (virus DNA, recombinante). Para VHC, VHD y VHE no hay vacuna disponible comercialmente.",
+      "G": "❌ Incorrecto. No hay vacuna para hepatitis C, D ni E. Solo hepatitis A y B tienen vacunas disponibles.",
+      "H": "❌ Incorrecto. No hay vacuna para hepatitis C, D ni E. Solo hepatitis A y B tienen vacunas disponibles."
+    }
+  },
+  {
+    "QUESTAO": 65,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "VHB",
+      "transmisión",
+      "sexual",
+      "vertical",
+      "parenteral"
+    ],
+    "ENUNCIADO": "El virus de la hepatitis B se transmite por:",
+    "ALTERNATIVAS": {
+      "A": "Vía sexual y parenteral",
+      "B": "Mediante agua contaminada",
+      "C": "Vía sexual, vertical y parenteral"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Es cierto que se transmite por vía sexual y parenteral, pero falta mencionar la transmisión VERTICAL (madre-hijo), que es la principal vía de transmisión en áreas endémicas.",
+      "B": "❌ Incorrecto. El VHB NO se transmite por agua contaminada (esa es la vía de transmisión fecal-oral del VHA y VHE). VHB se transmite por sangre, fluidos corporales y vía vertical.",
+      "C": "✅ Correcto. El VHB se transmite por tres vías principales: SEXUAL (contacto con fluidos infectados), VERTICAL (madre-hijo durante el parto) y PARENTERAL (sangre contaminada, jeringas, agujas). Es altamente infectivo y resistente."
+    }
+  },
+  {
+    "QUESTAO": 66,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "kernicterus",
+      "bilirrubina",
+      "RN",
+      "encefalopatía"
+    ],
+    "ENUNCIADO": "Señale la correcta. R N con sospecha de kernicterus:",
+    "ALTERNATIVAS": {
+      "A": "Letargo, hiporreflexia, convulsiones, espasticidad",
+      "B": "Puede dejar como secuelas, Discapacidad Intelectual, Parálisis Cerebral, Hipoacusia",
+      "C": "No posee tratamiento",
+      "D": "A y B son correctas"
+    },
+    "RESPOSTA_CORRETA": "D",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Los síntomas neurológicos descritos (letargo, hiporreflexia, convulsiones, espasticidad) son correctos, pero la opción B también lo es. La respuesta completa es D (A y B).",
+      "B": "❌ Incorrecto. Las secuelas descritas (discapacidad intelectual, parálisis cerebral, hipoacusia) son correctas, pero la opción A también lo es.",
+      "C": "❌ Incorrecto. El kernicterus SÍ tiene tratamiento: fototerapia y exanguinotransfusión. La afirmación \"no posee tratamiento\" es falsa.",
+      "D": "✅ Correcto. A y B son correctas. El kernicterus (encefalopatía por bilirrubina) en RN cursa con letargo, hiporreflexia, convulsiones y espasticidad (A). Las secuelas incluyen discapacidad intelectual, parálisis cerebral e hipoacusia (B)."
+    }
+  },
+  {
+    "QUESTAO": 67,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "bacterias",
+      "fisión binaria",
+      "reproducción",
+      "esporas",
+      "cápsula"
+    ],
+    "ENUNCIADO": "Bacterias correcto: esporas; por fisión binaria;",
+    "ALTERNATIVAS": {
+      "A": "Todas producen",
+      "B": "Todas se multiplican",
+      "C": "Todas poseen cápsula"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. NO todas las bacterias producen esporas. La esporulación es característica de los géneros Bacillus (aerobios) y Clostridium (anaerobios). La mayoría de las bacterias no forman esporas.",
+      "B": "✅ Correcto. Todas las bacterias se reproducen por FISIÓN BINARIA (división celular asexual). Es la característica común a todas las bacterias. El cromosoma bacteriano se replica y la célula se divide en dos células hijas genéticamente idénticas.",
+      "C": "❌ Incorrecto. NO todas las bacterias poseen cápsula. La cápsula es un factor de virulencia presente en algunas bacterias (S. pneumoniae, N. meningitidis, H. influenzae, K. pneumoniae), pero no en todas."
+    }
+  },
+  {
+    "QUESTAO": 68,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Klebsiella pneumoniae",
+      "ITU",
+      "bacilo Gram negativo"
+    ],
+    "ENUNCIADO": "Una mujer de 30 años con antecedentes de infecciones urinarias a repetición presenta signos y síntomas de cistitis. Se le realiza urocultivo. En la coloración de Gram se observan abundantes leucocitos y abundantes bacilos gram negativos. Cultivo bacteriológico en curso. Con estos datos, ¿cuál puede ser el agente causal?",
+    "ALTERNATIVAS": {
+      "A": "Klebsiella pneumoniae",
+      "B": "Salmonella entérica",
+      "C": "Shigella sp"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Klebsiella pneumoniae es un bacilo Gram negativo causante frecuente de infecciones urinarias, especialmente en mujeres con ITU recurrente. Es una enterobacteria oportunista que coloniza el tracto intestinal.",
+      "B": "❌ Incorrecto. Salmonella entérica causa fiebre entérica (tifoidea) o gastroenteritis, no infecciones urinarias. No es un patógeno urinario típico.",
+      "C": "❌ Incorrecto. Shigella sp. causa disentería (infección intestinal invasiva), no infecciones urinarias. No coloniza el tracto urinario."
+    }
+  },
+  {
+    "QUESTAO": 69,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Staphylococcus",
+      "catalasa",
+      "piel",
+      "microbiota"
+    ],
+    "ENUNCIADO": "En el microbiota habitual de piel podemos encontrar distintas especies de Staphylococcus (S. aureus en 30% de la población) Marque la respuesta correcta: Seleccione una:",
+    "ALTERNATIVAS": {
+      "A": "Todos tienen catalasa y son cocos gram positivos en racimos",
+      "B": "S. aureus segrega biofilm o “slime” que recubren catéteres y prótesis",
+      "C": "S. saprophyticus produce enfermedad mediante toxinas"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Los estafilococos son catalasa positivos (enzima que descompone H₂O₂) y cocos Gram+ en racimos. Staphylococcus, Micrococcus y otros géneros relacionados comparten estas características.",
+      "B": "❌ Incorrecto. S. aureus puede formar biofilm en algunas circunstancias, pero no es la característica más distintiva de la microbiota cutánea. S. epidermidis es más conocido por formar biofilm.",
+      "C": "❌ Incorrecto. S. saprophyticus causa ITU (principalmente en mujeres jóvenes), pero su mecanismo no es exclusivamente por toxinas. Además no es la afirmación más correcta sobre la microbiota cutánea."
+    }
+  },
+  {
+    "QUESTAO": 70,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "rotavirus",
+      "virus desnudo",
+      "diarrea",
+      "infante"
+    ],
+    "ENUNCIADO": "Rotavirus: inmunidad permanente;",
+    "ALTERNATIVAS": {
+      "A": "Es un virus desnudo",
+      "B": "La infección deja",
+      "C": "Se contagia por contacto con fluidos corporales"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. Rotavirus es un virus DESNUDO (sin envoltura lipídica), perteneciente a la familia Reoviridae. La ausencia de envoltura lo hace resistente a pH ácido, detergentes y condiciones ambientales adversas.",
+      "B": "❌ Incorrecto. La infección por rotavirus NO deja inmunidad permanente. Las reinfecciones son comunes, aunque la primera infección suele ser la más severa. La inmunidad es parcial y se refuerza con exposiciones repetidas.",
+      "C": "❌ Incorrecto. La transmisión de rotavirus es FECAL-ORAL (agua, alimentos contaminados, fomites), no por contacto con fluidos corporales. Es altamente contagioso en guarderías."
+    }
+  },
+  {
+    "QUESTAO": 71,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "ECET",
+      "E. coli enterotoxigénica",
+      "diarrea del viajero",
+      "toxinas"
+    ],
+    "ENUNCIADO": "Un paciente de 30 años presenta diarrea acuosa, con 10 deposiciones por día. El recuento de leucocitos en las heces es negativo. El agente causante puede ser Escherichia coli enterotóxigénica (ECET) por:",
+    "ALTERNATIVAS": {
+      "A": "Ser la causa más común de diarrea del viajero",
+      "B": "Ser causa de brotes intrahospitalarios",
+      "C": "Ser causa de diarrea invasiva"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. E. coli enterotoxigénica (ECET) es la causa más común de DIARREA DEL VIAJERO. Produce diarrea acuosa sin sangre (leucocitos fecales negativos) por toxinas LT (termolábil) y ST (termoestable). No es invasiva.",
+      "B": "❌ Incorrecto. ECET no suele causar brotes intrahospitalarios. Es típicamente adquirida en la comunidad por alimentos/agua contaminados, no en hospitales (donde C. difficile es más frecuente).",
+      "C": "❌ Incorrecto. ECET NO causa diarrea INVASIVA. Es no invasiva (actúa por toxinas sin invadir mucosa). La diarrea invasiva (leucocitos fecales +) es causada por ECEI, Shigella, Salmonella, Campylobacter."
+    }
+  },
+  {
+    "QUESTAO": 72,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "VSR",
+      "bronquiolitis",
+      "aspirado nasofaríngeo",
+      "antígeno"
+    ],
+    "ENUNCIADO": "Un bebé de 6 meses presenta un cuadro respiratorio agudo con fiebre y disnea. Con el diagnóstico presuntivo de bronquiolitis ¿cómo haría para certificar dicho diagnóstico?",
+    "ALTERNATIVAS": {
+      "A": "Solicitaría búsqueda de Ag de VSR en aspirado nasofaríngeo",
+      "B": "Solicitaría búsqueda de anticuerpos IgG anti VSR en suero",
+      "C": "Solicitaría hemograma completo con plaquetas"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La bronquiolitis se certifica mediante detección de antígeno de VSR en aspirado nasofaríngeo (inmunofluorescencia, ELISA). Es rápido, sensible y específico.",
+      "B": "❌ Incorrecto. IgG anti-VSR indica infección pasada/exposición previa (transplacentaria en lactantes). No sirve para diagnóstico de infección aguda.",
+      "C": "❌ Incorrecto. Hemograma con plaquetas es inespecífico. No certifica bronquiolitis por VSR."
+    }
+  },
+  {
+    "QUESTAO": 73,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Difícil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "celulitis",
+      "polimicrobiano",
+      "anaerobios",
+      "Clostridium"
+    ],
+    "ENUNCIADO": "Un paciente de 35 años presenta una celulitis de miembro inferior. Se le realiza punción de la zona afectada. Se solicita directo, cultivo aeróbico y anaeróbico. En la coloración de Gram del material de la herida se observan abundantes leucocitos, abundantes bacilos Gram negativos, regulares cocos Gram positivos en cadena y regulares bacilos Gram positivos esporulados. Cultivo bacteriológico en aerobiosis: negativo a las 24 Hs. Cultivo bacteriológico en anaerobiosis: en curso. Con estos datos, ¿cuál es la respuesta correcta?",
+    "ALTERNATIVAS": {
+      "A": "La patología es polimicrobiana producida por bacterias anaerobias",
+      "B": "Los bacilos Gram positivos que se observan pueden ser Corynebacterium sp",
+      "C": "La toma de muestra debió hacerse por hisopado"
+    },
+    "RESPOSTA_CORRETA": "A",
+    "FEEDBACK": {
+      "A": "✅ Correcto. La celulitis de miembro inferior con bacilos Gram+ esporulados, cocos Gram+ en cadena, bacilos Gram- y cultivo aerobio negativo → patología POLIMICROBIANA por bacterias ANAEROBIAS (Clostridium, Peptostreptococcus, Bacteroides).",
+      "B": "❌ Incorrecto. Los bacilos Gram positivos esporulados son Clostridium (anaerobios), no Corynebacterium (aerobios, no esporulados).",
+      "C": "❌ Incorrecto. La punción es adecuada para abscesos. El hisopado recoge flora superficial y no es recomendado para muestras profundas."
+    }
+  },
+  {
+    "QUESTAO": 74,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "hepatitis D",
+      "superinfección",
+      "VHD",
+      "VHB"
+    ],
+    "ENUNCIADO": "Hepatitis: Marque lo correcto.",
+    "ALTERNATIVAS": {
+      "A": "El virus de la hepatitis C se contagia por agua contaminada con heces humanas",
+      "B": "El virus de la hepatitis E se puede contagiar de madre a hijo por vía transplacentaria",
+      "C": "Se denomina superinfección al contagio de virus D y B simultáneamente"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. VHC se transmite por SANGRE (parenteral), no por agua contaminada. Agua contaminada es vía fecal-oral de VHA y VHE.",
+      "B": "❌ Incorrecto. VHE se transmite por vía FECAL-ORAL (agua contaminada), no por vía transplacentaria. La transmisión vertical es más típica de VHB.",
+      "C": "✅ Correcto. La SUPERINFECCIÓN por VHD ocurre cuando un paciente con hepatitis B crónica se infecta con VHD (virus delta). VHD es defectivo y requiere VHB para su replicación. Co-infección = simultánea, superinfección = secuencial."
+    }
+  },
+  {
+    "QUESTAO": 75,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "parasitosis",
+      "diarrea crónica",
+      "parasitológico seriado",
+      "niños"
+    ],
+    "ENUNCIADO": "Marta trae a consulta a su hija Noelia de 2 años con un cuadro de diarrea de 3 semanas de evolución. La mamá le cuenta que no es la primera vez que le sucede. cuadro ceda;",
+    "ALTERNATIVAS": {
+      "A": "Le explica que la diarrea se autolimita así que probablemente en 7-10 días el",
+      "B": "Pide hemograma y Rx de abdomen de pie",
+      "C": "Pide parasitológico en fresco y seriado de materia fecal XX",
+      "D": "Indica dieta constipante y medicación antidiarreica"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. Si la diarrea ya dura 3 semanas y es recurrente, no es un episodio autolimitado típico. Se debe investigar causa (parásitos).",
+      "B": "❌ Incorrecto. Hemograma y Rx de abdomen no son los estudios de elección para diarrea crónica infantil. El parasitológico seriado es prioritario.",
+      "C": "✅ Correcto. Niña de 2 años con diarrea de 3 SEMANAS (crónica), recurrente → sospecha de PARASITOSIS. El estudio parasitológico en fresco y seriado de materia fecal es el método diagnóstico para detectar quistes/trofozoítos de parásitos intestinales.",
+      "D": "❌ Incorrecto. Dieta constipante y antidiarreicos no tratan la causa y no deben usarse en sospecha de infección parasitaria. Se debe diagnosticar la etiología."
+    }
+  },
+  {
+    "QUESTAO": 76,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Fácil",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Neisseria gonorrhoeae",
+      "uretritis",
+      "diplococo Gram negativo",
+      "ETS"
+    ],
+    "ENUNCIADO": "Un hombre de 30 años presenta signos de uretritis purulenta. Se le realiza un exudado uretral. En la coloración de Gram se observan abundantes leucocitos y abundantes diplococos Gram negativos. ¿Con estos datos, cual puede ser la bacteria causante?",
+    "ALTERNATIVAS": {
+      "A": "Neisseria meningitidis",
+      "B": "Acinetobacter baumanni",
+      "C": "Neisseria gonorrhoeae",
+      "D": "Escherichia coli",
+      "E": "Pseudomonas aeruginosa"
+    },
+    "RESPOSTA_CORRETA": "C",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. N. meningitidis es también un diplococo Gram negativo, pero causa meningitis y meningococemia, no uretritis. Es un patógeno respiratorio.",
+      "B": "❌ Incorrecto. Acinetobacter baumannii es un cocobacilo Gram negativo, no diplococo. Causa infecciones nosocomiales, no uretritis purulenta en jóvenes.",
+      "C": "✅ Correcto. Uretritis purulenta + diplococos Gram negativos en exudado uretral → Neisseria gonorrhoeae. Es la bacteria clásica causante de gonorrea, un diplococo Gram negativo intracelular que infecta el epitelio cilíndrico de la uretra.",
+      "D": "❌ Incorrecto. E. coli es un bacilo Gram negativo, no diplococo. Causa ITU, pero el Gram mostraría bacilos, no diplococos.",
+      "E": "❌ Incorrecto. Pseudomonas aeruginosa es un bacilo Gram negativo, no diplococo. Causa infecciones nosocomiales, no uretritis purulenta en pacientes jóvenes."
+    }
+  },
+  {
+    "QUESTAO": 77,
+    "ANO": "3º",
+    "MATERIA": "Defesa",
+    "PARCIAL": "Primeiro Parcial",
+    "DIFICULDADE": "Médio",
+    "DISCIPLINA_BASE": "Microbiologia",
+    "TAGS": [
+      "Neisseria gonorrhoeae",
+      "Gram",
+      "cultivo",
+      "confirmación diagnóstica"
+    ],
+    "ENUNCIADO": "Un hombre de 30 años con uretritis purulenta. Se realiza coloración de Gram de la secreción uretral con el siguiente resultado: se observan abundantes leucocitos polimorfonucleares y regular cantidad de cocos Gram negativos Con estos datos, ¿cuál es la respuesta correcta? al epitelio cilíndrico simple de la uretra y el Gram es confirmatorio; diagnostico; búsqueda de anticuerpo IgM en el suero; búsqueda de antígeno en la secreción para confirmar el resultado; para confirmar infección reciente.",
+    "ALTERNATIVAS": {
+      "A": "La causa puede ser Neisseria gonorrheae porque tiene fimbrias para adherirse",
+      "B": "La causa puede ser Neisseria gonorrheae se debe hacer cultivo para confirmar el",
+      "C": "La causa puede ser Neisseria gonorrheae se debe confirmar al diagnóstico con",
+      "D": "La causa puede ser Neisseria gonorrheae se debe confirmar al diagnóstico con",
+      "E": "La causa puede ser Neisseria gonorrheae se debe buscar anticuerpos IgG en suero"
+    },
+    "RESPOSTA_CORRETA": "B",
+    "FEEDBACK": {
+      "A": "❌ Incorrecto. El Gram de exudado uretral NO es confirmatorio en hombres. Aunque es muy sensible (90-95%), se requiere CULTIVO para confirmación definitiva en todos los casos.",
+      "B": "✅ Correcto. El Gram es ORIENTATIVO pero no confirmatorio. Se debe realizar CULTIVO (medio selectivo Thayer-Martin) para confirmar N. gonorrhoeae. El Gram sugiere el diagnóstico por diplococos Gram negativos intracelulares.",
+      "C": "❌ Incorrecto. La detección de anticuerpos IgM en suero no es el método de confirmación para gonorrea. La infección es local (uretral) y no genera respuesta sistémica detectable rápidamente.",
+      "D": "❌ Incorrecto. La búsqueda de antígeno en secreción puede ser útil, pero el CULTIVO sigue siendo el estándar de oro para confirmar N. gonorrhoeae, permitiendo además test de sensibilidad antibiótica.",
+      "E": "❌ Incorrecto. IgG en suero no sirve para confirmar infección reciente. La infección gonocócica no genera inmunidad duradera y la IgG puede persistir de infecciones previas."
+    }
+  }
+]

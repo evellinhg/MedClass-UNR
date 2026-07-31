@@ -4240,7 +4240,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La inflamación crónica se caracteriza por la presencia de células MONONUCLEARES: macrófagos, linfocitos y plasmocitos. Los NEUTRÓFILOS son las células predominantes de la inflamación AGUDA.",
       "✅ Correcto (es FALSO). La inflamación crónica se caracteriza por la presencia de células MONONUCLEARES: macrófagos, linfocitos y plasmocitos. Los NEUTRÓFILOS son las células predominantes de la inflamación AGUDA."
     ]
   },
@@ -4262,7 +4262,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La proliferación de vasos sanguíneos (angiogénesis) y de tejido conjuntivo corresponde a la fase de REPARACIÓN (tejido de granulación) y a la inflamación crónica. La fase aguda se caracteriza por fenómenos vasculares (vasodilatación, permeabilidad) y exudación, no por proliferación vascular.",
       "✅ Correcto (es FALSO). La proliferación de vasos sanguíneos (angiogénesis) y de tejido conjuntivo corresponde a la fase de REPARACIÓN (tejido de granulación) y a la inflamación crónica. La fase aguda se caracteriza por fenómenos vasculares (vasodilatación, permeabilidad) y exudación, no por proliferación vascular."
     ]
   },
@@ -4284,7 +4284,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La fagocitosis consta de MÁS de dos pasos: 1) reconocimiento (con o sin opsonización), 2) englobamiento (formación del fagosoma), 3) formación del fagolisosoma y 4) destrucción/digestión del microorganismo (estallido oxidativo, enzimas).",
       "✅ Correcto (es FALSO). La fagocitosis consta de MÁS de dos pasos: 1) reconocimiento (con o sin opsonización), 2) englobamiento (formación del fagosoma), 3) formación del fagolisosoma y 4) destrucción/digestión del microorganismo (estallido oxidativo, enzimas)."
     ]
   },
@@ -4308,7 +4308,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). La liberación de factores de crecimiento como el Factor de Crecimiento Epidérmico (EGF) estimula la división celular (mitosis) en células con capacidad regenerativa como los HEPATOCITOS, promoviendo así la regeneración hepática.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). La liberación de factores de crecimiento como el Factor de Crecimiento Epidérmico (EGF) estimula la división celular (mitosis) en células con capacidad regenerativa como los HEPATOCITOS, promoviendo así la regeneración hepática."
     ]
   },
   {
@@ -4330,7 +4330,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO según el examen). La fiebre elevada puede ser PERJUDICIAL para la capacidad destructiva de los leucocitos: el calor excesivo y el consumo energético pueden afectar el metabolismo y la función leucocitaria, además de provocar convulsiones en niños. (Nota: una fiebre moderada suele BENEFICIAR la respuesta inmune; el examen considera la afirmación como verdadera en el contexto de fiebre dañina.)",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO según el examen). La fiebre elevada puede ser PERJUDICIAL para la capacidad destructiva de los leucocitos: el calor excesivo y el consumo energético pueden afectar el metabolismo y la función leucocitaria, además de provocar convulsiones en niños. (Nota: una fiebre moderada suele BENEFICIAR la respuesta inmune; el examen considera la afirmación como verdadera en el contexto de fiebre dañina.)"
     ]
   },
   {
@@ -4352,7 +4352,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). La histamina aumenta la permeabilidad vascular al retraer las células endoteliales de las vénulas postcapilares, lo que produce FILTRACIÓN INTERCELULAR (salida de líquido y proteínas hacia el intersticio) → edema.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). La histamina aumenta la permeabilidad vascular al retraer las células endoteliales de las vénulas postcapilares, lo que produce FILTRACIÓN INTERCELULAR (salida de líquido y proteínas hacia el intersticio) → edema."
     ]
   },
   {
@@ -4373,7 +4373,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). Igual que en el punto 1 y 11: la fase CRÓNICA se caracteriza por predominio de células MONONUCLEARES (macrófagos, linfocitos, plasmocitos); los NEUTRÓFILOS predominan en la fase AGUDA.",
       "✅ Correcto (es FALSO). Igual que en el punto 1 y 11: la fase CRÓNICA se caracteriza por predominio de células MONONUCLEARES (macrófagos, linfocitos, plasmocitos); los NEUTRÓFILOS predominan en la fase AGUDA."
     ]
   },
@@ -4396,7 +4396,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). La migración direccional de los leucocitos hacia el sitio de la lesión, guiada por un gradiente químico, se denomina QUIMIOTAXIS.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). La migración direccional de los leucocitos hacia el sitio de la lesión, guiada por un gradiente químico, se denomina QUIMIOTAXIS."
     ]
   },
   {
@@ -4419,7 +4419,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). La vasodilatación de las ARTERIOLAS precapilares aumenta el flujo sanguíneo en la zona afectada durante la inflamación aguda, produciendo hiperemia activa, que se manifiesta clínicamente como RUBOR y CALOR.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). La vasodilatación de las ARTERIOLAS precapilares aumenta el flujo sanguíneo en la zona afectada durante la inflamación aguda, produciendo hiperemia activa, que se manifiesta clínicamente como RUBOR y CALOR."
     ]
   },
   {
@@ -4442,7 +4442,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). Los MACRÓFAGOS activados participan en la ANGIOGÉNESIS y en la reparación de heridas durante la inflamación crónica: liberan factores de crecimiento (VEGF, FGF, TGF-β, PDGF) que estimulan la formación de nuevos vasos y la proliferación de fibroblastos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). Los MACRÓFAGOS activados participan en la ANGIOGÉNESIS y en la reparación de heridas durante la inflamación crónica: liberan factores de crecimiento (VEGF, FGF, TGF-β, PDGF) que estimulan la formación de nuevos vasos y la proliferación de fibroblastos."
     ]
   },
   {
@@ -4463,7 +4463,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La inflamación crónica NO se caracteriza por neutrófilos; estos son propios de la inflamación aguda. En la inflamación crónica predominan los macrófagos, linfocitos y plasmocitos (células mononucleares).",
       "✅ Correcto (es FALSO). La inflamación crónica NO se caracteriza por neutrófilos; estos son propios de la inflamación aguda. En la inflamación crónica predominan los macrófagos, linfocitos y plasmocitos (células mononucleares)."
     ]
   },
@@ -4486,7 +4486,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). La Ley de Bergonié-Tribondeau establece que la radiación ionizante es más eficaz en células con mayor actividad REPRODUCTIVA (mitótica) y menor grado de diferenciación: las células que más se dividen son las más radiosensibles.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). La Ley de Bergonié-Tribondeau establece que la radiación ionizante es más eficaz en células con mayor actividad REPRODUCTIVA (mitótica) y menor grado de diferenciación: las células que más se dividen son las más radiosensibles."
     ]
   },
   {
@@ -4507,7 +4507,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La sensibilidad a la irradiación celular NO es constante a lo largo del ciclo celular: varía según la fase, siendo máxima en M y G2, moderada en S y menor en G1 (resistencias relativas).",
       "✅ Correcto (es FALSO). La sensibilidad a la irradiación celular NO es constante a lo largo del ciclo celular: varía según la fase, siendo máxima en M y G2, moderada en S y menor en G1 (resistencias relativas)."
     ]
   },
@@ -4531,7 +4531,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto (es VERDADERO). Las células en fase M (mitosis) del ciclo celular son las más sensibles a la radiación, junto con la fase G2.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: (es VERDADERO). Las células en fase M (mitosis) del ciclo celular son las más sensibles a la radiación, junto con la fase G2."
     ]
   },
   {
@@ -4552,7 +4552,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: (es FALSO). La tasa de dosis SÍ influye en la respuesta celular a la radiación: a mayor tasa de dosis, mayor daño (menos tiempo para reparación del ADN entre eventos); a baja tasa, hay más oportunidad de reparación celular.",
       "✅ Correcto (es FALSO). La tasa de dosis SÍ influye en la respuesta celular a la radiación: a mayor tasa de dosis, mayor daño (menos tiempo para reparación del ADN entre eventos); a baja tasa, hay más oportunidad de reparación celular."
     ]
   }

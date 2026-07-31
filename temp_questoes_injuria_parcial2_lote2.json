@@ -502,7 +502,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El eritrocito maduro es una célula anucleada (sin núcleo ni orgánulos) cuyo citoplasma está lleno de hemoglobina, la proteína que transporta oxígeno y CO₂.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El eritrocito maduro es una célula anucleada (sin núcleo ni orgánulos) cuyo citoplasma está lleno de hemoglobina, la proteína que transporta oxígeno y CO₂."
     ]
   },
   {
@@ -525,7 +525,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los leucocitos se clasifican según la presencia de gránulos citoplasmáticos: granulocitos (neutrófilos, eosinófilos y basófilos) y agranulocitos (linfocitos y monocitos).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los leucocitos se clasifican según la presencia de gránulos citoplasmáticos: granulocitos (neutrófilos, eosinófilos y basófilos) y agranulocitos (linfocitos y monocitos)."
     ]
   },
   {
@@ -549,7 +549,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los granulocitos poseen núcleo lobulado (polidoblado) y gránulos citoplasmáticos específicos. Los tres tipos son neutrófilos, eosinófilos y basófilos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los granulocitos poseen núcleo lobulado (polidoblado) y gránulos citoplasmáticos específicos. Los tres tipos son neutrófilos, eosinófilos y basófilos."
     ]
   },
   {
@@ -571,8 +571,8 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
-      "✅ Correcto. La afirmación es falsa en la parte del núcleo: los monocitos tienen un núcleo ARRIONADO (reniforme o indentado), no redondeado. El resto es correcto: sí se diferencian en macrófagos en los tejidos."
+      "Incorrecto. La afirmación es FALSA en cuanto a la forma del núcleo: los monocitos tienen un núcleo arriñonado (reniforme o indentado), no redondeado. El resto de la afirmación es correcto: los monocitos sí se diferencian en macrófagos en los tejidos.",
+      "Correcto. La afirmación es falsa específicamente en la forma del núcleo: los monocitos tienen un núcleo arriñonado (reniforme o indentado), no redondeado y liso. El resto es correcto: sí se diferencian en macrófagos al migrar a los tejidos."
     ]
   },
   {
@@ -596,7 +596,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los linfocitos son las células clave de la inmunidad adaptativa y se subdividen en linfocitos B (producción de anticuerpos) y linfocitos T (inmunidad celular).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los linfocitos son las células clave de la inmunidad adaptativa y se subdividen en linfocitos B (producción de anticuerpos) y linfocitos T (inmunidad celular)."
     ]
   },
   {
@@ -619,7 +619,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El recuento de glóbulos blancos (leucocitosis/leucopenia) se expresa en células por mm³ (o por μL), con valor normal de 4,000-11,000/mm³.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El recuento de glóbulos blancos (leucocitosis/leucopenia) se expresa en células por mm³ (o por μL), con valor normal de 4,000-11,000/mm³."
     ]
   },
   {
@@ -642,7 +642,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El hematocrito es el porcentaje del volumen sanguíneo total ocupado por los glóbulos rojos; sus valores normales son ~40-50% en hombres y ~36-45% en mujeres.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El hematocrito es el porcentaje del volumen sanguíneo total ocupado por los glóbulos rojos; sus valores normales son ~40-50% en hombres y ~36-45% en mujeres."
     ]
   },
   {
@@ -665,7 +665,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La diarrea secretora se caracteriza por un aumento de la SECRECIÓN de agua y electrolitos hacia el lumen, o por una disminución de la absorción, con acumulación de líquido que genera deposiciones abundantes que no ceden con el ayuno.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La diarrea secretora se caracteriza por un aumento de la SECRECIÓN de agua y electrolitos hacia el lumen, o por una disminución de la absorción, con acumulación de líquido que genera deposiciones abundantes que no ceden con el ayuno."
     ]
   },
   {
@@ -688,7 +688,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. En la diarrea motora hay hiperactividad peristáltica que acelera el tránsito intestinal, reduciendo el tiempo de contacto para la absorción de agua.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: En la diarrea motora hay hiperactividad peristáltica que acelera el tránsito intestinal, reduciendo el tiempo de contacto para la absorción de agua."
     ]
   },
   {
@@ -711,7 +711,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La diarrea inflamatoria (invasiva) cursa con inflamación de la mucosa, daño de la barrera y exudación, con pérdida de sangre, moco y proteínas (disentería).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La diarrea inflamatoria (invasiva) cursa con inflamación de la mucosa, daño de la barrera y exudación, con pérdida de sangre, moco y proteínas (disentería)."
     ]
   },
   {
@@ -733,7 +733,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Toxinas bacterianas (p. ej., toxina colérica, toxina termolábil de E. coli) estimulan la adenilato ciclasa/AMPc y aumentan la secreción de agua y electrolitos, originando diarrea secretora.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Toxinas bacterianas (p. ej., toxina colérica, toxina termolábil de E. coli) estimulan la adenilato ciclasa/AMPc y aumentan la secreción de agua y electrolitos, originando diarrea secretora."
     ]
   },
   {
@@ -756,7 +756,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La malabsorción de nutrientes como la lactosa deja el sustrato osmóticamente activo en el lumen; el agua es retenida por ósmosis y se produce diarrea osmótica.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La malabsorción de nutrientes como la lactosa deja el sustrato osmóticamente activo en el lumen; el agua es retenida por ósmosis y se produce diarrea osmótica."
     ]
   },
   {
@@ -778,7 +778,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. En la diarrea osmótica el ayuno (retirar el agente osmótico) mejora la diarrea, y la ingesta del alimento responsable la empeora; es la diferencia clave con la diarrea secretora.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: En la diarrea osmótica el ayuno (retirar el agente osmótico) mejora la diarrea, y la ingesta del alimento responsable la empeora; es la diferencia clave con la diarrea secretora."
     ]
   },
   {
@@ -800,7 +800,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los AINE inhiben la síntesis de prostaglandinas y pueden provocar diarrea por daño de mucosa, pero no son el tratamiento de la diarrea secretora. El tratamiento de la diarrea secretora es la reposición hidroelectrolítica y, según la causa, otros fármacos.",
       "✅ Correcto. La afirmación es FALSA: los AINE inhiben la síntesis de prostaglandinas y pueden provocar diarrea por daño de mucosa, pero no son el tratamiento de la diarrea secretora. El tratamiento de la diarrea secretora es la reposición hidroelectrolítica y, según la causa, otros fármacos."
     ]
   },
@@ -823,7 +823,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Las náuseas son la sensación subjetiva de malestar epigástrico/precordial que habitualmente precede al vómito, aunque no siempre termina en vómito.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Las náuseas son la sensación subjetiva de malestar epigástrico/precordial que habitualmente precede al vómito, aunque no siempre termina en vómito."
     ]
   },
   {
@@ -845,7 +845,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El vómito es la expulsión activa y forzada del contenido gástrico (y a veces duodenal) a través de la boca, coordinada por el centro del vómito.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El vómito es la expulsión activa y forzada del contenido gástrico (y a veces duodenal) a través de la boca, coordinada por el centro del vómito."
     ]
   },
   {
@@ -867,7 +867,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: náuseas y vómitos también se producen por causas centrales (tumor cerebral, migraña, fármacos), metabólicas (cetoacidosis diabética, uremia), vestibulares (vértigo) y emocionales, no solo gastrointestinales.",
       "✅ Correcto. La afirmación es FALSA: náuseas y vómitos también se producen por causas centrales (tumor cerebral, migraña, fármacos), metabólicas (cetoacidosis diabética, uremia), vestibulares (vértigo) y emocionales, no solo gastrointestinales."
     ]
   },
@@ -890,7 +890,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Estímulos sobre los receptores de la mucosa gástrica (sustancias irritantes, gastritis) activan el centro del vómito a través de la vía vagal.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Estímulos sobre los receptores de la mucosa gástrica (sustancias irritantes, gastritis) activan el centro del vómito a través de la vía vagal."
     ]
   },
   {
@@ -913,7 +913,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El área postrema, fuera de la barrera hematoencefálica, es la zona gatillo quimiorreceptora (CTZ) donde actúan toxinas y fármacos que inducen el vómito.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El área postrema, fuera de la barrera hematoencefálica, es la zona gatillo quimiorreceptora (CTZ) donde actúan toxinas y fármacos que inducen el vómito."
     ]
   },
   {
@@ -936,7 +936,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Trastornos metabólicos como la cetoacidosis diabética, la uremia o la insuficiencia suprarrenal pueden causar náuseas y vómitos por acción sobre la zona gatillo.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Trastornos metabólicos como la cetoacidosis diabética, la uremia o la insuficiencia suprarrenal pueden causar náuseas y vómitos por acción sobre la zona gatillo."
     ]
   },
   {
@@ -957,7 +957,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la ictericia fisiológica se debe a una Disminución (inmadurez) de la captación y conjugación hepática, aumento de la hemólisis fisiológica y mayor circulación enterohepática, no a un aumento de la secreción de bilirrubina.",
       "✅ Correcto. La afirmación es FALSA: la ictericia fisiológica se debe a una Disminución (inmadurez) de la captación y conjugación hepática, aumento de la hemólisis fisiológica y mayor circulación enterohepática, no a un aumento de la secreción de bilirrubina."
     ]
   },
@@ -980,7 +980,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La ictericia por leche materna es de inicio temprano, aparece en la primera semana y alcanza su valor máximo alrededor de los 14 días, persistiendo varias semanas.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La ictericia por leche materna es de inicio temprano, aparece en la primera semana y alcanza su valor máximo alrededor de los 14 días, persistiendo varias semanas."
     ]
   },
   {
@@ -1002,7 +1002,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La ictericia asociada a la alimentación a pecho (lactancia inadecuada) se presenta en los primeros 3-4 días de vida, por baja ingesta, deshidratación relativa y retraso en la eliminación del meconio.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La ictericia asociada a la alimentación a pecho (lactancia inadecuada) se presenta en los primeros 3-4 días de vida, por baja ingesta, deshidratación relativa y retraso en la eliminación del meconio."
     ]
   },
   {
@@ -1025,7 +1025,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El predominio indirecto puede deberse a disminución de la depuración (captación y conjugación) hepática de bilirrubina, además de hemólisis y aumento de la circulación enterohepática.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El predominio indirecto puede deberse a disminución de la depuración (captación y conjugación) hepática de bilirrubina, además de hemólisis y aumento de la circulación enterohepática."
     ]
   },
   {
@@ -1047,7 +1047,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la hemorragia del SNC produce ictericia a predominio INDIRECTO (reabsorción de sangre con hemólisis de los glóbulos rojos extravasados), no directo.",
       "✅ Correcto. La afirmación es FALSA: la hemorragia del SNC produce ictericia a predominio INDIRECTO (reabsorción de sangre con hemólisis de los glóbulos rojos extravasados), no directo."
     ]
   },
@@ -1071,7 +1071,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La prueba de Coombs directa detecta anticuerpos fijados a los eritrocitos del RN, confirmando la hemólisis inmunológica (incompatibilidad Rh/ABO) en la ictericia.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La prueba de Coombs directa detecta anticuerpos fijados a los eritrocitos del RN, confirmando la hemólisis inmunológica (incompatibilidad Rh/ABO) en la ictericia."
     ]
   },
   {
@@ -1093,7 +1093,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: el método más difundido y confiable para dosificar la bilirrubina en suero es la FOTOCOLORIMETRÍA, no la electroforesis.",
       "✅ Correcto. La afirmación es FALSA: el método más difundido y confiable para dosificar la bilirrubina en suero es la FOTOCOLORIMETRÍA, no la electroforesis."
     ]
   },
@@ -1116,7 +1116,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La anemia reduce la hemoglobina y la palidez (piel y mucosas) es un signo clásico de la anemia, junto con la fatiga.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La anemia reduce la hemoglobina y la palidez (piel y mucosas) es un signo clásico de la anemia, junto con la fatiga."
     ]
   },
   {
@@ -1139,7 +1139,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Con menos hemoglobina disminuye el transporte de oxígeno a los tejidos, produciendo fatiga, debilidad y disnea de esfuerzo.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Con menos hemoglobina disminuye el transporte de oxígeno a los tejidos, produciendo fatiga, debilidad y disnea de esfuerzo."
     ]
   },
   {
@@ -1162,7 +1162,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El corazón compensa la hipoxia aumentando la frecuencia cardíaca (taquicardia) y el gasto cardíaco para mantener el aporte de oxígeno.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El corazón compensa la hipoxia aumentando la frecuencia cardíaca (taquicardia) y el gasto cardíaco para mantener el aporte de oxígeno."
     ]
   },
   {
@@ -1183,7 +1183,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: muchas anemias leves o crónicas son asintomáticas o paucisintomáticas, y los síntomas dependen de la velocidad de instalación y la severidad.",
       "✅ Correcto. La afirmación es FALSA: muchas anemias leves o crónicas son asintomáticas o paucisintomáticas, y los síntomas dependen de la velocidad de instalación y la severidad."
     ]
   },
@@ -1206,7 +1206,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la taquicardia es característica de la anemia, y la bradicardia NO está relacionada con la anemia; por lo tanto la segunda parte de la afirmación la vuelve incorrecta.",
       "✅ Correcto. La afirmación es FALSA: la taquicardia es característica de la anemia, y la bradicardia NO está relacionada con la anemia; por lo tanto la segunda parte de la afirmación la vuelve incorrecta."
     ]
   },
@@ -1230,7 +1230,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La hipoxia miocárdica por anemia severa puede causar dolor torácico (angina), especialmente en pacientes con enfermedad coronaria de base.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La hipoxia miocárdica por anemia severa puede causar dolor torácico (angina), especialmente en pacientes con enfermedad coronaria de base."
     ]
   },
   {
@@ -1251,7 +1251,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la cefalea es un síntoma FRECUENTE de la anemia (sobre todo ferropénica), no poco común ni siempre relacionado con otras condiciones.",
       "✅ Correcto. La afirmación es FALSA: la cefalea es un síntoma FRECUENTE de la anemia (sobre todo ferropénica), no poco común ni siempre relacionado con otras condiciones."
     ]
   },
@@ -1275,7 +1275,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La hipoxia cerebral por bajo aporte de oxígeno y flujo puede causar mareos, lipotimia y síncope.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La hipoxia cerebral por bajo aporte de oxígeno y flujo puede causar mareos, lipotimia y síncope."
     ]
   },
   {
@@ -2755,7 +2755,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: el amiloide se acumula en el espacio EXTRACELULAR (tejido conectivo, paredes vasculares, órganos), no en el interior de las células.",
       "✅ Correcto. La afirmación es FALSA: el amiloide se acumula en el espacio EXTRACELULAR (tejido conectivo, paredes vasculares, órganos), no en el interior de las células."
     ]
   },
@@ -2778,7 +2778,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La calcificación distrófica es la acumulación extracelular de sales de calcio en tejidos previamente lesionados o necróticos, con calcemia normal.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La calcificación distrófica es la acumulación extracelular de sales de calcio en tejidos previamente lesionados o necróticos, con calcemia normal."
     ]
   },
   {
@@ -2799,7 +2799,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los cuerpos de Mallory (hialinos) son inclusiones INTRACELULARES de queratina alterada en los hepatocitos, típicas de la hepatitis alcohólica.",
       "✅ Correcto. La afirmación es FALSA: los cuerpos de Mallory (hialinos) son inclusiones INTRACELULARES de queratina alterada en los hepatocitos, típicas de la hepatitis alcohólica."
     ]
   },
@@ -2822,7 +2822,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: el colesterol en la placa aterosclerótica se deposita en la íntima arterial, es decir, en el espacio EXTRACELULAR (y en macrófagos espumosos), no es una acumulación intracelular simple.",
       "✅ Correcto. La afirmación es FALSA: el colesterol en la placa aterosclerótica se deposita en la íntima arterial, es decir, en el espacio EXTRACELULAR (y en macrófagos espumosos), no es una acumulación intracelular simple."
     ]
   },
@@ -2845,7 +2845,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la bilirrubina que tiñe la piel y los tejidos (ictericia) se deposita en el espacio EXTRACELULAR de la dermis y las escleróticas, no en el interior de las células.",
       "✅ Correcto. La afirmación es FALSA: la bilirrubina que tiñe la piel y los tejidos (ictericia) se deposita en el espacio EXTRACELULAR de la dermis y las escleróticas, no en el interior de las células."
     ]
   },
@@ -2868,7 +2868,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La amiloidosis se caracteriza por la acumulación EXTRACELULAR de proteínas anormalmente plegadas (fibrillas de amiloide) en distintos tejidos y órganos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La amiloidosis se caracteriza por la acumulación EXTRACELULAR de proteínas anormalmente plegadas (fibrillas de amiloide) en distintos tejidos y órganos."
     ]
   },
   {
@@ -2889,7 +2889,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: no todas las acumulaciones intracelulares son patológicas; algunas son normales (glucógeno en hígado, lípidos en adipocitos, melanina en melanocitos).",
       "✅ Correcto. La afirmación es FALSA: no todas las acumulaciones intracelulares son patológicas; algunas son normales (glucógeno en hígado, lípidos en adipocitos, melanina en melanocitos)."
     ]
   },
@@ -2911,7 +2911,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: el alcoholismo es una enfermedad CRÓNICA, caracterizada por consumo compulsivo, tolerancia y dependencia, no una enfermedad aguda.",
       "✅ Correcto. La afirmación es FALSA: el alcoholismo es una enfermedad CRÓNICA, caracterizada por consumo compulsivo, tolerancia y dependencia, no una enfermedad aguda."
     ]
   },
@@ -2935,7 +2935,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El alcohol etílico puede provenir de bebidas alcohólicas, pero también de antisépticos bucales, enjuagues, lociones para después de afeitarse y otros productos de uso cotidiano.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El alcohol etílico puede provenir de bebidas alcohólicas, pero también de antisépticos bucales, enjuagues, lociones para después de afeitarse y otros productos de uso cotidiano."
     ]
   },
   {
@@ -2957,7 +2957,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la bebida moderada se define como no más de DOS tragos por día para hombres y uno para mujeres, no tres.",
       "✅ Correcto. La afirmación es FALSA: la bebida moderada se define como no más de DOS tragos por día para hombres y uno para mujeres, no tres."
     ]
   },
@@ -2980,7 +2980,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La cirrosis alcohólica puede evolucionar a carcinoma hepatocelular en un porcentaje estimado entre el 5% y el 15% de los pacientes, por lo que requiere vigilancia.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La cirrosis alcohólica puede evolucionar a carcinoma hepatocelular en un porcentaje estimado entre el 5% y el 15% de los pacientes, por lo que requiere vigilancia."
     ]
   },
   {
@@ -3003,7 +3003,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la patogénesis del daño hepático inducido por alcohol involucra múltiples mecanismos (estrés oxidativo, citoquinas, endotoxinas), no solo las alteraciones del intestino.",
       "✅ Correcto. La afirmación es FALSA: la patogénesis del daño hepático inducido por alcohol involucra múltiples mecanismos (estrés oxidativo, citoquinas, endotoxinas), no solo las alteraciones del intestino."
     ]
   },
@@ -3027,7 +3027,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El alcohol puede dañar directamente las células acinares del páncreas por toxicidad de sus metabolitos, además de los mecanismos obstructivo y metabólico.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El alcohol puede dañar directamente las células acinares del páncreas por toxicidad de sus metabolitos, además de los mecanismos obstructivo y metabólico."
     ]
   },
   {
@@ -4558,7 +4558,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los nitritos se usan como conservantes de alimentos (embutidos, fiambres) para prevenir el crecimiento de Clostridium botulinum y fijar el color.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los nitritos se usan como conservantes de alimentos (embutidos, fiambres) para prevenir el crecimiento de Clostridium botulinum y fijar el color."
     ]
   },
   {
@@ -4580,7 +4580,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La exposición crónica a nitritos/nitratos puede generar nitrosaminas (carcinógenos) en el estómago, asociándose a mayor riesgo de cáncer gástrico.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La exposición crónica a nitritos/nitratos puede generar nitrosaminas (carcinógenos) en el estómago, asociándose a mayor riesgo de cáncer gástrico."
     ]
   },
   {
@@ -4602,7 +4602,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los nitritos oxidan el hierro de la hemoglobina (Fe²⁺→Fe³⁺) formando metahemoglobina, que no puede transportar oxígeno, produciendo cianosis e hipoxia (metahemoglobinemia).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los nitritos oxidan el hierro de la hemoglobina (Fe²⁺→Fe³⁺) formando metahemoglobina, que no puede transportar oxígeno, produciendo cianosis e hipoxia (metahemoglobinemia)."
     ]
   },
   {
@@ -4624,7 +4624,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los organofosforados son PLAGUICIDAS (insecticidas) utilizados en agricultura, no fertilizantes.",
       "✅ Correcto. La afirmación es FALSA: los organofosforados son PLAGUICIDAS (insecticidas) utilizados en agricultura, no fertilizantes."
     ]
   },
@@ -4648,7 +4648,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La inhibición de la colinesterasa acumula acetilcolina y produce el síndrome muscarínico: salivación, sudoración, lagrimeo, miosis (pupila puntiforme), broncorrea, bradicardia.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La inhibición de la colinesterasa acumula acetilcolina y produce el síndrome muscarínico: salivación, sudoración, lagrimeo, miosis (pupila puntiforme), broncorrea, bradicardia."
     ]
   },
   {
@@ -4670,7 +4670,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los organofosforados inhiben de forma irreversible la acetilcolinesterasa en el sistema nervioso (central y periférico), acumulando acetilcolina en las sinapsis.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los organofosforados inhiben de forma irreversible la acetilcolinesterasa en el sistema nervioso (central y periférico), acumulando acetilcolina en las sinapsis."
     ]
   },
   {
@@ -4692,7 +4692,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El monóxido de carbono se une a la hemoglobina con alta afinidad formando carboxihemoglobina (COHb); su dosaje en sangre confirma el diagnóstico de intoxicación.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El monóxido de carbono se une a la hemoglobina con alta afinidad formando carboxihemoglobina (COHb); su dosaje en sangre confirma el diagnóstico de intoxicación."
     ]
   },
   {
@@ -4715,7 +4715,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El arsénico del agua de bebida es carcinógeno: la exposición crónica se asocia a cáncer de piel, pulmón y vejiga, además de lesiones cutáneas y neuropatía.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El arsénico del agua de bebida es carcinógeno: la exposición crónica se asocia a cáncer de piel, pulmón y vejiga, además de lesiones cutáneas y neuropatía."
     ]
   },
   {
@@ -4736,7 +4736,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: Nota: la clave oficial del examen marca FALSA, pero médicamente esta afirmación es VERDADERA: la presencia de nitritos en orina es un indicador de infección del tracto urinario (las bacterias uropatógenas reducen los nitratos a nitritos). Se mantiene la clave oficial.",
       "✅ Correcto. Nota: la clave oficial del examen marca FALSA, pero médicamente esta afirmación es VERDADERA: la presencia de nitritos en orina es un indicador de infección del tracto urinario (las bacterias uropatógenas reducen los nitratos a nitritos). Se mantiene la clave oficial."
     ]
   },
@@ -4759,7 +4759,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La intoxicación aguda por arsénico causa vómitos, diarrea (cólera arsenical), dolor abdominal y trastornos cardiovasculares (shock, arritmias).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La intoxicación aguda por arsénico causa vómitos, diarrea (cólera arsenical), dolor abdominal y trastornos cardiovasculares (shock, arritmias)."
     ]
   },
   {
@@ -4781,7 +4781,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El fosfuro de aluminio es un fumigante tóxico usado en agricultura para el control de plagas de granos almacenados; libera fosfina (PH₃) altamente tóxica.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El fosfuro de aluminio es un fumigante tóxico usado en agricultura para el control de plagas de granos almacenados; libera fosfina (PH₃) altamente tóxica."
     ]
   },
   {
@@ -4804,7 +4804,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El glifosato es el herbicida más usado; estudios epidemiológicos (p. ej., la IARC) lo relacionaron con un posible mayor riesgo de ciertos cánceres (linfoma no Hodgkin).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El glifosato es el herbicida más usado; estudios epidemiológicos (p. ej., la IARC) lo relacionaron con un posible mayor riesgo de ciertos cánceres (linfoma no Hodgkin)."
     ]
   },
   {
@@ -4827,7 +4827,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los receptores muscarínicos (M1-M5) son activados por la acetilcolina y median las respuestas del sistema nervioso parasimpático en los órganos efectores (corazón, glándulas, músculo liso).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los receptores muscarínicos (M1-M5) son activados por la acetilcolina y median las respuestas del sistema nervioso parasimpático en los órganos efectores (corazón, glándulas, músculo liso)."
     ]
   },
   {
@@ -4850,7 +4850,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los agonistas alfa-1 adrenérgicos producen vasoconstricción periférica, aumentando la resistencia vascular y la presión arterial (p. ej., fenilefrina).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los agonistas alfa-1 adrenérgicos producen vasoconstricción periférica, aumentando la resistencia vascular y la presión arterial (p. ej., fenilefrina)."
     ]
   },
   {
@@ -4872,7 +4872,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los beta-bloqueantes (p. ej., propranolol, atenolol) bloquean los receptores beta-1 cardíacos, disminuyendo la frecuencia cardíaca, la contractilidad y la presión arterial.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los beta-bloqueantes (p. ej., propranolol, atenolol) bloquean los receptores beta-1 cardíacos, disminuyendo la frecuencia cardíaca, la contractilidad y la presión arterial."
     ]
   },
   {
@@ -4895,7 +4895,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La afirmación es FALSA: la pilocarpina es un parasimpaticomimético que produce MIOSIS (contrae la pupila) y se usa para tratar el glaucoma; los midriáticos (dilatan la pupila) son los anticolinérgicos como la atropina o los simpaticomiméticos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: la pilocarpina es un parasimpaticomimético que produce MIOSIS (contrae la pupila) y se usa para tratar el glaucoma; los midriáticos (dilatan la pupila) son los anticolinérgicos como la atropina o los simpaticomiméticos."
     ]
   },
   {
@@ -4917,7 +4917,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la neostigmina es un inhibidor de la colinesterasa que aumenta la actividad del sistema nervioso PARASIMPÁTICO (no simpático), potenciando la acetilcolina.",
       "✅ Correcto. La afirmación es FALSA: la neostigmina es un inhibidor de la colinesterasa que aumenta la actividad del sistema nervioso PARASIMPÁTICO (no simpático), potenciando la acetilcolina."
     ]
   },
@@ -4941,7 +4941,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La atropina bloquea los receptores muscarínicos y produce sequedad de boca, visión borrosa (midriasis y parálisis de la acomodación), taquicardia y estreñimiento.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La atropina bloquea los receptores muscarínicos y produce sequedad de boca, visión borrosa (midriasis y parálisis de la acomodación), taquicardia y estreñimiento."
     ]
   },
   {
@@ -4964,7 +4964,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los agonistas beta-2 adrenérgicos (salbutamol) relajan el músculo liso bronquial (broncodilatación) y se usan en el tratamiento del asma y EPOC.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los agonistas beta-2 adrenérgicos (salbutamol) relajan el músculo liso bronquial (broncodilatación) y se usan en el tratamiento del asma y EPOC."
     ]
   },
   {
@@ -4987,7 +4987,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los simpaticomiméticos (p. ej., adrenalina, dobutamina) estimulan los receptores beta-1 cardíacos, aumentando la frecuencia cardíaca y la contractilidad.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los simpaticomiméticos (p. ej., adrenalina, dobutamina) estimulan los receptores beta-1 cardíacos, aumentando la frecuencia cardíaca y la contractilidad."
     ]
   },
   {
@@ -5009,7 +5009,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El bethanechol es un agonista muscarínico que aumenta la motilidad gastrointestinal (y la contracción vesical), usándose en la atonía gástrica y el estreñimiento.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El bethanechol es un agonista muscarínico que aumenta la motilidad gastrointestinal (y la contracción vesical), usándose en la atonía gástrica y el estreñimiento."
     ]
   },
   {
@@ -5031,7 +5031,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La escopolamina es un anticolinérgico (antagonista muscarínico) que se usa para prevenir y tratar el mareo por movimiento (cinetosis) y las náuseas.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La escopolamina es un anticolinérgico (antagonista muscarínico) que se usa para prevenir y tratar el mareo por movimiento (cinetosis) y las náuseas."
     ]
   },
   {
@@ -5053,7 +5053,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la marihuana actúa sobre los receptores cannabinoides CB1/CB2 (agonista), mientras que la cocaína bloquea la recaptación de dopamina/noradrenalina; sus mecanismos son diferentes.",
       "✅ Correcto. La afirmación es FALSA: la marihuana actúa sobre los receptores cannabinoides CB1/CB2 (agonista), mientras que la cocaína bloquea la recaptación de dopamina/noradrenalina; sus mecanismos son diferentes."
     ]
   },
@@ -5077,7 +5077,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El THC de la marihuana es un agonista de los receptores cannabinoides CB1, muy abundantes en el SNC, produciendo los efectos psicoactivos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El THC de la marihuana es un agonista de los receptores cannabinoides CB1, muy abundantes en el SNC, produciendo los efectos psicoactivos."
     ]
   },
   {
@@ -5099,7 +5099,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La cocaína se metaboliza principalmente en el hígado (por esterasas y CYP) antes de eliminarse por orina.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La cocaína se metaboliza principalmente en el hígado (por esterasas y CYP) antes de eliminarse por orina."
     ]
   },
   {
@@ -5122,7 +5122,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La marihuana produce taquicardia (aumento de la frecuencia cardíaca) y aumento de la presión arterial por estimulación simpática.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La marihuana produce taquicardia (aumento de la frecuencia cardíaca) y aumento de la presión arterial por estimulación simpática."
     ]
   },
   {
@@ -5145,7 +5145,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La cocaína actúa principalmente bloqueando el transportador de dopamina (DAT), aumentando la dopamina en la sinapsis (no es agonista directo, pero potencia la señal dopaminérgica); la clave considera 'agonista' en sentido de potenciador.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La cocaína actúa principalmente bloqueando el transportador de dopamina (DAT), aumentando la dopamina en la sinapsis (no es agonista directo, pero potencia la señal dopaminérgica); la clave considera 'agonista' en sentido de potenciador."
     ]
   },
   {
@@ -5167,7 +5167,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina se absorbe rápidamente en el torrente sanguíneo a través de los pulmones (al fumar) y de las mucosas y la piel (parches), llegando al cerebro en segundos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina se absorbe rápidamente en el torrente sanguíneo a través de los pulmones (al fumar) y de las mucosas y la piel (parches), llegando al cerebro en segundos."
     ]
   },
   {
@@ -5189,7 +5189,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina se metaboliza principalmente en el hígado (por el CYP2A6) a cotinina, que es su principal metabolito urinario.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina se metaboliza principalmente en el hígado (por el CYP2A6) a cotinina, que es su principal metabolito urinario."
     ]
   },
   {
@@ -5207,11 +5207,11 @@
       "Verdadero",
       "Falso"
     ],
-    "indice_correta": 1,
+    "indice_correta": 0,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
-      "✅ Correcto. Nota: la clave oficial del examen marca FALSA, pero médicamente la afirmación es VERDADERA: la nicotina tiene una vida media corta (aproximadamente 2 horas). Se mantiene la clave oficial."
+      "Correcto. La nicotina tiene una vida media plasmática corta, de aproximadamente 2 horas, lo que explica por qué los fumadores sienten la necesidad de fumar varias veces al día para mantener sus niveles plasmáticos.",
+      "Incorrecto. La afirmación es VERDADERA: la nicotina tiene una vida media corta (aproximadamente 2 horas), por lo que se metaboliza y elimina rápidamente del organismo."
     ]
   },
   {
@@ -5233,7 +5233,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina se une a los receptores nicotínicos de acetilcolina (nAChR) en el cerebro, liberando dopamina en el circuito de recompensa.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina se une a los receptores nicotínicos de acetilcolina (nAChR) en el cerebro, liberando dopamina en el circuito de recompensa."
     ]
   },
   {
@@ -5255,7 +5255,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina es un estimulante del SNC: aumenta la alerta, la atención y libera dopamina, generando sensación de placer.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina es un estimulante del SNC: aumenta la alerta, la atención y libera dopamina, generando sensación de placer."
     ]
   },
   {
@@ -5276,7 +5276,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la nicotina tiene un efecto ESTIMULANTE (simpaticomimético) sobre el sistema nervioso periférico (aumenta frecuencia cardíaca, presión y motilidad), no relajante.",
       "✅ Correcto. La afirmación es FALSA: la nicotina tiene un efecto ESTIMULANTE (simpaticomimético) sobre el sistema nervioso periférico (aumenta frecuencia cardíaca, presión y motilidad), no relajante."
     ]
   },
@@ -5299,7 +5299,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina es una de las sustancias más adictivas: la dependencia se instala rápidamente por la potente liberación de dopamina.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina es una de las sustancias más adictivas: la dependencia se instala rápidamente por la potente liberación de dopamina."
     ]
   },
   {
@@ -5321,7 +5321,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina tiene efectos negativos cardiovasculares: taquicardia, hipertensión, vasoconstricción coronaria y mayor riesgo de infarto y ACV.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina tiene efectos negativos cardiovasculares: taquicardia, hipertensión, vasoconstricción coronaria y mayor riesgo de infarto y ACV."
     ]
   },
   {
@@ -5343,7 +5343,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina afecta la salud reproductiva: reduce la fertilidad, aumenta el riesgo de aborto, parto prematuro y bajo peso al nacer.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina afecta la salud reproductiva: reduce la fertilidad, aumenta el riesgo de aborto, parto prematuro y bajo peso al nacer."
     ]
   },
   {
@@ -5365,7 +5365,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La nicotina inmunosuprime: altera la función de linfocitos y macrófagos, aumentando la susceptibilidad a infecciones.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La nicotina inmunosuprime: altera la función de linfocitos y macrófagos, aumentando la susceptibilidad a infecciones."
     ]
   },
   {
@@ -6554,7 +6554,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. En el ciclo enterohepático los ácidos biliares secretados en la bilis son reabsorbidos en el íleon (intestino delgado) y reciclados de vuelta al hígado por la vena porta.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: En el ciclo enterohepático los ácidos biliares secretados en la bilis son reabsorbidos en el íleon (intestino delgado) y reciclados de vuelta al hígado por la vena porta."
     ]
   },
   {
@@ -6575,7 +6575,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los ácidos biliares son secretados por las células del HÍGADO (hepatocitos), no por el intestino delgado; el intestino los reabsorbe.",
       "✅ Correcto. La afirmación es FALSA: los ácidos biliares son secretados por las células del HÍGADO (hepatocitos), no por el intestino delgado; el intestino los reabsorbe."
     ]
   },
@@ -6599,7 +6599,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los ácidos biliares se sintetizan en el hígado a partir del colesterol, se almacenan en la vesícula biliar y se liberan al duodeno durante la digestión.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los ácidos biliares se sintetizan en el hígado a partir del colesterol, se almacenan en la vesícula biliar y se liberan al duodeno durante la digestión."
     ]
   },
   {
@@ -6621,7 +6621,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los ácidos biliares emulsionan las grasas formando micelas, lo que permite la absorción de los lípidos y de las vitaminas liposolubles (A, D, E, K) en el intestino delgado.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los ácidos biliares emulsionan las grasas formando micelas, lo que permite la absorción de los lípidos y de las vitaminas liposolubles (A, D, E, K) en el intestino delgado."
     ]
   },
   {
@@ -6642,7 +6642,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: la mayor parte de los ácidos biliares se reabsorbe en el INTESTINO DELGADO (íleon), no se elimina en el intestino grueso.",
       "✅ Correcto. La afirmación es FALSA: la mayor parte de los ácidos biliares se reabsorbe en el INTESTINO DELGADO (íleon), no se elimina en el intestino grueso."
     ]
   },
@@ -6665,7 +6665,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Aproximadamente el 95% de los ácidos biliares se reabsorbe en el intestino delgado y vuelve al hígado por la circulación enterohepática (vena porta).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Aproximadamente el 95% de los ácidos biliares se reabsorbe en el intestino delgado y vuelve al hígado por la circulación enterohepática (vena porta)."
     ]
   },
   {
@@ -6687,7 +6687,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La reabsorción de los ácidos biliares en el íleon (intestino delgado) es parte esencial del ciclo enterohepático, evitando la pérdida excesiva.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La reabsorción de los ácidos biliares en el íleon (intestino delgado) es parte esencial del ciclo enterohepático, evitando la pérdida excesiva."
     ]
   },
   {
@@ -6709,7 +6709,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los ácidos biliares no se filtran ni se excretan por los riñones en condiciones normales; se reciclan por el ciclo enterohepático (hígado-intestino).",
       "✅ Correcto. La afirmación es FALSA: los ácidos biliares no se filtran ni se excretan por los riñones en condiciones normales; se reciclan por el ciclo enterohepático (hígado-intestino)."
     ]
   },
@@ -6732,7 +6732,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La reabsorción de los ácidos biliares permite conservar la bilis y mantener un pool constante para la digestión de las grasas.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La reabsorción de los ácidos biliares permite conservar la bilis y mantener un pool constante para la digestión de las grasas."
     ]
   },
   {
@@ -6754,7 +6754,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Una pequeña fracción (~5%) de los ácidos biliares se pierde en las heces (pérdida irreversible) y debe ser reemplazada por síntesis hepática de novo a partir del colesterol.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Una pequeña fracción (~5%) de los ácidos biliares se pierde en las heces (pérdida irreversible) y debe ser reemplazada por síntesis hepática de novo a partir del colesterol."
     ]
   },
   {
@@ -6778,7 +6778,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los enterovirus del género Enterovirus (familia Picornaviridae) incluyen los virus Echo, Coxsackie A y B, y Polio, además de los enterovirus numerados.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los enterovirus del género Enterovirus (familia Picornaviridae) incluyen los virus Echo, Coxsackie A y B, y Polio, además de los enterovirus numerados."
     ]
   },
   {
@@ -6801,7 +6801,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los enterovirus producen un amplio espectro clínico: infecciones respiratorias leves, enfermedad mano-pie-boca, meningitis aséptica, miocarditis y la poliomielitis (parálisis).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los enterovirus producen un amplio espectro clínico: infecciones respiratorias leves, enfermedad mano-pie-boca, meningitis aséptica, miocarditis y la poliomielitis (parálisis)."
     ]
   },
   {
@@ -6824,7 +6824,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La transmisión de los enterovirus es principalmente fecal-oral y por contacto directo con secreciones respiratorias o fómites contaminados.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La transmisión de los enterovirus es principalmente fecal-oral y por contacto directo con secreciones respiratorias o fómites contaminados."
     ]
   },
   {
@@ -6847,7 +6847,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La vacunación antipoliomielítica (OPV/IPV) permitió casi erradicar la poliomielitis en el mundo (solo queda endémica en algunos países).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La vacunación antipoliomielítica (OPV/IPV) permitió casi erradicar la poliomielitis en el mundo (solo queda endémica en algunos países)."
     ]
   },
   {
@@ -6870,7 +6870,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El virus Coxsackie causa fiebre aftosa (herpangina / enfermedad mano-pie-boca) y meningitis aséptica, entre otros cuadros.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El virus Coxsackie causa fiebre aftosa (herpangina / enfermedad mano-pie-boca) y meningitis aséptica, entre otros cuadros."
     ]
   },
   {
@@ -6892,7 +6892,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los enterovirus afectan a todas las edades; aunque son más frecuentes en niños, los adultos también se infectan (a menudo por contacto con niños infectados).",
       "✅ Correcto. La afirmación es FALSA: los enterovirus afectan a todas las edades; aunque son más frecuentes en niños, los adultos también se infectan (a menudo por contacto con niños infectados)."
     ]
   },
@@ -6915,7 +6915,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. La mayoría de las infecciones por enterovirus son asintomáticas o subclínicas; solo una minoría desarrolla enfermedad manifiesta.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: La mayoría de las infecciones por enterovirus son asintomáticas o subclínicas; solo una minoría desarrolla enfermedad manifiesta."
     ]
   },
   {
@@ -6938,7 +6938,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Las infecciones por enterovirus son autolimitadas y el tratamiento es sintomático/de sostén; no requieren antibióticos ni antivirales específicos en la mayoría de los casos.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Las infecciones por enterovirus son autolimitadas y el tratamiento es sintomático/de sostén; no requieren antibióticos ni antivirales específicos en la mayoría de los casos."
     ]
   },
   {
@@ -6960,7 +6960,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Los enterovirus se replican inicialmente en el tracto respiratorio superior e inferior y en el tracto gastrointestinal, desde donde pueden diseminarse.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Los enterovirus se replican inicialmente en el tracto respiratorio superior e inferior y en el tracto gastrointestinal, desde donde pueden diseminarse."
     ]
   },
   {
@@ -6981,7 +6981,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: los enterovirus circulan todo el año con pico en verano/otoño, pero no son la causa principal de enfermedad respiratoria en la temporada de gripe (invierno), que es el virus influenza.",
       "✅ Correcto. La afirmación es FALSA: los enterovirus circulan todo el año con pico en verano/otoño, pero no son la causa principal de enfermedad respiratoria en la temporada de gripe (invierno), que es el virus influenza."
     ]
   },
@@ -9371,7 +9371,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. En la primera tópica freudiana, el Inconsciente es una instancia psíquica separada de la Conciencia; la Represión es el mecanismo que mantiene sus contenidos fuera de la conciencia.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: En la primera tópica freudiana, el Inconsciente es una instancia psíquica separada de la Conciencia; la Represión es el mecanismo que mantiene sus contenidos fuera de la conciencia."
     ]
   },
   {
@@ -9393,8 +9393,8 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
-      "✅ Correcto. La afirmación es falsa en la parte final: los pensamientos reprimidos NO están construidos con la misma lógica que la conciencia. El inconsciente obedece a leyes propias (proceso primario: condensación, desplazamiento, ausencia de negación y de contradicción), tal como plantea Freud en 'Lo Inconsciente' (1915). La afirmación es FALSA según Freud: los pensamientos reprimidos NO se construyen con la misma lógica de la conciencia. El Inconsciente obedece a leyes propias (proceso primario: condensación, desplazamiento, ausencia de negación y de contradicción), tal como sostiene el propio examen en las preguntas 3, 4 y 5. La clave oficial marcaba V, pero es contradictoria con la teoría freudiana."
+      "Incorrecto. La afirmación es FALSA en su parte final: los pensamientos reprimidos no están construidos con la misma lógica que la conciencia. Según Freud ('Lo inconsciente', 1915), el inconsciente obedece a leyes propias del proceso primario (condensación, desplazamiento, ausencia de negación y de contradicción), radicalmente distintas de la lógica consciente.",
+      "Correcto. La afirmación es falsa en su parte final: los pensamientos reprimidos no se construyen con la misma lógica que la conciencia. El inconsciente obedece a leyes propias del proceso primario (condensación, desplazamiento, ausencia de negación y de contradicción), como plantea Freud en 'Lo inconsciente' (1915)."
     ]
   },
   {
@@ -9416,7 +9416,7 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
+      "Incorrecto. La afirmación es FALSA: La diferencia entre la conciencia y el inconsciente NO es una cuestión de grados (cuantitativa), sino cualitativa: son sistemas con leyes de funcionamiento diferentes.",
       "✅ Correcto. La diferencia entre la conciencia y el inconsciente NO es una cuestión de grados (cuantitativa), sino cualitativa: son sistemas con leyes de funcionamiento diferentes."
     ]
   },
@@ -9440,7 +9440,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Freud sostiene que el Inconsciente tiene otras leyes lógicas que la conciencia, como la ausencia del principio de contradicción, la atemporalidad y la sustitución de la realidad exterior por la realidad psíquica.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Freud sostiene que el Inconsciente tiene otras leyes lógicas que la conciencia, como la ausencia del principio de contradicción, la atemporalidad y la sustitución de la realidad exterior por la realidad psíquica."
     ]
   },
   {
@@ -9462,7 +9462,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El Inconsciente freudiano se presenta como radicalmente diferente a la conciencia; esa diferencia se refleja en fenómenos como lapsus, sueños, síntomas y trastornos del pensamiento lógico.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El Inconsciente freudiano se presenta como radicalmente diferente a la conciencia; esa diferencia se refleja en fenómenos como lapsus, sueños, síntomas y trastornos del pensamiento lógico."
     ]
   },
   {
@@ -9483,8 +9483,8 @@
     "indice_correta": 1,
     "justificativa": null,
     "opcoes_comentario": [
-      "❌ Incorrecto. La afirmación es VERDADERA.",
-      "✅ Correcto. La afirmación es falsa: para Freud el Inconsciente NO es una 'versión oculta' de la conciencia (no es una conciencia escondida). Es una instancia con leyes y lógica propias, radicalmente distinta de la conciencia. La afirmación es FALSA según Freud: el Inconsciente NO es una 'versión oculta' de la conciencia (no es una conciencia escondida). Es una instancia con leyes y lógica propias, radicalmente distinta de la conciencia. La clave oficial marcaba V, pero contradice la teoría freudiana del Inconsciente."
+      "Incorrecto. La afirmación es FALSA: para Freud, el inconsciente no es una 'versión oculta' de la conciencia (no es una conciencia escondida), sino una instancia con leyes y lógica propias, radicalmente distinta de la conciencia.",
+      "Correcto. Para Freud, el inconsciente no es una 'versión oculta' de la conciencia, sino una instancia con leyes y lógica propias (proceso primario), radicalmente distinta del funcionamiento consciente."
     ]
   },
   {
@@ -9507,7 +9507,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. Freud considera que en el Inconsciente no existe la representación de la muerte: solo puede inscribirse lo que puede ser representado como castración (la muerte como tal no tiene representación inconsciente).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: Freud considera que en el Inconsciente no existe la representación de la muerte: solo puede inscribirse lo que puede ser representado como castración (la muerte como tal no tiene representación inconsciente)."
     ]
   },
   {
@@ -9530,7 +9530,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El descubrimiento del Inconsciente por Freud implicó una conmoción en el campo del saber establecido desde la Modernidad: el sujeto deja de ser dueño y transparente para sí mismo (descentramiento del sujeto).",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El descubrimiento del Inconsciente por Freud implicó una conmoción en el campo del saber establecido desde la Modernidad: el sujeto deja de ser dueño y transparente para sí mismo (descentramiento del sujeto)."
     ]
   },
   {
@@ -9554,7 +9554,7 @@
     "justificativa": null,
     "opcoes_comentario": [
       "✅ Correcto. El Inconsciente se revela en la conciencia a través de formaciones del inconsciente: lapsus, actos fallidos, síntomas, chistes y sueños.",
-      "❌ Incorrecto. La afirmación es FALSA."
+      "Incorrecto. La afirmación es VERDADERA: El Inconsciente se revela en la conciencia a través de formaciones del inconsciente: lapsus, actos fallidos, síntomas, chistes y sueños."
     ]
   },
   {

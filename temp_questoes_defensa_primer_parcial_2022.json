@@ -1,0 +1,812 @@
+[
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "patologia",
+  "tags": [
+   "púrpura",
+   "plaquetopenia",
+   "vasculitis",
+   "coagulación"
+  ],
+  "enunciado": "Las púrpuras pueden ser causadas por:",
+  "opcoes": [
+   "Plaquetopenia",
+   "Alteración de los factores de coagulación",
+   "Vasculitis",
+   "Todos son correctos"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La plaquetopenia (trombocitopenia) es una causa frecuente de púrpura, porque las plaquetas son esenciales para la hemostasia primaria, pero no es la única causa. La respuesta completa es 'todos son correctos'.",
+   "❌ Incorrecto. La alteración de los factores de coagulación puede manifestarse con púrpuras y equimosis (hemostasia secundaria alterada), pero no es la única causa. La respuesta completa es 'todos son correctos'.",
+   "❌ Incorrecto. La vasculitis (inflamación de la pared vascular) produce púrpura por fragilidad y daño del vaso (ej. púrpura de Schönlein-Henoch), pero no es la única causa. La respuesta completa es 'todos son correctos'.",
+   "✅ Correcto. La púrpura es la extravasación de sangre en piel y mucosas y puede obedecer a tres mecanismos: PLAQUETOPENIA (déficit de hemostasia primaria), ALTERACIÓN DE LOS FACTORES DE COAGULACIÓN (hemostasia secundaria) y VASCULITIS (daño de la pared del vaso). Por lo tanto, todas las opciones son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "derrame pleural",
+   "matidez",
+   "vibraciones vocales",
+   "murmullo vesicular"
+  ],
+  "enunciado": "En una paciente con derrame pleural, en el examen físico usted esperaría encontrar:",
+  "opcoes": [
+   "Matidez, VV aumentadas, murmullo vesicular disminuido",
+   "Matidez, VV ausentes o disminuidas, murmullo vesicular ausente",
+   "Hipersonoridad, VV disminuidos, murmullo vesicular disminuido",
+   "Hipersonoridad, VV ausentes, murmullo vesicular aumentado"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Las vibraciones vocales (VV) en el derrame pleural están DISMINUIDAS o abolidas, porque el líquido amortigua la transmisión de las vibraciones; 'VV aumentadas' es el hallazgo del síndrome de condensación. La matidez y el MV disminuido sí son correctos, pero la opción está mal.",
+   "✅ Correcto. En el DERRAME PLEURAL el examen físico muestra: MATIDEZ a la percusión (el líquido es de densidad aumentada, apagando la resonancia), VIBRACIONES VOCALES AUSENTES O DISMINUIDAS y MURMULLO VESICULAR AUSENTE en la zona del derrame, porque el líquido interpuesto entre el parénquima y la pared impide la transmisión del sonido. Puede acompañarse de disminución de la expansión torácica.",
+   "❌ Incorrecto. La hipersonoridad no corresponde al derrame: es el hallazgo del neumotórax o del enfisema (exceso de aire). El derrame da matidez, y las VV y el MV están disminuidos, no las VV solo.",
+   "❌ Incorrecto. La hipersonoridad y el MV aumentado no corresponden al derrame pleural; el derrame produce matidez con VV y MV ausentes o disminuidos."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "colecistitis aguda",
+   "punto de Murphy",
+   "semiología abdominal",
+   "hipocondrio derecho"
+  ],
+  "enunciado": "En una colecistitis aguda al examinar paciente, usted encontrará:",
+  "opcoes": [
+   "Hepatomegalia y esplenomegalia",
+   "Punto de Murphy positivo",
+   "Punto de Mac Burney positivo",
+   "Vientre en tabla"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La hepatomegalia y esplenomegalia no son hallazgos característicos de la colecistitis aguda: corresponden a procesos como hepatitis, hipertensión portal o hematopatías. En la colecistitis el signo clave es el punto de Murphy.",
+   "✅ Correcto. En la COLECISTITIS AGUDA el signo característico es el PUNTO DE MURPHY POSITIVO: dolor y cortejo vegetativo (interrupción de la inspiración) al palpar profundamente el hipocondrio derecho mientras el paciente inspira, porque la vesícula inflamada se acerca a la mano. Es el hallazgo físico más específico.",
+   "❌ Incorrecto. El punto de Mac Burney positivo corresponde a la APENDICITIS aguda, que se localiza en la fosa ilíaca derecha; no es un hallazgo de la colecistitis aguda.",
+   "❌ Incorrecto. El vientre en tabla (contractura abdominal) es el signo de la PERITONITIS difusa (abdomen agudo por perforación), no de la colecistitis aguda no complicada."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "",
+  "tags": [
+   "dolor referido",
+   "dolor cólico",
+   "dolor somático",
+   "tipos de dolor"
+  ],
+  "enunciado": "Marque lo correcto:",
+  "opcoes": [
+   "El dolor referido es el percibido a distancia del órgano enfermo",
+   "El dolor cólico es un dolor continuo, sordo y persistente",
+   "El dolor somático es un dolor irradiado característico de las vísceras huecas",
+   "Ninguna es correcta"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. El DOLOR REFERIDO es el que se PERCIBE A DISTANCIA del órgano enfermo, en territorios cutáneos o áreas inervadas por el mismo segmento (metámera) de donde proviene el estímulo visceral (ej. dolor en el hombro derecho por irritación diafragmática, dolor testicular en el cólico renal). Es una de las características del dolor visceral.",
+   "❌ Incorrecto. El dolor cólico NO es continuo, sordo ni persistente: es un dolor INTERMITENTE, en oleadas (exacerbaciones), tipo cólico o retortijón, característico de las vísceras huecas. El dolor continuo, sordo y persistente (gravativo) corresponde al dolor visceral profundo.",
+   "❌ Incorrecto. El dolor somático es AGUDO, bien localizado y se origina en estructuras inervadas somáticamente (peritoneo parietal, pleura, piel); no es 'irradiado' ni característico de las vísceras huecas. El dolor de las vísceras huecas es el dolor visceral.",
+   "❌ Incorrecto. La opción A es correcta, por lo que 'ninguna es correcta' es falsa."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "",
+  "tags": [
+   "íleo paralítico",
+   "timpanismo",
+   "RHA ausentes",
+   "abdomen agudo"
+  ],
+  "enunciado": "Un paciente con un íleo paralítico se presenta con:",
+  "opcoes": [
+   "Dolor cólico, falta de eliminación de gases, distensión abdominal, timpanismo, ausencia de RHA",
+   "Dolor cólico, distensión abdominal, matidez, RHA aumentados",
+   "Dolor cólico, cambio del hábito evacuatorio, distensión abdominal, matidez, RHA ausentes",
+   "B y C correctas"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. El ÍLEO PARALÍTICO (oclusión funcional por falta de peristalsis) se presenta con DOLOR de tipo cólico (puede ser difuso o retortijón), FALTA DE ELIMINACIÓN DE GASES Y MATERIA FECAL, DISTENSIÓN ABDOMINAL, TIMPANISMO a la percusión (por el aire acumulado en asas distendidas) y RHA AUSENTES o muy disminuidos, por la parálisis del peristaltismo.",
+   "❌ Incorrecto. La MATIDEZ no corresponde al íleo paralítico (debe haber timpanismo por el aire acumulado) y los RHA están AUSENTES o disminuidos, no aumentados. Los RHA aumentados ('lucha intestinal') son del íleo MECÁNICO obstructivo en fase inicial.",
+   "❌ Incorrecto. El cambio del hábito evacuatorio (estreñimiento y/o diarrea) es más característico del íleo mecánico obstructivo, y la MATIDEZ no corresponde: el íleo paralítico da timpanismo. Los RHA ausentes sí son correctos, pero la opción en su conjunto está mal.",
+   "❌ Incorrecto. Ni B ni C son correctas porque ambas incluyen 'matidez', que contradice el timpanismo característico del íleo paralítico, y B además incluye RHA aumentados."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "dolor cólico",
+   "visceras huecas",
+   "dolor visceral",
+   "exacerbaciones intermitentes"
+  ],
+  "enunciado": "El dolor de tipo cólico es:",
+  "opcoes": [
+   "Gravativo y profundo",
+   "Se presenta con exacerbaciones intermitentes",
+   "Es característico de las vísceras huecas",
+   "B y C correctas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. El dolor gravativo y profundo (continuo, sordo, mal localizado) es el dolor VISCERAL propiamente dicho, no el cólico. El cólico es intermitente.",
+   "❌ Incorrecto. Es verdadero que el dolor cólico se presenta con EXACERBACIONES INTERMITENTES (oleadas de dolor que aumentan y disminuyen, tipo retortijón), pero no es la única característica correcta: también es característico de las vísceras huecas. La respuesta completa es B y C.",
+   "❌ Incorrecto. Es verdadero que el dolor cólico es característico de las VÍSCERAS HUECAS (intestino, uréter, vía biliar), pero tampoco es la única opción correcta. La respuesta completa es B y C.",
+   "✅ Correcto. El DOLOR CÓLICO se presenta con EXACERBACIONES INTERMITENTES (oleadas rítmicas, tipo retortijón) y es CARACTERÍSTICO DE LAS VÍSCERAS HUECAS, producido por la contracción peristáltica excesiva contra un obstáculo (cólico intestinal, renal, biliar). Ambas afirmaciones (B y C) son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "patologia",
+  "tags": [
+   "linfadenitis crónica",
+   "hiperplasia folicular",
+   "centros germinales",
+   "linfocitos B"
+  ],
+  "enunciado": "¿Cuál de los siguientes enunciados sobre linfadenitis crónica inespecífica son ciertos?",
+  "opcoes": [
+   "La hiperplasia folicular se debe a un proceso inflamatorio que activa los linfocitos B",
+   "La hiperplasia folicular se caracteriza por la presencia de folículos con centros germinales activados (folículos secundarios)",
+   "La hiperplasia folicular es causada por infecciones bacterianas",
+   "Todos son correctos"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Es verdadero que la hiperplasia folicular se debe a un proceso inflamatorio que ACTIVA LOS LINFOCITOS B (los folículos son territorios de células B), pero no es la única afirmación correcta. La respuesta completa es 'todos son correctos'.",
+   "❌ Incorrecto. Es verdadero que la hiperplasia folicular se caracteriza por FOLÍCULOS con CENTROS GERMINALES ACTIVADOS (folículos secundarios), expresión de la respuesta B dependiente del antígeno, pero no es la única afirmación correcta. La respuesta completa es 'todos son correctos'.",
+   "❌ Incorrecto. Es verdadero que la hiperplasia folicular es causada por infecciones bacterianas (y otras causas), como parte de la respuesta inflamatoria crónica inespecífica del ganglio, pero no es la única afirmación correcta. La respuesta completa es 'todos son correctos'.",
+   "✅ Correcto. En la LINFADENITIS CRÓNICA INESPECÍFICA la hiperplasia folicular es el patrón de respuesta de la zona de células B: se debe a un proceso inflamatorio que activa a los LINFOCITOS B, se caracteriza por FOLÍCULOS con CENTROS GERMINALES ACTIVADOS (folículos secundarios) y es causada frecuentemente por INFECCIONES BACTERIANAS (además de otras causas). Todas las afirmaciones son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "patologia",
+  "tags": [
+   "hiperplasia esplénica",
+   "pulpa blanca",
+   "bazo",
+   "cuadro reactivo"
+  ],
+  "enunciado": "La causa más probable de hiperplasia de pulpa blanca esplénica es:",
+  "opcoes": [
+   "Insuficiencia cardíaca global",
+   "Leucemia",
+   "Presencia de microabscesos",
+   "Cuadro reactivo"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La insuficiencia cardíaca global produce congestión pasiva crónica del BAZO con hiperplasia de la PULPA ROJA (por hipertensión del retorno venoso), no de la pulpa blanca.",
+   "❌ Incorrecto. En la leucemia el bazo se infiltra difusamente por las células leucémicas, lo que produce esplenomegalia por infiltración, no una hiperplasia reactiva de la pulpa blanca.",
+   "❌ Incorrecto. La presencia de microabscesos no es causa de hiperplasia de la pulpa blanca; corresponde a procesos sépticos focales (ej. abscesos miliares) y no a la respuesta inmune proliferativa de la pulpa blanca.",
+   "✅ Correcto. La HIPERPLASIA DE LA PULPA BLANCA esplénica traduce una respuesta INMUNE REACTIVA: la estimulación antigénica (infecciones, procesos inflamatorios, respuesta humoral) expande los folículos linfoides y las vainas linfáticas periarteriales. La causa más probable es, por lo tanto, un CUADRO REACTIVO del sistema inmunitario."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "patologia",
+  "tags": [
+   "neumonía viral",
+   "membranas hialinas",
+   "infiltrado intersticial",
+   "patología pulmonar"
+  ],
+  "enunciado": "Proceso patológico caracterizado por infiltrado linfocitario a nivel intersticial y peribroncovascular, asociado a vasocongestión, edema focal, presencia de membranas hialinas y algunas células descamadas a nivel endoalveolar:",
+  "opcoes": [
+   "Neumonía hepatización gris",
+   "Neumonía en hepatización roja",
+   "Neumonía viral",
+   "Bronquitis crónica"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La neumonía en HEPATIZACIÓN GRIS es una fase evolutiva de la neumonía lobar bacteriana: se caracteriza por exudado de FIBRINA, neutrófilos y destrucción de eritrocitos (aspecto gris), no por infiltrado linfocitario intersticial ni membranas hialinas.",
+   "❌ Incorrecto. La neumonía en HEPATIZACIÓN ROJA es la fase inicial de la consolidación bacteriana lobar, con abundantes ERITROCITOS, fibrina y neutrófilos en los alvéolos; no presenta infiltrado intersticial linfocitario ni membranas hialinas.",
+   "✅ Correcto. El cuadro descrito corresponde a la NEUMONÍA VIRAL (patrón de daño alveolar difuso/neumonía intersticial): INFILTRADO LINFOCITARIO INTERSTICIAL y PERIBRONCOVASCULAR, VASOCONGESTIÓN, EDEMA focal, MEMBRANAS HIALINAS y células descamadas (hiperplasia de neumocitos tipo II) en el espacio endoalveolar. Es la histología típica de las neumonías por virus respiratorios.",
+   "❌ Incorrecto. La bronquitis crónica se caracteriza por hiperplasia de glándulas mucosas e hipersecreción de moco en los bronquios, con tos productiva crónica; no presenta membranas hialinas ni el patrón intersticial descrito."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "patologia",
+  "tags": [
+   "neumonía bacteriana",
+   "complicaciones",
+   "abscesos",
+   "pleuritis"
+  ],
+  "enunciado": "La neumonía bacteriana suele complicarse, especialmente en pacientes debilitados. Entre las complicaciones puede mencionarse:",
+  "opcoes": [
+   "Pleuritis fibrinosa",
+   "Organización parcial del proceso",
+   "Formación de abscesos",
+   "Todas las anteriores son correctas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La pleuritis fibrinosa (compromiso inflamatorio de la pleura que puede progresar a derrame o empiema) es una complicación real de la neumonía bacteriana, pero no es la única. La respuesta completa es 'todas las anteriores son correctas'.",
+   "❌ Incorrecto. La organización parcial del proceso (carnificación pulmonar: el exudado se organiza en tejido fibroso cuando no se resuelve por completo) es otra complicación de la neumonía bacteriana, pero no es la única. La respuesta completa es 'todas las anteriores son correctas'.",
+   "❌ Incorrecto. La formación de abscesos (necrosis licuefactiva con cavitación, frecuente en pacientes debilitados y en infecciones por estafilococos o anaerobios) también es una complicación, pero no la única. La respuesta completa es 'todas las anteriores son correctas'.",
+   "✅ Correcto. La neumonía bacteriana puede complicarse con PLEURITIS FIBRINOSA (hasta empiema), ORGANIZACIÓN PARCIAL del exudado (carnificación con fibrosis residual) y FORMACIÓN DE ABSCESOS (sobre todo en debilitados, alcohólicos o por gérmenes necrosantes). Todas las complicaciones mencionadas son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "patologia",
+  "tags": [
+   "hígado graso",
+   "hepatitis alcohólica",
+   "cirrosis",
+   "alcohol"
+  ],
+  "enunciado": "¿Qué produce el alcohol en el hígado?",
+  "opcoes": [
+   "Hígado graso",
+   "Hepatitis aguda",
+   "Cirrosis",
+   "Todas ellas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. El hígado graso (esteatosis alcohólica) es la lesión hepática alcohólica más precoz y frecuente, pero no es la única consecuencia del alcohol. La respuesta completa es 'todas ellas'.",
+   "❌ Incorrecto. La hepatitis aguda (hepatitis alcohólica, con necrosis hepatocelular y esteatohepatitis) es otra manifestación del daño por alcohol, pero no es la única. La respuesta completa es 'todas ellas'.",
+   "❌ Incorrecto. La cirrosis (fibrosis con nódulos de regeneración) es el estadio terminal de la enfermedad hepática alcohólica, pero no es la única consecuencia. La respuesta completa es 'todas ellas'.",
+   "✅ Correcto. El alcohol produce un espectro de enfermedad hepática que incluye HÍGADO GRASO (esteatosis, la más precoz), HEPATITIS AGUDA (hepatitis alcohólica) y CIRROSIS (evolución fibrosa terminal). Todas las opciones son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "microbiologia",
+  "tags": [
+   "VHB",
+   "hepatitis B",
+   "portador asintomático",
+   "cirrosis"
+  ],
+  "enunciado": "El VHB puede provocar:",
+  "opcoes": [
+   "Hepatitis aguda con recuperación y eliminación del virus, o estado de portador asintomático",
+   "Hepatitis crónica no progresiva o hepatitis crónica progresiva que acaba en cirrosis",
+   "Hepatitis fulminante con necrosis hepática masiva",
+   "Todas las anteriores son correctas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. El VHB puede causar hepatitis aguda con recuperación completa y eliminación del virus, o evolucionar a un estado de PORTADOR ASINTOMÁTICO, pero no es la única evolución posible. La respuesta completa es 'todas las anteriores son correctas'.",
+   "❌ Incorrecto. El VHB puede producir hepatitis crónica no progresiva o hepatitis crónica progresiva que termina en CIRROSIS, pero no es la única evolución posible. La respuesta completa es 'todas las anteriores son correctas'.",
+   "❌ Incorrecto. El VHB puede causar hepatitis fulminante con necrosis hepática masiva, pero no es la única evolución posible. La respuesta completa es 'todas las anteriores son correctas'.",
+   "✅ Correcto. La infección por el VIRUS DE LA HEPATITIS B tiene espectros clínicos variados: HEPATITIS AGUDA con recuperación y eliminación del virus, o PORTADOR ASINTOMÁTICO; HEPATITIS CRÓNICA (no progresiva o progresiva hasta la CIRROSIS); y HEPATITIS FULMINANTE con necrosis hepática masiva. Todas las opciones son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "",
+  "tags": [
+   "resiliencia",
+   "vivencias",
+   "salud mental",
+   "psicología"
+  ],
+  "enunciado": "En el sujeto, las vivencias pro resiliencia deben:",
+  "opcoes": [
+   "Excluir lo imaginario",
+   "Incorporar las experiencias individuales, familiares y sociales",
+   "Pertenecer solo al campo de lo real experienciado",
+   "Todas son correctas"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La resiliencia NO excluye lo imaginario: la capacidad de imaginar, proyectar y dar sentido (lo simbólico e imaginario) es parte del proceso resiliente, que permite crear alternativas frente a la adversidad.",
+   "✅ Correcto. Las vivencias que sostienen la RESILIENCIA (capacidad de reponerse de la adversidad) deben INCORPORAR LAS EXPERIENCIAS INDIVIDUALES, FAMILIARES Y SOCIALES del sujeto: la resiliencia se construye en el entretejido de lo personal con el sostén vincular y comunitario, no aisladamente.",
+   "❌ Incorrecto. Las vivencias resilientes NO pertenecen solo al campo de lo real experienciado: la resiliencia integra también la dimensión imaginaria y simbólica (proyectos, sentido, creatividad), no se limita a lo puramente vivido.",
+   "❌ Incorrecto. No todas son correctas: las opciones A y C son falsas, porque la resiliencia incorpora la dimensión imaginaria y no se limita a lo real experienciado."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "",
+  "tags": [
+   "mecanismos de defensa",
+   "conversión",
+   "urgencia psiquiátrica",
+   "salud mental"
+  ],
+  "enunciado": "Por manifestación de cuál de estos mecanismos de defensa psíquicos se puede derivar a una situación que constituya una urgencia:",
+  "opcoes": [
+   "Somatización",
+   "Sublimación",
+   "Conversión",
+   "Psicomatización"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La somatización expresa el conflicto psíquico a través de síntomas físicos difusos o multisistémicos, pero el mecanismo que clásicamente puede desembocar en una situación de URGENCIA es la conversión.",
+   "❌ Incorrecto. La sublimación es un mecanismo de defensa MADURO y adaptativo (encauzar los impulsos hacia actividades socialmente valoradas, como el arte o el trabajo); no genera urgencias.",
+   "✅ Correcto. La CONVERSIÓN es el mecanismo por el cual un conflicto psíquico se transforma en síntomas motores o sensitivos SIN lesión orgánica (parálisis, ceguera, afonía, crisis conversivas o pseudo-crisis convulsivas). Estas manifestaciones pueden presentarse como una situación de URGENCIA (ej. una crisis conversiva o una parálisis aguda) que motiva la consulta en guardia.",
+   "❌ Incorrecto. La psicomatización refiere la participación de factores psíquicos en la génesis de enfermedades orgánicas (trastornos psicosomáticos); aunque requiere evaluación, no es el mecanismo cuya manifestación constituye la urgencia típica descrita (la conversión)."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "farmacologia_base",
+  "tags": [
+   "uso irracional",
+   "antimicrobianos",
+   "dosis subóptimas",
+   "mercado negro"
+  ],
+  "enunciado": "¿Cuál de las siguientes afirmaciones respecto a las causas del uso irracional de los antimicrobianos es correcta?",
+  "opcoes": [
+   "Falta de personal sanitario suficientemente capacitado",
+   "Utilización de dosis subóptimas y vías de administración incorrectas",
+   "Mercado negro de los antibacterianos",
+   "Todas son correctas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La falta de personal sanitario suficientemente capacitado es una causa de uso irracional de los antimicrobianos, pero no es la única. La respuesta completa es 'todas son correctas'.",
+   "❌ Incorrecto. La utilización de dosis subóptimas y vías de administración incorrectas es una causa frecuente de uso irracional (favorece fracaso terapéutico y resistencia), pero no es la única. La respuesta completa es 'todas son correctas'.",
+   "❌ Incorrecto. El mercado negro de los antibacterianos (venta sin receta, medicamentos adulterados o sin cadena de frío) también contribuye al uso irracional, pero no es la única causa. La respuesta completa es 'todas son correctas'.",
+   "✅ Correcto. El uso irracional de los antimicrobianos se debe a múltiples causas: FALTA DE PERSONAL SANITARIO CAPACITADO, DOSIS SUBÓPTIMAS y VÍAS DE ADMINISTRACIÓN INCORRECTAS, y el MERCADO NEGRO de antibacterianos (acceso sin prescripción, calidad inadecuada), entre otras. Todas las afirmaciones son correctas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "farmacologia_base",
+  "tags": [
+   "prescripción incorrecta",
+   "polifarmacia",
+   "uso racional",
+   "medicamentos"
+  ],
+  "enunciado": "¿Cuál de los siguientes conceptos coincide con el de una prescripción incorrecta?",
+  "opcoes": [
+   "El periodo de tratamiento es demasiado largo",
+   "Se utilizan dos o más medicamentos cuando uno o dos lograrían el mismo efecto",
+   "No se hacen ajustes para factores coexistentes, médicos, genéticos, otros",
+   "El tratamiento sintomático de condiciones leves desvía fondos del tratamiento de enfermedades serias"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. El periodo de tratamiento demasiado largo es un ejemplo de prescripción inapropiada (uso irracional por duración), pero la definición prototípica de 'prescripción incorrecta' en el módulo es la utilización de más medicamentos de los necesarios.",
+   "✅ Correcto. La definición clásica de PRESCRIPCIÓN INCORRECTA es la que 'UTILIZA DOS O MÁS MEDICAMENTOS cuando uno o dos lograrían el mismo efecto' (polifarmacia o poliprescripción): se prescribe más de lo necesario, exponiendo al paciente a efectos adversos e interacciones sin beneficio adicional. Es el concepto central del uso racional de medicamentos.",
+   "❌ Incorrecto. No realizar ajustes por factores coexistentes (edad, función renal/hepática, genética) es un ejemplo de prescripción no individualizada o inapropiada, pero no es la definición de 'prescripción incorrecta' que coincide con el enunciado principal del módulo.",
+   "❌ Incorrecto. El tratamiento sintomático de condiciones leves que desvía fondos del tratamiento de enfermedades serias es un problema de asignación de recursos del sistema sanitario (uso irracional a nivel poblacional), no la definición de una prescripción incorrecta del fármaco en sí."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "farmacologia_base",
+  "tags": [
+   "macrólidos",
+   "subunidad 50S",
+   "síntesis proteica",
+   "antibacterianos"
+  ],
+  "enunciado": "¿Cuál de los siguientes grupos de antibacterianos afecta la síntesis proteica por su unión a la subunidad 50s ribosómica?",
+  "opcoes": [
+   "Macrólidos",
+   "Tetraciclinas",
+   "Betalactámicos",
+   "Glucopéptidos"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. Los MACRÓLIDOS (eritromicina, claritromicina, azitromicina) actúan uniéndose a la SUBUNIDAD 50S del ribosoma bacteriano e inhiben la síntesis proteica (bloquean la transpeptidación o el desplazamiento del peptidil-ARNt). Son bacteriostáticos.",
+   "❌ Incorrecto. Las tetraciclinas se unen a la SUBUNIDAD 30S del ribosoma (bloquean la fijación del aminoacil-ARNt), no a la 50S. En la versión del examen que pregunta por la subunidad 30S, la respuesta es tetraciclinas.",
+   "❌ Incorrecto. Los betalactámicos (penicilinas, cefalosporinas) inhiben la síntesis de la PARED CELULAR (transpeptidación de los péptidoglicanos), no la síntesis proteica ribosómica.",
+   "❌ Incorrecto. Los glucopéptidos (vancomicina, teicoplanina) inhiben la síntesis de la PARED CELULAR (bloquean la elongación del péptidoglicano), no la síntesis proteica."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "microbiologia",
+  "tags": [
+   "erisipela",
+   "punción del borde",
+   "diagnóstico etiológico",
+   "estreptococo"
+  ],
+  "enunciado": "Un paciente presenta una placa roja, caliente y sobreelevada en miembro inferior derecho. Se sospecha erisipela. ¿Cómo realizaría el diagnóstico etiológico?",
+  "opcoes": [
+   "Solicitaría punción aspiración del borde, gram, cultivo, identificación y antibiograma",
+   "Solicitaría solamente hemocultivos seriados por ser una infección posiblemente bacteriémica",
+   "Solicitaría cultivo de pliegue inguinal a fin de certificar la colonización de Streptococcus beta hemolítico grupo A",
+   "Solicitaría citoquímico de líquido de las vesículas obtenidas por punción"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. Para el DIAGNÓSTICO ETIOLÓGICO de la erisipela (infección cutánea superficial por Streptococcus pyogenes) el estudio indicado es la PUNCIÓN-ASPIRACIÓN DEL BORDE de la lesión (zona activa de avance) para realizar COLORACIÓN DE GRAM, CULTIVO, IDENTIFICACIÓN y ANTIBIOGRAMA del material obtenido. Es el abordaje microbiológico directo de la lesión.",
+   "❌ Incorrecto. Los hemocultivos seriados tienen baja rentabilidad en la erisipela y no son el único ni el primer estudio para el diagnóstico etiológico; la bacteriemia es infrecuente en esta infección superficial.",
+   "❌ Incorrecto. El cultivo del pliegue inguinal para demostrar colonización estreptocócica puede usarse como dato indirecto (la puerta de entrada suele ser un foco de colonización), pero no es el método de diagnóstico etiológico directo de la lesión que pide la pregunta.",
+   "❌ Incorrecto. La erisipela no produce vesículas, por lo que no hay líquido vesicular que analizar; la opción confunde con infecciones vesiculosas (ej. herpes o varicela), donde sí tendría sentido el estudio de las vesículas."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "microbiologia",
+  "tags": [
+   "tuberculosis",
+   "Ziehl Neelsen",
+   "baciloscopía",
+   "diagnóstico"
+  ],
+  "enunciado": "Un paciente de 25 años consulta por tos de 1 mes de evolución, febrícula, decaimiento, pérdida de peso y ahora agregó esputo hemoptoico. Con estos datos usted sospecha tuberculosis. Señale la respuesta correcta en cuanto a su diagnóstico:",
+  "opcoes": [
+   "El diagnóstico se realiza por búsqueda de Ac IgM circulantes en suero del paciente",
+   "Solicitaría una Rx de tórax para realizar el diagnóstico etiológico",
+   "El agente etiológico se puede observar mediante una coloración de Ziehl Neelsen",
+   "El cultivo se realiza en medio simples y demora una semana en crecer"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La tuberculosis NO se diagnostica por anticuerpos (Ac IgM) en suero: la serología no es útil para el diagnóstico de la infección tuberculosa, porque la respuesta humoral no se correlaciona con la enfermedad.",
+   "❌ Incorrecto. La Rx de tórax es un estudio de imagen que sugiere el diagnóstico (imagen cavitada, infiltrado apical), pero NO realiza el diagnóstico ETIOLÓGICO, que requiere demostrar el bacilo (baciloscopía, cultivo o biología molecular).",
+   "✅ Correcto. El diagnóstico etiológico de la TUBERCULOSIS pulmonar se realiza mediante la BACILOSCOPÍA (coloración de ZIEHL-NEELSEN), que evidencia los bacilos ácido-alcohol resistentes (BAAR, Mycobacterium tuberculosis) en el esputo del paciente. Es la técnica diagnóstica inicial de elección por su rapidez y bajo costo.",
+   "❌ Incorrecto. El cultivo de Mycobacterium tuberculosis se realiza en medios especiales (Löwenstein-Jensen) y demora SEMANAS (2 a 8) en crecer, no una semana ni en medios simples."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "microbiologia",
+  "tags": [
+   "diarrea disenteriforme",
+   "campylobacter",
+   "coprocultivo",
+   "diagnóstico microbiológico"
+  ],
+  "enunciado": "Un paciente presenta diarrea disenteriforme. ¿Qué estudios le solicitaría para el diagnóstico etiológico específico?",
+  "opcoes": [
+   "Coprocultivo para el diagnóstico de Entamoeba histolytica",
+   "Búsqueda de toxina termolábil de Vibrio cholerae en heces",
+   "Cultivo de las heces en medios específicos para desarrollo de Campylobacter jejuni/coli",
+   "Reacción de Widal en suero para el diagnóstico de Salmonellas entéricas"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. El coprocultivo es el estudio para BACTERIAS (Salmonella, Shigella, Campylobacter, etc.), no para Entamoeba histolytica, que se diagnostica por EXAMEN PARASITOLÓGICO de heces (parasitológico seriado) y se sospecha ante disentería amebiana.",
+   "❌ Incorrecto. La toxina termolábil corresponde a la enterotoxina de Escherichia coli ETEC, y Vibrio cholerae se asocia a DIARREA ACUOSA (colérica), no a diarrea disenteriforme (con moco y sangre).",
+   "✅ Correcto. La DIARREA DISENTERIFORME (con moco, sangre y tenesmo) puede ser causada por Campylobacter jejuni/coli, cuya detección requiere el CULTIVO DE HECES en MEDIOS ESPECÍFICOS (selectivos, con antibióticos y condiciones de microaerofilia, ej. agar Skirrow). Es el estudio etiológico específico de esta bacteria enteroinvasiva.",
+   "❌ Incorrecto. La reacción de Widal (aglutinación en suero) es una serología antigua, de baja especificidad, para fiebre entérica por Salmonella, y no es el estudio de elección para el diagnóstico de la diarrea disenteriforme aguda."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "microbiologia",
+  "tags": [
+   "meningitis",
+   "criptococo",
+   "tinta china",
+   "LCR"
+  ],
+  "enunciado": "Un varón de 30 años presenta un cuadro neurológico de pérdida del sensorio, obnubilación y desorientación temporoespacial de instalación lenta. Ante la sospecha clínica de meningitis de etiología infecciosa, ¿qué estudios solicitaría? Señale la respuesta correcta:",
+  "opcoes": [
+   "Búsqueda de Ac específicos en suero para Streptococcus pneumoniae",
+   "Búsqueda de endotoxina de Haemophilus influenzae en LCR",
+   "Hemocultivo seriado",
+   "Coloración con tinta china del LCR"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La búsqueda de anticuerpos específicos en suero para Streptococcus pneumoniae no es el método de diagnóstico de la meningitis; el diagnóstico se realiza sobre el LÍQUIDO CEFALORRAQUÍDEO (cultivo, antígenos, tinta china), no por serología.",
+   "❌ Incorrecto. La búsqueda de endotoxina de Haemophilus influenzae en LCR no es un estudio de uso corriente; además, el cuadro de INSTALACIÓN LENTA orienta a meningitis subaguda/crónica (criptocócica, tuberculosa), no a la meningitis bacteriana aguda.",
+   "❌ Incorrecto. El hemocultivo seriado es complementario en la meningitis bacteriana aguda (la bacteriemia puede acompañarla), pero no es el estudio específico que la pregunta espera para un cuadro de instalación lenta.",
+   "✅ Correcto. La INSTALACIÓN LENTA (subaguda/crónica) con compromiso del sensorio y desorientación orienta a MENINGITIS CRÍPTOCÓCICA (Cryptococcus neoformans), propia de inmunocomprometidos. La COLORACIÓN CON TINTA CHINA del LCR evidencia las cápsulas del hongo (halo claro alrededor de la levadura) y es el estudio etiológico indicado en este contexto."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "historia clínica",
+   "definición",
+   "documento médico",
+   "abarcativa"
+  ],
+  "enunciado": "¿Cuál de las siguientes definiciones es más abarcativa respecto de la HC?",
+  "opcoes": [
+   "Es el testimonio escrito del motivo de consulta, evolución y de todo lo que sucede al lado del paciente",
+   "Constituye en la atención médica una herramienta de valor para la auditoría médica prioritariamente",
+   "Es un instrumento de defensa del médico en caso de imputación sobre su praxis, por ello debe ser resguardado",
+   "Documentos que dan cuenta de algunos estados de salud del paciente y de la evolución de sus procesos de salud y enfermedad"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. La definición MÁS ABARCATIVA de la HISTORIA CLÍNICA es la que la describe como el TESTIMONIO ESCRITO del motivo de consulta, la evolución y de todo lo que sucede alrededor del paciente: engloba la totalidad de los datos biológicos, psicológicos, sociales y la evolución del proceso, integrando todas las funciones (asistencial, docente, científica, legal, de auditoría).",
+   "❌ Incorrecto. La auditoría médica es una de las FUNCIONES de la historia clínica, pero no es el concepto prioritario ni la definición abarcativa; reducir la HC a la auditoría la limita a una sola de sus utilidades.",
+   "❌ Incorrecto. La defensa del médico en caso de imputación es otra función legal secundaria de la HC; no es la definición más abarcativa del documento.",
+   "❌ Incorrecto. Decir que la HC 'da cuenta de ALGUNOS estados de salud' la subestima: la historia clínica registra la totalidad del proceso de salud-enfermedad del paciente (no solo algunos estados), por lo que esta definición es menos abarcativa."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "prevención",
+   "vacunas",
+   "lavado de manos",
+   "salud pública"
+  ],
+  "enunciado": "En la prevención, las dos medidas más eficientes en la historia son:",
+  "opcoes": [
+   "La aparición de los antibióticos y el diagnóstico por imágenes",
+   "Las vacunas y el lavado de manos",
+   "El aumento de hospitales de segundo y tercer nivel",
+   "La vigilancia epidemiológica y la resonancia nuclear magnética"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Los antibióticos y el diagnóstico por imágenes son avances TERAPÉUTICOS y DIAGNÓSTICOS, no medidas de prevención; además, su aporte a la prevención poblacional no se compara con la vacunación y la higiene de manos.",
+   "✅ Correcto. Las dos medidas más eficientes en la prevención a lo largo de la historia son las VACUNAS (prevención primaria de enfermedades infecciosas a nivel poblacional, con erradicación de la viruela y control de muchas otras) y el LAVADO DE MANOS (medida simple de higiene que redujo drásticamente la transmisión de infecciones, descubierta por Semmelweis e Ignaz/Florence Nightingale).",
+   "❌ Incorrecto. El aumento de hospitales de segundo y tercer nivel es una medida de asistencia (nivel terciario de atención), no de prevención eficiente; la prevención actúa antes de la enfermedad.",
+   "❌ Incorrecto. La vigilancia epidemiológica es importante pero no es una medida preventiva directa, y la resonancia nuclear magnética es un método diagnóstico de alta complejidad, no una medida de prevención."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "imunologia",
+  "tags": [
+   "inmunoglobulinas",
+   "linfocitos B",
+   "anticuerpos",
+   "inmunidad humoral"
+  ],
+  "enunciado": "Las Ig son proteínas sintetizadas por:",
+  "opcoes": [
+   "Linfocitos T",
+   "Macrófagos y monocitos",
+   "Linfocitos T y B",
+   "Linfocitos B"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Los linfocitos T no sintetizan inmunoglobulinas: sus productos son las citoquinas y, en el caso de los CD8+, las perforinas y granzimas. La inmunoglobulina es el receptor del linfocito B y el anticuerpo secretado por los plasmocitos.",
+   "❌ Incorrecto. Los macrófagos y monocitos son células fagocíticas y presentadoras de antígeno; NO producen inmunoglobulinas (sí producen citoquinas y radicales de oxígeno).",
+   "❌ Incorrecto. Solo los linfocitos B (y sus células efectoras, los plasmocitos) sintetizan inmunoglobulinas; los linfocitos T no las producen.",
+   "✅ Correcto. Las INMUNOGLOBULINAS (anticuerpos) son proteínas sintetizadas por los LINFOCITOS B: en su forma de membrana funcionan como receptor del linfocito B y, tras la activación y diferenciación a PLASMOCITOS, se secretan al plasma y a las mucosas, mediando la inmunidad humoral."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "imunologia",
+  "tags": [
+   "receptores scavenger",
+   "fagocitosis",
+   "inmunidad innata",
+   "macrófagos"
+  ],
+  "enunciado": "Los receptores depuradores o scavenger de las células de la inmunidad innata:",
+  "opcoes": [
+   "Tienen como principal función inducir la fagocitosis",
+   "Son receptores citoplasmáticos",
+   "Están presentes solo en macrófagos",
+   "Ninguna es correcta"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. Los receptores DEPURADORES o SCAVENGER tienen como PRINCIPAL FUNCIÓN inducir la FAGOCITOSIS: reconocen y unen una amplia variedad de ligandos (lipoproteínas modificadas, células apoptóticas, bacterias y otros microorganismos), promoviendo su captación y eliminación por los fagocitos. No reconocen ligandos específicos sino patrones de superficie alterados.",
+   "❌ Incorrecto. Los receptores scavenger son receptores de MEMBRANA (transmembrana), no citoplasmáticos; los receptores citoplasmáticos típicos son los de la familia RIG-I/MDA5 o los NOD, que detectan patógenos intracelulares.",
+   "❌ Incorrecto. No están presentes solo en macrófagos: también se expresan en células dendríticas, células endoteliales y algunos linfocitos B, entre otras células.",
+   "❌ Incorrecto. La opción A es correcta (su principal función es inducir la fagocitosis), por lo que 'ninguna es correcta' es falsa."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "imunologia",
+  "tags": [
+   "linfocitos T CD8+",
+   "citotoxicidad",
+   "MHC-I",
+   "inmunidad celular"
+  ],
+  "enunciado": "El mecanismo de citotoxicidad directa restringido por moléculas de clase 1 del CMH lo ejercen los:",
+  "opcoes": [
+   "Linfocitos TCD4+",
+   "Linfocitos B",
+   "Linfocitos TCD8+",
+   "Eosinófilos"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Los linfocitos TCD4+ (colaboradores) reconocen antígenos presentados por moléculas de MCH CLASE II y no ejercen citotoxicidad directa restringida por clase I: actúan produciendo citoquinas que orquestan la respuesta.",
+   "❌ Incorrecto. Los linfocitos B reconocen antígenos nativos por su inmunoglobulina de membrana y producen anticuerpos; no ejercen citotoxicidad directa restringida por CMH de clase I.",
+   "✅ Correcto. La CITOTOXICIDAD DIRECTA restringida por moléculas de MCH CLASE I la ejercen los LINFOCITOS TCD8+ (citotóxicos): reconocen el complejo péptido-CMH-I en las células nucleadas infectadas o tumorales y las destruyen mediante perforinas, granzimas y FASL. La restricción por clase I es el sello de los CD8+.",
+   "❌ Incorrecto. Los eosinófilos son granulocitos implicados sobre todo en la defensa antiparasitaria y en reacciones alérgicas; no ejercen citotoxicidad restringida por el CMH de clase I."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "imunologia",
+  "tags": [
+   "células dendríticas",
+   "maduras",
+   "presentación antigénica",
+   "linfocitos T vírgenes"
+  ],
+  "enunciado": "Las células dendríticas maduras:",
+  "opcoes": [
+   "Se encuentran en tejidos periféricos",
+   "Tienen alta capacidad endocítica y de procesamiento",
+   "Tienen alta capacidad de presentar antígenos a linfocitos T vírgenes",
+   "Presentan péptidos a los linfocitos TCD8+ a través de moléculas del CMH-II"
+  ],
+  "indice_correta": 2,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Las células dendríticas INMADURAS son las que se encuentran en los tejidos periféricos (piel, mucosas) captando antígenos; al madurar, MIGRAN hacia los ganglios linfáticos y otros órganos linfoides secundarios.",
+   "❌ Incorrecto. Es la célula dendrítica INMADURA la que tiene alta capacidad endocítica y de procesamiento de antígenos; la MADURA tiene menor capacidad de captación, pero adquiere una altísima capacidad de presentación antigénica.",
+   "✅ Correcto. Las CÉLULAS DENDRÍTICAS MADURAS tienen una ALTA CAPACIDAD de PRESENTAR ANTÍGENOS a los LINFOCITOS T VÍRGENES (naïve): aumentan la expresión de MCH-I y MCH-II y de moléculas coestimuladoras (CD80/CD86), y migran a los órganos linfoides secundarios, donde inician la respuesta inmune adaptativa. Son las células presentadoras más eficientes.",
+   "❌ Incorrecto. Los péptidos endógenos se presentan a los TCD8+ a través de MCH CLASE I (no clase II). Las moléculas de clase II presentan antígenos exógenos a los linfocitos TCD4+."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "APS",
+   "atención primaria",
+   "fuentes de información",
+   "salud pública"
+  ],
+  "enunciado": "En el médico de APS, que se pregunta por los mecanismos de defensa poblacionales e individuales, ¿tiene que recurrir a fuentes de información?",
+  "opcoes": [
+   "Solo de historias clínicas",
+   "Bases de datos informatizadas",
+   "Informantes claves de la comunidad",
+   "Todas ellas"
+  ],
+  "indice_correta": 3,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. Las historias clínicas son una fuente de información individual valiosa, pero no la única: el médico de APS debe integrar también datos poblacionales y comunitarios. La respuesta completa es 'todas ellas'.",
+   "❌ Incorrecto. Las bases de datos informatizadas (sistemas de información en salud, estadísticas sanitarias) son una fuente importante, pero no la única. La respuesta completa es 'todas ellas'.",
+   "❌ Incorrecto. Los informantes claves de la comunidad aportan información cualitativa y de contexto sociosanitario, pero tampoco son la única fuente. La respuesta completa es 'todas ellas'.",
+   "✅ Correcto. El médico de atención primaria que aborda los mecanismos de defensa poblacionales e individuales debe recurrir a TODAS las fuentes de información: HISTORIAS CLÍNICAS (dato individual), BASES DE DATOS INFORMATIZADAS (estadísticas sanitarias y vigilancia) e INFORMANTES CLAVES DE LA COMUNIDAD (información contextual y cualitativa). La respuesta completa es 'todas ellas'."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "médio",
+  "disciplina_base": "",
+  "tags": [
+   "neumoperitoneo",
+   "aire subdiafragmático",
+   "radiología",
+   "abdomen agudo"
+  ],
+  "enunciado": "Ante la sospecha de neumoperitoneo solicito las siguientes incidencias radiológicas:",
+  "opcoes": [
+   "Rx directa renovesical",
+   "Rx de tórax frente y abdomen de pie",
+   "Rx de abdomen de pie y en decúbito lateral",
+   "No solicito Rx"
+  ],
+  "indice_correta": 1,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "❌ Incorrecto. La Rx directa renovesical (radiografía simple de abdomen en decúbito) no es la incidencia de elección para el neumoperitoneo: en decúbito el aire libre intraperitoneal no asciende y puede no visualizarse. Se necesitan incidencias en bipedestación.",
+   "✅ Correcto. Ante la sospecha de NEUMOPERITONEO (perforación de víscera hueca) se solicita la RADIOGRAFÍA DE TÓRAX DE FRENTE en BIPEDESTACIÓN, que es la incidencia de elección para evidenciar el AIRE LIBRE SUBDIAFRAGMÁTICO (signo de la doble cúpula diafragmática), junto con la radiografía de abdomen de pie. Por eso la opción 'Rx de tórax frente y abdomen de pie' es la correcta.",
+   "❌ Incorrecto. El abdomen de pie permite ver aire subdiafragmático y el decúbito lateral se usa cuando el paciente no puede ponerse de pie, pero la opción no incluye la incidencia de elección (tórax de pie) y no es la combinación que pide el examen.",
+   "❌ Incorrecto. La radiología es útil y debe solicitarse: ante la sospecha de neumoperitoneo la Rx de tórax de pie (o abdomen de pie) permite confirmar el aire libre intraperitoneal y orientar la urgencia quirúrgica."
+  ]
+ },
+ {
+  "materia": "defesa",
+  "parcial": "parcial1",
+  "dificuldade": "fácil",
+  "disciplina_base": "",
+  "tags": [
+   "aire fisiológico",
+   "colon",
+   "estómago",
+   "radiología abdominal"
+  ],
+  "enunciado": "¿En qué estructuras intraabdominales se encuentra la presencia de aire en condiciones fisiológicas?",
+  "opcoes": [
+   "Colon y estómago",
+   "Colon y delgado",
+   "Delgado y recto",
+   "Subdiafragmático"
+  ],
+  "indice_correta": 0,
+  "justificativa": null,
+  "opcoes_comentario": [
+   "✅ Correcto. En condiciones FISIOLÓGICAS el aire está presente en el ESTÓMAGO (por deglución de aire) y en el COLON (por la fermentación bacteriana de los carbohidratos no absorbidos): por eso se los considera estructuras con aire normal en la radiografía de abdomen. En el intestino delgado el aire es escaso o ausente en el adulto sano.",
+   "❌ Incorrecto. El intestino delgado en el adulto normal contiene muy poco o nada de aire (su presencia en cantidad es un signo patológico de íleo o distensión); por eso no se lo agrupa con el colon como sitio fisiológico de aire.",
+   "❌ Incorrecto. El recto forma parte del colon (sí contiene aire normal), pero el DELGADO no es un sitio fisiológico de aire en el adulto, por lo que la opción es incorrecta.",
+   "❌ Incorrecto. El aire SUBDIAFRAGMÁTICO (aire libre intraperitoneal bajo las cúpulas) es SIEMPRE patológico: corresponde al neumoperitoneo por perforación de víscera hueca, nunca es un hallazgo fisiológico."
+  ]
+ }
+]

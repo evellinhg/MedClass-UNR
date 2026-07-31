@@ -1,0 +1,662 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["acetilcolina", "colinoacetil transferasa", "síntesis", "colina", "acetil-CoA"],
+    "enunciado": "¿Cuál es la enzima responsable de la síntesis de acetilcolina (ACh) a partir de colina y Acetil-CoA?",
+    "opcoes": [
+      "Acetilcolinesterasa",
+      "Colinoacetil transferasa",
+      "Piruvato deshidrogenasa",
+      "Fosfatidilcolina transferasa"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La acetilcolinesterasa (AChE) es la enzima que DEGRADA la acetilcolina: rompe la ACh en colina y ácido acético en la hendidura sináptica, permitiendo terminar la señal y reciclar la colina. No participa en la síntesis.",
+      "✅ Correcto. La colinoacetil transferasa (ChAT) es la enzima que SINTETIZA la acetilcolina a partir de colina y acetil-CoA en el citoplasma de la terminal nerviosa colinérgica, antes de que la ACh sea almacenada en las vesículas. Es el marcador específico de las neuronas colinérgicas.",
+      "❌ Incorrecto. La piruvato deshidrogenasa es una enzima del metabolismo energético que convierte el piruvato en acetil-CoA dentro de la mitocondria; no interviene en la síntesis de acetilcolina en la terminal nerviosa.",
+      "❌ Incorrecto. La fosfatidilcolina transferasa participa en la síntesis de fosfolípidos de membrana (fosfatidilcolina) y es una enzima ubicua; no tiene relación con la síntesis de acetilcolina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["hemicolinio-3", "recaptación de colina", "transporte de colina", "colinérgicos", "síntesis de ACh"],
+    "enunciado": "¿Qué fármaco inhibe la recaptación de colina en la terminal nerviosa?",
+    "opcoes": [
+      "Vesamicol",
+      "Hemicolinio-3",
+      "Clindamicina",
+      "Tetraciclina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El vesamicol bloquea el TRANSPORTADOR VESICULAR de acetilcolina (VAChT): impide que la ACh ya sintetizada se almacene dentro de las vesículas, pero NO afecta la recaptación de colina desde la hendidura sináptica.",
+      "✅ Correcto. El hemicolinio-3 inhibe el TRANSPORTADOR DE COLINA (CHT) de la membrana de la terminal nerviosa. Al impedir la captación de la colina reciclada, disminuye la disponibilidad de sustrato y, por lo tanto, la síntesis de acetilcolina (produce un agotamiento funcional de la transmisión colinérgica).",
+      "❌ Incorrecto. La clindamicina es un antibiótico de la familia de las lincosamidas que inhibe la síntesis proteica bacteriana (subunidad 50S del ribosoma); no actúa sobre el transporte de colina.",
+      "❌ Incorrecto. La tetraciclina es un antibiótico que inhibe la síntesis proteica bacteriana (subunidad 30S del ribosoma); no tiene efecto sobre la recaptación de colina en la terminal colinérgica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["receptores muscarínicos", "M2", "corazón", "bradicardia", "vagal"],
+    "enunciado": "¿Dónde se encuentran los receptores muscarínicos M2 y cuál es su principal efecto?",
+    "opcoes": [
+      "En el músculo liso, causando broncoconstricción",
+      "En el corazón, reduciendo la frecuencia cardíaca",
+      "En el sistema nervioso central, mejorando la memoria",
+      "En las glándulas exocrinas, aumentando la secreción"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La broncoconstricción por estimulación muscarínica está mediada por los receptores M3 del músculo liso bronquial (por eso los anticolinérgicos como el ipratropio relajan el bronquio). El M2 no se localiza allí.",
+      "✅ Correcto. Los receptores M2 son los predominantes en el CORAZÓN (nodo sinusal, nodo AV y aurículas): al ser activados por la acetilcolina vagal reducen la frecuencia cardíaca (cronotropismo negativo) y la conducción AV (dromotropismo negativo). Es la base del efecto bradicardizante del vago.",
+      "❌ Incorrecto. En el sistema nervioso central predominan los receptores M1 y M4; el M2 cardíaco no participa en la mejora de la memoria (de hecho los fármacos anticolinérgicos centrales la deterioran).",
+      "❌ Incorrecto. Las glándulas exocrinas (salivales, lacrimales, bronquiales, sudoríparas) tienen receptores M3, cuya activación aumenta las secreciones. El M2 es el receptor cardíaco, no el secretor."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["toxina botulínica", "liberación de ACh", "SNARE", "exocitosis", "bloqueo neuromuscular"],
+    "enunciado": "¿Qué efecto tiene la toxina botulínica sobre la liberación de acetilcolina?",
+    "opcoes": [
+      "Aumenta la liberación de ACh",
+      "Inhibe la síntesis de ACh",
+      "Bloquea la liberación de ACh",
+      "Promueve la recaptación de colina"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La toxina botulínica produce exactamente lo contrario: BLOQUEA la liberación de acetilcolina. Aumentar la liberación sería el efecto de fármacos como las aminopiridinas o de toxinas tipo la tetánica (también bloquea, pero a nivel de la inhibición).",
+      "❌ Incorrecto. La toxina botulínica no interfiere con la enzima que sintetiza la ACh (colinoacetil transferasa): la célula sigue produciendo acetilcolina, lo que está alterado es su liberación al espacio sináptico.",
+      "✅ Correcto. La toxina botulínica es una endopeptidasa que CLIVA las proteínas SNARE (fundamentalmente la SNAP-25) de la terminal nerviosa, impidiendo la fusión de las vesículas con la membrana presináptica y, por lo tanto, la EXOCITOSIS de acetilcolina. Eso produce la parálisis flácida característica del botulismo y su uso terapéutico en la distonía y la estética.",
+      "❌ Incorrecto. La recaptación de colina es un mecanismo de reciclaje independiente de la exocitosis; la toxina botulínica no la promueve ni la inhibe. Su blanco es la maquinaria de liberación vesicular."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["colinoacetil transferasa", "acetilcolinesterasa", "enzimas", "ganglios", "neuronas colinérgicas"],
+    "enunciado": "¿Cuál de las siguientes enzimas se encuentra exclusivamente en las neuronas y en la sinapsis ganglionares?",
+    "opcoes": [
+      "Butirilcolinesterasa",
+      "Fosfatidilcolina transferasa",
+      "Colinoacetil transferasa",
+      "Acetilcolinesterasa"
+    ],
+    "indice_correta": 2,
+    "justificativa": "La grilla de la fuente marca D (acetilcolinesterasa), pero el dato correcto es C: la colinoacetil transferasa (ChAT) es la enzima exclusiva de las neuronas colinérgicas (incluidas las preganglionares de los ganglios), mientras que la acetilcolinesterasa también está presente en la unión neuromuscular, eritrocitos y otros tejidos. Se corrige la respuesta.",
+    "opcoes_comentario": [
+      "❌ Incorrecto. La butirilcolinesterasa (pseudocolinesterasa) se encuentra en el PLASMA, el hígado y la glía; no es exclusiva de las neuronas ni de los ganglios. Tiene relevancia farmacológica porque metaboliza la succinilcolina y el mivacurio.",
+      "❌ Incorrecto. La fosfatidilcolina transferasa interviene en la síntesis de fosfolípidos de membrana y es una enzima ubicua de todas las células; no es específica de las neuronas ni de la sinapsis ganglionar.",
+      "✅ Correcto. La colinoacetil transferasa (ChAT) cataliza la síntesis de acetilcolina y se localiza EXCLUSIVAMENTE en las neuronas colinérgicas: neuronas motoras somáticas y neuronas preganglionares autonómicas (que hacen sinapsis en los ganglios). Es, por eso, el marcador específico de las neuronas colinérgicas.",
+      "❌ Incorrecto (respuesta de la grilla corregida). La acetilcolinesterasa (AChE) degrada la ACh en la hendidura sináptica, pero NO es exclusiva de las neuronas ni de los ganglios: también se encuentra en la unión neuromuscular, en los eritrocitos y en otros tejidos, por lo que la afirmación 'exclusivamente en las neuronas y en la sinapsis ganglionares' no le corresponde."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["anticolinérgicos", "antagonistas muscarínicos", "mecanismo de acción", "atropina", "receptores muscarínicos"],
+    "enunciado": "¿Cuál es el principal mecanismo de acción de los anticolinérgicos?",
+    "opcoes": [
+      "Estimulan los receptores muscarínicos",
+      "Inhiben la acción de la acetilcolinesterasa",
+      "Bloquean los receptores muscarínicos",
+      "Aumentan la liberación de acetilcolina"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. ESTIMULAR los receptores muscarínicos es el mecanismo de los AGONISTAS colinérgicos (pilocarpina, muscarina, arecolina). Un anticolinérgico hace lo opuesto: los bloquea.",
+      "❌ Incorrecto. INHIBIR la acetilcolinesterasa es el mecanismo de los anticolinesterásicos (neostigmina, fisostigmina, organofosforados), que AUMENTAN la acetilcolina. Son fármacos colinomiméticos, no anticolinérgicos.",
+      "✅ Correcto. Los anticolinérgicos (atropina, escopolamina, ipratropio, tiotropio) son ANTAGONISTAS de los receptores muscarínicos: se unen al receptor sin activarlo y BLOQUEAN la acción de la acetilcolina, produciendo los efectos anticolinérgicos típicos (boca seca, midriasis, taquicardia, broncodilatación, retención urinaria, íleo).",
+      "❌ Incorrecto. Aumentar la liberación de acetilcolina no corresponde a los anticolinérgicos: existen fármacos (ej. aminopiridinas, utilizadas en síndromes botulínicos) que favorecen la liberación, pero no forman parte de este grupo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["anticolinérgicos", "broncodilatación", "M3", "músculo liso bronquial", "sistema respiratorio"],
+    "enunciado": "¿Qué efecto tienen los anticolinérgicos en el sistema respiratorio?",
+    "opcoes": [
+      "Broncoconstricción",
+      "Broncodilatación",
+      "Aumento de secreciones bronquiales",
+      "Disminución de la frecuencia respiratoria"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La broncoconstricción es el efecto COLINÉRGICO (estimulación de los M3 del músculo liso bronquial). Los anticolinérgicos, al bloquear esos receptores, producen el efecto contrario.",
+      "✅ Correcto. Al bloquear los receptores M3 del músculo liso bronquial, los anticolinérgicos reducen el tono vagal bronquial y producen BRONCODILATACIÓN (además disminuyen las secreciones). Por eso el ipratropio y el tiotropio se usan como broncodilatadores en la EPOC y el asma.",
+      "❌ Incorrecto. Los anticolinérgicos DISMINUYEN las secreciones bronquiales (boca seca, menor broncorrea). El aumento de secreciones es un efecto colinérgico.",
+      "❌ Incorrecto. El blanco de los anticolinérgicos en el sistema respiratorio es el tono del músculo liso bronquial (broncodilatación); no modifican de forma relevante la frecuencia respiratoria, que está regulada por centros bulbares."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["anticolinérgicos", "midriasis", "efectos adversos", "atropina", "síndrome anticolinérgico"],
+    "enunciado": "¿Cuál de los siguientes efectos es comúnmente observado con el uso de anticolinérgicos?",
+    "opcoes": [
+      "Aumento de la salivación",
+      "Bradicardia",
+      "Midriasis",
+      "Diarrea"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los anticolinérgicos producen XEROSTOMÍA (boca seca), porque bloquean la estimulación muscarínica M3 de las glándulas salivales. El aumento de la salivación es un efecto colinérgico/agonista.",
+      "❌ Incorrecto. Los anticolinérgicos producen TAQUICARDIA (bloquean los receptores M2 del corazón, anulando el tono vagal). La bradicardia es el efecto opuesto, propio de los colinérgicos.",
+      "✅ Correcto. La MIDRIASIS (dilatación pupilar) es un efecto anticolinérgico típico: al bloquear los receptores M3 del esfínter del iris, éste se relaja y predomina el músculo dilatador (inervado por el simpático). Junto con la cicloplejía (parálisis de la acomodación) es la base del uso oftalmológico de la atropina.",
+      "❌ Incorrecto. Los anticolinérgicos producen CONSTIPACIÓN e ÍLEO paralítico (disminuyen la motilidad y las secreciones gastrointestinales). La diarrea es un efecto colinérgico, por aumento de la motilidad."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["benztropina", "Parkinson", "anticolinérgico", "trihexifenidilo", "extrapiramidal"],
+    "enunciado": "¿Qué fármaco es un anticolinérgico utilizado para tratar la enfermedad de Parkinson?",
+    "opcoes": [
+      "Atropina",
+      "Benztropina",
+      "Pilocarpina",
+      "Fisostigmina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La atropina es un anticolinérgico, pero se usa para la bradicardia, la intoxicación por organofosforados, la preanestesia y en oftalmología; su perfil de efectos sistémicos (taquicardia, sequedad extrema) la hace inadecuada para el Parkinson, donde se emplean anticolinérgicos de acción preferentemente central como la benztropina.",
+      "✅ Correcto. La benztropina (y el trihexifenidilo) es un anticolinérgico CENTRAL que reequilibra la relación dopamina/acetilcolina en los ganglios basales, reduciendo el temblor y la rigidez en la enfermedad de Parkinson y en el parkinsonismo inducido por antipsicóticos.",
+      "❌ Incorrecto. La pilocarpina es un AGONISTA muscarínico (aumenta la acetilcolina), usado en xerostomía y glaucoma. En el Parkinson, aumentar la acetilcolina central empeoraría los síntomas.",
+      "❌ Incorrecto. La fisostigmina es un INHIBIDOR de la acetilcolinesterasa que AUMENTA la acetilcolina (es el antídoto del síndrome anticolinérgico central). Está contraindicada en el Parkinson porque agrava el desequilibrio colinérgico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["anticolinérgicos", "gastrointestinal", "secreción gástrica", "motilidad", "espasmo"],
+    "enunciado": "¿Qué efecto tienen los anticolinérgicos sobre el tracto gastrointestinal?",
+    "opcoes": [
+      "Aumentan la motilidad gastrointestinal",
+      "Disminuyen la secreción gástrica",
+      "Estimulan la contracción del músculo liso",
+      "Incrementan la producción de ácido gástrico"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. Los anticolinérgicos DISMINUYEN la motilidad gastrointestinal (relajan el músculo liso y reducen las ondas peristálticas). El aumento de la motilidad es un efecto colinérgico.",
+      "✅ Correcto. Al bloquear los receptores muscarínicos (M3) del estómago, los anticolinérgicos DISMINUYEN la secreción gástrica (incluida la de ácido) y también reducen la motilidad y los espasmos. Por eso se usan como antiespasmódicos en cólicos abdominales y en la úlcera péptica.",
+      "❌ Incorrecto. Los anticolinérgicos RELAJAN el músculo liso gastrointestinal (efecto antiespasmódico); la contracción del músculo liso es un efecto colinérgico.",
+      "❌ Incorrecto. Reducen la producción de ácido gástrico (al bloquear la estimulación vagal y la acción de la acetilcolina sobre las células parietales), no la incrementan."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["noradrenalina", "síntesis de catecolaminas", "tirosina", "paso limitante", "adrenérgicos"],
+    "enunciado": "¿Cuál es el paso inicial en la síntesis de noradrenalina?",
+    "opcoes": [
+      "Transformación de dopamina en noradrenalina",
+      "Captación de tirosina por la terminal nerviosa adrenérgica",
+      "Almacenamiento de noradrenalina en las vesículas",
+      "Liberación de noradrenalina al espacio sináptico"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La conversión de dopamina en noradrenalina (por la dopamina β-hidroxilasa) es un paso TARDÍO de la síntesis, que ocurre dentro de las vesículas, no el paso inicial.",
+      "✅ Correcto. El paso inicial de la síntesis de catecolaminas es la CAPTACIÓN de tirosina hacia la terminal nerviosa adrenérgica (a través de un transportador de aminoácidos). Allí la tirosina se convierte en DOPA (tirosina hidroxilasa, paso limitante), luego en dopamina y finalmente en noradrenalina.",
+      "❌ Incorrecto. El almacenamiento de la noradrenalina en las vesículas es un paso posterior (mediado por el transportador vesicular VMAT), que se da recién después de la síntesis.",
+      "❌ Incorrecto. La liberación de noradrenalina al espacio sináptico es el paso final de la transmisión adrenérgica (exocitosis dependiente de calcio), no el inicio de la síntesis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["dopamina β-hidroxilasa", "noradrenalina", "síntesis", "vesículas", "adrenérgicos"],
+    "enunciado": "¿Qué enzima transforma la dopamina en noradrenalina en las vesículas adrenérgicas?",
+    "opcoes": [
+      "Dopamina β hidroxilasa",
+      "Tirosina hidroxilasa",
+      "DOPA descarboxilasa",
+      "Monoaminooxidasa (MAO)"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La dopamina β-hidroxilasa (DBH) se encuentra dentro de las vesículas adrenérgicas y cataliza la hidroxilación de la dopamina en NORADRENALINA. En la médula suprarrenal, la misma enzima participa en la vía que culmina con la adrenalina (vía PNMT).",
+      "❌ Incorrecto. La tirosina hidroxilasa es la enzima del paso LIMITANTE de la síntesis: convierte la tirosina en DOPA en el citosol. No transforma la dopamina en noradrenalina.",
+      "❌ Incorrecto. La DOPA descarboxilasa (descarboxilasa de aminoácidos aromáticos) convierte la DOPA en DOPAMINA en el citosol; actúa antes de la dopamina β-hidroxilasa.",
+      "❌ Incorrecto. La monoaminooxidasa (MAO) es una enzima DEGRADATIVA: desamina oxidativamente las catecolaminas (noradrenalina, dopamina, serotonina) para inactivarlas, no las sintetiza."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["adrenalina", "médula suprarrenal", "PNMT", "catecolaminas", "producción"],
+    "enunciado": "¿Cuál es el principal sitio de producción de adrenalina?",
+    "opcoes": [
+      "Placa motora",
+      "Ganglios simpáticos",
+      "Neuronas adrenérgicas",
+      "Médula suprarrenal"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La placa motora es la unión neuromuscular de las neuronas motoras SOMÁTICAS (su neurotransmisor es la acetilcolina, no la adrenalina).",
+      "❌ Incorrecto. Los ganglios simpáticos son sitios de relevo de la vía autonómica (neurotransmisor: acetilcolina nicotínica) y liberan algo de noradrenalina en las fibras posganglionares, pero no son el sitio principal de producción de adrenalina.",
+      "❌ Incorrecto. Las neuronas adrenérgicas posganglionares sintetizan y liberan principalmente NORADRENALINA (no adrenalina), ya que les falta la feniletanolamina-N-metiltransferasa (PNMT).",
+      "✅ Correcto. La adrenalina se sintetiza casi EXCLUSIVAMENTE en la MÉDULA SUPRARRENAL (células cromafines), que expresan la PNMT, la enzima que metila la noradrenalina para convertirla en adrenalina. La estimulación simpática de la médula libera adrenalina a la sangre como hormona."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["MAO", "monoaminooxidasa", "metabolismo de noradrenalina", "desaminación oxidativa", "COMT"],
+    "enunciado": "¿Qué enzima metaboliza la noradrenalina en la periferia, predominantemente de forma oxidativa?",
+    "opcoes": [
+      "Catecol-o-metil-transferasa (COMT)",
+      "Aldehído deshidrogenasa",
+      "Monoaminooxidasa (MAO)",
+      "Tirosina hidroxilasa"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La COMT inactiva las catecolaminas por O-METILACIÓN (metabolismo O-metilado), actúa principalmente en la sinapsis y en tejidos posjuncionales (hígado, riñón); no es la vía predominante de tipo oxidativo.",
+      "❌ Incorrecto. La aldehído deshidrogenasa participa en la degradación de las catecolaminas transformando el aldehído intermediario generado por la MAO, pero es un paso secundario de la vía degradativa, no la enzima principal que metaboliza la noradrenalina.",
+      "✅ Correcto. La monoaminooxidasa (MAO) metaboliza la noradrenalina (y las demás catecolaminas y la serotonina) mediante DESAMINACIÓN OXIDATIVA, inactivándolas en el citosol de la terminal y en otros tejidos. Es la vía predominante en la periferia y el blanco de los IMAO.",
+      "❌ Incorrecto. La tirosina hidroxilasa es una enzima de SÍNTESIS (convierte tirosina en DOPA, paso limitante); no degrada la noradrenalina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["receptores α1", "vasoconstricción", "músculo liso vascular", "adrenérgicos", "fenilefrina"],
+    "enunciado": "¿Cuál es el efecto de la estimulación de los receptores α1 adrenérgicos en el músculo liso arterial y venoso?",
+    "opcoes": [
+      "Vasodilatación",
+      "Vasoconstricción",
+      "Relajación",
+      "Contracción"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La vasodilatación es un efecto β2 (y en algunos lechos, α2) sobre el músculo liso vascular: activa la adenilato ciclasa, aumenta el AMPc y relaja la célula. La estimulación α1 produce lo contrario.",
+      "✅ Correcto. Los receptores α1 son receptores acoplados a Gq: su activación aumenta el calcio intracelular (vía IP3) y produce CONTACCIÓN del músculo liso vascular, es decir, VASOCONSTRICCIÓN arteriolar y venosa. Por eso los agonistas α1 (fenilefrina, noradrenalina) elevan la presión arterial y los antagonistas α1 (prazosina) la bajan.",
+      "❌ Incorrecto. La relajación del músculo liso vascular es un efecto β2 (AMPc), no α1. La estimulación α1 es contractilizante.",
+      "❌ Incorrecto. 'Contracción' es un término genérico: describe el mecanismo subyacente, pero la respuesta esperada y clínicamente relevante sobre el lecho arterial y venoso es la VASOCONSTRICCIÓN (la opción más específica y correcta de la pregunta)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["antiadrenérgicos", "bloqueo de receptores", "mecanismo de acción", "simpaticolíticos"],
+    "enunciado": "¿Cuál es el mecanismo de acción principal de los antiadrenérgicos?",
+    "opcoes": [
+      "Estimulación de los receptores adrenérgicos",
+      "Bloqueo de los receptores adrenérgicos",
+      "Aumento de la síntesis de noradrenalina",
+      "Inhibición de la recaptación de noradrenalina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La estimulación de los receptores adrenérgicos es el mecanismo de los AGONISTAS simpaticomiméticos (adrenalina, noradrenalina, isoproterenol), no de los antiadrenérgicos.",
+      "✅ Correcto. Los antiadrenérgicos (simpaticolíticos) son ANTAGONISTAS de los receptores adrenérgicos: bloquean los efectos del sistema simpático. Se dividen en bloqueadores α (prazosina, fentolamina), β (propranolol, metoprolol) y de acción mixta o central (metildopa, clonidina).",
+      "❌ Incorrecto. Aumentar la síntesis de noradrenalina potenciaría la transmisión simpática; ningún antiadrenérgico actúa de esa manera.",
+      "❌ Incorrecto. La inhibición de la recaptación de noradrenalina (cocaína, antidepresivos tricíclicos) AUMENTA la disponibilidad sináptica de NA y potencia la señal simpática; es un efecto simpaticomimético indirecto, no antiadrenérgico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["guanetidina", "liberación de noradrenalina", "antiadrenérgico", "antihipertensivo", "terminal adrenérgica"],
+    "enunciado": "¿Qué tipo de droga es la guanetidina en relación con su acción en las terminaciones nerviosas adrenérgicas?",
+    "opcoes": [
+      "Inhibidor de la recaptación de noradrenalina",
+      "Inhibidor de la MAO",
+      "Agonista de los receptores adrenérgicos",
+      "Bloqueador de la liberación de noradrenalina"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La inhibición de la recaptación de noradrenalina es el mecanismo de la cocaína y de los antidepresivos tricíclicos (aumentan la NA en la sinapsis); la guanetidina no actúa así.",
+      "❌ Incorrecto. Los inhibidores de la MAO (tranilcipromina, fenelzina) bloquean la degradación de las monoaminas; la guanetidina no es un IMAO.",
+      "❌ Incorrecto. Un agonista de los receptores adrenérgicos estimularía la respuesta simpática; la guanetidina produce lo contrario (hipotensión).",
+      "✅ Correcto. La guanetidina se concentra en la terminal adrenérgica mediante el transportador de noradrenalina y BLOQUEA la liberación de noradrenalina ante el potencial de acción (además agota los depósitos vesiculares). Por eso actúa como antihipertensivo simpaticolítico."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["reserpina", "VMAT", "depleción de noradrenalina", "vesículas", "antihipertensivo"],
+    "enunciado": "¿Qué efecto tendría la reserpina en el depósito de noradrenalina en las vesículas de las terminaciones nerviosas adrenérgicas?",
+    "opcoes": [
+      "Aumentaría el depósito",
+      "Disminuiría el depósito",
+      "No tendría efecto en el depósito",
+      "Convertiría la noradrenalina en adrenalina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La reserpina no aumenta el depósito: impide el empaquetamiento vesicular, por lo que el contenido de noradrenalina en las vesículas se reduce progresivamente.",
+      "✅ Correcto. La reserpina BLOQUEA el transportador vesicular de monoaminas (VMAT) en la membrana de las vesículas: la noradrenalina no puede almacenarse y queda en el citosol, donde la MAO la degrada. El resultado es la DEPLECIÓN de los depósitos de noradrenalina (y de otras monoaminas) en la terminal, con la consiguiente disminución de la liberación y del tono simpático (acción antihipertensiva).",
+      "❌ Incorrecto. La reserpina tiene un efecto marcado sobre los depósitos: al bloquear el VMAT, los agota de forma sostenida.",
+      "❌ Incorrecto. La reserpina no modifica las enzimas de síntesis; la conversión de noradrenalina en adrenalina es función de la PNMT (médula suprarrenal), no de la reserpina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["tiramina", "IMAO", "crisis hipertensiva", "queso", "noradrenalina"],
+    "enunciado": "¿Cuál es el efecto de la tiramina en pacientes que utilizan inhibidores de la monoaminooxidasa (IMAO)?",
+    "opcoes": [
+      "No tiene efecto",
+      "Aumenta la presión arterial",
+      "Disminuye la presión arterial",
+      "Induce la liberación de adrenalina"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La tiramina tiene un efecto importante en pacientes con IMAO: puede desencadenar una reacción hipertensiva grave. No es inocua.",
+      "✅ Correcto. La tiramina (presente en quesos curados, vino, embutidos) es una amina simpaticomimética INDIRECTA: entra a la terminal y DESPLAZA la noradrenalina de las vesículas, liberándola. En presencia de IMAO la noradrenalina no puede ser degradada y se acumula, provocando una CRISIS HIPERTENSIVA (la clásica 'reacción al queso').",
+      "❌ Incorrecto. La tiramina con IMAO produce HIPERTENSIÓN, no hipotensión. La hipotensión ortostática es un efecto adverso propio de los IMAO por su acción basal, no el efecto de la tiramina.",
+      "❌ Incorrecto. La tiramina desplaza principalmente NORADRENALINA de las vesículas (no adrenalina) y el efecto clínicamente definitorio de la interacción es el aumento de la presión arterial, no 'la liberación de adrenalina'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["betabloqueantes", "receptores β1", "miocardio", "cronotropismo negativo", "frecuencia cardíaca"],
+    "enunciado": "¿Cuál es el principal efecto de los antiadrenérgicos β1 en el miocardio?",
+    "opcoes": [
+      "Vasodilatación",
+      "Broncodilatación",
+      "Inotropismo positivo",
+      "Disminución de la frecuencia cardíaca"
+    ],
+    "indice_correta": 3,
+    "justificativa": "La grilla de la fuente marca C (inotropismo positivo), pero es incorrecta: el bloqueo de los receptores β1 del corazón produce INOTROPISMO y CRONOTROPISMO NEGATIVOS (disminuye la fuerza de contracción y la frecuencia cardíaca). La respuesta correcta es D. Se corrige la respuesta.",
+    "opcoes_comentario": [
+      "❌ Incorrecto. La vasodilatación no es un efecto β1 en el miocardio; es un efecto β2 sobre el músculo liso vascular (y en parte α1 antagonizado). En el corazón, el bloqueo β1 disminuye la actividad cardíaca, no produce vasodilatación.",
+      "❌ Incorrecto. La broncodilatación es un efecto β2 (músculo liso bronquial); los receptores β1 son cardíacos. De hecho, los betabloqueantes NO selectivos pueden producir broncoconstricción, no broncodilatación.",
+      "❌ Incorrecto (respuesta de la grilla corregida). El bloqueo β1 produce INOTROPISMO NEGATIVO (disminuye la fuerza de contracción del miocardio), no positivo. El inotropismo positivo es efecto de la estimulación β1 por catecolaminas.",
+      "✅ Correcto. El bloqueo de los receptores β1 del corazón (nodo sinusal, nodo AV, miocardio) produce CRONOTROPISMO NEGATIVO: DISMINUCIÓN DE LA FRECUENCIA CARDÍACA (además de inotropismo y dromotropismo negativos). Por eso los betabloqueantes β1 (metoprolol, atenolol) se usan en la taquicardia, la angina y la insuficiencia cardíaca."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["antagonismo competitivo", "farmacodinámica", "receptores", "agonista", "interacción"],
+    "enunciado": "¿Qué tipo de antagonismo se produce cuando el antagonista actúa en el mismo sitio que el agonista?",
+    "opcoes": [
+      "Antagonismo fisiológico",
+      "Antagonismo competitivo",
+      "Antagonismo no competitivo",
+      "Antagonismo irreversible"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El antagonismo FISIOLÓGICO se produce cuando dos fármacos producen efectos OPUESTOS por mecanismos y receptores distintos (ej. histamina y adrenalina sobre la presión arterial); no comparten el sitio de unión.",
+      "✅ Correcto. El antagonismo COMPETITIVO ocurre cuando el antagonista se une al MISMO sitio de unión del agonista, compitiendo por él de forma reversible. Se caracteriza por desplazar la curva dosis-respuesta hacia la derecha y porque su efecto se puede superar aumentando la concentración del agonista.",
+      "❌ Incorrecto. El antagonismo NO competitivo ocurre cuando el antagonista se une a un sitio DISTINTO (alostérico) y reduce la eficacia del agonista sin que aumentos del agonista lo superen; no actúa en el mismo sitio.",
+      "❌ Incorrecto. El antagonismo IRREVERSIBLE implica la unión covalente o casi irreversible del antagonista al receptor (se comporta como no competitivo); no se describe como 'mismo sitio' reversible, que es la definición del competitivo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["sumación", "potenciación", "agonistas", "efecto aditivo", "farmacodinámica"],
+    "enunciado": "¿Qué fenómeno se observa cuando dos agonistas de similar afinidad y eficacia producen efectos que se suman?",
+    "opcoes": [
+      "Sumación de efectos",
+      "Potenciación de efectos",
+      "Antagonismo fisiológico",
+      "Tolerancia"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La SUMACIÓN (o efecto aditivo) es el fenómeno en el que dos agonistas que actúan por el mismo mecanismo o receptor producen un efecto total igual a la SUMA de sus efectos individuales (1 + 1 = 2). Ejemplo clásico: dos benzodiazepinas o dos AINE administrados juntos.",
+      "❌ Incorrecto. La POTENCIACIÓN ocurre cuando el efecto combinado es MAYOR que la suma de los efectos individuales (1 + 1 > 2), porque uno de los fármacos potencializa al otro; no es el caso descrito en la pregunta.",
+      "❌ Incorrecto. El antagonismo fisiológico es la oposición de efectos por mecanismos distintos; aquí los dos agonistas producen efectos que se SUMAN, no que se oponen.",
+      "❌ Incorrecto. La tolerancia es la disminución de la respuesta ante la administración repetida; no describe la interacción entre dos agonistas administrados juntos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["supersensibilización", "sensibilización", "receptores", "up-regulation", "respuesta celular"],
+    "enunciado": "¿Cómo se llama el fenómeno en el cual la respuesta celular aumenta para la misma concentración del agonista?",
+    "opcoes": [
+      "Tolerancia",
+      "Sensibilización",
+      "Supersensibilización",
+      "Desensibilización"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La tolerancia es lo CONTRARIO: la disminución de la respuesta celular a la misma concentración del agonista tras la exposición repetida.",
+      "❌ Incorrecto. La sensibilización es el término general para el aumento de la respuesta, pero en la jerga farmacológica el fenómeno específico de aumento de la respuesta para la misma concentración —especialmente tras denervación, bloqueo crónico o deprivación de agonista— se denomina SUPERSENSIBILIZACIÓN (que es la opción marcada como correcta por la fuente).",
+      "✅ Correcto. La SUPERSENSIBILIZACIÓN es el fenómeno en el que la respuesta celular AUMENTA para la misma concentración del agonista. Suele deberse a un aumento del número de receptores (up-regulation) o de su afinidad, y se observa típicamente después de la denervación o del bloqueo crónico de los receptores (ej. los betabloqueantes que, al suspenderse bruscamente, dejan al receptor supersensible).",
+      "❌ Incorrecto. La desensibilización es la disminución de la respuesta tras la exposición sostenida al agonista (down-regulation, internalización de receptores); es lo opuesto al aumento de la respuesta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["tolerancia farmacocinética", "metabolismo", "distribución", "inducción enzimática", "farmacocinética"],
+    "enunciado": "¿Qué tipo de tolerancia se produce por cambios en el metabolismo o distribución de la droga?",
+    "opcoes": [
+      "Tolerancia farmacocinética",
+      "Tolerancia farmacodinámica",
+      "Tolerancia aprendida",
+      "Tolerancia innata"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La tolerancia FARMACOCINÉTICA se produce por cambios en la disposición del fármaco (ADME): fundamentalmente INDUCCIÓN ENZIMÁTICA (mayor metabolismo hepático, ej. el alcohol o la carbamazepina que inducen el CYP450) o alteraciones de la distribución, con lo que llega MENOS fármaco al sitio de acción y se requieren dosis mayores.",
+      "❌ Incorrecto. La tolerancia FARMACODINÁMICA se debe a cambios en el RECEPTOR o en el efector celular (disminución de la respuesta a la misma concentración del fármaco), no a cambios en su metabolismo o distribución.",
+      "❌ Incorrecto. La tolerancia APRENDIDA es una adaptación conductual o compensatoria del organismo (ej. aprender a compensar los efectos del alcohol); no se relaciona con el metabolismo ni la distribución.",
+      "❌ Incorrecto. La tolerancia INNATA es la resistencia a un fármaco determinada genéticamente, sin exposición previa (ej. resistencia genética a ciertos sedantes); no depende del metabolismo ni la distribución."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["desensibilización", "down-regulation", "taquifilaxia", "agonistas", "respuesta celular"],
+    "enunciado": "¿Qué fenómeno se observa cuando las células son estimuladas por mucho tiempo por agonistas y se produce una menor respuesta celular?",
+    "opcoes": [
+      "Sensibilización",
+      "Tolerancia",
+      "Desensibilización",
+      "Sumación de efectos"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La sensibilización (o supersensibilización) es el AUMENTO de la respuesta, típicamente por deprivación del agonista; aquí la exposición prolongada produce lo contrario.",
+      "❌ Incorrecto. La tolerancia describe la disminución de la respuesta a nivel del ORGANISMO; el término que describe específicamente la menor respuesta CELULAR tras la estimulación prolongada por agonistas es la DESENSIBILIZACIÓN.",
+      "✅ Correcto. La DESENSIBILIZACIÓN es el fenómeno celular por el cual, tras la exposición prolongada al agonista, disminuye la respuesta celular a la misma concentración: se produce por fosforilación, internalización y/o down-regulation de los receptores (también se la llama refractariedad). Es la base molecular de la taquifilaxia y de la tolerancia farmacodinámica.",
+      "❌ Incorrecto. La sumación de efectos es la adición de los efectos de dos fármacos; no describe la menor respuesta celular tras la estimulación sostenida."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["EC50", "curva dosis-respuesta", "potencia", "parámetro de localización", "farmacodinámica"],
+    "enunciado": "¿Qué parámetro de localización de la curva dosis-respuesta indica que una droga es más potente que otra?",
+    "opcoes": [
+      "Pendiente",
+      "Umbral",
+      "Concentración efectiva 50 (EC50)",
+      "Potencia"
+    ],
+    "indice_correta": 2,
+    "justificativa": "La grilla de la fuente marca D (potencia), pero el dato correcto es C: la EC50 es el PARÁMETRO DE LOCALIZACIÓN de la curva dosis-respuesta — cuanto menor es la EC50, más potente es la droga. La potencia es el concepto derivado de ese parámetro, no el parámetro en sí. Se corrige la respuesta.",
+    "opcoes_comentario": [
+      "❌ Incorrecto. La pendiente es un parámetro de FORMA de la curva dosis-respuesta (describe la rapidez con la que la respuesta cambia con la dosis); no indica dónde se localiza la curva en el eje de concentraciones.",
+      "❌ Incorrecto. El umbral es la concentración mínima que produce una respuesta observable, pero no es el parámetro de localización que define la potencia.",
+      "✅ Correcto. La EC50 (concentración que produce el 50% del efecto máximo) es el PARÁMETRO DE LOCALIZACIÓN de la curva dosis-respuesta: ubica la curva sobre el eje de concentraciones. Cuanto MENOR es la EC50, la droga alcanza el efecto con menor concentración y, por lo tanto, es MÁS POTENTE.",
+      "❌ Incorrecto (respuesta de la grilla corregida). La potencia es el CONCEPTO derivado: una droga es más potente que otra cuando produce el mismo efecto con una menor dosis (menor EC50). El PARÁMETRO de localización que se mide en la curva es la EC50, no 'la potencia'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["tolerancia farmacodinámica", "administración prolongada", "dosis", "receptores", "farmacodinámica"],
+    "enunciado": "¿Qué tipo de tolerancia se desarrolla durante una administración prolongada y requiere aumentar las dosis del fármaco para lograr el mismo efecto?",
+    "opcoes": [
+      "Tolerancia farmacocinética",
+      "Tolerancia farmacodinámica",
+      "Tolerancia aprendida",
+      "Tolerancia innata"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La tolerancia FARMACOCINÉTICA se debe a cambios en el metabolismo o distribución (ej. inducción enzimática) que reducen la concentración del fármaco; la descrita aquí (administración prolongada con necesidad de aumentar dosis por menor respuesta del órgano blanco) es de tipo farmacodinámico.",
+      "✅ Correcto. La tolerancia FARMACODINÁMICA es la disminución de la respuesta del órgano blanco a la misma concentración del fármaco, producida por adaptaciones a nivel de receptores o vías de señalización durante la administración prolongada. Es el mecanismo típico de opioides, benzodiazepinas y nitratos: para mantener el mismo efecto hay que aumentar la dosis.",
+      "❌ Incorrecto. La tolerancia APRENDIDA es una adaptación conductual compensatoria (el individuo 'aprende' a compensar los efectos del fármaco); no es una adaptación del receptor al fármaco administrado de forma prolongada.",
+      "❌ Incorrecto. La tolerancia INNATA es la resistencia determinada genéticamente, presente desde la primera exposición; no se desarrolla con la administración prolongada."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "fácil",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["taquifilaxia", "tolerancia aguda", "administración repetida", "efectos decrecientes", "farmacodinámica"],
+    "enunciado": "¿Cuál es el fenómeno en el cual la administración repetida de una droga produce cada vez menores efectos?",
+    "opcoes": [
+      "Taquifilaxis",
+      "Sensibilización",
+      "Tolerancia",
+      "Potenciación"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "✅ Correcto. La TAQUIFILAXIA es la forma de tolerancia de desarrollo RÁPIDO (minutos a horas): tras la administración repetida, la droga produce cada vez menos efecto y se requieren dosis crecientes. Ejemplo clásico: la efedrina y los nitratos, que pierden efecto rápidamente.",
+      "❌ Incorrecto. La sensibilización es lo CONTRARIO: el aumento de la respuesta a la misma dosis tras la exposición al fármaco.",
+      "❌ Incorrecto. La tolerancia es el concepto general de disminución de la respuesta (puede desarrollarse de forma aguda o crónica); cuando el desarrollo es RÁPIDO, el fenómeno específico se denomina TAQUIFILAXIA, que es la respuesta que busca la pregunta.",
+      "❌ Incorrecto. La potenciación es el aumento del efecto de un fármaco por la acción de otro (efecto combinado mayor que la suma); no describe la pérdida de efecto tras la administración repetida."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["supersensibilización", "respuesta celular", "receptores", "sensibilización", "misma concentración"],
+    "enunciado": "¿Qué fenómeno se observa cuando la respuesta celular aumenta para la misma concentración del agonista?",
+    "opcoes": [
+      "Desensibilización",
+      "Supersensibilización",
+      "Tolerancia",
+      "Sumación de efectos"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. La desensibilización es la DISMINUCIÓN de la respuesta celular a la misma concentración del agonista (tras exposición sostenida), no su aumento.",
+      "✅ Correcto. La SUPERSENSIBILIZACIÓN es el fenómeno por el cual la respuesta celular AUMENTA para la misma concentración del agonista, generalmente por un aumento del número de receptores (up-regulation) o de su afinidad. Se observa tras la deprivación del agonista, la denervación o la suspensión brusca de un bloqueante.",
+      "❌ Incorrecto. La tolerancia es la disminución de la respuesta a la misma concentración tras la exposición repetida; es el fenómeno opuesto al aumento de la respuesta.",
+      "❌ Incorrecto. La sumación de efectos describe la suma de los efectos de dos agonistas administrados juntos (interacción entre fármacos), no un cambio en la respuesta celular a un agonista dado."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "dificuldade": "médio",
+    "disciplina_base": "farmacologia_base",
+    "tags": ["antagonismo no competitivo", "sitio alostérico", "farmacodinámica", "receptores", "Emax"],
+    "enunciado": "¿Qué tipo de antagonismo se produce cuando el antagonista actúa en un sitio distinto del agonista pero afecta su interacción con el receptor?",
+    "opcoes": [
+      "Antagonismo fisiológico",
+      "Antagonismo competitivo",
+      "Antagonismo no competitivo",
+      "Antagonismo irreversible"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "❌ Incorrecto. El antagonismo FISIOLÓGICO se produce cuando dos fármacos producen efectos funcionalmente opuestos por mecanismos y receptores completamente distintos (ej. un broncoconstrictor y un broncodilatador); no involucra el receptor del agonista.",
+      "❌ Incorrecto. El antagonismo COMPETITIVO ocurre cuando el antagonista se une al MISMO sitio del agonista; aquí el enunciado dice explícitamente que actúa en un sitio distinto, por lo que no es competitivo.",
+      "✅ Correcto. El antagonismo NO COMPETITIVO se produce cuando el antagonista se une a un sitio ALOSTÉRICO distinto del sitio del agonista y, aun así, reduce o anula la respuesta al agonista (disminuye la eficacia máxima, Emax). No se supera aumentando la concentración del agonista.",
+      "❌ Incorrecto. El antagonismo IRREVERSIBLE se refiere a la forma de unión del antagonista al receptor (covalente, permanente) y suele comportarse como no competitivo, pero la definición que describe el enunciado (sitio distinto que afecta la interacción) es la del antagonismo NO competitivo."
+    ]
+  }
+]

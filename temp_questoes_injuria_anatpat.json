@@ -1,0 +1,2514 @@
+[
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "mediadores",
+      "anatomía patológica"
+    ],
+    "enunciado": "Mediadores químicos en inflamación aguda:",
+    "opcoes": [
+      "La quimiotaxis se relaciona a la acción de PG, quimiocinas e IL1 y 6",
+      "La VD se debe a la acción de factores C3A y C5A del complemento",
+      "El dolor se explica por los efectos de las PG y bradicinina."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Ambas (PG y bradicinina) actúan como mediadores en inflamación aguda, no solo las PG. Es incorrecto excluir la bradicinina.",
+      "Incorrecto. Ambas participan. La bradicinina es un mediador importante de la inflamación aguda, aumentando la permeabilidad vascular y produciendo dolor.",
+      "Correcto. Las prostaglandinas (PG) y la bradicinina son mediadores químicos importantes de la inflamación aguda. Las PG son producidas por la ciclooxigenasa y causan vasodilatación y dolor. La bradicinina aumenta permeabilidad vascular y produce dolor."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "proceso",
+      "anatomía patológica"
+    ],
+    "enunciado": "Proceso adaptativo que implica cambio de un tipo celular adulto en otro de la misma estirpe:",
+    "opcoes": [
+      "Hiperplasia",
+      "Metaplasia (R&C pag 10)",
+      "Hiperplasia",
+      "Displasia."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La hiperplasia es aumento del número de células, no cambio de un tipo celular a otro. Eso corresponde a metaplasia.",
+      "Correcto. La metaplasia (R&C pag 10) es el cambio reversible de un tipo celular adulto por otro tipo celular adulto. Es una adaptación celular frente a estrés crónico donde un epitelio es reemplazado por otro más resistente.",
+      "Incorrecto. La displasia es crecimiento celular desordenado con atipias, considerada una lesión preneoplásica, no una adaptación benigna como la metaplasia.",
+      "Incorrecto. La anaplasia es pérdida de diferenciación celular, característica de neoplasias malignas. No es un proceso adaptativo reversible como la metaplasia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El infarto de testículo corresponde a un infarto:",
+    "opcoes": [
+      "Blanco.",
+      "Rojo."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El infarto blanco (anémico) ocurre en órganos con circulación terminal única (corazón, riñón, bazo). El testículo tiene circulación colateral que permite la entrada de sangre.",
+      "Correcto. El infarto de testículo corresponde a un infarto rojo (hemorrágico). Los infartos en órganos con doble circulación o circulación colateral extensa (pulmón, hígado, testículo) tienden a ser rojos por la entrada de sangre desde la circulación colateral."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La hiperplasia es:",
+    "opcoes": [
+      "Aumento del tamaño de las células",
+      "Aumento del número de las células",
+      "Cambio de un tipo celular a otro."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La hiperplasia no tiene nada que ver con aumento de colágeno. Eso es fibrosis. Hiperplasia es aumento del número de células.",
+      "Correcto. La hiperplasia es el aumento del número de células de un órgano o tejido, generalmente por aumento de la proliferación celular. Puede ser fisiológica (hormonal, compensadora) o patológica.",
+      "Incorrecto. Aumento del tamaño celular es hipertrofia, no hiperplasia. Hiperplasia es aumento del número de células."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "Los cornetes ubicados en las fosas nasales intervienen en:",
+    "opcoes": [
+      "Humedecer el aire inspirado",
+      "Calentar el aire inspirado debido a la turbulencia que realizan",
+      "Ambas correctas."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Los cornetes también participan en la filtración de partículas, no solo en la humidificación.",
+      "Incorrecto. Los cornetes también humidifican y calientan el aire, no solo filtran partículas.",
+      "Correcto. Los cornetes nasales (superior, medio e inferior) cumplen AMBAS funciones: A) humidificación y calentamiento del aire inspirado (al aumentar la superficie de contacto) y B) filtración de partículas (atrapadas en el moco)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El exudado inflamatorio vinculado a las infecciones virales es de tipo:",
+    "opcoes": [
+      "Hemorrágico",
+      "Fibrinoso",
+      "Fibrinopurulento",
+      "Seroso"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El exudado purulento es típico de infecciones bacterianas piógenas, no virales.",
+      "Incorrecto. El exudado fibrinopurulento ocurre en infecciones bacterianas más severas.",
+      "Incorrecto. El exudado hemorrágico es raro en infecciones virales. Las infecciones virales producen exudado seroso.",
+      "Correcto. El exudado inflamatorio vinculado a infecciones virales es típicamente seroso: líquido claro, con bajo contenido de proteínas y células, pocos leucocitos. Característico de rinitis, faringitis y bronquitis virales."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "El bronquio fuente derecha comparativamente con el izquierdo es:",
+    "opcoes": [
+      "Mas horizontal",
+      "Mas largo",
+      "Mas vertical",
+      "De igual",
+      "Mas delgado"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El bronquio fuente derecho no es más horizontal, sino más vertical. El izquierdo es más horizontal por el arco aórtico.",
+      "Incorrecto. El bronquio derecho no es más largo y fino; es más corto y ancho que el izquierdo.",
+      "Correcto. El bronquio fuente derecho es más vertical, más corto y de mayor calibre que el izquierdo. Esto explica por qué los cuerpos extraños y las aspiraciones tienen mayor tendencia al pulmón derecho.",
+      "Incorrecto. El bronquio derecho es más ancho que el izquierdo, no más fino.",
+      "Incorrecto. El bronquio derecho es más corto, más ancho y más vertical que el izquierdo. Las diferencias anatómicas son bien definidas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bioquímica"
+    ],
+    "enunciado": "El hierro proveniente del catabolismo del hemo es transportado en sangre por:",
+    "opcoes": [
+      "Ferrilina",
+      "Transferina",
+      "Albumina",
+      "Hemosiderina",
+      "A+B",
+      "B+C."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La ferritina es la principal proteína de almacenamiento intracelular de hierro, no de transporte plasmático. El hierro del catabolismo del hemo es transportado por transferrina.",
+      "Correcto. La transferrina es la proteína transportadora de hierro en el plasma. Transporta el hierro liberado del catabolismo del hemo hacia los sitios de almacenamiento (hígado, bazo) y eritropoyesis (médula ósea).",
+      "Incorrecto. La albúmina transporta ácidos grasos, bilirrubina, fármacos y hormonas, pero no es la responsable del transporte de hierro. Esa función corresponde a la transferrina.",
+      "Incorrecto. La hemosiderina es un pigmento derivado de la ferritina que representa almacenamiento de hierro en condiciones de sobrecarga, no es la proteína transportadora plasmática.",
+      "Incorrecto. A+B (Ferrilina + Transferrina) no es correcta porque la ferrilina no existe como proteína transportadora. La única proteína responsable del transporte plasmático de hierro es la transferrina.",
+      "Incorrecto. B+C (Transferrina + Albúmina) es incorrecta porque la albúmina no participa en el transporte de hierro. Solo la transferrina cumple esa función."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "biopsia",
+      "anatomía patológica"
+    ],
+    "enunciado": "Biopsia de la mucosa bronquial revestida focalmente por epitelio pavimentoso hipo glucogénico que presenta además leve infiltrado en las células linfocitarias a nivel del colon. El diagnostico anatomopatológico en el presente caso correspondería a:",
+    "opcoes": [
+      "Hiperplasia",
+      "Metaplasia trato bronquial cilíndrico epitelio es epitelio del pseudoestratificado ciliado con células caliciformes); (el",
+      "Hipertrofia",
+      "Atrofia."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La hiperplasia implica aumento del número de células, pero el tipo celular sigue siendo el mismo. En la biopsia descrita hay cambio de un tipo epitelial a otro (metaplasia), no solo aumento celular.",
+      "Correcto. La metaplasia escamosa es la sustitución del epitelio pseudoestratificado cilíndrico ciliado normal del árbol bronquial por epitelio escamoso estratificado. Es una adaptación reversible frente a agresiones crónicas como el tabaquismo.",
+      "Incorrecto. La hipertrofia es aumento del tamaño celular, no cambio en el tipo de epitelio. El hallazgo descrito (epitelio escamoso en mucosa bronquial) es metaplasia escamosa.",
+      "Incorrecto. La atrofia es disminución del tamaño o número celular. En este caso hay sustitución de un epitelio por otro, que es el proceso de metaplasia, no atrofia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "características",
+      "anatomía patológica"
+    ],
+    "enunciado": "Características de muerte células por apoptosis.",
+    "opcoes": [
+      "Cambios morfológicos que sigue a la muerte en el tejido vivo por acción degradante progresiva de las enzimas",
+      "Muerte celular inducida por programa intracelular en el cual las células destinadas a morir activan enzimas que degradan el propio ADN",
+      "Produce cambios nucleares: cariolisis, picnosis y cariorexis",
+      "Se produce por lesión isquémica que es la causa más frecuente de lesión por privación de oxígeno."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Estos cambios morfológicos post-mortem describen la necrosis, no la apoptosis. En la necrosis hay acción de enzimas degradativas sobre el tejido muerto, mientras la apoptosis es un proceso activo y programado.",
+      "Correcto. La apoptosis es muerte celular programada, genéticamente regulada, donde las células activan un programa intracelular de suicidio. Ocurre en desarrollo embrionario, renovación tisular y eliminación de células dañadas sin desencadenar inflamación.",
+      "Incorrecto. Cariolisis, picnosis y cariorrexis son cambios nucleares típicos de necrosis, no de apoptosis. En apoptosis el núcleo se fragmenta en cuerpos apoptóticos sin desorganización del tejido circundante.",
+      "Incorrecto. La necrosis por lesión isquémica es el ejemplo clásico de necrosis coagulativa (infarto), no de apoptosis. La apoptosis requiere energía (ATP) y no se produce por isquemia severa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Las acumulaciones intracelulares de lípidos simples pueden producirse en:",
+    "opcoes": [
+      "Células musculares lisas (aterosclerosis)",
+      "Macrófago (xantomas, inflamación y necrosis, colesterolosis)",
+      "Hepatocito (cambio graso)",
+      "Todas las anteriores."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Es cierto que la ingesta excesiva de alcohol produce esteatosis hepática (hígado graso alcohólico), pero no es la única causa. También hay otras como hepatotóxicos y diabetes.",
+      "Incorrecto. El tetracloruro de carbono y tetracloruro de carbono son hepatotóxicos que causan esteatosis, pero hay más causas como alcohol y diabetes.",
+      "Incorrecto. La diabetes mellitus produce esteatosis por aumento de ácidos grasos libres circulantes y su captación hepática, pero no es la única causa.",
+      "Correcto. Las acumulaciones intracelulares de lípidos simples (esteatosis) ocurren por: A) ingesta excesiva de alcohol (esteatosis alcohólica), B) hepatotóxicos como tetracloruro de carbono, y C) diabetes mellitus donde hay aumento de ácidos grasos libres. Todas las opciones son correctas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cite",
+      "anatomía patológica"
+    ],
+    "enunciado": "Cite la célula del tejido conectivo capaz de liberar una sustancia que inicia el proceso inflamatorio.",
+    "opcoes": [
+      "Fibroblastos",
+      "Mastocitos",
+      "Plasmocitos",
+      "Reticular. En el tejido conectivo laxo, la célula llamada MASTOCITO libera entre otras sustancias, histamina que actúa sobre la pared vascular determinando LA PERMEABILIDAD DE LAS VÉNULAS, DILATACIÓN DE LAS ARTERIOLAS Y CONTRACCIÓN DE LAS GRANDES ARTERIAS."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Los fibroblastos producen colágeno, elastina y matriz extracelular. No sintetizan ni almacenan histamina; esa función corresponde a los mastocitos.",
+      "Correcto. Los mastocitos (células cebadas) son las células del tejido conectivo especializadas en almacenar y liberar histamina, heparina y otros mediadores de la inflamación. Participan en reacciones alérgicas e inflamación aguda.",
+      "Incorrecto. Los macrófagos son células fagocíticas derivadas de monocitos, participan en inflamación y defensa, pero no almacenan histamina. Los mastocitos son los responsables.",
+      "Incorrecto. Los linfocitos son células del sistema inmune adaptativo (B y T). No producen histamina; esa función es de los mastocitos del tejido conectivo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "determina",
+      "anatomía patológica"
+    ],
+    "enunciado": "Determina los valores absolutos normales de:",
+    "opcoes": [
+      "Glóbulos rojos o Eritrócitos o Hematites (mi/mm3): H4,5-5 M4-4,5",
+      "Glóbulos blancos o Leucocitos (/mm3): 5000-10.000",
+      "Plaquetas o Trombocitos (/mm3): 150.000-400.000."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Los valores absolutos normales son: hematocrito 40-54% (hombres) y 37-47% (mujeres), hemoglobina 13.5-18 g/dL (hombres) y 12-16 g/dL (mujeres), leucocitos 4500-11000/mm³, plaquetas 150000-450000/mm³.",
+      "Incorrecto. Esa combinación no corresponde a los rangos de normalidad establecidos para hematimetría. Revise los valores de referencia estándar de cada serie celular.",
+      "Incorrecto. Esa combinación no corresponde a los rangos de normalidad establecidos. Verifique los valores de referencia en hematología."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Al MET, la mayoría de las granulaciones de neutrófilos y eosinófilos corresponden a un organóide, relacionado con sus respectivas funciones:",
+    "opcoes": [
+      "Vesículas cubiertas",
+      "Lisosomas",
+      "Gránulos densos",
+      "Ribosomas."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Las mitocondrias son orgánulos visibles al MET, pero las granulaciones referidas son depósitos de glucógeno y lisosomas.",
+      "Correcto. Las granulaciones del MET (microscopio electrónico de transmisión) corresponden a glucógeno y lisosomas. Los lisosomas contienen enzimas hidrolíticas y son visibles como gránulos densos en el citoplasma.",
+      "Incorrecto. No es correcta la combinación. Las granulaciones del MET corresponden específicamente a glucógeno y lisosomas.",
+      "Incorrecto. Los ribosomas son organelos responsables de la síntesis proteica; no corresponden a las granulaciones observadas en neutrófilos y eosinófilos al MET, que en realidad son lisosomas y gránulos específicos, no ribosomas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "área",
+      "infarto",
+      "microscópicamente",
+      "anatomía patológica"
+    ],
+    "enunciado": "Área localizada, de límites netos y color blanquecino, en el espesor del miocardio. Microscópicamente se observa miocitos con preservación de su forma, acidofilia homogénea citoplasmática y picnosis o ausencia nuclear:",
+    "opcoes": [
+      "Infarto antiguo, reemplazado por cicatriz fibrosa",
+      "Infarto reciente",
+      "Necrosis licuefactiva por invasión bacteriana",
+      "Depósito de material hialino, extracelular"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Un infarto antiguo ya reemplazado por cicatriz fibrosa se caracteriza histológicamente por tejido conectivo denso y fibroblastos, no por miocitos con acidofilia homogénea y picnosis, que son signos de necrosis coagulativa reciente.",
+      "Correcto. La preservación de la forma celular junto con citoplasma acidófilo homogéneo y picnosis o cariólisis nuclear es la descripción clásica de la necrosis coagulativa, el tipo de necrosis característico de un infarto de miocardio reciente (primeras horas a días), antes de que se organice la cicatriz fibrosa.",
+      "Incorrecto. La necrosis licuefactiva implica digestión enzimática del tejido con pérdida de la arquitectura tisular, lo opuesto a lo descripto en el enunciado, donde se destaca justamente la preservación de la forma de los miocitos.",
+      "Incorrecto. El depósito de material hialino extracelular no es una descripción de necrosis miocárdica; el cuadro descripto (miocitos con acidofilia homogénea y picnosis) corresponde específicamente a necrosis coagulativa por isquemia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "señale",
+      "anatomía patológica"
+    ],
+    "enunciado": "Un paciente con diagnóstico previo de cardiopatía chagásica crónica concurre a la consulta acusando disnea en los esfuerzos grandes, fatiga y nicturia. Señale de los siguientes cuál podría ser el hallazgo histopatológico más probable en sus pulmones:",
+    "opcoes": [
+      "Macrófagos cargados con moléculas de colesterol (células espumosas)",
+      "Ingurgitación capilar, edema (trasudado) intersticial y alveolar intenso",
+      "Tabiques interalveolares engrosados por ingurgitación capilar y fibrosis",
+      "Presencia de abundancia fibrina y leucocitos en las luces alveolares."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La parada cardiorrespiratoria es una complicación posible, pero no es un hallazgo anatomopatológico. En el contexto clínico descrito se espera congestión pasiva crónica.",
+      "Correcto. En la cardiopatía chagásica crónica hay ingurgitación capilar y fibrosis en diversos órganos. La cianosis y los signos de insuficiencia cardíaca se deben a la miocardiopatía dilatada con congestión pasiva crónica.",
+      "Incorrecto. Colapso pulmonar masivo no es típico de cardiopatía chagásica. La insuficiencia cardíaca produce congestión pulmonar, no colapso.",
+      "Incorrecto. Derrame pericárdico masivo no es un hallazgo característico de la miocardiopatía chagásica crónica. Lo típico son cambios por insuficiencia cardíaca congestiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Qué es la hemosiderina y donde se acumula?:",
+    "opcoes": [
+      "Pigmento derivado de la hemoglobina que no contiene Fe, se encuentra en la bilis y se acumula en el citoplasma de las células",
+      "Pigmento derivado de la hemoglobina color amarillo-dorado a marrón, granular o cristalino, en cuya forma se almacena el hierro en el citoplasma de la célula",
+      "Pigmento endógeno no derivado de la hemoglobina, color marrón, que se produce por oxidación de la tirosina en los melanocitos",
+      "Ninguna de las anteriores."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La hemosiderina no es un pigmento biliar. La bilirrubina es el pigmento biliar derivado del catabolismo del hemo. La hemosiderina almacena hierro.",
+      "Correcto. La hemosiderina es un pigmento derivado de la ferritina que almacena hierro intracelularmente. Se acumula en macrófagos del hígado (células de Kupffer), bazo y médula ósea cuando hay sobrecarga de hierro.",
+      "Incorrecto. La hemosiderina sí requiere tinción especial (azul de Prusia / Perls) para su identificación. Es visible como gránulos intracitoplasmáticos dorado-parduscos.",
+      "Incorrecto. No es correcta la combinación. La hemosiderina es un pigmento derivado de ferritina que se acumula en macrófagos, no en eritrocitos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "entre",
+      "anatomía patológica"
+    ],
+    "enunciado": "Entre los factores de riesgo del fenómeno de trombosis se mencionan:",
+    "opcoes": [
+      "Lesión endotelial",
+      "Flujo turbulento",
+      "Estasis",
+      "Trastornos de coagulación",
+      "Todas las anteriores.",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La inmovilización es un factor de riesgo, pero no el único. También los anticonceptivos orales, obesidad y tabaquismo son factores importantes.",
+      "Incorrecto. Los anticonceptivos orales aumentan el riesgo de trombosis venosa, pero no son el único factor. La respuesta completa incluye todas las opciones.",
+      "Incorrecto. La obesidad es factor de riesgo, pero también la inmovilización, anticonceptivos y tabaquismo.",
+      "Incorrecto. El tabaquismo daña el endotelio y aumenta el riesgo trombótico, pero no es el único factor involucrado.",
+      "Correcto. Los factores de riesgo de trombosis incluyen: A) inmovilización (estasis venosa), B) anticonceptivos orales (hipercoagulabilidad), C) obesidad (estasis + hipercoagulabilidad) y D) tabaquismo (daño endotelial + hipercoagulabilidad). Todos contribuyen a la tríada de Virchow.",
+      "Incorrecto. Sí existe una combinación correcta entre las opciones: la lesión endotelial, el flujo turbulento, la estasis y los trastornos de la coagulación son justamente los componentes reconocidos de la tríada de Virchow, por lo que la respuesta correcta es 'todas las anteriores', no 'ninguna'."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "pigmento",
+      "anatomía patológica"
+    ],
+    "enunciado": "Pigmento denominado de desgaste habitualmente observado a nível visceral:",
+    "opcoes": [
+      "Hemosiderina",
+      "Melanina",
+      "Lipofuscina (signo de vejez celular derivado de la acción de los ROS)",
+      "Bilirrubina."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La melanina es el pigmento de la piel producido por melanocitos, no es el pigmento de desgaste celular.",
+      "Incorrecto. La hemosiderina almacena hierro y aparece en sobrecarga férrica, no es el pigmento de desgaste por envejecimiento.",
+      "Correcto. La lipofuscina es el pigmento de \"desgaste\" o envejecimiento, también llamado lipocromo o ceroid. Es un pigmento pardo-amarillento producto de la peroxidación de lípidos en lisosomas, que se acumula en células post-mitóticas como neuronas, cardiomiocitos y hepatocitos.",
+      "Incorrecto. El colágeno es una proteína estructural de la matriz extracelular, no un pigmento. El pigmento de desgaste es la lipofuscina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "invasión",
+      "marque",
+      "anatomía patológica"
+    ],
+    "enunciado": "Invasión de cavidad pleural con exudado purulento, microorganismos piógenos y piocitos, ya sea por extensión directa desde un foco pulmonar, a sea por diseminación linfohematógena desde una lesión alejada. Marque la opción correcta:",
+    "opcoes": [
+      "Pleuritis crónica (inflamación)",
+      "Absceso",
+      "Hidrotórax",
+      "Empiema (infección que acumula pus en el espacio pleural, la exudativa es liquido estéril)."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El derrame pleural seroso es trasudado o exudado no purulento. Cuando hay pus en la pleura se llama empiema.",
+      "Incorrecto. El hemotórax es sangre en la cavidad pleural (traumático o espontáneo), no pus.",
+      "Incorrecto. El neumotórax es aire en la cavidad pleural. La presencia de exudado purulento define un empiema.",
+      "Correcto. El empiema es la acumulación de pus en la cavidad pleural. Generalmente es consecuencia de una neumonía complicada o de la extensión de una infección desde el parénquima pulmonar al espacio pleural."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El edema es la acumulación excesiva de líquido en el espacio intersticial y cavidades orgánicas que se produce por:",
+    "opcoes": [
+      "Ruptura de pared de vasos sanguíneos",
+      "Aumento de la presión hidrostática",
+      "Alteración del proceso de coagulación",
+      "Fragilidad capilar."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La disminución de la presión oncótica (hipoproteinemia) produce edema, pero no es la causa más común. La causa más frecuente es el aumento de presión hidrostática por ICC.",
+      "Correcto. El edema por aumento de la presión hidrostática ocurre en insuficiencia cardíaca congestiva, trombosis venosa, compresión venosa, etc. El aumento de presión fuerza la salida de líquido del capilar al intersticio.",
+      "Incorrecto. La obstrucción linfática produce linfedema, que es un tipo específico y menos común de edema.",
+      "Incorrecto. El aumento de permeabilidad vascular produce edema inflamatorio, que es diferente del edema hemodinámico por aumento de presión hidrostática."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La necrosis isquémica por la interrupción brusca y completa de la irrigación arterial o del drenaje venoso, corresponde a:",
+    "opcoes": [
+      "Congestión",
+      "Hemorragia; c)",
+      "Gangrena. Infarto (R&C pag 139)"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La apoptosis es muerte celular programada, no por isquemia. La necrosis isquémica produce necrosis coagulativa = infarto.",
+      "Incorrecto. La necrosis por digestión enzimática describe la necrosis licuefactiva (ej: absceso cerebral), no la isquémica que produce infarto.",
+      "Incorrecto. La degeneración hidrópica es cambio celular reversible por lesión hipóxica, no necrosis isquémica definitiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuál",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuál es la principal causa de HTA secundaria?",
+    "opcoes": [
+      "El propio metabolismo del alcohol es lipotrópico; por lo que incrementa la síntesis y acumulación de lípidos",
+      "El etilista crónico en fases avanzadas es un desnutrido crónico por lo que tiene un déficit de apoproteínas para vehiculizar grasas; además, hay lipólisis periférica, por lo que aumenta la oferta de ácidos grasos libres al hígado",
+      "El daño hepatocelular tanto por el propio etanol como por sus productos metabólicos (especialmente el acetaldehído) y radicales libres puede dañar la maquinaria metabólica",
+      "Todas las opciones pueden ser consideradas correctas (Los mecanismos fisio patogénicos son múltiples. A todos ellos le podríamos agregar la hipoxia generada por endotelinas liberadas por el daño alcohólico. El déficit de ATP consecuente a la hipoxia también puede contribuir a la acumulación de ácidos grasos que no pueden transformarse en TAG)."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El alcohol no es lipotrópico. Produce acumulación de lípidos en el hígado. Los factores lipotrópicos (colina, metionina) promueven la salida de lípidos del hígado.",
+      "Incorrecto. La oxidación del alcohol aumenta NADH/NAD+, lo que favorece la lipogénesis, no la oxidación de ácidos grasos. Esto contribuye a la esteatosis.",
+      "Incorrecto. La combinación no es correcta. La esteatosis alcohólica es multifactorial y TODAS las opciones contribuyen.",
+      "Correcto. La esteatosis alcohólica se produce por varios mecanismos: el etanol aumenta la lipogénesis hepática (por aumento de NADH/NAD+), inhibe la oxidación de ácidos grasos, y genera estrés oxidativo. La combinación es correcta."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La esteatosis alcohólica:",
+    "opcoes": [
+      "Comienza siendo medio lobulillar y termina siendo centrolobulillar",
+      "Comienza siendo perilobullillar y termina siendo panlobulillar",
+      "Comienza siendo centrolobulillar y termina siendo panlobulillar (Al igual de lo que sucede con los niños con desnutrición, el cambio graso en el etilismo crónico comienza en lo hepatocitos de la zona 3 (central) y se va haciendo panlobulillar con el tiempo)",
+      "Es panlobulillar (difusa) desde el comienzo y durante toda su evolución."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La esteatosis alcohólica inicia en la zona centrolobulillar, no periportal. La zona 3 (centrolobulillar) es la más afectada por el metabolismo del alcohol.",
+      "Incorrecto. La esteatosis alcohólica comienza en la zona centrolobulillar. La progresión a panlobulillar ocurre en etapas avanzadas.",
+      "Correcto. La esteatosis alcohólica comienza en la región centrolobulillar (zona 3 del acino hepático) porque allí la concentración de alcohol es mayor y la hipoxia relativa es máxima. Puede progresar a panlobulillar si el consumo continúa.",
+      "Incorrecto. No es correcta la combinación. La esteatosis alcohólica tiene un patrón de distribución característico que inicia en la región centrolobulillar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El consumo crónico de alcohol se puede asociar a la/s siguiente/s neoplasia/s:",
+    "opcoes": [
+      "Melanoma",
+      "Tumores del SNC",
+      "Cáncer de pulmón",
+      "Cáncer esofágico (Junto al cáncer de boca y estómago, el cáncer esofágico es uno de los más asociados a esta injuria aquí constituida como “carcinogénico” químico.)."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El alcohol no produce cáncer gástrico. La asociación más fuerte es con carcinoma escamoso de esófago.",
+      "Incorrecto. El alcohol se asocia a carcinoma esofágico, no a cáncer de colon.",
+      "Incorrecto. El alcohol se asocia a cáncer esofágico, no hepático (aunque la cirrosis alcohólica es factor de riesgo para hepatocarcinoma).",
+      "Correcto. El consumo crónico de alcohol se asocia a carcinoma esofágico (especialmente de células escamosas). El alcohol actúa como carcinógeno directo y además facilita la acción de otros carcinógenos como los del tabaco."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "señale",
+      "anatomía patológica"
+    ],
+    "enunciado": "El humo del cigarrillo produce cambios adaptativos tras muchos años de consumo y procesos inflamatorios mediante. Señale lo correcto.",
+    "opcoes": [
+      "El epitelio respiratorio cilíndrico ciliado pseudoestratificado con células caliciformes se transforma en un epitelio plano estratificado (El epitelio respiratorio debe estratificarse para hacerse más resistente a la noxa y alcanzar un nuevo nivel de “homeostasis”. Recuerden que a este cambio adaptativo se lo llama metaplasia y consiste en la transformación de un tejido maduro por otro maduro, perteneciente a la misma estirpe histogenética (en este caso, epitelio por epitelio)",
+      "El epitelio respiratorio cilíndrico ciliado pseudoestratificado con células caliciformes se transforma en un epitelio columnar simple",
+      "Las glándulas bronquiales de la submucosa se atrofian con la consecuente ausencia de moco y es el sustrato anatómico de lo que se conoce como Bronquitis Crónica, una de las formas de EPOC",
+      "Ninguna es correcta."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El humo del cigarrillo produce metaplasia escamosa del epitelio respiratorio: el epitelio pseudoestratificado cilíndrico ciliado normal es reemplazado por epitelio plano estratificado escamoso. Esto es una adaptación al estrés crónico.",
+      "Incorrecto. El humo produce cambio a epitelio plano estratificado (metaplasia escamosa), no a epitelio pseudoestratificado.",
+      "Incorrecto. La glándula o la mucosa glandular no es el cambio adaptativo característico. La metaplasia escamosa es la respuesta típica.",
+      "Incorrecto. No es correcta la combinación. El cambio característico es metaplasia escamosa del epitelio bronquial."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Al cambio adaptativo de la pregunta anterior (5) se lo denomina:",
+    "opcoes": [
+      "Metaplasia mieloide",
+      "Metaplasia glandular",
+      "Metaplasia escamosa (Se denomina metaplasia escamosa, epidermoide o pavimentosa en alusión a los estratos epiteliales que se forman)",
+      "Metaplasia mesenquimática."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La metaplasia escamosa es un cambio adaptativo frecuente en diversos epitelios, no exclusivo del esófago. Ocurre en bronquios, cérvix, vejiga, etc.",
+      "Incorrecto. La metaplasia NO es un proceso irreversible. Es una adaptación REVERSIBLE al eliminar el estímulo agresor.",
+      "Correcto. La metaplasia escamosa es la transformación de un epitelio no escamoso (como el cilíndrico) en epitelio escamoso estratificado. En el cérvix, el epitelio cilíndrico endocervical es reemplazado por escamoso en la zona de transformación.",
+      "Incorrecto. Es FALSO que siempre precede al carcinoma. Aunque puede ser un campo fértil para la transformación neoplásica, la mayoría de las metaplasias no progresan a cáncer."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "dislipidemias",
+      "diabetes",
+      "hipertensión",
+      "sistémica",
+      "anatomía patológica"
+    ],
+    "enunciado": "El Tabaquismo, junto a la Hipertensión Arterial Sistémica, la Diabetes Mellitus y las Dislipidemias, se constituyen como los principales factores de riesgo para:",
+    "opcoes": [
+      "Cáncer",
+      "Aterosclerosis (La aterosclerosis, que es la formación de una placa fibro-lipídica en la túnica íntima de las arterias de mediano y gran calibre, tiene como factores de riesgo mayor a estas cuatro entidades nosológicas)",
+      "Enfermedades autoinmunes",
+      "Obesidad."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La HTA y tabaquismo causan aterosclerosis, no osteoporosis (aunque el tabaco sí afecta el metabolismo óseo, el efecto principal es cardiovascular).",
+      "Correcto. El tabaquismo y la HTA son factores de riesgo independientes que dañan el endotelio vascular, iniciando el proceso aterosclerótico. La dislipemia y diabetes se suman como factores de riesgo mayores.",
+      "Incorrecto. La HTA y tabaquismo NO causan enfisema directamente (el enfisema se asocia al tabaco pero por mecanismos diferentes). La combinación HTA+tabaco acelera la aterosclerosis.",
+      "Incorrecto. No es correcta la combinación. El efecto sinérgico de HTA y tabaquismo es principalmente sobre la pared arterial promoviendo aterosclerosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El tejido de granulación está constituido por:",
+    "opcoes": [
+      "Vasos de neoformación, fibroblastos e infiltrado leucocitario variable",
+      "Macrófagos convertidos en células epitelioides, linfocitos y fibroblastos",
+      "Fibras de colágeno, macrófagos, con ausencia de vasos."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El tejido de granulación está compuesto por: 1) vasos de neoformación (angiogénesis), 2) fibroblastos que producen colágeno, y 3) infiltrado inflamatorio (macrófagos, linfocitos, plasmocitos). Es el sustrato de la reparación tisular.",
+      "Incorrecto. El tejido de granulación se compone de vasos neoformados y fibroblastos, no de miofibroblastos exclusivamente (aunque pueden estar presentes en fases tardías).",
+      "Incorrecto. El tejido de granulación incluye vasos neoformados, fibroblastos y células inflamatorias. No es solo tejido fibroso."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Uno de los modelos etiofisiopatogénicos de la HTA esencial es:",
+    "opcoes": [
+      "Disfunción endotelial por exceso de Óxido Nítrico",
+      "Aumento de la natriuresis y del tono parasimpático",
+      "Exceso de codificación del angiotensinógeno hepático (Este trastorno genético explica una mayor hidrólisis de esta sustancia con mayor producción de angiotensina I y conversión a angiotensina II mediada por la ECA)",
+      "Exceso de la secreción de hormona antidiurética (ADH)."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El déficit de aldosterona produce hipotensión, no hipertensión. La HTA esencial no se relaciona con déficit de aldosterona.",
+      "Incorrecto. El exceso de cortisol produce HTA secundaria (síndrome de Cushing), no esencial. La HTA esencial tiene un origen multifactorial.",
+      "Correcto. La HTA esencial tiene un componente genético poligénico. El angiotensinógeno es producido por el hígado y su exceso (por variantes genéticas del gen AGT) se ha asociado con mayor susceptibilidad a desarrollar HTA esencial.",
+      "Incorrecto. No es correcta la combinación. La HTA esencial no se debe a déficit de aldosterona ni a exceso de cortisol."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La cardiopatía hipertensiva puede incluir lesiones como:",
+    "opcoes": [
+      "Hipertrofia de volumen y dilatación cardíaca global",
+      "Ateromatosis coronaria complicada con trombosis e infartos que afectan a la arteria circunfleja en el 50% de los casos",
+      "Infarto del ventrículo derecho con fibrosis, dilatación aneurismática y posterior insuficiencia cardiaca derecha crónica",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La hipertrofia en HTA es concéntrica (aumento del grosor parietal), no excéntrica (de volumen con dilatación). Esto último ocurre en la sobrecarga de volumen (insuficiencia aórtica).",
+      "Incorrecto. La arteria más frecuentemente comprometida en el IAM (en ~50% de los casos) es la descendente anterior izquierda, no la circunfleja. La descendente anterior irriga el tabique y la pared anterior del VI.",
+      "Incorrecto. El infarto aislado de ventrículo derecho es raro (<5% de los IAM). Generalmente acompaña al IAM inferior o posterior. La afirmación es incorrecta.",
+      "Correcto. Ninguna de las anteriores es correcta porque: la hipertrofia hipertensiva es concéntrica (no de volumen), la arteria más afectada en IAM es la descendente anterior (no la circunfleja en 50%), y el VD raramente se infarta solo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El tejido de granulación puede constituirse en:",
+    "opcoes": [
+      "Ambas son correctas",
+      "Procesos inflamatorios crónicos",
+      "Reparación cicatrizal."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El tejido de granulación se constituye AMBAS: A) alrededor de un absceso (formando la cápsula) y B) en los bordes de una úlcera (como lecho de cicatrización). Es parte fundamental de la reparación tisular.",
+      "Incorrecto. No solo en úlceras, también alrededor de abscesos. El tejido de granulación participa en la reparación de múltiples tipos de lesiones.",
+      "Incorrecto. No solo en abscesos, también en úlceras. El tejido de granulación tiene un papel universal en la reparación tisular."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "benigna",
+      "nefroesclerosis",
+      "anatomía patológica"
+    ],
+    "enunciado": "En la Nefroesclerosis Benigna por HTA hay:",
+    "opcoes": [
+      "Arteriosclerosis Hiperplásica",
+      "Arteriolitis necrotizante con necrosis fibrinoide",
+      "Arteriosclerosis Hialina (La Arteriosclerosis hialina es la lesión más frecuente acompañada de Glomeruloesclerosis global y difusa hialina con isquemia crónica, atrofia y cicatrices corticales que le dan a la superficie renal un aspecto granular fino)",
+      "Glomeruloesclerosis nodular."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La necrosis fibrinoide es característica de la nefroesclerosis MALIGNA (HTA acelerada), no de la benigna. La benigna muestra arteriolosclerosis hialina.",
+      "Incorrecto. La necrosis fibrinoide es de la HTA maligna, no benigna. La nefroesclerosis benigna cursa con hialinosis arteriolar.",
+      "Correcto. La nefroesclerosis benigna por HTA se caracteriza por arteriolosclerosis hialina: depósito de material hialino (proteico) en la pared de las arteriolas aferentes, lo que produce engrosamiento y estrechamiento de la luz.",
+      "Incorrecto. No es correcta la combinación. La nefroesclerosis benigna se caracteriza por arteriolosclerosis hialina, no necrosis fibrinoide."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "dislipidemias",
+      "dónde",
+      "tabaco",
+      "anatomía patológica"
+    ],
+    "enunciado": "La HTA, junto a la DBT, el Tabaco y las Dislipidemias, son los principales factores de riesgo para ATEROMATOSIS. ¿Dónde localiza y cómo está formada una placa aterosclerótica?",
+    "opcoes": [
+      "Es intimal, pero subendotelial y está formada por un centro de necrosis con lípidos rodeado de un área cicatrizal (La placa se localiza en el corion que sostiene el endotelio junto con el cual constituye la íntima del vaso. Está formada por un centro lipídico de colesterol y necrosis provocada por la respuesta inflamatoria y rodeada por una respuesta cicatrizal, principalmente en forma de casquete fibroso superior y a partir del tejido de granulación)",
+      "Se localiza entre el endotelio y la adventicia; y está constituida por células espumosas y colesterol libre de aspecto acicular",
+      "Se localiza en la media a la cual diseca generando los aneurismas “disecantes” de la aorta abdominal y del cayado",
+      "Se localiza en las arterias de mediano y gran calibre y está formada por depósitos de calcio de manera anular provocando mayor rigidez de la pared."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La placa aterosclerótica es una lesión de la íntima arterial: se inicia con disfunción endotelial, seguida de acúmulo de lipoproteínas en el espacio subendotelial, reclutamiento de macrófagos y formación de la célula espumosa.",
+      "Incorrecto. La placa se desarrolla en la íntima, no en la adventicia. La adventicia es la capa externa del vaso, que puede tener vasa vasorum.",
+      "Incorrecto. La placa se forma en la íntima, no en la media. La capa media puede adelgazarse por la presión de la placa.",
+      "Incorrecto. No es correcta la combinación. La localización primaria de la placa aterosclerótica es en la íntima arterial."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La retinopatía hipertensiva grave incluye:",
+    "opcoes": [
+      "Arteriosclerosis hialina con estrechamiento de luces (hilo de cobre)",
+      "Edema de papila (La presencia de edema de papila nos habla de una forma avanzada y grave de daño de retina)",
+      "Cruces arteriovenosos anómalos",
+      "Exudados blandos."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La tortuosidad vascular y el cruce arteriovenoso patológico son signos de retinopatía hipertensiva crónica (benigna), no de la forma grave.",
+      "Correcto. La retinopatía hipertensiva grave incluye edema de papila (papiledema), que es un signo de HTA acelerada-maligna. También hay exudados algodonosos, hemorragias en llama y estrechamiento arteriolar.",
+      "Incorrecto. Los microaneurismas son más característicos de retinopatía diabética, no hipertensiva.",
+      "Incorrecto. Las manchas de Roth son hemorragias retinianas con centro blanco, asociadas a endocarditis infecciosa, leucemia y anemia, no a retinopatía hipertensiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Qué selectina es la encargada de fijar monocitos en el proceso de aterogénesis?",
+    "opcoes": [
+      "ICAM-1",
+      "PECAM-1",
+      "ELAM-1",
+      "Ninguna de las anteriores"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El ICAM-1 (molécula de adhesión intercelular) es una molécula de adhesión de la superfamilia de las inmunoglobulinas, no una selectina, y participa en la adhesión firme de leucocitos en general, no específicamente como el mediador clave de la fijación de monocitos en la aterogénesis.",
+      "Incorrecto. El PECAM-1 (CD31) participa principalmente en la transmigración (diapédesis) de los leucocitos a través del endotelio, no en la fijación inicial de monocitos característica de la aterogénesis.",
+      "Incorrecto. El ELAM-1 (E-selectina) es una selectina endotelial que interviene en el rodamiento leucocitario general, pero la molécula específicamente asociada a la captación de monocitos en la placa aterosclerótica en formación es el VCAM-1, que no es una selectina.",
+      "Correcto. La molécula clave para la fijación de monocitos en el proceso de aterogénesis es el VCAM-1 (molécula de adhesión celular vascular), que no es una selectina sino una molécula de la superfamilia de las inmunoglobulinas; como ninguna de las selectinas listadas (ICAM-1 tampoco es selectina, PECAM-1 tampoco, ELAM-1 sí lo es pero no es la protagonista aquí) cumple ese rol específico, la respuesta correcta es que ninguna de las anteriores lo hace."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "De varias tomas de TA usted diagnostica HTA con cifras tales:",
+    "opcoes": [
+      "120/85",
+      "155/80 (Se refiere a la llamada HTA sistólica aislada y es una forma de HTA. Recuerde que las cifras por sobre las cuales se considera a un paciente hipertenso son >=140 (PAS) y/o >=90 (PAD)",
+      "135/85",
+      "Todas son cifras normales."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. 135/80 se considera presión normal alta o prehipertensión, no HTA establecida.",
+      "Correcto. Según las guías, se diagnostica HTA con cifras ≥ 140/90 mmHg en consulta (o ≥ 135/85 en AMPA/MAPA). 155/85 cumple criterio de HTA sistólica aislada o HTA grado 1.",
+      "Incorrecto. 120/80 es presión óptima. No cumple criterios para diagnosticar HTA.",
+      "Incorrecto. No es correcta la combinación. Solo 155/80 cumple criterio diagnóstico de HTA."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El proceso de organización consiste en la transformación de un exudado en tejido cicatrizal (con proliferación de fibroblastos y angiogénesis) ¿En qué tipo de exudados es más factible que ocurra?",
+    "opcoes": [
+      "Exudado fibrinoso",
+      "Exudado seroso",
+      "Ninguna es correcta."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El proceso de organización consiste en la transformación del exudado fibrinoso en tejido de granulación. Los macrófagos fagocitan la fibrina y los fibroblastos depositan colágeno, restaurando la arquitectura.",
+      "Incorrecto. La organización reemplaza el exudado fibrinoso por tejido de granulación, no por exudado seroso (que tiene baja concentración proteica).",
+      "Incorrecto. La organización produce tejido de granulación, que eventualmente madura a cicatriz colágena, no a nuevo tejido linfoide."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "congestiva",
+      "izquierda",
+      "insuficiencia",
+      "cardíaca",
+      "anatomía patológica"
+    ],
+    "enunciado": "En un paciente con Insuficiencia Cardíaca Crónica Congestiva Izquierda ¿qué podría hallar microscópicamente en los pulmones?:",
+    "opcoes": [
+      "Exudado fibrinoso y organización del mismo",
+      "Congestión activa, trasudado y focos de hemorragia; c) Ingurgitación capilar y macrófagos con hemosiderina (Hay congestión pasiva crónica con ingurgitación capilar y células de la insuficiencia cardíaca, es decir, macrófagos que han fagocitado eritrocitos que han extravasado por la intensa congestión y su hemo ha sido transformado en el pigmento hemosiderina. Además, habrá trasudado en las luces alveolares que explicarían las disneas de esfuerzo y la tos, entre otros)",
+      "Trasudado y células espumosas."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El edema agudo de pulmón ocurre en ICC descompensada (congestión activa), no en todos los pacientes con ICC crónica. El hallazgo típico crónico es congestión pasiva.",
+      "Incorrecto. El infarto pulmonar es secundario a TEP, no a ICC. La ICC produce congestión pasiva crónica.",
+      "Incorrecto. No es correcta la combinación. La patología pulmonar en ICC es congestión pasiva crónica con macrófagos con hemosiderina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿De las siguientes lesiones o trastornos del SNC, cuáles se asocian a la HTA?:",
+    "opcoes": [
+      "Demencia tipo Alzheimer",
+      "Hematoma subdural",
+      "Encefalopatía por déficit de tiamina",
+      "Infartos lacunares (Junto a la Leucoaraiosis, los infartos lacunares subcorticales en los núcleos de la base son las lesiones más frecuentes asociadas a la HTA)."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El hematoma subdural es generalmente traumático, no hipertensivo. La HTA produce hemorragia intraparenquimatosa y microinfartos.",
+      "Incorrecto. El absceso cerebral es infeccioso, la HTA no lo produce. Las lesiones de HTA en SNC son de origen vascular.",
+      "Incorrecto. Los gliomas son tumores primarios del SNC, no relacionados con HTA. Las lesiones hipertensivas son isquémicas o hemorrágicas.",
+      "Correcto. La HTA crónica produce cambios en arteriolas perforantes del SNC que pueden llevar a infartos lacunares (pequeños infartos en ganglios basales, tálamo, protuberancia, cápsula interna). También puede producir hemorragia intracerebral."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "marcar",
+      "anatomía patológica"
+    ],
+    "enunciado": "En el proceso de quimiotaxis el leucocito en migrar depende, del tipo de noxa. Marcar lo correcto:",
+    "opcoes": [
+      "En las infecciones parasitarias y alergias predominan eosinófilos",
+      "En las infecciones bacterianas predominan linfocitos y neutrófilos",
+      "En infecciones virales predominan basófilos y monocitos."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las infecciones parasitarias reclutan principalmente eosinófilos. La quimiotaxis de eosinófilos es mediada por eotaxina, IL-5, y factores derivados de mastocitos. Los eosinófilos combaten helmintos y parásitos mediante degranulación.",
+      "Incorrecto. Los neutrófilos son los primeros en responder a infecciones bacterianas y hongos, no a parásitos. Las infecciones parasitarias reclutan principalmente eosinófilos.",
+      "Incorrecto. Los basófilos participan en reacciones alérgicas, pero no son las células quimiotácticas principales en parasitosis. Los eosinófilos son los característicos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuál",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuál considera factores quimiotácticos para leucocitos?",
+    "opcoes": [
+      "Toxinas bacterianas y leucotrieno B4",
+      "IL5 T C3B del complemento",
+      "Selectinas, integrinas C5A del complemento"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las toxinas bacterianas (péptidos formilados como fMLP) y el leucotrieno B4 (LTB4) son potentes factores quimiotácticos para leucocitos. LTB4 es producido por neutrófilos y macrófagos.",
+      "Incorrecto. C5a es un factor quimiotáctico (fracción del complemento), pero el leucotrieno C4 (LTC4) es más importante en contracción de músculo liso y permeabilidad vascular que en quimiotaxis.",
+      "Incorrecto. No es correcta la combinación. LTB4 es el leucotrieno quimiotáctico, no LTC4."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "absceso",
+      "anatomía patológica"
+    ],
+    "enunciado": "Absceso:",
+    "opcoes": [
+      "Colección de material purulento en una cavidad neoformada",
+      "Colección de material purulento en una cavidad preexistente",
+      "Material purulento en el tejido conectivo sin delimitación clara."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Un absceso es una cavidad neoformada (no preexistente) que contiene pus, delimitada por una cápsula de tejido fibroso. Es una forma de inflamación aguda con necrosis licuefactiva central.",
+      "Incorrecto. Un absceso implica necrosis licuefactiva y formación de pus, no necrosis coagulativa (que es típica de infarto).",
+      "Incorrecto. Un absceso produce una cavidad (neoformada), no una úlcera (pérdida de superficie epitelial)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "para",
+      "eliminación",
+      "anatomía patológica"
+    ],
+    "enunciado": "Para que la respuesta inflamatoria aguda sea considerada exitosa deben ocurrir 3 eventos: Eliminación de la noxa, reparación ad integrum y:",
+    "opcoes": [
+      "Resolución del exudado",
+      "Reparación cicatrizal",
+      "Organización."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La resolución del exudado inflamatorio ocurre cuando la agresión es leve y de corta duración, con eliminación del agente y restitución del tejido dañado a su estado normal. Implica drenaje linfático y fagocitosis.",
+      "Incorrecto. Cuando hay destrucción tisular significativa o el exudado es extenso, se produce organización (reemplazo por tejido de granulación y fibrosis), no resolución.",
+      "Incorrecto. La supuración es formación de pus, que es un tipo de evolución diferente de la inflamación aguda. La resolución es el retorno a la normalidad sin cicatriz."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "lesión",
+      "anatomía patológica"
+    ],
+    "enunciado": "Lesión macroscópica de la mucosa gástrica como consecuencia de la necrosis y descamación del epitelio de cubierta, con la consecuente reacción inflamatoria.",
+    "opcoes": [
+      "Ulceración",
+      "Inflamación catarral",
+      "Seudomembrana."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La úlcera es una pérdida circunscrita de la mucosa gástrica que penetra hasta la submucosa o más profundamente. Macroscópicamente se ve como un cráter o excavación, de bordes netos.",
+      "Incorrecto. Un pólipo es una lesión protruyente (elevada), no una excavación. La descripción corresponde a una úlcera.",
+      "Incorrecto. Una erosión es una pérdida superficial que no penetra la muscular de la mucosa. La úlcera es más profunda."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La respuesta inflamatoria aguda gatillada por virus cursa con:",
+    "opcoes": [
+      "Exudado seroso",
+      "Exudado purulento",
+      "Exudado fibrinoso."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las infecciones virales generalmente producen exudado seroso: un líquido claro con bajo contenido celular y proteico. Es característico de la inflamación aguda por virus.",
+      "Incorrecto. El exudado purulento es típico de infecciones bacterianas piógenas (estafilococos, estreptococos), no virales.",
+      "Incorrecto. La inflamación viral aguda produce exudado seroso, no se caracteriza por formación de abscesos (que requieren necrosis licuefactiva y pus)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "Las células productoras de surfactante se llaman:",
+    "opcoes": [
+      "Neumocitos II",
+      "Células en cepillo I",
+      "Células neumoendocrinas."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Los neumocitos tipo II (células alveolares granulares) producen surfactante pulmonar, un complejo lipoproteico que reduce la tensión superficial alveolar y previene el colapso alveolar al final de la espiración.",
+      "Incorrecto. Los neumocitos tipo I son células escamosas que recubren el 95% de la superficie alveolar y participan en el intercambio gaseoso, pero no producen surfactante.",
+      "Incorrecto. Los macrófagos alveolares (células del polvo) fagocitan partículas y microorganismos, pero no producen surfactante. Esa función es de los neumocitos tipo II."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "señale",
+      "anatomía patológica"
+    ],
+    "enunciado": "Señale la opción correcta que atraviesa las capas de la barrera alveolocapilar, en el sentido del CO2:",
+    "opcoes": [
+      "Endotelio capilar, MB del capilar, MB del neumocito I, neumocito II, surfactante",
+      "Neumocito II, surfactante, endotelio capilar",
+      "Surfactante, neumocito I, MB neumocito I, MB endotelio, endotelio."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El surfactante y el neumocito I son parte de la barrera, pero la hendidura intercelular (unión entre células) no forma parte de la barrera alveolocapilar funcional.",
+      "Incorrecto. Las células ciliadas son parte del epitelio bronquial, NO de la barrera alveolocapilar (que es alveolar).",
+      "Correcto. La barrera alveolocapilar está compuesta por: neumocito tipo I (epitelio alveolar), membrana basal fusionada y endotelio capilar. La hendidura intercelular NO es parte de la barrera alveolocapilar en condiciones normales."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "señale",
+      "anatomía"
+    ],
+    "enunciado": "Señale en qué lugar desemboca el conducto lacrimonasal:",
+    "opcoes": [
+      "Meato inferior",
+      "Meato superior",
+      "Meato medio."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El conducto lacrimonasal drena las lágrimas desde el saco lagrimal hacia el meato inferior de la fosa nasal. Comunica la órbita con la cavidad nasal.",
+      "Incorrecto. El conducto lacrimonasal desemboca en el meato inferior, no en el superior. El meato superior recibe drenaje de los senos etmoidales posteriores.",
+      "Incorrecto. Desemboca en el meato inferior, no en el medio. En el meato medio drenan los senos frontal, maxilar y etmoidales anteriores."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "En la difusión alveolocapilar del oxígeno intervienen, entre otros, los siguientes factores:",
+    "opcoes": [
+      "Espesor de la membrana, presión alveolar de O2, superficie de intercambio",
+      "Afinidad del O2 por HB sanguínea, volumen de espacio muerto, superficie de intercambio",
+      "presión aortica de o2, capacidad vital, superficie de intercambio."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La difusión alveolocapilar del oxígeno depende del espesor de la membrana alveolocapilar, el gradiente de presión parcial de O2 (alveolar vs capilar), y la superficie de intercambio. Cualquier alteración de estos factores afecta la difusión.",
+      "Incorrecto. La concentración de O2 atmosférico determina la PO2 inspirada, pero la difusión alveolocapilar específicamente depende del espesor de membrana.",
+      "Incorrecto. Es cierto que la superficie de intercambio y el flujo sanguíneo determinan la capacidad de difusión, pero el espesor de la membrana también es fundamental (ecuación de Fick)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "clara",
+      "anatomía"
+    ],
+    "enunciado": "Las células de Clara productoras de sustancia tensoactiva que evita el colapso bronquiolar se encuentran en:",
+    "opcoes": [
+      "Bronquiolo respiratorio",
+      "Bronquiolo terminal",
+      "Bronquiolo propiamente dicho."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Las células caliciformes producen moco y se encuentran en bronquios mayores, no en bronquiolos terminales. Las células de Clara son específicas del bronquiolo terminal.",
+      "Correcto. Las células de Clara son células no ciliadas del epitelio bronquiolar (bronquiolo terminal) que secretan proteínas como la CC10 (Clara Cell 10kDa) con función antiinflamatoria y detoxificante.",
+      "Incorrecto. No es correcta la combinación. Las células de Clara son características del bronquiolo terminal, productoras de sustancias detoxificantes."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "De superior a inferior los cartílagos laríngeos son:",
+    "opcoes": [
+      "Epiglotis, tiroides, aritenoides, cricoides",
+      "Epiglotis, tiroides, cricoides",
+      "Epiglotis, aritenoides, tiroides, cricoides."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El orden es epiglotis → tiroides → cricoides. No es epiglotis → cricoides → tiroides.",
+      "Correcto. De superior a inferior, los cartílagos laríngeos son: epiglotis (sup), tiroides (medio), cricoides (inf). El cricoides es el único cartílago laríngeo completo en anillo.",
+      "Incorrecto. El orden correcto es epiglotis, tiroides, cricoides de superior a inferior. No comienza con tiroides."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "Las fosas nasales están irrigadas por:",
+    "opcoes": [
+      "Ambos sistemas",
+      "Sistema carotideo externo",
+      "Sistema carotideo interno."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las fosas nasales están irrigadas por los sistemas de la carótida interna (arteria etmoidal anterior y posterior, ramas de la oftálmica) y carótida externa (arteria maxilar interna, rama esfenopalatina).",
+      "Incorrecto. No solo por la carótida interna. La irrigación nasal proviene de ambos sistemas (carótida interna y externa).",
+      "Incorrecto. No solo por la carótida externa. Ambos sistemas vasculares contribuyen a la irrigación de las fosas nasales."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "La capacidad vital está constituida como la suma de los siguientes volúmenes:",
+    "opcoes": [
+      "VC, VRE, VRI",
+      "VR, VC, VRI",
+      "VR, VRE, VRI."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La capacidad vital (CV) está constituida por: Volumen Corriente (VC) + Volumen de Reserva Inspiratoria (VRI) + Volumen de Reserva Espiratoria (VRE). Es el volumen máximo de aire que se puede espirar después de una inspiración máxima.",
+      "Incorrecto. La CV es VC + VRI + VRE. El Volumen Residual no se incluye en la CV, forma parte de la capacidad pulmonar total (CPT).",
+      "Incorrecto. La CV no incluye el Volumen Residual ni la Capacidad Residual Funcional. Se compone de VC, VRI y VRE."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "Las resistencias ventilatorias:",
+    "opcoes": [
+      "están determinadas por la elasticidad del pulmón y el tórax y las resistencias friccionales",
+      "Se deben principalmente a las resistencias de las vías aéreas más pequeñas",
+      "Se deben principalmente a la resistencia friccional de los tejidos"
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las resistencias ventilatorias son de dos tipos: elásticas (relacionadas con la compliance pulmonar y de la caja torácica) y friccionales/resistivas (al flujo aéreo en las vías respiratorias).",
+      "Incorrecto. Las resistencias elásticas son parte de las resistencias ventilatorias totales. No son independientes. La resistencia total = elástica + friccional.",
+      "Incorrecto. Las resistencias friccionales existen y son parte importante de las resistencias ventilatorias. No solo las elásticas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "cuál",
+      "anatomía"
+    ],
+    "enunciado": "¿Cuál de los siguientes órganos se relaciona con la pleura en el mediastino posterior?:",
+    "opcoes": [
+      "Esófago",
+      "Pericardio",
+      "Timo."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El esófago se relaciona con la arteria carótida primitiva izquierda y la subclavia izquierda en el mediastino superior. La carótida primitiva izquierda nace del arco aórtico y asciende por el mediastino posterior a la izquierda del esófago.",
+      "Incorrecto. La tráquea está en el mediastino anterior, no se relaciona directamente con la carótida primitiva izquierda. La carótida izquierda está más lateral y posterior.",
+      "Incorrecto. El cayado de la ácigos está a la derecha, no se relaciona con estructuras de la izquierda como la carótida primitiva."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "kiesselbach",
+      "anatomía"
+    ],
+    "enunciado": "El área de Kiesselbach es:",
+    "opcoes": [
+      "Un área de convergencia vascular del sistema carotídeo interno y externo",
+      "Un área de drenaje linfático",
+      "Un área de anastomosis de los nervios II y V."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El área de Kiesselbach (o plexo de Little) es una zona de convergencia vascular en el tabique nasal anterior donde se anastomosan ramas de la arteria esfenopalatina, etmoidal anterior, labial superior y palatina mayor. Es el sitio más frecuente de epistaxis.",
+      "Incorrecto. No es el área de drenaje lagrimal (eso es el conducto lacrimonasal hacia el meato inferior). El área de Kiesselbach es el plexo vascular del tabique nasal.",
+      "Incorrecto. No es la zona de la mucosa olfatoria (que está en el techo de la fosa nasal). El área de Kiesselbach es un plexo vascular en la porción anterior del tabique nasal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "La mucosa del aparato respiratorio (tráquea y bronquios) presentan epitelio:",
+    "opcoes": [
+      "Biestratificado cilíndrico ciliado con células caliciformes",
+      "Cilíndrico simple con células caliciformes y microvellosidades",
+      "Estratificado plano."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La tráquea está revestida por epitelio pseudoestratificado cilíndrico ciliado (también llamado biestratificado cilíndrico ciliado), con células caliciformes productoras de moco. Es parte del \"árbol traqueobronquial\".",
+      "Incorrecto. La tráquea no tiene epitelio escamoso estratificado (ese reviste esófago y cavidad oral). El epitelio traqueal es cilíndrico pseudoestratificado ciliado.",
+      "Incorrecto. No es correcta la combinación. El epitelio traqueal es cilíndrico pseudoestratificado ciliado, no plano estratificado."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "El tabique nasal está formado por:",
+    "opcoes": [
+      "Cartílago del tabique, etmoides y vómer",
+      "Cartílago del tabique y etmoides",
+      "Cartílago del tabique y hueso palatino."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El tabique nasal está formado por: cartílago septal (anterior), lámina perpendicular del etmoides (superior) y vómer (posteroinferior). El periostio y el pericondrio recubren estas estructuras.",
+      "Incorrecto. El maxilar superior y el palatino forman parte del paladar y la pared lateral de la fosa nasal, no del tabique nasal.",
+      "Incorrecto. El tabique nasal se compone de cartílago, etmoides y vómer, No de cornetes ni maxilar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "anatomía"
+    ],
+    "enunciado": "En relación a los bronquios fuente:",
+    "opcoes": [
+      "El bronquio fuente derecho es más vertical que el izquierdo",
+      "El bronquio fuente izquierdo es más vertical que el derecho",
+      "Ambos bronquios tienen una angulación similar respecto de la tráquea."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El bronquio fuente derecho es más vertical, más corto y de mayor calibre que el izquierdo, lo que explica la mayor frecuencia de aspiración de cuerpos extraños hacia el pulmón derecho.",
+      "Incorrecto. El bronquio izquierdo es más horizontal, no vertical. Es más largo y angosto que el derecho.",
+      "Incorrecto. No es correcta. La principal diferencia clínica es que el bronquio derecho es más vertical, facilitando la aspiración de cuerpos extraños hacia el pulmón derecho."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "anatomia",
+    "tags": [
+      "mencione",
+      "anatomía"
+    ],
+    "enunciado": "Mencione la única opción para aumentar la resistencia bronquial:",
+    "opcoes": [
+      "Disminución del radio bronquial",
+      "Disminución de la longitud de la vía aérea",
+      "Disminución de la presión alveolar."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La resistencia al flujo aéreo es inversamente proporcional al radio de la vía aérea elevado a la 4ª potencia (ley de Poiseuille). Disminuir el radio aumenta drásticamente la resistencia. Es la única opción para aumentarla.",
+      "Incorrecto. Aumentar el radio DISMINUYE la resistencia (R ∝ 1/r⁴). Para aumentar la resistencia se necesita disminuir el radio.",
+      "Incorrecto. En flujo turbulento la resistencia es mayor que en laminar, pero aumentar el flujo no es la única ni principal forma de aumentar la resistencia. La disminución del radio es la más eficaz."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En una respiración en reposo de un individuo normal:",
+    "opcoes": [
+      "El régimen de flujo aéreo es laminar",
+      "El régimen de flujo aéreo se caracteriza por líneas de corriente entrecruzadas",
+      "El régimen de flujo aéreo es turbulento."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. En condiciones normales durante la respiración en reposo, el flujo de aire en la mayoría de las vías respiratorias es laminar (excepto en tráquea y bronquios principales donde es ligeramente turbulento). El flujo laminar es silencioso y eficiente.",
+      "Incorrecto. El flujo turbulento no es el predominante en reposo. Ocurre en flujos altos (ejercicio) o en vías estrechadas. En reposo predomina el flujo laminar.",
+      "Incorrecto. No es una mezcla. En reposo, con flujo normal y vías aéreas normales, el flujo es predominantemente laminar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En los tejidos u órganos con inflamación aguda, el rubor y el calor se explican por el fenómeno de:",
+    "opcoes": [
+      "Aumento de la permeabilidad",
+      "Bajada del umbral de los receptos del dolor",
+      "Aumento del volumen de sangre en el lecho capilar",
+      "Migración de leucocitos",
+      "Vasodilatación venular."
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La vasodilatación venular no es el evento principal. La arteriolar es la responsable de la hiperemia activa y el eritema en inflamación aguda.",
+      "Incorrecto. La vasodilatación no es exclusivamente por PGE2. También participan histamina, bradicinina y óxido nítrico (NO).",
+      "Incorrecto. La vasodilatación no es solo por histamina. Múltiples mediadores actúan sinérgicamente (histamina, PG, NO, bradicinina).",
+      "Incorrecto. La vasodilatación por leucotrienos no es el mecanismo principal. Los leucotrienos actúan más en permeabilidad vascular y broncoconstricción.",
+      "Correcto. En la inflamación aguda NO hay vasodilatación venular activa (las vénulas no tienen capacidad vasomotora significativa). La vasodilatación ocurre en arteriolas, mediada por histamina, PG y NO. El aumento del flujo sanguíneo (hiperemia) se debe a vasodilatación arteriolar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En la respuesta vascular de la inflamación intervienen mediadores químicos celulares como:",
+    "opcoes": [
+      "Bradiquinina",
+      "Prostaglandinas",
+      "Fracciones del complemento",
+      "Elementos de la hemostasia",
+      "Ninguno de los anteriores."
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La bradiquinina es un mediador plasmático (no celular) que aumenta la permeabilidad vascular, pero no es el único mediador celular en la respuesta vascular.",
+      "Incorrecto. Las prostaglandinas son mediadores celulares de la inflamación, pero no son las únicas en intervenir en la respuesta vascular.",
+      "Incorrecto. Las fracciones del complemento (C3a, C5a) son mediadores que actúan en la inflamación, pero la respuesta vascular inicial NO depende exclusivamente de ellos.",
+      "Incorrecto. Los elementos de la hemostasia (plaquetas, factores de coagulación) participan en la fase tardía, no en la respuesta vascular inicial.",
+      "Correcto. \"Ninguno de los anteriores\" porque la respuesta vascular inicial en inflamación aguda es vasodilatación (mediada por histamina, PG, NO) seguida de aumento de permeabilidad vascular. Los mediadores celulares mencionados (bradiquinina, PG, complemento, hemostasia) actúan en diferentes fases."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuál",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuál de las siguientes citocinas es capaz de aumentar la permeabilidad endotelial capilar por el mecanismo de reorganización del citoesqueleto?:",
+    "opcoes": [
+      "FNT-α",
+      "Histamina",
+      "Serotonina",
+      "IL-8",
+      "Bradiquinina."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. TNF-α (Factor de Necrosis Tumoral alfa) es una citocina proinflamatoria que aumenta la permeabilidad vascular mediante la activación del endotelio y la expresión de moléculas de adhesión. También induce producción de otras citocinas.",
+      "Incorrecto. IL-2 es factor de crecimiento de linfocitos T, no tiene efecto directo sobre permeabilidad vascular. La citocina con ese efecto es TNF-α.",
+      "Incorrecto. IL-4 es una citocina Th2 involucrada en respuestas alérgicas y cambio de clase de IgE, no en permeabilidad vascular directa.",
+      "Incorrecto. TGF-β es una citocina reguladora con efectos antiinflamatorios y fibróticos, no aumenta la permeabilidad vascular.",
+      "Incorrecto. IFN-γ activa macrófagos y promueve respuestas Th1, pero no es la citocina principal en el aumento de permeabilidad vascular."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Lo que diferencia un exudado de un trasudado en términos fisicoquímicos es:",
+    "opcoes": [
+      "su densidad, la cual es menor a 1010",
+      "La presencia de solutos de bajo peso molecular",
+      "La presencia de células que han migrado",
+      "La ausencia de ultrafiltrado del plasma",
+      "El descenso de la presión hidrostática por pasaje de proteínas."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El exudado tiene mayor densidad que el trasudado (>1010 vs <1010), pero esto es consecuencia, no la característica distintiva principal. La presencia de células es clave.",
+      "Incorrecto. Tanto el exudado como el trasudado contienen solutos de bajo peso molecular. La diferencia está en proteínas y células.",
+      "Correcto. El exudado se diferencia del trasudado por la presencia de células que han migrado (leucocitos) debido al aumento de permeabilidad vascular. El exudado tiene alta concentración proteica (>3 g/dL) y celularidad, mientras el trasudado es un ultrafiltrado del plasma con baja celularidad.",
+      "Incorrecto. El exudado NO es ausencia de ultrafiltrado. Al contrario, el exudado es rico en proteínas por aumento de permeabilidad, mientras que el trasudado sí es similar a un ultrafiltrado.",
+      "Incorrecto. En el exudado hay descenso de la presión hidrostática por pasaje de proteínas al intersticio, pero esto es una consecuencia, no la característica que lo define."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En el proceso de quimiotaxis se produce la siguiente secuencia:",
+    "opcoes": [
+      "Migración-adhesión-fagocitosis-liberación de enzimas-marginación-adhesión",
+      "Liberación de enzimas-fagocitosis-adhesión-marginación-migración",
+      "Marginación-migración-fagocitosis-quimiotaxis-adhesión-liberación de enzimas",
+      "Ninguna es correcta (marginalización, rodadura, adhesión, transmigración, migración)",
+      "Todas pueden ser correctas dependiendo el caso."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La migración y adhesión ocurren después de la marginación, no al inicio. La secuencia comienza con marginación y rodadura.",
+      "Incorrecto. La liberación de enzimas ocurre tras la fagocitosis, al final del proceso, no al inicio.",
+      "Incorrecto. La adhesión precede a la migración. La secuencia correcta es marginación → rodadura → adhesión → diapédesis → quimiotaxis → fagocitosis.",
+      "Correcto. \"Ninguna\" porque la secuencia correcta de la extravasación leucocitaria es: 1) Marginación, 2) Rodadura, 3) Adhesión firme, 4) Diapédesis (migración), 5) Quimiotaxis hacia el sitio de lesión.",
+      "Incorrecto. No todas las secuencias propuestas son correctas: existe una única secuencia fisiológica real de extravasación leucocitaria (marginación, rodadura, adhesión firme, diapédesis y quimiotaxis), que no coincide con ninguna de las secuencias A, B o C planteadas, por lo que ninguna de ellas describe correctamente el proceso."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El rodamiento es favorecido por la intervención de selectinas endoteliales en interacción con integrinas leucocitarias de baja afinidad. ¿Qué selectina/s?",
+    "opcoes": [
+      "L-selectina",
+      "PECAM-1; c) ICAM-1",
+      "E-selectina",
+      "ninguna es correcta."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. ICAM-1 media la adhesión firme, no el rodamiento. El rodamiento es mediado por selectinas.",
+      "Incorrecto. VCAM-1 media la adhesión firme de linfocitos y monocitos, no el rodamiento.",
+      "Incorrecto. LFA-1 (integrina) participa en adhesión firme, no en rodamiento. El rodamiento es mediado por selectinas (E, P, L).",
+      "Correcto. El rodamiento leucocitario es favorecido por la E-selectina (expresada en endotelio activado). La E-selectina se une a ligandos sialilados en leucocitos, mediando el rodamiento de baja afinidad, necesario para la posterior adhesión firme."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "además",
+      "anatomía patológica"
+    ],
+    "enunciado": "Además de las toxinas bacterianas ¿cuál de los siguientes es un potente agente quimiotáctico?",
+    "opcoes": [
+      "C3b",
+      "Prostaglandinas",
+      "Leucotrienos B4",
+      "IL-1; e) INF-γ."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La histamina es un mediador de permeabilidad vascular y vasodilatación, pero tiene poco o ningún efecto quimiotáctico directo.",
+      "Incorrecto. Las prostaglandinas son vasodilatadoras y moduladoras de la inflamación, pero no son quimiotácticas significativas.",
+      "Correcto. Los leucotrienos B4 (LTB4) son potentes factores quimiotácticos producidos por neutrófilos y macrófagos. Atraen leucocitos al sitio de inflamación activando receptores BLT1.",
+      "Incorrecto. El TNF-α activa endotelio y promueve adhesión, pero no es directamente quimiotáctico. Las quimiocinas y LTB4 son los principales factores quimiotácticos."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "marque",
+      "anatomía patológica"
+    ],
+    "enunciado": "En un paciente cursando un proceso inflamatorio agudo, el hemograma puede aportar datos útiles. Marque la aseveración correcta.",
+    "opcoes": [
+      "Cuando la noxa es viral suele haber leucocitosis con monocitosis",
+      "Cuando la noxa es un parásito interviene exclusivamente el eosinófilo",
+      "Una leucopenia con neutrofilia es lo más frecuente en las infecciones bacterianas agudas",
+      "Los alergenos provocan respuestas con leucocitosis y linfocitosis",
+      "En las diferentes virosis puede haber leucopenia con linfocitosis."
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La leucocitosis con neutrofilia es lo esperable en inflamación aguda, no leucopenia.",
+      "Incorrecto. La leucocitosis no es exclusivamente mononuclear. En inflamación aguda predomina la neutrofilia (polimorfonucleares).",
+      "Incorrecto. La leucocitosis con eosinofilia es característica de parasitosis y alergias, no de la inflamación aguda bacteriana típica.",
+      "Incorrecto. La leucocitosis con linfocitosis es más típica de infecciones virales, no de la inflamación aguda bacteriana.",
+      "Correcto. En un paciente con inflamación aguda, el hemograma típicamente muestra leucocitosis con neutrofilia (por liberación desde médula ósea y margen vascular). Leucopenia con linfocitosis NO es característico de inflamación aguda bacteriana."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuándo",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuándo consideramos que la respuesta inflamatoria aguda ha sido \"exitosa\"?",
+    "opcoes": [
+      "Cuando la noxa persiste, pero es contenida y ya no genera daño",
+      "Cuando ocurre reparación cicatrizal previa formación de tejido de granulación",
+      "Cuando el exudado se organiza",
+      "Cuando se constituyen los granulomas y el proceso se detiene",
+      "Ninguna es correcta."
+    ],
+    "indice_correta": 4,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La presencia de macrófagos indica que la inflamación continúa activa. La resolución implica que el proceso inflamatorio ha terminado.",
+      "Incorrecto. La presencia de fibroblastos indica reparación activa. La resolución es la restitución sin cicatriz.",
+      "Incorrecto. El dolor y los fenómenos vasculares son signos de inflamación activa, no de resolución.",
+      "Incorrecto. La presencia de células plasmáticas indica un proceso inflamatorio crónico activo. En la resolución aguda no hay células plasmáticas.",
+      "Correcto. \"Ninguna\" porque la inflamación aguda se considera resuelta cuando se ha eliminado el agente agresor, el exudado ha sido drenado/fagocitado y el tejido ha retornado a su estructura y función normal (restitución ad integrum)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En la inflamación crónica inespecífica se observan:",
+    "opcoes": [
+      "Áreas de inflamación aguda con predominio de infiltrado PMN",
+      "Intentos de regeneración con recuperación de las células dañadas",
+      "Persistencia de la noxa con formación consecuente de \"granulomas\", para contenerla",
+      "Reparación cicatrizal, monomorfonucleares y zonas de inflamación activa",
+      "Ninguna puede ser considerada correcta."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La reparación cicatrizal y la presencia de células plasmáticas son parte de la inflamación crónica, pero también hay macrófagos y linfocitos.",
+      "Incorrecto. Los microorganismos no son característicos de inflamación crónica inespecífica (pueden estar ausentes).",
+      "Incorrecto. La combinación no es completa. La inflamación crónica inespecífica típicamente incluye las tres características mencionadas.",
+      "Correcto. En la inflamación crónica inespecífica se observan: reparación cicatrizal (fibrosis), células mononucleares (linfocitos, macrófagos, plasmocitos) y proliferación de fibroblastos. Es una respuesta tisular a inflamación persistente.",
+      "Incorrecto. No es correcta la combinación. La respuesta completa es reparación cicatrizal + células mononucleares + fibrosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuáles",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuáles son los valores normales de hematocrito en ambos sexos?",
+    "opcoes": [
+      "Sexo femenino:",
+      "Sexo masculino: 37 a 48%. 42 a 52%."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Los valores normales de hematocrito son: hombres 40-54% (media ~47%), mujeres 37-47% (media ~42%). Estos valores varían ligeramente según el laboratorio.",
+      "Incorrecto. Esos valores no corresponden a los rangos normales de hematocrito. Revise los valores de referencia estándar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "usted",
+      "anatomía patológica"
+    ],
+    "enunciado": "Usted recibe el informe anatomo patológico correspondiente a una biopsia del cuello uterino de una paciente de 36 años cuyo diagnostico anatomopatológico es el siguiente: fragmentos de tejido representativos de la unión escamo columnar que presentan difusa metaplasia pavimentosa asociada a proceso inflamatorio crónico:",
+    "opcoes": [
+      "Proceso adaptativo irreversible",
+      "Proceso adaptativo reversible",
+      "Proceso adaptativo con altas posibilidades de transformación maligna",
+      "Proceso adaptativo cuya irreversibilidad o reversibilidad no puede predecirse."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La necrosis es lesión irreversible con muerte celular. El informe de \"daño leve\" sin necrosis indica lesión reversible.",
+      "Correcto. La lesión celular reversible es aquella en la que, al cesar el estímulo nocivo, la célula retorna a la normalidad. Se manifiesta por tumefacción celular y degeneración hidrópica.",
+      "Incorrecto. La apoptosis es muerte celular programada, irreversible. No corresponde a un daño leve.",
+      "Incorrecto. La distrofia no es término adecuado para describir daño leve con posible recuperación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "área",
+      "infarto",
+      "anatomía patológica"
+    ],
+    "enunciado": "Área de necrosis coagulativa, macroscópicamente de color blanquecino, originada por impactación embólica a nivel arterial:",
+    "opcoes": [
+      "Infarto pulmonar",
+      "Infarto esplénico",
+      "Infarto intestinal",
+      "Gangrena"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El pulmón tiene doble circulación (arterias pulmonares y bronquiales), por lo que sus infartos suelen ser hemorrágicos (rojos), no blanquecinos, al recibir sangre desde la circulación colateral bronquial pese a la obstrucción embólica.",
+      "Correcto. El bazo tiene circulación de tipo terminal (arterial única, sin colaterales significativas), por lo que un émbolo arterial produce un infarto blanco o pálido, con necrosis coagulativa bien delimitada, tal como describe el enunciado.",
+      "Incorrecto. El intestino tiene una rica red de circulación colateral, por lo que sus infartos son típicamente hemorrágicos (rojos), no blanquecinos.",
+      "Incorrecto. La gangrena implica necrosis extensa, habitualmente con sobreinfección bacteriana secundaria y coloración oscura/negruzca, no la necrosis coagulativa blanquecina bien delimitada descripta, que corresponde a un infarto isquémico simple en un órgano de circulación terminal."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "cuál",
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Cuál de las siguientes citocinas es capaz de aumentar la permeabilidad endotelial capilar por el mecanismo de reorganización del citoesqueleto?",
+    "opcoes": [
+      "FNT-α",
+      "Histamina",
+      "Serotonina",
+      "IL-8",
+      "Bradiquinina."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El FNT-α (factor de necrosis tumoral alfa) aumenta la permeabilidad endotelial capilar mediante la reorganización del citoesqueleto de actina de las células endoteliales, provocando retracción celular y ensanchamiento de las uniones intercelulares, a diferencia de mediadores como la histamina, que actúan por contracción endotelial rápida y transitoria.",
+      "Incorrecto. La histamina aumenta la permeabilidad vascular principalmente por contracción de las células endoteliales, con formación de hendiduras interendoteliales, un mecanismo rápido y de corta duración, no por reorganización del citoesqueleto.",
+      "Incorrecto. La serotonina actúa de forma similar a la histamina, provocando contracción endotelial rápida y transitoria, no reorganización del citoesqueleto.",
+      "Incorrecto. La IL-8 es principalmente un factor quimiotáctico para neutrófilos; no es el mediador característico del aumento de permeabilidad por reorganización del citoesqueleto endotelial.",
+      "Incorrecto. La bradicinina aumenta la permeabilidad vascular por un mecanismo de contracción endotelial similar al de la histamina, no por reorganización del citoesqueleto."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El proceso inflamatorio del parénquima pulmonar que causa con consolidación exudativa, focal o multifocal, se denomina:",
+    "opcoes": [
+      "Bronquiolitis aguda",
+      "Neumonitis intersticial o atípica",
+      "Empiemia",
+      "Neumonía."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La bronconeumonía es un patrón de neumonía (focos broncogénicos), pero el término general es neumonía.",
+      "Incorrecto. La neumonitis es inflamación del intersticio pulmonar (no exclusivamente del parénquima). Neumonía es el término para inflamación parenquimatosa.",
+      "Incorrecto. La pleuritis es inflamación de la pleura, no del parénquima pulmonar.",
+      "Correcto. La neumonía es el proceso inflamatorio del parénquima pulmonar. La inflamación aguda del parénquima pulmonar = neumonía (infecciosa o no)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "masa",
+      "anatomía patológica"
+    ],
+    "enunciado": "Masa constituida por elementos formes de la sangre adherida al endotelio vascular:",
+    "opcoes": [
+      "Trombo",
+      "Coagulo post mortem",
+      "Coagulo in vitro",
+      "Embolo."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Un trombo es una masa constituida por elementos formes de la sangre (plaquetas, hematíes, leucocitos) y fibrina, que se forma dentro del sistema cardiovascular en un individuo vivo.",
+      "Incorrecto. Un coágulo se forma fuera del organismo o post-mortem. El trombo se forma in vivo y tiene organización laminar (líneas de Zahn).",
+      "Incorrecto. Un êmbolo es un material (trombo, grasa, aire) que viaja por el torrente sanguíneo. La masa descrita (constituida por elementos formes) es un trombo.",
+      "Incorrecto. Una placa de ateroma está compuesta por lípidos, células espumosas y matriz extracelular en la íntima arterial, no por elementos formes de la sangre."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "entre",
+      "anatomía patológica"
+    ],
+    "enunciado": "Entre el edema inflamatorio o exudativo y el edema hemodinámico, las diferencias son:",
+    "opcoes": [
+      "La concentración proteica",
+      "La presencia de elementos celulares",
+      "La densidad",
+      "Todas son correctas."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Es cierto que la congestión es un proceso pasivo y la hiperemia activo, pero hay más diferencias correctas.",
+      "Incorrecto. La hiperemia produce color rojo brillante por sangre oxigenada, y la congestión rojo azulado por desoxigenación, pero ambas diferencias son correctas.",
+      "Incorrecto. La hiperemia activa tiene importancia clínica en inflamación y rubor. Todas las diferencias son correctas.",
+      "Correcto. La congestión y la hiperemia son procesos activos (aumento del flujo de entrada) y pasivos (disminución del flujo de salida), respectivamente. Todas las diferencias mencionadas son correctas."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "Las diátesis hemorrágicas (aparición de una erupción plana o papular en la piel o en las mucosas) pueden vincularse a déficit de:",
+    "opcoes": [
+      "Vitamina D",
+      "Vitamina B1",
+      "Vitamina K",
+      "Vitamina A."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La vitamina C es importante para síntesis de colágeno (escorbuto), no para factores de coagulación.",
+      "Incorrecto. La vitamina D regula el metabolismo del calcio y fósforo, no la coagulación.",
+      "Correcto. La vitamina K es esencial para la síntesis hepática de los factores de coagulación II (protrombina), VII, IX y X. Sin vitamina K, estos factores se producen inactivos.",
+      "Incorrecto. No es correcta la combinación. La vitamina K es la necesaria para la síntesis de factores de coagulación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "virchow",
+      "trombofilia",
+      "anatomía patológica"
+    ],
+    "enunciado": "Trombofilia es un factor que contribuye a la trombosis (como componente de la triada de Virchow) en las siguientes circunstancias, excepto:",
+    "opcoes": [
+      "Cáncer",
+      "Inmovilización prolongada",
+      "Lesiones tisulares",
+      "Déficit de factor 8."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El déficit de antitrombina III SÍ es trombofílico (no inhibe trombina). La pregunta pide EXCEPTO.",
+      "Incorrecto. El déficit de proteína C SÍ es trombofílico (no inactiva factores Va y VIIIa).",
+      "Incorrecto. El déficit de proteína S SÍ es trombofílico (cofactor de proteína C).",
+      "Correcto. \"EXCEPTO\" déficit de factor VIII. El déficit de factor VIII produce hemofilia A (trastorno hemorrágico), NO trombofilia. La trombofilia es predisposición a trombosis."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "ictericia",
+      "anatomía patológica"
+    ],
+    "enunciado": "Ictericia patológica: La correcta:",
+    "opcoes": [
+      "Cuando la bilirrubina atraviesa la barrera hematoencefálica produce daño cerebral",
+      "No requiere determinación de niveles séricos de bilirrubina",
+      "Producido por el exceso de bilirrubina directa."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La bilirrubina (no conjugada) atraviesa la barrera hematoencefálica (BHE) y es neurotóxica, causando kernicterus en recién nacidos. Esta es una afirmación correcta sobre ictericia patológica.",
+      "Incorrecto. La bilirrubina conjugada NO atraviesa la BHE. La bilirrubina indirecta (no conjugada) es liposoluble y atraviesa la BHE.",
+      "Incorrecto. La bilirrubina conjugada es hidrosoluble y se elimina por orina. La no conjugada es liposoluble y no se elimina por orina sin conjugación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "diámetro",
+      "anatomía patológica"
+    ],
+    "enunciado": "Diámetro máximo de la arteria pulmonar descendente es:",
+    "opcoes": [
+      "15mm en la M y 16mm en el H",
+      "20mm en ambos sexos",
+      "20mm en la M y 22mm en el H",
+      "23mm en la M y 25mm en el H."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. El diámetro máximo de la arteria pulmonar descendente es de 15 mm en mujeres y 16 mm en hombres en la radiografía de tórax (proyección PA).",
+      "Incorrecto. Esos valores no corresponden al diámetro normal de la arteria pulmonar descendente.",
+      "Incorrecto. Esos valores no corresponden a los diámetros normales.",
+      "Incorrecto. Esos valores no son los de referencia."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "godet",
+      "este",
+      "anatomía patológica"
+    ],
+    "enunciado": "Una mujer fumadora, de 59 años, tiene edema en la pierna derecha, con signo de Godet positivo y dolor acompañante a la dorsiflexión del pie, de 24 Hs de evolución. Este cuadro clínico se vincula a:",
+    "opcoes": [
+      "Embolia grasa",
+      "Gangrena seca",
+      "Trombosis venosa profunda",
+      "Congestión pasiva crónica"
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La ICC puede causar edema, pero la combinación con disnea súbita en fumadora sin cardiopatía previa sugiere más TEP.",
+      "Incorrecto. El edema crónico no es por TVP asintomática (la TVP aguda da dolor y edema unilateral, no disnea).",
+      "Correcto. Mujer fumadora de 59 años con edema en miembros inferiores y disnea: el cuadro sugiere trombosis venosa profunda (TVP) con posible tromboembolismo pulmonar (TEP). El tabaquismo y la edad son factores de riesgo.",
+      "Incorrecto. Varices esofágicas dan hematemesis, no edema de miembros inferiores."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Qué es el término caquexia?",
+    "opcoes": [
+      "Un trastorno nutricional por déficit de ingesta proteica",
+      "Trastorno por déficit de Vitamina C",
+      "Un trastorno nutricional por déficit de ingesta calórica global",
+      "Un trastorno de astenia y anorexia (consunción) en pacientes con cáncer avanzado, que implica notable pérdida de peso y masa muscular."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El acúmulo de líquido en cavidad peritoneal es ascitis, no caquexia. Caquexia es emaciación/consunción.",
+      "Incorrecto. El aumento del perímetro abdominal no es caquexia. Caquexia implica pérdida de peso y masa muscular.",
+      "Incorrecto. El edema agudo de pulmón es una emergencia por acúmulo de líquido alveolar, no caquexia.",
+      "Correcto. Caquexia (del griego \"kakos\" = malo, \"hexis\" = estado) es un estado de extrema consunción corporal con pérdida severa de peso y masa muscular, asociado frecuentemente a cáncer avanzado, enfermedades crónicas o desnutrición severa."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "kernicterus",
+      "anatomía patológica"
+    ],
+    "enunciado": "Kernicterus:",
+    "opcoes": [
+      "Daño cerebral producido por depósito de Bilirrubina en encéfalo",
+      "La Bilirrubina directa puede entrar a las neuronas, la indirecta no",
+      "Los síntomas aparecerán después de la primera semana de vida."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. \"Kernicterus\" es el daño cerebral producido por depósito de bilirrubina no conjugada en los ganglios basales del cerebro. Ocurre en hiperbilirrubinemia neonatal severa (>20 mg/dL) y puede causar parálisis cerebral.",
+      "Incorrecto. La definición es incorrecta. Kernicterus no es fracaso hepático, sino daño cerebral por bilirrubina.",
+      "Incorrecto. Kernicterus no es una enfermedad hematológica, es neurológica por neurotoxicidad de bilirrubina."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "marcelo",
+      "anatomía patológica"
+    ],
+    "enunciado": "Marcelo de 16 años consulta por dolor de garganta, la cual se observa intensamente rojiza al examen físico. ¿Por qué ese color?",
+    "opcoes": [
+      "Por hemorragia subepitelial",
+      "Por el fenómeno hemodinámico de congestión activa",
+      "Por aposición del exudado inflamatorio",
+      "Por la irritación de los receptores del dolor (nociceptores)."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La congestión pasiva es por disminución del drenaje venoso (ej: ICC). En una infección aguda hay hiperemia activa inflamatoria.",
+      "Correcto. La congestión activa (hiperemia activa) es el aumento del flujo sanguíneo por vasodilatación arteriolar. Marcelo con dolor de garganta y fiebre tiene una faringitis aguda con hiperemia activa de la mucosa faríngea (eritema).",
+      "Incorrecto. La congestión en inflamación aguda es activa (vasodilatación arteriolar mediada por histamina y prostaglandinas).",
+      "Incorrecto. La irritación de los nociceptores explica el dolor, otro de los signos cardinales de la inflamación, pero no el color rojizo de la mucosa, que se debe al aumento del flujo sanguíneo por congestión activa (hiperemia)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "apoptosis",
+      "señale",
+      "anatomía patológica"
+    ],
+    "enunciado": "Señale lo correcto respecto de la Apoptosis:",
+    "opcoes": [
+      "afecta grandes grupos de células, con destrucción de la trama de sostén",
+      "siempre es fisiológica",
+      "las células afectadas están rodeadas de reacción inflamatoria",
+      "hay degradación del núcleo con conservación de la membrana plasmática"
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La apoptosis afecta células individuales (no grandes grupos) y conserva la trama de sostén. La destrucción de la trama de sostén es típica de necrosis.",
+      "Incorrecto. La apoptosis NO siempre es fisiológica. Ocurre también en procesos patológicos como lesión por radiación, estrés oxidativo y enfermedades neurodegenerativas.",
+      "Incorrecto. Las células apoptóticas NO están rodeadas de reacción inflamatoria. La ausencia de inflamación es una característica distintiva de la apoptosis frente a la necrosis.",
+      "Correcto. En la apoptosis hay degradación del núcleo (fragmentación en cuerpos apoptóticos) pero la membrana plasmática se conserva hasta fases tardías. Esto permite que las células apoptóticas sean fagocitadas sin liberar contenido y sin desencadenar inflamación."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En cuanto a la reparación tisular, si la inflamación es limitada y leve, en un tejido con capacidad regenerativa, ¿cuál es el resultado más probable?",
+    "opcoes": [
+      "Cicatrización, con pérdida de la función",
+      "Que se desarrolle una neoplasia",
+      "Formación de absceso",
+      "Regeneración con restitución ad-integrum."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La cicatrización con pérdida de función ocurre cuando hay daño extenso o en tejidos sin capacidad regenerativa. La reparación ad integrum es posible si la lesión es leve.",
+      "Incorrecto. La fibrosis extensa ocurre en lesiones graves o crónicas. En lesión leve con capacidad regenerativa, el resultado es restitución completa.",
+      "Incorrecto. La organización del exudado es parte del proceso de resolución. En lesiones leves, el exudado se reabsorbe y el tejido se regenera sin secuelas.",
+      "Correcto. Si la inflamación es limitada y leve, en un tejido con capacidad regenerativa (ej: hígado, epitelios), el resultado es regeneración ad integrum: restitución completa del tejido normal sin cicatriz."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "El número normal de plaquetas por milímetro cúbico de sangre oscila:",
+    "opcoes": [
+      "10000 a 40000.",
+      "100000 y 400000.",
+      "4000 a 10000.",
+      "3 y 5 millones."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. 5.000-10.000/mm³ es el rango normal de leucocitos, no de plaquetas. Las plaquetas son mucho más numerosas.",
+      "Correcto. El número normal de plaquetas por mm³ (valor absoluto) es de 100.000-400.000/mm³ (también referido como 150.000-450.000/μL, según el laboratorio).",
+      "Incorrecto. El rango normal de plaquetas es de 100.000-400.000/mm³. 4-5 millones/mm³ es el recuento de eritrocitos.",
+      "Incorrecto. No es correcta la combinación. 5.000-10.000 son leucocitos, 4-5 millones son eritrocitos. Las plaquetas normales son 100-400 mil/mm³."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "médio",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En el trauma:",
+    "opcoes": [
+      "Tos ferina",
+      "Tos bitonal",
+      "Tos seca",
+      "Tos productiva."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Es cierto que la degeneración hidrópica es una lesión reversible por hipoxia, pero también es correcto que la necrosis coagulativa ocurre por isquemia en trauma. Ambas son correctas.",
+      "Incorrecto. La necrosis coagulativa sí ocurre en trauma (por isquemia). Pero también la degeneración hidrópica es correcta.",
+      "Incorrecto. La necrosis coagulativa SÍ es causada por isquemia (trauma vascular). Pero también la degeneración hidrópica es correcta.",
+      "Correcto. En el trauma: A) la degeneración hidrópica es lesión reversible por hipoxia (correcto) y C) la necrosis coagulativa es necrosis por isquemia (correcto). Ambas (A y C) son correctas según el contexto del trauma tisular."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "tos",
+      "procesos inflamatorios",
+      "vías aéreas",
+      "patología"
+    ],
+    "enunciado": "Los procesos inflamatorios de vías aéreas superiores producen:",
+    "opcoes": [
+      "Tos ferina",
+      "Tos bitonal",
+      "Tos seca",
+      "Tos productiva"
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Tos ferina es causada por Bordetella pertussis (infección específica), no es el resultado general de procesos inflamatorios de vías aéreas superiores.",
+      "Correcto. La tos bitonal (tipo \"perro\" o \"foca\") es característica de procesos inflamatorios de vías aéreas superiores como laringitis o crup, por edema de la región subglótica.",
+      "Incorrecto. La tos seca es más característica de irritación traqueal o bronquial inicial, no específicamente de vías aéreas superiores.",
+      "Incorrecto. La tos productiva es típica de procesos infecciosos bronquiales o pulmonares (vías aéreas inferiores), no de vías superiores."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La cianosis central debe buscarse en:",
+    "opcoes": [
+      "Palmas, plantas y lecho ungueal",
+      "Lengua, labio, pabellones auriculares, nariz",
+      "Conjuntiva y escleras",
+      "Miembros inferiores."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Palmas, plantas y lecho ungueal son sitios para evaluar cianosis PERIFÉRICA (por vasoconstricción o bajo gasto cardíaco), no central.",
+      "Correcto. La cianosis central debe buscarse en mucosas: lengua, labios, nariz, orejas y conjuntivas (zonas con alta vascularización y epitelio fino). La cianosis central refleja hipoxemia arterial.",
+      "Incorrecto. La cianosis central se busca en mucosas calientes y bien perfundidas (lengua, labios), no en zonas de piel gruesa como palmas y plantas.",
+      "Incorrecto. No es correcta la combinación. La cianosis central se evalúa en mucosas (lengua, labios) y la periférica en extremidades."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "superóxido",
+      "anatomía patológica"
+    ],
+    "enunciado": "Superóxido dismutasa convierte el anión superóxido:",
+    "opcoes": [
+      "Oxígeno singlete",
+      "Radicales hidroxilos",
+      "Peróxido de hidrógeno y oxígeno",
+      "Radicales peróxidos."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La SOD no produce radicales hidroxilo (OH⁻). Eso ocurre por reacción de Fenton/Haber-Weiss. La SOD produce H₂O₂ y O₂.",
+      "Incorrecto. La SOD no produce O₂⁻ (lo consume). Produce H₂O₂ y O₂.",
+      "Correcto. La superóxido dismutasa (SOD) convierte el anión superóxido (O₂⁻) en peróxido de hidrógeno (H₂O₂) y oxígeno (O₂). Es la primera línea de defensa antioxidante celular.",
+      "Incorrecto. No es correcta la combinación. La reacción catalizada por SOD es: 2O₂⁻ + 2H⁺ → H₂O₂ + O₂."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La hemoptisis es:",
+    "opcoes": [
+      "Eliminación de sangre proveniente de nariz y eliminada con la tos",
+      "Eliminación de sangre proveniente del aparato respiratorio",
+      "Eliminación de sangre con el vómito",
+      "Eliminación de sangre con el vómito proveniente del aparato respiratorio."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. Hematemesis es la expulsión de sangre del aparato digestivo (vómito con sangre). Hemoptisis es del aparato respiratorio.",
+      "Correcto. La hemoptisis es la expulsión de sangre (expectoración con sangre) proveniente del aparato respiratorio (vías aéreas o parénquima pulmonar). Puede ser desde leve (esputo hemoptoico) hasta masiva (>600 mL/24h).",
+      "Incorrecto. Melena es la emisión de sangre digerida por el recto (heces negras), del tracto digestivo. No es equivalente a hemoptisis.",
+      "Incorrecto. No es correcta la combinación. Hemoptisis es sangre del aparato respiratorio."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "En la inflamación, los pasos para la extravasación de los leucocitos son:",
+    "opcoes": [
+      "Migración, diapédesis, marginación, rodadura",
+      "Marginación, rodadura, diapédesis, migración",
+      "Rodadura, marginación, migración, diapédesis",
+      "Marginación, diapédesis, rodadura, migración."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La adhesión precede a la diapédesis, no la sigue. El orden correcto comienza con marginación.",
+      "Correcto. Los pasos para la extravasación leucocitaria en la inflamación son: 1) Marginación (desplazamiento a la periferia), 2) Rodadura (adhesión débil mediada por selectinas), 3) Diapédesis (migración), 4) Migración (quimiotaxis hacia el sitio de lesión).",
+      "Incorrecto. La diapédesis precede a la migración. Las selectinas median la rodadura, pero la secuencia comienza con marginación.",
+      "Incorrecto. No es correcta la combinación. La secuencia de extravasación es ordenada y específica."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La atrofia siempre es patológica:",
+    "opcoes": [
+      "Verdadero.",
+      "Falso."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La atrofia NO siempre es patológica. Existe atrofia fisiológica como parte del desarrollo normal y el envejecimiento.",
+      "Correcto. Es FALSO que la atrofia siempre sea patológica. La atrofia puede ser fisiológica: ej. atrofia del timo en la pubertad, atrofia del útero post-parto, atrofia muscular por envejecimiento (sarcopenia)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La congestión es:",
+    "opcoes": [
+      "El pasaje de líquido desde los vasos sanguíneos al tejido extracelular",
+      "La acumulación de la sangre en los capilares",
+      "El pasaje de líquido desde el tejido extravascular a los vasos sanguíneos."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La acumulación de orina en la vejiga es retención urinaria, no congestión. La congestión se refiere a sangre en capilares.",
+      "Correcto. La congestión es la acumulación pasiva de sangre en capilares y vénulas por disminución del drenaje venoso (congestión pasiva). A diferencia de la hiperemia (activa), la sangre está desoxigenada y da color azul-púrpura.",
+      "Incorrecto. El aumento del flujo de entrada es hiperemia activa, no congestión. La congestión es pasiva (disminución del drenaje venoso)."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La tensión superficial a nivel de la interfase entre el aire alveolar y el líquido que tapiza los alvéolos:",
+    "opcoes": [
+      "Es un determinante muy importante de la complianza pulmonar",
+      "En ausencia de surfactante sería mayor en los alvéolos más grandes",
+      "En ausencia de surfactante sería menor en los alvéolos más pequeños",
+      "Es un parámetro que incide escasamente sobre la complianza pulmonar."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. La tensión superficial en la interfase alveolo-aire es un determinante importante de la compliance pulmonar. La ley de Laplace (P = 2T/r) explica que a mayor tensión superficial, mayor presión necesaria para mantener el alveolo abierto. El surfactante reduce esta tensión.",
+      "Incorrecto. La tensión superficial NO es un determinante importante de la compliance. Al contrario, SÍ lo es. A mayor tensión superficial, menor compliance (pulmón más rígido).",
+      "Incorrecto. La tensión superficial aumenta la retracción elástica, no la disminuye. El surfactante la disminuye.",
+      "Incorrecto. No es correcta la combinación. La tensión superficial es un determinante importante de la compliance pulmonar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "respuestas",
+      "señale",
+      "anatomía patológica"
+    ],
+    "enunciado": "Señale la respuesta correcta. Respuestas al estrés en RN:",
+    "opcoes": [
+      "Mediante el eje HPA el RN responde a las experiencias tempranas traumáticas (maltrato, abuso, cirugías, etc.)",
+      "Las respuestas a las diferentes situaciones que generan estrés determinan aumento del cortisol",
+      "El aumento del cortisol tiene efectos protectores sobre el Hipocampo",
+      "A y B son correctas."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La atrofia es una respuesta adaptativa al estrés (disminución del estímulo), pero la hipertrofia también lo es (aumento del estímulo).",
+      "Incorrecto. La hipertrofia es respuesta adaptativa al estrés, pero la atrofia también. Ambas son correctas.",
+      "Incorrecto. Tanto A (atrofia) como B (hipertrofia) son respuestas adaptativas al estrés celular (Robbins).",
+      "Correcto. Las respuestas al estrés celular incluyen: A) atrofia (disminución del tamaño celular por reducción de demanda), B) hipertrofia (aumento del tamaño celular por mayor demanda). Ambas (A y B) son respuestas adaptativas al estrés."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿En la segmentación pulmonar, el lóbulo superior derecho tiene cuales segmentos?",
+    "opcoes": [
+      "Apical, pósteroanterior",
+      "Anterior, posterior y apical",
+      "Apicoanterior y posterior",
+      "Anterior, ápicoposterior."
+    ],
+    "indice_correta": 1,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El orden no es apical, posterior y anterior. La descripción anatómica correcta es anterior, posterior y apical.",
+      "Correcto. La segmentación pulmonar del pulmón derecho (en sentido anteroposterior) incluye los segmentos anterior, posterior y apical del lóbulo superior. Esta es la respuesta correcta.",
+      "Incorrecto. No es correcta la combinación. La segmentación del lóbulo superior derecho sigue un patrón específico.",
+      "Incorrecto. No es correcta la combinación. Consulte la anatomía segmentaria pulmonar."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "bioquimica",
+    "tags": [
+      "bioquímica"
+    ],
+    "enunciado": "El grupo hemo se sintetiza a partir:",
+    "opcoes": [
+      "Leucina y acetil CoA",
+      "Leucina y succinilCoA",
+      "Glicina y acetil CoA",
+      "Gliclina y succinil CoA."
+    ],
+    "indice_correta": 3,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. El grupo hemo no se sintetiza a partir de colesterol y acetil-CoA. El colesterol se sintetiza a partir de acetil-CoA (vía del mevalonato).",
+      "Incorrecto. El grupo hemo se sintetiza a partir de glicina y succinil-CoA, no de acetoacetato y ácido aspártico.",
+      "Incorrecto. El grupo hemo se sintetiza a partir de glicina y succinil-CoA, no de ornitina y citrulina.",
+      "Correcto. El grupo hemo se sintetiza a partir de glicina y succinil-CoA (en las mitocondrias). La enzima ALA-sintetasa condensa glicina + succinil-CoA para formar ácido δ-aminolevulínico (ALA), primer paso de la síntesis del hemo."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "La lesión hipóxica reversible puede manifestarse:",
+    "opcoes": [
+      "Necrosis de coagulación",
+      "Apoptosis",
+      "Tumefacción celular",
+      "Necrosis de licuefacción."
+    ],
+    "indice_correta": 2,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Incorrecto. La necrosis es lesión irreversible, no reversible. La tumefacción celular es reversible si se restaura el oxígeno.",
+      "Incorrecto. Los cuerpos apoptóticos son característicos de apoptosis (muerte programada), no de lesión reversible. En la lesión reversible la célula puede recuperarse.",
+      "Correcto. La lesión hipóxica reversible se manifiesta por tumefacción celular (swelling), que es la primera manifestación morfológica del daño celular reversible por hipoxia. Se produce por fallo de la bomba Na⁺/K⁺-ATPasa por déficit de ATP.",
+      "Incorrecto. No es correcta la combinación. La tumefacción celular es el signo característico de lesión hipóxica reversible."
+    ]
+  },
+  {
+    "materia": "injuria",
+    "parcial": "parcial1",
+    "dificuldade": "fácil",
+    "disciplina_base": "patologia",
+    "tags": [
+      "anatomía patológica"
+    ],
+    "enunciado": "¿Qué son las várices?",
+    "opcoes": [
+      "Dilataciones tortuosas elongadas y cicatrízales, con adelgazamiento de la pared venosa",
+      "Son dilataciones de la luz vascular en personas jóvenes 20 o 30 años.",
+      "Son dilataciones causadas por hipertensión vascular.",
+      "Dilataciones de la luz vascular causadas por ateromatosis."
+    ],
+    "indice_correta": 0,
+    "justificativa": null,
+    "opcoes_comentario": [
+      "Correcto. Las várices son dilataciones venosas tortuosas permanentes, con adelgazamiento de la pared y alteración valvular. Más frecuentes en miembros inferiores, también pueden ocurrir en esófago (várices esofágicas por hipertensión portal).",
+      "Incorrecto. Las várices son venas dilatadas, no arterias. Las dilataciones arteriales son aneurismas.",
+      "Incorrecto. Los linfáticos dilatados son linfangiectasias. Las várices son dilataciones venosas.",
+      "Incorrecto. Las várices son dilataciones de venas, no de capilares. Los capilares no tienen pared muscular ni válvulas como para desarrollar várices."
+    ]
+  }
+]

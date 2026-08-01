@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { NavbarSocialIcons } from "@/components/navbar-social-icons"
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -60,6 +61,7 @@ export function Navbar() {
 
         {/* CTA */}
         <div className="hidden items-center gap-2 md:flex">
+          <NavbarSocialIcons />
           <LanguageSwitcher />
           <Button asChild className="rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] hover:from-[#a3e635] hover:to-[#65a30d]">
             <a href="/login">{t.nav.entrar}</a>
@@ -68,6 +70,7 @@ export function Navbar() {
 
         {/* Mobile: language switcher + menu button */}
         <div className="flex items-center gap-2 md:hidden">
+          <NavbarSocialIcons />
           <LanguageSwitcher />
           <button
             className="text-white/70"

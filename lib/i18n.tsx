@@ -133,6 +133,10 @@ const pt = {
     saldoDisponivel: "Saldo disponível",
     acumuladosNoTotal: "acumulados no total",
   },
+  whatsapp: {
+    suporte: "Falar com Atendimento",
+    grupo: "Grupo de Alunos",
+  },
   cronograma: {
     // Rótulos de exibição por chave canônica (chave é sempre a mesma nos dois
     // idiomas — é o que fica salvo no banco — só o texto mostrado muda).
@@ -1010,6 +1014,10 @@ const es: typeof pt = {
       materiasPraticadas: "Materias practicadas",
       questoesAbrev: (n: number) => `${n} preguntas`,
     },
+  },
+  whatsapp: {
+    suporte: "Hablar con Atención",
+    grupo: "Grupo de Estudiantes",
   },
   medcoinsWidget: {
     verExtrato: "Ver movimientos",

@@ -10,6 +10,7 @@ import { Pricing } from "@/components/pricing"
 import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 import { PwaInstallBanner } from "@/components/pwa-install-banner"
+import { WhatsappFloatButton } from "@/components/whatsapp-float-button"
 
 export const revalidate = 3600 // Revalidar a cada hora
 
@@ -28,6 +29,7 @@ export default function Page() {
       <FaqSection />
       <Footer />
       <PwaInstallBanner />
+      <WhatsappFloatButton />
     </main>
   )
 }

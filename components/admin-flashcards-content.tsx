@@ -39,6 +39,7 @@ interface DeckForm {
   titulo: string
   ano: AnoKey
   materia: string
+  subsecao: string
   disciplinaBase: DisciplinaBaseKey | ""
   descricao: string
   ordem: number
@@ -82,6 +83,7 @@ export function AdminFlashcardsContent() {
       titulo: "",
       ano: ANO_KEYS[0],
       materia: MATERIA_KEYS_BY_ANO[ANO_KEYS[0]][0],
+      subsecao: "",
       disciplinaBase: "",
       descricao: "",
       ordem: proximaOrdem,
@@ -129,6 +131,7 @@ export function AdminFlashcardsContent() {
         deck.materia && MATERIA_KEYS_BY_ANO[anoDerivado].includes(deck.materia)
           ? deck.materia
           : MATERIA_KEYS_BY_ANO[anoDerivado][0],
+      subsecao: deck.subsecao ?? "",
       disciplinaBase: (deck.disciplina_base as DisciplinaBaseKey) || "",
       descricao: deck.descricao ?? "",
       ordem: deck.ordem,
@@ -188,6 +191,7 @@ export function AdminFlashcardsContent() {
     const deckPayload = {
       titulo: form.titulo.trim(),
       materia: form.materia || null,
+      subsecao: form.subsecao.trim() || null,
       disciplina_base: form.disciplinaBase || null,
       descricao: form.descricao.trim() || null,
       cor_hex: cor.hex,
@@ -273,6 +277,7 @@ export function AdminFlashcardsContent() {
                 <div className="min-w-0 flex-1">
                   <div className="mb-2 flex flex-wrap items-center gap-2">
                     {deck.materia && <Badge variant="secondary">{materiaLabel[deck.materia] ?? deck.materia}</Badge>}
+                    {deck.subsecao && <Badge variant="outline">{deck.subsecao}</Badge>}
                     {deck.disciplina_base && (
                       <Badge variant="outline">{disciplinaBaseLabel[deck.disciplina_base] ?? deck.disciplina_base}</Badge>
                     )}
@@ -399,6 +404,19 @@ export function AdminFlashcardsContent() {
                   </Select>
                   <p className="text-[11px] text-muted-foreground">A cor do baralho segue a disciplina escolhida.</p>
                 </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="subsecao">Subseção (opcional)</Label>
+                <p className="text-xs text-muted-foreground">
+                  Agrupa baralhos dentro da matéria (ex: "UP1", "UP2"). Deixe em branco se não se aplicar.
+                </p>
+                <Input
+                  id="subsecao"
+                  value={form.subsecao}
+                  onChange={(e) => setForm((p) => ({ ...p, subsecao: e.target.value }))}
+                  placeholder="Ex: UP1"
+                />
               </div>
 
               <div className="grid grid-cols-2 gap-3">

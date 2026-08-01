@@ -186,7 +186,22 @@ export function FlashcardDecksGrid() {
       .filter((m) => porMateria.has(m))
       .map((materiaKey) => {
         const decksDaMateria = [...porMateria.get(materiaKey)!].sort((a, b) => rankDisciplina(a) - rankDisciplina(b))
-        return { materiaKey, decks: decksDaMateria }
+
+        const porSubsecao = new Map<string | null, DeckWithProgress[]>()
+        for (const deck of decksDaMateria) {
+          const key = deck.subsecao || null
+          if (!porSubsecao.has(key)) porSubsecao.set(key, [])
+          porSubsecao.get(key)!.push(deck)
+        }
+        const subsections = Array.from(porSubsecao.entries())
+          .map(([subsecaoKey, subsecaoDecks]) => ({
+            subsecaoKey,
+            decks: subsecaoDecks,
+            minOrdem: Math.min(...subsecaoDecks.map((d) => d.ordem)),
+          }))
+          .sort((a, b) => (a.subsecaoKey === null ? -1 : b.subsecaoKey === null ? 1 : a.minOrdem - b.minOrdem))
+
+        return { materiaKey, subsections }
       })
   }, [decks])
 
@@ -217,12 +232,13 @@ export function FlashcardDecksGrid() {
 
   return (
     <div className="space-y-8">
-      {bySection.map(({ materiaKey, decks: decksDaMateria }) => {
+      {bySection.map(({ materiaKey, subsections }) => {
         const isOpen = !collapsed.has(materiaKey)
         const materiaTitulo =
           materiaKey === SEM_CATEGORIA
             ? t.flashcardsGrid.semCategoria
             : t.cronograma.materiaLabel[materiaKey] ?? materiaKey
+        const totalDecks = subsections.reduce((sum, s) => sum + s.decks.length, 0)
 
         return (
           <section key={materiaKey}>
@@ -233,7 +249,7 @@ export function FlashcardDecksGrid() {
             >
               <span className="flex items-center gap-2">
                 <h2 className="text-lg font-semibold text-foreground">{materiaTitulo}</h2>
-                <Badge variant="secondary" className="text-[11px]">{decksDaMateria.length}</Badge>
+                <Badge variant="secondary" className="text-[11px]">{totalDecks}</Badge>
               </span>
               {isOpen ? (
                 <ChevronUp className="h-4 w-4 shrink-0 text-muted-foreground" />
@@ -242,7 +258,23 @@ export function FlashcardDecksGrid() {
               )}
             </button>
 
-            {isOpen && <DeckRow decks={decksDaMateria} t={t} />}
+            {isOpen && (
+              <div className="space-y-5">
+                {subsections.map(({ subsecaoKey, decks: decksDaSubsecao }) => (
+                  <div key={subsecaoKey ?? "_"}>
+                    {subsecaoKey && (
+                      <h3 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                        {subsecaoKey}
+                        <Badge variant="outline" className="text-[10px] font-normal normal-case">
+                          {decksDaSubsecao.length}
+                        </Badge>
+                      </h3>
+                    )}
+                    <DeckRow decks={decksDaSubsecao} t={t} />
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         )
       })}

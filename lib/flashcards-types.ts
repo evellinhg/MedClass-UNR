@@ -3,6 +3,7 @@ export interface FlashcardDeck {
   titulo: string
   especialidade: string | null
   materia: string | null
+  subsecao: string | null
   disciplina_base: string | null
   descricao: string | null
   cor_hex: string

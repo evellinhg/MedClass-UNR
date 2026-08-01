@@ -1,0 +1,2084 @@
+[
+  {
+    "titulo": "Defensa UP4 — Semiología — Dolor abdominal: fisiopatogenia y tipos",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Dolor abdominal: fisiopatogenia, tipos (visceral, somático, referido), características y datos del interrogatorio",
+    "tags": [
+      "defensa-up4",
+      "semiologia",
+      "dolor-abdominal",
+      "dolor-visceral",
+      "dolor-referido",
+      "abdomen-agudo"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los tipos de dolor abdominal según su mecanismo fisiopatogénico?",
+        "verso": "Dolor visceral (por distensión, espasmo o isquemia de órganos con inervación vegetativa, mal localizado), dolor somático o parietal (por irritación del peritoneo parietal, bien localizado) y dolor referido (percibido en un área distante al órgano originario).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (fisiopatogenia de dolor abdominal, tipos)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el dolor visceral?",
+        "verso": "Es profundo, sordo, vago y mal localizado (se percibe en la línea media o en el territorio del dermatoma correspondiente), acompañado frecuentemente de manifestaciones vegetativas (náuseas, vómitos, sudoración) y desencadenado por distensión, espasmo o isquemia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (tipos de dolor abdominal)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el dolor somático o parietal?",
+        "verso": "Es agudo, intenso, bien localizado, se exacerba con el movimiento, la palpación y la tos, y se debe a la irritación del peritoneo parietal inervado por el sistema somático (indica compromiso peritoneal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (tipos de dolor abdominal)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el dolor referido?",
+        "verso": "Es el dolor percibido en un territorio alejado del órgano afectado, porque las fibras viscerales convergen en las mismas neuronas medulares que reciben el estímulo somático (p. ej., dolor escapular en la colecistitis, dolor de hombro en la irritación diafragmática, dolor testicular en el cólico renal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (tipos de dolor abdominal)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el cólico abdominal?",
+        "verso": "Es el dolor de tipo visceral originado por espasmos o contracciones excesivas de la musculatura de un órgano hueco (intestino, vía biliar, uréter, útero); se caracteriza por ser de comienzo y cese bruscos, con períodos de calma, e intensidad variable.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (fisiopatogenia del dolor abdominal)"
+        ]
+      },
+      {
+        "frente": "¿Qué datos del interrogatorio son relevantes en el dolor abdominal?",
+        "verso": "Carácter (cólico, urente, continuo), intensidad y evolución, localización e irradiación, forma de comienzo (brusco o progresivo), factores que lo desencadenan o calman (alimentación, defecación), síntomas acompañantes (náuseas, vómitos, fiebre, diarrea) y antecedentes del paciente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (datos relevantes en el interrogatorio)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos del examen físico orientan el origen del dolor abdominal?",
+        "verso": "Palpación superficial y profunda (dolor, defensa, contractura), signo de Blumberg (dolor a la descompresión), signo de Murphy (colecistitis), signo de McBurney (apendicitis), puño-percusión lumbar (cólico renal) y la distensión abdominal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (examen físico anormal de abdomen)"
+        ]
+      },
+      {
+        "frente": "¿Cómo orienta la localización del dolor abdominal el diagnóstico?",
+        "verso": "En epigastrio: estómago, duodeno, páncreas, vía biliar; en hipocondrio derecho: hígado, vesícula, colon; en mesogastrio: intestino delgado; en fosa ilíaca derecha: apéndice; en hipogastrio: vejiga, útero, colon; en flancos y fosa lumbar: riñones y uréteres.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (síndromes y dolor abdominal)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la contractura abdominal involuntaria?",
+        "verso": "Es la rigidez permanente de la pared abdominal, de carácter reflejo e involuntario, secundaria a la irritación peritoneal (peritonitis); indica abdomen agudo quirúrgico y se diferencia de la defensa muscular voluntaria porque persiste durante la inspiración y la relajación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (examen físico anormal de abdomen)"
+        ]
+      },
+      {
+        "frente": "En el caso de Julio (dolor + distensión abdominal, náuseas, vómitos y palidez extrema), ¿qué orientación diagnóstica inicial se plantea?",
+        "verso": "Un abdomen agudo, en el cual la palidez extrema con dolor y distensión orientan a una causa quirúrgica y a posibles complicaciones como hemorragia interna o perforación con peritonitis; se evalúan signos de irritación peritoneal y de shock (taquicardia, hipotensión).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (caso UP4)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Semiología — Abdomen agudo: definición y causas",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Abdomen agudo: definición, causas y síntomas acompañantes",
+    "tags": [
+      "defensa-up4",
+      "semiologia",
+      "abdomen-agudo",
+      "dolor-abdominal",
+      "peritonitis"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué es el abdomen agudo?",
+        "verso": "Es un cuadro clínico de comienzo brusco caracterizado por dolor abdominal intenso, de causa grave y generalmente de evolución rápida, que puede requerir tratamiento quirúrgico de urgencia; exige diagnóstico precoz para evitar complicaciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (definición y causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales causas de abdomen agudo?",
+        "verso": "Inflamatorias/infecciosas (apendicitis, colecistitis, diverticulitis, pancreatitis, peritonitis), obstructivas (íleo mecánico por bridas, vólvulo, invaginación, tumores), perforativas (úlcera, divertículo, neoplasia), vasculares/isquémicas (isquemia mesentérica) y hemorrágicas (rotura de embarazo ectópico, de bazo, de aneurisma).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué síntomas acompañan con frecuencia al abdomen agudo?",
+        "verso": "Náuseas y vómitos, distensión abdominal, ausencia de eliminación de gases y heces (en obstrucción), fiebre (en procesos inflamatorios/infecciosos), taquicardia, palidez y datos de shock (en hemorragia o sepsis), y alteración del estado general.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (síntomas acompañantes)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los signos de irritación peritoneal?",
+        "verso": "Dolor a la palpación, defensa muscular, contractura involuntaria de la pared, signo de Blumberg (dolor a la descompresión brusca) y dolor a la percusión o a la movilización; indican peritonitis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (examen físico anormal de abdomen)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la apendicitis aguda y cómo se manifiesta?",
+        "verso": "Inflamación aguda del apéndice, la causa quirúrgica más frecuente de abdomen agudo; clásicamente comienza con dolor periumbilical que migra a fosa ilíaca derecha, anorexia, náuseas, fiebre, signo de McBurney y defensa local.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la colecistitis aguda y cómo se manifiesta?",
+        "verso": "Inflamación aguda de la vesícula biliar (habitualmente por litiasis obstructiva del conducto cístico), con dolor en hipocondrio derecho irradiado a espalda, náuseas y vómitos, fiebre, signo de Murphy positivo y, si hay obstrucción de la vía biliar, ictericia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la pancreatitis aguda y cómo se manifiesta?",
+        "verso": "Inflamación aguda del páncreas (por litiasis biliar o alcohol en la mayoría de los casos), con dolor epigástrico intenso irradiado en 'cinturón' a espalda, náuseas y vómitos, abdomen distendido, y elevación de amilasa y lipasa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la peritonitis?",
+        "verso": "Inflamación del peritoneo, generalmente secundaria a perforación o contaminación de la cavidad (peritonitis secundaria) o por traslocación bacteriana sin foco evidente (peritonitis espontánea); se manifiesta con dolor difuso, contractura y compromiso del estado general.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la obstrucción intestinal o íleo mecánico?",
+        "verso": "Interrupción del tránsito intestinal por una causa mecánica (bridas, hernias, vólvulo, tumores, invaginación), con dolor cólico, vómitos, distensión y detención de gases y heces; se confirma con radiografía o TC que muestran dilatación de asas y niveles hidroaéreos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (causas de abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la hemorragia digestiva en el contexto del abdomen agudo?",
+        "verso": "La pérdida de sangre en el tracto gastrointestinal, que puede presentarse con hematemesis, melena o rectorragia y, si es masiva, con signos de shock (palidez, taquicardia, hipotensión), como orienta el cuadro de palidez extrema del caso de Julio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: clasificación y causas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Semiología — Abdomen agudo: clínico vs quirúrgico",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Definición y diagnóstico diferencial entre abdomen agudo clínico (médico) y quirúrgico",
+    "tags": [
+      "defensa-up4",
+      "semiologia",
+      "abdomen-agudo",
+      "quirurgico",
+      "medico",
+      "diagnostico-diferencial"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Qué es el abdomen agudo clínico (médico)?",
+        "verso": "Es el cuadro de dolor abdominal agudo que no requiere tratamiento quirúrgico inmediato y responde al manejo médico: cólicos renales o biliares, gastroenteritis, pancreatitis en fase inicial, constipación, síndrome premenstrual, cetoacidosis diabética, entre otros.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (definición y diag. diferencial abdomen agudo clínico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el abdomen agudo quirúrgico?",
+        "verso": "Es el cuadro de dolor abdominal agudo que requiere resolución quirúrgica por existir una lesión que lo justifica: apendicitis, colecistitis complicada, perforación con peritonitis, obstrucción mecánica, isquemia mesentérica, hemorragia intraabdominal, etc.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (definición y diag. diferencial abdomen agudo quirúrgico)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos orientan hacia un abdomen agudo quirúrgico?",
+        "verso": "Dolor progresivo e intenso, contractura involuntaria de la pared, signo de Blumberg positivo, distensión progresiva, vómitos persistentes, fiebre alta, taquicardia, datos de shock y signos radiológicos o ecográficos de perforación, obstrucción o masa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (diag. diferencial abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Qué elementos clínicos favorecen un abdomen agudo de origen médico?",
+        "verso": "Dolor cólico que cede entre accesos, ausencia de contractura o signos peritoneales, fiebre moderada o ausente, síntomas digestivos acompañantes (diarrea en gastroenteritis), antecedentes (cólico renal conocido, cetoacidosis) y buen estado general.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (diag. diferencial abdomen agudo clínico)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la conducta frente a un abdomen agudo?",
+        "verso": "Evaluación clínica completa y urgente (anamnesis y examen físico reiterados), estudios complementarios según la sospecha (laboratorio, radiografía de abdomen, ecografía o TC), analgesia luego de la evaluación, ayuno y derivación a cirugía ante la sospecha de abdomen agudo quirúrgico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (metodología de estudio)"
+        ]
+      },
+      {
+        "frente": "¿Qué métodos complementarios ayudan al diagnóstico del abdomen agudo?",
+        "verso": "Laboratorio (hemograma, amilasa/lipasa, hepatograma, coagulación), radiografía de abdomen de pie y acostado (niveles hidroaéreos, neumoperitoneo), ecografía abdominal (vesícula, apéndice, líquido libre) y tomografía computarizada cuando es necesario.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (metodología de estudio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el neumoperitoneo y qué sugiere?",
+        "verso": "Es la presencia de aire libre en la cavidad peritoneal, que en la radiografía de pie se observa bajo los diafragmas como una imagen de media luna; sugiere perforación de víscera hueca (úlcera, divertículo, neoplasia) y obliga a descartar cirugía de urgencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (diag. diferencial abdomen agudo)"
+        ]
+      },
+      {
+        "frente": "¿Por qué es clave diferenciar el abdomen agudo clínico del quirúrgico?",
+        "verso": "Porque el abdomen agudo quirúrgico no resuelto evoluciona a peritonitis, sepsis y shock con alta morbimortalidad, mientras que en el clínico la cirugía innecesaria agrega riesgo; el diagnóstico diferencial orienta la conducta y la urgencia de la derivación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (definición y diag. diferencial)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Semiología — Hemorragia digestiva",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Hemorragia digestiva: clasificación (alta/baja) y causas, manifestaciones y evaluación de gravedad",
+    "tags": [
+      "defensa-up4",
+      "semiologia",
+      "hemorragia-digestiva",
+      "hematemesis",
+      "melena",
+      "rectorragia"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Qué es la hemorragia digestiva?",
+        "verso": "La pérdida de sangre desde cualquier punto del tracto gastrointestinal; se clasifica según su origen en alta (por encima del ángulo de Treitz) y baja (por debajo), y según su forma de presentación en aguda, crónica u oculta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: clasificación)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas más frecuentes de hemorragia digestiva alta?",
+        "verso": "Úlcera péptica gastroduodenal, varices esofágicas (por hipertensión portal), gastritis y erosiones, síndrome de Mallory-Weiss (desgarro por vómitos), esofagitis y tumores.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: causas)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas más frecuentes de hemorragia digestiva baja?",
+        "verso": "Diverticulosis, angiodisplasias, enfermedad diverticular, enfermedad inflamatoria intestinal, pólipos y neoplasias de colon, hemorroides, fisuras y, en el adulto joven, enfermedad de Crohn y pólipos juveniles.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: causas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la hematemesis y qué es la melena?",
+        "verso": "Hematemesis es el vómito de sangre (roja o en 'posos de café' cuando ha sido digerida), propio de la hemorragia digestiva alta; melena es la eliminación de heces negras, brillantes y fétidas por digestión de la sangre, que orienta a hemorragia alta o de intestino delgado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: clasificación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la rectorragia y la hematoquecia?",
+        "verso": "Rectorragia es la emisión de sangre roja por el ano, generalmente de origen bajo; hematoquecia es la emisión de sangre roja mezclada con heces, que en hemorragias masivas puede también corresponder a hemorragia alta muy rápida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: clasificación)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos clínicos indican gravedad o shock en la hemorragia digestiva?",
+        "verso": "Palidez cutáneo-mucosa, taquicardia, hipotensión, sudoración, oliguria y deterioro del sensorio (como la palidez extrema del caso de Julio); la taquicardia suele preceder a la hipotensión en la hemorragia aguda.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (síntomas acompañantes, caso UP4)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se evalúa la magnitud de la hemorragia digestiva?",
+        "verso": "Con el control de signos vitales (frecuencia cardíaca, presión arterial) y su respuesta, la valoración de la volemia (taquicardia >100, hipotensión), el hemograma seriado (hemoglobina y hematocrito), la coagulación y la corrección de la anemia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (metodología de estudio)"
+        ]
+      },
+      {
+        "frente": "¿Qué estudios confirman el origen de la hemorragia digestiva?",
+        "verso": "Endoscopía digestiva alta (panendoscopía) ante sospecha de hemorragia alta, colonoscopía ante sospecha de baja, y en casos seleccionados cápsula endoscópica, angiotomografía o arteriografía para sangrado de intestino delgado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (metodología de estudio)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la relación entre la hipertensión portal y la hemorragia digestiva?",
+        "verso": "La hipertensión portal (por cirrosis) produce varices esofágicas y gástricas, cuya rotura es causa frecuente de hemorragia digestiva alta grave en el cirrótico; el sangrado por varices es una emergencia con alta mortalidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (hemorragia digestiva: causas, vínculo UP3)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Semiología — Historia clínica orientada a problemas",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Historia clínica orientada a problemas, método clínico y datos relevantes del interrogatorio y el examen físico",
+    "tags": [
+      "defensa-up4",
+      "semiologia",
+      "historia-clinica",
+      "metodo-clinico",
+      "problemas",
+      "anamnesis"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Qué es la historia clínica orientada a problemas (HCOP)?",
+        "verso": "Es una modalidad de registro médico que organiza la información en una lista de problemas (activos y resueltos), con un plan de diagnóstico y tratamiento para cada uno; facilita el seguimiento longitudinal y el trabajo en equipo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (historia clínica orientada a problemas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es un 'problema' en la HCOP?",
+        "verso": "Cualquier alteración de la salud del paciente que requiere atención y seguimiento: un síntoma (dolor abdominal), un signo (palidez), un síndrome, un hallazgo de laboratorio o un diagnóstico; se enuncia con precisión y se jerarquiza en activo o resuelto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (historia clínica orientada a problemas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el método clínico?",
+        "verso": "Es el proceso ordenado y científico de la práctica médica: 1) obtención de datos (anamnesis y examen físico), 2) elaboración de hipótesis (síndromes y diagnósticos diferenciales), 3) confirmación con estudios complementarios y 4) plan terapéutico y seguimiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (método clínico)"
+        ]
+      },
+      {
+        "frente": "¿Qué datos son relevantes en el interrogatorio de un paciente con dolor abdominal?",
+        "verso": "Características del dolor (inicio, carácter, intensidad, localización, irradiación, factores que lo modifican), síntomas acompañantes (náuseas, vómitos, fiebre, distensión, alteraciones del tránsito), antecedentes (quirúrgicos, enfermedades, medicación, alcohol) y datos de alarma (hemorragia, pérdida de peso).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (datos relevantes en el interrogatorio)"
+        ]
+      },
+      {
+        "frente": "¿Qué datos son relevantes en el examen físico del abdomen?",
+        "verso": "Inspección (distensión, cicatrices, circulación colateral), auscultación (ruidos hidroaéreos: ausentes en íleo paralítico, aumentados en obstrucción), palpación superficial y profunda (dolor, defensa, contractura, masas, visceromegalias), percusión (matidez, timpanismo) y tacto rectal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (datos relevantes del examen físico)"
+        ]
+      },
+      {
+        "frente": "¿Qué ventajas tiene la historia clínica orientada a problemas?",
+        "verso": "Organiza la información en forma lógica y jerarquizada, permite el seguimiento de cada problema en el tiempo, facilita la comunicación entre profesionales, la evaluación y la investigación, y contribuye a la calidad y seguridad de la atención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (historia clínica orientada a problemas)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estructura la evaluación de un problema en la HCOP?",
+        "verso": "Se registra: lista numerada de problemas, y para cada uno los datos subjetivos y objetivos, la evaluación (análisis y diagnóstico/s) y el plan (diagnóstico y terapéutico), actualizados en cada consulta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (historia clínica orientada a problemas)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia la HCOP del registro tradicional de la historia clínica?",
+        "verso": "La historia tradicional ordena los datos en forma lineal (anamnesis, examen, evoluciones) sin jerarquizar problemas; la HCOP enumera los problemas y vincula cada dato al problema correspondiente, facilitando el razonamiento y el seguimiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Semiología: contenidos desagregados (historia clínica orientada a problemas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Inmunología — Inmunidad de mucosas y tejidos linfoides (MALT)",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Inmunidad de mucosas: epitelio mucoso, MALT (BALT, GALT, NALT), flora comensal, placas de Peyer y sitios de inducción/efectores",
+    "tags": [
+      "defensa-up4",
+      "inmunologia",
+      "malt",
+      "galt",
+      "balt",
+      "inmunidad-de-mucosas",
+      "iga"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Qué es el MALT y qué tejidos comprende?",
+        "verso": "Es el tejido linfoide asociado a las mucosas (mucosa-associated lymphoid tissue); comprende el GALT (tejido linfoide asociado al intestino, placas de Peyer y apéndice), el BALT (asociado a bronquios) y el NALT (asociado a la nariz), entre otros.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (tejidos mucosos regionales, MALT: BALT, GALT, NALT)"
+        ]
+      },
+      {
+        "frente": "¿Qué características morfológicas y funcionales tiene el epitelio mucoso?",
+        "verso": "Es una barrera epitelial continua con uniones estrechas, células caliciformes productoras de moco, células de Paneth (péptidos antimicrobianos) y células M (microfold) que captan antígenos de la luz y los transportan a los folículos linfoides subepiteliales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (características del epitelio mucoso)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los linfocitos intraepiteliales?",
+        "verso": "Son linfocitos T que residen entre las células epiteliales de la mucosa, con características de memoria y función citotóxica/reguladora; participan en la defensa de la superficie mucosa y en el mantenimiento de la integridad epitelial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (linfocitos intraepiteliales)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función de la flora comensal (microbiota) en la inmunidad de mucosas?",
+        "verso": "La flora comensal compite con los patógenos por nutrientes y receptores, produce sustancias antimicrobianas, estimula el desarrollo y la maduración del sistema inmune de mucosas y mantiene la homeostasis del tejido linfoide asociado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (función de la flora comensal)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las placas de Peyer y los folículos linfoides?",
+        "verso": "Son agregados de tejido linfoide organizado en la submucosa intestinal, con folículos con centros germinales ricos en linfocitos B y áreas T; constituyen el principal sitio de inducción de la respuesta inmune de mucosas del intestino.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (placas de Peyer, folículos linfoides)"
+        ]
+      },
+      {
+        "frente": "¿Cómo ingresan los antígenos desde la luz intestinal?",
+        "verso": "A través de las células M (microfold) que los transportan por transcitosis hacia las placas de Peyer, y también por captación de células dendríticas que extienden sus prolongaciones entre las células epiteliales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (ingreso de antígenos desde la luz intestinal)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los sitios de inducción de la respuesta inmune adaptativa de mucosas?",
+        "verso": "Son los tejidos linfoides organizados asociados a mucosas: placas de Peyer (GALT), folículos del apéndice, tejido linfoide bronquial (BALT) y nasofaríngeo (NALT), donde los linfocitos T y B reconocen el antígeno y se activan.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (sitios de inducción de la respuesta inmune de las mucosas)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los sitios efectores de la respuesta inmune adaptativa de mucosas?",
+        "verso": "Son la lámina propia y el epitelio de las mucosas (intestino, bronquios, tracto urogenital, glándulas), donde migran los linfocitos activados y las células plasmáticas que producen principalmente IgA secretoria.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (sitios efectores de la respuesta inmune de las mucosas)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se produce la migración de linfocitos desde los sitios de inducción a los efectores?",
+        "verso": "Los linfocitos activados en los folículos linfoides abandonan la mucosa por los linfáticos, pasan a la circulación y, mediante moléculas de homing (integrinas y quimioquinas, como la integrina α4β7 que reconoce la selectina MadCAM-1 intestinal), vuelven a la lámina propia y epitelio de las mucosas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (activación de linfocitos T y B, migración a sitios efectores)"
+        ]
+      },
+      {
+        "frente": "¿Qué tipo de respuesta predomina en las mucosas?",
+        "verso": "Predomina una respuesta humoral de tipo IgA secretoria (con componente de IgA en secreciones) junto a linfocitos T de la lámina propia e intraepiteliales, orientada a neutralizar microorganismos y toxinas en la superficie mucosa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (inmunidad innata y adaptativa de las mucosas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Inmunología — IgA secretoria: propiedades, función y transporte",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Propiedades y función de la IgA, transporte a través del epitelio (receptor polimérico, pieza secretoria) y protección de mucosas",
+    "tags": [
+      "defensa-up4",
+      "inmunologia",
+      "iga",
+      "iga-secretoria",
+      "pieza-secretoria",
+      "mucosas"
+    ],
+    "ordem": 7,
+    "cards": [
+      {
+        "frente": "¿Qué propiedades tiene la inmunoglobulina A (IgA)?",
+        "verso": "Es la inmunoglobulina más abundante en las secreciones (mucosidad) y la segunda en suero; existe en forma monomérica en sangre y en forma dimérica (con pieza J) en las secreciones, donde es resistente a las proteasas. Se divide en IgA1 e IgA2.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (propiedades y función de las IgA)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función principal de la IgA secretoria?",
+        "verso": "Proteger las superficies mucosas: neutraliza microorganismos y toxinas en la luz, bloquea la adhesión y penetración de patógenos en el epitelio y coopera con los mecanismos innatos de la mucosa, sin activar intensamente la inflamación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (propiedades y función de las IgA)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se transporta la IgA a través del epitelio?",
+        "verso": "La IgA dimérica producida por células plasmáticas de la lámina propia se une al receptor polimérico de inmunoglobulina (pIgR) en la membrana basal del epitelio; el complejo se internaliza y se transporta por transcitosis hasta la superficie luminal, donde el pIgR se escinde dejando la pieza secretoria unida a la IgA.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (transporte de IgA a través del epitelio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la pieza secretoria y qué función cumple?",
+        "verso": "Es el fragmento del receptor polimérico de inmunoglobulina (pIgR) que queda unido a la IgA dimérica al ser liberada en la luz; la protege de la degradación por las proteasas de las secreciones y facilita su estabilidad en la superficie mucosa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (transporte de IgA a través del epitelio)"
+        ]
+      },
+      {
+        "frente": "¿Dónde se producen las células plasmáticas productoras de IgA?",
+        "verso": "En la lámina propia de las mucosas (intestino, bronquios, glándulas salivales, mamarias y lacrimales), tras la activación de linfocitos B en los sitios de inducción (placas de Peyer) y su migración a los sitios efectores.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (sitios efectores, producción de IgA)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la IgA con la inmunidad del recién nacido?",
+        "verso": "La IgA secretoria se transfiere al lactante a través de la leche materna (calostro), protegiendo la mucosa intestinal y respiratoria del recién nacido contra infecciones, mientras su sistema inmune madura.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (función de las IgA)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia existe entre IgA1 e IgA2?",
+        "verso": "La IgA1 predomina en suero y tiene mayor susceptibilidad a proteasas bacterianas; la IgA2 predomina en las secreciones (intestino, respiratorio) y es más resistente a la degradación, adaptada al ambiente de las mucosas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (propiedades de las IgA)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la inmunidad innata de las mucosas?",
+        "verso": "Es la primera línea de defensa de las superficies mucosas, conformada por la barrera epitelial, el moco, las células M, péptidos antimicrobianos (defensinas), células de Paneth, fagocitos y la flora comensal; no es específica y actúa rápidamente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (inmunidad innata de las mucosas)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre la inmunidad de mucosas y el eje intestino-sistema inmune?",
+        "verso": "La mucosa intestinal es la mayor superficie de contacto con el ambiente: la flora comensal, la IgA y los linfocitos de la lámina propia e intraepiteliales mantienen la tolerancia a antígenos inocuos y la defensa contra patógenos, influyendo sobre la inmunidad sistémica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Inmunología: contenidos desagregados (función de la flora comensal)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Microbiología — Síndrome diarreico agudo",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "microbiologia",
+    "descricao": "Síndrome diarreico agudo: definición, mecanismos de defensa del huésped, modelos de diarrea (invasivo, enterotóxico, no inflamatorio) y agentes prevalentes",
+    "tags": [
+      "defensa-up4",
+      "microbiologia",
+      "diarrea",
+      "sindrome-diarreico",
+      "diarrea-invasiva",
+      "diarrea-secretora"
+    ],
+    "ordem": 8,
+    "cards": [
+      {
+        "frente": "¿Qué es el síndrome diarreico agudo?",
+        "verso": "Es el aumento del número y/o del contenido líquido de las deposiciones, con disminución de su consistencia, de comienzo brusco y duración generalmente menor a 14 días; es una causa frecuente de morbilidad, especialmente en niños.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (síndrome diarreico agudo: definición)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los mecanismos de defensa del huésped frente a las infecciones gastrointestinales?",
+        "verso": "La acidez gástrica, la motilidad intestinal, el moco y la secreción de IgA, la flora comensal (que compite con patógenos), las células fagocíticas, los péptidos antimicrobianos y el sistema inmune de mucosas (GALT).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (mecanismos de defensa del huésped)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la microbiota residente habitual del aparato digestivo?",
+        "verso": "El intestino alberga una microbiota abundante y diversa (anaerobios como Bacteroides, lactobacilos, bifidobacterias, enterobacterias en menor número), que es esencial para la digestión, la protección frente a patógenos y la regulación inmune; el estómago y el duodeno tienen escasa flora por la acidez y el peristaltismo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (microbiota residente habitual en el aparato digestivo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diarrea invasiva (inflamatoria)?",
+        "verso": "Es la diarrea producida por microorganismos que invaden y dañan la mucosa intestinal, con fiebre, dolor abdominal, tenesmo y heces con moco y sangre (disentería); los agentes típicos son Shigella, Salmonella, Campylobacter, E. coli enteroinvasiva (EIEC) y, en algunas presentaciones, E. coli enterohemorrágica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (modelos de diarreas: invasivo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diarrea enterotóxica (secretora)?",
+        "verso": "Es la diarrea acuosa de gran volumen producida por enterotoxinas que estimulan la secreción de agua y electrolitos sin daño importante de la mucosa (p. ej., toxina del cólera, toxinas de E. coli enterotoxigénica); cursa sin sangre ni pus y produce deshidratación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (modelos de diarreas: enterotóxico inflamatorio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diarrea no inflamatoria?",
+        "verso": "Es la diarrea acuosa autolimitada sin signos inflamatorios (fiebre, sangre, pus), producida por virus (rotavirus, norovirus, adenovirus), por microorganismos que alteran la absorción sin invadir (Giardia en algunos casos) o por toxinas preformadas (estafilocócica).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (modelos de diarreas: no inflamatoria)"
+        ]
+      },
+      {
+        "frente": "¿Qué microorganismos son prevalentes en cada modelo de diarrea?",
+        "verso": "Invasivo: Shigella, Salmonella, Campylobacter, EIEC/EHEC; enterotóxico secretor: Vibrio cholerae, E. coli enterotoxigénica (ETEC); no inflamatorio viral: rotavirus, norovirus, adenovirus; parasitario: Giardia lamblia, Entamoeba histolytica, Cryptosporidium.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (microorganismos prevalentes en cada caso)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se realiza el diagnóstico microbiológico de la diarrea?",
+        "verso": "Con coprocultivo (materia fecal en medio de transporte apropiado, con identificación y antibiograma) para bacterias entéricas, coproparasitológico seriado para parásitos, métodos moleculares (PCR) y detección de antígenos virales o toxinas según la sospecha.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (diagnóstico desde el laboratorio microbiológico)"
+        ]
+      },
+      {
+        "frente": "¿Cuándo se indica coprocultivo?",
+        "verso": "Ante diarrea con fiebre, sangre o moco, diarrea prolongada o grave, pacientes inmunodeprimidos, brotes o casos sospechosos de infecciones de notificación obligatoria (como fiebre tifoidea, cólera) y diarrea del viajero que no cede.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (métodos para la búsqueda de agentes etiológicos)"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene el agua y los alimentos en las diarreas infecciosas?",
+        "verso": "El agua no potabilizada y los alimentos contaminados (mal lavados o manipulados) son vías frecuentes de transmisión de bacterias entéricas (Salmonella, Shigella, Vibrio), virus (norovirus, HAV) y parásitos (Giardia, Cryptosporidium); la higiene y potabilización son medidas clave de prevención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (transmisión y prevención)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diarrea del viajero y cuál es su principal agente?",
+        "verso": "Es la diarrea aguda que se presenta en viajeros a zonas con deficiencias sanitarias; su agente más frecuente es la E. coli enterotoxigénica (ETEC), seguida de otros entéricos; suele ser acuosa, autolimitada y se previene con higiene y agua segura.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (modelos de diarreas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Microbiología — Helicobacter pylori y gastritis",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "microbiologia",
+    "descricao": "Rol del Helicobacter pylori en la gastritis: transmisión, patogenia, enfermedades asociadas y diagnóstico de laboratorio",
+    "tags": [
+      "defensa-up4",
+      "microbiologia",
+      "helicobacter-pylori",
+      "gastritis",
+      "ulcera",
+      "ureasa"
+    ],
+    "ordem": 9,
+    "cards": [
+      {
+        "frente": "¿Qué es Helicobacter pylori y qué enfermedad produce?",
+        "verso": "Es una bacteria Gram negativa espiralada, microaerófila y ureasa positiva, que coloniza la mucosa gástrica y es la principal causa de gastritis crónica, úlcera péptica gastroduodenal y factor de riesgo de adenocarcinoma gástrico y linfoma MALT.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (rol del Helicobacter pylori en la gastritis)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se transmite H. pylori?",
+        "verso": "Por vía fecal-oral u oral-oral (agua o alimentos contaminados, contacto familiar cercano); la infección se adquiere habitualmente en la infancia y persiste de por vida si no se trata.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (H. pylori: transmisión)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la patogenia del daño gástrico por H. pylori?",
+        "verso": "La bacteria coloniza el moco gástrico y utiliza la ureasa para hidrolizar urea y producir amonio, que neutraliza la acidez local; produce factores de virulencia (CagA, VacA), inflamación crónica de la mucosa (gastritis), y en sujetos susceptibles ulceración o transformación neoplásica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (rol del H. pylori en la gastritis)"
+        ]
+      },
+      {
+        "frente": "¿Qué enfermedades se asocian a la infección por H. pylori?",
+        "verso": "Gastritis crónica (antral y atrófica), úlcera péptica duodenal y gástrica, adenocarcinoma gástrico y linfoma MALT gástrico; la erradicación reduce la recurrencia de úlceras y el riesgo de neoplasia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (H. pylori: enfermedades asociadas)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica H. pylori por métodos no invasivos?",
+        "verso": "Test del aliento con urea marcada (13C-ureasa, detecta actividad de ureasa), detección de antígeno en materia fecal y serología (anticuerpos IgG), que indica contacto pero no confirma infección activa ni erradicación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (métodos de laboratorio)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica H. pylori por métodos invasivos?",
+        "verso": "Con endoscopía y biopsia gástrica: test rápido de ureasa, histología (tinción de Giemsa o Warthin-Starry), cultivo (permite antibiograma) y PCR.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (métodos de laboratorio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el test rápido de ureasa y por qué se usa en la endoscopía?",
+        "verso": "Es un método invasivo que detecta la actividad de la enzima ureasa de H. pylori en una biopsia colocada en un medio con urea e indicador de pH: la producción de amonio alcaliniza el medio y produce cambio de color, orientando el diagnóstico en minutos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (métodos de laboratorio)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento de erradicación de H. pylori?",
+        "verso": "La terapia triple con inhibidor de la bomba de protones (IBP) más dos antibióticos (claritromicina y amoxicilina, o metronidazol) durante 14 días, con confirmación de erradicación posterior mediante test del aliento o antígeno fecal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (rol de H. pylori, tratamiento)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona H. pylori con la úlcera péptica?",
+        "verso": "La infección crónica por H. pylori es la causa más frecuente de úlcera péptica gastroduodenal: la inflamación y la alteración de la regulación ácida aumentan la susceptibilidad de la mucosa a la lesión; su erradicación cura la mayoría de las úlceras y evita recidivas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (rol de H. pylori; relación con la UP3/UP4)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Microbiología — Bacteriemias, fungemias y hemocultivo",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "microbiologia",
+    "descricao": "Bacteriemias y fungemias: definición, clasificación (adquisición, foco, hemocultivo), toma de muestra e interpretación de hemocultivos",
+    "tags": [
+      "defensa-up4",
+      "microbiologia",
+      "bacteriemia",
+      "fungemia",
+      "hemocultivo",
+      "asepsia"
+    ],
+    "ordem": 10,
+    "cards": [
+      {
+        "frente": "¿Qué es la bacteriemia?",
+        "verso": "Es la presencia de bacterias viables en sangre; puede ser transitoria, intermitente o continua, y puede cursar sin síntomas (bacteriemia asintomática) o con manifestaciones sistémicas graves (sepsis, shock séptico).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (bacteriemias: definición)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las bacteriemias según el lugar de adquisición?",
+        "verso": "En comunitarias (adquiridas fuera del hospital), intrahospitalarias o nosocomiales (después de 48 horas de internación) y asociadas a la atención de la salud; el origen orienta los microorganismos probables y el tratamiento empírico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (clasificación según lugar de adquisición)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las bacteriemias según el foco?",
+        "verso": "Según el foco de origen: primaria (sin foco aparente, relacionada con catéteres), secundaria (por diseminación desde un foco localizado, p. ej., endocarditis, neumonía, infección urinaria, abdominal) o criptogenética cuando no se identifica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (clasificación según el foco)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpretan los resultados del hemocultivo (bacteriemia verdadera vs contaminación)?",
+        "verso": "El aislamiento del mismo microorganismo en 2 o más muestras separadas apoya la bacteriemia verdadera; el aislamiento en una sola muestra de microorganismos de la piel (estafilococo coagulasa negativa, corinebacterias) sugiere contaminación; algunos patógenos (S. aureus, E. coli, S. typhi, Brucella) se consideran significativos aunque se aíslen en una muestra, según el contexto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3 (interpretación de hemocultivos, casos A-G)"
+        ]
+      },
+      {
+        "frente": "¿Cuántas muestras de hemocultivo se necesitan y en qué momento?",
+        "verso": "Se recomiendan 2 a 3 extracciones de dos frascos (aerobio y anaerobio) en sitios diferentes, en el momento de fiebre/escalofríos o antes de iniciar antibióticos; en endocarditis, por ejemplo, se toman 3 juegos en 24 horas espaciados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3 (toma de muestra, número de muestras)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se realiza la asepsia en la toma de hemocultivo?",
+        "verso": "Con desinfección de la piel con alcohol 70° y luego yodo povidona o clorhexidina, dejar secar, no palpar la vena una vez desinfectada, extraer con material estéril y desinfectar la tapa de los frascos; evita la contaminación de la muestra.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (hemocultivo, asepsia y antisepsia)"
+        ]
+      },
+      {
+        "frente": "¿Qué información parcial va suministrando el microbiólogo en función del tiempo?",
+        "verso": "Informe inicial (al día, examen directo con Gram del frasco positivo), luego la identificación presuntiva del microorganismo, después la identificación definitiva y finalmente el antibiograma (sensibilidad); permite ajustar el tratamiento empírico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3 (información parcial según el tiempo)"
+        ]
+      },
+      {
+        "frente": "¿Qué microorganismos son más frecuentes en la endocarditis infecciosa?",
+        "verso": "Estreptococos del grupo viridans, Staphylococcus aureus y enterococos en endocarditis de válvula nativa; S. aureus y estafilococos coagulasa negativa en endocarditis de prótesis o relacionada con catéter; se diagnostica con hemocultivos seriados y ecocardiograma.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 1 (endocarditis)"
+        ]
+      },
+      {
+        "frente": "En la tabla de hemocultivos, ¿cómo interpretaría cada caso?",
+        "verso": "A (ECN en 1 de 3): probable contaminante. B (ECN en las 3 muestras, mismo biotipo): bacteriemia verdadera. C (Brucella en 1): patógeno significativo por su lento crecimiento. D (E. coli en 3): bacteriemia verdadera. E (S. typhi en 1): significativa. F (S. aureus en 3): bacteriemia verdadera. G (Corynebacterium en 1): contaminante.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 1 B (tabla de interpretación)"
+        ]
+      },
+      {
+        "frente": "¿Qué se entiende por microorganismos patógenos, raramente contaminantes y contaminantes en hemocultivos?",
+        "verso": "Patógenos: S. aureus, E. coli, S. typhi, Brucella, enterococos, etc., casi siempre significativos; raramente contaminantes: estreptococos, algunos bacilos Gram negativos; contaminantes habituales de la piel: estafilococos coagulasa negativa, corinebacterias, Bacillus, Propionibacterium.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (interpretación de hallazgos etiológicos en hemocultivos)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la fungemia y qué métodos la detectan?",
+        "verso": "Es la presencia de hongos (principalmente Candida spp.) en sangre, frecuente en inmunodeprimidos o con catéteres; se diagnostica con hemocultivo en medios especiales (BACTEC/FAN, agar Sabouraud) y métodos serológicos o moleculares.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (bacteriemias y fungemias)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Microbiología — Líquidos de punción: LCR, ascítico y otros",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "microbiologia",
+    "descricao": "Estudio de líquidos de punción: toma de muestra, recolección y transporte, métodos microbiológicos para LCR, líquido abdominal/ascítico y otros",
+    "tags": [
+      "defensa-up4",
+      "microbiologia",
+      "liquidos-de-puncion",
+      "lcr",
+      "liquido-ascitico",
+      "meningitis"
+    ],
+    "ordem": 11,
+    "cards": [
+      {
+        "frente": "¿Qué líquidos de punción se estudian en el laboratorio microbiológico?",
+        "verso": "Líquido cefalorraquídeo (LCR), líquido pleural, ascítico (abdominal), pericárdico y articular (sinovial); cada uno requiere técnica de punción adecuada y procesamiento según la sospecha clínica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (líquidos de punción)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se toma y se procesa el líquido cefalorraquídeo (LCR)?",
+        "verso": "Se obtiene por punción lumbar en tubos estériles (para citología, bioquímica y microbiología); ante sospecha de meningitis se realiza examen directo (Gram, tinta china), cultivo, antígenos y, según el caso, PCR; debe transportarse rápidamente a temperatura adecuada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 2 (meningitis)"
+        ]
+      },
+      {
+        "frente": "Ante un LCR turbio, ¿qué estudios se solicitan para el diagnóstico etiológico?",
+        "verso": "Citológico (recuento y fórmula celular), bioquímica (glucosa, proteínas), examen directo con tinción de Gram (bacterias), tinta china o látex (criptococo), cultivo (aerobio y, según el caso, anaerobio), antígenos y PCR; el LCR turbio orienta a meningitis bacteriana purulenta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 2 (LCR turbio)"
+        ]
+      },
+      {
+        "frente": "¿Qué agentes son más frecuentes en la meningitis aguda del adulto?",
+        "verso": "Streptococcus pneumoniae, Neisseria meningitidis y, en mayores de 50 años o inmunodeprimidos, Listeria monocytogenes; en el recién nacido, Streptococcus agalactiae y E. coli; el Gram del LCR orienta el tratamiento empírico inicial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 2 (agentes frecuentes)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estudia el líquido ascítico (abdominal)?",
+        "verso": "Se obtiene por paracentesis en frascos estériles, con el paciente en decúbito; se realiza citológico (PMN), bioquímico (albúmina para el gradiente SAAG, glucosa, LDH, proteínas) y cultivo (preferentemente en frasco de hemocultivo para mayor sensibilidad), para diagnosticar o descartar peritonitis bacteriana espontánea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (líquido abdominal, ascítico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la peritonitis bacteriana espontánea (PBE)?",
+        "verso": "Infección del líquido ascítico sin foco abdominal aparente, frecuente en el cirrótico con ascitis por traslocación bacteriana intestinal; se diagnostica por paracentesis (PMN ≥250/mm³ y/o cultivo positivo) y se trata con antibióticos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (líquido ascítico, vínculo UP3)"
+        ]
+      },
+      {
+        "frente": "¿Qué métodos microbiológicos se utilizan para los líquidos de punción?",
+        "verso": "Examen directo con tinciones (Gram, Ziehl-Neelsen, tinta china), cultivo en medios adecuados (aerobio, anaerobio, enriquecidos), hemocultivo enriquecido para líquidos estériles (como LCR o ascítico), detección de antígenos y métodos moleculares (PCR).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (métodos microbiológicos para líquidos de punción)"
+        ]
+      },
+      {
+        "frente": "¿Qué datos relevantes deben consignarse en la solicitud de un estudio de líquido de punción?",
+        "verso": "Identificación del paciente y edad, motivo y sospecha clínica (meningitis, PBE, pleuresía), características de la muestra (aspecto turbio, xantocrómico), momento y forma de la toma, antibióticos previos y estudios solicitados (citológico, bioquímico, cultivo).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (solicitud y datos relevantes)"
+        ]
+      },
+      {
+        "frente": "¿Qué información parcial va suministrando el microbiólogo en un LCR?",
+        "verso": "El examen directo con Gram (resultado en horas, orienta a bacterias y su morfología), luego el aislamiento en cultivo (24-48 h) con identificación, y finalmente el antibiograma; permite ajustar el tratamiento antibiótico empírico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: UP4 Laboratorio Nº 3, Situación Nº 2 (información parcial)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se conservan y transportan las muestras de líquidos de punción?",
+        "verso": "En frascos estériles, rápidamente y a temperatura adecuada (el LCR no se refrigera si el cultivo es inmediato; otros líquidos pueden requerir refrigeración), en condiciones de bioseguridad y con rotulado completo, para preservar la viabilidad de los microorganismos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Microbiología: contenidos desagregados (recolección y transporte de la muestra)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Patología — Gastritis aguda y úlceras gástricas agudas",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "patologia",
+    "descricao": "Gastritis aguda, úlceras gástricas agudas y úlceras por estrés: causas, morfología y patogenia (recuperación Taller 2)",
+    "tags": [
+      "defensa-up4",
+      "patologia",
+      "gastritis-aguda",
+      "ulceras-agudas",
+      "ulcera-por-estres",
+      "mucosa-gastrica"
+    ],
+    "ordem": 12,
+    "cards": [
+      {
+        "frente": "¿Qué es la gastritis aguda?",
+        "verso": "Es la inflamación aguda de la mucosa gástrica, con congestión, edema e infiltrado neutrofílico, generalmente por agentes que dañan la barrera mucosa (AINEs, alcohol, estrés, shock, H. pylori); puede producir erosiones y hemorragia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4, recuperación Taller 2 (gastritis aguda)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas de gastritis aguda?",
+        "verso": "Fármacos (AINEs, corticoides), alcohol, estrés físico o emocional, shock con hipoperfusión de la mucosa (vasoconstricción esplácnica), infección por H. pylori, ingestión de cáusticos y grandes quemados o traumatismos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (gastritis aguda: causas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la úlcera gástrica aguda y cómo se diferencia de la erosión?",
+        "verso": "La erosión afecta solo el epitelio de superficie; la úlcera aguda es la pérdida de sustancia que compromete todo el espesor de la mucosa (y puede alcanzar submucosa), de evolución aguda; ambas pueden sangrar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlceras gástricas agudas: morfología)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las úlceras por estrés y dónde se localizan?",
+        "verso": "Son úlceras gástricas agudas (a veces múltiples) que aparecen en pacientes graves (shock, sepsis, traumatismos, quemaduras extensas), por hipoperfusión y daño de la mucosa; incluyen la úlcera de Curling (quemados) y de Cushing (lesiones de SNC).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlceras agudas: causas, morfología)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la patogenia de las úlceras gástricas agudas en el shock?",
+        "verso": "En el shock, la vasoconstricción esplácnica produce hipoxia y acidosis de la mucosa gástrica, con disminución del moco protector y de la regeneración epitelial, favoreciendo erosiones y úlceras (relación con las lesiones del tubo digestivo en el shock).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (gastritis aguda; shock: tubo digestivo)"
+        ]
+      },
+      {
+        "frente": "¿Qué complicaciones tienen las úlceras gástricas agudas?",
+        "verso": "Hemorragia (hematemesis o melena), perforación con peritonitis y, en casos graves, shock hemorrágico; la hemorragia es la complicación más frecuente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlceras agudas: complicaciones)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la gastritis aguda con la hemorragia digestiva?",
+        "verso": "Las erosiones y úlceras agudas de la mucosa gástrica son causa frecuente de hemorragia digestiva alta (sangrado de la mucosa), manifestada como hematemesis o melena, y deben considerarse en el diagnóstico diferencial del paciente con abdomen agudo y palidez.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (vínculo con hemorragia digestiva, caso UP4)"
+        ]
+      },
+      {
+        "frente": "¿Qué microanatomía patológica se observa en la gastritis aguda?",
+        "verso": "Congestión y edema de la mucosa, infiltrado de neutrófilos (polimorfonucleares), erosiones superficiales o ulceración, hemorragia focal de la mucosa y, según la causa, lesión del epitelio superficial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (gastritis aguda: morfología)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la gastritis crónica y qué relación tiene con H. pylori?",
+        "verso": "Es la inflamación crónica de la mucosa gástrica, frecuentemente por H. pylori o por mecanismos autoinmunes; puede ser antral o atrófica (con metaplasia), y constituye el sustrato para la úlcera péptica y el adenocarcinoma gástrico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (gastritis, relación con H. pylori y UP3)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Patología — Úlcera péptica gastroduodenal crónica",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "patologia",
+    "descricao": "Úlcera péptica gastroduodenal crónica: causas, morfología y complicaciones",
+    "tags": [
+      "defensa-up4",
+      "patologia",
+      "ulcera-peptica",
+      "ulcera-duodenal",
+      "h-pylori",
+      "perforacion"
+    ],
+    "ordem": 13,
+    "cards": [
+      {
+        "frente": "¿Qué es la úlcera péptica gastroduodenal crónica?",
+        "verso": "Es la pérdida crónica y recurrente de sustancia de la mucosa gástrica o duodenal que atraviesa la muscular de la mucosa, asociada a un desequilibrio entre los factores agresivos (ácido, pepsina, H. pylori, AINEs) y los defensivos de la mucosa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4, recuperación Taller 2 (úlcera péptica gastroduodenal crónica)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas de la úlcera péptica crónica?",
+        "verso": "Infección por H. pylori (la más frecuente), consumo de AINEs (que inhiben la síntesis de prostaglandinas protectoras), hipersecreción ácida (síndrome de Zollinger-Ellison) y otros factores (tabaco, alcohol, estrés).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: causas)"
+        ]
+      },
+      {
+        "frente": "¿Dónde se localizan con más frecuencia las úlceras pépticas y cuál es la más frecuente?",
+        "verso": "En el duodeno (primera porción, úlcera duodenal, la más frecuente) y en el estómago (úlcera gástrica, más frecuente en la curvatura menor y el antro); la duodenal se asocia más a hipersecreción ácida y H. pylori.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: morfología)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la morfología de la úlcera péptica crónica?",
+        "verso": "Es una lesión profunda, de bordes netos, fondo con tejido necrótico y cicatricial (fibrótico), que atraviesa la muscular de la mucosa y puede penetrar hasta la serosa; a diferencia de la aguda, muestra fibrosis y reparación crónica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: morfología)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las complicaciones de la úlcera péptica crónica?",
+        "verso": "Hemorragia (la más frecuente, por erosión de vasos), perforación (con peritonitis), penetración (a órganos vecinos como páncreas) y obstrucción del canal de salida gástrico o del bulbo por fibrosis y edema.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: complicaciones)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación existe entre la úlcera péptica y la hemorragia digestiva?",
+        "verso": "La úlcera péptica es la causa más frecuente de hemorragia digestiva alta; la erosión de un vaso de la base de la úlcera produce hematemesis o melena y puede desencadenar shock hemorrágico, como orienta la palidez extrema del caso de Julio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: complicaciones, caso UP4)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se manifiesta clínicamente la úlcera péptica crónica?",
+        "verso": "Con dolor epigástrico urente, relacionado con las comidas (mejora con la ingesta en la duodenal, empeora con la ingesta en la gástrica), acidez, regurgitación y, ante complicaciones, hematemesis, melena, vómitos o dolor intenso por perforación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: manifestaciones)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la diferencia entre la úlcera aguda y la úlcera crónica?",
+        "verso": "La úlcera aguda se instala rápidamente (estrés, shock, AINEs), compromete la mucosa de forma superficial o hasta submucosa, con escasa reacción fibrosa; la crónica es de evolución prolongada, más profunda, con fibrosis y cicatrización, y mayor tendencia a complicarse.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera aguda vs crónica)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el rol de la erradicación de H. pylori en el tratamiento de la úlcera péptica?",
+        "verso": "La erradicación de H. pylori (IBP + antibióticos) cura la mayoría de las úlceras duodenales y gástricas asociadas a la bacteria y reduce significativamente las recidivas, siendo el pilar del tratamiento etiológico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 (úlcera péptica: tratamiento, vínculo con Microbiología)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Patología — Shock: concepto y tipos",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "patologia",
+    "descricao": "Shock: definición, fisiopatogenia general y tipos (cardiogénico, hipovolémico, séptico, neurogénico, anafiláctico)",
+    "tags": [
+      "defensa-up4",
+      "patologia",
+      "shock",
+      "hipovolemico",
+      "septico",
+      "cardiogenico",
+      "hipoperfusion"
+    ],
+    "ordem": 14,
+    "cards": [
+      {
+        "frente": "¿Qué es el shock?",
+        "verso": "Es una entidad clínica asociada a la pérdida generalizada de perfusión tisular, con hipotensión profunda y gasto cardíaco insuficiente para cubrir las necesidades tisulares de oxigenación, nutrición y eliminación de catabolitos; es un trastorno hemodinámico progresivo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (definición)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la unidad capilar y qué función cumple?",
+        "verso": "Es el sistema arteriolocápilovenular (microcirculación), que posee tono y motricidad propia según los requerimientos del tejido local; en ella se produce el intercambio de oxígeno, nutrientes y desechos, y es el sitio donde se instala la insuficiencia del shock.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (unidad capilar)"
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de shock existen?",
+        "verso": "Cardiogénico (falla de bomba), hipovolémico (falta de volumen), séptico (por infecciones sistémicas), neurogénico (pérdida del tono vascular), vasogénico y anafiláctico (por hipersensibilidad tipo I mediada por IgE).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (tipos)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock cardiogénico y cuáles son sus causas?",
+        "verso": "Es el shock por falla o insuficiencia grave de la bomba miocárdica: daño miocárdico intrínseco (infarto agudo de miocardio), presión extrínseca (taponamiento cardíaco, hemopericardio) u obstrucción al flujo de salida (tromboembolismo pulmonar), con disminución del gasto cardíaco.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (cardiogénico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock hipovolémico y cuáles son sus causas?",
+        "verso": "Es el shock por falta de sangre o plasma para bombear: pérdida de sangre externa o interna (hemorragia), plasmaféresis (quemaduras extensas) y pérdida de agua y electrolitos (diarreas, vómitos); conduce a reducción del gasto cardíaco.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (hipovolémico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock séptico y cuáles son sus causas?",
+        "verso": "Es el shock por infecciones microbianas sistémicas (gérmenes Gram negativos —shock endotóxico—, Gram positivos y hongos), en el que los mediadores (endotoxinas, citocinas) producen vasodilatación periférica, lesión endotelial y disfunción de la microcirculación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (séptico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock neurogénico y cuál es su mecanismo?",
+        "verso": "Es el shock por pérdida del tono vascular periférico con vasodilatación y remanso de sangre, desencadenado por dolores muy intensos (pancreatitis aguda), accidentes anestésicos y lesiones de la médula espinal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (neurogénico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock anafiláctico?",
+        "verso": "Es el shock por reacción de hipersensibilidad de tipo I mediada por IgE, con vasodilatación sistémica y aumento de la permeabilidad vascular en la circulación general, producido por la liberación de mediadores (histamina) frente al alérgeno.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (anafiláctico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la hipovolemia absoluta y qué es la relativa?",
+        "verso": "Absoluta: hay verdadera disminución del volumen circulante (hemorragia, deshidratación); relativa: el volumen circulante puede no estar disminuido pero la capacidad del lecho vascular está aumentada por vasodilatación (shock séptico, neurogénico, anafiláctico), por lo que el volumen eficiente es insuficiente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (hipovolemia absoluta y relativa)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la vía final común de todos los tipos de shock?",
+        "verso": "La hipotensión arterial con reducción de la perfusión tisular e hipoxia celular, que si progresa lleva a acidosis, disfunción multiorgánica y muerte; en los shock vasodilatados la falla es la incapacidad del músculo liso vascular para contraerse.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (fisiopatogenia)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Patología — Shock: fisiopatogenia, estadios y compensación",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "patologia",
+    "descricao": "Shock: mecanismos compensadores (barorreceptores, catecolaminas, RAAS), estadios (compensado, progresivo, irreversible) y shock vasodilatado",
+    "tags": [
+      "defensa-up4",
+      "patologia",
+      "shock",
+      "estadios-del-shock",
+      "shock-compensado",
+      "shock-vasodilatado",
+      "oxido-nitrico"
+    ],
+    "ordem": 15,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los mecanismos compensadores iniciales del shock?",
+        "verso": "Los barorreceptores carotídeos actúan sobre el sistema nervioso autónomo incrementando la actividad simpática: se liberan catecolaminas (noradrenalina y adrenalina), se produce vasoconstricción de algunos lechos, taquicardia y aumento de la contractilidad; se activan además el eje hipotálamo-hipófiso-suprarrenal (glucocorticoides), la hormona antidiurética y el sistema renina-angiotensina-aldosterona, que retienen agua y sodio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (mecanismos compensadores)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock compensado (estadio I)?",
+        "verso": "Es el primer estadio del shock (fase no progresiva), en el que los mecanismos compensadores mantienen la perfusión de los órganos vitales: hay hipotensión compensada con taquicardia, vasoconstricción periférica (piel pálida y fría) y redistribución del flujo hacia corazón y cerebro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (estadio I)"
+        ]
+      },
+      {
+        "frente": "¿Qué ocurre en el estadio intermedio o progresivo (estadio II) del shock?",
+        "verso": "Los mecanismos compensadores comienzan a fallar: la acidosis metabólica (pH ~6,9 por glucólisis anaeróbica y acidosis láctica) dilata los vasos previamente contraídos, disminuye la presión arterial, la sangre se desvía del intestino y riñones (con íleo y lesión tubular), y se instala la lesión celular.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (estadio II)"
+        ]
+      },
+      {
+        "frente": "¿Qué ocurre en el estadio final o irreversible (estadio III) del shock?",
+        "verso": "Las lesiones celulares y tisulares son irreversibles: los mecanismos compensadores ya no actúan, el corazón está insuficiente por acidosis y taquicardia extrema, hay necrosis celular en hígado, corazón y cerebro, y la muerte se produce por fallo multiorgánico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (estadio III)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el shock vasodilatado?",
+        "verso": "Es la forma de shock en que la hipotensión se debe fundamentalmente a la falla del músculo liso vascular para contraerse (vasodilatación), con mala respuesta a drogas vasopresoras; la sepsis es la causa más frecuente, pero puede ser la vía final común de cualquier shock severo o prolongado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (shock vasodilatado)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el papel del óxido nítrico en el shock vasodilatado?",
+        "verso": "El óxido nítrico (muy elevado en el shock séptico y hemorrágico descompensado) produce desfosforilación de la miosina y miorrelajación (vasodilatación) y probablemente hiperpolariza la membrana del músculo liso vascular, impidiendo la entrada de calcio necesaria para la vasoconstricción, contribuyendo a la hipotensión y a la resistencia a vasopresores.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (óxido nítrico)"
+        ]
+      },
+      {
+        "frente": "¿Qué mecanismos promueven la vasodilatación en el shock vasodilatado?",
+        "verso": "Muerte de las células vasculares por hipotensión prolongada, inadecuada extracción de oxígeno, incremento de prostaglandinas vasodilatadoras, hiperpolarización de la membrana por acidosis láctica, óxido nítrico y la disminución de la hormona antidiurética en la fase tardía.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (mecanismos de vasodilatación)"
+        ]
+      },
+      {
+        "frente": "¿Por qué la noradrenalina y la angiotensina II no logran vasoconstricción en el shock vasodilatado?",
+        "verso": "Porque la acidosis y el óxido nítrico hiperpolarizan la membrana de las células musculares lisas e impiden la entrada de calcio (mediada por la noradrenalina y angiotensina II), por lo que la fosforilación de la miosina (que produce contracción) no se logra, aun con niveles elevados de estas hormonas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (shock vasodilatado)"
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumplen las citocinas en el shock séptico?",
+        "verso": "Las endotoxinas de los gérmenes Gram negativos (y moléculas análogas de Gram positivos y hongos) activan a macrófagos, monocitos, células endoteliales y complemento, desencadenando la cascada de citocinas que produce vasodilatación generalizada, disminución de la contractilidad miocárdica y lesión endotelial con coagulación intravascular diseminada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (shock séptico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la coagulación intravascular diseminada (CID) en el shock?",
+        "verso": "Es un proceso trombohemorrágico de la microcirculación, de evolución aguda en el shock, activado por la extensa lesión endotelial: microtrombos en la microcirculación, consumo de plaquetas y factores de coagulación (coagulopatía de consumo) y activación de la fibrinólisis que agrava la diátesis hemorrágica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (CID)"
+        ]
+      },
+      {
+        "frente": "¿Qué sucede en la microcirculación durante el shock (estadio progresivo)?",
+        "verso": "Por la hipoxia se abren capilares con enlentecimiento del flujo, el esfínter precapilar pierde el tono, mientras el postcapilar resiste más a la acidosis; se produce estancamiento, aumento de la presión hidrostática capilar, plasmaféresis (pasaje de líquido al espacio extravascular) y coagulación, agravando la hipovolemia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (fisiopatogenia del shock)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Patología — Shock: manifestaciones y alteraciones morfológicas",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "patologia",
+    "descricao": "Shock: manifestaciones iniciales y tardías por órgano y alteraciones morfológicas (cerebro, corazón, riñón, pulmón, hígado, tubo digestivo)",
+    "tags": [
+      "defensa-up4",
+      "patologia",
+      "shock",
+      "sdra",
+      "necrosis-tubular-aguda",
+      "manifestaciones",
+      "morfologia"
+    ],
+    "ordem": 16,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las manifestaciones iniciales y tardías del shock en la piel?",
+        "verso": "Iniciales: piel pálida y fría (vasoconstricción periférica); tardías: piel cianótica por hipoxia y deterioro circulatorio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (manifestaciones)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las manifestaciones iniciales y tardías en los riñones durante el shock?",
+        "verso": "Iniciales: diuresis escasa (oliguria por vasoconstricción y redistribución del flujo); tardías: necrosis del epitelio tubular (necrosis tubular aguda) que produce insuficiencia renal aguda.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (riñones)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la necrosis tubular aguda (NTA) isquémica?",
+        "verso": "Es la lesión del epitelio tubular renal por isquemia sostenida, que causa insuficiencia renal aguda (diuresis <400 ml/día); a diferencia de la NTA nefrotóxica (por drogas o tóxicos), su patogenia es un trastorno grave y duradero del riego sanguíneo, y es una lesión reversible.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (riñones: NTA)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el pulmón de shock o SDRA?",
+        "verso": "Es el síndrome de dificultad respiratoria del adulto, por lesión alveolar y capilar difusa aguda (en shock séptico o por traumatismo), con congestión, edema intersticial e intraalveolar, depósito de fibrina, inflamación y formación de membranas hialinas; el proceso inicial es la lesión del endotelio capilar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (pulmones: SDRA)"
+        ]
+      },
+      {
+        "frente": "¿En qué se diferencia el SDRA del síndrome de dificultad respiratoria del recién nacido?",
+        "verso": "El SDRA del adulto se debe a la lesión del endotelio capilar (shock, sepsis, traumatismo), mientras que el del recién nacido obedece al déficit de surfactante pulmonar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (SDRA)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones produce el shock en el cerebro?",
+        "verso": "Encefalopatía isquémica o isquemia cerebral global: alteraciones iniciales (12-24 h) de microvacuolización neuronal, eosinofilia citoplasmática, luego picnosis y cariorrexis; puede existir infarto cerebral extenso; clínicamente hay disminución del nivel de conciencia y, en la fase final, coma.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (cerebro)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones produce el shock en el corazón y el hígado?",
+        "verso": "Corazón: necrosis de coagulación y hemorragias, con taquicardia inicial y necrosis miocárdica en fases tardías; hígado: transformación grasa inicial y necrosis de las células centrolobulillares en la fase tardía.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (corazón, hígado)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones produce el shock en el tubo digestivo?",
+        "verso": "Íleo inicial y, en fases tardías, necrosis del revestimiento epitelial; en el estómago y duodeno pueden encontrarse sufusiones hemorrágicas de mucosa y submucosa o erosiones y úlceras (por vasoconstricción esplácnica con hipoxia y acidosis), relacionadas con la hemorragia digestiva.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (tubo digestivo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las alteraciones morfológicas generales del shock?",
+        "verso": "Hemorragia, trombosis (CID) y necrosis isquémica; los órganos con lesiones más evidentes son cerebro, corazón, riñones, pulmones, suprarrenales, tubo digestivo e hígado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (alteraciones morfológicas)"
+        ]
+      },
+      {
+        "frente": "¿Qué lesiones se observan en las suprarrenales durante el shock?",
+        "verso": "Inicialmente desaparecen los lípidos de la corteza suprarrenal; si la evolución es desfavorable aparece CID e infartos hemorrágicos que afectan corteza y médula.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Anatomía y Fisiología Patológicas: UP4 material 'Shock' (suprarrenales)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Diagnóstico por Imágenes — Abdomen agudo",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "diagnostico_por_imagenes",
+    "descricao": "Causas de abdomen agudo médico y quirúrgico, patologías prevalentes del tracto gastrointestinal y métodos/signos imagenológicos",
+    "tags": [
+      "defensa-up4",
+      "diagnostico-por-imagenes",
+      "abdomen-agudo",
+      "neumoperitoneo",
+      "apendicitis",
+      "colecistitis"
+    ],
+    "ordem": 17,
+    "cards": [
+      {
+        "frente": "¿Qué métodos de imagen se utilizan en el abdomen agudo?",
+        "verso": "Radiografía simple de abdomen (de pie y acostado), ecografía abdominal (primera línea para vesícula, apéndice, líquido libre) y tomografía computarizada (TC), que es el método más sensible en el abdomen agudo del adulto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (métodos)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el íleo y qué signos radiológicos presenta?",
+        "verso": "Es la obstrucción o parálisis del tránsito intestinal (mecánico o paralítico); radiológicamente se observan asas dilatadas con niveles hidroaéreos escalonados (en la obstrucción mecánica) o dilatación difusa en el íleo paralítico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (íleo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el neumoperitoneo y cuál es su signo radiológico?",
+        "verso": "Es la presencia de aire libre en la cavidad peritoneal por perforación de víscera hueca; en la radiografía de pie se observa como una imagen de 'media luna' radiolúcida bajo los diafragmas (aire subdiafragmático), signo de abdomen agudo quirúrgico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (neumoperitoneo)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos imagenológicos orientan a la apendicitis aguda?",
+        "verso": "En ecografía o TC: apéndice dilatado (>6 mm de diámetro), pared engrosada, líquido periapendicular o absceso, y signos inflamatorios de la grasa adyacente; en la radiografía puede verse fecalito.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (apendicitis)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos imagenológicos orientan a la colecistitis aguda?",
+        "verso": "En ecografía: engrosamiento de la pared vesicular (>3-4 mm), distensión, líquido perivesicular, cálculo impactado en el cuello y signo de Murphy ecográfico positivo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (colecistitis)"
+        ]
+      },
+      {
+        "frente": "¿Qué signos imagenológicos se evalúan en la ictericia obstructiva?",
+        "verso": "Dilatación de la vía biliar intra y extrahepática (ecografía o TC), presencia de cálculos en el colédoco, masas de cabeza de páncreas o de vía biliar que obstruyen el flujo, y el signo del 'doble conducto' (dilatación biliar y pancreática).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (ictericia)"
+        ]
+      },
+      {
+        "frente": "¿Qué calcificaciones abdominales se reconocen por radiografía?",
+        "verso": "Fecalitos apendiculares, litiasis biliar y renal, calcificaciones vasculares, calcificaciones de quistes hidatídicos, calcificaciones de la arteria esplénica o páncreas (en pancreatitis crónica), que orientan al origen del dolor abdominal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (calcificaciones abdominales)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se evalúan los tumores abdominales por imagen?",
+        "verso": "Con ecografía y especialmente TC/RM: masas sólidas o quísticas, afectación de órganos vecinos, adenopatías y metástasis; la TC es el método de elección para estadificar tumores del tracto gastrointestinal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (tumores)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el 'signo de doble burbuja'?",
+        "verso": "Es la imagen de dos burbujas de gas en el abdomen superior del recién nacido (estómago y duodeno dilatados) con ausencia de aire distal, característica de la atresia duodenal; ejemplo de cómo el patrón de distribución de gas orienta la obstrucción intestinal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (obstrucción)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la utilidad de la ecografía en el abdomen agudo?",
+        "verso": "Permite detectar líquido libre (ascitis, hemoperitoneo), evaluar vesícula (colecistitis, colelitiasis), apéndice, órganos sólidos (hígado, bazo, riñones, páncreas) y estructuras vasculares, con rapidez y sin radiación, siendo el primer método en muchas situaciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (métodos)"
+        ]
+      },
+      {
+        "frente": "¿Qué hallazgos de imagen orientan a la isquemia mesentérica?",
+        "verso": "Engrosamiento de la pared intestinal, neumatosis intestinal (aire en la pared), aire en la vena porta, ausencia de realce de la pared intestinal en la TC con contraste y dilatación de las asas; la angio-TC evalúa la obstrucción vascular.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: contenidos desagregados UP4 (abdomen agudo vascular)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Medicina y Sociedad — Estado argentino y políticas de salud",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina_y_sociedad",
+    "descricao": "Historia de la evolución del estado argentino, modelos de estado, 'cuestión social' y su influencia en la organización de los servicios de salud",
+    "tags": [
+      "defensa-up4",
+      "medicina-y-sociedad",
+      "estado-argentino",
+      "politicas-de-salud",
+      "cuestión-social"
+    ],
+    "ordem": 18,
+    "cards": [
+      {
+        "frente": "¿Qué estudia el contenido de 'Estado argentino y políticas de salud'?",
+        "verso": "La evolución histórica del estado argentino y el desarrollo de las políticas de salud según los valores e interpretaciones referidas a la conformación de la Nación, sus instituciones y la relación entre los diferentes modelos de estado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (historia de la evolución del estado argentino)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan los modelos de estado con la 'cuestión social'?",
+        "verso": "Cada modelo de estado interpreta la 'cuestión social' (los problemas sociales colectivos como la pobreza y la enfermedad) de una manera particular, y esa interpretación influye en la organización de los servicios de salud y en las respuestas frente a los problemas colectivos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (cuestión social y modelos de estado)"
+        ]
+      },
+      {
+        "frente": "¿Cómo ha influido la interpretación de la 'cuestión social' en la organización de los servicios de salud?",
+        "verso": "Según el modelo de estado (liberal, benefactor, neoliberal, etc.), la atención de la salud se organizó de formas distintas: desde la asistencia pública y la beneficencia, pasando por el estado de bienestar con derechos sanitarios, hasta la fragmentación y mercantilización de los servicios.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (influencia en la organización de los servicios de salud)"
+        ]
+      },
+      {
+        "frente": "¿Qué etapas vitales fueron atendidas más tempranamente en la historia sanitaria argentina?",
+        "verso": "La niñez y la maternidad (salud materno-infantil) fueron de las primeras en recibir atención estatal, junto con las campañas contra enfermedades infectocontagiosas; la atención de otros grupos y problemas llegó en etapas posteriores.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (etapas vitales atendidas tempranamente)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la medicalización y qué efectos produce?",
+        "verso": "Es el proceso por el cual problemas de la vida social y cotidiana se convierten en problemas médicos y se abordan desde la medicina; sus efectos pueden incluir la sobreutilización de la consulta y los tratamientos, la estigmatización y el desplazamiento de respuestas colectivas por respuestas individuales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (efectos de la medicalización)"
+        ]
+      },
+      {
+        "frente": "¿Cómo respondió el estado frente a los problemas de salud de alcance colectivo?",
+        "verso": "Con políticas sanitarias diferenciadas según la etapa histórica: sanidad pública y campañas contra epidemias, creación de organismos de salud, ampliación de la cobertura asistencial, y más recientemente programas focalizados y políticas de derechos en salud.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (respuestas del estado)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre las formas de estado y las políticas de salud en la historia argentina?",
+        "verso": "Las políticas de salud reflejan la forma que asume el estado en cada momento histórico: el estado liberal (asistencia y beneficencia), el estado benefactor (derechos y servicios públicos), el estado neoliberal (descentralización, mercado y fragmentación) y los procesos de recuperación de derechos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (modelos de estado y políticas de salud)"
+        ]
+      },
+      {
+        "frente": "¿Por qué es relevante estudiar esta historia para la práctica médica?",
+        "verso": "Porque permite comprender que los problemas de salud y las formas de respuesta son procesos sociales e históricos, y que la organización del sistema de salud (segmentado, con subsectores) es producto de esas decisiones, lo que condiciona el acceso y la calidad de la atención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina y Sociedad: contenidos UP4 (relevancia para la práctica)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Medicina Preventiva — Efectores del sistema de salud",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina_preventiva",
+    "descricao": "Efectores del sistema de salud: efectores del subsector público y del subsector privado (obras sociales, prepagas)",
+    "tags": [
+      "defensa-up4",
+      "medicina-preventiva",
+      "efectores",
+      "subsector-publico",
+      "subsector-privado",
+      "obras-sociales"
+    ],
+    "ordem": 19,
+    "cards": [
+      {
+        "frente": "¿Qué son los efectores del sistema de salud?",
+        "verso": "Son las unidades que prestan servicios de salud: hospitales, centros de salud, consultorios, sanatorios, clínicas y laboratorios, organizados en subsectores (público, de obras sociales y privado).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los efectores del subsector público?",
+        "verso": "Son los servicios de salud financiados y administrados por el estado: hospitales públicos, centros de salud y programas nacionales, provinciales y municipales; atienden a la población sin obra social y en situaciones de urgencia a todos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores del subsector público)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los efectores del subsector privado?",
+        "verso": "Son los servicios de salud de gestión privada: sanatorios, clínicas, consultorios particulares y prepagas, financiados por el pago directo, las obras sociales o las aseguradoras privadas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores del subsector privado)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las obras sociales?",
+        "verso": "Son instituciones que brindan cobertura de salud a los trabajadores y sus familias (financiadas con aportes y contribuciones), que contratan efectores privados o propios para prestar los servicios.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (subsector privado)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las empresas de medicina prepaga?",
+        "verso": "Son aseguradoras privadas que ofrecen planes de cobertura de salud a cambio de un pago periódico (premio), contratando efectores privados; constituyen el subsector privado de aseguramiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (subsector privado)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se organiza el sistema de salud argentino?",
+        "verso": "En tres subsistemas: público (estado, con hospitales y centros de salud), de la seguridad social (obras sociales) y privado (prepagas y servicios privados); esta segmentación genera desigualdades de acceso y de cobertura.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores)"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene conocer los efectores en la planificación de salud?",
+        "verso": "Permite identificar dónde y cómo se prestan los servicios, las poblaciones que cubren, los recursos disponibles y las brechas de acceso, información esencial para planificar y programar acciones de salud pública.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores y planificación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la red de servicios de salud y cómo se articulan los efectores?",
+        "verso": "Es la organización coordinada de efectores de distintos niveles de complejidad (atención primaria, hospitales generales, alta complejidad) y subsectores, con el fin de garantizar accesibilidad, continuidad y calidad de la atención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Preventiva y Social: contenidos desagregados UP4 (efectores)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Medicina Legal — Historia clínica: definición, contenido y titularidad",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina_legal",
+    "descricao": "Historia clínica: Ley 26.529 (modif. por 26.742), definición (art. 12), contenidos (arts. 15-16), titularidad (art. 14) y quienes pueden solicitarla (art. 19)",
+    "tags": [
+      "defensa-up4",
+      "medicina-legal",
+      "historia-clinica",
+      "ley-26529",
+      "titularidad",
+      "derechos-del-paciente"
+    ],
+    "ordem": 20,
+    "cards": [
+      {
+        "frente": "¿Cómo define la Ley 26.529 (modificada por la 26.742) la historia clínica?",
+        "verso": "Como el documento obligatorio, cronológico, foliado y completo en el que conste toda actuación realizada al paciente por profesionales y auxiliares de la salud (art. 12).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (Ley 26.529, art. 12)"
+        ]
+      },
+      {
+        "frente": "¿Qué características debe tener la historia clínica según la ley?",
+        "verso": "Obligatoria, cronológica, foliada y completa; debe reflejar toda la actuación realizada al paciente por profesionales y auxiliares de la salud, para garantizar una asistencia adecuada y la continuidad asistencial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (definición)"
+        ]
+      },
+      {
+        "frente": "¿Qué requisitos debe cumplir el asiento en la historia clínica escrita?",
+        "verso": "Debe ser suscripto de puño y letra por quien lo redacta (para identificar al responsable), con sello o aclaración de sus datos y función, dejando constancia de todos los procesos asistenciales indicados y recibidos, aceptados o rechazados, y de los datos actualizados del estado de salud del paciente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (reglamentación art. 12)"
+        ]
+      },
+      {
+        "frente": "¿Qué contenidos deben constar en la historia clínica según el art. 15 de la Ley 26.529?",
+        "verso": "Fecha de inicio de su confección, datos identificatorios del paciente y de su núcleo familiar, datos del profesional interviniente y su especialidad, registros claros de los actos realizados, antecedentes patológicos, todo acto médico realizado o indicado (medicamentos, tratamientos, prácticas, estudios), intervención de especialistas, diagnóstico, pronóstico, procedimiento, evolución, ingresos y altas médicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 15)"
+        ]
+      },
+      {
+        "frente": "¿Qué reglas rigen la escritura de la historia clínica en papel?",
+        "verso": "No debe tener tachaduras ni escritura sobre lo ya escrito, no se puede borrar y reescribir, se deben evitar espacios en blanco (ante un error se escribe 'ERROR' y se aclara en el espacio subsiguiente), no incluir texto interlineado y evitar abreviaturas (o aclarar su significado).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (reglamentación art. 15)"
+        ]
+      },
+      {
+        "frente": "¿Qué documentos integran la historia clínica (art. 16)?",
+        "verso": "Consentimientos informados, hojas de indicaciones médicas, planillas de enfermería, protocolos quirúrgicos, prescripciones dietarias y estudios y prácticas realizadas, rechazadas o abandonadas, con fecha, firma y sello del profesional actuante.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 16)"
+        ]
+      },
+      {
+        "frente": "¿Quién es el titular de la historia clínica (art. 14)?",
+        "verso": "El paciente es el titular de la historia clínica; a simple requerimiento se le debe suministrar copia autenticada, en el plazo de 48 horas, salvo casos de emergencia en que se procura entregarla de inmediato.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 14, titularidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué sucede si la institución no puede entregar la copia en 48 horas?",
+        "verso": "Puede entregar una epicrisis de alta o resumen de historia clínica y solicitar una prórroga para entregar la copia completa, que no podrá extenderse más allá de los diez días corridos desde la solicitud.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 14, reglamentación)"
+        ]
+      },
+      {
+        "frente": "¿Quiénes están legitimados para solicitar la historia clínica (art. 19)?",
+        "verso": "a) El paciente y su representante legal; b) el cónyuge o conviviente en unión de hecho y los herederos forzosos (con autorización del paciente, salvo que esté imposibilitado); c) los médicos y otros profesionales del arte de curar con expresa autorización del paciente o su representante legal; quedan eximidos de presentar autorización los profesionales responsables del tratamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 19)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre 'historia clínica' y 'ficha'?",
+        "verso": "Se denomina historia clínica a la confeccionada en internación o en la segunda o más consultas de un mismo paciente; ficha es el registro de enfermos de consulta única (ambulatoria).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (confección obligatoria)"
+        ]
+      },
+      {
+        "frente": "¿Por qué la historia clínica es la prueba documental por excelencia en medicina legal?",
+        "verso": "Porque constituye la narración verdadera de los sucesos acaecidos junto al paciente y permite probar la conducta profesional (diligente, prudente y perita), la responsabilidad o no de la institución o prestador, y defender la correcta praxis ante un reclamo judicial años después.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (utilidad legal)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Medicina Legal — Historia clínica: guarda, informatización y utilidades",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina_legal",
+    "descricao": "Historia clínica: obligación de guarda (art. 18), historia clínica informatizada (art. 13), reglas básicas de confección y utilidades",
+    "tags": [
+      "defensa-up4",
+      "medicina-legal",
+      "historia-clinica",
+      "guarda",
+      "historia-clinica-informatizada",
+      "utilidades"
+    ],
+    "ordem": 21,
+    "cards": [
+      {
+        "frente": "¿Qué establece la obligación de guarda de la historia clínica (art. 18)?",
+        "verso": "Los establecimientos asistenciales públicos o privados y los profesionales de la salud (titulares de consultorios privados) tienen a su cargo la guarda y custodia de la historia clínica, asumiendo el carácter de depositarios, durante un plazo mínimo de diez años de prescripción liberatoria de la responsabilidad contractual.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 18, obligación de guarda)"
+        ]
+      },
+      {
+        "frente": "¿Desde cuándo se computa el plazo de diez años de guarda?",
+        "verso": "Desde la última actuación registrada en la historia clínica; vencido el plazo, el depositario puede entregarla al paciente, acordar la continuación del depósito, o informatizarla, microfilmarla u otro mecanismo de resguardo; si el paciente no expresa interés, puede destruirse.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 18)"
+        ]
+      },
+      {
+        "frente": "¿Qué requisitos exige la ley para la historia clínica informatizada (art. 13)?",
+        "verso": "Debe asegurar la preservación de la integridad, autenticidad, inalterabilidad, perdurabilidad y recuperabilidad de los datos, mediante accesos restringidos con claves de identificación, medios no reescribibles de almacenamiento y control de modificación de campos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (art. 13)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las reglas básicas de confección de la historia clínica?",
+        "verso": "Redactarse personalmente por el profesional que realiza el acto médico, con prolijidad, letra legible y amplia, con orden lógico (especialidades, cronológico, fecha, hora, folio) y con firma después de cada anotación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (reglas básicas de confección)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la utilidad más importante de la historia clínica?",
+        "verso": "La asistencial: garantizar la continuidad asistencial, pues el primer y principal interesado en entender lo expresado en el documento es el propio médico responsable de su confección; de ella derivan las demás utilidades.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (utilidad asistencial)"
+        ]
+      },
+      {
+        "frente": "¿Qué otras utilidades tiene la historia clínica?",
+        "verso": "Administrativa (facturación y trámites), legal (prueba documental de la conducta profesional), ética (permite que otro colega conozca y continúe la evolución), educativa (aprendizaje por el registro evolutivo), estadística (indicadores de calidad) y auditoría médica (evaluación de la calidad prestacional).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (utilidades)"
+        ]
+      },
+      {
+        "frente": "¿Qué contenidos básicos debe permitir conocer todo registro médico de asistencialidad?",
+        "verso": "Motivo/s de consulta, signos y síntomas relacionados, estudios complementarios solicitados (con signos positivos y negativos), procedimientos terapéuticos aconsejados, cumplimiento del paciente, interrupción del tratamiento, consentimiento, controles evolutivos, interconsultas, diagnósticos posibles/probables, consejos médicos y condiciones de alta (epicrisis).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (contenidos básicos)"
+        ]
+      },
+      {
+        "frente": "¿Quién es el principal interesado en saber qué contiene una historia clínica?",
+        "verso": "Fundamentalmente el propio médico que la confecciona, para poder tener continuidad prestacional sin depender de lo que el paciente o familiar le recuerden, y para fundamentar la defensa de una correcta praxis ante un reclamo judicial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (¿quién es el principal interesado?)"
+        ]
+      },
+      {
+        "frente": "¿Por qué es fundamental registrar la interrupción del tratamiento y el consentimiento?",
+        "verso": "Porque documenta la continuidad del proceso asistencial, la aceptación o el rechazo de las indicaciones por el paciente o la prestadora, y el consentimiento (positivo o negativo), elementos centrales para evaluar la responsabilidad y la calidad del acto médico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Medicina Legal: UP4 'Historias clínicas' (contenidos básicos)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Salud Mental — Bases PINE en patología psicosomática",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "psiquiatria",
+    "descricao": "Bases psiconeuroinmunoendocrinológicas (PINE): subsistemas, niveles de relación, estrés, trauma y memoria (incidencia en patología psicosomática)",
+    "tags": [
+      "defensa-up4",
+      "salud-mental",
+      "pine",
+      "psicosomatica",
+      "estres",
+      "psiconeuroinmunoendocrinologia"
+    ],
+    "ordem": 22,
+    "cards": [
+      {
+        "frente": "¿Qué estudia la PINE?",
+        "verso": "La PINE (psiconeuroinmunoendocrinología) estudia la relación entre los sistemas regulatorios y el control del organismo: la comunicación entre los sistemas psíquico-neurológico, inmunológico y endocrinológico, mediante señales moleculares que establecen niveles de interrelación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE de incidencia en patología psicosomática'"
+        ]
+      },
+      {
+        "frente": "¿Qué subsistemas integran el sistema PINE?",
+        "verso": "Subsistema psíquico-neurológico (neurotransmisores, neuromediadores y neuromoduladores), subsistema inmunológico (interleuquinas e inmunomediadores) y subsistema endocrinológico (hormonas y neuropéptidos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (subsistemas)"
+        ]
+      },
+      {
+        "frente": "¿Qué propiedad tienen los componentes PINE?",
+        "verso": "Establecen interrelaciones con otros sistemas y se autorregulan mediante señales que tienden a funcionar en armonía y en interacción con el medio, pudiendo concebirse como un sistema con bases anatomofuncionales de dependencia mutua.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE'"
+        ]
+      },
+      {
+        "frente": "¿Qué circuitos se vinculan a los procesos emocionales en la PINE?",
+        "verso": "El circuito límbico (hipocampo —memorias propias y de la especie—, amígdala —autopreservación, familiaridad, conductas de fight, flight, faint, freeze ante amenazas—, septum y ganglios basales) y el circuito paralímbico (corteza prefrontal, orbitofrontal, entorrinal, cerebelo y circuito pineal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (circuito límbico)"
+        ]
+      },
+      {
+        "frente": "¿Qué niveles se vinculan a los procesos neurológicos, endocrinos e inmunológicos?",
+        "verso": "Neurológicos: SNC-SNP, neurotransmisores y neurorreguladores; endocrinos: hipotálamo y el eje córtico-límbico-hipotálamo-hipófiso-periférico; inmunológicos: citoquinas, linfoquinas e interleuquinas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (niveles de relación)"
+        ]
+      },
+      {
+        "frente": "¿Cómo influye la emoción sobre las respuestas físicas según la PINE?",
+        "verso": "Los niveles de relación PINE son responsables de la influencia emocional sobre las respuestas físicas, influyendo en la evolución de una enfermedad; a la vez, el proceso de enfermedad puede modificar los procesos emocionales individuales y de relación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (influencia emocional)"
+        ]
+      },
+      {
+        "frente": "¿Qué efecto tiene el estrés y el trauma sobre los procesos PINE?",
+        "verso": "El estrés influye en el desarrollo y modelado de los procesos PINE; el trauma afecta el neurodesarrollo (neurogénesis postnatal, estructuras como hipocampo y cerebelo y procesos de la glía), y experiencias vitales tempranas estresantes (afecciones sistémicas, malnutrición, catástrofes, traumas psicológicos) perturban la homeostasis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (estrés y trauma)"
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tiene el abuso o abandono temprano según la PINE?",
+        "verso": "Determinan rasgos de personalidad que aumentan la vulnerabilidad fenotípica para padecer trastornos de personalidad y enfermedad ansioso-depresiva.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (experiencias infantiles traumáticas)"
+        ]
+      },
+      {
+        "frente": "¿Qué cascada de eventos generan los sistemas PINE ante el estrés?",
+        "verso": "Aumento de CRH (hormona liberadora de corticotropina) con una cascada de eventos que deviene en hipofunción tiroidea y somatotrofa, aumento de somatostatina, modificaciones prolactínicas e inmunosupresión.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (cascada CRH)"
+        ]
+      },
+      {
+        "frente": "¿En qué 'memorias' se graba la experiencia conflictiva o traumática según la intensidad, vulnerabilidad y defensas?",
+        "verso": "En memoria sensorial (inscripción corta), memoria límbico-temporal (inscripción larga) y memoria inmuno-endocrina (permanente, ¿transmisible?).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (memoria)"
+        ]
+      },
+      {
+        "frente": "¿Cómo aborda la PINE la enfermedad?",
+        "verso": "Aborda la enfermedad como la resultante de la alteración de la interrelación entre sistemas en permanente dinamismo, integrando los procesos emocionales, neurológicos, endocrinos e inmunológicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Bases PINE' (campo de la PINE)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Salud Mental — Enfermedades psicosomáticas",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "psiquiatria",
+    "descricao": "Medicina psicosomática: concepto (unidad mente-cuerpo), teoría del estrés, personalidad tipo A, correlaciones psíquicas y enfermedades psicosomáticas",
+    "tags": [
+      "defensa-up4",
+      "salud-mental",
+      "enfermedades-psicosomaticas",
+      "estres",
+      "personalidad-tipo-a",
+      "somatomorfos"
+    ],
+    "ordem": 23,
+    "cards": [
+      {
+        "frente": "¿Qué es la medicina psicosomática?",
+        "verso": "Es una concepción de la medicina que integra mente y cuerpo como unidad (basada en formulaciones de Henry Ey) y que hoy se articula con la psiconeuroinmunoendocrinología (PINE); estudia los factores psíquicos en la presentación, evolución y pronóstico de las enfermedades.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas'"
+        ]
+      },
+      {
+        "frente": "¿Qué plantea la teoría del estrés en la patología psicosomática?",
+        "verso": "El estrés crónico, intenso y percibido desempeña un papel importante en el desarrollo de variadas enfermedades somáticas; Cannon (1920) describió el primer modelo: la estimulación del sistema nervioso autónomo prepara al organismo para la respuesta de 'lucha o huida' (HPTA, taquicardia, aumento del volumen minuto), que en humanos organizada en forma patológica puede producir enfermedad (patología cardiovascular).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (teoría del estrés)"
+        ]
+      },
+      {
+        "frente": "¿Qué factores psíquicos intervienen en la etiología de las enfermedades psicosomáticas?",
+        "verso": "La vulnerabilidad/fragilidad de la personalidad, el estrés y el estilo de afrontamiento (las personas que enfrentan el estrés de forma optimista no suelen experimentar trastornos psicosomáticos), y los conflictos psíquicos (que pueden servir como válvula de escape de tensiones acumuladas).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (etiología)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la personalidad tipo A y qué enfermedad predispone?",
+        "verso": "Es un patrón de personalidad caracterizado por agresividad, impaciencia y búsqueda de éxito social, que predispone a la enfermedad coronaria (aumenta LDL, triglicéridos y presión arterial).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (personalidad tipo A)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son algunas correlaciones psíquicas de los trastornos psicofisiológicos?",
+        "verso": "Úlcera péptica: sentirse privado de necesidades de dependencia; colitis: verse obligado en la infancia a la dependencia; hipertensión: verse obligado a contener resentimientos en la infancia; migraña: incapacidad para cumplir excesivas autoexigencias; asma: ansiedad de separación y afecto maternal inconstante; neurodermatitis: padres sobreprotectores y ansia de afecto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (correlaciones psíquicas)"
+        ]
+      },
+      {
+        "frente": "¿Qué factores fisiológicos conforman el 'fenotipo vulnerable'?",
+        "verso": "Hiperactividad del eje límbico-hipotálamo-hipófiso-adrenal, hiperactividad noradrenérgica, aumento de la neurotoxicidad y disminución de la neurogénesis a nivel hipocampal, y acciones del sistema inmunitario (depleción de linfocitos, interacción monocitos-neuropéptidos cerebrales).",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (factores fisiológicos)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el trastorno paradigmático de la medicina psicosomática?",
+        "verso": "La enfermedad coronaria: los factores psíquicos aumentan el riesgo de desarrollarla y de agravar una existente, y complican el tratamiento médico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (trastorno paradigmático)"
+        ]
+      },
+      {
+        "frente": "¿Qué otras enfermedades se consideran psicosomáticas?",
+        "verso": "Enfermedad coronaria (personalidad tipo A), artritis reumatoide (estrés psíquico con supresión inmunológica), cefaleas tensionales (estrés psíquico con contracción de músculos de la cabeza), fibromialgia (situaciones de estrés con espasmo arterial localizado) y comorbilidad del síndrome de fatiga crónica con depresión.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (otras enfermedades)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia existe entre las enfermedades psicosomáticas y los trastornos somatomorfos?",
+        "verso": "En las enfermedades psicosomáticas existen factores psíquicos que afectan a entidades médicas reales (enfermedad orgánica objetivable, influida en su inicio, evolución o pronóstico); en los trastornos somatomorfos hay síntomas o preocupaciones somáticas sin causa médica conocida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (diferenciación)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se concibió históricamente la unidad mente-cuerpo?",
+        "verso": "Desde Sócrates (400 a.C.) se sabe que cuerpo y mente son una unidad que interactúa con el ambiente; Empédocles asoció los cuatro elementos a dioses, Hipócrates (padre de la medicina) relacionó los humores con la personalidad y las enfermedades, Platón asoció los humores al comportamiento y Freud agregó el determinismo psíquico en los trastornos conversivos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: UP4 material 'Enfermedades psicosomáticas' (antecedentes históricos)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Defensa UP4 — Salud Mental — El síntoma, el enfermo y el médico: alexitimia",
+    "ano": "ano3",
+    "materia": "defensa",
+    "parcial": "parcial1",
+    "disciplina_base": "psiquiatria",
+    "descricao": "Participaciones psíquicas en procesos somáticos: el cuerpo como sede de padecimientos, el síntoma para el enfermo y para el médico, hablarle al médico y alexitimia",
+    "tags": [
+      "defensa-up4",
+      "salud-mental",
+      "síntoma",
+      "relacion-medico-paciente",
+      "alexitimia",
+      "psicosomatica"
+    ],
+    "ordem": 24,
+    "cards": [
+      {
+        "frente": "¿Qué son las participaciones psíquicas en los procesos de enfermedades somáticas?",
+        "verso": "Son la influencia de los factores psíquicos (emociones, conflictos, estrés, personalidad) en la aparición, evolución y expresión de las enfermedades orgánicas, y en la manera en que el sujeto vivencia y comunica su padecimiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (participaciones psíquicas en procesos de enfermedades somáticas)"
+        ]
+      },
+      {
+        "frente": "¿Qué significa 'el cuerpo como sede de padecimientos subjetivos'?",
+        "verso": "Que el cuerpo no solo es el organismo biológico, sino también el lugar donde el sujeto experimenta y expresa su sufrimiento psíquico: dolores, síntomas y enfermedades pueden condensar conflictos emocionales y significados subjetivos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (el cuerpo como sede de padecimientos subjetivos)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el 'descubrimiento de la enfermedad'?",
+        "verso": "Es el momento subjetivo en que el paciente percibe y reconoce que algo le ocurre, proceso que está mediado por su historia, sus temores y sus significaciones; precede a la consulta médica e influye en cómo relata y enfrenta el cuadro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (descubrimiento de la enfermedad)"
+        ]
+      },
+      {
+        "frente": "¿Por qué se afirma que 'el síntoma no es lo mismo para el enfermo que para el médico'?",
+        "verso": "Porque para el enfermo el síntoma es una vivencia cargada de significado, angustia y contexto personal, mientras que para el médico es un dato objetivo a interpretar desde el saber técnico (signo/síntoma) para llegar a un diagnóstico; ambos sentidos deben integrarse en la relación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (el síntoma para el enfermo y para el médico; Lucien Israel)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el problema del enfermo de 'hablarle al médico'?",
+        "verso": "Refiere a la dificultad del paciente para comunicar su padecimiento: expresar con palabras su sufrimiento, sus temores y lo que le ocurre, lo que requiere del médico una escucha activa que vaya más allá del interrogatorio estandarizado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (el problema del enfermo: hablarle al médico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la alexitimia?",
+        "verso": "Es la dificultad para identificar, diferenciar y verbalizar las emociones, con un pensamiento orientado a lo concreto y pobreza de la vida fantástica; se asocia a la tendencia a expresar el malestar psíquico a través de síntomas somáticos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (concepto de alexitimia)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación tiene la alexitimia con los trastornos psicosomáticos?",
+        "verso": "Las personas alexitímicas tienen dificultad para elaborar y comunicar emociones, por lo que tienden a manifestar el conflicto psíquico por la vía somática (síntomas corporales), favoreciendo la aparición o la cronificación de enfermedades psicosomáticas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (alexitimia y psicosomática)"
+        ]
+      },
+      {
+        "frente": "¿Qué actitud debe asumir el médico frente a un paciente con padecimiento somático y componente psíquico?",
+        "verso": "Integrar la escucha de la historia subjetiva del paciente, reconocer el significado de sus síntomas, evitar la descalificación ('no tiene nada'), trabajar en equipo interdisciplinario y derivar a salud mental cuando se detecten procesos psíquicos significativos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (encuadre clínico)"
+        ]
+      },
+      {
+        "frente": "¿Por qué es importante reconocer las participaciones psíquicas en la práctica clínica (caso de dolor abdominal)?",
+        "verso": "Porque síntomas orgánicos (como el dolor abdominal) pueden combinar componentes biológicos y psíquicos; reconocer el sufrimiento subjetivo y la forma de comunicación del paciente mejora el vínculo, evita errores de interpretación y permite un abordaje integral.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (participaciones psíquicas, caso UP4)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia al síntoma de la enfermedad desde la perspectiva psicosomática?",
+        "verso": "La enfermedad es la entidad orgánica definible; el síntoma es la experiencia subjetiva del padecimiento, que depende de la significación personal, la historia y las defensas del sujeto, por lo que dos enfermos con la misma patología pueden vivenciarla y expresarla de modos distintos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP4 — Salud Mental: contenidos desagregados UP4 (el síntoma y la enfermedad)"
+        ]
+      }
+    ]
+  }
+]

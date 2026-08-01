@@ -117,6 +117,7 @@ export function VideoaulasGrid() {
   const [arquivosItems, setArquivosItems] = useState<Record<string, VideoaulaArquivoDB[] | "loading" | "error">>({})
   const [playing, setPlaying] = useState<VideoItem | null>(null)
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
+  const [collapsedAnos, setCollapsedAnos] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     supabase
@@ -137,6 +138,14 @@ export function VideoaulasGrid() {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
       else next.add(id)
+      return next
+    })
+
+  const toggleAno = (key: string) =>
+    setCollapsedAnos((prev) => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
       return next
     })
 
@@ -246,16 +255,31 @@ export function VideoaulasGrid() {
       {grupos.map(({ fonteKey, subgrupos }) => (
         <div key={fonteKey} className="space-y-6">
           <h2 className="text-lg font-bold text-foreground">{t.videoaulasGrid.fonteLabel[fonteKey] ?? fonteKey}</h2>
-          {subgrupos.map(({ anoKey, items }) => (
+          {subgrupos.map(({ anoKey, items }) => {
+            const anoSectionKey = `${fonteKey}-${anoKey}`
+            const isAnoOpen = anoKey === SEM_ANO_KEY || !collapsedAnos.has(anoSectionKey)
+            return (
             <div key={anoKey} className="space-y-4">
               {anoKey !== SEM_ANO_KEY && (
-                <h3 className="flex items-center gap-2 border-l-4 border-primary pl-3 text-xl font-extrabold text-foreground">
-                  {t.cronograma.anoLabel[anoKey] ?? anoKey}
-                  <Badge variant="outline" className="text-xs font-normal">
-                    {items.length}
-                  </Badge>
-                </h3>
+                <button
+                  type="button"
+                  onClick={() => toggleAno(anoSectionKey)}
+                  className="flex w-full items-center justify-between gap-2 border-l-4 border-primary py-1 pl-3 text-left"
+                >
+                  <span className="flex items-center gap-2 text-xl font-extrabold text-foreground">
+                    {t.cronograma.anoLabel[anoKey] ?? anoKey}
+                    <Badge variant="outline" className="text-xs font-normal">
+                      {items.length}
+                    </Badge>
+                  </span>
+                  {isAnoOpen ? (
+                    <ChevronUp className="h-5 w-5 shrink-0 text-muted-foreground" />
+                  ) : (
+                    <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground" />
+                  )}
+                </button>
               )}
+              {isAnoOpen && (
               <div className="space-y-8">
                 {items.map(({ videoaula, index }) => {
                   const color = videoaula.cor_hex || NEON_COLORS[index % NEON_COLORS.length].hex
@@ -361,8 +385,10 @@ export function VideoaulasGrid() {
                   )
                 })}
               </div>
+              )}
             </div>
-          ))}
+            )
+          })}
         </div>
       ))}
 

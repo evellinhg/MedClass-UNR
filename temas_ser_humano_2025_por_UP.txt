@@ -1,0 +1,187 @@
+==================================================================
+SER HUMANO Y SU MEDIO 2025 — LISTA DE TEMAS POR UP
+Área: 25/9 – 14/11 | 1er parcial: 20/10 | 2do parcial: 17/11
+Fonte: ser-humano-y-su-medio-2025-guia-de-estudio-para-el-1er-parcial.pdf
+==================================================================
+
+------------------------------------------------------------------
+UP1 — El agua, el cuerpo y el ambiente
+Situación: Teresa (barrio sin agua, defensas, animales salvajes)
+------------------------------------------------------------------
+Anatomía:
+- Fosa lumbar. Columna lumbar. Articulaciones y músculos. Retroperitoneo.
+
+Histología y Embriología:
+- Tejido conectivo.
+- Tejido sanguíneo. Hemograma.
+
+Fisiología:
+- Fisiología de la sangre: composición/fracciones, volumen sanguíneo, hematocrito, componentes del plasma, proteinograma plasmático, valores de referencia.
+- Medio interno: compartimentos líquidos del organismo; distribución del agua corporal; vías de ingreso y egreso del agua; medición de los compartimientos.
+
+Física:
+- Propiedades del agua: solvente polar, capacidad solvente y dispersante; densidad y tensión superficial; conductividad térmica, calor específico y calor latente; rol en la termorregulación.
+
+Biología:
+- Sistemas. Sistemas cibernéticos. Retroalimentación positiva y negativa.
+- Ecosistema: definición, tipos (estructurales y funcionales), evolución (sucesión primaria y secundaria, regresión), influencia humana.
+- Hábitat y nicho ecológico. Leyes en ecología (tolerancia, mínimo, factores limitantes, incrementos decrecientes, principio holocenótico).
+- Factores ambientales abióticos y bióticos. Características de los seres vivos. Relaciones interespecíficas e intraespecíficas. Teoría del predador prudente. Traslape de nicho. Síndrome General de Adaptación. Principio de exclusión competitiva.
+
+Salud Mental:
+- Ambioma–Genoma–Epigenoma.
+- Introducción a la Psiconeuroinmunoendocrinología (PNIE) 1. Ejes.
+
+Medicina y Sociedad:
+- Condiciones de vida y salud.
+- Medicina Social y modelo de la Determinación Social de la Salud.
+
+Medicina Preventiva y Social:
+- Ambiente como construcción social. Salud Ambiental.
+- Epidemiología: concepto y aplicaciones.
+- Promoción de la salud: ciudades saludables.
+
+------------------------------------------------------------------
+UP2 — Agua, ósmosis y hábitos en la infancia
+Situación: Natalia (niño que transpira, hidratación infantil)
+------------------------------------------------------------------
+Anatomía:
+- Periné.
+
+Fisiología:
+- Intercambio de agua entre compartimentos: entre LIC y LEC; entre plasma e intersticio.
+- Diagramas de Darrow–Yannet.
+- Osmolaridad plasmática y concentración sérica de cationes/aniones. Medición y estimación de la osmolaridad plasmática.
+
+Física:
+- Ósmosis. Presión osmótica. Ley de Van't Hoff. Concentración osmótica efectiva. Presión osmótica real.
+- Soluciones iso, hipo e hiperosmóticas. Presión osmótica de soluciones coloidales. Ósmosis inversa.
+
+Salud Mental:
+- PNIE 2.
+- Redes sociales y salud mental.
+- Funciones de representación: lenguaje, pensamiento lógico, gráfica y juego.
+- Familia como mediadora del ambiente social.
+
+Medicina Preventiva y Social:
+- Epidemiología descriptiva: variables de tiempo, lugar y persona.
+- Indicadores: utilidad y propiedades. Cifras absolutas y relativas. Tasas, razones y proporciones. Tasas de natalidad y mortalidad. Tasa de mortalidad infantil.
+
+------------------------------------------------------------------
+UP3 — Hidratación en el deporte y el aparato urinario
+Situación: maratón en Rosario, hidratación durante el ejercicio
+------------------------------------------------------------------
+Anatomía:
+- Sistema urinario: riñones y vías urinarias superiores.
+
+Histología y Embriología:
+- Histología del aparato urinario: configuración microscópica del riñón; tubo urinífero (nefrón + tubo colector); sectores estructural/ultraestructural/funcional; vejiga y vías urinarias.
+
+Fisiología:
+- Introducción a la fisiología renal: nefrón (unidad funcional, relación estructura-función); flujo sanguíneo renal, autorregulación, regulación hormonal y por SNA; filtración, reabsorción, secreción y excreción.
+- Filtración glomerular: ecuación de Starling; barrera de filtración; interacción de proteínas con la barrera; albuminuria normal; TFG (concepto, unidades); fracción de filtración; regulación de la TFG; carga filtrada.
+- Aclaramiento (clearance) renal: aclaramiento de creatinina; estimación clínica de TFG (Cockroft–Gault, MDRD, CKD-EPI).
+- Análisis de orina: composición normal; examen físico; examen químico; examen de sedimento.
+
+Salud Mental:
+- PNIE 3.
+- Consolidación de la identidad, normas y reglas.
+- Formas familiares y adolescencia. Expectativas adolescentes y de familia. Adolescencia y posmodernidad.
+
+Medicina Preventiva y Social:
+- Indicadores de inequidad. NBI.
+
+------------------------------------------------------------------
+UP4 — Agua potable, población y comunidad
+Situación: profesional en barrio carente de agua potable
+------------------------------------------------------------------
+Anatomía:
+- Sistema urinario: vejiga y uretra masculina y femenina.
+
+Fisiología:
+- El riñón como depurador: función tubular (reabsorción, secreción, carga filtrada/excretada, clearance de creatinina).
+- Manejo renal de compuestos exógenos y endógenos: transporte en túbulo contorneado proximal; glucosa (TM como factor limitante); PAH (secreción neta); transporte de ácidos orgánicos; aclaramiento de PAH → flujo plasmático renal efectivo.
+- Fisiología del Asa de Henle: transporte de agua (paracelular/transcelular, acuaporinas); mecanismo de concentración de la orina (intersticio medular hiperosmótico, multiplicador de contracorriente); manejo del sodio proximal y en asa; cinética de la urea; vasos rectos (intercambiador de contracorriente).
+
+Biología:
+- Población y comunidad: características estructurales y dinámicas; demografía; pirámides poblacionales; estructura, distribución, abundancia y densidad; tasas de natalidad y mortalidad; migración.
+- Crecimiento poblacional: modelo exponencial y sigmoideo; potencial biótico y resistencia ambiental; modelo demóstato; evolución del crecimiento de la población humana.
+
+Microbiología:
+- Mundo microbiano: introducción; clasificación, estructura y replicación de bacterias, hongos, parásitos y virus.
+- Microbiota habitual del cuerpo humano.
+- Interrelaciones: comensalismo, mutualismo y parasitismo.
+
+Salud Mental:
+- El hombre en comunidad. El hombre y el sufrimiento.
+- Concepciones médicas del sufrimiento psíquico.
+- Medio ambiente y salud mental. Ecología y salud mental.
+
+Medicina Preventiva y Social:
+- El derecho humano al agua. Políticas públicas para garantizar el acceso al agua potable.
+- Potabilización del agua en pequeña y gran escala.
+
+------------------------------------------------------------------
+UP5 — Calor, equilibrio hidroelectrolítico y adulto joven
+Situación: joven repartidor (fatiga, menor ingesta de agua)
+------------------------------------------------------------------
+Anatomía:
+- Arterias y venas de Abdomen y Pelvis.
+
+Histología y Embriología:
+- Embriología del aparato urinario.
+
+Fisiología:
+- Regulación diferencial del volumen del LEC y de la osmolaridad del agua corporal total.
+- Regulación de la osmolaridad: mecanismo de la sed (ingesta de agua); balance hídrico e intercambio de agua con el medio externo; excreción renal de agua libre (concentración/dilución de la orina, clearance de agua libre y clearance osmolar); túbulo distal y colectores; ADH/AVP (síntesis, estímulos, retroalimentación, receptores, acuaporinas y su distribución).
+- Regulación del volumen del LEC: balance de sodio; manejo del sodio en nefrón distal; sensores del volumen; FENa; SRAA (glándula suprarrenal, zona glomerular, aparato yuxtaglomerular, angiotensinas, aldosterona); péptidos natriuréticos; implicancias en la presión arterial.
+- Metabolismo del potasio: balance interno (bomba Na-K-ATPasa, insulina, catecolaminas, aldosterona, pH, ejercicio, recambio celular); balance externo (manejo en TCP, asa gruesa ascendente, túbulo colector cortical; factores de la secreción; evaluación de la excreción).
+
+Semiología:
+- Historia clínica. Método clínico. Relación médico-paciente.
+
+Salud Mental:
+- Salud mental: concepto e indicadores.
+- Medio ambiente y salud mental. Ecología y salud mental.
+- La semiología psiquiátrica en la posmodernidad.
+
+Medicina y Sociedad:
+- Relación ambiente–salud.
+- Cambio climático.
+
+Medicina Preventiva y Social:
+- Saneamiento ambiental: concepto y acciones; control de la contaminación del aire; eliminación de residuos sólidos; control de vectores.
+
+------------------------------------------------------------------
+UP6 — Envejecimiento, ácido-base y ambiente
+Situación: Luis (adulto mayor, ascenso, contaminación de un arroyo)
+------------------------------------------------------------------
+Anatomía:
+- Nervios de Abdomen y Pelvis. Nervios esplácnicos. Cadena simpática.
+
+Fisiología:
+- Equilibrio ácido-base: pH de los líquidos corporales; efecto del pH sobre las funciones celulares; amortiguación (buffers intracelulares y extracelulares); bases buffer totales y exceso de bases; sistema bicarbonato–ácido carbónico (buffer abierto, ley de acción de masas, anhidrasa carbónica); ecuación de Henderson–Hasselbach; diagrama de Davenport; desequilibrios metabólicos y respiratorios; compensación renal y respiratoria; banda de compensación; trastornos mixtos.
+- Rol del riñón en el metabolismo fosfocálcico: manejo renal de calcio y fósforo; vitamina D y PTH.
+- Regulación de la micción.
+- Fisiología del medio interno del adulto mayor: cambios en función renal y adrenocortical; modificaciones del balance hidroelectrolítico.
+
+Física:
+- Mezclas reguladoras: características y mecanismo de acción.
+- Teoría ácido-base – medida de la acidez: pH.
+
+Biología:
+- Contaminación ambiental: definición y clasificación.
+- Capa de ozono y efecto invernadero. Magnificación biológica.
+
+Salud Mental:
+- Crisis vitales.
+- El adulto mayor en su medio social y familiar: vínculo con los otros; tradición y transmisión generacionales; fragmentación y cambio en las relaciones sociales; cultura posmoderna; tercera edad (cultura, clase social, género); procesos de inclusión/exclusión.
+
+Medicina y Sociedad:
+- Promoción de la salud: prerrequisitos; rol del promotor de la salud.
+- Atención Primaria de la Salud (APS) en el contexto rural.
+
+Medicina Preventiva y Social:
+- Saneamiento ambiental: eliminación de excretas.
+- Envejecimiento poblacional.
+- Barreras en la vida cotidiana de los adultos mayores (económicas, sociales, políticas, culturales, arquitectónicas).

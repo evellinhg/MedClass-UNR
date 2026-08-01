@@ -134,7 +134,7 @@ const pt = {
     acumuladosNoTotal: "acumulados no total",
   },
   whatsapp: {
-    suporte: "Falar com Atendimento",
+    suporte: "Atendimento e Vendas",
     grupo: "Grupo de Alunos",
   },
   cronograma: {
@@ -1016,7 +1016,7 @@ const es: typeof pt = {
     },
   },
   whatsapp: {
-    suporte: "Hablar con Atención",
+    suporte: "Atención y Ventas",
     grupo: "Grupo de Estudiantes",
   },
   medcoinsWidget: {

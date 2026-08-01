@@ -4,6 +4,7 @@ import { Users } from "lucide-react"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 import { useLanguage } from "@/lib/i18n"
 
+const SUPORTE_URL = "https://wa.me/543412290349"
 const GRUPO_URL = "https://chat.whatsapp.com/JC6z8bHq2NOLoxzY6EnjC4?s=hd&p=i&mlu=4"
 
 function WhatsappIcon({ className }: { className?: string }) {
@@ -18,22 +19,39 @@ export function WhatsappHeaderButtons() {
   const { t } = useLanguage()
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <a
-          href={GRUPO_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={t.whatsapp.grupo}
-          className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
-        >
-          <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
-          <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-card ring-1 ring-[#25D366]/60">
-            <Users className="h-2.5 w-2.5 text-[#25D366]" strokeWidth={2.5} />
-          </span>
-        </a>
-      </TooltipTrigger>
-      <TooltipContent>{t.whatsapp.grupo}</TooltipContent>
-    </Tooltip>
+    <div className="flex items-center gap-1.5">
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <a
+            href={SUPORTE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t.whatsapp.suporte}
+            className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
+          >
+            <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
+          </a>
+        </TooltipTrigger>
+        <TooltipContent>{t.whatsapp.suporte}</TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <a
+            href={GRUPO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={t.whatsapp.grupo}
+            className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
+          >
+            <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
+            <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-card ring-1 ring-[#25D366]/60">
+              <Users className="h-2.5 w-2.5 text-[#25D366]" strokeWidth={2.5} />
+            </span>
+          </a>
+        </TooltipTrigger>
+        <TooltipContent>{t.whatsapp.grupo}</TooltipContent>
+      </Tooltip>
+    </div>
   )
 }

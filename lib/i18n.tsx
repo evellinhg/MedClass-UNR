@@ -408,12 +408,12 @@ const pt = {
     sectionBadge: "Aplicativo grátis",
     sectionTitle: "Leve a sua aprovação na Medicina UNR no bolso!",
     sectionSubtitle:
-      "Instale nosso aplicativo gratuito. Estude offline, receba notificações de novos simulados e acelere sua aprovação.",
+      "Instale nosso aplicativo gratuito. Estude online direto do app, receba notificações de novos simulados e acelere sua aprovação.",
     ctaInstall: "📲 Instalar App Agora",
     ctaInstalled: "App instalado ✓",
     dismiss: "Agora não",
     perks: {
-      offline: "Estude offline",
+      offline: "Estude online pelo app",
       notifications: "Notificações de simulados",
       fast: "Mais rápido que o navegador",
     },
@@ -1380,12 +1380,12 @@ const es: typeof pt = {
     sectionBadge: "Aplicación gratuita",
     sectionTitle: "¡Llevá tu aprobación en Medicina UNR en el bolsillo!",
     sectionSubtitle:
-      "Instalá nuestra aplicación gratuita. Estudiá offline, recibí notificaciones de nuevos simulacros y acelerá tu aprobación.",
+      "Instalá nuestra aplicación gratuita. Estudiá online directo desde la app, recibí notificaciones de nuevos simulacros y acelerá tu aprobación.",
     ctaInstall: "📲 Instalar App Ahora",
     ctaInstalled: "App instalada ✓",
     dismiss: "Ahora no",
     perks: {
-      offline: "Estudiá offline",
+      offline: "Estudiá online desde la app",
       notifications: "Notificaciones de simulacros",
       fast: "Más rápido que el navegador",
     },

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { Loader2, MessageSquare, Send } from "lucide-react"
+import { ExternalLink, Loader2, MessageSquare, Send } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -25,6 +25,8 @@ interface FeedbackRow {
   resposta_admin: string | null
   respondido_em: string | null
   created_at: string
+  anexo_path: string | null
+  anexo_nome: string | null
   usuario: { id: string; email: string; full_name: string | null } | null
 }
 
@@ -57,6 +59,7 @@ export function AdminFeedbacksContent() {
   const [filterStatus, setFilterStatus] = useState<string>("todos")
   const [respostas, setRespostas] = useState<Record<string, string>>({})
   const [enviandoId, setEnviandoId] = useState<string | null>(null)
+  const [abrindoAnexoId, setAbrindoAnexoId] = useState<string | null>(null)
 
   const load = async () => {
     setLoading(true)
@@ -82,6 +85,18 @@ export function AdminFeedbacksContent() {
     const pendentes = feedbacks.filter((f) => f.status === "pendente").length
     return { total, pendentes }
   }, [feedbacks])
+
+  const handleVerAnexo = async (f: FeedbackRow) => {
+    if (!f.anexo_path) return
+    setAbrindoAnexoId(f.id)
+    const { data, error } = await supabase.storage.from("feedback-anexos").createSignedUrl(f.anexo_path, 3600)
+    setAbrindoAnexoId(null)
+    if (error || !data) {
+      alert("Não foi possível abrir o anexo.")
+      return
+    }
+    window.open(data.signedUrl, "_blank", "noopener,noreferrer")
+  }
 
   const handleResponder = async (id: string) => {
     const resposta = (respostas[id] ?? "").trim()
@@ -156,6 +171,21 @@ export function AdminFeedbacksContent() {
                 {f.usuario?.full_name || f.usuario?.email || `Usuário ${f.user_id.slice(0, 8)}`}
               </p>
               <p className="font-medium text-foreground">{f.mensagem}</p>
+              {f.anexo_path && (
+                <button
+                  type="button"
+                  onClick={() => handleVerAnexo(f)}
+                  disabled={abrindoAnexoId === f.id}
+                  className="mt-1.5 flex items-center gap-1 text-xs font-medium text-primary hover:underline disabled:opacity-50"
+                >
+                  {abrindoAnexoId === f.id ? (
+                    <Loader2 className="h-3 w-3 animate-spin" />
+                  ) : (
+                    <ExternalLink className="h-3 w-3" />
+                  )}
+                  {f.anexo_nome ?? "Ver anexo"}
+                </button>
+              )}
 
               {f.status === "respondido" && f.resposta_admin && (
                 <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-3">

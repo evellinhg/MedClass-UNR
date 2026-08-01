@@ -5,6 +5,7 @@ import { HomeStats } from "@/components/home-stats"
 import { ActionCards } from "@/components/action-cards"
 import { DesempenhoWidget } from "@/components/desempenho-widget"
 import { RankingWidget } from "@/components/ranking-widget"
+import { ComunidadeBanner } from "@/components/comunidade-banner"
 import { DailyTipHeader } from "@/components/daily-tip-header"
 import { useLanguage } from "@/lib/i18n"
 
@@ -29,6 +30,8 @@ export default function HomePage() {
           <DesempenhoWidget />
           <RankingWidget />
         </div>
+
+        <ComunidadeBanner />
       </div>
     </DashboardLayout>
   )

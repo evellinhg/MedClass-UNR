@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { ChevronLeft, ChevronRight, Info, Loader2, PlayCircle } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Info, Loader2, PlayCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,6 +14,25 @@ interface PlaylistVideo {
   videoId: string
   title: string
   thumbnail: string
+}
+
+const SECTION_NEON_COLORS = [
+  "#c6ff3a", // lima
+  "#22d3ee", // ciano
+  "#e879f9", // fúcsia
+  "#fbbf24", // âmbar
+  "#a78bfa", // violeta
+  "#fb7185", // rosa
+  "#2dd4bf", // teal
+  "#60a5fa", // azul
+]
+
+function hexToRgba(hex: string, alpha: number) {
+  const clean = hex.replace("#", "")
+  const r = parseInt(clean.slice(0, 2), 16)
+  const g = parseInt(clean.slice(2, 4), 16)
+  const b = parseInt(clean.slice(4, 6), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
 interface VideoItem {
@@ -110,6 +129,7 @@ export function VideoaulasGrid() {
   const [loading, setLoading] = useState(true)
   const [playlistItems, setPlaylistItems] = useState<Record<string, PlaylistVideo[] | "loading" | "error">>({})
   const [playing, setPlaying] = useState<VideoItem | null>(null)
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     supabase
@@ -118,13 +138,24 @@ export function VideoaulasGrid() {
       .eq("ativo", true)
       .order("ordem")
       .then(({ data }) => {
-        setVideoaulas((data as VideoaulaDB[]) ?? [])
+        const list = (data as VideoaulaDB[]) ?? []
+        setVideoaulas(list)
+        setCollapsed(new Set(list.map((v) => v.id)))
         setLoading(false)
       })
   }, [])
 
+  const toggleSection = (id: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+
   useEffect(() => {
     videoaulas.forEach((videoaula) => {
+      if (collapsed.has(videoaula.id)) return
       if (!videoaula.youtube_url) return
       const listId = getYoutubePlaylistId(videoaula.youtube_url)
       if (!listId || playlistItems[videoaula.id]) return
@@ -140,7 +171,7 @@ export function VideoaulasGrid() {
         })
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [videoaulas])
+  }, [videoaulas, collapsed])
 
   const aviso = t.videoaulasGrid.aviso
 
@@ -186,7 +217,8 @@ export function VideoaulasGrid() {
   return (
     <div className="space-y-8">
       {avisoBox}
-      {videoaulas.map((videoaula) => {
+      {videoaulas.map((videoaula, index) => {
+        const color = SECTION_NEON_COLORS[index % SECTION_NEON_COLORS.length]
         const listId = videoaula.youtube_url ? getYoutubePlaylistId(videoaula.youtube_url) : null
 
         let videos: VideoItem[] = []
@@ -213,29 +245,56 @@ export function VideoaulasGrid() {
           }
         }
 
+        const isOpen = !collapsed.has(videoaula.id)
+
         return (
           <section key={videoaula.id}>
-            <div className="mb-3 flex flex-wrap items-center gap-2">
-              <Badge variant="secondary" className="text-[11px]">
-                {videoaula.especialidade}
-              </Badge>
-              <h2 className="text-base font-semibold text-foreground">{videoaula.titulo}</h2>
-            </div>
+            <button
+              type="button"
+              onClick={() => toggleSection(videoaula.id)}
+              className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
+              style={{
+                borderColor: hexToRgba(color, 0.5),
+                backgroundColor: hexToRgba(color, 0.06),
+                boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
+              }}
+            >
+              <span className="flex flex-wrap items-center gap-2">
+                <Badge
+                  className="border-0 text-[11px]"
+                  style={{ backgroundColor: hexToRgba(color, 0.18), color }}
+                >
+                  {videoaula.especialidade}
+                </Badge>
+                <h2 className="text-base font-semibold text-foreground">{videoaula.titulo}</h2>
+                {isOpen && videos.length > 0 && (
+                  <Badge variant="outline" className="text-[11px]" style={{ borderColor: hexToRgba(color, 0.4), color }}>
+                    {videos.length}
+                  </Badge>
+                )}
+              </span>
+              {isOpen ? (
+                <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
+              ) : (
+                <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
+              )}
+            </button>
 
-            {sectionStatus === "loading" ? (
-              <div className="flex items-center gap-2 py-6 text-sm text-muted-foreground">
-                <Loader2 className="h-4 w-4 animate-spin" />
-                {t.videoaulasGrid.carregandoPlaylist}
-              </div>
-            ) : sectionStatus === "error" ? (
-              <p className="py-6 text-sm text-muted-foreground">{t.videoaulasGrid.erroPlaylist}</p>
-            ) : videos.length > 0 ? (
-              <VideoRow videos={videos} onPlay={setPlaying} />
-            ) : (
-              <Card className="flex h-28 items-center justify-center border border-dashed border-border bg-card">
-                <PlayCircle className="h-8 w-8 text-muted-foreground" />
-              </Card>
-            )}
+            {isOpen &&
+              (sectionStatus === "loading" ? (
+                <div className="flex items-center gap-2 py-6 text-sm text-muted-foreground">
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t.videoaulasGrid.carregandoPlaylist}
+                </div>
+              ) : sectionStatus === "error" ? (
+                <p className="py-6 text-sm text-muted-foreground">{t.videoaulasGrid.erroPlaylist}</p>
+              ) : videos.length > 0 ? (
+                <VideoRow videos={videos} onPlay={setPlaying} />
+              ) : (
+                <Card className="flex h-28 items-center justify-center border border-dashed border-border bg-card">
+                  <PlayCircle className="h-8 w-8 text-muted-foreground" />
+                </Card>
+              ))}
           </section>
         )
       })}

@@ -8,4 +8,5 @@ export interface VideoaulaDB {
   ativo: boolean
   created_at: string
   youtube_url: string | null
+  cor_hex: string | null
 }

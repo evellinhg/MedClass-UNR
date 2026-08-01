@@ -8,31 +8,13 @@ import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import type { VideoaulaDB } from "@/lib/videoaulas-types"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
+import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
 
 interface PlaylistVideo {
   videoId: string
   title: string
   thumbnail: string
-}
-
-const SECTION_NEON_COLORS = [
-  "#c6ff3a", // lima
-  "#22d3ee", // ciano
-  "#e879f9", // fúcsia
-  "#fbbf24", // âmbar
-  "#a78bfa", // violeta
-  "#fb7185", // rosa
-  "#2dd4bf", // teal
-  "#60a5fa", // azul
-]
-
-function hexToRgba(hex: string, alpha: number) {
-  const clean = hex.replace("#", "")
-  const r = parseInt(clean.slice(0, 2), 16)
-  const g = parseInt(clean.slice(2, 4), 16)
-  const b = parseInt(clean.slice(4, 6), 16)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
 interface VideoItem {
@@ -218,7 +200,7 @@ export function VideoaulasGrid() {
     <div className="space-y-8">
       {avisoBox}
       {videoaulas.map((videoaula, index) => {
-        const color = SECTION_NEON_COLORS[index % SECTION_NEON_COLORS.length]
+        const color = videoaula.cor_hex || NEON_COLORS[index % NEON_COLORS.length].hex
         const listId = videoaula.youtube_url ? getYoutubePlaylistId(videoaula.youtube_url) : null
 
         let videos: VideoItem[] = []

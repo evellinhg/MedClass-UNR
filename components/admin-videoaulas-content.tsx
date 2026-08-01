@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { Loader2, PlayCircle, Pencil, Plus, Search, Trash2 } from "lucide-react"
+import { Check, Layers, Loader2, PlayCircle, Pencil, Plus, Search, Trash2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS } from "@/lib/quiz-config"
 import { Button } from "@/components/ui/button"
@@ -13,7 +13,8 @@ import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import type { VideoaulaDB } from "@/lib/videoaulas-types"
-import { getYoutubeEmbedUrl } from "@/lib/youtube"
+import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
+import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 
 interface VideoaulaForm {
   titulo: string
@@ -23,6 +24,7 @@ interface VideoaulaForm {
   ativo: boolean
   tags: string
   youtubeUrl: string
+  corHex: string
 }
 
 export function AdminVideoaulasContent() {
@@ -30,6 +32,7 @@ export function AdminVideoaulasContent() {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("")
   const [dialogOpen, setDialogOpen] = useState(false)
+  const [dialogKind, setDialogKind] = useState<"video" | "playlist">("video")
   const [editingId, setEditingId] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
   const [form, setForm] = useState<VideoaulaForm>(emptyForm(1))
@@ -54,6 +57,7 @@ export function AdminVideoaulasContent() {
       ativo: true,
       tags: "",
       youtubeUrl: "",
+      corHex: NEON_COLORS[0].hex,
     }
   }
 
@@ -65,15 +69,17 @@ export function AdminVideoaulasContent() {
     )
   }, [videoaulas, search])
 
-  const openNew = () => {
+  const openNew = (kind: "video" | "playlist") => {
     const proximaOrdem = videoaulas.length > 0 ? Math.max(...videoaulas.map((v) => v.ordem)) + 1 : 1
     setEditingId(null)
+    setDialogKind(kind)
     setForm(emptyForm(proximaOrdem))
     setDialogOpen(true)
   }
 
   const openEdit = (videoaula: VideoaulaDB) => {
     setEditingId(videoaula.id)
+    setDialogKind(getYoutubePlaylistId(videoaula.youtube_url ?? "") ? "playlist" : "video")
     setForm({
       titulo: videoaula.titulo,
       especialidade: videoaula.especialidade,
@@ -82,6 +88,7 @@ export function AdminVideoaulasContent() {
       ativo: videoaula.ativo,
       tags: videoaula.tags.join(", "),
       youtubeUrl: videoaula.youtube_url ?? "",
+      corHex: videoaula.cor_hex ?? NEON_COLORS[0].hex,
     })
     setDialogOpen(true)
   }
@@ -101,6 +108,10 @@ export function AdminVideoaulasContent() {
       alert("Link do YouTube inválido. Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo (youtube.com/watch?v=... ou youtu.be/...).")
       return
     }
+    if (dialogKind === "playlist" && youtubeUrl && !getYoutubePlaylistId(youtubeUrl)) {
+      alert("Esse link não é de uma playlist. Cole um link no formato youtube.com/playlist?list=...")
+      return
+    }
     setSaving(true)
     const payload = {
       titulo: form.titulo.trim(),
@@ -110,6 +121,7 @@ export function AdminVideoaulasContent() {
       ativo: form.ativo,
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
       youtube_url: youtubeUrl || null,
+      cor_hex: form.corHex,
     }
 
     const { error } = editingId
@@ -147,10 +159,16 @@ export function AdminVideoaulasContent() {
             className="pl-9"
           />
         </div>
-        <Button variant="gradient" className="gap-1.5" onClick={openNew}>
-          <Plus className="h-4 w-4" />
-          Nova Videoaula
-        </Button>
+        <div className="flex gap-2">
+          <Button variant="outline" className="gap-1.5" onClick={() => openNew("playlist")}>
+            <Layers className="h-4 w-4" />
+            Nova Playlist
+          </Button>
+          <Button variant="gradient" className="gap-1.5" onClick={() => openNew("video")}>
+            <Plus className="h-4 w-4" />
+            Nova Videoaula
+          </Button>
+        </div>
       </div>
 
       {loading ? (
@@ -164,11 +182,21 @@ export function AdminVideoaulasContent() {
         </Card>
       ) : (
         <div className="space-y-3">
-          {filtered.map((videoaula) => (
+          {filtered.map((videoaula) => {
+            const isPlaylist = !!getYoutubePlaylistId(videoaula.youtube_url ?? "")
+            const cor = videoaula.cor_hex ?? NEON_COLORS[0].hex
+            return (
             <Card key={videoaula.id} className="border border-border bg-card p-4">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0 flex-1">
                   <div className="mb-2 flex flex-wrap items-center gap-2">
+                    {videoaula.youtube_url && (
+                      <span
+                        className="h-3 w-3 shrink-0 rounded-full"
+                        style={{ backgroundColor: cor, boxShadow: `0 0 6px ${hexToRgba(cor, 0.8)}` }}
+                        title="Cor de classificação"
+                      />
+                    )}
                     <Badge variant="secondary">{videoaula.especialidade}</Badge>
                     <Badge variant="outline">Ordem {videoaula.ordem}</Badge>
                     <span className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -177,7 +205,7 @@ export function AdminVideoaulasContent() {
                     </span>
                     {videoaula.youtube_url && (
                       <Badge variant="secondary" className="gap-1 bg-red-500/10 text-red-500">
-                        YouTube
+                        {isPlaylist ? "Playlist" : "Vídeo"}
                       </Badge>
                     )}
                   </div>
@@ -212,14 +240,17 @@ export function AdminVideoaulasContent() {
                 </div>
               </div>
             </Card>
-          ))}
+            )
+          })}
         </div>
       )}
 
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
-            <DialogTitle>{editingId ? "Editar Videoaula" : "Nova Videoaula"}</DialogTitle>
+            <DialogTitle>
+              {editingId ? "Editar Videoaula" : dialogKind === "playlist" ? "Nova Playlist" : "Nova Videoaula"}
+            </DialogTitle>
           </DialogHeader>
 
           <div className="space-y-4 py-2">
@@ -229,7 +260,9 @@ export function AdminVideoaulasContent() {
                 id="titulo"
                 value={form.titulo}
                 onChange={(e) => setForm((p) => ({ ...p, titulo: e.target.value }))}
-                placeholder="Ex: Insuficiência Cardíaca Congestiva"
+                placeholder={
+                  dialogKind === "playlist" ? "Ex: Playlist Oficial UNR — 4º Ano" : "Ex: Insuficiência Cardíaca Congestiva"
+                }
               />
             </div>
 
@@ -261,9 +294,13 @@ export function AdminVideoaulasContent() {
             </div>
 
             <div className="space-y-1.5">
-              <Label htmlFor="youtubeUrl">Link do YouTube (playlist ou vídeo)</Label>
+              <Label htmlFor="youtubeUrl">
+                {dialogKind === "playlist" ? "Link da playlist do YouTube" : "Link do YouTube (playlist ou vídeo)"}
+              </Label>
               <p className="text-xs text-muted-foreground">
-                Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo específico. Fica incorporado direto na página.
+                {dialogKind === "playlist"
+                  ? "Cole o link da playlist inteira (youtube.com/playlist?list=...). Os vídeos aparecem lado a lado para os alunos."
+                  : "Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo específico. Fica incorporado direto na página."}
               </p>
               <Input
                 id="youtubeUrl"
@@ -271,6 +308,33 @@ export function AdminVideoaulasContent() {
                 onChange={(e) => setForm((p) => ({ ...p, youtubeUrl: e.target.value }))}
                 placeholder="https://www.youtube.com/playlist?list=..."
               />
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Cor de classificação (neon)</Label>
+              <p className="text-xs text-muted-foreground">
+                Usada para destacar essa {dialogKind === "playlist" ? "playlist" : "videoaula"} na página de Materiais.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {NEON_COLORS.map((c) => {
+                  const selected = form.corHex === c.hex
+                  return (
+                    <button
+                      key={c.hex}
+                      type="button"
+                      title={c.label}
+                      onClick={() => setForm((p) => ({ ...p, corHex: c.hex }))}
+                      className="flex h-8 w-8 items-center justify-center rounded-full transition-transform hover:scale-110"
+                      style={{
+                        backgroundColor: c.hex,
+                        boxShadow: selected ? `0 0 0 2px var(--background), 0 0 0 4px ${c.hex}` : `0 0 8px ${hexToRgba(c.hex, 0.6)}`,
+                      }}
+                    >
+                      {selected && <Check className="h-4 w-4 text-black/70" />}
+                    </button>
+                  )
+                })}
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
@@ -309,7 +373,7 @@ export function AdminVideoaulasContent() {
               Cancelar
             </Button>
             <Button variant="gradient" onClick={handleSave} disabled={saving}>
-              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Salvar Videoaula"}
+              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : dialogKind === "playlist" ? "Salvar Playlist" : "Salvar Videoaula"}
             </Button>
           </DialogFooter>
         </DialogContent>

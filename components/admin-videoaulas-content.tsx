@@ -13,6 +13,7 @@ import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import type { VideoaulaDB } from "@/lib/videoaulas-types"
+import { getYoutubeEmbedUrl } from "@/lib/youtube"
 
 interface VideoaulaForm {
   titulo: string
@@ -21,6 +22,7 @@ interface VideoaulaForm {
   ordem: number
   ativo: boolean
   tags: string
+  youtubeUrl: string
 }
 
 export function AdminVideoaulasContent() {
@@ -51,6 +53,7 @@ export function AdminVideoaulasContent() {
       ordem: proximaOrdem,
       ativo: true,
       tags: "",
+      youtubeUrl: "",
     }
   }
 
@@ -78,6 +81,7 @@ export function AdminVideoaulasContent() {
       ordem: videoaula.ordem,
       ativo: videoaula.ativo,
       tags: videoaula.tags.join(", "),
+      youtubeUrl: videoaula.youtube_url ?? "",
     })
     setDialogOpen(true)
   }
@@ -92,6 +96,11 @@ export function AdminVideoaulasContent() {
       alert("Preencha o título da videoaula.")
       return
     }
+    const youtubeUrl = form.youtubeUrl.trim()
+    if (youtubeUrl && !getYoutubeEmbedUrl(youtubeUrl)) {
+      alert("Link do YouTube inválido. Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo (youtube.com/watch?v=... ou youtu.be/...).")
+      return
+    }
     setSaving(true)
     const payload = {
       titulo: form.titulo.trim(),
@@ -100,6 +109,7 @@ export function AdminVideoaulasContent() {
       ordem: form.ordem,
       ativo: form.ativo,
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
+      youtube_url: youtubeUrl || null,
     }
 
     const { error } = editingId
@@ -165,6 +175,11 @@ export function AdminVideoaulasContent() {
                       <PlayCircle className="h-3.5 w-3.5" />
                       {videoaula.duracao}
                     </span>
+                    {videoaula.youtube_url && (
+                      <Badge variant="secondary" className="gap-1 bg-red-500/10 text-red-500">
+                        YouTube
+                      </Badge>
+                    )}
                   </div>
                   <p className="font-medium text-foreground">{videoaula.titulo}</p>
                   {videoaula.tags.length > 0 && (
@@ -243,6 +258,19 @@ export function AdminVideoaulasContent() {
                   placeholder="Ex: 42 min"
                 />
               </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="youtubeUrl">Link do YouTube (playlist ou vídeo)</Label>
+              <p className="text-xs text-muted-foreground">
+                Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo específico. Fica incorporado direto na página.
+              </p>
+              <Input
+                id="youtubeUrl"
+                value={form.youtubeUrl}
+                onChange={(e) => setForm((p) => ({ ...p, youtubeUrl: e.target.value }))}
+                placeholder="https://www.youtube.com/playlist?list=..."
+              />
             </div>
 
             <div className="grid grid-cols-2 gap-3">

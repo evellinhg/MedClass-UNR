@@ -9,7 +9,7 @@ const csp = [
   `img-src 'self' data: blob: ${supabaseUrl}`,
   "font-src 'self' data:",
   `connect-src 'self' ${supabaseUrl} ${supabaseWs} https://va.vercel-scripts.com https://vitals.vercel-insights.com`,
-  "frame-src 'none'",
+  "frame-src https://www.youtube-nocookie.com",
   "object-src 'none'",
 ].join("; ")
 

@@ -7,4 +7,5 @@ export interface VideoaulaDB {
   ordem: number
   ativo: boolean
   created_at: string
+  youtube_url: string | null
 }

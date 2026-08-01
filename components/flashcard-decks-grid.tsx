@@ -13,6 +13,7 @@ import { getDisciplinaIcon } from "@/lib/disciplina-icons"
 import { getDisciplinaColor } from "@/lib/disciplina-colors"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, DISCIPLINA_BASE_KEYS } from "@/lib/unr-curriculum"
 import type { FlashcardDeck } from "@/lib/flashcards-types"
+import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
 
 interface DeckWithProgress extends FlashcardDeck {
@@ -232,29 +233,37 @@ export function FlashcardDecksGrid() {
 
   return (
     <div className="space-y-8">
-      {bySection.map(({ materiaKey, subsections }) => {
+      {bySection.map(({ materiaKey, subsections }, index) => {
         const isOpen = !collapsed.has(materiaKey)
         const materiaTitulo =
           materiaKey === SEM_CATEGORIA
             ? t.flashcardsGrid.semCategoria
             : t.cronograma.materiaLabel[materiaKey] ?? materiaKey
         const totalDecks = subsections.reduce((sum, s) => sum + s.decks.length, 0)
+        const color = NEON_COLORS[index % NEON_COLORS.length].hex
 
         return (
           <section key={materiaKey}>
             <button
               type="button"
               onClick={() => toggleSection(materiaKey)}
-              className="mb-4 flex w-full items-center justify-between gap-2 border-b border-border pb-2 text-left"
+              className="mb-4 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
+              style={{
+                borderColor: hexToRgba(color, 0.5),
+                backgroundColor: hexToRgba(color, 0.06),
+                boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
+              }}
             >
               <span className="flex items-center gap-2">
                 <h2 className="text-lg font-semibold text-foreground">{materiaTitulo}</h2>
-                <Badge variant="secondary" className="text-[11px]">{totalDecks}</Badge>
+                <Badge variant="outline" className="text-[11px]" style={{ borderColor: hexToRgba(color, 0.4), color }}>
+                  {totalDecks}
+                </Badge>
               </span>
               {isOpen ? (
-                <ChevronUp className="h-4 w-4 shrink-0 text-muted-foreground" />
+                <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
               ) : (
-                <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground" />
+                <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
               )}
             </button>
 

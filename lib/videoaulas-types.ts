@@ -1,3 +1,6 @@
+export const VIDEOAULA_FONTE_KEYS = ["unr", "alde"] as const
+export type VideoaulaFonteKey = (typeof VIDEOAULA_FONTE_KEYS)[number]
+
 export interface VideoaulaDB {
   id: string
   titulo: string
@@ -9,4 +12,5 @@ export interface VideoaulaDB {
   created_at: string
   youtube_url: string | null
   cor_hex: string | null
+  fonte: string
 }

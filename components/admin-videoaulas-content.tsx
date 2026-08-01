@@ -12,9 +12,14 @@ import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import type { VideoaulaDB } from "@/lib/videoaulas-types"
+import { VIDEOAULA_FONTE_KEYS, type VideoaulaDB } from "@/lib/videoaulas-types"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
+
+const FONTE_LABEL: Record<string, string> = {
+  unr: "Facultad de Ciencias Médicas – UNR",
+  alde: "ALDE",
+}
 
 interface VideoaulaForm {
   titulo: string
@@ -25,6 +30,7 @@ interface VideoaulaForm {
   tags: string
   youtubeUrl: string
   corHex: string
+  fonte: string
 }
 
 export function AdminVideoaulasContent() {
@@ -58,6 +64,7 @@ export function AdminVideoaulasContent() {
       tags: "",
       youtubeUrl: "",
       corHex: NEON_COLORS[0].hex,
+      fonte: VIDEOAULA_FONTE_KEYS[0],
     }
   }
 
@@ -89,6 +96,7 @@ export function AdminVideoaulasContent() {
       tags: videoaula.tags.join(", "),
       youtubeUrl: videoaula.youtube_url ?? "",
       corHex: videoaula.cor_hex ?? NEON_COLORS[0].hex,
+      fonte: videoaula.fonte || VIDEOAULA_FONTE_KEYS[0],
     })
     setDialogOpen(true)
   }
@@ -122,6 +130,7 @@ export function AdminVideoaulasContent() {
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
       youtube_url: youtubeUrl || null,
       cor_hex: form.corHex,
+      fonte: form.fonte,
     }
 
     const { error } = editingId
@@ -208,6 +217,7 @@ export function AdminVideoaulasContent() {
                         {isPlaylist ? "Playlist" : "Vídeo"}
                       </Badge>
                     )}
+                    <Badge variant="outline">{FONTE_LABEL[videoaula.fonte] ?? videoaula.fonte}</Badge>
                   </div>
                   <p className="font-medium text-foreground">{videoaula.titulo}</p>
                   {videoaula.tags.length > 0 && (
@@ -291,6 +301,22 @@ export function AdminVideoaulasContent() {
                   placeholder="Ex: 42 min"
                 />
               </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label>Fonte / Canal</Label>
+              <Select value={form.fonte} onValueChange={(v) => setForm((p) => ({ ...p, fonte: v }))}>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {VIDEOAULA_FONTE_KEYS.map((key) => (
+                    <SelectItem key={key} value={key}>
+                      {FONTE_LABEL[key]}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
 
             <div className="space-y-1.5">

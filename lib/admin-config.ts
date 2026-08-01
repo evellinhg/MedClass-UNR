@@ -1,7 +1,7 @@
 const envEmails = process.env.ADMIN_EMAILS ?? ""
 export const ADMIN_EMAILS: string[] = envEmails
   ? envEmails.split(",").map((e) => e.trim().toLowerCase())
-  : ["leonardoac.alves@gmail.com", "leonardoac.alves2@gmail.com"]
+  : ["leonardoac.alves@gmail.com", "leonardoac.alves2@gmail.com", "medclassunr@gmail.com"]
 
 export function isAdminEmail(email?: string | null) {
   if (!email) return false

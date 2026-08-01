@@ -563,6 +563,14 @@ const pt = {
     copyright: "© 2026 MedClass UNR. Todos os direitos reservados.",
     terms: "Termos de Uso",
     privacy: "Política de Privacidade",
+    social: {
+      titulo: "Fica por dentro nas redes",
+      subtitulo: "Dicas, novidades e bastidores da MedClass UNR — e a comunidade de alunos te espera.",
+      instagramLabel: "Seguir no Instagram",
+      instagramHandle: "@medclassunr",
+      whatsappLabel: "Entrar no grupo",
+      whatsappSubtitulo: "Grupo oficial de WhatsApp",
+    },
   },
   dashboard: {
     subjects: {
@@ -1449,6 +1457,14 @@ const es: typeof pt = {
     copyright: "© 2026 MedClass UNR. Todos los derechos reservados.",
     terms: "Términos de Uso",
     privacy: "Política de Privacidad",
+    social: {
+      titulo: "Sumate a nuestras redes",
+      subtitulo: "Tips, novedades y contenido exclusivo de MedClass UNR — y la comunidad de estudiantes te espera.",
+      instagramLabel: "Seguir en Instagram",
+      instagramHandle: "@medclassunr",
+      whatsappLabel: "Unirte al grupo",
+      whatsappSubtitulo: "Grupo oficial de WhatsApp",
+    },
   },
   dashboard: {
     subjects: {

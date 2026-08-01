@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { SocialBanner } from "@/components/social-banner"
 import { useLanguage } from "@/lib/i18n"
 
 export function Footer() {
@@ -30,6 +31,9 @@ export function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Social Section */}
+      <SocialBanner />
 
       {/* Bottom */}
       <div className="mx-auto max-w-7xl px-6 pb-12">

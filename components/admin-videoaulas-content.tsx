@@ -13,6 +13,7 @@ import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { VIDEOAULA_FONTE_KEYS, type VideoaulaArquivoDB, type VideoaulaDB } from "@/lib/videoaulas-types"
+import { ANO_KEYS } from "@/lib/unr-curriculum"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 
@@ -21,6 +22,16 @@ const FONTE_LABEL: Record<string, string> = {
   alde: "ALDE",
   propria: "MedClass UNR (própria)",
 }
+
+const ANO_LABEL: Record<string, string> = {
+  ano1: "1º Ano",
+  ano2: "2º Ano",
+  ano3: "3º Ano",
+  ano4: "4º Ano",
+  ano5: "5º Ano",
+}
+
+const SEM_ANO = "sem_ano"
 
 type DialogKind = "video" | "playlist" | "propria"
 
@@ -36,6 +47,7 @@ interface VideoaulaForm {
   youtubeUrl: string
   corHex: string
   fonte: string
+  ano: string
 }
 
 export function AdminVideoaulasContent() {
@@ -76,6 +88,7 @@ export function AdminVideoaulasContent() {
       youtubeUrl: "",
       corHex: NEON_COLORS[0].hex,
       fonte: VIDEOAULA_FONTE_KEYS[0],
+      ano: SEM_ANO,
     }
   }
 
@@ -122,6 +135,7 @@ export function AdminVideoaulasContent() {
       youtubeUrl: videoaula.youtube_url ?? "",
       corHex: videoaula.cor_hex ?? NEON_COLORS[0].hex,
       fonte: videoaula.fonte || VIDEOAULA_FONTE_KEYS[0],
+      ano: videoaula.ano ?? SEM_ANO,
     })
     if (kind === "propria") loadArquivos(videoaula.id)
     else setArquivos([])
@@ -207,6 +221,7 @@ export function AdminVideoaulasContent() {
       youtube_url: youtubeUrl || null,
       cor_hex: form.corHex,
       fonte: form.fonte,
+      ano: form.ano === SEM_ANO ? null : form.ano,
     }
 
     if (editingId) {
@@ -431,20 +446,39 @@ export function AdminVideoaulasContent() {
               />
             </div>
 
-            <div className="space-y-1.5">
-              <Label>Fonte / Canal</Label>
-              <Select value={form.fonte} onValueChange={(v) => setForm((p) => ({ ...p, fonte: v }))}>
-                <SelectTrigger className="w-full">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {VIDEOAULA_FONTE_KEYS.map((key) => (
-                    <SelectItem key={key} value={key}>
-                      {FONTE_LABEL[key]}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label>Fonte / Canal</Label>
+                <Select value={form.fonte} onValueChange={(v) => setForm((p) => ({ ...p, fonte: v }))}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {VIDEOAULA_FONTE_KEYS.map((key) => (
+                      <SelectItem key={key} value={key}>
+                        {FONTE_LABEL[key]}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-1.5">
+                <Label>Ano</Label>
+                <p className="text-xs text-muted-foreground">Agrupa a playlist por ano dentro da fonte/canal.</p>
+                <Select value={form.ano} onValueChange={(v) => setForm((p) => ({ ...p, ano: v }))}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value={SEM_ANO}>Sem ano específico</SelectItem>
+                    {ANO_KEYS.map((key) => (
+                      <SelectItem key={key} value={key}>
+                        {ANO_LABEL[key]}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
 
             {dialogKind === "propria" ? (

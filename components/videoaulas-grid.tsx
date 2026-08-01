@@ -7,9 +7,12 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VIDEOAULA_FONTE_KEYS, type VideoaulaArquivoDB, type VideoaulaDB } from "@/lib/videoaulas-types"
+import { ANO_KEYS } from "@/lib/unr-curriculum"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
+
+const SEM_ANO_KEY = "sem_ano"
 
 interface PlaylistVideo {
   videoId: string
@@ -216,124 +219,150 @@ export function VideoaulasGrid() {
     )
   }
 
-  const grupos = VIDEOAULA_FONTE_KEYS.map((fonteKey) => ({
-    fonteKey,
-    items: videoaulas
+  const ordemAno = [...ANO_KEYS, SEM_ANO_KEY]
+
+  const grupos = VIDEOAULA_FONTE_KEYS.map((fonteKey) => {
+    const itemsComIndex = videoaulas
       .map((videoaula, index) => ({ videoaula, index }))
-      .filter(({ videoaula }) => (videoaula.fonte || "unr") === fonteKey),
-  })).filter((g) => g.items.length > 0)
+      .filter(({ videoaula }) => (videoaula.fonte || "unr") === fonteKey)
+
+    const porAno = new Map<string, typeof itemsComIndex>()
+    for (const item of itemsComIndex) {
+      const anoKey = item.videoaula.ano || SEM_ANO_KEY
+      if (!porAno.has(anoKey)) porAno.set(anoKey, [])
+      porAno.get(anoKey)!.push(item)
+    }
+
+    const subgrupos = Array.from(porAno.entries())
+      .map(([anoKey, items]) => ({ anoKey, items }))
+      .sort((a, b) => ordemAno.indexOf(a.anoKey) - ordemAno.indexOf(b.anoKey))
+
+    return { fonteKey, subgrupos }
+  }).filter((g) => g.subgrupos.length > 0)
 
   return (
     <div className="space-y-8">
       {avisoBox}
-      {grupos.map(({ fonteKey, items }) => (
-        <div key={fonteKey} className="space-y-4">
+      {grupos.map(({ fonteKey, subgrupos }) => (
+        <div key={fonteKey} className="space-y-6">
           <h2 className="text-lg font-bold text-foreground">{t.videoaulasGrid.fonteLabel[fonteKey] ?? fonteKey}</h2>
-          <div className="space-y-8">
-            {items.map(({ videoaula, index }) => {
-              const color = videoaula.cor_hex || NEON_COLORS[index % NEON_COLORS.length].hex
-              const listId = videoaula.youtube_url ? getYoutubePlaylistId(videoaula.youtube_url) : null
-              const titulo = (lang === "es" && videoaula.titulo_es) || videoaula.titulo
-              const especialidade = (lang === "es" && videoaula.especialidade_es) || videoaula.especialidade
+          {subgrupos.map(({ anoKey, items }) => (
+            <div key={anoKey} className="space-y-4">
+              {anoKey !== SEM_ANO_KEY && (
+                <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  {t.cronograma.anoLabel[anoKey] ?? anoKey}
+                  <Badge variant="outline" className="text-[10px] font-normal normal-case">
+                    {items.length}
+                  </Badge>
+                </h3>
+              )}
+              <div className="space-y-8">
+                {items.map(({ videoaula, index }) => {
+                  const color = videoaula.cor_hex || NEON_COLORS[index % NEON_COLORS.length].hex
+                  const listId = videoaula.youtube_url ? getYoutubePlaylistId(videoaula.youtube_url) : null
+                  const titulo = (lang === "es" && videoaula.titulo_es) || videoaula.titulo
+                  const especialidade = (lang === "es" && videoaula.especialidade_es) || videoaula.especialidade
 
-              let videos: VideoItem[] = []
-              let sectionStatus: "ok" | "loading" | "error" = "ok"
+                  let videos: VideoItem[] = []
+                  let sectionStatus: "ok" | "loading" | "error" = "ok"
 
-              if (videoaula.fonte === "propria") {
-                const arquivoData = arquivosItems[videoaula.id]
-                if (arquivoData === "loading" || arquivoData === undefined) {
-                  sectionStatus = "loading"
-                } else if (arquivoData === "error") {
-                  sectionStatus = "error"
-                } else {
-                  videos = arquivoData.map((arquivo) => ({
-                    key: arquivo.id,
-                    title: arquivo.titulo,
-                    thumbnail: null,
-                    embedUrl: supabase.storage.from("videoaulas-arquivos").getPublicUrl(arquivo.arquivo_path).data.publicUrl,
-                    type: "file",
-                  }))
-                }
-              } else if (listId) {
-                const playlistData = playlistItems[videoaula.id]
-                if (playlistData === "loading" || playlistData === undefined) {
-                  sectionStatus = "loading"
-                } else if (playlistData === "error") {
-                  sectionStatus = "error"
-                } else {
-                  videos = playlistData.map((item) => ({
-                    key: item.videoId,
-                    title: item.title,
-                    thumbnail: item.thumbnail,
-                    embedUrl: `https://www.youtube-nocookie.com/embed/${item.videoId}`,
-                    type: "youtube",
-                  }))
-                }
-              } else if (videoaula.youtube_url) {
-                const embedUrl = getYoutubeEmbedUrl(videoaula.youtube_url)
-                if (embedUrl) {
-                  videos = [{ key: videoaula.id, title: titulo, thumbnail: null, embedUrl, type: "youtube" }]
-                }
-              }
+                  if (videoaula.fonte === "propria") {
+                    const arquivoData = arquivosItems[videoaula.id]
+                    if (arquivoData === "loading" || arquivoData === undefined) {
+                      sectionStatus = "loading"
+                    } else if (arquivoData === "error") {
+                      sectionStatus = "error"
+                    } else {
+                      videos = arquivoData.map((arquivo) => ({
+                        key: arquivo.id,
+                        title: arquivo.titulo,
+                        thumbnail: null,
+                        embedUrl: supabase.storage.from("videoaulas-arquivos").getPublicUrl(arquivo.arquivo_path).data.publicUrl,
+                        type: "file",
+                      }))
+                    }
+                  } else if (listId) {
+                    const playlistData = playlistItems[videoaula.id]
+                    if (playlistData === "loading" || playlistData === undefined) {
+                      sectionStatus = "loading"
+                    } else if (playlistData === "error") {
+                      sectionStatus = "error"
+                    } else {
+                      videos = playlistData.map((item) => ({
+                        key: item.videoId,
+                        title: item.title,
+                        thumbnail: item.thumbnail,
+                        embedUrl: `https://www.youtube-nocookie.com/embed/${item.videoId}`,
+                        type: "youtube",
+                      }))
+                    }
+                  } else if (videoaula.youtube_url) {
+                    const embedUrl = getYoutubeEmbedUrl(videoaula.youtube_url)
+                    if (embedUrl) {
+                      videos = [{ key: videoaula.id, title: titulo, thumbnail: null, embedUrl, type: "youtube" }]
+                    }
+                  }
 
-              const isOpen = !collapsed.has(videoaula.id)
+                  const isOpen = !collapsed.has(videoaula.id)
 
-              return (
-                <section key={videoaula.id}>
-                  <button
-                    type="button"
-                    onClick={() => toggleSection(videoaula.id)}
-                    className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
-                    style={{
-                      borderColor: hexToRgba(color, 0.5),
-                      backgroundColor: hexToRgba(color, 0.06),
-                      boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
-                    }}
-                  >
-                    <span className="flex flex-wrap items-center gap-2">
-                      <Badge
-                        className="border-0 text-[11px]"
-                        style={{ backgroundColor: hexToRgba(color, 0.18), color }}
+                  return (
+                    <section key={videoaula.id}>
+                      <button
+                        type="button"
+                        onClick={() => toggleSection(videoaula.id)}
+                        className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
+                        style={{
+                          borderColor: hexToRgba(color, 0.5),
+                          backgroundColor: hexToRgba(color, 0.06),
+                          boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
+                        }}
                       >
-                        {especialidade}
-                      </Badge>
-                      <h3 className="text-base font-semibold text-foreground">{titulo}</h3>
-                      {isOpen && videos.length > 0 && (
-                        <Badge
-                          variant="outline"
-                          className="text-[11px]"
-                          style={{ borderColor: hexToRgba(color, 0.4), color }}
-                        >
-                          {videos.length}
-                        </Badge>
-                      )}
-                    </span>
-                    {isOpen ? (
-                      <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
-                    ) : (
-                      <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
-                    )}
-                  </button>
+                        <span className="flex flex-wrap items-center gap-2">
+                          <Badge
+                            className="border-0 text-[11px]"
+                            style={{ backgroundColor: hexToRgba(color, 0.18), color }}
+                          >
+                            {especialidade}
+                          </Badge>
+                          <h3 className="text-base font-semibold text-foreground">{titulo}</h3>
+                          {isOpen && videos.length > 0 && (
+                            <Badge
+                              variant="outline"
+                              className="text-[11px]"
+                              style={{ borderColor: hexToRgba(color, 0.4), color }}
+                            >
+                              {videos.length}
+                            </Badge>
+                          )}
+                        </span>
+                        {isOpen ? (
+                          <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
+                        )}
+                      </button>
 
-                  {isOpen &&
-                    (sectionStatus === "loading" ? (
-                      <div className="flex items-center gap-2 py-6 text-sm text-muted-foreground">
-                        <Loader2 className="h-4 w-4 animate-spin" />
-                        {t.videoaulasGrid.carregandoPlaylist}
-                      </div>
-                    ) : sectionStatus === "error" ? (
-                      <p className="py-6 text-sm text-muted-foreground">{t.videoaulasGrid.erroPlaylist}</p>
-                    ) : videos.length > 0 ? (
-                      <VideoRow videos={videos} onPlay={setPlaying} />
-                    ) : (
-                      <Card className="flex h-28 items-center justify-center border border-dashed border-border bg-card">
-                        <PlayCircle className="h-8 w-8 text-muted-foreground" />
-                      </Card>
-                    ))}
-                </section>
-              )
-            })}
-          </div>
+                      {isOpen &&
+                        (sectionStatus === "loading" ? (
+                          <div className="flex items-center gap-2 py-6 text-sm text-muted-foreground">
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            {t.videoaulasGrid.carregandoPlaylist}
+                          </div>
+                        ) : sectionStatus === "error" ? (
+                          <p className="py-6 text-sm text-muted-foreground">{t.videoaulasGrid.erroPlaylist}</p>
+                        ) : videos.length > 0 ? (
+                          <VideoRow videos={videos} onPlay={setPlaying} />
+                        ) : (
+                          <Card className="flex h-28 items-center justify-center border border-dashed border-border bg-card">
+                            <PlayCircle className="h-8 w-8 text-muted-foreground" />
+                          </Card>
+                        ))}
+                    </section>
+                  )
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       ))}
 

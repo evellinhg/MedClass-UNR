@@ -15,6 +15,7 @@ export interface VideoaulaDB {
   youtube_url: string | null
   cor_hex: string | null
   fonte: string
+  ano: string | null
 }
 
 export interface VideoaulaArquivoDB {

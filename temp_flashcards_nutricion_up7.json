@@ -1,0 +1,821 @@
+[
+  {
+    "titulo": "Nutrición UP7 — Anatomía — Peritoneo y cavidad peritoneal",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Serosa peritoneal: hojas visceral y parietal, mesos, ligamentos, omentos (epiplones), transcavidad de los epiplones, fondos de saco peritoneales (Douglas, vesicouterino, rectovesical y receso hepatorenal) e irrigación e inervación del peritoneo.",
+    "tags": [
+      "nutricion-up7",
+      "anatomia",
+      "peritoneo",
+      "cavidad-peritoneal",
+      "mesos",
+      "omentos",
+      "transcavidad-de-los-epiplones",
+      "fondos-de-saco"
+    ],
+    "ordem": 93,
+    "cards": [
+      {
+        "frente": "¿Qué es el peritoneo y cuáles son sus dos hojas?",
+        "verso": "Es una membrana serosa que tapiza la cavidad abdominopélvica. Presenta dos hojas: la hoja parietal (recubre la pared abdominal y pelviana) y la hoja visceral (recubre los órganos). Entre ambas queda la cavidad peritoneal, virtual, con una pequeña cantidad de líquido seroso.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones cumple el peritoneo?",
+        "verso": "Permite el deslizamiento de las vísceras entre sí, da sostén a los órganos, conduce vasos y nervios a través de mesos y ligamentos, y participa en la defensa local (mecanismos inflamatorios y de contención de infecciones).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un meso y cuáles son los principales del abdomen?",
+        "verso": "Es una doble capa de peritoneo que une un órgano a la pared y conduce sus vasos, nervios y linfáticos: mesenterio (intestino delgado), mesocolon transverso, mesocolon sigmoide y mesoapéndice.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un ligamento peritoneal y qué ejemplos importantes existen?",
+        "verso": "Es un pliegue de doble capa de peritoneo que une órganos entre sí o a la pared: ligamento falciforme (hígado a la pared anterior), ligamento hepatoduodenal (contiene el pedículo hepático: arteria hepática propia, colédoco y vena porta), ligamento gastrohepático y ligamento ancho del útero, entre otros.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los omentos (epiplones) y cuáles son?",
+        "verso": "Son dobles capas de peritoneo que unen el estómago a otros órganos. El omento mayor cuelga de la curvatura mayor del estómago y cubre como un delantal el colon transverso y el intestino delgado; el omento menor une la curvatura menor del estómago y el duodeno inicial con la cara visceral del hígado (formado por los ligamentos gastrohepático y hepatoduodenal).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transcavidad de los epiplones (bolsa omental)?",
+        "verso": "Es un receso de la cavidad peritoneal situado por detrás del estómago y del omento menor y por delante del páncreas y del riñón izquierdo. Se comunica con el resto de la cavidad peritoneal por el foramen epiploico (hiato de Winslow).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué límites tiene la transcavidad de los epiplones?",
+        "verso": "Adelante: el omento menor y la cara posterior del estómago; atrás: el peritoneo que cubre el páncreas, el riñón y la glándula suprarrenal izquierdos; arriba: la cara inferior del hígado; abajo: el mesocolon transverso. Se comunica con la gran cavidad a través del foramen epiploico de Winslow.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué fondos de saco peritoneales existen en la pelvis?",
+        "verso": "En la mujer: la excavación rectouterina (fondo de saco de Douglas, entre el útero y el recto) y la excavación vesicouterina (entre la vejiga y el útero). En el varón: la excavación rectovesical (entre el recto y la vejiga con las vesículas seminales). El fondo de saco de Douglas es el punto más declive de la cavidad en la mujer.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el receso (fondo de saco) hepatorenal?",
+        "verso": "Es el espacio peritoneal situado entre la cara visceral del lóbulo derecho del hígado y el riñón derecho con la glándula suprarrenal, conocido como receso de Morrison; es el punto más declive de la cavidad en decúbito supino, donde suelen acumularse colecciones (líquido, pus, sangre).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se irriga e inerva el peritoneo?",
+        "verso": "La hoja parietal se irriga por arterias de la pared abdominal y se inerva por nervios somáticos, por lo que es sensible al dolor bien localizado (tacto, calor, frío). La hoja visceral se irriga por ramas de las arterias viscerales y está inervada por el sistema autónomo, con dolor mal localizado y referido.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Peritoneo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Anatomía — Aorta abdominal, vena cava inferior y plexos autónomos",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Arteria aorta y sus divisiones, ramas viscerales pares e impares (tronco celíaco, mesentéricas), vena cava inferior y sus afluentes, plexo celíaco (solar) y plexos hipogástricos.",
+    "tags": [
+      "nutricion-up7",
+      "anatomia",
+      "aorta-abdominal",
+      "tronco-celiaco",
+      "mesentericas",
+      "vena-cava-inferior",
+      "plexo-celiaco",
+      "plexos-hipogastricos"
+    ],
+    "ordem": 94,
+    "cards": [
+      {
+        "frente": "¿Por dónde atraviesa la aorta el diafragma y cuál es su segmento abdominal?",
+        "verso": "La aorta atraviesa el diafragma por el hiato aórtico a nivel de T12 y desciende como aorta abdominal por detrás del peritoneo, a la izquierda de la vena cava inferior; termina bifurcándose en las arterias ilíacas comunes a nivel de L4.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las ramas viscerales pares e impares de la aorta abdominal?",
+        "verso": "Pares: suprarrenales medias, renales y testiculares u ováricas (gonadales). Impares: el tronco celíaco (a nivel de T12), la arteria mesentérica superior (L1) y la arteria mesentérica inferior (L3).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué ramas da el tronco celíaco y qué territorios irriga?",
+        "verso": "Da las arterias gástrica izquierda, esplénica y hepática común; irriga el estómago, el hígado, el bazo, el páncreas y el duodeno proximal (el territorio del intestino anterior).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué territorios irrigan las arterias mesentéricas superior e inferior?",
+        "verso": "La mesentérica superior (L1) irriga el páncreas, el duodeno distal, el yeyuno, el íleon y el colon derecho hasta el ángulo esplénico; la mesentérica inferior (L3) irriga el colon izquierdo, el sigmoide y la porción superior del recto.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se forma la vena cava inferior y qué afluentes recibe en el abdomen?",
+        "verso": "Se forma por la unión de las venas ilíacas comunes a nivel de L5 y asciende a la derecha de la aorta. Recibe venas lumbares, frénicas inferiores, suprarrenales, renales y hepáticas, y atraviesa el diafragma por el foramen de la vena cava (T8) para desembocar en la aurícula derecha.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué la sangre del tubo digestivo no llega directamente a la vena cava inferior?",
+        "verso": "Porque la sangre de la mayor parte del tubo digestivo drena por el sistema de la vena porta, que la conduce al hígado; recién después de atravesar los sinusoides hepáticos pasa por las venas hepáticas hacia la vena cava inferior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Irrigación e inervación I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el plexo celíaco (solar)?",
+        "verso": "Es la gran red de ganglios y fibras autónomas situada alrededor del tronco celíaco y del origen de la mesentérica superior, a nivel de T12-L1, que distribuye inervación simpática y parasimpática a las vísceras abdominales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Inervación del abdomen. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué nervios contribuyen al plexo celíaco y qué plexos se originan de él?",
+        "verso": "Recibe el simpático preganglionar de los esplácnicos mayores (T5-T9) y el parasimpático del vago, más aferentes viscerales. De él se originan los plexos que acompañan a las arterias: gástrico, hepático, esplénico, renal, mesentérico superior e inferior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Inervación del abdomen. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los plexos hipogástricos?",
+        "verso": "El plexo hipogástrico superior es una lámina única delante de la bifurcación aórtica y del promontorio sacro (recibe simpático lumbar y parasimpático pélvico); el plexo hipogástrico inferior (o pélvico) es impar, delante del sacro, y distribuye la inervación autónoma a los órganos pelvianos.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Inervación del abdomen. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los nervios esplácnicos del abdomen y qué aportan?",
+        "verso": "Los esplácnicos mayores (T5-T9), menores (T10-T11) e imo (T12) llevan el simpático preganglionar; los lumbares (L1-L2) continúan la inervación simpática y los esplácnicos pélvicos (S2-S4) aportan el parasimpático de los órganos pelvianos. Integran los plexos celíaco, mesentéricos e hipogástricos.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Inervación del abdomen. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Biología — Guías Alimentarias para la Población Argentina 2016",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Las Guías Alimentarias para la Población Argentina (GAPA) 2016: qué son, proceso de actualización, los 10 mensajes, la gráfica de la alimentación diaria y el plan alimentario promedio.",
+    "tags": [
+      "nutricion-up7",
+      "biologia",
+      "guias-alimentarias",
+      "gapa-2016",
+      "mensajes-gapa",
+      "promocion-de-la-salud",
+      "grafica-alimentaria",
+      "plan-alimentario"
+    ],
+    "ordem": 95,
+    "cards": [
+      {
+        "frente": "¿Qué son las guías alimentarias y cuál es su propósito?",
+        "verso": "Son un instrumento educativo cuyo sentido primario es favorecer la promoción de estilos de vida más saludables y la prevención de problemas de salud relacionados con la dieta; traducen las metas nutricionales de la población en mensajes prácticos, en lenguaje sencillo y coloquial.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo surgieron las primeras GAPA y por qué se actualizaron en 2016?",
+        "verso": "Las primeras GAPA datan del año 2000. Tras 15 años se actualizaron porque cambiaron los estilos de vida, la oferta del mercado de alimentos y bebidas y la situación epidemiológica y nutricional (las carencias coexisten con el aumento exponencial de enfermedades crónicas no transmisibles, con destaque de la obesidad), y hubo más información científica y encuestas poblacionales.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Quién coordinó la actualización de las GAPA 2016 y cuántos mensajes incluyen?",
+        "verso": "El Ministerio de Salud de la Nación, a través de la Dirección de Promoción de la Salud y Control de Enfermedades No Transmisibles, con el aval de referentes de distintas áreas del Estado, sociedades científicas, universidades y centros de investigación. Son guías basadas en alimentos que constan de 10 mensajes y una imagen gráfica.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indica el Mensaje 1 de las GAPA 2016?",
+        "verso": "Incorporar a diario alimentos de todos los grupos y realizar al menos 30 minutos de actividad física: realizar 4 comidas al día (desayuno, almuerzo, merienda y cena), comer tranquilo y moderar las porciones, elegir alimentos preparados en casa antes que procesados y mantener una vida activa con peso adecuado.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indican los mensajes 2 y 3 de las GAPA 2016?",
+        "verso": "Mensaje 2: tomar a diario 8 vasos de agua segura (al menos 2 litros de líquidos sin azúcar, preferentemente agua, sin esperar a tener sed). Mensaje 3: consumir a diario 5 porciones de frutas y verduras en variedad de tipos y colores (medio plato de verduras en almuerzo y cena, y 2 o 3 frutas por día); el consumo diario disminuye el riesgo de obesidad, diabetes, cáncer de colon y enfermedades cardiovasculares.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indican los mensajes 4 y 5 de las GAPA 2016?",
+        "verso": "Mensaje 4: reducir el uso de sal y el consumo de alimentos con alto contenido de sodio (cocinar sin sal, usar condimentos, leer etiquetas de fiambres, embutidos y procesados; previene hipertensión y enfermedades vasculares y renales). Mensaje 5: limitar el consumo de bebidas azucaradas y de alimentos con elevado contenido de grasas, azúcar y sal (golosinas, amasados de pastelería, productos de copetín, manteca, margarina, grasa animal y crema).",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indican los mensajes 6 y 7 de las GAPA 2016?",
+        "verso": "Mensaje 6: consumir diariamente leche, yogur o queso, preferentemente descremados (3 porciones al día; son fuente de calcio en todas las edades). Mensaje 7: al consumir carnes quitarle la grasa visible, aumentar el consumo de pescado e incluir huevo: pescado 2 o más veces por semana, otras carnes blancas 2 veces y carnes rojas hasta 3 veces por semana, e incluir hasta un huevo por día si no se consume la carne necesaria.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indican los mensajes 8 y 9 de las GAPA 2016?",
+        "verso": "Mensaje 8: consumir legumbres, cereales preferentemente integrales, papa, batata, choclo o mandioca (combinar legumbres y cereales permite reemplazar la carne en algunas comidas). Mensaje 9: consumir aceite crudo como condimento (2 cucharadas al día), frutas secas o semillas sin salar (al menos un puñado por semana); el aceite crudo, las frutas secas y las semillas aportan nutrientes esenciales.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indica el Mensaje 10 de las GAPA 2016?",
+        "verso": "El consumo de bebidas alcohólicas debe ser responsable: los niños, los adolescentes y las mujeres embarazadas no deben consumirlas y deben evitarse siempre al conducir; en el adulto, el consumo máximo es de dos medidas por día en el hombre y una en la mujer.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo está compuesta la gráfica de la alimentación diaria de las GAPA 2016?",
+        "verso": "Verduras y frutas ocupan el 45% de la imagen; legumbres, cereales, papa, pan y pastas el 27%; leche, yogur y queso el 12%; carnes y huevo el 9%; aceite, frutas secas y semillas el 4%; y los alimentos de consumo opcional el 3%. El agua segura se ubica en el centro, e incorpora la menor ingesta de sal y la actividad física diaria.",
+        "fontes": [
+          "Posadas M. Las guías alimentarias para la población argentina 2016. Facultad de Ciencias Médicas, UNR; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Fisiología — Páncreas endócrino e insulina",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Estructura del islote de Langerhans y tipos celulares; insulina: estructura química y síntesis, regulación de la secreción por glucosa y otros factores, niveles plasmáticos, mecanismo de acción y efectos metabólicos y proliferativos.",
+    "tags": [
+      "nutricion-up7",
+      "fisiologia",
+      "pancreas-endocrino",
+      "insulina",
+      "islote-de-langerhans",
+      "regulacion-de-la-secrecion",
+      "mecanismo-de-accion",
+      "glucemia"
+    ],
+    "ordem": 96,
+    "cards": [
+      {
+        "frente": "¿Qué tipos celulares conforman el islote de Langerhans y qué secretan?",
+        "verso": "Células beta (alrededor del 75%, secretan insulina), células alfa (alrededor del 20%, glucagón), células delta (somastatina, ~5%), células PP o F (polipéptido pancreático) y células épsilon (grelina).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué estructura química tiene la insulina y cómo se sintetiza?",
+        "verso": "Es un polipéptido de 51 aminoácidos con dos cadenas (A de 21 y B de 30 aminoácidos) unidas por dos puentes disulfuro. Se sintetiza como preproinsulina, luego proinsulina; en el aparato de Golgi se escinde en insulina y péptido C, que se secretan juntos en proporción equimolar.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Cómo estimula la glucosa la secreción de insulina?",
+        "verso": "La glucosa entra a la célula beta por GLUT2, se metaboliza y eleva la relación ATP/ADP; el ATP cierra los canales de K+ sensibles a ATP, despolariza la membrana, abre canales de Ca2+ dependientes de voltaje y el aumento de Ca2+ intracelular desencadena la exocitosis de la insulina.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué otros factores regulan la secreción de insulina?",
+        "verso": "La estimulan los aminoácidos (arginina, leucina), los ácidos grasos y los cuerpos cetónicos, la acetilcolina parasimpática y las enterohormonas (GIP y GLP-1). La inhiben la adrenalina (receptores alfa2) y el tono simpático, y la somatostatina de las células delta.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué es el efecto incretina y qué enterohormonas lo median?",
+        "verso": "Es el efecto por el cual las enterohormonas secretadas por el intestino ante los alimentos potencian la secreción de insulina: GIP (polipéptido insulinotrópico dependiente de glucosa) y GLP-1 (péptido similar al glucagón). Por eso la glucosa oral provoca mayor respuesta insulínica que la intravenosa.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los niveles plasmáticos de insulina en ayuno y en el período posprandial?",
+        "verso": "En ayuno la insulinemia es baja y la glucemia se mantiene por la glucogenólisis y la gluconeogénesis hepáticas; tras las comidas (posprandial) la insulina aumenta para almacenar glucosa, aminoácidos y lípidos, favoreciendo el estado anabólico.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Cómo es el receptor de insulina y qué vías de señalización activa?",
+        "verso": "Es un receptor tirosina quinasa (tetrámero alfa2beta2): al unir insulina se autofosforila y fosforila a sustratos IRS, activando la vía PI3K/Akt (efectos metabólicos: transporte de glucosa, glucógeno y síntesis) y la vía Ras/MAPK (efectos proliferativos y de expresión génica).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos metabólicos tiene la insulina sobre el músculo?",
+        "verso": "Aumenta la captación de glucosa (translocación de transportadores GLUT4 a la membrana), estimula la glucogenogénesis y la síntesis de proteínas e inhibe la proteólisis; los aminoácidos penetran y se incorporan a proteínas musculares.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene la insulina sobre el hígado y el tejido adiposo?",
+        "verso": "En el hígado: favorece la captación de glucosa (glucoquinasa), la glucogenogénesis, la glucólisis y la lipogénesis, e inhibe la gluconeogénesis, la glucogenólisis y la cetogénesis. En el tejido adiposo: activa la lipoproteína lipasa y la lipogénesis, e inhibe la lipasa sensible a hormonas (disminuye la liberación de ácidos grasos).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos proliferativos tiene la insulina?",
+        "verso": "A través de la vía Ras/MAPK estimula el crecimiento, la proliferación, la diferenciación celular y la expresión génica (efectos tróficos y mitogénicos). Estos efectos se potencian con las hormonas de crecimiento y, en exceso, pueden favorecer procesos proliferativos anormales.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Fisiología — Glucagón y regulación de la glucemia",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Glucagón: estructura, regulación de la secreción, mecanismo de acción y efectos; regulación de la glucemia en el ayuno y el período posprandial; hormonas contrarreguladoras rápidas y lentas; rol del sistema nervioso autónomo y las enterohormonas.",
+    "tags": [
+      "nutricion-up7",
+      "fisiologia",
+      "glucagon",
+      "regulacion-de-la-glucemia",
+      "ayuno",
+      "posprandial",
+      "hormonas-contrarreguladoras",
+      "enterohormonas"
+    ],
+    "ordem": 97,
+    "cards": [
+      {
+        "frente": "¿Qué estructura química tiene el glucagón y dónde se produce?",
+        "verso": "Es un polipéptido de 29 aminoácidos producido por las células alfa de los islotes de Langerhans; su estructura es similar a la de las enterohormonas (secretinas) y tiene una vida media corta en plasma.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se regula la secreción de glucagón?",
+        "verso": "La hipoglucemia la estimula y la hiperglucemia la inhibe; los aminoácidos (como arginina) la estimulan; los ácidos grasos libres la inhiben; el sistema simpático (receptores beta-adrenérgicos) la estimula y el parasimpático vago la inhibe.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Cómo actúa el glucagón a nivel molecular?",
+        "verso": "Se une a un receptor de membrana acoplado a proteína Gs, activa la adenilil ciclasa y aumenta el AMPc, que activa la proteína quinasa A (PKA); esta fosforila y regula enzimas clave del metabolismo hepático.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene el glucagón sobre el hígado?",
+        "verso": "Estimula la glucogenólisis (activa la glucógeno fosforilasa e inactiva la glucógeno sintasa) y la gluconeogénesis (utilizando aminoácidos, glicerol y lactato), e inhibe la glucólisis y la síntesis de ácidos grasos; favorece además la cetogénesis.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene el glucagón sobre el tejido adiposo?",
+        "verso": "Activa la lipasa sensible a hormonas (lipólisis), liberando ácidos grasos libres y glicerol a la sangre, que quedan disponibles como fuente de energía para los tejidos en el ayuno.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué ocurre en el período posprandial con la glucemia y las hormonas?",
+        "verso": "Tras las comidas la glucemia aumenta: la insulina se eleva y el glucagón desciende, de modo que se favorecen la captación y el almacenamiento de glucosa, aminoácidos y lípidos (estado anabólico o de absorción).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué ocurre en el ayuno con la glucemia?",
+        "verso": "La insulina baja y el glucagón aumenta: el hígado libera glucosa por glucogenólisis y luego por gluconeogénesis, se movilizan los ácidos grasos (lipólisis) y aumentan los cuerpos cetónicos; de este modo la glucemia se mantiene estable en el estado de ayuno (estado catabólico).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué hormonas contrarreguladoras rápidas existen y qué acciones tienen?",
+        "verso": "El glucagón y la adrenalina: en cuestión de minutos aumentan la glucemia estimulando la glucogenólisis hepática; la adrenalina además inhibe la secreción de insulina, moviliza sustratos (lipólisis) y aumenta la captación de sustratos gluconeogénicos. Responden ante la hipoglucemia aguda.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué hormonas contrarreguladoras lentas existen y qué acciones tienen?",
+        "verso": "El cortisol y la hormona de crecimiento: actúan en horas o días favoreciendo la gluconeogénesis y disminuyendo la captación periférica de glucosa (efecto anti-insulínico), y promoviendo la movilización de sustratos, lo que sustenta la glucemia en el ayuno prolongado.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumplen el sistema nervioso autónomo y las enterohormonas en la glucemia?",
+        "verso": "El simpático (adrenalina y noradrenalina) eleva la glucemia (hipoglucemia), mientras el parasimpático favorece el almacenamiento posprandial. Las enterohormonas incretinas (GIP y GLP-1) potencian la insulina y el GLP-1 además inhibe la secreción de glucagón, contribuyendo al control de la glucemia posprandial.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Páncreas endócrino. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Best & Taylor, Bases Fisiológicas de la Práctica Médica."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Química — Metabolismo fosfocálcico: calcio, fosfato y su homeostasis",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Funciones fisiológicas del calcio y el fosfato, requerimientos y fuentes, distribución corporal y valores plasmáticos normales, y participación de intestino, riñones y tejido óseo en su homeostasis.",
+    "tags": [
+      "nutricion-up7",
+      "quimica-biologica",
+      "metabolismo-fosfocalcico",
+      "calcio",
+      "fosfato",
+      "homeostasis",
+      "intestino-rinon-hueso",
+      "valores-plasmaticos"
+    ],
+    "ordem": 98,
+    "cards": [
+      {
+        "frente": "¿Qué funciones fisiológicas cumple el calcio?",
+        "verso": "Contracción muscular, conducción y excitabilidad nerviosa, coagulación de la sangre, secreción celular, estabilidad de las membranas, segundo mensajero en la transducción de señales y formación de la matriz ósea (fosfato cálcico).",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones cumple el fosfato en el organismo?",
+        "verso": "Forma parte del ATP, de los ácidos nucleicos, de los fosfolípidos y de las fosfoproteínas; actúa como amortiguador (tampón fosfato); participa en fosforilaciones reguladoras y es componente de la hidroxiapatita de huesos y dientes.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se distribuye el calcio en el organismo y en el plasma?",
+        "verso": "Alrededor del 99% se encuentra en huesos y dientes (hidroxiapatita) y ~1% en el líquido extracelular y los tejidos. En plasma: ~50% es calcio ionizado (libre y biológicamente activo), ~40% está unido a proteínas (principalmente albúmina) y ~10% forma complejos con citrato y fosfato.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los valores plasmáticos normales de calcio y fósforo?",
+        "verso": "Calcio total: 8,8-10,4 mg/dL (2,1-2,6 mmol/L); la fracción ionizada es la activa (~4,4-5,2 mg/dL). Fósforo (fosfato): 2,5-4,5 mg/dL (0,81-1,45 mmol/L).",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los requerimientos diarios de calcio y fósforo y sus fuentes alimentarias?",
+        "verso": "Calcio: unos 800-1.200 mg/día (aumentados en la adolescencia, el embarazo, la lactancia y la vejez); fósforo: unos 700-1.250 mg/día. El calcio abunda en lácteos (leche, yogur, queso), pescados con espinas, brócoli y legumbres; el fósforo en carnes, lácteos, huevos y cereales.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el intestino en la homeostasis del calcio y del fosfato?",
+        "verso": "El calcio se absorbe sobre todo en el duodeno y su absorción es estimulada por la 1,25-dihidroxivitamina D (calcitriol); el fosfato se absorbe de manera más eficiente en el intestino delgado y también está regulada por la vitamina D.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el riñón en la homeostasis fosfocálcica?",
+        "verso": "Filtra ambos iones: la PTH aumenta la reabsorción distal de calcio (retiene Ca) e inhibe la reabsorción proximal de fosfato (aumenta la fosfaturia); la vitamina D aumenta la reabsorción de calcio y de fosfato. Pequeñas cantidades de calcio se excretan por la orina.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el tejido óseo en la homeostasis del calcio y del fosfato?",
+        "verso": "Es el reservorio de ambos iones: la resorción ósea (osteoclastos) libera calcio y fosfato al plasma y la formación ósea (osteoblastos) los deposita. La PTH y el calcitriol estimulan la resorción; la calcitonina la inhibe transitoriamente.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué respuesta desencadena la hipocalcemia?",
+        "verso": "Estimula la secreción de PTH, que corrige la caída del calcio iónico aumentando la resorción ósea, la reabsorción renal de calcio y la síntesis renal de calcitriol (que a su vez aumenta la absorción intestinal de calcio), restaurando la calcemia.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Por qué la hipoalbuminemia reduce el calcio total sin alterar el calcio ionizado?",
+        "verso": "Porque una fracción del calcio plasmático está unida a la albúmina: si ésta disminuye, baja el calcio 'total' medido, pero el calcio ionizado (la fracción activa) puede ser normal. Por eso en la clínica interesa el calcio iónico o corregir el total según la albuminemia.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Química — Hormonas de la homeostasis fosfocálcica: PTH, vitamina D y calcitonina",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Hormona paratiroidea (origen, estímulo y acciones), vitamina D (alimentación y exposición solar, pasos de la síntesis en piel, hígado y riñón, acciones) y calcitonina (origen y acciones).",
+    "tags": [
+      "nutricion-up7",
+      "quimica-biologica",
+      "hormona-paratiroidea",
+      "vitamina-d",
+      "calcitonina",
+      "calcitriol",
+      "homeostasis-fosfocalcica",
+      "sintesis-de-vitamina-d"
+    ],
+    "ordem": 99,
+    "cards": [
+      {
+        "frente": "¿De dónde proviene la PTH y qué estímulo regula su secreción?",
+        "verso": "Es secretada por las células principales de las glándulas paratiroides. El descenso del calcio iónico plasmático (hipocalcemia) estimula su secreción y la hipercalcemia la inhibe; la hipomagnesemia severa también puede deprimirla.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué acciones tiene la PTH sobre el hueso?",
+        "verso": "Estimula la resorción ósea, movilizando calcio y fosfato del hueso al plasma: una fase rápida de activación de los osteocitos y una fase lenta que aumenta la actividad osteoclástica (mediada por RANKL expresado en los osteoblastos).",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué acciones tiene la PTH sobre el riñón?",
+        "verso": "Aumenta la reabsorción distal de calcio, aumenta la excreción de fosfato (inhibe su reabsorción proximal, produciendo fosfaturia) y estimula la 1alfa-hidroxilasa renal, que convierte la 25-(OH)-vitamina D en 1,25-(OH)2-vitamina D (calcitriol).",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el efecto neto de la PTH sobre la calcemia y la fosfatemia?",
+        "verso": "Aumenta la calcemia y disminuye la fosfatemia. Sobre el intestino actúa de modo indirecto: estimula la síntesis renal de calcitriol, que aumenta la absorción intestinal de calcio.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se sintetiza la vitamina D en la piel?",
+        "verso": "La piel sintetiza colecalciferol (vitamina D3) a partir del 7-deshidrocolesterol por acción de la radiación ultravioleta B (UVB) de la luz solar; una exposición insuficiente al sol reduce los niveles de vitamina D.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué aporta la alimentación a los niveles de vitamina D?",
+        "verso": "Alimentos como pescados grasos, hígado, yema de huevo y lácteos fortificados aportan vitamina D (colecalciferol D3 y ergocalciferol D2 de origen vegetal), complementando la síntesis cutánea. La dieta y la exposición solar son las dos fuentes de la vitamina.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los pasos principales de la síntesis de vitamina D y sus metabolitos activos?",
+        "verso": "Colecalciferol → en el hígado, 25-hidroxilación → 25-(OH)-vitamina D (calcifediol, forma circulante de reserva que se mide en el laboratorio) → en el riñón, 1alfa-hidroxilación → 1,25-(OH)2-vitamina D (calcitriol, forma activa). La 1alfa-hidroxilasa es estimulada por la PTH y la hipofosfatemia.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué acciones tiene el calcitriol (1,25-(OH)2-D)?",
+        "verso": "Aumenta la absorción intestinal de calcio y fosfato, favorece la resorción y la mineralización ósea (junto con la PTH), aumenta la reabsorción renal de calcio y fosfato e inhibe la secreción de PTH por retroalimentación negativa. Su deficiencia causa raquitismo en niños y osteomalacia en adultos.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Qué es la calcitonina, de dónde proviene y qué acciones tiene?",
+        "verso": "Es secretada por las células C (parafoliculares) de la glándula tiroides; la hipercalcemia estimula su secreción. Inhibe la resorción ósea (disminuye la actividad osteoclástica) y aumenta la excreción renal de calcio y fosfato, por lo que disminuye la calcemia.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la importancia relativa de la calcitonina en el organismo?",
+        "verso": "Su papel es menor en la homeostasis del adulto: es más relevante durante el crecimiento, el embarazo y la lactancia y ante sobrecargas agudas de calcio. En el adulto, el control de la calcemia depende sobre todo de la PTH y de la vitamina D.",
+        "fontes": [
+          "Cátedra de Química Biológica. Metabolismo fosfocálcico. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Blanco A, Blanco G. Química Biológica."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Nutrición — Recomendaciones nutricionales en el embarazo",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Recomendaciones nutricionales en el embarazo según el Ministerio de Salud de la Nación: aumento de los requerimientos, suplementación (hierro, folato, yodo), calcio y lácteos, alimentos y hábitos a evitar, y ganancia de peso.",
+    "tags": [
+      "nutricion-up7",
+      "nutricion",
+      "embarazo",
+      "requerimientos-nutricionales",
+      "hierro",
+      "acido-folico",
+      "calcio",
+      "ganancia-de-peso"
+    ],
+    "ordem": 100,
+    "cards": [
+      {
+        "frente": "¿Por qué aumentan los requerimientos nutricionales en el embarazo?",
+        "verso": "Por el crecimiento del feto y la placenta, el aumento de la volemia y de la masa de glóbulos rojos y la preparación para la lactancia; es un período de máximo requerimiento de energía y de nutrientes.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuánto aumentan las necesidades de energía en el embarazo y qué nutrientes son críticos?",
+        "verso": "Se estima un aumento de unas 300 kcal/día durante el segundo y el tercer trimestre. Son críticos las proteínas, el hierro, el calcio, el ácido fólico, el yodo y la vitamina D, junto con el control del aumento de peso.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se recomienda la suplementación con hierro en el embarazo?",
+        "verso": "Porque la dieta habitualmente no alcanza a cubrir el requerimiento (la masa de glóbulos rojos aumenta alrededor del 30-40% y el feto acumula reservas), previniendo la anemia ferropénica y sus consecuencias sobre la madre y el recién nacido.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se recomienda consumir lácteos (calcio) en el embarazo?",
+        "verso": "Para cubrir el calcio requerido por la mineralización del esqueleto fetal (máxima en el tercer trimestre), proteger la masa ósea materna y contribuir a la prevención de la hipertensión del embarazo; se recomiendan unas 3 porciones de lácteos por día.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se suplementa ácido fólico y desde cuándo?",
+        "verso": "Para prevenir los defectos del tubo neural; debe iniciarse idealmente antes de la concepción y continuar durante el primer trimestre del embarazo (dosis de 400-800 µg/día).",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene el yodo en el embarazo?",
+        "verso": "Es necesario para la síntesis de hormonas tiroideas, el desarrollo neurológico y el crecimiento fetal; se recomienda su suplementación y el uso de sal yodada y de alimentos que lo aportan.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se recomienda evitar las bebidas azucaradas en el embarazo?",
+        "verso": "Porque aportan calorías vacías, favorecen el aumento excesivo de peso y el riesgo de diabetes gestacional, y desplazan a alimentos con nutrientes esenciales; se desaconsejan junto con los alimentos de alto contenido de azúcar y grasas.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué alimentos y hábitos se deben evitar en el embarazo?",
+        "verso": "Alcohol, tabaco y drogas; bebidas azucaradas; pescados crudos o ahumados, quesos sin pasteurizar y carnes poco cocidas (riesgo de listeriosis y toxoplasmosis); consumo excesivo de sal y dietas restrictivas.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan estas recomendaciones con el concepto de requerimientos nutricionales?",
+        "verso": "Los requerimientos son las cantidades de nutrientes necesarias para cubrir las necesidades del organismo en cada etapa; en el embarazo aumentan, por lo que la alimentación debe aportar más energía y nutrientes y suele complementarse con suplementos (hierro, ácido fólico, yodo y calcio).",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la ganancia de peso recomendada en el embarazo y de qué depende?",
+        "verso": "Depende del IMC pregestacional: en general se recomienda una ganancia de 8 a 15 kg aproximadamente en un embarazo de término, con control periódico; tanto la ganancia excesiva como la insuficiente se asocian con complicaciones materno-fetales.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Nutrición y Embarazo. Recomendaciones en Nutrición para los equipos de salud, 2012; Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP7 — Embriología — Desarrollo embrionario del aparato digestivo",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "embriologia",
+    "descricao": "Desarrollo embrionario del aparato digestivo: origen endodérmico, intestino anterior, medio y posterior, rotación del intestino medio, desarrollo de hígado, vías biliares y páncreas, y formación del conducto anal.",
+    "tags": [
+      "nutricion-up7",
+      "embriologia",
+      "aparato-digestivo",
+      "intestino-primitivo",
+      "rotacion-del-intestino-medio",
+      "higado-pancreas",
+      "diverticulo-de-meckel",
+      "desarrollo-embrionario"
+    ],
+    "ordem": 101,
+    "cards": [
+      {
+        "frente": "¿De qué hoja germinativa deriva el tubo digestivo y cómo se origina?",
+        "verso": "Deriva del endodermo. El intestino primitivo se forma durante el plegamiento del embrión, incorporando parte del saco vitelino, y queda suspendido en la cavidad por el mesenterio dorsal, que deriva del mesodermo esplácnico.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿En qué porciones se divide el intestino primitivo y con qué irrigación se relacionan?",
+        "verso": "Se divide en intestino anterior, medio y posterior: el anterior se irriga por el tronco celíaco, el medio por la arteria mesentérica superior y el posterior por la arteria mesentérica inferior.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Qué estructuras derivan del intestino anterior?",
+        "verso": "La faringe, el esófago, el estómago, el duodeno proximal (hasta la desembocadura del colédoco), el hígado, las vías biliares y el páncreas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Qué estructuras derivan del intestino medio?",
+        "verso": "El duodeno distal a la ampolla de Vater, el yeyuno, el íleon, el ciego, el apéndice, el colon ascendente y los 2/3 proximales del transverso. Comunica con el saco vitelino a través del conducto onfalomesentérico (vitelino).",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Qué estructuras derivan del intestino posterior?",
+        "verso": "El tercio distal del transverso, el colon descendente, el sigmoide, el recto y la porción superior del conducto anal, irrigados por la arteria mesentérica inferior.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Qué es la rotación del intestino medio y qué fallas pueden ocurrir?",
+        "verso": "En la sexta semana el intestino medio hernía fisiológicamente al cordón umbilical, rota unos 270° alrededor de la arteria mesentérica superior y retorna a la cavidad abdominal entre las semanas 10 y 12. Sus fallas producen malrotación, vólvulo, onfalocele o gastrosquisis.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se desarrollan el hígado y las vías biliares?",
+        "verso": "Del divertículo hepático del duodeno (intestino anterior): los cordones de hepatoblastos invaden el mesénquima del tabique transverso y, en el período fetal, realizan hematopoyesis; se forman los conductos hepáticos, la vesícula biliar (del divertículo cístico) y el conducto cístico.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se desarrolla el páncreas?",
+        "verso": "Por las yemas pancreáticas dorsal y ventral: la ventral rota hacia la derecha junto con el duodeno y se fusiona con la dorsal. El conducto de Wirsung (pancreático principal) drena la mayor parte de la glándula; puede persistir el conducto de Santorini (dorsal).",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Qué es el divertículo de Meckel?",
+        "verso": "Es la persistencia del conducto onfalomesentérico (vitelino): un divertículo del íleon situado a unos 60 cm de la válvula ileocecal, presente en aproximadamente el 2% de la población; puede contener mucosa gástrica o pancreática y causar sangrado o invaginación.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      },
+      {
+        "frente": "¿Cómo se forma el conducto anal y qué marca la línea pectínea?",
+        "verso": "El septo urorrectal divide la cloaca en el seno urogenital y el conducto anorrectal. El recto y el conducto anal superior derivan del endodermo (intestino posterior) y la parte inferior del ectodermo (proctodeo); la línea pectínea marca la unión de ambos, con distinta irrigación e inervación a cada lado.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Desarrollo embrionario del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR; Moore KL, Persaud TVN. Embriología Clínica."
+        ]
+      }
+    ]
+  }
+]

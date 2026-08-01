@@ -249,9 +249,9 @@ export function VideoaulasGrid() {
           {subgrupos.map(({ anoKey, items }) => (
             <div key={anoKey} className="space-y-4">
               {anoKey !== SEM_ANO_KEY && (
-                <h3 className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <h3 className="flex items-center gap-2 border-l-4 border-primary pl-3 text-xl font-extrabold text-foreground">
                   {t.cronograma.anoLabel[anoKey] ?? anoKey}
-                  <Badge variant="outline" className="text-[10px] font-normal normal-case">
+                  <Badge variant="outline" className="text-xs font-normal">
                     {items.length}
                   </Badge>
                 </h3>

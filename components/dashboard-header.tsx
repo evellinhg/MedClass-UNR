@@ -48,7 +48,7 @@ export function DashboardHeader() {
       {/* Greeting */}
       <div className="hidden min-w-0 sm:block">
         <h1 className="truncate text-lg font-semibold text-foreground">
-          {t.dashboardNav.bemVindoDeVolta}{firstName ? `, ${firstName}` : ""}
+          {t.dashboardNav.bemVindoDeVolta(firstName)}
         </h1>
         <p className="truncate text-xs text-muted-foreground">{t.dashboardNav.continueProgresso}</p>
       </div>

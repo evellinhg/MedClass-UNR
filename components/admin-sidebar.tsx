@@ -19,6 +19,7 @@ import {
   ArrowLeft,
   BarChart3,
   MessageSquare,
+  Quote,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
@@ -33,6 +34,7 @@ const adminNavigation: AdminNavItem[] = [
   { name: "Usuários", href: "/admin/usuarios", icon: Users },
   { name: "Relatórios", href: "/admin/relatorios", icon: BarChart3 },
   { name: "Feedbacks", href: "/admin/feedbacks", icon: MessageSquare },
+  { name: "Depoimentos", href: "/admin/depoimentos", icon: Quote },
   { name: "Dados", href: "/admin/dados", icon: Database },
   { name: "Banco de Questões", href: "/admin/questoes", icon: BookOpen },
   { name: "MedCoins", href: "/admin/medcoins", icon: Coins },

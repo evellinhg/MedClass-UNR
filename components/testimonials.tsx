@@ -1,8 +1,10 @@
 "use client"
 
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { Stethoscope, HeartPulse, Activity } from "lucide-react"
+import { ArrowRight, Stethoscope, HeartPulse, Activity } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
+import { DepoimentoForm } from "@/components/depoimento-form"
 
 const icons = [Stethoscope, HeartPulse, Activity]
 
@@ -77,6 +79,18 @@ export function Testimonials() {
             )
           })}
         </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/depoimentos"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#bef264] transition-colors hover:text-[#c6ff3a]"
+          >
+            {t.testimonials.verTodos}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <DepoimentoForm />
       </div>
     </section>
   )

@@ -1,11 +1,12 @@
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ""
 const supabaseWs = supabaseUrl.replace(/^https/, "wss")
+const supabaseHostname = supabaseUrl ? new URL(supabaseUrl).hostname : ""
 
 const csp = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
+  `img-src 'self' data: blob: ${supabaseUrl}`,
   "font-src 'self' data:",
   `connect-src 'self' ${supabaseUrl} ${supabaseWs} https://va.vercel-scripts.com https://vitals.vercel-insights.com`,
   "frame-src 'none'",
@@ -23,6 +24,11 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: supabaseHostname
+      ? [{ protocol: "https", hostname: supabaseHostname, pathname: "/storage/v1/object/public/**" }]
+      : [],
+  },
   async headers() {
     // So aplica em producao: Turbopack/HMR do dev server pode depender de eval
     // e outros padroes que uma CSP estrita bloquearia, quebrando o `npm run dev`.

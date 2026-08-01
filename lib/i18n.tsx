@@ -311,6 +311,17 @@ const pt = {
   videoaulasGrid: {
     carregando: "Carregando...",
     vazio: "Nenhuma videoaula disponível no momento.",
+    carregandoPlaylist: "Carregando vídeos da playlist...",
+    erroPlaylist: "Não foi possível carregar os vídeos dessa playlist.",
+    aviso: {
+      titulo: "📌 Sobre as videoaulas",
+      paragrafo1:
+        "As videoaulas desta seção não foram produzidas pelo MedClass UNR. Trata-se de conteúdo público do canal oficial da Facultad de Ciencias Médicas – UNR, disponível gratuitamente no YouTube.",
+      paragrafo2:
+        "Aqui organizamos esse conteúdo por matéria e tema, para que você não perca tempo procurando vídeo por vídeo — o valor da plataforma está na organização, no cronograma e no material complementar (resumos, questões e flashcards), não no vídeo em si.",
+      paragrafo3:
+        "O MedClass UNR não possui vínculo oficial, autorização ou afiliação com a Facultad de Ciencias Médicas – UNR. Os vídeos permanecem de responsabilidade exclusiva do canal original, e sua disponibilidade pode mudar a qualquer momento conforme decisão dos autores.",
+    },
   },
   flashcardsGrid: {
     carregando: "Carregando...",
@@ -1264,6 +1275,17 @@ const es: typeof pt = {
   videoaulasGrid: {
     carregando: "Cargando...",
     vazio: "No hay ninguna videoclase disponible por el momento.",
+    carregandoPlaylist: "Cargando videos de la playlist...",
+    erroPlaylist: "No se pudieron cargar los videos de esta playlist.",
+    aviso: {
+      titulo: "📌 Sobre las videoclases",
+      paragrafo1:
+        "Las videoclases de esta sección no fueron producidas por MedClass UNR. Se trata de contenido público del canal oficial de la Facultad de Ciencias Médicas – UNR, disponible gratis en YouTube.",
+      paragrafo2:
+        "Acá organizamos ese contenido por materia y tema, para que no pierdas tiempo buscando video por video — el valor de la plataforma está en la organización, en el cronograma y en el material complementario (resúmenes, preguntas y flashcards), no en el video en sí.",
+      paragrafo3:
+        "MedClass UNR no tiene vínculo oficial, autorización ni afiliación con la Facultad de Ciencias Médicas – UNR. Los videos siguen siendo responsabilidad exclusiva del canal original, y su disponibilidad puede cambiar en cualquier momento según decisión de los autores.",
+    },
   },
   flashcardsGrid: {
     carregando: "Cargando...",

@@ -38,3 +38,16 @@ export function getYoutubeEmbedUrl(rawUrl: string): string | null {
 
   return null
 }
+
+// Retorna o ID da playlist só quando o link aponta para a playlist inteira
+// (youtube.com/playlist?list=...), não para um vídeo específico dentro dela.
+export function getYoutubePlaylistId(rawUrl: string): string | null {
+  try {
+    const url = new URL(rawUrl.trim())
+    if (!YOUTUBE_HOSTS.has(url.hostname)) return null
+    if (url.pathname === "/playlist") return url.searchParams.get("list")
+    return null
+  } catch {
+    return null
+  }
+}

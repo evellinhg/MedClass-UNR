@@ -1,0 +1,1254 @@
+[
+  {
+    "titulo": "Nutrición UP2 — Anatomía — Cavidad bucal: límites, dientes y lengua",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Límites de la cavidad bucal, maxilares y hueso palatino, piezas dentarias, dentición temporal y definitiva y lengua.",
+    "tags": [
+      "nutricion-up2",
+      "anatomia",
+      "cavidad-bucal",
+      "lengua",
+      "dientes",
+      "maxilares"
+    ],
+    "ordem": 16,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los límites de la cavidad bucal?",
+        "verso": "Está limitada por: labios y carrillos (paredes anterior y lateral), el paladar (techo) y el piso de la boca (suelo), y se comunica hacia atrás con la faringe por el istmo de las fauces. Contiene la lengua y las piezas dentarias.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Cavidad bucal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué huesos forman el esqueleto de la cavidad bucal?",
+        "verso": "El maxilar superior, el maxilar inferior (mandíbula) y el hueso palatino. El maxilar superior y el palatino forman el paladar duro (techo); la mandíbula aloja las piezas dentarias inferiores y forma el piso óseo.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Cavidad bucal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las piezas dentarias y cómo se disponen?",
+        "verso": "Son los órganos de la masticación alojados en los procesos alveolares del maxilar superior e inferior. Se disponen en forma de arco (arcadas dentarias) y cumplen la función de cortar y triturar los alimentos.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Cavidad bucal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo erupcionan los dientes caducos o 'de leche'?",
+        "verso": "Comienzan su erupción entre los 6 y 8 meses y se completan alrededor de los 3 años. Su caída y la aparición de los definitivos comienza a los 6 años y se completa cerca de los 12.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué la dentición es poco útil para determinar la edad cronológica del niño?",
+        "verso": "Porque los procesos madurativos referidos a la dentición tienen un amplio rango de variación dentro de la normalidad. Son un indicador biológico de madurez, no un reloj fiable de edad cronológica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la lengua y cuál es su ubicación?",
+        "verso": "Es un órgano muscular que ocupa la mayor parte de la cavidad bucal. Posee un esqueleto fibroso (aponeurosis lingual), músculos intrínsecos y extrínsecos, y su superficie presenta papilas. Participa en la masticación, la deglución y el gusto.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Lengua. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el esqueleto fibroso de la lengua?",
+        "verso": "Una estructura de tejido fibroso (aponeurosis lingual) que sirve de inserción y sostén a los músculos de la lengua, permitiendo que actúen como una unidad funcional móvil.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Lengua. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumplen los músculos de la lengua en la alimentación del lactante?",
+        "verso": "Los movimientos de la lengua intervienen en la succión, la extrución y el traslado del alimento. Los movimientos laterales que llevan los alimentos hacia los molares aparecen entre los 8 y 10 meses, y los movimientos rotatorios completos recién de los 12 a 18 meses.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo evoluciona la fuerza de masticación con la edad?",
+        "verso": "Aumenta con la edad: a los 6 años alcanza el 40% de la fuerza del adulto y se logra la fuerza completa recién a los 16 años. Estos eventos madurativos indican la edad mínima en que los alimentos pueden ser físicamente manejados por los niños.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación tiene la maduración de la lengua con la introducción de alimentos semisólidos?",
+        "verso": "A los 5 meses aparecen movimientos masticatorios de la mandíbula y comienza a desaparecer el reflejo de extrución, lo que permite introducir papillas (semisólidos) independientemente de la presencia de dientes.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Anatomía — Glándulas salivales, ATM, faringe y músculos de la deglución",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Glándulas salivales (parótida, sublingual, submaxilar), articulación temporomandibular, músculos masticadores y suprahioideos, faringe y nervios craneales de la deglución.",
+    "tags": [
+      "nutricion-up2",
+      "anatomia",
+      "glandulas-salivales",
+      "atm",
+      "faringe",
+      "deglucion"
+    ],
+    "ordem": 17,
+    "cards": [
+      {
+        "frente": "Nombra las tres glándulas salivales mayores.",
+        "verso": "La parótida, la sublingual y la submaxilar (submandibular). Cada una tiene una ubicación, relaciones, conducto excretor, irrigación e inervación propias y drena su secreción a la cavidad bucal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Glándulas salivales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la articulación temporomandibular (ATM)?",
+        "verso": "La articulación entre el cóndilo del maxilar inferior (mandíbula) y la fosa articular del hueso temporal. Permite los movimientos de apertura, cierre, protrusión y lateralidad necesarios para la masticación y la deglución.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Articulación temporomandibular. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los músculos masticadores?",
+        "verso": "El masetero, el temporal, el pterigoideo medial y el pterigoideo lateral. Elevan, protruyen y desplazan lateralmente la mandíbula, permitiendo cortar y triturar los alimentos.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Músculos masticadores. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los músculos suprahioideos y qué función cumplen?",
+        "verso": "Son los músculos que se insertan por arriba del hueso hioides (digástrico, milohioideo, genihioideo y estilohioideo). Elevan el hioides y la laringe durante la deglución y ayudan a la apertura de la boca.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Músculos del piso de la boca. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué músculos conforman el piso de la boca?",
+        "verso": "El milohioideo (que forma el diafragma muscular del piso), el genihioideo, el digástrico y el estilohioideo, junto con el vientre de los suprahioideos. Sostienen la lengua y elevan el hioides durante la deglución.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Músculos del piso de la boca. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Describe la faringe: ubicación y características generales.",
+        "verso": "Es un conducto musculomembranoso ubicado detrás de las cavidades nasal, bucal y laringe. Comunica la boca y la nariz con el esófago y la laringe; posee músculos constrictores y elevadores y participa en la deglución.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Faringe. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué nervios craneales participan en la deglución?",
+        "verso": "El trigémino (V), facial (VII), glosofaríngeo (IX), vago (X) y el hipogloso (XII). Coordinan la masticación, la sensibilidad y los movimientos de lengua, velo del paladar, faringe y laringe durante la deglución.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Nervios craneales de la deglución. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple el velo del paladar en la deglución?",
+        "verso": "Sus músculos elevan y tensan el velo, cerrando la comunicación con la rinofaringe durante el pasaje del bolo, de modo que el alimento no refluya hacia la nariz.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Músculos del velo del paladar. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo progresa el bolo alimenticio desde la boca hacia el estómago?",
+        "verso": "Tras la masticación y la formación del bolo en la boca, la lengua lo impulsa hacia la faringe; por la contracción de los constrictores faríngeos desciende al esófago, que con sus movimientos peristálticos lo conduce al estómago.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene la glándula sublingual en el lactante?",
+        "verso": "Las glándulas salivales son pequeñas y de escasa funcionalidad en el RN y el lactante. Por eso la digestión de las grasas en esa etapa depende de la lipasa lingual producida por glándulas serosas del tercio posterior de la lengua, potenciada por la lipasa de la leche materna.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Fisiología — Funciones del aparato digestivo y su control neurohormonal",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Funciones motora, enzimática y absortiva; control nervioso y hormonal; sistema nervioso enteral y sistema APUD.",
+    "tags": [
+      "nutricion-up2",
+      "fisiologia",
+      "aparato-digestivo",
+      "sistema-nervioso-enteral",
+      "apud",
+      "control-hormonal"
+    ],
+    "ordem": 18,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las funciones del aparato digestivo?",
+        "verso": "1) Motora: traslado de alimentos. 2) Enzimática, secretoria o digestiva: digestión de los nutrientes reduciéndolos a partículas absorbibles. 3) Absortiva: pasaje de los nutrientes digeridos al sistema circulatorio.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué requiere el proceso nutricional para ser adecuado?",
+        "verso": "Un aparato digestivo y circulatorio indemne y un sistema metabólico que utilice los diferentes nutrientes de manera óptima. El digestivo traslada, digiere y absorbe; el circulatorio lleva los nutrientes a órganos de reserva y a los que los requieren.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se transportan los nutrientes absorbidos?",
+        "verso": "Por el sistema porta venoso llegan al hígado y por el sistema linfático a la circulación general. El hígado, la grasa y el plasma actúan como depósito de nutrientes.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema nervioso entérico (SNE)?",
+        "verso": "La red de neuronas y plexos (mientérico y submucoso) que controla las funciones digestivas en forma local e integrada. Es considerado 'el cerebro del intestino' y está modulado por el sistema nervioso autónomo.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Funciones del aparato digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los niveles de integración del control entérico?",
+        "verso": "1) Local: plexos entéricos (Sistema Nervioso Entérico). 2) Central: reflejos vago-vagales y de los ganglios prevertebrales. El conjunto coordina motilidad, secreción y flujo sanguíneo digestivo.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Control nervioso de las funciones digestivas. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema APUD?",
+        "verso": "Un sistema de células neuroendócrinas difusas del tubo digestivo (y otros órganos) que captan precursores de aminas y los descarboxilan, produciendo hormonas y péptidos que regulan la función digestiva.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Mecanismos neuroendócrinos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un mecanismo neuroendócrino en la digestión?",
+        "verso": "La regulación de una función digestiva (motilidad o secreción) por la integración de nervios (reflejos) y hormonas/mediadores parácrinos liberados por células enteroendócrinas frente al contenido luminal.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Mecanismos neuroendócrinos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el control hormonal de las funciones digestivas?",
+        "verso": "Hormonas gastrointestinales (como gastrina, secretina, colecistoquinina y GIP) liberadas por células endócrinas del epitelio digestivo en respuesta a estímulos luminales regulan secreción, motilidad y crecimiento de la mucosa.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Control hormonal de las funciones digestivas. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumple el aparato circulatorio en la nutrición?",
+        "verso": "Traslada los nutrientes por el sistema porta venoso al hígado y por el sistema linfático a la circulación general, llevándolos a los órganos de reserva (hígado, grasa, plasma) y a los que los requieren para su función energética, plástica, enzimática e inmunológica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Dónde se utilizan los nutrientes y la energía aportados por la dieta?",
+        "verso": "En las mitocondrias se sintetizan proteínas y se utiliza la energía para las funciones celulares. Los nutrientes cumplen funciones energética, plástica, enzimática e inmunológica en los distintos tejidos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Fisiología — Secreciones digestivas: saliva y secreción gástrica",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Modelo general de secreción, secreción salival (funciones, tipos, regulación), secreción gástrica (HCl, pepsina, lipasa gástrica, factor antianémico).",
+    "tags": [
+      "nutricion-up2",
+      "fisiologia",
+      "secreciones-digestivas",
+      "saliva",
+      "secrecion-gastrica",
+      "pepsina"
+    ],
+    "ordem": 19,
+    "cards": [
+      {
+        "frente": "¿Cuál es el modelo general de secreción digestiva?",
+        "verso": "Las células glandulares producen la secreción; los conductos la transportan y modifican; la secreción se vierte en la luz y cumple su función (digestión, protección, lubricación) y luego puede ser reabsorbida o eliminada.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Secreciones digestivas. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones de la saliva?",
+        "verso": "Humectar y lubricar el bolo, iniciar la digestión de almidones (amilasa salival), protección (barrera frente a injurias), favorecer el gusto y el habla, y mantener la higiene bucal.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Secreción salival. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de saliva existen?",
+        "verso": "Saliva serosa (rica en enzimas, acuosa, producida por la parótida) y saliva mucosa (rica en moco, viscosa, producida por las glándulas sublinguales). La submaxilar produce secreción mixta.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Secreción salival. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se regula la secreción salival?",
+        "verso": "Por el sistema nervioso autónomo: el parasimpático estimula una secreción abundante y fluida, y el simpático una secreción escasa y viscosa. Se desencadena por estímulos sensitivos, psíquicos y reflejos condicionados.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Secreción salival. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la secreción salival en el recién nacido?",
+        "verso": "Es escasa. Las glándulas salivales son pequeñas y de escasa funcionalidad en RN y lactante; su maduración completa se alcanza a los dos años. La digestión de grasas en esta etapa depende de la lipasa lingual y la de la leche materna.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué produce el estómago y cuál es la función de cada producto?",
+        "verso": "Ácido clorhídrico (HCl) y pepsina, que desdoblan las proteínas en estructuras más simples; lipasa gástrica, que actúa sobre triglicéridos junto con la lingual; y factor antianémico, que favorece la absorción de vitamina B12.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Para qué sirve el HCl gástrico además de la digestión?",
+        "verso": "Mantiene la acidez del medio gástrico y limita la proliferación bacteriana en el intestino superior, contribuyendo a la barrera de defensa frente a injurias.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo es la producción de pepsina y HCl al nacimiento?",
+        "verso": "Tanto la pepsina como el HCl son escasos al nacimiento y su volumen aumenta durante el primer año de vida, permitiendo la incorporación de proteínas fibrosas a partir del séptimo y octavo mes.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué la leche de madre no requiere grandes cantidades de HCl y pepsina?",
+        "verso": "Porque contiene proteínas globulares, solubles y móviles, que llegan al duodeno predigeridas en pequeños coágulos hidrolizados por la tripsina pancreática.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el factor antianémico y por qué es importante?",
+        "verso": "Un producto de la mucosa gástrica que favorece la absorción de la vitamina B12, utilizada en la formación de los glóbulos rojos. Su deficiencia se relaciona con anemia megaloblástica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Fisiología — Motilidad digestiva, deglución y vómito",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Músculo liso digestivo, reflejo de deglución, esfínteres funcionales y anatómicos, ondas esofágicas, vaciamiento gástrico, peristaltismo y vómito.",
+    "tags": [
+      "nutricion-up2",
+      "fisiologia",
+      "motilidad",
+      "deglucion",
+      "esfinteres",
+      "vomito",
+      "peristaltismo"
+    ],
+    "ordem": 20,
+    "cards": [
+      {
+        "frente": "¿Qué propiedades tiene el músculo liso digestivo?",
+        "verso": "Se contrae en forma rítmica (ondas lentas) y espontánea; posee actividad de marcapasos, se distiende fácilmente (plasticidad) y su contracción está controlada por neurotransmisores, hormonas y mediadores parácrinos.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Motilidad del tubo digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el modelo general de motilidad del tubo digestivo?",
+        "verso": "Los segmentos se contraen en forma coordinada: peristalsis (progresión del contenido), segmentación (mezcla) y tono basal de los esfínteres, controlados por el SNE, el autónomo y las hormonas.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Motilidad del tubo digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo de deglución?",
+        "verso": "Una secuencia coordinada de eventos (elevación del velo, descenso de la glotis, contracción de los constrictores faríngeos y apertura del esfínter esofágico superior) que transporta el bolo de la boca al esófago.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Reflejo de deglución. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Diferencia entre esfínter funcional y esfínter anatómico.",
+        "verso": "Esfínter anatómico: engrosamiento muscular bien definido (píloro). Esfínter funcional: zona de cierre por tono muscular o mecanismo valvular, sin engrosamiento anatómico evidente (cardias, esfínter esofágico inferior).",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Concepto de esfínter. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las ondas esofágicas primarias y secundarias?",
+        "verso": "Primarias: la onda peristáltica que continúa la deglución y propulsa el bolo desde el esófago superior al estómago. Secundarias: ondas locales que se generan cuando la primaria no vació por completo el esófago.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Motilidad esofágica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué el RN debe sostenerse semisentado después de mamar?",
+        "verso": "Porque en el RN el cardias es menos competente y pequeñas porciones de leche pueden refluir por el cardias y el esófago hasta la boca. La posición semisentada o vertical favorece el vaciamiento y evita el reflujo.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿De qué depende el tiempo de vaciamiento gástrico?",
+        "verso": "De las características químicas del alimento: es más rápido con alimentos de baja densidad calórica y con triglicéridos de cadena mediana, y más lento con los de cadena larga.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los complejos motores de migración?",
+        "verso": "Ondas de actividad motora que barren los restos de alimentos y bacterias que quedan en el intestino entre comidas. En el RN aparecen cada 20 a 44 minutos y duran 7 a 10 minutos; podrían ser la base fisiológica de los cólicos del lactante.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo gastrocólico?",
+        "verso": "La distensión del estómago con la llegada de alimentos produce contracción del recto, que sumado a los reflejos motores de migración provoca la defecación. Como el niño pequeño come cada 2-3 horas, es probable que defeque tras cada comida.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el vómito?",
+        "verso": "La expulsión forzada del contenido gástrico por la boca, mediada por el centro del vómito en el bulbo, que coordina el cierre de la glotis, la contracción diafragmática y abdominal y la relajación del cardias.",
+        "fontes": [
+          "Cátedra de Fisiología Humana. Vómito. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Histología y Embriología — Estructura del tubo digestivo, cavidad oral y glándulas salivales",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Estructura básica del tubo digestivo, cavidad oral (labios, carrillos, paladar, lengua), faringe y glándulas salivales.",
+    "tags": [
+      "nutricion-up2",
+      "histologia",
+      "tubo-digestivo",
+      "cavidad-oral",
+      "glandulas-salivales"
+    ],
+    "ordem": 21,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las capas básicas de la pared del tubo digestivo?",
+        "verso": "De adentro hacia afuera: mucosa (epitelio, lámina propia, muscular de la mucosa), submucosa, capa muscular (circular y longitudinal) y serosa o adventicia, con plexos nerviosos entéricos en la submucosa y entre las capas musculares.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Estructura básica del tubo digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estructura tiene la mucosa digestiva?",
+        "verso": "Epitelio (que varía según el segmento: escamoso estratificado en boca/esófago, cilíndrico simple en estómago e intestino), lámina propia de tejido conectivo y muscular de la mucosa. En el intestino forma vellosidades y criptas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Estructura básica del tubo digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumplen los plexos nerviosos de la pared digestiva?",
+        "verso": "El plexo submucoso (de Meissner) y el mientérico (de Auerbach) controlan la secreción, el flujo sanguíneo y la motilidad local del tubo digestivo, constituyendo el sistema nervioso entérico.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Estructura básica del tubo digestivo. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo está revestida la cavidad oral?",
+        "verso": "Por una mucosa de epitelio escamoso estratificado no queratinizado (con zonas de queratinización en encías y paladar duro) sobre una lámina propia, que descansa sobre el tejido conectivo o el periostio.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Cavidad oral. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Describe histológicamente la lengua.",
+        "verso": "Es un órgano musculoso revestido por mucosa con papilas (filiformes, fungiformes, foliadas y caliciformes). Las caliciformes contienen corpúsculos gustativos y se relacionan con la sensación del gusto.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Cavidad oral: lengua. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los corpúsculos gustativos?",
+        "verso": "Células receptoras del gusto ubicadas principalmente en las papilas caliciformes y fungiformes de la lengua (y en menor grado en paladar y faringe), que detectan los sabores básicos (dulce, salado, ácido, amargo, umami).",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Olfato y gusto. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo está constituida histológicamente la faringe?",
+        "verso": "Presenta mucosa de epitelio escamoso estratificado (nasofaringe, orofaringe) y cilíndrico pseudoestratificado ciliado (partes altas), sobre una capa muscular estriada (constrictores y elevadores) que interviene en la deglución.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Faringe. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estructura histológica tienen las glándulas salivales?",
+        "verso": "Son glándulas tubuloacinares compuestas: adenómeros (acinos) serosos (parótida), mucosos o mixtos (submaxilar, sublingual), con células mioepiteliales y un sistema de conductos que drena la saliva a la cavidad bucal.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándulas salivales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las células mioepiteliales de las glándulas salivales?",
+        "verso": "Células contráctiles en forma de cesta ubicadas alrededor de los acinos y conductos; se contraen ayudando a expulsar la saliva hacia los conductos excretores.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándulas salivales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la histología de las glándulas salivales con la maduración en el lactante?",
+        "verso": "Al nacer las glándulas salivales son pequeñas y funcionalmente inmaduras; se desarrollan durante el primer año y alcanzan maduración completa a los dos años, completándose el proceso de digestión en la boca.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Química Biológica — Vitaminas y minerales",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Clasificación de vitaminas en hidrosolubles y liposolubles, funciones biológicas, macrominerales y oligoelementos, distribución en los alimentos.",
+    "tags": [
+      "nutricion-up2",
+      "quimica",
+      "vitaminas",
+      "minerales",
+      "liposolubles",
+      "hidrosolubles",
+      "oligoelementos"
+    ],
+    "ordem": 22,
+    "cards": [
+      {
+        "frente": "¿Cómo se clasifican las vitaminas?",
+        "verso": "En hidrosolubles (solubles en agua: complejo B y vitamina C) y liposolubles (solubles en grasas: vitaminas A, D, E y K). La clasificación determina su distribución, absorción y forma de transporte.",
+        "fontes": [
+          "Área de Nutrición. Composición de los alimentos II: Vitaminas y minerales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se absorben las vitaminas liposolubles?",
+        "verso": "Se unen a las micelas de los ácidos grasos y son absorbidas junto con ellas. Por eso su absorción depende de una digestión y emulsión adecuada de las grasas (sales biliares y lipasa).",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué vitaminas son liposolubles?",
+        "verso": "La A, la D, la E y la K. Son las que viajan unidas a las micelas de ácidos grasos y se almacenan en el organismo.",
+        "fontes": [
+          "Área de Nutrición. Composición de los alimentos II: Vitaminas y minerales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué vitaminas son hidrosolubles?",
+        "verso": "Las del complejo B (B1, B2, B3, B6, B12, ácido fólico, etc.) y la vitamina C. Son solubles en agua, no se almacenan en grandes cantidades y se eliminan por orina.",
+        "fontes": [
+          "Área de Nutrición. Composición de los alimentos II: Vitaminas y minerales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función tiene la vitamina B12 y cómo se absorbe?",
+        "verso": "Se utiliza en la formación de los glóbulos rojos (eritropoyesis). Su absorción es favorecida por el factor antianémico producido por la mucosa gástrica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican los minerales de la dieta?",
+        "verso": "En macrominerales (necesarios en mayor cantidad: calcio, fósforo, sodio, potasio, magnesio, cloro) y oligoelementos (necesarios en pequeñas cantidades: hierro, yodo, zinc, cobre, selenio, flúor).",
+        "fontes": [
+          "Área de Nutrición. Composición de los alimentos II: Vitaminas y minerales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se favorece la absorción del hierro en el lactante?",
+        "verso": "La absorción del Fe está favorecida por enzimas especiales contenidas en la leche materna (lactoferrina), lo que permite un aprovechamiento del 80 al 90% del hierro.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se absorbe el sodio?",
+        "verso": "Se absorbe acoplado a la glucosa y a algunos aminoácidos, o en forma libre por diferencia de concentración entre la luz intestinal y el interior de la célula. Sale por la membrana basal al espacio intercelular, donde atrae agua: es el principal mecanismo de absorción del agua.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué es importante conocer la distribución de vitaminas y minerales en los alimentos?",
+        "verso": "Para poder prescribir una alimentación que cubra los requerimientos: cada alimento aporta vitaminas y minerales en distintas proporciones. Su deficiencia o exceso tiene consecuencias biológicas específicas.",
+        "fontes": [
+          "Área de Nutrición. Composición de los alimentos II: Vitaminas y minerales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumple la leche materna respecto de las vitaminas y minerales del lactante?",
+        "verso": "Provee vitaminas y minerales con alta biodisponibilidad (el hierro con lactoferrina alcanza 80-90% de aprovechamiento), además de enzimas e inmunoglobulinas que suplen los mecanismos inmaduros del lactante durante los primeros seis meses.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Química Biológica — Enzimas del sistema digestivo",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Enzimas de las secreciones salival, biliar, pancreática y de la mucosa intestinal en la digestión de hidratos de carbono, lípidos y proteínas; diferencias lactante-adulto.",
+    "tags": [
+      "nutricion-up2",
+      "quimica",
+      "enzimas-digestivas",
+      "lipasa",
+      "amilasa",
+      "tripsina",
+      "lactasa"
+    ],
+    "ordem": 23,
+    "cards": [
+      {
+        "frente": "¿Qué enzima de la boca es fundamental para la digestión de grasas en el RN y el lactante?",
+        "verso": "La lipasa lingual, producida por glándulas de secreción serosa del tercio posterior de la lengua. Potenciada por la lipasa que contiene la leche materna, comienza a actuar cuando llega al duodeno.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene la amilasa salival en el lactante?",
+        "verso": "En la escasa saliva del RN y lactante hay una amilasa que podría digerir hidratos de carbono complejos, pero como estos no están presentes en la leche de madre, su importancia es muy reducida en esa etapa.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enzimas gástricas participan en la digestión de proteínas?",
+        "verso": "La pepsina, junto con el ácido clorhídrico, desdobla las proteínas en estructuras más simples sobre las que actúan luego las enzimas intestinales. La lipasa gástrica actúa sobre los triglicéridos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la enteroquinasa y cuál es su función?",
+        "verso": "Una enzima liberada por la mucosa del duodeno al llegar el alimento, que transforma el tripsinógeno pancreático en tripsina activa. Su producción está presente desde el nacimiento y aumenta levemente durante el primer año.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumple la tripsina?",
+        "verso": "Degrada las proteínas a polipéptidos; estos son luego hidrolizados a aminoácidos y péptidos más simples por las peptidasas del ribete en cepillo del enterocito.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se digieren los lípidos y qué se obtiene?",
+        "verso": "Son solubilizados por los ácidos biliares (del hígado y la vesícula) e hidrolizados por la lipasa pancreática, obteniéndose ácidos grasos y monoglicéridos. Se clasifican en triglicéridos de cadena mediana (TGM) o larga (TGL).",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué las grasas de la leche materna se digieren bien en el RN si las sales biliares son escasas?",
+        "verso": "Porque se digieren gracias a la lipasa lingual del niño y a la lipasa de la leche materna, que compensan la escasez de sales biliares y de lipasa pancreática al nacimiento.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo se alcanza una digestión adecuada de las grasas en el niño?",
+        "verso": "Alrededor de los 6 meses la concentración de sales biliares permite una emulsión adecuada de las grasas y el aumento de la lipasa pancreática su hidrólisis. Recién al año se pueden incorporar grasas en cantidades moderadas sin riesgo de mala absorción.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enzimas hidrolizan los glúcidos y los disacáridos?",
+        "verso": "La amilasa pancreática y la alfa-amilasa del ribete en cepillo transforman almidón y glucógeno en disacáridos; luego la lactasa, sacarasa y maltasa del ribete en cepillo convierten lactosa, sacarosa y maltosa en monosacáridos (glucosa, galactosa, fructosa).",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué no se recomienda la introducción temprana de almidones?",
+        "verso": "Porque la amilasa pancreática y la alfa-amilasa del ribete en cepillo recién alcanzan niveles adecuados al sexto mes y solo después del año tienen actividad efectiva; la introducción temprana de almidones no es recomendada.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Nutrición — El sistema digestivo del niño: motilidad y maduración",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Reflejos de alimentación del RN, succión y deglución, maduración masticatoria, esófago, cardias, estómago, intestino y peristaltismo en la niñez.",
+    "tags": [
+      "nutricion-up2",
+      "nutricion",
+      "sistema-digestivo-del-nino",
+      "succion",
+      "deglucion",
+      "cardias",
+      "peristaltismo"
+    ],
+    "ordem": 24,
+    "cards": [
+      {
+        "frente": "¿Qué reflejos de alimentación presenta el RN sano desde el nacimiento?",
+        "verso": "El reflejo de hociqueo (búsqueda al estimular la zona peribucal) y un vigoroso reflejo de succión y extrución coordinado con los movimientos deglutorios.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo de hociqueo?",
+        "verso": "Se evidencia cuando se estimula la zona peribucal del RN, produciéndose intensos movimientos de búsqueda. Permite que el niño oriente la boca hacia el pezón para alimentarse.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Describe el mecanismo de succión y extrución del RN.",
+        "verso": "El estímulo táctil sobre el paladar duro posterior produce movimientos de los músculos de las mejillas (succión) y compresión de la lengua contra el paladar (extrución), extrayendo la leche de los conductos galactóforos y completando su vaciamiento.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué protección evita que la leche pase a la laringe durante la deglución?",
+        "verso": "Durante la succión, la glotis desciende impidiendo el pasaje de la leche o el alimento a la laringe, mientras se contraen los músculos de la faringe desencadenando la deglución.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo se coordinan la succión y la deglución?",
+        "verso": "Los movimientos de succión y deglución están presentes desde el segundo trimestre del embarazo, pero solo se coordinan a las 36 semanas de gestación. En el RN de término sano aseguran una alimentación sin riesgos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué el RN de término puede alimentarse sin riesgos?",
+        "verso": "Por la madurez de sus reflejos de succión y deglución, que se coordinan a las 36 semanas de gestación, siempre que se respeten su madurez psicomotriz y sus capacidades metabólica, enzimática e inmunológica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo comienza a desaparecer el reflejo de extrución y qué permite?",
+        "verso": "A los 5 meses, cuando aparecen movimientos de la mandíbula de tipo masticatorio y desaparece el reflejo de extrución, permitiendo la introducción de alimentos semisólidos como papillas, independientemente de la presencia de dientes.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el cardias y por qué es menos competente en el RN?",
+        "verso": "Es el engrosamiento de la capa interna de músculo liso en la unión esófago-estómago. En el RN suele ser menos competente, permitiendo que pequeñas porciones de leche refluyan; por eso se sostiene al niño semisentado tras la mamada.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el tránsito intestinal del neonato?",
+        "verso": "El intestino del RN mide entre 240 y 300 cm y el tránsito desde el duodeno (yeyuno, íleon, colon) hasta el recto puede durar entre 6 y 16 horas. El peristaltismo se modula por ganglios nerviosos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo influyen las pautas sociales en el patrón de defecación?",
+        "verso": "El patrón neurodigestivo de deposiciones tras cada comida persiste toda la vida, pero las pautas sociales y culturales influyen para que el niño mayor y el adulto tengan una o dos defecaciones por día.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Nutrición — Digestión y absorción intestinal en el niño",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Absorción de proteínas, lípidos e hidratos de carbono, transporte de monosacáridos, vías porta y linfática, y reservas de nutrientes.",
+    "tags": [
+      "nutricion-up2",
+      "nutricion",
+      "absorcion",
+      "proteinas",
+      "lipidos",
+      "hidratos-de-carbono",
+      "sistema-porta"
+    ],
+    "ordem": 25,
+    "cards": [
+      {
+        "frente": "¿Cómo se absorben los aminoácidos y oligopéptidos?",
+        "verso": "Por transporte activo dependiente del sodio (Na) a través de las células intestinales, unidos a un transportador específico. Por el sistema venoso llegan al hígado, donde se sintetiza la albúmina.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la albúmina y qué función tiene?",
+        "verso": "Una proteína sintetizada en el hígado a partir de los aminoácidos absorbidos; se encuentra en la sangre como reservorio circulante de proteínas. La mayor parte de los aminoácidos de reserva son intracelulares (pool de aminoácidos).",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué usos tienen los aminoácidos de reserva?",
+        "verso": "Sirven para la síntesis de proteínas musculares, enzimáticas y nerviosas e, incluso, para obtener energía en situaciones especiales.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se absorben los triglicéridos de cadena mediana (TGM) y larga (TCL)?",
+        "verso": "Los ácidos grasos y monoglicéridos se reesterifican a TGM en los enterocitos y son absorbidos por el sistema venoso (porta) al hígado. Los TCL son llevados por el sistema linfático al conducto torácico y a la circulación general.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tejidos utilizan principalmente las grasas como fuente energética?",
+        "verso": "El hígado, los músculos y el corazón. Los depósitos principales de lípidos son el tejido adiposo, los músculos y el hígado.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué función estructural tienen los lípidos de la leche de madre?",
+        "verso": "Una función estructural muy importante en la formación de mielina, esencial para la mielinización del sistema nervioso del lactante.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se absorben la glucosa y la galactosa?",
+        "verso": "Por transporte activo con gasto de energía y mediado por el ion Na a través de la membrana del enterocito. Una vez en la circulación venosa, pueden seguir hacia el hígado o ser usadas directamente como fuente energética.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué sucede con los monosacáridos llevados al hígado?",
+        "verso": "Son transformados en glucosa y, a partir de ella, se sintetiza glucógeno como forma de depósito intracelular de los hidratos de carbono.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tejidos solo pueden usar glucosa como fuente de energía?",
+        "verso": "El cerebro y los glóbulos rojos, que no pueden utilizar otras fuentes de energía. Por eso la glucosa absorbida se usa directamente como fuente energética por los tejidos, en especial por ellos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se absorbe el agua en el intestino?",
+        "verso": "El Na sale del enterocito por la membrana basal hacia el espacio intercelular, donde aumenta su concentración y atrae el agua de la luz intestinal. Este es el principal mecanismo de absorción del agua.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Nutrición — Defensas e inmunidad intestinal del lactante",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Barrera intestinal, factores no inmunológicos e inmunológicos, GALT, inmunoglobulina A secretoria y suplementación por la leche humana.",
+    "tags": [
+      "nutricion-up2",
+      "nutricion",
+      "barrera-intestinal",
+      "galt",
+      "iga-secretoria",
+      "inmunidad",
+      "lactoferrina"
+    ],
+    "ordem": 26,
+    "cards": [
+      {
+        "frente": "¿Qué es la barrera intestinal?",
+        "verso": "Un mecanismo de defensa del intestino frente a las injurias del medio externo (bacterias o alimentos), compuesta por factores no inmunológicos e inmunológicos que impiden el ingreso de moléculas antigénicas.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores no inmunológicos de la barrera intestinal?",
+        "verso": "La saliva, la acidez gástrica, la flora intestinal y enzimas como las proteasas, que degradan grandes moléculas que, de ser absorbidas, podrían actuar como antígenos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores inmunológicos de la barrera intestinal?",
+        "verso": "El tejido linfoide asociado al intestino (GALT), el moco, la población de células B y la inmunoglobulina A secretoria.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué riesgo implica la inmadurez de la barrera intestinal al nacimiento?",
+        "verso": "Como los factores de defensa son escasos al nacer, las grandes moléculas antigénicas pueden atravesar la membrana del enterocito e ingresar al organismo con el riesgo de desencadenar una reacción alérgica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo madura el sistema defensivo intestinal?",
+        "verso": "Después de los tres meses. Por eso no se aconseja la introducción de toda molécula ajena a la especie humana hasta después de los seis meses de edad.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo suple la leche humana los mecanismos inmunológicos inmaduros del lactante?",
+        "verso": "Con grandes cantidades de lactoferrina, lisozima, IgA, IgM e IgG, que suplen los mecanismos inmunológicos inmaduros durante los primeros seis meses de vida.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los probióticos y qué función cumplen?",
+        "verso": "Diferentes componentes de la flora bacteriana (probióticos) que estimularían a los linfocitos T intestinales en su función inmunológica.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la inmunoglobulina A secretoria (IgA)?",
+        "verso": "Un anticuerpo del tipo IgA producido por las células B del GALT que se secreta hacia la luz intestinal, donde actúa como primera línea de defensa frente a microorganismos y antígenos.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la lactoferrina?",
+        "verso": "Una enzima contenida en la leche materna que favorece la absorción del hierro (80-90% de aprovechamiento) y, además, tiene propiedades antimicrobianas, contribuyendo a la defensa del lactante.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se recomienda la lactancia exclusiva durante los primeros seis meses?",
+        "verso": "Porque la leche humana suple los mecanismos inmunológicos inmaduros del lactante (lactoferrina, lisozima, IgA, IgM, IgG) y evita la exposición a moléculas ajenas a la especie humana, cuyo ingreso se asocia a reacciones alérgicas.",
+        "fontes": [
+          "Castelli B. El sistema digestivo del niño. Primera Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Salud Mental — Vínculo temprano, lactancia y apego",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Importancia del vínculo temprano, madre suficientemente buena, lactancia como comunicación, vivencia de satisfacción y apego según Bowlby.",
+    "tags": [
+      "nutricion-up2",
+      "salud-mental",
+      "vinculo-temprano",
+      "madre-suficientemente-buena",
+      "lactancia",
+      "apego"
+    ],
+    "ordem": 27,
+    "cards": [
+      {
+        "frente": "¿Qué es la 'madre suficientemente buena' según Winnicott?",
+        "verso": "La madre (o quien cumple su función) que se adapta de manera activa y progresivamente menos perfecta a las necesidades del bebé. Es la que sostiene y contiene al niño, permitiendo que desarrolle la ilusión y luego la desilusión, base de su subjetividad.",
+        "fontes": [
+          "Winnicott D. La madre suficientemente buena. Salud Mental y Nutrición, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué la lactancia es una forma de comunicación?",
+        "verso": "Porque en el acto de amamantar se transmite no solo alimento sino afecto, palabra y una posición subjetiva: cómo la madre sostiene, nombra y responde al bebé. El pecho es un vínculo, no solo una fuente de nutrientes.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la vivencia de satisfacción?",
+        "verso": "La experiencia temprana en la que la necesidad (hambre) encuentra satisfacción (alimento) y con ella la presencia del otro. Deja una huella psíquica que organiza la vida afectiva y la relación con el mundo y con la comida.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el apego según Bowlby?",
+        "verso": "El lazo afectivo temprano que el niño establece con la figura que lo cuida (figura de apego), que le brinda protección y seguridad. La calidad del apego influye en el desarrollo emocional y en la capacidad de vincularse.",
+        "fontes": [
+          "Bowlby J. El concepto de apego. Salud Mental y Nutrición, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la alimentación con el apego?",
+        "verso": "La alimentación es una de las primeras escenas donde se juega el vínculo de apego: el bebé es alimentado por la figura que lo cuida, y en esa experiencia de cuidado se constituye la seguridad afectiva. Apego y alimentación son inseparables.",
+        "fontes": [
+          "Bowlby J. El concepto de apego. Salud Mental y Nutrición, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene el vínculo temprano para la nutrición?",
+        "verso": "El modo en que se alimenta al bebé (con sostén, palabra y afecto) condiciona su relación futura con la comida y su salud mental. Un vínculo temprano adecuado favorece la regulación emocional y la constitución de hábitos saludables.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué implica que la lactancia sea un 'vínculo' y no solo un aporte de nutrientes?",
+        "verso": "Que amamantar significa dar alimento, contacto, calor, palabra y reconocimiento. El bebé no solo incorpora leche: incorpora un modo de ser sostenido y amado, que funda su vida psíquica.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tiene la interrupción precoz del amamantamiento desde la salud mental?",
+        "verso": "Además de la pérdida de los nutrientes y factores inmunológicos de la leche, se interrumpe una escena de vínculo: el contacto, la palabra y el sostén asociados a la lactancia. Por eso debe evaluarse la dimensión afectiva de la decisión.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué rol tiene el pediatra frente al vínculo temprano?",
+        "verso": "Debe sostener y facilitar el vínculo madre-bebé: acompañar el amamantamiento, alentar la lactancia como comunicación y detectar dificultades afectivas del vínculo, no solo aspectos nutricionales.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la 'madre suficientemente buena' con la alimentación complementaria?",
+        "verso": "La introducción de nuevos alimentos requiere una madre (o cuidador) suficientemente buena que lea las señales del bebé, respete sus tiempos y le ofrezca el alimento con paciencia, sosteniendo el pasaje de la lactancia a la alimentación familiar.",
+        "fontes": [
+          "Winnicott D. La madre suficientemente buena. Salud Mental y Nutrición, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Salud Mental — Zona erógena, diques anímicos e impacto subjetivo",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Concepto de zona erógena (oral, anal, fálica), diques anímicos (asco y vergüenza) y modalidades de impacto subjetivo.",
+    "tags": [
+      "nutricion-up2",
+      "salud-mental",
+      "zona-erogena",
+      "oral",
+      "diques-animicos",
+      "asco",
+      "vergüenza"
+    ],
+    "ordem": 28,
+    "cards": [
+      {
+        "frente": "¿Qué es una zona erógena?",
+        "verso": "Una región del cuerpo privilegiada como fuente de excitación y placer (oral, anal, fálica). Cada zona adquiere un valor erógeno según la historia y las experiencias del sujeto, y organiza los modos de relacionarse con el mundo y con el cuerpo.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la zona erógena oral?",
+        "verso": "La zona de la boca, primera zona erógena en el desarrollo: la succión, el mamar y el comer son experiencias de placer ligadas al vínculo con la madre. La incorporación oral es el prototipo de la identificación.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la zona erógena anal?",
+        "verso": "La zona del ano y de los esfínteres, que cobra importancia con el control de esfínteres: el niño experimenta el poder de retener y expulsar, organizándose en torno a la oposición retener/soltar y a los valores de higiene y control.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la zona erógena fálica?",
+        "verso": "La zona en la que el niño descubre la diferencia anatómica de los sexos y la importancia del falo como organizador de la diferencia. Se asocia al complejo de Edipo y a la interrogación sobre el origen.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los diques anímicos?",
+        "verso": "Las barreras psíquicas que regulan el placer y la pulsión, en particular el asco y la vergüenza. Se constituyen en la infancia y ordenan qué se incorpora, qué se rechaza y qué se oculta en la relación con el cuerpo y con los otros.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple el asco en la alimentación?",
+        "verso": "El asco es un dique anímico que delimita lo incorporable de lo rechazable: establece qué alimentos se aceptan y cuáles repugnan. Su constitución es cultural y subjetiva, y regula la ingesta.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple la vergüenza como dique anímico?",
+        "verso": "La vergüenza regula lo que se muestra y lo que se oculta del cuerpo y de la intimidad, protegiendo al sujeto de la mirada del otro. Se relaciona con el pudor y con la educación del cuerpo en la infancia.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las modalidades de impacto subjetivo?",
+        "verso": "Los modos singulares en que un acontecimiento (una separación, un síntoma, un cambio en la alimentación) afecta e inscribe al sujeto. Cada niño vive y significa los eventos según su historia y su estructura psíquica.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan las zonas erógenas con la alimentación?",
+        "verso": "La alimentación recorre las zonas erógenas: la boca (oral) incorpora el alimento, el control de esfínteres (anal) ordena la incorporación/eliminación, y el complejo de Edipo (fálico) organiza las prohibiciones y los sentidos del comer.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué un niño puede rechazar ciertos alimentos (aversión alimentaria)?",
+        "verso": "Porque el asco y otras modalidades de impacto subjetivo regulan la incorporación: un alimento puede ser vivido como repugnante según la historia, la cultura y las experiencias del niño, más allá de su valor nutricional.",
+        "fontes": [
+          "Salud Mental y Nutrición, Módulo Infancias. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP2 — Medicina y Sociedad — Cultura y alimentación: el alimento en los hábitos sociales",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "El lugar y la función del alimento en los hábitos sociales, carácter social de la alimentación, significados del alimento y funciones sociales según Contreras, Aguirre y Harris.",
+    "tags": [
+      "nutricion-up2",
+      "medicina-sociedad",
+      "cultura-alimentacion",
+      "caracter-social",
+      "significados-del-alimento",
+      "comensalidad"
+    ],
+    "ordem": 29,
+    "cards": [
+      {
+        "frente": "¿Por qué la alimentación es un hecho social y no solo biológico?",
+        "verso": "Porque qué, cómo, cuándo, con quién y por qué se come están determinados por la cultura, la economía y las relaciones sociales. El alimento tiene funciones y significados que van más allá del aporte de nutrientes.",
+        "fontes": [
+          "Aguirre P. El carácter social de la alimentación. UNSAM, 2008."
+        ]
+      },
+      {
+        "frente": "¿Qué es el lugar del alimento en los hábitos sociales?",
+        "verso": "El alimento estructura la vida social: la comida organiza reuniones, ritos, celebraciones y jerarquías; marca pertenencias e identidades. Los hábitos alimentarios son prácticas sociales transmitidas y compartidas.",
+        "fontes": [
+          "Contreras J. Los alimentos también tienen significado. Universidad Complutense, 1993."
+        ]
+      },
+      {
+        "frente": "¿Qué significa que los alimentos 'tienen significado'?",
+        "verso": "Que los alimentos son signos cargados de valor: comunican estatus, prestigio, hospitalidad, identidad y pertenencia. Cada cultura atribuye a los alimentos significados que exceden su función nutricional.",
+        "fontes": [
+          "Contreras J. Los alimentos también tienen significado. Universidad Complutense, 1993."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son algunas funciones sociales de la alimentación?",
+        "verso": "Favorecer la sociabilidad y el vínculo (comensalidad), expresar identidad y pertenencia grupal, marcar estatus y prestigio, celebrar ritos y acontecimientos, y establecer distinciones (permitido/prohibido, de fiesta, de pobre).",
+        "fontes": [
+          "Contreras J. Funciones sociales de la alimentación. Universidad Complutense, 1993."
+        ]
+      },
+      {
+        "frente": "¿Cómo explica Harris el tabú de la vaca en la India?",
+        "verso": "Con el materialismo cultural: más allá del significado religioso, la prohibición de matar y comer vacas cumple una función ecológica y económica racional (el animal vivo provee leche, fuerza de trabajo y estiércol).",
+        "fontes": [
+          "Harris M. La madre Vaca. En: Vacas, cerdos, guerras y brujas. Editorial Aguilar, 1989."
+        ]
+      },
+      {
+        "frente": "¿Qué es la comensalidad?",
+        "verso": "El acto de compartir la mesa y los alimentos. La comensalidad crea y refuerza vínculos sociales: comer juntos marca pertenencia, genera reciprocidad y transmite valores e identidad del grupo.",
+        "fontes": [
+          "Contreras J. Funciones sociales de la alimentación. Universidad Complutense, 1993."
+        ]
+      },
+      {
+        "frente": "¿Qué relación establece Aguirre entre alimentación y desigualdad?",
+        "verso": "Las prácticas alimentarias varían según la posición social: el ingreso determina qué alimentos son accesibles. Las carencias, la desnutrición y la obesidad se distribuyen diferencialmente según la clase y el contexto.",
+        "fontes": [
+          "Aguirre P. El carácter social de la alimentación. UNSAM, 2008."
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene la 'demanda' en la alimentación?",
+        "verso": "La demanda es la forma en que los sujetos y grupos expresan y reclaman la satisfacción de sus necesidades alimentarias. Es modelada por la cultura y los medios de comunicación, y puede estar desligada de las necesidades reales.",
+        "fontes": [
+          "Staffolani C. Demandas, necesidades y satisfactores. Seminario/Taller disciplinar N°1, Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Diferencia entre necesidad, demanda y satisfactor alimentario.",
+        "verso": "Necesidad: requerimiento básico para vivir (alimentarse). Demanda: la expresión concreta y cultural de esa necesidad. Satisfactor: el modo específico de cubrirla (qué alimentos, qué preparaciones), condicionado por la cultura y los recursos.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. CELATS, 1991; Staffolani C. Demandas, necesidades y satisfactores."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre los medios de comunicación y la alimentación?",
+        "verso": "Los medios modelan la demanda: publicitan alimentos, crean modas y estandarizan el deseo de consumo, influyendo en las decisiones alimentarias de la población con frecuencia en detrimento de una alimentación saludable.",
+        "fontes": [
+          "Seminario/Taller disciplinar N°1: Demanda, necesidades, satisfactores y estrategias alimentarias. Medicina y Sociedad, FCM-UNR."
+        ]
+      }
+    ]
+  }
+]

@@ -607,20 +607,22 @@ export function SimuladosContent() {
                     {emAndamento ? <RotateCcw className="h-4 w-4" /> : simulado.finished_at ? <Eye className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                     {emAndamento ? t.treinamentos.retomar : simulado.finished_at ? t.treinamentos.verCorrecao : t.treinamentos.iniciar}
                   </Button>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => handleDelete(simulado.id)}
-                    disabled={deletingId === simulado.id}
-                    className="text-destructive hover:bg-destructive/10"
-                    aria-label={t.treinamentos.ariaExcluir}
-                  >
-                    {deletingId === simulado.id ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      <Trash2 className="h-4 w-4" />
-                    )}
-                  </Button>
+                  {!simulado.finished_at && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => handleDelete(simulado.id)}
+                      disabled={deletingId === simulado.id}
+                      className="text-destructive hover:bg-destructive/10"
+                      aria-label={t.treinamentos.ariaExcluir}
+                    >
+                      {deletingId === simulado.id ? (
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                      ) : (
+                        <Trash2 className="h-4 w-4" />
+                      )}
+                    </Button>
+                  )}
                 </div>
               </div>
             )

@@ -4,7 +4,11 @@ import Link from "next/link"
 import { ArrowRight, Users } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
 
-export function ComunidadeBanner() {
+interface ComunidadeBannerProps {
+  showCta?: boolean
+}
+
+export function ComunidadeBanner({ showCta = true }: ComunidadeBannerProps) {
   const { t } = useLanguage()
 
   return (
@@ -19,13 +23,15 @@ export function ComunidadeBanner() {
             <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{t.comunidadeBanner.corpo}</p>
           </div>
         </div>
-        <Link
-          href="/dashboard/feedback"
-          className="flex shrink-0 items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] px-4 py-2.5 text-sm font-semibold text-[#0a1f00] shadow-sm transition-opacity hover:opacity-90"
-        >
-          {t.comunidadeBanner.cta}
-          <ArrowRight className="h-4 w-4" />
-        </Link>
+        {showCta && (
+          <Link
+            href="/dashboard/feedback"
+            className="flex shrink-0 items-center gap-1.5 rounded-lg bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] px-4 py-2.5 text-sm font-semibold text-[#0a1f00] shadow-sm transition-opacity hover:opacity-90"
+          >
+            {t.comunidadeBanner.cta}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        )}
       </div>
     </div>
   )

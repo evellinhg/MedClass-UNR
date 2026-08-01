@@ -1,4 +1,5 @@
 import { FeedbackContent } from "@/components/feedback-content"
+import { ComunidadeBanner } from "@/components/comunidade-banner"
 import { DashboardLayout } from "@/components/dashboard-layout"
 
 export const metadata = {
@@ -16,6 +17,8 @@ export default function FeedbackPage() {
             Compartilhe dúvidas, sugestões e reporte erros
           </p>
         </div>
+
+        <ComunidadeBanner showCta={false} />
 
         <FeedbackContent />
       </div>

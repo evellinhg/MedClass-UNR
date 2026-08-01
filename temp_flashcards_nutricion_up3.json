@@ -1,0 +1,1096 @@
+[
+  {
+    "titulo": "Nutrición UP3 — Anatomía — Glándula mamaria: situación, forma y dimensiones",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Situación, forma, dimensiones, desarrollo y variaciones de la glándula mamaria en la cara anterosuperior del tórax.",
+    "tags": [
+      "nutricion-up3",
+      "anatomia",
+      "glandula-mamaria",
+      "torax",
+      "mama",
+      "pezon",
+      "areola"
+    ],
+    "ordem": 30,
+    "cards": [
+      {
+        "frente": "¿Dónde se sitúan las mamas?",
+        "verso": "En la cara anterosuperior del tórax, entre el borde lateral del esternón y la línea axilar anterior. Verticalmente se extienden desde la tercera a la séptima costilla.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué representan las mamas desde el punto de vista funcional y sexual?",
+        "verso": "Son una característica sexual secundaria del sexo femenino y sirven para proporcionar nutrición al recién nacido.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Los varones presentan glándulas mamarias?",
+        "verso": "Sí. Tienen el mismo origen embriológico que en las mujeres y presentan los mismos elementos, pero menos desarrollados. En la pubertad sufren transformaciones que se detienen quedando rudimentarias.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los límites topográficos de la región mamaria?",
+        "verso": "Por arriba llega hasta la clavícula, por abajo hasta el borde inferior del tórax, por dentro hasta la línea medioesternal y por fuera hasta el músculo dorsal ancho.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo alcanzan las mamas su desarrollo adulto y qué forma tienen?",
+        "verso": "Alcanzan su desarrollo adulto en la pubertad. Su forma es de semiesfera terminada en un vértice por una saliente: la papila mamaria o pezón.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el surco submamario?",
+        "verso": "En posición de pie, la mitad inferior de la mama forma con la pared torácica subyacente un surco de profundidad variable: el surco submamario.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las dimensiones de la mama en una mujer adulta?",
+        "verso": "Son variables y no guardan relación con la talla de la persona. En promedio miden de 10 a 11 cm de altura, 12 a 13 cm de ancho y 5 o 6 cm de espesor.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las mamas supernumerarias?",
+        "verso": "Variaciones en el número de mamas: aunque lo normal es que sean dos, pueden aparecer mamas a lo largo de la línea mamaria, denominadas mamas supernumerarias.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la areola y qué caracteres presenta?",
+        "verso": "Es una zona cutánea pigmentada circular de 4 o 5 cm de diámetro que rodea el pezón. Su coloración varía: es rosada en la mujer joven y adquiere una coloración más amarronada en las mujeres que han estado embarazadas. Su superficie presenta pequeñas eminencias que corresponden a glándulas sebáceas.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las glándulas areolares o de Morgagni y los tubérculos areolares?",
+        "verso": "Son glándulas sebáceas de la areola, en número de 10 o 15. Durante el embarazo se hacen más voluminosas por hipertrofia y reciben el nombre de tubérculos areolares.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Anatomía — Glándula mamaria: estructura y conductos",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Estructura de la mama desde la superficie a la profundidad: pezón, areola, músculo areolar, conductos galactóforos, capas adiposas y glándula mamaria.",
+    "tags": [
+      "nutricion-up3",
+      "anatomia",
+      "glandula-mamaria",
+      "mama",
+      "conductos-galactoforos",
+      "mama-estructura"
+    ],
+    "ordem": 31,
+    "cards": [
+      {
+        "frente": "¿Qué estructuras forman la mama desde la superficie a la profundidad?",
+        "verso": "De superficie a profundidad: 1) revestimiento cutáneo (con areola y pezón), 2) tejido adiposo subcutáneo o capa pre glandular, 3) glándula mamaria, y 4) capa adiposa posterior o retromamaria.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el pezón o papila mamaria y qué desemboca en él?",
+        "verso": "Es una prominencia central de la mama, cilíndrica o cónica, de aproximadamente 1 cm de ancho y de alto. En su extremidad libre desembocan los conductos galactóforos o lactíferos, por orificios llamados poros galactóforos (15 a 20).",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el pezón umbilicado?",
+        "verso": "Es una variante en la cual el pezón se encuentra en una depresión excavada en la glándula.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué constituye el músculo areolar y cuáles son sus fibras?",
+        "verso": "Es el conjunto de fibras musculares lisas subdérmicas anexadas a la piel fina de la areola y el pezón. Está constituido por fibras circulares y fibras radiadas.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la erección del pezón?",
+        "verso": "Ante excitaciones diversas (roces, frío, emociones) las fibras circulares del músculo areolar se contraen, la piel de la areola se contrae y proyecta el pezón hacia adelante: es la erección del pezón.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los senos galactóforos?",
+        "verso": "Son dilataciones de los conductos galactóforos que se ubican antes de llegar al pezón. Allí se almacena la leche en el intervalo de las extracciones, por el bebé o manualmente.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los ligamentos suspensorios de la mama o de Cooper?",
+        "verso": "Son tabiques de tejido conectivo que se extienden desde la cara profunda de la dermis hasta la fascia del pectoral mayor, separando los lóbulos de la glándula mamaria. Más desarrollados en la parte superior de la mama, contribuyen al soporte del tejido mamario.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la glándula mamaria y cuántos lóbulos posee?",
+        "verso": "Es una masa oval de espesor mayor en el centro y menor en la periferia, con cara posterior relativamente plana. Cada glándula mamaria está constituida por 15 o 20 lóbulos, cada uno de los cuales presenta un conducto excretor: el conducto galactóforo.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se forman los lóbulos de la glándula mamaria?",
+        "verso": "Cada lóbulo, de forma cónica, se forma por la unión de lobulillos, en los que se encuentran los acinos o alvéolos, donde se produce la secreción láctea.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué prolongaciones emite la glándula mamaria y cuáles son las más frecuentes?",
+        "verso": "Su circunferencia es irregular por emitir prolongaciones. La más constante es el proceso axilar, que se dirige hacia arriba y lateralmente rodeando el borde inferior del pectoral mayor; otra frecuente es la prolongación inferomedial o abdominal, dirigida hacia la vaina del músculo recto del abdomen.",
+        "fontes": [
+          "Yaber F, Boglioli A, Calgaro G. Generalidades de glándula mamaria. Anatomía Normal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Histología y Embriología — Glándula mamaria: estructura y desarrollo",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Características generales y estructura histológica de la glándula mamaria, unidad funcional, adenómeros, conductos excretores, mama en reposo y en lactancia y desarrollo embriológico.",
+    "tags": [
+      "nutricion-up3",
+      "histologia",
+      "embriologia",
+      "glandula-mamaria",
+      "mama",
+      "adenomeros",
+      "lactancia"
+    ],
+    "ordem": 32,
+    "cards": [
+      {
+        "frente": "¿Cómo se clasifica histológicamente la glándula mamaria?",
+        "verso": "Es una glándula exocrina, tubuloacinar compuesta. Su parénquima se organiza en 15 a 20 lóbulos, cada uno con numerosos lobulillos formados por adenómeros o alvéolos secretores.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la unidad funcional de la glándula mamaria?",
+        "verso": "El adenómero o alvéolo mamario. Está revestido por un epitelio glandular simple cúbico y rodeado por células mioepiteliales, que colaboran con la eyección de la leche.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué células revisten los alvéolos secretores de la mama?",
+        "verso": "Un epitelio simple cúbico, con células secretoras de lípidos y proteínas de la leche. Entre el epitelio y la lámina basal se disponen células mioepiteliales contráctiles.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se organiza el sistema de conductos excretores de la mama?",
+        "verso": "Desde los adenómeros, la leche fluye por conductos intralobulillares e interlobulillares que confluyen en los conductos galactóforos (uno por lóbulo), que se dilatan en senos galactóforos y desembocan en el pezón.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se presenta la mama en reposo (no lactante)?",
+        "verso": "Predomina el tejido conectivo y adiposo; el parénquima glandular es escaso, con pocos alvéolos pequeños y conductos bien definidos. Hay poco desarrollo de los adenómeros.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se presenta la mama en lactancia?",
+        "verso": "El parénquima glandular está muy desarrollado: los adenómeros son numerosos y grandes, con luz dilatada conteniendo leche; las células secretoras son altas y el tejido conectivo y adiposo disminuye.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué células intervienen en la eyección de la leche y por cuál estímulo se contraen?",
+        "verso": "Las células mioepiteliales, que rodean los alvéolos y conductos. Se contraen bajo la acción de la oxitocina, expulsando la leche hacia los conductos excretores (reflejo de eyección).",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el origen embriológico de las glándulas mamarias?",
+        "verso": "Se originan como evaginaciones del ectodermo superficial a lo largo de las líneas mamarias o crestas de leche, que se extienden desde la región axilar hasta la inguinal. De ellas se forman las yemas mamarias primarias, que originan los conductos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación tiene la línea o cresta mamaria con las mamas supernumerarias?",
+        "verso": "La persistencia o desarrollo incompleto de porciones de la línea mamaria puede originar mamas o pezones supernumerarios en cualquier punto de la cresta.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo se completa el desarrollo funcional de la glándula mamaria?",
+        "verso": "El desarrollo estructural se completa en la pubertad (estimulado por estrógenos y progesterona), pero el desarrollo funcional pleno, con secreción láctea, ocurre durante el embarazo y la lactancia.",
+        "fontes": [
+          "Cátedra de Histología y Embriología. Glándula mamaria. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Fisiología — Lactancia: mamogénesis, lactogénesis y prolactina",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Regulación de los procesos de mamogénesis, lactogénesis y lactopoyesis. Prolactina: estructura, origen, formas circulantes, control hipotalámico, papel del estradiol y mecanismo de acción.",
+    "tags": [
+      "nutricion-up3",
+      "fisiologia",
+      "lactancia",
+      "prolactina",
+      "mamogenesis",
+      "lactogenesis",
+      "lactopoyesis",
+      "hipotalamo"
+    ],
+    "ordem": 33,
+    "cards": [
+      {
+        "frente": "¿Qué es la mamogénesis y qué hormonas intervienen?",
+        "verso": "Es el proceso de desarrollo y crecimiento de la glándula mamaria. Intervienen principalmente estrógenos (crecimiento de conductos), progesterona (desarrollo de lobulillos y alvéolos), prolactina, GH, cortisol e insulina.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué es la lactogénesis?",
+        "verso": "Es el inicio de la secreción de leche por la glándula mamaria, que ocurre alrededor del parto. Requiere la acción de prolactina y de la caída de estrógenos y progesterona tras el alumbramiento (que dejan de inhibir a la prolactina).",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué es la lactopoyesis y cómo se mantiene?",
+        "verso": "Es el mantenimiento de la secreción láctea establecida. Depende de la prolactina y del estímulo de succión del pezón, que por vía refleja mantiene los niveles de prolactina y la eyección de leche.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la estructura química y el origen de la prolactina?",
+        "verso": "Es una hormona polipeptídica, estructuralmente similar a la hormona de crecimiento y a la somatolactotropina placentaria, sintetizada y secretada por los lactótrofos de la adenohipófisis.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las formas circulantes de la prolactina?",
+        "verso": "Circula en forma monomérica (biológicamente activa) y en formas de mayor peso molecular: la dimérica ('big' prolactina) y los agregados ('big-big' prolactina o macroprolactina), de menor actividad biológica.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cómo controla el hipotálamo la secreción de prolactina?",
+        "verso": "El control predominante es inhibitorio: la dopamina hipotalámica (factor inhibidor de prolactina) suprime su secreción. También existen péptidos hipotalámicos estimuladores, como el TRH, que la aumentan.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el papel del estradiol en la regulación de la prolactina en la mujer?",
+        "verso": "El estradiol estimula la secreción de prolactina: aumenta el número y la actividad de los lactótrofos y suprime la acción inhibitoria de la dopamina. Esto explica el aumento de prolactina durante el embarazo.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué efecto tiene la gesta sobre los niveles de prolactina?",
+        "verso": "Durante el embarazo la prolactina aumenta progresivamente por el estímulo estrogénico placentario; sin embargo, la secreción de leche se bloquea por los altos niveles de estrógenos y progesterona, que inhiben a nivel mamario.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cómo es el mecanismo de acción de la prolactina?",
+        "verso": "Actúa sobre receptores de membrana de la familia de receptores de citoquinas, acoplados a la vía JAK/STAT. La unión hormona-receptor activa señales intracelulares que regulan la expresión génica de las células secretoras de leche.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué acciones ejerce la prolactina sobre el sistema inmune y el eje gonadotrófico?",
+        "verso": "Sobre el sistema inmune ejerce efectos inmunomoduladores (regula la función de linfocitos). Sobre el eje gonadotrófico, la hiperprolactinemia inhibe la secreción de GnRH y, en consecuencia, de LH y FSH, contribuyendo a la amenorrea de la lactancia.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Fisiología — Oxitocina y reflejo de eyección láctea",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Oxitocina: estructura química, síntesis y almacenamiento, control de su secreción (reflejos eyecto-lácteo y de parto), mecanismo de acción y principales efectos.",
+    "tags": [
+      "nutricion-up3",
+      "fisiologia",
+      "oxitocina",
+      "lactancia",
+      "reflejo-eyecto-lacteo",
+      "neurohipofisis",
+      "parto"
+    ],
+    "ordem": 34,
+    "cards": [
+      {
+        "frente": "¿Cuál es la estructura química de la oxitocina y dónde se sintetiza?",
+        "verso": "Es un nonapéptido (9 aminoácidos) con un puente disulfuro, estructuralmente similar a la vasopresina. Se sintetiza en los núcleos supraóptico y paraventricular del hipotálamo.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Dónde se almacena y libera la oxitocina?",
+        "verso": "Se transporta por los axones hipotálamo-hipofisarios hasta la neurohipófisis (lóbulo posterior de la hipófisis), donde se almacena y desde donde se libera a la sangre tras el estímulo adecuado.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo eyecto-lácteo?",
+        "verso": "Es el reflejo neuroendocrino por el cual la succión del pezón genera impulsos aferentes que llegan al hipotálamo y provocan la liberación de oxitocina, la cual contrae las células mioepiteliales de la glándula mamaria y expulsa la leche.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple la oxitocina en el mantenimiento de la lactogénesis en el puerperio?",
+        "verso": "Aunque la prolactina mantiene la producción de leche, la oxitocina asegura su eyección (descenso) por el reflejo eyecto-lácteo. El vaciamiento eficaz de la mama es necesario para sostener la lactogénesis en el puerperio.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué factores psicológicos pueden inhibir el reflejo eyecto-lácteo?",
+        "verso": "El estrés, la ansiedad, el temor o el dolor pueden inhibir la liberación de oxitocina y, con ello, el descenso de la leche, aun cuando haya producción (disminución del reflejo eyecto-lácteo).",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo de parto (reflejo de Ferguson)?",
+        "verso": "Es el reflejo neuroendocrino en el cual la distensión del cuello uterino y la vagina estimula la liberación de oxitocina, que aumenta las contracciones uterinas y favorece la progresión del parto.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cómo es el mecanismo de acción de la oxitocina y cuáles son sus principales efectos?",
+        "verso": "Actúa sobre receptores acoplados a proteína G (Gq), que activan la vía del calcio intracelular. Sus principales efectos son la contracción de las células mioepiteliales mamarias (eyección de leche) y del músculo liso uterino (contracciones de parto).",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cómo regula el hipotálamo el control de la secreción de oxitocina?",
+        "verso": "El control es de tipo neuroendocrino: los estímulos sensoriales (succión del pezón, distensión del canal del parto) activan vías aferentes hacia los núcleos supraóptico y paraventricular, que despolarizan las neuronas magnocelulares y liberan oxitocina por la neurohipófisis.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la diferencia funcional entre prolactina y oxitocina en la lactancia?",
+        "verso": "La prolactina regula la producción/secreción de leche (lactogénesis y lactopoyesis), mientras que la oxitocina regula la eyección de la leche ya producida (reflejo eyecto-lácteo). Ambas son necesarias para una lactancia eficaz.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      },
+      {
+        "frente": "¿Qué mecanismo explica la amenorrea de la lactancia?",
+        "verso": "La succión eleva la prolactina, que inhibe la secreción de GnRH y por lo tanto de LH y FSH, suprimiendo la ovulación. Por eso, la lactancia exclusiva a demanda tiende a retrasar la reanudación de los ciclos ovulatorios.",
+        "fontes": [
+          "Arias P. Unidad hipotálamo hipofisaria. En: Dvorkin M, Cardinali DP. Best y Taylor, Bases fisiológicas de la práctica médica. Panamericana, 13ª ed."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Química Biológica — Metabolismo y glucólisis",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Consideraciones generales del metabolismo, catabolismo y anabolismo, reacciones redox, ingreso y fosforilación de la glucosa, y glucólisis: localización, etapas, producto final, significado funcional y enzimas irreversibles.",
+    "tags": [
+      "nutricion-up3",
+      "bioquimica",
+      "metabolismo",
+      "glucolisis",
+      "glucosa",
+      "catabolismo",
+      "anabolismo",
+      "oxido-reduccion"
+    ],
+    "ordem": 35,
+    "cards": [
+      {
+        "frente": "¿Qué es el metabolismo?",
+        "verso": "Es el conjunto de transformaciones químicas que ocurren en el organismo, mediante el cual la energía química de los alimentos se redistribuye en nuevos enlaces químicos, parte se disipa como calor y se produce trabajo celular.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el catabolismo y qué es el anabolismo?",
+        "verso": "El catabolismo es el conjunto de vías que degradan moléculas grandes en otras más simples con liberación de energía (reacciones exergónicas). El anabolismo son las vías que sintetizan moléculas complejas a partir de simples, consumiendo energía (reacciones endergónicas).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las reacciones de óxido-reducción y qué coenzimas participan?",
+        "verso": "Son reacciones en las que una especie se oxida (pierde electrones o hidrógenos) y otra se reduce (los gana). En el metabolismo intervienen coenzimas transportadoras de electrones como el NAD+/NADH y el FAD/FADH2.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo ingresa la glucosa a las células y qué es su fosforilación?",
+        "verso": "Ingresa por transporte mediado por transportadores GLUT según el gradiente de concentración. Una vez dentro, se fosforila a glucosa-6-fosfato por la hexoquinasa (o glucoquinasa en hígado), quedando atrapada en la célula e iniciando su metabolización.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tipo de vía es la glucólisis, en qué tejidos ocurre y dónde se localiza celularmente?",
+        "verso": "Es una vía catabólica, común a la mayoría de los tejidos, que ocurre en el citosol celular. Degrada la glucosa (6 carbonos) a dos moléculas de piruvato (3 carbonos).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales etapas de la glucólisis y su producto final?",
+        "verso": "Comprende: 1) inversión energética (gasto de 2 ATP), 2) fraccionamiento de la hexosa en dos triosas, y 3) producción de energía (formación de 4 ATP y 2 NADH). El producto final son dos moléculas de piruvato.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el balance energético de la glucólisis?",
+        "verso": "Por cada glucosa: se consumen 2 ATP y se producen 4 ATP, por lo que el rendimiento neto es de 2 ATP y 2 NADH por molécula de glucosa.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el significado funcional de la glucólisis?",
+        "verso": "Provee ATP rápidamente sin necesidad de oxígeno, y genera piruvato, que puede seguir oxidándose en condiciones aeróbicas (ciclo de Krebs) o reducirse a lactato en condiciones anaeróbicas.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué la glucólisis es irreversible y qué enzimas participan en las reacciones irreversibles?",
+        "verso": "Presenta tres reacciones irreversiblemente reguladas, catalizadas por: hexoquinasa (glucosa → glucosa-6-P), fosfofructoquinasa-1 (fructosa-6-P → fructosa-1,6-bifosfato) y piruvato quinasa (fosfoenolpiruvato → piruvato).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la enzima reguladora principal de la glucólisis y qué la activa?",
+        "verso": "La fosfofructoquinasa-1 (PFK-1) es la enzima clave de la vía. Es activada por el AMP (alta demanda energética) y por la fructosa-2,6-bifosfato, e inhibida por el ATP y el citrato.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Química Biológica — Destino del piruvato, ciclo de Krebs y cadena respiratoria",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Destino del piruvato (lactato y descarboxilación oxidativa), ciclo de Krebs, cadena de transporte de electrones y síntesis de ATP: fosforilación a nivel de sustrato y fosforilación oxidativa, y balance energético de la glucosa.",
+    "tags": [
+      "nutricion-up3",
+      "bioquimica",
+      "piruvato",
+      "ciclo-de-krebs",
+      "cadena-respiratoria",
+      "atp",
+      "fosforilacion-oxidativa",
+      "balance-energetico"
+    ],
+    "ordem": 36,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los dos destinos posibles del piruvato?",
+        "verso": "En condiciones anaeróbicas se reduce a lactato (regenerando NAD+). En condiciones aeróbicas sufre descarboxilación oxidativa a acetil-CoA, que ingresa al ciclo de Krebs.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enzima cataliza la formación de lactato a partir del piruvato?",
+        "verso": "La lactato deshidrogenasa (LDH), que reduce el piruvato a lactato utilizando NADH, regenerando NAD+ para que la glucólisis continúe en ausencia de oxígeno.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la descarboxilación oxidativa del piruvato?",
+        "verso": "Es la conversión del piruvato en acetil-CoA, catalizada por el complejo piruvato deshidrogenasa, que ocurre en la mitocondria y produce CO2 y NADH. Es un paso irreversible que conecta la glucólisis con el ciclo de Krebs.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tipo de vía es el ciclo de Krebs, dónde se localiza y cuáles son sus productos finales?",
+        "verso": "Es una vía anfibólica (catabólica y anabólica) que ocurre en la matriz mitocondrial. Oxida el acetil-CoA a CO2, generando por vuelta 3 NADH, 1 FADH2 y 1 GTP.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el significado funcional del ciclo de Krebs?",
+        "verso": "Es la vía común final de oxidación de carbohidratos, ácidos grasos y aminoácidos; provee los equivalentes reductores (NADH y FADH2) para la cadena respiratoria y también intermediarios para la síntesis de biomoléculas (carácter anfibólico).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los componentes de la cadena de transporte de electrones?",
+        "verso": "Se ubica en la membrana mitocondrial interna e incluye los complejos I, II, III y IV, la ubiquinona (coenzima Q) y el citocromo c. Los electrones fluyen desde el NADH y el FADH2 hasta el oxígeno.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función de la cadena respiratoria?",
+        "verso": "Transportar electrones hasta el oxígeno, bombeando protones al espacio intermembranoso y generando un gradiente electroquímico que impulsa la síntesis de ATP por la ATP sintasa (fosforilación oxidativa).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fosforilación a nivel de sustrato?",
+        "verso": "Es la síntesis directa de ATP (o GTP) por transferencia de un grupo fosfato de un sustrato de alta energía a un ADP, sin intervención de la cadena respiratoria. Ocurre en la glucólisis (fosfoglicerato quinasa y piruvato quinasa) y en el ciclo de Krebs (succinil-CoA sintetasa).",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fosforilación oxidativa y cómo se relaciona con la cadena respiratoria?",
+        "verso": "Es la síntesis de ATP acoplada al transporte de electrones y al bombeo de protones en la cadena respiratoria, mediante la ATP sintasa. Es la principal fuente de ATP en condiciones aeróbicas.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el balance energético total de la oxidación completa de la glucosa y de dónde proviene la mayor parte?",
+        "verso": "Por cada glucosa se obtienen unos 30-32 ATP: 2 ATP por fosforilación a nivel de sustrato (glucólisis) y 1 GTP en el ciclo de Krebs; el resto proviene de la fosforilación oxidativa (NADH y FADH2 en la cadena respiratoria), que aporta la mayor parte de la energía.",
+        "fontes": [
+          "Área de Nutrición. Química Biológica: Metabolismo de hidratos de carbono I. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Nutrición — Talla y nutrición: crecimiento y factores",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Crecimiento y desarrollo como fenómenos biológicos, factores genéticos, hormonales y medioambientales, herencia de la talla y el papel determinante de la nutrición.",
+    "tags": [
+      "nutricion-up3",
+      "nutricion",
+      "talla",
+      "crecimiento",
+      "desarrollo",
+      "genetica",
+      "factores-ambientales",
+      "auxologia"
+    ],
+    "ordem": 37,
+    "cards": [
+      {
+        "frente": "¿Qué factores deben considerarse al evaluar el crecimiento y el desarrollo?",
+        "verso": "Factores genéticos, hormonales y medioambientales. Entre los ambientales: altitud, latitud, contaminación del aire, cuidados de crianza, afecto, estímulo y alimentación. Cada uno, en delicado equilibrio, contribuye a que el factor genético exprese su máximo potencial.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué se creyó tradicionalmente sobre el factor genético y la talla?",
+        "verso": "Que el factor genético era determinante de la talla y que explicaba por qué algunos grupos humanos eran más bajos (por ejemplo, pueblos originarios de Argentina: mapuches, wichis, tobas, araucanos). Llegó a proponerse la elaboración de tablas de percentilos específicas para cada grupo étnico.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué demostró la observación de los hijos de japoneses emigrados a Estados Unidos?",
+        "verso": "Que los hijos de padres japoneses emigrados a EE.UU. tras la Segunda Guerra Mundial alcanzaron una talla sensiblemente mayor que sus padres y, en dos generaciones, un incremento de estatura de unos 10 cm. El factor que más había variado era la alimentación.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se caracteriza la herencia de la talla?",
+        "verso": "La talla, como el peso, es un carácter cuantitativo de herencia compleja o multifactorial, controlado por el efecto aditivo de numerosos genes (genes menores o poligenes), intensamente influido por el ambiente. Los caracteres cualitativos (ej. ojos claros u oscuros) dependen de pocos genes mayores, sin influencia ambiental.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la auxología?",
+        "verso": "Es la ciencia que estudia el crecimiento y desarrollo (del griego auxein: crecimiento, y logos: ciencia).",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué mostró el trabajo del Dr. Hugo Amigo sobre las mujeres mapuches?",
+        "verso": "Presentado en las Jornadas de Auxología de mayo de 2006, mostró que las mujeres mapuches aumentan su estatura a medida que mejora su situación socioeconómica, requiriendo al menos dos generaciones de condiciones óptimas de nutrición para el incremento de la talla.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué señalan los esqueletos hallados en la zona de Coronda (Santa Fe)?",
+        "verso": "Esqueletos humanos de unos 2.000 años de antigüedad, de antiguos cazadores recolectores, señalan una talla media de 1,80 metros para los varones, lo que cuestiona la idea de que la baja talla de los pueblos originarios esté determinada genéticamente.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué conclusión se extrae sobre la baja talla de los pueblos originarios?",
+        "verso": "Que la baja talla no está establecida genéticamente sino que fue determinada por la mala alimentación durante varias generaciones, sometidas a la miseria, la explotación y pobres condiciones de vida. La privación alimentaria puede afectar no solo la talla sino también la maduración de tejidos como el nervioso.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el papel de la nutrición en la determinación de la talla?",
+        "verso": "Es la nutrición la que adquiere la mayor importancia para que cada individuo pueda alcanzar la máxima expresión de la talla que su dotación genética le permita.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo afecta el déficit nutricional en los primeros dos años de vida?",
+        "verso": "El déficit nutricional en un período crítico de crecimiento como los dos primeros años de vida afecta a la talla de forma irreversible. Por eso, superado el período agudo, se deben reprogramar las dietas para dar los nutrientes adecuados y mantener la relación peso-talla adecuada.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Nutrición — Patrón de crecimiento OMS y lactancia materna",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Estudio Multicéntrico OMS 1997-2006, nuevo Patrón Internacional de Crecimiento Infantil, lactancia materna como norma, beneficios y reflexiones sobre políticas alimentarias.",
+    "tags": [
+      "nutricion-up3",
+      "nutricion",
+      "patron-oms",
+      "crecimiento-infantil",
+      "lactancia-materna",
+      "estudio-multicentrico",
+      "salud-publica"
+    ],
+    "ordem": 38,
+    "cards": [
+      {
+        "frente": "¿Cuándo y con qué objetivo comenzó la OMS su estudio multicéntrico?",
+        "verso": "La OMS comenzó en el año 1997 un estudio multicéntrico para estudiar el peso y la talla de niños de muy diferentes lugares y costumbres, con el fin de desarrollar nuevos criterios internacionales de evaluación del crecimiento físico, el estado nutricional y el desarrollo motor.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características tenían los niños seleccionados para el estudio multicéntrico de la OMS?",
+        "verso": "Pertenecían a clases socioeconómicas altas, habían sido alimentados a pecho, en ambientes favorables con adecuada estimulación, con madres no fumadoras y familias de progenitores muy dedicados a la crianza. Este entorno óptimo garantizaba que el genoma expresara su máximo potencial.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿De qué países provenían los 8.000 niños del estudio multicéntrico de la OMS?",
+        "verso": "De Brasil, los Estados Unidos de América, Ghana, India, Noruega y Omán.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuándo fue difundido el nuevo Patrón Internacional de Crecimiento Infantil y qué confirma?",
+        "verso": "Fue difundido en 2006 por la OMS. Confirma que todos los niños nacidos en cualquier parte del mundo que reciban una atención óptima desde el comienzo tienen el potencial de desarrollarse en la misma gama de tallas y pesos, evidenciando la gran homogeneidad genética de la población humana actual.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿De qué dependen las diferencias en el crecimiento infantil hasta los cinco años?",
+        "verso": "Dependen más de la nutrición, las prácticas de alimentación, el medio ambiente y la atención sanitaria que de los factores genéticos o étnicos.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué el nuevo patrón OMS se basa en el niño alimentado con leche materna?",
+        "verso": "Porque la lactancia materna es la norma esencial para el crecimiento y el desarrollo, garantizando coherencia entre los instrumentos de evaluación del crecimiento y las directrices nacionales e internacionales que la recomiendan como fuente óptima de nutrición durante la primera infancia.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué indicadores incluyen las gráficas del patrón de crecimiento de la OMS?",
+        "verso": "Peso para la edad, talla para la edad, peso para la talla, y por primera vez un índice de masa corporal normalizado para niños hasta cinco años, además de pautas de desarrollo motor (sentarse, mantenerse de pie y caminar).",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enfermedades futuras ayuda a prevenir la lactancia materna?",
+        "verso": "La lactancia materna revaloriza su papel como factor nutricional, inmunológico y favorecedor del desarrollo, y permite la prevención de enfermedades futuras, en especial la obesidad y sus consecuencias, las enfermedades cardiovasculares y la diabetes.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel juegan la leptina y la grelina presentes en la leche materna?",
+        "verso": "Contribuyen a crear un patrón de saciedad en las dos primeras semanas de vida, patrón que luego se mantiene en la edad adulta, aunque está fuertemente influido por el hábito familiar de alimentación.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué reflexión final plantea Castelli sobre las políticas de asistencia alimentaria en Argentina?",
+        "verso": "Las políticas implementadas en los años 80 y 90 lograron el salvataje frente a la desnutrición aguda, pero su continuidad está llevando a esos desnutridos a la obesidad. 'Nuestros desnutridos de ayer están siendo nuestros obesos de hoy', sumando a la desnutrición pasada la obesidad presente y la diabetes y enfermedad cardiovascular futuras.",
+        "fontes": [
+          "Castelli B. Avances en nutrición: talla y nutrición, nutrición y salud. Cátedra de Pediatría, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Nutrición — Composición y valor de la leche materna",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Composición de la leche materna, relación con los requerimientos del lactante, características inmunológicas y beneficios nutricionales, psicológicos, sociales y económicos.",
+    "tags": [
+      "nutricion-up3",
+      "nutricion",
+      "leche-materna",
+      "lactancia",
+      "composicion-leche",
+      "inmunologia",
+      "lactante",
+      "alimentacion-saludable"
+    ],
+    "ordem": 39,
+    "cards": [
+      {
+        "frente": "¿Cómo se relacionan los requerimientos del niño con los aportes de la leche materna?",
+        "verso": "La leche materna se adapta a los requerimientos del lactante en cada etapa, aportando agua, energía y nutrientes en las proporciones adecuadas para el crecimiento y desarrollo óptimos del primer semestre de vida.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR.",
+          "Sociedad Argentina de Pediatría, Comité de Nutrición (2001). Guía de Alimentación para niños sanos de 0 a 2 años. Ediciones SAP."
+        ]
+      },
+      {
+        "frente": "¿Qué características tienen las proteínas de la leche materna?",
+        "verso": "Presentan menor cantidad y diferente proporción que la leche de vaca: predominan las seroproteínas (lactoalbúmina, lactoferrina, lisozima e inmunoglobulinas) sobre la caseína, lo que forma un coágulo más fino y digerible, adaptado al aparato digestivo inmaduro del lactante.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el principal glúcido de la leche materna y qué función cumple?",
+        "verso": "La lactosa, presente en mayor concentración que en la leche de vaca. Aporta energía, favorece la absorción de calcio y, al fermentarse en el colon, genera un medio ácido que estimula el crecimiento de la flora bífida, protectora del intestino.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características presentan los lípidos de la leche materna?",
+        "verso": "Son la principal fuente de energía de la leche, aportan ácidos grasos esenciales, colesterol y fosfolípidos necesarios para la mielinización y el desarrollo del sistema nervioso, y su absorción se ve facilitada por la lipasa presente en la propia leche.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el valor calórico de la leche materna?",
+        "verso": "Aproximadamente 70 Kcal por 100 ml, aportadas principalmente por los lípidos y la lactosa, cubriendo los requerimientos energéticos del lactante amamantado a demanda.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características inmunológicas posee la leche materna?",
+        "verso": "Contiene inmunoglobulinas (principalmente IgA secretoria), lactoferrina, lisozima, oligosacáridos y células (macrófagos y linfocitos) que protegen al lactante contra infecciones, además de favorecer la maduración de su sistema inmune.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el calostro y qué aporta al recién nacido?",
+        "verso": "Es la secreción de los primeros días, amarillenta y más concentrada en proteínas, inmunoglobulinas (especialmente IgA) y factores de crecimiento, y más pobre en grasas y lactosa. Actúa como 'primera vacuna', protegiendo el intestino y la salud del recién nacido.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Lactancia materna. En: crecerconsalud. argentina.gob.ar/salud/crecerconsalud/lactancia."
+        ]
+      },
+      {
+        "frente": "¿Por qué la leche de Nahuel 'tan clara' sí lo alimenta?",
+        "verso": "El aspecto de la leche varía en cada toma: la leche del comienzo es más diluida y clara (calma la sed) y la del final más cremosa y rica en grasas (saciedad y energía). Su color claro no significa que no alimente: el lactante la recibe completa amamantando a demanda.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR.",
+          "Sociedad Argentina de Pediatría, Comité de Nutrición (2001). Guía de Alimentación para niños sanos de 0 a 2 años. Ediciones SAP."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los beneficios nutricionales y psicológicos de la lactancia materna?",
+        "verso": "Nutricionales: aporte óptimo de nutrientes adaptado al lactante. Psicológicos: fortalece el vínculo temprano madre-hijo y el apego, favoreciendo el desarrollo emocional y cognitivo del niño.",
+        "fontes": [
+          "Primera Cátedra de Pediatría. Lactancia materna. En: Pediatría 2000, Tomo II (páginas 111-124). FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los beneficios sociales y económicos de la lactancia materna?",
+        "verso": "Es un alimento disponible, seguro, gratuito y que no requiere preparación, reduciendo costos familiares y de salud pública. Además, favorece la soberanía alimentaria y la promoción de la salud a nivel comunitario.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Lactancia materna. En: crecerconsalud. argentina.gob.ar/salud/crecerconsalud/lactancia.",
+          "Sociedad Argentina de Pediatría, Comité de Nutrición (2001). Guía de Alimentación para niños sanos de 0 a 2 años. Ediciones SAP."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Salud Mental — Apego y maternaje",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Teoría del apego de Bowlby, fases ante la separación, tipos de apego, concepto de maternaje y estructuras neurobiológicas implicadas.",
+    "tags": [
+      "nutricion-up3",
+      "salud-mental",
+      "apego",
+      "maternaje",
+      "bowlby",
+      "neurodesarrollo",
+      "vínculo-temprano",
+      "psiquiatria"
+    ],
+    "ordem": 40,
+    "cards": [
+      {
+        "frente": "¿Qué observaciones dieron origen a la Teoría del Apego y quién la expuso?",
+        "verso": "La separación de madre y cría provocaba en ambos, en las semanas siguientes, alto nivel de excitación y distress, con aumento de locomoción, vocalizaciones de distress y búsqueda de la madre. Estas observaciones dieron origen a la Teoría del Apego expuesta por John Bowlby.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la finalidad del apego según la teoría de Bowlby?",
+        "verso": "Sostener el mantenimiento y acrecentamiento de la proximidad de la madre para satisfacer las necesidades fisiológicas, garantizar la especie y la exploración del entorno. El niño dispone desde el nacimiento de un patrón conductual de apego hacia la persona que entra en contacto con él.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las fases que experimenta el niño humano ante la separación?",
+        "verso": "1) Protesta, vinculada a la ansiedad de separación; 2) desesperanza, relacionada con la pena, el dolor y el duelo; y 3) indiferencia.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tipos de apego descritos?",
+        "verso": "Apego seguro: alegría y consuelo al reencontrarse con el objeto materno, permaneciendo apegado a ella. Apego ambivalente: distress ante la separación, se mantiene cerca pero protesta con enfado y se muestra áspero. Apego evitativo: no experimenta distress ante la separación y en el reencuentro ignora a la madre o se acerca para luego alejarse.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el entorno en el desarrollo del ser humano?",
+        "verso": "El entorno participa activamente a través de diversas experiencias vivenciales con la figura materna. Estas experiencias, junto a los afectos, actúan durante el período de ventana crítico en el neurodesarrollo, configurando los sistemas neurales de procesamiento del SNC.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué favorece el desarrollo de recursos estables para afrontar los desafíos de la vida?",
+        "verso": "El desarrollo de experiencias satisfactorias entre madre e hijo, la adecuada y no excesiva estimulación del hijo, junto con la presencia de un ambiente enriquecido.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los trastornos del apego y qué experiencias afectan la neurogénesis y sinaptogénesis?",
+        "verso": "Los trastornos del apego incluyen: deprivación social, institucionalización, violencia y maltrato físico, emocional o sexual. La neurogénesis y la sinaptogénesis resultan afectadas por experiencias tempranas de separaciones y pérdidas, abandonos y pérdidas, y abuso emocional, físico y sexual, cuando ocurren en el período de ventana postnatal.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el maternaje?",
+        "verso": "Es el conjunto de conductas reguladas por la interacción entre lo que consideramos instintivo, tendiente a la protección y conservación de la progenie, con el medio ambiente y los eventos derivados del mismo (carga alostática). No es necesario que sea la madre biológica ni de la misma especie.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estructuras cerebrales se vinculan al maternaje y qué funciones cumplen?",
+        "verso": "Corteza cingulada anterior: funciones promotoras, procesamiento afectivo y cognitivo vía amígdala, asignación de carga emocional a estímulos y valoración de interacciones tempranas madre-hijo. Hipocampo: se vincula con inputs ambientales, experiencias tempranas, aprendizaje, memoria y el 'apagado' del eje HPA ante estresores. Amígdala: complejo nuclear del lóbulo temporal, parte del sistema límbico, procesa la memoria emocional.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos neurobiológicos produce un maternaje adecuado frente a uno adverso?",
+        "verso": "Con maternaje adecuado: mayor impacto de experiencias tempranas, mayor densidad y conectividad sináptica con aumento de sinaptofisina, efecto neurotrófico, menor activación de receptores CRH en hipotálamo, amígdala y locus coeruleus, y menor respuesta de ACTH y cortisol al estrés agudo. Con maternaje adverso: desinhibición del eje HPA, incremento de ARNm para CRF en amígdala e hipotálamo, aumento de receptores CRF en locus coeruleus y núcleo dorsal del rafe, y marcada disminución de la neurogénesis con atrofia hipocampal significativa.",
+        "fontes": [
+          "Garcia Riera J. Apego y maternaje. Cátedra Psiquiatría Niños, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP3 — Medicina y Sociedad — Demanda, necesidades y satisfactores",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Conceptos de demanda, necesidades, satisfactores y estrategias alimentarias; tipos de necesidades y satisfactores, su relación con los medios de comunicación y las estrategias colectivas y estatales.",
+    "tags": [
+      "nutricion-up3",
+      "medicina-sociedad",
+      "demanda",
+      "necesidades",
+      "satisfactores",
+      "estrategias-alimentarias",
+      "calidad-de-vida",
+      "politicas-publicas"
+    ],
+    "ordem": 41,
+    "cards": [
+      {
+        "frente": "¿Qué es la necesidad desde la perspectiva de Medicina y Sociedad?",
+        "verso": "Es la carencia o falta de algo que debe ser satisfecho para el desarrollo humano y la calidad de vida. Las necesidades son de carácter biológico, psicológico y social, y su satisfacción depende del contexto cultural y de la organización social.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991.",
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la demanda?",
+        "verso": "Es la expresión manifiesta y concreta de una necesidad, formulada por el individuo o la comunidad. No siempre coincide con la necesidad 'objetiva' o real: puede subestimar o sobreestimar la necesidad que la origina.",
+        "fontes": [
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un satisfactor?",
+        "verso": "Es el medio, recurso o respuesta concreta que permite cubrir una necesidad. Los satisfactores pueden ser de distinta naturaleza (materiales, simbólicos, individuales, colectivos) y su adecuación depende de cómo se definan las necesidades.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991.",
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de necesidades se reconocen?",
+        "verso": "Se distinguen necesidades biológicas o fisiológicas (alimentación, abrigo, sueño), psicológicas o afectivas (vínculo, seguridad, pertenencia) y sociales (participación, identidad, educación). Estas se relacionan con la calidad de vida de los individuos y las comunidades.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan las necesidades y los satisfactores con la calidad de vida?",
+        "verso": "La calidad de vida depende de la capacidad de satisfacer las necesidades humanas. Las necesidades no se limitan a lo material: la satisfacción de necesidades psicológicas y sociales es tan relevante como la biológica para el bienestar y el desarrollo.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991."
+        ]
+      },
+      {
+        "frente": "¿Cómo intervienen los medios de comunicación en la configuración de demandas y necesidades?",
+        "verso": "Los medios de comunicación modelan las expectativas y deseos de las personas: publicitan alimentos, estilos de vida y consumos, creando y reforzando demandas que pueden o no corresponder con necesidades reales, e influyendo en los hábitos alimentarios.",
+        "fontes": [
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las estrategias colectivas y estatales?",
+        "verso": "Son las respuestas organizadas de la sociedad civil y del Estado frente a las necesidades: programas y políticas públicas alimentarias, redes comunitarias, organizaciones sociales, comedores y programas de asistencia, orientadas a garantizar el acceso a satisfactores.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991.",
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las estrategias alimentarias?",
+        "verso": "Son el conjunto de prácticas que los hogares y las comunidades despliegan para asegurar la alimentación: diversificación de fuentes de ingreso, redes de intercambio, huertas, comedores comunitarios y programas alimentarios, entre otras.",
+        "fontes": [
+          "Seminario/Taller disciplinar N°1: Demandas, necesidades, satisfactores y estrategias alimentarias. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "En el caso de Nahuel, ¿qué demanda expresa la madre y cuál es la necesidad real?",
+        "verso": "La madre demanda la mamadera influida por las vecinas, que cuestionan su leche. La necesidad real del lactante es una alimentación saludable, que la leche materna cubre plenamente. El pediatra debe responder a la necesidad (promover y sostener la lactancia) y no solo a la demanda manifiesta.",
+        "fontes": [
+          "Ministerio de Salud de la Nación. Lactancia materna. En: crecerconsalud. argentina.gob.ar/salud/crecerconsalud/lactancia.",
+          "Seminario/Taller disciplinar N°1: Demandas, necesidades, satisfactores y estrategias alimentarias. Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple el médico frente a la demanda y la necesidad en promoción de la salud?",
+        "verso": "El médico actúa como promotor de salud: debe identificar la necesidad subyacente a la demanda, orientar a la persona y a la comunidad hacia satisfactores adecuados y participar en estrategias colectivas y estatales de protección del derecho a la alimentación.",
+        "fontes": [
+          "Ruiz Rojas A. Necesidad y Calidad de vida. En: Salud Comunitaria y Promoción del Desarrollo. CELATS, 1991.",
+          "Staffolani C. Demandas, necesidades y satisfactores. Medicina y Sociedad, FCM-UNR."
+        ]
+      }
+    ]
+  }
+]

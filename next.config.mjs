@@ -7,6 +7,7 @@ const csp = [
   "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com",
   "style-src 'self' 'unsafe-inline'",
   `img-src 'self' data: blob: ${supabaseUrl} https://*.ytimg.com`,
+  `media-src 'self' ${supabaseUrl}`,
   "font-src 'self' data:",
   `connect-src 'self' ${supabaseUrl} ${supabaseWs} https://va.vercel-scripts.com https://vitals.vercel-insights.com`,
   "frame-src https://www.youtube-nocookie.com",

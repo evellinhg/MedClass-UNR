@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { Check, Layers, Loader2, PlayCircle, Pencil, Plus, Search, Trash2 } from "lucide-react"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { Check, Layers, Loader2, PlayCircle, Pencil, Plus, Search, Trash2, Upload, Video } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { AREAS } from "@/lib/quiz-config"
 import { Button } from "@/components/ui/button"
@@ -12,14 +12,17 @@ import { Badge } from "@/components/ui/badge"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { VIDEOAULA_FONTE_KEYS, type VideoaulaDB } from "@/lib/videoaulas-types"
+import { VIDEOAULA_FONTE_KEYS, type VideoaulaArquivoDB, type VideoaulaDB } from "@/lib/videoaulas-types"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 
 const FONTE_LABEL: Record<string, string> = {
   unr: "Facultad de Ciencias Médicas – UNR",
   alde: "ALDE",
+  propria: "MedClass UNR (própria)",
 }
+
+type DialogKind = "video" | "playlist" | "propria"
 
 interface VideoaulaForm {
   titulo: string
@@ -38,10 +41,14 @@ export function AdminVideoaulasContent() {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("")
   const [dialogOpen, setDialogOpen] = useState(false)
-  const [dialogKind, setDialogKind] = useState<"video" | "playlist">("video")
+  const [dialogKind, setDialogKind] = useState<DialogKind>("video")
   const [editingId, setEditingId] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
   const [form, setForm] = useState<VideoaulaForm>(emptyForm(1))
+  const [arquivos, setArquivos] = useState<VideoaulaArquivoDB[]>([])
+  const [arquivoTitulo, setArquivoTitulo] = useState("")
+  const [uploadingArquivo, setUploadingArquivo] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const load = async () => {
     setLoading(true)
@@ -76,17 +83,29 @@ export function AdminVideoaulasContent() {
     )
   }, [videoaulas, search])
 
-  const openNew = (kind: "video" | "playlist") => {
+  const openNew = (kind: DialogKind) => {
     const proximaOrdem = videoaulas.length > 0 ? Math.max(...videoaulas.map((v) => v.ordem)) + 1 : 1
     setEditingId(null)
     setDialogKind(kind)
-    setForm(emptyForm(proximaOrdem))
+    setArquivos([])
+    setForm({ ...emptyForm(proximaOrdem), fonte: kind === "propria" ? "propria" : VIDEOAULA_FONTE_KEYS[0] })
     setDialogOpen(true)
+  }
+
+  const loadArquivos = async (videoaulaId: string) => {
+    const { data } = await supabase
+      .from("materiais_videoaulas_arquivos")
+      .select("*")
+      .eq("videoaula_id", videoaulaId)
+      .order("ordem")
+    setArquivos((data as VideoaulaArquivoDB[]) ?? [])
   }
 
   const openEdit = (videoaula: VideoaulaDB) => {
     setEditingId(videoaula.id)
-    setDialogKind(getYoutubePlaylistId(videoaula.youtube_url ?? "") ? "playlist" : "video")
+    const kind: DialogKind =
+      videoaula.fonte === "propria" ? "propria" : getYoutubePlaylistId(videoaula.youtube_url ?? "") ? "playlist" : "video"
+    setDialogKind(kind)
     setForm({
       titulo: videoaula.titulo,
       especialidade: videoaula.especialidade,
@@ -98,7 +117,56 @@ export function AdminVideoaulasContent() {
       corHex: videoaula.cor_hex ?? NEON_COLORS[0].hex,
       fonte: videoaula.fonte || VIDEOAULA_FONTE_KEYS[0],
     })
+    if (kind === "propria") loadArquivos(videoaula.id)
+    else setArquivos([])
     setDialogOpen(true)
+  }
+
+  const handleUploadArquivo = async (file: File) => {
+    if (!editingId) return
+    const titulo = arquivoTitulo.trim() || file.name.replace(/\.[^.]+$/, "")
+    setUploadingArquivo(true)
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
+    const path = `${editingId}/${Date.now()}-${safeName}`
+
+    const { error: uploadError } = await supabase.storage
+      .from("videoaulas-arquivos")
+      .upload(path, file, { contentType: file.type || undefined })
+
+    if (uploadError) {
+      setUploadingArquivo(false)
+      alert(`Erro ao enviar o vídeo: ${uploadError.message}`)
+      return
+    }
+
+    const proximaOrdem = arquivos.length > 0 ? Math.max(...arquivos.map((a) => a.ordem)) + 1 : 1
+    const { error: insertError } = await supabase.from("materiais_videoaulas_arquivos").insert({
+      videoaula_id: editingId,
+      titulo,
+      arquivo_path: path,
+      ordem: proximaOrdem,
+    })
+
+    setUploadingArquivo(false)
+    if (insertError) {
+      alert(`Erro ao salvar o vídeo: ${insertError.message}`)
+      return
+    }
+
+    setArquivoTitulo("")
+    if (fileInputRef.current) fileInputRef.current.value = ""
+    loadArquivos(editingId)
+  }
+
+  const handleDeleteArquivo = async (arquivo: VideoaulaArquivoDB) => {
+    if (!confirm(`Excluir o vídeo "${arquivo.titulo}"? Essa ação não pode ser desfeita.`)) return
+    await supabase.storage.from("videoaulas-arquivos").remove([arquivo.arquivo_path])
+    const { error } = await supabase.from("materiais_videoaulas_arquivos").delete().eq("id", arquivo.id)
+    if (error) {
+      alert(`Erro ao excluir: ${error.message}`)
+      return
+    }
+    setArquivos((prev) => prev.filter((a) => a.id !== arquivo.id))
   }
 
   const handleToggleAtivo = async (videoaula: VideoaulaDB) => {
@@ -111,7 +179,7 @@ export function AdminVideoaulasContent() {
       alert("Preencha o título da videoaula.")
       return
     }
-    const youtubeUrl = form.youtubeUrl.trim()
+    const youtubeUrl = dialogKind === "propria" ? "" : form.youtubeUrl.trim()
     if (youtubeUrl && !getYoutubeEmbedUrl(youtubeUrl)) {
       alert("Link do YouTube inválido. Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo (youtube.com/watch?v=... ou youtu.be/...).")
       return
@@ -133,15 +201,33 @@ export function AdminVideoaulasContent() {
       fonte: form.fonte,
     }
 
-    const { error } = editingId
-      ? await supabase.from("materiais_videoaulas").update(payload).eq("id", editingId)
-      : await supabase.from("materiais_videoaulas").insert(payload)
+    if (editingId) {
+      const { error } = await supabase.from("materiais_videoaulas").update(payload).eq("id", editingId)
+      setSaving(false)
+      if (error) {
+        alert(`Erro ao salvar: ${error.message}`)
+        return
+      }
+      setDialogOpen(false)
+      load()
+      return
+    }
 
+    const { data, error } = await supabase.from("materiais_videoaulas").insert(payload).select().single()
     setSaving(false)
     if (error) {
       alert(`Erro ao salvar: ${error.message}`)
       return
     }
+
+    if (dialogKind === "propria") {
+      // Mantém o dialog aberto para o admin subir os vídeos na sequência.
+      setEditingId(data.id)
+      setArquivos([])
+      load()
+      return
+    }
+
     setDialogOpen(false)
     load()
   }
@@ -168,10 +254,14 @@ export function AdminVideoaulasContent() {
             className="pl-9"
           />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <Button variant="outline" className="gap-1.5" onClick={() => openNew("playlist")}>
             <Layers className="h-4 w-4" />
             Nova Playlist
+          </Button>
+          <Button variant="outline" className="gap-1.5" onClick={() => openNew("propria")}>
+            <Upload className="h-4 w-4" />
+            Playlist Própria
           </Button>
           <Button variant="gradient" className="gap-1.5" onClick={() => openNew("video")}>
             <Plus className="h-4 w-4" />
@@ -259,7 +349,15 @@ export function AdminVideoaulasContent() {
         <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
           <DialogHeader>
             <DialogTitle>
-              {editingId ? "Editar Videoaula" : dialogKind === "playlist" ? "Nova Playlist" : "Nova Videoaula"}
+              {editingId
+                ? dialogKind === "propria"
+                  ? "Playlist Própria"
+                  : "Editar Videoaula"
+                : dialogKind === "playlist"
+                  ? "Nova Playlist"
+                  : dialogKind === "propria"
+                    ? "Nova Playlist Própria"
+                    : "Nova Videoaula"}
             </DialogTitle>
           </DialogHeader>
 
@@ -319,22 +417,93 @@ export function AdminVideoaulasContent() {
               </Select>
             </div>
 
-            <div className="space-y-1.5">
-              <Label htmlFor="youtubeUrl">
-                {dialogKind === "playlist" ? "Link da playlist do YouTube" : "Link do YouTube (playlist ou vídeo)"}
-              </Label>
-              <p className="text-xs text-muted-foreground">
-                {dialogKind === "playlist"
-                  ? "Cole o link da playlist inteira (youtube.com/playlist?list=...). Os vídeos aparecem lado a lado para os alunos."
-                  : "Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo específico. Fica incorporado direto na página."}
-              </p>
-              <Input
-                id="youtubeUrl"
-                value={form.youtubeUrl}
-                onChange={(e) => setForm((p) => ({ ...p, youtubeUrl: e.target.value }))}
-                placeholder="https://www.youtube.com/playlist?list=..."
-              />
-            </div>
+            {dialogKind === "propria" ? (
+              <div className="space-y-1.5">
+                <Label>Vídeos desta playlist</Label>
+                <p className="text-xs text-muted-foreground">
+                  Envie os arquivos de vídeo do seu computador. Cada arquivo vira um card na página de Materiais.
+                </p>
+
+                {!editingId ? (
+                  <p className="rounded-md border border-dashed border-border p-3 text-xs text-muted-foreground">
+                    Salve a playlist primeiro para poder enviar os vídeos.
+                  </p>
+                ) : (
+                  <>
+                    {arquivos.length > 0 && (
+                      <div className="space-y-1.5">
+                        {arquivos.map((arquivo) => (
+                          <div
+                            key={arquivo.id}
+                            className="flex items-center justify-between gap-2 rounded-md border border-border bg-muted/30 px-3 py-2"
+                          >
+                            <span className="flex min-w-0 items-center gap-1.5 text-sm">
+                              <Video className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                              <span className="truncate">{arquivo.titulo}</span>
+                            </span>
+                            <Button
+                              size="icon-sm"
+                              variant="ghost"
+                              className="shrink-0 text-destructive hover:bg-destructive/10"
+                              onClick={() => handleDeleteArquivo(arquivo)}
+                              aria-label="Excluir vídeo"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </Button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="flex items-center gap-2 pt-1.5">
+                      <Input
+                        value={arquivoTitulo}
+                        onChange={(e) => setArquivoTitulo(e.target.value)}
+                        placeholder="Título do vídeo (opcional)"
+                        className="flex-1"
+                      />
+                      <input
+                        ref={fileInputRef}
+                        type="file"
+                        accept="video/*"
+                        className="hidden"
+                        onChange={(e) => {
+                          const file = e.target.files?.[0]
+                          if (file) handleUploadArquivo(file)
+                        }}
+                      />
+                      <Button
+                        type="button"
+                        variant="outline"
+                        className="shrink-0 gap-1.5"
+                        disabled={uploadingArquivo}
+                        onClick={() => fileInputRef.current?.click()}
+                      >
+                        {uploadingArquivo ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                        Enviar vídeo
+                      </Button>
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <div className="space-y-1.5">
+                <Label htmlFor="youtubeUrl">
+                  {dialogKind === "playlist" ? "Link da playlist do YouTube" : "Link do YouTube (playlist ou vídeo)"}
+                </Label>
+                <p className="text-xs text-muted-foreground">
+                  {dialogKind === "playlist"
+                    ? "Cole o link da playlist inteira (youtube.com/playlist?list=...). Os vídeos aparecem lado a lado para os alunos."
+                    : "Cole o link de uma playlist (youtube.com/playlist?list=...) ou de um vídeo específico. Fica incorporado direto na página."}
+                </p>
+                <Input
+                  id="youtubeUrl"
+                  value={form.youtubeUrl}
+                  onChange={(e) => setForm((p) => ({ ...p, youtubeUrl: e.target.value }))}
+                  placeholder="https://www.youtube.com/playlist?list=..."
+                />
+              </div>
+            )}
 
             <div className="space-y-1.5">
               <Label>Cor de classificação (neon)</Label>
@@ -396,10 +565,18 @@ export function AdminVideoaulasContent() {
 
           <DialogFooter>
             <Button variant="outline" onClick={() => setDialogOpen(false)}>
-              Cancelar
+              {dialogKind === "propria" && editingId ? "Concluir" : "Cancelar"}
             </Button>
             <Button variant="gradient" onClick={handleSave} disabled={saving}>
-              {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : dialogKind === "playlist" ? "Salvar Playlist" : "Salvar Videoaula"}
+              {saving ? (
+                <Loader2 className="h-4 w-4 animate-spin" />
+              ) : dialogKind === "playlist" ? (
+                "Salvar Playlist"
+              ) : dialogKind === "propria" ? (
+                editingId ? "Salvar Dados da Playlist" : "Criar Playlist e Continuar"
+              ) : (
+                "Salvar Videoaula"
+              )}
             </Button>
           </DialogFooter>
         </DialogContent>

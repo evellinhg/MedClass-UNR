@@ -1,4 +1,4 @@
-export const VIDEOAULA_FONTE_KEYS = ["unr", "alde"] as const
+export const VIDEOAULA_FONTE_KEYS = ["unr", "alde", "propria"] as const
 export type VideoaulaFonteKey = (typeof VIDEOAULA_FONTE_KEYS)[number]
 
 export interface VideoaulaDB {
@@ -13,4 +13,13 @@ export interface VideoaulaDB {
   youtube_url: string | null
   cor_hex: string | null
   fonte: string
+}
+
+export interface VideoaulaArquivoDB {
+  id: string
+  videoaula_id: string
+  titulo: string
+  arquivo_path: string
+  ordem: number
+  created_at: string
 }

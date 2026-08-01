@@ -6,7 +6,7 @@ import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
-import { VIDEOAULA_FONTE_KEYS, type VideoaulaDB } from "@/lib/videoaulas-types"
+import { VIDEOAULA_FONTE_KEYS, type VideoaulaArquivoDB, type VideoaulaDB } from "@/lib/videoaulas-types"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
@@ -22,6 +22,7 @@ interface VideoItem {
   title: string
   thumbnail: string | null
   embedUrl: string
+  type: "youtube" | "file"
 }
 
 function VideoCard({ video, onPlay }: { video: VideoItem; onPlay: () => void }) {
@@ -110,6 +111,7 @@ export function VideoaulasGrid() {
   const [videoaulas, setVideoaulas] = useState<VideoaulaDB[]>([])
   const [loading, setLoading] = useState(true)
   const [playlistItems, setPlaylistItems] = useState<Record<string, PlaylistVideo[] | "loading" | "error">>({})
+  const [arquivosItems, setArquivosItems] = useState<Record<string, VideoaulaArquivoDB[] | "loading" | "error">>({})
   const [playing, setPlaying] = useState<VideoItem | null>(null)
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
 
@@ -138,6 +140,24 @@ export function VideoaulasGrid() {
   useEffect(() => {
     videoaulas.forEach((videoaula) => {
       if (collapsed.has(videoaula.id)) return
+
+      if (videoaula.fonte === "propria") {
+        if (arquivosItems[videoaula.id]) return
+        setArquivosItems((prev) => ({ ...prev, [videoaula.id]: "loading" }))
+        supabase
+          .from("materiais_videoaulas_arquivos")
+          .select("*")
+          .eq("videoaula_id", videoaula.id)
+          .order("ordem")
+          .then(({ data, error }) => {
+            setArquivosItems((prev) => ({
+              ...prev,
+              [videoaula.id]: error ? "error" : ((data as VideoaulaArquivoDB[]) ?? []),
+            }))
+          })
+        return
+      }
+
       if (!videoaula.youtube_url) return
       const listId = getYoutubePlaylistId(videoaula.youtube_url)
       if (!listId || playlistItems[videoaula.id]) return
@@ -217,7 +237,22 @@ export function VideoaulasGrid() {
               let videos: VideoItem[] = []
               let sectionStatus: "ok" | "loading" | "error" = "ok"
 
-              if (listId) {
+              if (videoaula.fonte === "propria") {
+                const arquivoData = arquivosItems[videoaula.id]
+                if (arquivoData === "loading" || arquivoData === undefined) {
+                  sectionStatus = "loading"
+                } else if (arquivoData === "error") {
+                  sectionStatus = "error"
+                } else {
+                  videos = arquivoData.map((arquivo) => ({
+                    key: arquivo.id,
+                    title: arquivo.titulo,
+                    thumbnail: null,
+                    embedUrl: supabase.storage.from("videoaulas-arquivos").getPublicUrl(arquivo.arquivo_path).data.publicUrl,
+                    type: "file",
+                  }))
+                }
+              } else if (listId) {
                 const playlistData = playlistItems[videoaula.id]
                 if (playlistData === "loading" || playlistData === undefined) {
                   sectionStatus = "loading"
@@ -229,12 +264,13 @@ export function VideoaulasGrid() {
                     title: item.title,
                     thumbnail: item.thumbnail,
                     embedUrl: `https://www.youtube-nocookie.com/embed/${item.videoId}`,
+                    type: "youtube",
                   }))
                 }
               } else if (videoaula.youtube_url) {
                 const embedUrl = getYoutubeEmbedUrl(videoaula.youtube_url)
                 if (embedUrl) {
-                  videos = [{ key: videoaula.id, title: videoaula.titulo, thumbnail: null, embedUrl }]
+                  videos = [{ key: videoaula.id, title: videoaula.titulo, thumbnail: null, embedUrl, type: "youtube" }]
                 }
               }
 
@@ -302,17 +338,23 @@ export function VideoaulasGrid() {
       <Dialog open={!!playing} onOpenChange={(open) => !open && setPlaying(null)}>
         <DialogContent className="max-w-3xl overflow-hidden p-0 sm:max-w-3xl">
           <DialogTitle className="sr-only">{playing?.title}</DialogTitle>
-          {playing && (
-            <div className="aspect-video w-full bg-black">
-              <iframe
-                src={playing.embedUrl}
-                title={playing.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="h-full w-full"
-              />
-            </div>
-          )}
+          {playing &&
+            (playing.type === "file" ? (
+              <div className="aspect-video w-full bg-black">
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                <video src={playing.embedUrl} controls autoPlay className="h-full w-full" />
+              </div>
+            ) : (
+              <div className="aspect-video w-full bg-black">
+                <iframe
+                  src={playing.embedUrl}
+                  title={playing.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full"
+                />
+              </div>
+            ))}
         </DialogContent>
       </Dialog>
     </div>

@@ -316,15 +316,16 @@ const pt = {
     aviso: {
       titulo: "📌 Sobre as videoaulas",
       paragrafo1:
-        "As videoaulas desta seção não foram produzidas pelo MedClass UNR. São vídeos públicos disponíveis gratuitamente no YouTube — do canal oficial da Facultad de Ciencias Médicas – UNR e também de canais parceiros de conteúdo educacional, como o ALDE.",
+        "A maior parte das videoaulas desta seção não foi produzida pelo MedClass UNR. São vídeos públicos disponíveis gratuitamente no YouTube — do canal oficial da Facultad de Ciencias Médicas – UNR e também de canais parceiros de conteúdo educacional, como o ALDE.",
       paragrafo2:
         "Aqui organizamos esse conteúdo por matéria e tema, para que você não perca tempo procurando vídeo por vídeo — o valor da plataforma está na organização, no cronograma e no material complementar (resumos, questões e flashcards), não no vídeo em si.",
       paragrafo3:
-        "O MedClass UNR não possui vínculo oficial, autorização ou afiliação com nenhum desses canais. Os vídeos permanecem de responsabilidade exclusiva de seus respectivos autores, e sua disponibilidade pode mudar a qualquer momento.",
+        "Para o conteúdo de terceiros, o MedClass UNR não possui vínculo oficial, autorização ou afiliação com nenhum desses canais. Os vídeos permanecem de responsabilidade exclusiva de seus respectivos autores, e sua disponibilidade pode mudar a qualquer momento.",
     },
     fonteLabel: {
       unr: "Facultad de Ciencias Médicas – UNR",
       alde: "ALDE",
+      propria: "MedClass UNR",
     } as Record<string, string>,
   },
   flashcardsGrid: {
@@ -1284,15 +1285,16 @@ const es: typeof pt = {
     aviso: {
       titulo: "📌 Sobre las videoclases",
       paragrafo1:
-        "Las videoclases de esta sección no fueron producidas por MedClass UNR. Son videos públicos disponibles gratis en YouTube — del canal oficial de la Facultad de Ciencias Médicas – UNR y también de canales educativos asociados, como ALDE.",
+        "La mayor parte de las videoclases de esta sección no fue producida por MedClass UNR. Son videos públicos disponibles gratis en YouTube — del canal oficial de la Facultad de Ciencias Médicas – UNR y también de canales educativos asociados, como ALDE.",
       paragrafo2:
         "Acá organizamos ese contenido por materia y tema, para que no pierdas tiempo buscando video por video — el valor de la plataforma está en la organización, en el cronograma y en el material complementario (resúmenes, preguntas y flashcards), no en el video en sí.",
       paragrafo3:
-        "MedClass UNR no tiene vínculo oficial, autorización ni afiliación con ninguno de estos canales. Los videos siguen siendo responsabilidad exclusiva de sus respectivos autores, y su disponibilidad puede cambiar en cualquier momento.",
+        "Para el contenido de terceros, MedClass UNR no tiene vínculo oficial, autorización ni afiliación con ninguno de estos canales. Los videos siguen siendo responsabilidad exclusiva de sus respectivos autores, y su disponibilidad puede cambiar en cualquier momento.",
     },
     fonteLabel: {
       unr: "Facultad de Ciencias Médicas – UNR",
       alde: "ALDE",
+      propria: "MedClass UNR",
     } as Record<string, string>,
   },
   flashcardsGrid: {

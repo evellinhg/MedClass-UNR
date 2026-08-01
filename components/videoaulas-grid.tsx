@@ -107,7 +107,7 @@ function VideoRow({ videos, onPlay }: { videos: VideoItem[]; onPlay: (video: Vid
 }
 
 export function VideoaulasGrid() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const [videoaulas, setVideoaulas] = useState<VideoaulaDB[]>([])
   const [loading, setLoading] = useState(true)
   const [playlistItems, setPlaylistItems] = useState<Record<string, PlaylistVideo[] | "loading" | "error">>({})
@@ -233,6 +233,8 @@ export function VideoaulasGrid() {
             {items.map(({ videoaula, index }) => {
               const color = videoaula.cor_hex || NEON_COLORS[index % NEON_COLORS.length].hex
               const listId = videoaula.youtube_url ? getYoutubePlaylistId(videoaula.youtube_url) : null
+              const titulo = (lang === "es" && videoaula.titulo_es) || videoaula.titulo
+              const especialidade = (lang === "es" && videoaula.especialidade_es) || videoaula.especialidade
 
               let videos: VideoItem[] = []
               let sectionStatus: "ok" | "loading" | "error" = "ok"
@@ -270,7 +272,7 @@ export function VideoaulasGrid() {
               } else if (videoaula.youtube_url) {
                 const embedUrl = getYoutubeEmbedUrl(videoaula.youtube_url)
                 if (embedUrl) {
-                  videos = [{ key: videoaula.id, title: videoaula.titulo, thumbnail: null, embedUrl, type: "youtube" }]
+                  videos = [{ key: videoaula.id, title: titulo, thumbnail: null, embedUrl, type: "youtube" }]
                 }
               }
 
@@ -293,9 +295,9 @@ export function VideoaulasGrid() {
                         className="border-0 text-[11px]"
                         style={{ backgroundColor: hexToRgba(color, 0.18), color }}
                       >
-                        {videoaula.especialidade}
+                        {especialidade}
                       </Badge>
-                      <h3 className="text-base font-semibold text-foreground">{videoaula.titulo}</h3>
+                      <h3 className="text-base font-semibold text-foreground">{titulo}</h3>
                       {isOpen && videos.length > 0 && (
                         <Badge
                           variant="outline"

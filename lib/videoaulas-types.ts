@@ -4,7 +4,9 @@ export type VideoaulaFonteKey = (typeof VIDEOAULA_FONTE_KEYS)[number]
 export interface VideoaulaDB {
   id: string
   titulo: string
+  titulo_es: string | null
   especialidade: string
+  especialidade_es: string | null
   duracao: string
   tags: string[]
   ordem: number

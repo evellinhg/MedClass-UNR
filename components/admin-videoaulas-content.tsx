@@ -26,7 +26,9 @@ type DialogKind = "video" | "playlist" | "propria"
 
 interface VideoaulaForm {
   titulo: string
+  tituloEs: string
   especialidade: string
+  especialidadeEs: string
   duracao: string
   ordem: number
   ativo: boolean
@@ -64,7 +66,9 @@ export function AdminVideoaulasContent() {
   function emptyForm(proximaOrdem: number): VideoaulaForm {
     return {
       titulo: "",
+      tituloEs: "",
       especialidade: AREAS[0],
+      especialidadeEs: "",
       duracao: "",
       ordem: proximaOrdem,
       ativo: true,
@@ -108,7 +112,9 @@ export function AdminVideoaulasContent() {
     setDialogKind(kind)
     setForm({
       titulo: videoaula.titulo,
+      tituloEs: videoaula.titulo_es ?? "",
       especialidade: videoaula.especialidade,
+      especialidadeEs: videoaula.especialidade_es ?? "",
       duracao: videoaula.duracao,
       ordem: videoaula.ordem,
       ativo: videoaula.ativo,
@@ -191,7 +197,9 @@ export function AdminVideoaulasContent() {
     setSaving(true)
     const payload = {
       titulo: form.titulo.trim(),
+      titulo_es: form.tituloEs.trim() || null,
       especialidade: form.especialidade,
+      especialidade_es: form.especialidadeEs.trim() || null,
       duracao: form.duracao.trim(),
       ordem: form.ordem,
       ativo: form.ativo,
@@ -362,21 +370,33 @@ export function AdminVideoaulasContent() {
           </DialogHeader>
 
           <div className="space-y-4 py-2">
-            <div className="space-y-1.5">
-              <Label htmlFor="titulo">Título</Label>
-              <Input
-                id="titulo"
-                value={form.titulo}
-                onChange={(e) => setForm((p) => ({ ...p, titulo: e.target.value }))}
-                placeholder={
-                  dialogKind === "playlist" ? "Ex: Playlist Oficial UNR — 4º Ano" : "Ex: Insuficiência Cardíaca Congestiva"
-                }
-              />
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="titulo">Título (Português)</Label>
+                <Input
+                  id="titulo"
+                  value={form.titulo}
+                  onChange={(e) => setForm((p) => ({ ...p, titulo: e.target.value }))}
+                  placeholder={
+                    dialogKind === "playlist" ? "Ex: Playlist Oficial UNR — 4º Ano" : "Ex: Insuficiência Cardíaca Congestiva"
+                  }
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="tituloEs">Título (Español)</Label>
+                <Input
+                  id="tituloEs"
+                  value={form.tituloEs}
+                  onChange={(e) => setForm((p) => ({ ...p, tituloEs: e.target.value }))}
+                  placeholder="Ex: Playlist Oficial UNR — 4º Año"
+                />
+                <p className="text-xs text-muted-foreground">Se deixar em branco, usa o título em português também no ES.</p>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1.5">
-                <Label>Especialidade</Label>
+                <Label>Especialidade (Português)</Label>
                 <Select value={form.especialidade} onValueChange={(v) => setForm((p) => ({ ...p, especialidade: v }))}>
                   <SelectTrigger className="w-full">
                     <SelectValue />
@@ -391,14 +411,24 @@ export function AdminVideoaulasContent() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <Label htmlFor="duracao">Duração</Label>
+                <Label htmlFor="especialidadeEs">Especialidade (Español)</Label>
                 <Input
-                  id="duracao"
-                  value={form.duracao}
-                  onChange={(e) => setForm((p) => ({ ...p, duracao: e.target.value }))}
-                  placeholder="Ex: 42 min"
+                  id="especialidadeEs"
+                  value={form.especialidadeEs}
+                  onChange={(e) => setForm((p) => ({ ...p, especialidadeEs: e.target.value }))}
+                  placeholder="Ex: Ginecología y Obstetricia"
                 />
               </div>
+            </div>
+
+            <div className="space-y-1.5">
+              <Label htmlFor="duracao">Duração</Label>
+              <Input
+                id="duracao"
+                value={form.duracao}
+                onChange={(e) => setForm((p) => ({ ...p, duracao: e.target.value }))}
+                placeholder="Ex: 42 min"
+              />
             </div>
 
             <div className="space-y-1.5">

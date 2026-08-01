@@ -63,6 +63,7 @@ as $$
     from agregado a
     join profiles p on p.id = a.user_id
     where a.total > 0
+      and p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
   )
   select
     row_number() over (order by points desc, correct desc, total desc, display_name asc) as posicao,
@@ -125,6 +126,7 @@ as $$
       (a.correct * 10 - (a.total - a.correct) * 3 + a.total * 1)::bigint as points
     from agregado a
     join profiles p on p.id = a.user_id
+    where p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
   ),
   posicionado as (
     select

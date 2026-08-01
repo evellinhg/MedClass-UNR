@@ -4,6 +4,7 @@ import { DashboardLayout } from "@/components/dashboard-layout"
 import { HomeStats } from "@/components/home-stats"
 import { ActionCards } from "@/components/action-cards"
 import { DesempenhoWidget } from "@/components/desempenho-widget"
+import { RankingWidget } from "@/components/ranking-widget"
 import { DailyTipHeader } from "@/components/daily-tip-header"
 import { useLanguage } from "@/lib/i18n"
 
@@ -24,7 +25,10 @@ export default function HomePage() {
           <ActionCards />
         </div>
 
-        <DesempenhoWidget />
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <DesempenhoWidget />
+          <RankingWidget />
+        </div>
       </div>
     </DashboardLayout>
   )

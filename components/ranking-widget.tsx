@@ -8,11 +8,18 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useLanguage } from "@/lib/i18n"
 
-interface LeaderboardRow {
+const TOP_N = 3
+
+interface RankingRow {
+  posicao: number
   user_id: string
   display_name: string
-  total_points: number
-  total_simulados: number
+  points: number
+}
+
+interface MinhaPosicao {
+  posicao: number
+  points: number
 }
 
 const positionStyles = [
@@ -23,24 +30,29 @@ const positionStyles = [
 
 export function RankingWidget() {
   const { t } = useLanguage()
-  const [rows, setRows] = useState<LeaderboardRow[]>([])
+  const [rows, setRows] = useState<RankingRow[]>([])
+  const [minhaPosicao, setMinhaPosicao] = useState<MinhaPosicao | null>(null)
   const [currentUserId, setCurrentUserId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    Promise.all([
-      supabase.from("leaderboard").select("*").order("total_points", { ascending: false }),
-      supabase.auth.getUser(),
-    ]).then(([{ data }, { data: userData }]) => {
-      setRows(((data as LeaderboardRow[]) ?? []).filter((r) => r.total_simulados > 0))
-      setCurrentUserId(userData.user?.id ?? null)
+    supabase.auth.getUser().then(async ({ data: userData }) => {
+      const userId = userData.user?.id ?? null
+      const [{ data: rankingData }, posicaoResult] = await Promise.all([
+        supabase.rpc("get_ranking_por_materia", { materia_filtro: null, limite: TOP_N }),
+        userId
+          ? supabase.rpc("get_minha_posicao_ranking", { materia_filtro: null, alvo_user_id: userId })
+          : Promise.resolve({ data: null }),
+      ])
+      setCurrentUserId(userId)
+      setRows((rankingData as RankingRow[]) ?? [])
+      const posicaoData = (posicaoResult.data as MinhaPosicao[] | null) ?? []
+      setMinhaPosicao(posicaoData[0] ?? null)
       setLoading(false)
     })
   }, [])
 
-  const top3 = rows.slice(0, 3)
-  const myPosition = rows.findIndex((r) => r.user_id === currentUserId)
-  const me = myPosition >= 3 ? rows[myPosition] : null
+  const estouNoTop = currentUserId ? rows.some((r) => r.user_id === currentUserId) : false
 
   return (
     <Card className="border border-border bg-card p-6">
@@ -63,15 +75,13 @@ export function RankingWidget() {
           <Loader2 className="h-4 w-4 animate-spin" />
           {t.rankingWidget.carregando}
         </div>
-      ) : top3.length === 0 ? (
-        <p className="py-4 text-center text-sm text-muted-foreground">
-          {t.rankingWidget.vazio}
-        </p>
+      ) : rows.length === 0 ? (
+        <p className="py-4 text-center text-sm text-muted-foreground">{t.rankingWidget.vazio}</p>
       ) : (
         <div className="space-y-1.5">
-          {top3.map((row, idx) => {
-            const style = positionStyles[idx]
-            const PositionIcon = style.icon
+          {rows.map((row) => {
+            const style = positionStyles[row.posicao - 1]
+            const PositionIcon = style?.icon ?? Medal
             return (
               <div
                 key={row.user_id}
@@ -80,24 +90,27 @@ export function RankingWidget() {
                 }`}
               >
                 <div
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-sm ${style.ring}`}
+                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-sm ${style?.ring ?? "from-muted to-muted"}`}
                 >
-                  <PositionIcon className={`h-4 w-4 ${style.iconColor}`} strokeWidth={2.25} />
+                  <PositionIcon className={`h-4 w-4 ${style?.iconColor ?? "text-foreground"}`} strokeWidth={2.25} />
                 </div>
                 <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">{row.display_name}</p>
-                <span className="text-sm font-bold text-foreground">{row.total_points}</span>
+                <span className="text-sm font-bold text-foreground">{row.points}</span>
               </div>
             )
           })}
-          {me && (
+          {!estouNoTop && minhaPosicao && (
             <div className="flex items-center gap-3 rounded-lg bg-primary/10 p-2.5">
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/15 text-xs font-semibold text-primary">
-                {myPosition + 1}
+                {minhaPosicao.posicao}
               </div>
               <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">
-                {t.rankingWidget.voce} <Badge variant="secondary" className="ml-1 text-[10px]">{t.rankingWidget.suaPosicao}</Badge>
+                {t.rankingWidget.voce}{" "}
+                <Badge variant="secondary" className="ml-1 text-[10px]">
+                  {t.rankingWidget.suaPosicao}
+                </Badge>
               </p>
-              <span className="text-sm font-bold text-foreground">{me.total_points}</span>
+              <span className="text-sm font-bold text-foreground">{minhaPosicao.points}</span>
             </div>
           )}
         </div>

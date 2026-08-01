@@ -13,7 +13,7 @@ type FeedbackTipoKey = "duvida" | "sugestao" | "erro"
 const FEEDBACK_TIPOS: FeedbackTipoKey[] = ["duvida", "sugestao", "erro"]
 const OUTRO_KEY = "outro"
 const MATERIA_OPTIONS = [...ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano]), OUTRO_KEY]
-const ANEXO_MAX_BYTES = 20 * 1024 * 1024
+const ANEXO_MAX_BYTES = 50 * 1024 * 1024
 const ANEXO_ACCEPT = "image/*,video/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt"
 
 interface FeedbackEntry {

@@ -2,9 +2,9 @@
 -- Bucket privado para anexos de feedback (imagens, vídeos, documentos) +
 -- colunas na tabela feedbacks + RLS de storage (dono do arquivo ou admin).
 
-insert into storage.buckets (id, name, public)
-values ('feedback-anexos', 'feedback-anexos', false)
-on conflict (id) do nothing;
+insert into storage.buckets (id, name, public, file_size_limit)
+values ('feedback-anexos', 'feedback-anexos', false, 52428800) -- 50MB, teto do plano Free do Supabase
+on conflict (id) do update set file_size_limit = excluded.file_size_limit;
 
 alter table public.feedbacks
   add column if not exists anexo_path text,

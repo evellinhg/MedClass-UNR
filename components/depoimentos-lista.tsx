@@ -3,12 +3,14 @@
 import { useEffect, useState } from "react"
 import { Loader2, User } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { StarRating } from "@/components/star-rating"
 import { useLanguage } from "@/lib/i18n"
 
 interface Depoimento {
   id: string
   nome: string
   ano_cursado: string
+  nota: number | null
   foto_path: string | null
   comentario: string
   created_at: string
@@ -23,7 +25,7 @@ export function DepoimentosLista() {
     const load = async () => {
       const { data } = await supabase
         .from("depoimentos")
-        .select("id, nome, ano_cursado, foto_path, comentario, created_at")
+        .select("id, nome, ano_cursado, nota, foto_path, comentario, created_at")
         .eq("status", "aprovado")
         .order("created_at", { ascending: false })
       setDepoimentos((data as Depoimento[]) ?? [])
@@ -51,7 +53,8 @@ export function DepoimentosLista() {
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {depoimentos.map((d) => (
         <div key={d.id} className="rounded-2xl border border-white/5 bg-white/[0.02] p-6">
-          <p className="text-lg leading-relaxed text-white/70">&quot;{d.comentario}&quot;</p>
+          {d.nota && <StarRating value={d.nota} readOnly size={18} />}
+          <p className="mt-3 text-lg leading-relaxed text-white/70">&quot;{d.comentario}&quot;</p>
           <div className="mt-6 flex items-center gap-3">
             {d.foto_path ? (
               // eslint-disable-next-line @next/next/no-img-element

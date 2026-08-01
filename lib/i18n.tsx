@@ -510,6 +510,7 @@ const pt = {
     ],
     verTodos: "Ver todos os depoimentos",
     form: {
+      abrirBotao: "Criar meu comentário",
       titulo: "Deixe seu depoimento",
       subtitulo: "Conta pra gente como o MedClass UNR te ajudou nos estudos.",
       nome: "Nome",
@@ -520,6 +521,7 @@ const pt = {
       fotoSelecionar: "Escolher foto",
       fotoTrocar: "Trocar foto",
       fotoRemover: "Remover",
+      avaliacao: "Sua avaliação",
       comentario: "Seu depoimento",
       comentarioPlaceholder: "Conte sua experiência com o MedClass UNR...",
       enviar: "Enviar depoimento",
@@ -527,7 +529,7 @@ const pt = {
       sucesso: "Obrigado! Seu depoimento foi enviado e pode aparecer aqui assim que for revisado.",
       erro: "Não foi possível enviar seu depoimento. Tenta de novo em instantes.",
       erroFoto: "A foto deve ter até 5MB.",
-      camposObrigatorios: "Preenche seu nome, ano e depoimento para enviar.",
+      camposObrigatorios: "Preenche seu nome, ano, avaliação e depoimento para enviar.",
     },
   },
   depoimentosPage: {
@@ -1480,6 +1482,7 @@ const es: typeof pt = {
     ],
     verTodos: "Ver todos los testimonios",
     form: {
+      abrirBotao: "Crear mi comentario",
       titulo: "Dejá tu testimonio",
       subtitulo: "Contanos cómo MedClass UNR te ayudó a estudiar.",
       nome: "Nombre",
@@ -1490,6 +1493,7 @@ const es: typeof pt = {
       fotoSelecionar: "Elegir foto",
       fotoTrocar: "Cambiar foto",
       fotoRemover: "Quitar",
+      avaliacao: "Tu calificación",
       comentario: "Tu testimonio",
       comentarioPlaceholder: "Contanos tu experiencia con MedClass UNR...",
       enviar: "Enviar testimonio",
@@ -1497,7 +1501,7 @@ const es: typeof pt = {
       sucesso: "¡Gracias! Tu testimonio fue enviado y puede aparecer acá una vez que sea revisado.",
       erro: "No se pudo enviar tu testimonio. Probá de nuevo en un momento.",
       erroFoto: "La foto debe pesar hasta 5MB.",
-      camposObrigatorios: "Completá tu nombre, año y testimonio para enviar.",
+      camposObrigatorios: "Completá tu nombre, año, calificación y testimonio para enviar.",
     },
   },
   depoimentosPage: {

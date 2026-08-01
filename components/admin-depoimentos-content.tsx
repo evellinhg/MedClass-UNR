@@ -14,11 +14,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { StarRating } from "@/components/star-rating"
 
 interface DepoimentoRow {
   id: string
   nome: string
   ano_cursado: string
+  nota: number | null
   foto_path: string | null
   comentario: string
   status: "pendente" | "aprovado" | "rejeitado"
@@ -176,6 +178,7 @@ export function AdminDepoimentosContent() {
                 <div className="min-w-0 flex-1">
                   <p className="font-medium text-foreground">{d.nome}</p>
                   <p className="text-xs text-muted-foreground">{d.ano_cursado}</p>
+                  {d.nota && <StarRating value={d.nota} readOnly size={16} />}
                   <p className="mt-1.5 text-sm text-foreground">{d.comentario}</p>
                 </div>
               </div>

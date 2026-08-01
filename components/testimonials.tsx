@@ -39,6 +39,10 @@ export function Testimonials() {
           </p>
         </motion.div>
 
+        <div className="mb-6 flex justify-end">
+          <DepoimentoForm />
+        </div>
+
         {/* Testimonials grid */}
         <div className="grid gap-6 md:grid-cols-3">
           {t.testimonials.items.map((testimonial, i) => {
@@ -89,8 +93,6 @@ export function Testimonials() {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-
-        <DepoimentoForm />
       </div>
     </section>
   )

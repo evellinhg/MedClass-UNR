@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useState } from "react"
-import { Loader2, Send, User, X } from "lucide-react"
+import { Loader2, MessageSquarePlus, Send, User, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { StarRating } from "@/components/star-rating"
 import { ANO_KEYS } from "@/lib/unr-curriculum"
 import { useLanguage } from "@/lib/i18n"
 
@@ -23,8 +25,10 @@ export function DepoimentoForm() {
   const { t } = useLanguage()
   const fileInputRef = useRef<HTMLInputElement>(null)
 
+  const [open, setOpen] = useState(false)
   const [nome, setNome] = useState("")
   const [ano, setAno] = useState("")
+  const [nota, setNota] = useState(0)
   const [comentario, setComentario] = useState("")
   const [fotoFile, setFotoFile] = useState<File | null>(null)
   const [fotoPreview, setFotoPreview] = useState<string | null>(null)
@@ -55,7 +59,7 @@ export function DepoimentoForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!nome.trim() || !ano || !comentario.trim()) {
+    if (!nome.trim() || !ano || !comentario.trim() || !nota) {
       setStatus("erro")
       return
     }
@@ -82,6 +86,7 @@ export function DepoimentoForm() {
     const { error } = await supabase.from("depoimentos").insert({
       nome: nome.trim(),
       ano_cursado: ano,
+      nota,
       foto_path: fotoPath,
       comentario: comentario.trim(),
     })
@@ -96,120 +101,147 @@ export function DepoimentoForm() {
     setStatus("sucesso")
     setNome("")
     setAno("")
+    setNota(0)
     setComentario("")
     handleRemoveFoto()
+    setTimeout(() => {
+      setOpen(false)
+      setStatus("idle")
+    }, 2000)
   }
 
   return (
-    <div className="mx-auto mt-16 max-w-2xl rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8">
-      <h3 className="text-xl font-bold text-white">{t.testimonials.form.titulo}</h3>
-      <p className="mt-1 text-sm text-white/50">{t.testimonials.form.subtitulo}</p>
-
-      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.nome}</label>
-            <Input
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              placeholder={t.testimonials.form.nomePlaceholder}
-              className="border-white/10 bg-white/[0.03] text-white placeholder:text-white/30"
-            />
-          </div>
-          <div>
-            <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.anoCursado}</label>
-            <Select value={ano} onValueChange={setAno}>
-              <SelectTrigger className="border-white/10 bg-white/[0.03] text-white">
-                <SelectValue placeholder={t.testimonials.form.anoSelecione} />
-              </SelectTrigger>
-              <SelectContent>
-                {ANO_KEYS.map((key) => (
-                  <SelectItem key={key} value={key}>
-                    {t.cronograma.anoLabel[key] ?? key}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-        </div>
-
-        <div>
-          <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.foto}</label>
-          <div className="flex items-center gap-3">
-            {fotoPreview ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={fotoPreview} alt="" className="h-12 w-12 rounded-full object-cover" />
-            ) : (
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white/30">
-                <User className="h-5 w-5" />
-              </div>
-            )}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept={FOTO_ACCEPT}
-              onChange={handleFotoChange}
-              className="hidden"
-              id="depoimento-foto-input"
-            />
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              onClick={() => fileInputRef.current?.click()}
-              className="border-white/10 bg-white/[0.03] text-white/70 hover:bg-white/10 hover:text-white"
-            >
-              {fotoFile ? t.testimonials.form.fotoTrocar : t.testimonials.form.fotoSelecionar}
-            </Button>
-            {fotoFile && (
-              <button
-                type="button"
-                onClick={handleRemoveFoto}
-                aria-label={t.testimonials.form.fotoRemover}
-                className="text-white/40 hover:text-white"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
-          </div>
-          {fotoError && <p className="mt-1 text-xs text-red-400">{fotoError}</p>}
-        </div>
-
-        <div>
-          <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.comentario}</label>
-          <Textarea
-            value={comentario}
-            onChange={(e) => setComentario(e.target.value)}
-            placeholder={t.testimonials.form.comentarioPlaceholder}
-            className="min-h-[100px] border-white/10 bg-white/[0.03] text-white placeholder:text-white/30"
-          />
-        </div>
-
-        {status === "erro" && (
-          <p className="text-sm text-red-400">
-            {!nome.trim() || !ano || !comentario.trim() ? t.testimonials.form.camposObrigatorios : t.testimonials.form.erro}
-          </p>
-        )}
-        {status === "sucesso" && <p className="text-sm text-[#bef264]">{t.testimonials.form.sucesso}</p>}
-
-        <Button
-          type="submit"
-          disabled={enviando}
-          className="w-full gap-2 bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] hover:from-[#a3e635] hover:to-[#65a30d]"
+    <>
+      <Dialog open={open} onOpenChange={setOpen}>
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] px-6 py-3 text-sm font-semibold text-[#0a1f00] shadow-md transition-transform hover:scale-105 hover:from-[#a3e635] hover:to-[#65a30d]"
         >
-          {enviando ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" />
-              {t.testimonials.form.enviando}
-            </>
-          ) : (
-            <>
-              <Send className="h-4 w-4" />
-              {t.testimonials.form.enviar}
-            </>
-          )}
-        </Button>
-      </form>
-    </div>
+          <MessageSquarePlus className="h-4 w-4" />
+          {t.testimonials.form.abrirBotao}
+        </button>
+
+        <DialogContent className="max-h-[90vh] overflow-y-auto border-white/10 bg-[#12140f] text-white sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-xl font-bold text-white">{t.testimonials.form.titulo}</DialogTitle>
+            <p className="text-sm text-white/50">{t.testimonials.form.subtitulo}</p>
+          </DialogHeader>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.nome}</label>
+                <Input
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  placeholder={t.testimonials.form.nomePlaceholder}
+                  className="border-white/10 bg-white/[0.03] text-white placeholder:text-white/30"
+                />
+              </div>
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.anoCursado}</label>
+                <Select value={ano} onValueChange={setAno}>
+                  <SelectTrigger className="border-white/10 bg-white/[0.03] text-white">
+                    <SelectValue placeholder={t.testimonials.form.anoSelecione} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {ANO_KEYS.map((key) => (
+                      <SelectItem key={key} value={key}>
+                        {t.cronograma.anoLabel[key] ?? key}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.foto}</label>
+              <div className="flex items-center gap-3">
+                {fotoPreview ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={fotoPreview} alt="" className="h-12 w-12 rounded-full object-cover" />
+                ) : (
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/5 text-white/30">
+                    <User className="h-5 w-5" />
+                  </div>
+                )}
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept={FOTO_ACCEPT}
+                  onChange={handleFotoChange}
+                  className="hidden"
+                  id="depoimento-foto-input"
+                />
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="border-white/10 bg-white/[0.03] text-white/70 hover:bg-white/10 hover:text-white"
+                >
+                  {fotoFile ? t.testimonials.form.fotoTrocar : t.testimonials.form.fotoSelecionar}
+                </Button>
+                {fotoFile && (
+                  <button
+                    type="button"
+                    onClick={handleRemoveFoto}
+                    aria-label={t.testimonials.form.fotoRemover}
+                    className="text-white/40 hover:text-white"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
+              {fotoError && <p className="mt-1 text-xs text-red-400">{fotoError}</p>}
+            </div>
+
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.avaliacao}</label>
+              <StarRating value={nota} onChange={setNota} size={28} />
+            </div>
+
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-white/70">{t.testimonials.form.comentario}</label>
+              <Textarea
+                value={comentario}
+                onChange={(e) => setComentario(e.target.value)}
+                placeholder={t.testimonials.form.comentarioPlaceholder}
+                className="min-h-[100px] border-white/10 bg-white/[0.03] text-white placeholder:text-white/30"
+              />
+            </div>
+
+            {status === "erro" && (
+              <p className="text-sm text-red-400">
+                {!nome.trim() || !ano || !comentario.trim() || !nota
+                  ? t.testimonials.form.camposObrigatorios
+                  : t.testimonials.form.erro}
+              </p>
+            )}
+            {status === "sucesso" && <p className="text-sm text-[#bef264]">{t.testimonials.form.sucesso}</p>}
+
+            <Button
+              type="submit"
+              disabled={enviando}
+              className="w-full gap-2 bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] hover:from-[#a3e635] hover:to-[#65a30d]"
+            >
+              {enviando ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  {t.testimonials.form.enviando}
+                </>
+              ) : (
+                <>
+                  <Send className="h-4 w-4" />
+                  {t.testimonials.form.enviar}
+                </>
+              )}
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </>
   )
 }

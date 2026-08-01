@@ -1,0 +1,814 @@
+[
+  {
+    "titulo": "Nutrición UP8 — Anatomía — Colon, recto y ano",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Intestino grueso: ubicación, división y características generales del colon (tenias, haustras, apéndices omentales), relaciones, funciones, irrigación e inervación. Recto: ubicación, características morfológicas (flexuras, válvulas), relaciones, función, irrigación e inervación. Conducto anal y esfínteres.",
+    "tags": [
+      "nutricion-up8",
+      "anatomia",
+      "colon",
+      "recto",
+      "conducto-anal",
+      "esfinteres",
+      "intestino-grueso"
+    ],
+    "ordem": 102,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las porciones del colon y dónde se ubica el intestino grueso?",
+        "verso": "El intestino grueso se extiende desde el ciego hasta el conducto anal, enmarcando las asas del intestino delgado. Se divide en: ciego (con apéndice vermiforme), colon ascendente, colon transverso, colon descendente, colon sigmoide, recto y conducto anal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué características morfológicas distinguen al colon de otras porciones del tubo digestivo?",
+        "verso": "Presenta tres tenias (bandas musculares longitudinales de la capa muscular externa), haustras (saculaciones de la pared entre las tenias) y apéndices omentales (pequeños acúmulos de tejido adiposo cubiertos de peritoneo). Está fijado a la pared posterior por el mesocolon.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la relación del colon ascendente y descendente con el peritoneo?",
+        "verso": "Son porciones retroperitoneales: el colon ascendente y el descendente están recubiertos por peritoneo solo en su cara anterior y medial (retroperitoneales secundarios). El colon transverso y el sigmoide son intraperitoneales y están suspendidos por sus mesos (mesocolon transverso y mesocolon sigmoide).",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones principales del colon?",
+        "verso": "Absorción de agua y electrolitos, concentración de los residuos de la digestión, formación y almacenamiento temporal de las heces, y tránsito hacia el recto. Además aloja la microbiota que fermenta fibra y produce vitaminas (K, algunas del complejo B) y ácidos grasos de cadena corta.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el origen de la irrigación arterial del colon?",
+        "verso": "Deriva de las arterias mesentéricas: la mesentérica superior irriga ciego, apéndice, colon ascendente y los dos tercios proximales del transverso (a. ileocólica, cólica derecha, cólica media). La mesentérica inferior irriga el tercio distal del transverso, descendente y sigmoide (a. cólica izquierda, sigmoideas) y la rectal superior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo está constituido el arco vascular marginal del colon?",
+        "verso": "Las arcadas arteriales cólicas se anastomosan entre sí formando un arco continuo próximo al borde mesocólico, denominado arco marginal de Drummond, que asegura la irrigación de todo el colon y permite la viabilidad de la pared cuando se ocluye una arteria mayor.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la inervación del colon?",
+        "verso": "Autónoma: parasimpática y simpática. El parasimpático deriva del vago (colon derecho y transverso proximal) y de los nervios esplácnicos pélvicos (transverso distal, descendente y sigmoide). El simpático proviene de los plexos celíaco, mesentérico superior e inferior. Su función es regular motilidad, secreción y vascularización.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Colon, recto y ano. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características morfológicas del recto?",
+        "verso": "Se ubica en la pelvis, siguiendo la curvatura del sacro y cóccix, con las flexuras sacras y anorrectales. Presenta tres pliegues transversales internos (válvulas de Houston). Su capa muscular externa pierde las tenias: las fibras longitudinales se reúnen formando bandas continuas y la capa circular se engrosa en el esfínter interno del ano.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Recto. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la irrigación y drenaje venoso del recto?",
+        "verso": "Irrigado por la arteria rectal superior (rama de la mesentérica inferior) y las rectales medias (iliacas internas). El drenaje venoso se realiza por las venas rectales superior (al sistema porta), media e inferior (al sistema cava), generando una anastomosis portocava en la zona, relevante en hipertensión portal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Recto. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estructura forman los esfínteres del ano y cuál es la delimitación del conducto anal?",
+        "verso": "El conducto anal es la porción terminal del tubo digestivo, limitado por la línea anorrectal (uniòn con el recto) y el orificio anal. Presenta dos esfínteres: el esfínter interno (músculo liso, involuntario, engrosamiento de la capa circular) y el esfínter externo (músculo estriado, voluntario, inervado por el nervio pudendo), responsables del continencia y de la defecación voluntaria.",
+        "fontes": [
+          "Cátedra de Anatomía Normal. Conducto anal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Anatomía — Peritoneo: mesos, ligamentos y fascias",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Peritoneo parietal y visceral, mesos, ligamentos y fascias retroperitoneales, funciones de la serosa, cavidad peritoneal II: irrigación e inervación del peritoneo y su relación con los órganos abdominales.",
+    "tags": [
+      "nutricion-up8",
+      "anatomia",
+      "peritoneo",
+      "mesos",
+      "ligamentos",
+      "fascias",
+      "cavidad-peritoneal"
+    ],
+    "ordem": 103,
+    "cards": [
+      {
+        "frente": "¿Qué son el peritoneo parietal y el visceral?",
+        "verso": "El peritoneo parietal reviste la pared interna de la cavidad abdominopélvica; el visceral recubre la superficie de los órganos. Entre ambas hojas queda la cavidad peritoneal, un espacio virtual con líquido seroso que permite el deslizamiento de las vísceras.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un meso y qué conduce?",
+        "verso": "Es una doble capa de peritoneo que une un órgano intraperitoneal a la pared posterior y le conduce vasos sanguíneos y linfáticos y nervios. Ejemplos: mesenterio del intestino delgado, mesocolon transverso, mesocolon sigmoide y mesoapéndice.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un ligamento peritoneal y cuáles se describen en el abdomen?",
+        "verso": "Es un pliegue de doble hoja peritoneal que une órganos entre sí o un órgano a la pared, pudiendo contener vasos. Ejemplos: ligamento hepatogástrico, hepatoduodenal (contiene vía biliar, arteria hepática y vena porta), gastrocolico, esplenorrenal y ligamento falciforme del hígado.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los omentos (epiplones) y cómo se diferencian del mesenterio?",
+        "verso": "Los omentos son repliegues peritoneales que unen vísceras entre sí: el omento mayor cuelga de la curvatura mayor gástrica cubriendo las asas (delantal omental, con función de reserva adiposa y defensa), y el omento menor une el hígado con la curvatura menor gástrica y el duodeno. A diferencia del mesenterio, no fijan un órgano a la pared.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las fascias retroperitoneales y qué órganos relacionan?",
+        "verso": "Son capas de tejido conjuntivo situadas por detrás del peritoneo parietal que separan las vísceras retroperitoneales. La fascia renal envuelve riñón y glándula suprarrenal; las fascias de fusión (como la retrocólica o la de Toldt) fijan las porciones retroperitoneales del colon y el duodeno.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones del peritoneo?",
+        "verso": "Mantener las vísceras en posición, permitir su deslizamiento sin fricción, servir de vía de conducción de vasos y nervios a través de mesos y ligamentos, y actuar en la defensa local: capacidad de reabsorción de líquido, respuesta inflamatoria, contención de procesos infecciosos (omentos y cavidad peritoneal).",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la irrigación arterial del peritoneo parietal y visceral?",
+        "verso": "El peritoneo parietal está irrigado por arterias de la pared abdominal y pelviana (intercostales, lumbares, iliacas, etc.), con sensibilidad somática. El peritoneo visceral está irrigado por las ramas viscerales de la aorta (tronco celíaco, mesentérica superior e inferior), con inervación autónoma.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Práctico cavidad peritoneal II. Guía 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la inervación del peritoneo y su correlación con el dolor abdominal?",
+        "verso": "El peritoneo parietal recibe inervación somática (nervios intercostales, subcostal, iliopubianos, lumbar) que produce dolor localizado, agudo y bien referido. El peritoneo visceral está inervado por el sistema autónomo (plexos celíaco, mesentéricos e hipogástricos) y origina dolor mal localizado, sordo y con repercusión vegetativa.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Práctico cavidad peritoneal II. Guía 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la disposición de los órganos según su relación con el peritoneo?",
+        "verso": "Los órganos intraperitoneales están cubiertos por peritoneo visceral y unidos a la pared por un meso (estómago, hígado, bazo, yeyuno, íleon, ciego, apéndice, colon transverso, sigmoide, recto superior). Los retroperitoneales están por detrás del peritoneo parietal, cubiertos solo en su cara anterior (duodeno, páncreas, riñones, uréteres, colon ascendente y descendente, recto inferior, aorta y vena cava inferior).",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué importancia clínica tiene la relación del peritoneo con los órganos en los procesos inflamatorios?",
+        "verso": "Determina la difusión y localización de infecciones y líquidos: un órgano intraperitoneal (apéndice, vesícula) puede producir peritonitis difusa; los retroperitoneales (páncreas) producen colecciones retroperitoneales. Los mesos y omentos actúan como barreras y los fondos de saco (Douglas, hepatorenal) son puntos de acumulación de líquido, por ejemplo en la peritonitis.",
+        "fontes": [
+          "Cátedra de Anatomía Humana. Peritoneo. FCM-UNR, 2023. Guía de aprendizaje en Nutrición 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Fisiología — Fisiología colónica: motilidad, secreción y absorción",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Fisiología del colon: movimientos de mezcla y propulsión (haustras, masas peristálticas, reflejo gastrocólico), secreciones colónicas, absorción de agua, sodio y electrolitos, y factores que modifican la formación y consistencia de la materia fecal.",
+    "tags": [
+      "nutricion-up8",
+      "fisiologia",
+      "colon",
+      "motilidad",
+      "absorcion",
+      "secrecion",
+      "materia-fecal"
+    ],
+    "ordem": 104,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los movimientos del colon y qué función cumplen?",
+        "verso": "Presenta contracciones de mezcla (haustraciones, que remueven el contenido exponiéndolo a la mucosa) y contracciones de propulsión (masas peristálticas, que desplazan las heces hacia el recto). La motilidad colónica es lenta: el tránsito puede durar muchas horas.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el reflejo gastrocólico?",
+        "verso": "Es un reflejo que se desencadena por la distensión gástrica tras la ingesta y que aumenta la motilidad y las masas peristálticas del colon, generando la necesidad de defecar después de comer. Está mediado por el sistema nervioso autónomo y péptidos gastrointestinales.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las secreciones del colon y qué función cumplen?",
+        "verso": "El colon secreta moco (secretado por las células caliciformes), abundante en la porción distal, que protege la mucosa, lubrica el tránsito fecal y aglutina el contenido. No secreta enzimas digestivas: la digestión ya se completó en el intestino delgado.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué sustancias absorbe principalmente el colon?",
+        "verso": "Absorbe agua, sodio y cloro, y en menor medida potasio y bicarbonato. También puede absorber ácidos grasos de cadena corta producidos por la fermentación de la fibra, y vitaminas (K y algunas del complejo B) sintetizadas por la microbiota.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la capacidad de absorción de agua del colon y qué sucede si se supera?",
+        "verso": "Recibe alrededor de 1,5 litros de contenido líquido por día del íleon y absorbe la mayor parte del agua, dejando unos 100-200 ml en las heces. Si la cantidad que llega supera su capacidad o el tránsito es muy rápido, se produce diarrea.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué determina la consistencia de la materia fecal?",
+        "verso": "El tiempo de tránsito y la absorción de agua: tránsito lento y mayor reabsorción producen heces duras y secas (constipación); tránsito rápido o secreción aumentada generan heces líquidas. La fibra, al retener agua, modifica la consistencia y el volumen fecal.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo regula el sistema nervioso la motilidad colónica?",
+        "verso": "El parasimpático (vago para colon derecho, esplácnicos pélvicos para colon izquierdo y recto) estimula la motilidad y favorece la defecación; el simpático la inhibe. Los plexos mientérico y submucoso integran reflejos locales. La distensión y la ingesta la activan, el reposo la disminuye.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué factores reducen la motilidad colónica y pueden producir constipación?",
+        "verso": "Sedentarismo y baja actividad física, dieta pobre en fibra y agua, envejecimiento, fármacos (opiáceos, anticolinérgicos), inactividad del reflejo defecatorio por suprimir la necesidad, y factores emocionales. En el adulto mayor se conjugan estos factores, como en la situación de Alberto.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple la fibra alimentaria en la fisiología del colon?",
+        "verso": "Aumenta el volumen y la retención de agua del contenido, estimula el reflejo de la defecación y la motilidad, acorta el tiempo de tránsito y es sustrato de la fermentación bacteriana que produce ácidos grasos de cadena corta y favorece una microbiota saludable.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan las secreciones digestivas con la formación de la materia fecal?",
+        "verso": "Los jugos digestivos (saliva, gástrico, biliar, pancréatico, intestinal) aportan agua y electrolitos que se reabsorben en intestino delgado y colon. Su composición y volumen determinan la cantidad de líquido que llega al colon y, junto con los residuos no absorbidos, la flora y el moco, participan en la formación de las heces.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Fisiología colónica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Fisiología — Microbiota intestinal y defecación",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Microbiota intestinal: composición, funciones (fermentación de fibra, producción de vitaminas y ácidos grasos de cadena corta, defensa y regulación inmunitaria). Mecanismo de la defecación: llenado rectal, reflejo defecatorio intrínseco y parasimpático, esfínteres y defecación voluntaria.",
+    "tags": [
+      "nutricion-up8",
+      "fisiologia",
+      "microbiota",
+      "defecacion",
+      "reflejo-defecatorio",
+      "esfinter-anal",
+      "flora-intestinal"
+    ],
+    "ordem": 105,
+    "cards": [
+      {
+        "frente": "¿Qué es la microbiota intestinal y dónde se concentra principalmente?",
+        "verso": "Es el conjunto de microorganismos (bacterias, arqueas, hongos y virus) que habitan el tubo digestivo. Se concentra en el colon, donde alcanza la mayor densidad microbiana del organismo, integrada por una comunidad compleja y en equilibrio con el hospedador.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Microbiota intestinal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones cumple la microbiota intestinal en el hospedador?",
+        "verso": "Fermenta fibras y carbohidratos no digeridos produciendo ácidos grasos de cadena corta, sintetiza vitaminas (K y del complejo B), interviene en la absorción de minerales, compite con patógenos (efecto barrera), estimula el sistema inmunitario y modula el metabolismo energético.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Microbiota intestinal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los ácidos grasos de cadena corta y qué papel tienen?",
+        "verso": "Son productos de la fermentación bacteriana de la fibra (acetato, propionato, butirato). El butirato es la principal fuente de energía de los colonocitos, el acetato y propionato llegan a circulación con efectos metabólicos e inmunorreguladores; además acidifican el medio e inhiben patógenos.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Microbiota intestinal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación existe entre la dieta, la edad y la composición de la microbiota?",
+        "verso": "La composición depende de la dieta: las fibras y los alimentos vegetales favorecen especies fermentadoras beneficiosas, mientras que dietas pobres en fibra las reducen. Con la edad, y con el sedentarismo y menor consumo de verduras, se observan cambios en la diversidad microbiana, como en el caso de Alberto.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Microbiota intestinal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué efecto tienen los antibióticos sobre la microbiota intestinal?",
+        "verso": "Alteran la composición de la flora, reduciendo la diversidad y permitiendo el sobrecrecimiento de patógenos (por ejemplo Clostridioides difficile), lo que puede producir diarrea asociada a antibióticos. Por eso el uso racional de antibióticos preserva el equilibrio microbiano.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Microbiota intestinal. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el estímulo que inicia el proceso de la defecación?",
+        "verso": "La distensión del recto por la llegada de heces (masas peristálticas). El llenado del recto genera el reflejo defecatorio intrínseco, mediado por el plexo mientérico, que relaja el esfínter interno; cuando se combina con el reflejo parasimpático (nervios pélvicos, médula sacra S2-S4) la propulsión aumenta y se inicia la defecación.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Defecación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo participan los esfínteres anales en la defecación y la continencia?",
+        "verso": "El esfínter interno (liso, involuntario) mantiene la continencia en reposo y se relaja ante la distensión rectal. El esfínter externo (estriado, voluntario, inervado por el pudendo) permite retener voluntariamente las heces; la defecación requiere su relajación junto con la contracción abdominal y el diafragma pélvico.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Defecación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué mecanismos voluntarios acompañan a la defecación?",
+        "verso": "Cuando es conveniente, se produce la contracción de la musculatura abdominal y el descenso del diafragma (maniobra de Valsalva) que aumentan la presión intraabdominal, junto con la relajación voluntaria del esfínter externo y del piso pelviano, facilitando la expulsión del contenido rectal.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Defecación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué suprimir el deseo de defecar favorece la constipación?",
+        "verso": "Si se inhibe voluntariamente el reflejo defecatorio, el recto se distiende y el esfínter interno se contrae nuevamente; las masas peristálticas disminuyen por horas, el agua se reabsorbe y las heces se endurecen. La repetición de esta conducta puede perpetuar la constipación.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Defecación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué factores biológicos, psicológicos y sociales afectan el proceso de eliminación (defecación)?",
+        "verso": "Biológicos: dieta pobre en fibra y agua, sedentarismo, fármacos, edad y comorbilidades. Psicológicos: estrés, ansiedad, depresión y hábitos. Sociales: cambios en la rutina, pérdida de redes comunitarias (como el cierre de la huerta de Alberto) y acceso limitado a alimentos frescos. Todos condicionan la frecuencia y consistencia de las evacuaciones.",
+        "fontes": [
+          "Guyton y Hall. Tratado de Fisiología Médica. Defecación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Química Biológica — Balance nitrogenado y recambio proteico",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Balance nitrogenado como equilibrio entre ingreso y egreso de nitrógeno, recambio proteico (turnover), proteólisis lisosómica y proteosoma, y pool metabólico de aminoácidos: origen y utilización.",
+    "tags": [
+      "nutricion-up8",
+      "quimica",
+      "balance-nitrogenado",
+      "recambio-proteico",
+      "proteosoma",
+      "lisosoma",
+      "pool-de-aminoacidos"
+    ],
+    "ordem": 106,
+    "cards": [
+      {
+        "frente": "¿Qué es el balance nitrogenado y cómo se calcula?",
+        "verso": "Es la diferencia entre el nitrógeno que ingresa al organismo (por la proteína de la dieta) y el que se elimina (orina como urea, heces, sudor y otras pérdidas). Balance = N ingerido − N excretado. Un balance positivo indica retención de nitrógeno (crecimiento, embarazo, recuperación); negativo, pérdida de proteínas corporales (inanición, catabolismo).",
+        "fontes": [
+          "Blanco A. Química Biológica. Metabolismo de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estados cursan con balance nitrogenado positivo y cuáles con negativo?",
+        "verso": "Positivo: crecimiento, embarazo, lactancia, recuperación de enfermedades y entrenamiento con desarrollo muscular. Negativo: ayuno e inanición, dietas hipoproteicas, catabolismo por fiebre, infección, traumatismo y quemaduras, y procesos de desgaste proteico del adulto mayor.",
+        "fontes": [
+          "Blanco A. Química Biológica. Balance nitrogenado. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el recambio proteico (turnover) y por qué ocurre continuamente?",
+        "verso": "Es la degradación y resíntesis permanente de las proteínas celulares. Permite eliminar proteínas dañadas o con vida media corta, regular las concentraciones de enzimas y proteínas reguladoras y aportar aminoácidos al pool metabólico. En el adulto sano, la síntesis iguala a la degradación.",
+        "fontes": [
+          "Blanco A. Química Biológica. Recambio proteico. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los dos sistemas principales de degradación intracelular de proteínas?",
+        "verso": "La proteólisis lisosómica, que degrada proteínas de vida media larga, material endocitado y de la membrana, sin especificidad; y la proteólisis no lisosómica por el proteosoma (complejo proteolítico dependiente de ubiquitina), que degrada proteínas citosólicas y nucleares de vida media corta, reguladoras y dañadas, de forma específica y dependiente de ATP.",
+        "fontes": [
+          "Blanco A. Química Biológica. Proteólisis celular. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo funciona la vía ubiquitina-proteosoma?",
+        "verso": "Las proteínas a degradar son marcadas por la unión covalente de cadenas de ubiquitina (con gasto de ATP). El conjugado es reconocido y degradado por el proteosoma, una estructura multicatalítica en forma de cilindro, que hidroliza la proteína en péptidos y aminoácidos. Es una vía altamente regulada y selectiva.",
+        "fontes": [
+          "Blanco A. Química Biológica. Proteosoma. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el fondo metabólico común o pool de aminoácidos?",
+        "verso": "Es el conjunto de aminoácidos libres disponibles en los líquidos corporales, alimentado por el aporte de la dieta, la digestión de proteínas y la degradación de proteínas endógenas. De él se extraen aminoácidos para la síntesis proteica, la síntesis de compuestos nitrogenados (hormonas, neurotransmisores) y la producción de energía.",
+        "fontes": [
+          "Blanco A. Química Biológica. Pool de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los orígenes de los aminoácidos del pool metabólico?",
+        "verso": "1) Aporte exógeno de la dieta (proteínas digeridas y absorbidas); 2) recambio de las proteínas endógenas; 3) síntesis de novo de aminoácidos no esenciales a partir de intermediarios metabólicos. La mayor parte del pool proviene del recambio de las proteínas corporales.",
+        "fontes": [
+          "Blanco A. Química Biológica. Pool de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales utilizaciones de los aminoácidos del pool?",
+        "verso": "Síntesis de proteínas (la principal), síntesis de compuestos nitrogenados no proteicos (nucleótidos, neurotransmisores, hormonas, porfirinas, creatina, glutation), transformación en glucosa y ácidos grasos, y oxidación para producir energía. Los aminoácidos no pueden almacenarse; el exceso se cataboliza eliminando el nitrógeno.",
+        "fontes": [
+          "Blanco A. Química Biológica. Pool de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué no existen reservas significativas de aminoácidos y qué consecuencia tiene el ayuno prolongado?",
+        "verso": "A diferencia de la glucosa o los lípidos, los aminoácidos no se almacenan como tal: el exceso se oxida o se convierte en otras sustancias. En el ayuno prolongado las proteínas estructurales se degradan para aportar aminoácidos glucogénicos (gluconeogénesis) y energía, lo que produce balance nitrogenado negativo y pérdida de masa muscular.",
+        "fontes": [
+          "Blanco A. Química Biológica. Pool de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación tiene el recambio proteico con la edad y el estado nutricional?",
+        "verso": "La masa y el recambio proteico declinan con la edad; en el adulto mayor disminuyen la síntesis y aumentan las pérdidas (sarcopenia), agravadas por dietas hipoproteicas, menor actividad y enfermedad. El equilibrio entre síntesis y degradación (balance nitrogenado) es el indicador del estado proteico global.",
+        "fontes": [
+          "Blanco A. Química Biológica. Balance nitrogenado. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Química Biológica — Catabolismo de aminoácidos",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Reacciones generales del catabolismo de aminoácidos: transaminación y desaminación oxidativa del glutamato. Eliminación del nitrógeno: síntesis de glutamina y ciclo de la urea. Destino del esqueleto carbonado, aminoácidos glucogénicos y cetogénicos y función precursora de los aminoácidos.",
+    "tags": [
+      "nutricion-up8",
+      "quimica",
+      "transaminacion",
+      "desaminacion",
+      "ciclo-de-la-urea",
+      "glutamina",
+      "aminoacidos-glucogenicos",
+      "aminoacidos-cetogenicos"
+    ],
+    "ordem": 107,
+    "cards": [
+      {
+        "frente": "¿Cuál es la primera reacción general del catabolismo de los aminoácidos?",
+        "verso": "La transaminación: transferencia del grupo amino de un aminoácido a un alfa-cetoácido, catalizada por transaminasas (aminotransferasas) con fosfato de piridoxal (vitamina B6) como coenzima. Produce un nuevo aminoácido y el alfa-cetoácido correspondiente, sin liberar amoníaco libre.",
+        "fontes": [
+          "Blanco A. Química Biológica. Catabolismo de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las transaminasas más importantes y su utilidad diagnóstica?",
+        "verso": "La ALT (alanina aminotransferasa o GPT) que transfiere el amino al piruvato formando alanina, y la AST (aspartato aminotransferasa o GOT) que lo transfiere al oxalacetato formando aspartato. Ambas se elevan en el plasma ante daño celular (especialmente hepático) y se usan como marcadores de lesión.",
+        "fontes": [
+          "Blanco A. Química Biológica. Transaminación. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se libera el amoníaco en el catabolismo de aminoácidos?",
+        "verso": "Principalmente por la desaminación oxidativa del glutamato: la glutamato deshidrogenasa elimina el grupo amino del glutamato regenerando alfa-cetoglutarato y liberando amoníaco libre (NH3/NH4+). El glutamato concentra los grupos amino de los demás aminoácidos gracias a la transaminación previa.",
+        "fontes": [
+          "Blanco A. Química Biológica. Desaminación del glutamato. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la toxicidad del amoníaco y cómo se transporta en sangre?",
+        "verso": "El amoníaco libre es tóxico, especialmente para el sistema nervioso central. En sangre se transporta de forma segura principalmente como glutamina (formada por la glutamina sintetasa, que fija NH3 al glutamato) y en menor medida como alanina (ciclo de la alanina-glucosa desde el músculo).",
+        "fontes": [
+          "Blanco A. Química Biológica. Transporte del amoníaco. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Dónde se produce y cuál es el destino final del nitrógeno amínico?",
+        "verso": "El NH3 se libera en tejidos (músculo, intestino, riñón) y viaja como glutamina y alanina hasta el hígado y el riñón. En el hígado el nitrógeno se incorpora al ciclo de la urea para formar urea, compuesto no tóxico que se elimina por orina. El riñón puede excretar directamente amonio (NH4+) en la regulación ácido-base.",
+        "fontes": [
+          "Blanco A. Química Biológica. Destino del nitrógeno. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Dónde ocurre el ciclo de la urea y cuál es su resultado neto?",
+        "verso": "Ocurre principalmente en el hígado: la primera reacción (carbamoil fosfato sintetasa I) en la mitocondria y el resto en el citosol. Por cada ciclo se convierte un grupo amino (dos átomos de nitrógeno, uno del NH4+ y otro del aspartato) en una molécula de urea, consumiendo 4 enlaces de alta energía.",
+        "fontes": [
+          "Blanco A. Química Biológica. Ciclo de la urea. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tiene un defecto enzimático del ciclo de la urea?",
+        "verso": "Acumulación de amoníaco en sangre (hiperamonemia) con toxicidad cerebral: alteración del estado de conciencia, vómitos y encefalopatía. También aumenta la glutamina plasmática. Son errores congénitos que se manifiestan con síntomas neurológicos tras la ingesta proteica.",
+        "fontes": [
+          "Blanco A. Química Biológica. Ciclo de la urea. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el destino del esqueleto carbonado de los aminoácidos?",
+        "verso": "Luego de la transaminación, el alfa-cetoácido resultante ingresa a vías metabólicas: puede convertirse en piruvato, acetil-CoA o intermediarios del ciclo de Krebs. Así el carbono se oxida para producir energía o se utiliza en gluconeogénesis (aminoácidos glucogénicos) o cetogénesis/lipogénesis (cetogénicos).",
+        "fontes": [
+          "Blanco A. Química Biológica. Destino del esqueleto carbonado. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre aminoácidos glucogénicos y cetogénicos?",
+        "verso": "Los glucogénicos (la mayoría) tienen su esqueleto carbonado convertible en piruvato o intermediarios del ciclo de Krebs, por lo que pueden dar glucosa por gluconeogénesis (ej.: alanina, glutamato, glicina). Los cetogénicos (leucina, lisina) forman acetil-CoA o acetoacetato y pueden originar cuerpos cetónicos; la isoleucina, fenilalanina y triptófano son mixtos.",
+        "fontes": [
+          "Blanco A. Química Biológica. Aminoácidos glucogénicos y cetogénicos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son ejemplos de la función precursora de los aminoácidos?",
+        "verso": "Los aminoácidos son precursores de compuestos de gran importancia: glicina (porfirinas, glutation, creatina), histidina (histamina), triptófano (serotonina, melatonina, niacina), tirosina (dopamina, adrenalina, hormonas tiroideas), glutamato y GABA (neurotransmisores), arginina (óxido nítrico, urea) y metionina (donante de grupos metilo, SAM).",
+        "fontes": [
+          "Blanco A. Química Biológica. Función precursora de aminoácidos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Química Biológica — Valor nutricional de las proteínas",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Jerarquización del valor nutricional de las proteínas: aminoácidos esenciales y no esenciales, digestibilidad, valor biológico y calidad proteica, complementación proteica, y requerimientos según edad y estado fisiológico.",
+    "tags": [
+      "nutricion-up8",
+      "quimica",
+      "proteínas",
+      "aminoacidos-esenciales",
+      "valor-biologico",
+      "digestibilidad",
+      "calidad-proteica",
+      "complementacion"
+    ],
+    "ordem": 108,
+    "cards": [
+      {
+        "frente": "¿Qué son los aminoácidos esenciales y cuáles son?",
+        "verso": "Son los que el organismo no puede sintetizar (o lo hace en cantidad insuficiente) y deben aportarse con la dieta: histidina, isoleucina, leucina, lisina, metionina, fenilalanina, treonina, triptófano y valina. La cisteína y la tirosina se consideran condicionalmente esenciales porque derivan de metionina y fenilalanina.",
+        "fontes": [
+          "Blanco A. Química Biológica. Aminoácidos esenciales. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué define el valor nutricional o calidad de una proteína?",
+        "verso": "Depende de su composición en aminoácidos (presencia de todos los esenciales en proporciones adecuadas) y de su digestibilidad (proporción que se absorbe). Una proteína de alto valor biológico aporta los aminoácidos esenciales en las cantidades que el organismo requiere para mantener el balance nitrogenado.",
+        "fontes": [
+          "Blanco A. Química Biológica. Calidad proteica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el valor biológico de una proteína?",
+        "verso": "Es una medida de la retención de nitrógeno por gramo de nitrógeno absorbido: indica la eficacia con la que el organismo utiliza la proteína ingerida para síntesis. El mayor valor biológico corresponde a las proteínas de referencia (ej.: clara de huevo y leche); las de origen vegetal suelen presentar valores menores.",
+        "fontes": [
+          "Blanco A. Química Biológica. Valor biológico. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el aminoácido limitante?",
+        "verso": "Es el aminoácido esencial presente en menor cantidad en relación con las necesidades del organismo. Limita la síntesis proteica: aunque el resto de aminoácidos sea abundante, la proteína no puede utilizarse más allá de lo que permite el aminoácido limitante.",
+        "fontes": [
+          "Blanco A. Química Biológica. Aminoácido limitante. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la digestibilidad de una proteína y de qué depende?",
+        "verso": "Es la fracción de proteína ingerida que es hidrolizada y absorbida. Depende de la fuente: es alta en las de origen animal (huevo, leche, carne) y en las de soja, y menor en muchas proteínas vegetales (legumbres, cereales), influida por antinutrientes, procesamiento y cocción.",
+        "fontes": [
+          "Blanco A. Química Biológica. Digestibilidad proteica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la complementación proteica y qué ejemplo típico se cita?",
+        "verso": "Consiste en combinar en la misma comida proteínas vegetales con aminoácidos limitantes distintos, de modo que se suplan mutuamente las deficiencias y la mezcla alcance un valor biológico similar al de una proteína animal. Ejemplo clásico: cereales (deficientes en lisina) + legumbres (deficientes en metionina).",
+        "fontes": [
+          "Blanco A. Química Biológica. Complementación proteica. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la ingesta proteica con el balance nitrogenado?",
+        "verso": "Si la ingesta cubre los requerimientos, el balance es nulo (equilibrio). Con ingesta insuficiente, balance negativo por pérdida de proteínas corporales; con exceso, el nitrógeno sobrante se elimina como urea (el exceso de proteínas no se almacena). Las necesidades aumentan en crecimiento, embarazo, lactancia, actividad y enfermedad.",
+        "fontes": [
+          "Blanco A. Química Biológica. Balance nitrogenado. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los requerimientos proteicos aproximados del adulto y cómo cambian en el adulto mayor?",
+        "verso": "En el adulto sano se estiman alrededor de 0,8 g de proteína por kg de peso por día. En el adulto mayor se recomienda una ingesta algo mayor (1-1,2 g/kg/día) para prevenir la sarcopenia y compensar el menor anabolismo, siempre con adecuada calidad proteica y distribución en las comidas.",
+        "fontes": [
+          "Blanco A. Química Biológica. Requerimientos proteicos. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué riesgos tiene el consumo excesivo de dietas ricas en proteínas?",
+        "verso": "El exceso de proteínas se cataboliza: aumenta la producción de urea (mayor carga de trabajo renal), puede aportar exceso de energía (se convierte en grasa), desplaza otros alimentos (menos fibra y micronutrientes) y, en personas con función renal disminuida, puede acelerar el daño. No es superior a una dieta equilibrada en el adulto mayor.",
+        "fontes": [
+          "Blanco A. Química Biológica. Dietas hiperproteicas. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se responde a la pregunta de Alberto sobre si las dietas ricas en proteínas son beneficiosas en su edad?",
+        "verso": "El adulto mayor se beneficia de una ingesta adecuada y de buena calidad (mayor a 0,8 g/kg/día, con distribución en las comidas) para mantener masa muscular y balance nitrogenado. No se recomiendan dietas hiperproteicas extremas: el exceso no aumenta beneficios, sobrecarga el riñón y desplaza alimentos ricos en fibra necesarios para su constipación.",
+        "fontes": [
+          "Blanco A. Química Biológica. Nutrición del adulto mayor. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Medicina y Sociedad — Soberanía alimentaria y salud colectiva",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Soberanía alimentaria: concepto, relación con el derecho a la alimentación y la Promoción de la Salud, políticas de consumo, producción y comercialización de alimentos, sustentabilidad y salud colectiva. Envejecimiento: miradas sociales sobre el cuerpo.",
+    "tags": [
+      "nutricion-up8",
+      "medicina-y-sociedad",
+      "soberania-alimentaria",
+      "salud-colectiva",
+      "promocion-de-la-salud",
+      "derecho-a-la-alimentacion",
+      "envejecimiento"
+    ],
+    "ordem": 109,
+    "cards": [
+      {
+        "frente": "¿Qué es la soberanía alimentaria?",
+        "verso": "Es el derecho de los pueblos a definir sus propias políticas y estrategias sostenibles de producción, distribución y consumo de alimentos, garantizando la alimentación de toda la población, con respeto a las culturas y a los sistemas de producción locales. Va más allá de la seguridad alimentaria al incorporar la dimensión de poder y decisión.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Enria G y otros, Promoción de la Salud. Una perspectiva latinoamericana. Editorial Latín."
+        ]
+      },
+      {
+        "frente": "¿Cómo se diferencia la soberanía alimentaria de la seguridad alimentaria?",
+        "verso": "La seguridad alimentaria se centra en el acceso a alimentos suficientes, inocuos y nutritivos. La soberanía alimentaria agrega la dimensión política: quién produce, cómo y para quién, priorizando la producción local, los derechos de los pueblos y el control sobre las políticas alimentarias, de comercialización y de consumo.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Enria G y otros, Promoción de la Salud. Editorial Latín. García X. (2003). Soberanía alimentaria."
+        ]
+      },
+      {
+        "frente": "¿Por qué la soberanía alimentaria es un derecho vinculado a la salud colectiva?",
+        "verso": "Porque la alimentación es determinante de la salud: la imposibilidad de decidir sobre la producción y el consumo (por pobreza, desregulación, alimentos ultraprocesados) se asocia a malnutrición, enfermedades crónicas y pérdida de soberanía de las comunidades. Garantizarla es una estrategia de Promoción de la Salud.",
+        "fontes": [
+          "Enria G; D'Andrea L; Sauro M y otros. (2011). Soberanía alimentaria. Nuevo desafío en la interacción derechos humanos y salud. UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué papel juegan las políticas de consumo, producción y comercialización de alimentos?",
+        "verso": "Las políticas pueden favorecer u obstaculizar la soberanía: la producción local y la agricultura familiar, la regulación de la comercialización (precios justos, mercados locales) y las políticas de consumo (educación alimentaria, etiquetado) determinan el acceso a alimentos adecuados y la sustentabilidad de los sistemas.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Promoción de la Salud. Editorial Latín. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación tiene la soberanía alimentaria con la sustentabilidad?",
+        "verso": "La soberanía alimentaria promueve sistemas alimentarios sostenibles: producción agroecológica y local, menor uso de agroquímicos, menor dependencia de cadenas globales, conservación de semillas y cuidado del ambiente, garantizando la alimentación de las generaciones actuales sin comprometer las futuras.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Promoción de la Salud. Editorial Latín. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué ejemplo histórico se cita del impacto de las políticas alimentarias sobre la salud de los pueblos?",
+        "verso": "La invasión europea de América produjo un colapso demográfico por la introducción de nuevas enfermedades y el desmantelamiento de los sistemas de producción y alimentación locales, lo que muestra cómo las transformaciones políticas alteran la alimentación y la salud de las poblaciones (Escudero).",
+        "fontes": [
+          "Escudero JC. (1992). Quinto centenario del colapso demográfico. El impacto epidemiológico de la invasión europea de América. Revista ecológica política."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona el concepto de soberanía alimentaria con la situación de la huerta comunitaria del barrio de Alberto?",
+        "verso": "El cierre de la huerta comunitaria implica pérdida de producción local, de acceso a verduras frescas y de un espacio de participación comunitaria. Ilustra que la alimentación depende de determinantes sociales: cuando desaparecen los espacios de producción y acceso, se afecta la calidad de la dieta y la salud de la población.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Promoción de la Salud. Editorial Latín. Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las miradas sociales sobre el cuerpo en el envejecimiento?",
+        "verso": "Le Breton analiza el envejecimiento como una construcción social: el cuerpo anciano es mirado según los cánones de rendimiento y juventud de la modernidad, muchas veces invisibilizado o estigmatizado. Las representaciones sobre el cuerpo influyen en la autoimagen, la alimentación y el cuidado de las personas mayores.",
+        "fontes": [
+          "Le Breton D. (1995). El envejecimiento intolerable. En: Antropología del cuerpo y modernidad. Editorial Nueva Visión."
+        ]
+      },
+      {
+        "frente": "¿Por qué el acceso a alimentos no alcanza para garantizar una alimentación saludable?",
+        "verso": "Porque además del acceso económico, intervienen la disponibilidad de alimentos locales, la educación, las costumbres y la posibilidad de decidir qué producir y consumir. La soberanía alimentaria integra estas dimensiones y reconoce que la alimentación es un derecho que se ejerce colectivamente.",
+        "fontes": [
+          "D'Andrea L. (2014). Soberanía Alimentaria. En: Promoción de la Salud. Editorial Latín. Enria G y otros (2011). UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo aporta la soberanía alimentaria a la Promoción de la Salud?",
+        "verso": "Genera entornos favorables: promueve políticas públicas y acciones comunitarias que aumentan el acceso a alimentos adecuados, favorece la producción local y sustentable, y fortalece la participación de la comunidad, pilares de la Promoción de la Salud orientados a modificar los determinantes de la alimentación.",
+        "fontes": [
+          "Enria G; D'Andrea L; Sauro M y otros. (2011). Soberanía alimentaria. Nuevo desafío en la interacción derechos humanos y salud. UNR."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Nutrición UP8 — Salud Mental — Módulo Adultez Mayor",
+    "ano": "ano1",
+    "materia": "nutricao",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Módulo Adultez Mayor: la mirada, el miramiento y el otro como semejante; vejez y comunidad y el valor de las propuestas participativas; el cuerpo en la vejez. Representaciones sociales, autonomía y participación de las personas mayores.",
+    "tags": [
+      "nutricion-up8",
+      "salud-mental",
+      "adultez-mayor",
+      "vejez",
+      "el-otro-como-semejante",
+      "participacion-comunitaria",
+      "cuerpo-en-la-vejez"
+    ],
+    "ordem": 110,
+    "cards": [
+      {
+        "frente": "¿Qué plantea el módulo Adultez Mayor sobre 'la mirada, el miramiento y el otro como semejante'?",
+        "verso": "Invita a reflexionar sobre cómo miramos a las personas mayores: las representaciones sociales y prejuicios (mirada) condicionan el trato y el cuidado (miramiento). Reconocer al otro como semejante implica desplazarse de la compasión o la estigmatización hacia un vínculo de igualdad, dignidad y respeto en la atención.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tienen las representaciones sociales negativas de la vejez?",
+        "verso": "Pueden producir edadismo: infantilización, desvalorización de la palabra, exclusión y menor calidad de atención. Si la persona mayor es mirada como dependiente o improductiva, se limitan su autonomía, sus decisiones (incluidas las alimentarias) y su participación social, afectando su salud y bienestar.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué implica 'el otro como semejante' en la práctica profesional con adultos mayores?",
+        "verso": "Tratar a la persona mayor como un sujeto de derechos, igual en dignidad, con capacidad de decidir y de expresar sus necesidades. Implica escucha activa, consideración de sus experiencias y del contexto (familiar, comunitario, cultural) y un vínculo simétrico que reconozca su sabiduría y autonomía.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué valor tienen las propuestas participativas para la vejez y la comunidad?",
+        "verso": "La participación (talleres, huertas comunitarias, grupos de pares) fortalece los vínculos sociales, la autoestima, el sentido de pertenencia y la actividad física y mental. Las propuestas participativas convierten a los adultos mayores en protagonistas de su comunidad y protegen su salud integral.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Vejez y comunidad. Material del Campus Virtual, FCM-UNR 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tiene para la persona mayor la pérdida de espacios participativos?",
+        "verso": "Puede generar aislamiento, soledad, inactividad, pérdida de sentido y deterioro de la salud física y mental. En el caso de Alberto, el cierre de la huerta comunitaria no solo redujo su consumo de verduras sino también su red social y su actividad, factores que impactan en su bienestar y su tránsito intestinal.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Vejez y comunidad. Material del Campus Virtual, FCM-UNR 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué plantea el módulo sobre el cuerpo en la vejez?",
+        "verso": "El cuerpo envejecido es un cuerpo que cambia y que es significado socialmente: atravesado por mandatos de juventud y rendimiento, muchas veces negado o estigmatizado. La vivencia del cuerpo propio afecta la identidad, la autoestima y los cuidados de salud, incluidos la alimentación y el autocuidado.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. El cuerpo en la vejez. Material del Campus Virtual, FCM-UNR 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona el concepto de cuerpo en la vejez con la alimentación?",
+        "verso": "Las representaciones sobre el cuerpo anciano influyen en la relación con la comida: desde la restricción excesiva (por temor al cuerpo 'deteriorado') hasta el descuido. Una mirada respetuosa del cuerpo en la vejez promueve el disfrute de la alimentación, la actividad y el cuidado, en lugar de la exigencia o el abandono.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. El cuerpo en la vejez. Material del Campus Virtual, FCM-UNR 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué factores bio-psico-sociales se deben considerar en la evaluación nutricional del adulto mayor?",
+        "verso": "Biológicos: cambios digestivos, menor masa muscular, enfermedades y medicación. Psicológicos: ánimo, autoestima, motivación y representaciones de la vejez. Sociales: ingresos, acceso a alimentos, redes de apoyo, participación y soledad. La situación de Alberto integra estos tres planos (menor actividad, dieta y huerta comunitaria cerrada).",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué rol cumple el equipo de salud frente a las personas mayores en situación de aislamiento?",
+        "verso": "Abordar la integralidad: identificar determinantes sociales, promover la participación y las redes comunitarias, acompañar las decisiones alimentarias, detectar síntomas de depresión o soledad y trabajar en red con la comunidad, evitando enfoques exclusivamente biológicos o asistencialistas.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se vincula la salud mental con la constipación y los hábitos de Alberto?",
+        "verso": "El aislamiento y la pérdida de actividades placenteras pueden disminuir el apetito, la actividad y la rutina de comidas, afectando el tránsito intestinal. Además, la ansiedad sobre las propias evacuaciones puede aumentar la preocupación. Atender el plano emocional y social (vínculos, comunidad, actividad) forma parte del abordaje integral.",
+        "fontes": [
+          "Salud Mental. Módulo Adultez Mayor. Material del Campus Virtual, Guía de aprendizaje en Nutrición 2025, FCM-UNR."
+        ]
+      }
+    ]
+  }
+]

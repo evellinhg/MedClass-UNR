@@ -741,6 +741,37 @@ const pt = {
     montandoSimulado: "Montando seu simulado",
     resumoContagem: "3 áreas · 30 questões",
     iniciarSimulado: "Iniciar Simulado",
+    slides: {
+      cronograma: {
+        subtitle: "Sua semana de estudos",
+        badge: "Em dia",
+        items: [
+          { day: "Seg", subject: "Fisiologia", status: "Concluído" },
+          { day: "Ter", subject: "Farmacologia", status: "Concluído" },
+          { day: "Qua", subject: "Clínica Médica", status: "Hoje" },
+          { day: "Qui", subject: "Cirurgia", status: "Pendente" },
+          { day: "Sex", subject: "Simulado geral", status: "Pendente" },
+        ],
+      },
+      ranking: {
+        subtitle: "Top da semana",
+        badge: "Ao vivo",
+        items: [
+          { nome: "Santiago Gómez", pontos: 1240 },
+          { nome: "Martina Acosta", pontos: 1185 },
+          { nome: "Facundo Herrera", pontos: 1102 },
+          { nome: "Delfina Suárez", pontos: 980 },
+          { nome: "Nicolás Ferreyra", pontos: 915 },
+        ],
+      },
+      desafios: {
+        subtitle: "Casos clínicos reais",
+        badge: "Novo",
+        tituloCaso: "Caso 1 — Radiografia de Tórax",
+        secaoLabel: "Diagnóstico por Imagens",
+        descricaoCaso: "Interprete a imagem e responda às perguntas do caso.",
+      },
+    },
   },
   treinamentos: {
     dificuldadeLabel: {
@@ -1663,6 +1694,37 @@ const es: typeof pt = {
     montandoSimulado: "Armando tu simulacro",
     resumoContagem: "3 áreas · 30 preguntas",
     iniciarSimulado: "Iniciar Simulacro",
+    slides: {
+      cronograma: {
+        subtitle: "Tu semana de estudio",
+        badge: "Al día",
+        items: [
+          { day: "Lun", subject: "Fisiología", status: "Completado" },
+          { day: "Mar", subject: "Farmacología", status: "Completado" },
+          { day: "Mié", subject: "Medicina Clínica", status: "Hoy" },
+          { day: "Jue", subject: "Cirugía", status: "Pendiente" },
+          { day: "Vie", subject: "Simulacro general", status: "Pendiente" },
+        ],
+      },
+      ranking: {
+        subtitle: "Top de la semana",
+        badge: "En vivo",
+        items: [
+          { nome: "Santiago Gómez", pontos: 1240 },
+          { nome: "Martina Acosta", pontos: 1185 },
+          { nome: "Facundo Herrera", pontos: 1102 },
+          { nome: "Delfina Suárez", pontos: 980 },
+          { nome: "Nicolás Ferreyra", pontos: 915 },
+        ],
+      },
+      desafios: {
+        subtitle: "Casos clínicos reales",
+        badge: "Nuevo",
+        tituloCaso: "Caso 1 — Radiografía de Tórax",
+        secaoLabel: "Diagnóstico por Imágenes",
+        descricaoCaso: "Interpretá la imagen y respondé las preguntas del caso.",
+      },
+    },
   },
   treinamentos: {
     dificuldadeLabel: {

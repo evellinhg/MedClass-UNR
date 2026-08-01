@@ -1,0 +1,775 @@
+[
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Anatomía — Generalidades",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Anatomía, posición anatómica, planos, osteología, artrología, miología, angiología, neurología",
+    "tags": [
+      "cyd-up1",
+      "anatomia",
+      "posicion-anatomica",
+      "planos",
+      "osteologia",
+      "artrologia"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la Anatomía y cómo se clasifica?",
+        "verso": "Es la ciencia que estudia la estructura del cuerpo humano. Se clasifica en: descriptiva o sistemática (por sistemas), topográfica (por regiones) y funcional (relaciona estructura con función).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la posición anatómica?",
+        "verso": "La posición de referencia: cuerpo erguido, mirada al frente, miembros superiores a lo largo del cuerpo con palmas hacia delante, miembros inferiores juntos con pies hacia delante.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los planos de sección del cuerpo?",
+        "verso": "Plano sagital (divide en derecha e izquierda), coronal o frontal (divide en anterior y posterior) y transversal u horizontal (divide en superior e inferior).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los términos de situación y dirección?",
+        "verso": "Palabras que describen la posición relativa de estructuras: superior/inferior, anterior/posterior, medial/lateral, proximal/distal, superficial/profundo, interno/externo.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se divide el esqueleto?",
+        "verso": "En esqueleto axial (cabeza, columna vertebral, costillas y esternón) y esqueleto apendicular (huesos de los miembros superiores e inferiores y sus cinturas).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tipos de huesos según su forma?",
+        "verso": "Largos, cortos, planos, irregulares y sesamoideos.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la osificación y cómo se clasifica?",
+        "verso": "El proceso de formación del tejido óseo. Se clasifica en endocondral (sobre molde cartilaginoso, p. ej. huesos largos) y intramembranosa o directa (en el seno de tejido conectivo, p. ej. huesos planos del cráneo).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las articulaciones?",
+        "verso": "Según su movimiento: sinartrosis (fijas), anfiartrosis (semimóviles) y diartrosis (móviles); según su medio de unión: fibrosas, cartilaginosas y sinoviales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una diartrosis y qué estructuras la componen?",
+        "verso": "Articulación móvil (sinovial): cápsula articular, cartílago hialino, membrana sinovial y líquido sinovial.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los términos de movimiento?",
+        "verso": "Flexión/extensión, abducción/aducción, rotación interna y externa, pronación/supinación, circunducción, inclinación.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el músculo según su función y estructura?",
+        "verso": "Según su estructura: estriado esquelético, estriado cardíaco y liso. Según su función: flexores, extensores, abductores, aductores, rotadores.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son la inserción de origen y la inserción terminal?",
+        "verso": "El origen es el punto de inserción fijo (menos móvil) del músculo; la inserción terminal es el punto móvil que se aproxima al origen durante la contracción.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una aponeurosis?",
+        "verso": "Una lámina de tejido conectivo fibroso que envuelve a los músculos o sirve de inserción plana.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema linfático?",
+        "verso": "Red de capilares, vasos, ganglios y órganos linfáticos que drenan el exceso de líquido intersticial y participan en la defensa inmunológica.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre circulación mayor y menor?",
+        "verso": "La circulación mayor o sistémica va del corazón a los tejidos y vuelve; la menor o pulmonar va del corazón a los pulmones para oxigenar la sangre.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Anatomía — Columna vertebral y cráneo",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Columna vertebral, vértebras, cráneo, calvaria y base del cráneo",
+    "tags": [
+      "cyd-up1",
+      "anatomia",
+      "columna-vertebral",
+      "vertebras",
+      "craneo",
+      "fontanelas"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cómo se organiza la columna vertebral?",
+        "verso": "Se organiza en porciones: cervical (7 vértebras), torácica (12), lumbar (5), sacra (5 fusionadas en el sacro) y coccígea (3-5 fusionadas).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las curvaturas de la columna vertebral?",
+        "verso": "Lordosis cervical y lumbar (concavidad posterior) y cifosis torácica y sacra (concavidad anterior).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las características comunes de una vértebra?",
+        "verso": "Cuerpo vertebral, arco vertebral (pedículos y láminas), apófisis espinosa, transversas y articulares, y agujero vertebral.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el conducto raquídeo y el agujero de conjunción?",
+        "verso": "El conducto raquídeo es el canal formado por la superposición de los agujeros vertebrales que contiene la médula espinal; el agujero de conjunción es el espacio entre vértebras por donde salen los nervios espinales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué vértebras presentan características diferenciales?",
+        "verso": "Atlas (C1, sin cuerpo, sostiene el cráneo), axis (C2, con apófisis odontoides), vértebras torácicas (con fositas costales) y lumbares (cuerpos grandes).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se dividen los músculos del dorso?",
+        "verso": "En extrínsecos (relacionados con los miembros superiores y la respiración, p. ej. trapecio, dorsal ancho) e intrínsecos (propios de la columna, mantienen la postura, p. ej. erector de la columna).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué huesos forman el neurocráneo?",
+        "verso": "Frontal, etmoides, esfenoides, occipital, los dos parietales y los dos temporales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la calota o calvaria?",
+        "verso": "La bóveda del cráneo, formada por el frontal, los parietales y el occipital; presenta eminencias, suturas y fontanelas en el recién nacido.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las fontanelas?",
+        "verso": "Zonas membranosas del cráneo del recién nacido donde aún no se han unido los huesos; permiten el crecimiento del cráneo y el parto.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las suturas del cráneo?",
+        "verso": "Articulaciones fibrosas (sinartrosis) entre los huesos del cráneo: coronaria, sagital y lambdoidea, entre otras.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la base del cráneo y qué fosas presenta?",
+        "verso": "La base se divide en endocráneo y exocráneo; presenta tres fosas o pisos: anterior (lóbulos frontales), media (lóbulos temporales) y posterior (cerebelo y tronco encefálico).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Francisquelo R, Boglioli A, Cabral ME, Calgaro G). Generalidades, Columna Vertebral, Cráneo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Biología — Evolución y hominización",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "biologia",
+    "descricao": "Evolución biológica, género Homo, niveles de organización",
+    "tags": [
+      "cyd-up1",
+      "biologia",
+      "evolucion",
+      "hominizacion",
+      "homo",
+      "niveles-de-organizacion"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Qué es la evolución biológica?",
+        "verso": "El proceso de cambio de las poblaciones de organismos a lo largo de las generaciones, que produce diversidad; se sustenta en la variabilidad genética y la selección natural.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las tendencias evolutivas del género Homo?",
+        "verso": "La mano prensil, la agudeza visual, el cuidado de las crías, el desarrollo del cerebro y la bipedestación.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza al género Australopithecus?",
+        "verso": "La bipedestación: caminar erguido sobre dos miembros inferiores, que liberó las manos para usar herramientas.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza al Homo habilis?",
+        "verso": "El desarrollo del cerebro y la fabricación de las primeras herramientas de piedra (cultura lítica).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza al Homo erectus?",
+        "verso": "El uso del fuego, la caza y la salida de África (expansión geográfica).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza al Homo sapiens?",
+        "verso": "El desarrollo del lenguaje simbólico, la cultura y la capacidad de adaptación, como especie biológica y cultural.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los niveles de organización de la materia viva?",
+        "verso": "Moléculas, células, tejidos, órganos, sistemas, organismo, población, comunidad y ecosistema; el todo es más que la suma de las partes.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre organismos procariotas y eucariotas?",
+        "verso": "Los procariotas carecen de núcleo definido y organelas membranosas (bacterias); los eucariotas poseen núcleo y organelas (células animales y vegetales).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son población, comunidad y ecosistema?",
+        "verso": "Población: individuos de la misma especie en un área. Comunidad: conjunto de poblaciones que interactúan. Ecosistema: la comunidad más el ambiente físico.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Martínez SM). La evolución biológica, la hominización, jerarquía de sistemas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Fisiología — Conceptos básicos",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Sistemas, servomecanismos, homeostasis y homeodinamia",
+    "tags": [
+      "cyd-up1",
+      "fisiologia",
+      "homeostasis",
+      "homeodinamia",
+      "servomecanismos",
+      "sistemas"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Qué es un sistema en Fisiología?",
+        "verso": "Un conjunto de elementos interrelacionados que funcionan como una unidad; puede ser estático o dinámico, determinista o no determinista, lineal o no lineal, regulado o no regulado.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un servomecanismo?",
+        "verso": "Un sistema de regulación por retroalimentación (feedback) que corrige las desviaciones; la regulación negativa anula la desviación y la positiva la amplifica.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la homeostasis?",
+        "verso": "El mantenimiento del estado estable del medio interno del organismo mediante mecanismos reguladores, a pesar de los cambios del ambiente.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la homeodinamia?",
+        "verso": "El concepto de equilibrio dinámico: la constancia del medio interno es resultado de procesos activos y continuos de ajuste, no de un estado estático.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los métodos de estudio de la Fisiología?",
+        "verso": "El enfoque funcional o teleológico (para qué sirve una función) y el enfoque mecanicista (cómo se produce un fenómeno).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una variable fisiológica y qué son el valor medio y la dispersión?",
+        "verso": "La variable fisiológica es una magnitud medible del organismo (p. ej. glucemia, temperatura); su valor medio representa el punto de referencia y la dispersión describe la variabilidad normal.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el medio interno?",
+        "verso": "El ambiente líquido interno del organismo (sangre, linfa y líquido intersticial) en el que viven las células; su constancia es la base de la homeostasis (Claude Bernard).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroalimentación negativa?",
+        "verso": "Mecanismo regulador en el que la desviación de una variable dispara respuestas que la corrigen en sentido contrario, manteniendo la constancia (p. ej., la regulación de la glucemia).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Conceptos básicos de Fisiología. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Histología — La célula y microscopía",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Célula, microscopía, preparados y tinciones",
+    "tags": [
+      "cyd-up1",
+      "histologia",
+      "celula",
+      "microscopia",
+      "tinciones",
+      "preparados"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Qué es la célula?",
+        "verso": "La unidad estructural y funcional de los seres vivos; puede ser procariota (sin núcleo) o eucariota (con núcleo definido).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los métodos de observación de la célula?",
+        "verso": "La microscopía: microscopio óptico (luz) y microscopio electrónico (de transmisión y de barrido); las unidades de medida son el micrómetro (μm) y el nanómetro (nm).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los preparados histológicos y cómo se preparan?",
+        "verso": "Muestras de tejido procesadas para su observación: fijación, inclusión, corte (micrótomo) y tinción.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una tinción histológica y para qué sirve?",
+        "verso": "Coloración de los tejidos para visualizar sus componentes; la hematoxilina-eosina (H&E) es la más usada: basófilos (núcleos) y acidófilos (citoplasma).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre un preparado fresco y uno fijado?",
+        "verso": "El fresco observa el tejido vivo sin fijar; el fijado conserva la estructura al detener los procesos de autólisis.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las partes del microscopio óptico?",
+        "verso": "Sistema óptico (ocular, objetivo, condensador) y sistema mecánico (platina, tornillos macro y micrométrico); el objetivo determina el aumento y la resolución.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la estructura general de la célula eucariota?",
+        "verso": "Membrana plasmática, citoplasma con organelas (mitocondrias, retículo endoplásmico, aparato de Golgi, etc.) y núcleo (cromatina y nucléolo).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la resolución de un microscopio?",
+        "verso": "La capacidad de distinguir dos puntos muy cercanos como separados; depende de la longitud de onda de la luz y de la apertura numérica del objetivo.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula, microscopía. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Química Biológica — Nociones básicas",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Átomo, enlaces, fuerzas intermoleculares, ácidos y pH",
+    "tags": [
+      "cyd-up1",
+      "quimica",
+      "enlaces",
+      "ph",
+      "atomos",
+      "electronegatividad"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Qué es la electronegatividad?",
+        "verso": "La capacidad de un átomo de atraer electrones en un enlace; explica la polaridad de los enlaces y moléculas.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tipos de enlaces químicos?",
+        "verso": "Enlace iónico (transferencia de electrones), covalente (compartición; puede ser simple, doble o triple, polar o apolar) y el enlace de hidrógeno (fuerza intermolecular).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las fuerzas intermoleculares?",
+        "verso": "Interacciones entre moléculas: puentes de hidrógeno, enlaces iónicos, fuerzas de Van der Waals e interacciones hidrofóbicas.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un ácido y una base según Bronsted-Lowry?",
+        "verso": "Ácido: especie que dona protones (H+). Base: especie que acepta protones.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el pH?",
+        "verso": "El logaritmo negativo de la concentración de iones hidrógeno: pH = -log[H+]. Escala de 0 a 14; el pH fisiológico del plasma es 7,35-7,45.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué elementos son los más frecuentes en los seres vivos?",
+        "verso": "Carbono, hidrógeno, oxígeno, nitrógeno, fósforo y azufre (bioelementos primarios), además de sodio, potasio, calcio, magnesio, hierro y cloro.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una solución amortiguadora (buffer)?",
+        "verso": "Mezcla de un ácido débil y su base conjugada que resiste cambios de pH al agregar ácidos o bases; el sistema bicarbonato regula el pH plasmático.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el agua y cuáles son sus propiedades biológicas?",
+        "verso": "Molécula polar (dipolo) que forma puentes de hidrógeno; es el solvente universal, regula la temperatura y participa en las reacciones químicas.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Química Biológica — Proteínas y enzimas",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Aminoácidos, estructura proteica, catálisis enzimática",
+    "tags": [
+      "cyd-up1",
+      "quimica",
+      "proteinas",
+      "enzimas",
+      "aminoacidos",
+      "desnaturalizacion"
+    ],
+    "ordem": 7,
+    "cards": [
+      {
+        "frente": "¿Qué es un aminoácido?",
+        "verso": "Molécula con grupo amino (-NH2) y grupo carboxilo (-COOH) unidos a un carbono alfa, además de una cadena lateral (R) que le da identidad.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la unión peptídica?",
+        "verso": "Enlace covalente entre el grupo carboxilo de un aminoácido y el grupo amino del siguiente, con liberación de agua.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los niveles estructurales de las proteínas?",
+        "verso": "Primaria (secuencia de aminoácidos), secundaria (alfa-hélice y beta-lámina), terciaria (plegamiento 3D) y cuaternaria (unión de subunidades).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la desnaturalización de una proteína?",
+        "verso": "La pérdida de la estructura nativa (niveles secundario en adelante) por pH o temperatura extremos, con pérdida de su función; puede ser reversible o irreversible.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las proteínas?",
+        "verso": "En simples y conjugadas (con grupo prostético); y en globulares (albúmina, hemoglobina) y fibrosas (colágeno).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una enzima?",
+        "verso": "Un catalizador biológico proteico que acelera una reacción química sin consumirse, disminuyendo la energía de activación.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son la holoenzima, la apoenzima y el cofactor?",
+        "verso": "La holoenzima es la enzima completa; la apoenzima es la parte proteica; el cofactor es la parte no proteica (coenzimas o iones metálicos).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sitio activo y qué es la especificidad enzimática?",
+        "verso": "El sitio activo es la región de la enzima donde se une el sustrato; la especificidad es la capacidad de la enzima de reconocer solo su sustrato.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significan la Km y la velocidad máxima (Vmax)?",
+        "verso": "La Km es la concentración de sustrato a la cual la velocidad es la mitad de la máxima (afinidad); la Vmax es la velocidad máxima que alcanza la reacción.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué factores modifican la actividad enzimática?",
+        "verso": "pH, temperatura, concentración de enzima y sustrato, e inhibidores.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se regula la actividad enzimática?",
+        "verso": "Por enzimas alostéricas, modificación covalente (fosforilación), isoenzimas y por la inducción/represión (enzimas constitutivas e inducibles).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR. Nociones básicas de química, proteínas, enzimas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Medicina y Sociedad — Cultura",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Cultura, relativismo cultural e hibridación",
+    "tags": [
+      "cyd-up1",
+      "medicina-y-sociedad",
+      "cultura",
+      "relativismo-cultural",
+      "hibridacion",
+      "migracion"
+    ],
+    "ordem": 8,
+    "cards": [
+      {
+        "frente": "¿Qué es la cultura?",
+        "verso": "El conjunto de significados, valores, normas, prácticas y saberes que los seres humanos construyen y transmiten en sociedad.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre cultura y educación?",
+        "verso": "La educación es el proceso de transmisión formal de saberes; la cultura es el marco más amplio de significados donde ese proceso ocurre.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el relativismo cultural?",
+        "verso": "La perspectiva que entiende que cada cultura debe comprenderse en sus propios términos, sin juzgarla con las categorías de otra.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre cultura y migración?",
+        "verso": "Los migrantes portan y re-significan su cultura en el nuevo contexto, generando procesos de hibridación y nuevas identidades.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transnacionalización cultural?",
+        "verso": "El flujo de bienes, ideas y prácticas culturales a través de las fronteras, propio de la globalización.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la hibridación cultural?",
+        "verso": "El proceso por el cual culturas distintas se mezclan y generan nuevas prácticas, sin que una absorba totalmente a la otra (Canclini).",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el etnocentrismo?",
+        "verso": "La actitud de juzgar a otras culturas con las categorías y valores de la propia, considerándolas inferiores.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la cultura con la salud?",
+        "verso": "La cultura define qué se considera salud, enfermedad y tratamiento, y organiza las prácticas de cuidado en cada comunidad.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Canclini N. Cultura. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP1 — Salud Mental — Introducción al campo",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Salud-Salud Mental, psíquico, ser y lenguaje",
+    "tags": [
+      "cyd-up1",
+      "salud-mental",
+      "psiquico",
+      "lenguaje",
+      "escucha",
+      "subjetividad"
+    ],
+    "ordem": 9,
+    "cards": [
+      {
+        "frente": "¿Qué es lo psíquico?",
+        "verso": "Un concepto intermedio entre lo biológico y lo social, que integra la experiencia subjetiva y el cuerpo en la construcción de la Salud-Salud Mental.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre ser y lenguaje?",
+        "verso": "El lenguaje es constitutivo del ser humano: al nacer, el sujeto queda inmerso en un universo simbólico que lo precede y lo configura.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué aportan la escucha y la palabra a la Salud Mental?",
+        "verso": "El encuentro con otro que escucha y nombra sostiene la constitución subjetiva y el bienestar psíquico.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se integra lo biológico, lo psicológico y lo social?",
+        "verso": "En la complejidad del ser humano: las dimensiones no se suman, se integran; el todo es más que la suma de las partes.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué disciplinas componen el campo de la Salud Mental?",
+        "verso": "La psiquiatría, la psicología, el psicoanálisis, la epidemiología en salud mental y las ciencias sociales, entre otras.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Salud-Salud Mental?",
+        "verso": "El bienestar integral del sujeto que integra lo biológico, lo psíquico y lo social; no se limita a la ausencia de enfermedad.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los determinantes sociales de la salud mental?",
+        "verso": "Las condiciones sociales, económicas, culturales y familiares que inciden en el bienestar y en el sufrimiento psíquico.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el malestar subjetivo?",
+        "verso": "El sufrimiento singular que el sujeto padece y expresa con su cuerpo y su palabra, más allá de los diagnósticos.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Seminario UP1. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ]
+  }
+]

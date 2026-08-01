@@ -29,7 +29,10 @@ const ANO_LABEL: Record<string, string> = {
   ano3: "3º Ano",
   ano4: "4º Ano",
   ano5: "5º Ano",
+  cursos: "Cursos (sem ano específico)",
 }
+
+const ANO_SELECT_KEYS = [...ANO_KEYS, "cursos"] as const
 
 const SEM_ANO = "sem_ano"
 
@@ -471,7 +474,7 @@ export function AdminVideoaulasContent() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value={SEM_ANO}>Sem ano específico</SelectItem>
-                    {ANO_KEYS.map((key) => (
+                    {ANO_SELECT_KEYS.map((key) => (
                       <SelectItem key={key} value={key}>
                         {ANO_LABEL[key]}
                       </SelectItem>

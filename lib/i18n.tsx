@@ -158,6 +158,7 @@ const pt = {
       ano3: "3º Ano",
       ano4: "4º Ano",
       ano5: "5º Ano",
+      cursos: "Cursos",
     } as Record<string, string>,
     materiaLabel: {
       crescimento_desenvolvimento: "Crescimento e Desenvolvimento",
@@ -1127,6 +1128,7 @@ const es: typeof pt = {
       ano3: "3er Año",
       ano4: "4to Año",
       ano5: "5to Año",
+      cursos: "Cursos",
     } as Record<string, string>,
     materiaLabel: {
       crescimento_desenvolvimento: "Crecimiento y Desarrollo",

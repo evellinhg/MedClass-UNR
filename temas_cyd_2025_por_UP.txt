@@ -1,0 +1,337 @@
+CRECIMIENTO Y DESARROLLO 2025 — Guía de aprendizaje
+Área Crecimiento y Desarrollo — Ciclo Promoción de la Salud — FCM-UNR
+Materia (schema): crescimento_desenvolvimento — ano1
+12 UPs organizadas por Módulos del ciclo vital
+
+------------------------------------------------------------------
+UP1 — El ser humano desde su complejidad (Módulo introductorio)
+Situación: Juan y Leticia escuchan que somos animales emparentados con todos los seres vivos y también personas sociales y culturales
+------------------------------------------------------------------
+Anatomía:
+- Generalidades: Anatomía (definición, clasificación). Posición anatómica. Planos de sección. Términos de situación y dirección.
+- Osteología: esqueleto axial y apendicular. Constitución. Clasificación. Accidentes óseos. Osificación: concepto, clasificación, vascularización.
+- Artrología: clasificación de articulaciones. Términos de movimientos. Ejes.
+- Miología: tipos, clasificación, tendones, inserción de origen e inserción terminal, aponeurosis, vainas fibrosas y sinoviales, bolsas serosas, acción mecánica.
+- Angiología: arterias, venas, capilares, sistema linfático, circulación mayor y menor.
+- Neurología: división, constitución, nervios. Órgano y sistema.
+- Columna vertebral: organización, porciones, curvaturas, vértebras, conducto raquídeo, agujero de conjunción, articulaciones, músculos del dorso.
+- Cráneo: neurocráneo, huesos, calvaria, suturas, fontanelas, base, fosas o pisos.
+
+Biología:
+- Evolución biológica. Evolución humana: divergencia de los primates, tendencias del género Homo.
+- Origen de los homínidos. Australopithecus: bipedestación. Género Homo: cerebro, Homo habilis (herramientas), Homo erectus (fuego, salida de África), Homo sapiens.
+- Jerarquización del mundo viviente: niveles de organización. Procariotas y eucariotas. Organismo, población, comunidad y ecosistema.
+
+Fisiología Humana:
+- Introducción a la Fisiología. Sistemas: estáticos/dinámicos, deterministas/no deterministas, lineales/no lineales, regulados/no regulados.
+- Servomecanismos: regulación negativa y positiva. Estado estable y equilibrio dinámico.
+- Homeostasis y homeodinamia. Métodos de estudio: enfoque funcional (teleológico) y mecanicista.
+- Variables fisiológicas: valor medio y dispersión. Niveles de organización.
+
+Histología y Embriología:
+- La célula: concepto, eucariotas y procariotas. Medios de observación. Microscopía. Unidades de medida.
+- Métodos de examen microscópico. Tipos de preparados, métodos de preparación, tinciones.
+
+Química Biológica:
+- Nociones básicas de química: átomo, electronegatividad, enlaces químicos, funciones orgánicas, fuerzas intermoleculares, ácidos y bases, pH.
+- Proteínas: aminoácidos, unión peptídica, niveles estructurales, solubilidad, desnaturalización, clasificación (albúmina, hemoglobina, colágeno).
+- Enzimas: holoenzima, apoenzima, cofactores, sitio activo, Km, velocidad máxima, factores, regulación (alostéricas, modificación covalente, isoenzimas).
+
+Medicina y Sociedad:
+- Cultura: definiciones. Cultura y educación. Cultura versus civilización. Relativismo cultural.
+- Cultura y migración. Cultura y reproducción social. Cultura y conflictos sociales. Transnacionalización cultural. Hibridación cultural.
+
+Salud Mental:
+- Campo de la Salud Mental y sus disciplinas. Lo psíquico como concepto intermedio.
+- Hacia una definición de Salud y Salud Mental. De lo biológico, psicológico y social a la complejidad.
+- Ser y lenguaje. La escucha y la palabra en el sostenimiento de la Salud Mental.
+
+------------------------------------------------------------------
+UP2 — La identidad y la transmisión de la vida (Módulo introductorio)
+Situación: Ignacio (1978) nota poco parecido físico con sus padres y consulta cómo determinar su identidad
+------------------------------------------------------------------
+Biología:
+- Genética Mendeliana: genotipo y fenotipo. Caracteres. Haploide y diploide. Homocigoto y heterocigoto. Dominante y recesivo. Variabilidad.
+- Leyes de Mendel: principio de la segregación de los gametos. Principio de la distribución independiente.
+
+Histología y Embriología:
+- La célula: superficie celular, glucocálix. Membrana celular: bicapa lipídica, proteínas de membrana, funciones. Medios de unión celular. Moléculas de adhesión.
+- Núcleo: envoltura nuclear, cromatina, nucléolo, matriz nuclear. División celular: mitosis y meiosis.
+- Organoides: retículo endoplasmático, Golgi, ribosomas, lisosomas, endosomas, peroxisomas, mitocondrias, centríolo, citoesqueleto, inclusiones.
+
+Medicina y Sociedad:
+- Concepto de salud y derecho a la salud. Concepto de salud según OMS. Críticas al concepto oficial.
+- Salud como derecho y como derecho humano. Salud como derecho vs. salud como mercancía. Salud como construcción sociocultural en la diversidad.
+
+Química Biológica:
+- Bases moleculares de la herencia: nucleótidos, ácidos nucleicos, ADN y ARN, tipos de ARN, cromatina, concepto de gen.
+- Replicación del ADN: ubicación en el ciclo celular, mecanismo, enzimas.
+- Transcripción: mecanismo, enzimas, ARNm precursor, procesamiento (cap, cola poli A, intrones/exones, splicing).
+- Código genético: codón, universalidad, degeneración. Mutaciones.
+- Síntesis de proteínas: etapas, enzimas, gasto energético. Modificaciones postraduccionales. Pépido señal. Control de la expresión génica.
+
+Salud Mental:
+- Aportes del Psicoanálisis: el sujeto, descentramiento del yo. El inconsciente, interpretación de los sueños, sexualidad infantil.
+- Constitución del psiquismo y aparato psíquico. Funciones parentales y filiación simbólica. Formas familiares.
+
+------------------------------------------------------------------
+UP3 — Células madre y tratamiento (Módulo introductorio)
+Situación: Verónica consulta si las células madre pueden curar enfermedades adaptándose al medio
+------------------------------------------------------------------
+Física Biológica:
+- Dispersiones: concepto, clasificación. Concentración de una solución: formas de expresarla. Dilución.
+- Flujo, difusión, Ley de Fick. Tipos de transporte: simple, facilitada, canales iónicos, bombas. Transporte activo y pasivo.
+
+Fisiología Humana:
+- Concepto de difusión. Determinantes de la difusión (solutos con/sin carga). Gradientes químico, eléctrico y de presión hidrostática. Flujo.
+- Concentraciones: molaridad, equivalencia, osmolaridad. Distribución iónica de los compartimentos líquidos.
+- Transporte a través de membranas: pasivo (difusión simple y facilitada), activo (primario y secundario). Regulación del volumen celular.
+
+Química Biológica:
+- Constitución química de las membranas biológicas: composición, modelo de mosaico fluido.
+- Lípidos de membrana: glicerofosfolípidos, esfingofosfolípidos, cerebrósidos, gangliósidos. Función del colesterol. Proteínas integrales y periféricas.
+
+Histología y Embriología:
+- Concepto de tejido histológico. Tejidos básicos: estructura y función.
+- Tejido epitelial: clasificación, epitelios de revestimiento, glandular y sensorial. Epitelio glandular exócrino.
+- Tejido conectivo: células, sustancia fundamental y fibras. Tejido adiposo.
+
+Medicina y Sociedad:
+- Proceso salud-enfermedad-atención. Concepto. Aplicación como herramienta de análisis a escala poblacional.
+
+Psiquiatría Adultos:
+- Relación médico-paciente. El médico y su prestigio. El médico-enfermo. Lo científico. Acerca de la relación singular.
+
+------------------------------------------------------------------
+UP4 — Embarazo y desarrollo embrionario (Módulo introductorio)
+Situación: María (1er mes de embarazo) consulta por cuidados y cambio de coloración de la piel
+------------------------------------------------------------------
+Crecimiento y Desarrollo:
+- Promoción para embarazo saludable. Carnet perinatal.
+
+Anatomía Normal:
+- Aparato genital femenino: ovario, trompas uterinas, útero, vagina, vulva (morfología, ubicación, relaciones, medios de fijación).
+- Aparato genital masculino: testículo, epidídimo, vías espermáticas (conducto deferente, vesículas seminales, conducto eyaculador, uretra), cordón espermático, próstata, glándulas bulbouretrales, pene, escroto.
+
+Histología y Embriología:
+- Introducción al desarrollo embrionario y fetal. Fecundación. Períodos del desarrollo.
+- Período pre-embrionario (1ª, 2ª y 3ª semana). Período embrionario (4ª-9ª semana). Cambios del período fetal.
+- Placenta: formación, vellosidades, función. Asociación de tejidos para formar órganos. Piel: capas, anexos cutáneos.
+
+Medicina y Sociedad:
+- Promoción de la salud: definición, historia, prerrequisitos, empoderamiento.
+- Representaciones y prácticas sociales: definición, importancia en los procesos de salud-enfermedad-atención.
+
+Física Biológica:
+- Bases biofísicas de la comunicación celular. Potencial de reposo. Potencial de acción. Rol del transporte. Equilibrio y estado estacionario.
+- Potencial de equilibrio. Ecuación de Nernst. Ecuación de Goldman. Potencial de bombeo. Equilibrio Gibbs-Donnan.
+
+Fisiología Humana:
+- Comunicación intercelular: autócrina, parácrina, yuxtácrina, endocrina y nerviosa. Mensajeros primarios. Receptores.
+- Segundos mensajeros: AMPc, GMPc. Receptores asociados a tirosina quinasa. Receptores intracelulares.
+- Electrofisiología: potencial transmembrana en reposo y sus determinantes. Potenciales electrotónicos. Umbral de excitación. Potencial de acción.
+
+Psiquiatría Adultos:
+- Constitución del sujeto y del aparato psíquico. Complejo de Edipo.
+
+==================================================================
+MÓDULO NIÑEZ
+==================================================================
+
+------------------------------------------------------------------
+UP5 — Recién nacido saludable (Módulo Niñez)
+Situación: nace Juan; su hermana Sofía (3 años) observa que se sobresalta ante los ruidos
+------------------------------------------------------------------
+Crecimiento y Desarrollo:
+- RN saludable. Evaluación sistemática del RN a término. Clasificación según peso y edad gestacional. Test de Capurro.
+- Antropometría 0-28 días. Configuración de cabeza, tronco y extremidades. Cabeza: fontanelas. Piel: aspecto, color, sensibilidad. Peso, talla, perímetro cefálico.
+- Signos de vitalidad: esfuerzo respiratorio, tono muscular, coloración, reflejos. Promoción de la salud del RN y el niño.
+- Evaluación del desarrollo del nacimiento a los 2 años. Crecimiento. Desarrollo. Reflejos arcaicos.
+
+Anatomía Normal:
+- Sistema nervioso: generalidades y organización. SNC. Tronco encefálico: situación, porciones (pedúnculos cerebrales, protuberancia, bulbo), configuración externa e interna, 4º ventrículo.
+- Nervios craneales: denominación, origen real y aparente, trayecto, función. Formación reticular.
+- Cerebelo: división filogenética (arquicerebelo, paleocerebelo, neocerebelo), conexiones.
+- Médula espinal: situación, configuración externa e interna.
+
+Histología y Embriología:
+- Tejido nervioso: clasificación, células y funciones. SNC: sustancia gris y blanca. SNP: nervios, ganglios y plexos periféricos.
+
+Fisiología Humana:
+- Propagación del potencial de acción. Efecto de la mielina en la velocidad. Potencial de acción compuesto. Velocidad de conducción.
+- Sinapsis eléctricas y químicas: estructura. Neurotransmisores (síntesis, almacenamiento, liberación, mecanismos). Potenciales postsinápticos excitatorios e inhibitorios. Unión neuromuscular.
+- Reflejos: definición, bases neuroanatómicas (receptores, componentes neuronales, efectores).
+
+Salud Mental:
+- Deconstrucción del concepto de infancias. Funciones parentales y responsabilidad simbólica de nominar.
+- Constitución subjetiva: identificación y surgimiento del yo. Procesos socioafectivos: narcisismo e imagen corporal, mecanismos de defensa, resolución del complejo de Edipo.
+- Procesos sociocognitivos: aprendizaje y lenguaje. La función del jugar y la Salud Mental.
+
+------------------------------------------------------------------
+UP6 — Lenguaje y desarrollo de 2 a 6 años (Módulo Niñez)
+Situación: Verónica preocupa porque su hijo de 2 años pronuncia pocas palabras y empezará el jardín
+------------------------------------------------------------------
+Anatomía Normal:
+- Cerebro: situación, configuración externa e interna (sustancia blanca, corteza, núcleos basales, ventrículos laterales).
+- Diencéfalo: tálamo, subtálamo, epitálamo, hipotálamo. 3er ventrículo. Cerebelo: situación, configuración externa e interna.
+
+Crecimiento y Desarrollo:
+- Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS).
+
+Histología y Embriología:
+- Cerebro, cerebelo y médula espinal. Meninges, plexos coroideos, cavidades encéfalo-medulares.
+- Principales células y funciones. Capas. Vainas neurológicas.
+
+Medicina y Sociedad:
+- Concepto de Atención Primaria de la Salud (APS). Sistema de salud. Declaración de Alma Ata.
+- Definición de APS. Principios. Historia de la APS. Diferentes visiones de APS.
+
+------------------------------------------------------------------
+UP7 — Percepción táctil y sentidos (Módulo Niñez)
+Situación: Camila (5 años) juega a adivinar objetos con el tacto
+------------------------------------------------------------------
+Anatomía Normal:
+- SNP: nervios raquídeos. Sistema nervioso autónomo: simpático y parasimpático.
+- Vías de conducción: ascendentes o sensitivas y descendentes o motoras (organización anatómica y funciones).
+- Sistema límbico. Vascularización del SNC: carótida interna, vertebral, polígono de Willis. Drenaje venoso, senos venosos.
+- Meninges: encefálicas y espinales. Líquido cefalorraquídeo: funciones, producción, reabsorción, circulación. Ventrículos y cisternas.
+
+Fisiología Humana:
+- Procesos sensoriales: receptores, transducción, estímulo adecuado, potencial de receptor y generador, adaptación.
+- Características del estímulo: modalidad, intensidad, localización, número. Codificación. Inhibición lateral y aferente. Campos receptivos.
+- Representación cortical. Plasticidad. Sensibilidad somática: tacto-presión, temperatura, dolor, posición-movimiento, estiramiento-tensión. Propiocepción.
+- Sensación simple, compleja y percepción. Modalidades de alta y baja discriminación. Corteza somatosensorial (somatotopía). Dermatomas. Regla de los dermatomas. Metámera medular.
+
+==================================================================
+MÓDULO ADOLESCENCIA
+==================================================================
+
+------------------------------------------------------------------
+UP8 — Pubertad y crecimiento (Módulo Adolescencia)
+Situación: Santiago (12 años) es el más bajo del grado y abandonó actividades
+------------------------------------------------------------------
+Anatomía Normal:
+- Hipotálamo. Hipófisis.
+
+Biología:
+- Percentilos.
+
+Crecimiento y Desarrollo:
+- Expresiones corporales del crecimiento y desarrollo. Pubertad. Antropometría.
+- Desarrollo genital. Caracteres sexuales secundarios. Caracterización cronológica de los aspectos madurativos. Variables relevantes del seguimiento del crecimiento.
+
+Fisiología Humana:
+- Sistema endócrino: generalidades, glándulas, hormonas (definición, clasificación química, mecanismos de acción), mecanismos de regulación.
+- Eje hipotálamo-hipofiso-tiroideo. Eje somatotrófico (hormona de crecimiento).
+- Regulación del crecimiento: factores de crecimiento.
+- Eje hipotálamo-hipofiso-gonadal: testosterona y estradiol.
+- Desarrollo puberal: impacto de las hormonas gonadales. Caracteres sexuales primarios y secundarios. Pico puberal de crecimiento.
+
+Histología y Embriología:
+- Tejido epitelial glandular endócrino. Órganos del sistema endócrino: estructura histológica, células y funciones. Sistema APUD.
+
+Psiquiatría Adultos:
+- Soma-cuerpo: diferenciación conceptual.
+
+Salud Mental:
+- Del complejo de Edipo a la metamorfosis de la pubertad. Pubertad-adolescencia. La adolescencia como pasaje.
+- Identificaciones. Lugar de los padres: dependencia/independencia. Agentes de subjetivación no familiares.
+- Concepto de duelo. Duelos adolescentes. Versiones adolescentes. Importancia del proyecto: del jugar al trabajar. Adolescencias y Salud Mental.
+
+------------------------------------------------------------------
+UP9 — Vacunación e inmunidad (Módulo Adolescencia)
+Situación: Juan (15 años) se vacunó contra COVID-19 y nota dolor y tumefacción en el brazo y axila
+------------------------------------------------------------------
+Crecimiento y Desarrollo:
+- Carnet de vacunación. Adherencia al Programa Ampliado de Inmunizaciones (PAI).
+
+Histología y Embriología:
+- Tejido sanguíneo: plasma y elementos figurados, funciones.
+- Tejido hemocitopoyético: clasificación, componentes, funciones. Tejido linfático: clasificación, células, funciones.
+- Órganos linfoides primarios y secundarios: organización histológica.
+
+Inmunología:
+- Sistema inmune, respuesta inmune, inmunidad. Órganos, células y moléculas. Órganos linfoides primarios y secundarios. Recirculación linfocitaria.
+- Inmunidad innata: elementos celulares y humorales, inflamación, células fagocíticas, complemento.
+- Inmunidad adquirida: antígenos, células presentadoras, linfocitos B y T (helpers y citotóxicos), receptores, activación, cooperación Th-B.
+- Inmunoglobulinas: clases, estructura, funciones. Respuesta primaria y secundaria. Memoria inmunológica.
+- Inmunidad activa (natural y artificial) y pasiva (natural y artificial). Fundamento de la vacunación.
+
+Química Biológica:
+- Constitución química de las membranas biológicas (repaso UP3).
+
+==================================================================
+MÓDULO ADULTEZ
+==================================================================
+
+------------------------------------------------------------------
+UP10 — Adulto joven, miembro superior y dolor (Módulo Adultez)
+Situación: José (35 años) carga objetos pesados; dificultad y dolor en el brazo
+------------------------------------------------------------------
+Anatomía Normal:
+- Sistema esquelético y articular del miembro superior: clavícula, escápula, húmero, cúbito, radio, carpo, metacarpo, falanges. Cintura escapular, hombro, codo, antebrazo, muñeca, mano.
+- Sistema muscular del miembro superior: grupos, planos, inserción de origen y terminal, acción, inervación, vascularización.
+- Irrigación arterial: axilar, humeral (braquial), cubital, radial. Arcos palmares. Pulsos. Drenaje venoso y linfático.
+- Inervación: plexo braquial (ubicación, constitución, ramas terminales y colaterales, topografía).
+
+Fisiología Humana:
+- Fisiología del dolor: tipos y características. Hiperalgesia primaria y secundaria. Dolor referido.
+- Control de la percepción del dolor: endorfinas, teoría de la compuerta (asta dorsal), estimulación nerviosa transcutánea y medular.
+
+Histología y Embriología:
+- Tejido muscular: clasificación y funciones. Músculo liso, estriado esquelético y estriado cardíaco. Características morfológicas.
+
+Salud Mental:
+- Cultura y malestar. Lo pulsional en la vida. La adultez: balanceo entre placer y realidad.
+- Avatares en la vida adulta: crisis, asedios y posibles. Realidad psíquica. ¿Qué es la realidad humana? Adultez y Salud Mental.
+
+==================================================================
+MÓDULO ADULTEZ MAYOR
+==================================================================
+
+------------------------------------------------------------------
+UP11 — Adulto mayor, marcha y tejidos de sostén (Módulo Adultez Mayor)
+Situación: Beatriz (71 años) nota que las piernas no la sostienen; temerosa tras el fallecimiento de su pareja
+------------------------------------------------------------------
+Anatomía Normal:
+- Sistema esquelético y articular del miembro inferior: coxal, fémur, rótula, tibia, peroné, tarso, metatarso, falanges. Cintura pélvica, rodilla, pierna, tobillo, pie.
+- Sistema muscular del miembro inferior: grupos, planos, inserciones, acción, inervación, vascularización.
+- Irrigación arterial: ilíaca externa, femoral, poplítea, tronco tibioperoneo, tibial anterior, pedia, plantares. Pulsos. Drenaje venoso y linfático.
+- Inervación: plexo lumbar y sacro. Topografía. Anatomía funcional del pie. Marcha normal: definición, fases, descripción.
+
+Fisiología Humana:
+- Reflejo miotático, miotático inverso y de retirada: estructura, función, estímulo adecuado y respuesta. Control de los reflejos espinales.
+- Fisiología del envejecimiento: apoptosis vs. necrosis. Mecanismos bioquímicos. Cambios en el sistema nervioso y endócrino asociados al envejecimiento.
+
+Histología y Embriología:
+- Tejido óseo: clasificación y funciones. Osteoblastos, osteoclastos, osteocitos. Sustancia intercelular. Mineralización. Hueso compacto y esponjoso. Endostio y periostio.
+- Tejido cartilaginoso: características, clasificación, células, sustancia intercelular.
+
+Salud Mental:
+- Avatares de la estructura. La vida: libido, finitud, pérdidas, duelo, melancolía y reelaboraciones.
+- La adultez mayor: imaginario social de la vejez. Tiempo de duelos. Imagen corporal durante la vejez. Intervenciones en Salud Mental con pacientes adultos mayores.
+
+------------------------------------------------------------------
+UP12 — Sentidos: visión y audición en el adulto mayor (Módulo Adultez Mayor)
+Situación: Antonio (80 años) dejó de ir al teatro por disminución de la agudeza de sus sentidos
+------------------------------------------------------------------
+Anatomía Normal:
+- Visión: cavidad orbitaria, globo ocular, músculos extrínsecos e intrínsecos, medios transparentes, aparato lagrimal, párpado, vía óptica, vasos e inervación de la órbita.
+- Audición: oído externo, medio e interno. Vía coclear. Vía vestibular.
+
+Física Biológica:
+- Óptica: refracción, índice de refracción, lentes convergentes y divergentes, imágenes reales y virtuales, lupa, lentes negativas.
+- Visión: el ojo como sistema óptico, ojo reducido, formación de imagen en retina, acomodación, agudeza visual.
+- Movimiento ondulatorio: características. Sonido: propiedades físicas, variación de la intensidad con la distancia.
+- Audición: mecanismo, propiedades de la sensación auditiva (sonoridad, tono, timbre), campo auditivo, gama de frecuencias, polución por ruidos.
+
+Fisiología Humana:
+- Visión: fotorreceptores, proceso de recepción, compuestos fotosensibles, neuronas retinianas (visión diurna y nocturna), adaptación a la luz/oscuridad, visión de colores.
+- Vía óptica, relevos, áreas corticales, visión binocular, campo visual, agudeza visual. Cambios de la fisiología visual con la edad. Promoción de la salud visual.
+- Audición: conducción del sonido hasta la cóclea, función del oído externo y medio, reflejos autonómicos, transducción, onda viajera, células ciliadas externas, vía auditiva y áreas corticales. Promoción de la salud auditiva.
+
+Histología y Embriología:
+- Órganos de los sentidos: ojo y oído. Globo ocular: capas y estructuras. Retina y córnea, medios transparentes. Oído interno (órgano de Corti), medio y externo.
+
+Psiquiatría Adultos:
+- Proceso salud-enfermedad: sus contingencias. El saber acerca de la enfermedad.

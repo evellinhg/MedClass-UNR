@@ -1,0 +1,563 @@
+[
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Biología — Genética Mendeliana",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "biologia",
+    "descricao": "Genotipo, fenotipo y leyes de Mendel",
+    "tags": [
+      "cyd-up2",
+      "biologia",
+      "mendel",
+      "genotipo",
+      "fenotipo",
+      "leyes-de-mendel"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el genotipo y qué es el fenotipo?",
+        "verso": "El genotipo es la constitución genética de un individuo; el fenotipo es la expresión observable de ese genotipo (caracteres).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significan haploide y diploide?",
+        "verso": "Haploide (n): células con un juego de cromosomas (gametos). Diploide (2n): células con dos juegos (células somáticas).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son homocigoto y heterocigoto?",
+        "verso": "Homocigoto: individuo con dos alelos idénticos para un gen (AA o aa). Heterocigoto: individuo con dos alelos distintos (Aa).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los caracteres dominantes y recesivos?",
+        "verso": "El carácter dominante se expresa en heterocigosis (presencia de un solo alelo); el recesivo solo se manifiesta en homocigosis.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué establece la primera ley de Mendel (segregación)?",
+        "verso": "Los gametos se forman segregando los alelos: cada gameto recibe un solo alelo de cada par (segregación de los gametos).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué establece la segunda ley de Mendel (distribución independiente)?",
+        "verso": "Los alelos de genes diferentes se distribuyen en los gametos de forma independiente, combinándose al azar.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la variabilidad genética?",
+        "verso": "Las diferencias entre individuos debidas a la diversidad de alelos y a la recombinación durante la meiosis; base de la evolución.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un gen y un alelo?",
+        "verso": "El gen es la unidad de la herencia; el alelo es cada variante de un gen (dominante o recesivo) que ocupa el mismo locus en un cromosoma.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR (Di Masso R, Martínez SM, Tarrés MC). Genética Mendeliana. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 10
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Histología — La célula: membrana y núcleo",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Membrana, glucocálix, núcleo, mitosis y meiosis",
+    "tags": [
+      "cyd-up2",
+      "histologia",
+      "membrana-celular",
+      "nucleo",
+      "mitosis",
+      "meiosis"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el glucocálix y cuáles son sus funciones?",
+        "verso": "Capa de carbohidratos en la superficie externa de la membrana celular; participa en la protección, adhesión y reconocimiento celular.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué constitución tiene la membrana celular?",
+        "verso": "Bicapa lipídica con proteínas integrales y periféricas, según el modelo de mosaico fluido; incluye colesterol y glucolípidos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones cumple la membrana plasmática?",
+        "verso": "Delimitación y protección, transporte de sustancias, recepción de señales, reconocimiento celular y adhesión.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los medios de unión celulares?",
+        "verso": "Estructuras que conectan células entre sí: uniones ocluyentes (tight), adherentes (desmosomas) y comunicantes (gap).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué estructuras forman el núcleo?",
+        "verso": "Envoltura nuclear (con poros), cromatina, nucléolo y matriz nuclear.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cromatina y cómo se relaciona con los cromosomas?",
+        "verso": "La cromatina es el ADN asociado a histonas; durante la división celular se condensa formando los cromosomas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nucléolo?",
+        "verso": "Región del núcleo donde se sintetizan los ARN ribosómicos y se ensamblan las subunidades ribosómicas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la mitosis?",
+        "verso": "División celular que produce dos células hijas idénticas (diploides) para el crecimiento y reparación de los tejidos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la meiosis?",
+        "verso": "División celular que produce gametos haploides con recombinación genética; consta de dos divisiones sucesivas (I y II).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre mitosis y meiosis?",
+        "verso": "Mitosis: una división, células hijas 2n idénticas. Meiosis: dos divisiones, cuatro células n con variabilidad genética (gametos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 11
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Histología — Organoides citoplasmáticos",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "RE, Golgi, ribosomas, lisosomas, mitocondrias, citoesqueleto",
+    "tags": [
+      "cyd-up2",
+      "histologia",
+      "organoides",
+      "golgi",
+      "mitocondrias",
+      "lisosomas",
+      "citoesqueleto"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el retículo endoplasmático y qué tipos existen?",
+        "verso": "Red de membranas del citoplasma: el rugoso (con ribosomas, sintetiza proteínas) y el liso (sintetiza lípidos y detoxifica).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones tiene el aparato de Golgi?",
+        "verso": "Modifica, clasifica y empaqueta proteínas y lípidos para su secreción o transporte a otros organoides.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los ribosomas?",
+        "verso": "Complejos de ARN ribosomal y proteínas donde se sintetizan las proteínas (traducción).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los lisosomas y qué contienen?",
+        "verso": "Organoides con enzimas hidrolíticas (fosfatasas ácidas) que digieren material extracelular e intracelular (autofagia).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el peroxisoma?",
+        "verso": "Organoide que contiene catalasa y oxidasas, participa en la detoxificación (peróxido de hidrógeno) y en el metabolismo de lípidos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué función tienen las mitocondrias?",
+        "verso": "Son la central energética: producen ATP mediante la respiración celular (fosforilación oxidativa); poseen su propio ADN.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el centríolo?",
+        "verso": "Estructura cilíndrica de microtúbulos que participa en la formación del huso mitótico y en la organización del citoesqueleto (centrosoma).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el citoesqueleto?",
+        "verso": "Red de microtúbulos, microfilamentos y filamentos intermedios que da forma, sostén y movilidad a la célula.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. La célula: membrana, núcleo, organoides, división celular. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 12
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Medicina y Sociedad — Salud y derecho a la salud",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Concepto de salud, derecho a la salud y salud como mercancía",
+    "tags": [
+      "cyd-up2",
+      "medicina-y-sociedad",
+      "salud",
+      "derecho-a-la-salud",
+      "oms",
+      "determinantes"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la salud según la OMS?",
+        "verso": "Un estado de completo bienestar físico, mental y social, y no solamente la ausencia de enfermedad o afección.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las críticas al concepto oficial de salud de la OMS?",
+        "verso": "Que es una definición idealista y estática, difícil de alcanzar y medir; se propone una visión dinámica, histórica y determinada socialmente.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Por qué la salud es un derecho humano?",
+        "verso": "Porque es condición para el ejercicio de los demás derechos; el Estado tiene la obligación de garantizarla para todos.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué implica salud como derecho vs. salud como mercancía?",
+        "verso": "Como derecho: acceso universal y equitativo garantizado por el Estado. Como mercancía: la salud se rige por el mercado y el poder de compra.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significa que la salud es una construcción sociocultural?",
+        "verso": "Que cada sociedad define qué es estar sano o enfermo según su cultura, su historia y sus condiciones materiales.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el derecho a la salud?",
+        "verso": "El derecho humano fundamental a gozar del más alto nivel de salud alcanzable, garantizado por el Estado (OMS y Constitución argentina).",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significa acceso a la salud?",
+        "verso": "La posibilidad efectiva de utilizar los servicios de salud cuando se necesitan, sin barreras económicas, geográficas o culturales.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la equidad en salud?",
+        "verso": "La reducción de las diferencias evitables e injustas en salud entre poblaciones, priorizando a los grupos más vulnerables.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Berlinguer, Testa, Staffolani. Concepto de salud y derecho a la salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 13
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Química Biológica — Ácidos nucleicos y replicación",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Nucleótidos, ADN/ARN, replicación y transcripción",
+    "tags": [
+      "cyd-up2",
+      "quimica",
+      "adn",
+      "arn",
+      "replicacion",
+      "transcripcion"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es un nucleótido y cuáles son sus componentes?",
+        "verso": "Base nitrogenada (púrica o pirimidínica) + azúcar (ribosa o desoxirribosa) + grupo fosfato.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre ADN y ARN?",
+        "verso": "ADN: doble cadena, desoxirribosa, bases A-T y C-G, núcleo. ARN: cadena simple, ribosa, bases A-U y C-G, citoplasma y núcleo.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tipos de ARN y sus funciones?",
+        "verso": "ARNm (lleva la información del gen), ARNr (componente de los ribosomas) y ARNt (transporta aminoácidos en la traducción).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cromatina?",
+        "verso": "El complejo de ADN con histonas en el núcleo interfásico.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un gen?",
+        "verso": "Segmento de ADN que codifica una proteína o un ARN funcional; es la unidad de información hereditaria.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo ocurre la replicación del ADN?",
+        "verso": "Semiconservadora: las dos hebras se separan y cada una sirve de molde para sintetizar su complementaria, con enzimas como ADN polimerasa, helicasa y ligasa; ocurre en la fase S del ciclo celular.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transcripción?",
+        "verso": "La síntesis de ARN a partir de ADN, catalizada por la ARN polimerasa, que copia un gen en ARNm precursor.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la diferencia entre ADN polimerasa y ARN polimerasa?",
+        "verso": "La ADN polimerasa sintetiza ADN a partir de ADN (replicación); la ARN polimerasa sintetiza ARN a partir de ADN (transcripción).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el procesamiento del ARNm?",
+        "verso": "La maduración del ARNm precursor: adición del cap en 5', cola poli-A en 3', y splicing (eliminación de intrones y unión de exones).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son intrón, exón y splicing alternativo?",
+        "verso": "Intrón: secuencia no codificante que se elimina. Exón: secuencia codificante que se conserva. El splicing alternativo permite generar distintas proteínas desde un mismo gen.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 14
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Química Biológica — Código genético y síntesis proteica",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Código genético, traducción y regulación génica",
+    "tags": [
+      "cyd-up2",
+      "quimica",
+      "codigo-genetico",
+      "traduccion",
+      "mutaciones",
+      "expresion-genica"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el código genético?",
+        "verso": "El conjunto de reglas que relaciona los codones (tripletes de ARNm) con los aminoácidos; es universal y degenerado.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un codón?",
+        "verso": "Triplete de bases del ARNm que codifica un aminoácido o una señal de inicio/terminación.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significa que el código es degenerado?",
+        "verso": "Que varios codones pueden codificar el mismo aminoácido (61 codones codifican 20 aminoácidos).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las mutaciones?",
+        "verso": "Cambios en la secuencia del ADN; pueden ser puntuales (sustitución, inserción, deleción) y alterar la proteína o el fenotipo.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las etapas de la síntesis de proteínas (traducción)?",
+        "verso": "Iniciación, elongación y terminación; participan ribosomas, ARNm, ARNt y enzimas, con gasto de energía (GTP).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las modificaciones postraduccionales?",
+        "verso": "Cambios posteriores a la síntesis: plegamiento de la proteína, glicosilación y fosforilación.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el péptido señal?",
+        "verso": "Secuencia corta del extremo N-terminal que dirige a la proteína en formación hacia el retículo endoplasmático o a su destino celular.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los niveles de regulación de la expresión génica?",
+        "verso": "Modificación del número/estructura de genes, regulación de la transcripción, maduración del ARN, nivel de traducción y modificaciones postraduccionales.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son genes estructurales, reguladores y constitutivos?",
+        "verso": "Estructurales: codifican productos funcionales. Reguladores: controlan la expresión de otros genes. Constitutivos: se expresan siempre (housekeeping).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Ballina JC, Feldman S). Bases moleculares de la herencia. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 15
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP2 — Salud Mental — Psicoanálisis y aparato psíquico",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Sujeto del inconsciente, aparato psíquico y funciones parentales",
+    "tags": [
+      "cyd-up2",
+      "salud-mental",
+      "psicoanalisis",
+      "inconsciente",
+      "aparato-psiquico",
+      "formas-familiares"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué aportes hace el Psicoanálisis a la Salud Mental?",
+        "verso": "Concibe al ser humano como sujeto del inconsciente, descentrado del yo; interpreta sueños, síntomas y la sexualidad infantil.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el inconsciente según el Psicoanálisis?",
+        "verso": "Instancia del aparato psíquico donde se alojan contenidos reprimidos que se expresan en sueños, actos fallidos y síntomas.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el aparato psíquico?",
+        "verso": "La estructura de la vida psíquica (para Freud: ello, yo y superyó) que regula los procesos de satisfacción pulsional y de adaptación.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué condiciones requieren las funciones parentales para la transmisión de la filiación simbólica?",
+        "verso": "Que el niño sea ubicado en un lugar simbólico por sus padres (deseo, nombre, ley), lo que funda su subjetividad.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las formas familiares?",
+        "verso": "Las distintas configuraciones familiares (nuclear, monoparental, ensamblada, ampliada) que sostienen la filiación y la transmisión simbólica.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la represión en psicoanálisis?",
+        "verso": "Mecanismo central del psicoanálisis que aparta de la conciencia representaciones inaceptables, manteniéndolas en el inconsciente.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transferencia?",
+        "verso": "El fenómeno por el cual el paciente actualiza en el vínculo con el analista los afectos y conflictos de su historia.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el inconsciente?",
+        "verso": "La instancia psíquica que contiene contenidos reprimidos, que se expresan en síntomas, sueños y actos fallidos.",
+        "fontes": [
+          "Cátedra de Salud Mental, FCM-UNR. Aportes del Psicoanálisis. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 16
+  }
+]

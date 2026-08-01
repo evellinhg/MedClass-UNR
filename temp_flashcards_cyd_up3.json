@@ -1,0 +1,465 @@
+[
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Física Biológica — Dispersiones y concentración",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "biofisica",
+    "descricao": "Dispersiones, concentración, molaridad, osmolaridad y dilución",
+    "tags": [
+      "cyd-up3",
+      "biofisica",
+      "dispersiones",
+      "concentracion",
+      "molaridad",
+      "osmolaridad"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es una dispersión y cómo se clasifica?",
+        "verso": "Mezcla de una fase dispersa en un medio dispersante; según el tamaño de la fase dispersa: soluciones (molecular), coloides y suspensiones.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la concentración de una solución?",
+        "verso": "La relación entre la cantidad de soluto y la cantidad de solución o solvente; se expresa en molaridad, molalidad, porcentaje, etc.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre concentración y cantidad de soluto?",
+        "verso": "La concentración es una relación (soluto/solución); la cantidad de soluto es la masa o moles presentes, que no cambia al diluir.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la dilución?",
+        "verso": "El proceso de reducir la concentración de una solución agregando solvente; la cantidad de soluto permanece constante.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la molaridad?",
+        "verso": "Moles de soluto por litro de solución (mol/L).",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la osmolaridad?",
+        "verso": "Moles de partículas osmóticamente activas por litro de solución (Osm/L); depende de la concentración y del número de partículas en que se disocia el soluto.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es una solución?",
+        "verso": "Dispersión molecular homogénea en la que el soluto (de tamaño molecular) se distribuye en el solvente, sin sedimentar.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la presión osmótica?",
+        "verso": "La presión que debe aplicarse para detener el flujo neto de solvente a través de una membrana semipermeable; depende de la osmolaridad (Ley de Van't Hoff).",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 17
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Física y Fisiología — Transporte de membrana",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "biofisica",
+    "descricao": "Difusión, Ley de Fick, transporte pasivo y activo",
+    "tags": [
+      "cyd-up3",
+      "biofisica",
+      "transporte",
+      "difusion",
+      "ley-de-fick",
+      "bomba-na-k",
+      "canales"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la difusión?",
+        "verso": "El movimiento neto de partículas desde una zona de mayor concentración a una de menor concentración (a favor del gradiente), hasta el equilibrio.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué establece la Ley de Fick?",
+        "verso": "Que el flujo de difusión es proporcional al gradiente de concentración y al área, e inversamente proporcional al grosor de la membrana.",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los gradientes que impulsan el transporte?",
+        "verso": "Gradiente químico (concentración), gradiente eléctrico (carga) y gradiente de presión hidrostática.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la difusión simple?",
+        "verso": "El paso de sustancias pequeñas y liposolubles a favor del gradiente, sin gasto de energía ni transportador (O2, CO2, agua).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la difusión facilitada?",
+        "verso": "El transporte a favor del gradiente mediado por proteínas transportadoras (carriers) o canales iónicos, sin gasto de energía.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el transporte activo?",
+        "verso": "El transporte de sustancias en contra de su gradiente, con gasto de energía (ATP): primario (bomba Na-K-ATPasa) o secundario (cotransporte).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la bomba Na-K-ATPasa?",
+        "verso": "Transportador activo primario que saca 3 Na+ e ingresa 2 K+ por ATP, manteniendo el gradiente electroquímico de la célula.",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el transporte según su mecanismo?",
+        "verso": "Simple (sin transportador), facilitado (carrier) y por canales iónicos; y por bombas (transporte activo).",
+        "fontes": [
+          "Cátedra de Física Biológica, FCM-UNR (Dabin C, Urli L). Dispersiones, soluciones y transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el transporte según su energía?",
+        "verso": "Pasivo (a favor del gradiente, sin energía: difusión simple y facilitada) y activo (en contra del gradiente, con energía).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la regulación del volumen celular?",
+        "verso": "El mantenimiento del volumen de la célula mediante el control de la osmolaridad interna (acumulación de solutos y salida de agua).",
+        "fontes": [
+          "Cátedra de Fisiología Humana, FCM-UNR. Transporte a través de membranas. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 18
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Química Biológica — Membranas biológicas",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "bioquimica",
+    "descricao": "Mosaico fluido, lípidos de membrana y proteínas",
+    "tags": [
+      "cyd-up3",
+      "quimica",
+      "membranas",
+      "mosaico-fluido",
+      "fosfolipidos",
+      "colesterol"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuál es la composición química de las membranas biológicas?",
+        "verso": "Lípidos (fosfolípidos, colesterol, glucolípidos), proteínas (integrales y periféricas) y glúcidos (glucocálix).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué plantea el modelo de mosaico fluido?",
+        "verso": "Que la membrana es una bicapa lipídica fluida donde las proteínas se mueven lateralmente, como un mosaico dinámico.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué lípidos componen las membranas?",
+        "verso": "Glicerofosfolípidos (fosfatidilcolina), esfingofosfolípidos (esfingomielina), cerebrósidos y gangliósidos (glucolípidos).",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué función tiene el colesterol en la membrana?",
+        "verso": "Modula la fluidez de la bicapa: la estabiliza a temperaturas altas y la mantiene fluida a temperaturas bajas.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre proteínas integrales y periféricas?",
+        "verso": "Las integrales atraviesan la bicapa (transmembrana, p. ej. canales); las periféricas se asocian a la superficie de la membrana.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el glucocálix?",
+        "verso": "La capa de glúcidos en la cara externa de la membrana (glucoproteínas y glucolípidos), con funciones de reconocimiento, protección y adhesión celular.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones de la membrana plasmática?",
+        "verso": "Barrera selectiva, transporte de sustancias, comunicación y reconocimiento celular, y organización de la señalización.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la permeabilidad selectiva?",
+        "verso": "La capacidad de la membrana de permitir el paso de algunas sustancias (liposolubles y pequeñas) y restringir otras.",
+        "fontes": [
+          "Cátedra de Química Biológica, FCM-UNR (Fernández MC, Caferra D). Membranas celulares: composición química. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 19
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Histología — Tejidos básicos",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Tejido epitelial, conectivo y adiposo",
+    "tags": [
+      "cyd-up3",
+      "histologia",
+      "tejido-epitelial",
+      "tejido-conectivo",
+      "tejido-adiposo",
+      "matriz-extracelular"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es un tejido histológico?",
+        "verso": "Conjunto de células con origen, estructura y función comunes, organizadas para cumplir una función específica.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los cuatro tejidos básicos?",
+        "verso": "Epitelial, conectivo, muscular y nervioso.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características fundamentales del tejido epitelial?",
+        "verso": "Células muy juntas (escasa matriz extracelular), polaridad, avascular, apoyadas sobre membrana basal y con función de revestimiento, secreción o sensorial.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el epitelio?",
+        "verso": "Según el número de capas: simple, estratificado y pseudoestratificado; según la forma: plano, cúbico y cilíndrico; y según función: de revestimiento, glandular y sensorial.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el epitelio glandular exócrino?",
+        "verso": "Epitelio especializado en secretar productos hacia el exterior o una cavidad, a través de conductos (p. ej., glándulas salivales, sudoríparas).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los componentes del tejido conectivo?",
+        "verso": "Células (fibroblastos, adipocitos, macrófagos, mastocitos), fibras (colágeno, elásticas, reticulares) y sustancia fundamental (matriz extracelular).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el tejido adiposo?",
+        "verso": "Tejido conectivo especializado en almacenar lípidos (triglicéridos); puede ser blanco (reserva) o pardo (termogénesis).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la membrana basal?",
+        "verso": "Capa de matriz extracelular (colágeno tipo IV y laminina) que separa el epitelio del tejido conectivo, con funciones de soporte y filtración.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejidos histológicos básicos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 20
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Medicina y Sociedad — Proceso salud-enfermedad-atención",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Proceso salud-enfermedad-atención y sus aplicaciones",
+    "tags": [
+      "cyd-up3",
+      "medicina-y-sociedad",
+      "proceso-salud-enfermedad-atención",
+      "antropologia-medica",
+      "modelos-de-atencion"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el proceso salud-enfermedad-atención?",
+        "verso": "Un proceso social e histórico que integra cómo las poblaciones producen, viven y atienden la salud y la enfermedad, y no solo como un hecho biológico individual.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Para qué sirve el proceso salud-enfermedad-atención como herramienta?",
+        "verso": "Para analizar la situación de salud a escala poblacional, integrando lo biológico, lo social, lo cultural y las prácticas de atención.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué aporta la Antropología Médica al proceso salud-enfermedad?",
+        "verso": "Visibiliza que la enfermedad y la curación son hechos culturales: cada sociedad define qué es enfermedad y cómo se atiende.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los modelos de atención?",
+        "verso": "Las formas en que las sociedades enfrentan la enfermedad (modelo médico hegemónico, tradicional, alternativo), que coexisten en el proceso salud-enfermedad-atención.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los determinantes del proceso salud-enfermedad-atención?",
+        "verso": "Los factores económicos, sociales, culturales y ambientales que condicionan la distribución de la salud y la enfermedad en las poblaciones.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la medicalización de la vida?",
+        "verso": "La conversión de problemas cotidianos y sociales en asuntos médicos que requieren intervención profesional.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene el Estado en el proceso salud-enfermedad-atención?",
+        "verso": "Garantizar el acceso, financiar el sistema y definir políticas públicas que actúen sobre los determinantes sociales de la salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el modelo médico hegemónico?",
+        "verso": "El modelo dominante de atención basado en la biomedicina, el hospital y la enfermedad, en tensión con otros modelos de cuidado.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR (Menéndez E). Proceso salud-enfermedad-atención. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 21
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP3 — Psiquiatría — Relación médico-paciente",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Vínculo singular, prestigio y rol de la ciencia",
+    "tags": [
+      "cyd-up3",
+      "psiquiatria",
+      "relacion-medico-paciente",
+      "vínculo-singular",
+      "etica-medica"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la relación médico-paciente?",
+        "verso": "Un vínculo singular y asimétrico entre el médico y el paciente, fundado en la demanda de ayuda, la confianza y la ética.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el prestigio del médico en la relación?",
+        "verso": "La autoridad que la sociedad y el paciente le otorgan al saber médico; debe basarse en el conocimiento científico y la ética.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué significa el término 'médico-enfermo'?",
+        "verso": "Señala que el médico también es un ser humano sujeto a enfermedad y sufrimiento, lo que modera el ideal de omnipotencia.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué rol cumple 'lo científico' en la relación médico-paciente?",
+        "verso": "El conocimiento científico fundamenta la práctica, pero no sustituye la singularidad del vínculo ni la escucha del paciente.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué se dice que la relación médico-paciente es singular?",
+        "verso": "Porque cada encuentro clínico es irrepetible: depende del caso, de la historia y de la subjetividad de ambos participantes.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transferencia en la relación médico-paciente?",
+        "verso": "La reactualización de vínculos tempranos del paciente hacia el médico, que puede facilitar o entorpecer la confianza.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la alianza terapéutica?",
+        "verso": "El acuerdo explícito entre médico y paciente sobre los objetivos del tratamiento, base de la cooperación.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué rol tiene la escucha en la entrevista médica?",
+        "verso": "La escucha atenta del relato del paciente es condición para comprender su padecer y construir el diagnóstico.",
+        "fontes": [
+          "Bercoff E. Relación médico-paciente. En: Psiquiatría, sus aportes a la formación del futuro médico. FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 22
+  }
+]

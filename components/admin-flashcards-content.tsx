@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import { Layers, Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
-import { supabase } from "@/lib/supabase"
+import { supabase, fetchAllFlashcardRefs } from "@/lib/supabase"
 import { translations } from "@/lib/i18n"
 import {
   ANO_KEYS,
@@ -61,11 +61,10 @@ export function AdminFlashcardsContent() {
 
   const load = async () => {
     setLoading(true)
-    const [{ data: decksData }, { data: cardsData }] = await Promise.all([
+    const [{ data: decksData }, cards] = await Promise.all([
       supabase.from("materiais_flashcard_decks").select("*").order("ordem"),
-      supabase.from("materiais_flashcards").select("id, deck_id"),
+      fetchAllFlashcardRefs(),
     ])
-    const cards = (cardsData as { id: string; deck_id: string }[]) ?? []
     const decksComTotal = ((decksData as FlashcardDeck[]) ?? []).map((d) => ({
       ...d,
       total: cards.filter((c) => c.deck_id === d.id).length,

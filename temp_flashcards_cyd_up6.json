@@ -1,0 +1,380 @@
+[
+  {
+    "titulo": "Crecimiento y Desarrollo UP6 — Anatomía — Cerebro",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Configuración externa e interna del cerebro",
+    "tags": [
+      "cyd-up6",
+      "anatomia",
+      "cerebro",
+      "lobulos-cerebrales",
+      "corteza-cerebral",
+      "nucleos-basales",
+      "ventriculos-laterales"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuál es la situación y configuración externa del cerebro?",
+        "verso": "Ocupa la mayor parte de la cavidad craneal; presenta dos hemisferios separados por la hoz del cerebro, con surcos, cisuras y lóbulos (frontal, parietal, temporal, occipital e insular).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las cisuras principales del cerebro?",
+        "verso": "Cisura longitudinal (entre hemisferios), de Rolando (central), de Silvio (lateral) y parieto-occipital.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los lóbulos cerebrales?",
+        "verso": "Frontal, parietal, temporal, occipital y de la ínsula (insular).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la corteza cerebral?",
+        "verso": "Capa de sustancia gris que recubre los hemisferios; es el asiento de las funciones superiores (cognición, lenguaje, motricidad).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la sustancia blanca del cerebro?",
+        "verso": "Axones mielínicos que conectan la corteza entre sí (fibras de asociación, comisurales como el cuerpo calloso, y de proyección).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los núcleos basales?",
+        "verso": "Masas de sustancia gris subcortical (caudado, putamen, globo pálido, núcleo accumbens y subtalámico) que regulan el movimiento.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los ventrículos laterales?",
+        "verso": "Dos cavidades (uno por hemisferio) que contienen líquido cefalorraquídeo y comunican con el 3er ventrículo por los agujeros de Monro.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el cuerpo calloso?",
+        "verso": "La gran comisura de sustancia blanca que conecta los dos hemisferios cerebrales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 39
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP6 — Anatomía — Diencéfalo y cerebelo",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Tálamo, hipotálamo, 3er ventrículo y cerebelo",
+    "tags": [
+      "cyd-up6",
+      "anatomia",
+      "diencefalo",
+      "talamo",
+      "hipotalamo",
+      "cerebelo",
+      "3-ventriculo"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuáles son las partes del diencéfalo?",
+        "verso": "Tálamo, hipotálamo, subtálamo y epitálamo; envuelve al 3er ventrículo.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función del tálamo?",
+        "verso": "Núcleo de relevo de la mayoría de las vías sensitivas hacia la corteza, con funciones de integración y regulación del estado de alerta.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función del hipotálamo?",
+        "verso": "Centro de regulación neuroendócrina y autonómica: controla la homeostasis, el hambre, la sed, la temperatura y el sistema límbico.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son el subtálamo y el epitálamo?",
+        "verso": "El subtálamo participa en el control motor (núcleo subtalámico); el epitálamo incluye la glándula pineal (melatonina) y la habénula.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el 3er ventrículo?",
+        "verso": "Cavidad media del diencéfalo que contiene LCR y comunica con los ventrículos laterales y el acueducto de Silvio.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la situación y configuración externa del cerebelo?",
+        "verso": "Ocupa la fosa craneal posterior, debajo del lóbulo occipital; presenta dos hemisferios y el vermis central, con folias y cisuras.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la configuración interna del cerebelo?",
+        "verso": "Corteza cerebelosa (sustancia gris), sustancia blanca (arbor vitae) y núcleos profundos (dentado, emboliforme, globoso y fastigial).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los cuerpos mamilares?",
+        "verso": "Dos prominencias del hipotálamo posterior relacionadas con la memoria, parte de la vía del hipocampo.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR (Yaber F, Demeglio F). Cerebro, diencéfalo y cerebelo. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 40
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP6 — CyD — Desarrollo de 2 a 6 años",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Habilidades motoras y de lenguaje (AIEPI) por edad",
+    "tags": [
+      "cyd-up6",
+      "crecimiento-y-desarrollo",
+      "aiepi",
+      "desarrollo-infantil",
+      "lenguaje",
+      "hitos-del-desarrollo"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cómo se evalúa el desarrollo de 2 a 6 años?",
+        "verso": "Con el Manual AIEPI-OPS (Atención Integral de las Enfermedades Prevalentes de la Infancia), que evalúa habilidades por edad en áreas motora, de lenguaje, social y cognitiva.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué habilidades motoras se esperan a los 2 años?",
+        "verso": "Caminar solo, correr y subir escaleras apoyado; inician el control de esfínteres y garabatean.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué habilidades de lenguaje se esperan a los 2 años?",
+        "verso": "Frases de 2 palabras (telegráficas), vocabulario de 50 a 300 palabras y comprensión de órdenes simples.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué habilidades motoras se esperan a los 3 años?",
+        "verso": "Correr, subir escaleras alternando pies, saltar y andar en triciclo.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué habilidades de lenguaje se esperan a los 3 años?",
+        "verso": "Frases de 3 palabras, nombra objetos, conoce su edad y usa el plural.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué habilidades se esperan a los 4-5 años?",
+        "verso": "Saltar en un pie, dibujar la figura humana, contar historias, identificar colores y jugar con pares; a los 5-6 años inician la lectoescritura.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué señales de alarma del desarrollo se deben buscar?",
+        "verso": "Retraso del lenguaje (no dice palabras a los 18 meses), pérdida de habilidades adquiridas, dificultad para el juego social y conductas estereotipadas.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuándo se logra el control de esfínteres?",
+        "verso": "El control diurno suele lograrse entre los 2 y 3 años y el nocturno hacia los 3-4 años, con variabilidad individual.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Evaluación del desarrollo de los 2 a los 6 años (Manual AIEPI-OPS). Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 41
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP6 — Histología — Meninges, LCR y corteza",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Meninges, plexos coroideos, LCR y corteza cerebral",
+    "tags": [
+      "cyd-up6",
+      "histologia",
+      "meninges",
+      "lcr",
+      "plexos-coroideos",
+      "corteza-cerebral",
+      "purkinje"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué son las meninges?",
+        "verso": "Las tres membranas que envuelven el SNC: duramadre (externa, fibrosa), aracnoides (media) y piamadre (interna, adherida al tejido).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el espacio subaracnoideo?",
+        "verso": "Espacio entre la aracnoides y la piamadre que contiene el líquido cefalorraquídeo (LCR).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los plexos coroideos?",
+        "verso": "Invaginaciones vasculares de la piamadre en los ventrículos que producen el LCR.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las cavidades encéfalo-medulares?",
+        "verso": "Ventrículos laterales, 3er y 4º ventrículo, acueducto de Silvio y conducto central de la médula, llenos de LCR.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las capas y células principales de la corteza cerebral?",
+        "verso": "La corteza tiene 6 capas celulares (células piramidales, granulares y fusiformes) que procesan la información.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las células de Purkinje?",
+        "verso": "Neuronas grandes del cerebelo, dispuestas en una sola capa, que constituyen la única vía eferente de la corteza cerebelosa.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las vainas neurológicas?",
+        "verso": "Vainas de mielina y de Schwann que envuelven los axones; en el SNC también se asocian al astrocito.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema ventricular?",
+        "verso": "El conjunto de cavidades del SNC (ventrículos laterales, 3º y 4º, y acueducto de Silvio) que contienen LCR producido por los plexos coroideos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Cerebro, cerebelo, médula, meninges y plexos coroideos. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 42
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP6 — Medicina y Sociedad — Atención Primaria de la Salud",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Alma Ata, principios de APS y sistema de salud",
+    "tags": [
+      "cyd-up6",
+      "medicina-y-sociedad",
+      "atencion-primaria",
+      "alma-ata",
+      "sistema-de-salud",
+      "niveles-de-atencion"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la Atención Primaria de la Salud (APS)?",
+        "verso": "La estrategia de atención y organización del sistema de salud basada en la Declaración de Alma Ata (1978), orientada a la promoción, prevención y equidad.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué declaró Alma Ata en 1978?",
+        "verso": "La necesidad de salud para todos mediante la APS, como primer nivel de contacto con la comunidad y núcleo del sistema de salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los principios de la APS?",
+        "verso": "Accesibilidad, participación comunitaria, intersectorialidad, atención integral, continuidad y orientación hacia la prevención y promoción.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre la APS selectiva y la integral?",
+        "verso": "La selectiva se limita a intervenciones puntuales (p. ej., programas verticales de inmunización); la integral aborda la salud como derecho, con participación y desarrollo social.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se organiza el sistema de salud en Argentina?",
+        "verso": "En tres subsistemas: público (estatal), obras sociales (seguridad social) y privado (prepago); cada uno con diferentes niveles de atención.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los niveles de atención del sistema de salud?",
+        "verso": "Primer nivel (atención ambulatoria y APS), segundo nivel (hospitales generales y especialidades básicas) y tercer nivel (alta complejidad).",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la APS renovada?",
+        "verso": "La actualización del concepto de APS (OMS, 2008) orientada a la cobertura universal, la equidad y los determinantes sociales de la salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la intersectorialidad en APS?",
+        "verso": "La articulación del sector salud con educación, trabajo, vivienda y otros sectores para actuar sobre los determinantes de la salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Atención Primaria de la Salud (APS), Alma Ata y sistema de salud. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 43
+  }
+]

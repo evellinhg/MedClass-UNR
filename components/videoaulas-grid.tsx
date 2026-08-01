@@ -219,7 +219,7 @@ export function VideoaulasGrid() {
     )
   }
 
-  const ordemAno = [...ANO_KEYS, SEM_ANO_KEY]
+  const ordemAno = [...ANO_KEYS, "cursos", SEM_ANO_KEY]
 
   const grupos = VIDEOAULA_FONTE_KEYS.map((fonteKey) => {
     const itemsComIndex = videoaulas

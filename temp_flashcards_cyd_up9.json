@@ -1,0 +1,537 @@
+[
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — CyD — Vacunación y carnet",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Carnet, PAI, calendario y adherencia",
+    "tags": [
+      "cyd-up9",
+      "crecimiento-y-desarrollo",
+      "vacunas",
+      "carnet-de-vacunacion",
+      "pai",
+      "calendario-nacional",
+      "adherencia"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el carnet de vacunación?",
+        "verso": "Documento oficial que registra las vacunas aplicadas, sus dosis y fechas, permitiendo el control del calendario y la adherencia.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el PAI?",
+        "verso": "El Programa Ampliado de Inmunizaciones: el plan de vacunación universal y gratuito que organiza el calendario nacional de vacunas.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el fundamento biológico de la vacunación?",
+        "verso": "Generar inmunidad activa artificial administrando antígenos (atenuados, inactivados, ARNm) para producir memoria inmunológica sin enfermedad.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Por qué es importante la adherencia al calendario?",
+        "verso": "Para mantener coberturas altas que logren inmunidad de rebaño y prevengan brotes de enfermedades prevenibles.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué vacunas se indican en la adolescencia?",
+        "verso": "Refuerzo de difteria-tétanos-pertussis (dTpa), virus papiloma humano (VPH), meningococo, triple viral (SRP) y la correspondiente a COVID-19.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cadena de frío?",
+        "verso": "El sistema de refrigeración que mantiene las vacunas a la temperatura adecuada desde su producción hasta su aplicación, garantizando su eficacia.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los eventos adversos posvacunación?",
+        "verso": "Reacciones indeseadas tras la aplicación (fiebre, dolor local); se notifican y en la mayoría de los casos no contraindican el calendario.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la inmunidad de rebaño?",
+        "verso": "La protección indirecta de la comunidad cuando un alto porcentaje está inmunizado, dificultando la circulación del agente.",
+        "fontes": [
+          "Cátedra de Crecimiento y Desarrollo, FCM-UNR. Carnet de vacunación y Programa Ampliado de Inmunizaciones (PAI). Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 59
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Histología — Tejido sanguíneo",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Plasma, eritrocitos, leucocitos y plaquetas",
+    "tags": [
+      "cyd-up9",
+      "histologia",
+      "sangre",
+      "plasma",
+      "eritrocitos",
+      "leucocitos",
+      "plaquetas"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la sangre y cuál es su composición?",
+        "verso": "Tejido conectivo líquido formado por plasma y elementos figurados (eritrocitos, leucocitos y plaquetas).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el plasma sanguíneo?",
+        "verso": "La parte líquida de la sangre: agua, proteínas (albúmina, globulinas, fibrinógeno), iones, nutrientes y gases.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones de la sangre?",
+        "verso": "Transporte de oxígeno, nutrientes, hormonas y desechos; regulación de temperatura y pH; defensa inmunológica; coagulación.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los eritrocitos?",
+        "verso": "Glóbulos rojos anucleados, ricos en hemoglobina, que transportan oxígeno; se forman en la médula ósea.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los leucocitos y sus tipos?",
+        "verso": "Glóbulos blancos de la defensa: granulocitos (neutrófilos, eosinófilos, basófilos) y agranulocitos (linfocitos y monocitos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las plaquetas?",
+        "verso": "Fragmentos celulares (de los megacariocitos) que participan en la hemostasia y la coagulación.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el frotis sanguíneo?",
+        "verso": "Preparación en lámina para observar y contar los elementos figurados al microscopio (fórmula leucocitaria).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el hematocrito?",
+        "verso": "El porcentaje del volumen sanguíneo ocupado por los glóbulos rojos (aproximadamente 45% en el adulto).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 60
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Histología — Tejido hemocitopoyético y linfático",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Hemopoyesis, órganos linfoides primarios y secundarios",
+    "tags": [
+      "cyd-up9",
+      "histologia",
+      "hemopoyesis",
+      "medula-osea",
+      "timo",
+      "ganglios",
+      "bazo",
+      "tejido-linfatico"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el tejido hemocitopoyético?",
+        "verso": "El tejido que forma las células sanguíneas (hemopoyesis): médula ósea y, en el desarrollo fetal, hígado y bazo.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica la hemopoyesis?",
+        "verso": "En mielopoyesis (granulocitos, monocitos, eritrocitos, plaquetas) y linfopoyesis (linfocitos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el tejido linfático?",
+        "verso": "Tejido especializado de la inmunidad compuesto por linfocitos, células reticulares y macrófagos, organizado en órganos y tejidos linfoides.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los órganos linfoides primarios?",
+        "verso": "Timo y médula ósea: donde los linfocitos maduran (T en el timo, B en la médula).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los órganos linfoides secundarios?",
+        "verso": "Ganglios linfáticos, bazo, amígdalas y tejido linfoide asociado a mucosas (MALT), donde se inician las respuestas inmunes.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la organización del ganglio linfático?",
+        "verso": "Cápsula, corteza (folículos B), paracorteza (zona T) y médula (cordones y senos); filtra la linfa.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre médula ósea roja y amarilla?",
+        "verso": "La roja es hematopoyética activa; la amarilla está infiltrada por grasa y puede reactivarse ante un aumento de la demanda.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo es la histología del timo?",
+        "verso": "Lóbulos con corteza (linfocitos T inmaduros) y médula (corpúsculos de Hassall), donde los linfocitos T maduran.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido sanguíneo, hemocitopoyético y linfático. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 61
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Inmunología — Sistema inmune",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Órganos, células y moléculas de la inmunidad",
+    "tags": [
+      "cyd-up9",
+      "inmunologia",
+      "sistema-inmune",
+      "linfocitos",
+      "organos-linfoides",
+      "recirculacion",
+      "macrofagos"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el sistema inmune?",
+        "verso": "El conjunto de órganos, células y moléculas que defienden al organismo frente a agentes patógenos, con reconocimiento de lo propio y lo extraño.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las funciones de la respuesta inmune?",
+        "verso": "Reconocer, neutralizar y eliminar patógenos; reconocer lo propio (tolerancia); y generar memoria inmunológica.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las células del sistema inmune?",
+        "verso": "Células mieloides (macrófagos, neutrófilos, células dendríticas, mastocitos, eosinófilos) y linfoides (linfocitos B y T, NK).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los órganos linfoides primarios?",
+        "verso": "Timo y médula ósea, donde los linfocitos maduran y aprenden tolerancia (selección positiva y negativa).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los órganos linfoides secundarios?",
+        "verso": "Ganglios, bazo y MALT, donde los linfocitos vírgenes encuentran antígenos e inician la respuesta.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la recirculación linfocitaria?",
+        "verso": "El tráfico continuo de linfocitos entre sangre, linfa y órganos linfoides que permite el encuentro con antígenos en todo el cuerpo.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las citocinas?",
+        "verso": "Proteínas solubles (interleucinas, interferones, quimiocinas) que comunican y regulan a las células del sistema inmune.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la tolerancia inmunológica?",
+        "verso": "La falta de respuesta del sistema inmune contra lo propio, adquirida durante la maduración linfocitaria.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 62
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Inmunología — Inmunidad innata",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Barreras, fagocitos, inflamación y complemento",
+    "tags": [
+      "cyd-up9",
+      "inmunologia",
+      "inmunidad-innata",
+      "fagocitosis",
+      "inflamacion",
+      "complemento",
+      "celulas-nk"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la inmunidad innata?",
+        "verso": "La primera línea de defensa, inmediata e inespecífica, presente desde el nacimiento: barreras, células fagocíticas y complemento.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los elementos celulares de la inmunidad innata?",
+        "verso": "Neutrófilos, macrófagos, células dendríticas, células NK, eosinófilos y mastocitos.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los elementos humorales de la inmunidad innata?",
+        "verso": "Sistema del complemento, interferones, lisozima, péptidos antimicrobianos y proteínas de fase aguda.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la inflamación?",
+        "verso": "La respuesta vascular y celular a la lesión o infección: rubor, calor, tumor y dolor, que recluta células y favorece la reparación.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fagocitosis?",
+        "verso": "Proceso por el cual los fagocitos (macrófagos, neutrófilos) engloban y destruyen microorganismos o restos celulares.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema del complemento?",
+        "verso": "Conjunto de proteínas plasmáticas que opsonizan, lisan microorganismos y amplifican la inflamación.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las células NK?",
+        "verso": "Linfocitos de la inmunidad innata que lisan células infectadas o tumorales sin necesidad de presentación antigénica previa.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los interferones?",
+        "verso": "Citocinas antivirales producidas por células infectadas que protegen a las células vecinas de la infección viral.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 63
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Inmunología — Inmunidad adquirida",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Antígenos, APC, linfocitos B/T y cooperación",
+    "tags": [
+      "cyd-up9",
+      "inmunologia",
+      "inmunidad-adquirida",
+      "linfocitos-t",
+      "linfocitos-b",
+      "antigenos",
+      "mhc",
+      "celulas-presentadoras"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la inmunidad adquirida (adaptativa)?",
+        "verso": "La inmunidad específica y con memoria, mediada por linfocitos B (humoral) y T (celular), que mejora en respuestas sucesivas.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un antígeno?",
+        "verso": "Molécula reconocida como extraña por el sistema inmune y capaz de inducir una respuesta (proteínas, polisacáridos).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las células presentadoras de antígeno (APC)?",
+        "verso": "Células dendríticas, macrófagos y linfocitos B que capturan antígenos y los presentan a los linfocitos T mediante MHC.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los linfocitos T CD4 (helpers)?",
+        "verso": "Orquestan la respuesta inmune: activan linfocitos B, macrófagos y citotóxicos mediante citocinas.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los linfocitos T CD8 (citotóxicos)?",
+        "verso": "Lisan células infectadas o tumorales al reconocer el antígeno presentado por MHC clase I.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cooperación Th-B?",
+        "verso": "El linfocito T helper activado estimula al linfocito B (por contacto y citocinas) para producir anticuerpos específicos y memoria.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el receptor de células T (TCR)?",
+        "verso": "El receptor específico de los linfocitos T que reconoce antígenos presentados por moléculas del MHC.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los linfocitos B y los anticuerpos?",
+        "verso": "Los linfocitos B producen anticuerpos (inmunoglobulinas) que reconocen antígenos libres y median la inmunidad humoral.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 64
+  },
+  {
+    "titulo": "Crecimiento y Desarrollo UP9 — Inmunología — Inmunoglobulinas, memoria y vacunación",
+    "ano": "ano1",
+    "materia": "crescimento_desenvolvimento",
+    "parcial": "parcial1",
+    "disciplina_base": "inmunologia",
+    "descricao": "Clases de Ig, respuesta primaria/secundaria y tipos de inmunidad",
+    "tags": [
+      "cyd-up9",
+      "inmunologia",
+      "inmunoglobulinas",
+      "memoria-inmunologica",
+      "inmunidad-activa",
+      "inmunidad-pasiva",
+      "vacunas",
+      "arnm"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es una inmunoglobulina?",
+        "verso": "Anticuerpo: proteína producida por linfocitos B que reconoce y neutraliza antígenos; forma de Y con dos cadenas livianas y dos pesadas.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las clases de inmunoglobulinas?",
+        "verso": "IgG (principal, cruza la placenta), IgA (mucosas y leche), IgM (respuesta primaria), IgE (alergia y parásitos) e IgD (receptor de linfocitos B).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la respuesta primaria y secundaria?",
+        "verso": "Primaria: lenta y con IgM tras el primer contacto. Secundaria: rápida, más intensa y con IgG, gracias a la memoria inmunológica.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la memoria inmunológica?",
+        "verso": "La persistencia de linfocitos B y T de memoria que permiten una respuesta rápida y eficaz ante una nueva exposición al mismo antígeno.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la inmunidad activa?",
+        "verso": "Generada por el propio organismo al enfrentar el antígeno: natural (infección) o artificial (vacunación).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la inmunidad pasiva?",
+        "verso": "Anticuerpos transferidos ya formados: natural (a través de la placenta o leche) o artificial (inmunoglobulinas terapéuticas).",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el fundamento de la vacunación?",
+        "verso": "Inducir inmunidad activa artificial y memoria sin enfermedad, mediante antígenos atenuados, inactivados, subunidades o ARNm.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué vacuna actúa con ARNm?",
+        "verso": "Las vacunas de ARN mensajero (como las de COVID-19) que instruyen a las células para producir el antígeno e inducir memoria.",
+        "fontes": [
+          "Cátedra de Inmunología, FCM-UNR. Sistema inmune, inmunidad innata y adquirida, inmunoglobulinas y vacunación. Guía Crecimiento y Desarrollo 2025."
+        ]
+      }
+    ],
+    "ordem": 65
+  }
+]

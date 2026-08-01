@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2 } from "lucide-react"
-import { supabase } from "@/lib/supabase"
+import { supabase, fetchAllFlashcardRefs } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -141,12 +141,10 @@ export function FlashcardDecksGrid() {
       const { data: userData } = await supabase.auth.getUser()
       const userId = userData.user?.id
 
-      const [{ data: decksData }, { data: cardsData }] = await Promise.all([
+      const [{ data: decksData }, cards] = await Promise.all([
         supabase.from("materiais_flashcard_decks").select("*").eq("ativo", true).order("ordem"),
-        supabase.from("materiais_flashcards").select("id, deck_id"),
+        fetchAllFlashcardRefs(),
       ])
-
-      const cards = (cardsData as { id: string; deck_id: string }[]) ?? []
       let respondidoIds = new Set<string>()
       if (userId) {
         const { data: progressoData } = await supabase

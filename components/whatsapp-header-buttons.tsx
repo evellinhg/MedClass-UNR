@@ -1,7 +1,12 @@
 "use client"
 
-import { Users } from "lucide-react"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { Headset, Users } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { useLanguage } from "@/lib/i18n"
 
 const SUPORTE_URL = "https://wa.me/543412290349"
@@ -19,39 +24,30 @@ export function WhatsappHeaderButtons() {
   const { t } = useLanguage()
 
   return (
-    <div className="flex items-center gap-1.5">
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <a
-            href={SUPORTE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t.whatsapp.suporte}
-            className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
-          >
-            <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          aria-label="WhatsApp"
+          className="group flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
+        >
+          <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="w-56">
+        <DropdownMenuItem asChild>
+          <a href={SUPORTE_URL} target="_blank" rel="noopener noreferrer" className="cursor-pointer gap-2.5">
+            <Headset className="h-4 w-4 text-[#25D366]" />
+            {t.whatsapp.suporte}
           </a>
-        </TooltipTrigger>
-        <TooltipContent>{t.whatsapp.suporte}</TooltipContent>
-      </Tooltip>
-
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <a
-            href={GRUPO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t.whatsapp.grupo}
-            className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-[#0d2a1a] text-[#25D366] transition-all hover:scale-110 hover:bg-[#0f3a22] hover:shadow-[0_0_12px_2px_rgba(37,211,102,0.65)]"
-          >
-            <WhatsappIcon className="h-5 w-5 fill-current drop-shadow-[0_0_4px_rgba(37,211,102,0.9)] transition-transform group-hover:scale-110" />
-            <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-card ring-1 ring-[#25D366]/60">
-              <Users className="h-2.5 w-2.5 text-[#25D366]" strokeWidth={2.5} />
-            </span>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild>
+          <a href={GRUPO_URL} target="_blank" rel="noopener noreferrer" className="cursor-pointer gap-2.5">
+            <Users className="h-4 w-4 text-[#25D366]" />
+            {t.whatsapp.grupo}
           </a>
-        </TooltipTrigger>
-        <TooltipContent>{t.whatsapp.grupo}</TooltipContent>
-      </Tooltip>
-    </div>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   )
 }

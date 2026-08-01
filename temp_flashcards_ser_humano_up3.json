@@ -1,0 +1,624 @@
+[
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Anatomía — Riñones y vías urinarias superiores",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Configuración, relaciones, pedículo e irrigación renal",
+    "tags": [
+      "ser-humano-up3",
+      "anatomia",
+      "rinon",
+      "via-urinaria",
+      "pelvis-renal",
+      "ureter"
+    ],
+    "cards": [
+      {
+        "frente": "¿Dónde se ubican los riñones?",
+        "verso": "En el retroperitoneo, a ambos lados de la columna vertebral (L1-L3), el derecho algo más bajo que el izquierdo por el hígado.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las porciones del riñón en un corte?",
+        "verso": "Corteza (externa), médula (interna, con pirámides renales), y seno renal con el sistema colector (cálices y pelvis renal).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el hilio renal y qué contiene?",
+        "verso": "La zona de entrada del riñón, por donde pasan el pedículo renal: arteria renal, vena renal y pelvis renal, además de linfáticos y nervios.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la pirámide renal y la columna renal?",
+        "verso": "Pirámide: porción cónica de la médula que desemboca en los cálices menores. Columna de Bertin: prolongación de corteza entre dos pirámides.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las vías urinarias superiores?",
+        "verso": "Los cálices menores, cálices mayores, la pelvis renal y el uréter.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué relaciones presenta el riñón derecho?",
+        "verso": "Adelante: hígado, duodeno y colon; arriba: glándula suprarrenal. Su polo superior está a nivel de la 12ª costilla.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el pedículo renal y cuál es su orden?",
+        "verso": "Conjunto de estructuras que entran y salen por el hilio. Orden (de adelante hacia atrás): vena renal, arteria renal y pelvis renal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo está irrigado el riñón?",
+        "verso": "Por la arteria renal (rama de la aorta abdominal), que se divide en arterias segmentarias, lobares, interlobares, arciformes e interlobulillares; drena por la vena renal a la vena cava inferior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fascia renal (de Gerota)?",
+        "verso": "La envoltura conectiva que separa el riñón y la suprarrenal del resto del retroperitoneo; el riñón está rodeado por grasa perirrenal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la función principal del riñón?",
+        "verso": "Filtrar la sangre para formar orina, regulando el volumen, la osmolaridad, los electrolitos y el pH del medio interno, y excretando desechos (urea, creatinina).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Sistema urinario: riñones y vías urinarias superiores. Guía Ser Humano y su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 20
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Histología — Histología del aparato urinario",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Nefrón, corpúsculo renal, túbulos y urotelio",
+    "tags": [
+      "ser-humano-up3",
+      "histologia",
+      "nefron",
+      "glomerulo",
+      "tubo-urinifero",
+      "urotelio"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuál es la unidad funcional del riñón?",
+        "verso": "El nefrón: glomérulo (corpúsculo renal) + túbulos (contorneado proximal, asa de Henle, contorneado distal), que drena en el tubo colector.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el tubo urinífero?",
+        "verso": "La unidad anatómica formada por el nefrón y el tubo colector, que comparten la misma papila renal.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el corpúsculo renal y cuáles son sus componentes?",
+        "verso": "Glomérulo + cápsula de Bowman. El glomérulo es una red de capilares fenestrados; la cápsula tiene hoja parietal y hoja visceral (podocitos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué células integran el glomérulo?",
+        "verso": "Células endoteliales fenestradas, podocitos (con pedicelos y membrana de filtración) y células mesangiales (sostén y fagocitosis).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué características presenta el túbulo contorneado proximal?",
+        "verso": "Epitelio cúbico con borde en cepillo (microvellosidades), intensa actividad de reabsorción (Na, glucosa, aminoácidos, agua) y citoplasma acidófilo.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué características presenta el asa de Henle?",
+        "verso": "Rama delgada (epitelio plano, muy permeable al agua) y rama gruesa ascendente (epitelio cúbico impermeable al agua, transporta Na-K-2Cl); crea el intersticio hiperosmótico.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué características presenta el túbulo contorneado distal?",
+        "verso": "Epitelio cúbico simple, células con pliegues basales; impermeable al agua, reabsorbe Na y Cl y participa en la regulación de Ca y del equilibrio ácido-base.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el aparato yuxtaglomerular?",
+        "verso": "La zona de contacto entre la mácula densa (del túbulo distal), las células yuxtaglomerulares (producen renina) y las células mesangiales extraglomerulares.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué epitelio reviste la vejiga y las vías urinarias?",
+        "verso": "Urotelio (epitelio de transición), que se distiende; las células superficiales grandes (umbrella) permiten el cambio de volumen sin perder continuidad.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué células epiteliales recubren el uréter?",
+        "verso": "Urotelio (epitelio de transición) sobre lámina propia y capas musculares (longitudinal interna, circular media, longitudinal externa).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Histología del aparato urinario. Guía Ser Humano y su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 21
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Fisiología — Filtración glomerular y TFG",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Starling, barrera de filtración, TFG y su regulación",
+    "tags": [
+      "ser-humano-up3",
+      "fisiologia",
+      "filtracion-glomerular",
+      "tfg",
+      "starling",
+      "albumina"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la filtración glomerular?",
+        "verso": "El paso de plasma (agua y solutos de bajo peso molecular) desde los capilares glomerulares a la cápsula de Bowman, primer paso de la formación de orina.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Cap. 33 (Función renal)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la ecuación de Starling aplicada al glomérulo?",
+        "verso": "El balance de fuerzas que determina la filtración: presión hidrostática del capilar (favorece) menos presión oncótica del capilar y presión hidrostática de la cápsula (se oponen).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 26-27."
+        ]
+      },
+      {
+        "frente": "¿Qué propiedades tiene la barrera de filtración glomerular?",
+        "verso": "Consta de endotelio fenestrado, membrana basal y podocitos; es selectiva por tamaño y carga, permitiendo agua y solutos pequeños pero impidiendo el paso de proteínas (especialmente las de carga negativa).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la tasa de filtración glomerular (TFG) y su valor normal?",
+        "verso": "El volumen de plasma filtrado por los glomérulos por unidad de tiempo: ~125 mL/min (180 L/día).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 26-27."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fracción de filtración?",
+        "verso": "La proporción del flujo plasmático renal que se filtra: TFG / FPR ≈ 125/650 ≈ 20 % (0,2).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Cómo se regula la TFG?",
+        "verso": "Por autorregulación (mecanismo miogénico y retroalimentación tubuloglomerular con la mácula densa), por el sistema nervioso simpático y por hormonas (angiotensina II, prostaglandinas, óxido nítrico).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Cap. 33 (Función renal)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la carga filtrada y de qué factores depende?",
+        "verso": "La cantidad de una sustancia que se filtra por unidad de tiempo: carga filtrada = TFG x concentración plasmática de la sustancia.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la albuminuria normal?",
+        "verso": "La excreción fisiológica de albúmina en orina, menor a 30 mg/día; la barrera de filtración impide el paso de grandes cantidades de albúmina (carga negativa).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la TFG estimada y para qué sirve?",
+        "verso": "La TFG calculada por fórmulas clínicas (Cockcroft-Gault, MDRD, CKD-EPI) a partir de creatinina sérica, edad, sexo y raza; permite estadificar la enfermedad renal crónica.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Por qué la TFG no varía mucho con los cambios de presión arterial?",
+        "verso": "Por la autorregulación renal: entre ~80 y 180 mmHg de presión media, los mecanismos miogénico y tubuloglomerular mantienen constante la TFG.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Cap. 33 (Función renal)."
+        ]
+      }
+    ],
+    "ordem": 22
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Fisiología — Clearance renal y estimación de la TFG",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Aclaramiento de creatinina y PAH; fórmulas clínicas de TFG",
+    "tags": [
+      "ser-humano-up3",
+      "fisiologia",
+      "clearance",
+      "creatinina",
+      "pah",
+      "tfg"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el aclaramiento o clearance renal de una sustancia?",
+        "verso": "El volumen de plasma que queda totalmente depurado de esa sustancia por unidad de tiempo: C = (U x V) / P (mL/min).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué sustancia se usa para estimar la TFG y por qué?",
+        "verso": "La creatinina: se filtra libremente, casi no se reabsorbe ni se secreta, por lo que su aclaramiento se aproxima a la TFG (~120 mL/min).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Cómo se calcula el aclaramiento de creatinina?",
+        "verso": "Ccr = (creatinina en orina x flujo urinario) / creatinina plasmática. Requiere orina de 24 h y creatininemia.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fórmula de Cockcroft-Gault?",
+        "verso": "Fórmula clínica para estimar el aclaramiento de creatinina: [(140 - edad) x peso] / (72 x creatinina sérica), multiplicado por 0,85 en mujeres.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué son las fórmulas MDRD y CKD-EPI?",
+        "verso": "Fórmulas que estiman la TFG a partir de la creatinina sérica, edad, sexo y (en MDRD) raza, estandarizadas al área de superficie corporal; CKD-EPI es más precisa en TFG altas.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué mide el aclaramiento de PAH?",
+        "verso": "El flujo plasmático renal efectivo (FPRe): el PAH se secreta casi por completo en una sola pasada, por lo que su aclaramiento (≈650 mL/min) aproxima el flujo plasmático renal.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es el aclaramiento de agua libre?",
+        "verso": "La excreción de agua sin electrolitos: CH2O = V - Cosm; es positivo en la dilución (orina hipotónica) y negativo en la concentración (reabsorción de agua).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la TFG estimada con la estadificación renal?",
+        "verso": "La ERC se estadifica según TFG: G1 ≥90, G2 60-89, G3a 45-59, G3b 30-44, G4 15-29, G5 <15 mL/min/1,73m2.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué significa que la creatinina sérica suba?",
+        "verso": "Indica caída de la TFG (relación inversa); por su producción muscular constante, la creatinina es un marcador de función renal, aunque menos sensible que el aclaramiento.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Por qué el clearance de una sustancia puede ser mayor que la TFG?",
+        "verso": "Porque además de filtrarse se secreta activamente (p. ej., PAH: clearance > TFG). Si además se reabsorbe, el clearance puede ser menor que la TFG (p. ej., glucosa).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      }
+    ],
+    "ordem": 23
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Fisiología — Análisis de orina",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Examen físico, químico y sedimento de la orina",
+    "tags": [
+      "ser-humano-up3",
+      "fisiologia",
+      "analisis-de-orina",
+      "sedimento",
+      "cilindros",
+      "densidad-urinaria"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuál es la composición normal de la orina?",
+        "verso": "Agua (~95 %), urea, creatinina, iones (Na, K, Cl, fosfato), ácido úrico y pigmentos; pH entre 4,5 y 8, densidad 1010-1035.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué evalúa el examen físico de la orina?",
+        "verso": "Color, aspecto (transparencia) y densidad urinaria.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué evalúa el examen químico de la orina?",
+        "verso": "pH, glucosa (glucosuria), proteínas (proteinuria), cetonas, bilirrubina, urobilinógeno, nitritos, sangre oculta y leucocitos (tira reactiva).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué evalúa el examen del sedimento urinario?",
+        "verso": "Elementos formes al microscopio: células (epiteliales, leucocitos, eritrocitos), cilindros, cristales y microorganismos.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el momento adecuado para recolectar orina?",
+        "verso": "La primera orina de la mañana, por ser la más concentrada y representativa (retención nocturna).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué indica la presencia de cilindros en el sedimento?",
+        "verso": "Patología renal intrínseca: los cilindros se forman en los túbulos renales (glicoproteína de Tamm-Horsfall) y sugieren lesión glomerular o tubular.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué indica la glucosuria en presencia de glucemia normal?",
+        "verso": "Disfunción tubular proximal (bajo umbral de reabsorción, p. ej., glucosuria renal); con glucemia elevada indica diabetes.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la proteinuria y cuándo es patológica?",
+        "verso": "La presencia de proteínas en orina; hasta 150 mg/día es normal (albúmina <30 mg/día). Más allá indica lesión de la barrera de filtración (síndrome nefrótico, nefropatía).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué es la densidad urinaria y su valor normal?",
+        "verso": "Medida de la concentración de la orina (osmoles); normal entre 1010 y 1035 g/mL. Fijamente baja indica pérdida de capacidad de concentrar (p. ej., diabetes insípida).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      },
+      {
+        "frente": "¿Qué significa la presencia de nitritos en orina?",
+        "verso": "Posible infección urinaria: las bacterias productoras de nitrato-reductasa (enterobacterias) convierten los nitratos en nitritos, detectados en la tira reactiva.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 14, 22."
+        ]
+      }
+    ],
+    "ordem": 24
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Salud Mental — PNIE 3, identidad y adolescencia",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "PNIE, identidad, normas, formas familiares y posmodernidad",
+    "tags": [
+      "ser-humano-up3",
+      "salud-mental",
+      "pnie",
+      "adolescencia",
+      "identidad",
+      "formas-familiares"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la PNIE 3 en la UP3?",
+        "verso": "El tercer nivel de la Psiconeuroinmunoendocrinología, que se articula con la consolidación de la identidad y los procesos del adolescente.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la consolidación de la identidad en la adolescencia?",
+        "verso": "El proceso por el cual el adolescente construye un sentido de sí mismo (quién es), integrando sus experiencias, valores y expectativas sociales.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumplen las normas y reglas en la adolescencia?",
+        "verso": "Funcionan como marco de referencia y límite; el adolescente las cuestiona y las internaliza para construir su propio sistema de valores.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué son las formas familiares y cómo influyen en la adolescencia?",
+        "verso": "Las distintas estructuras familiares (nuclear, monoparental, ensamblada, ampliada); cada una ofrece modelos de vínculo, sostén y transmisión de valores.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué conflictos surgen entre expectativas del adolescente y de la familia?",
+        "verso": "La familia espera continuidad y obediencia; el adolescente busca autonomía e independencia; el conflicto generacional es parte normal del desarrollo.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Cómo influye la posmodernidad en la adolescencia?",
+        "verso": "La cultura posmoderna (individualismo, redes, consumo, incertidumbre) debilita referentes tradicionales y aumenta la exigencia de autoafirmación, con impacto en la identidad.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la moratoria psicosocial en la adolescencia?",
+        "verso": "El período de búsqueda y ensayo de roles que posibilita la construcción de la identidad antes de asumir compromisos adultos.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué rol tiene el grupo de pares en la adolescencia?",
+        "verso": "Fuente de pertenencia, experimentación de roles y validación; puede favorecer o dificultar la adopción de hábitos saludables.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre la PNIE y la respuesta al estrés en el adolescente?",
+        "verso": "Los cambios hormonales y el estrés psicosocial del adolescente modulan los ejes neuroendocrinos e inmunitarios, influyendo en su vulnerabilidad a enfermedades.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la identidad según la perspectiva psicosocial?",
+        "verso": "El resultado de la integración de las identificaciones infantiles, los valores familiares y las expectativas sociales, que se consolida principalmente en la adolescencia.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      }
+    ],
+    "ordem": 25
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP3 — Medicina Preventiva — Indicadores de inequidad y NBI",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Inequidad, Necesidades Básicas Insatisfechas y pobreza",
+    "tags": [
+      "ser-humano-up3",
+      "indicadores-de-inequidad",
+      "nbi",
+      "pobreza",
+      "gini"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué son los indicadores de inequidad?",
+        "verso": "Medidas que cuantifican las desigualdades evitables en salud y condiciones de vida entre grupos sociales.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el método de Necesidades Básicas Insatisfechas (NBI)?",
+        "verso": "Método que identifica hogares pobres estructuralmente cuando presentan al menos una carencia en: vivienda, condiciones sanitarias, hacinamiento, asistencia escolar o capacidad de subsistencia.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué dimensiones evalúa el NBI?",
+        "verso": "1) Vivienda inadecuada (tipo precario); 2) vivienda sin condiciones sanitarias mínimas (sin agua o sin retrete); 3) hacinamiento (más de 3 personas por cuarto); 4) hogares sin niños en edad escolar en la escuela; 5) alta dependencia económica (4 o más miembros por ocupado con jefe de baja instrucción).",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la pobreza por ingresos (LP/LI)?",
+        "verso": "Hogares cuyo ingreso no alcanza para una canasta básica alimentaria (indigencia) o para una canasta básica total (pobreza).",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre pobreza estructural y coyuntural?",
+        "verso": "La pobreza estructural (NBI) refleja carencias crónicas de infraestructura y capital humano; la coyuntural (por ingresos) varía con el ciclo económico.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el índice de Gini?",
+        "verso": "Medida de desigualdad de la distribución del ingreso: 0 = perfecta igualdad; 1 = máxima desigualdad.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Para qué sirven los indicadores de inequidad en salud?",
+        "verso": "Para visibilizar las desigualdades entre regiones y grupos, priorizar intervenciones y evaluar políticas de equidad.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre NBI y salud renal (UP3)?",
+        "verso": "Las comunidades con NBI suelen tener acceso deficiente a agua potable y saneamiento, lo que aumenta el riesgo de infecciones urinarias y enfermedad renal crónica.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la brecha de inequidad?",
+        "verso": "La diferencia de un indicador (p. ej., mortalidad infantil) entre el grupo más favorecido y el más desfavorecido; mide la magnitud de la injusticia social.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el agua segura como indicador?",
+        "verso": "El acceso a agua potable (cantidad y calidad) como determinante de salud; su ausencia refleja inequidad estructural y eleva el riesgo de enfermedades transmitidas por el agua.",
+        "fontes": [
+          "Scaglia E. Indicadores de inequidad y pobreza. Cátedra de Medicina Preventiva y Social, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 26
+  }
+]

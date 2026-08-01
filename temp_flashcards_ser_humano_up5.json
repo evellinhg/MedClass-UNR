@@ -1,0 +1,802 @@
+[
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Anatomía — Arterias y venas de abdomen y pelvis",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Aorta abdominal, tronco celíaco, mesentéricas, porta y cava",
+    "tags": [
+      "ser-humano-up5",
+      "anatomia",
+      "aorta",
+      "vena-porta",
+      "vena-cava",
+      "pelvis"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué ramas principales nacen de la aorta abdominal?",
+        "verso": "Tronco celíaco (T12), mesentérica superior (L1), renales (L1-L2), mesentérica inferior (L3) y la bifurcación en ilíacas comunes (L4).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué irriga el tronco celíaco?",
+        "verso": "El estómago, hígado, vesícula, bazo y páncreas (por sus tres ramas: gástrica izquierda, esplénica y hepática común).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué irriga la mesentérica superior?",
+        "verso": "El intestino delgado (yeyuno e íleon), ciego, colon ascendente y la mayor parte del colon transverso.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué irriga la mesentérica inferior?",
+        "verso": "El colon izquierdo, sigmoides y recto superior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué origina la arteria ilíaca interna?",
+        "verso": "Las arterias de la pelvis: vesicales, rectales medias, pudendas internas, obturatriz y glúteas, entre otras.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué drena la vena porta y por qué es importante?",
+        "verso": "Drena la sangre del tubo digestivo, bazo y páncreas hacia el hígado (nutrientes y tóxicos para metabolizar); se forma por la unión de mesentérica superior y esplénica.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los principales tributarios de la vena cava inferior?",
+        "verso": "Las venas ilíacas comunes, renales, gonadal derecha, suprarrenal derecha, hepáticas y lumbares.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son las anastomosis porto-cava?",
+        "verso": "Comunicaciones entre el sistema porta y el sistémico (esófago, recto, retroperitoneo, pared abdominal); se dilatan en la hipertensión portal formando várices.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se dispone el plexo lumbar y el plexo sacro?",
+        "verso": "El plexo lumbar (L1-L4) inerva la pared abdominal anterior y el muslo; el plexo sacro (L4-S4) inerva glúteo, periné y miembro inferior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué arterias irrigan la vejiga y el útero?",
+        "verso": "La vejiga por las vesicales superior e inferior (de la ilíaca interna); el útero por la arteria uterina (de la ilíaca interna), que cruza por encima del uréter.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Vasos de abdomen y pelvis. Guía Ser Humano y Su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 37
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Histología y Embriología — Embriología del aparato urinario",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Metanefros, yema ureteral, vejiga y malformaciones renales",
+    "tags": [
+      "ser-humano-up5",
+      "embriologia",
+      "metanefros",
+      "yema-ureteral",
+      "vejiga",
+      "malformaciones"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuáles son las etapas del desarrollo renal (embriología)?",
+        "verso": "Tres sistemas sucesivos: pronefros (rudimentario, no funcional), mesonefros (riñón intermedio) y metanefros (riñón definitivo), más la yema ureteral.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué estructura origina el riñón definitivo?",
+        "verso": "El metanefros, formado por la yema ureteral (del conducto mesonéfrico) y el blastema metanéfrico (del mesodermo intermedio).",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué forma la yema ureteral?",
+        "verso": "El uréter, la pelvis renal, los cálices mayores y menores y los tubos colectores.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué forma el blastema metanéfrico?",
+        "verso": "El nefrón completo: glomérulo, cápsula de Bowman, túbulo contorneado proximal, asa de Henle y túbulo contorneado distal.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué origina la vejiga?",
+        "verso": "La cloaca, que se divide en seno urogenital (vejiga y uretra) y canal anal por el tabique urorrectal; el trigono deriva del conducto mesonéfrico.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué es el divertículo alantoideo?",
+        "verso": "Evaginación del intestino posterior que forma el uraco (ligamento umbilical medio en el adulto); puede persistir como fístula uracal.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué es la agenesia renal?",
+        "verso": "La ausencia de un riñón (unilateral) o de ambos (bilateral, incompatible con la vida), por fallo de desarrollo del metanefros.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué es el riñón ectópico y la malrotación renal?",
+        "verso": "El riñón que no asciende (pélvico) o que gira de forma anómala; alteraciones del ascenso y rotación durante el desarrollo.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué es el riñón en herradura?",
+        "verso": "La fusión de los polos inferiores de ambos riñones por delante de la columna, que queda atrapado en la arteria mesentérica inferior durante el ascenso.",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      },
+      {
+        "frente": "¿Qué es la duplicación ureteral?",
+        "verso": "La división precoz de la yema ureteral, que produce dos uréteres para el mismo riñón (duplicación parcial o completa).",
+        "fontes": [
+          "Moore KL, Persaud TVN, Torchia MG. Embriología Clínica, 10ª ed., Elsevier. Aparato urinario."
+        ]
+      }
+    ],
+    "ordem": 38
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Fisiología — Regulación de la osmolaridad y ADH",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Sed, ADH/AVP, acuaporinas-2 y clearance de agua libre",
+    "tags": [
+      "ser-humano-up5",
+      "fisiologia",
+      "osmolaridad",
+      "adh",
+      "sed",
+      "agua-libre"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la osmolaridad del agua corporal total?",
+        "verso": "La concentración osmolar del cuerpo (~285-295 mOsm/L); se regula principalmente ajustando la ingesta (sed) y la excreción renal de agua libre.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cómo se mantiene la osmolaridad a pesar de cambios en la ingesta?",
+        "verso": "Por la regulación coordinada del balance hídrico: la sed controla la ingesta y la ADH controla la excreción renal de agua.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Qué es la sed y cómo se activa?",
+        "verso": "El mecanismo que impulsa la ingesta de agua, activado por hiperosmolaridad (osmorreceptores del hipotálamo) y por hipovolemia (barorreceptores y angiotensina II).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Qué es la ADH/AVP y dónde se sintetiza?",
+        "verso": "La hormona antidiurética (arginina vasopresina), sintetizada en el hipotálamo (núcleo supraóptico y paraventricular) y liberada por la neurohipófisis.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los estímulos para la liberación de ADH?",
+        "verso": "El aumento de la osmolaridad plasmática (>290 mOsm/L) y la disminución del volumen (hipovolemia >8-10 %); el umbral osmótico es menor.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cómo actúa la ADH sobre el riñón?",
+        "verso": "Se une a receptores V2 en el túbulo colector, inserta acuaporinas-2 (AQP2) en la membrana apical y aumenta la reabsorción de agua, concentrando la orina.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroalimentación de la ADH?",
+        "verso": "La regulación por bucle negativo: el aumento de la osmolaridad estimula ADH → reabsorción de agua → la osmolaridad vuelve a la normalidad y cesa el estímulo.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el clearance de agua libre?",
+        "verso": "La excreción de agua sin osmoles: CH2O = V - Cosm. Positivo en orina diluida (sin ADH), negativo (reabsorción de agua) en orina concentrada.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué es el clearance osmolar?",
+        "verso": "El volumen de plasma depurado de solutos: Cosm = (Uosm x V) / Posm; refleja la excreción de solutos en la orina.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué trastornos produce el exceso o déficit de ADH?",
+        "verso": "El déficit (diabetes insípida central) produce orina abundante y diluida; el exceso (SIADH) produce retención de agua, hiponatremia dilucional y orina concentrada.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      }
+    ],
+    "ordem": 39
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Fisiología — Regulación del volumen del LEC",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Balance de sodio, SRAA, aldosterona, péptidos natriuréticos y FENa",
+    "tags": [
+      "ser-humano-up5",
+      "fisiologia",
+      "lec",
+      "sraa",
+      "aldosterona",
+      "fena",
+      "peptidos-natriureticos"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cómo se regula el volumen del líquido extracelular (LEC)?",
+        "verso": "Principalmente regulando el balance de sodio (el Na es el catión del LEC y determina su volumen), con el riñón como efector principal.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la vía efectora de la regulación del sodio?",
+        "verso": "La reabsorción de sodio en el túbulo distal y colector, regulada por la aldosterona, los péptidos natriuréticos y el sistema nervioso simpático.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué son los sensores del volumen?",
+        "verso": "Mecanismos que detectan cambios del volumen efectivo: barorreceptores de alta presión (carotídeos, aórticos) y de baja presión (aurícula, arteria renal).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el SRAA?",
+        "verso": "El sistema renina-angiotensina-aldosterona: la renina (del aparato yuxtaglomerular) convierte angiotensinógeno en angiotensina I, y la ECA en angiotensina II.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene la angiotensina II?",
+        "verso": "Vasoconstricción, liberación de aldosterona (zona glomerular suprarrenal) y ADH, sed, y aumento de la reabsorción proximal de Na y agua.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene la aldosterona?",
+        "verso": "Aumenta la reabsorción de sodio y la secreción de potasio e hidrógeno en el túbulo colector (receptores mineralocorticoides).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué son los péptidos natriuréticos (ANP/BNP)?",
+        "verso": "Hormonas liberadas por la aurícula (ANP) y el ventrículo (BNP) ante la distensión; aumentan la excreción renal de sodio (natriuresis) y producen vasodilatación.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la FENa?",
+        "verso": "La fracción de excreción de sodio (FENa = clearance de Na / TFG x 100); <1 % indica estados de hipovolemia, >2 % sugiere daño tubular (necrosis tubular aguda).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué es el volumen efectivo circulante?",
+        "verso": "El volumen de sangre que perfunde los tejidos (relación entre volumen real y capacidad vascular); su disminución activa el SRAA aunque el volumen real sea normal (p. ej., en la insuficiencia cardíaca).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el riñón en la presión arterial?",
+        "verso": "Controlando el balance de sodio (volumen) y por el SRAA; la alteración de este control participa en la hipertensión esencial y renal.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      }
+    ],
+    "ordem": 40
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Fisiología — Metabolismo del potasio",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Balance interno y externo del potasio y su regulación",
+    "tags": [
+      "ser-humano-up5",
+      "fisiologia",
+      "potasio",
+      "hiperpotasemia",
+      "hipopotasemia",
+      "k"
+    ],
+    "cards": [
+      {
+        "frente": "¿Dónde se encuentra el potasio del cuerpo?",
+        "verso": "El 98 % es intracelular (balance interno); el LEC contiene solo el 2 %, y su concentración (~3,5-5 mEq/L) es crítica para la excitabilidad celular.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el balance interno del potasio?",
+        "verso": "La distribución entre el interior y el exterior de las células, regulada por la bomba Na-K-ATPasa (entrada de K) y los canales de fuga (salida).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué factores aumentan la entrada de K a las células?",
+        "verso": "La insulina, las catecolaminas beta-2, la aldosterona y la alcalosis; la bomba Na-K-ATPasa los media.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Qué factores sacan K de las células?",
+        "verso": "La acidosis, el ejercicio intenso, la lisis celular y los beta-bloqueantes; el exceso de K sale al LEC.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 35-36 (Regulación de volumen y osmolaridad)."
+        ]
+      },
+      {
+        "frente": "¿Cómo se maneja el K en el TCP y el asa?",
+        "verso": "El TCP y el asa ascendente gruesa reabsorben el 85-90 % del K filtrado; la excreción se ajusta sobre todo en el túbulo colector cortical.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Cómo se regula la secreción de K en el túbulo colector?",
+        "verso": "Las células principales secretan K (favorecida por aldosterona, alto Na y flujo) y reabsorben Na; las células intercaladas reabsorben K en la depleción.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué factores aumentan la secreción urinaria de K?",
+        "verso": "La aldosterona, el aumento del Na distal, el flujo urinario alto, la alcalosis y los diuréticos (furosemida, tiazidas).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      },
+      {
+        "frente": "¿Qué es la hiperpotasemia y cuáles son sus causas?",
+        "verso": "K plasmático >5,5 mEq/L: insuficiencia renal, diuréticos ahorradores, acidosis, rabdomiólisis, hemólisis; riesgo de arritmias y paro cardíaco.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Qué es la hipopotasemia y cuáles son sus causas?",
+        "verso": "K plasmático <3,5 mEq/L: diuréticos, vómitos, diarrea, aldosteronismo, alcalosis; debilidad, arritmias y agravamiento de la intoxicación digitálica.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 28-30."
+        ]
+      },
+      {
+        "frente": "¿Cómo se evalúa la excreción renal de K?",
+        "verso": "Con la concentración de K en orina o el gradiente transtubular de potasio (TTKG); distingue pérdidas renales de extrarrenales.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 18-20."
+        ]
+      }
+    ],
+    "ordem": 41
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Semiología — Historia clínica y método clínico",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "semiologia",
+    "descricao": "Historia clínica, método clínico y relación médico-paciente",
+    "tags": [
+      "ser-humano-up5",
+      "semiologia",
+      "historia-clinica",
+      "metodo-clinico",
+      "relacion-medico-paciente",
+      "anamnesis"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la historia clínica?",
+        "verso": "El documento médico que registra los datos de identificación, motivo de consulta, antecedentes, examen físico y evolución del paciente; es herramienta clínica, docente y legal.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las partes de la historia clínica?",
+        "verso": "Identificación, motivo de consulta, enfermedad actual, antecedentes personales y familiares, hábitos, examen físico, resumen, diagnóstico presuntivo, plan y evolución.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es el método clínico?",
+        "verso": "El proceso sistemático de abordaje del paciente: observación, interrogatorio (anamnesis), examen físico, diagnóstico presuntivo, confirmación y tratamiento.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es la anamnesis?",
+        "verso": "El interrogatorio al paciente para obtener datos de su enfermedad (síntomas, evolución, antecedentes); es la base de la mayoría de los diagnósticos.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es el motivo de consulta y la enfermedad actual?",
+        "verso": "El motivo de consulta es el síntoma que lleva al paciente a consultar; la enfermedad actual relata cronológicamente su evolución.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es la relación médico-paciente?",
+        "verso": "El vínculo terapéutico que se establece entre el médico y el paciente, basado en la confianza, la escucha activa y la comunicación efectiva.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los componentes de la relación médico-paciente?",
+        "verso": "Empatía, respeto, confidencialidad, información clara y adecuada, y participación del paciente en las decisiones.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es la entrevista clínica y qué estilos existen?",
+        "verso": "El instrumento de la anamnesis; puede ser directiva, semidirigida o abierta según el grado de participación del paciente.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué factores influyen en la relación médico-paciente?",
+        "verso": "La actitud del médico, el contexto cultural y social, las expectativas del paciente, la comunicación verbal y no verbal, y el tiempo de consulta.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      },
+      {
+        "frente": "¿Qué es la confidencialidad en la relación médico-paciente?",
+        "verso": "El deber del médico de no divulgar los datos del paciente; se exceptúa ante riesgo de daño a terceros o por mandato legal.",
+        "fontes": [
+          "Argente HA, Álvarez ME. Semiología Médica, 3ª ed., Panamericana."
+        ]
+      }
+    ],
+    "ordem": 42
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Salud Mental — Concepto e indicadores de salud mental",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Salud mental, indicadores, semiología psiquiátrica y posmodernidad",
+    "tags": [
+      "ser-humano-up5",
+      "salud-mental",
+      "indicadores",
+      "semiologia-psiquiatrica",
+      "posmodernidad"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la salud mental según la OMS?",
+        "verso": "Un estado de bienestar en el cual la persona realiza sus capacidades, afronta el estrés normal de la vida, trabaja productivamente y contribuye a su comunidad.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los indicadores de salud mental?",
+        "verso": "Medidas de bienestar o malestar: prevalencia de trastornos mentales, suicidios, consumo de sustancias, discapacidad por causas psíquicas y uso de servicios de salud mental.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el enfoque de la salud mental comunitaria?",
+        "verso": "La atención basada en la comunidad y en la promoción, prevención y participación social, en lugar del modelo asilar o exclusivamente hospitalario.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la semiología psiquiátrica?",
+        "verso": "El estudio de los signos y síntomas de los trastornos mentales: alteraciones de conciencia, atención, memoria, pensamiento, afectividad, conducta y lenguaje.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones del pensamiento se describen en la semiología psiquiátrica?",
+        "verso": "Trastornos del curso (taquipsiquia, bradipsiquia, fuga de ideas) y del contenido (ideas deliroides, delirios, obsesiones).",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones de la afectividad se describen?",
+        "verso": "Depresión, euforia, ansiedad, apatía, labilidad afectiva e incongruencia afectiva.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la salud mental en la posmodernidad?",
+        "verso": "El impacto de la cultura actual (incertidumbre, individualismo, redes sociales, consumo) sobre el bienestar psíquico y sobre la forma de manifestar el malestar.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué influencia tiene el ambiente físico y social sobre la salud mental?",
+        "verso": "El ambiente físico y social (contaminación, ruido, hacinamiento, exclusión) influye en el bienestar psíquico y en la aparición de trastornos.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el estigma en salud mental?",
+        "verso": "La desvalorización y discriminación hacia las personas con trastornos psíquicos, que retrasa la consulta y empeora el pronóstico.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la promoción de la salud mental?",
+        "verso": "Las acciones que favorecen el bienestar psíquico y la resiliencia (vínculos, educación, trabajo, participación), no solo la prevención de la enfermedad.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      }
+    ],
+    "ordem": 43
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Medicina y Sociedad — Ambiente, salud y cambio climático",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Determinantes ambientales, cambio climático y salud",
+    "tags": [
+      "ser-humano-up5",
+      "medicina-y-sociedad",
+      "ambiente",
+      "cambio-climatico",
+      "salud-planetaria"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la relación ambiente-salud?",
+        "verso": "La influencia del ambiente físico, químico, biológico y social sobre la salud humana; el ambiente sano es prerrequisito de la salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los determinantes ambientales de la salud?",
+        "verso": "Calidad del aire, agua y suelo, condiciones de vivienda, disponibilidad de alimentos, trabajo, urbanización y exposición a sustancias tóxicas.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué es el cambio climático?",
+        "verso": "La modificación del clima global por el aumento de gases de efecto invernadero (CO2, metano) de origen antrópico.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos del cambio climático afectan la salud?",
+        "verso": "Olas de calor, eventos extremos (inundaciones, sequías), extensión de vectores (dengue), inseguridad alimentaria y enfermedades respiratorias.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué es la justicia ambiental o climática?",
+        "verso": "El principio de que las poblaciones más vulnerables (pobres, comunidades marginadas) soportan desproporcionadamente los daños ambientales, debiendo priorizarse su protección.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué es el calentamiento global y la temperatura media?",
+        "verso": "El aumento de la temperatura media del planeta (≈1,1 °C desde la era preindustrial), consecuencia de la intensificación del efecto invernadero.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona el cambio climático con el agua (UP5)?",
+        "verso": "El cambio climático altera el ciclo del agua: sequías e inundaciones comprometen la disponibilidad y calidad del agua potable.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué son los gases de efecto invernadero?",
+        "verso": "Gases que retienen la radiación infrarroja: CO2, metano, óxido nitroso y vapor de agua; sus emisiones provienen de la quema de combustibles, industria y agricultura.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué es la salud planetaria?",
+        "verso": "El enfoque que integra la salud humana con la salud de los ecosistemas, reconociendo que la degradación ambiental enferma a las poblaciones.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      },
+      {
+        "frente": "¿Qué rol tiene el profesional de salud frente al cambio climático?",
+        "verso": "Promover la adaptación y mitigación: educación, detección de riesgos, reducción de la huella sanitaria y participación en políticas de sostenibilidad.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Ambiente y salud; cambio climático."
+        ]
+      }
+    ],
+    "ordem": 44
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP5 — Medicina Preventiva — Saneamiento ambiental",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Saneamiento del agua, aire, residuos y control de vectores",
+    "tags": [
+      "ser-humano-up5",
+      "medicina-preventiva",
+      "saneamiento",
+      "residuos",
+      "vectores",
+      "aire"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el saneamiento ambiental?",
+        "verso": "El conjunto de acciones destinadas a controlar y mejorar el ambiente para prevenir enfermedades: agua, excretas, residuos, aire, alimentos y vectores.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué acciones incluye el saneamiento del agua?",
+        "verso": "Provisión de agua potable, protección de fuentes, potabilización, control de calidad y tratamiento de aguas residuales.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Cómo se controla la contaminación del aire?",
+        "verso": "Con normas de calidad del aire, control de emisiones industriales y vehiculares, promoción de energías limpias y monitoreo de contaminantes (PM, CO, SO2, NOx, ozono).",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué es la contaminación atmosférica y qué daños produce?",
+        "verso": "La presencia de sustancias nocivas en el aire; produce enfermedades respiratorias y cardiovasculares, especialmente en niños y ancianos.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Cómo se eliminan los residuos sólidos?",
+        "verso": "Por recolección, transporte y disposición final: relleno sanitario (método recomendado), compostaje, reciclado o incineración controlada; el basural a cielo abierto es inaceptable.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué es el relleno sanitario?",
+        "verso": "La técnica de disposición final de residuos en capas compactadas y cubiertas con tierra, que controla olores, vectores y contaminación del suelo y agua.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué es el control de vectores?",
+        "verso": "Las medidas para reducir organismos que transmiten enfermedades (mosquitos, roedores, moscas, vinchucas): saneamiento, manejo ambiental y control químico o biológico.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué enfermedades transmiten los vectores y cómo se previenen?",
+        "verso": "Dengue, malaria, Chagas, leishmaniasis; se previenen eliminando criaderos, mejorando la vivienda y usando medidas de protección personal.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué es la gestión integral de residuos?",
+        "verso": "La jerarquía de acciones: reducción en origen, reutilización, reciclado, tratamiento y disposición final, con participación de la comunidad.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      },
+      {
+        "frente": "¿Qué es la epidemiología ambiental?",
+        "verso": "La disciplina que estudia la relación entre exposición ambiental y salud en las poblaciones, para fundamentar el saneamiento y la vigilancia.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento ambiental."
+        ]
+      }
+    ],
+    "ordem": 45
+  }
+]

@@ -1,0 +1,1155 @@
+[
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Anatomía — Fosa lumbar, columna lumbar y retroperitoneo",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Región lumbar, vértebras, retroperitoneo y relaciones renales",
+    "tags": [
+      "ser-humano-up1",
+      "anatomia",
+      "fosa-lumbar",
+      "columna-lumbar",
+      "retroperitoneo",
+      "rinon"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la fosa lumbar y cuáles son sus límites?",
+        "verso": "Depresión de la pared posterior del abdomen. Límites: arriba la 12ª costilla; abajo la cresta ilíaca; medialmente las apófisis espinosas de las vértebras lumbares; lateralmente el borde externo del músculo cuadrado lumbar.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuántas vértebras forman la columna lumbar y qué características morfológicas presentan?",
+        "verso": "5 vértebras lumbares (L1-L5), las de mayor tamaño del raquis. Tienen cuerpo voluminoso, foramen vertebral triangular, apófisis costales desarrolladas y apófisis mamilares.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué músculos se relacionan con la fosa lumbar?",
+        "verso": "El músculo cuadrado lumbar, el psoas mayor, el psoas menor, el ilíaco (psoasilíaco) y la masa común de los erectores de la columna (sacroespinal), junto con la aponeurosis posterior del transverso del abdomen.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el retroperitoneo y qué órganos lo ocupan?",
+        "verso": "Espacio situado detrás del peritoneo parietal posterior de la pared abdominal. Contiene riñones, glándulas suprarrenales, uréteres, aorta abdominal, vena cava inferior y, en posición secundaria, páncreas, duodeno (2ª a 4ª porción) y colon ascendente/descendente.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la vértebra lumbar de mayor tamaño y por qué?",
+        "verso": "L5, porque soporta el peso de todo el tronco y lo transmite al sacro; por eso su cuerpo vertebral es el más voluminoso.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué articulaciones presenta la columna lumbar?",
+        "verso": "Articulaciones de los cuerpos vertebrales (sínfisis, con disco intervertebral entre ambos) y articulaciones cigoapofisarias (sinoviales planas entre las apófisis articulares de vértebras adyacentes).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué relación topográfica tiene el riñón con la región lumbar?",
+        "verso": "El riñón se ubica en el retroperitoneo a los lados de la columna lumbar (L1-L3 aproximadamente), aplicado sobre el psoas y el cuadrado lumbar, protegido por la parrilla costal inferior.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nervio iliopsoas o nervios que atraviesan la región lumbar?",
+        "verso": "El plexo lumbar (L1-L4) se origina en la región lumbar; sus ramas inervan músculos y piel de abdomen, pelvis y miembro inferior. El nervio más voluminoso relacionado con el psoas es el femoral.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué significado clínico tiene la fosa lumbar (puntos de dolor renal)?",
+        "verso": "Es la región de proyección de los riñones: el ángulo costovertebral (límite entre 12ª costilla y columna) es el sitio donde se explora el puño-percusión en la sospecha de patología renal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué fascias revisten las estructuras retroperitoneales?",
+        "verso": "La fascia de Gerota (fascia renal) envuelve al riñón y a la glándula suprarrenal, separándolos del resto del retroperitoneo; el espacio pararrenal contiene tejido adiposo perirrenal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Fosa lumbar, columna lumbar y retroperitoneo. Guía Ser Humano y su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 1
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Histología — Tejido conectivo",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Células, fibras, matriz y clasificación del tejido conectivo",
+    "tags": [
+      "ser-humano-up1",
+      "histologia",
+      "tejido-conectivo",
+      "fibroblastos",
+      "mastocitos",
+      "fibras"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el tejido conectivo y cuáles son sus componentes?",
+        "verso": "Tejido de sostén que une, nutre y protege a los demás tejidos. Está formado por células (fibroblastos, macrófagos, mastocitos, plasmocitos, adipocitos) y matriz extracelular (fibras y sustancia fundamental amorfa).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la célula principal del tejido conectivo y qué produce?",
+        "verso": "El fibroblasto: sintetiza las fibras colágenas, elásticas y reticulares y los componentes de la sustancia fundamental (proteoglicanos, glicosaminoglicanos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de fibras existen en el tejido conectivo y cómo se tiñen?",
+        "verso": "Fibras colágenas (tipo I; azul de anilina en tricrómico), fibras elásticas (orceína) y fibras reticulares (colágeno III; sales de plata).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué son los mastocitos y qué secretan?",
+        "verso": "Células cebadas del conectivo que segregan histamina y heparina y liberan factor de atracción de eosinófilos; protagonistas de las reacciones alérgicas e inflamatorias.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué células componen la población celular del tejido conectivo?",
+        "verso": "Fijas: fibroblastos, adipocitos. Migrantes: macrófagos, mastocitos, plasmocitos, células reticulares y células del sistema inmunitario.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la sustancia fundamental amorfa?",
+        "verso": "Matriz gelatinosa extracelular formada por glicosaminoglicanos (ácido hialurónico), proteoglicanos y glucoproteínas, que permite la difusión de nutrientes y metabolitos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el tejido conectivo?",
+        "verso": "Embrionario (mesenquimatoso, mucoide) y adulto: propiamente dicho (laxo y denso, regular/irregular), reticular, elástico y especializado (adiposo, cartilaginoso, óseo, sanguíneo).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumplen los macrófagos del tejido conectivo?",
+        "verso": "Fagocitan restos celulares, microorganismos y sustancias extrañas, procesan antígenos (presentación a linfocitos) y secretan citocinas de la respuesta inflamatoria.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué tejido conectivo laxo está en el cordón umbilical?",
+        "verso": "El tejido mucoide (gelatina de Wharton), que rodea los vasos del cordón umbilical; es un conectivo laxo embrionario.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Dónde se encuentra el tejido conectivo reticular?",
+        "verso": "Forma el estroma de los órganos hematopoyéticos y linfoides (médula ósea, ganglios, bazo, timo), formado por células reticulares y fibras reticulares argirófilas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 2
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Histología — Tejido sanguíneo y hemograma",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "histologia",
+    "descricao": "Sangre, elementos formes y hemograma",
+    "tags": [
+      "ser-humano-up1",
+      "histologia",
+      "sangre",
+      "hemograma",
+      "hematocrito",
+      "leucocitos"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuáles son los componentes de la sangre?",
+        "verso": "Plasma (55 %) y elementos formes (45 %): glóbulos rojos (eritrocitos), glóbulos blancos (leucocitos) y plaquetas (trombocitos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el hematocrito?",
+        "verso": "El porcentaje del volumen sanguíneo ocupado por los elementos formes (principalmente glóbulos rojos). Valores normales: 42-52 % en varones y 37-48 % en mujeres.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el hemograma y qué incluye?",
+        "verso": "Análisis de la sangre que incluye recuento de glóbulos rojos y blancos, dosaje de hemoglobina, hematocrito, morfología de los hematíes, recuento de plaquetas y fórmula leucocitaria.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué células integran la serie blanca y cómo se clasifican?",
+        "verso": "Granulocitos (neutrófilos, eosinófilos, basófilos) y agranulocitos o monomorfonucleares (linfocitos y monocitos).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza al glóbulo rojo maduro?",
+        "verso": "Célula anucleada, forma de disco bicóncavo, carece de orgánulos y está llena de hemoglobina; su deformabilidad le permite transitar por los capilares.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué contienen los gránulos de los diferentes leucocitos?",
+        "verso": "Neutrófilos: granulaciones finas neutrófilas. Eosinófilos: granulaciones acidófilas (eosinófilas). Basófilos: granulaciones grandes basófilas. Los agranulocitos no presentan granulaciones específicas.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué función cumplen las plaquetas?",
+        "verso": "Hemostasia primaria: se adhieren y agregan en el sitio de lesión endotelial formando el tapón plaquetario; sus gránulos densos contienen serotonina y ATP.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cuál es la proteína plasmática más abundante?",
+        "verso": "La albúmina, que representa aproximadamente la mitad de las proteínas plasmáticas totales (albumina/globulina ~1,5-2/1).",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fórmula leucocitaria?",
+        "verso": "La distribución porcentual y absoluta de los leucocitos: neutrófilos (más abundantes), linfocitos, monocitos, eosinófilos y basófilos.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Dónde se producen las células sanguíneas?",
+        "verso": "En la médula ósea roja (hematopoyesis): eritrocitos, leucocitos y plaquetas derivan de células madre hematopoyéticas mediante el proceso de diferenciación celular.",
+        "fontes": [
+          "Cátedra de Histología y Embriología, FCM-UNR. Tejido conectivo y tejido sanguíneo. Guía Ser Humano y su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 3
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Fisiología — Fisiología de la sangre",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Composición, fracciones, proteinograma y hematopoyesis",
+    "tags": [
+      "ser-humano-up1",
+      "fisiologia",
+      "sangre",
+      "proteinograma",
+      "eritropoyesis",
+      "hemoglobina"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cuál es la función principal de la sangre?",
+        "verso": "Transporte de O2 y nutrientes a los tejidos, de CO2 y desechos para su excreción, de hormonas; además participa en la termorregulación, el equilibrio ácido-base, la inmunidad y la hemostasia.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué fracciones se distinguen en la sangre?",
+        "verso": "Plasma (parte líquida, con agua, proteínas, iones y solutos) y elementos formes (eritrocitos, leucocitos y plaquetas).",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el volumen sanguíneo y cuál es su valor aproximado?",
+        "verso": "El volumen total de sangre: aproximadamente 5 L (7-8 % del peso corporal), unos 70-80 mL/kg.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué proteínas integran el proteinograma plasmático?",
+        "verso": "Albúmina (mayoría), globulinas alfa, beta y gamma, y fibrinógeno; se separan por electroforesis.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la eritropoyesis y cómo se regula?",
+        "verso": "La formación de glóbulos rojos en la médula ósea, regulada por la eritropoyetina (EPO), secretada por el riñón ante hipoxia, y por el hierro, la B12 y el folato.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los valores de referencia de hemoglobina?",
+        "verso": "Varones: 13-17 g/dL; mujeres: 12-16 g/dL; eritrocitos ~4,5-5,9 millones/mm3 en varones y 4,0-5,2 en mujeres.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple la albúmina en el plasma?",
+        "verso": "Mantiene la presión oncótica (coloidosmótica) del plasma, evitando la salida excesiva de agua al intersticio, y transporta hormonas, ácidos grasos y fármacos.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la velocidad de eritrosedimentación (VES)?",
+        "verso": "La velocidad a la que sedimentan los eritrocitos en un tubo en una hora; se eleva en inflamación e infecciones por aumento de fibrinógeno y globulinas.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia existe entre plasma y suero?",
+        "verso": "El plasma contiene fibrinógeno y factores de coagulación; el suero se obtiene tras la coagulación, sin fibrinógeno.",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      },
+      {
+        "frente": "¿Qué funciones cumplen los leucocitos?",
+        "verso": "Defensa del organismo: fagocitosis (neutrófilos, monocitos), inmunidad humoral (linfocitos B-plasmocitos con anticuerpos) y celular (linfocitos T), y reacciones alérgicas (eosinófilos, basófilos).",
+        "fontes": [
+          "Cingolani HE, Houssay AB. Fisiología Humana de HOUSSAY, 7ª ed. Cap. 5 (Fisiología de la sangre)."
+        ]
+      }
+    ],
+    "ordem": 4
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Fisiología — Compartimentos líquidos del organismo",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Distribución, composición y medición de los compartimentos líquidos",
+    "tags": [
+      "ser-humano-up1",
+      "fisiologia",
+      "compartimentos-liquidos",
+      "lic",
+      "lec",
+      "agua-corporal"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cómo se distribuye el agua corporal total?",
+        "verso": "El agua total es ~60 % del peso corporal (varón adulto): 2/3 en el LIC (~40 %) y 1/3 en el LEC (~20 %). El LEC se divide en plasma (~5 %) y líquido intersticial (~15 %).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el líquido intracelular (LIC)?",
+        "verso": "El compartimento líquido dentro de las células; contiene principalmente K+, Mg2+, fosfatos y proteínas, y representa ~40 % del peso corporal.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el líquido extracelular (LEC) y cuáles son sus subcompartimentos?",
+        "verso": "El líquido fuera de las células: plasma (intravascular), líquido intersticial (entre células) y líquidos transcelulares (LCR, sinovial, digestivo). Representa ~20 % del peso.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Qué cationes y aniones predominan en el LEC?",
+        "verso": "Catión predominante: Na+; aniones: Cl- y HCO3-. El LIC tiene K+ y fosfatos como predominantes.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Cómo se mide el volumen de los compartimentos (método de dilución)?",
+        "verso": "Inyectando una sustancia indicadora que se distribuya solo en el compartimento a medir: agua deuterada/tritiada para el agua total, inulina/sacarosa para el LEC, D2O... Volumen = cantidad inyectada / concentración de equilibrio.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015."
+        ]
+      },
+      {
+        "frente": "¿Qué sustancias se usan para medir el plasma y el LEC?",
+        "verso": "Plasma: colorante Evan's Blue (une albúmina) o albúmina marcada. LEC: inulina, manitol, sacarosa o sulfato de sodio. LIC se calcula por diferencia (agua total - LEC).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las vías de ingreso de agua al organismo?",
+        "verso": "Ingestión de líquidos y agua de los alimentos, y en menor medida agua metabólica (oxidación de nutrientes).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las vías de egreso (pérdidas) de agua?",
+        "verso": "Pérdidas insensibles (piel y vía aérea), sudoración, orina (vía principal regulable) y heces.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Por qué la composición iónica del LIC y el LEC difiere tanto?",
+        "verso": "Por la acción de la bomba Na+/K+-ATPasa de la membrana, que mantiene alto K+ dentro y alto Na+ fuera, generando los gradientes necesarios para el potencial de membrana y el equilibrio osmótico.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el equilibrio osmótico entre LIC y LEC?",
+        "verso": "El agua se desplaza libremente entre compartimentos según las concentraciones de solutos osmóticamente activos; por eso la osmolaridad efectiva del LIC y del LEC es igual (~280-290 mOsm/L).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Cap. 25 (Regulación de los compartimientos del líquido corporal)."
+        ]
+      }
+    ],
+    "ordem": 5
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Física — Propiedades del agua",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "biofisica",
+    "descricao": "Solvente polar, densidad, tensión superficial y termorregulación",
+    "tags": [
+      "ser-humano-up1",
+      "biofisica",
+      "propiedades-del-agua",
+      "tension-superficial",
+      "calor-especifico",
+      "termorregulacion"
+    ],
+    "cards": [
+      {
+        "frente": "¿Por qué el agua es un solvente polar?",
+        "verso": "Su molécula es un dipolo (oxígeno electronegativo y dos hidrógenos), lo que le permite formar puentes de hidrógeno y disociar solutos iónicos y polares, siendo el solvente universal del organismo.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la capacidad solvente y dispersante del agua?",
+        "verso": "La capacidad de disolver solutos polares/ionizados (solvente) y de mantener en suspensión o dispersión coloides (sustancias macromoleculares), facilitando las reacciones del medio interno.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué peculiaridad tiene la densidad del agua y por qué es importante?",
+        "verso": "El agua presenta su máxima densidad a 4 °C (1 g/mL); al congelarse se expande (hielo menos denso que el agua líquida), por lo que flota, protegiendo la vida acuática.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la tensión superficial del agua?",
+        "verso": "La fuerza que actúa en la superficie líquida por la cohesión de sus moléculas (puentes de hidrógeno), que tiende a reducir la superficie; permite fenómenos como la capilaridad.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el calor específico del agua?",
+        "verso": "La cantidad de calor necesaria para elevar 1 g de agua en 1 °C. El agua tiene calor específico alto, por lo que amortigua los cambios térmicos del cuerpo.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el calor latente de evaporación del agua?",
+        "verso": "La energía necesaria para transformar 1 g de agua líquida en vapor a temperatura constante (≈540 cal/g). Es la base de la termorregulación por sudoración.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la conductividad térmica del agua?",
+        "verso": "La capacidad de transmitir calor; el agua la tiene relativamente alta, lo que favorece la distribución del calor corporal desde los tejidos profundos hacia la superficie.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo regula el agua la temperatura corporal?",
+        "verso": "Por su alto calor específico (amortigua cambios), su conductividad (distribuye calor) y su calor latente de evaporación (elimina calor al evaporarse el sudor).",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué el agua es esencial para las funciones del organismo?",
+        "verso": "Como solvente de iones y metabolitos, medio de las reacciones bioquímicas, transporte de nutrientes y desechos, lubricación y regulación térmica.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la capilaridad y qué relación tiene con el agua?",
+        "verso": "El ascenso de un líquido por un tubo fino, favorecido por la tensión superficial y la adhesión a las paredes; en el organismo interviene en fenómenos como el flujo en capilares de pequeño calibre.",
+        "fontes": [
+          "Rasia M, Hernández G, Bollini A. Propiedades del agua que fundamentan su rol en las funciones esenciales del organismo. Cátedra de Física Biológica, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 6
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Biología — Sistemas cibernéticos y retroalimentación",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Sistemas, feedback negativo y positivo, homeostasis",
+    "tags": [
+      "ser-humano-up1",
+      "biologia",
+      "sistemas-ciberneticos",
+      "retroalimentacion",
+      "homeostasis"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es un sistema?",
+        "verso": "Un conjunto de elementos o entidades relacionados entre sí, de modo que el comportamiento del conjunto no es la simple suma de las partes.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un sistema abierto?",
+        "verso": "Aquel que intercambia materia, energía e información con el ambiente; los seres vivos son sistemas abiertos.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un sistema cibernético?",
+        "verso": "Un sistema (vivo o mecánico) en el que las salidas actúan sobre las entradas y las modulan, permitiendo la autorregulación mediante la retroalimentación.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroalimentación o feedback?",
+        "verso": "La propiedad por la cual la salida de un sistema vuelve como parte de su entrada, influyendo en la salida subsiguiente (regulación automática).",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroalimentación negativa?",
+        "verso": "El mecanismo por el cual el sistema se opone a la desviación inicial y vuelve al punto de equilibrio; es la base de la homeostasis (p. ej., regulación de la temperatura).",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroalimentación positiva?",
+        "verso": "El mecanismo que amplifica la desviación inicial alejándose del equilibrio; suele aparecer cuando se rebasan los límites del plano homeostático (p. ej., coagulación, contracciones del parto).",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre homeostasis y retroalimentación negativa?",
+        "verso": "La homeostasis mantiene las variables del medio interno dentro de límites compatibles con la vida mediante la retroalimentación negativa, que corrige las desviaciones.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la placa o plano homeostático?",
+        "verso": "El área dentro de cuyos límites actúa la retroalimentación negativa para corregir las desviaciones y volver al punto de partida.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Dé un ejemplo biológico de retroalimentación negativa.",
+        "verso": "La regulación de la glucemia: cuando sube la glucosa, aumenta la insulina y esta baja la glucosa, contrarrestando el estímulo inicial.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "Dé un ejemplo biológico de retroalimentación positiva.",
+        "verso": "La liberación de oxitocina durante el parto: las contracciones estimulan más oxitocina, que aumenta las contracciones hasta que nace el bebé.",
+        "fontes": [
+          "Calderari S, Di Masso R, Martínez SM, Tarrés MC. Sistemas Cibernéticos. Cátedra de Biología, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 7
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Biología — Ecosistema y su evolución",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Definición, tipos, sucesión y regresión de ecosistemas",
+    "tags": [
+      "ser-humano-up1",
+      "biologia",
+      "ecosistema",
+      "sucesion-ecologica",
+      "biocenosis",
+      "biotopo"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es un ecosistema?",
+        "verso": "Unidad funcional formada por los seres vivos (biocenosis) y el medio físico (biotopo) con el que interactúan, entre los que se produce un flujo de energía y ciclos de materia.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el biotopo y qué es la biocenosis?",
+        "verso": "Biotopo: componente abiótico (medio físico-químico). Biocenosis: conjunto de seres vivos que habitan ese medio y sus interacciones.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican los ecosistemas según sus características estructurales?",
+        "verso": "Según su estructura: acuáticos (marinos, de agua dulce) y terrestres (bosque, pradera, desierto, etc.), según el ambiente y la vegetación dominante.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican los ecosistemas según sus características funcionales?",
+        "verso": "Según su función trófica/energética: productores (autótrofos), consumidores (herbívoros, carnívoros) y descomponedores, que forman cadenas y redes tróficas.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la sucesión primaria?",
+        "verso": "La colonización de un área que estaba desprovista de vida (roca desnuda, lava, arena), comenzando por organismos pioneros (líquenes, musgos) hasta llegar a la comunidad clímax.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la sucesión secundaria?",
+        "verso": "La reconstitución de un ecosistema tras una perturbación que dejó el suelo intacto (incendio, tala, cultivo abandonado), partiendo de etapas más avanzadas.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la regresión ecológica?",
+        "verso": "El proceso inverso a la sucesión: la degradación del ecosistema (pérdida de especies y biomasa) por factores adversos, naturales o antrópicos.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la comunidad clímax?",
+        "verso": "La etapa final, estable y madura de la sucesión, en equilibrio con el clima del lugar, con máxima biomasa y diversidad.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cómo influye el ser humano en el ecosistema?",
+        "verso": "Acelera la regresión: deforestación, contaminación, urbanización, sobreexplotación de recursos e introducción de especies, alterando los ciclos y el equilibrio ecológico.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la productividad de un ecosistema?",
+        "verso": "La cantidad de biomasa o energía fijada por unidad de tiempo; la productividad primaria corresponde a la fotosíntesis de los productores.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 8
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Biología — Hábitat, nicho y leyes de la ecología",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Hábitat, nicho, leyes ecológicas y exclusión competitiva",
+    "tags": [
+      "ser-humano-up1",
+      "biologia",
+      "habitat",
+      "nicho-ecologico",
+      "leyes-de-la-ecologia"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el hábitat?",
+        "verso": "El lugar físico donde vive un organismo o grupo de organismos, con las condiciones ambientales que le permiten sobrevivir y reproducirse.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nicho ecológico?",
+        "verso": "El papel o función que desempeña una especie en el ecosistema: cómo usa los recursos, sus relaciones con otras especies y sus requerimientos ambientales.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿En qué se diferencia hábitat de nicho ecológico?",
+        "verso": "El hábitat es la 'dirección' (dónde vive); el nicho es el 'oficio' (cómo vive, qué hace y qué necesita la especie).",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enuncia la Ley del Mínimo de Liebig?",
+        "verso": "El crecimiento de una población está limitado por el factor que se encuentra en menor proporción con respecto a sus requerimientos.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué enuncia la Ley de Tolerancia de Shelford?",
+        "verso": "Cada especie posee un rango de tolerancia para cada factor ambiental; fuera de ese rango no puede sobrevivir (mínimo y máximo).",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Ley de los Factores Limitantes?",
+        "verso": "El factor que más se acerca a los límites de tolerancia es el que condiciona el desarrollo de la población, aunque los demás sean óptimos.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Ley de los Incrementos Decrecientes?",
+        "verso": "A medida que se aporta un factor limitante, los incrementos de producción son cada vez menores hasta alcanzar un máximo (rendimientos decrecientes).",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el Principio Holocenótico o de Unidad Ambiental?",
+        "verso": "El efecto de los factores del ecosistema es interdependiente: el efecto simultáneo de todos es diferente de la suma de cada uno actuando por separado.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el principio de exclusión competitiva?",
+        "verso": "Dos especies que ocupan el mismo nicho ecológico no pueden coexistir de forma estable en la misma área: una desplaza a la otra o se produce diferenciación de nichos.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el traslape de nicho ecológico?",
+        "verso": "La superposición parcial de los nichos de dos especies que comparten algunos recursos, lo que genera competencia interespecífica.",
+        "fontes": [
+          "Labourdette V. Ecosistema, Nicho y Hábitat. Cátedra de Biología, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 9
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Biología — Factores ambientales y relaciones ecológicas",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Factores abióticos/bióticos, relaciones interespecíficas e intraespecíficas, SGA",
+    "tags": [
+      "ser-humano-up1",
+      "biologia",
+      "factores-abioticos",
+      "relaciones-interespecificas",
+      "sga",
+      "predador-prudente"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué son los factores ambientales abióticos? Dé ejemplos.",
+        "verso": "Características 'no vivas' del medio: temperatura, luz/radiación solar, humedad y precipitaciones, presión atmosférica, vientos, tipo de suelo y disponibilidad de agua.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los factores ambientales bióticos?",
+        "verso": "Los seres vivos que conviven en el medio y sus interacciones (depredación, competencia, cooperación, parasitismo, mutualismo).",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es una relación intraespecífica? Dé ejemplos.",
+        "verso": "Relación entre individuos de la misma especie: sociedades, colonias, familias, competencia intraespecífica.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es una relación interespecífica? Dé ejemplos.",
+        "verso": "Relación entre individuos de especies diferentes: mutualismo, comensalismo, parasitismo, depredación, competencia, amensalismo.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la teoría del predador prudente?",
+        "verso": "El predador que no elimina por completo a su presa (conserva el recurso) asegura su propia supervivencia a largo plazo; el consumo excesivo lleva a la extinción de ambos.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el Síndrome General de Adaptación (SGA)?",
+        "verso": "La respuesta inespecífica del organismo ante estresores, descrita por Selye, en tres fases: alarma, resistencia/adaptación y agotamiento.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el mutualismo?",
+        "verso": "Relación interespecífica en la que ambas especies se benefician; cuando se vuelve imprescindible para ambas se denomina simbiosis obligada.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es el comensalismo y qué es el parasitismo?",
+        "verso": "Comensalismo: una especie se beneficia y la otra no es afectada. Parasitismo: una especie (parásito) se beneficia a expensas del huésped, pudiendo perjudicarlo.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la depredación?",
+        "verso": "Relación interespecífica en la que un organismo (predador) se alimenta de otro (presa), regulando las poblaciones de ambos.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características de los seres vivos?",
+        "verso": "Organización celular, metabolismo, irritabilidad (respuesta a estímulos), homeostasis, reproducción, crecimiento, desarrollo y evolución.",
+        "fontes": [
+          "Labourdette V. Características del Ser Vivo. Cátedra de Biología, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 10
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Salud Mental — Ambioma, genoma, epigenoma y PNIE",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Bases de la Psiconeuroinmunoendocrinología y sus ejes",
+    "tags": [
+      "ser-humano-up1",
+      "salud-mental",
+      "pnie",
+      "epigenoma",
+      "ambioma",
+      "genoma"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el genoma?",
+        "verso": "El conjunto completo de material genético (ADN) de un organismo, que contiene los genes con la información hereditaria.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué es el ambioma?",
+        "verso": "El conjunto de factores ambientales (físicos, químicos, biológicos, sociales y psicológicos) que rodean e influyen sobre el organismo.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué es el epigenoma?",
+        "verso": "El conjunto de modificaciones químicas sobre el ADN y las histonas (metilación, acetilación) que regulan la expresión génica sin cambiar la secuencia de los genes; media la influencia del ambiente.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Psiconeuroinmunoendocrinología (PNIE)?",
+        "verso": "Disciplina transdisciplinaria que estudia las interrelaciones entre la psiquis (mente), el sistema nervioso, el sistema inmunitario y el sistema endocrino.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los ejes principales de la PNIE?",
+        "verso": "El eje hipotálamo-hipófisis-suprarrenal (HHS), el eje hipotálamo-hipófisis-tiroides y el eje simpático-suprarrenal-medular, que conectan lo psíquico con lo neuroendocrino e inmune.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Cómo se relacionan el estrés y el sistema inmunitario en la PNIE?",
+        "verso": "El estrés crónico activa el eje HHS con cortisol elevado, que suprime funciones inmunitarias, aumentando la vulnerabilidad a infecciones y enfermedades.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué significa que el desarrollo dependa de la interacción genoma-ambioma?",
+        "verso": "Que la expresión de los genes (genoma) es modulada por el ambiente (ambioma) a través de mecanismos epigenéticos, dando lugar a la individualidad y a la salud o enfermedad.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué es la plasticidad que permite el epigenoma?",
+        "verso": "La capacidad del organismo de modificar la expresión génica en respuesta al ambiente, lo que explica que gemelos idénticos (mismo genoma) puedan diferir fenotípicamente.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Qué rol cumple el eje hipotálamo-hipófisis-suprarrenal?",
+        "verso": "Regula la respuesta al estrés: el hipotálamo libera CRH, la hipófisis ACTH y la suprarrenal cortisol, que moviliza energía y modula la inflamación y la inmunidad.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      },
+      {
+        "frente": "¿Por qué se dice que la PNIE es transdisciplinaria?",
+        "verso": "Porque integra conocimientos de psicología, neurociencias, endocrinología e inmunología para comprender la salud como un fenómeno biopsicosocial.",
+        "fontes": [
+          "Gutiérrez Soriano J. PNIE: revisión para Introducción a la Salud Mental. UNAM 2021."
+        ]
+      }
+    ],
+    "ordem": 11
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Medicina y Sociedad — Determinación social de la salud",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Condiciones de vida, Medicina Social y Determinación Social de la Salud",
+    "tags": [
+      "ser-humano-up1",
+      "medicina-y-sociedad",
+      "determinacion-social",
+      "condiciones-de-vida",
+      "inequidades"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué son las condiciones de vida?",
+        "verso": "El conjunto de características del entorno material y social en que vive una persona o comunidad (vivienda, trabajo, alimentación, educación, ingresos, acceso a servicios).",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué estudia la Medicina Social?",
+        "verso": "Los procesos de salud-enfermedad como fenómenos sociales, analizando cómo las condiciones económicas, políticas y culturales determinan la salud colectiva.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Determinación Social de la Salud?",
+        "verso": "Modelo que sostiene que la salud y la enfermedad son determinadas por procesos sociales: estructurales (económico-políticos), particulares (condiciones de vida) y singulares (estilos de vida, biología).",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿En qué se diferencia el modelo de determinación social del modelo de riesgo?",
+        "verso": "El modelo de riesgo se centra en factores individuales de exposición; el de determinación social analiza las causas de las causas, es decir, los procesos sociales que generan las inequidades.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son las inequidades en salud?",
+        "verso": "Diferencias evitables e injustas en salud entre grupos sociales, determinadas por la distribución desigual de los recursos y las condiciones de vida.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Por qué el ambiente es una construcción social?",
+        "verso": "Porque las características del ambiente (vivienda, agua, contaminación, barrio) son producto de decisiones sociales, políticas y económicas, y no simples hechos naturales.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre nivel socioeconómico y salud?",
+        "verso": "A menor nivel socioeconómico, peores condiciones de vida y mayores tasas de enfermedad y mortalidad: la salud sigue un gradiente social.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué aporta la perspectiva de la salud colectiva latinoamericana?",
+        "verso": "Comprende la salud-enfermedad como proceso social e histórico y promueve la participación comunitaria y la acción sobre los determinantes sociales.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué son los determinantes intermedios de la salud?",
+        "verso": "Las condiciones de vida y trabajo, el acceso a servicios de salud, la alimentación, la vivienda y la educación, que traducen los determinantes estructurales en riesgo individual.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué implica intervenir sobre la determinación social de la salud?",
+        "verso": "Implica políticas públicas que actúen sobre las causas estructurales (pobreza, desigualdad, vivienda, trabajo) y no solo sobre factores de riesgo individuales.",
+        "fontes": [
+          "Material de Medicina y Sociedad. Cátedra de Medicina y Sociedad, FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 12
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP1 — Medicina Preventiva — Salud ambiental, epidemiología y ciudades saludables",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Epidemiología, promoción de la salud y ciudades saludables",
+    "tags": [
+      "ser-humano-up1",
+      "salud-ambiental",
+      "epidemiologia",
+      "promocion-de-la-salud",
+      "ciudades-saludables"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la salud ambiental?",
+        "verso": "El campo de la salud pública que estudia las condiciones del ambiente que pueden afectar la salud humana y las intervenciones para controlarlas.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la epidemiología?",
+        "verso": "La ciencia que estudia la distribución y los determinantes de los estados de salud y enfermedad en las poblaciones, y sus aplicaciones para el control de los problemas de salud.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las aplicaciones de la epidemiología?",
+        "verso": "Identificar factores de riesgo, conocer la historia natural de las enfermedades, evaluar intervenciones y servicios, planificar y priorizar recursos, y generar hipótesis etiológicas.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué busca la promoción de la salud?",
+        "verso": "El proceso que capacita a las personas y comunidades para aumentar el control sobre los determinantes de la salud y mejorarla; se expresa en la Carta de Ottawa (1986).",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es una ciudad saludable?",
+        "verso": "Aquella que crea y mejora continuamente sus ambientes físicos y sociales, expande los recursos comunitarios y habilita a los ciudadanos a apoyarse mutuamente y desarrollar su máximo potencial.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué NO define a una ciudad saludable?",
+        "verso": "La cantidad de servicios de atención disponibles en cualquier momento; el concepto se centra en la promoción y en los entornos, no en la infraestructura asistencial.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es la atención primaria de la salud (APS)?",
+        "verso": "La estrategia de salud pública basada en la accesibilidad, la participación comunitaria, la promoción y la prevención como primer nivel de contacto con el sistema de salud.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los prerrequisitos para la salud según Ottawa?",
+        "verso": "Paz, vivienda, educación, alimentación, ingresos, ecosistema estable, recursos sostenibles y justicia social.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué es un determinante ambiental de la salud?",
+        "verso": "Un factor del ambiente (físico, químico, biológico o social) que influye en la aparición o evolución de enfermedades, como el agua, el aire, el saneamiento y la contaminación.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      },
+      {
+        "frente": "¿Qué rol cumple el promotor de salud?",
+        "verso": "Facilitar la participación comunitaria, educar sobre factores protectores, fortalecer la organización barrial y articular con los servicios para mejorar las condiciones de vida.",
+        "fontes": [
+          "Scaglia E. La epidemiología y sus aplicaciones; Liborio M, Rondelli E. Promoción, atención primaria y ciudades saludables. FCM-UNR."
+        ]
+      }
+    ],
+    "ordem": 13
+  }
+]

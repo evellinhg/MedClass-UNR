@@ -1,0 +1,981 @@
+[
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Anatomía — Nervios de abdomen y pelvis",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "anatomia",
+    "descricao": "Nervios esplácnicos, cadena simpática y plexos viscerales",
+    "tags": [
+      "ser-humano-up6",
+      "anatomia",
+      "esplacnicos",
+      "cadena-simpatica",
+      "plexo-celiaco",
+      "plexo-hipogastrico"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué son los nervios esplácnicos?",
+        "verso": "Ramos del tronco simpático que llevan fibras viscerales a los plexos (celíaco, mesentéricos, hipogástrico): esplácnicos torácicos, lumbares y sacros.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cadena simpática y dónde se ubica?",
+        "verso": "La cadena de ganglios paravertebrales que se extiende desde la base del cráneo al cóccix, a ambos lados de la columna vertebral.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué forman los nervios esplácnicos mayores?",
+        "verso": "Fibras preganglionares simpáticas (T5-T9) que hacen sinapsis en el ganglio celíaco e inervan el estómago, hígado, bazo, páncreas e intestino proximal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el plexo celíaco?",
+        "verso": "El plexo nervioso perivascular de la raíz del tronco celíaco, con los ganglios celíacos; coordina la inervación de las vísceras abdominales altas.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el plexo hipogástrico?",
+        "verso": "El plexo de la pelvis (superior e inferior) que lleva fibras simpáticas y parasimpáticas (S2-S4) a vejiga, recto y órganos genitales.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué inervación tiene la vejiga?",
+        "verso": "Parasimpática (S2-S4, nervios esplácnicos pélvicos): contrae el detrusor y relaja el esfínter interno; simpática (T11-L2): relaja el detrusor y contrae el cuello.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nervio vago en abdomen?",
+        "verso": "El principal componente parasimpático preganglionar de las vísceras abdominales hasta el colon transverso; la pelvis recibe el parasimpático sacro.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nervio esplácnico menor?",
+        "verso": "Fibras preganglionares (T10-T11) que inervan el intestino medio (duodeno distal, yeyuno, íleon y colon derecho).",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nervio esplácnico imo (mínimo)?",
+        "verso": "Fibras preganglionares (T12) que participan en la inervación simpática del riñón y del intestino proximal.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el nervio pudendo y qué inerva?",
+        "verso": "Nervio somático del periné (S2-S4): esfínter externo de la uretra y del ano, y musculatura perineal; controla la micción voluntaria.",
+        "fontes": [
+          "Cátedra de Anatomía Normal, FCM-UNR. Nervios de abdomen y pelvis; sistema nervioso autónomo. Guía Ser Humano y Su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 46
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Física — Mezclas reguladoras y pH",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisica",
+    "descricao": "Buffers, Henderson-Hasselbalch y mecanismo de acción",
+    "tags": [
+      "ser-humano-up6",
+      "fisica",
+      "ph",
+      "buffer",
+      "henderson-hasselbalch",
+      "mezclas-reguladoras"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el pH?",
+        "verso": "El logaritmo negativo de la concentración de iones hidrógeno: pH = -log[H+]. El pH fisiológico del plasma es 7,35-7,45.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué es una mezcla reguladora o buffer?",
+        "verso": "Un sistema que minimiza los cambios de pH ante la adición de ácidos o bases, formado por un ácido débil y su base conjugada (p. ej., H2CO3/HCO3-).",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Cómo actúa un buffer?",
+        "verso": "El ácido débil neutraliza las bases agregadas y la base conjugada neutraliza los ácidos agregados, transformándolos en compuestos de escasa disociación.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué dice la ecuación de Henderson-Hasselbalch?",
+        "verso": "pH = pKa + log ([base] / [ácido]). Relaciona el pH con la proporción entre la forma básica y ácida del par buffer.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Cuál es el pKa del par bicarbonato/ácido carbónico?",
+        "verso": "pKa ≈ 6,1. En el plasma el buffer funciona porque el sistema es abierto: el CO2 se elimina por el pulmón, permitiendo que pH = 6,1 + log(HCO3- / 0,03·pCO2).",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué es la capacidad buffer?",
+        "verso": "La cantidad de ácido o base que un buffer puede neutralizar antes de cambiar significativamente el pH; depende de la concentración y del pKa.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los principales buffers del organismo?",
+        "verso": "Bicarbonato/CO2 (extracelular), hemoglobina y proteínas (intracelular y sangre) y fosfatos (orina y medio intracelular).",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué es la ley de acción de masas aplicada a los buffers?",
+        "verso": "El equilibrio de la reacción ácido-base que depende de las concentraciones de las especies; al agregar H+, el equilibrio se desplaza hacia la forma ácida.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple la anhidrasa carbónica?",
+        "verso": "Cataliza CO2 + H2O ⇌ H2CO3 ⇌ H+ + HCO3-; acelera la formación y disociación del ácido carbónico en el glóbulo rojo, pulmón y riñón.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      },
+      {
+        "frente": "¿Qué es el efecto del pH sobre las funciones celulares?",
+        "verso": "Las enzimas y canales dependen del pH; su variación altera la contractilidad cardíaca, la actividad neuronal, el transporte de K y el metabolismo.",
+        "fontes": [
+          "Rasia R, et al. Física Biológica para las Ciencias de la Salud, Corpus. Mezclas reguladoras y pH."
+        ]
+      }
+    ],
+    "ordem": 47
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Fisiología — Equilibrio ácido-base: conceptos y buffers",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Buffers, sistema bicarbonato, Davenport y defensas del pH",
+    "tags": [
+      "ser-humano-up6",
+      "fisiologia",
+      "acido-base",
+      "buffers",
+      "bicarbonato",
+      "davenport"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es el equilibrio ácido-base?",
+        "verso": "El mantenimiento del pH de los líquidos corporales en rangos compatibles con la vida (7,35-7,45), por acción de buffers, pulmón y riñón.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los mecanismos de defensa del pH?",
+        "verso": "1) Buffers inmediatos (segundos-minutos); 2) compensación respiratoria (minutos-horas, ajusta pCO2); 3) compensación renal (horas-días, ajusta HCO3- y H+).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema bicarbonato-ácido carbónico?",
+        "verso": "El principal buffer extracelular: CO2 + H2O ⇌ H2CO3 ⇌ H+ + HCO3-. Es un sistema abierto, regulado por el pulmón (CO2) y el riñón (HCO3-).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué son las bases buffer totales y el exceso de bases?",
+        "verso": "Las bases buffer totales (BB) son la suma de bicarbonato, proteínas y fosfatos; el exceso de bases (BE) mide la desviación del buffer extracelular respecto a lo normal.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es el diagrama de Davenport?",
+        "verso": "La gráfica que relaciona pH, HCO3- y pCO2; permite ubicar los trastornos ácido-base y su compensación a partir de un punto (pH, HCO3-).",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es el buffer abierto?",
+        "verso": "Un buffer en contacto con un reservorio que se puede eliminar (el CO2 con el pulmón), lo que aumenta enormemente su capacidad frente a un buffer cerrado.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa la hemoglobina como buffer?",
+        "verso": "Los grupos imidazol de la histidina bufferan H+; la desoxihemoglobina es mejor buffer (efecto Haldane), captando H+ del CO2 transportado.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el fosfato como buffer?",
+        "verso": "Es el principal buffer urinario e intracelular: HPO4= + H+ ⇌ H2PO4-; en orina permite eliminar H+ como fosfato monobásico.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene el riñón en el equilibrio ácido-base?",
+        "verso": "Reabsorbe el HCO3- filtrado, secreta H+ (bombeado hacia la luz) y genera HCO3- nuevo a partir de glutamina (NH4+), compensando la acidosis.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene el pulmón en el equilibrio ácido-base?",
+        "verso": "Regula la pCO2 por la ventilación: hiperventilación elimina CO2 (alcalosis respiratoria) e hipoventilación lo retiene (acidosis respiratoria).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      }
+    ],
+    "ordem": 48
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Fisiología — Trastornos del equilibrio ácido-base",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Acidosis/alcalosis metabólica y respiratoria, compensación y anión gap",
+    "tags": [
+      "ser-humano-up6",
+      "fisiologia",
+      "acido-base",
+      "acidosis",
+      "alcalosis",
+      "anion-gap"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la acidosis metabólica?",
+        "verso": "Trastorno con pH bajo y HCO3- bajo (bicarbonato consumido): diarrea, cetoacidosis, insuficiencia renal, acidosis láctica.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es la alcalosis metabólica?",
+        "verso": "Trastorno con pH alto y HCO3- alto: vómitos, hipopotasemia, diuréticos, exceso de bicarbonato.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es la acidosis respiratoria?",
+        "verso": "Trastorno con pH bajo y pCO2 alta (hipoventilación): EPOC, depresión del centro respiratorio, obstrucción de la vía aérea.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es la alcalosis respiratoria?",
+        "verso": "Trastorno con pH alto y pCO2 baja (hiperventilación): ansiedad, hipoxia, fiebre, ventilación mecánica excesiva.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es la compensación respiratoria?",
+        "verso": "El ajuste ventilatorio frente a un trastorno metabólico: en la acidosis metabólica, la hiperventilación baja la pCO2; en la alcalosis metabólica, la hipoventilación la sube.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la compensación renal?",
+        "verso": "El ajuste de la excreción de H+ y la reabsorción de HCO3- frente a un trastorno respiratorio; es más lenta (días) pero potente.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la banda de compensación?",
+        "verso": "El rango esperado de valores compensatorios para cada trastorno primario (p. ej., en acidosis metabólica, pCO2 esperada ≈ 1,5 x HCO3- + 8 ± 2); fuera de ella hay trastorno mixto.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es un trastorno mixto del equilibrio ácido-base?",
+        "verso": "La combinación de dos o más trastornos simultáneos (p. ej., acidosis metabólica + acidosis respiratoria), detectado cuando los valores no entran en la banda de compensación.",
+        "fontes": [
+          "Berne & Levy. Fisiología, 7ª ed. Caps. 37 (Acido-base), 38."
+        ]
+      },
+      {
+        "frente": "¿Qué es el anión gap y para qué sirve?",
+        "verso": "La diferencia entre cationes y aniones medidos: AG = Na+ - (Cl- + HCO3-), normal 8-12; clasifica las acidosis metabólicas en normo y con anion gap elevado.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué acidosis metabólicas cursan con anión gap elevado?",
+        "verso": "Cetoacidosis, acidosis láctica, insuficiencia renal y tóxicos (metanol, etilenglicol, salicilatos): acumulan ácidos no medidos.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      }
+    ],
+    "ordem": 49
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Fisiología — Metabolismo fosfocálcico y rol renal",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "PTH, vitamina D, FGF23 y manejo renal de calcio y fósforo",
+    "tags": [
+      "ser-humano-up6",
+      "fisiologia",
+      "calcio",
+      "fosforo",
+      "pth",
+      "vitamina-d"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cómo se regula el calcio plasmático?",
+        "verso": "Por la PTH, la vitamina D y la calcitonina, que actúan sobre hueso, intestino y riñón para mantener la calcemia (~8,5-10,5 mg/dL).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Cómo maneja el riñón el calcio?",
+        "verso": "El 98 % del Ca filtrado se reabsorbe (TCP y asa) y el resto en el túbulo distal bajo control de la PTH; la calciuria refleja el equilibrio.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué efectos renales tiene la PTH?",
+        "verso": "Aumenta la reabsorción de Ca en el túbulo distal y la excreción de fosfato (inhibe su reabsorción proximal), además de activar la vitamina D.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es la vitamina D y qué hace?",
+        "verso": "Hormona esteroidea (25-OH-D activada a 1,25-(OH)2-D en el riñón) que aumenta la absorción intestinal de calcio y fósforo.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es el fósforo y cómo se regula?",
+        "verso": "El fosfato se reabsorbe en el TCP (cotransporte con Na, regulado por PTH y FGF23); el riñón es el principal regulador de su balance.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es el FGF23?",
+        "verso": "Fibroblast growth factor 23, secretado por el hueso, que reduce la reabsorción renal de fosfato y la producción de vitamina D activa; su exceso causa hipofosfatemia.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es la calcitonina?",
+        "verso": "Hormona tiroidea que baja la calcemia inhibiendo la resorción ósea; papel menor en el ser humano adulto.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la hiperfosfatemia en la insuficiencia renal?",
+        "verso": "La retención de fosfato cuando la TFG cae; estimula PTH y FGF23, produce hiperparatiroidismo secundario y enfermedad ósea renal.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es la osteodistrofia renal?",
+        "verso": "La alteración del metabolismo óseo por la enfermedad renal crónica (déficit de vitamina D activa, hiperfosfatemia y PTH alta).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es la hipercalcemia y cuáles son sus causas?",
+        "verso": "Calcemia >10,5 mg/dL: hiperparatiroidismo primario, cáncer (metástasis óseas), exceso de vitamina D, sarcoidosis; produce nefrolitiasis y depresión neuromuscular.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      }
+    ],
+    "ordem": 50
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Fisiología — Regulación de la micción",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Reflejo de la micción, centros nerviosos y trastornos vesicales",
+    "tags": [
+      "ser-humano-up6",
+      "fisiologia",
+      "miccion",
+      "vejiga",
+      "incontinencia",
+      "reflejo-miccional"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la micción?",
+        "verso": "El proceso coordinado de vaciamiento de la vejiga: contracción del detrusor, apertura del cuello vesical y relajación de los esfínteres.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Cómo funciona el reflejo de la micción?",
+        "verso": "La distensión vesical activa estiramientos en la pared (S2-S4), generando el reflejo espinal que contrae el detrusor y relaja el esfínter interno.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué papel cumple el centro pontino de la micción?",
+        "verso": "Coordina el vaciamiento: facilita el reflejo de micción y la relajación del esfínter externo cuando hay decisión de orinar.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué control ejerce el cerebro sobre la micción?",
+        "verso": "La corteza cerebral permite o inhibe voluntariamente la micción contrayendo el esfínter externo (estriado) y controlando el centro pontino.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la incontinencia urinaria?",
+        "verso": "La pérdida involuntaria de orina; causas: esfuerzo (incompetencia del esfínter), urgencia (vejiga hiperactiva), mixta y por rebosamiento.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la retención urinaria?",
+        "verso": "La incapacidad de vaciar la vejiga; causas: obstrucción prostática, drogas anticolinérgicas, lesión neurológica o dolor.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la vejiga neurogénica?",
+        "verso": "La disfunción vesical por lesión del sistema nervioso (central, espinal o periférico): espástica (lesión medular alta) o flácida (lesión del sacro).",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la enuresis?",
+        "verso": "La micción involuntaria durante el sueño en niños mayores de 5 años, sin causa orgánica aparente.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Qué es la capacidad vesical normal y la sensación de llenado?",
+        "verso": "La vejiga almacena 300-500 mL; la primera sensación de llenado aparece a ~150-200 mL y el deseo miccional a ~400 mL.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      },
+      {
+        "frente": "¿Cómo cambia la micción en el adulto mayor?",
+        "verso": "Disminuye la capacidad y el tono vesical, aumenta la frecuencia nocturna (nicturia) y la presencia de obstrucción prostática en el varón.",
+        "fontes": [
+          "Guyton & Hall. Tratado de Fisiología Médica, 14ª ed. Caps. 30-31."
+        ]
+      }
+    ],
+    "ordem": 51
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Fisiología — Medio interno del adulto mayor",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "fisiologia",
+    "descricao": "Cambios renales, hidroelectrolíticos y adrenocorticales en el envejecimiento",
+    "tags": [
+      "ser-humano-up6",
+      "fisiologia",
+      "adulto-mayor",
+      "envejecimiento",
+      "tfg",
+      "hiponatremia"
+    ],
+    "cards": [
+      {
+        "frente": "¿Cómo cambia la función renal con la edad?",
+        "verso": "Disminuye la TFG (~1 mL/min/año después de los 40), el flujo sanguíneo renal, la masa renal y la capacidad de concentrar y diluir la orina.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo cambia el balance hidroelectrolítico en el adulto mayor?",
+        "verso": "Disminuye el agua corporal total y la sed, con menor capacidad renal de concentrar, lo que predispone a deshidratación e hiponatremia.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo cambia la osmolaridad y la respuesta a la ADH con la edad?",
+        "verso": "La sensibilidad a la ADH se conserva o aumenta pero el umbral de la sed se eleva; la menor ingesta predispone a hiperosmolaridad.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo cambia la función adrenocortical con la edad?",
+        "verso": "Disminuye la secreción de aldosterona y renina (hiporreninismo), con menor capacidad de conservar sodio y eliminar potasio.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo se presenta la insuficiencia renal en el adulto mayor?",
+        "verso": "Puede ser silenciosa porque la creatinina se mantiene normal por la menor masa muscular; debe estimarse la TFG por fórmulas.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Por qué el adulto mayor es vulnerable a la hiponatremia?",
+        "verso": "Por la menor capacidad de diluir y la mayor retención de agua (menor TFG, fármacos como diuréticos tiazídicos, y mayor ADH).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo cambia la respuesta al sodio con la edad?",
+        "verso": "Disminuye la capacidad de excreta y de conservar sodio, con riesgo de hipo e hipernatremia según la situación clínica.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué es la nefropatía por analgésicos y su relación con el envejecimiento?",
+        "verso": "El daño renal crónico por abuso de AINE, más frecuente y grave en el adulto mayor, que agrava la caída fisiológica de la TFG.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Cómo se evalúa la función renal en el anciano?",
+        "verso": "Con la TFG estimada por CKD-EPI, la creatinina sola no basta (masa muscular baja); y con la evaluación del balance de líquidos y electrolitos.",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      },
+      {
+        "frente": "¿Qué cambios tiene el sistema acidificante renal con la edad?",
+        "verso": "Disminuye la capacidad de secretar H+ y generar amonio, con mayor riesgo de acidosis metabólica (especialmente en la enfermedad renal crónica).",
+        "fontes": [
+          "Aranalde G, Mujica G, Agüero R, Velzi D. Fisiología Renal, 1ª ed., Corpus, 2015. Caps. 22-24."
+        ]
+      }
+    ],
+    "ordem": 52
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Biología — Contaminación ambiental",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": "biologia",
+    "descricao": "Contaminación, ozono, efecto invernadero y magnificación biológica",
+    "tags": [
+      "ser-humano-up6",
+      "biologia",
+      "contaminacion",
+      "ozono",
+      "efecto-invernadero",
+      "magnificacion-biologica"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la contaminación ambiental?",
+        "verso": "La presencia en el ambiente de sustancias o energías nocivas en concentraciones que alteran la salud humana o de los ecosistemas.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica la contaminación?",
+        "verso": "Por el medio afectado (aire, agua, suelo), por la naturaleza del contaminante (químico, físico, biológico) y por la fuente (puntual o difusa).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la capa de ozono y su función?",
+        "verso": "La capa de ozono estratosférico que absorbe la radiación UV-B; su deterioro aumenta el riesgo de cáncer de piel y daño ocular.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el efecto invernadero?",
+        "verso": "La retención de calor por gases de la atmósfera (CO2, metano); su intensificación produce el calentamiento global.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la magnificación biológica?",
+        "verso": "La concentración creciente de contaminantes liposolubles (DDT, mercurio) a lo largo de la cadena trófica: cada nivel acumula más tóxico.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la bioacumulación?",
+        "verso": "La acumulación de un contaminante en los tejidos de un organismo cuando su ingreso supera su eliminación.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es la biomagnificación?",
+        "verso": "El aumento de la concentración del contaminante en cada eslabón de la cadena alimentaria (resultado de la bioacumulación sucesiva).",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es un contaminante persistente?",
+        "verso": "Sustancia que no se degrada fácilmente (PCB, DDT, dioxinas, mercurio), acumulándose en el ambiente y en los organismos.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué es el ozono troposférico?",
+        "verso": "Contaminante del aire a nivel del suelo, formado por reacciones fotoquímicas (óxidos de nitrógeno y VOC); irrita vías respiratorias, a diferencia del ozono estratosférico protector.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      },
+      {
+        "frente": "¿Qué relación hay entre contaminación del agua y salud (UP6)?",
+        "verso": "Los arroyos contaminados (efluentes, agroquímicos, heces) transmiten enfermedades y daños crónicos, afectando a la población que los usa.",
+        "fontes": [
+          "Cátedra de Biología, FCM-UNR. Contaminación ambiental y ecosistemas. Guía Ser Humano y Su Medio 2025."
+        ]
+      }
+    ],
+    "ordem": 53
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Salud Mental — Crisis vitales y adulto mayor",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Crisis vitales, transmisión generacional y vejez en la posmodernidad",
+    "tags": [
+      "ser-humano-up6",
+      "salud-mental",
+      "crisis-vitales",
+      "adulto-mayor",
+      "transmision-generacional",
+      "edadismo"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es una crisis vital?",
+        "verso": "Un momento de desequilibrio psicológico ante cambios o pérdidas del ciclo vital (duelos, jubilación, enfermedad, cambios familiares) que supera los recursos habituales.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de crisis vitales se describen?",
+        "verso": "Crisis evolutivas (propias del desarrollo: adolescencia, adultez, vejez) y crisis circunstanciales (eventos inesperados: duelo, accidentes, desastres).",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué papel tiene el adulto mayor en su familia y comunidad?",
+        "verso": "Sostén afectivo y transmisor de tradición y memoria; su rol se redefine en la sociedad actual.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la transmisión generacional?",
+        "verso": "El pasaje de valores, saberes, historia y afectos entre generaciones, mediado por la familia y la comunidad.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la fragmentación social y cómo afecta al anciano?",
+        "verso": "El debilitamiento de los vínculos y redes sociales en la posmodernidad, que aumenta el aislamiento y la exclusión del adulto mayor.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cultura posmoderna y su efecto en el envejecimiento?",
+        "verso": "La valoración de lo joven, rápido y productivo, que tiende a excluir a la vejez; impacta en la autoestima y los roles del anciano.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Cómo influyen cultura, clase social y género en la tercera edad?",
+        "verso": "Determinan los recursos, el acceso a servicios y las expectativas de envejecer; la vejez no es homogénea entre grupos sociales.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué son los procesos de inclusión y exclusión en la vejez?",
+        "verso": "La inclusión (participación, vínculos, acceso a derechos) favorece el bienestar; la exclusión (aislamiento, pobreza, edadismo) lo daña.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Qué es el edadismo?",
+        "verso": "El prejuicio y la discriminación por edad; en los mayores se manifiesta como infantilización, desvalorización y exclusión social.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      },
+      {
+        "frente": "¿Cómo aborda la PNIE el envejecimiento?",
+        "verso": "El estrés psicosocial y la soledad activan ejes neuroendocrino-inmunitarios que influyen en la vulnerabilidad del adulto mayor a enfermedades.",
+        "fontes": [
+          "Sánchez-Teruel D, Robles-Bello MA. Psiconeuroinmunología. Educ Med. 2018;19(S2)."
+        ]
+      }
+    ],
+    "ordem": 54
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Medicina y Sociedad — Promoción de la salud y APS rural",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Promoción de la salud, Carta de Ottawa, APS y promotores",
+    "tags": [
+      "ser-humano-up6",
+      "medicina-y-sociedad",
+      "promocion-de-la-salud",
+      "aps",
+      "ottawa",
+      "participacion-comunitaria"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la promoción de la salud?",
+        "verso": "El proceso que capacita a las personas y comunidades para aumentar el control sobre su salud y mejorarla, actuando sobre sus determinantes.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los prerrequisitos de la salud según la Carta de Ottawa?",
+        "verso": "Paz, vivienda, educación, alimentación, ingreso, ecosistema estable, recursos sostenibles y justicia social.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Carta de Ottawa?",
+        "verso": "Documento de la OMS (1986) que define la promoción de la salud y sus cinco áreas de acción: políticas públicas, ambientes favorables, acción comunitaria, habilidades personales y reorientación de servicios.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la Atención Primaria de la Salud (APS)?",
+        "verso": "La estrategia de salud basada en el primer nivel de contacto con la comunidad, con atención integral, accesible, participativa y centrada en la prevención y promoción.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué rol cumple el promotor de la salud?",
+        "verso": "Facilita la participación comunitaria, educa, detecta riesgos y articula con el equipo de salud; es el vínculo entre la comunidad y los servicios.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la APS en el contexto rural?",
+        "verso": "La adecuación de la estrategia de APS a comunidades rurales: acceso geográfico, agentes sanitarios, saneamiento, educación y participación local.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la participación comunitaria?",
+        "verso": "La intervención activa de la comunidad en la identificación de problemas, planificación y ejecución de acciones de salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la intersectorialidad?",
+        "verso": "La articulación entre sectores (salud, educación, ambiente, vivienda, trabajo) para abordar los determinantes sociales de la salud.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre promoción y prevención?",
+        "verso": "La promoción actúa sobre los determinantes para mejorar la salud y el bienestar; la prevención actúa sobre factores de riesgo específicos para evitar enfermedades.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      },
+      {
+        "frente": "¿Qué es la alfabetización en salud?",
+        "verso": "La capacidad de las personas de obtener, comprender y usar información de salud para tomar decisiones; es objetivo de la promoción.",
+        "fontes": [
+          "Cátedra de Medicina y Sociedad, FCM-UNR. Promoción de la salud y APS rural."
+        ]
+      }
+    ],
+    "ordem": 55
+  },
+  {
+    "titulo": "Ser Humano y Su Medio UP6 — Medicina Preventiva — Saneamiento de excretas y envejecimiento",
+    "ano": "ano2",
+    "materia": "ser_humano_meio",
+    "parcial": "parcial1",
+    "disciplina_base": null,
+    "descricao": "Eliminación de excretas y envejecimiento poblacional",
+    "tags": [
+      "ser-humano-up6",
+      "medicina-preventiva",
+      "excretas",
+      "envejecimiento",
+      "accesibilidad",
+      "letrina"
+    ],
+    "cards": [
+      {
+        "frente": "¿Qué es la eliminación de excretas y por qué importa?",
+        "verso": "La disposición segura de orina y materia fecal para evitar la contaminación del suelo y el agua y las enfermedades de transmisión fecal-oral.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué sistemas de eliminación de excretas existen?",
+        "verso": "Red cloacal con tratamiento de aguas residuales, cámara séptica con pozo absorbente y letrinas sanitarias (pozo ventilado).",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué es la letrina sanitaria?",
+        "verso": "Instalación de pozo cubierto y ventilado que aísla las heces del ambiente y de los insectos; alternativa segura cuando no hay red cloacal.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué enfermedades previene la correcta eliminación de excretas?",
+        "verso": "Cólera, fiebre tifoidea, hepatitis A, diarreas, parasitosis y poliomielitis (enfermedades de transmisión fecal-oral).",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué es la cámara séptica?",
+        "verso": "Sistema domiciliario de tratamiento de excretas en el que la materia orgánica se digiere anaeróbicamente y el efluente se infiltra en un pozo absorbente.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué es el envejecimiento poblacional?",
+        "verso": "El aumento de la proporción de personas de 60 años o más en la población, resultado de la baja natalidad y la mayor esperanza de vida.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué consecuencias tiene el envejecimiento poblacional en la salud?",
+        "verso": "Mayor demanda de servicios geriátricos y crónicos, cambio del perfil epidemiológico (enfermedades crónicas y discapacidad) y necesidad de cuidados de larga duración.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué barreras enfrentan los adultos mayores en la vida cotidiana?",
+        "verso": "Barreras económicas (pobreza), sociales (aislamiento), políticas (falta de representación), culturales (edadismo) y arquitectónicas (falta de accesibilidad).",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué es la accesibilidad universal?",
+        "verso": "El diseño de entornos, productos y servicios que pueden usar todas las personas, incluidos los adultos mayores, sin adaptaciones especiales.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      },
+      {
+        "frente": "¿Qué es el cuidado domiciliario y la red de apoyo al anciano?",
+        "verso": "El conjunto de cuidados en el hogar (familiares, cuidadores, enfermería) y de servicios comunitarios que permiten envejecer con dignidad.",
+        "fontes": [
+          "Cátedra de Medicina Preventiva y Social, FCM-UNR. Saneamiento de excretas y envejecimiento poblacional."
+        ]
+      }
+    ],
+    "ordem": 56
+  }
+]

@@ -29,7 +29,7 @@ interface HistoricoItem {
 }
 
 function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
-  if (desafio.secao === "diagnostico_imagens") {
+  if (desafio.secao === "diagnostico_imagens" || desafio.secao === "ciclo_basico_dx") {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
         <Image src={CAPA_DIAGNOSTICO_IMAGENS} alt="" fill className="object-cover" />

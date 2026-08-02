@@ -37,7 +37,7 @@ export function getDesafioIcon(nome: string): LucideIcon {
 // não especialidade). Chave canônica salva no banco — rótulo bilíngue em
 // lib/i18n.tsx (t.cronograma.desafioSecaoLabel). Cresce conforme novas seções
 // forem criadas no admin.
-export const DESAFIO_SECAO_KEYS = ["diagnostico_imagens"] as const
+export const DESAFIO_SECAO_KEYS = ["diagnostico_imagens", "ciclo_basico_dx"] as const
 export type DesafioSecaoKey = (typeof DESAFIO_SECAO_KEYS)[number]
 
 const COVER_GRADIENTS = [

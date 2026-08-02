@@ -194,6 +194,7 @@ const pt = {
     } as Record<string, string>,
     desafioSecaoLabel: {
       diagnostico_imagens: "Diagnóstico por Imagem",
+      ciclo_basico_dx: "Ciclo Básico Dx",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {
@@ -1174,6 +1175,7 @@ const es: typeof pt = {
     } as Record<string, string>,
     desafioSecaoLabel: {
       diagnostico_imagens: "Diagnóstico por Imágenes",
+      ciclo_basico_dx: "Ciclo Básico Dx",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {

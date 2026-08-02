@@ -38,7 +38,7 @@ export function PwaInstallBanner() {
   return (
     <>
       <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center px-3 pb-3 sm:hidden">
-        <div className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-[#c6ff3a]/25 bg-[#1a1e15]/95 p-3 shadow-[0_8px_30px_rgba(0,0,0,0.55)] backdrop-blur-sm">
+        <div className="flex w-full max-w-md items-center gap-3 rounded-2xl border border-[#c6ff3a]/25 bg-[#1a1e15]/95 p-3 shadow-[0_8px_30px_rgba(0,0,0,0.55)]">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16]">
             <Download className="h-5 w-5 text-[#0a1f00]" />
           </div>

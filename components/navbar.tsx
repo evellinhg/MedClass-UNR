@@ -29,7 +29,7 @@ export function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="flex w-full max-w-6xl items-center justify-between gap-4 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 shadow-2xl shadow-black/40 backdrop-blur-xl sm:px-6">
+      <nav className="flex w-full max-w-6xl items-center justify-between gap-4 rounded-full border border-white/10 bg-[#12140f]/90 px-4 py-2 shadow-2xl shadow-black/40 sm:px-6">
         {/* Logo */}
         <a href="#" className="flex shrink-0 items-center">
           <Image
@@ -84,7 +84,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
-          className="absolute inset-x-4 top-[calc(100%+0.5rem)] rounded-3xl border border-white/10 bg-[#12140f]/95 px-6 py-4 shadow-2xl backdrop-blur-xl md:hidden"
+          className="absolute inset-x-4 top-[calc(100%+0.5rem)] rounded-3xl border border-white/10 bg-[#12140f]/95 px-6 py-4 shadow-2xl md:hidden"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >

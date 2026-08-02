@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, type MouseEvent } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Loader2, CheckCircle2, XCircle, ChevronDown, ChevronUp, Pencil, Plus } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
@@ -16,6 +17,8 @@ import { useLanguage } from "@/lib/i18n"
 
 const SEM_CATEGORIA = "sem_categoria"
 
+const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/capa-diagnostico-imagens.jpg"
+
 interface HistoricoItem {
   id: string
   acertos: number
@@ -25,6 +28,14 @@ interface HistoricoItem {
 }
 
 function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
+  if (desafio.secao === "diagnostico_imagens") {
+    return (
+      <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
+        <Image src={CAPA_DIAGNOSTICO_IMAGENS} alt="" fill className="object-cover" />
+      </div>
+    )
+  }
+
   const Icon = getDesafioIcon(desafio.icone)
   return (
     <div

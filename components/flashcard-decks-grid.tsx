@@ -200,6 +200,9 @@ export function FlashcardDecksGrid() {
     })
 
     setDecks(decksComProgresso)
+    setCollapsed((prev) =>
+      prev.size === 0 ? new Set(decksComProgresso.map((d) => d.materia ?? SEM_CATEGORIA)) : prev
+    )
     setLoading(false)
   }
 

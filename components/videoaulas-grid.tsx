@@ -135,6 +135,15 @@ export function VideoaulasGrid() {
         const list = (data as VideoaulaDB[]) ?? []
         setVideoaulas(list)
         setCollapsed((prev) => (prev.size === 0 ? new Set(list.map((v) => v.id)) : prev))
+        setCollapsedAnos((prev) =>
+          prev.size === 0
+            ? new Set(
+                list
+                  .filter((v) => v.ano)
+                  .map((v) => `${v.fonte || "unr"}-${v.ano}`)
+              )
+            : prev
+        )
         setLoading(false)
       })
 

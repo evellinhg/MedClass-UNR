@@ -83,7 +83,11 @@ export function DesafiosClinicosContent() {
         : Promise.resolve({ data: [] }),
     ])
 
-    setDesafios((desafiosData as DesafioClinico[]) ?? [])
+    const lista = (desafiosData as DesafioClinico[]) ?? []
+    setDesafios(lista)
+    setCollapsed((prev) =>
+      prev.size === 0 ? new Set(lista.map((d) => d.secao || d.area || SEM_CATEGORIA)) : prev
+    )
     setHistorico((historicoRes.data as unknown as HistoricoItem[]) ?? [])
     setLoading(false)
   }

@@ -17,8 +17,8 @@ import { useLanguage } from "@/lib/i18n"
 
 const SEM_CATEGORIA = "sem_categoria"
 
-const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/capa-diagnostico-imagens.jpg"
-const CAPA_CLINICA_MEDICA = "/desafios-clinicos/capa-clinica-medica.jpg"
+const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/desafio-capa-diagnostico-imagens.jpg"
+const CAPA_CLINICA_MEDICA = "/desafios-clinicos/desafio-capa-clinica-medica.jpg"
 
 interface HistoricoItem {
   id: string

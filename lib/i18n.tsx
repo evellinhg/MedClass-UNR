@@ -546,6 +546,13 @@ const pt = {
     titleHighlight: "para não travar em nenhuma prova",
     subtitle: "Cancele quando quiser, sem letras miúdas.",
     paymentNote: "Pagamento via Pix.",
+    promo: {
+      badge: "Promoção de Lançamento",
+      title: "Período Gratuito",
+      description: "Aproveite o período gratuito para testar nossa plataforma.",
+      features: ["Acesso ilimitado durante o período gratuito", "Acesso a todo o conteúdo da plataforma"],
+      cta: "Criar conta grátis",
+    },
     plans: [
       {
         name: "Plano Mensal",
@@ -1519,6 +1526,13 @@ const es: typeof pt = {
     titleHighlight: "para no trabarte en ningún examen",
     subtitle: "Cancelá cuando quieras, sin letra chica.",
     paymentNote: "Pago por transferencia (CBU/ALIAS).",
+    promo: {
+      badge: "Promoción de Lanzamiento",
+      title: "Período Gratuito",
+      description: "Aprovechá el período gratuito para probar nuestra plataforma.",
+      features: ["Acceso ilimitado durante el período gratuito", "Acceso a todo el contenido de la plataforma"],
+      cta: "Crear cuenta gratis",
+    },
     plans: [
       {
         name: "Plan Mensual",

@@ -1,0 +1,2693 @@
+[
+ {
+  "titulo": "Defensa UP7 — Semiología — Síndromes paraneoplásicos: concepto y mecanismos",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "semiologia",
+  "descricao": "Síndromes paraneoplásicos: definición, mecanismos fisiopatológicos e importancia clínica",
+  "tags": [
+   "defensa-up7",
+   "semiologia",
+   "sindrome-paraneoplasico",
+   "cancer",
+   "neoplasia"
+  ],
+  "ordem": 1,
+  "cards": [
+   {
+    "frente": "¿Qué son los síndromes paraneoplásicos (SP)?",
+    "verso": "Son un conjunto de manifestaciones asociadas a la presencia de un tumor maligno en órganos y sistemas NO afectados directamente por el crecimiento neoplásico ni por sus metástasis.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Material bibliográfico: Semiología Clínica, Síndromes paraneoplásicos (Prof. Dra. María Gabriela Garrido)"
+    ]
+   },
+   {
+    "frente": "¿Por qué la sintomatología de un SP no se explica por el compromiso tumoral del órgano?",
+    "verso": "Porque no se debe a la infiltración tumoral del órgano sino a factores humorales o inmunes: hormonas, citoquinas, interleuquinas o respuestas inmunes contra antígenos tumorales que tienen reacción cruzada con antígenos neuronales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (mecanismos)"
+    ]
+   },
+   {
+    "frente": "¿Qué importancia clínica tiene la identificación de un síndrome paraneoplásico?",
+    "verso": "Permite sospechar la existencia de un tumor en alguna parte del organismo; como muchos SP preceden al diagnóstico del cáncer, su identificación permite descubrirlo en fases tempranas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (importancia)"
+    ]
+   },
+   {
+    "frente": "¿Qué porcentaje de las neoplasias se manifiesta con algún síndrome paraneoplásico?",
+    "verso": "Entre un 7-15% de las neoplasias se manifiestan en algún momento de su evolución por alguna forma de SP.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (epidemiología)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles fueron los SP clásicamente mejor caracterizados?",
+    "verso": "Los producidos por tumores secretantes de alguna hormona (por ejemplo ACTH o PTH), que se distribuyen por la circulación y actúan en el órgano diana, lejos del cáncer que las produjo; también pueden deberse al desarrollo de autoinmunidad u otros mecanismos desconocidos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (mecanismos)"
+    ]
+   },
+   {
+    "frente": "¿Por qué es de gran interés reconocer el SP en el cáncer de pulmón?",
+    "verso": "Porque en determinadas ocasiones es la primera manifestación de la neoplasia, lo que permite un estudio y diagnóstico más precoz; además puede ser útil en la evolución, la respuesta al tratamiento y la posible recidiva del tumor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (cáncer de pulmón)"
+    ]
+   },
+   {
+    "frente": "¿Qué riesgo tiene el SP no diagnosticado ni controlado?",
+    "verso": "Puede ser una amenaza para la vida del enfermo; por eso, como muchas veces la sintomatología precede a la del tumor, es importante el seguimiento y monitorización de los pacientes en busca del tumor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (riesgo)"
+    ]
+   },
+   {
+    "frente": "¿Por qué se debe hacer un seguimiento estrecho de los pacientes con SP?",
+    "verso": "Porque el SP puede preceder al diagnóstico del tumor y su reconocimiento permite detectar el cáncer en fases tempranas, evaluar la respuesta al tratamiento y detectar recidivas; su estudio y detección tienen gran importancia clínica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (seguimiento)"
+    ]
+   },
+   {
+    "frente": "¿Qué órganos o sistemas NO se afectan directamente en un síndrome paraneoplásico?",
+    "verso": "Los órganos y sistemas afectados por la manifestación paraneoplásica no están invadidos directamente por el tumor ni por sus metástasis; la alteración es mediada por hormonas, citoquinas o respuestas inmunes cruzadas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (definición)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Semiología — Síndromes paraneoplásicos: clasificación",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "semiologia",
+  "descricao": "Clasificación de los síndromes paraneoplásicos según el sistema comprometido",
+  "tags": [
+   "defensa-up7",
+   "semiologia",
+   "sindrome-paraneoplasico",
+   "clasificacion",
+   "cancer"
+  ],
+  "ordem": 2,
+  "cards": [
+   {
+    "frente": "¿Qué SP sistémicos se describen?",
+    "verso": "Polimiositis/dermatomiositis, lupus eritematoso sistémico y caquexia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (sistémicos)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP endocrinos se describen?",
+    "verso": "Síndrome de Cushing (secreción ectópica de ACTH), hiponatremia (secreción inadecuada de ADH), galactorrea, ginecomastia, hipertiroidismo, hipercalcemia, hipoglicemia/hiperglicemia, acromegalia y síndrome carcinoide.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (endocrinos)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP cutáneos se describen?",
+    "verso": "Acantosis nigricans, hiperpigmentación difusa, prurito, urticaria, eritema polimorfo e ictiosis.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (cutáneos)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP hematológicos se describen?",
+    "verso": "Anemia, policitemia, coagulopatía, púrpura trombocitopénica, disproteinemia y leucoeritroblastosis.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (hematológicos)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP vasculares se describen?",
+    "verso": "Tromboflebitis migratoria y endocarditis trombótica no bacteriana.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (vasculares)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP renales se describen?",
+    "verso": "Síndrome nefrótico y glomerulonefritis.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (renales)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP esqueléticos se describen?",
+    "verso": "Dedos en palillos de tambor y osteoartropatía hipertrófica neumónica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (esqueléticos)"
+    ]
+   },
+   {
+    "frente": "¿Qué SP neurológicos se describen?",
+    "verso": "Miastenia gravis, neuropatías, demencias, encefalomielitis y trastornos cerebelosos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (neurológicos)"
+    ]
+   },
+   {
+    "frente": "¿Qué síndrome paraneoplásico endocrino se asocia a la secreción ectópica de ACTH?",
+    "verso": "El síndrome de Cushing (secreción ectópica de ACTH); también se describen hiponatremia por secreción inadecuada de ADH, hipercalcemia, galactorrea, ginecomastia, hipertiroidismo y acromegalia, entre otros.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (endocrinos)"
+    ]
+   },
+   {
+    "frente": "¿Qué manifestación cutánea paraneoplásica clásica se menciona?",
+    "verso": "La acantosis nigricans (junto a hiperpigmentación difusa, prurito, urticaria, eritema polimorfo e ictiosis).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Síndromes paraneoplásicos (cutáneos)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Semiología — Historia clínica y detección precoz de una neoplasia",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "semiologia",
+  "descricao": "Historia clínica, datos relevantes, síndrome de impregnación tumoral, examen de mama y hábito evacuatorio",
+  "tags": [
+   "defensa-up7",
+   "semiologia",
+   "historia-clinica",
+   "cancer",
+   "deteccion-precoz",
+   "mama",
+   "habito-evacuatorio"
+  ],
+  "ordem": 3,
+  "cards": [
+   {
+    "frente": "¿Qué datos relevantes de la historia clínica permiten la detección precoz de una neoplasia?",
+    "verso": "Edad, antecedentes familiares de cáncer (p. ej., madre fallecida por cáncer de mama, como en Norma), exposición a carcinógenos (parque industrial, tabaco), cambios en el ritmo evacuatorio, pérdida de peso no explicada, sangrado (hemorragia digestiva baja, sangre oculta en materia fecal) y síndrome de impregnación tumoral.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: historia clínica para detección precoz de neoplasia"
+    ]
+   },
+   {
+    "frente": "¿Qué es el síndrome de impregnación tumoral?",
+    "verso": "Es el conjunto de síntomas y signos generales constitucionales producidos por el tumor y sus sustancias (astenia, anorexia, adelgazamiento, fiebre), que sin ser específicos, orientan a la sospecha de una neoplasia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: síndromes neoplásicos y paraneoplásicos"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tiene el cambio del hábito evacuatorio con las neoplasias?",
+    "verso": "Los cambios del hábito evacuatorio (constipación, diarrea o alternancia) son un dato clave de la historia clínica que orienta al cáncer colorrectal, sobre todo en pacientes mayores; en Norma es uno de los datos de alarma del control anual.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: cambios del hábito evacuatorio (UP7, caso Norma)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la hemorragia digestiva baja y con qué neoplasia se relaciona?",
+    "verso": "Es la pérdida de sangre por el tubo digestivo distal (colon y recto); se relaciona con el cáncer colorrectal y su detección se complementa con la búsqueda de sangre oculta en materia fecal.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: hemorragia digestiva baja"
+    ]
+   },
+   {
+    "frente": "¿Qué utilidad tiene la detección de sangre oculta en materia fecal?",
+    "verso": "Es un método de cribado (screening) para el cáncer colorrectal en población asintomática; su positividad obliga a profundizar la evaluación (colonoscopía).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: sangre oculta en materia fecal"
+    ]
+   },
+   {
+    "frente": "¿Qué se debe evaluar en la inspección y palpación de la mama?",
+    "verso": "Simetría, retracciones, cambios de la piel y del pezón, nódulos y adenopatías axilares; es parte del examen físico del control anual (especialmente con antecedentes familiares de cáncer de mama).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: inspección y palpación de mama"
+    ]
+   },
+   {
+    "frente": "¿Qué exámenes complementarios se utilizan ante la sospecha de neoplasia?",
+    "verso": "Laboratorio (sangre oculta en materia fecal, marcadores tumorales, hemograma), imágenes (mamografía, colonoscopía, tomografía, ecografía) y estudios histopatológicos (biopsia, citología, Papanicolaou).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, Contenidos: exámenes complementarios (neoplasia)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el cribado (screening) oncológico?",
+    "verso": "Es la aplicación sistemática de una prueba de detección en una población asintomática para descubrir pacientes con anomalías indicativas de un cáncer o de una lesión precancerosa y tratarlos prontamente (ejemplos: Papanicolaou, mamografía, sangre oculta en materia fecal, PSA).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología/Medicina Preventiva, UP7 (diagnóstico temprano y cribado)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel tienen los antecedentes familiares en la pesquisa oncológica de Norma?",
+    "verso": "El antecedente de madre fallecida por cáncer de mama eleva la sospecha (cánceres familiares), por lo que en su control anual se recomienda pesquisa de mama (mamografía) y, por el cambio del hábito evacuatorio, pesquisa colorrectal (sangre oculta en materia fecal y/o colonoscopía).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, UP7 (caso Norma)"
+    ]
+   },
+   {
+    "frente": "¿Qué sintomatología general orienta a sospechar una neoplasia en la anamnesis?",
+    "verso": "Pérdida de peso y apetito, astenia, fiebre de origen desconocido, sudoración nocturna, anemia, sangrados, cambios del tránsito intestinal, nódulos o masas palpables y síndrome paraneoplásico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Semiología, UP7 (síndromes neoplásicos)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Epidemiología del cáncer: conceptos generales y carga global",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Concepto de cáncer, carga mundial, tumores más frecuentes, edad y mortalidad",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "epidemiologia-del-cancer",
+   "cancer",
+   "mortalidad",
+   "tumores-frecuentes"
+  ],
+  "ordem": 4,
+  "cards": [
+   {
+    "frente": "¿Qué es el cáncer según la epidemiología?",
+    "verso": "Es un nombre genérico que designa un amplio grupo de enfermedades que pueden afectar a cualquier parte del organismo; también se habla de 'tumores malignos' o 'neoplasias malignas'. Su característica es la multiplicación rápida de células anormales que se extienden más allá de sus límites habituales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (JTP Marcela Farroni)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es la principal causa de muerte por cáncer?",
+    "verso": "Las metástasis son la principal causa de muerte por cáncer, ya que el tumor se propaga a otros órganos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer"
+    ]
+   },
+   {
+    "frente": "¿Qué carga de mortalidad mundial tuvo el cáncer en 2008?",
+    "verso": "En 2008 causó aproximadamente 7,6 millones de defunciones (cerca del 13% del total de muertes en el mundo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (OMS Nota Nº 297)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los tumores más frecuentes en los hombres?",
+    "verso": "Los de próstata, pulmón y colorrectales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los tumores más frecuentes en las mujeres?",
+    "verso": "Los de mama, pulmón y colorrectales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué proporción de diagnósticos y muertes por cáncer concentran pulmón, próstata, mama y colon/recto?",
+    "verso": "Constituyen más del 50% de los diagnósticos y muertes por cáncer en la población estadounidense.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Cómo evolucionó la mortalidad por cáncer en los últimos 50 años?",
+    "verso": "La tasa global de mortalidad por cáncer ajustada por edad aumentó significativamente en los hombres (atribuible al cáncer de pulmón), mientras que cayó ligeramente en las mujeres (por la disminución de muertes por cáncer de útero, estómago, hígado y cuello de útero).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los cánceres que más muertes producen en el mundo cada año?",
+    "verso": "Pulmonar, gástrico, hepático, colorrectal, mamario y cervicouterino; más del 70% de las defunciones por cáncer se registran en países de ingresos bajos y medianos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (OMS Nota Nº 297)"
+    ]
+   },
+   {
+    "frente": "¿A qué edad ocurren la mayoría de los carcinomas?",
+    "verso": "La mayoría de los carcinomas ocurren en los últimos años de vida (aproximadamente 55 años); el cáncer es la causa principal de muerte en las mujeres de 40 a 79 años y en los hombres de 60 a 79 años.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué neoplasias son responsables de la mortalidad infantil por cáncer?",
+    "verso": "En los menores de 15 años el cáncer ocupa el segundo lugar (después de los accidentes) y la leucemia aguda y las neoplasias del sistema nervioso central son responsables del 60% de las muertes; las neoplasias comunes de la lactancia e infancia incluyen neuroblastoma, tumor de Wilms, retinoblastoma, leucemias agudas y rabdomiosarcoma.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Epidemiología del cáncer: factores de riesgo, geografía y prevención",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Factores de riesgo, variaciones geográficas, sobrepeso, tabaco, alcohol, HPV y estrategias de prevención",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "epidemiologia-del-cancer",
+   "factores-de-riesgo",
+   "prevencion",
+   "tabaco",
+   "hpv"
+  ],
+  "ordem": 5,
+  "cards": [
+   {
+    "frente": "¿Qué proporción de defunciones por cáncer podrían evitarse modificando factores de riesgo?",
+    "verso": "Más del 30% de las defunciones por cáncer podrían evitarse modificando o evitando los principales factores de riesgo: tabaco, obesidad, inactividad física, baja ingesta de frutas y verduras, alcohol, infecciones por HPV/VHB/VHC, contaminación del aire y humo de combustibles sólidos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (OMS Nota Nº 297)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel juega el tabaquismo en la mortalidad por cáncer?",
+    "verso": "El consumo de cigarrillos es responsable del 90% de las muertes por cáncer de pulmón y se ha implicado en cáncer de boca, faringe, laringe, esófago, páncreas y vejiga; es el factor ambiental aislado más importante que contribuye a la muerte prematura en EEUU.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Cómo influyen el sobrepeso y la obesidad en la mortalidad por cáncer?",
+    "verso": "El sobrepeso y la obesidad pueden ser responsables del 14% de las muertes por cáncer en hombres y del 20% en mujeres; los individuos con sobrepeso en EEUU tienen una tasa de mortalidad por cáncer 52% (hombres) y 62% (mujeres) mayor que las personas más delgadas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué cánceres se asocian al abuso de alcohol?",
+    "verso": "El alcohol aumenta el riesgo de carcinoma de orofaringe (excluyendo labios), laringe y esófago y, a causa de la cirrosis alcohólica, de hepatocarcinoma; junto con el tabaco multiplica el peligro de cáncer del tracto aerodigestivo superior.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué evidencias muestran los datos geográficos sobre el origen del cáncer gástrico?",
+    "verso": "La tasa de mortalidad por cáncer de estómago es 7 a 8 veces mayor en Japón que en EEUU, y las tasas de los inmigrantes japoneses de primera generación en EEUU son intermedias y se aproximan a las de los nativos con cada generación, lo que señala factores ambientales y culturales más que una predisposición genética.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es el papel del Helicobacter pylori en el cáncer gástrico?",
+    "verso": "La infección crónica por H. pylori aumenta el riesgo de carcinoma gástrico en 5 a 6 veces (gastritis crónica → atrofia → metaplasia intestinal → displasia → carcinoma) y es la única bacteria reconocida por la OMS como productora de cáncer, aunque la mayoría de los infectados no desarrolla la enfermedad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran, carcinoma gástrico)"
+    ]
+   },
+   {
+    "frente": "¿Qué características tiene la epidemiología del cáncer de cuello de útero?",
+    "verso": "Se diagnostican unos 530.000 casos nuevos anuales en el mundo, más del 85% en países en desarrollo con mortalidad cercana al 50%; en Argentina se diagnostican ~4000 casos nuevos al año y mueren ~1800 mujeres, con tasas más altas en las provincias del Norte (Formosa 19/100.000, Misiones 16, Salta 15).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Lineamientos técnicos VPH Argentina)"
+    ]
+   },
+   {
+    "frente": "¿Qué rol tiene la vacuna contra el HPV?",
+    "verso": "Es una importante oportunidad de prevención primaria del cáncer cérvico-uterino; un enfoque integral que combine la vacuna contra el HPV con el tamizaje poblacional (prevención secundaria) permitirá reducir significativamente su incidencia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (VACUNA VPH Argentina 2011)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son las estrategias de prevención del cáncer enumeradas?",
+    "verso": "Intensificar la evitación de los factores de riesgo, vacunar contra HPV y VHB, controlar los riesgos ocupacionales y reducir la exposición a la radiación solar.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Estrategias de prevención)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los dos componentes de la detección temprana del cáncer?",
+    "verso": "El diagnóstico temprano (conocer los signos y síntomas iniciales para tratar antes de la fase avanzada) y el cribado (aplicación sistemática de una prueba de detección en población asintomática: inspección con ácido acético, Papanicolaou, mamografía y PSA).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (OMS Nota Nº 297)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Predisposición genética al cáncer y procesos precancerosos",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Síndromes autosómicos dominantes, reparación del DNA, cánceres familiares, inflamación crónica y precancerosos",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "predisposicion-genetica",
+   "cancer-familiar",
+   "brca",
+   "inflamacion-cronica"
+  ],
+  "ordem": 6,
+  "cards": [
+   {
+    "frente": "¿En cuántas categorías se divide la predisposición genética al cáncer?",
+    "verso": "Tres: síndromes cancerosos heredados autosómicos dominantes, síndromes de reparación del DNA defectuoso, y cánceres familiares.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué caracteriza a los síndromes cancerosos autosómicos dominantes?",
+    "verso": "La herencia de un único gen mutado aumenta mucho el riesgo de desarrollar un tumor; habitualmente la mutación heredada es puntual en un alelo de un gen supresor tumoral. Ejemplos: retinoblastoma, poliposis adenomatosa del colon (APC), Li-Fraumeni (p53) y neoplasias endócrinas múltiples (MEN-1, MEN-2).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el retinoblastoma hereditario?",
+    "verso": "Es el ejemplo más notable de síndrome autosómico dominante: el 40% de los retinoblastomas son hereditarios y los portadores de la mutación del gen supresor tumoral RB tienen un riesgo 10.000 veces mayor de desarrollarlo, habitualmente bilateral, con riesgo aumentado de sarcoma osteogénico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué ocurre en la poliposis adenomatosa familiar del colon (APC)?",
+    "verso": "Los individuos que heredan la mutación autosómica dominante del gen APC desarrollan innumerables adenomas polipoideos del colon y prácticamente el 100% de los casos están condenados a desarrollar un carcinoma de colon antes de los 50 años.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué síndromes presentan reparación defectuosa del DNA?",
+    "verso": "Xeroderma pigmentosum, ataxia-telangiectasia y síndrome de Bloom (autosómicos recesivos, con inestabilidad genética por defectos en la reparación del DNA); también el cáncer de colon no polipoideo hereditario (HNPCC), autosómico dominante por inactivación de un gen de reparación de malos emparejamientos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué caracteriza a los cánceres familiares?",
+    "verso": "Afectan las formas familiares de casi todos los cánceres esporádicos (colon, mama, ovario, cerebro, melanomas); rasgos: edad precoz de comienzo, tumores en dos o más parientes próximos y, a veces, tumores múltiples o bilaterales; no se asocian a fenotipos específicos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué genes de susceptibilidad se identificaron en el cáncer de mama familiar?",
+    "verso": "BRCA1 y BRCA2; la mutación ocurre en no más del 3% de los cánceres de mama. Se estima que del 10 al 20% de las pacientes con cáncer de mama u ovario tienen un pariente de primer o segundo grado con uno de estos tumores.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación hay entre inflamación crónica y cáncer?",
+    "verso": "Desde Virchow (1863) se sabe que el cáncer se desarrolla en sitios de inflamación crónica (colitis ulcerosa, Crohn, gastritis por H. pylori, hepatitis vírica, pancreatitis crónica); las citocinas estimulan el crecimiento celular, aumenta la dotación de células madres y la inflamación favorece la inestabilidad genómica por formas de oxígeno reactivo, induciendo además COX-2.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué son los procesos precancerosos?",
+    "verso": "Son trastornos no neoplásicos con asociación tan bien definida con el cáncer que se los denomina así: gastritis atrófica crónica de la anemia perniciosa, queratosis solar, colitis ulcerosa crónica y leucoplasia de la cavidad oral, vulva y pene; el adenoma velloso del colon desarrolla cambios cancerosos hasta en el 50% de los casos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el síndrome de Li-Fraumeni?",
+    "verso": "Un síndrome canceroso autosómico dominante producido por mutaciones del gen p53 en la línea germinal; junto a los tipos 1 y 2 de neoplasia endócrina múltiple (MEN-1 y MEN-2).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Epidemiología del Cáncer (Robbins y Cotran)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Neoplasia: definición, tumor y componentes",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Concepto de neoplasia, tumor, cáncer, parénquima y estroma",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "neoplasia",
+   "tumor",
+   "parenquima",
+   "estroma"
+  ],
+  "ordem": 7,
+  "cards": [
+   {
+    "frente": "¿Qué significa la palabra neoplasia?",
+    "verso": "Neoplasia significa 'nuevo crecimiento'.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es la definición de neoplasia?",
+    "verso": "Es una masa anormal de tejido cuyo crecimiento excede y no está coordinado con el de los tejidos normales, y persiste al cesar el estímulo que desencadenó el cambio.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es el origen del término tumor?",
+    "verso": "Inicialmente se aplicó a la tumefacción o hinchazón por inflamación (tétrada de Celso: rubor, calor, dolor y tumor); hoy se usa como sinónimo de neoplasia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre tumor y cáncer?",
+    "verso": "El término tumor abarca tanto neoplasias benignas como malignas; el término cáncer (del latín 'cangrejo') es sinónimo de neoplasia maligna.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se clasifican las neoplasias según su comportamiento clínico-biológico?",
+    "verso": "En benignas o malignas: las benignas son masas bien delimitadas, localizadas, que pueden curar por extirpación quirúrgica; las malignas invaden o infiltran y destruyen los tejidos adyacentes y pueden diseminarse a sitios distantes (metastatizar).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los dos componentes de toda neoplasia?",
+    "verso": "El parénquima (células neoplásicas proliferantes) y el estroma (tejido conjuntivo y vasos sanguíneos que le dan el armazón estructural y la irrigación al parénquima).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Cómo es la macroscopía según la cantidad de estroma?",
+    "verso": "Los tumores con escaso estroma son 'blandos y carnosos'; los ricos en estroma colágeno (estroma desmoplásico) son 'duros o escirros'.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Qué función cumple el estroma en la neoplasia?",
+    "verso": "Proporciona el armazón estructural y la irrigación adecuada al parénquima neoplásico, permitiendo su crecimiento.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Qué caracteriza a las neoplasias benignas?",
+    "verso": "Son masas bien delimitadas que permanecen localizadas sin diseminarse a otros sitios, por lo tanto pueden curar por extirpación quirúrgica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   },
+   {
+    "frente": "¿Qué caracteriza a los tumores malignos?",
+    "verso": "Tienden a invadir o infiltrar y destruir los tejidos adyacentes y pueden diseminarse a sitios distantes (metastatizar), lo que dificulta el tratamiento.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (JTP Daniela Zicre)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Nomenclatura de los tumores",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Nomenclatura de tumores mesenquimáticos y epiteliales, adenoma, papiloma, carcinoma",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "nomenclatura",
+   "neoplasia",
+   "adenoma",
+   "carcinoma",
+   "sarcoma"
+  ],
+  "ordem": 8,
+  "cards": [
+   {
+    "frente": "¿En qué se basa la nomenclatura de los tumores?",
+    "verso": "Se basa en el comportamiento biológico (benigno o maligno) y en la histogénesis, es decir la célula o tejido de origen (mesenquimática, epitelial, germinal, linfoide, otras).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se nombran los tumores mesenquimáticos benignos y malignos?",
+    "verso": "Benignos: se añade el sufijo -oma a la célula de origen (fibroma, lipoma, condroma, osteoma, leiomioma, rabdomioma, angioma, linfangioma). Malignos: se añade el sufijo -sarcoma (del griego sar = carnoso): fibrosarcoma, liposarcoma, condrosarcoma, osteosarcoma, etc.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un adenoma?",
+    "verso": "Es la neoplasia benigna que se origina de glándulas, de un epitelio glandular secretor o que forma microscópicamente estructuras glandulares.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un papiloma de células escamosas o pavimentosas?",
+    "verso": "Es la neoplasia benigna que se origina de un epitelio de revestimiento escamoso y crece como proyecciones digitiformes o verrucosas sobre la superficie de un epitelio.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un cistoadenoma?",
+    "verso": "Es la neoplasia benigna de origen epitelial glandular que crece formando tumores enteramente quísticos (cisto = quiste), como los del ovario.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se denominan los tumores malignos epiteliales?",
+    "verso": "Se denominan carcinomas: adenocarcinoma (de glándulas o patrón glandular), carcinoma pavimentoso/epidermoide/escamoso (de epitelio de revestimiento escamoso) y carcinoma de células transicionales (de epitelio de revestimiento transicional).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un papiloma transicional?",
+    "verso": "Es la neoplasia benigna que se origina de un epitelio transicional (por ejemplo de vejiga) y crece formando estructuras digitiformes.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Qué parámetros se usan en la nomenclatura de los tumores epiteliales?",
+    "verso": "El tipo histológico del epitelio de origen (glandular, pavimentoso o transicional), el patrón microscópico (glándulas, empalizada, estructuras papilares) y el patrón de crecimiento macroscópico (masas quísticas con sufijo cisto, o lesión sobreelevada con pedículo = pólipo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura epitelial)"
+    ]
+   },
+   {
+    "frente": "¿Qué tumores se denominan con sufijo -oma pero son malignos?",
+    "verso": "Melanoma (tumor maligno de los melanocitos), seminoma (tumor maligno de células germinales del testículo) y linfoma (neoplasia maligna del tejido linfoide, antiguamente denominado linfosarcoma); son términos inapropiados pero ampliamente afianzados.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (términos especiales)"
+    ]
+   },
+   {
+    "frente": "Complete: tejido fibroso → tumor benigno/maligno; tejido adiposo → ...; músculo liso → ...; vasos sanguíneos → ...",
+    "verso": "Fibroso: fibroma / fibrosarcoma. Adiposo: lipoma / liposarcoma. Cartilaginoso: condroma / condrosarcoma. Óseo: osteoma / osteosarcoma. Músculo liso: leiomioma / leiomiosarcoma. Músculo estriado: rabdomioma / rabdomiosarcoma. Vasos sanguíneos: angioma / angiosarcoma. Vasos linfáticos: linfangioma / linfangiosarcoma.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (nomenclatura mesenquimática)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Tumores mixtos y teratomas",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Tumores mixtos, adenoma pleomorfo de parótida y teratomas",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "tumores-mixtos",
+   "teratoma",
+   "adenoma-pleomorfo"
+  ],
+  "ordem": 9,
+  "cards": [
+   {
+    "frente": "¿Qué son los tumores mixtos?",
+    "verso": "Surgen de la diferenciación divergente de un único tipo de célula neoplásica hacia dos estirpes o tejidos diferentes.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (tumores mixtos)"
+    ]
+   },
+   {
+    "frente": "¿Qué ejemplo de tumor mixto se cita?",
+    "verso": "El adenoma pleomorfo de parótida, formado por componentes epitelial y mesenquimático (cartílago, hueso y otros), ambos derivados de una única célula mioepitelial.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (tumores mixtos)"
+    ]
+   },
+   {
+    "frente": "¿Qué son los teratomas?",
+    "verso": "Son tumores integrados por gran cantidad de tejidos maduros o inmaduros (hueso, tejido nervioso, cartílago; los quísticos por pelos y dientes), compuestos por más de un tipo de célula neoplásica derivada de más de una capa germinal embrionaria (ecto, meso y endodermo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (teratomas)"
+    ]
+   },
+   {
+    "frente": "¿De qué células se originan los teratomas?",
+    "verso": "De células totipotenciales presentes en ovario, testículo y, en ocasiones, de restos embrionarios secuestrados en la línea media.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (teratomas)"
+    ]
+   },
+   {
+    "frente": "¿Qué significa la palabra teratoma?",
+    "verso": "Proviene del latín terathos (monstruo), por la gran cantidad y diversidad de tejidos que los componen.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (teratomas)"
+    ]
+   },
+   {
+    "frente": "¿Cuántas capas germinales componen un teratoma?",
+    "verso": "Más de una capa germinal embrionaria: ectodermo, mesodermo y endodermo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (teratomas)"
+    ]
+   },
+   {
+    "frente": "¿Por qué el adenoma pleomorfo de parótida es un tumor mixto?",
+    "verso": "Porque está formado por dos componentes diferentes (epitelial y mesenquimático: cartílago, hueso y otros) que derivan de una única célula mioepitelial, es decir, de una diferenciación divergente de un solo tipo celular.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (tumores mixtos)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tienen los tumores mixtos con la histogénesis?",
+    "verso": "A diferencia de los tumores que derivan de una sola estirpe, los mixtos demuestran la diferenciación divergente de una única célula neoplásica hacia dos tejidos distintos, lo que muestra la plasticidad de la célula de origen.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (tumores mixtos)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Neoplasias benignas vs malignas: diferenciación y anaplasia",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Grado de diferenciación, anaplasia, criterios citológicos y correlación",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "benigno-vs-maligno",
+   "diferenciacion",
+   "anaplasia",
+   "pleomorfismo"
+  ],
+  "ordem": 10,
+  "cards": [
+   {
+    "frente": "¿Qué es el grado de diferenciación de un tumor?",
+    "verso": "Es el grado en que las células neoplásicas se asemejan a las células parenquimatosas normales de las cuales se originan, tanto morfológica como funcionalmente. Los tumores benignos son por regla general bien diferenciados; los malignos pueden ser bien, semidiferenciados o poco diferenciados.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diferenciación)"
+    ]
+   },
+   {
+    "frente": "¿Qué significa anaplasia?",
+    "verso": "Significa 'retroceso': es la pérdida de diferenciación morfológica y funcional de las células neoplásicas respecto de sus progenitoras normales. Este término se aplica a los tumores malignos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (anaplasia)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los criterios de anaplasia?",
+    "verso": "Pleomorfismo (variación del tamaño y forma de células y núcleos, con posibles células gigantes tumorales), hipercromasia nuclear (núcleos con abundante cromatina que se tiñen oscuro con H-E), alteración de la relación núcleo-citoplasma (se acerca a 1:1; normal 1/4 a 1/6) y mitosis anómalas (tripolares o multipolares).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (criterios de anaplasia)"
+    ]
+   },
+   {
+    "frente": "¿Los tumores benignos presentan mitosis?",
+    "verso": "Sí, pero en ellos las mitosis son normales (bipolares); las mitosis anómalas (tripolares o multipolares) caracterizan a los tumores malignos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (criterios de anaplasia)"
+    ]
+   },
+   {
+    "frente": "¿En qué se basa el grado de diferenciación y la anaplasia?",
+    "verso": "El grado de diferenciación se basa en la arquitectura histológica del tumor; la anaplasia en las alteraciones celulares (citología). En general el grado de diferenciación se correlaciona con la anaplasia (un tumor pobremente diferenciado suele ser anaplásico), aunque puede haber excepciones.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diferenciación y anaplasia)"
+    ]
+   },
+   {
+    "frente": "¿Cómo es la velocidad de crecimiento de las neoplasias benignas y malignas?",
+    "verso": "Los tumores benignos son por regla general de lento crecimiento; los malignos crecen más rápido, determinados por un exceso de producción celular sobre la pérdida de las mismas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (velocidad de crecimiento)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tiene la fracción de crecimiento con la evolución clínica?",
+    "verso": "En tumores con fracción de crecimiento alta (leucemias, ciertos linfomas) la evolución clínica es rápida; en neoplasias con fracciones bajas (cánceres de colon y mama) la producción celular supera la pérdida solo en aproximadamente 10% y crecen más lentamente.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (velocidad de crecimiento)"
+    ]
+   },
+   {
+    "frente": "¿Qué factores además del intrínseco afectan el crecimiento tumoral?",
+    "verso": "La estimulación hormonal y una adecuada irrigación; por ejemplo, los leiomiomas uterinos crecen lentamente durante años y tras la menopausia, al cesar el estímulo estrogénico, dejan de crecer y sufren atrofia e incluso calcificación distrófica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (velocidad de crecimiento)"
+    ]
+   },
+   {
+    "frente": "¿Qué capacidad funcional conservan las neoplasias bien diferenciadas?",
+    "verso": "Cuanto mejor es la diferenciación, la célula tumoral mantiene la capacidad funcional de sus progenitoras: las neoplasias benignas y los adenocarcinomas bien diferenciados de glándulas endocrinas pueden secretar hormonas y un hepatocarcinoma bien diferenciado puede secretar bilis.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diferenciación)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el pleomorfismo?",
+    "verso": "Es uno de los criterios de anaplasia: tanto las células como los núcleos presentan variación en el tamaño y la forma, y pueden aparecer células gigantes tumorales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (criterios de anaplasia)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Invasión local, necrosis/hemorragia y metástasis",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Invasión local, cápsula, necrosis, hemorragia y vías de diseminación metastásica",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "metastasis",
+   "invasion-local",
+   "diseminacion",
+   "carcinomas",
+   "sarcomas"
+  ],
+  "ordem": 11,
+  "cards": [
+   {
+    "frente": "¿Cómo es la invasión local de los tumores benignos?",
+    "verso": "Los tumores benignos no invaden: en general permanecen localizados y bien delimitados por una cápsula de tejido fibroso o seudocápsula, originada por la atrofia del tejido adyacente no tumoral.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (invasión local)"
+    ]
+   },
+   {
+    "frente": "¿Cómo es la invasión local de los tumores malignos?",
+    "verso": "Invaden y destruyen los tejidos adyacentes, tienen bordes irregulares y espiculados, es decir emiten prolongaciones que les permiten penetrar y adherirse fuertemente a los tejidos vecinos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (invasión local)"
+    ]
+   },
+   {
+    "frente": "¿Por qué los tumores malignos presentan más necrosis y hemorragia?",
+    "verso": "Por su crecimiento más rápido sufren más frecuentemente necrosis isquémica por falta de irrigación o hemorragia que los tumores benignos; ambos fenómenos pueden apreciarse micro y macroscópicamente.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (necrosis y hemorragia)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la metástasis?",
+    "verso": "Es la diseminación a distancia de las células tumorales malignas a otro sitio u órgano alejado del tumor inicial que no guarda continuidad con el mismo. La capacidad de metastatizar es propia de los tumores malignos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (metástasis)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son las tres vías de diseminación metastásica?",
+    "verso": "Siembra directa de cavidades o superficies corporales, diseminación linfática y diseminación hematógena.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (vías de diseminación)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la siembra directa de cavidades?",
+    "verso": "Es la diseminación que ocurre cuando la neoplasia maligna penetra en un 'campo abierto natural': cavidad peritoneal (frecuente en carcinomas de ovario), cavidad pleural, pericardio, espacio subaracnoideo y espacio articular.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (vías de diseminación)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es la vía de diseminación más frecuente de los carcinomas?",
+    "verso": "La diseminación linfática: las células tumorales se diseminan a través de los vasos linfáticos de drenaje a los ganglios regionales; por ejemplo, un adenocarcinoma de mama del cuadrante súpero-externo metastatiza a los ganglios axilares.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diseminación linfática)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es la vía de diseminación más frecuente de los sarcomas?",
+    "verso": "La diseminación hematógena: las células penetran generalmente los vasos venosos (de paredes más delgadas que las arteriales) y siguen el flujo venoso; hígado y pulmón son 'pasos obligados' y los órganos más afectados, seguidos por hueso y cerebro.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diseminación hematógena)"
+    ]
+   },
+   {
+    "frente": "¿Qué órganos raramente reciben metástasis?",
+    "verso": "Bazo, músculo esquelético, corazón y riñón raramente son localización de tumores metastásicos, aunque puede haber diseminación a casi todos los órganos de la economía.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (diseminación hematógena)"
+    ]
+   },
+   {
+    "frente": "Complete el cuadro comparativo: benigno vs maligno en diferenciación, anaplasia, mitosis, bordes, cápsula, necrosis/hemorragia y metástasis.",
+    "verso": "Grado de diferenciación: bien diferenciado vs bien/semi/poco diferenciado. Anaplasia: ausente vs presente. Mitosis: ausentes/escasas vs numerosas/anómalas. Bordes: netos vs espiculados o infiltrativos. Cápsula o seudocápsula: presente vs ausente. Necrosis/hemorragia: ausente/rara vs presente. Metástasis: no vs sí.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (cuadro comparativo)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Patología — Lesiones preneoplásicas, displasia y carcinoma in situ",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "patologia",
+  "descricao": "Concepto de lesión preneoplásica, grados de displasia y carcinoma in situ",
+  "tags": [
+   "defensa-up7",
+   "patologia",
+   "displasia",
+   "carcinoma-in-situ",
+   "preneoplasia",
+   "membrana-basal"
+  ],
+  "ordem": 12,
+  "cards": [
+   {
+    "frente": "¿Qué son las lesiones preneoplásicas?",
+    "verso": "Son patologías con asociación definida con el desarrollo de tumores malignos: si bien en la mayoría de los casos no llegan a generar cáncer, conllevan un incremento del riesgo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (lesiones preneoplásicas)"
+    ]
+   },
+   {
+    "frente": "¿Qué ejemplos de lesiones preneoplásicas se citan?",
+    "verso": "La hiperplasia endometrial (precursora del adenocarcinoma de endometrio), la displasia del epitelio bronquial o cervical (precursoras del carcinoma broncogénico o del cuello uterino), la colitis ulcerosa y los adenomas de colon.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (lesiones preneoplásicas)"
+    ]
+   },
+   {
+    "frente": "¿Qué significa displasia?",
+    "verso": "Significa 'crecimiento desordenado': es una lesión preneoplásica caracterizada por la alteración en la maduración y diferenciación de un epitelio (glandular o pavimentoso), con pérdida de la uniformidad de las células individuales y de su orientación arquitectural.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (displasia)"
+    ]
+   },
+   {
+    "frente": "¿Qué cambios citológicos presenta la displasia?",
+    "verso": "Al igual que las células neoplásicas, pleomorfismo, núcleos hipercromáticos y alteración de la relación núcleo-citoplasma, pero estos cambios ocurren en el espesor epitelial sin sobrepasar la membrana basal.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (displasia)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se clasifica la displasia sobre epitelio pavimentoso?",
+    "verso": "Displasia leve (compromete el tercio inferior del epitelio), displasia moderada (afecta los 2/3 inferiores) y displasia intensa o carcinoma in situ (todo el espesor del epitelio afectado sin sobrepasar la membrana basal).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (grados de displasia)"
+    ]
+   },
+   {
+    "frente": "¿Cuándo se transforma en carcinoma invasor?",
+    "verso": "Cuando las células tumorales atraviesan la membrana basal, el carcinoma in situ se transforma en carcinoma invasor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (carcinoma in situ)"
+    ]
+   },
+   {
+    "frente": "¿La displasia siempre progresa a cáncer?",
+    "verso": "No necesariamente: la displasia leve y moderada pueden ser reversibles en un 60% y 30% respectivamente, una vez eliminado el agente injuriante.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (displasia: reversibilidad)"
+    ]
+   },
+   {
+    "frente": "¿Qué agentes producen displasia en los ejemplos citados?",
+    "verso": "El epitelio bronquial respiratorio puede sufrir alteraciones displásicas por acción del tabaco, y es bien conocida la displasia de cuello uterino por acción del virus del papiloma humano (HPV).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (displasia: ejemplos)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre carcinoma in situ y carcinoma invasor?",
+    "verso": "El carcinoma in situ afecta todo el espesor del epitelio sin sobrepasar la membrana basal; cuando las células tumorales atraviesan la membrana basal se transforma en carcinoma invasor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, Neoplasias (carcinoma in situ)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tiene la displasia cervical con el tamizaje?",
+    "verso": "La displasia de cuello uterino (por HPV) es precursora del carcinoma de cuello uterino; el tamizaje con Papanicolaou (prevención secundaria) y la vacuna contra el HPV (prevención primaria) permiten reducir su incidencia y mortalidad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Anatomía y Fisiología Patológicas, UP7 (displasia cervical y tamizaje)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Inmunología — Antígenos tumorales y respuesta inmune antitumoral",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "inmunologia",
+  "descricao": "Antígenos tumorales, respuesta inmune, mecanismos efectores, evasión e inmunoterapia",
+  "tags": [
+   "defensa-up7",
+   "inmunologia",
+   "antigenos-tumorales",
+   "respuesta-antitumoral",
+   "inmunoterapia",
+   "evasion"
+  ],
+  "ordem": 13,
+  "cards": [
+   {
+    "frente": "¿Qué son los antígenos asociados a tumores (TAA) y los antígenos específicos del tumor (TSA)?",
+    "verso": "Los TAA son antígenos expresados por las células tumorales que también están presentes (en menor medida) en células normales; los TSA son antígenos exclusivos de la célula tumoral, producto de mutaciones o de la transformación neoplásica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Antígenos Asociados a Tumores y Antígenos Específicos del Tumor)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se presentan los antígenos tumorales a los linfocitos?",
+    "verso": "Se procesan como antígenos endógenos y se presentan y reconocen por linfocitos T CD4+ y TCD8+ (presentación por MHC de clase I a CD8+ y de clase II a CD4+).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Procesamiento y presentación de antígenos tumorales)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los mecanismos efectores celulares de la respuesta antitumoral?",
+    "verso": "Linfocitos T citotóxicos TCD8+, linfocitos citotóxicos naturales (NK), macrófagos y otras poblaciones celulares (Tg/d; NKT).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Mecanismos efectores antitumorales)"
+    ]
+   },
+   {
+    "frente": "¿Qué mecanismos humorales participan en la respuesta antitumoral?",
+    "verso": "Anticuerpos contra antígenos tumorales y citotoxicidad celular anticuerpo dependiente (ADCC).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Respuesta humoral antitumoral)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la inmunoedición tumoral?",
+    "verso": "Es el proceso por el cual el sistema inmune edita el inmunofenotipo del tumor: inicialmente elimina células tumorales inmunogénicas y selecciona variantes menos inmunogénicas que escapan a la respuesta inmune (equilibrio-escape).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Inmunoedición tumoral)"
+    ]
+   },
+   {
+    "frente": "¿Qué mecanismos de evasión de la respuesta antitumoral utilizan los tumores?",
+    "verso": "Pérdida o reducción de la expresión de antígenos tumorales y de moléculas de MHC, secreción de citoquinas inmunosupresoras, inducción de linfocitos T reguladores, expresión de moléculas de muerte (PD-L1) y otros.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Mecanismos de evasión)"
+    ]
+   },
+   {
+    "frente": "¿Qué rol puede tener el sistema inmune en la exacerbación del crecimiento tumoral?",
+    "verso": "La inflamación crónica puede estimular el crecimiento tumoral mediante citoquinas, y en la inmunoedición el sistema inmune puede seleccionar variantes tumorales más agresivas; además ciertos mecanismos inmunes pueden ser cooptados por el tumor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Rol del sistema inmune en la exacerbación del crecimiento tumoral)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la inmunoterapia antitumoral?",
+    "verso": "Es la estrategia terapéutica que busca potenciar la respuesta inmune contra los tumores (p. ej., inhibidores de puntos de control como PD-1/PD-L1, células CAR-T, vacunas antitumorales), aprovechando la respuesta inmunitaria frente a las transformaciones neoplásicas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Inmunoterapia antitumoral)"
+    ]
+   },
+   {
+    "frente": "¿Qué son los virus oncogénicos?",
+    "verso": "Son virus que pueden contribuir a la transformación neoplásica (p. ej., HPV en carcinoma de cuello uterino, VHB/VHC en hepatocarcinoma, EBV en linfomas); forman parte de los agentes etiológicos infecciosos del cáncer.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología/Inmunología, UP7 (Virus oncogénicos)"
+    ]
+   },
+   {
+    "frente": "¿Por qué los tumores pueden escapar aunque existan respuestas inmunes?",
+    "verso": "Por la inmunoedición y la evasión: los tumores pierden inmunogenicidad, regulan negativamente MHC o antígenos, generan microambiente inmunosupresor y desarrollan mecanismos de tolerancia frente a los linfocitos T.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Inmunología, UP7 (Inmunoedición y evasión)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Microbiología — Infecciones en inmunodeprimidos",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "microbiologia",
+  "descricao": "Infecciones en inmunodeprimidos, HIV, marcadores de SIDA, neoplasias y virus de hepatitis",
+  "tags": [
+   "defensa-up7",
+   "microbiologia",
+   "inmunodeprimidos",
+   "hiv",
+   "sida",
+   "infecciones-oportunistas"
+  ],
+  "ordem": 14,
+  "cards": [
+   {
+    "frente": "¿Qué son las infecciones en inmunodeprimidos?",
+    "verso": "Son infecciones causadas por agentes de baja patogenicidad (oportunistas) que se producen cuando el sistema inmune está comprometido por enfermedades, tratamientos o condiciones que lo deprimen.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: Infecciones en inmunosuprimidos)"
+    ]
+   },
+   {
+    "frente": "¿De qué procedencia puede ser la inmunodepresión?",
+    "verso": "Puede ser congénita (inmunodeficiencias primarias) o adquirida: infección por HIV, neoplasias, trasplantes con inmunosupresión, tratamiento quimioterápico, desnutrición, edad avanzada, entre otras.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: inmunosuprimidos)"
+    ]
+   },
+   {
+    "frente": "¿Qué alteraciones inmunes predisponen a las infecciones?",
+    "verso": "Alteraciones de la inmunidad humoral, celular, fagocítica (neutropenia) o del complemento; cada tipo de defecto predispone a distintos agentes oportunistas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: alteraciones inmunes)"
+    ]
+   },
+   {
+    "frente": "¿Qué infecciones oportunistas presenta el paciente que convive con HIV?",
+    "verso": "Candidiasis oral/esofágica, neumonía por Pneumocystis jirovecii, toxoplasmosis cerebral, criptococosis, tuberculosis, micobacterias atípicas, citomegalovirus, entre otras.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: HIV)"
+    ]
+   },
+   {
+    "frente": "¿Qué son las infecciones marcadores de SIDA?",
+    "verso": "Son infecciones oportunistas graves cuya presencia en un paciente con HIV marca la evolución a SIDA (p. ej., neumonía por Pneumocystis, candidiasis esofágica, toxoplasmosis cerebral, tuberculosis diseminada).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: infecciones marcadoras de SIDA)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tienen los virus de hepatitis con la inmunodepresión?",
+    "verso": "Los virus de la hepatitis B y C se asocian a hepatocarcinoma y pueden cursar con mayor riesgo de cronificación e infecciones en pacientes inmunodeprimidos; el VHB además es un virus oncogénico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: virus de hepatitis)"
+    ]
+   },
+   {
+    "frente": "¿Por qué los pacientes con neoplasias son más susceptibles a infecciones?",
+    "verso": "Por la inmunodepresión asociada al tumor y a los tratamientos (quimioterapia, radioterapia, neutropenia), la ruptura de barreras y la alteración de la inmunidad humoral y celular; además, la hipercortisolemia crónica produce inmunodepresión (infecciones y neoplasias).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8A: neoplasias)"
+    ]
+   },
+   {
+    "frente": "¿Qué agentes biológicos frecuentemente producen infecciones en inmunosuprimidos?",
+    "verso": "Agentes bacterianos, micóticos, virales y parasitarios que también producen infecciones nosocomiales: bacterias multirresistentes, Candida y Aspergillus, citomegalovirus, Pneumocystis, Toxoplasma y micobacterias.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminarios 8A y 8B)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Microbiología — Infección nosocomial",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "microbiologia",
+  "descricao": "Definición, factores de riesgo, infecciones más frecuentes y medidas de control",
+  "tags": [
+   "defensa-up7",
+   "microbiologia",
+   "infeccion-nosocomial",
+   "control-de-infecciones",
+   "cateteres",
+   "bacteriemia"
+  ],
+  "ordem": 15,
+  "cards": [
+   {
+    "frente": "¿Qué es la infección nosocomial?",
+    "verso": "Es la infección adquirida durante la internación o como consecuencia de la atención en un establecimiento de salud, que no estaba presente ni en incubación al ingreso del paciente (infecciones asociadas al cuidado de la salud).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: infección nosocomial)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los factores de riesgo para contraer una infección nosocomial?",
+    "verso": "Internación prolongada, procedimientos invasivos (catéteres, respirador, cirugía), inmunodepresión, edad extrema, uso previo de antibióticos, enfermedades de base y dispositivos (prótesis).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: factores de riesgo)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son las infecciones nosocomiales más frecuentes?",
+    "verso": "Infección urinaria, neumonía, infección de herida quirúrgica y bacteriemia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: infecciones más frecuentes)"
+    ]
+   },
+   {
+    "frente": "¿Qué infecciones nosocomiales se asocian a dispositivos?",
+    "verso": "Bacteriemias relacionadas con catéteres, infecciones relacionadas con prótesis, infecciones relacionadas con respirador (neumonía asociada a ventilación mecánica) y la infección urinaria asociada a sondas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: dispositivos)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la bacteriemia relacionada con catéteres?",
+    "verso": "Es la infección de la sangre que se origina en un catéter intravascular (contaminación del dispositivo o del sitio de inserción), una de las infecciones nosocomiales más frecuentes y graves.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: bacteriemia por catéter)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la neumonía relacionada con respirador?",
+    "verso": "Es la neumonía nosocomial que aparece en pacientes con ventilación mecánica, asociada a la colonización del circuito y del tubo endotraqueal.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: neumonía asociada a respirador)"
+    ]
+   },
+   {
+    "frente": "¿Qué medidas se implementan para controlar las infecciones en el hospital?",
+    "verso": "Higiene de manos, uso racional de antibióticos, técnicas asépticas en procedimientos, retiro precoz de catéteres y sondas, aislamiento de pacientes con gérmenes multirresistentes, vigilancia epidemiológica y protocolos de prevención.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: medidas de control)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel juegan los microorganismos multirresistentes en el hospital?",
+    "verso": "Seleccionados por el uso de antibióticos, causan infecciones de difícil tratamiento y mayor mortalidad; por eso el control de la resistencia y el aislamiento son pilares de la prevención.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: multirresistencia)"
+    ]
+   },
+   {
+    "frente": "¿Qué agentes biológicos producen frecuentemente infecciones nosocomiales?",
+    "verso": "Bacterias (S. aureus, enterobacterias, Pseudomonas, Acinetobacter), hongos (Candida, Aspergillus), virus (CMV, influenza, SARS-CoV-2) y parásitos; muchos de ellos también causan infecciones en inmunosuprimidos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminarios 8A y 8B)"
+    ]
+   },
+   {
+    "frente": "¿Por qué la infección urinaria es la nosocomial más frecuente?",
+    "verso": "Por la alta utilización de sondas vesicales (cateterismo urinario), que permiten la ascensión de bacterias a la vejiga; su retiro precoz es una de las medidas más eficaces.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Microbiología, UP7 (Seminario 8B: infección urinaria)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Diagnóstico por Imágenes — Chequeo anual",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "diagnostico_por_imagenes",
+  "descricao": "Chequeo anual: Rx de tórax frente y perfil, doppler de vasos de cuello y ecocardiograma",
+  "tags": [
+   "defensa-up7",
+   "diagnostico-por-imagenes",
+   "chequeo-anual",
+   "rx-torax",
+   "doppler",
+   "ecocardiograma"
+  ],
+  "ordem": 16,
+  "cards": [
+   {
+    "frente": "¿Qué metodologías de imágenes se utilizan en el chequeo anual?",
+    "verso": "Rx de tórax frente y perfil, ecografía doppler de vasos de cuello y ecocardiograma.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (Chequeo anual)"
+    ]
+   },
+   {
+    "frente": "¿Para qué se utiliza la Rx de tórax frente y perfil en el chequeo anual?",
+    "verso": "Para evaluar los campos pulmonares, el mediastino, la silueta cardíaca, la pleura y las estructuras óseas; permite detectar nódulos, masas, infiltrados, derrames, cardiomegalia o patología vascular (se recuperan conceptos de la UP5).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (Rx de tórax)"
+    ]
+   },
+   {
+    "frente": "¿Por qué se realizan dos proyecciones (frente y perfil) de tórax?",
+    "verso": "Para localizar las lesiones en el espacio (anteroposterior y lateral) y detectar imágenes que pueden ocultarse en una sola proyección; la proyección lateral aporta el componente profundo y retrocardíaco.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (Rx de tórax frente y perfil)"
+    ]
+   },
+   {
+    "frente": "¿Qué evalúa la ecografía doppler de vasos de cuello?",
+    "verso": "El flujo de las arterias carótidas y vertebrales; detecta placas ateroscleróticas y estenosis, útil en el control del paciente con riesgo cardiovascular (en Norma, 68 años, dentro del chequeo anual).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (ecografía doppler vasos de cuello)"
+    ]
+   },
+   {
+    "frente": "¿Qué información aporta el modo doppler en los vasos de cuello?",
+    "verso": "El análisis del flujo sanguíneo y sus velocidades, lo que permite cuantificar el grado de estenosis de las carótidas y valorar el riesgo de evento vascular.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (ecografía doppler vasos de cuello)"
+    ]
+   },
+   {
+    "frente": "¿Para qué se utiliza el ecocardiograma en el chequeo anual?",
+    "verso": "Para evaluar la estructura y función cardíaca: cavidades, válvulas, función sistólica (fracción de eyección) y diastólica, y posibles derrames o masas; complementa la evaluación cardiovascular.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (ecocardiograma)"
+    ]
+   },
+   {
+    "frente": "¿Qué tipos de ecocardiograma existen?",
+    "verso": "Transtorácico (el más utilizado en el chequeo), transesofágico y de estrés; cada uno aporta información estructural o funcional según la indicación.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (ecocardiograma)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se integra el chequeo por imágenes en el control anual de Norma?",
+    "verso": "En su control anual se solicitan Rx de tórax (por vivir cerca de un parque industrial y su edad), ecografía doppler de vasos de cuello y ecocardiograma para el cribado cardiovascular, junto a la pesquisa oncológica por el antecedente materno de cáncer de mama y el cambio del hábito evacuatorio.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Diagnóstico por Imágenes, UP7 (caso Norma)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina Preventiva — Modos de vida, calidad de vida y métodos epidemiológicos",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_preventiva",
+  "descricao": "Modos de vida, estilos de vida, calidad de vida, screening, cohortes, casos y controles, registro de cáncer",
+  "tags": [
+   "defensa-up7",
+   "medicina-preventiva",
+   "modos-de-vida",
+   "estilos-de-vida",
+   "screening",
+   "epidemiologia",
+   "registro-de-cancer"
+  ],
+  "ordem": 17,
+  "cards": [
+   {
+    "frente": "¿Qué son los modos de vida?",
+    "verso": "Son las formas de vivir de una población o grupo social, determinadas por sus condiciones de vida (vivienda, empleo, educación, acceso a servicios, estructura familiar y seguridad en el trabajo), dentro de un contexto histórico y social.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva y Social, UP7 (modos de vida)"
+    ]
+   },
+   {
+    "frente": "¿Qué son los estilos de vida?",
+    "verso": "Son las conductas y hábitos individuales (tabaquismo, alcohol, alimentación, actividad física) que se asocian a riesgo o protección de enfermedades; se inscriben dentro de los modos de vida de los grupos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva y Social, UP7 (estilos de vida)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la calidad de vida?",
+    "verso": "Es la percepción y las condiciones del bienestar físico, mental y social de los individuos y grupos, vinculadas a la satisfacción de necesidades y a las condiciones objetivas de existencia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva y Social, UP7 (calidad de vida)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el screening o cribado?",
+    "verso": "Es la aplicación sistemática de una prueba de detección en una población asintomática para descubrir anomalías indicativas de un cáncer o de una lesión precancerosa (ejemplos: Papanicolaou, mamografía, sangre oculta en materia fecal, PSA).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (screening)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un estudio de cohortes?",
+    "verso": "Es un estudio epidemiológico prospectivo (o retrospectivo) que sigue en el tiempo a un grupo de individuos expuestos y no expuestos a un factor, comparando la aparición de la enfermedad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (métodos epidemiológicos: cohortes)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un estudio de casos y controles?",
+    "verso": "Es un estudio retrospectivo que compara la exposición previa a un factor de un grupo con la enfermedad (casos) con otro sin ella (controles), para estimar la asociación.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (métodos epidemiológicos: casos y controles)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el registro de cáncer?",
+    "verso": "Es un sistema que recolecta de forma sistemática y continua los casos de cáncer de una población (incidencia, mortalidad, sobrevida), permitiendo el monitoreo epidemiológico y la evaluación de las políticas de prevención y cribado.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (registro de cáncer)"
+    ]
+   },
+   {
+    "frente": "¿Qué utilidad tiene la epidemiología del cáncer?",
+    "verso": "Permite conocer la distribución y los determinantes del cáncer (factores de riesgo, diferencias geográficas, genéticas y culturales) y evaluar las estrategias de prevención y detección temprana.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (epidemiología del cáncer)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se relacionan los modos de vida con el perfil de cáncer?",
+    "verso": "Las condiciones de vida y el desarrollo de las fuerzas productivas definen el perfil epidemiológico: en los países desarrollados predominan neoplasias, cardiovasculares y degenerativas, mientras que en los países en desarrollo persisten el cáncer de cuello uterino (HPV) y gástrico (H. pylori).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva/Patología, UP7 (modos de vida y perfil de cáncer)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación hay entre modos de vida y detección precoz en el caso de Norma?",
+    "verso": "Sus condiciones de vida (vive cerca de un parque industrial), la edad (68 años) y el antecedente familiar de cáncer de mama la convierten en candidata a screening oncológico (mamografía, sangre oculta en materia fecal y evaluación del hábito evacuatorio) en el chequeo anual.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (caso Norma)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Salud Mental — Afecciones del humor",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "psiquiatria",
+  "descricao": "Estados de ánimo y sus presentaciones: depresión, manía, ciclotimia y distimia",
+  "tags": [
+   "defensa-up7",
+   "salud-mental",
+   "estado-de-animo",
+   "depresion",
+   "mania",
+   "ciclotimia",
+   "distimia"
+  ],
+  "ordem": 18,
+  "cards": [
+   {
+    "frente": "¿Qué son los estados de ánimo?",
+    "verso": "Son los estados afectivos básicos y prolongados que tiñen la vida psíquica (alegría, tristeza, irritabilidad, etc.); sus alteraciones definen las afecciones del humor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (afecciones del humor: estados de ánimo)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se presenta la depresión?",
+    "verso": "Con tristeza patológica, anhedonia, pérdida de interés y placer, apatía, alteraciones del sueño y del apetito, baja autoestima, ideas de culpa, retardo psicomotor o agitación, y en casos graves ideación suicida.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (depresión)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se presenta la manía?",
+    "verso": "Con euforia o ánimo expansivo e irritable, aumento de la energía y de la actividad, disminución de la necesidad de sueño, grandiosidad, logorrea, fuga de ideas y conductas de riesgo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (manía)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la ciclotimia?",
+    "verso": "Es un trastorno del humor crónico con oscilaciones leves entre síntomas hipomaníacos y depresivos, sin alcanzar la intensidad ni la duración de los episodios de un trastorno bipolar o depresivo mayor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (ciclotimia)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la distimia?",
+    "verso": "Es un trastorno depresivo persistente de baja intensidad (humor deprimido la mayor parte del día, casi todos los días, durante al menos dos años), sin los episodios completos de la depresión mayor.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (distimia)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre depresión y distimia?",
+    "verso": "La depresión se presenta en episodios más intensos y con mayor compromiso funcional; la distimia es crónica y de menor intensidad pero de larga duración (≥ 2 años).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (depresión vs distimia)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre manía y ciclotimia?",
+    "verso": "La manía es un episodio agudo e intenso de elevación del ánimo; la ciclotimia es una oscilación crónica y leve entre fases subclínicas de ánimo elevado y deprimido.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (manía vs ciclotimia)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tienen las afecciones del humor con el síndrome metabólico?",
+    "verso": "Los pacientes con trastornos afectivos (depresión, bipolar) presentan mayor riesgo metabólico: obesidad central (3 veces más grasa abdominal), resistencia insulínica, dislipemias y síndrome metabólico, agravados por psicofármacos y hábitos nocivos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (afecciones del humor y SM)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la hipomanía?",
+    "verso": "Es la elevación del ánimo de menor intensidad y duración que la manía, sin síntomas psicóticos y sin compromiso grave del funcionamiento; puede aparecer en la ciclotimia o en el trastorno bipolar tipo II.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (estados de ánimo)"
+    ]
+   },
+   {
+    "frente": "¿Por qué es importante el reconocimiento de las afecciones del humor en APS?",
+    "verso": "Porque son frecuentes, generan gran discapacidad, se asocian a comorbilidad metabólica y cardiovascular y al riesgo de suicidio; su detección temprana permite el tratamiento y la derivación adecuada.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Salud Mental, UP7 (importancia en APS)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Psiquiatría — Síndrome metabólico y salud mental",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "psiquiatria",
+  "descricao": "Alteraciones metabólicas en trastornos mentales, eje HHA, receptores de glucocorticoides y psicofármacos",
+  "tags": [
+   "defensa-up7",
+   "psiquiatria",
+   "sindrome-metabolico",
+   "eje-hha",
+   "glucocorticoides",
+   "psicofarmacos",
+   "estres-cronico"
+  ],
+  "ordem": 19,
+  "cards": [
+   {
+    "frente": "¿Existe relación entre los trastornos mentales y las alteraciones metabólicas?",
+    "verso": "Sí: existe un aumento considerable de la incidencia y prevalencia de alteraciones metabólicas en el paciente en tratamiento psiquiátrico respecto de la población general; los psicofármacos (especialmente antipsicóticos) tienen perfil metabólico desfavorable (aumento de peso, resistencia insulínica y dislipemias).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría y Salud Mental, UP7 (Síndrome metabólico y salud mental)"
+    ]
+   },
+   {
+    "frente": "¿El riesgo metabólico es solo por los psicofármacos?",
+    "verso": "No: investigaciones previas a 1949 (año de introducción del litio, primer psicofármaco moderno) ya mencionaban incremento del riesgo metabólico en pacientes con enfermedad mental severa; además, pacientes esquizofrénicos sin tratamiento tienden a presentar 3 veces más grasa abdominal que la población general, y valores similares se ven en trastornos afectivos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: historia)"
+    ]
+   },
+   {
+    "frente": "¿Qué modelo fisiopatológico explica los cambios metabólicos en los trastornos mentales?",
+    "verso": "El modelo de estrés crónico/depresión sobre el eje hipotálamo-hipófiso-adrenal (HHA), regulado fundamentalmente por dos receptores de glucocorticoides: el receptor tipo I y el tipo II.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: fisiopatología)"
+    ]
+   },
+   {
+    "frente": "¿Qué características tiene el receptor tipo I de glucocorticoides?",
+    "verso": "Presenta alta afinidad por cortisol y aldosterona, actividad neurorreguladora, bajo umbral de respuesta; su ocupación produce un 'shut off' (cierre) del eje, mantiene el tono basal de la hormona adrenal y regula las modificaciones homeostáticas del cortisol (responde ante ansiedad, euforia o somnolencia). Es el receptor de afrontamiento de situaciones cotidianas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: receptor tipo I)"
+    ]
+   },
+   {
+    "frente": "¿Qué características tiene el receptor tipo II de glucocorticoides?",
+    "verso": "Baja afinidad por el cortisol y alta afinidad por dexametasona; alto umbral de respuesta (no se activa ante concentraciones bajas) y alta eficacia; produce shut off solo ante concentraciones máximas de cortisol y se activa ante disforia, alerta y sueño REM. Es el receptor de confrontación o enfrentamiento.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: receptor tipo II)"
+    ]
+   },
+   {
+    "frente": "¿Qué ocurre en el estrés crónico con el eje HHA?",
+    "verso": "Los niveles altos de cortisol sobreactivan los receptores por exceso y sobre todo por cronicidad, generando desensibilización del eje y respuestas rígidas, no plásticas y desadaptativas; se pierde la posibilidad de inhibición (hiperactividad del eje), con hipersecreción crónica de CRH, estimulación simpática crónica e hipercortisolemia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: estrés crónico)"
+    ]
+   },
+   {
+    "frente": "¿Qué efectos metabólicos produce la hipercortisolemia?",
+    "verso": "Promueve gluconeogénesis y catabolismo proteico; disminuye la utilización periférica de glucosa; aumenta ácidos grasos libres; redistribución centrípeta de la grasa; aumento de la ingesta (hidratos de carbono); osteoporosis; inmunodepresión (infecciones y neoplasias); retención de Na+ y H2O; aumento de la reactividad vascular a sustancias presoras; y disminución de TRH y TSH (alteraciones del eje tiroideo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: hipercortisolemia)"
+    ]
+   },
+   {
+    "frente": "¿En qué patologías es válido el modelo del estrés crónico/depresión?",
+    "verso": "Es válido para estrés crónico, trastornos afectivos y trastornos adaptativos; los estudios del eje HHA en pacientes esquizofrénicos y bipolares son inconsistentes y sus alteraciones se explicarían complementando con otras teorías.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: alcance del modelo)"
+    ]
+   },
+   {
+    "frente": "¿Qué hábitos contribuyen al 'cóctel explosivo' metabólico del paciente con trastornos mentales?",
+    "verso": "Tabaquismo, alcoholismo, consumo de otras sustancias, sedentarismo y trastornos de la alimentación, que sumados a la medicación y a los cambios fisiopatológicos crean un riesgo metabólico importante, a tener en cuenta por el médico de APS.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: hábitos nocivos)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación tiene la hipercortisolemia con las neoplasias?",
+    "verso": "La inmunodepresión por hipercortisolemia crónica predispone a infecciones y a neoplasias, vinculando el estado mental, el metabolismo y el riesgo oncológico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (SM y salud mental: inmunodepresión y neoplasias)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Psiquiatría — ¿Urgencia o emergencia?",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "psiquiatria",
+  "descricao": "Conceptos de urgencia y emergencia, definiciones OMS y AMA, escenarios y triage",
+  "tags": [
+   "defensa-up7",
+   "psiquiatria",
+   "urgencia",
+   "emergencia",
+   "triage",
+   "guardia"
+  ],
+  "ordem": 20,
+  "cards": [
+   {
+    "frente": "¿Qué es lo primero que el profesional intenta identificar en una consulta?",
+    "verso": "El potencial riesgo de vida de la situación para el paciente, planteándose si se trata de una emergencia, de una urgencia o de ninguna de ellas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (¿Urgencia o emergencia?)"
+    ]
+   },
+   {
+    "frente": "¿Cómo define la OMS la urgencia?",
+    "verso": "Como la aparición fortuita (imprevista o inesperada) en cualquier lugar o actividad de un problema de causa diversa y gravedad variable que genera la conciencia de una necesidad inminente de atención por parte del sujeto que lo sufre o de su familia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia según OMS)"
+    ]
+   },
+   {
+    "frente": "¿Cómo define la A.M.A. la urgencia?",
+    "verso": "Como toda condición que, en opinión del paciente, su familia o quien asuma la responsabilidad de la demanda, requiere una asistencia sanitaria inmediata (sin requerir gravedad necesaria).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia según AMA)"
+    ]
+   },
+   {
+    "frente": "¿Qué definición clínica de urgencia da la OMS?",
+    "verso": "La patología cuya evolución es lenta y no necesariamente mortal, pero cuya atención no debe retrasarse más de 6 horas para evitar complicaciones mayores (algunos autores sugieren no más de 3 horas). Ejemplos: diarreas, vómitos, esguinces.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia: definición clínica)"
+    ]
+   },
+   {
+    "frente": "¿Cómo define la OMS la emergencia?",
+    "verso": "Como el caso en que la falta de asistencia conduciría a la muerte en minutos y en el que la aplicación de primeros auxilios por cualquier persona es de importancia vital.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (emergencia según OMS)"
+    ]
+   },
+   {
+    "frente": "¿Cómo define la A.M.A. la emergencia?",
+    "verso": "Como la situación que pone en peligro inmediato la vida del paciente o la función de un órgano; algunos autores mencionan que el tiempo de atención nunca puede ser mayor a una hora. Ejemplos: pérdida de conocimiento, dolor precordial, asfixia, accidentes cerebrovasculares.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (emergencia según AMA)"
+    ]
+   },
+   {
+    "frente": "¿Qué eje común tienen las definiciones de emergencia?",
+    "verso": "El potencial desenlace fatal de la situación y la necesidad de atención rápida, cuanto más precoz mejor; por eso el eje común es el riesgo de vida inmediato.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (eje común de la emergencia)"
+    ]
+   },
+   {
+    "frente": "¿En qué escenarios se desarrolla la atención de la urgencia?",
+    "verso": "En dos grandes escenarios: el ambiente hospitalario (guardia) y el prehospitalario (vía pública, domicilio, barrios carenciados, catástrofes), que condicionan la dinámica de acción según los recursos, la demanda y el medio.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (escenario de la urgencia)"
+    ]
+   },
+   {
+    "frente": "¿Por qué es prioritaria la seguridad de la escena?",
+    "verso": "Garantizar la seguridad del equipo de salud es prioritario, especialmente en catástrofes; si la situación no es segura, la atención deberá posponerse y el paciente debe ser trasladado previamente a un sitio seguro.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (seguridad de la escena)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se realiza el triage en situaciones de catástrofe con múltiples heridos?",
+    "verso": "Es la categorización de las víctimas según la celeridad con que deben ser asistidas, en prioridad decreciente: rojo (urgencia extrema), amarillo (urgente), verde (no urgente) y negro (no asistencia: óbito o estado no compatible con la vida).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (triage)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Psiquiatría — Urgencias en salud mental",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "psiquiatria",
+  "descricao": "Urgencia psiquiátrica, formas de presentación, interconsulta y riesgos",
+  "tags": [
+   "defensa-up7",
+   "psiquiatria",
+   "urgencia-psiquiatrica",
+   "salud-mental",
+   "internacion",
+   "suicidio"
+  ],
+  "ordem": 21,
+  "cards": [
+   {
+    "frente": "¿Cómo se define la urgencia en salud mental?",
+    "verso": "Como la situación en la que el trastorno del pensamiento, del afecto o de la conducta son en tal grado disruptivos que el paciente mismo, la familia o la sociedad consideran que requiere atención inmediata; puede ser de etiología variable (orgánicas, tóxicas, psíquicas, farmacológicas).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia en salud mental)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son las formas de presentación de la urgencia psiquiátrica?",
+    "verso": "1) Estado de alteración psíquica aguda (ansiedad, pánico, depresión); 2) Riesgo de daño autoinfligido o interpersonal, que en principio lo convierte en criterio de internación; 3) Evidencias de comportamientos en extremo desorganizados (delirios, alucinaciones, conductas desadaptadas).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (formas de presentación)"
+    ]
+   },
+   {
+    "frente": "¿Por qué es imprescindible que el médico general maneje la urgencia psiquiátrica?",
+    "verso": "Porque las urgencias en salud mental se transforman en consulta frecuente en la guardia general, por lo que el médico debe estar familiarizado con su manejo aunque considere que la psiquiatría está fuera de su campo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia psiquiátrica en guardia)"
+    ]
+   },
+   {
+    "frente": "¿Qué pasos se recomiendan para proceder ante una interconsulta psiquiátrica?",
+    "verso": "Establecer la presencia de un trastorno mental; obtener información para el diagnóstico diferencial (incluyendo fuentes colaterales); identificar objetivos a largo plazo para el seguimiento; clarificar el ámbito y objetivo de la evaluación antes de la interconsulta; proporcionar respuestas específicas y claras a los demandantes; y respetar la relación del paciente con el médico que realiza la interconsulta.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (cómo proceder según APA)"
+    ]
+   },
+   {
+    "frente": "¿Qué importancia tiene el contexto de la evaluación?",
+    "verso": "Los objetivos y procedimientos deben ajustarse al contexto (hospitalario, ambulatorio, domicilio, escuela, correccionales, forenses); si la familia condiciona las respuestas o presiona, es prudente entrevistar a ambas partes por separado para objetivar la subjetividad de los involucrados.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (contexto de la evaluación)"
+    ]
+   },
+   {
+    "frente": "¿Una urgencia psiquiátrica puede transformarse en emergencia?",
+    "verso": "Sí: no siempre es posible asegurar la inexistencia de un riesgo de vida inmediato; especialmente en el paciente con excitación psicomotriz o ideas de suicidio, el comportamiento errático e impredecible puede llevar a resultados catastróficos, transformando la urgencia 'subjetiva' en una auténtica emergencia.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (urgencia vs emergencia psiquiátrica)"
+    ]
+   },
+   {
+    "frente": "¿Qué principios rectores se enfatizan en la urgencia en salud mental?",
+    "verso": "No subestimar ni desestimar la situación: el sufrimiento del paciente es real y puede comprometer la vida; recordar que el sufrimiento psíquico no excluye ni descarta la patología orgánica ('la angustia y el infarto no son incompatibles').",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (principios rectores)"
+    ]
+   },
+   {
+    "frente": "¿Qué ejemplos de riesgo convierten una urgencia psiquiátrica en criterio de internación?",
+    "verso": "El riesgo de daño autoinfligido (hacia sí mismo) o interpersonal (hacia otros) es criterio de internación; también los comportamientos extremadamente desorganizados y el riesgo suicida.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Psiquiatría, UP7 (criterios de internación)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina Preventiva — Atención Primaria de la Salud (APS)",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_preventiva",
+  "descricao": "Conceptos de APS (selectiva, estrategia, filosofía), renovación de APS y salud colectiva",
+  "tags": [
+   "defensa-up7",
+   "medicina-preventiva",
+   "aps",
+   "atencion-primaria",
+   "renovacion-aps",
+   "salud-colectiva",
+   "promocion"
+  ],
+  "ordem": 22,
+  "cards": [
+   {
+    "frente": "¿Qué puede significar el concepto de APS?",
+    "verso": "Puede significar APS selectiva (acciones dirigidas a los sectores poblacionales más vulnerables y programas para problemáticas prevalentes), APS como estrategia (el sistema de salud organizado sobre los principios de la APS, universal, con actividades intersectoriales) o APS como filosofía (la salud como derecho humano, centrada en la promoción y la participación de las comunidades).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva y Social, UP7 (APS: Prof. Tit. Mónica M. Liborio)"
+    ]
+   },
+   {
+    "frente": "¿Qué propuso la OPS/OMS en 2007 sobre la APS?",
+    "verso": "La necesidad de 'renovar' la APS: reconoció que las relaciones entre la salud y el desarrollo son indiscutibles y que la salud es la resultante de un proceso social, económico y político, por lo que la APS debe analizar junto a otros sectores los determinantes de salud para definir políticas públicas de desarrollo humano integral y sostenible.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (renovación de la APS)"
+    ]
+   },
+   {
+    "frente": "¿Qué implica la 'renovación de la APS'?",
+    "verso": "Que la APS sea pensada no solo como organización del Sistema de Salud Integral sino como compromiso de atender las necesidades de salud de la población con calidad, responsabilidad y transparencia, justicia social, participación e intersectorialidad, entendiendo la universalidad con equidad y garantizando la promoción de la salud.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (APS renovada)"
+    ]
+   },
+   {
+    "frente": "¿Qué valores definen los servicios de salud en la APS renovada?",
+    "verso": "Equidad, solidaridad, sostenibilidad y calidad; estos valores permiten que los servicios sean congruentes con las necesidades de salud de cada población.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (APS renovada: valores)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es la estrategia central en el proceso de renovación de la APS?",
+    "verso": "La promoción de la salud.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (APS renovada: promoción)"
+    ]
+   },
+   {
+    "frente": "¿En qué se basa la orientación comunitaria de la APS?",
+    "verso": "En lo que se denomina medicina comunitaria, cuyos componentes son: la evaluación activa y detallada de las necesidades de salud de la comunidad y la implementación de acciones o intervenciones que den respuesta a las mismas; para ello se realiza un diagnóstico de la situación de salud (epidemiología).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (orientación comunitaria)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la salud colectiva?",
+    "verso": "Es un campo que tiene como antecedente la medicina social desarrollada en América Latina hace unos 30 años; es esencialmente interdisciplinario y se centra en el objeto salud, enfermedad, atención (SEA); es un campo científico y a la vez un campo de acción.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (salud colectiva)"
+    ]
+   },
+   {
+    "frente": "¿Por qué la salud colectiva se propone como más integradora que la orientación comunitaria?",
+    "verso": "Porque incorpora categorías teóricas (determinantes, historicidad, género, etnia, redes, territorio, equidad, universalidad) que responden mejor a los retos del fortalecimiento del derecho a la salud y permiten poner en práctica políticas públicas en relación a los derechos sociales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (salud colectiva)"
+    ]
+   },
+   {
+    "frente": "¿Qué significa la sigla SEA en salud colectiva?",
+    "verso": "Salud, enfermedad y atención: el objeto de estudio y acción del campo de la salud colectiva.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (salud colectiva: SEA)"
+    ]
+   },
+   {
+    "frente": "¿Cómo evolucionó la salud colectiva y la salud reproductiva?",
+    "verso": "De los programas de planificación familiar centrados en el control de la natalidad se pasó a la salud materno-infantil o maternidad sin riesgos, para luego comprender la complejidad del proceso de salud reproductiva incorporando no solo determinantes biológicos sino también sociales y psicológicos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (salud colectiva y salud reproductiva)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina Preventiva — Promoción de la salud y participación social",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_preventiva",
+  "descricao": "Promoción de la salud, Alma Ata, Ottawa, empoderamiento, educación para la salud y participación social",
+  "tags": [
+   "defensa-up7",
+   "medicina-preventiva",
+   "promocion-de-la-salud",
+   "ottawa",
+   "alma-ata",
+   "participacion-social",
+   "empoderamiento"
+  ],
+  "ordem": 23,
+  "cards": [
+   {
+    "frente": "¿Cuándo se reconoció la promoción de la salud como práctica fundamental de la APS?",
+    "verso": "Se la reconoce como práctica fundamental en la APS renovada; ya en 1978, en Alma Ata, se la había enumerado como uno de sus principales componentes.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (promoción de la salud: Alma Ata)"
+    ]
+   },
+   {
+    "frente": "¿Cómo definió la Carta de Ottawa (1986) la promoción de la salud?",
+    "verso": "Como una actividad que consiste en hacer posible que los pueblos posean los medios necesarios para mejorar su salud y ejercer el mayor control sobre la misma; definió la salud como un estado adecuado de bienestar físico, mental y social.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (Carta de Ottawa 1986)"
+    ]
+   },
+   {
+    "frente": "¿Cómo concibe Ottawa la responsabilidad por la salud?",
+    "verso": "Como una responsabilidad individual y colectiva: el gobierno, la sociedad civil y los ciudadanos se comprometen conjuntamente a asegurar las condiciones básicas que hacen posible el desarrollo de la capacidad saludable de la población.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (Ottawa: responsabilidad)"
+    ]
+   },
+   {
+    "frente": "¿Qué son el empoderamiento y la 'advocacy' en promoción de la salud?",
+    "verso": "Empoderamiento: devolución del poder a las personas o grupos sociales (desarrollo de valores, conocimientos e instrumentos para el logro de sus expectativas). Advocacy (defensoría) y alianzas se refieren a los aspectos políticos, como estrategias prioritarias para la promoción.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (empoderamiento y advocacy)"
+    ]
+   },
+   {
+    "frente": "¿Por qué se dice que la promoción de la salud no es políticamente neutral?",
+    "verso": "Porque requiere cambios en las políticas, sistemas y servicios de salud para que sea posible el ejercicio del poder o de los derechos por parte de la población; por lo tanto implica una toma de posición ideológica y política.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (promoción no neutral)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre promoción de la salud y 'educación informativa'?",
+    "verso": "La educación para la salud (en las escuelas: higiene, prevención, atención oportuna) es un componente de la promoción; cuando se imponen 'cambios de hábitos' o 'estilos de vida saludables' sin arraigo en la población, pertenecen a la 'educación informativa'. La promoción considera a los sujetos como ciudadanos que valoran sus deseos y ejercen sus derechos, con autonomía.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (educación para la salud)"
+    ]
+   },
+   {
+    "frente": "¿Qué técnica se destaca para la actuación del promotor de salud?",
+    "verso": "La entrevista, entendida como 'interacción social': la población no es pasiva ni únicamente receptiva, sino que construye su saber, su poder y sus decisiones.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (entrevista como interacción social)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la participación social (PS)?",
+    "verso": "Es un proceso en el cual los individuos y las familias asumen responsabilidades en cuanto a su salud y bienestar propios y de la comunidad, y mejoran la capacidad de contribuir a su propio desarrollo económico y colectivo; la PS en sí misma no es ni buena ni mala, sino un medio orientado según los sujetos y grupos sociales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (participación social)"
+    ]
+   },
+   {
+    "frente": "¿Qué objetivos persigue la participación en salud?",
+    "verso": "Mejorar la salud y reducir daños; legitimar al Estado o a algún grupo que impulsa las actividades; organizar la comunidad/barrio para un ejercicio organizado; el trabajo voluntario; posibilitar la mayor y mejor aceptación de propuestas; y el ejercicio de ciudadanía y democracia, entre otros.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (objetivos de la participación)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el territorio y qué es la unidad de análisis en el trabajo de campo?",
+    "verso": "El territorio es el escenario y soporte material de los procesos de reproducción de los grupos sociales (equipamiento urbano, viviendas, características sociales y económicas, modos de vida que definen las condiciones de vida). En el trabajo de campo se toma como unidad la vivienda (que puede contener uno o varios hogares según coman en una misma mesa), con entrevista ética y confidencial.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (trabajo de campo)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina Preventiva — Construcción de ciudadanía en salud",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_preventiva",
+  "descricao": "Salud ciudadana, posgrado, dispositivo analizador, integralidad e intersectorialidad",
+  "tags": [
+   "defensa-up7",
+   "medicina-preventiva",
+   "ciudadania-en-salud",
+   "posgrado",
+   "integralidad",
+   "intersectorialidad"
+  ],
+  "ordem": 24,
+  "cards": [
+   {
+    "frente": "¿Qué se requiere para que un sistema de salud sea democrático, universal y equitativo?",
+    "verso": "Un proceso de construcción social y político que puede partir de la formulación de políticas públicas, pero estas deben estar plasmadas en los servicios de salud, y las prácticas cotidianas de los actores deben centrarse en la reflexión crítica de sus procesos de trabajo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva y Social, UP7 (Un objetivo común: construcción de ciudadanía en salud)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la 'salud ciudadana'?",
+    "verso": "Es la base sobre la cual se construye un Sistema de Salud democrático, universal y equitativo: requiere cambios en los grupos humanos concretos que deben actuar, tomar decisiones y gestionar, y la reorientación del modelo asistencial hacia las necesidades de salud individuales y colectivas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (salud ciudadana)"
+    ]
+   },
+   {
+    "frente": "¿Qué rol cumple el posgrado en la transformación del sistema de salud?",
+    "verso": "Introduce un proceso de reconversión de los componentes del equipo de salud a través de un proceso de enseñanza-aprendizaje que trabaja 'en' el servicio de salud (CAPS), constituyendo una posibilidad de transformación tanto académica como del Sistema de Salud.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (posgrado)"
+    ]
+   },
+   {
+    "frente": "¿Qué es un 'dispositivo analizador' en este modelo?",
+    "verso": "El posgrado de Especialización en Salud Colectiva con orientación en Salud Social y Comunitaria se constituyó en un dispositivo analizador que permitió no solo observar las deficiencias formativas (contenidos y formas de enseñanza) sino también repensar las prácticas, los modos, los equipos, la infraestructura y los condicionantes del servicio de salud.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (dispositivo analizador)"
+    ]
+   },
+   {
+    "frente": "¿Qué noción de integralidad propone el nuevo modelo asistencial?",
+    "verso": "La integralidad de las prácticas: un nuevo modelo asistencial para un nuevo Sistema de Salud con nuevas racionalidades, que responde más a las 'necesidades reales' de la población asistida, relacionada con la organización de los servicios 'y en' los servicios.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (integralidad)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los tres espacios de trabajo del posgrado?",
+    "verso": "1) El territorio-proceso: donde se visualizan los efectos y se construyen realidades con la comunidad (encuentros tutoriales); 2) La presencialidad: donde con los docentes de la Universidad se formulan los fundamentos teóricos; 3) La intersectorialidad: donde las instituciones (universidad y ministerios provinciales) acuerdan o desacuerdan y construyen colectivamente los caminos posibles.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (espacios del posgrado)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel juega la intersectorialidad en la construcción de ciudadanía en salud?",
+    "verso": "Permite la construcción colectiva entre la universidad y los ministerios provinciales, generando consensos sobre los caminos posibles; es un espacio de integración de los diferentes momentos del posgrado que permite el crecimiento mutuo hacia la construcción de ciudadanía en salud.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (intersectorialidad)"
+    ]
+   },
+   {
+    "frente": "¿Qué relación hay entre ideología y prácticas según Marx y Gramsci?",
+    "verso": "Gramsci define la ideología como un cuerpo de representaciones existentes en determinadas instituciones y prácticas; Marx la define como un conjunto de ideas compartidas por un grupo, producidas por el desarrollo de las fuerzas productivas, lo que permite ubicar a las prácticas como dimensión material de la ideología.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (ideología: Gramsci y Marx)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se define la cultura en el texto?",
+    "verso": "Como el conjunto de respuestas colectivas a necesidades vitales: el universo de la cultura se delimita como el conjunto de actividades, bienes u objetos que no están dados en la naturaleza, aprendida a través de hábitos y estructuras de pensamiento compartidas por un grupo social.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (cultura)"
+    ]
+   },
+   {
+    "frente": "¿Qué aporta el concepto de cultura a la comprensión de la sexualidad?",
+    "verso": "La ideología dominante puede asociar los usos del cuerpo con la reproducción biológica, naturalizando prácticas sociales (en este caso heterosexuales) como 'normales'; la reproducción cultural otorga elementos de identidad individual que implican relaciones de poder.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (cultura, ideología y sexualidad)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina Preventiva — Calendario Nacional de Vacunas",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_preventiva",
+  "descricao": "Calendario nacional de vacunación por grupos de edad y embarazadas",
+  "tags": [
+   "defensa-up7",
+   "medicina-preventiva",
+   "calendario-de-vacunas",
+   "inmunizacion",
+   "vacunas",
+   "adulto-mayor"
+  ],
+  "ordem": 25,
+  "cards": [
+   {
+    "frente": "¿Qué importancia tiene la prevención y la inmunización en la salud colectiva?",
+    "verso": "La prevención es uno de los pilares fundamentales de la salud colectiva y responsabilidad directa del Estado por su potencial de impacto en los indicadores de mortalidad y morbilidad; la inmunización es una de las actividades preventivas de mayor impacto sanitario y base del control de las enfermedades transmisibles.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (Calendario Nacional de Vacunas, Prof. Dra. Analía Chumpitaz)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se aplican antes del egreso de la maternidad?",
+    "verso": "BCG (previene la tuberculosis) y Hepatitis B.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: recién nacido)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se aplican a los 2, 4 y 6 meses?",
+    "verso": "A los 2 y 4 meses: pentavalente/quíntuple, neumococo conjugada, Salk/IPV y rotavirus. A los 3 y 5 meses: meningococo (1° y 2° dosis). A los 6 meses: pentavalente y Sabin/OPV. La pentavalente previene difteria, tos convulsa, tétanos, Haemophilus influenzae b y hepatitis B; la neumococo previene meningitis e infección invasiva.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: menores de 1 año)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se aplican a los 12 meses, 15 meses y 15-18 meses?",
+    "verso": "A los 12 meses: triple viral (sarampión, rubéola y parotiditis, 1° dosis), hepatitis A y refuerzo de neumococo conjugada. A los 15 meses: refuerzo de meningococo. De 15 a 18 meses: varicela (dosis única). Entre 6 meses y 2 años: antigripal anual.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: 1-2 años)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se requieren en el ingreso escolar (1° grado)?",
+    "verso": "Sabin/OPV (2° refuerzo), triple bacteriana DPT (refuerzo: difteria, tos convulsa y tétanos) y triple viral (2° dosis).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: ingreso escolar)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se aplican a los 11 años?",
+    "verso": "VPH (mujeres y varones, 2 dosis 0-6 meses), meningococo tetravalente (una dosis) y triple bacteriana acelular (difteria, tos convulsa y tétanos).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: 11 años)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se recomiendan en adultos?",
+    "verso": "Hepatitis B (comenzar o completar esquema, constatar 3 dosis), triple/doble viral (constatar 2 dosis), doble adulto (difteria + tétanos, refuerzo cada 10 años) y fiebre hemorrágica argentina (una dosis para quienes viven o trabajan en áreas de riesgo de la provincia).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: adultos)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se recomiendan a partir de los 65 años?",
+    "verso": "Antigripal (1 dosis anual) y la vacuna Prevenar 13 (neumococo conjugada), con neumococo 23 valente al año (única dosis).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: adulto mayor)"
+    ]
+   },
+   {
+    "frente": "¿Qué vacunas se aplican en el embarazo?",
+    "verso": "Triple bacteriana acelular (difteria, tos convulsa y tétanos), antigripal y hepatitis B (comenzar o completar esquema, 3 dosis); en el puerperio inmediato se completa el esquema con doble/triple viral.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: embarazadas)"
+    ]
+   },
+   {
+    "frente": "¿Qué particularidad tiene la vacuna de fiebre amarilla?",
+    "verso": "Es de única dosis y ya no se requieren refuerzos para viajeros; debe consultarse en los vacunatorios de la provincia de Santa Fe.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Preventiva, UP7 (calendario: fiebre amarilla)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Paradigma y modelos de enfermedad",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Paradigma, modelos monocausales y multicausales, Hipócrates, Galeno y positivismo",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "paradigma",
+   "hipocrates",
+   "galeno",
+   "modelo-medico-social",
+   "historicidad"
+  ],
+  "ordem": 26,
+  "cards": [
+   {
+    "frente": "¿Qué es un paradigma?",
+    "verso": "Es una concepción general aplicada al objeto de estudio de una ciencia, a los problemas que deben estudiarse, al método de investigación y a las formas de explicar, interpretar o comprender los resultados; es un modelo o patrón aceptado que tiene vigencia por un tiempo (Tomas Kuhn).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (El modelo médico social: historicidad, Dr. Mauricio Rosa)"
+    ]
+   },
+   {
+    "frente": "¿De qué depende la vigencia de un paradigma?",
+    "verso": "De su poder o capacidad para resolver problemas dentro del campo de la investigación científica y de la lucidez de pensamiento para visualizar de manera nueva y creativa los interrogantes que el paradigma anterior dejaba oscuros.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (paradigma: vigencia)"
+    ]
+   },
+   {
+    "frente": "¿Qué son los modelos médicos monocausales?",
+    "verso": "Son los que establecen una relación directa entre causa y efecto, entre acción y reacción; el modelo hipocrático (la naturaleza) y el de Koch (el agente causal) son ejemplos de modelos monocausales, respaldados por el paradigma biologista.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelos monocausales y multicausales)"
+    ]
+   },
+   {
+    "frente": "¿Cómo concebía Hipócrates la enfermedad?",
+    "verso": "La enfermedad es siempre un desequilibrio de la naturaleza o physis: la alteración del equilibrio (krasis) del conjunto de humores del cuerpo (sangre, bilis negra, bilis amarilla y flema) se llama dyskrasia; también elaboró una clasificación de temperamentos (colérico, sanguíneo, melancólico y flemático). La escuela de Cos toma al hombre como totalidad (tendencia holística) y a la enfermedad como reacción global (reactivismo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelo hipocrático)"
+    ]
+   },
+   {
+    "frente": "¿Cómo concebía Galeno la enfermedad?",
+    "verso": "La enfermedad ('nosos') es una afección de las funciones vitales producida pasivamente por una causa externa (aitía prokatarktikè) que actúa sobre una causa interna (aitía proegumenè), y que determina en el cuerpo una modificación anatomofisiológica anormal (causa conjunta, aitía synektikè); su existencia es definida por el hallazgo de una lesión (reduccionismo) y la terapéutica consiste en localizar el foco y extirparlo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelo galénico)"
+    ]
+   },
+   {
+    "frente": "¿De qué modelos es precursora la escuela galénica?",
+    "verso": "De los modelos organicistas, mecanicistas y deterministas de la enfermedad, propios de los modelos positivistas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (escuela galénica)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se organizó la Medicina sobre los postulados de las ciencias positivas?",
+    "verso": "Se apoyó en disciplinas que le prestan rigor científico (Anatomía, Biofísica y Bioquímica), aspirando a transformarse en una ciencia exacta a través de la metodología científico-natural; así se produce la progresiva objetivación de la enfermedad desde el siglo XVIII.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (positivismo)"
+    ]
+   },
+   {
+    "frente": "¿Qué modelos de enfermedad surgen de la objetivación según la escuela de Galeno?",
+    "verso": "El modelo anatomopatológico (Morgagni, Bichat, Laennec, Charcot, Rokitansky) y el modelo etiopatogénico (Sydenham, Lancisi, Koch), entre otros, que buscan la lesión o la causa de la enfermedad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelos anatomopatológico y etiopatogénico)"
+    ]
+   },
+   {
+    "frente": "¿Qué es la krasis y la dyskrasia en el modelo hipocrático?",
+    "verso": "La krasis es el equilibrio o interacción adecuada de los humores (nivel óptimo de salud); la dyskrasia es la alteración de ese equilibrio, causa de la enfermedad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelo hipocrático: krasis/dyskrasia)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel juega la observación en la construcción del conocimiento médico según el texto?",
+    "verso": "La observación guió las inquietudes para identificar y resolver la enfermedad (o aliviarla) en un mundo que durante cientos de años se comportó pasivamente frente a los hechos; el paradigma se reconceptualizó y fundamentó nuevos modelos según los condicionantes sociales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (observación y paradigma)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Modelos anatomopatológico y etiopatogénico",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Modelo anatomopatológico (lesión), etiopatogénico (miasmas, Koch) y Semmelweis",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "anatomopatologico",
+   "etiopatogenico",
+   "koch",
+   "miasmas",
+   "semmelweis"
+  ],
+  "ordem": 27,
+  "cards": [
+   {
+    "frente": "¿Qué plantea el modelo anatomopatológico?",
+    "verso": "Tiene como eje la objetivación de la causa sinéctica de Galeno: la lesión anatómico-patológica es aquello en lo que la enfermedad realmente consiste (locus patiens); la lesión puede ser macroscópica, microscópica (tisular o celular, con Virchow como fundador de la patología celular) o bioquímica.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelo anatomopatológico: Morgagni, Bichat, Laennec, Charcot, Rokitansky)"
+    ]
+   },
+   {
+    "frente": "¿Qué son las enfermedades 'funcionales' o 'sine materia' para el modelo anatomopatológico?",
+    "verso": "Consisten en una alteración o lesión orgánica sutil, fugaz y muy poco circunscripta; no tienen una lesión macroscópica evidente.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (enfermedades funcionales)"
+    ]
+   },
+   {
+    "frente": "¿Qué plantea el modelo etiopatogénico?",
+    "verso": "Consiste en caracterizar la enfermedad a través del hallazgo de su causa; representado por Sydenham, Lancisi y Koch.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (modelo etiopatogénico)"
+    ]
+   },
+   {
+    "frente": "¿Qué fue la teoría de los miasmas?",
+    "verso": "Desarrollada por Sydenham y Lancisi: los miasmas (conjunto de emanaciones fétidas de suelos y aguas impuras) eran la causa de la enfermedad, atribuyendo la causa al medio ambiente.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (teoría de los miasmas)"
+    ]
+   },
+   {
+    "frente": "¿Qué aportó Robert Koch?",
+    "verso": "Revolucionó la medicina con la observación del bacilo de la TBC, dando por tierra con mucho del pensamiento mágico sobre la enfermedad; sus postulados cimentaron la base del método científico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Robert Koch)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los postulados de Koch?",
+    "verso": "1) El agente está presente en el enfermo; 2) aislamiento del microorganismo causal; 3) inoculación a un agente sano; 4) reproducción de la enfermedad; 5) aislamiento del microorganismo causal. Siguen el método científico: enunciado, hipótesis, experimentación, comprobación o rechazo y reproductibilidad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (postulados de Koch)"
+    ]
+   },
+   {
+    "frente": "¿Qué aportó Semmelweis?",
+    "verso": "Conocido como 'el mártir del lavado de manos', descendió la mortalidad de la fiebre puerperal con el simple acto de lavarse las manos, observando que la mortalidad aumentaba en la segunda sala de obstetricia, donde los practicantes venían de trabajar con cadáveres; fue marginado y ridiculizado, recibiendo reconocimiento póstumo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Semmelweis)"
+    ]
+   },
+   {
+    "frente": "¿Qué reafirmó el descubrimiento de los agentes causales?",
+    "verso": "El desarrollo de las enfermedades infecciosas y el modelo galénico de la causa externa, donde se observa una reacción específica a una acción específica de un determinado agente causal.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (agentes causales)"
+    ]
+   },
+   {
+    "frente": "¿Qué diferencia hay entre los modelos anatomopatológico y etiopatogénico?",
+    "verso": "El anatomopatológico define la enfermedad por la lesión orgánica (locus patiens: macroscópica, microscópica o bioquímica); el etiopatogénico la define por el hallazgo de su causa (miasmas en Sydenham/Lancisi; agente causal en Koch).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (comparación de modelos)"
+    ]
+   },
+   {
+    "frente": "¿Qué papel juega la lesión bioquímica en el modelo anatomopatológico?",
+    "verso": "Es la lesión que afecta a moléculas que comprometen un proceso vital determinado, como por ejemplo los errores congénitos del metabolismo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (lesión bioquímica)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Historia natural de la enfermedad (Leavell y Clark)",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Modelo de Leavell y Clark: tríada ecológica, períodos prepatogénico y patogénico, prevención",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "leavell-y-clark",
+   "historia-natural-de-la-enfermedad",
+   "triada-ecologica",
+   "prevencion"
+  ],
+  "ordem": 28,
+  "cards": [
+   {
+    "frente": "¿Qué es el modelo de Leavell y Clark (1965)?",
+    "verso": "Es el modelo de la historia natural de la enfermedad relacionado con los niveles de prevención; aplicable a cualquier enfermedad (transmisible o no, aguda o crónica). Es el máximo exponente del biologismo y del positivismo, e incorpora la tríada ecológica en el período prepatogénico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Leavell y Clark)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los componentes de la tríada ecológica?",
+    "verso": "Agente, huésped y medio ambiente. El agente es el microorganismo, sustancia química o forma de radiación cuya presencia, presencia excesiva o relativa ausencia es esencial para la ocurrencia de la enfermedad; el huésped aporta edad, sexo, ocupación, nivel socioeconómico, hábitos, herencia y susceptibilidad; el medio ambiente incluye factores físicos, socioeconómicos y biológicos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (tríada ecológica)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el período prepatogénico?",
+    "verso": "Es el período en que se establece la interacción entre el agente potencial de la enfermedad, el huésped y los factores ambientales (intervención de la tríada ecológica o cadena de infección), antes de que la enfermedad se manifieste.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (período prepatogénico)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el período patogénico?",
+    "verso": "Se inicia cuando se rompe el equilibrio de la tríada ecológica y el huésped es afectado por la enfermedad, comenzando con sutiles cambios celulares y tisulares; puede durar meses o años en las enfermedades crónicas degenerativas y mentales.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (período patogénico)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se subdivide el período patogénico?",
+    "verso": "En período subclínico (existen lesiones anatómicas o funcionales pero el paciente aún no percibe síntomas; en las transmisibles, el lapso entre el estímulo y la aparición de síntomas se llama período de latencia) y período clínico (cuando presenta síntomas o signos; el momento de la primera manifestación es el horizonte clínico).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (período patogénico: subclínico y clínico)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son las etapas del período clínico?",
+    "verso": "Período prodrómico (manifestaciones generales, confusas, que dificultan el diagnóstico), período clínico (signos y síntomas específicos que facilitan el diagnóstico y manejo) y período de resolución (la enfermedad desaparece, se vuelve crónica o el paciente fallece).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (etapas del período clínico)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el horizonte clínico?",
+    "verso": "Es el momento en el que aparece la primera manifestación de la enfermedad, marcando el paso del período subclínico al clínico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (horizonte clínico)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se relacionan los niveles de prevención con los períodos?",
+    "verso": "La prevención primaria actúa sobre el período prepatogénico; la secundaria sobre el período patogénico (detección temprana); la terciaria rehabilita (evita secuelas de la enfermedad ya establecida).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (niveles de prevención)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el período de latencia en las enfermedades transmisibles?",
+    "verso": "Es la fase inicial del período patogénico, que transcurre entre el momento del estímulo y la aparición de síntomas y signos.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (período de latencia)"
+    ]
+   },
+   {
+    "frente": "¿Qué propiedades de los agentes biológicos se describen?",
+    "verso": "Las propiedades referidas a su perpetuación como especie, las que rigen el tipo de contacto con el huésped humano y las que determinan la producción de la enfermedad; las propiedades intrínsecas de los microorganismos son la composición química y la morfología.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (propiedades de los agentes biológicos)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Modelo de Medicina Social y determinantes de la salud",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Niveles singular, particular y general; reproducción social; determinantes de la salud y modelo de Castellanos",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "medicina-social",
+   "determinantes-de-la-salud",
+   "castellanos",
+   "reproduccion-social"
+  ],
+  "ordem": 29,
+  "cards": [
+   {
+    "frente": "¿Qué tres espacios analiza el Modelo de Medicina Social?",
+    "verso": "Nivel singular o individual (proceso salud-enfermedad, 'epidemiología de qué'), nivel particular ('epidemiología de quién', grupos de población) y nivel general (políticas y planes de salud).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Modelo de Medicina Social)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el nivel singular o individual?",
+    "verso": "Es el espacio de la 'epidemiología de qué': los problemas de salud-enfermedad aparecen como variaciones entre individuos o atributos individuales, definidos por la frecuencia o gravedad de una patología o accidente entre personas con determinados atributos de tiempo, espacio o caracteres biológicos o sociales; las acumulaciones suelen denominarse 'estilos de vida'.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (nivel singular)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el nivel particular?",
+    "verso": "Es el espacio de la 'epidemiología de quién': los problemas aparecen como variaciones del perfil de salud-enfermedad a nivel de grupos de población; la explicación enfatiza los procesos de reproducción social y las condiciones objetivas de existencia (calidad de vida) de cada grupo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (nivel particular)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los momentos principales del proceso de reproducción social?",
+    "verso": "Por lo menos cuatro: la reproducción de los procesos biológicos, las relaciones y procesos ecológicos, las formas de conciencia y de conducta, y las relaciones económicas.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (reproducción social)"
+    ]
+   },
+   {
+    "frente": "¿Qué es el nivel general?",
+    "verso": "Es el ámbito de las políticas y planes de salud: los problemas aparecen como la necesidad de decidir entre prioridades, de priorizar entre grupos de población y de insertar los perfiles de salud y el modelo asistencial en los procesos económicos, políticos, demográficos y las condiciones naturales; allí se definen las características básicas del modelo asistencial.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (nivel general)"
+    ]
+   },
+   {
+    "frente": "¿Qué evidencia respalda la enfermedad como producción social?",
+    "verso": "La tuberculosis en Londres bajó un 70% su prevalencia con el saneamiento ambiental (cloacas, agua potable, pasteurización de la leche) casi 20 años antes de la aparición de los primeros antibióticos; se plantea la pregunta de Boltansky: ¿por qué una persona enferma en este momento histórico?",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (enfermedad como producción social)"
+    ]
+   },
+   {
+    "frente": "¿Cómo definió la OMS en 1998 los determinantes de la salud?",
+    "verso": "Como el conjunto de factores personales, sociales, políticos y ambientales que determinan el estado de salud de los individuos y las poblaciones; destaca que ya no se habla de enfermedad sino de SALUD, incorporando la preservación de la salud por sobre la construcción social de la enfermedad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (OMS 1998: determinantes de la salud)"
+    ]
+   },
+   {
+    "frente": "¿Qué plantea el Modelo Médico Social de Castellanos?",
+    "verso": "Pone en eje a la salud como producción política y plantea un cambio de paradigma en donde los individuos son actores reales y no casos clínicos; son personas en relación.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Modelo Médico Social de Castellanos)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los determinantes sociales enumerados?",
+    "verso": "El gradiente social, el estrés, la infancia, la exclusión social, el trabajo, el desempleo, el apoyo social, las adicciones, la alimentación y el transporte; también se describen determinantes socioeconómicos y culturales y macro-determinantes (acceso a servicios básicos, educación, empleo, vivienda, participación en la riqueza, respeto a la diversidad).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (determinantes sociales)"
+    ]
+   },
+   {
+    "frente": "¿Qué son las condiciones de vida?",
+    "verso": "Son las condiciones materiales concretas que definen los modos de vida de los grupos: vivienda, empleo, acceso y calidad de la educación, estructura y dinámica familiar y vecinal, y condiciones y seguridad en el trabajo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (condiciones de vida)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Sistema de salud argentino: organización",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Modelos de sistemas de salud, federalismo, subsectores público, de obras sociales y privado",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "sistema-de-salud",
+   "organizacion",
+   "obras-sociales",
+   "pami",
+   "medicina-prepaga"
+  ],
+  "ordem": 30,
+  "cards": [
+   {
+    "frente": "¿Cuáles son los dos modelos genéricos de sistemas de salud?",
+    "verso": "Los servicios nacionales de salud (SNS), en los que los recursos pertenecen al Estado y se financian mediante impuestos generales (prototipo: SNS británico de 1948), y los de seguridad social (SeS), en los que los recursos pueden ser estatales o privados y se financian mediante alícuotas del salario (prototipo: SeS alemana de 1883); un tercer modelo es el Seguro Nacional de Salud (Canadá, Costa Rica).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Hugo Arce: Organización y financiamiento del sistema de salud en la Argentina)"
+    ]
+   },
+   {
+    "frente": "¿Qué particularidad tiene el origen de la seguridad social en Argentina y Uruguay?",
+    "verso": "A diferencia del resto de los países, donde la SeS fue de origen estatal, en Uruguay y Argentina se originó a partir de organizaciones no estatales y fragmentadas: las mutuales de procedencia inmigratoria común.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (origen de la SeS)"
+    ]
+   },
+   {
+    "frente": "¿Cuál es el rasgo más relevante del sistema de salud argentino?",
+    "verso": "La organización federal del país: las provincias retienen su autonomía para administrar los servicios de salud y educación; se suma la pluralidad de iniciativas y jurisdicciones y la persistente fragmentación institucional, que acentúa la dispersión de los centros de decisión.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (organización del sistema)"
+    ]
+   },
+   {
+    "frente": "¿Qué hacen Brasil, Uruguay y Chile para concentrar los fondos?",
+    "verso": "Brasil concentró en un único ente recaudador la administración de los fondos públicos y de la SeS (Sistema Único de Salud, SUS). Uruguay concentró los fondos públicos y mutuales en un organismo estatal autárquico (Fondo Nacional de Salud, FoNaSa). Chile: los usuarios de las ISaPre's, aunque aportan a un seguro privado, mantienen sus contribuciones y dependencia regulatoria de un ente similar, también denominado FoNaSa.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (comparación con otros países)"
+    ]
+   },
+   {
+    "frente": "¿Qué rol cumple la ANSeS (1991) en relación a las Obras Sociales?",
+    "verso": "Concentró la recaudación de todos los aportes y contribuciones de Obras Sociales, Jubilaciones y Subsidios Familiares, pero en lo relativo a Obras Sociales solo actúa como ente distribuidor, sin poder para establecer normas ni regulaciones.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (ANSeS)"
+    ]
+   },
+   {
+    "frente": "¿Qué estructura hospitalaria describe el catastro de 2000?",
+    "verso": "El país cuenta con 3311 nosocomios con internación (153.065 camas): 1271 públicos y 2040 privados; los públicos promedian 64,4 camas y los privados 34,9. Se agregan 14.534 establecimientos ambulatorios (6456 públicos que proveen el 1er nivel y 8078 privados). Aunque la mayor cantidad de camas pertenece al subsector estatal, los servicios privados concentran las 2/3 partes del movimiento económico.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (catastro 2000)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se compone la seguridad social (Obras Sociales) argentina?",
+    "verso": "En 2004 se contabilizaban 284 Obras Sociales nacionales reguladas por la SSS (201 sindicales, 25 de personal de dirección y 58 de otras categorías), más las OS fuera de la SSS (Fuerzas Armadas y Seguridad, personal universitario, Poderes Legislativo y Judicial), el PAMI (la mayor entidad del país) y 24 OS provinciales, que junto con el PAMI representan entre el 40 y el 70% de la población cubierta.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (Obras Sociales)"
+    ]
+   },
+   {
+    "frente": "¿Quiénes usan las Empresas de Medicina Prepaga (EMP)?",
+    "verso": "La población de mayor poder adquisitivo, ya sea por contratación directa o por tercerización de la cobertura a través de una OS; las OS delegan la gestión de sus afiliados de más altos ingresos a una EMP para evitar su migración. Desde la Ley 26.682 (2011) la regulación de las EMP quedó en la órbita de la SSS.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (medicina prepaga)"
+    ]
+   },
+   {
+    "frente": "¿Quiénes son usuarios de los servicios públicos?",
+    "verso": "La población que carece de cobertura (por falta de capacidad contributiva o por desenvolverse en la economía informal), a la que acceden en forma gratuita incluyendo medicamentos básicos; el alcance estatal es amplio y accesible incluso en barriadas marginales, con la principal dificultad en localidades aisladas de baja densidad (traslado a centros de mayor poder resolutivo).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (sector público)"
+    ]
+   },
+   {
+    "frente": "¿Cuáles son los tres rasgos del sistema de salud argentino según Arce?",
+    "verso": "a) La organización federal del país, donde las provincias administran salud y educación; b) la coexistencia de servicios públicos y privados, tanto ambulatorios como de internación; c) entidades fragmentadas de seguridad social, en su mayoría de origen extraestatal.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (resumen del sistema)"
+    ]
+   }
+  ]
+ },
+ {
+  "titulo": "Defensa UP7 — Medicina y Sociedad — Sistema de salud argentino: financiamiento",
+  "ano": "ano3",
+  "materia": "defensa",
+  "parcial": "parcial1",
+  "disciplina_base": "medicina_y_sociedad",
+  "descricao": "Gasto en salud, inequidad, gasto de bolsillo, doble cobertura y flujos financieros",
+  "tags": [
+   "defensa-up7",
+   "medicina-y-sociedad",
+   "financiamiento",
+   "gasto-de-bolsillo",
+   "inequidad",
+   "doble-cobertura"
+  ],
+  "ordem": 31,
+  "cards": [
+   {
+    "frente": "¿Qué evidencia la inequidad del sistema de salud argentino en el financiamiento?",
+    "verso": "La existencia de un componente importante de gasto de bolsillo del orden del 30%, donde las 2/3 partes corresponden a gastos de farmacia; del total del gasto público, aproximadamente ¼ parte es ejecutada por la Nación y el resto por las provincias.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (financiamiento: inequidad)"
+    ]
+   },
+   {
+    "frente": "¿Qué porcentaje del gasto global del Sector ejecuta el Ministerio de Salud nacional?",
+    "verso": "Menos del 4% del gasto global del Sector; la mayor parte del gasto público nacional se distribuye entre diferentes carteras y las provincias ejecutan la mayor parte del gasto público.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (financiamiento: Ministerio de Salud)"
+    ]
+   },
+   {
+    "frente": "¿Cómo se compara el gasto argentino con el de otros países latinoamericanos?",
+    "verso": "Argentina tiene el mayor gasto en dólares de la Región, pero la mayor dimensión del gasto no se refleja en mejores resultados sanitarios: al menos Chile, Uruguay y Costa Rica tienen mejores indicadores de morbimortalidad.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (financiamiento: comparación regional)"
+    ]
+   },
+   {
+    "frente": "¿Qué revela el análisis del sistema como mercado de bienes y servicios?",
+    "verso": "Que diferentes actores gestionan la cobertura de salud a segmentos variables de la población en base a fondos recaudados por diversas vías; en 2009 más del 16% de la población contaba con doble cobertura, y el gasto de bolsillo aparecía subestimado (21,5%).",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (sistema como mercado)"
+    ]
+   },
+   {
+    "frente": "¿Qué subsidios cruzados existen entre los subsectores?",
+    "verso": "Los programas preventivos de las autoridades sanitarias alcanzan a toda la población (tenga o no cobertura), y los beneficiarios de Obras Sociales a menudo utilizan los servicios públicos sin declarar su cobertura; esto genera transferencias entre subsectores.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (subsidios cruzados)"
+    ]
+   },
+   {
+    "frente": "¿Qué conclusión general extrae Arce sobre el sistema de salud argentino?",
+    "verso": "El país realiza un gran esfuerzo global en salud, pero sus resultados no se reflejan en indicadores de morbimortalidad mejores que los de países con menor gasto; la marcada fragmentación y dispersión de centros de decisión ha determinado un equilibrio que impide abordar reformas estructurales de fondo.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (conclusión)"
+    ]
+   },
+   {
+    "frente": "¿Qué poder tiene la autoridad sanitaria nacional?",
+    "verso": "No reúne poder suficiente para imponer innovaciones legislativas que deriven en cambios trascendentes; para hacerlo debe concitar consensos muy amplios, que escapan a su capacidad de influir sobre los poderes provinciales y los recursos que gestiona.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (autoridad sanitaria nacional)"
+    ]
+   },
+   {
+    "frente": "¿Qué características tienen los sistemas de salud en América Latina?",
+    "verso": "Predominaron sistemas pluralistas: subsistemas de servicios públicos financiados por el Estado; subsistemas de SeS de origen estatal financiados con aportes salariales dirigidos a trabajadores formales, con prestadores predominantemente privados; y subsistemas privados (aseguradoras con o sin fines de lucro). La permanencia de grandes sectores en la economía no registrada dejó sin cobertura de SeS a menudo a las ¾ partes de los habitantes.",
+    "fontes": [
+     "Cuaderno del alumno, Área Defensa 2025 (FCM-UNR), UP7 — Medicina Social, UP7 (sistemas de salud latinoamericanos)"
+    ]
+   }
+  ]
+ }
+]

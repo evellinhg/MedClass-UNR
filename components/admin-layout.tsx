@@ -18,7 +18,18 @@ interface AdminLayoutProps {
 type Status = "checking" | "authorized" | "forbidden" | "unauthenticated"
 type EffectiveRole = "admin" | "colaborador"
 
-const COLABORADOR_ALLOWED_PREFIX = "/admin/questoes"
+const COLABORADOR_ALLOWED_PREFIXES = [
+  "/admin/questoes",
+  "/admin/flashcards",
+  "/admin/videoaulas",
+  "/admin/resumos",
+  "/admin/desafios",
+  "/admin/trilhas",
+]
+
+function colaboradorPodeAcessar(pathname: string) {
+  return pathname === "/admin" || COLABORADOR_ALLOWED_PREFIXES.some((prefix) => pathname.startsWith(prefix))
+}
 
 export function AdminLayout({ children, title }: AdminLayoutProps) {
   const router = useRouter()
@@ -57,11 +68,11 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
       if (isAdmin) {
         setRole("admin")
         setStatus("authorized")
-      } else if (isColaborador && pathname.startsWith(COLABORADOR_ALLOWED_PREFIX)) {
+      } else if (isColaborador && colaboradorPodeAcessar(pathname)) {
         setRole("colaborador")
         setStatus("authorized")
       } else if (isColaborador) {
-        router.replace("/admin/questoes")
+        router.replace("/admin")
       } else {
         setStatus("forbidden")
       }

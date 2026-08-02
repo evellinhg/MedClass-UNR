@@ -58,9 +58,19 @@ export function AdminSidebar({ onNavigate, role = "admin" }: AdminSidebarProps) 
   const pathname = usePathname()
   const router = useRouter()
 
+  const COLABORADOR_HREFS = [
+    "/admin",
+    "/admin/questoes",
+    "/admin/flashcards",
+    "/admin/videoaulas",
+    "/admin/resumos",
+    "/admin/desafios",
+    "/admin/trilhas",
+  ]
+
   const navigation =
     role === "colaborador"
-      ? adminNavigation.filter((item) => item.href === "/admin/questoes")
+      ? adminNavigation.filter((item) => COLABORADOR_HREFS.includes(item.href))
       : adminNavigation
 
   const handleLogout = async () => {

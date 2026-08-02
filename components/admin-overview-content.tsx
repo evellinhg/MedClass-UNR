@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { isAdminEmail } from "@/lib/admin-config"
 import { Card } from "@/components/ui/card"
 
 interface StatDef {
@@ -41,16 +42,12 @@ const CONTENT_STATS: StatDef[] = [
 ]
 
 export function AdminOverviewContent() {
+  const [isColaborador, setIsColaborador] = useState(false)
   const [counts, setCounts] = useState<Record<string, number | null>>({})
   const [recentQuestoes, setRecentQuestoes] = useState<any[]>([])
   const [depoimentosPendentes, setDepoimentosPendentes] = useState<number | null>(null)
 
   useEffect(() => {
-    ;[...STATS, ...CONTENT_STATS].forEach(async (stat) => {
-      const { count, error } = await supabase.from(stat.table).select("*", { count: "exact", head: true })
-      setCounts((prev) => ({ ...prev, [stat.table]: error ? null : count ?? 0 }))
-    })
-
     supabase
       .from("questoes")
       .select("id, enunciado, materia, dificuldade, created_at")
@@ -58,11 +55,29 @@ export function AdminOverviewContent() {
       .limit(5)
       .then(({ data }) => setRecentQuestoes(data ?? []))
 
-    supabase
-      .from("depoimentos")
-      .select("*", { count: "exact", head: true })
-      .eq("status", "pendente")
-      .then(({ count, error }) => setDepoimentosPendentes(error ? null : count ?? 0))
+    supabase.auth.getUser().then(async ({ data: userData }) => {
+      const user = userData.user
+      let colaborador = false
+      if (user && !isAdminEmail(user.email)) {
+        const { data: profile } = await supabase.from("profiles").select("role").eq("id", user.id).maybeSingle()
+        colaborador = profile?.role === "colaborador"
+      }
+      setIsColaborador(colaborador)
+
+      const statsParaBuscar = colaborador ? [STATS[0], ...CONTENT_STATS] : [...STATS, ...CONTENT_STATS]
+      statsParaBuscar.forEach(async (stat) => {
+        const { count, error } = await supabase.from(stat.table).select("*", { count: "exact", head: true })
+        setCounts((prev) => ({ ...prev, [stat.table]: error ? null : count ?? 0 }))
+      })
+
+      if (!colaborador) {
+        supabase
+          .from("depoimentos")
+          .select("*", { count: "exact", head: true })
+          .eq("status", "pendente")
+          .then(({ count, error }) => setDepoimentosPendentes(error ? null : count ?? 0))
+      }
+    })
   }, [])
 
   function renderStatCard(stat: StatDef) {
@@ -88,16 +103,22 @@ export function AdminOverviewContent() {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">{STATS.map(renderStatCard)}</div>
+      {!isColaborador && (
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">{STATS.map(renderStatCard)}</div>
+      )}
 
       <div>
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Conteúdo da plataforma
         </h3>
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">{CONTENT_STATS.map(renderStatCard)}</div>
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {isColaborador
+            ? [STATS[0], ...CONTENT_STATS].map(renderStatCard)
+            : CONTENT_STATS.map(renderStatCard)}
+        </div>
       </div>
 
-      {depoimentosPendentes !== null && depoimentosPendentes > 0 && (
+      {!isColaborador && depoimentosPendentes !== null && depoimentosPendentes > 0 && (
         <Link href="/admin/depoimentos">
           <Card className="flex items-center justify-between border border-primary/40 bg-primary/5 p-4 transition-colors hover:bg-primary/10">
             <div className="flex items-center gap-3">

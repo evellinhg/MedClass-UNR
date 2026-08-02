@@ -18,6 +18,7 @@ import { useLanguage } from "@/lib/i18n"
 const SEM_CATEGORIA = "sem_categoria"
 
 const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/capa-diagnostico-imagens.jpg"
+const CAPA_CLINICA_MEDICA = "/desafios-clinicos/capa-clinica-medica.jpg"
 
 interface HistoricoItem {
   id: string
@@ -32,6 +33,14 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
         <Image src={CAPA_DIAGNOSTICO_IMAGENS} alt="" fill className="object-cover" />
+      </div>
+    )
+  }
+
+  if (desafio.area === "Clínica Médica") {
+    return (
+      <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
+        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-cover" />
       </div>
     )
   }

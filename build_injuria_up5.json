@@ -1,0 +1,582 @@
+[
+  {
+    "titulo": "Injuria UP5 — Química Biológica — Eritrocitos y metabolismo del hemo",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "quimica-biologica",
+    "descricao": "Eritrocito maduro, hemoglobina y grupo hemo, síntesis y degradación del hemo, bilirrubina y caso Susana (esferocitosis)",
+    "tags": [
+      "injuria-up5",
+      "quimica-biologica",
+      "eritrocitos",
+      "hemoglobina",
+      "hemo",
+      "bilirrubina",
+      "esferocitosis",
+      "ictericia"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué características tiene el eritrocito maduro?",
+        "verso": "Es una célula anucleada que no posee información genética (carece de núcleo, mitocondrias y ribosomas), con forma bicóncava, que transporta oxígeno mediante la hemoglobina. Tiene una vida media de aproximadamente 120 días y al final de ella es fagocitado por el sistema fagocítico mononuclear (SFM), principalmente en el bazo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, introducción (el eritrocito maduro)"
+        ]
+      },
+      {
+        "frente": "¿Qué vías metabólicas utiliza el eritrocito maduro?",
+        "verso": "Al carecer de núcleo y mitocondrias, depende de la glucólisis anaerobia (vía de Embden-Meyerhof) para su energía y de la vía de las pentosas (shunt de hexosa monofosfato) para mantener el glutatión reducido. Los metabolismos de degradación de los productos de la hemoglobina se realizan en el hígado y el intestino.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, introducción (metabolismo eritrocitario)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la hemoglobina y cuál es su estructura?",
+        "verso": "Es una proteína tetramérica formada por cuatro subunidades globina (en el adulto: dos cadenas alfa y dos beta), cada una unida a un grupo hemo. Es la responsable del transporte de oxígeno desde los pulmones a los tejidos y de parte del CO2.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (estructura de la hemoglobina)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el grupo hemo y cuál es su función?",
+        "verso": "Es el grupo prostético de la hemoglobina (y de otras hemoproteínas como mioglobina, citocromos y peroxidasas), formado por una protoporfirina IX (anillo tetrapirrólico) y un átomo de hierro ferroso (Fe2+) que es el sitio de unión reversible del oxígeno.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (estructura y función del hemo)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se sintetiza el hemo?",
+        "verso": "Se sintetiza en la mitocondria y el citosol, fundamentalmente en eritroblastos de la médula ósea y en el hígado: succinil-CoA + glicina forman el ácido delta-aminolevulínico (ALA) por la ALA-sintasa; se condensa a porfobilinógeno y luego a protoporfirina IX, que en la mitocondria incorpora Fe2+ (ferroquelatasa) para formar el hemo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (síntesis del hemo)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se degrada el hemo?",
+        "verso": "En el SFM (bazo, hígado): la hemoglobina libera el hemo, que es abierto por la hemo-oxigenasa a biliverdina, reducida a bilirrubina no conjugada (indirecta, liposoluble). Esta viaja unida a la albúmina hasta el hígado, donde es conjugada con ácido glucurónico (bilirrubina directa, hidrosoluble), se excreta en la bilis al intestino y es transformada por la flora en urobilinógeno y estercobilina (heces); una parte del urobilinógeno se reabsorbe y se elimina como urobilina por la orina.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (degradación del hemo y bilirrubina)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre la bilirrubina indirecta y la directa?",
+        "verso": "La indirecta es la bilirrubina no conjugada: liposoluble, tóxica para el SNC (riesgo de kernicterus), se transporta unida a albúmina y no se excreta por la orina. La directa es la bilirrubina conjugada con glucurónido: hidrosoluble, se excreta por bilis y orina. Su separación permite clasificar las ictericias en pre-hepáticas (indirecta), hepáticas y post-hepáticas (directa o mixta).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (bilirrubina directa e indirecta)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la ictericia?",
+        "verso": "Es la coloración amarillenta de piel y mucosas producida por el aumento de la bilirrubina en sangre (hiperbilirrubinemia), que se hace clínicamente evidente cuando la bilirrubina supera aproximadamente los 2 mg/dl en el adulto. En el recién nacido su interpretación requiere criterios específicos según la edad en horas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (ictericia)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la situación problemática de la UP5 y qué orienta el caso Susana?",
+        "verso": "Susana, un bebé de 4 días de vida, está ictérica y presenta manchas ocre en el pañal, con antecedentes familiares de esferocitosis hereditaria. El caso orienta al estudio de la ictericia neonatal y su diagnóstico diferencial: la esferocitosis (anemia hemolítica hereditaria) debe sospecharse por los antecedentes familiares y produce ictericia de causa hemolítica con predominio de bilirrubina indirecta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, situación problemática (caso Susana)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la esferocitosis hereditaria?",
+        "verso": "Es la anemia hemolítica congénita más frecuente, de herencia autosómica dominante, por defecto de las proteínas del citoesqueleto del eritrocito (espectrina, anquirina, banda 3, proteína 4.2). Los glóbulos rojos pierden su forma bicóncava y se vuelven esferocitos, con aumento de la fragilidad osmótica, hemólisis en el bazo (SFM), anemia, ictericia y riesgo de litiasis biliar. Se confirma con frotis (esferocitos) y test de fragilidad osmótica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, caso Susana (esferocitosis hereditaria)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la urobilina y la estercobilina?",
+        "verso": "Son los pigmentos finales de la degradación de la bilirrubina en el intestino (por acción de la flora, el urobilinógeno se oxida a urobilina/estercobilina). La estercobilina da el color característico de las heces; una parte del urobilinógeno reabsorbido se elimina como urobilina por la orina. Su ausencia orienta a colestasis (acolia) y su presencia en orina a hemólisis o enfermedad hepática.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Química Biológica (pigmentos biliares)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP5 — Hematología — Grupos ABO y Rh y compatibilidad transfusional",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "hematologia",
+    "descricao": "Sistema ABO y Rh, aglutinógenos y aglutininas, dador y receptor universal, prueba cruzada y exanguinotransfusión",
+    "tags": [
+      "injuria-up5",
+      "hematologia",
+      "grupos-sanguineos",
+      "abo",
+      "rh",
+      "factor-rh",
+      "transfusion",
+      "dador-universal",
+      "exanguinotransfusion",
+      "enfermedad-hemolitica"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué son los grupos sanguíneos ABO?",
+        "verso": "Es el sistema de tipificación de la sangre basado en los antígenos A y B presentes en la superficie de los glóbulos rojos (aglutinógenos) y en los anticuerpos naturales anti-A y anti-B del plasma (aglutininas), que se producen por estímulo ambiental (antígenos bacterianos). Determina la compatibilidad de las transfusiones y trasplantes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (sistema ABO)"
+        ]
+      },
+      {
+        "frente": "¿Qué antígenos y anticuerpos tiene cada grupo ABO?",
+        "verso": "Grupo A: antígeno A y anticuerpos anti-B. Grupo B: antígeno B y anticuerpos anti-A. Grupo AB: antígenos A y B, sin anticuerpos anti-A ni anti-B. Grupo O: sin antígenos A ni B, con anticuerpos anti-A y anti-B.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (grupos ABO)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el factor Rh y cuál es su antígeno principal?",
+        "verso": "El sistema Rh es otro sistema de antígenos eritrocitarios; el más importante e inmunógeno es el antígeno D. Quien lo presenta es Rh positivo (Rh+) y quien no, Rh negativo (Rh−). A diferencia de los anti-A/anti-B, los anticuerpos anti-D no son naturales sino adquiridos por transfusión incompatible o por exposición fetal (madre Rh− con hijo Rh+).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (factor Rh)"
+        ]
+      },
+      {
+        "frente": "¿Quién es el dador universal y el receptor universal de glóbulos rojos?",
+        "verso": "El dador universal de glóbulos rojos es el grupo O Rh negativo: no presenta antígenos A, B ni D, por lo que sus glóbulos no son aglutinados por los anticuerpos del receptor. El receptor universal es el grupo AB Rh positivo: no posee anticuerpos anti-A, anti-B ni anti-D, por lo que puede recibir glóbulos de cualquier grupo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (dador y receptor universal)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la prueba cruzada (compatibilidad pretransfusional)?",
+        "verso": "Es la prueba que enfrenta el suero del receptor con los glóbulos rojos del dador (prueba cruzada mayor) y el suero del dador con los glóbulos del receptor (prueba menor) para verificar que no haya aglutinación (incompatibilidad). Se realiza junto con la tipificación ABO/Rh y la detección de anticuerpos irregulares antes de transfundir.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (prueba cruzada)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la aglutinación y cómo se detecta?",
+        "verso": "Es la unión de anticuerpos (aglutininas) con los antígenos eritrocitarios (aglutinógenos) que forma grumos visibles de glóbulos rojos. Se detecta macroscópicamente en placa, tubo o tarjeta y es la base de la tipificación ABO/Rh y de la prueba cruzada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (aglutinación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la exanguinotransfusión?",
+        "verso": "Es el recambio del volumen sanguíneo del recién nacido (extracción y reinfusión de sangre en fracciones) que elimina bilirrubina, anticuerpos maternos y glóbulos rojos sensibilizados. Está indicada en la hiperbilirrubinemia grave o en la enfermedad hemolítica del RN (incompatibilidad Rh/ABO) para prevenir el kernicterus. La sangre utilizada debe ser compatible (habitualmente grupo O Rh negativo o del mismo grupo del RN).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (exanguinotransfusión)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la enfermedad hemolítica del recién nacido?",
+        "verso": "Es la destrucción de los glóbulos rojos del RN por anticuerpos maternos (anti-D en madre Rh− con hijo Rh+, o anti-A/anti-B en incompatibilidad ABO) que atraviesan la placenta. Produce anemia hemolítica, ictericia precoz con bilirrubina indirecta, reticulocitosis y, en formas graves, kernicterus e hidropesía fetal. La madre Rh− debe recibir inmunoglobulina anti-D para prevenir la sensibilización.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (enfermedad hemolítica del RN)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el kernicterus?",
+        "verso": "Es la encefalopatía bilirrubínica: depósito de bilirrubina no conjugada (liposoluble) en los ganglios de la base y núcleos del tronco, que produce letargia, hipotonía, opistótono y secuelas neurológicas graves (parálisis, sordera). Es la complicación más temida de la hiperbilirrubinemia neonatal y el motivo de la fototerapia y la exanguinotransfusión.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (kernicterus)"
+        ]
+      },
+      {
+        "frente": "Ejercicio: ¿qué sangre puede recibir un paciente del grupo A Rh+ y a quién puede donar?",
+        "verso": "Puede recibir glóbulos rojos de donantes A u O (y Rh+ o Rh− en la primera transfusión, con criterio habitual A Rh+), y puede donar a receptores A o AB. El suero anti-B del grupo A contraindica recibir glóbulos B o AB.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Hematología (compatibilidad, ejercicio)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP5 — Neonatología — Ictericia neonatal fisiológica y por leche materna",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "pediatria",
+    "descricao": "Ictericia fisiológica del RN, criterios de Maisels (1981), ictericia por leche materna, fototerapia y exanguinotransfusión",
+    "tags": [
+      "injuria-up5",
+      "pediatria",
+      "neonatologia",
+      "ictericia",
+      "ictericia-neonatal",
+      "bilirrubina",
+      "leche-materna",
+      "maisels",
+      "fototerapia",
+      "recien-nacido"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Qué es la ictericia fisiológica del recién nacido?",
+        "verso": "Es la hiperbilirrubinemia no conjugada, transitoria y generalmente benigna que aparece después de las 24-48 horas de vida, por la inmadurez hepática (menor actividad de la glucuronil transferasa), el mayor recambio eritrocitario y la mayor circulación enterohepática. Se resuelve hacia la primera semana en el término y hacia las dos semanas en el prematuro, sin tratamiento en la mayoría de los casos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (ictericia fisiológica)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios de ictericia patológica propuestos por Maisels (1981)?",
+        "verso": "1) Ictericia visible dentro de las primeras 24 horas de vida; 2) ascenso de la bilirrubina mayor de 5 mg/dl/día; 3) bilirrubina total mayor de 12,9 mg/dl en el recién nacido a término o mayor de 15 mg/dl en el prematuro; 4) bilirrubina directa mayor de 1,5-2 mg/dl; 5) ictericia que persiste más de 1 semana en el término o más de 2 semanas en el prematuro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (criterios de Maisels)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la ictericia por leche materna?",
+        "verso": "Es una ictericia no conjugada de aparición tardía, que comienza en la primera semana de vida, alcanza su pico alrededor del día 14 y se normaliza entre las 4 y las 12 semanas. Se atribuye a sustancias de la leche humana que inhiben la conjugación de la bilirrubina. No contraindica la lactancia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (ictericia por leche materna)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia existe entre la ictericia por leche materna y la ictericia por ayuno o ingesta insuficiente?",
+        "verso": "La ictericia por ayuno es precoz (primera semana) y se debe a la escasa ingesta que aumenta la circulación enterohepática; mejora al incrementar la alimentación. La ictericia por leche materna es tardía (después de la primera semana), persiste semanas y no requiere suspender la lactancia mientras la bilirrubina se mantenga en valores seguros.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (ictericia por leche materna vs ayuno)"
+        ]
+      },
+      {
+        "frente": "¿Qué factores aumentan el riesgo de hiperbilirrubinemia neonatal?",
+        "verso": "Prematurez, hemólisis (incompatibilidad Rh/ABO, esferocitosis, déficit de G6PD), sepsis, hematomas y cefalohematomas, poliglobulia, ayuno e ingesta insuficiente, hipotiroidismo y antecedentes de hermano con ictericia que requirió fototerapia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (factores de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la principal complicación de la hiperbilirrubinemia neonatal grave?",
+        "verso": "El kernicterus o encefalopatía bilirrubínica: el depósito de bilirrubina no conjugada en el tejido nervioso produce secuelas neurológicas permanentes. Su prevención se basa en la fototerapia y, en casos graves, la exanguinotransfusión.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (complicación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la fototerapia y cuándo se indica?",
+        "verso": "Es el tratamiento con luz (habitualmente azul) que transforma la bilirrubina no conjugada en fotoproductos hidrosolubles excretables por bilis y orina. Se indica cuando la bilirrubina supera los umbrales según la edad gestacional, las horas de vida y los factores de riesgo, para prevenir el kernicterus.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (fototerapia)"
+        ]
+      },
+      {
+        "frente": "¿Cuándo se indica la exanguinotransfusión en el RN ictérico?",
+        "verso": "Cuando la bilirrubina es muy elevada (con riesgo de kernicterus a pesar de la fototerapia), hay signos de encefalopatía bilirrubínica, o en la enfermedad hemolítica con anemia grave. Permite remover bilirrubina y anticuerpos maternos; se usa sangre compatible (O Rh− o del mismo grupo del RN).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (exanguinotransfusión)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se previene la enfermedad hemolítica del RN por Rh?",
+        "verso": "Administrando inmunoglobulina anti-D a la madre Rh negativa (tras parto, aborto o hemorragia con exposición a sangre Rh+) para impedir la sensibilización y la formación de anticuerpos anti-D que dañarían a un futuro hijo Rh+. El control prenatal del grupo sanguíneo y del Rh es fundamental.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (prevención enfermedad hemolítica)"
+        ]
+      },
+      {
+        "frente": "¿Qué orienta en la UP5 el caso de Susana, RN de 4 días ictérico con antecedentes de esferocitosis?",
+        "verso": "Orienta a la etiología hemolítica de la ictericia neonatal: la esferocitosis hereditaria (antecedentes familiares) produce hemólisis con aumento de bilirrubina indirecta y debe diferenciarse de la ictericia fisiológica aplicando los criterios de Maisels. Las manchas ocre en el pañal orientan al diagnóstico diferencial de la orina de recién nacido (cristales de urato) frente a sangrados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, situación problemática (caso Susana)"
+        ]
+      },
+      {
+        "frente": "¿Por qué el recién nacido es más susceptible a la toxicidad de la bilirrubina?",
+        "verso": "Porque la bilirrubina no conjugada es liposoluble, la barrera hematoencefálica es más permeable, la albúmina es menor (menor capacidad de transporte), la conjugación hepática es inmadura (menor glucuronil transferasa) y aumenta la circulación enterohepática, favoreciendo la reabsorción intestinal de la bilirrubina.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Neonatología (susceptibilidad del RN)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP5 — Salud Mental — El inconsciente freudiano y la causalidad psíquica",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "La conciencia como engaño, formaciones del inconsciente, síntoma, asociación libre y causalidad psíquica (caso Juan)",
+    "tags": [
+      "injuria-up5",
+      "salud-mental",
+      "inconsciente",
+      "freud",
+      "causalidad-psiquica",
+      "sintoma",
+      "asociacion-libre",
+      "psicoanalisis",
+      "formaciones-del-inconsciente"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Qué plantea la ficha de Salud Mental de la UP5?",
+        "verso": "El inconsciente freudiano y la noción de causalidad psíquica: la posición de Freud sitúa a la conciencia como engaño y abre la pregunta por la relación entre el sujeto y el síntoma, más allá de la causa eficiente de las ciencias naturales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental: El inconsciente freudiano y la noción de causalidad psíquica"
+        ]
+      },
+      {
+        "frente": "¿Qué significa 'la conciencia como engaño' en Freud?",
+        "verso": "Que la conciencia ya no es el amo absoluto de la realidad humana: está marcada por una carencia fundamental (por ese Otro irreducible). El síntoma, el lapsus y los actos fallidos muestran que la conciencia es equívoca, y el 'tomar conciencia' pasa a ser una tarea del sujeto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (la conciencia como engaño)"
+        ]
+      },
+      {
+        "frente": "¿Quiénes son los 'protagonistas de la sospecha' según Foucault?",
+        "verso": "Marx, Nietzsche y Freud: autores que se erigen como desenmascaradores de la relación entre el sujeto y los símbolos, poniendo en cuestión la conciencia como fundamento del conocimiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (Foucault: los maestros de la sospecha)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las 'formaciones del inconsciente'?",
+        "verso": "Sueños, lapsus, actos fallidos, síntomas y chistes: producciones en las que se manifiesta el inconsciente. Hablar de 'formaciones del inconsciente' implica una articulación dialéctica entre lo consciente y lo inconsciente, tomando como modelo el análisis de los sueños.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (formaciones del inconsciente)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síntoma para el psicoanálisis?",
+        "verso": "Es una manifestación del inconsciente y una experiencia de discurso: aquello de lo que un sujeto habla. No es un mero disparador de la objetivación de la patología orgánica; el síntoma es 'aquella parte del discurso concreto, en cuanto tras-individual, que falta a la disposición del sujeto para restablecer la continuidad de su discurso consciente' (Lacan).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (el síntoma)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre la causalidad eficiente y la causalidad psíquica?",
+        "verso": "La causalidad eficiente es la que explica los fenómenos según causa-efecto en las ciencias naturales (la semiología busca los signos objetivos). La causalidad psíquica parte de la falta de la conciencia: el síntoma compromete al sujeto de manera oscura e irreducible a los contenidos conscientes, y requiere otro orden de causalidad, en el que está perdida la dimensión de causa eficiente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (causalidad eficiente vs psíquica)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la asociación libre?",
+        "verso": "Es el método por el cual el paciente habla de todo aquello que le surge en la conciencia, sin omitirlo aunque lo encuentre poco razonable, falto de importancia o disparatado. Permite la emergencia de recuerdos, sueños y sentimientos ligados al síntoma, y su desplazamiento y resolución.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (asociación libre)"
+        ]
+      },
+      {
+        "frente": "¿Qué muestra el caso de Juan en la UP5?",
+        "verso": "Juan no puede jugar más a la pelota: sus piernas no le responden, tiene pinchazos y parestesias, pero no hay causa física eficiente que lo explique (semiología y anamnesis negativas). En el trabajo de asociación libre los pinchazos se transformaron en ortigas y las ortigas en espinas, enlazándose con escenas y deseos olvidados de su infancia; el síntoma fue desplazándose por el cuerpo hasta desaparecer. Ejemplifica el síntoma como formación del inconsciente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (caso Juan)"
+        ]
+      },
+      {
+        "frente": "¿Qué implica el conocimiento del inconsciente para el médico?",
+        "verso": "Estar advertido de su existencia para no cometer errores ni por defecto (no queriendo saber nada de esto) ni por exceso (poniéndose a interpretar sin contar con los recursos de su formación). No se trata de que el médico haga psicoanálisis, sino de no reducir el síntoma solo a su objetivación orgánica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (implicancias para el médico)"
+        ]
+      },
+      {
+        "frente": "¿Por qué la anamnesis clásica es limitada frente al síntoma?",
+        "verso": "Porque la anamnesis apunta solo a la conciencia y al recuerdo consciente, y frente al síntoma se muestra limitada e incluso inoperante: la causa de la manifestación de sufrimiento implica al sujeto de una manera oscura e irreducible a los contenidos de la conciencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (límites de la anamnesis)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el inconsciente para el psicoanálisis freudiano?",
+        "verso": "No es una dimensión psíquica ni un grado de la conciencia a restaurar ni un sujeto psicológico: es una experiencia de palabra, de discurso. Como el síntoma es una manifestación del inconsciente, no se explica por la razón objetiva ni se reduce a los trastornos mentales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (noción de inconsciente)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el 'tomar conciencia' en el psicoanálisis?",
+        "verso": "Poner el acento en el acto, en la acción del verbo: la conciencia se revela en el momento del juicio y del acto como un momento dialéctico, no como un dato ya dado. Es una tarea del sujeto marcada por la falta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental (tomar conciencia)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP5 — Salud Mental — Guía de integración en UABP5",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "Integración de salud mental en enfermedad hepática, consideraciones farmacológicas, paidopsiquiatría en ictericia neonatal, evaluación biopsicosocial y estándares de documentación",
+    "tags": [
+      "injuria-up5",
+      "salud-mental",
+      "integracion",
+      "enfermedad-hepatica",
+      "paidopsiquiatria",
+      "depresion-posparto",
+      "examen-del-estado-mental",
+      "biopsicosocial",
+      "historia-clinica"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Qué modelo de atención enfatiza la guía de integración de salud mental de la UABP5?",
+        "verso": "El modelo biopsicosocial de atención en salud y la importancia de una documentación clínica integral, integrando la salud mental y la historia clínica psiquiátrica en el currículo de la UABP 5.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Salud Mental: Guía de integración UABP5 (introducción)"
+        ]
+      },
+      {
+        "frente": "¿Qué consideraciones de salud mental se documentan en la enfermedad hepática (integración con Química Biológica)?",
+        "verso": "Los cambios cognitivos en la disfunción hepática, las alteraciones del ciclo sueño-vigilia, las alteraciones del estado de ánimo y los patrones de uso de sustancias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (enfermedad hepática)"
+        ]
+      },
+      {
+        "frente": "¿Qué puntos clave de la historia clínica se tienen en cuenta en las alteraciones metabólicas?",
+        "verso": "Examen del estado mental en el contexto de las alteraciones metabólicas, relación temporal entre los síntomas físicos y psicológicos, historia familiar de condiciones hepáticas y psiquiátricas, e impacto en el funcionamiento diario y la calidad de vida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (historia clínica)"
+        ]
+      },
+      {
+        "frente": "¿Qué consideraciones farmacológicas se plantean en la enfermedad hepática?",
+        "verso": "Requisitos de documentación de ensayos y respuestas a medicamentos, monitoreo de efectos secundarios psiquiátricos, registro de patrones de adherencia a la medicación y evaluación de interacciones con sustancias de uso.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (consideraciones farmacológicas)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los requisitos de documentación clínica en farmacología?",
+        "verso": "Procedimientos de reconciliación medicamentosa, documentación del riesgo-beneficio, procesos de consentimiento informado y monitoreo de la respuesta al tratamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (documentación clínica)"
+        ]
+      },
+      {
+        "frente": "¿Qué enfoque en paidopsiquiatría propone la guía para la ictericia neonatal?",
+        "verso": "Evaluación psicológica materna, documentación de los patrones de apego, detección de depresión posparto y evaluación del sistema de apoyo familiar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (paidopsiquiatría)"
+        ]
+      },
+      {
+        "frente": "¿Qué se documenta en la historia clínica en el enfoque de paidopsiquiatría?",
+        "verso": "Seguimiento de los hitos del desarrollo, observaciones de la interacción padres-hijo, evaluación de los mecanismos de afrontamiento familiar y documentación del sistema de apoyo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (paidopsiquiatría, historia clínica)"
+        ]
+      },
+      {
+        "frente": "¿Qué evalúa el enfoque de evaluación integrativa (biopsicosocial)?",
+        "verso": "Los hallazgos del examen físico, el examen del estado mental, la evaluación del apoyo social y la consideración del contexto cultural.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (evaluación integrativa)"
+        ]
+      },
+      {
+        "frente": "¿Qué incluye la documentación de la evaluación de riesgo?",
+        "verso": "La detección de riesgo suicida, la evaluación del uso de sustancias, la detección de violencia familiar y la evaluación del sistema de apoyo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (evaluación de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los estándares de documentación propuestos?",
+        "verso": "1) Utilizar un formato estructurado de examen mental; 2) incluir hallazgos objetivos y subjetivos; 3) documentar las relaciones temporales entre síntomas físicos y psicológicos; 4) incluir el contexto familiar y social; 5) registrar la adherencia al tratamiento y sus barreras.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (estándares de documentación)"
+        ]
+      },
+      {
+        "frente": "¿Qué herramientas de evaluación se integran en la guía?",
+        "verso": "Instrumentos de detección de depresión, escalas de evaluación de ansiedad, pruebas de función cognitiva, medidas de calidad de vida y evaluaciones del funcionamiento familiar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (herramientas de evaluación)"
+        ]
+      },
+      {
+        "frente": "¿Qué casos clínicos ejemplifica la guía de integración?",
+        "verso": "Caso 1: adulto con encefalopatía hepática (documentación completa de historia psiquiátrica, formato de examen del estado mental, notas de evolución, entrevista familiar). Caso 2: ictericia neonatal con depresión materna (detección de salud mental materna, evaluación de la interacción madre-bebé, documentación del apoyo familiar y planificación del tratamiento).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Guía de integración UABP5 (casos clínicos)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP5 — Laboratorio y seminarios — Daño biológico por radiaciones",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "fisica-biologica",
+    "descricao": "Seminario de laboratorio sobre daño biológico por radiaciones: efectos, dosis, irradiación y contaminación, radiosensibilidad",
+    "tags": [
+      "injuria-up5",
+      "laboratorio",
+      "seminarios",
+      "radiaciones",
+      "dano-biologico",
+      "radiosensibilidad",
+      "radiacion",
+      "fisica-biologica"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Qué estudia el seminario de laboratorio de la UP5 sobre radiaciones?",
+        "verso": "El daño biológico por radiaciones: los efectos de las radiaciones ionizantes sobre los seres vivos, su mecanismo de acción sobre el material genético y las bases para su prevención y protección.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio y seminarios disciplinares (daño biológico por radiaciones)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos biológicos de las radiaciones ionizantes?",
+        "verso": "Actúan ionizando los átomos, generan radicales libres (especies reactivas del oxígeno) y producen daño directo o indirecto sobre el ADN: muerte celular, mutaciones, carcinogénesis y efectos sobre la división celular. Son más sensibles las células en división activa (médula ósea, epitelio intestinal, células germinales) y los tejidos con alto recambio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (efectos biológicos de las radiaciones)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre efectos deterministas y efectos estocásticos de la radiación?",
+        "verso": "Los efectos deterministas tienen umbral y su gravedad aumenta con la dosis (eritema, alopecia, fibrosis, catarata). Los efectos estocásticos no tienen umbral y su probabilidad aumenta con la dosis (cáncer, mutaciones hereditarias).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (efectos deterministas y estocásticos)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre irradiación y contaminación radiactiva?",
+        "verso": "Irradiación: exposición de un organismo a la radiación sin contacto con la fuente (no queda contaminado y deja de estar expuesto al retirarse). Contaminación: contacto con material radiactivo que queda depositado en el cuerpo, la ropa o el ambiente (persiste la exposición hasta su descontaminación).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (irradiación vs contaminación)"
+        ]
+      },
+      {
+        "frente": "¿Qué factores determinan el daño por radiación?",
+        "verso": "La dosis y la tasa de dosis, el tipo de radiación (alfa, beta, gamma, X), la vía de exposición (externa o interna), el órgano irradiado y su radiosensibilidad, y el tiempo de exposición (dosis aguda vs fraccionada).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (factores del daño)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los principios básicos de protección radiológica?",
+        "verso": "Tiempo (reducir la duración de la exposición), distancia (aumentar la distancia a la fuente) y blindaje (colocar barreras, plomo, agua), junto con la justificación y la optimización (principio ALARA: tan bajo como sea razonablemente posible) y los límites de dosis para trabajadores y público.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (protección radiológica)"
+        ]
+      },
+      {
+        "frente": "¿Qué células y tejidos son más radiosensibles?",
+        "verso": "Las células en activa división y las que tienen alta tasa de proliferación: células madre de la médula ósea, células de la capa basal del epitelio intestinal y de la piel, células germinales y tejido embrionario. La ley de Bergonié y Tribondeau: la radiosensibilidad es proporcional a la actividad reproductiva e inversamente proporcional al grado de diferenciación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (radiosensibilidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síndrome de irradiación aguda?",
+        "verso": "Conjunto de síntomas que aparecen tras una exposición aguda de cuerpo entero a altas dosis: fase prodrómica (náuseas, vómitos), fase de latencia, y luego compromiso de los sistemas más radiosensibles (médula ósea con pancitopenia, gastrointestinal y neurológico según la dosis).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP5 — UP5, Laboratorio (síndrome de irradiación aguda)"
+        ]
+      }
+    ]
+  }
+]

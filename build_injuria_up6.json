@@ -1,0 +1,1347 @@
+[
+  {
+    "titulo": "Injuria UP6 — Farmacología — Introducción a las adicciones",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "farmacologia",
+    "descricao": "Dependencia y abuso según DSM, refuerzo, tolerancia y sus tipos, dependencia física, síndrome de abstinencia y etapas del tratamiento",
+    "tags": [
+      "injuria-up6",
+      "farmacologia",
+      "adicciones",
+      "dependencia",
+      "abuso",
+      "tolerancia",
+      "abstinencia",
+      "refuerzo",
+      "drogas"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la dependencia según el Taller disciplinar de Farmacología?",
+        "verso": "Un trastorno conductal adquirido en el que la persona tiene disminuido el control sobre el consumo de una determinada droga, siendo la característica la necesidad de seguir tomando la sustancia en forma periódica o continuada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (dependencia)"
+        ]
+      },
+      {
+        "frente": "¿Cuándo hay dependencia según los criterios del DSM IV?",
+        "verso": "Preocupación por la búsqueda de la ingesta de la sustancia; frecuente ingestión en mayor cantidad; tolerancia; síntomas característicos de abstinencia; deterioro por el uso de la sustancia; y pérdida de importante actividad socio-laboral para buscar o tomar la sustancia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (criterios de dependencia DSM IV)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el abuso?",
+        "verso": "Un patrón de consumo de sustancia que no reúne los criterios de dependencia del DSM IV.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (abuso)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el refuerzo y qué diferencia hay entre refuerzo positivo y negativo?",
+        "verso": "Refuerzo es la capacidad de la sustancia que hace que el sujeto desee obtenerla otra vez. Refuerzo positivo: produce placer o euforia en un sujeto con estado de ánimo normal. Refuerzo negativo: alivia una situación de malestar produciendo un estado de ánimo normal (por ejemplo, mejora la sintomatología de la abstinencia).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (refuerzo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la tolerancia y cuáles son sus tipos?",
+        "verso": "Es la reacción más frecuente con el consumo repetitivo de la misma droga: disminución de los efectos que produce la droga. Tipos: innata, adquirida (farmacocinética, farmacodinámica y aprendida), aguda y cruzada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (tolerancia)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la tolerancia cruzada?",
+        "verso": "La tolerancia inducida por una droga que se extiende a otras drogas, generalmente del mismo grupo o con mecanismo de acción similar (por ejemplo, entre alcohol y otras sustancias depresoras del SNC).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (tolerancia cruzada)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la dependencia física y qué ocurre al suprimir la droga?",
+        "verso": "Es el estado que resulta de la adaptación producida por el reajuste de los mecanismos homeostáticos por la administración repetida de una sustancia. Cuando se suprime la administración de la droga aparece el síndrome de abstinencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (dependencia física)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síndrome de abstinencia?",
+        "verso": "Es el conjunto de síntomas característicos que aparecen al discontinuar o suprimir la administración de una sustancia en una persona con dependencia física.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (síndrome de abstinencia)"
+        ]
+      },
+      {
+        "frente": "¿Qué tres aspectos se analizan en las adicciones?",
+        "verso": "1) El agente o sustancia adictiva; 2) el huésped o consumidor; y 3) el ambiente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (aspectos de las adicciones)"
+        ]
+      },
+      {
+        "frente": "¿Qué variables del agente (sustancia) influyen en el inicio y continuación de una adicción?",
+        "verso": "Disponibilidad, costo y pureza; modo de administración (masticación, gastrointestinal, intranasal, subcutánea, intramuscular, intravenosa, inhalatoria); farmacocinética; y rapidez de inicio y terminación de los efectos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (variables del agente)"
+        ]
+      },
+      {
+        "frente": "¿Qué variables del huésped (consumidor) influyen en las adicciones?",
+        "verso": "Herencia (en la tolerancia innata, la rapidez de la tolerancia adquirida y la probabilidad de interpretar la intoxicación como placer); personalidad y cuadros psicológicos o psiquiátricos previos; tendencia a conductas peligrosas; y experiencias y expectativas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (variables del huésped)"
+        ]
+      },
+      {
+        "frente": "¿Qué variables del ambiente influyen en las adicciones?",
+        "verso": "Actitudes comunitarias (influencia de los compañeros, modelos sociales); disponibilidad de otros reforzadores como fuentes placenteras o recreación; empleo y oportunidades recreativas; y entorno social.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (variables del ambiente)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las etapas en el tratamiento de la dependencia?",
+        "verso": "Desintoxicación, rehabilitación y reinserción social.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Taller disciplinar de Farmacología (etapas del tratamiento)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Farmacología — Etanol: farmacocinética y farmacodinamia",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "farmacologia",
+    "descricao": "Absorción, distribución y metabolismo del etanol, cinética de orden cero, ADH/catalasa/MEOS, tolerancia, mecanismo de acción y efectos según alcoholemia",
+    "tags": [
+      "injuria-up6",
+      "farmacologia",
+      "etanol",
+      "alcohol",
+      "alcoholemia",
+      "farmacocinetica",
+      "ad-h",
+      "meos",
+      "tolerancia",
+      "accidentes"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cómo se absorbe el etanol?",
+        "verso": "El etanol se absorbe rápidamente desde el estómago, el intestino delgado (principalmente duodeno) y el colon. El tiempo desde el último trago hasta las concentraciones máximas en sangre es de 30 a 90 minutos (a veces hasta 3 horas). Lo que más influye es si el estómago está vacío o no: los hidratos de carbono retardan más la absorción que las grasas y estas más que las proteínas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (absorción)"
+        ]
+      },
+      {
+        "frente": "¿Cómo influye el tipo de bebida en la alcoholemia?",
+        "verso": "El etanol de las bebidas destiladas se absorbe más rápido y alcanza mayor alcoholemia que el de vino o cerveza. Ejemplo (individuo de 70 kg, 44 g de etanol): como whisky (120 ml) con estómago vacío 67-92 mg% y luego de comida mixta 30-53 mg%; como cerveza (1200 ml) con estómago vacío 41-49 mg% y con comida 23-29 mg%.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (tipo de bebida)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se distribuye el etanol en el organismo?",
+        "verso": "Se distribuye de un modo aproximadamente uniforme en todos los tejidos y líquidos corporales; su volumen de distribución es de 0,6 litro/kg.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (distribución)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se metaboliza el etanol y qué cinética sigue?",
+        "verso": "Entre el 90 y 98% del etanol se metaboliza por completo. Su velocidad de oxidación es relativamente constante y poco incrementa al aumentar la concentración sanguínea: sigue una cinética no lineal o de orden cero cuando la concentración supera los 0,08 g/litro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (cinética de orden cero)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las tres vías metabólicas del etanol?",
+        "verso": "a) Alcohol dehidrogenasa (ADH): alcohol + NAD produce acetaldehído + NADH (vía principal). b) Catalasa: no supera el 10% del metabolismo (aumenta en consumo concomitante de clofibrato). c) MEOS (sistema oxidativo microsomal del etanol) con citocromo P450 (CYP2E1), inducible por el alcohol u otras sustancias. Luego el acetaldehído es oxidado a acetato por la acetaldehído dehidrogenasa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (metabolismo)"
+        ]
+      },
+      {
+        "frente": "¿A qué velocidad promedio se metaboliza el etanol?",
+        "verso": "En el adulto la velocidad promedio es de 120 mg/kg/hora, lo que reduce la concentración plasmática aproximadamente 15 a 20 mg%/hora. Con una concentración de 120 mg% se requieren 6 a 8 horas para que el etanol desaparezca de la sangre.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (velocidad de metabolismo)"
+        ]
+      },
+      {
+        "frente": "¿Qué mecanismos producen la tolerancia al alcohol?",
+        "verso": "Cinético (por inducción del metabolismo, referido al MEOS/CYP2E1); dinámico (a nivel neuronal, es el más importante y puede llegar a incrementos del 100%); y conductual (adaptación a niveles altos de alcoholemia). Además existe polimorfismo genético de la ADH que explica variaciones de la velocidad metabólica entre individuos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (tolerancia)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el mecanismo de acción del etanol?",
+        "verso": "No está del todo dilucidado: antagoniza los receptores NMDA y potencia los receptores GABAA; además altera la composición y la fluidez de la bicapa lipídica de las membranas celulares, altera los receptores de membrana e inhibe la ATPasa, entre otras acciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (farmacodinamia)"
+        ]
+      },
+      {
+        "frente": "¿Cómo influye el sexo en la biodisponibilidad del etanol?",
+        "verso": "La biodisponibilidad es del 90% en mujeres y del 75% en hombres, porque las mujeres tienen menor actividad de alcohol dehidrogenasa en el estómago.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (sexo y biodisponibilidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué interacciones medicamentosas del etanol son relevantes para conducir?",
+        "verso": "La acción aditiva con otros depresores del SNC: barbitúricos, benzodiacepinas, fenotiacinas, glutetimida e hidrato de cloral, que deteriora la capacidad de conducir. La cafeína no hace que una persona intoxicada con alcohol esté capacitada para conducir.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (interacciones)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos agudos del etanol según su concentración en sangre (sin tolerancia)?",
+        "verso": "0,3 g/l: euforia moderada y desinhibición; 0,5: incoordinación moderada; 1: ataxia; 2: mareo y confusión; 3: estupor; 4 y más: hipoglucemia, hipotermia, falla respiratoria, coma y muerte.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (guía de efectos agudos)"
+        ]
+      },
+      {
+        "frente": "¿A partir de qué nivel hay efecto umbral relacionado con los accidentes de tránsito?",
+        "verso": "Se ve efecto umbral con 0,3 g/l: tiempo de reacción aumentado, control motor fino disminuido y facultad crítica disminuida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (efecto umbral y accidentes)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se determina la alcoholemia en forma indirecta (aire espirado y orina)?",
+        "verso": "En el aire espirado hay 0,05% de la concentración sanguínea (misma cantidad de alcohol en dos litros de aire que en un ml de plasma). En orina existe una proporción aproximada de 1,3 a 1 en la fase declinante de la curva, considerando el contenido previo de orina de la vejiga (efecto dilutorio) y la posible adulteración.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (alcoholemia indirecta)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 48 de la Ley Nacional de Tránsito 24.449 sobre la alcoholemia?",
+        "verso": "Prohíbe conducir con alcoholemia superior a 500 mg/litro de sangre (0,5 g/l); para motocicletas y ciclomotores, superior a 200 mg/litro (0,2 g/l); y para vehículos de transporte de pasajeros, de menores y de carga, prohíbe conducir cualquiera sea la concentración.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (Ley 24.449, art. 48)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Farmacología — Intoxicación alcohólica, SAF y alcohol en accidentes",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "farmacologia",
+    "descricao": "Intoxicación aguda, valoración médico-legal de la alcoholemia, riesgo de accidentes, lesiones del consumo crónico, síndrome alcohólico fetal",
+    "tags": [
+      "injuria-up6",
+      "farmacologia",
+      "intoxicacion-alcoholica",
+      "saf",
+      "sindrome-alcoholico-fetal",
+      "accidentes-de-transito",
+      "embarazo",
+      "medicina-legal",
+      "dependencia"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Cuál es la definición legal de intoxicación alcohólica?",
+        "verso": "Se toma sobre la base de la alcoholemia determinada en los conductores (directa o calculada por orina o aire espirado). Es importante porque el cuadro clínico es muy variable y puede confundirse con otras intoxicaciones por drogas, fracturas de cráneo o coma diabético; la halitosis es poco confiable.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Influencias del alcohol en los accidentes de tránsito (intoxicación)"
+        ]
+      },
+      {
+        "frente": "¿Cómo aumenta el riesgo de accidente según la alcoholemia?",
+        "verso": "Si se considera 1 el riesgo de accidente de un conductor sin influencia alcohólica, este aumenta a 7 con alcoholemias de 100 mg% y a 25 con alcoholemia de 150 mg%.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Influencias del alcohol en los accidentes de tránsito (riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Qué proporción de accidentes graves de tránsito se atribuye al alcohol?",
+        "verso": "El alcohol es la causa directa del 30 al 50% de los accidentes graves de tránsito y de las defunciones por esa causa. Las estadísticas oficiales subestiman considerablemente su influencia, sobre todo en países en vías de desarrollo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Influencias del alcohol en los accidentes de tránsito"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los datos de Argentina sobre siniestros de tránsito?",
+        "verso": "Los siniestros de tránsito causan 20 muertes por día (más de 7.000 al año), más de 120.000 heridos por año y grandes pérdidas materiales estimadas en U$S 10.000 millones por año.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Influencias del alcohol en los accidentes de tránsito (datos Argentina)"
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene el alcohol sobre la capacidad de conducción?",
+        "verso": "Afecta la capacidad de juicio del conductor sobre sus propias capacidades, obnubilando su raciocinio respecto de sus posibilidades reales: asume riesgos excesivos y disminuye su margen de seguridad. La tolerancia social hacia el binomio alcohol-conducción en Argentina genera indiferencia e impunidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Influencias del alcohol en los accidentes de tránsito (conducción)"
+        ]
+      },
+      {
+        "frente": "¿Qué lesiones orgánicas produce el consumo crónico de etanol?",
+        "verso": "Lesiones en el sistema nervioso central, hígado (hepatopatía alcohólica), metabolismo intermedio, tubo digestivo, aparato cardiovascular, músculo y aparato urogenital.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Etanol (lesiones por consumo crónico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síndrome alcohólico fetal (SAF) y cuál es su epidemiología?",
+        "verso": "Es la causa más importante de deficiencia mental inducida de manera teratógena en el mundo occidental. Aparece en 1 de cada 3 hijos de madres alcohólicas y afecta entre 1 en 300 y 1 en 2000 nacidos vivos. La ingesta mínima de alcohol asociada es de 75 ml por día; la muerte fetal y el aborto espontáneo son 2 a 3 veces más frecuentes en mujeres que toman 3 o más copas por día.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Alcohol y embarazo (SAF)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características clínicas del SAF?",
+        "verso": "Bajo coeficiente intelectual, microcefalia, crecimiento lento, anomalías faciales (fisuras palpebrales cortas, nariz corta en silla de montar, hipoplasia del labio superior, ausencia de surco nasogeniano, implantación baja de las orejas, ojos más separados, pliegues epicánticos), y aumento de la susceptibilidad a infecciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Alcohol y embarazo (SAF, clínica)"
+        ]
+      },
+      {
+        "frente": "¿A qué se atribuye el SAF y cuál es la conducta frente al alcohol en el embarazo?",
+        "verso": "Se atribuye a efectos del acetaldehído, que inhibiría la proliferación celular embrionaria al inicio de la gestación, y/o a defectos nutricionales que provocan lesión de la placenta. La ingesta de alcohol, incluso moderada, está contraindicada en el embarazo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Alcohol y embarazo (mecanismo y conducta)"
+        ]
+      },
+      {
+        "frente": "¿En qué consiste la valoración médico-legal de la ebriedad (peritaje)?",
+        "verso": "El peritaje sigue el camino inverso a la exposición: se parte de un valor de alcoholemia (o más frecuentemente de alcoholuria) y se calcula cuánto pudo tener en el momento del hecho, considerando un descenso mínimo de 125 mg/litro por hora.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Legal: Ebriedad alcohólica. Valoración médico legal (peritaje)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Farmacología — Marihuana y cocaína",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "farmacologia",
+    "descricao": "THC y cocaína: mecanismo de acción, farmacocinética, cuadro clínico agudo y crónico, interacciones, laboratorio y tratamiento",
+    "tags": [
+      "injuria-up6",
+      "farmacologia",
+      "marihuana",
+      "thc",
+      "cocaina",
+      "crack",
+      "cocaetileno",
+      "interacciones",
+      "intoxicacion"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Cuál es el principal cannabinoide psicoactivo de la marihuana y su contenido?",
+        "verso": "El THC (tetrahidrocannabinol). Cannabis sativa contiene 1 a 5%; el hashish (resina) 5-15%; y el aceite 30-60%.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (THC)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el mecanismo de acción del THC?",
+        "verso": "Se han encontrado receptores para THC en ganglios basales, hipocampo, corteza cerebral y cerebelo, en altas concentraciones; las bajas concentraciones en tronco cerebral explicarían su baja mortalidad. El receptor está acoplado a proteína Gi e inhibe la adenilciclasa. A nivel cardíaco, el THC estimula receptores adrenérgicos e inhibe los muscarínicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (mecanismo del THC)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la farmacocinética del THC?",
+        "verso": "Por pirólisis su biodisponibilidad es del 20% y la oral menor al 6%. Inhalado: efecto inicial a los 2-3 minutos, pico a los 20-30 minutos y duración de 90-120 minutos. En sangre se une a lipoproteínas y albúmina; se inactiva en hígado por hidroxilación y carboxilación. Sigue un modelo bicompartimental con vida media beta de 28-56 horas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (farmacocinética del THC)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos agudos de la marihuana?",
+        "verso": "Psicosis tóxica aguda con ilusiones, alucinaciones o confusión; ansiedad, paranoia, reacciones de pánico; ataxia, palpitaciones, taquicardia, boca seca, hiperemia conjuntival y otras manifestaciones oculares. Producen alteraciones motoras y de las tareas complejas: disminución de la capacidad para conducir. Raramente: retención urinaria, infarto de miocardio, neumotórax.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (efectos agudos)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos crónicos de la marihuana?",
+        "verso": "Disminución del rendimiento académico y de la motivación, fallas en la memoria, irritación ocular crónica o tos crónica. Se considera un carcinógeno potencial y el uso crónico se asocia a enfermedades respiratorias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (efectos crónicos)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se detecta la marihuana en el laboratorio?",
+        "verso": "Se miden metabolitos del THC; el más importante es el ácido carboxílico 11-nor-THC-9. Se detecta 1 hora después de inhalar, hasta 2-5 días en usuarios infrecuentes y hasta 6-8 semanas en usuarios crónicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (laboratorio)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento de la sobredosis de marihuana?",
+        "verso": "No hay medidas específicas para la sobredosis. Se debe descartar el consumo de otras drogas y, en pacientes con psicosis tóxica, resulta útil sedarlos con benzodiacepinas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (tratamiento)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el mecanismo de acción de la cocaína?",
+        "verso": "Estimulación simpática por inhibición de la recaptación de adrenalina y noradrenalina en neuronas adrenérgicas presinápticas periféricas; en el SNC aumenta la liberación de noradrenalina y aminoácidos excitatorios y bloquea la recaptación de dopamina y serotonina. Como resultado: estimulación del SNC, taquicardia, hipertensión, hipertermia, vasoconstricción arterial, formación de trombos y agregación plaquetaria. Además es anestésico local.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (mecanismo de la cocaína)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el modelo de toxicidad de Goldfrank-Hoffman?",
+        "verso": "Muestra la interacción entre el efecto de la cocaína a nivel del sistema nervioso periférico y central: el bloqueo de los efectos periféricos puede aumentar la toxicidad sobre el SNC, mientras que el tratamiento de la toxicidad a nivel del SNC reduce tanto las manifestaciones periféricas como las centrales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (Goldfrank-Hoffman)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la farmacocinética de la cocaína y sus metabolitos?",
+        "verso": "Se absorbe por aplicación en mucosa nasal, ingesta, inhalación por fumar crack o vía endovenosa. Su vida media es de 0,5 a 1,5 horas. Metabolitos: benzoilecgonina (vida media 5-8 horas, 40% por hidrólisis no enzimática) y metiléster de ecgonina (EME, 3,5-6 horas, 30-50% por esterasas plasmáticas). Se detecta en orina 48-72 horas después del uso y hasta 3 semanas con GC/MS.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (farmacocinética y laboratorio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el cocaetileno?",
+        "verso": "Es un metabolito único que se produce cuando se usan simultáneamente alcohol y cocaína. Produce estimulación psicomotora similar a la cocaína, pero mayor depresión de la función ventricular izquierda que la cocaína sola; la letalidad puede incrementarse cuando se usan juntos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (cocaetileno)"
+        ]
+      },
+      {
+        "frente": "¿Qué interacción tienen la cocaína y el tabaco a nivel coronario?",
+        "verso": "Ambos causan vasoconstricción coronaria mediada por mecanismos alfa-adrenérgicos; cuando se usan juntos, la magnitud de la vasoconstricción coronaria es mayor que cuando se usa cualquiera de los dos por separado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (interacción tabaco)"
+        ]
+      },
+      {
+        "frente": "¿Por qué están contraindicados los antagonistas beta-adrenérgicos en la intoxicación por cocaína?",
+        "verso": "En pacientes con potencial infarto de miocardio inducido por cocaína, los beta-bloqueantes aumentan la vasoconstricción, empeoran la función ventricular izquierda e incrementan la letalidad, por lo que están contraindicados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (beta-bloqueantes)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el cuadro clínico de la intoxicación por cocaína?",
+        "verso": "Hipertensión y taquicardia (lo más frecuente); crónicamente acelera arteriosclerosis, hipertrofia ventricular izquierda y formación de trombos, con isquemia o infarto de miocardio, arritmias, miocardiopatía dilatada y disección o ruptura de aorta; hipertermia (una de las principales causas de muerte) y taquipnea; a nivel neurológico: ansiedad, agitación, infartos cerebrales, hemorragias subaracnoideas y convulsiones; otros efectos isquémicos renales, mesentéricos, pulmonares y oculares; rabdomiólisis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (cuadro clínico)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento de la intoxicación por cocaína?",
+        "verso": "Debe realizarse en lugares que permitan adecuada atención de vías aéreas, respiración y circulación, con protocolos para arritmias, hipertensión, infarto, edema agudo de pulmón, hipertermia, convulsiones y rabdomiólisis. En pacientes ansiosos y agitados no deben restringirse físicamente sin sedación química (riesgo de exacerbar hipertermia y rabdomiólisis); los agentes de elección son las benzodiacepinas. En transportadores ('mulas') está indicado el lavado intestinal continuo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Farmacología: Marihuana y cocaína (tratamiento)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Medicina Preventiva — Epidemiología de los accidentes",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "medicina-preventiva",
+    "descricao": "Definición de accidente y lesión, modelos de causalidad, modelo de Leavell-Clark, edad como factor de riesgo, fuentes de información y prevención",
+    "tags": [
+      "injuria-up6",
+      "medicina-preventiva",
+      "accidentes",
+      "epidemiologia",
+      "multicausalidad",
+      "leavell-clark",
+      "lesion",
+      "prevencion",
+      "factores-de-riesgo"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Cómo define Liborio el accidente?",
+        "verso": "Como el desprendimiento súbito de energía física (mecánica en primer término) o química, y su impacto o intercambio produce una lesión o manifestación en el organismo humano. Bajo esta definición, el accidente se produce por una inadecuada respuesta del individuo frente a las demandas del medio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (definición)"
+        ]
+      },
+      {
+        "frente": "¿Es el accidente un acontecimiento aleatorio?",
+        "verso": "No: los accidentes no suceden por casualidad; poseen características precisas, como todos los problemas de salud sujetos a un análisis epidemiológico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características del accidente?",
+        "verso": "Falta de intencionalidad (no es efecto de una voluntad ni de un acto deliberado, por lo que se analizan los precedentes); consecuencias (daños a personas: mortalidad, invalidez, efectos sobre la salud); y rapidez (las consecuencias son inmediatas y dependen de la dosis, el tiempo de exposición y la respuesta corporal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (características)"
+        ]
+      },
+      {
+        "frente": "¿Qué unidad de análisis propone la epidemiología para los accidentes?",
+        "verso": "La 'lesión o traumatismo accidental' y la cantidad de 'accidentados o lesionados' por accidente, cuidando qué se registra como ubicación (el lugar del hecho o el domicilio del lesionado), porque un accidente de tránsito puede lesionar a una o varias personas y la muerte se certifica en el lugar de ocurrencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (unidad de análisis)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se define la lesión?",
+        "verso": "Es el daño al organismo causado por su brusca exposición a concentraciones de energía que sobrepasan su margen de tolerancia, o por factores que interfieren con los intercambios de energía en él. Las formas de energía son: mecánica o cinética, térmica, química, eléctrica, interferencia con los intercambios de energía y radiaciones ionizantes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (lesión)"
+        ]
+      },
+      {
+        "frente": "¿Cómo clasifica la CIE los accidentes y qué incluyen las muertes por causas externas?",
+        "verso": "La CIE-10 permite discernir si los accidentes se producen durante el trabajo, en la vivienda o en la recreación. Las muertes por causas externas incluyen las muertes violentas: accidentes, suicidios y homicidios. En Argentina representan un 7,8% del total de causas (cuarto lugar); en Rosario en el año 2000 implicaban el 4,7% del total.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (CIE)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles fueron los modelos de causalidad de los accidentes?",
+        "verso": "En un comienzo el modelo unicausal (cada hecho único con su causa, condición necesaria y suficiente, que sostuvo la idea de personas 'accidentables'); luego la teoría de la predisposición; la teoría de los accidentes totalmente aleatorios; y en la década del 60 la teoría de la multicausalidad y la búsqueda de factores de riesgo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (causalidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué períodos propone el modelo de Leavell-Clark aplicado a los accidentes?",
+        "verso": "1) Pre-accidente: actúan los factores que condicionan, precipitan y/o predisponen al accidente (factores humanos, vehículos, medio físico, medio socioeconómico). 2) Accidente: se evalúan los obstáculos inmediatos, la falla, la interrupción. 3) Post-accidente: se desarrollan las consecuencias o los efectos sobre la salud en las personas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (Leavell-Clark)"
+        ]
+      },
+      {
+        "frente": "¿Qué plantean los modelos A, B y C para la visión de los accidentes?",
+        "verso": "Modelo A: pre-accidente / accidente / post-accidente con exposición potencial o real a los riesgos. Modelo B: caja negra con entrada (características de los sujetos: edad, sexo, genética, hábitos, salud) y salida (respuesta frente al accidente: exposición, aptitud, umbral de lesión, probabilidad de curación). Modelo C: los entornos o contextos sociales e históricos donde se producen los fenómenos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (modelos A, B y C)"
+        ]
+      },
+      {
+        "frente": "¿Cómo varía el riesgo de accidentes según la edad?",
+        "verso": "Menores de 1 año: exposición limitada; riesgos de caídas, asfixias, intoxicaciones por medicamentos. De 1 a 5 años: caídas, quemaduras, asfixias y accidentes en vehículos (predominan los del hogar). De 6 a 14: se agregan lesiones deportivas. De 15 a 24: accidentes en o por vehículos (motos en Rosario), ahogamiento, alcohol, farmacodependencia y accidentes de trabajo. De 25 a 64: trabajo y vehículo. De 65 y más: caídas y quemaduras en el hogar, e iatrogenia. Debe correlacionarse con el sexo, la estacionalidad, los horarios y los ambientes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (edad)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las medidas de prevención de los accidentes?",
+        "verso": "Varios factores deben ser contemplados por otros sectores que no son del ámbito de la salud: educación vial, evitar la velocidad y el consumo de alcohol antes de conducir, prevención de accidentes en el hogar (guardado de medicamentos, cómo cocinar). La epidemiología de los accidentes es relativamente reciente y los problemas son heterogéneos, por lo que deben abordarse interdisciplinariamente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (prevención)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las fuentes de información sobre accidentes y sus limitaciones?",
+        "verso": "Deben hallarse en el lugar o en el momento más cercano del accidente; generalmente cubren los accidentes con víctimas, por lo que existe subregistro. Las estadísticas sanitarias recogen los fallecimientos a través del informe de defunción; la morbilidad no se conoce con detalle (traslados hospitalarios). Para evaluar la magnitud se analizan indicadores como los años de vida perdidos por discapacidad, que muestran la necesidad de rehabilitación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Epidemiología de los accidentes (fuentes de información)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Medicina Preventiva — Proceso de alcoholización",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "medicina-preventiva",
+    "descricao": "Fenómeno de socialización del alcohol, vulnerabilidad, inequidad y clase social, proceso de alcoholización, modelo médico hegemónico y modelo médico social",
+    "tags": [
+      "injuria-up6",
+      "medicina-preventiva",
+      "alcoholizacion",
+      "alcohol",
+      "menendez",
+      "modelo-medico-hegemonico",
+      "modelo-medico-social",
+      "vulnerabilidad",
+      "inequidad"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Qué es el proceso de alcoholización según Menéndez?",
+        "verso": "El proceso mediante el cual el consumo de alcohol, siendo un fenómeno de socialización, puede devenir en enfermedad (alcoholismo). Explica las dificultades del saber médico para diferenciar la práctica sociocultural del consumo de la enfermedad, tanto en la producción teórica como en las intervenciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva y Social: Proceso de alcoholización (Menéndez)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se describe la historia del consumo de alcohol en América?",
+        "verso": "El consumo de alcohol en América es de tradición precolombina; se difunde más rápidamente a partir de la Conquista española; en el siglo XVIII comienza a vislumbrarse como problema; y en la actualidad aparece como altamente consumible en la mayoría de los eventos sociales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Proceso de alcoholización (historia)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la situación del consumo de alcohol en las Américas?",
+        "verso": "El consumo de alcohol en las Américas es un 50% mayor que en el resto del mundo (Revista Panamericana de la Salud Pública, 2005). El uso de etanol es un hábito socialmente aceptado, promovido por anuncios comerciales y constituye para los jóvenes un símbolo de iniciación en la edad adulta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Proceso de alcoholización (datos regionales)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los 'bebedores sociales'?",
+        "verso": "Entre la abstención total y el alcoholismo se intercala la proporción mayoritaria de la población, constituida por los llamados 'bebedores sociales', entre los que existen diferencias de acuerdo a la asiduidad, la oportunidad y la dosis consumidas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Proceso de alcoholización (bebedores sociales)"
+        ]
+      },
+      {
+        "frente": "¿Qué nociones se analizan en relación con el proceso de alcoholización?",
+        "verso": "Las nociones de vulnerabilidad, inequidad y clase social en la relación Salud-Enfermedad-Atención, que permiten comprender cómo los determinantes sociales condicionan la exposición y el curso del consumo de alcohol en la población.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva y Social: Proceso de alcoholización (vulnerabilidad, inequidad, clase social)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el Modelo Médico Hegemónico?",
+        "verso": "El modelo biomédico dominante que concibe la salud-enfermedad centrada en el individuo, la enfermedad y la atención curativa, con predominio del saber técnico sobre el conocimiento de las condiciones sociales del proceso de salud-enfermedad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva y Social: Proceso de alcoholización (modelo médico hegemónico)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el Modelo Médico Social?",
+        "verso": "El modelo alternativo que incorpora la multicausalidad y los determinantes sociales del proceso salud-enfermedad-atención, considerando el contexto socioeconómico, cultural y ambiental en la génesis y la resolución de los problemas de salud, como el alcoholismo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva y Social: Proceso de alcoholización (modelo médico social)"
+        ]
+      },
+      {
+        "frente": "¿Por qué la conducción bajo la influencia del etanol es un problema de salud pública?",
+        "verso": "Porque es uno de los factores de riesgo de siniestros de tránsito más reconocido y universal: afecta la capacidad de juicio del conductor, obnubila su raciocinio, hace que asuma riesgos excesivos y disminuye su margen de seguridad; en Argentina la tolerancia social genera indiferencia e impunidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Influencias del alcohol en los accidentes de tránsito"
+        ]
+      },
+      {
+        "frente": "¿Qué condición es necesaria para que las personas adopten hábitos adecuados en el tránsito?",
+        "verso": "Que el entorno social, legal, cultural, económico y ambiental les dé soporte.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Influencias del alcohol en los accidentes de tránsito (soporte social)"
+        ]
+      },
+      {
+        "frente": "¿Qué evidencias respaldan la influencia del alcohol en los accidentes?",
+        "verso": "Desde el primer trabajo publicado en 1933, las evidencias de la influencia negativa del etanol sobre la aptitud para conducir y del aumento del riesgo y de la gravedad de las consecuencias son irrefutables; el alcohol es causa directa del 30 al 50% de los accidentes graves de tránsito.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Medicina Preventiva: Influencias del alcohol en los accidentes de tránsito (evidencias)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Salud Mental — Aspectos psicosociales del consumo de sustancias",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "Grupos humanos críticos, familia en riesgo, edades de riesgo, situaciones de riesgo en la adolescencia, familia productora de salud, marginopatías y diagnóstico de las adicciones",
+    "tags": [
+      "injuria-up6",
+      "salud-mental",
+      "adolescencia",
+      "familia",
+      "consumo",
+      "sustancias-psicoactivas",
+      "marginopatia",
+      "adicciones",
+      "valongo",
+      "prevencion"
+    ],
+    "ordem": 7,
+    "cards": [
+      {
+        "frente": "¿Cómo explica la metáfora de la inundación el ingreso de la droga en una comunidad?",
+        "verso": "La droga en una comunidad es como una inundación: penetra en las zonas más bajas. Las 'zonas bajas' no responden primordialmente a características socioeconómicas: la debilidad de la estructura es un requisito fundamental para la penetración de la problemática (lo bajo, lo débil, como lugares críticos por donde circulan las adicciones).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo de sustancias (Valongo y Sosa)"
+        ]
+      },
+      {
+        "frente": "¿Qué tres series responden a la problemática del consumo?",
+        "verso": "La personalidad, el núcleo familiar continente y el medio adictivo social; las tres posibilidades pueden complementarse o funcionar independientemente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (tres series)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características de la 'familia en riesgo'?",
+        "verso": "Gran desorganización de los roles parentales por abandono, inmadurez o perversión de los padres; desintegración parcial o total del marco de contención familiar; inexistencia de familia nuclear y aun ampliada; algún índice de enfermedades psiquiátricas y/o adictivas en sus miembros; descuido de los padres a los hijos en momentos críticos; trastornos de conducta (repetición de grado, fugas, violencia infantil) no atendidos; transiciones conflictivas (familias ensambladas); y anomia familiar, que culmina en el niño en la calle o en situaciones de abuso.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (familia en riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las edades de riesgo en las adicciones?",
+        "verso": "La primera experimentación de los ya adictos comienza a los 13 y 14 años; la edad promedio de la primera consulta es entre los 18 y los 22 años. El adolescente tarda entre 5 y 8 años en acudir a la consulta; a menor edad en la iniciación del consumo, más rápida es la inclusión en la existencia crónica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (edades de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las situaciones de riesgo en la adolescencia?",
+        "verso": "a) El esquema corporal: cambios psicológicos y hormonales que llevan a reacciones depresivas y/o hiperactivas con trastornos del carácter y del humor. b) El tiempo libre: asociado a aburrimiento, tedio y confusión, con importancia del grupo de amigos. c) La sexualidad: embarazo precoz, enfermedades venéreas, contagio de HIV y promoción de la promiscuidad. d) El contacto con el mundo de los valores y una filosofía de vida: la escuela como eje fundamental. La familia es la protagonista esencial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (situaciones de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Qué funciones definen a una familia productora de salud según Theodore Lidz?",
+        "verso": "a) Funciones parentales de nutrición: nutrición emocional (aportes de Spitz, Bowlby y Winnicott sobre las carencias afectivas). b) Organización de la dinámica familiar: coalición parental fuerte, límites entre generaciones y adhesión de los padres a sus roles ligados al sexo. c) Sistema de roles que transmite los valores prescriptivos y los prohibidos. d) Transmisión de las técnicas instrumentales de la cultura.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (familia productora de salud)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la familia funcional?",
+        "verso": "Las fronteras generacionales son definidas y la organización jerárquica clara; los conflictos estimulan el desarrollo sin la búsqueda de un chivo emisario; hay capacidad de cambio durante el ciclo vital; y promueve un sistema de valores que permite al niño discriminar la realidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (familia funcional)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la marginopatía?",
+        "verso": "Es un concepto interdisciplinario que en psiquiatría denuncia los trastornos de conducta y personalidades antisociales (DSM IV); en psicopatología, los trastornos evolutivos antisociales con toxicodependencias; en sociología, la desorganización social ligada a la destrucción ecológica urbana y la anomia (Durkheim) con aumento de ideas suicidas en jóvenes; en la escuela sistémica, las familias explosivas; y desde el punto de vista psicológico evolutivo, un mundo conformado desde la carencia afectiva y ética.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (marginopatía)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los aspectos diagnósticos de las adicciones?",
+        "verso": "1) Nivel adictivo y drogas utilizadas; 2) diagnóstico psiquiátrico; 3) diagnóstico clínico-neurológico; 4) evaluación psicodiagnóstica individual; 5) evaluación de la estructura y dinámica familiar; 6) trasfondo social y cultural (lugar y grupo de origen, amigos, ocupaciones, nivel de instrucción, grado de conciencia de enfermedad), con el informe de Asistencia Social como fundamental.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (diagnóstico)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los problemas psicosociales y ambientales a considerar?",
+        "verso": "Los relativos al grupo primario de apoyo (pérdidas, separación, abuso, abandono, sobreprotección), al ambiente social (apoyo inadecuado, discriminación, vivir solo), a la enseñanza (analfabetismo, problemas académicos), laborales (desempleo, trabajo estresante), de vivienda, económicos (pobreza extrema), de acceso a los servicios de salud, de interacción con el sistema legal o el crimen, y otros (desastres, guerra, conflictos con cuidadores).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (problemas psicosociales)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se define la prevención de las patologías sociales?",
+        "verso": "Como un proceso activo de implementación de acciones y programas tendientes a modificar y mejorar la formación integral y la calidad de vida de las personas, en una acción anticipadora para evitar riesgos y/o reducir la frecuencia de las llamadas 'enfermedades sociales'.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Aspectos psicosociales del consumo (prevención)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Salud Mental — Evaluación psiquiátrica en el trauma y uso de drogas",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "Evaluación integrada del paciente con trauma, historia clínica psiquiátrica, aspectos médico-legales, Pharmakon, ley 23.737 y reducción de daños",
+    "tags": [
+      "injuria-up6",
+      "salud-mental",
+      "trauma",
+      "politraumatismo",
+      "evaluacion-psiquiatrica",
+      "reduccion-de-danos",
+      "ley-23737",
+      "derechos",
+      "pharmakon"
+    ],
+    "ordem": 8,
+    "cards": [
+      {
+        "frente": "¿Qué integra la evaluación inicial del paciente con trauma?",
+        "verso": "La valoración del estado de conciencia (Escala de Glasgow), el examen físico neurológico, la evaluación psiquiátrica preliminar y el screening toxicológico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Integración de la Evaluación Psiquiátrica en el Paciente con Trauma"
+        ]
+      },
+      {
+        "frente": "¿Qué elementos debe incorporar la historia clínica psiquiátrica en el contexto de trauma?",
+        "verso": "Antecedentes de consumo de sustancias, historia psiquiátrica previa, contexto social y familiar y factores de vulnerabilidad psicosocial.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Integración de la Evaluación Psiquiátrica en el Paciente con Trauma (historia clínica)"
+        ]
+      },
+      {
+        "frente": "¿Qué incluye la intervención inmediata en el paciente con trauma e intoxicación?",
+        "verso": "Estabilización física, manejo de la intoxicación aguda, prevención de complicaciones psiquiátricas e intervención en crisis cuando sea necesario.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Integración de la Evaluación Psiquiátrica en el Paciente con Trauma (intervención)"
+        ]
+      },
+      {
+        "frente": "¿Qué considera la planificación del tratamiento a largo plazo?",
+        "verso": "Rehabilitación física, tratamiento de adicciones cuando corresponda, apoyo psicosocial y prevención de recaídas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Integración de la Evaluación Psiquiátrica en el Paciente con Trauma (largo plazo)"
+        ]
+      },
+      {
+        "frente": "¿Qué aspectos médico-legales deben documentarse en el paciente con trauma?",
+        "verso": "Estado de conciencia al ingreso, niveles de alcoholemia, capacidad de toma de decisiones y consentimientos informados. En el plano forense: cadena de custodia en muestras toxicológicas, registro detallado de lesiones y documentación de aspectos psiquiátricos relevantes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Integración de la Evaluación Psiquiátrica en el Paciente con Trauma (médico-legal)"
+        ]
+      },
+      {
+        "frente": "¿Qué significa el concepto griego 'Pharmakon' aplicado a las drogas?",
+        "verso": "Explica que las drogas en sí mismas no son ni buenas ni malas: remedio y veneno a la vez. Según las dosis y las modalidades de consumo devendrá lo primero (medicamentos) o lo segundo (drogas). Es el sujeto el que hace a la droga, y no a la inversa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (Inchaurraga, Pharmakon)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el origen etimológico del término 'adicto'?",
+        "verso": "Del latín 'addictum', participio del verbo addico (adjudicar, designar, ofrendar): en la República Romana designaba al hombre que para saldar una deuda se convertía en esclavo por carecer de otros bienes. Hoy, en los bordes de la modernidad, asistimos a la nueva subjetividad del consumidor, un ser definido por su consumo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (etimología)"
+        ]
+      },
+      {
+        "frente": "¿Qué plantea el discurso del consumo sobre el malestar en la cultura?",
+        "verso": "La paradoja del nuevo malestar en la cultura es la creencia de que toda angustia o sufrimiento puede ser resuelto con objetos: el sufrimiento debe resolverse con psicofármacos, el dolor físico y el existencial con medicamentos. El adicto se presenta como caricatura de esta ficción.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (consumo y cultura)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece la ley 23.737 sobre drogas?",
+        "verso": "Penaliza la tenencia de drogas para consumo personal (artículo 14) y la impartición pública de instrucciones acerca de la producción, fabricación, elaboración o uso de estupefacientes (artículo 28). Se plantea que los usuarios de drogas no son delincuentes y que el uso de drogas debe entenderse como un problema subjetivo, social y de salud.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (ley 23.737)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 19 de la Constitución Nacional Argentina?",
+        "verso": "Las acciones privadas de los hombres que de ningún modo ofendan al orden y a la moral pública ni perjudiquen a un tercero, están solo reservadas a Dios y exentas de la autoridad de los magistrados. Ningún habitante será obligado a hacer lo que no manda la ley ni privado de lo que ella no prohíbe.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (Constitución Nacional, art. 19)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la reducción de daños?",
+        "verso": "Una política pública en relación a la salud y lo social, relativamente nueva, que tiene por objetivo reducir los daños relacionados con las drogas, no focalizándose en el consumo en sí mismo ni en la abstinencia. Incluye programas de cambio de jeringas, sustitución opiácea, acceso a información clara y verídica, y acceso al sistema de salud; reconoce que los consumidores de drogas son ciudadanos con derechos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (reducción de daños)"
+        ]
+      },
+      {
+        "frente": "¿Qué plantea la Declaración de Medellín sobre las políticas de drogas?",
+        "verso": "Inspirada en la Resolución de Frankfurt, señala que las políticas que han buscado solucionar el problema por medio de la represión y la moralidad, obligando a la abstinencia total y convirtiéndola en condición indispensable para obtener ayuda, han limitado la posibilidad de ofrecer alternativas a los consumidores crónicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (Declaración de Medellín)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona el VIH/SIDA con el uso de drogas?",
+        "verso": "El SIDA se transmite no por las drogas sino por el uso compartido de equipos de inyección infectados; las políticas contra la transmisión del SIDA no deben ser interferidas por las políticas de reducción del uso de drogas (OMS 1986). La educación debe informar sobre evitar compartir equipos, desinfección, riesgos de las combinatorias de sustancias y 'formas seguras de inyección'.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Salud Mental: Usos de drogas y nuevas respuestas (VIH)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Semiología — Anamnesis aplicada al reconocimiento de las adicciones",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "semiologia",
+    "descricao": "Habilidades del médico en APS, criterios de abuso y dependencia, clasificación de sustancias, efectos según tipo, tests de orina y screening",
+    "tags": [
+      "injuria-up6",
+      "semiologia",
+      "anamnesis",
+      "adicciones",
+      "screening",
+      "drogas",
+      "dependencia",
+      "abuso",
+      "tests-urinarios"
+    ],
+    "ordem": 9,
+    "cards": [
+      {
+        "frente": "¿Qué habilidades debe desarrollar el médico de atención primaria mediante la anamnesis para las adicciones?",
+        "verso": "Identificar (screening) al adicto y establecer la frecuencia y cantidad de sustancia que consume; conocer el tipo de sustancia (legal o ilegal); e intervenir clínicamente (prevención 1ª, 2ª o 3ª).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios de adicción a las drogas (debe cumplir al menos tres)?",
+        "verso": "1) Consumir grandes cantidades o durante largos períodos; 2) persistente deseo o intentos fracasados de controlar la ingesta; 3) mucho tiempo perdido en conseguir la sustancia, tomarla o recuperarse; 4) frecuentes intoxicaciones o abstinencia en momentos de obligaciones o peligro; 5) abandonar o disminuir actividades sociales, ocupacionales o recreativas; 6) uso continuado pese a conocer los problemas; 7) marcada tolerancia; 8) síntomas de abstinencia al discontinuar; 9) la sustancia controla o evita la abstinencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (criterios de adicción)"
+        ]
+      },
+      {
+        "frente": "¿Cómo diferencia el DSM el abuso de la dependencia de sustancias?",
+        "verso": "Abuso: cumplir al menos un criterio en 12 meses (uso continuado a pesar del daño, uso recurrente en situaciones de riesgo físico, problemas legales reiterados, problemas sociales reiterados) y no depender de la sustancia. Dependencia: cumplir al menos tres criterios en 12 meses (tolerancia o abandono, adicción excesiva, frecuentes intoxicaciones o abstinencia, mucho tiempo perdido, abandono de actividades, dependencia a pesar de conocer los problemas).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (abuso vs dependencia)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las sustancias según su accesibilidad?",
+        "verso": "Legales: sociales (cafeína, alcohol, nicotina, inhalantes como gasoil y pintura), de farmacia (supresores del apetito, jarabe para la tos con codeína, analgésicos). Ilegales: marihuana (Cannabis sativa), Mandrax (metaqualona), LSD, PCP, heroína, cocaína (crack) y opio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (clasificación)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las sustancias según la injuria que producen en el SNC?",
+        "verso": "Estimulantes: cafeína, nicotina, cocaína (crack), supresores del apetito, éxtasis (XTC), ice (metanfetamina). Depresores: alcohol, morfina/heroína, opio, codeína, inhalantes, Mandrax, barbitúricos, tranquilizantes/benzodiacepinas, analgésicos no opiáceos. Alucinógenas: LSD, PCP, marihuana (dagga).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (clasificación por SNC)"
+        ]
+      },
+      {
+        "frente": "¿Qué efectos adversos tienen la cocaína y el crack en usadores 'pesados'?",
+        "verso": "Cocaína: complicaciones cardiovasculares, arritmias, infarto de miocardio, hemorragia cerebral, convulsiones y enfermedades respiratorias. Crack: altamente adictivo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (cocaína)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos de la marihuana y su potencial valor terapéutico?",
+        "verso": "El efecto más común al ser fumada es la euforia, la disminución de la función motora y la desorientación témporoespacial; el uso crónico se asocia a enfermedades respiratorias. La disminución de la ansiedad y la sedación serían los determinantes de su potencial valor terapéutico, referido a pacientes terminales o con HIV (dolor, náuseas y debilitamiento), aunque aún deben realizarse más ensayos clínicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (marihuana)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las drogas según su precio?",
+        "verso": "Baratas: inhalantes. Moderadas: dagga (marihuana). Caras: heroína. Muy caras: cocaína.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (precio)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las limitaciones de los tests urinarios para drogas?",
+        "verso": "Son sensibles y específicos para el usuario reciente, pero no logran distinguir a los usadores ocasionales de los abusadores o dependientes en usadores 'pesados' que lo hacen en forma rutinaria. No pueden efectuarse sin consentimiento informado (violan autonomía y confidencialidad); el valor predictivo disminuye en poblaciones de baja prevalencia; y los pacientes pueden ser discriminados si no se asegura la confidencialidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (tests de orina)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la conducta frente al screening de drogas?",
+        "verso": "No hay suficiente evidencia científica para realizar o recomendar de rutina un screening de abuso de drogas. Se incluyen preguntas sobre el uso o abuso de drogas al construir la historia clínica de niños, adolescentes o adultos jóvenes, y se aconseja a toda mujer embarazada por el potencial efecto sobre el feto y la transmisión por leche materna.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (screening)"
+        ]
+      },
+      {
+        "frente": "¿Qué cuidados se indican a los usadores de drogas endovenosas?",
+        "verso": "Deben ser testeados periódicamente para la detección de infecciones por HIV y hepatitis B, y aconsejados con medidas para disminuir riesgos: usar jeringas nuevas para cada aplicación, cambiar de aguja, no compartir equipos, preparar la droga con agua estéril, limpiar la zona de aplicación con alcohol y usar dispositivos de seguridad para descartar las agujas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (drogas EV)"
+        ]
+      },
+      {
+        "frente": "¿Cómo debe ser la relación médico-paciente ante el consumo de drogas?",
+        "verso": "Basada en la confianza: discutir el uso de drogas, no juzgar y respetar los conceptos del paciente y su confidencialidad. Los pacientes identificados como adictos deben ser informados de los riesgos y aconsejados para disminuir o abandonar, confeccionando un plan de tratamiento según sus necesidades.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis aplicada al reconocimiento de las adicciones (relación médico-paciente)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Semiología — Historia clínica del politraumatizado y estado de conciencia",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "semiologia",
+    "descricao": "Historia clínica del paciente traumatizado, etiología de los trastornos de conciencia, escala de Glasgow, anamnesis, mareos y vértigos, examen neurológico",
+    "tags": [
+      "injuria-up6",
+      "semiologia",
+      "politraumatismo",
+      "conciencia",
+      "escala-de-glasgow",
+      "coma",
+      "examen-neurologico",
+      "traumatismo-craneoencefalico"
+    ],
+    "ordem": 10,
+    "cards": [
+      {
+        "frente": "¿Qué variantes se tienen en cuenta en la historia clínica del paciente traumatizado?",
+        "verso": "Las variantes propias de la emergencia: el mecanismo y la cinemática del trauma, la hora y el lugar del hecho, la presencia de intoxicación (alcohol, drogas), el estado de conciencia, los signos vitales, la evaluación de la vía aérea, y la secuencia de medidas diagnósticas y terapéuticas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Historia clínica del paciente traumatizado"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las etiologías de los trastornos de conciencia?",
+        "verso": "Estructurales (traumatismo craneoencefálico, accidente cerebrovascular, tumores, epilepsia) y metabólicas o tóxicas (hipoxia, hipoglucemia, insuficiencia hepática o renal, intoxicaciones por alcohol y drogas, infecciones). La semiología debe distinguir el coma por causa estructural del de causa metabólica-tóxica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Etiología de los trastornos de conciencia"
+        ]
+      },
+      {
+        "frente": "¿Qué es la escala de coma de Glasgow y cómo se interpreta?",
+        "verso": "Evalúa tres parámetros: apertura ocular (1-4), respuesta verbal (1-5) y respuesta motora (1-6), sumando un puntaje de 3 a 15. Un puntaje menor o igual a 8 indica coma y, en el traumatizado, es indicación de intubación y manejo avanzado de la vía aérea; el puntaje bajo se asocia a mayor gravedad y peor pronóstico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Escala de Glasgow"
+        ]
+      },
+      {
+        "frente": "¿Qué datos se recogen en la anamnesis del paciente con trastorno de conciencia?",
+        "verso": "El comienzo (súbito o progresivo), la presencia de testigos, antecedentes de traumatismo, consumo de alcohol o drogas, medicación, convulsiones, enfermedades previas (diabetes, cardiopatía, epilepsia) y la evolución del cuadro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Anamnesis (trastornos de conciencia)"
+        ]
+      },
+      {
+        "frente": "¿Qué comprende el examen del estado de conciencia y qué es la fascie?",
+        "verso": "El nivel de conciencia (obnubilación, estupor, coma) y su contenido (orientación, lenguaje, memoria). La fascie es la expresión de la cara que puede orientar el diagnóstico (fascie alcohólica, parkinsoniana, mixta, comatosa). También se evalúan la marcha, los mareos y los vértigos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Estado de conciencia, fascie y marcha"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre mareo y vértigo?",
+        "verso": "El mareo es una sensación inespecífica de inestabilidad, vacío o aturdimiento. El vértigo es una sensación ilusoria de rotación del cuerpo o del ambiente, de origen vestibular; se clasifica en periférico (laberinto y nervio vestibular) y central (tronco y cerebelo).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Mareos y vértigos"
+        ]
+      },
+      {
+        "frente": "¿Qué es el politraumatismo?",
+        "verso": "Es la presencia de lesiones traumáticas graves en dos o más órganos o sistemas, o múltiples lesiones de gravedad que comprometen la vida. Los accidentes de tránsito son la primera causa de mortalidad en adolescentes y adultos jóvenes, y el politraumatizado requiere evaluación ABCDE y estudio por imágenes según el mecanismo del trauma.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Politraumatismo"
+        ]
+      },
+      {
+        "frente": "¿Qué comprende el examen físico neurológico en el traumatizado?",
+        "verso": "Evaluación del estado de conciencia (Glasgow), pupilas (tamaño, simetría, reactividad), pares craneales, motilidad y tono, sensibilidad, reflejos osteotendinosos y cutáneos, coordinación y signos meníngeos, buscando focalización neurológica que oriente a lesión estructural.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Semiología: Examen físico neurológico"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Diagnóstico por Imágenes — Radioprotección",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "diagnostico-por-imagenes",
+    "descricao": "Ecuación riesgo-beneficio, postulados de radioprotección, ALARA, efectos estocásticos y no estocásticos, unidades, zonas y dosis máximas permisibles",
+    "tags": [
+      "injuria-up6",
+      "diagnostico-por-imagenes",
+      "radioproteccion",
+      "alara",
+      "sievert",
+      "gray",
+      "radiacion",
+      "zonas",
+      "dosis"
+    ],
+    "ordem": 11,
+    "cards": [
+      {
+        "frente": "¿Por qué la utilización médica de radiaciones ionizantes debe encararse como una ecuación riesgo-beneficio?",
+        "verso": "Porque su empleo no es de ninguna manera inocuo: al conocerse sus acciones sobre el material biológico y el organismo humano se creó la necesidad de subespecialidades como la RADIOBIOLOGÍA y la RADIOPROTECCIÓN, cuya finalidad es preservar a las personas expuestas profesionalmente, a los pacientes y al público en general.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (riesgo-beneficio)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tres postulados básicos de radioprotección?",
+        "verso": "1) Justificación: analizar la posibilidad de recurrir a métodos alternativos igualmente válidos antes de usar radiaciones. 2) Optimización: adoptar las medidas para impedir y/o minimizar el efecto deletéreo (diafragmado del haz, protección gonadal, intensificador de imágenes, radioisótopos de período más corto). 3) Limitación de la dosis: la magnitud del riesgo es directamente proporcional a la dosis absorbida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (postulados)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el criterio ALARA?",
+        "verso": "As Low As Reasonably Achievable: reducir las exposiciones al máximo razonablemente lograble, minimizando las dosis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (ALARA)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre efectos estocásticos y no estocásticos de la radiación?",
+        "verso": "Estocásticos: regidos por las leyes de probabilidad y azar; posibilidad de causar daños con dosis bajas sin umbral mínimo (valores alrededor de 0,05 Gy o menos). No estocásticos (deterministas): dosis determinadas a partir de las cuales los efectos son esperables con seguridad, con umbral mínimo: 2 Gy en cristalino produce catarata, 3 Gy en ovarios menopausia en mujeres mayores de 40 años, 4,5 Gy de irradiación corporal total destruye la médula ósea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (estocásticos vs no estocásticos)"
+        ]
+      },
+      {
+        "frente": "¿Qué unidades se utilizan en radioprotección?",
+        "verso": "Gray (Gy) = joule/kg: unidad de dosis absorbida. Sievert (Sv) = joule/kg: dosis equivalente efectiva, ponderando magnitud, tipo y energía de la radiación y radiosensibilidad relativa de los órganos. Antes se usaba el rad: 1 rad = 0,01 Gy.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (unidades)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las zonas de radioprotección y sus características?",
+        "verso": "Zona de vigilancia: dosis puede superar 1 mSv/año; se limita la permanencia. Zona controlada: dosis efectiva puede superar 6 mSv/año; el personal es 'profesionalmente expuesto' (salas de rayos, medicina nuclear, bunker de Co 60); dosimetría personal obligatoria. Zona restringida: dosis superiores a 3 mSv/hora; prohibición absoluta de acceso, solo el paciente en tratamiento (bunker de bomba de Co 60, acelerador lineal, braquiterapia de alta tasa).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (zonas)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las dosis máximas permisibles?",
+        "verso": "Personas expuestas profesionalmente: 20 milisievert/año. Público en general: 1 mSv/año (veinte veces menor).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (dosis máximas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la ley del cuadrado de la distancia?",
+        "verso": "La intensidad de un haz de radiación decae en proporción inversa al cuadrado de la distancia: si se duplica la distancia, la intensidad cae a la cuarta parte; si se triplica, a un noveno. Es la más barata y sencilla medida de radioprotección.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (distancia)"
+        ]
+      },
+      {
+        "frente": "¿Qué se tiene en cuenta para el blindaje?",
+        "verso": "El tipo de radiación, su energía e intensidad. Las radiaciones corpusculares pueden blindarse absolutamente; las fotónicas solo atenuarse. Los rayos alfa se detienen fácilmente por su carga y masa; los beta (electrones) requieren material de doble composición (bajo número atómico y luego alto número atómico para la radiación de frenamiento o bremsstrahlung); los fotónicos (x, gamma) requieren alto número atómico y/o importante espesor (hormigón).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (blindaje)"
+        ]
+      },
+      {
+        "frente": "¿Qué medidas de radioprotección se aplican respecto al paciente en radiodiagnóstico?",
+        "verso": "Calidad del rayo (kV y filtración), distancia foco-paciente y paciente-detector, tamaño del campo (diafragmar), sensibilidad del dispositivo detector (preferir tecnología digital), blindaje acorde al equipamiento, minimizar los tiempos de exposición en radioscopía y protección gonadal (más sencilla en varones).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (radiodiagnóstico, paciente)"
+        ]
+      },
+      {
+        "frente": "¿Qué medidas de radioprotección se aplican respecto al personal?",
+        "verso": "Recinto con blindaje y dimensiones adecuadas; delantal y guantes plomados (equivalencia 0,25-0,35 mm de Pb), particularmente en radioscopía, angiografía y radiología intervencionista; gafas plomadas y oscuras para la práctica radioscópica; y protección cervical para preservar la tiroides. Todos los recaudos están dirigidos contra la radiación secundaria; en ningún caso está permitida la exposición al haz primario.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (personal)"
+        ]
+      },
+      {
+        "frente": "¿Qué premisas rigen la radioterapia y la braquiterapia?",
+        "verso": "En terapia radiante la premisa es lograr una alta dosis tumoricida (variable entre 30 y 80 Gy) preservando al máximo las estructuras y órganos sanos (técnicas tridimensionales conformadas e intensidad modulada), con equipos en 'bunker' de gruesas paredes de hormigón. En medicina nuclear se prefiere el MIBI Tc99m sobre el Talio 201 para estudios cardiológicos y radioisótopos de período más corto (yodo 123, PSD 13 horas, reservando el yodo 131 para radioiodoterapia).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (terapia y medicina nuclear)"
+        ]
+      },
+      {
+        "frente": "¿Qué cuidados exige el 'cuarto caliente' de medicina nuclear?",
+        "verso": "Prohibido comer, beber, fumar o pipetear con la boca, para evitar la incorporación de sustancias radiactivas (irradiación interna); uso de guantes, escudo protector y blindajes acordes; prevención de contaminaciones accidentales; paredes y piso lisos y lavables sin junturas; desagües sin sifón; y permanencia mínima.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Diagnóstico por Imágenes: Radioprotección (cuarto caliente)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Traumatología — Fracturas óseas",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "traumatologia",
+    "descricao": "Definición y clasificación de las fracturas: etiológica, patogénica, por mecanismo, patrón radiográfico y examen clínico",
+    "tags": [
+      "injuria-up6",
+      "traumatologia",
+      "fracturas",
+      "hueso",
+      "tallo-verde",
+      "conminuta",
+      "espiroidea",
+      "politrauma",
+      "ortopedia"
+    ],
+    "ordem": 12,
+    "cards": [
+      {
+        "frente": "¿Qué es una fractura?",
+        "verso": "Una solución de continuidad de un hueso.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (definición)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las fracturas según su causa (etiología)?",
+        "verso": "1) Traumáticas: por violencia externa o interna bien determinada (traumatismo directo sobre la tibia). 2) Espontáneas: cuando el traumatismo es tan leve que parece producida por un esfuerzo normal (anciana con osteoporosis que pisa cargando el peso). 3) Patológicas: sobre un hueso debilitado por un padecimiento previo (neoplasia). 4) Por stress: por sobrecarga o fatiga (atletas sobreentrenados, soldados por marcha forzada).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (clasificación etiológica)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre fracturas por mecanismo directo e indirecto?",
+        "verso": "Directo: se producen en el nivel donde actuó la violencia. Indirecto: se producen a distancia de la zona donde actuó la violencia (fractura de codo por caída sobre la mano) o por contracción muscular (arrancamiento).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (mecanismo directo/indirecto)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las fracturas según el mecanismo productor?",
+        "verso": "Por flexión: con tercer fragmento cuneiforme o con extremo fijo (oblicuas). Por rotación: espiroideas (causa indirecta, ejemplo fractura de tibia por esquí). Por cizallamiento (de tijera): dos fuerzas opuestas cercanas que no se encuentran, producen fracturas transversales. Por compresión sobre el eje (directo o indirecto): fracturas conminutas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (mecanismos)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las fracturas según su localización y qué son las estables e inestables?",
+        "verso": "Por localización: diafisarias, metafisarias y epifisarias. Las diafisarias se clasifican en estables (no tienen tendencia a desplazarse dentro del yeso una vez reducidas: transversales y poco oblicuas) e inestables (pueden ocasionar perforación de la piel por una punta ósea, transformando una fractura cerrada en expuesta y complicando la lesión con infección).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (localización y estabilidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué fracturas son completas e incompletas?",
+        "verso": "Completas: el hueso afectado en todo su diámetro queda dividido en 2 o más fragmentos. Incompletas: entre ellas las fracturas en tallo verde de los niños, en las que el estuche perióstico no se rompe (el periostio no se ve en la RX); puede existir una fisura muy leve o un arrugamiento de la cortical ósea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (extensión)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las fracturas según el examen clínico?",
+        "verso": "1) Asociada a la tríada de urgencia + shock + hemorragia. 2) Fractura con complicación vascular + hemorragia + isquemia. 3) Fractura con complicación medular. 4) Fractura con luxación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (clasificación clínica)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la importancia clínica de distinguir fracturas estables e inestables en la diafisaria?",
+        "verso": "Las estables (transversales, poco oblicuas) no tienden a desplazarse dentro del yeso una vez reducidas. Las inestables pueden ocasionar la perforación de la piel por una punta ósea, transformando una fractura cerrada en expuesta, complicando la lesión con el riesgo de infección.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (importancia de la estabilidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la fractura en tallo verde y por qué se produce en niños?",
+        "verso": "Es una fractura incompleta característica de los niños, que deben su nombre a que su estuche perióstico no se rompe: el periostio no se ve en la RX y puede existir una fisura muy leve o un arrugamiento de la cortical ósea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — Traumatología: Fracturas óseas (tallo verde)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP6 — Microbiología — Injurias biológicas en accidentes",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "microbiologia",
+    "descricao": "Cocos Gram positivos (Staphylococcus), bacterias anaerobias, micosis superficiales y oportunistas, Herpesviridae, bacilos no fermentadores y bacilos Gram positivos aerobios",
+    "tags": [
+      "injuria-up6",
+      "microbiologia",
+      "staphylococcus",
+      "anaerobios",
+      "clostridium",
+      "herpes",
+      "pseudomonas",
+      "candida",
+      "listeria",
+      "infeccion"
+    ],
+    "ordem": 13,
+    "cards": [
+      {
+        "frente": "¿Qué injurias biológicas se estudian como productoras y/o consecuencia de un accidente?",
+        "verso": "Las infecciones que complican las heridas y lesiones de los accidentados: cocos Gram positivos (Staphylococcus), bacterias anaerobias (Clostridium, Bacteroides), micosis superficiales y oportunistas, virus de la familia Herpesviridae, bacilos Gram negativos no fermentadores (Pseudomonas, Acinetobacter) y bacilos Gram positivos aerobios (Listeria, Corynebacterium, Bacillus).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (injurias biológicas en accidentes)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el Staphylococcus aureus?",
+        "verso": "Coco Gram positivo, agrupado en racimos, coagulasa positiva. Factores de virulencia: cápsula, proteína A (anti-fagocítica), enzimas (coagulasa, catalasa, hialuronidasa, lipasas) y toxinas (hemolisinas, leucocidina, toxinas exfoliativas y enterotoxinas). Produce forúnculos, abscesos, infecciones de heridas, osteomielitis, endocarditis, neumonía, síndrome de shock tóxico e intoxicación alimentaria. El SARM (meticilino-resistente) es un problema nosocomial y comunitario.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (Staphylococcus aureus)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tienen S. epidermidis, S. lugdunensis y S. saprophyticus?",
+        "verso": "S. epidermidis: coagulasa negativa, integrante de la microbiota de la piel, principal causa de infecciones asociadas a catéteres, prótesis y dispositivos. S. lugdunensis: coagulasa negativa pero inusualmente virulento, causa endocarditis e infecciones de piel. S. saprophyticus: coagulasa negativa, causa infecciones urinarias en mujeres jóvenes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (estafilococos coagulasa negativos)"
+        ]
+      },
+      {
+        "frente": "¿Qué características generales tienen las bacterias anaerobias?",
+        "verso": "Son microorganismos que no pueden crecer en presencia de oxígeno (o solo en bajas concentraciones). En la UP6 se estudian los géneros Clostridium, grupo Bacteroides, Peptococcus, Lactobacillus, Fusobacterium, Porphyromonas, Veillonella, Prevotella, Bifidobacterium, Mobiluncus y Propionibacterium. Producen infecciones polimicrobianas de heridas, abscesos, infecciones intraabdominales y ginecológicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (bacterias anaerobias)"
+        ]
+      },
+      {
+        "frente": "¿Qué patologías producen los Clostridium?",
+        "verso": "Son bacilos Gram positivos esporulados, anaerobios: C. tetani (tétanos), C. botulinum (botulismo), C. perfringens (gangrena gaseosa, intoxicación alimentaria, celulitis crepitante) y C. difficile (colitis pseudomembranosa asociada a antibióticos). Son relevantes en la contaminación de heridas en accidentes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (Clostridium)"
+        ]
+      },
+      {
+        "frente": "¿Qué micosis superficiales se estudian en la UP6?",
+        "verso": "Las producidas por Malassezia spp. (pitiriasis versicolor, foliculitis) y los dermatofitos (tiñas: tinea capitis, corporis, pedis) que afectan queratina de piel, pelo y uñas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (micosis superficiales)"
+        ]
+      },
+      {
+        "frente": "¿Qué micosis oportunistas se estudian?",
+        "verso": "Candida spp. (candidiasis mucocutánea y sistémica), Aspergillus (aspergilosis invasiva en inmunodeprimidos), Mucor (mucormicosis, frecuente en diabéticos), Hyphomycetes (Acremonium, Fusarium), Pheohyphomycetes y Saccharomyces.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (micosis oportunistas)"
+        ]
+      },
+      {
+        "frente": "¿Qué virus de la familia Herpesviridae se estudian y qué producen?",
+        "verso": "Herpes Simplex I-II (herpes orofacial y genital), Varicela-Zoster (varicela y herpes zóster), Citomegalovirus (mononucleosis, infección congénita, retinitis en inmunodeprimidos), Epstein-Barr (mononucleosis infecciosa, asociado a linfoma de Burkitt y carcinoma nasofaríngeo) y Herpes VI, VII y VIII (HHV-8 asociado al sarcoma de Kaposi).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (Herpesviridae)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tienen los bacilos Gram negativos no fermentadores de glucosa?",
+        "verso": "Pseudomonas aeruginosa: bacilo aerobio estricto, pigmentado (piocianina), oportunista, causa infecciones en heridas y quemados, neumonía nosocomial, infecciones urinarias y sepsis, multirresistente. Acinetobacter baumannii: nosocomial, multirresistente, infecciones asociadas a ventilación y UCI. Stenotrophomonas maltophilia y Burkholderia cepacia: oportunistas (B. cepacia en fibrosis quística). Aggregatibacter actinomycetemcomitans: periodontal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (bacilos no fermentadores)"
+        ]
+      },
+      {
+        "frente": "¿Qué bacilos Gram positivos aerobios se estudian?",
+        "verso": "Bacillus cereus (intoxicación alimentaria y oportunista), Bacillus anthracis (ántrax/carbunco), Lactobacillus sp (microbiota, raramente patógeno), Listeria monocytogenes (meningitis y sepsis en RN, inmunodeprimidos y embarazo, transmisión alimentaria) y Corynebacterium sp, incluido Corynebacterium diphtheriae (difteria, por su toxina).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (bacilos Gram positivos aerobios)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se realiza la toma de muestra y el diagnóstico microbiológico de las infecciones de heridas?",
+        "verso": "La muestra se toma por aspiración del absceso o con hisopo de la lesión profunda evitando la contaminación de la piel, trasladándose en medios adecuados (anaerobios: transporte especial sin oxígeno). Se realiza tinción de Gram, cultivo aerobio y anaerobio, y antibiograma; los métodos moleculares (PCR) complementan el diagnóstico de virus (Herpesviridae) y bacterias difíciles.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP6 — UP6, Microbiología (toma de muestra y diagnóstico)"
+        ]
+      }
+    ]
+  }
+]

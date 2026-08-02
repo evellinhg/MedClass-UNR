@@ -1,0 +1,1114 @@
+[
+  {
+    "titulo": "Injuria UP8 — Microbiología — Infecciones urinarias",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "microbiologia",
+    "descricao": "Definición, clasificación altas y bajas, vías de infección, agentes, factores predisponentes, diagnóstico (orina completa, Gram, urocultivo, recuento, antibiograma) y toma de muestra",
+    "tags": [
+      "injuria-up8",
+      "microbiologia",
+      "infeccion-urinaria",
+      "cistitis",
+      "pielonefritis",
+      "urocultivo",
+      "orina-completa",
+      "antibiograma",
+      "bacteriuria",
+      "escherichia-coli"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es una infección urinaria (IU)?",
+        "verso": "Es la presencia de microorganismos (habitualmente bacterias) en la orina, con o sin invasión tisular, acompañada de signos y síntomas clínicos. Se define también por la bacteriuria significativa en el urocultivo asociada a la clínica del paciente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (definición)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las infecciones urinarias y qué cuadro clínico presentan?",
+        "verso": "En altas y bajas. Bajas: afectan vejiga y uretra (cistitis: disuria, polaquiuria, tenesmo vesical, dolor suprapúbico, orina turbia, ocasional hematuria; uretritis). Altas: afectan riñón y pelvis renal (pielonefritis aguda: fiebre, escalofríos, dolor lumbar, compromiso del estado general, a menudo asociada a síntomas bajos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (clasificación y cuadro clínico)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las vías de infección de las IU y cuál es la más frecuente?",
+        "verso": "Vía ascendente (la más frecuente): los gérmenes del periné y la región perianal colonizan la uretra y ascienden a vejiga y riñón. Vía descendente (hematógena o linfática): los microorganismos llegan al riñón desde la sangre (diseminación hematógena, menos frecuente).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (vías de infección)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los agentes productores de IU y los más frecuentes?",
+        "verso": "Gram negativos enterobacterias: Escherichia coli (el más frecuente, aproximadamente el 80%), Proteus mirabilis, Klebsiella pneumoniae, Enterobacter, Morganella. Gram positivos: Staphylococcus saprophyticus (mujeres jóvenes), Enterococcus faecalis, Staphylococcus aureus. Casos especiales: Pseudomonas aeruginosa y especies de Candida en pacientes sondados, inmunodeprimidos o tratados con antibióticos; Mycoplasma y Ureaplasma en uretritis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (agentes)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores predisponentes del huésped para las IU?",
+        "verso": "Sexo femenino (uretra corta y próxima al periné), actividad sexual, embarazo (estasis e hidronefrosis fisiológica), obstrucción del flujo urinario (hiperplasia prostática, litiasis, estenosis), vejiga neurogénica, reflujo vesicoureteral, sondas y catéteres, diabetes mellitus (glucosuria), alteraciones anatómicas, edad avanzada e inmunosupresión.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (factores del huésped)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores de virulencia del microorganismo en la patogenia de las IU?",
+        "verso": "Fimbrias o adhesinas (permiten la adherencia a los urotelios), flagelos y motilidad, ureasa (Proteus: alcaliniza la orina y favorece la litiasis por estruvita), producción de toxinas y la capacidad de evasión inmune. En E. coli la adhesión por fimbrias P y la capacidad de producir aerobactina favorecen la pielonefritis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (factores del microorganismo)"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene la anamnesis y qué estudios se solicitan en la IU?",
+        "verso": "La anamnesis orienta la localización (alta o baja) mediante los síntomas y los antecedentes (diabetes, embarazo, sondas, litiasis). Estudios: orina completa (leucocituria/piuria, bacteriuria, nitritos, hematuria, proteínas) y urocultivo con recuento de colonias; el Gram del sedimento permite un diagnóstico rápido.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (diagnóstico)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se realiza la toma de muestra de orina en los diferentes casos?",
+        "verso": "Micción media (chorro medio) tras aseo de los genitales: método de elección en la mayoría de los pacientes. En lactantes y niños pequeños: bolsa colectora o punción suprapúbica. En pacientes sondados: aspiración por el puerto de la sonda (no del bolsillo de drenaje). La muestra debe procesarse en el menor tiempo posible o refrigerarse.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (toma de muestra)"
+        ]
+      },
+      {
+        "frente": "¿Qué se solicita en la confección de la solicitud de urocultivo?",
+        "verso": "Datos del paciente (edad, sexo), el motivo de la solicitud, el tipo de muestra y forma de obtención, y las particularidades clínicas observadas por el médico (síntomas, diabetes, embarazo, sonda, antibióticos previos) para que sean tenidas en cuenta al interpretar el cultivo y el recuento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (solicitud de urocultivo)"
+        ]
+      },
+      {
+        "frente": "¿Qué valor tiene el recuento de colonias en el urocultivo?",
+        "verso": "Se considera bacteriuria significativa un recuento mayor o igual a 100.000 UFC/ml de un germen único en micción media; en pacientes sintomáticos pueden ser significativos recuentos menores (10^3 a 10^4 UFC/ml). El recuento permite tomar una actitud activa: diferenciar infección verdadera de contaminación o colonización.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (recuento de colonias)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el antibiograma y qué método se usa generalmente?",
+        "verso": "Es la prueba de susceptibilidad del microorganismo a los antimicrobianos. El método más usado es la difusión en disco (Kirby-Bauer) en agar, categorizando cada antibiótico en sensible, intermedio o resistente según el halo de inhibición; también existen métodos de dilución para determinar CIM. Orienta el tratamiento específico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (antibiograma)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tiempo aproximado del informe microbiológico y cómo se interpreta?",
+        "verso": "El Gram orienta en minutos-horas; el cultivo e identificación demoran 18-48 horas; el antibiograma agrega 18-24 horas (informe final aproximado a las 48-72 horas). El informe indica germen identificado, recuento de colonias y categorías de sensibilidad; se interpreta correlacionando con la clínica y la calidad de la muestra.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Microbiología: Infecciones urinarias (interpretación del informe)"
+        ]
+      },
+      {
+        "frente": "Caso Matilde: mujer de 64 años, diabética, con ardor al orinar que se intensifica, mayor frecuencia miccional y dolor y sangre al orinar durante un viaje. ¿Qué cuadro plantea y qué factores predisponentes presenta?",
+        "verso": "Plantea una cistitis aguda (infección urinaria baja): disuria, polaquiuria y hematuria. Factores predisponentes: sexo femenino, edad avanzada y diabetes mellitus (glucosuria favorece el crecimiento bacteriano). El urocultivo con Gram y orina completa confirman el diagnóstico etiológico y orientan el antibiótico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Microbiología: situación problemática (caso Matilde)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Farmacología — Farmacocinética clínica",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "farmacologia",
+    "descricao": "Dosis de carga y de mantenimiento, parámetros farmacocinéticos, cinética lineal y no lineal, plateau, concentraciones pico y valle, área bajo la curva, modelos y ajuste de dosis en insuficiencia renal",
+    "tags": [
+      "injuria-up8",
+      "farmacologia",
+      "farmacocinetica",
+      "dosis-de-carga",
+      "dosis-de-mantenimiento",
+      "vida-media",
+      "volumen-de-distribucion",
+      "biodisponibilidad",
+      "insuficiencia-renal",
+      "cinetica-lineal"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Por qué es importante la farmacocinética clínica para el médico de atención primaria?",
+        "verso": "Porque permite calcular las dosis correctas (de carga y de mantenimiento), predecir las concentraciones alcanzadas en el organismo, interpretar la respuesta y la toxicidad de los fármacos, y ajustar las dosis en situaciones especiales como la insuficiencia renal, la edad avanzada o la polifarmacia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (importancia en APS)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la dosis de carga y cuándo se utiliza?",
+        "verso": "Es la dosis inicial (mayor o repetida) necesaria para alcanzar rápidamente la concentración terapéutica en estado de equilibrio (plateau). Se calcula: Dosis de carga = (Concentración deseada × Volumen de distribución) / Biodisponibilidad. Es útil cuando el fármaco tiene vida media larga y se necesita efecto inmediato (por ejemplo, digoxina, amiodarona).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (dosis de carga)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la dosis de mantenimiento?",
+        "verso": "Es la dosis que se administra en forma repetida para mantener la concentración plasmática en estado de equilibrio, compensando la eliminación del fármaco. Se calcula: Dosis de mantenimiento = (Aclaramiento × Concentración deseada) / Biodisponibilidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (dosis de mantenimiento)"
+        ]
+      },
+      {
+        "frente": "¿Qué son la biodisponibilidad, la vida media y el volumen de distribución?",
+        "verso": "Biodisponibilidad: fracción de la dosis administrada que llega inalterada a la circulación sistémica (depende de la absorción y del metabolismo de primer paso). Vida media (t1/2): tiempo necesario para que la concentración plasmática se reduzca a la mitad. Volumen de distribución (Vd): volumen aparente en el que se distribuiría el fármaco para explicar su concentración plasmática.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (parámetros)"
+        ]
+      },
+      {
+        "frente": "¿Qué son la constante de eliminación y el porcentaje de unión a proteínas?",
+        "verso": "La constante de eliminación (Ke) es la fracción del fármaco que se elimina por unidad de tiempo (Ke = 0,693/t1/2). El porcentaje unido a proteínas plasmáticas (albúmina, alfa-1-glicoproteína ácida) corresponde a la fracción inactiva; solo la fracción libre ejerce efecto farmacológico, es metabolizada y eliminada, por lo que es clave en hipoalbuminemia e insuficiencia renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (Ke y unión a proteínas)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencias hay entre cinética lineal y no lineal?",
+        "verso": "Cinética lineal (de primer orden): la eliminación es proporcional a la concentración, la vida media es constante e independiente de la dosis; la concentración en el equilibrio es proporcional a la dosis. Cinética no lineal (de orden cero o saturable): los mecanismos de eliminación se saturan (metabolización enzimática, transporte activo); la vida media aumenta con la dosis y pequeños incrementos pueden causar grandes aumentos de concentración y toxicidad (por ejemplo, fenitoína, etanol, salicilatos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (cinética lineal y no lineal)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el plateau o meseta y cómo se alcanza?",
+        "verso": "Es el estado de equilibrio (steady state) en el que la velocidad de administración iguala la velocidad de eliminación y la concentración plasmática se mantiene estable en el tiempo. Se alcanza aproximadamente a las 4-5 vidas medias del fármaco, independientemente de la dosis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (plateau)"
+        ]
+      },
+      {
+        "frente": "¿Qué son la concentración pico, la concentración valle y el área bajo la curva?",
+        "verso": "Concentración pico: máxima concentración plasmática tras una dosis (relacionada con el efecto máximo y la toxicidad). Concentración valle: concentración mínima antes de la siguiente dosis (relacionada con la eficacia mantenida). Área bajo la curva (AUC): refleja la exposición total al fármaco en un intervalo y se relaciona con la biodisponibilidad y la dosis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (pico, valle, AUC)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los modelos farmacocinéticos unicompartimental y multicompartimental?",
+        "verso": "Unicompartimental: el fármaco se distribuye instantáneamente y el organismo se comporta como un solo compartimiento, con una sola fase de eliminación. Multicompartimental: la distribución se describe con dos o más compartimientos (central y periféricos), con fases de distribución rápida y eliminación más lenta (por ejemplo, los anestésicos y la digoxina).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (modelos)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se calcula la dosis en la insuficiencia renal?",
+        "verso": "Se reduce la dosis de mantenimiento o se prolonga el intervalo entre dosis según el aclaramiento de creatinina y la fracción del fármaco eliminada por vía renal, manteniendo la concentración terapéutica: Dosis ajustada = Dosis normal × (Aclaramiento del paciente / Aclaramiento normal). Los fármacos de eliminación renal (aminoglucósidos, digoxina, litio) requieren monitoreo de concentraciones; la dosis de carga habitualmente no se modifica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Farmacología: Farmacocinética II (dosis en insuficiencia renal)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Anatomía Patológica — Diabetes mellitus",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "anatomia-patologica",
+    "descricao": "Regulación de la glucosa por insulina, alteraciones metabólicas, patogenia de la hiperglucemia, productos de glicación avanzada (AGE), vía de los polioles, complicaciones y lesiones renales de la diabetes",
+    "tags": [
+      "injuria-up8",
+      "anatomia-patologica",
+      "diabetes",
+      "diabetes-mellitus",
+      "insulina",
+      "hiperglucemia",
+      "age",
+      "polioles",
+      "glucosuria",
+      "kimmelstiel-wilson",
+      "nefropatia-diabetica"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Cómo regula la insulina el metabolismo de los glúcidos?",
+        "verso": "La insulina facilita la captación de glucosa por los tejidos (GLUT4 en músculo y tejido adiposo), estimula la glucólisis y la glucogenogénesis y el depósito de glucógeno, e inhibe la gluconeogénesis hepática y la glucogenólisis. Promueve el estado de almacenamiento y anabólico del organismo, disminuyendo la glucemia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Pérdida de la regulación del metabolismo de la glucosa (Meletti, Márquez, Abranzón)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones metabólicas produce la hiperglucemia persistente?",
+        "verso": "Alteraciones del metabolismo de los hidratos de carbono (disminución del ingreso de glucosa a los tejidos, glucosuria cuando supera el umbral renal), de los lípidos (lipólisis aumentada, cetonemia y, en la diabetes descompensada, cetoacidosis; dislipidemia) y de las proteínas (degradación aumentada, gluconeogénesis, balance nitrogenado negativo y pérdida de peso).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (alteraciones metabólicas)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la patogenia de la hiperglucemia según la edad y el tipo de diabetes?",
+        "verso": "Diabetes tipo 1 (más frecuente en niños y jóvenes): destrucción autoinmune de las células beta del páncreas, con déficit absoluto de insulina y tendencia a la cetoacidosis. Diabetes tipo 2 (adultos y ancianos, asociada a obesidad y sedentarismo): resistencia a la insulina con déficit relativo de su secreción, hiperglucemia progresiva y menor tendencia a la cetosis. La edad de presentación condiciona la clínica y el tratamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (patogenia según edad)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los productos de glicación avanzada (AGE) y cómo se forman?",
+        "verso": "Los AGE (Advanced Glycosylation End products) son compuestos que se forman por la unión no enzimática de la glucosa con proteínas, lípidos o ácidos nucleicos (reacción de Maillard) en condiciones de hiperglucemia crónica. Se acumulan en la matriz extracelular y las membranas basales, alteran la estructura y función de los tejidos y se unen a receptores celulares (RAGE) activando inflamación y estrés oxidativo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (AGE)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la vía de los polioles y qué consecuencias tiene?",
+        "verso": "En la hiperglucemia, parte de la glucosa es convertida por la aldosa reductasa en sorbitol (y luego en fructosa por la sorbitol deshidrogenasa), proceso que consume NADPH y acumula sorbitol (osmóticamente activo) en tejidos que no requieren insulina (cristalino, nervios, riñón, endotelio). Produce daño osmótico celular, disminución del glutation reducido (más estrés oxidativo) y contribuye a la catarata, la neuropatía y el daño vascular.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (vía de los polioles)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la patogenia de las complicaciones de la hiperglucemia persistente?",
+        "verso": "Por mecanismos combinados: glicación no enzimática (AGE), vía de los polioles, estrés oxidativo, activación de la proteína quinasa C (PKC) y de la inflamación, con engrosamiento de membranas basales y lesión endotelial. Produce complicaciones microvasculares (retinopatía, nefropatía, neuropatía) y macrovasculares (aterosclerosis acelerada con cardiopatía, ACV y enfermedad arterial periférica).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (patogenia de complicaciones)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los hallazgos morfológicos de la diabetes a nivel renal?",
+        "verso": "Glomerulosclerosis diabética: engrosamiento difuso de las membranas basales, aumento de la matriz mesangial y, en su forma nodular, los nódulos de Kimmelstiel-Wilson. Además: microaneurismas glomerulares, esclerosis arteriolar (hialinosis aferente y eferente), proteinuria progresiva que conduce a síndrome nefrótico e insuficiencia renal crónica; también favorece la glomerulosclerosis y las infecciones urinarias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (lesiones renales, Robbins)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación tienen el balance hidroelectrolítico alterado y la isquemia con la diabetes?",
+        "verso": "La hiperglucemia produce diuresis osmótica (poliuria), deshidratación y alteraciones del balance hidroelectrolítico; en la cetoacidosis hay depleción de potasio. La aterosclerosis acelerada causa isquemia de los tejidos (corazón, cerebro, miembros, riñón), que se suma a los fenómenos de adaptación celular (atrofia, hipertrofia, hiperplasia) del tejido lesionado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (balance hidroelectrolítico e isquemia)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los fenómenos adaptativos y cómo se relacionan con la diabetes?",
+        "verso": "Los fenómenos adaptativos son los cambios celulares reversibles ante la injuria crónica: hipertrofia (cardíaca en la cardiopatía isquémica), hiperplasia, atrofia, metaplasia. En la diabetes, la isquemia, la hiperglucemia y la lesión vascular crónica inducen estos fenómenos en los órganos afectados (corazón, riñón, nervios).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Diabetes mellitus (fenómenos adaptativos)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los signos clínicos del paciente diabético que se correlacionan con la patología?",
+        "verso": "Poliuria, polidipsia, polifagia, pérdida de peso, astenia, visión borrosa, infecciones urinarias y cutáneas recurrentes (glucosuria), parestesias por neuropatía y signos de complicaciones vasculares; en la descompensación, deshidratación, confusión, cetoacidosis y coma.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Anatomía Patológica y Semiología: Diabetes mellitus (síntomas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Anatomía Patológica — Enfermedades renales",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "anatomia-patologica",
+    "descricao": "Uropatía obstructiva, urolitiasis, enfermedades túbulo-intersticiales y glomerulares, concepto de patogenia de la lesión glomerular e insuficiencia renal",
+    "tags": [
+      "injuria-up8",
+      "anatomia-patologica",
+      "uropatia-obstructiva",
+      "urolitiasis",
+      "litiasis",
+      "hidronefrosis",
+      "tubulo-intersticial",
+      "glomerulonefritis",
+      "insuficiencia-renal",
+      "patogenia-glomerular"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Qué es la uropatía obstructiva y cuáles son sus causas?",
+        "verso": "Es la obstrucción del flujo de la orina en algún punto del tracto urinario (intrínseca o extrínseca). Causas: litiasis, hiperplasia prostática benigna (causa frecuente en el hombre mayor), tumores de vejiga, próstata o cuello, estenosis uretral, fibrosis retroperitoneal, neoplasias pelvianas y alteraciones congénitas. Según la localización puede ser unilateral o bilateral.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Uropatía obstructiva"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las consecuencias de la uropatía obstructiva?",
+        "verso": "Retención de orina con aumento de la presión retrógrada, hidronefrosis (dilatación de pelvis y cálices renales con atrofia del parénquima), deterioro de la función renal, mayor riesgo de infección y, si es bilateral o afecta un riñón único, insuficiencia renal. La hidronefrosis puede ser asintomática hasta estadios avanzados o cursar con dolor lumbar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Uropatía obstructiva (consecuencias)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la urolitiasis y qué tipos de cálculos existen?",
+        "verso": "Es la formación de cálculos (litiasis) en el riñón o la vía urinaria. Tipos: oxalato de calcio (el más frecuente, 70-80%), estruvita o fosfato amónico-magnésico (asociada a infección por gérmenes ureasa positivos como Proteus), ácido úrico (gota, hiperuricemia, orina ácida) y cistina (defecto genético de transporte).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Urolitiasis"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores que favorecen la urolitiasis?",
+        "verso": "Alta concentración urinaria de solutos (calcio, oxalato, ácido úrico), baja diuresis (deshidratación, climas cálidos), orina ácida o alcalina según el cálculo, infecciones urinarias (estruvita), hiperparatiroidismo, hipercalciuria, obesidad, dieta y antecedentes familiares.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Urolitiasis (factores)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las complicaciones de la urolitiasis?",
+        "verso": "Cólico renal (dolor lumbar agudo por obstrucción ureteral), hematuria, obstrucción con hidronefrosis, infección urinaria asociada y deterioro de la función renal si la obstrucción es prolongada.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Urolitiasis (complicaciones)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las enfermedades túbulo-intersticiales y cuáles se estudian?",
+        "verso": "Son las enfermedades que afectan primariamente los túbulos y el intersticio renal: la pielonefritis aguda (infección bacteriana ascendente), la pielonefritis crónica, la nefritis intersticial (fármacos, toxinas, autoinmunidad) y la necrosis tubular aguda. Cursan con alteración de la concentración urinaria, poliuria, nicturia y, en los cuadros crónicos, insuficiencia renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Enfermedades túbulo-intersticiales"
+        ]
+      },
+      {
+        "frente": "¿Qué son las enfermedades glomerulares y cuál es el concepto de la patogenia de la lesión glomerular?",
+        "verso": "Son las enfermedades que afectan primariamente el glomérulo. Concepto de patogenia: la lesión glomerular es en su mayoría de origen inmunomediado (inmunocomplejos circulantes que se depositan, anticuerpos antimembrana basal, o daño mediado por complemento y citocinas), con participación de los podocitos, la membrana basal y el mesangio. Se expresan clínicamente como síndrome nefrótico, síndrome nefrítico, hematuria, proteinuria e insuficiencia renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Enfermedades glomerulares (patogenia)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre el síndrome nefrótico y el nefrítico?",
+        "verso": "Síndrome nefrótico: proteinuria masiva (más de 3,5 g/día), hipoalbuminemia, edema, hiperlipidemia y lipiduria (lesión de la barrera de filtración; por ejemplo, enfermedad de cambios mínimos, glomeruloesclerosis). Síndrome nefrítico: hematuria, oliguria, hipertensión y edema moderado con proteinuria (inflamación glomerular; por ejemplo, glomerulonefritis postestreptocócica, IgA).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Enfermedades glomerulares (síndromes)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la insuficiencia renal aguda y crónica?",
+        "verso": "Insuficiencia renal aguda (IRA): pérdida rápida de la función renal (horas-días), prerenal (hipoperfusión), renal (necrosis tubular aguda, glomerulonefritis) o postrenal (obstrucción), con oliguria y elevación de urea y creatinina. Insuficiencia renal crónica (IRC): pérdida progresiva e irreversible de nefronas (diabetes, HTA, glomerulopatías, uropatía obstructiva), con síndrome urémico, anemia (menos eritropoyetina) y alteraciones óseas, que conduce a diálisis o trasplante.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — Anatomía Patológica: Insuficiencia renal aguda y crónica"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la enfermedad renal con la HTA y la diabetes en la UP8?",
+        "verso": "La HTA y la diabetes son las causas más frecuentes de enfermedad renal crónica: la nefroangioesclerosis por HTA y la nefropatía diabética (glomerulosclerosis, Kimmelstiel-Wilson) destruyen progresivamente las nefronas; a su vez, la enfermedad renal agrava la HTA y produce retención de líquidos, configurando un círculo vicioso de injuria renal crónica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Anatomía Patológica: HTA, diabetes y daño renal"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Fisiología — Función renal",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "fisiologia",
+    "descricao": "Filtración, reabsorción, secreción y excreción, funciones endocrinas (vitamina D, eritropoyetina), control de la micción y del equilibrio hidroelectrolítico",
+    "tags": [
+      "injuria-up8",
+      "fisiologia",
+      "rinon",
+      "filtracion-glomerular",
+      "reabsorcion",
+      "secrecion",
+      "eritropoyetina",
+      "vitamina-d",
+      "miccion",
+      "tfg",
+      "equilibrio-hidroelectrolitico"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las funciones principales del riñón?",
+        "verso": "Excretora: filtra, reabsorbe, secreta y excreta agua y solutos (desechos metabólicos como urea, creatinina, ácido úrico; regula el equilibrio hidroelectrolítico y ácido-base). Endocrina: produce eritropoyetina, renina y calcitriol (hidroxilación de vitamina D). Además regula la presión arterial y el volumen del líquido extracelular.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Función renal (Ganong; Cingolani)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la filtración glomerular y cómo se regula?",
+        "verso": "Es el paso de agua y solutos de pequeño tamaño desde la sangre al espacio de Bowman a través del glomérulo, impulsado por la presión hidrostática. La tasa de filtración glomerular (TFG, normal ~125 ml/min) se autorregula por el tono de las arteriolas aferente y eferente, la presión de perfusión y mecanismos como la retroalimentación túbulo-glomerular; la TFG disminuye en la enfermedad renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Filtración glomerular"
+        ]
+      },
+      {
+        "frente": "¿Qué es la reabsorción y la secreción tubular?",
+        "verso": "Reabsorción: paso de agua y solutos desde el filtrado glomerular de vuelta a la sangre a lo largo del túbulo (glucosa, aminoácidos, Na+, Cl-, agua, bicarbonato); es selectiva y regulada por hormonas. Secreción: paso de sustancias desde la sangre al túbulo (potasio, hidrógeno, ácido úrico, creatinina, algunos fármacos), que complementa la excreción.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Reabsorción y secreción"
+        ]
+      },
+      {
+        "frente": "¿Qué es la excreción urinaria y cómo se determina?",
+        "verso": "Es la cantidad de una sustancia eliminada en la orina, resultante de la filtración, menos la reabsorción, más la secreción. Su medida permite calcular el aclaramiento renal (por ejemplo, aclaramiento de creatinina para estimar la TFG).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Excreción"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el rol del riñón en la hidroxilación de la vitamina D?",
+        "verso": "El riñón hidroxila el 25-hidroxicolecalciferol en su posición 1 (enzima 1-alfa-hidroxilasa) para producir calcitriol (1,25-dihidroxicolecalciferol), la forma activa de la vitamina D, que regula la absorción intestinal de calcio y fósforo y la mineralización ósea. En la insuficiencia renal crónica, la menor producción de calcitriol contribuye a la osteodistrofia renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Vitamina D"
+        ]
+      },
+      {
+        "frente": "¿Qué es la eritropoyetina y cómo se regula?",
+        "verso": "Es una hormona glicoproteica producida principalmente por las células intersticiales peritubulares del riñón en respuesta a la hipoxia, que estimula la eritropoyesis en la médula ósea. En la insuficiencia renal crónica, su déficit produce anemia renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Eritropoyetina"
+        ]
+      },
+      {
+        "frente": "¿Cómo se realiza el control neurológico de la vesical y la micción?",
+        "verso": "La vejiga (detrusor, músculo liso) y los esfínteres uretrales interno (liso, simpático) y externo (estriado, somático) están inervados por el sistema autónomo (parasimpático S2-S4: contracción del detrusor; simpático T11-L2: relajación y continencia) y el pudendo. La micción es un reflejo de saciedad mediado por el tronco con control cortical voluntario del esfínter externo; su alteración produce incontinencia o retención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Control neurológico vesical"
+        ]
+      },
+      {
+        "frente": "¿Cómo regula el riñón el equilibrio hidroelectrolítico y ácido-base?",
+        "verso": "Regula el agua mediante la hormona antidiurética (ADH/vasopresina) que controla la reabsorción en el túbulo colector, y el sodio mediante la aldosterona y el sistema renina-angiotensina; secreta H+ y reabsorbe bicarbonato para mantener el pH; y ajusta la excreción de potasio, calcio, fósforo y magnesio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Equilibrio hidroelectrolítico y ácido-base"
+        ]
+      },
+      {
+        "frente": "¿Qué funciones del riñón se alteran en la insuficiencia renal?",
+        "verso": "Disminuye la TFG con acumulación de urea y creatinina (azotemia/uremia), se altera el balance de agua, sodio y potasio (hiperkalemia, edema, acidosis), cae la producción de eritropoyetina (anemia), disminuye el calcitriol (alteraciones óseas) y aumenta la renina con HTA.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Fisiología: Insuficiencia renal (alteraciones funcionales)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Semiología — Signos y síntomas nefrourológicos",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "semiologia",
+    "descricao": "Edema, dolor lumbar y cólico renal, disuria y trastornos de la micción, alteraciones del volumen y ritmo urinario, de la orina, hematuria, proteinuria e infección urinaria alta y baja",
+    "tags": [
+      "injuria-up8",
+      "semiologia",
+      "edema",
+      "colico-renal",
+      "disuria",
+      "polaquiuria",
+      "hematuria",
+      "proteinuria",
+      "oliguria",
+      "poliuria",
+      "nicturia",
+      "infeccion-urinaria"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Qué es la disuria y qué otros trastornos de la micción se describen?",
+        "verso": "Disuria: dolor o ardor al orinar, típico de la cistitis e infecciones urinarias. Trastornos de la micción: polaquiuria (aumento de la frecuencia miccional con escaso volumen), pujo (sensación de esfuerzo o pujo doloroso para orinar) y tenesmo vesical (sensación persistente de necesidad de orinar con micción escasa, típica de la cistitis).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Síntomas urinarios (Muniagurria)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el cólico renal y cómo se manifiesta?",
+        "verso": "Es el dolor lumbar agudo, intenso, de inicio brusco, cólico (ondulante), que se irradia al flanco, a la fosa ilíaca y a los genitales, secundario a la obstrucción ureteral por un cálculo (urolitiasis). Se acompaña de hematuria, náuseas y vómitos, y de signos como puño-percusión renal positiva.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Cólico renal (Muniagurria)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el edema y qué valor tiene como signo nefrológico?",
+        "verso": "El edema es el aumento del líquido intersticial. En la enfermedad renal puede ser por retención de sodio y agua (glomerulonefritis, insuficiencia renal) o por pérdida proteica (síndrome nefrótico: hipoalbuminemia). Es periorbitario (sobre todo al despertar), en miembros inferiores y progresivamente generalizado (anasarca); se evalúa con la maniobra de Godet.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Edema (recuperar UP2)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones del volumen urinario se describen?",
+        "verso": "Oliguria: disminución del volumen urinario (menos de 400 ml/día), propia de la insuficiencia renal aguda y la deshidratación. Poliuria: aumento del volumen urinario (más de 2.500-3.000 ml/día), en diabetes mellitus y diabetes insípida, insuficiencia renal crónica y el uso de diuréticos. Anuria: ausencia de diuresis (menos de 100 ml/día), grave, en obstrucción o insuficiencia renal terminal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Alteraciones del volumen urinario"
+        ]
+      },
+      {
+        "frente": "¿Qué son la nicturia y la nocturia?",
+        "verso": "Nicturia: emisión de orina predominante o exclusiva durante la noche (aumento del volumen nocturno), frecuente en insuficiencia renal crónica, prostatismo y diabetes. Nocturia: necesidad de levantarse a orinar durante la noche; suelen usarse como sinónimos, aunque nicturia enfatiza el mayor volumen nocturno.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Nicturia y nocturia"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones de las características de la orina se valoran?",
+        "verso": "Color: orina roja/hemática (hematuria), oscura 'cola de whisky' (bilirrubina), turbia (piuria, fosfatos). Olor: fétido (infección), acetona (cetonuria). Aspecto: turbio (piuria, bacteriuria), espumoso (proteinuria). También se valora el pH y la densidad. Estos datos orientan al diagnóstico junto con la tira reactiva.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Características de la orina"
+        ]
+      },
+      {
+        "frente": "¿Qué es la hematuria y cómo se clasifica?",
+        "verso": "Es la presencia de sangre en la orina. Macroscópica (visible a simple vista) o microscópica (solo en el sedimento, más de 3-5 glóbulos rojos por campo). Origen: glomerular (hematuria dismórfica, con cilindros hemáticos) o no glomerular/vía urinaria (cálculos, tumores, infección, traumatismo). Es un signo de alarma que siempre debe estudiarse.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Hematuria"
+        ]
+      },
+      {
+        "frente": "¿Qué es la proteinuria y qué significados tiene?",
+        "verso": "Es la presencia de proteínas en la orina. Puede ser fisiológica (ortostática, ejercicio) o patológica: en la enfermedad glomerular (síndrome nefrótico, proteinuria masiva), en la diabetes (microalbuminuria como marcador de nefropatía incipiente), en la HTA y en la infección urinaria. Se cuantifica en orina de 24 horas o por cociente proteína/creatinina.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Proteinuria"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los signos y síntomas de la infección urinaria alta y baja?",
+        "verso": "Baja (cistitis/uretritis): disuria, polaquiuria, tenesmo, dolor suprapúbico, hematuria y orina turbia. Alta (pielonefritis): fiebre, escalofríos, dolor lumbar espontáneo y a la puño-percusión, compromiso del estado general, a menudo acompañando los síntomas bajos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Signos y síntomas de la IU alta y baja"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores predisponentes de infección urinaria que se exploran en la anamnesis?",
+        "verso": "Sexo femenino, edad, embarazo, actividad sexual, diabetes mellitus, obstrucción (hiperplasia prostática, litiasis, tumores), sondas y catéteres, reflujo vesicoureteral, vejiga neurogénica, inmunosupresión y antecedentes de infecciones urinarias previas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Factores predisponentes de la IU"
+        ]
+      },
+      {
+        "frente": "¿Qué datos aporta el examen físico en el paciente con patología renal?",
+        "verso": "Palpación y percusión de las fosas lumbares (puño-percusión renal en la pielonefritis), palpación de vejiga (globo vesical en la retención), búsqueda de edema, medición de la presión arterial (HTA secundaria renal), examen de genitales y, en el varón, tacto rectal para evaluar la próstata.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Examen físico nefrourológico"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Semiología — Diabetes",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "semiologia",
+    "descricao": "Concepto general de diabetes, signos y síntomas, exámenes complementarios, factores de riesgo y diagnóstico diferencial",
+    "tags": [
+      "injuria-up8",
+      "semiologia",
+      "diabetes",
+      "diabetes-mellitus",
+      "poliuria",
+      "polidipsia",
+      "polifagia",
+      "glucemia",
+      "hemoglobina-glicosilada",
+      "diagnostico-diferencial"
+    ],
+    "ordem": 7,
+    "cards": [
+      {
+        "frente": "¿Qué es la diabetes mellitus y cuál es su concepto general?",
+        "verso": "Es un grupo de enfermedades metabólicas crónicas caracterizadas por hiperglucemia persistente por defectos en la secreción de insulina, en su acción, o ambas, que con el tiempo produce daño de diversos órganos (riñón, ojos, nervios, corazón y vasos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (concepto)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los signos y síntomas del paciente diabético?",
+        "verso": "Poliuria (aumento del volumen urinario por diuresis osmótica), nocturia, polidipsia (sed excesiva), polifagia (hambre aumentada), pérdida de peso, astenia, visión borrosa, infecciones urinarias y cutáneas recurrentes, parestesias o neuropatía y cicatrización lenta de heridas. En la descompensación: deshidratación, confusión y coma.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (síntomas)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica la diabetes y qué exámenes complementarios se solicitan?",
+        "verso": "Glucemia en ayunas mayor o igual a 126 mg/dl en dos ocasiones; glucemia casual mayor o igual a 200 mg/dl con síntomas; o glucemia a las 2 horas mayor o igual a 200 mg/dl en la prueba de tolerancia oral a la glucosa. Complementarios: hemoglobina glicosilada (HbA1c, refleja el control de los últimos 2-3 meses), glucemia postprandial, y monitoreo de complicaciones (creatinina, microalbuminuria, fondo de ojo, ECG).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (exámenes complementarios)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores de riesgo de diabetes tipo 2?",
+        "verso": "Edad mayor de 45 años, obesidad y sobrepeso, sedentarismo, antecedentes familiares de diabetes, antecedentes de diabetes gestacional o hijos con macrosomía, HTA, dislipidemia, síndrome de ovario poliquístico y etnias de alto riesgo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (factores de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los diagnósticos diferenciales de la poliuria y la polidipsia?",
+        "verso": "Diabetes mellitus (glucosuria con diuresis osmótica), diabetes insípida central y nefrogénica (poliuria diluida sin glucosuria), insuficiencia renal crónica, hipercalcemia, hipokalemia, fármacos (diuréticos, litio) y polidipsia primaria/psicógena.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (diagnóstico diferencial)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diabetes tipo 1 y qué es la tipo 2?",
+        "verso": "Tipo 1: déficit absoluto de insulina por destrucción autoinmune de las células beta, de comienzo agudo en niños y jóvenes, requiere insulina, tiende a la cetoacidosis. Tipo 2: resistencia a la insulina con déficit relativo de secreción, comienzo gradual en adultos con obesidad y sedentarismo, se asocia a síndrome metabólico, puede tratarse con dieta, hipoglucemiantes orales e insulina.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología y Anatomía Patológica: Diabetes tipo 1 y 2"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las complicaciones de la diabetes que se evalúan en la semiología?",
+        "verso": "Microvasculares: retinopatía (ceguera), nefropatía (proteinuria, insuficiencia renal) y neuropatía (parestesias, hipoestesia, disautonomía, pie diabético). Macrovasculares: enfermedad coronaria, ACV y enfermedad arterial periférica (claudicación). La diabetes también predispone a infecciones (urinarias, cutáneas).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: Diabetes (complicaciones)"
+        ]
+      },
+      {
+        "frente": "Caso Matilde: mujer de 64 años, diabética, con ardor al orinar, aumento de la frecuencia y dolor y sangre al orinar. ¿Qué síntomas de su diabetes y qué signos nefrourológicos están presentes?",
+        "verso": "Presenta disuria, polaquiuria y hematuria (trastornos de la micción y de la orina de la semiología nefrourológica) que sugieren cistitis aguda; como diabética debe evaluarse el control glucémico (glucosuria favorece la infección) y pesquisar complicaciones como la nefropatía con orina completa, microalbuminuria y creatininemia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Semiología: situación problemática (caso Matilde)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Diagnóstico por Imágenes — Aparato urinario",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "diagnostico-por-imagenes",
+    "descricao": "Directa renovesical, urograma excretor, ecografía, urotomografía sin contraste y unidades Hounsfield, métodos contrastados, hidronefrosis, pielonefritis, quistes, neoplasias, trauma renal y anomalías en niños",
+    "tags": [
+      "injuria-up8",
+      "diagnostico-por-imagenes",
+      "ecografia-renal",
+      "urograma-excretor",
+      "tomografia",
+      "litiasis",
+      "hidronefrosis",
+      "pielonefritis",
+      "hounsfield",
+      "cums",
+      "quiste-renal"
+    ],
+    "ordem": 8,
+    "cards": [
+      {
+        "frente": "¿Qué se evalúa en la directa de abdomen (renovesical) en la patología urinaria?",
+        "verso": "La silueta renal (tamaño, forma y posición), la presencia de calcificaciones en la zona renal y vesical (litiasis calcificadas) y la ausencia de gas intestinal superpuesto que impida la valoración; permite sospechar litiasis radiopacas (oxalato de calcio) y tamaño renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Directa renovesical"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las indicaciones del urograma excretor?",
+        "verso": "Evaluar la vía urinaria excretora (morfología y función), litiasis radiolúcidas, estenosis y obstrucciones, tumores de la vía, hematuria, y valorar las anomalías de rotación y ectopias renales. Hoy es complementado o reemplazado por la urotomografía y la ecografía.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Urograma excretor"
+        ]
+      },
+      {
+        "frente": "¿Qué son las anomalías de rotación y las ectopias renales?",
+        "verso": "Anomalías de rotación: el riñón no rota adecuadamente durante su ascenso embrionario y la pelvis renal queda orientada de manera anómala. Ectopias: el riñón se localiza fuera de su posición normal (pelvis renal, ectopia cruzada); se asocian a mayor riesgo de obstrucción, litiasis e infección.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Anomalías de rotación y ectopias"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estudia la litiasis renal y qué es la unidad Hounsfield?",
+        "verso": "Con ecografía (cálculos hiperecogénicos con sombra acústica, especialmente en el riñón) y urotomografía sin contraste (método de elección para el cólico renal, detecta cálculos radiolúcidos). La unidad Hounsfield (UH) es la escala de atenuación de la TC (agua 0, aire -1000, hueso +1000); el valor UH del cálculo orienta su composición (urato menos denso que el oxalato de calcio) y la elección del tratamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Litiasis renal"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los métodos contrastados de la vía excretora y sus usos?",
+        "verso": "Pielografía descendente (contraste IV que opacifica pelvis y cálices), pielografía ascendente (contraste por catéter ureteral retrógrado en obstrucciones), cistografía miccional (vejiga y reflujo vesicoureteral, con micción) y uretrocistografía retrógrada (uretrografía en varones, estenosis, trauma).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Métodos contrastados"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica la hidronefrosis por imágenes?",
+        "verso": "Ecografía: dilatación de pelvis y cálices renales con atrofia cortical progresiva. Urograma excretor: opacificación retrasada y dilatación calicial ('cálices en copa dilatada'). TC: dilatación de la vía excretora y determinación del nivel y causa de la obstrucción (litiasis, tumor, compresión).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Hidronefrosis"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los hallazgos de la pielonefritis aguda en la ecografía y la TC?",
+        "verso": "Ecografía: riñón aumentado de tamaño, con parénquima heterogéneo e hipoecogénico. TC con contraste: áreas focales de nefrograma en 'cuña' hipodensas (zonas de inflamación), signos de compromiso perirrenal y, en la uropionefrosis, dilatación de la vía con contenido purulento (ecos internos en la pelvis renal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Pielonefritis aguda"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los hallazgos incidentales más frecuentes en la ecografía renal?",
+        "verso": "Quistes renales simples (lesiones anecoicas, redondeadas, con refuerzo posterior, sin pared gruesa ni contenido), quistes hiperdensos (más atenuados, a valorar en TC) y neoplasias renales o de la vía excretora (masas sólidas que requieren caracterización con TC o RM con contraste).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Hallazgos incidentales"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las indicaciones de la tomografía y la resonancia en el aparato urinario?",
+        "verso": "TC: caracterización de masas renales (determinar si son quísticas o sólidas, evaluación de extensión y estadiaje tumoral), urolitiasis, trauma renal, pielonefritis y abscesos. RM: alternativa cuando el contraste yodado está contraindicado, caracterización de quistes complejos (Bosniak), masas renales y vía excretora, y estudio de la vena renal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: TC y RM"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estudia el trauma renal por imágenes?",
+        "verso": "Según la gravedad: la ecografía FAST orienta en el politraumatizado; la TC con contraste es el método de elección para evaluar lesiones renales (laceraciones, hematomas, extravasación, compromiso vascular y del pedículo) y decidir el manejo quirúrgico o conservador.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Trauma renal"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estudian las anomalías del uréter distal, la vejiga y la uretra en niños?",
+        "verso": "Ecografía (evaluación inicial de hidronefrosis y del sistema urinario), cistografía miccional seriada (CUMS, para el reflujo vesicoureteral), y en las malformaciones: mega uréter (dilatación congénita del uréter) y uréter ectópico (desemboca fuera de la vejiga).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Diagnóstico por Imágenes: Anomalías en niños"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Paidopsiquiatría — Trastornos mentales de base orgánica, ansiedad y angustia",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "paidopsiquiatria",
+    "descricao": "Trastornos mentales de base orgánica, degenerativos (Alzheimer, Parkinson), secundarios a diabetes e isquemias, ansiedad vs angustia, crisis de angustia, pródromos cognitivos y semiología en salud mental",
+    "tags": [
+      "injuria-up8",
+      "paidopsiquiatria",
+      "trastorno-mental-organico",
+      "alzheimer",
+      "parkinson",
+      "ansiedad",
+      "angustia",
+      "crisis-de-angustia",
+      "demencia",
+      "pródromos-cognitivos",
+      "sifilis",
+      "vih"
+    ],
+    "ordem": 9,
+    "cards": [
+      {
+        "frente": "¿Qué son los trastornos mentales de base orgánica?",
+        "verso": "Son los trastornos mentales causados por una enfermedad, lesión o disfunción cerebral demostrable (neurológica, metabólica, infecciosa, vascular o tóxica). Se diferencian de los trastornos 'funcionales' porque hay una causa orgánica subyacente identificable que produce deterioro cognitivo, del comportamiento o de la conciencia (por ejemplo, demencias, delirium, cuadros por diabetes e isquemias).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Trastornos mentales de base orgánica (seminario)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se manifiestan los trastornos degenerativos en el encéfalo?",
+        "verso": "Producen deterioro cognitivo y del comportamiento progresivo: en la enfermedad de Alzheimer, deterioro de la memoria reciente y funciones ejecutivas, afasia, apraxia, agnosia y cambios de conducta; en la enfermedad de Parkinson, síntomas motores (temblor, rigidez, bradicinesia) y frecuentemente depresión y deterioro cognitivo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Trastornos degenerativos (Alzheimer, Parkinson)"
+        ]
+      },
+      {
+        "frente": "¿Qué son los trastornos mentales secundarios a diabetes e isquemias en el encéfalo?",
+        "verso": "Son las alteraciones neuropsiquiátricas que complican a la diabetes (hipoglucemia e hiperglucemia, encefalopatía, neuropatía) y a la enfermedad cerebrovascular isquémica: demencia vascular por microinfartos múltiples, infartos lacunares y lesión de sustancia blanca, que cursan con deterioro cognitivo, cambios de conducta y labilidad emocional.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Secundarios a diabetes e isquemias"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones de salud mental presenta el paciente con neuropatía, dializado o trasplantado?",
+        "verso": "El paciente con enfermedad renal crónica en diálisis o trasplante presenta: reacciones de adaptación (depresión, ansiedad), impacto en la autoimagen y los roles, síntomas neuropsiquiátricos de la uremia y encefalopatía urémica, estrés por los procedimientos invasivos, problemas de adherencia y preocupaciones por la sobrevida y la calidad de vida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Paciente dializado o trasplantado"
+        ]
+      },
+      {
+        "frente": "¿Qué son la ansiedad y la angustia y qué diferencias hay entre ambas?",
+        "verso": "Angustia (del latín angustus, estrecho): emoción displacentera sin objeto preciso, que se acompaña de fenómenos corporales (opresión, ahogo, palpitaciones); es un afecto nuclear, se vincula con el miedo a la muerte o al descontrol. Ansiedad: estado de inquietud, preocupación y expectación aprensiva ante un peligro indeterminado o anticipado, con componente psíquico (preocupación, temor) y somático. En la práctica se usan como sinónimos, aunque la angustia remite al cuerpo y la ansiedad a lo psíquico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Ansiedad y angustia (Marquez)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la crisis de angustia y qué síntomas la componen?",
+        "verso": "Es la aparición súbita y aislada de miedo intenso o malestar que alcanza su pico en pocos minutos, con síntomas como palpitaciones, taquicardia, sudoración, temblor, sensación de ahogo o falta de aire, dolor u opresión torácica, náuseas, mareos, despersonalización, miedo a morir o a volverse loco y parestesias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Crisis de angustia (Kaplan & Sadock)"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene lo psíquico en el abordaje del paciente con patología orgánica?",
+        "verso": "La dimensión psíquica condiciona la adherencia al tratamiento, la evolución y el pronóstico del paciente con enfermedad orgánica; la depresión y la ansiedad no tratadas empeoran las enfermedades crónicas (diabetes, enfermedad renal, cardiovascular) y disminuyen la calidad de vida, por lo que deben explorarse sistemáticamente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Importancia de lo psíquico en el abordaje"
+        ]
+      },
+      {
+        "frente": "¿Qué son los pródromos cognitivos y qué patologías producen deterioro cognitivo secundario?",
+        "verso": "Los pródromos cognitivos son los síntomas iniciales y sutiles de deterioro de las funciones cognitivas (memoria, atención, lenguaje, funciones ejecutivas) que anteceden al cuadro pleno de demencia. Patologías con deterioro secundario: sífilis (parálisis general progresiva), HIV (demencia asociada al VIH), enfermedad de los microinfartos múltiples (demencia vascular) e IVH (infecciones/inflamaciones vasculares).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Pródromos cognitivos (Alzheimer, Parkinson, sífilis, IVH, microinfartos)"
+        ]
+      },
+      {
+        "frente": "¿Qué comprende la semiología básica en salud mental?",
+        "verso": "La exploración del estado mental: apariencia, actitud y conducta, lenguaje, afecto y ánimo, pensamiento (curso y contenido), sensopercepción (alucinaciones), cognición (orientación, memoria, atención, cálculo) y juicio; junto con la historia de vida, la evaluación del riesgo (ideación suicida) y el examen del paciente neurológico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Paidopsiquiatría: Semiología básica en salud mental"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Medicina y Sociedad — Salud del adulto mayor y prevención",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "medicina-preventiva",
+    "descricao": "Mantenimiento de la salud en los ancianos, rol del médico de APS, tipos de prevención, perfil patológico de los mayores, autonomía y dependencia, monitoreo de enfermedades crónicas",
+    "tags": [
+      "injuria-up8",
+      "medicina-preventiva",
+      "adulto-mayor",
+      "geriatria",
+      "prevencion-primaria",
+      "prevencion-secundaria",
+      "prevencion-terciaria",
+      "autonomia",
+      "dependencia",
+      "enfermedades-cronicas",
+      "aps"
+    ],
+    "ordem": 10,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los objetivos para mantener la salud en los ancianos?",
+        "verso": "Preservar la función y la autonomía, prevenir la discapacidad y las caídas, mantener la capacidad funcional (física, cognitiva y social), controlar las enfermedades crónicas, optimizar la medicación y garantizar la calidad de vida y el apoyo social.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Mantenimiento y promoción de la salud en geriatría (Hall; Ham)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la importancia del médico de APS en la atención del adulto mayor?",
+        "verso": "El médico de atención primaria es el primer contacto y el coordinador de la atención del anciano: realiza la evaluación integral (clínica, funcional, cognitiva y social), la prevención, el monitoreo de enfermedades crónicas, la promoción de hábitos saludables y la coordinación con especialistas y la red de cuidados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Médico de APS (Ham)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los tipos de prevención y qué ejemplos se aplican en el adulto mayor?",
+        "verso": "Prevención primaria: evitar la aparición de la enfermedad (vacunación antigripal y antineumocócica, alimentación, ejercicio, cesación tabáquica). Prevención secundaria: detección precoz (control de HTA, diabetes, dislipidemia, cribado de cáncer de colon, mama y próstata). Prevención terciaria: evitar complicaciones y discapacidad (control de diabetes, rehabilitación post-ACV, prevención de caídas).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Tipos de prevención"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el perfil patológico de los mayores?",
+        "verso": "Predominan las enfermedades crónicas no transmisibles: cardiovasculares (HTA, cardiopatía isquémica, insuficiencia cardíaca), diabetes, EPOC, osteoartrosis y osteoporosis, enfermedades neurodegenerativas (Alzheimer, Parkinson), enfermedad renal crónica, déficit sensoriales (visión, audición), caídas y síndromes geriátricos (inmovilidad, incontinencia, deterioro cognitivo, desnutrición).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Perfil patológico de los mayores (Fleitas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la prevención específica de las enfermedades más frecuentes en el anciano?",
+        "verso": "Son las medidas dirigidas a los problemas prevalentes: control estricto de la HTA y la diabetes para prevenir el ACV y la insuficiencia renal, vacunación (influenza, neumococo, COVID), prevención de caídas (revisión del hogar, ejercicios de equilibrio), despistaje de deterioro cognitivo, cáncer (colonoscopia, mamografía, PSA) y osteoporosis, y revisión de la polifarmacia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Prevención específica"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene la historia de vida en la evaluación del adulto mayor?",
+        "verso": "La historia de vida permite comprender las características del envejecimiento, los recursos y las redes de apoyo, las pérdidas (viudez, jubilación, amigos), la historia ocupacional y los significados que la persona da a su salud, para planificar cuidados acordes a sus valores, expectativas y preferencias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Historia de vida"
+        ]
+      },
+      {
+        "frente": "¿Qué son la autonomía y la dependencia en el anciano?",
+        "verso": "Autonomía: capacidad de la persona para decidir y gobernar su propia vida (toma de decisiones, autodeterminación). Dependencia: la necesidad de ayuda de otras personas para realizar las actividades de la vida diaria (AVD) por pérdida de la capacidad funcional. Su evaluación (índices de Katz, Barthel, Lawton) define el plan de cuidados y el nivel de soporte.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Autonomía y dependencia"
+        ]
+      },
+      {
+        "frente": "¿Qué es el monitoreo de las enfermedades crónicas y qué procesos se controlan?",
+        "verso": "Es el seguimiento periódico y planificado de las enfermedades crónicas para evaluar control, prevenir complicaciones y ajustar el tratamiento: HTA, diabetes (glucemia, HbA1c, microalbuminuria, fondo de ojo), dislipidemia, insuficiencia cardíaca y renal (creatinina, TFG), EPOC y polifarmacia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Monitoreo de enfermedades crónicas"
+        ]
+      },
+      {
+        "frente": "¿Qué son la incidencia y la prevalencia y para qué se usan en el adulto mayor?",
+        "verso": "Incidencia: número de casos nuevos de una enfermedad en un período en una población (mide el riesgo de enfermar). Prevalencia: número de casos totales (nuevos y preexistentes) en un momento dado (mide la carga de enfermedad). Se usan para dimensionar los problemas crónicos de los mayores y planificar los servicios y las medidas de prevención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Medicina y Sociedad: Incidencia y prevalencia"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Salud Mental y Medicina Preventiva — Salud integral de la mujer",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "medicina-preventiva",
+    "descricao": "Perspectiva de género en salud, salud reproductiva, salud sexual y procreación responsable, Convención CEDAW, leyes 25.673 y 11.888, y control prenatal",
+    "tags": [
+      "injuria-up8",
+      "medicina-preventiva",
+      "salud-mental",
+      "genero",
+      "salud-integral-de-la-mujer",
+      "salud-reproductiva",
+      "cedaw",
+      "ley-25673",
+      "ley-11888",
+      "control-prenatal",
+      "procreacion-responsable"
+    ],
+    "ordem": 11,
+    "cards": [
+      {
+        "frente": "¿Qué implica entender la salud desde una perspectiva de género?",
+        "verso": "Distinguir las diferencias sexuales (biológicas) de las diferencias atribuidas y esperadas de varones y mujeres que tienen origen social y cultural (roles, valores, comportamientos y jerarquías), y explicar cómo las diferencias biológicas devienen en fuentes de desigualdad en las condiciones de salud, económicas, políticas y culturales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental y Medicina Preventiva: Salud integral de la mujer (Mangupli, Gaselli, Luque)"
+        ]
+      },
+      {
+        "frente": "¿Por qué se habla de salud integral de la mujer?",
+        "verso": "Porque los problemas de salud de las mujeres adoptan formas específicas en las distintas etapas de la vida y ubicaciones sociales, y porque la realidad asimétrica entre varones y mujeres conlleva una apropiación diferente del derecho a la salud; se busca un modelo de atención integral que amplíe la autonomía y la autodeterminación de las mujeres sobre su cuerpo, su sexualidad y su vida.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (fundamentación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la salud reproductiva?",
+        "verso": "Un estado general de bienestar físico, mental y social (y no solo ausencia de enfermedad) en todo lo relacionado con el sistema reproductivo y sus funciones y procesos, con la capacidad de disfrutar de una vida sexual satisfactoria y sin riesgo, y la libertad de decidir procrear o no, cuándo y con qué frecuencia, con acceso a métodos seguros, eficaces, asequibles y aceptables.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (salud reproductiva)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece la Convención sobre la eliminación de todas las formas de discriminación contra la mujer (CEDAW), incorporada a la Constitución Nacional en 1994?",
+        "verso": "Entre otros: art. 10 inc. h) acceso al material informativo que contribuya a la salud y el bienestar de la familia; art. 12) eliminar la discriminación en la esfera de la atención médica, garantizando igualdad de acceso a los servicios incluidos los de planificación familiar; art. 16 inc. e) los mismos derechos a decidir libre y responsablemente el número de hijos y el intervalo entre nacimientos y a acceder a la información, la educación y los medios para ejercerlos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (CEDAW)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las leyes de procreación responsable en la Provincia de Santa Fe y la Nación?",
+        "verso": "Ley provincial 11.888 de Procreación Responsable, votada el 31/05/2001 en Santa Fe, y ley nacional 25.673 de Salud Sexual y Procreación Responsable, sancionada en octubre de 2002, que garantizan el acceso a la información, la educación y los métodos anticonceptivos y el derecho a la salud sexual y reproductiva.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (leyes de procreación responsable)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el programa de procreación responsable?",
+        "verso": "Es un programa de salud sexual y reproductiva que asegura el acceso gratuito a la información y a los métodos anticonceptivos, el asesoramiento, la atención del embarazo y el parto y la posibilidad de decidir libremente sobre la procreación, en el marco de los derechos garantizados por la Constitución Nacional y los tratados internacionales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (programa de procreación responsable)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el control prenatal y cuáles son sus características para ser eficaz?",
+        "verso": "Es el conjunto de actividades que se ejercen sobre la embarazada para obtener el mejor grado de salud de ella y de su hijo. Para ser eficaz debe ser: precoz (iniciarse desde el primer trimestre, para detectar embarazos de alto riesgo), periódico (frecuencia según el riesgo), completo (contenidos mínimos de fomento, protección, recuperación y rehabilitación) y extenso (solo con alto porcentaje de población controlada se reducen la morbi-mortalidad materna y perinatal).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (control prenatal; Kroeger y Luna)"
+        ]
+      },
+      {
+        "frente": "¿Qué utilidad tiene el enfoque de riesgo en el control prenatal?",
+        "verso": "Permite clasificar a las embarazadas según su riesgo (bajo o alto) y adecuar la frecuencia y el tipo de controles, priorizando la tecnología apropiada y las acciones de fomento, protección y recuperación, para prevenir la morbilidad y mortalidad materna y perinatal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud integral de la mujer (enfoque de riesgo)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP8 — Salud Mental — Salud mental en injurias del sistema urinario",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial3",
+    "disciplina_base": "salud-mental",
+    "descricao": "Reacciones de adaptación a condiciones crónicas, manifestaciones neuropsiquiátricas de la uremia, encefalopatía urémica, aspectos psicosociales del tratamiento, historia clínica psiquiátrica e intervenciones",
+    "tags": [
+      "injuria-up8",
+      "salud-mental",
+      "uremia",
+      "encefalopatia-uremica",
+      "dialisis",
+      "trasplante",
+      "adherencia",
+      "depresion",
+      "ansiedad",
+      "historia-clinica-psiquiatrica",
+      "psicofarmacos-insuficiencia-renal"
+    ],
+    "ordem": 12,
+    "cards": [
+      {
+        "frente": "¿Qué reacciones de adaptación presenta el paciente con enfermedad renal crónica?",
+        "verso": "Proceso de adaptación psicológica al diagnóstico (negación, ira, negociación, depresión, aceptación), impacto en la identidad y la autoimagen, modificaciones en los roles sociales y familiares, y despliegue de mecanismos de afrontamiento y resiliencia; puede aparecer depresión y ansiedad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Área Salud Mental: Aspectos de salud mental en injurias del sistema urinario"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las manifestaciones neuropsiquiátricas de la uremia?",
+        "verso": "El síndrome urémico afecta el sistema nervioso central: encefalopatía urémica con deterioro cognitivo, desorientación, apatía, irritabilidad, alteraciones del sueño, dificultad para concentrarse, temblor y, en estadios avanzados, confusión, convulsiones y coma; también se observan neuropatía periférica y síntomas depresivos y ansiosos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Manifestaciones neuropsiquiátricas de la uremia"
+        ]
+      },
+      {
+        "frente": "¿Qué es la encefalopatía urémica y cómo se diferencia de los síntomas psiquiátricos primarios?",
+        "verso": "Es el cuadro de disfunción cerebral aguda o subaguda causado por la acumulación de toxinas urémicas en la insuficiencia renal: alteración de la conciencia, del pensamiento y de la conducta. Se diferencia de los trastornos psiquiátricos primarios por la correlación con el deterioro de la función renal, el examen neurológico y la reversibilidad (parcial o total) con el tratamiento dialítico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Encefalopatía urémica"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los aspectos psicosociales del tratamiento renal (diálisis y trasplante)?",
+        "verso": "Adaptación a procedimientos médicos invasivos (fístulas, sesiones de diálisis), impacto en la vida laboral y social (cambios de horarios, dependencia del centro), adherencia al tratamiento (dieta, restricción de líquidos, medicación) condicionada por factores psicológicos, y el rol del apoyo familiar y social como factor protector.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Aspectos psicosociales del tratamiento"
+        ]
+      },
+      {
+        "frente": "¿Qué elementos clave incluye la historia clínica psiquiátrica en el paciente con injuria urinaria?",
+        "verso": "Antecedentes psiquiátricos personales y familiares, evaluación del estado mental actual, historia de adaptación a enfermedades previas, recursos de afrontamiento disponibles; y áreas específicas: calidad del sueño, cambios en el apetito y peso, energía y fatiga, funcionamiento cognitivo, e ideación suicida y riesgo autolítico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Historia clínica psiquiátrica"
+        ]
+      },
+      {
+        "frente": "¿Qué incluye la evaluación del entorno social del paciente renal?",
+        "verso": "Red de apoyo familiar, recursos comunitarios disponibles, situación laboral y económica y acceso a servicios de salud mental, que determinan la posibilidad de sostener el tratamiento y la evolución.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Evaluación del entorno social"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las intervenciones terapéuticas recomendadas?",
+        "verso": "Psicoeducativas (información sobre la enfermedad y su curso, manejo de expectativas, estrategias de autocuidado, promoción de la adherencia), psicoterapéuticas (terapia individual de apoyo, terapia cognitivo-conductual, intervenciones familiares, grupos de apoyo) y psicofarmacológicas (con ajuste de dosis según la función renal, monitoreo de efectos adversos e interacciones).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Intervenciones terapéuticas"
+        ]
+      },
+      {
+        "frente": "¿Qué consideraciones especiales rigen la psicofarmacología en la insuficiencia renal?",
+        "verso": "Ajustar las dosis de los psicofármacos según la función renal (aclaramiento de creatinina), preferir fármacos de menor eliminación renal o metabolismo hepático, evitar o monitorear los que se acumulan (litio, benzodiacepinas de vida media larga, algunos antidepresivos), vigilar las interacciones medicamentosas y monitorizar los efectos adversos (sodio, potasio, QT).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Psicofarmacología en insuficiencia renal"
+        ]
+      },
+      {
+        "frente": "¿Qué recomienda la guía para la evaluación inicial y el seguimiento del paciente renal?",
+        "verso": "Evaluación inicial: screening de salud mental en la primera consulta, identificación de factores de riesgo psicosocial, evaluación de recursos de afrontamiento, plan de seguimiento. Seguimiento: monitorización regular del estado mental, evaluación periódica de la adherencia, ajuste de intervenciones y coordinación con servicios de salud mental. Documentación: registro sistemático y plan de cuidados integrado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Recomendaciones para la práctica clínica"
+        ]
+      },
+      {
+        "frente": "¿Por qué es importante integrar la salud mental en la atención de las injurias urinarias?",
+        "verso": "Porque la evaluación y el manejo adecuado de los aspectos psicológicos y psiquiátricos mejoran significativamente la adherencia al tratamiento, la calidad de vida y los resultados clínicos generales de los pacientes, garantizando una atención integral.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP8 — UP8, Salud Mental: Conclusiones de la guía"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,1189 @@
+[
+  {
+    "titulo": "Injuria UP4 — Microbiología — Enterobacterias y bacilos Gram negativos curvos",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "microbiologia",
+    "descricao": "Bacilos Gram negativos fermentadores de glucosa (Enterobacterias oportunistas y patógenas) y bacilos curvos (Helicobacter, Vibrio, Campylobacter) productores de diarrea",
+    "tags": [
+      "injuria-up4",
+      "microbiologia",
+      "enterobacterias",
+      "escherichia-coli",
+      "salmonella",
+      "shigella",
+      "vibrio-cholerae",
+      "campylobacter",
+      "helicobacter-pylori"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué gérmenes se estudian como productores de diarreas en nuestro medio?",
+        "verso": "Bacterias, virus y parásitos frecuentes: bacilos Gram negativos fermentadores de glucosa (Enterobacterias), bacilos Gram negativos curvos (Helicobacter, Vibrio, Campylobacter) y protozoarios gastrointestinales (Giardia lamblia, Entamoeba histolytica, Cryptosporidium parvum, Isospora belli, Balantidium coli) y genitourinarios (Trichomonas vaginalis).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Gérmenes productores de diarreas"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las características generales de las Enterobacterias?",
+        "verso": "Son bacilos Gram negativos, no esporulados, anaerobios facultativos, que fermentan la glucosa, son oxidasa negativos y catalasa positivos. Presentan antígenos O (somático, LPS), H (flagelar) y K (capsular); viven en el intestino del hombre y animales (flora intestinal) y se transmiten por vía fecal-oral.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Enterobacterias (características generales)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las Enterobacterias oportunistas y qué géneros incluyen?",
+        "verso": "Forman parte de la microbiota normal y producen infección cuando hay alteraciones de las defensas, catéteres o disbiosis. Incluyen: Escherichia coli, Klebsiella, Enterobacter, Serratia, Proteus, Providencia y Morganella; pueden causar infecciones urinarias, intraabdominales, neumonías y sepsis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Enterobacterias oportunistas"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las Enterobacterias patógenas intestinales?",
+        "verso": "E. coli productoras de diarrea (E. coli diarreogénicas), Salmonella, Shigella y Yersinia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Enterobacterias patógenas"
+        ]
+      },
+      {
+        "frente": "¿Qué variantes de E. coli diarreogénica existen y qué cuadros producen?",
+        "verso": "ETEC (enterotoxigénica): diarrea acuosa del viajero, produce toxinas LT y ST; EPEC (enteropatógena): diarrea infantil, adherencia con aplanamiento de microvellosidades; EIEC (enteroinvasiva): disentería, invade enterocitos; EHEC/STEC (enterohemorrágica): diarrea sanguinolenta y síndrome urémico hemolítico, produce toxina Shiga (serotipo O157:H7); EAEC (enteroagregativa): diarrea persistente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: E. coli diarreogénicas"
+        ]
+      },
+      {
+        "frente": "¿Qué cuadros producen las Salmonella y cuáles son sus mecanismos?",
+        "verso": "Enterocolitis (diarrea con fiebre y dolor abdominal) por ingestión de alimentos contaminados y fiebre tifoidea (por S. typhi), cuadro sistémico con invasión de placas de Peyer, bacteriemia y fiebre prolongada. Factores de virulencia: invasión de enterocitos, supervivencia intracelular, endotoxina.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Salmonella"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la Shigella?",
+        "verso": "Bacilo Gram negativo no fermentador de lactosa, muy contagioso (requiere bajo inóculo, ~10-100 bacterias). Produce disentería bacilar: invade la mucosa del colon con destrucción de enterocitos, sangre y moco en heces, fiebre y dolor abdominal tipo cólico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Shigella"
+        ]
+      },
+      {
+        "frente": "¿Qué cuadros produce la Yersinia?",
+        "verso": "Y. enterocolitica produce enterocolitis (pseudapendicitis por adenitis mesentérica), mientras que Y. pestis produce peste (no diarrea). Se transmite por alimentos contaminados, especialmente carnes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Yersinia"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los bacilos Gram negativos curvos y qué cuadros producen?",
+        "verso": "Helicobacter pylori (gastritis, úlcera péptica, asociado a adenocarcinoma gástrico y linfoma MALT), Campylobacter jejuni (diarrea inflamatoria, frecuente en niños, asociado a síndrome de Guillain-Barré) y Vibrio cholerae (cólera) y Vibrio parahaemolyticus (diarrea por mariscos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Bacilos Gram negativos curvos"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la fisiopatogenia del cólera?",
+        "verso": "El Vibrio cholerae, bacilo curvo, se adhiere al intestino delgado sin invadirlo y secreta la toxina colérica, que actúa sobre la proteína Gs estimulando la adenilato ciclasa (ADP-ribosilación), lo que aumenta el AMPc intracelular y produce la secreción masiva de agua y electrolitos: diarrea acuosa 'en agua de arroz' que puede llevar a deshidratación grave y shock. Se previene con agua potable y saneamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Vibrio cholerae"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostican desde el laboratorio las diarreas bacterianas y cómo se toma la muestra?",
+        "verso": "Muestra: materia fecal (fresca o en medio de transporte Cary-Blair) y coprocultivo en medios selectivos (agar SS, MacConkey, XLD, TCBS para vibrio). Se identifican por sus características bioquímicas (fermentación de glucosa, lactosa), antigénicas (aglutinación con antisueros) y, cuando se necesita, por técnicas moleculares (PCR). El examen directo orienta en parásitos y leucocitos fecales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Diagnóstico de laboratorio"
+        ]
+      },
+      {
+        "frente": "¿Cómo se previenen las diarreas bacterianas?",
+        "verso": "Asegurando agua potable y saneamiento, correcta recolección de residuos, adecuada eliminación de excretas, control de alimentos, lavado de manos, lactancia materna y evitar el hacinamiento; la vacunación antitiñoidea y anticólera se reserva a situaciones específicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Prevención de diarreas"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Microbiología — Protozoarios gastrointestinales y genitourinarios",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "microbiologia",
+    "descricao": "Giardia lamblia, Entamoeba histolytica, Cryptosporidium parvum, Isospora belli, Balantidium coli y Trichomonas vaginalis: características, virulencia, fisiopatogenia, prevención y diagnóstico",
+    "tags": [
+      "injuria-up4",
+      "microbiologia",
+      "protozoarios",
+      "giardia",
+      "ameba",
+      "cryptosporidium",
+      "trichomonas",
+      "parasitos"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué protozoarios intestinales producen diarrea?",
+        "verso": "Giardia lamblia, Entamoeba histolytica, Cryptosporidium parvum, Isospora belli y Balantidium coli. El Trichomonas vaginalis es un protozoario genitourinario que NO produce diarrea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Protozoarios gastrointestinales"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la Giardia lamblia?",
+        "verso": "Es un protozoario flagelado que parasita el duodeno y yeyuno (trofozoíto piriforme con dos núcleos) y se transmite por quistes en agua y alimentos contaminados. Produce diarrea aguda o crónica con esteatorrea, dolor abdominal, distensión y malabsorción. Diagnóstico por examen coproparasitológico seriado (quistes o trofozoítos) o antígeno en heces.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Giardia lamblia"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la Entamoeba histolytica?",
+        "verso": "Protozoario que produce amebiasis: desde colonización asintomática hasta disentería amebiana (diarrea con sangre y moco, úlceras en 'botón de camisa') e invasión extraintestinal (absceso hepático amebiano). La invasividad depende de la capacidad de destruir tejidos (histolisina). Se transmite por quistes en agua y alimentos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Entamoeba histolytica"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el Cryptosporidium parvum?",
+        "verso": "Coccidio que produce diarrea acuosa autolimitada en inmunocompetentes pero grave y crónica en inmunodeprimidos (VIH/SIDA). Se transmite por agua contaminada (resistente al cloro, ooquistes) y contacto con animales; zoonosis frecuente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Cryptosporidium parvum"
+        ]
+      },
+      {
+        "frente": "¿Qué características tienen la Isospora belli y el Balantidium coli?",
+        "verso": "Isospora belli es un coccidio intestinal que produce diarrea, a menudo crónica en inmunodeprimidos. Balantidium coli es el único ciliado patógeno humano, produce colitis disentérica y se adquiere por agua contaminada con heces de cerdos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Isospora belli y Balantidium coli"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el Trichomonas vaginalis?",
+        "verso": "Protozoario flagelado genitourinario, se transmite por vía sexual. En la mujer produce vaginitis (flujo espumoso, prurito, leucorrea) y en el hombre uretritis. No produce diarrea; se diagnostica por examen en fresco del flujo (trofozoítos móviles).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Trichomonas vaginalis"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la fisiopatogenia común de las diarreas por protozoarios intestinales?",
+        "verso": "Ingesta de quistes/ooquistes por agua o alimentos contaminados; en el intestino se produce la excistación y la colonización del epitelio. El daño puede ser por adherencia y bloqueo de la absorción (Giardia), destrucción de la mucosa con úlceras (amebas, Balantidium), o invasión del enterocito (coccidios), con diarrea secretoria, osmótica o inflamatoria según el mecanismo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Protozoarios (fisiopatogenia)"
+        ]
+      },
+      {
+        "frente": "¿Qué factores de virulencia presentan los protozoarios intestinales?",
+        "verso": "Adherencia al epitelio (disco suctorio de Giardia, lectinas de amebas), enzimas proteolíticas y citolíticas (histolisina amebiana), capacidad de multiplicación en la luz intestinal, resistencia de quistes y ooquistes en el ambiente y a la cloración (Cryptosporidium).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Protozoarios (factores de virulencia)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostican los protozoarios intestinales?",
+        "verso": "Examen coproparasitológico seriado (3 muestras con técnica de enriquecimiento/formol-éter para quistes y ooquistes), tinciones específicas (Kinyoun para coccidios), detección de antígenos en heces y, en amebiasis invasiva, serología (ELISA de anticuerpos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Protozoarios (diagnóstico)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se previenen las parasitosis intestinales?",
+        "verso": "Agua potable y saneamiento, correcta eliminación de excretas, higiene de manos, lavado de frutas y verduras, control de alimentos, evitar el hacinamiento y educación sanitaria; en los extremos de la vida (lactantes y ancianos) la vigilancia debe ser mayor por sus condiciones inmunológicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Microbiología: Protozoarios (prevención)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Medicina Preventiva — Epidemiología de las diarreas",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "medicina-preventiva",
+    "descricao": "La boca como puerta de entrada, multicausalidad, historia natural de la enfermedad, vigilancia epidemiológica y notificación de las diarreas",
+    "tags": [
+      "injuria-up4",
+      "medicina-preventiva",
+      "diarrea",
+      "notificacion",
+      "vigilancia-epidemiologica",
+      "multicausalidad",
+      "historia-natural",
+      "brote"
+    ],
+    "ordem": 3,
+    "cards": [
+      {
+        "frente": "¿Por qué la boca es la puerta de entrada de las patologías gastrointestinales?",
+        "verso": "Porque es la puerta de entrada de numerosos microorganismos que, vehiculizados por el agua y/o alimentos contaminados, producen distintas patologías gastrointestinales.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — UP4, introducción (la boca como puerta de entrada)"
+        ]
+      },
+      {
+        "frente": "¿Qué condiciones favorecen los cuadros de diarrea?",
+        "verso": "La falta de agua potable, la incorrecta recolección de residuos (domiciliarios y a veces patológicos), la inadecuada eliminación de excretas, los alimentos sin el control adecuado y el hacinamiento.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — UP4, introducción (condiciones que favorecen las diarreas)"
+        ]
+      },
+      {
+        "frente": "¿Qué grupos etarios están más expuestos a las diarreas y por qué?",
+        "verso": "Los extremos de la vida: los niños (sobre todo lactantes y primera infancia) y los ancianos, dadas sus condiciones inmunológicas; si bien todos los grupos etarios son alcanzados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — UP4, introducción (grupos de riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Qué medidas son imprescindibles para prevenir las enfermedades por aguas contaminadas?",
+        "verso": "Mejorar la vivienda y sobre todo asegurar la provisión de agua potable a todos los sectores de la población, para prevenir no solo los procesos infecciosos sino todos los atribuibles a las aguas contaminadas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — UP4, introducción (prevención)"
+        ]
+      },
+      {
+        "frente": "¿Qué plantea la multicausalidad en la interpretación de las enfermedades?",
+        "verso": "Que la enfermedad no tiene una única causa sino que resulta de la interacción de múltiples factores (agente, huésped y ambiente); supera el modelo unicausal de Koch y es la base de la historia natural de la enfermedad y de los niveles de prevención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina Preventiva: Causalidad y multicausalidad (UP4, retoma Liborio)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la historia natural de la enfermedad?",
+        "verso": "La evolución de la enfermedad sin intervención médica, desde la exposición a los factores causales (período prepatogénico) hasta su resolución (período patogénico con sus fases de enfermedad subclínica, clínica y secuelas). Permite ubicar los niveles de prevención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina Preventiva: Historia natural de la enfermedad (UP4)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la vigilancia epidemiológica y qué rol juega en las diarreas?",
+        "verso": "Es la recolección sistemática y continua, el análisis, interpretación y difusión de datos de salud para la acción. En las diarreas permite detectar tempranamente los brotes, estimar la magnitud del problema y orientar las medidas de control; se apoya en la notificación de los casos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina Preventiva: Vigilancia epidemiológica (UP4)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la notificación de diarrea?",
+        "verso": "Es la comunicación obligatoria de los casos de diarrea al sistema de vigilancia (SINAVE), según las definiciones de caso y la periodicidad establecidas (notificación individual o por unidad de tiempo según el módulo), para detectar brotes, monitorear tendencias y orientar la prevención.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina Preventiva: Notificación de diarreas (UP4)"
+        ]
+      },
+      {
+        "frente": "Defina caso, brote, endemia, epidemia y pandemia.",
+        "verso": "Caso: persona afectada por la enfermedad (según definición de caso). Brote: aparición de un número inusual de casos en un lugar y tiempo determinados. Endemia: presencia habitual de una enfermedad en una zona. Epidemia: aumento de casos por encima de lo esperado en un lugar y período. Pandemia: epidemia que se extiende a numerosos países de manera simultánea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología UP4 (conceptos epidemiológicos)"
+        ]
+      },
+      {
+        "frente": "¿Qué niveles de prevención existen y cómo se aplican a las enfermedades tóxicas y adicciones?",
+        "verso": "Prevención primaria (evitar la aparición de la enfermedad: agua potable, saneamiento, vacunas), secundaria (detección y tratamiento precoz: diagnóstico temprano del caso, notificación) y terciaria (evitar secuelas y rehabilitar: tratamiento de la deshidratación y complicaciones).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología UP4 (niveles de prevención)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Farmacología — Toxicología",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "farmacologia",
+    "descricao": "Definición de tóxico y toxicidad, tipos de toxicidades, DL50, exposición y riesgo, peligro vs riesgo, xenobióticos frecuentes y HACRE",
+    "tags": [
+      "injuria-up4",
+      "farmacologia",
+      "toxicologia",
+      "toxicos",
+      "dl50",
+      "riesgo",
+      "xenobiotico",
+      "arsenico",
+      "hacre"
+    ],
+    "ordem": 4,
+    "cards": [
+      {
+        "frente": "¿Qué es un tóxico?",
+        "verso": "Cualquier sustancia capaz de producir daño en la salud o muerte en organismos vivos como resultado de interacciones fisicoquímicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (glosario)"
+        ]
+      },
+      {
+        "frente": "¿Qué relación existe entre Farmacología y Toxicología?",
+        "verso": "Las interacciones de sustancias químicas con organismos vivos en Farmacología son para prevenir, diagnosticar, tratar o curar enfermedades, pero los mecanismos son iguales a los producidos por las sustancias tóxicas. Como decía Paracelso (1493-1541): 'Toda sustancia, sin excepción, es un veneno. La dosis correcta diferencia entre un veneno y un remedio'.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (Paracelso)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la toxicidad y en referencia a qué se define?",
+        "verso": "Es la capacidad de dañar a organismos vivos, definida en referencia a: la cantidad administrada o absorbida; la vía en la que el químico ingresa al organismo; el tiempo de exposición (única dosis o repetidas); el tipo y la severidad del daño; el tiempo necesario para producir el daño; la naturaleza del organismo afectado; y otras condiciones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (toxicidad)"
+        ]
+      },
+      {
+        "frente": "Enumere los tipos de toxicidades.",
+        "verso": "Corrosiva, irritante, asfixiante, anestésico primario, tóxico sistémico (hepatotóxico, nefrotóxico, neurotóxico, hematotóxico), agentes que dañan los pulmones, agentes genotóxicos, mutágenos, carcinógenos, embriotóxicos y teratógenos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (tipos de toxicidades)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la exposición y qué es el riesgo?",
+        "verso": "Exposición: función de la cantidad (o concentración) de la sustancia involucrada y el tiempo que dura su interacción con el organismo o la gente en riesgo. Riesgo: predicción de la frecuencia real (probabilidad) de que un químico cause daños o efectos inaceptables como resultado de la exposición de organismos susceptibles o ecosistemas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (exposición y riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el factor de incertidumbre y qué es el riesgo aceptable?",
+        "verso": "Factor de incertidumbre: expresión matemática de la incertidumbre usada para proteger poblaciones de riesgos que no pueden ser evaluados con precisión. Riesgo aceptable: probabilidad de sufrir enfermedad o daño que podría ser tolerado por un individuo, un grupo o una sociedad; su aceptabilidad está influida por factores políticos, económicos y sociales y por la percepción de los beneficios esperados.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (incertidumbre y riesgo aceptable)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la DL50?",
+        "verso": "Es la dosis letal 50: la dosis de una sustancia que mata al 50% de los animales de un lote experimental, expresada habitualmente en mg/kg de peso (vía oral en ratas). Permite comparar la toxicidad aguda de las sustancias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (DL50)"
+        ]
+      },
+      {
+        "frente": "Ordene por su DL50 oral aguda (rata macho, mg/kg) al etanol, la nicotina, el DDT y la dioxina (TCDD).",
+        "verso": "Etanol 7000, cloruro de sodio 3000, sulfato de cobre 1500, DDT 100, nicotina 60, dioxina (TCDD) 0.02. A menor DL50, mayor toxicidad: la dioxina es la más tóxica de la lista y el etanol la menos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (valores de DL50)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica la toxicidad aguda según la DL50 oral en ratas?",
+        "verso": "Muy tóxico: menos de 25 mg/kg. Tóxico: de 25 a 200 mg/kg. Nocivo: de 200 a 2000 mg/kg.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (clasificación de toxicidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre peligro y riesgo?",
+        "verso": "El peligro es una fuente de daño (cualquier material que representa una amenaza para la salud humana o el ambiente: tóxico, corrosivo, inflamable, explosivo o químicamente reactivo), mientras que el riesgo es la probabilidad de que se produzca un daño por un determinado peligro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (peligro vs riesgo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es un xenobiótico y qué ejemplos se estudian en la UP4?",
+        "verso": "Es un compuesto químico ajeno a un organismo vivo. Ejemplos de la unidad: monóxido de carbono (CO), nitritos, compuestos organoclorados y arsénico (As), además de fosfuro de aluminio, glifosato y organofosforados, estudiados por su mecanismo a nivel tisular, celular y molecular.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (xenobióticos)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el HACRE y qué situación tiene en Santa Fe?",
+        "verso": "Hidroarsenicismo Crónico Regional Endémico: enfermedad causada por la ingestión prolongada de agua con arsénico, con lesiones de piel (queratosis, hiperpigmentación), compromiso vascular, hepático y aumento del riesgo de cáncer. Es endémica en regiones de aguas subterráneas con arsénico, incluyendo sectores de Santa Fe, donde el As es un xenobiótico frecuente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (arsénico y HACRE)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las reacciones adversas tipo A y tipo B?",
+        "verso": "Tipo A (aumentadas): dosis dependientes, predecibles y relacionadas con el mecanismo de acción del fármaco (ej.: hemorragia con anticoagulantes). Tipo B (bizarras): no dosis dependientes, impredecibles, idiosincráticas o por hipersensibilidad (ej.: anafilaxia). El concepto de Paracelso de que la dosis diferencia veneno de remedio sirve para definir estos dos tipos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Taller disciplinar de Farmacología (reacciones adversas)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Salud Mental — Violencia y familia",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "Agresión vs violencia, modelo circular de la interacción violenta, supuestos de Perrone, relaciones simétrica y complementaria, contexto de la violencia y sistema de creencias",
+    "tags": [
+      "injuria-up4",
+      "salud-mental",
+      "violencia",
+      "familia",
+      "perrone",
+      "relacion-simetrica",
+      "relacion-complementaria",
+      "comunicacion"
+    ],
+    "ordem": 5,
+    "cards": [
+      {
+        "frente": "¿Qué diferencia hay entre agresión y violencia?",
+        "verso": "La agresión es un acto instintivo, repentino, que no busca dañar intencionalmente. La violencia es un acto consciente, preparado, cuyo objetivo es producir un daño determinado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia"
+        ]
+      },
+      {
+        "frente": "¿Por qué la familia es un lugar privilegiado de la violencia?",
+        "verso": "Desde una perspectiva histórica, la familia aparece como uno de los lugares privilegiados de la violencia dado que es el lugar del aprendizaje social de base.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (familia como lugar de violencia)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el modelo circular de la interacción y cómo se diferencia del lineal?",
+        "verso": "En el modelo circular, las interacciones se explican a través de eventos interdependientes: si 'A' lleva a 'B', 'B' a 'C' y 'C' a 'D', es un sistema lineal; pero si 'D' envía a 'A', el sistema es circular y escapa a la lógica del sistema precedente. Es el modelo que explica la violencia familiar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (modelo circular)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la retroacción (feedback)?",
+        "verso": "Es el proceso según el cual una parte de la información es reenviada al sistema, que de esta manera se autorregula. La retroacción positiva provoca una desestabilización del sistema, mientras que la retroacción negativa mantiene el equilibrio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (retroacción)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se entiende el acto de violencia?",
+        "verso": "Como todo ataque a la integridad física y psíquica del individuo, con un sentimiento de coacción, apremio y peligro percibido por el sujeto.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (acto de violencia)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los supuestos del grupo de investigación 'Violencia y Familia' del Dr. Reynaldo Perrone?",
+        "verso": "1) La violencia no es un fenómeno individual sino la manifestación de un fenómeno interaccional. 2) Los participantes de una interacción están todos implicados y son responsables. 3) Todo individuo mayor con capacidad para vida autónoma es garante de su propia seguridad; si no cumple esa responsabilidad estimula los aspectos violentos del otro. 4) Cualquier individuo puede ser violento bajo modalidades diferentes: es un equilibrio inestable entre violencia y no violencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (supuestos de Perrone)"
+        ]
+      },
+      {
+        "frente": "¿Qué formas de violencia se relacionan con la relación simétrica y con la complementaria?",
+        "verso": "a) La violencia 'agresión-cólera' se observa entre dos personas en relación simétrica. b) La violencia 'castigo' se observa entre dos personas en relación complementaria.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (interacción violenta)"
+        ]
+      },
+      {
+        "frente": "¿Qué caracteriza a la relación simétrica y a la complementaria?",
+        "verso": "En la relación simétrica los participantes tienden a igualar su conducta recíproca, basada en la igualdad (puede mantenerse en debilidad, fuerza, bondad o maldad). En la relación complementaria la conducta de uno complementa la del otro: uno ocupa la posición superior y el otro la inferior (relaciones madre-hijo, médico-paciente, alumno-profesor), con status desigual y basada en la aceptación de las diferencias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (relaciones simétrica y complementaria)"
+        ]
+      },
+      {
+        "frente": "¿Qué forma toma la violencia en la relación simétrica y en la complementaria?",
+        "verso": "En la simétrica la violencia se convierte en golpes y agresiones recíprocas que pueden llegar hasta la muerte, aunque la identidad y la autoestima están en parte preservadas. En la complementaria toma la forma de castigo: niños descuidados, encerrados, con ruptura total de la relación afectiva y de cuidados maternos; el castigado tiene baja autoestima, trastorno de la identidad y un sentimiento de deuda que justifica los golpes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (formas de violencia)"
+        ]
+      },
+      {
+        "frente": "¿Cómo es el actor emisor de la violencia?",
+        "verso": "Es a menudo rígido, carente de empatía, impermeable al otro y a su diferencia, impregnado de ideas fijas y de comportamientos encaminados a corregir lo que es diferente de él, con denegación del otro y no reconocimiento de su identidad. Busca modelar al otro hasta fracturarlo para hacerlo conforme a la imagen de su propio mundo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (actor emisor)"
+        ]
+      },
+      {
+        "frente": "¿Qué aspectos componen el contexto (marco) de la violencia?",
+        "verso": "Un aspecto espacial (el territorio donde la violencia es admitida, delimitado como el ring o el estadio), un aspecto temporal (el momento del desencadenamiento y la cronología de la acción, predeterminados) y un aspecto temático (acontecimientos y contenidos de comunicación que desencadenan el proceso). Estos elementos tienen un valor de señal, como los tres golpes del teatro.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (contexto de la violencia)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el sistema de creencias y el modelo del mundo?",
+        "verso": "El modelo del mundo es el mapa del que el sujeto se sirve para ubicarse en la realidad (el mapa no es el territorio, según Bateson): el sentido subjetivo otorgado a las percepciones. Cuando el conjunto de experiencias vividas por sí mismo y por los demás a través de las generaciones constituye un todo coherente y funcional, se vuelve un sistema de creencias al que se adhiere y del que se sirve para actuar.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (sistema de creencias)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el acto violento según este modelo?",
+        "verso": "Cuando la acomodación frente a la amenaza del sistema de creencias es imposible, se crea una situación de ruptura inminente; el acto violento aparece como 'un mensaje analógico de normalización del otro' o 'una acción encaminada a la normalización de la otra realidad', es decir, hacer que el otro corresponda al sistema de creencias propio.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Violencia y familia (acto violento como normalización)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Salud Mental — Los niños víctimas de violencia",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "salud-mental",
+    "descricao": "Maltrato y abuso infantil, tipos de maltrato, pautas para el diagnóstico, enfoque médico legal y tratamiento ante la sospecha",
+    "tags": [
+      "injuria-up4",
+      "salud-mental",
+      "maltrato-infantil",
+      "abuso-infantil",
+      "abuso-sexual",
+      "negligencia",
+      "denuncia",
+      "sindrome-de-malos-tratos"
+    ],
+    "ordem": 6,
+    "cards": [
+      {
+        "frente": "¿Por qué los niños son las víctimas más fáciles de la violencia?",
+        "verso": "Por su natural dependencia de los adultos y en especial de los padres, son las víctimas más fáciles del ejercicio ilegítimo de la fuerza y los que menos posibilidades tienen de buscar ayuda y protección espontáneamente. El maltrato es el más frecuente de esta violencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia"
+        ]
+      },
+      {
+        "frente": "¿Cómo se define el Síndrome de Malos Tratos?",
+        "verso": "'El niño golpeado no es más que la última faz del espectro del Síndrome de Malos Tratos': el abandono y el maltrato infantil son la expresión en el niño de una enfermedad en los adultos, que refleja una grave alteración familiar inserta en una comunidad que no protege a sus miembros más vulnerables.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (Síndrome de Malos Tratos)"
+        ]
+      },
+      {
+        "frente": "¿Qué tipos de maltrato y negligencia se consideran?",
+        "verso": "Abuso físico (niños golpeados: contusiones, quemaduras, traumatismos cefálicos y fracturas), abuso emocional (abandono, reprimendas continuas, intimidaciones, acusaciones, indiferencia: mutilación de la personalidad en desarrollo), abusos sexuales, abuso de drogas en la primera infancia (administrar sustancias nocivas sin prescripción), negligencia en la alimentación y omisión de tratamiento médico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (tipos de maltrato)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene el abuso sexual en el niño?",
+        "verso": "Es probablemente el que con menor frecuencia se diagnostica. Reviste varias formas: lesiones predominantemente en el área genital, intento o consumación de coito u otro contacto genital con un adulto (masturbación recíproca) y participación en actividades sexuales de adultos (filmaciones pornográficas).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (abuso sexual)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se distribuye la incidencia del maltrato infantil?",
+        "verso": "El problema del abuso no está limitado a determinados estratos sociales o económicos, niveles intelectuales, razas o religiones. Hay aumento en la incidencia de malos tratos en niños menores de tres años, con gran porcentaje por debajo de los seis meses.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (incidencia)"
+        ]
+      },
+      {
+        "frente": "¿Qué efectos a largo plazo produce el abuso en los niños?",
+        "verso": "Los efectos a largo plazo son dañinos para la autoestima, la habilidad para relacionarse y para un buen ajuste en la vida emocional; la extensión del daño dependerá de las posteriores experiencias del individuo, inclusive si tuvo o no algún tipo de ayuda terapéutica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (efectos)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las dos responsabilidades del médico frente a los malos tratos en la infancia?",
+        "verso": "La de descubrirlos y la de denunciarlos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (responsabilidad médica)"
+        ]
+      },
+      {
+        "frente": "¿Qué datos de la anamnesis orientan al diagnóstico de malos tratos?",
+        "verso": "Es raro una confesión directa del causante. Se debe interrogar sobre el posible accidente; si el niño es mayor de tres años, conviene interrogarlo sin la presencia de los padres. Datos sospechosos: traumatismo inexplicable, historias discrepantes, historias inverosímiles, demora en la asistencia médica, insuficiente desarrollo y conducta de los padres que induce a sospechar abuso o negligencia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (anamnesis)"
+        ]
+      },
+      {
+        "frente": "¿Qué hallazgos del examen físico orientan al diagnóstico de malos tratos?",
+        "verso": "Actitud pasiva sin quejarse ni buscar la mirada de los progenitores (un niño normal llora), descuido o falta de higiene, grado de desnutrición valorado por las tablas, retraso neurológico madurativo, alteraciones del comportamiento, lesiones cutáneas, traumatismos intraabdominales, lesiones oculares, hematomas subdurales y, si hubo abuso sexual, examen genital imprescindible.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (examen físico)"
+        ]
+      },
+      {
+        "frente": "¿Qué exámenes complementarios colaboran en el diagnóstico?",
+        "verso": "Chequeos hemáticos y urinarios; la radiología es uno de los exámenes complementarios más importantes que coadyuvan al diagnóstico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (complementarios)"
+        ]
+      },
+      {
+        "frente": "¿Qué implica el enfoque médico legal ante la sospecha de maltrato?",
+        "verso": "Dar intervención policial (en estos casos no se debe mantener el secreto médico) y comunicar a sus superiores jerárquicos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (enfoque médico legal)"
+        ]
+      },
+      {
+        "frente": "¿Qué tratamiento se indica ante la sospecha de maltrato?",
+        "verso": "Hospitalización del niño para protegerlo hasta dilucidar la cuestión de la seguridad en su domicilio, tratamiento de las lesiones y de la desnutrición, y ofrecer la ayuda necesaria a los padres.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Salud Mental: Los niños víctimas de violencia (tratamiento)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Ética — Problemática crítica de la ética en genética",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "etica",
+    "descricao": "Proyecto Genoma Humano, Declaración UNESCO 1997, estudio y asesoramiento genético, consentimiento informado, no discriminación y terapéutica genética",
+    "tags": [
+      "injuria-up4",
+      "etica",
+      "genetica",
+      "genoma-humano",
+      "unesco",
+      "consentimiento-informado",
+      "asesoramiento-genetico",
+      "bioetica"
+    ],
+    "ordem": 7,
+    "cards": [
+      {
+        "frente": "¿Qué documento estableció los límites a la investigación y aplicación clínica del Proyecto de Genoma Humano?",
+        "verso": "La Declaración de la UNESCO de 1997, un conjunto de 7 ítems que comprenden cada uno una serie de artículos, con el objeto de que la investigación humana sea verdaderamente 'humana': servidora y no dueña de la persona humana.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 1 de la Declaración UNESCO sobre el genoma humano?",
+        "verso": "'El Genoma Humano es la base de la unidad fundamental de la familia humana y del reconocimiento de su dignidad intrínseca y de su diversidad, y simbólicamente se considera patrimonio de la Humanidad'. La crítica propone aclarar la vaguedad de 'patrimonio de la Humanidad': la dignidad del ser humano confiere dignidad al genoma y no a la inversa.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (artículo 1)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 5 de la Declaración UNESCO?",
+        "verso": "Reconoce el derecho de los interesados a ser investigados solo previa valoración de riesgos y ventajas, de conformidad con las leyes, con su consentimiento informado, y el derecho a conocer o no los resultados de los estudios genéticos propios. La crítica señala que el estudio genético involucra a terceras personas (consanguíneos y descendencia).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (artículo 5)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 6 de la Declaración UNESCO?",
+        "verso": "La no discriminación por razones genéticas: ser portador no significa padecer la enfermedad (depende del genotipo, del fenotipo y de otras variables), por lo que las discriminaciones laborales o de compañías aseguradoras son injustas, inhumanas y poco científicas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (artículo 6)"
+        ]
+      },
+      {
+        "frente": "¿Qué establecen los artículos 7, 10 y 11 de la Declaración UNESCO?",
+        "verso": "Artículo 7: confidencialidad de los datos genéticos asociados a una persona identificable. Artículo 10: ninguna investigación ni aplicación puede prevalecer sobre el respeto por los Derechos Humanos y la dignidad. Artículo 11: no deben permitirse las prácticas contrarias a la dignidad humana, como la clonación con fines reproductivos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (artículos 7, 10 y 11)"
+        ]
+      },
+      {
+        "frente": "¿Qué establece el artículo 21 de la Declaración UNESCO?",
+        "verso": "Aconseja a las naciones promover nuevas líneas de investigación, formación y difusión de la información que permitan una mayor conciencia de la responsabilidad relacionada con la dignidad humana, favoreciendo los debates con libre expresión de las distintas corrientes socioculturales, religiosas y filosóficas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (artículo 21)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las aplicaciones médicas de las investigaciones genéticas que interesan a la práctica profesional?",
+        "verso": "El estudio genético y el asesoramiento genético. El estudio genético puede ser requerido por motivos médicos (diagnóstico, tratamiento, transmisión de la patología, screening poblacional), judiciales (paternidad) o laborales (determinar riesgos).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (aplicaciones médicas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el asesoramiento genético?",
+        "verso": "Es el proceso por el cual se transmite la información a los interesados y se dan las pautas para la toma de decisiones. Debe seguir a todo estudio médico y en la práctica comprende ambos aspectos (estudio y asesoramiento).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (asesoramiento genético)"
+        ]
+      },
+      {
+        "frente": "¿Qué características éticas particulares tiene el estudio genético?",
+        "verso": "No es único: involucra a terceras personas (consanguíneos, descendencia). Es limitado: las anomalías halladas pueden o no expresarse como enfermedad según el genotipo, su penetración, el fenotipo y otras variantes. Es riesgoso: el diagnóstico probable de una enfermedad grave causa impacto psicológico, social y laboral. Por ello debe efectuarse con consentimiento informado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (características del estudio)"
+        ]
+      },
+      {
+        "frente": "¿Qué requisitos deben respetarse al solicitar un estudio genético?",
+        "verso": "Tener una indicación precisa diagnóstica o terapéutica; respetar la autonomía del paciente; satisfacer su derecho a la información; solicitar siempre el consentimiento informado; respetar su privacidad y confidencialidad (con las excepciones del secreto profesional conocidas y aceptadas por el interesado); proteger especialmente los grupos vulnerables (niños, deficientes mentales, cuyos representantes legales dan el consentimiento); y existencia de justicia distributiva (accesibilidad a cualquier interesado).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (requisitos)"
+        ]
+      },
+      {
+        "frente": "¿Qué objetivos tiene el estudio genético?",
+        "verso": "Diagnóstico pre o post-natal, determinación de la magnitud o porcentaje de transmisión, establecer las probabilidades de modificación y las alternativas para evitar la enfermedad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (objetivos)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las responsabilidades éticas del asesor genético?",
+        "verso": "Transmitir de manera entendible y clara toda la información, veraz, sin ocultamientos, tergiversaciones ni exageraciones; respetar privacidad, confidencialidad y autonomía del paciente, haciéndole saber la responsabilidad del ocultamiento de resultados a terceros involucrados; plantear todas las alternativas con sus ventajas y riesgos, respetando los valores del paciente, y hacer uso de la objeción de conciencia cuando la elección se contraponga con sus propios valores.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (rol del asesor)"
+        ]
+      },
+      {
+        "frente": "¿Qué requisitos debe cumplir la terapéutica genética para ser éticamente aceptable?",
+        "verso": "Debe ser realmente necesaria, no debe existir otra alternativa, no debe poner en peligro la vida (especialmente de embriones o fetos), no debe distorsionar la identidad ni el sexo, el beneficio debe estar científicamente documentado y el riesgo ser aceptable.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (terapéutica genética)"
+        ]
+      },
+      {
+        "frente": "¿Qué límites tiene la autonomía y la confidencialidad en genética?",
+        "verso": "La autonomía tiene los límites de los derechos del otro y la confidencialidad el bien del otro: cuando terceros involucrados corren un serio riesgo, el médico se enfrenta a su derecho de no respetar el secreto profesional, pero siempre con conocimiento del paciente.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Ética: Problemática crítica de la ética en genética (límites)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Semiología — Cuadro clínico de las diarreas",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "semiologia",
+    "descricao": "Definición y mecanismos de la diarrea, náuseas y vómitos, otros síntomas digestivos, hemorragias digestivas, examen físico de abdomen y signos de deshidratación",
+    "tags": [
+      "injuria-up4",
+      "semiologia",
+      "diarrea",
+      "deshidratacion",
+      "nauseas",
+      "vomitos",
+      "dolor-abdominal",
+      "disfagia",
+      "hematemesis",
+      "abdomen"
+    ],
+    "ordem": 8,
+    "cards": [
+      {
+        "frente": "¿Cómo se define la diarrea?",
+        "verso": "Es el aumento en el número, la fluidez (disminución de la consistencia) y/o el volumen de las deposiciones, generalmente con más de tres evacuaciones por día; se clasifica según su mecanismo en osmótica, secretoria, inflamatoria (exudativa) y por alteración de la motilidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Cuadro clínico de las diarreas (definición)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los mecanismos fisiopatológicos de la diarrea?",
+        "verso": "Osmótica (sustancias no absorbibles retienen agua: malabsorción, laxantes), secretoria (aumento de la secreción de agua y electrolitos: toxinas, cólera), inflamatoria o exudativa (daño de la mucosa con sangre, moco y leucocitos: Shigella, amebas, enfermedad inflamatoria) y por trastorno de la motilidad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Cuadro clínico de las diarreas (mecanismos)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la metodología de estudio de la diarrea?",
+        "verso": "Anamnesis (comienzo, duración, número de deposiciones, características: acuosa, con moco, con sangre; fiebre, dolor, epidemiología: agua, alimentos, viajes, contacto con enfermos), examen físico (estado de hidratación, abdomen), y complementarios: coprocultivo, examen coproparasitológico, leucocitos fecales, toxinas, endoscopía según la sospecha.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Cuadro clínico de las diarreas (metodología)"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la principal complicación de la diarrea?",
+        "verso": "La deshidratación, sobre todo en los extremos de la vida (lactantes, ancianos), que puede llevar a shock hipovolémico; su prevención se basa en la hidratación oral precoz.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Cuadro clínico de las diarreas (deshidratación)"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los signos semiológicos de la deshidratación?",
+        "verso": "Sequedad de mucosas, disminución de la turgencia y elasticidad de la piel, ojos hundidos, fontanela deprimida en el lactante, taquicardia, hipotensión, oliguria, sed, llanto sin lágrimas y signo del pliegue cutáneo positivo (pliegue que persiste al soltar la piel).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Cuadro clínico de las diarreas (signos de deshidratación)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el dolor abdominal y cómo se clasifica?",
+        "verso": "Es la percepción de dolor referido al abdomen. Se clasifica por su localización (visceral, somático/parietal, referido), por su forma de comienzo (agudo, crónico, recidivante) y por su mecanismo; su semiología incluye características, irradiación, factores que lo modifican y síntomas acompañantes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Dolor abdominal"
+        ]
+      },
+      {
+        "frente": "¿Qué son las náuseas y los vómitos y cuál es su mecanismo fisiopatológico?",
+        "verso": "Náuseas: sensación subjetiva de ganas de vomitar. Vómitos: expulsión forzada del contenido gástrico, coordinada por el centro del vómito (bulbo) y desencadenada por la zona gatillo quimiorreceptora (sustancias, toxinas), el aparato vestibular, la corteza (olfato, memoria) y estímulos viscerales. Sus causas incluyen digestivas, neurológicas, metabólicas, farmacológicas y psicógenas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Náuseas y vómitos"
+        ]
+      },
+      {
+        "frente": "¿Cómo se estudian las náuseas y los vómitos?",
+        "verso": "Anamnesis (características del vómito: contenido, fuerza, relación con las comidas, horario, síntomas acompañantes como dolor, mareos, cefalea) y examen físico (estado de hidratación, abdomen, neurológico); según la sospecha: endoscopía, laboratorio, estudios de imágenes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Náuseas y vómitos (metodología)"
+        ]
+      },
+      {
+        "frente": "Defina dispepsia, disfagia, acidez, pirosis y regurgitación.",
+        "verso": "Dispepsia: malestar o dolor en epigastrio relacionado con las comidas (distensión, saciedad precoz). Disfagia: dificultad para deglutir. Acidez: sensación de quemazón retroesternal. Pirosis: quemazón retroesternal ascendente por reflujo gastroesofágico. Regurgitación: retorno de contenido alimentario a la boca sin esfuerzo ni náuseas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Otros síntomas digestivos"
+        ]
+      },
+      {
+        "frente": "Defina hematemesis, melena, enterorragia y proctorragia.",
+        "verso": "Hematemesis: vómito con sangre (origen en esófago, estómago o duodeno). Melena: deposición negra, brillante y fétida por sangre digerida (origen alto). Enterorragia: eliminación de sangre roja por el recto mezclada con heces. Proctorragia: sangre roja al final de la evacuación o en el papel, de origen bajo (hemorroides, fisuras).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Hemorragias digestivas"
+        ]
+      },
+      {
+        "frente": "¿Cómo es el examen físico normal del abdomen?",
+        "verso": "Inspección (forma, simetría, movimientos con la respiración, ombligo, latidos), auscultación (ruidos hidroaéreos), percusión (timpanismo, matidez hepática y de la vejiga) y palpación superficial y profunda (tono, visceromegalias, dolor, masas), siguiendo la topografía en nueve regiones o cuatro cuadrantes.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Semiología: Examen físico del abdomen"
+        ]
+      },
+      {
+        "frente": "¿Qué cuadro clínico presenta el caso Flavio (niño de 4 años con Síndrome de Down) de la UP4?",
+        "verso": "Náuseas, vómitos, dolor abdominal y varias deposiciones semilíquidas en corto tiempo, con un cuadro parecido dos semanas antes. Corresponde a un cuadro de diarrea aguda con síntomas digestivos acompañantes, en el que la anamnesis (alimentación, agua, contacto) y la evaluación de la hidratación son claves.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — UP4, situación problemática (caso Flavio)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Histología — Sangre y tejido conectivo",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "histologia",
+    "descricao": "Elementos figurados de la sangre, serie roja, blanca y plaquetas, valores normales, tejido conectivo, inflamación y sistema vascular linfático",
+    "tags": [
+      "injuria-up4",
+      "histologia",
+      "sangre",
+      "serie-roja",
+      "serie-blanca",
+      "plaquetas",
+      "tejido-conectivo",
+      "linfa"
+    ],
+    "ordem": 9,
+    "cards": [
+      {
+        "frente": "¿Cuáles son los elementos figurados de la sangre?",
+        "verso": "Los glóbulos rojos o eritrocitos (serie roja), los glóbulos blancos o leucocitos (serie blanca) y las plaquetas (trombocitos). El plasma, con sus proteínas y sustancias disueltas, es el componente líquido.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre y tejido conectivo"
+        ]
+      },
+      {
+        "frente": "¿Qué características tiene la serie roja (eritrocitos)?",
+        "verso": "Son células anucleadas, bicóncavas, de 7-8 μm, que contienen hemoglobina y transportan oxígeno. Valores normales: en el hombre ~4,5-5,9 millones/mm3 y en la mujer ~4-5 millones/mm3; hematocrito ~40-52% (hombre) y 37-47% (mujer); hemoglobina 13,5-17 g/dl (hombre) y 12-15,5 g/dl (mujer). Su vida media es de ~120 días.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre (serie roja)"
+        ]
+      },
+      {
+        "frente": "¿Qué células componen la serie blanca (leucocitos)?",
+        "verso": "Granulocitos: neutrófilos (50-70%, fagocitos), eosinófilos (1-4%, parásitos y alergia) y basófilos (0-1%, histamina); y agranulocitos: linfocitos (20-40%, inmunidad) y monocitos (2-8%, se transforman en macrófagos). El valor normal total es de 4.500 a 11.000/mm3.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre (serie blanca)"
+        ]
+      },
+      {
+        "frente": "¿Qué características tienen las plaquetas?",
+        "verso": "Son fragmentos citoplasmáticos anucleados (2-4 μm) que derivan de los megacariocitos de la médula ósea. Participan en la hemostasia primaria (adhesión, agregación y formación del tapón plaquetario). Valor normal: 150.000 a 400.000/mm3.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre (plaquetas)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el hematocrito?",
+        "verso": "Es el porcentaje del volumen sanguíneo ocupado por los elementos figurados, fundamentalmente glóbulos rojos (~45% en promedio). Es una proporción normal del componente celular de la sangre.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre (hematocrito)"
+        ]
+      },
+      {
+        "frente": "¿Qué componentes tiene el plasma?",
+        "verso": "Agua, proteínas (albúmina, globulinas, fibrinógeno), electrolitos, nutrientes, gases, hormonas y productos de desecho. El suero es el plasma sin fibrinógeno ni factores de la coagulación.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sangre (plasma)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifica el tejido conectivo y qué componentes tiene?",
+        "verso": "Se clasifica en conectivo propiamente dicho (laxo, denso regular e irregular), especializado (cartilaginoso, óseo, adiposo, sangre, tejido hematopoyético y linfático). Componentes: células (fibroblastos, macrófagos, mastocitos, células adiposas, plasmocitos, leucocitos), fibras (colágenas, reticulares, elásticas) y sustancia fundamental (proteoglicanos, glicoproteínas, agua).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Tejido conectivo"
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el tejido conectivo en los mecanismos de defensa?",
+        "verso": "Mediante células (macrófagos y monocitos que fagocitan, mastocitos que liberan mediadores inflamatorios, plasmocitos que producen anticuerpos, linfocitos) y la sustancia fundamental que sirve de matriz para la migración celular, colaborando en la respuesta inflamatoria e inmune.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Tejido conectivo (defensa)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la inflamación desde el punto de vista histológico?",
+        "verso": "Es la respuesta vascular y celular del tejido conectivo y vascularizado frente a la injuria. Incluye los fenómenos vasculares (vasodilatación, aumento de la permeabilidad, exudación) y celulares (migración, quimiotaxis y fagocitosis de neutrófilos y macrófagos), y se clasifica según su duración y el tipo celular predominante en aguda y crónica.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Tejido conectivo (inflamación)"
+        ]
+      },
+      {
+        "frente": "¿Cómo participa el sistema vascular linfático y cuál es su función?",
+        "verso": "La linfa circula por capilares linfáticos (sistema linfático) formados por endotelio, drenando el exceso de líquido intersticial, macromoléculas y células inmunes hacia los ganglios linfáticos, donde se produce el encuentro entre antígenos y linfocitos (centros germinativos), participando en la defensa y en la hemodinamia hística.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Histología: Sistema vascular linfático"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Anatomía Patológica — Malnutrición",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "anatomia-patologica",
+    "descricao": "Fisiopatología y correlación anátomo-clínica de la malnutrición, desnutrición proteico-calórica, marasmo y kwashiorkor",
+    "tags": [
+      "injuria-up4",
+      "anatomia-patologica",
+      "malnutricion",
+      "desnutricion",
+      "marasmo",
+      "kwashiorkor",
+      "deficit-energetico"
+    ],
+    "ordem": 10,
+    "cards": [
+      {
+        "frente": "¿Qué es la malnutrición?",
+        "verso": "Es el estado resultante del desequilibrio entre el aporte y las necesidades del organismo de nutrientes, ya sea por déficit (desnutrición, carencias) o por exceso (sobrepeso, obesidad); la desnutrición proteico-calórica es la forma más grave en la infancia.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición"
+        ]
+      },
+      {
+        "frente": "¿Qué es la desnutrición proteico-calórica y cómo se clasifica?",
+        "verso": "Es la deficiencia de energía y proteínas de origen dietario. Se clasifica en marasmo (deficiencia predominante de energía, con emaciación) y kwashiorkor (deficiencia predominante de proteínas, con edema e hipoalbuminemia), con formas mixtas.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (desnutrición proteico-calórica)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el marasmo y qué alteraciones presenta?",
+        "verso": "Es la desnutrición por déficit calórico global: emaciación extrema, pérdida de masa muscular y grasa subcutánea ('huesos y piel'), sin edema importante, con compromiso del crecimiento, atrofia de órganos y alteración de la inmunidad. El niño presenta cara de 'viejo'.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (marasmo)"
+        ]
+      },
+      {
+        "frente": "¿Qué es el kwashiorkor y qué alteraciones presenta?",
+        "verso": "Es la desnutrición por déficit proteico con aporte calórico relativamente conservado: edema (por hipoalbuminemia), esteatosis hepática, dermatosis (piel en 'escamas de pintura'), despigmentación de cabello y apatía, con preservación relativa de la grasa subcutánea.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (kwashiorkor)"
+        ]
+      },
+      {
+        "frente": "¿Qué efectos tiene la desnutrición sobre el sistema inmunológico?",
+        "verso": "Disminuye la inmunidad celular (atrofia del timo y del tejido linfático, menor respuesta de linfocitos T) y la inmunidad humoral, favoreciendo las infecciones: por eso en los extremos de la vida la deficiencia inmunológica se agrava con la desnutrición.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (inmunidad)"
+        ]
+      },
+      {
+        "frente": "¿Qué órganos se ven afectados en la desnutrición?",
+        "verso": "Atrofia de la masa muscular y del tejido adiposo; atrofia de vísceras (corazón, hígado, intestino, glándulas endocrinas) por la falta de estímulos; hígado con esteatosis en el kwashiorkor; sistema nervioso comprometido en la desnutrición temprana (menor mielinización) y alteración de la médula ósea y de la hematopoyesis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (órganos afectados)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se relaciona la malnutrición con la diarrea y las injurias de la UP4?",
+        "verso": "Existe un círculo vicioso: la diarrea produce pérdida de nutrientes y deshidratación, y la desnutrición favorece la diarrea y las infecciones por el compromiso inmunológico; la atención de la desnutrición (rehidratación, realimentación, tratamiento de las infecciones) es parte de la correlación anátomo-clínica de las lesiones.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica: Malnutrición (relación con la diarrea)"
+        ]
+      },
+      {
+        "frente": "¿Cómo se valora la desnutrición en la práctica clínica?",
+        "verso": "Con tablas de peso y talla para la edad (percentilos, puntaje z), antropometría (pliegue tricipital, circunferencia braquial), laboratorio (albúmina, prealbúmina, hemograma, electrolitos) y evaluación del desarrollo madurativo.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Anatomía Patológica y Semiología UP4 (valoración de la desnutrición)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Diagnóstico por Imágenes — Abdomen y tracto gastrointestinal",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "diagnostico-por-imagenes",
+    "descricao": "Cavidades abdominales, espacios, diseminación de patologías, estudios baritados y de doble contraste, y signos radiológicos y ecográficos de diarrea",
+    "tags": [
+      "injuria-up4",
+      "diagnostico-por-imagenes",
+      "abdomen",
+      "retroperitoneo",
+      "seriada-esofagogastroduodenal",
+      "transito-intestinal",
+      "colon-por-enema",
+      "ecografia"
+    ],
+    "ordem": 11,
+    "cards": [
+      {
+        "frente": "¿Cómo se divide la cavidad abdominal y qué espacios comprende?",
+        "verso": "Se divide en cavidad mayor y menor (transcavidad). Comprende los espacios intraperitoneal, subperitoneal, retroperitoneal y extraperitoneal, separados por mesos y ligamentos; el retroperitoneo se segmenta en sus porciones anterior, media y posterior.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Cavidades abdominales"
+        ]
+      },
+      {
+        "frente": "¿Por qué es importante conocer los espacios y mesos abdominales?",
+        "verso": "Porque determinan la diseminación de las patologías: líquidos, pus, sangre o neoplasias se difunden a través de los espacios y compartimentos siguiendo las vías anatómicas (recesos, correderas, mesos), lo que orienta la localización y el diagnóstico imagenológico.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Cavidades abdominales (diseminación)"
+        ]
+      },
+      {
+        "frente": "¿Qué proyecciones radiográficas se utilizan para el abdomen?",
+        "verso": "Radiografía directa de abdomen de frente de pie (para neumoperitoneo y niveles hidroaéreos), de frente en decúbito dorsal, radiografía de tórax de frente de pie, y radiografía de abdomen o tóraco-abdominal de frente en decúbito lateral con rayo horizontal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Radiografía de abdomen"
+        ]
+      },
+      {
+        "frente": "¿Qué es la seriada esófagogastroduodenal (SEGD)?",
+        "verso": "Es el estudio baritado del esófago, estómago y duodeno con contraste de bario, que permite evaluar la anatomía, las relaciones y las variantes anatómicas constitucionales del estómago (en J, en gancho), la motilidad, úlceras, tumores y estenosis.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Seriada esófagogastroduodenal"
+        ]
+      },
+      {
+        "frente": "¿Qué es la duodenografía hipotónica?",
+        "verso": "Es el estudio baritado del duodeno con hipotonía inducida (fármacos anticolinérgicos) y doble contraste, que permite evaluar con detalle la papila y las lesiones de la segunda porción duodenal.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Duodenografía hipotónica"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre los pliegues yeyunales e ileales?",
+        "verso": "Los pliegues del yeyuno son numerosos, altos y juntos (aspecto en 'pluma'), mientras que los del íleon son escasos, bajos y separados; esta diferencia se aprecia en el tránsito de intestino delgado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Intestino delgado"
+        ]
+      },
+      {
+        "frente": "¿Qué es el tránsito de intestino delgado y qué es la enteroclisis?",
+        "verso": "El tránsito de intestino delgado es el estudio baritado oral seriado que sigue el paso del contraste por el intestino delgado evaluando pliegues, motilidad y lesiones. La enteroclisis administra el contraste directamente por sonda en el yeyuno proximal, con mayor distensión y detalle (indicada en sospecha de enfermedad de Crohn y obstrucción).",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Intestino delgado"
+        ]
+      },
+      {
+        "frente": "¿Qué es el colon por enema de doble contraste y cuál es su indicación?",
+        "verso": "Es el estudio del colon y recto con bario y aire (doble contraste) que evalúa la anatomía, los haustras y las lesiones de la mucosa (pólipos, tumores, divertículos, enfermedad inflamatoria); se indica cuando la colonoscopía está contraindicada o incompleta.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Colon por enema"
+        ]
+      },
+      {
+        "frente": "¿Qué es la colonoscopía virtual y cuál es su indicación?",
+        "verso": "Es la colonoscopía realizada con tomografía computarizada (TC) que reconstruye en 3D el colon, con menor invasividad; indicada para el screening de lesiones polipoides cuando la colonoscopía óptica no puede completarse, aunque no permite la toma de biopsias.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Colonoscopía virtual"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre la radiografía de abdomen de frente y la directa reno vesical?",
+        "verso": "La radiografía directa de abdomen de frente evalúa globalmente las vísceras, los niveles hidroaéreos, la distribución de gases y el esqueleto; la directa reno vesical es la proyección de frente centrada en la vía urinaria (riñones, uréteres y vejiga) para valorar cálculos radioopacos.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Radiografía de abdomen"
+        ]
+      },
+      {
+        "frente": "¿Qué signos radiológicos y ecográficos se asocian a la diarrea?",
+        "verso": "Radiológicos: distensión de asas intestinales con niveles hidroaéreos, aumento del gas intestinal, engrosamiento de pliegues y, en casos de íleo, dilatación. Ecográficos: engrosamiento de la pared intestinal, hiperemia de la pared (Doppler), líquido libre, adenopatías mesentéricas y alteración del peristaltismo; en el colon, pérdida de las haustras.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Diagnóstico por Imágenes: Signos de diarrea"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Injuria UP4 — Medicina y Sociedad — Clases sociales e inequidad",
+    "ano": "ano3",
+    "materia": "injuria",
+    "parcial": "parcial2",
+    "disciplina_base": "medicina-y-sociedad",
+    "descricao": "Clases sociales, inequidad, condiciones de vida y niñez, estrato y clase social, políticas sociales y uso de prevalencia e incidencia",
+    "tags": [
+      "injuria-up4",
+      "medicina-y-sociedad",
+      "inequidad",
+      "clase-social",
+      "condiciones-de-vida",
+      "ninez",
+      "politicas-sociales",
+      "prevalencia",
+      "incidencia"
+    ],
+    "ordem": 12,
+    "cards": [
+      {
+        "frente": "¿Qué es la inequidad en salud?",
+        "verso": "Es la existencia de diferencias injustas y evitables en el estado de salud y en el acceso a los servicios entre distintos grupos sociales, relacionadas con la posición social; a diferencia de la simple desigualdad, la inequidad es evitable y es resultado de la injusticia social.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Clases sociales e inequidad"
+        ]
+      },
+      {
+        "frente": "¿Qué diferencia hay entre estrato social y clase social?",
+        "verso": "El estrato social es un agrupamiento descriptivo de la población según características (ingresos, educación, ocupación); la clase social es un concepto analítico que remite a las relaciones de producción y a la posición diferencial de los grupos en la estructura económica, que condiciona las condiciones de vida y el proceso salud-enfermedad.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Estrato y clase social"
+        ]
+      },
+      {
+        "frente": "¿Cómo influyen las condiciones de vida en la salud de la niñez?",
+        "verso": "Las condiciones de vida (vivienda, agua potable, alimentación, ingreso, educación, saneamiento) son determinantes del proceso salud-enfermedad: los niños que viven en la pobreza tienen mayor riesgo de enfermedad, desnutrición y muerte, y menor acceso a la atención oportuna.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Condiciones de vida y niñez"
+        ]
+      },
+      {
+        "frente": "¿Qué papel juegan las políticas sociales en la inequidad?",
+        "verso": "Las políticas sociales (salud, educación, vivienda, transferencias de ingreso) pueden reducir o reproducir la inequidad: políticas universales y redistributivas tienden a disminuir las brechas de salud entre clases sociales, mientras que su ausencia o fragmentación las profundiza.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Políticas sociales e inequidad"
+        ]
+      },
+      {
+        "frente": "¿Qué es la prevalencia y qué es la incidencia?",
+        "verso": "Prevalencia: proporción de personas afectadas por una enfermedad en una población y momento determinados (casos existentes); mide la carga de enfermedad. Incidencia: número de casos nuevos que aparecen en un período en una población en riesgo; mide la velocidad de aparición. Ambos se usan para analizar los problemas de salud según clase social.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Prevalencia e incidencia"
+        ]
+      },
+      {
+        "frente": "¿Qué es la estructura social y cómo se relaciona con la salud?",
+        "verso": "La estructura social es el ordenamiento de la sociedad en grupos con posiciones diferenciales de poder, recursos y prestigio (clases, estratos); se relaciona con la salud porque determina las condiciones de vida y el acceso diferencial a los bienes y servicios que protegen o dañan la salud.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Estructura social (recupera Minujin)"
+        ]
+      },
+      {
+        "frente": "¿Qué son las representaciones sociales?",
+        "verso": "Son los modos de conocimiento y significación que los grupos comparten sobre los objetos y fenómenos (incluida la salud y la enfermedad), construidos socialmente y que orientan las prácticas y percepciones de las personas sobre su vida y su cuidado.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Representaciones sociales (Jodelet)"
+        ]
+      },
+      {
+        "frente": "¿Qué propone el concepto de clase social en Bourdieu?",
+        "verso": "La posición de clase se constituye por la combinación de distintos capitales (económico, cultural, social y simbólico) y por los habitus, que se expresan en prácticas, gustos y formas de vida con consecuencias sobre la salud.",
+        "fontes": [
+          "Cuaderno del alumno, Área Injuria 2025 (FCM-UNR), UP4 — Medicina y Sociedad: Clase social en Bourdieu"
+        ]
+      }
+    ]
+  }
+]

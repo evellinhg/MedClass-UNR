@@ -1,16 +1,19 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Info, Loader2, PlayCircle } from "lucide-react"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Info, Loader2, PlayCircle, Pencil, Plus } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 import { VIDEOAULA_FONTE_KEYS, type VideoaulaArquivoDB, type VideoaulaDB } from "@/lib/videoaulas-types"
 import { ANO_KEYS } from "@/lib/unr-curriculum"
 import { getYoutubeEmbedUrl, getYoutubePlaylistId } from "@/lib/youtube"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
+import { useIsContentEditor } from "@/lib/use-content-editor"
+import { VideoaulaEditDialog } from "@/components/videoaula-edit-dialog"
 
 const SEM_ANO_KEY = "sem_ano"
 
@@ -111,6 +114,7 @@ function VideoRow({ videos, onPlay }: { videos: VideoItem[]; onPlay: (video: Vid
 
 export function VideoaulasGrid() {
   const { t, lang } = useLanguage()
+  const isEditor = useIsContentEditor()
   const [videoaulas, setVideoaulas] = useState<VideoaulaDB[]>([])
   const [loading, setLoading] = useState(true)
   const [playlistItems, setPlaylistItems] = useState<Record<string, PlaylistVideo[] | "loading" | "error">>({})
@@ -118,8 +122,10 @@ export function VideoaulasGrid() {
   const [playing, setPlaying] = useState<VideoItem | null>(null)
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
   const [collapsedAnos, setCollapsedAnos] = useState<Set<string>>(new Set())
+  const [editDialogOpen, setEditDialogOpen] = useState(false)
+  const [editingVideoaula, setEditingVideoaula] = useState<VideoaulaDB | null>(null)
 
-  useEffect(() => {
+  const load = () =>
     supabase
       .from("materiais_videoaulas")
       .select("*")
@@ -128,10 +134,28 @@ export function VideoaulasGrid() {
       .then(({ data }) => {
         const list = (data as VideoaulaDB[]) ?? []
         setVideoaulas(list)
-        setCollapsed(new Set(list.map((v) => v.id)))
+        setCollapsed((prev) => (prev.size === 0 ? new Set(list.map((v) => v.id)) : prev))
         setLoading(false)
       })
+
+  useEffect(() => {
+    load()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const openEdit = (videoaula: VideoaulaDB, e: MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setEditingVideoaula(videoaula)
+    setEditDialogOpen(true)
+  }
+
+  const openNew = () => {
+    setEditingVideoaula(null)
+    setEditDialogOpen(true)
+  }
+
+  const proximaOrdem = videoaulas.length > 0 ? Math.max(...videoaulas.map((v) => v.ordem)) + 1 : 1
 
   const toggleSection = (id: string) =>
     setCollapsed((prev) => {
@@ -205,6 +229,15 @@ export function VideoaulasGrid() {
     </div>
   )
 
+  const editorToolbar = isEditor && (
+    <div className="flex justify-end">
+      <Button variant="outline" size="sm" className="gap-1.5" onClick={openNew}>
+        <Plus className="h-4 w-4" />
+        Nova videoaula
+      </Button>
+    </div>
+  )
+
   if (loading) {
     return (
       <div className="space-y-6">
@@ -221,9 +254,19 @@ export function VideoaulasGrid() {
     return (
       <div className="space-y-6">
         {avisoBox}
+        {editorToolbar}
         <Card className="border border-border bg-card p-8 text-center">
           <p className="text-muted-foreground">{t.videoaulasGrid.vazio}</p>
         </Card>
+        {isEditor && (
+          <VideoaulaEditDialog
+            open={editDialogOpen}
+            onOpenChange={setEditDialogOpen}
+            videoaula={editingVideoaula}
+            proximaOrdem={proximaOrdem}
+            onSaved={load}
+          />
+        )}
       </div>
     )
   }
@@ -252,6 +295,7 @@ export function VideoaulasGrid() {
   return (
     <div className="space-y-8">
       {avisoBox}
+      {editorToolbar}
       {grupos.map(({ fonteKey, subgrupos }) => (
         <div key={fonteKey} className="space-y-6">
           <h2 className="text-lg font-bold text-foreground">{t.videoaulasGrid.fonteLabel[fonteKey] ?? fonteKey}</h2>
@@ -331,40 +375,52 @@ export function VideoaulasGrid() {
 
                   return (
                     <section key={videoaula.id}>
-                      <button
-                        type="button"
-                        onClick={() => toggleSection(videoaula.id)}
-                        className="mb-3 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
-                        style={{
-                          borderColor: hexToRgba(color, 0.5),
-                          backgroundColor: hexToRgba(color, 0.06),
-                          boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
-                        }}
-                      >
-                        <span className="flex flex-wrap items-center gap-2">
-                          <Badge
-                            className="border-0 text-[11px]"
-                            style={{ backgroundColor: hexToRgba(color, 0.18), color }}
-                          >
-                            {especialidade}
-                          </Badge>
-                          <h3 className="text-base font-semibold text-foreground">{titulo}</h3>
-                          {isOpen && videos.length > 0 && (
+                      <div className="relative mb-3">
+                        <button
+                          type="button"
+                          onClick={() => toggleSection(videoaula.id)}
+                          className={`flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005] ${isEditor ? "pr-14" : ""}`}
+                          style={{
+                            borderColor: hexToRgba(color, 0.5),
+                            backgroundColor: hexToRgba(color, 0.06),
+                            boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
+                          }}
+                        >
+                          <span className="flex flex-wrap items-center gap-2">
                             <Badge
-                              variant="outline"
-                              className="text-[11px]"
-                              style={{ borderColor: hexToRgba(color, 0.4), color }}
+                              className="border-0 text-[11px]"
+                              style={{ backgroundColor: hexToRgba(color, 0.18), color }}
                             >
-                              {videos.length}
+                              {especialidade}
                             </Badge>
+                            <h3 className="text-base font-semibold text-foreground">{titulo}</h3>
+                            {isOpen && videos.length > 0 && (
+                              <Badge
+                                variant="outline"
+                                className="text-[11px]"
+                                style={{ borderColor: hexToRgba(color, 0.4), color }}
+                              >
+                                {videos.length}
+                              </Badge>
+                            )}
+                          </span>
+                          {isOpen ? (
+                            <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
+                          ) : (
+                            <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
                           )}
-                        </span>
-                        {isOpen ? (
-                          <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
+                        </button>
+                        {isEditor && (
+                          <button
+                            type="button"
+                            onClick={(e) => openEdit(videoaula, e)}
+                            aria-label="Editar videoaula"
+                            className="absolute right-9 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-black/10 transition-colors hover:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20"
+                          >
+                            <Pencil className="h-3.5 w-3.5" style={{ color }} />
+                          </button>
                         )}
-                      </button>
+                      </div>
 
                       {isOpen &&
                         (sectionStatus === "loading" ? (
@@ -414,6 +470,16 @@ export function VideoaulasGrid() {
             ))}
         </DialogContent>
       </Dialog>
+
+      {isEditor && (
+        <VideoaulaEditDialog
+          open={editDialogOpen}
+          onOpenChange={setEditDialogOpen}
+          videoaula={editingVideoaula}
+          proximaOrdem={proximaOrdem}
+          onSaved={load}
+        />
+      )}
     </div>
   )
 }

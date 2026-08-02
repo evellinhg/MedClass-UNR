@@ -4,13 +4,15 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
-import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy } from "lucide-react"
+import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy, X, ZoomIn, Pencil } from "lucide-react"
 import confetti from "canvas-confetti"
 import { supabase } from "@/lib/supabase"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 import { trackEvent } from "@/lib/analytics"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
+import { useIsContentEditor } from "@/lib/use-content-editor"
+import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 
 const NOTA_CORTE_APROVACAO = 60
 
@@ -38,8 +40,11 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const [respondidas, setRespondidas] = useState<Record<string, boolean>>({})
   const [selecaoAtual, setSelecaoAtual] = useState<string | null>(null)
   const [elapsed, setElapsed] = useState(0)
+  const [imagemExpandida, setImagemExpandida] = useState(false)
   const [finalizado, setFinalizado] = useState(false)
   const [salvando, setSalvando] = useState(false)
+  const [editDialogOpen, setEditDialogOpen] = useState(false)
+  const isEditor = useIsContentEditor()
   const startRef = useRef<number | null>(null)
 
   const CATEGORIA_LABELS: Record<DesafioCategoria, string> = {
@@ -50,23 +55,34 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     conduta: t.desafiosClinicos.categoria.conduta,
   }
 
+  async function loadDesafio() {
+    const [{ data: desafioData }, { data: perguntasData }] = await Promise.all([
+      supabase.from("desafios_clinicos").select("*").eq("id", desafioId).single(),
+      supabase
+        .from("desafios_clinicos_perguntas")
+        .select("*")
+        .eq("desafio_id", desafioId)
+        .order("ordem", { ascending: true }),
+    ])
+    setDesafio((desafioData as DesafioClinico) ?? null)
+    setPerguntas((perguntasData as DesafioClinicoPergunta[]) ?? [])
+  }
+
   useEffect(() => {
-    async function load() {
-      const [{ data: desafioData }, { data: perguntasData }] = await Promise.all([
-        supabase.from("desafios_clinicos").select("*").eq("id", desafioId).single(),
-        supabase
-          .from("desafios_clinicos_perguntas")
-          .select("*")
-          .eq("desafio_id", desafioId)
-          .order("ordem", { ascending: true }),
-      ])
-      setDesafio((desafioData as DesafioClinico) ?? null)
-      setPerguntas((perguntasData as DesafioClinicoPergunta[]) ?? [])
+    loadDesafio().then(() => {
       setLoading(false)
       startRef.current = Date.now()
-    }
-    load()
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [desafioId])
+
+  async function handleEdicaoSalva() {
+    await loadDesafio()
+    setRespostas({})
+    setRespondidas({})
+    setSelecaoAtual(null)
+    setCurrentIndex(0)
+  }
 
   useEffect(() => {
     if (finalizado) return
@@ -185,9 +201,16 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
         </div>
       </div>
 
-      <div>
-        <h1 className="text-xl font-bold leading-tight text-foreground">{desafio.titulo}</h1>
-        {desafio.area && <p className="mt-1 text-sm text-muted-foreground">{desafio.area}</p>}
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h1 className="text-xl font-bold leading-tight text-foreground">{desafio.titulo}</h1>
+          {desafio.area && <p className="mt-1 text-sm text-muted-foreground">{desafio.area}</p>}
+        </div>
+        {isEditor && (
+          <Button variant="outline" size="icon-sm" onClick={() => setEditDialogOpen(true)} aria-label="Editar caso clínico">
+            <Pencil className="h-4 w-4" />
+          </Button>
+        )}
       </div>
 
       <div className="space-y-6">
@@ -197,9 +220,16 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             </h2>
             <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
             {desafio.imagem_url && (
-              <div className="relative mt-4 aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]">
+              <button
+                type="button"
+                onClick={() => setImagemExpandida(true)}
+                className="group relative mt-4 aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]"
+              >
                 <Image src={desafio.imagem_url} alt={t.desafiosClinicos.imagemCasoAlt} fill className="object-contain" />
-              </div>
+                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/40">
+                  <ZoomIn className="h-8 w-8 text-white opacity-0 transition-opacity group-hover:opacity-100" />
+                </div>
+              </button>
             )}
           </div>
 
@@ -388,6 +418,39 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             </div>
           )}
         </div>
+
+      {imagemExpandida && desafio.imagem_url && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+          onClick={() => setImagemExpandida(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setImagemExpandida(false)}
+            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+            aria-label={t.desafiosClinicos.fecharImagem}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div className="relative h-full w-full max-w-5xl">
+            <Image
+              src={desafio.imagem_url}
+              alt={t.desafiosClinicos.imagemCasoAlt}
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
+
+      {isEditor && (
+        <DesafioClinicoEditDialog
+          open={editDialogOpen}
+          onOpenChange={setEditDialogOpen}
+          desafio={desafio}
+          onSaved={handleEdicaoSalva}
+        />
+      )}
     </div>
   )
 }

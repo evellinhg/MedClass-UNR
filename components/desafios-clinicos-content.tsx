@@ -1,13 +1,20 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState, type MouseEvent } from "react"
 import Link from "next/link"
-import { Loader2, CheckCircle2, XCircle } from "lucide-react"
+import { Loader2, CheckCircle2, XCircle, ChevronDown, ChevronUp, Pencil, Plus } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
+import { useIsContentEditor } from "@/lib/use-content-editor"
+import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import type { DesafioClinico } from "@/lib/desafios-types"
 import { useLanguage } from "@/lib/i18n"
+
+const SEM_CATEGORIA = "sem_categoria"
 
 interface HistoricoItem {
   id: string
@@ -32,33 +39,68 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
 
 export function DesafiosClinicosContent() {
   const { t } = useLanguage()
+  const isEditor = useIsContentEditor()
   const [desafios, setDesafios] = useState<DesafioClinico[]>([])
   const [historico, setHistorico] = useState<HistoricoItem[]>([])
   const [loading, setLoading] = useState(true)
   const [histPage, setHistPage] = useState(1)
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
+  const [editDialogOpen, setEditDialogOpen] = useState(false)
+  const [editingDesafio, setEditingDesafio] = useState<DesafioClinico | null>(null)
+
+  const load = async () => {
+    const { data: sessionData } = await supabase.auth.getSession()
+    const userId = sessionData.session?.user.id
+
+    const [{ data: desafiosData }, historicoRes] = await Promise.all([
+      supabase.from("desafios_clinicos").select("*").eq("ativo", true).order("created_at", { ascending: true }),
+      userId
+        ?         supabase
+            .from("desafios_clinicos_historico")
+            .select("id, acertos, total, created_at, desafio:desafios_clinicos(id, titulo, icone)")
+            .eq("user_id", userId)
+            .order("created_at", { ascending: false })
+        : Promise.resolve({ data: [] }),
+    ])
+
+    setDesafios((desafiosData as DesafioClinico[]) ?? [])
+    setHistorico((historicoRes.data as unknown as HistoricoItem[]) ?? [])
+    setLoading(false)
+  }
 
   useEffect(() => {
-    async function load() {
-      const { data: sessionData } = await supabase.auth.getSession()
-      const userId = sessionData.session?.user.id
-
-      const [{ data: desafiosData }, historicoRes] = await Promise.all([
-        supabase.from("desafios_clinicos").select("*").eq("ativo", true).order("created_at", { ascending: true }),
-        userId
-          ?           supabase
-              .from("desafios_clinicos_historico")
-              .select("id, acertos, total, created_at, desafio:desafios_clinicos(id, titulo, icone)")
-              .eq("user_id", userId)
-              .order("created_at", { ascending: false })
-          : Promise.resolve({ data: [] }),
-      ])
-
-      setDesafios((desafiosData as DesafioClinico[]) ?? [])
-      setHistorico((historicoRes.data as unknown as HistoricoItem[]) ?? [])
-      setLoading(false)
-    }
     load()
   }, [])
+
+  const openEdit = (desafio: DesafioClinico, e: MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setEditingDesafio(desafio)
+    setEditDialogOpen(true)
+  }
+
+  const openNew = () => {
+    setEditingDesafio(null)
+    setEditDialogOpen(true)
+  }
+
+  const bySection = useMemo(() => {
+    const porSecao = new Map<string, DesafioClinico[]>()
+    for (const desafio of desafios) {
+      const key = desafio.secao || desafio.area || SEM_CATEGORIA
+      if (!porSecao.has(key)) porSecao.set(key, [])
+      porSecao.get(key)!.push(desafio)
+    }
+    return Array.from(porSecao.entries())
+  }, [desafios])
+
+  const toggleSection = (key: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
 
   if (loading) {
     return (
@@ -71,9 +113,17 @@ export function DesafiosClinicosContent() {
 
   return (
     <div className="space-y-8">
-      <div>
-        <h2 className="text-2xl font-bold text-gradient-brand">{t.desafiosClinicos.novoEstudoTitulo}</h2>
-        <p className="mt-1 text-sm text-muted-foreground">{t.desafiosClinicos.novoEstudoDescricao}</p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 className="text-2xl font-bold text-gradient-brand">{t.desafiosClinicos.novoEstudoTitulo}</h2>
+          <p className="mt-1 text-sm text-muted-foreground">{t.desafiosClinicos.novoEstudoDescricao}</p>
+        </div>
+        {isEditor && (
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={openNew}>
+            <Plus className="h-4 w-4" />
+            Novo caso
+          </Button>
+        )}
       </div>
 
       {desafios.length === 0 ? (
@@ -81,27 +131,72 @@ export function DesafiosClinicosContent() {
           <p className="text-muted-foreground">{t.desafiosClinicos.nenhumDesafioDisponivel}</p>
         </div>
       ) : (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {desafios.map((desafio) => (
-            <Link
-              key={desafio.id}
-              href={`/dashboard/desafios-clinicos/${desafio.id}`}
-              className="group overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/50"
-            >
-              <DesafioCover desafio={desafio} />
-              <div className="space-y-1 p-4">
-                {(desafio.secao || desafio.area) && (
-                  <p className="text-[11px] font-medium uppercase tracking-wide text-primary">
-                    {(desafio.secao && t.cronograma.desafioSecaoLabel[desafio.secao]) ?? desafio.secao ?? desafio.area}
-                  </p>
+        <div className="space-y-8">
+          {bySection.map(([sectionKey, desafiosDaSecao], index) => {
+            const isOpen = !collapsed.has(sectionKey)
+            const titulo =
+              sectionKey === SEM_CATEGORIA
+                ? t.flashcardsGrid.semCategoria
+                : t.cronograma.desafioSecaoLabel[sectionKey] ?? sectionKey
+            const color = NEON_COLORS[index % NEON_COLORS.length].hex
+
+            return (
+              <section key={sectionKey}>
+                <button
+                  type="button"
+                  onClick={() => toggleSection(sectionKey)}
+                  className="mb-4 flex w-full items-center justify-between gap-2 rounded-2xl border-2 px-4 py-3 text-left transition-transform hover:scale-[1.005]"
+                  style={{
+                    borderColor: hexToRgba(color, 0.5),
+                    backgroundColor: hexToRgba(color, 0.06),
+                    boxShadow: `0 0 20px -8px ${hexToRgba(color, 0.6)}`,
+                  }}
+                >
+                  <span className="flex items-center gap-2">
+                    <h2 className="text-lg font-semibold text-foreground">{titulo}</h2>
+                    <Badge variant="outline" className="text-[11px]" style={{ borderColor: hexToRgba(color, 0.4), color }}>
+                      {desafiosDaSecao.length}
+                    </Badge>
+                  </span>
+                  {isOpen ? (
+                    <ChevronUp className="h-4 w-4 shrink-0" style={{ color }} />
+                  ) : (
+                    <ChevronDown className="h-4 w-4 shrink-0" style={{ color }} />
+                  )}
+                </button>
+
+                {isOpen && (
+                  <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {desafiosDaSecao.map((desafio) => (
+                      <Link
+                        key={desafio.id}
+                        href={`/dashboard/desafios-clinicos/${desafio.id}`}
+                        className="group relative overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/50"
+                      >
+                        {isEditor && (
+                          <button
+                            type="button"
+                            onClick={(e) => openEdit(desafio, e)}
+                            aria-label="Editar caso clínico"
+                            className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+                          >
+                            <Pencil className="h-4 w-4" />
+                          </button>
+                        )}
+                        <DesafioCover desafio={desafio} />
+                        <div className="space-y-1 p-4">
+                          <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
+                          <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                            {t.desafiosClinicos.estudarCta} →
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 )}
-                <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
-                <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                  {t.desafiosClinicos.estudarCta} →
-                </p>
-              </div>
-            </Link>
-          ))}
+              </section>
+            )
+          })}
         </div>
       )}
 
@@ -152,6 +247,15 @@ export function DesafiosClinicosContent() {
           )
         })()}
       </div>
+
+      {isEditor && (
+        <DesafioClinicoEditDialog
+          open={editDialogOpen}
+          onOpenChange={setEditDialogOpen}
+          desafio={editingDesafio}
+          onSaved={load}
+        />
+      )}
     </div>
   )
 }

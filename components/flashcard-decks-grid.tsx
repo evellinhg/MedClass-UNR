@@ -2,10 +2,11 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2 } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2, Pencil, Plus } from "lucide-react"
 import { supabase, fetchAllFlashcardRefs } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { getAreaIcon } from "@/lib/area-icons"
 import { getAreaColor } from "@/lib/area-colors"
@@ -15,6 +16,8 @@ import { ANO_KEYS, MATERIA_KEYS_BY_ANO, DISCIPLINA_BASE_KEYS } from "@/lib/unr-c
 import type { FlashcardDeck } from "@/lib/flashcards-types"
 import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
+import { useIsContentEditor } from "@/lib/use-content-editor"
+import { FlashcardDeckEditDialog } from "@/components/flashcard-deck-edit-dialog"
 
 interface DeckWithProgress extends FlashcardDeck {
   total: number
@@ -25,7 +28,17 @@ const SEM_CATEGORIA = "sem_categoria"
 
 const MATERIA_ORDER = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
-function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof useLanguage>["t"] }) {
+function DeckCard({
+  deck,
+  t,
+  isEditor,
+  onEdit,
+}: {
+  deck: DeckWithProgress
+  t: ReturnType<typeof useLanguage>["t"]
+  isEditor?: boolean
+  onEdit?: (deck: DeckWithProgress) => void
+}) {
   const Icon = deck.disciplina_base ? getDisciplinaIcon(deck.disciplina_base) : getAreaIcon(deck.especialidade)
   const cor = deck.disciplina_base ? getDisciplinaColor(deck.disciplina_base) : getAreaColor(deck.especialidade ?? "")
   const pct = deck.total > 0 ? Math.round((deck.respondidos / deck.total) * 100) : 0
@@ -34,10 +47,24 @@ function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof us
     deck.disciplina_base && (t.cronograma.disciplinaBaseLabel[deck.disciplina_base] ?? deck.disciplina_base)
 
   return (
-    <Link href={`/dashboard/materiais/flashcards/${deck.id}`} className="w-64 shrink-0 sm:w-72">
+    <Link href={`/dashboard/materiais/flashcards/${deck.id}`} className="relative w-64 shrink-0 sm:w-72">
       <Card
         className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${cor.borderSoft} bg-card ${cor.hoverBorder} ${cor.hoverGlow}`}
       >
+        {isEditor && onEdit && (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              onEdit(deck)
+            }}
+            aria-label="Editar baralho"
+            className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+          >
+            <Pencil className="h-4 w-4" />
+          </button>
+        )}
         <div className="flex items-start justify-between">
           <div
             className="flex h-11 w-11 items-center justify-center rounded-full transition-transform group-hover:scale-105"
@@ -74,7 +101,17 @@ function DeckCard({ deck, t }: { deck: DeckWithProgress; t: ReturnType<typeof us
   )
 }
 
-function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof useLanguage>["t"] }) {
+function DeckRow({
+  decks,
+  t,
+  isEditor,
+  onEdit,
+}: {
+  decks: DeckWithProgress[]
+  t: ReturnType<typeof useLanguage>["t"]
+  isEditor?: boolean
+  onEdit?: (deck: DeckWithProgress) => void
+}) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(false)
@@ -113,7 +150,7 @@ function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof
         className="-mx-1 flex gap-4 overflow-x-auto scroll-smooth px-1 pb-2"
       >
         {decks.map((deck) => (
-          <DeckCard key={deck.id} deck={deck} t={t} />
+          <DeckCard key={deck.id} deck={deck} t={t} isEditor={isEditor} onEdit={onEdit} />
         ))}
       </div>
       {canScrollRight && (
@@ -132,39 +169,56 @@ function DeckRow({ decks, t }: { decks: DeckWithProgress[]; t: ReturnType<typeof
 
 export function FlashcardDecksGrid() {
   const { t } = useLanguage()
+  const isEditor = useIsContentEditor()
   const [decks, setDecks] = useState<DeckWithProgress[]>([])
   const [loading, setLoading] = useState(true)
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
+  const [editDialogOpen, setEditDialogOpen] = useState(false)
+  const [editingDeck, setEditingDeck] = useState<FlashcardDeck | null>(null)
+
+  const load = async () => {
+    const { data: userData } = await supabase.auth.getUser()
+    const userId = userData.user?.id
+
+    const [{ data: decksData }, cards] = await Promise.all([
+      supabase.from("materiais_flashcard_decks").select("*").eq("ativo", true).order("ordem"),
+      fetchAllFlashcardRefs(),
+    ])
+    let respondidoIds = new Set<string>()
+    if (userId) {
+      const { data: progressoData } = await supabase
+        .from("materiais_flashcard_progresso")
+        .select("flashcard_id")
+        .eq("user_id", userId)
+      respondidoIds = new Set(((progressoData as { flashcard_id: string }[]) ?? []).map((p) => p.flashcard_id))
+    }
+
+    const decksComProgresso = ((decksData as FlashcardDeck[]) ?? []).map((deck) => {
+      const cardsDoDeck = cards.filter((c) => c.deck_id === deck.id)
+      const respondidos = cardsDoDeck.filter((c) => respondidoIds.has(c.id)).length
+      return { ...deck, total: cardsDoDeck.length, respondidos }
+    })
+
+    setDecks(decksComProgresso)
+    setLoading(false)
+  }
 
   useEffect(() => {
-    const load = async () => {
-      const { data: userData } = await supabase.auth.getUser()
-      const userId = userData.user?.id
-
-      const [{ data: decksData }, cards] = await Promise.all([
-        supabase.from("materiais_flashcard_decks").select("*").eq("ativo", true).order("ordem"),
-        fetchAllFlashcardRefs(),
-      ])
-      let respondidoIds = new Set<string>()
-      if (userId) {
-        const { data: progressoData } = await supabase
-          .from("materiais_flashcard_progresso")
-          .select("flashcard_id")
-          .eq("user_id", userId)
-        respondidoIds = new Set(((progressoData as { flashcard_id: string }[]) ?? []).map((p) => p.flashcard_id))
-      }
-
-      const decksComProgresso = ((decksData as FlashcardDeck[]) ?? []).map((deck) => {
-        const cardsDoDeck = cards.filter((c) => c.deck_id === deck.id)
-        const respondidos = cardsDoDeck.filter((c) => respondidoIds.has(c.id)).length
-        return { ...deck, total: cardsDoDeck.length, respondidos }
-      })
-
-      setDecks(decksComProgresso)
-      setLoading(false)
-    }
     load()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const openEdit = (deck: DeckWithProgress) => {
+    setEditingDeck(deck)
+    setEditDialogOpen(true)
+  }
+
+  const openNew = () => {
+    setEditingDeck(null)
+    setEditDialogOpen(true)
+  }
+
+  const proximaOrdem = decks.length > 0 ? Math.max(...decks.map((d) => d.ordem)) + 1 : 1
 
   const bySection = useMemo(() => {
     const porMateria = new Map<string, DeckWithProgress[]>()
@@ -223,14 +277,41 @@ export function FlashcardDecksGrid() {
 
   if (decks.length === 0) {
     return (
-      <Card className="border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">{t.flashcardsGrid.vazio}</p>
-      </Card>
+      <div className="space-y-4">
+        {isEditor && (
+          <div className="flex justify-end">
+            <Button variant="outline" size="sm" className="gap-1.5" onClick={openNew}>
+              <Plus className="h-4 w-4" />
+              Novo baralho
+            </Button>
+          </div>
+        )}
+        <Card className="border border-border bg-card p-8 text-center">
+          <p className="text-muted-foreground">{t.flashcardsGrid.vazio}</p>
+        </Card>
+        {isEditor && (
+          <FlashcardDeckEditDialog
+            open={editDialogOpen}
+            onOpenChange={setEditDialogOpen}
+            deck={editingDeck}
+            proximaOrdem={proximaOrdem}
+            onSaved={load}
+          />
+        )}
+      </div>
     )
   }
 
   return (
     <div className="space-y-8">
+      {isEditor && (
+        <div className="flex justify-end">
+          <Button variant="outline" size="sm" className="gap-1.5" onClick={openNew}>
+            <Plus className="h-4 w-4" />
+            Novo baralho
+          </Button>
+        </div>
+      )}
       {bySection.map(({ materiaKey, subsections }, index) => {
         const isOpen = !collapsed.has(materiaKey)
         const materiaTitulo =
@@ -277,7 +358,7 @@ export function FlashcardDecksGrid() {
                         </Badge>
                       </h3>
                     )}
-                    <DeckRow decks={decksDaSubsecao} t={t} />
+                    <DeckRow decks={decksDaSubsecao} t={t} isEditor={isEditor} onEdit={openEdit} />
                   </div>
                 ))}
               </div>
@@ -285,6 +366,16 @@ export function FlashcardDecksGrid() {
           </section>
         )
       })}
+
+      {isEditor && (
+        <FlashcardDeckEditDialog
+          open={editDialogOpen}
+          onOpenChange={setEditDialogOpen}
+          deck={editingDeck}
+          proximaOrdem={proximaOrdem}
+          onSaved={load}
+        />
+      )}
     </div>
   )
 }

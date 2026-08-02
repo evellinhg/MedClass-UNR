@@ -1,0 +1,156 @@
+[
+  {
+    "titulo": "Clínica Médica UT21 — Cardiopatía Isquémica: Semiología del Dolor Torácico y Diagnóstico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Semiología de los distintos tipos de dolor torácico, formas clínicas de la cardiopatía isquémica, diagnósticos diferenciales, algoritmo diagnóstico, epidemiología regional, factores de riesgo y costo-beneficio de la tecnología",
+    "tags": [
+      "clinica-medica-ut21",
+      "cardiopatia-isquemica",
+      "dolor-toracico",
+      "angina",
+      "infarto",
+      "sca",
+      "troponina",
+      "diagnostico"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las características semiológicas del dolor torácico de origen isquémico?",
+        "verso": "Es un dolor u opresión retroesternal, en 'peso' o 'tirantez', que puede irradiar al brazo izquierdo, cuello, mandíbula o epigastrio. Se desencadena con el esfuerzo, la emoción o el frío y cede con el reposo o los nitratos (angina estable). Cuando aparece en reposo, dura más de 20-30 minutos, es de intensidad creciente (9/10), se acompaña de sudoración, mareos, náuseas y sensación de muerte inminente, orienta a síndrome coronario agudo (angina inestable o infarto), como el dolor de Osvaldo al despertar.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: semiología de los distintos tipos de dolor torácico"
+        ]
+      },
+      {
+        "frente": "¿Qué patologías cursan con dolor torácico y cómo se diferencian?",
+        "verso": "Isquémico: opresión retroesternal con irradiación (ver card). Pleurítico: punzante, aumenta con la respiración y la tos (TEP, neumonía, pleuritis, neumotórax). Aórtico (disección): desgarrante, irradiado a la espalda, con asimetría de pulsos y HTA severa. Digestivo: epigástrico, relación con comidas y acidez (reflujo, ERGE, úlcera), puede simular isquemia inferior. Músculo-esquelético: localizado, reproduce la palpación y el movimiento. Psicógeno/ansiedad: difuso, variable, con hiperventilación. La anamnesis del dolor (inicio, tipo, irradiación, duración, factores que lo desencadenan y alivian) es la clave del diagnóstico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: patologías que cursan con dolor torácico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las formas clínicas de la cardiopatía isquémica?",
+        "verso": "Angina estable (dolor predecible con el esfuerzo, reversible), angina inestable (dolor nuevo, en reposo o que cambia su patrón, sin elevación de marcadores), infarto agudo de miocardio con y sin elevación del ST, isquemia silenciosa (asintomática, detectada por métodos) y muerte súbita. Todas comparten el mecanismo de desbalance entre el aporte y la demanda de oxígeno por la enfermedad coronaria aterosclerótica.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Contenidos: formas clínicas de la cardiopatía isquémica"
+        ]
+      },
+      {
+        "frente": "¿Cómo es el algoritmo diagnóstico del dolor torácico en la guardia?",
+        "verso": "1) Evaluación clínica inicial con ECG de 12 derivaciones en los primeros 10 minutos (distingue SCA con ST elevado del resto); 2) marcadores de necrosis (troponinas) seriados; 3) estratificación del riesgo según clínica, ECG y troponinas; 4) en el SCACEST: reperfusión inmediata (angioplastia primaria o fibrinólisis); en el SCASEST: manejo médico y estratificación; si el dolor no es isquémico, se buscan las otras causas (aorta, TEP, digestivo, músculo-esquelético) con los métodos adecuados. El ECG nunca se espera: es la primera conducta.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: algoritmos diagnósticos en patologías con dolor torácico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los diagnósticos diferenciales del dolor de origen isquémico?",
+        "verso": "Además de las cardiopatías: disección de aorta (dolor desgarrante irradiado), tromboembolismo pulmonar (dolor pleurítico con disnea e hipoxemia), pericarditis (dolor que mejora al sentarse hacia delante, con roce pericárdico), enfermedad por reflujo gastroesofágico (acidez, relación con comidas), úlcera péptica, pancreatitis, esofagoespasmo, neumonía/pleuritis, neumotórax, herpes zóster, osteocondritis (costocondritis) y ansiedad. El dolor de Osvaldo, opresivo, de 30 minutos, con sudoración y mareos, es de alta sospecha isquémica, pero siempre se descartan la disección y el TEP.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: diagnósticos diferenciales del dolor de origen isquémico"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la epidemiología de la cardiopatía isquémica y qué se entiende por prevención primaria?",
+        "verso": "La cardiopatía isquémica es la primera causa de muerte en nuestro país y en el mundo; su incidencia aumenta con la edad y con la acumulación de factores de riesgo. La prevención primaria actúa antes del primer evento: detección y control de HTA, diabetes, dislipemia, tabaquismo y obesidad, con promoción de la alimentación saludable y la actividad física. En Osvaldo, la prevención primaria falló (tabaquismo, HTA mal controlada, obesidad) y llegó con un evento agudo.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Contenidos: epidemiología regional; prevención primaria"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores de riesgo hereditarios y ambientales de la cardiopatía isquémica?",
+        "verso": "Hereditarios: antecedentes familiares de enfermedad coronaria temprana (IAM o muerte súbita antes de los 55 en varones o 65 en mujeres), hipertensión, diabetes y dislipemia familiares (el padre de Osvaldo falleció por ACV y su hermano es diabético). Ambientales/modificables: tabaquismo (40 cig/día por 40 años en Osvaldo), HTA, dislipemia, diabetes, obesidad abdominal (cintura 145 cm), sedentarismo, dieta hipercalórica y estrés. La interacción herencia-ambiente explica por qué unos enferman y otros no frente a los mismos hábitos.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: factores de riesgo: herencia y ambiente"
+        ]
+      },
+      {
+        "frente": "¿Cómo se evalúa la relación costo/beneficio de la tecnología diagnóstica?",
+        "verso": "La tecnología se indica según la probabilidad pre-test y su impacto en la conducta: en la sospecha de angina estable, la ergometría (esfuerzo) es accesible y de bajo costo; el SPECT de perfusión y la ecografía de estrés se reservan para resultados dudosos o riesgo intermedio; la coronariografía (invasiva, costosa) se indica ante alto riesgo o cuando se planifica revascularización. El ECG y la troponina seriada en guardia son de bajo costo y alta utilidad en el SCA. Se evita el sobrediagnóstico que encarece sin modificar el pronóstico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Contenidos: relación costo-beneficio de la tecnología diagnóstica"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT21 — Cardiopatía Isquémica: Tratamiento, Farmacoterapia y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Farmacoterapia de la angina estable y del síndrome coronario agudo, criterios de elección de drogas, cambios de estilo de vida, factores afectivos y sociales, criterios de derivación y análisis del caso",
+    "tags": [
+      "clinica-medica-ut21",
+      "cardiopatia-isquemica",
+      "sca",
+      "aspirina",
+      "nitratos",
+      "betabloqueantes",
+      "estatinas",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cuál es el tratamiento farmacológico de la angina estable?",
+        "verso": "Antiagregación con aspirina (y control del riesgo); estatinas de intensidad moderada-alta (reducen eventos); betabloqueantes como primera línea para reducir la demanda de oxígeno (frecuencia y contractilidad) en el paciente con isquemia; nitratos sublinguales para el alivio agudo y nitratos de larga duración para la profilaxis; IECA o ARA II si hay HTA, diabetes o disfunción ventricular. El control estricto de los factores de riesgo (tabaco, HTA, lípidos, peso, glucemia) es tan importante como las drogas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Contenidos: farmacoterapéutica de la cardiopatía isquémica"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento del síndrome coronario agudo?",
+        "verso": "En guardia: monitoreo, oxígeno si hipoxemia, aspirina, clopidogrel (doble antiagregación), nitratos y morfina si el dolor persiste, betabloqueantes y estatinas de alta intensidad, anticoagulación con heparina. En el SCACEST: reperfusión inmediata (angioplastia primaria o fibrinólisis) dentro de las primeras horas. En el SCASEST de alto riesgo: coronariografía precoz. Se agregan IECA y se ajusta la dosis según la función ventricular. La celeridad del tratamiento limita el tamaño del infarto y la mortalidad.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Contenidos: farmacoterapéutica; formas clínicas"
+        ]
+      },
+      {
+        "frente": "¿Qué criterios guían la elección de los fármacos (costo/beneficio y riesgo/beneficio)?",
+        "verso": "Se eligen drogas con beneficio demostrado en supervivencia: aspirina, estatinas, betabloqueantes, IECA. El riesgo/beneficio: los betabloqueantes se evitan en asma severa o bradicardia marcada; los nitratos se contraindican si el paciente toma sildenafil o si hay hipotensión; la aspirina se evita en úlcera activa (con protección gástrica). El costo/beneficio en nuestro medio: aspirina, atenolol, enalapril y simvastatina son genéricos de bajo costo, lo que favorece la adherencia. La doble antiagregación se mantiene el tiempo indicado según el procedimiento y el riesgo hemorrágico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: criterios de elección según costo/beneficio y riesgo/beneficio"
+        ]
+      },
+      {
+        "frente": "¿Qué cambios de estilo de vida se indican al paciente coronario?",
+        "verso": "Cesación tabáquica completa (el tabaco de 40 cig/día de Osvaldo es el factor de mayor impacto reversible), alimentación cardiosaludable (reducir grasas saturadas, colesterol y sal; aumentar frutas, verduras, pescado y fibra), descenso de peso y de la obesidad abdominal, actividad física aeróbica regular (caminatas progresivas, supervisadas al inicio), control de la HTA, de la glucemia y del colesterol. Estos cambios reducen la recurrencia de eventos y se acompañan siempre de la medicación.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: valorar la importancia de las modificaciones del estilo de vida"
+        ]
+      },
+      {
+        "frente": "¿Qué papel juegan los factores afectivos y sociales en la cardiopatía isquémica?",
+        "verso": "El estrés crónico, la ansiedad y la depresión aumentan el riesgo de eventos coronarios por mecanismos neurohormonales y por conductas nocivas; además, los pacientes con síntomas depresivos tienen menor adherencia al tratamiento. El apoyo familiar y social mejora el pronóstico y la calidad de vida. En Osvaldo, el cargo gerencial, el estrés y el hábito de alimentación hipercalórica ligado a la vida laboral son aspectos a abordar en el plan integral, junto al tratamiento médico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: factores afectivos y sociales"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios de derivación al especialista?",
+        "verso": "Todo síndrome coronario agudo se deriva de inmediato al cardiólogo o a la unidad coronaria (en el caso de Osvaldo, con ECG y troponinas, en ambulancia o sala de dolor torácico). La angina estable de nuevo diagnóstico, la de esfuerzo que empeora, la que no responde al tratamiento médico, el SCA post-alta y el paciente con isquemia documentada requieren evaluación cardiológica para estratificar riesgo y decidir la coronariografía o la revascularización.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Objetivos: criterios de derivación al especialista"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el caso de Osvaldo?",
+        "verso": "Dolor torácico opresivo de 30 minutos con sensación de muerte inminente, mareos y sudoración al despertar: alto riesgo de síndrome coronario agudo. Se suman múltiples factores de riesgo: tabaquismo severo (40 cig/día por 40 años), HTA de 10 años mal controlada (PA 170/95), dislipemia a dosis baja de estatina, obesidad abdominal marcada (cintura 145 cm), sedentarismo y dieta hipercalórica, con herencia cardiovascular (padre fallecido por ACV, hermano diabético). La acidez epigástrica con comidas copiosas debe interpretarse con cuidado, porque puede corresponder a isquemia de cara inferior.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué conducta se toma en la guardia ante el dolor torácico de Osvaldo?",
+        "verso": "Monitoreo continuo, ECG de 12 derivaciones en los primeros 10 minutos (buscar supradesnivel del ST, infradesnivel, ondas Q), acceso venoso, troponinas seriadas y laboratorio completo; aspirina y clopidogrel, nitrato sublingual/EV con control de la PA, morfina si persiste el dolor, oxígeno si hay hipoxemia y evaluación de anticoagulación y betabloqueante. Ante un SCACEST se activa la reperfusión inmediata (angioplastia primaria); ante SCASEST de alto riesgo, coronariografía precoz. Derivación inmediata a cardiología/unidad coronaria.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT21 — Cardiopatía Isquémica — Situación problema"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,170 @@
+[
+  {
+    "titulo": "Clínica Médica UT16 — Diabetes Mellitus: Concepto, Diagnóstico y Epidemiología",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "endocrinologia",
+    "descricao": "Concepto y clasificación de la diabetes, criterios diagnósticos de DM2, presentación clínica, herencia multifactorial, obesidad y estilo de vida, diabetes gestacional, síndrome metabólico y metodología diagnóstica",
+    "tags": [
+      "clinica-medica-ut16",
+      "diabetes-mellitus",
+      "dm2",
+      "diagnostico",
+      "hemoglobina-glicosilada",
+      "diabetes-gestacional",
+      "sindrome-metabolico",
+      "obesidad"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la diabetes mellitus y cómo se clasifica?",
+        "verso": "Es un grupo de enfermedades metabólicas caracterizadas por hiperglucemia crónica, por defecto de la secreción o de la acción de la insulina, con alteración del metabolismo de los hidratos de carbono, lípidos y proteínas. Se clasifica en: tipo 1 (destrucción autoinmune de las células beta, déficit absoluto de insulina), tipo 2 (resistencia insulínica con déficit relativo de secreción), diabetes gestacional (diagnosticada en el embarazo) y otros tipos específicos (genéticos, enfermedades del páncreas, fármacos, endocrinopatías).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: concepto y clasificación de la diabetes mellitus"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios diagnósticos de la diabetes tipo 2?",
+        "verso": "Se diagnostica con cualquiera de: glucemia en ayunas (≥ 8 horas) ≥ 126 mg/dl; glucemia a las 2 horas de la sobrecarga oral de 75 g de glucosa (curva de tolerancia) ≥ 200 mg/dl; HbA1c ≥ 6,5%; o síntomas clásicos (poliuria, polidipsia, baja de peso) con glucemia casual ≥ 200 mg/dl. La alteración de glucemia en ayunas (100-125 mg/dl) y la intolerancia a la glucosa (140-199 mg/dl a las 2 h) son estados prediabéticos de alto riesgo. Requiere confirmación con una segunda determinación si no hay síntomas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: criterios diagnósticos de la diabetes tipo 2"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la presentación clínica típica de la diabetes tipo 2?",
+        "verso": "A diferencia de la tipo 1, la DM2 suele ser asintomática o paucisintomática durante años y se detecta en un control rutinario. Cuando aparece el cuadro metabólico da la clásica tríada: poliuria, polidipsia y polifagia, con baja de peso y visión borrosa. Las infecciones recurrentes (candidiasis vulvar como la de Rosa, micosis interdigital, infecciones urinarias), el prurito y la mala cicatrización pueden ser la forma de presentación.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: presentación clínica de la diabetes tipo 2; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el paradigma hereditario y ambiental de la diabetes tipo 2?",
+        "verso": "La DM2 es una enfermedad multifactorial: la herencia poligénica se combina con el ambiente (obesidad, dieta 'occidental' rica en azúcares y grasas, sedentarismo, tabaco) para producir resistencia insulínica y falla de las células beta. El antecedente familiar es un factor de riesgo fuerte: en el caso de Rosa, la madre es diabética e hipertensa. La historia de 'cazador-recolector' evoluciona hacia la sobrecarga calórica actual: por eso la alimentación y la actividad física son centrales en la prevención.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: herencia multifactorial; obesidad, dieta occidental y sedentarismo"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son la epidemiología y los factores de riesgo de la diabetes tipo 2?",
+        "verso": "La DM2 es una epidemia mundial en aumento, asociada al envejecimiento, la obesidad y el sedentarismo. Factores de riesgo: edad > 45 años, obesidad (sobre todo abdominal), antecedentes familiares de diabetes, sedentarismo, hipertensión, dislipemia, diabetes gestacional previa, hijos macrosómicos, síndrome de ovario poliquístico y etnias de alto riesgo. El sobrepeso y la obesidad son el factor modificable más importante.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: epidemiología y factores de riesgo"
+        ]
+      },
+      {
+        "frente": "¿Qué es la diabetes gestacional y por qué es importante como antecedente?",
+        "verso": "Es la intolerancia a los hidratos de carbono que se detecta por primera vez durante el embarazo, debida a la resistencia insulínica de las hormonas placentarias. Su importancia: a) riesgo materno-fetal en el embarazo (macrosomía — hijos > 4 kg como los de Rosa, preeclampsia, abortos); b) las mujeres que la padecen tienen alto riesgo futuro de diabetes tipo 2 y síndrome metabólico; c) el hijo macrosoólico tiene mayor riesgo de obesidad y diabetes. Es un antecedente clave para tamizar en la consulta (Rosa tuvo hijos de 4,4 y 4,5 kg y preeclampsia).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: diabetes gestacional: fisiopatología, importancia como antecedente"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síndrome metabólico y cómo se vincula a la diabetes?",
+        "verso": "Es la asociación de obesidad abdominal, disglucemia (glucemia alterada o diabetes), dislipemia (triglicéridos elevados, HDL bajo) e hipertensión arterial, unidos por la resistencia insulínica. Aumenta el riesgo cardiovascular y la progresión a diabetes tipo 2. En el caso de Rosa se reúnen todos los componentes: cintura 125 cm, PA 145/100, disglucemia probable y dislipemia a descartar, con acantosis nigricans como marcador cutáneo de resistencia insulínica.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Objetivos: reconocer el síndrome metabólico en los antecedentes"
+        ]
+      },
+      {
+        "frente": "¿Qué métodos de laboratorio se usan en el diagnóstico y seguimiento de la diabetes?",
+        "verso": "Glucemia en ayunas y curva de tolerancia oral a la glucosa (diagnóstico); hemoglobina glicosilada (HbA1c): refleja el control glucémico de los últimos 2-3 meses; fructosamina: mide la glucemia de las últimas 2-3 semanas (útil en gestación o cambios recientes); insulinemia e índice HOMA: evalúan resistencia insulínica; lipidograma: por la dislipemia asociada. El seguimiento combina glucemia en ayunas, HbA1c periódica y control de complicaciones (fondo de ojo, microalbuminuria, examen de pies).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: metodología diagnóstica y seguimiento"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT16 — Diabetes Mellitus: Complicaciones, Tratamiento y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina-interna",
+    "descricao": "Complicaciones micro y macrovasculares, neuropatía periférica y autonómica, pie diabético, infecciones, farmacoterapia de DM2, tratamiento en APS, educación y dieta, derivación y análisis del caso",
+    "tags": [
+      "clinica-medica-ut16",
+      "diabetes",
+      "pie-diabetico",
+      "neuropatia",
+      "nefropatia",
+      "metformina",
+      "prevencion",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las complicaciones microvasculares de la diabetes?",
+        "verso": "Retinopatía diabética (principal causa de ceguera evitable: exudados, hemorragias, neovasos), nefropatía diabética (inicia con microalbuminuria y progresa a insuficiencia renal) y neuropatía (periférica y autonómica). Se producen por la hiperglucemia crónica: glicosilación de proteínas, daño endotelial de los vasos pequeños y microangiopatía. La prevención (control glucémico estricto, HbA1c < 7%, tratamiento de la HTA) reduce su aparición y progresión.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: principales complicaciones; vasculopatía"
+        ]
+      },
+      {
+        "frente": "¿Qué es la vasculopatía diabética y cómo se manifiesta la enfermedad macrovascular?",
+        "verso": "La diabetes acelera la aterosclerosis de los vasos grandes: enfermedad coronaria, enfermedad cerebrovascular y enfermedad arterial periférica de los miembros inferiores (claudicación intermitente, dolor en reposo, ausencia de pulsos, isquemia crítica). Se suma a la microangiopatía que afecta retina, riñón y nervio. El tabaco, la HTA y la dislipemia potencian el daño vascular. La semiología vascular (pulsos, llenado capilar, temperatura, índice tobillo-brazo) y el Doppler son parte de la evaluación del diabético.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: vasculopatía diabética; semiología y exámenes complementarios de MMII"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son la patogenia, las manifestaciones y el diagnóstico de la neuropatía periférica diabética?",
+        "verso": "La neuropatía periférica (polineuropatía distal simétrica) es la complicación neurológica más frecuente: por daño metabólico y vascular de los nervios periféricos. Cursa con parestesias, hormigueos, dolor ardoroso, calambres y pérdida de la sensibilidad, en 'guante y media', con hipoestesia térmica, táctil, vibratoria (diapasón) y propioceptiva. El diagnóstico es clínico (examen neurológico, monofilamento, reflejos osteotendinosos, disminuidos) y se apoya en electromiograma. La pérdida de sensibilidad favorece úlceras e infecciones en los pies.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Objetivos: neuropatía periférica: etiología, patogenia y manifestaciones"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las manifestaciones de la neuropatía autonómica diabética?",
+        "verso": "Afecta el sistema nervioso autónomo: disfunción eréctil y disfunción sexual (por compromiso vascular y neuropático), gastroparesia con plenitud y vómitos, diarrea, hipotensión ortostática, pérdida de la sudoración (piel seca que predispone a grietas e infecciones) y arritmias (menor variabilidad de la frecuencia cardíaca). El diagnóstico es clínico con pruebas autonómicas. Es una causa importante de mala calidad de vida y de caídas en el adulto mayor diabético.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: neuropatía autónoma; disfunción sexual"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas desencadenantes del pie diabético y cómo se aborda?",
+        "verso": "El pie diabético surge de la combinación de neuropatía (pérdida de la sensibilidad), vasculopatía (isquemia) e infección. Las causas desencadenantes suelen ser microtraumatismos inadvertidos: calzado inadecuado, uñas mal cortadas, micosis interdigital, grietas, quemaduras por agua caliente o almohadillas. El abordaje: examen periódico del pie (piel, pulsos, sensibilidad con monofilamento), cuidado del calzado e higiene, tratar la micosis, y ante úlcera: descarga del pie, curación, antibiótico si hay infección, y valorar revascularización. El tratamiento es multidisciplinario y la prevención en APS es la clave.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Objetivos: abordaje del paciente con pie diabético"
+        ]
+      },
+      {
+        "frente": "¿Por qué los diabéticos tienen más infecciones?",
+        "verso": "Por la alteración de la función de los neutrófilos (quimiotaxis, fagocitosis y actividad bactericida), la inmunodepresión del huésped, la mala vascularización y la neuropatía que retrasa la consulta. Son frecuentes: candidiasis (vulvovaginal — como la de Rosa, intertrigo, bucal), micosis de los pies (micosis interdigital que presentaba Rosa), infecciones urinarias, neumonías, infecciones de piel y tejidos blandos y fascitis necrotizante. La hiperglucemia no controlada empeora la evolución de cualquier infección.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: enfermedades infecciosas en los diabéticos"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la farmacoterapia de la diabetes tipo 2 en el nivel de atención primaria?",
+        "verso": "Primera línea: metformina (biguanida, reduce la resistencia insulínica y la producción hepática de glucosa; no produce hipoglucemia ni aumento de peso). Si no se alcanza la meta se agregan: sulfonilureas (glibenclamida) o glinidas (estimulan la secreción de insulina), inhibidores de la DPP-4, o análogos del GLP-1 e inhibidores SGLT2 según disponibilidad y comorbilidades. Ante fracaso o complicaciones, déficit de insulina o situaciones agudas, se indica insulina. La elección considera riesgo/beneficio, costo y la educación del paciente. Los neurotrópicos y vasodilatadores complementan el tratamiento de la neuropatía dolorosa y de la claudicación.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: farmacoterapia de la DM2; utilidad de neurotrópicos y vasodilatadores"
+        ]
+      },
+      {
+        "frente": "¿Qué incluye el tratamiento no farmacológico y la educación diabetológica?",
+        "verso": "El cambio de hábito de vida es la base: prescripción del régimen alimentario según valor calórico total, distribución de hidratos de carbono, proteínas y grasas, priorizando fibra y evitando azúcares simples y fritos; actividad física aeróbica regular; cesación tabáquica; control del peso. La educación diabetológica mejora la adherencia, que es el mayor problema (en especial el cumplimiento de la dieta), y enseña el autocontrol glucémico y el cuidado de los pies. El equipo (médico, nutricionista, educador, podólogo) acompaña el seguimiento.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Contenidos: educación diabetológica; prescripción del régimen alimentario"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el caso de Rosa y cuál es la conducta?",
+        "verso": "Rosa reúne fuerte sospecha de DM2: candidiasis vulvovaginal recurrente y prurito vulvar, nocturia y polifagia, obesidad (IMC 35), cintura 125 cm, HTA 145/100, acantosis nigricans, madre diabética, y el antecedente de hijos macrosómicos con preeclampsia (diabetes gestacional previa). Se debe confirmar con glucemia en ayunas y HbA1c, solicitar lipidograma y microalbuminuria, examinar los pies (ya tiene micosis interdigital), y tratar: educación, dieta, ejercicio, metformina, tratamiento de la HTA, del tabaquismo y de la candidiasis; derivar a endocrinología según complejidad. Es un caso típico de síndrome metabólico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuándo se debe derivar al diabético al especialista y qué prevención se hace en APS?",
+        "verso": "Derivar a endocrinología cuando: mal control a pesar del tratamiento, cetoacidosis o estado hiperosmolar, complicaciones agudas, embarazo en diabética, pie diabético activo, nefropatía, retinopatía o neuropatía que superen el nivel de manejo del médico general. La prevención en APS: detección sistemática (tamizaje con glucemia en ayunas en adultos con factores de riesgo), promoción del estilo de vida saludable, control de los factores de riesgo cardiovascular, educación del paciente y seguimiento periódico de la HbA1c, el fondo de ojo, la microalbuminuria y el examen de los pies.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT16 — Diabetes Mellitus — Objetivos: indicaciones de derivación; estrategias de prevención en APS"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,169 @@
+[
+  {
+    "titulo": "Clínica Médica UT12 — Endocarditis Infecciosa: FOD, Epidemiología y Fisiopatología",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "infectologia",
+    "descricao": "Fiebre de origen desconocido, causas de FOD y costo-beneficio del estudio, endocarditis infecciosa como causa de FOD, factores predisponentes, fisiopatología, etiología y manifestaciones clínicas",
+    "tags": [
+      "clinica-medica-ut12",
+      "endocarditis-infecciosa",
+      "fiebre-de-origen-desconocido",
+      "fod",
+      "vegetaciones",
+      "hemocultivos",
+      "infeccion"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la fiebre de origen desconocido (FOD)?",
+        "verso": "Es la fiebre mayor de 38,3 °C documentada en varias ocasiones, de más de tres semanas de evolución, sin diagnóstico después de una semana de estudio hospitalario adecuado. Es un desafío diagnóstico: sus causas se agrupan en infecciones (la más frecuente, incluye abscesos, TBC y endocarditis), neoplasias (linfomas, tumores renales), enfermedades inflamatorias (vasculitis, colagenopatías) y misceláneas; un porcentaje queda sin etiología.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: definición de FOD"
+        ]
+      },
+      {
+        "frente": "¿Qué utilidad tiene la endocarditis infecciosa en el planteo de una FOD?",
+        "verso": "La endocarditis infecciosa es una causa clásica de FOD, en especial cuando la fiebre es prolongada, se acompaña de soplo, embolias o datos inmunológicos. Debe sospecharse y buscarse activamente con hemocultivos y ecocardiografía, porque su detección precoz modifica el pronóstico. El trabajo en contacto con animales (veterinarios) aumenta la sospecha de etiologías zoonóticas (Brucella, Coxiella burnetii).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: importancia de la EI como causa de FOD"
+        ]
+      },
+      {
+        "frente": "¿Cómo se valora el costo-beneficio de los métodos diagnósticos en la FOD?",
+        "verso": "El estudio se ordena según la sospecha y el rendimiento: hemocultivos y laboratorio básico son de bajo costo y alto rendimiento; la ecocardiografía se indica ante sospecha de EI; la TAC y la biopsia se reservan para hallazgos guía. Se evita el 'rastrillaje' indiscriminado, jerarquizando las pistas clínicas y reevaluando periódicamente, porque los estudios caros no sustituyen el razonamiento clínico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: costo-beneficio de los métodos diagnósticos"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los factores predisponentes de la endocarditis infecciosa?",
+        "verso": "Cardiopatía valvular previa o adquirida (valvulopatías, prolapso), prótesis valvulares, cardiopatías congénitas, endocarditis previa, uso de drogas endovenosas, bacteriemias persistentes (catéteres, infecciones), hemodiálisis, inmunosupresión y mala higiene dental. En pacientes sin cardiopatía, la bacteriemia por estafilococo u otros gérmenes virulentos puede asentar sobre válvulas sanas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: factores predisponentes"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la fisiopatología de la endocarditis infecciosa?",
+        "verso": "La lesión endotelial valvular (por turbulencia, prótesis, catéteres) expone matriz extracelular y trombos de plaquetas y fibrina; sobre ellos se adhieren y multiplican los microorganismos de la bacteriemia, formando las vegetaciones. Las vegetaciones producen: a) infección local con destrucción valvular; b) embolias sépticas (cerebrales, renales, esplénicas, pulmonares en el lado derecho); c) fenómenos inmunes (inmunocomplejos: glomerulonefritis, vasculitis).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos y contenidos: epidemiología, fisiopatología y factores predisponentes"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los microorganismos más frecuentes de la endocarditis infecciosa?",
+        "verso": "Streptococcus del grupo viridans (asociados a mala higiene dental), Enterococcus (vías urinarias, procedimientos), Staphylococcus aureus (curso agudo, drogas IV, prótesis), estafilococos coagulasa negativos (prótesis), el grupo HACEK y, en exposiciones zoonóticas, Brucella y Coxiella burnetii (fiebre Q). En el caso de Carlos, la mala dentadura y el trabajo en una veterinaria son dos puertas de entrada posibles.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Contenidos: agentes causales; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las manifestaciones clínicas de la endocarditis infecciosa?",
+        "verso": "Fiebre, soplo cardíaco nuevo o cambiante, anemia, esplenomegalia y petequias. Por lesión vascular embólica: manchas de Janeway (palmas/plantas), hemorragias en astilla, embolias cerebrales/renales/esplénicas, infartos pulmonares en EI derecha. Por respuesta inmune: nódulos de Osler (dedos), manchas de Roth (retina) y glomerulonefritis con hematuria/proteinuria. En el caso: fiebre, soplo aórtico sistólico, petequias conjuntivales y orina con proteínas y hemoglobina.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: manifestaciones clínicas (infección, lesión vascular y respuesta inmune)"
+        ]
+      },
+      {
+        "frente": "¿Qué alteraciones bioquímicas y de laboratorio produce la endocarditis?",
+        "verso": "Anemia (normocrómica), leucocitosis variable, elevación de la velocidad de sedimentación globular (VES) y de la proteína C reactiva (PCR), factor reumatoideo positivo en los de evolución prolongada, y alteraciones de la función renal por glomerulonefritis inmune (proteinuria, hematuria, elevación de creatinina). En el caso de Carlos: Hb 11,2, VES 93 mm/h, PCR positiva y orina con proteínas y hemoglobina.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: alteraciones bioquímicas; situación problema"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT12 — Endocarditis Infecciosa: Diagnóstico, Tratamiento y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Diagnóstico microbiológico y ecocardiográfico, criterios de Duke, esquemas terapéuticos, antibióticos alternativos, complicaciones, indicaciones quirúrgicas, profilaxis y análisis del caso",
+    "tags": [
+      "clinica-medica-ut12",
+      "endocarditis",
+      "hemocultivos",
+      "ecocardiografia",
+      "criterios-de-duke",
+      "profilaxis",
+      "tratamiento",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cómo se realiza el diagnóstico microbiológico de la endocarditis infecciosa?",
+        "verso": "Con hemocultivos: tres series (o al menos dos) extraídas de venas distintas en momentos diferentes, idealmente antes de iniciar antibióticos, cuando la fiebre asciende y manteniendo asepsia. La bacteriemia es casi continua en la EI. Permiten identificar el germen y su sensibilidad, orientando el tratamiento dirigido. Los cultivos negativos sugieren gérmenes exigentes (Brucella, Coxiella, HACEK) o antibióticos previos.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: métodos microbiológicos para el diagnóstico etiológico"
+        ]
+      },
+      {
+        "frente": "¿Qué papel juega la ecocardiografía en la endocarditis?",
+        "verso": "Es el método de imagen clave: detecta vegetaciones (masas móviles adheridas a válvulas), abscesos perianulares, dehiscencia de prótesis y valora la insuficiencia valvular y la función cardíaca. El ecocardiograma transesofágico (ETE) tiene mayor sensibilidad que el transtorácico (ETT), sobre todo en prótesis y vegetaciones pequeñas. Un ETT normal no descarta EI si la sospecha es alta.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: importancia de la ecocardiografía"
+        ]
+      },
+      {
+        "frente": "¿Qué son los criterios de Duke para el diagnóstico de endocarditis?",
+        "verso": "Combinan criterios mayores (hemocultivos positivos con microorganismos típicos, o evidencia ecocardiográfica de vegetación/absceso/dehiscencia, o nueva regurgitación valvular) y criterios menores (fiebre, predisposición, fenómenos vasculares, fenómenos inmunológicos, hemocultivos dudosos). Según el número de criterios se clasifica en endocarditis definitiva, posible o descartada. Son una herramienta orientadora, no reemplazan el juicio clínico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Contenidos: diagnóstico"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento de la endocarditis con etiología conocida?",
+        "verso": "Antibiótico bactericida intravenoso, prolongado (2-6 semanas) y de espectro dirigido: estreptococos sensibles a penicilina — penicilina G o ceftriaxona (4 semanas, ± gentamicina las primeras 2); enterococo — ampicilina + gentamicina; Staphylococcus aureus sensible a meticilina — cloxacilina o cefazolina; estafilococo resistente (MRSA) — vancomicina. Se asocia la cirugía cuando está indicada. La respuesta se controla con clínica, hemocultivos de control y ecocardiogramas seriados.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: esquemas terapéuticos con etiología conocida"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento cuando la etiología es desconocida?",
+        "verso": "Cobertura empírica parenteral amplia que cubra los gérmenes más probables: por ejemplo, una combinación con penicilina/ampicilina más cloxacilina (o vancomicina) más gentamicina, ajustada al perfil (válvula nativa vs prótesis, drogadicción IV, zoonosis sospechada), hasta obtener el resultado de los hemocultivos. Si se sospecha Brucella o Coxiella, se usan esquemas específicos (doxiciclina + rifampicina, o doxiciclina + hidroxicloroquina).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: esquemas terapéuticos con etiología desconocida"
+        ]
+      },
+      {
+        "frente": "¿Qué antibióticos alternativos se usan en caso de intolerancia o alergia?",
+        "verso": "En alergia a penicilina: cefazolina (si no hay anafilaxia) o vancomicina para estreptococos/estafilococos; para enterococos pueden usarse teicoplanina o linezolid; en alergia a betalactámicos el esquema se adapta al germen y al sitio. La elección debe hacerse con el especialista en infectología, documentando la alergia y evaluando el riesgo.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: antibióticos alternativos en intolerancia o alergia"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las complicaciones y las indicaciones quirúrgicas de la endocarditis?",
+        "verso": "Complicaciones: insuficiencia cardíaca (la más frecuente y grave), embolias sistémicas o pulmonares, abscesos perianulares con bloqueos AV, insuficiencia renal, sepsis y muerte. Indicaciones quirúrgicas: insuficiencia cardíaca refractaria al tratamiento médico, infección no controlada (fiebre persistente o abscesos, gérmenes resistentes o fúngicos), y prevención de embolias en vegetaciones grandes móviles tras embolia previa.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: complicaciones inmediatas y mediatas; indicaciones quirúrgicas"
+        ]
+      },
+      {
+        "frente": "¿Qué profilaxis de endocarditis se indica en los procedimientos?",
+        "verso": "Antibiótico profiláctico (amoxicilina 2 g oral una hora antes, o alternativa en alérgicos) previo a procedimientos que generan bacteriemia, en pacientes con alteraciones valvulares o antecedente de endocarditis previa, como los procedimientos odontológicos con manipulación gingival o periapical. La guía menciona también procedimientos urológicos y digestivos de riesgo en estos pacientes. La higiene dental y la prevención de bacteriemias cotidianas son tan importantes como la profilaxis.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: profilaxis de la endocarditis en procedimientos"
+        ]
+      },
+      {
+        "frente": "¿Qué datos del caso de Carlos sugieren endocarditis infecciosa?",
+        "verso": "Fiebre de 2 días con cefalea y astenia, dolor torácico, petequias conjuntivales en ángulo externo, soplo sistólico 2/6 en foco aórtico, anemia (Hb 11,2), VES muy elevada (93), PCR positiva y orina con proteínas y hemoglobina (compromiso renal inmune). Como puertas de entrada: regular estado dental (estreptococos del grupo viridans) y trabajo en veterinaria (zoonosis: Brucella, fiebre Q). La conducta es hemocultivos antes del antibiótico, ecocardiograma y tratamiento dirigido.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el rol del médico de atención primaria en la endocarditis?",
+        "verso": "Detectar precozmente la enfermedad ante fiebre prolongada con soplo, embolias o anemia sin explicación (sobre todo en pacientes con valvulopatías o exposición zoonótica); solicitar los hemocultivos antes de iniciar antibióticos; derivar en forma urgente para el diagnóstico (ecocardiografía) y tratamiento; y educar en la profilaxis y la higiene dental de los pacientes de riesgo. El trabajo multidisciplinario (clínica, cardiología, infectología, microbiología, cirugía) es esencial.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT12 — Endocarditis Infecciosa — Objetivos: rol del médico de APS; trabajo multidisciplinario"
+        ]
+      }
+    ]
+  }
+]

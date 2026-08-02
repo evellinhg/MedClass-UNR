@@ -1,0 +1,163 @@
+[
+  {
+    "titulo": "Clínica Médica UT15 — Emergencias y Urgencias Hipertensivas: Conceptos y Complicaciones Agudas",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Diferencias entre urgencia y emergencia hipertensiva, fisiopatología de la lesión de órgano blanco, complicaciones neurológicas agudas (encefalopatía, ACV), otros daños agudos y métodos diagnósticos",
+    "tags": [
+      "clinica-medica-ut15",
+      "emergencia-hipertensiva",
+      "urgencia-hipertensiva",
+      "hta",
+      "encefalopatia",
+      "acv",
+      "complicaciones",
+      "presion-arterial"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Cuál es la diferencia entre urgencia y emergencia hipertensiva?",
+        "verso": "La emergencia hipertensiva es la elevación severa de la PA (generalmente > 180/120 mmHg) CON daño agudo de órgano blanco en curso (encefalopatía, ACV, edema agudo de pulmón, disección aórtica, angina, insuficiencia renal aguda); requiere reducción de la PA controlada e inmediata por vía parenteral. La urgencia hipertensiva es la elevación severa SIN daño agudo de órgano blanco sintomático; se maneja con medicación oral y observación, reduciendo la PA en forma gradual en 24-48 horas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Contenidos: criterios de urgencia y emergencia hipertensiva"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las complicaciones neurológicas agudas de la hipertensión y su fisiopatología?",
+        "verso": "Son la encefalopatía hipertensiva y el ACV (hemorrágico o isquémico). Ante la elevación brusca de la PA, la autorregulación del flujo cerebral se rompe: el vasoespasmo con isquemia provoca infarto, mientras que la hiperperfusión con trasudación produce edema cerebral (encefalopatía) y ruptura de vasos, con hemorragia. La encefalopatía y el ACV hemorrágico son los mecanismos que predominan en las cifras extremas, como las de Sebastián (220/130).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: fisiopatología de las complicaciones neurológicas agudas"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el cuadro clínico de la encefalopatía hipertensiva?",
+        "verso": "Síndrome confusional agudo en un paciente con HTA severa: cefalea intensa, náuseas y vómitos, visión borrosa o convulsiones, fluctuación del sensorio, focalidad neurológica transitoria y papiledema al fondo de ojo. La PA suele estar muy elevada (> 180/120). Mejora al descender la presión arterial, lo que ayuda a diferenciarla del ACV. Requiere diagnóstico y tratamiento inmediatos porque puede progresar a coma.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: características clínicas de las complicaciones neurológicas de la HTA"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las otras complicaciones agudas de la hipertensión además de las neurológicas?",
+        "verso": "Cardiovasculares: angina inestable e infarto agudo de miocardio, edema agudo de pulmón hipertensivo, disección de aorta (dolor torácico desgarrante con asimetría de pulsos), insuficiencia cardíaca aguda. Renales: insuficiencia renal aguda, microangiopatía. Oculares: retinopatía hipertensiva con hemorragias, exudados y papiledema. La emergencia hipertensiva puede comprometer varios órganos a la vez.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: complicaciones agudas de la HTA"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica en forma rápida la complicación aguda de la HTA?",
+        "verso": "Con la anamnesis dirigida (cefalea, focalidad, dolor torácico, disnea), el examen físico completo (PA en ambos brazos, examen neurológico, fondo de ojo, auscultación cardíaca y pulmonar) y métodos seleccionados: TAC de cráneo ante sospecha de ACV (distingue hemorrágico de isquémico), ECG y troponina ante dolor torácico, radiografía de tórax y ecocardiograma ante disnea, laboratorio (creatinina, glucemia, electrolitos, hemograma) para valorar riñón y descartar causas. La TAC no debe demorar el inicio del tratamiento.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: diagnóstico rápido y selección de métodos diagnósticos"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las metas de reducción de la presión arterial en la emergencia hipertensiva?",
+        "verso": "Descender la PA en forma gradual y controlada, en general no más del 20-25% de la PAM en la primera hora, evitando la hipoperfusión de órganos blancos (en especial el cerebro). Las metas difieren según el órgano: en el ACV hemorrágico se busca una PA sistólica controlada; en la disección aórtica la reducción es agresiva y rápida; en el ACV isquémico NO se reduce en forma agresiva. Siempre con monitoreo en UTI y fármacos parenterales de acción corta y titulable.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Contenidos: criterios de emergencia hipertensiva; manejo"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene el antecedente de consumo de cocaína en la emergencia hipertensiva?",
+        "verso": "La cocaína produce hipertensión severa, vasoespasmo coronario y cerebral, taquiarritmias e isquemia, pudiendo desencadenar ACV hemorrágico o isquémico, IAM y disección aórtica en pacientes jóvenes. Se debe preguntar siempre su consumo ante una emergencia hipertensiva en un adulto joven (como Sebastián). En ese contexto se evitan los betabloqueantes puros (dejan la alfa-agonista sin oposición) y se prefiere sedación (benzodiacepinas) con vasodilatadores titulables.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la epidemiología de las complicaciones neurológicas de la HTA en nuestro país?",
+        "verso": "El ACV es una de las primeras causas de muerte y de discapacidad en Argentina, y la hipertensión arterial no controlada es su principal factor de riesgo modificable. La hemorragia intraparenquimatosa está fuertemente asociada a la HTA severa y al consumo de cocaína en jóvenes. El control poblacional de la HTA es la medida preventiva de mayor impacto para reducir estas complicaciones.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Contenidos: epidemiología de las complicaciones neurológicas agudas en nuestro país"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT15 — Emergencias y Urgencias Hipertensivas: Manejo, Derivación y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "neurologia",
+    "descricao": "Tratamiento de la emergencia y de la urgencia hipertensiva, manejo del ACV hemorrágico e isquémico, criterios de derivación a sala general o UTI y análisis del caso de hemorragia cerebral por cocaína",
+    "tags": [
+      "clinica-medica-ut15",
+      "emergencia-hipertensiva",
+      "urgencia",
+      "acv-hemorragico",
+      "cocaina",
+      "uti",
+      "tratamiento",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cómo se trata la emergencia hipertensiva?",
+        "verso": "Se ingresa a UTI con monitoreo continuo de PA y de la función neurológica/cardíaca. Se administra medicación parenteral de acción corta y titulable: nitroprusiato de sodio o nicardipino/labetalol según el cuadro, reduciendo la PAM 20-25% en la primera hora (excepto disección aórtica, donde se desciende rápido). Se trata la complicación de órgano blanco (antiedema cerebral, trombolisis o cirugía según el caso). Evitar descensos bruscos que causen hipoperfusión.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: medidas iniciales; contenidos: criterios de emergencia"
+        ]
+      },
+      {
+        "frente": "¿Cómo se maneja la urgencia hipertensiva?",
+        "verso": "El paciente con HTA severa pero sin daño agudo de órgano blanco no requiere internación en UTI ni medicación parenteral. Se reinterroga y se excluye daño orgánico (clínica, fondo de ojo, ECG, laboratorio), se inicia o ajusta la medicación antihipertensiva oral (por ejemplo IECA o calcioantagonista), se descartan causas secundarias o no adherencia, y se controla en observación durante horas para descender la PA en forma gradual (24-48 h) antes del alta con seguimiento ambulatorio.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Contenidos: criterios de urgencia hipertensiva"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diferencia la encefalopatía hipertensiva del ACV?",
+        "verso": "La encefalopatía hipertensiva: PA extremadamente elevada, compromiso del sensorio difuso y fluctuante, convulsiones, papiledema y pocas o inconstantes focalidades; mejora con el descenso de la PA. El ACV: déficit neurológico focal de inicio súbito y persistente (monoplejía, afasia, desviación de la mirada, anisocoria), con TAC que muestra hemorragia o infarto; no mejora solo con bajar la PA. Ambos pueden coexistir; la TAC de cráneo es el método que discrimina.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: características clínicas; métodos diagnósticos"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el manejo del ACV hemorrágico hipertensivo?",
+        "verso": "Es una emergencia que requiere UTI: control de la PA con metas definidas (descenso controlado de la sistólica, monitoreo neurológico frecuente), medidas antiedema cerebral si hay hipertensión intracraneana (cabecero elevado, manitol o cloruro de sodio hipertónico, sedación), corrección de la coagulopatía, control de la glucemia y temperatura, y evaluación neuroquirúrgica ante hemorragia extensa, vuelco ventricular o hidrocefalia. En el caso de Sebastián, la hemorragia intraparenquimatosa extensa con vuelco ventricular es de alto riesgo vital.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: medidas iniciales y derivación; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cómo se maneja la PA en el ACV isquémico?",
+        "verso": "A diferencia del hemorrágico, en el ACV isquémico NO se recomienda descender la presión arterial en forma agresiva, porque el infarto tiene un área de penumbra que depende del flujo colateral; la reducción brusca puede agrandar el infarto. Se desciende en forma suave y se mantiene en valores aceptables salvo que se planifique trombolisis (donde se controla más estrictamente). Siempre se confirma el tipo de ACV con TAC antes de decidir.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: complicaciones neurológicas; selección de métodos diagnósticos"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el caso de Sebastián?",
+        "verso": "Adulto joven (29 años), fumador y consumidor de cocaína, con cefalea intensa y progresiva, tendencia al sueño y monoplejía braquial izquierda. La PA 220/130 indica una crisis hipertensiva extrema; la focalidad motora y el compromiso del sensorio señalan daño neurológico agudo. La TAC muestra hemorragia intraparenquimatosa extensa con vuelco ventricular. El mecanismo: la cocaína, sumada a la HTA severa, rompe la autorregulación cerebral y provoca la hemorragia. Es una emergencia hipertensiva con ACV hemorrágico: manejo en UTI.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios para derivar a sala general o a UTI?",
+        "verso": "A UTI: toda emergencia hipertensiva (ACV, encefalopatía, disección aórtica, edema agudo de pulmón, IAM, IRA) que requiera monitoreo continuo y drogas parenterales titulables. A sala general: la urgencia hipertensiva estabilizada, sin daño agudo de órgano blanco, que precisa observación, ajuste de medicación oral y descarte de complicaciones. La decisión se toma por la gravedad y complejidad del cuadro, no por el valor aislado de la PA.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Contenidos: criterios de derivación a sala general o UTI"
+        ]
+      },
+      {
+        "frente": "¿Qué drogas parenterales se usan en la emergencia hipertensiva y en qué casos?",
+        "verso": "Nitroprusiato de sodio: vasodilatador de acción ultracorta, útil en la mayoría (encefalopatía, hemorragia cerebral, disección); puede elevar la PIC y producir toxicidad por tiocianato con uso prolongado. Labetalol (alfa y beta) o esmolol: útiles en disección aórtica e isquemia. Nicardipino: calcioantagonista IV, estable en ACV. Con cocaína se evita el betabloqueante puro y se asocian benzodiacepinas. La elección se titula según la respuesta de la PA y la tolerancia del paciente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: medidas iniciales"
+        ]
+      },
+      {
+        "frente": "¿Qué conducta inicial de guardia se aplica ante una sospecha de emergencia hipertensiva?",
+        "verso": "Reconocerla rápido: medir la PA correctamente, evaluar el examen neurológico y cardiovascular, descartar daño de órgano blanco (TAC ante focalidad o compromiso del sensorio, ECG y troponina ante dolor torácico, radiografía de tórax ante disnea), iniciar el monitoreo y la medicación parenteral si hay emergencia, y definir la derivación (UTI). No demorar el tratamiento por los estudios: la primera dosis debe administrarse precozmente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT15 — Emergencias y Urgencias Hipertensivas — Objetivos: diagnóstico rápido y medidas iniciales"
+        ]
+      }
+    ]
+  }
+]

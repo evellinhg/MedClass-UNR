@@ -1,0 +1,163 @@
+[
+  {
+    "titulo": "Clínica Médica UT22 — Arritmias Cardíacas: Palpitaciones, Causas y Diagnóstico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Definición y características de las palpitaciones, clasificación electrofisiológica de las arritmias, causas cardíacas y no cardíacas según grupos etarios, interrogatorio, examen físico y métodos diagnósticos (ECG, laboratorio, Holter, ecocardiograma)",
+    "tags": [
+      "clinica-medica-ut22",
+      "arritmias",
+      "palpitaciones",
+      "taquiarritmia",
+      "bradiarritmia",
+      "ecg",
+      "holter",
+      "fibrilacion-auricular"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué son las palpitaciones y cuáles son sus características clínicas?",
+        "verso": "Son la percepción consciente de los latidos cardíacos. Se caracterizan por: inicio (brusco o gradual), duración, regularidad (rápidas y regulares: taquicardia paroxística supraventricular, flutter; irregulares: fibrilación auricular, extrasístoles), frecuencia aproximada, síntomas acompañantes (sudoración, disnea, síncope, dolor torácico) y factores desencadenantes y de alivio (maniobras vagales). Esta descripción orienta la etiología antes de cualquier estudio.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: definición y características de las palpitaciones"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican electrofisiológicamente las arritmias?",
+        "verso": "Según el trastorno del impulso: a) de formación del impulso: automatismo anormal y actividad gatillada (extrasístoles, taquicardias); b) de conducción del impulso: bloqueos y circuitos de reentrada (la mayoría de las taquicardias: TSV por reentrada, flutter, fibrilación auricular, taquicardia ventricular); c) trastornos combinados. Esta clasificación explica el mecanismo y orienta el tratamiento (por ejemplo, la reentrada responde a maniobras vagales y a adenosina).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: clasificación electrofisiológica de las arritmias"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas NO cardíacas de palpitaciones?",
+        "verso": "Psiquiátricas (trastorno de pánico y ansiedad generalizada: ~31%), hábitos (cafeína — el mate de dos termos diarios de Sonia —, nicotina, alcohol, cocaína y otras drogas ilícitas), fármacos (simpaticomiméticos, anticolinérgicos, broncodilatadores, tiroxina), trastornos metabólicos (hipoglucemia, hipertiroidismo, desequilibrios hidroelectrolíticos) y estados de alto gasto cardíaco (anemia, embarazo, fiebre, enfermedad de Paget). También el exceso de catecolaminas por estrés y ejercicio.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: causas no cardíacas de palpitaciones"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas cardíacas de palpitaciones y qué tipos de arritmias existen?",
+        "verso": "Causas cardíacas (~44%): arritmias propiamente (extrasístoles, taquiarritmias y bradiarritmias) y enfermedades estructurales (miocardiopatías, valvulopatías — como el prolapso mitral de Sonia — y pericarditis). Taquiarritmias: supraventriculares (fibrilación y flutter auricular, taquicardias paroxísticas supraventriculares) y ventriculares (TV, fibrilación ventricular, de riesgo vital). Bradiarritmias: bloqueos AV y sinusal, enfermedad del nódulo sinusal.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: causas cardíacas: taquiarritmias y bradiarritmias"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas más frecuentes de palpitaciones y arritmias según el grupo etario?",
+        "verso": "En el adulto joven (como Sonia): ansiedad y trastorno de pánico, hipertiroidismo, anemia, consumo de cafeína/tabaco/drogas, extrasístoles y taquicardias supraventriculares; el prolapso mitral puede asociar extrasístoles benignas. En el adulto mayor: fibrilación auricular (la arritmia sostenida más frecuente), flutter, enfermedad del nódulo sinusal, bloqueos AV, cardiopatía isquémica e insuficiencia cardíaca como sustrato de taquiarritmias ventriculares. La edad orienta la sospecha y los estudios.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Objetivos: causas más frecuentes según el grupo etario"
+        ]
+      },
+      {
+        "frente": "¿Qué interrogatorio y examen físico se realizan ante las palpitaciones?",
+        "verso": "Interrogatorio: descripción del episodio (inicio, regularidad, duración, frecuencia), síntomas acompañantes, relación con esfuerzo, estrés, alimentos (mate, café), fármacos y drogas; antecedentes cardíacos, tiroideos y psiquiátricos; historia familiar de muerte súbita o arritmias. Examen físico: frecuencia y ritmo del pulso, PA (incluido el orthostatismo), examen tiroideo (bocio, temblor fino), auscultación cardíaca (soplos, clics — el clic mesosistólico de Sonia sugiere prolapso mitral), palidez y signos de anemia, y evaluación de ansiedad.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Objetivos: interrogatorio y examen físico adecuados"
+        ]
+      },
+      {
+        "frente": "¿Qué estudios se indican para el diagnóstico y cuándo se requieren métodos especiales?",
+        "verso": "Inicial: ECG de 12 derivaciones (registra el ritmo y los patrones de las arritmias más frecuentes) y laboratorio completo: hemograma (anemia), ionograma y hormonas tiroideas (TSH), glucemia. Métodos especiales, solo en casos particulares (síncope, disnea, riesgo de ACV, miocardiopatías, historia familiar de muerte súbita): ecocardiograma (valvulopatías, función ventricular), electrocardiograma ambulatorio o Holter de 24 horas (arritmias paroxísticas), ergometría (arritmias de esfuerzo) y estudio electrofisiológico (taquicardias recurrentes o riesgo alto).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Objetivos: saber qué estudios pedir en cada caso"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los patrones ECG de las arritmias más frecuentes?",
+        "verso": "Fibrilación auricular: ritmo irregular con ondas f ausentes y base ondulada, frecuencia variable. Flutter: ondas F 'en dientes de sierra' (250-350/min) con bloqueo variable. Taquicardia paroxística supraventricular: taquicardia regular, estrecha, de inicio y fin bruscos. Taquicardia ventricular: complejos anchos (QRS > 120 ms) regulares. Extrasístoles: latidos prematuros con pausa compensadora. Bloqueo AV de 1º grado: PR > 0,20 s; de 2º: PR progresivo con caída (Mobitz I) o caída sin progresión (Mobitz II); de 3º: disociación AV completa. El ECG normal (ritmo sinusal regular) se reconoce para comparar.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Objetivos: reconocer el ECG normal y los patrones de las arritmias"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT22 — Arritmias Cardíacas: Tratamiento y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Cuándo tratar las arritmias, clasificación de Vaughan-Williams de los antiarrítmicos y sus efectos indeseables, tratamiento farmacológico y no farmacológico de taqui y bradiarritmias, y análisis del caso de palpitaciones por hipertiroidismo y ansiedad",
+    "tags": [
+      "clinica-medica-ut22",
+      "arritmias",
+      "antiarritmicos",
+      "vaughan-williams",
+      "fibrilacion-auricular",
+      "marcapasos",
+      "ablatión",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cuándo obligan las arritmias a tratarlas?",
+        "verso": "Se tratan cuando: producen síntomas significativos (síncope, disnea, angina, bajo gasto), comprometen la estabilidad hemodinámica (hipotensión, insuficiencia cardíaca), tienen riesgo de eventos graves (taquicardia ventricular, fibrilación ventricular, historia de muerte súbita), causan riesgo de embolia (fibrilación auricular) o deterioran la calidad de vida. Las extrasístoles benignas aisladas, sin cardiopatía y sin síntomas, pueden solo controlarse y tranquilizar al paciente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Objetivos: causas que obligan a realizar tratamiento"
+        ]
+      },
+      {
+        "frente": "¿Cómo se clasifican las drogas antiarrítmicas (Vaughan-Williams)?",
+        "verso": "Clase I: bloqueantes de canales de sodio (Ia: quinidina; Ib: lidocaína; Ic: propafenona, flecainida). Clase II: betabloqueantes (atenolol, propranolol, metoprolol) — reducen la frecuencia y la excitabilidad. Clase III: bloqueantes de potasio (amiodarona, sotalol) — prolongan la repolarización. Clase IV: calcioantagonistas no dihidropiridínicos (verapamilo, diltiazem). Además se usan drogas no antiarrítmicas: atropina, adenosina, digoxina. La elección depende del tipo de arritmia, la cardiopatía de base y la función ventricular.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: clasificación de drogas antiarrítmicas"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los efectos indeseables de las drogas antiarrítmicas?",
+        "verso": "El más temido es el efecto proarrítmico: pueden generar o empeorar arritmias (las de clase I y III en pacientes con cardiopatía estructural). Otros: amiodarona — toxicidad tiroidea, pulmonar (fibrosis), hepática, corneana y cutánea, por lo que exige controles periódicos; betabloqueantes — bradicardia, hipotensión, broncoespasmo, fatiga; verapamilo/diltiazem — bloqueo AV, constipación; digoxina — náuseas, arritmias, intoxicación en la hipopotasemia; lidocaína — neurológicos (convulsiones). Se vigilan con ECG y controles de laboratorio.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: dosis y efectos indeseables de las drogas antiarrítmicas"
+        ]
+      },
+      {
+        "frente": "¿Cómo se trata la fibrilación auricular?",
+        "verso": "Se decide la estrategia: control de la frecuencia (betabloqueantes, calcioantagonistas no dihidropiridínicos, digoxina) o control del ritmo (cardioversión farmacológica o eléctrica, antiarrítmicos clase I o III). El riesgo de embolia obliga a la anticoagulación según el riesgo (CHA2DS2-VASc): casi todos los pacientes con FA lo requieren, con ajuste del riesgo hemorrágico. Se tratan la cardiopatía de base y los factores desencadenantes (hipertiroidismo, HTA, alcohol, infecciones). En la FA aguda inestable: cardioversión eléctrica urgente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: tratamiento farmacológico de las arritmias"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento no farmacológico de las arritmias?",
+        "verso": "Cardioversión eléctrica sincronizada (FA, flutter, TSV y TV inestables), maniobras vagales y adenosina EV (TSV por reentrada), marcapasos (bradiarritmias y bloqueos sintomáticos), desfibrilador implantable (TV/FV con riesgo de muerte súbita) y ablación por catéter (taquicardias supraventriculares recurrentes, flutter, FA seleccionada, TV del tracto de salida). Se eligen según la arritmia, la cardiopatía y la respuesta al tratamiento farmacológico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: tratamiento no farmacológico de las arritmias"
+        ]
+      },
+      {
+        "frente": "¿Cómo se maneja la taquicardia aguda con compromiso hemodinámico?",
+        "verso": "Ante taquicardia con inestabilidad (hipotensión, síncope, isquemia, edema pulmonar): cardioversión eléctrica sincronizada inmediata. Si el paciente está estable: se documenta el ECG, se intentan maniobras vagales y adenosina en la taquicardia supraventricular regular; en la FA/flutter se controla la frecuencia; en la TV estable, antiarrítmicos EV (amiodarona, lidocaína) y corrección del potasio/magnesio. La causa desencadenante (isquemia, hipopotasemia, tiroides, drogas) se corrige siempre.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: tratamiento de las taquiarritmias"
+        ]
+      },
+      {
+        "frente": "¿Cómo se manejan las bradiarritmias?",
+        "verso": "Las bradicardias asintomáticas y fisiológicas (deportistas, vagales) no requieren tratamiento. Las sintomáticas (síncope, mareos, disnea, bajo gasto) se tratan: atropina EV en la bradicardia sinusal o el bloqueo AV agudo, y marcapasos transitorio o definitivo en los bloqueos AV de 2º y 3º grado sintomáticos y en la enfermedad del nódulo sinusal con síncope. Se suspenden los fármacos que la provocan (betabloqueantes, calcioantagonistas, amiodarona, digoxina) cuando es posible.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Contenidos: tratamiento de las bradiarritmias"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el caso de Sonia?",
+        "verso": "Sonia presenta palpitaciones rápidas y regulares nocturnas con sudoración, temblor fino, insomnio, desasosiego, aceleración, menor concentración y temor en espacios públicos (agorafobia), con antecedente de crisis de pánico no tratada, prolapso mitral sin insuficiencia (clic mesosistólico, hallazgo benigno) y anemia leve por menorragia (Hb 11,5). El nódulo tiroideo palpable junto al temblor, la diarrea y el cuadro hiperadrenérgico hacen obligatorio descartar hipertiroidismo; el patrón agorafóbico y familiar (madre depresiva) orienta a trastorno de ansiedad. La cafeína (mate) y el tabaco agravan las palpitaciones.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál sería el plan diagnóstico y terapéutico de Sonia?",
+        "verso": "Solicitar TSH y hormonas tiroideas (por el nódulo tiroideo y el cuadro hipermetabólico) y ecografía tiroidea si el laboratorio lo confirma; completar el ionograma y evaluar la anemia por menorragia (hierro, control ginecológico). El ECG y el ecocardiograma ya están realizados (ritmo sinusal, PVM sin insuficiencia). Ante el hipertiroidismo, tratamiento de la glándula (que a su vez trata las palpitaciones); si es pánico/ansiedad, derivar a salud mental (tratamiento psicofarmacológico y psicoterapia) y educar para reducir cafeína y tabaco. Tranquilizar sobre el PVM y el clic, que son benignos sin insuficiencia.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT22 — Arritmias Cardíacas — Situación problema"
+        ]
+      }
+    ]
+  }
+]

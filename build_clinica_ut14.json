@@ -1,0 +1,170 @@
+[
+  {
+    "titulo": "Clínica Médica UT14 — Hipertensión Arterial: Concepto, Diagnóstico y Epidemiología",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "cardiologia",
+    "descricao": "Concepto de riesgo cardiovascular, diagnóstico y clasificación de la HTA, causas de hipertensión primaria y secundaria, epidemiología en nuestro país, métodos diagnósticos y evaluación de daño de órgano blanco",
+    "tags": [
+      "clinica-medica-ut14",
+      "hipertension-arterial",
+      "hta",
+      "riesgo-cardiovascular",
+      "diagnostico",
+      "secundaria",
+      "sindrome-metabolico",
+      "presion-arterial"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la hipertensión arterial y cómo se clasifica?",
+        "verso": "Es la elevación sostenida de la presión arterial, definida como PA ≥ 140/90 mmHg en dos o más mediciones separadas. Se clasifica: PA óptima/normal < 120/80; prehipertensión 120-139/80-89; HTA grado 1: 140-159/90-99; grado 2: 160-179/100-109; grado 3: ≥ 180/110. El riesgo cardiovascular aumenta de forma continua con la PA por encima de los niveles normales.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: saber diagnosticar adecuadamente la HTA"
+        ]
+      },
+      {
+        "frente": "¿Qué es el riesgo cardiovascular global?",
+        "verso": "Es la probabilidad de presentar un evento cardiovascular (IAM, ACV, muerte) en un período determinado, estimada por la interacción de la HTA con otros factores: tabaquismo, diabetes, dislipemia, obesidad, sedentarismo, edad, sexo y antecedentes familiares. La HTA casi nunca actúa sola: el tratamiento y la decisión terapéutica se basan en el riesgo global y no solo en la cifra tensional.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: concepto de riesgo cardiovascular"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la epidemiología de la hipertensión en nuestro país?",
+        "verso": "La HTA es el factor de riesgo cardiovascular más prevalente en Argentina: afecta a más de un tercio de los adultos, con alta proporción de pacientes que no se saben hipertensos, no reciben tratamiento o no están controlados. Predomina en mayores de 50 años y se asocia a obesidad, sedentarismo, exceso de sal y consumo de alcohol, por lo que su detección es central en el examen periódico de salud.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: epidemiología de la HTA en nuestro país"
+        ]
+      },
+      {
+        "frente": "¿Por qué la HTA es una enfermedad de herencia multifactorial y cómo se vincula al síndrome metabólico?",
+        "verso": "Participan múltiples genes de efecto pequeño que interactúan con el ambiente (sal, obesidad, alcohol, estrés), por lo que la historia familiar es un factor importante. Se vincula estrechamente al síndrome metabólico: obesidad abdominal, disglucemia, dislipemia e HTA comparten mecanismos (resistencia insulínica, hiperactividad simpática y del SRAA). En el caso de Juan: cintura 135 cm, fumador, bebedor y sedentario, con padre fallecido de ACV.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: herencia multifactorial, factores de riesgo y síndrome metabólico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas de hipertensión secundaria y sus pistas clínicas?",
+        "verso": "Secundarias: nefropatía parenquimatosa (la más frecuente), HTA renovascular (soplo abdominal, HTA de comienzo brusco o resistente, en jóvenes: displasia fibromuscular; en mayores: aterosclerosis), hiperaldosteronismo primario (hipopotasemia), feocromocitoma (crisis de cefalea, palpitaciones y sudoración), síndrome de Cushing, coartación de aorta (diferencia de pulsos) y fármacos (corticoides, AINE, anticonceptivos, simpaticomiméticos). Pistas: comienzo antes de los 30 o después de los 55, HTA resistente o de inicio abrupto.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: principales causas de hipertensión y sus características clínicas"
+        ]
+      },
+      {
+        "frente": "¿Cómo se debe medir y confirmar el diagnóstico de hipertensión?",
+        "verso": "Con técnica correcta: paciente sentado 5 minutos de reposo, sin café ni tabaco 30 minutos antes, manguito adecuado al brazo, tres mediciones separadas y con la PA de los dos brazos. El diagnóstico de HTA se confirma con valores elevados en al menos dos ocasiones. Ante hipertensión de 'guardapolvo blanco' o sospecha de HTA enmascarada se indica la medición ambulatoria o domiciliaria (MAPA), que además evalúa el patrón nocturno.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: diagnóstico; contenidos a recuperar: métodos de medición"
+        ]
+      },
+      {
+        "frente": "¿Qué estudios complementarios se solicitan en la evaluación del hipertenso?",
+        "verso": "Laboratorio: hemograma, glucemia, perfil lipídico, creatinina, urea, ionograma (potasio), ácido úrico y orina completa (proteinuria). ECG para detectar hipertrofia ventricular izquierda. Fondo de ojo para valorar retinopatía hipertensiva. Permiten descartar causas secundarias, evaluar el daño de órgano blanco (corazón, riñón, retina, cerebro) y estratificar el riesgo para decidir la conducta.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: cuadro clínico, diagnóstico y laboratorio"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el cuadro clínico de la hipertensión arterial?",
+        "verso": "En general es asintomática y se descubre en un control (por eso el examen periódico de salud es clave). Los síntomas, cuando aparecen, reflejan daño de órgano blanco o complicaciones: cefalea (frecuentemente occipital u 'holocraneana' con sensación pulsátil, como la de Juan), acúfenos, mareos, epistaxis; disnea de esfuerzo o angina por daño cardíaco; visión borrosa por retinopatía. La cefalea que mejora al disminuir la intensidad del trabajo es la forma que motivó la consulta de Juan.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: cuadro clínico; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cómo influye el status psicosocial en la presión arterial?",
+        "verso": "El estrés psicosocial, los conflictos familiares y laborales, la ansiedad y la mala calidad del sueño elevan la PA por activación simpática y favorecen hábitos nocivos (alcohol, tabaco, malos patrones de alimentación). En el caso de Juan, el conflicto con el hijo adolescente, el consumo de alcohol, el tabaquismo y el uso no supervisado de ansiolíticos son factores a abordar: modificar el estilo de vida exige intervenir también en la esfera psicosocial.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos a recuperar: relación del status psicosocial con la PA; situación problema"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT14 — Hipertensión Arterial: Tratamiento, Complicaciones y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina-interna",
+    "descricao": "Cambios de estilo de vida y alimentación, grupos de drogas antihipertensivas y criterios de elección, manejo en APS, complicaciones y daño de órgano blanco, criterios de derivación y análisis del caso",
+    "tags": [
+      "clinica-medica-ut14",
+      "hipertension",
+      "tratamiento",
+      "enalapril",
+      "estilo-de-vida",
+      "complicaciones",
+      "derivacion",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué modificaciones del estilo de vida se indican al hipertenso?",
+        "verso": "Son la base del tratamiento en todos los pacientes: reducir la ingesta de sal (< 5 g/día de sodio), dieta rica en frutas, verduras y fibras, con control del peso (bajar la obesidad abdominal como la de Juan con cintura 135 cm), actividad física aeróbica regular (30-45 min la mayoría de los días), suspender el tabaco, limitar el alcohol (máximo 1-2 unidades al día; Juan bebe ½ litro de vino diario) y manejar el estrés. Un descenso moderado de peso y de sal puede reducir varios mmHg.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: importancia del cambio de hábito de vida y alimentación"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los principales grupos de drogas antihipertensivas?",
+        "verso": "IECA (enalapril) y ARA II (losartán): bloquean el SRAA, de elección en diabéticos, cardiopatía isquémica e IC. Calcioantagonistas (amlodipino): eficaces en el anciano y el paciente aislado sistólico. Diuréticos tipo tiazida (hidroclorotiazida): útiles en el volumen-dependiente y el anciano. Betabloqueantes (atenolol, carvedilol): indicados en cardiopatía isquémica, IC y taquiarritmias. Complementan: alfa-bloqueantes, espironolactona, vasodilatadores directos. En Argentina, los genéricos de bajo costo (enalapril, amlodipino) facilitan la adherencia.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: principales grupos de drogas útiles"
+        ]
+      },
+      {
+        "frente": "¿Qué criterios guían la elección del antihipertensivo (riesgo/beneficio y costo/beneficio)?",
+        "verso": "Se elige según las comorbilidades y contraindicaciones de cada paciente: IECA/ARA II si hay diabetes, proteinuria, IC o cardiopatía isquémica; betabloqueante si hay coronariopatía o taquiarritmias; calcioantagonista o tiazida en el anciano. Se prefieren los fármacos de una sola dosis diaria y de bajo costo (enalapril, amlodipino, hidroclorotiazida) para asegurar adherencia, y se ajusta la dosis en forma progresiva. El riesgo/beneficio: evitar efectos adversos (tos por IECA, hipopotasemia por tiazidas, bradicardia por betabloqueantes).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: criterios de elección según costo/beneficio y riesgo/beneficio"
+        ]
+      },
+      {
+        "frente": "¿Cómo se decide iniciar tratamiento farmacológico desde la atención primaria?",
+        "verso": "En HTA grado 1 de bajo riesgo se comienza con cambios de estilo de vida y se reevalúa en 3-6 meses; si no se alcanza la meta, se agrega medicación. En HTA grado 2 o 3, o con riesgo alto (diabetes, daño de órgano blanco, enfermedad cardiovascular), se inicia el fármaco de forma precoz junto con los cambios de hábitos. La meta habitual es < 140/90 mmHg (más estricta, < 130/80, en diabéticos, renales o con alto riesgo). La adherencia y la tolerancia se controlan en consultas de seguimiento.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: tratamiento farmacológico de manejo del médico de APS"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales complicaciones de la hipertensión no controlada?",
+        "verso": "Daño de órgano blanco: corazón (hipertrofia ventricular izquierda, cardiopatía isquémica, insuficiencia cardíaca), cerebro (ACV isquémico y hemorrágico, demencia vascular), riñón (nefroangioesclerosis, insuficiencia renal crónica), retina (retinopatía hipertensiva con hemorragias, exudados y papiledema) y grandes vasos (aneurisma, disección aórtica). La HTA no controlada aumenta la mortalidad cardiovascular global. En el caso de Juan, el padre falleció por ACV y el abuelo por IAM, reflejando esta complicación familiar.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Contenidos: principales complicaciones"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los criterios de derivación al especialista?",
+        "verso": "Sospecha de HTA secundaria (joven < 30 años, comienzo brusco, HTA resistente a 3 drogas incluida tiazida, hipopotasemia, soplo abdominal, crisis con palpitaciones/sudoración); HTA acelerada o maligna (cifras muy elevadas con daño de órgano blanco agudo); embarazo; hipertensión en el paciente con nefropatía avanzada o IC; y falta de control a pesar de tratamiento adecuado. El clic protosistólico en foco aórtico y la ingurgitación yugular de Juan son datos a jerarquizar con el cardiólogo.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: criterios de derivación al especialista"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpretan los factores de riesgo presentes en el caso de Juan?",
+        "verso": "Juan tiene HTA grado 2 (160/100) confirmable, obesidad abdominal severa (cintura 135 cm), tabaquismo (20 cig/día), consumo de alcohol (½ L de vino diario), sedentarismo, exceso de sal y estrés psicosocial por el conflicto con su hijo; además, antecedentes familiares de ACV e IAM. Todos son factores de riesgo cardiovascular modificables. La cefalea con 'latidos' que mejora con el reposo y la disnea con los esfuerzos son los síntomas de consulta. La ingurgitación yugular y las sibilancias exigen completar la evaluación cardíaca y respiratoria.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál sería el plan de manejo y seguimiento de Juan?",
+        "verso": "Confirmar el diagnóstico con nuevas mediciones (idealmente MAPA); solicitar laboratorio (glucemia, perfil lipídico, creatinina, potasio, orina), ECG y fondo de ojo para estratificar daño de órgano blanco; indicar cesación tabáquica, restricción de sal y alcohol, baja de peso con ejercicio y contención del conflicto familiar (sin automedicación de ansiolíticos); iniciar IECA (enalapril) o calcioantagonista ajustado al perfil; y educar para la adherencia. Reevaluar en 1-2 meses; derivar al especialista si no controla o si aparecen datos de HTA secundaria.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el rol del médico de atención primaria en la hipertensión?",
+        "verso": "Detectar y diagnosticar correctamente la HTA en el examen periódico, estratificar el riesgo cardiovascular, iniciar los cambios de estilo de vida y el tratamiento farmacológico de primera línea (IECA, calcioantagonistas, tiazidas), educar sobre la dieta y la adherencia, tratar las comorbilidades asociadas (dislipemia, diabetes, obesidad, tabaquismo, alcoholismo) y derivar oportunamente al especialista cuando corresponda. El control crónico del hipertenso estabilizado es una función típica del médico de cabecera.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT14 — Hipertensión Arterial — Objetivos: manejo del médico de atención primaria"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "titulo": "Clínica Médica UT17 — Complicaciones Agudas de la Diabetes: Cetoacidosis y Síndrome Hiperosmolar",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "endocrinologia",
+    "descricao": "Definición, fisiopatología, causas desencadenantes, síntomas y signos, alteraciones bioquímicas y fundamentos terapéuticos de la cetoacidosis diabética y del síndrome hiperglucémico hiperosmolar no cetoacidótico",
+    "tags": [
+      "clinica-medica-ut17",
+      "cetoacidosis-diabetica",
+      "estado-hiperosmolar",
+      "emergencia",
+      "hiperglucemia",
+      "insulina",
+      "acidosis",
+      "diabetes"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué es la cetoacidosis diabética (CAD)?",
+        "verso": "Es una emergencia metabólica caracterizada por la tríada de hiperglucemia (generalmente > 250 mg/dl), acidosis metabólica con aumento del anión gap y cetonemia/cetonuria. Se produce por déficit absoluto o relativo de insulina con exceso de hormonas contrarreguladoras. Predomina en la diabetes tipo 1, aunque puede verse en la tipo 2 ante estrés agudo severo. Requiere tratamiento urgente con insulina, hidratación y reposición de electrolitos.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: definición de cetoacidosis diabética"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los mecanismos fisiopatológicos que desencadenan la cetoacidosis diabética?",
+        "verso": "El déficit de insulina más el exceso de glucagón, cortisol y catecolaminas produce: en el hígado, aumento de la gluconeogénesis y glucogenólisis (hiperglucemia), y de la lipólisis; la oxidación hepática de los ácidos grasos liberados forma cuerpos cetónicos (acetoacetato y betahidroxibutirato), que sobrepasan la capacidad de utilización y generan acidosis metabólica de anión gap aumentado. La hiperglucemia causa diuresis osmótica con deshidratación y pérdida de sodio y potasio.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: mecanismos fisiopatológicos desencadenantes de la CAD"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales causas desencadenantes de la cetoacidosis diabética?",
+        "verso": "Las infecciones (la causa más frecuente: urinaria, respiratoria), la omisión o dosis insuficiente de insulina (en especial por falta de adherencia o problemas de acceso), el infarto agudo de miocardio y el ACV, la pancreatitis, el traumatismo o la cirugía, el estrés emocional, los fármacos hiperglucemiantes (corticoides) y el debut de la diabetes tipo 1. Identificar y tratar el factor desencadenante es tan importante como la corrección metabólica.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: causas desencadenantes de la CAD"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los síntomas y signos de la cetoacidosis diabética?",
+        "verso": "Síndrome poliuropolidípsico agudo (poliuria, polidipsia, polifagia), deshidratación (mucosas secas, taquicardia, hipotensión), náuseas, vómitos y dolor abdominal (por la acidosis), respiración de Kussmaul (respiración profunda y rápida), aliento con olor a acetona o a frutas, y compromiso del sensorio que va desde la obnubilación hasta el coma. La ausencia de fiebre no descarta infección como desencadenante.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: principales síntomas y signos de la CAD"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las alteraciones bioquímicas de la cetoacidosis diabética?",
+        "verso": "Hiperglucemia (> 250 mg/dl, a veces > 400), acidosis metabólica con pH bajo, bicarbonato bajo (< 15-18 mEq/L) y anión gap aumentado, cetonemia (betahidroxibutirato y acetoacetato) y cetonuria; además deshidratación (hematocrito elevado, urea aumentada) e hipernatremia corregida o pseudohipponatremia, y el potasio corporal total está disminuido aunque el potasio sérico inicial pueda ser normal o alto (pasa del intracelular al extracelular por la acidosis). Durante el tratamiento puede aparecer hipopotasemia que debe reponerse.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: alteraciones bioquímicas de la CAD"
+        ]
+      },
+      {
+        "frente": "¿Qué es el síndrome hiperglucémico hiperosmolar no cetoacidótico (SHH)?",
+        "verso": "Es una emergencia metabólica de hiperglucemia extrema (a menudo > 600 mg/dl) con hiperosmolaridad (osmolaridad efectiva > 320 mOsm/L) y deshidratación profunda, con alteración del sensorio, pero SIN cetonuria ni acidosis significativas. Ocurre típicamente en adultos mayores con diabetes tipo 2, muchas veces descompensados por infecciones, mala adherencia, diuréticos o falta de acceso al agua. Hay insulina residual suficiente para frenar la cetogénesis, pero no la hiperglucemia.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: definición y mecanismos fisiopatológicos del SHH"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las causas, los síntomas y las alteraciones bioquímicas del SHH?",
+        "verso": "Causas: infecciones, infarto o ACV, fármacos hiperglucemiantes (corticoides, diuréticos), abandono del tratamiento, hemorragia digestiva, o el inicio de una diabetes tipo 2 no reconocida. Clínica: poliuria y polidipsia iniciales, deshidratación intensa (ojos hundidos, piel pastosa, hipotensión, taquicardia), fiebre por la infección subyacente y compromiso neurológico (obnubilación, coma) proporcional a la osmolaridad, sin respiración de Kussmaul. Bioquímica: glucemia muy alta, osmolaridad elevada, sin acidosis ni cetonuria, con natremia corregida variable y azotemia por la deshidratación.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: causas, síntomas y alteraciones bioquímicas del SHH"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los fundamentos terapéuticos de las emergencias hiperglucémicas (CAD y SHH)?",
+        "verso": "1) Hidratación: solución fisiológica o hipotónica según el sodio, para corregir la deshidratación y la hiperosmolaridad. 2) Insulina regular EV o IM, idealmente en bomba, para corregir la hiperglucemia y detener la cetogénesis. 3) Reposición de potasio (vigilar la hipopotasemia durante la insulinoterapia) y de los demás electrolitos. 4) Bicarbonato solo en acidosis muy severa o refractaria. 5) Tratar la causa desencadenante (antibióticos, IAM) y monitorear en UTI. La glucemia se desciende en forma gradual para evitar el edema cerebral.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: fundamentos terapéuticos de las emergencias diabetológicas"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT17 — Complicaciones Agudas de la Diabetes: Hipoglucemia y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina-interna",
+    "descricao": "Definición, fisiopatología, causas, síntomas y signos y tratamiento del coma hipoglucémico, prevención y educación, y análisis del caso de hipoglucemia por sulfonilurea con neuropatía autonómica",
+    "tags": [
+      "clinica-medica-ut17",
+      "hipoglucemia",
+      "coma-hipoglucemico",
+      "glibenclamida",
+      "sulfonilureas",
+      "neuropatia",
+      "caso-clinico",
+      "emergencia"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué es la hipoglucemia y cuándo se considera grave?",
+        "verso": "Es la disminución de la glucemia por debajo de 70 mg/dl acompañada o no de síntomas. Se considera hipoglucemia grave cuando requiere asistencia de otra persona por el compromiso del sensorio (confusión, convulsiones o coma). Es la complicación aguda más temida del tratamiento con insulina y sulfonilureas, porque el cerebro depende casi exclusivamente de la glucosa y su déficit prolongado causa daño neurológico irreversible.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: definición del coma hipoglucémico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los mecanismos fisiopatológicos que desencadenan la hipoglucemia?",
+        "verso": "Se produce un desbalance entre el aporte de glucosa (ingesta) y su utilización, con exceso relativo de insulina: la insulina exógena (o las sulfonilureas que la estimulan) frena la gluconeogénesis hepática y aumenta la captación periférica de glucosa. En el diabético de larga evolución se agrega la falla de los mecanismos de contrarregulación (déficit de glucagón y de epinefrina, hipoglucemia sin aviso), que aumenta el riesgo de hipoglucemias severas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: mecanismos fisiopatológicos desencadenantes de la hipoglucemia"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las principales causas desencadenantes de la hipoglucemia en el diabético?",
+        "verso": "Exceso de dosis de insulina o de sulfonilureas (la glibenclamida, de vida media larga, es la de mayor riesgo; es la droga de Julio), omisión o retraso de comidas, ejercicio intenso sin ajuste de dosis ni de alimentos, consumo de alcohol (inhibe la gluconeogénesis), insuficiencia renal que reduce la depuración de los fármacos, edad avanzada, infecciones y vómitos que impiden la ingesta. Reconocer el origen evita la recurrencia: el caso de Julio probablemente combina la sulfonilurea con la gastroparesia y los horarios irregulares del taxista.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: causas desencadenantes del coma hipoglucémico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los síntomas y signos de la hipoglucemia?",
+        "verso": "Dos grupos: a) autonómicos/adrenérgicos, por la descarga catecolamínica: sudoración profusa (como Julio), temblor, palpitaciones, taquicardia, ansiedad, hambre; b) neuroglucopénicos, por la falta de glucosa cerebral: cefalea, visión borrosa, confusión, dificultad para concentrarse, conducta extraña, convulsiones y coma. En los diabéticos de larga evolución con neuropatía autonómica los síntomas de aviso pueden faltar y la primera manifestación es ya el compromiso neurológico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: principales síntomas y signos del coma hipoglucémico"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las alteraciones bioquímicas de la hipoglucemia?",
+        "verso": "La glucemia se halla baja (< 70 mg/dl y en el coma < 50 mg/dl; en el caso de Julio, 45 mg/dl). El resto del laboratorio suele ser normal, aunque puede haber hipopotasemia o alteraciones por el estado de base (renal, hepático). No hay acidosis ni cetonuria en la hipoglucemia por fármacos, salvo que coexista alcoholismo o ayuno prolongado. Lo decisivo es que el cuadro revierte con el aporte de glucosa, como ocurrió con Julio al administrar solución glucosada al 50%.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: alteraciones bioquímicas del coma hipoglucémico"
+        ]
+      },
+      {
+        "frente": "¿Cómo se trata la hipoglucemia?",
+        "verso": "Si el paciente está consciente y colabora: ingesta oral de azúcar o hidratos de carbono de absorción rápida (15 g de glucosa; 'regla de 15': 15 g, recontolar en 15 minutos, repetir si persiste). Si está inconsciente, no convulsiona o no puede deglutir: glucosa endovenosa (solución glucosada al 50%, como en el caso de Julio, o al 10% en infusión) o glucagón intramuscular/subcutáneo. Tras recuperar la conciencia se administra un carbohidrato de absorción lenta y se investiga la causa. Se educa al paciente y a la familia para saber reconocerla y actuar.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Contenidos: fundamentos terapéuticos; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cómo se interpreta el caso de Julio y cuál es el origen de su hipoglucemia?",
+        "verso": "Julio, diabético tipo 2 de 16 años tratado con metformina y glibenclamida (sulfonilurea de vida media larga, principal sospechosa de hipoglucemia severa), es encontrado con alteración del sensorio y sudoración profusa: la glucemia de 45 mg/dl confirma hipoglucemia grave, que revierte con glucosa EV. Factores contribuyentes: omisión de comidas por su trabajo de taxista, la gastroparesia (distensión abdominal, constipación/diarrea) que altera la absorción de alimentos, la edad y el uso de sulfonilurea. Debe ajustarse el tratamiento y educar al paciente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué complicaciones crónicas se evidencian en el examen de Julio?",
+        "verso": "Además de la hipoglucemia (complicación aguda), Julio muestra complicaciones crónicas de la diabetes: neuropatía autonómica (visión borrosa fluctuante, mareos al levantarse por hipotensión ortostática, distensión abdominal y constipación alternando con diarrea por gastroparesia) y neuropatía periférica con isquemia de miembros inferiores (hipoestesia e hipoalgesia en piernas, disminución del vello, pulsos periféricos débiles, hiperqueratosis plantar), lo que lo coloca en riesgo de pie diabético. Requiere control del pie, evaluación vascular y ajuste del riesgo cardiovascular (fumador, HTA, dislipidemia).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué medidas preventivas y de educación se indican para evitar la hipoglucemia?",
+        "verso": "Educación diabetológica al paciente y a la familia: reconocer los síntomas de alarma, autocontrol glucémico, no omitir comidas, ajustar la insulina o sulfonilurea al plan alimentario y al ejercicio, evitar el alcohol en ayunas, y conocer la 'regla de 15'. Se reevalúan y reducen las dosis de sulfonilureas en ancianos o con insuficiencia renal. La guía informativa comunitaria debe enumerar las complicaciones de la diabetes (agudas y crónicas) y las medidas preventivas: control metabólico, dieta, ejercicio, cuidado de los pies y control periódico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT17 — Complicaciones Agudas de la Diabetes Mellitus — Actividades: guía informativa a la comunidad"
+        ]
+      }
+    ]
+  }
+]

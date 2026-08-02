@@ -1,0 +1,168 @@
+[
+  {
+    "titulo": "Clínica Médica UT2 — Dolor Músculo-Esquelético: Enfermedades Psicosomáticas",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "medicina-interna",
+    "descricao": "Concepto de enfermedad psicosomática, relación psiquis-soma, el síntoma como comunicación, y enfoque biopsicosocial del dolor muscular",
+    "tags": [
+      "clinica-medica-ut2",
+      "psicosomatica",
+      "dolor-musculo-esqueletico",
+      "biopsicosocial",
+      "sintoma",
+      "fibromialgia"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Qué plantea la noción de enfermedad psicosomática?",
+        "verso": "Plantea la necesidad de recomponer la unidad perdida entre psiquis y soma: los seres humanos somos psicosomáticos y no existen patologías únicamente orgánicas ni 100% psíquicas. El enfoque dualista que separa mente y cuerpo debe reemplazarse por una síntesis en la que la persona es a la vez biología, emociones, afectos, pensamientos y relaciones con los demás y con el ambiente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Introducción"
+        ]
+      },
+      {
+        "frente": "¿Qué significa que 'el síntoma habla, comunica'?",
+        "verso": "Que el síntoma expresa un sentido simbólico: reúne y sintetiza el significado comunicativo del contexto de relaciones en el que aparece. Para conocer la 'causa' de la enfermedad hay que entenderla como algo que se está manifestando con un sentido afectivo, singular y relacional. Por eso, ante los primeros síntomas cabe preguntarse: ¿qué más está pasando realmente?",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Introducción"
+        ]
+      },
+      {
+        "frente": "¿Qué relación establece la tradición psicosomática entre las vivencias y la enfermedad?",
+        "verso": "Siguiendo a Freud, Alexander Mitscherlich sostuvo que las patologías se producen como consecuencia de situaciones vivenciales (catástrofes, duelos o pérdidas) y por el efecto que tienen en nuestras vidas. No toda persona que atraviesa estos eventos enferma: enferman sobre todo quienes carecen de recursos para elaborar esas situaciones que impactan singularmente en la vida.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Introducción"
+        ]
+      },
+      {
+        "frente": "¿Por qué el médico clínico no debe enviar al psiquiatra a todo paciente 'sin causa orgánica'?",
+        "verso": "Porque psiquis y soma son dos caras de una misma moneda y no se puede afectar una sin involucrar la otra. Los pacientes con depresión, ansiedad o desadaptación vivencial también son de nuestra competencia; desentenderse de esta problemática es una forma de iatrogenia, que hace que el paciente, descreído, no acepte la derivación y siga deambulando por los consultorios en busca de quien lo escuche.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — La Clínica Médica (enfermos orgánicos y funcionales)"
+        ]
+      },
+      {
+        "frente": "¿Qué es la fibromialgia?",
+        "verso": "Es un síndrome de dolor músculo-esquelético crónico, generalizado y difuso, pobremente localizado, que se acompaña de fatiga (astenia), sueño no reparador, cefalea y alteraciones del ánimo, sin evidencia de inflamación ni daño estructural que lo explique. Se exacerba con el estrés emocional y los esfuerzos, y se asocia con frecuencia a situaciones vivenciales de tensión.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos y situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué debe descartarse clínicamente ante un cuadro de dolor muscular generalizado?",
+        "verso": "Inflamación articular (sinovitis), rigidez matinal prolongada, fiebre, pérdida de peso, debilidad real y compromiso orgánico. En la fibromialgia estos datos están ausentes: no hay rigidez matinal mayor a 15 minutos, ni inflamación articular, ni síntomas sistémicos, y el examen articular y la fuerza son normales.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos y situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el valor de los exámenes complementarios en la fibromialgia?",
+        "verso": "Sirven para excluir otras enfermedades: en la fibromialgia el laboratorio es normal (hemograma, glucemia, función renal y hepática, VES, PCR, CPK, TSH) y la electromiografía no muestra alteraciones. Una VES o PCR muy elevadas, CPK elevada, TSH alterada o EMG anormal orientan hacia otra enfermedad (inflamatoria, miopática, tiroidea o neurogénica).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: exámenes complementarios; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué importancia tiene el ejercicio en el dolor músculo-esquelético?",
+        "verso": "El ejercicio es el mantenimiento del músculo normal: la actividad física regular (por ejemplo natación) previene el dolor y el desacondicionamiento. En los pacientes con dolor crónico, suspender el ejercicio exacerba los síntomas; por eso el entrenamiento aeróbico gradual forma parte del tratamiento de la fibromialgia.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: prevención primaria (importancia del ejercicio)"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT2 — Fibromialgia: Diagnóstico Diferencial y Tratamiento",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "reumatologia",
+    "descricao": "Criterios de puntos sensibles, diagnóstico diferencial (polimiositis/dermatomiositis, polimialgia reumática, miastenia gravis), semiología muscular, EMG, enzimas musculares y tratamiento",
+    "tags": [
+      "clinica-medica-ut2",
+      "fibromialgia",
+      "diagnostico-diferencial",
+      "polimiositis",
+      "polimialgia-reumatica",
+      "miastenia-gravis",
+      "electromiografia",
+      "puntos-sensibles"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Qué son los puntos sensibles (tender points) y qué criterio clásico se usa para el diagnóstico de fibromialgia?",
+        "verso": "Son 18 sitios anatómicos definidos (inserciones tendinosas, zonas periarticulares, cara interna de codos y rodillas, regiones cervical y lumbar, etc.) donde la presión digital (~4 kg) produce dolor en los pacientes. El criterio clásico (ACR 1990) exige dolor generalizado crónico de más de 3 meses y al menos 11 de 18 puntos sensibles, con distribución simétrica. En el caso, Susana presenta 12 puntos sensibles.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Situación problema; semiología clínica"
+        ]
+      },
+      {
+        "frente": "¿Cómo es la semiología del dolor y la debilidad muscular?",
+        "verso": "El dolor muscular (mialgia) es la manifestación subjetiva; la debilidad es la pérdida de fuerza objetivable. La semiología debe establecer: distribución (proximal vs distal, simétrica vs asimétrica), comienzo (agudo, subagudo, crónico), presencia de rigidez matinal y su duración, datos inflamatorios (fiebre, pérdida de peso, VES/PCR), y asociación con fatiga o fatigabilidad (miastenia). Esto orienta hacia miopatía, neuropatía o disfunción del sistema nervioso.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: semiología clínica del músculo"
+        ]
+      },
+      {
+        "frente": "¿Qué es la electromiografía (EMG) y qué aporta al estudio del músculo?",
+        "verso": "Es el registro de la actividad eléctrica de los músculos y nervios (aguja y conducción nerviosa). Aporta a la detección precoz y al diagnóstico de las enfermedades musculares: diferencia miopatías (patrón miopático) de neuropatías y de alteraciones de la placa neuromuscular (decremento en miastenia gravis). En la fibromialgia la EMG es normal.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: prevención secundaria (importancia de la electromiografía)"
+        ]
+      },
+      {
+        "frente": "¿Qué valor tienen las enzimas musculares en el estudio del dolor/debilidad muscular?",
+        "verso": "La CPK (creatina fosfoquinasa) y la aldolasa son enzimas musculares que se elevan en las miopatías inflamatorias o tóxicas con daño muscular (ej.: polimiositis, rabdomiólisis). En la fibromialgia la CPK es normal. Su elevación, junto con debilidad proximal, orienta al diagnóstico de miopatía inflamatoria.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: laboratorio y valor de las enzimas musculares"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los diagnósticos diferenciales principales del dolor/debilidad muscular según la UT2?",
+        "verso": "Polimiositis/Dermatomiositis, polimialgia reumática y miastenia gravis. Además deben considerarse hipotiroidismo (mialgias con TSH alterada), síndromes de atrapamiento (ej.: túnel carpiano) y cuadros funcionales como la fibromialgia. El dato clave para diferenciar es la presencia o ausencia de inflamación, debilidad real y alteraciones de laboratorio/EMG.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: diagnóstico diferencial"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diferencia la fibromialgia de la polimiositis/dermatomiositis?",
+        "verso": "La polimiositis y la dermatomiositis son miopatías inflamatorias con debilidad muscular proximal real y simétrica, CPK muy elevada, EMG con patrón miopático, y en la dermatomiositis lesiones cutáneas (eritema heliotropo, pápulas de Gottron). En la fibromialgia no hay debilidad objetiva, las enzimas y la EMG son normales y predomina el dolor difuso con puntos sensibles.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: diagnóstico diferencial — polimiositis/dermatomiositis"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diferencia la fibromialgia de la polimialgia reumática?",
+        "verso": "La polimialgia reumática aparece en adultos mayores de 50 años, cursa con dolor y rigidez matinal prolongada (más de 30-60 minutos) en cintura escapular y pélvica, y se acompaña de marcada elevación de VES y PCR. Responde espectacularmente a los corticoides y puede asociarse a arteritis de células gigantes. En la fibromialgia no hay inflamación sistémica ni VES elevada y los pacientes suelen ser más jóvenes.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: diagnóstico diferencial — polimialgia reumática"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diferencia la fibromialgia de la miastenia gravis?",
+        "verso": "La miastenia gravis es una enfermedad de la placa neuromuscular con debilidad fatigable y fluctuante: empeora con el ejercicio y mejora con el reposo, compromete musculatura ocular (ptosis, diplopía), bulbar (disfagia, disartria) y extremidades. Se asocia a anticuerpos contra el receptor de acetilcolina y la EMG muestra decremento de la respuesta repetitiva. En la fibromialgia no hay fatigabilidad neuromuscular objetiva ni compromiso bulbar u ocular.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: diagnóstico diferencial — miastenia gravis"
+        ]
+      },
+      {
+        "frente": "¿Cuándo debe derivar el clínico al especialista en un cuadro de dolor muscular?",
+        "verso": "Ante datos de alarma: debilidad muscular real o progresiva, rigidez matinal inflamatoria, fiebre o pérdida de peso, elevación de enzimas musculares, EMG alterada, VES/PCR muy elevadas, compromiso bulbar u ocular, o mala respuesta al tratamiento con repercusión funcional, social o psíquica importante. En esos casos se deriva a Reumatología o Neurología.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: cuándo derivar; prevención secundaria y terciaria"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el tratamiento de la fibromialgia?",
+        "verso": "Es multimodal: educación del paciente, ejercicio aeróbico gradual y regular (no suspenderlo), higiene del sueño, manejo del estrés, terapia cognitivo-conductual y tratamiento de la ansiedad/depresión asociadas. Fármacos: amitriptilina a dosis bajas, duloxetina, pregabalina u otros neuromoduladores. Los AINEs y miorrelajantes tienen utilidad limitada (alivio parcial, como en el caso). Se contempla la rehabilitación físico-psíquico-social.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT2 — Dolor Músculo-Esquelético. Fibromialgia — Contenidos: bases de tratamiento; prevención terciaria"
+        ]
+      }
+    ]
+  }
+]

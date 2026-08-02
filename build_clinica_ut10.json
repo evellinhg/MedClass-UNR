@@ -1,0 +1,162 @@
+[
+  {
+    "titulo": "Clínica Médica UT10 — VIH-SIDA: Historia Natural y Diagnóstico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "infectologia",
+    "descricao": "Vías de transmisión, historia natural (primoinfección, asintomática, sida), eventos definidores de sida, métodos diagnósticos, pruebas de progresión, implicancias ético-legales y perfil de la epidemia",
+    "tags": [
+      "clinica-medica-ut10",
+      "vih",
+      "sida",
+      "historia-natural",
+      "cd4",
+      "carga-viral",
+      "eventos-definidores",
+      "diagnostico"
+    ],
+    "ordem": 1,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las vías de transmisión del VIH y los factores de riesgo?",
+        "verso": "Transmisión sexual (la más frecuente, sobre todo sin método de barrera y con múltiples parejas), sanguínea (uso compartido de agujas y jeringas, transfusiones sin control) y vertical (de la madre al hijo durante el embarazo, el parto o la lactancia). Son factores de riesgo las relaciones sin preservativo con parejas ocasionales, el consumo de drogas intravenosas o inhalatorias en contextos de riesgo y las ETS previas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos y situación problema"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la historia natural de la infección por VIH sin tratamiento?",
+        "verso": "1) Infección primaria o síndrome retroviral agudo (2-4 semanas): fiebre, faringitis, linfadenopatías, exantema, mialgias, en una fase de alta viremia. 2) Infección asintomática o de latencia clínica: dura años, el paciente está asintomático mientras el virus y la inmunidad se equilibran, con descenso progresivo de linfocitos CD4. 3) Fase sintomática o sida: con CD4 muy bajos aparecen las infecciones oportunistas y neoplasias. El tratamiento antirretroviral modifica esta evolución, controlando la viremia y preservando los CD4.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: historia natural de la infección por VIH"
+        ]
+      },
+      {
+        "frente": "¿Qué son los eventos definidores de sida?",
+        "verso": "Son los cuadros que marcan la progresión a sida: recuento de CD4 < 200/µl, o la aparición de enfermedades oportunistas y neoplasias específicas: neumonía por Pneumocystis jirovecii, toxoplasmosis cerebral, candidiasis esofágica, tuberculosis, criptococosis, criptosporidiosis, retinitis por CMV, micobacterias atípicas, sarcoma de Kaposi, linfomas, entre otras. El diagnóstico de sida no equivale a 'años de vida perdidos': con TARV es tratable.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos y contenidos: eventos definidores de sida"
+        ]
+      },
+      {
+        "frente": "¿Cómo se diagnostica la infección por VIH?",
+        "verso": "Con pruebas de tamizaje (ELISA de 4ª generación que detecta anticuerpos y antígeno p24, o pruebas rápidas) y confirmación con Western blot o inmunoblot. En la infección aguda precoz pueden usarse la detección de antígeno p24 y la PCR (RNA viral). Debe respetarse la 'ventana' (período entre el contagio y la positivización, que con las pruebas actuales es de semanas) y la confidencialidad.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: métodos diagnósticos"
+        ]
+      },
+      {
+        "frente": "¿Qué pruebas de laboratorio evalúan la progresión de la enfermedad por VIH?",
+        "verso": "El recuento de linfocitos T CD4 (indica el grado de inmunodepresión y el riesgo de infecciones oportunistas) y la carga viral (copias de RNA de VIH/mL, indica la replicación y guía la respuesta al tratamiento). Con el TARV se busca carga viral indetectable y recuperación de CD4.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: pruebas de laboratorio para evaluar la progresión"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las implicancias ético-legales del diagnóstico de VIH?",
+        "verso": "El test de VIH requiere consentimiento informado previo (no puede realizarse sin el conocimiento del paciente), los resultados son confidenciales y no debe discriminarse al paciente; la notificación es parte del sistema de vigilancia epidemiológica. El médico debe brindar consejería pre y post test, explicar el significado del resultado y los cuidados, y acompañar el impacto emocional del diagnóstico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos: implicancias ético-legales; impacto psicológico"
+        ]
+      },
+      {
+        "frente": "¿Cómo es la epidemia de VIH en la Argentina y nuestra región?",
+        "verso": "La transmisión sexual es la vía predominante; hay una proporción relevante de diagnóstico tardío (personas que se enteran de su infección al llegar al sida), una mayor incidencia en poblaciones vulnerables y brechas en el acceso y la adherencia al tratamiento. Conocer la prevalencia y el perfil local permite orientar las estrategias de prevención, testeo y tratamiento.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos: prevalencia regional y perfil de la epidemia"
+        ]
+      },
+      {
+        "frente": "¿Qué impacto psicológico tiene el diagnóstico de VIH en el paciente y su entorno?",
+        "verso": "El diagnóstico genera shock, ansiedad, depresión, miedo al estigma y a la discriminación, y afecta los vínculos, la sexualidad y los proyectos de vida. El médico debe acompañar, brindar información clara (VIH no es sida; con tratamiento es una enfermedad crónica controlable), derivar a apoyo psicológico cuando corresponda y respetar la intimidad y autonomía del paciente.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos: impacto psicológico del diagnóstico"
+        ]
+      }
+    ]
+  },
+  {
+    "titulo": "Clínica Médica UT10 — VIH-SIDA: Fiebre, Infecciones Oportunistas y Caso Clínico",
+    "ano": "ano4",
+    "materia": "clinica-medica",
+    "parcial": "parcial1",
+    "disciplina_base": "infectologia",
+    "descricao": "Causas de fiebre según el estadio, neumonía por Pneumocystis jirovecii y otras infecciones oportunistas, situaciones de riesgo de vida, manejo inicial, tratamiento antirretroviral y análisis del caso",
+    "tags": [
+      "clinica-medica-ut10",
+      "vih",
+      "fiebre",
+      "pneumocystis-jirovecii",
+      "infecciones-oportunistas",
+      "tratamiento-antirretroviral",
+      "caso-clinico"
+    ],
+    "ordem": 2,
+    "cards": [
+      {
+        "frente": "¿Cuáles son las causas de fiebre en el paciente con VIH según el estadio evolutivo?",
+        "verso": "Con CD4 conservados (> 500): las causas comunes de la población general (infecciones virales, sinusitis, faringitis). Con CD4 intermedios (200-500): tuberculosis, neumonías bacterianas, herpes. Con CD4 bajos (< 200): infecciones oportunistas (neumonía por Pneumocystis jirovecii, toxoplasmosis, criptococosis, candidiasis, micobacterias atípicas, CMV) y neoplasias. El estadio inmunológico orienta el estudio de la fiebre.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos: causas de fiebre según el estadio"
+        ]
+      },
+      {
+        "frente": "¿Cuál es la clínica y el diagnóstico de la neumonía por Pneumocystis jirovecii (PCP)?",
+        "verso": "Fiebre, tos seca y disnea progresiva (de esfuerzos hasta reposo) con hipoxemia desproporcionada al examen físico; LDH suele estar elevada y la radiografía muestra infiltrados intersticiales bilaterales difusos. Se presenta con CD4 < 200. El diagnóstico se confirma con visualización del hongo en secreciones respiratorias (esputo inducido o lavado broncoalveolar) con tinciones específicas.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: complicaciones oportunistas; situación problema"
+        ]
+      },
+      {
+        "frente": "¿Qué otras infecciones oportunistas y neoplasias son frecuentes en el sida?",
+        "verso": "Tuberculosis (la más frecuente en muchas regiones), toxoplasmosis cerebral (lesión única o múltiple en anillo con realce), candidiasis esofágica (odinofagia), criptococosis (meningitis), retinitis y colitis por CMV, micobacterias atípicas (CD4 < 50), además de sarcoma de Kaposi, linfomas y cáncer de cuello uterino (virus HPV). Cada una orienta a exámenes específicos (TC, LCR, fondo de ojo, cultivos).",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: complicaciones infecciosas oportunistas y no oportunistas"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son las situaciones de riesgo de vida en el paciente VIH febril?",
+        "verso": "Insuficiencia respiratoria por neumonía grave (PCP, bacteriana) con hipoxemia progresiva; meningitis (criptococo, tuberculosis, neumococo) con deterioro de conciencia; sepsis y shock por bacteriemia; lesiones cerebrales con hipertensión endocraneana; y anemia/plaquetopenia grave. La presencia de disnea de reposo, taquipnea, hipoxemia, compromiso neurológico o inestabilidad hemodinámica exige internación y actuación inmediata.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Objetivos: situaciones de riesgo de vida en el paciente VIH febril"
+        ]
+      },
+      {
+        "frente": "¿Qué exámenes complementarios se realizan ante la fiebre del paciente VIH positivo?",
+        "verso": "Hemograma, función renal y hepática, LDH, radiografía de tórax, hemocultivos, urocultivo, búsqueda de micobacterias en esputo y cultivos, serologías y antígenos (cifra de CD4, carga viral, antígeno de criptococo, etc.), y según el foco: TC cerebral con contraste, punción lumbar y fondo de ojo. Los exámenes se guían por el estadio inmunológico y el cuadro clínico.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: exámenes complementarios para el diagnóstico de las complicaciones febriles"
+        ]
+      },
+      {
+        "frente": "¿Cuál es el manejo inicial de las infecciones oportunistas?",
+        "verso": "Cobertura específica precoz según el germen más probable: trimetoprima-sulfametoxazol para PCP (más corticoides si hay hipoxemia), tratamiento anti-TB combinado en tuberculosis, pirimetamina-sulfadiazina en toxoplasmosis, anfotericina o fluconazol en criptococosis/candidiasis, ganciclovir/valganciclovir en CMV. Se complementa con el tratamiento de la causa y la evaluación de iniciar o adecuar el TARV.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: manejo inicial de las complicaciones infecciosas"
+        ]
+      },
+      {
+        "frente": "¿Cuáles son los conceptos generales del tratamiento antirretroviral (TARV)?",
+        "verso": "Se basa en la combinación de al menos tres fármacos de dos o más familias (dos inhibidores nucleosídicos de la transcriptasa inversa más un tercer fármaco: inhibidor no nucleosídico, inhibidor de proteasa potenciado o inhibidor de integrasa). El tratamiento se inicia tempranamente (independientemente del CD4), es de por vida, exige excelente adherencia, busca carga viral indetectable y se monitorea con CD4, carga viral y clínica.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: conceptos generales sobre el tratamiento antirretroviral"
+        ]
+      },
+      {
+        "frente": "¿Qué profilaxis se indica según el recuento de CD4?",
+        "verso": "Con CD4 < 200: profilaxis de PCP con trimetoprima-sulfametoxazol (que además previene toxoplasmosis con CD4 < 100). Con CD4 < 100: valorar profilaxis de toxoplasmosis. Con CD4 < 50: profilaxis de micobacterias atípicas. La profilaxis se suspende cuando los CD4 se recuperan sostenidamente con el TARV.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Contenidos: conceptos generales del tratamiento; profilaxis"
+        ]
+      },
+      {
+        "frente": "¿Qué datos del caso de Esteban orientan al diagnóstico de neumonía por Pneumocystis jirovecii?",
+        "verso": "Fiebre de 7 días con tos seca progresiva y disnea que evoluciona a disnea de reposo en un paciente con inmunodepresión sospechada (adinamia y pérdida de 7 kg en 2 años, linfopenia con 8% de linfocitos, anemia Hb 9,9) y LDH elevada (750), con antecedentes de riesgo (parejas ocasionales sin preservativo, consumo de cocaína). La disnea de reposo y el tiraje supraclavicular/supraesternal indican insuficiencia respiratoria y obligan a internación, estudio respiratorio (Rx de tórax, gasometría, esputo inducido/BAL) y testeo de VIH con consejería.",
+        "fontes": [
+          "Guía de Aprendizaje, Área Clínica Médica (FCM-UNR), UT10 — VIH-SIDA — Situación problema"
+        ]
+      }
+    ]
+  }
+]

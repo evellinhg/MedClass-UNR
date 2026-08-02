@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Check, X, ArrowRight, RotateCcw } from "lucide-react"
@@ -162,18 +162,55 @@ const DEMO_QUESTIONS: DemoQuestion[] = [
       "Incorrecto. La otitis media serosa postinflamatoria suele ser bilateral y de resolución espontánea; no existe un mecanismo autoinmune primario que explique un derrame unilateral del adulto.",
     ],
   },
+  {
+    materiaKey: "oftalmologia",
+    statement: "En un paciente recién nacido con ojos grandes y azulados, ¿qué debo descartar?",
+    options: ["Retinoblastoma", "Catarata congénita", "Estrabismo", "Glaucoma congénito"],
+    correctIndex: 3,
+    explanations: [
+      "Incorrecto. El retinoblastoma se presenta típicamente con leucocoria (pupila blanca) y estrabismo, sin aumento volumétrico ocular difuso bilateral en recién nacidos.",
+      "Incorrecto. La catarata congénita se manifiesta como opacidad del cristalino con leucocoria, sin inducir buftalmía ni alteración de la córnea.",
+      "Incorrecto. El estrabismo es un desvío de alineación motora que no afecta las dimensiones del globo ni la transparencia de la córnea.",
+      "Correcto. Ojos grandes (buftalmía) y azulados (por edema y opacidad corneal derivados de la hipertensión ocular) son signos de alarma del glaucoma congénito primario.",
+    ],
+  },
 ]
+
+// Alterna entre dois grupos fixos de 5 questões a cada visita/atualização da
+// página (guardado por navegador em localStorage), em vez de mostrar as 10
+// de uma vez ou sortear aleatoriamente.
+const GROUP_A_KEYS = [
+  "crescimento_desenvolvimento",
+  "sexualidade_genero_reproducao",
+  "ser_humano_meio",
+  "defesa",
+  "otorrinolaringologia",
+]
+const GROUP_STORAGE_KEY = "medclass_quiz_demo_group"
+
+function nextGroup(): "A" | "B" {
+  if (typeof window === "undefined") return "A"
+  const last = window.localStorage.getItem(GROUP_STORAGE_KEY)
+  const next = last === "A" ? "B" : "A"
+  window.localStorage.setItem(GROUP_STORAGE_KEY, next)
+  return next
+}
 
 export function QuizDemo() {
   const { t } = useLanguage()
-  const questions = useMemo(
-    () =>
-      DEMO_QUESTIONS.map((q) => ({
-        ...q,
-        materia: t.cronograma.materiaLabel[q.materiaKey] ?? q.materiaKey,
-      })),
-    [t]
-  )
+  const [group, setGroup] = useState<"A" | "B">("A")
+
+  useEffect(() => {
+    setGroup(nextGroup())
+  }, [])
+
+  const questions = useMemo(() => {
+    const selected = DEMO_QUESTIONS.filter((q) => GROUP_A_KEYS.includes(q.materiaKey) === (group === "A"))
+    return selected.map((q) => ({
+      ...q,
+      materia: t.cronograma.materiaLabel[q.materiaKey] ?? q.materiaKey,
+    }))
+  }, [t, group])
   const [current, setCurrent] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
   const [confirmed, setConfirmed] = useState(false)

@@ -2,14 +2,21 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
 import { BookOpenCheck, Smartphone, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { StudyDashboard } from "./study-dashboard"
 import { AmbientBackground } from "./ambient-background"
 import { useLanguage } from "@/lib/i18n"
 import { usePwaInstall } from "@/lib/use-pwa-install"
 import { PwaInstallInstructionsDialog } from "@/components/pwa-install-instructions-dialog"
+
+// recharts é pesado (~100KB+) e só é usado dentro do StudyDashboard para um
+// gráfico decorativo — carrega em separado do bundle inicial do Hero.
+const StudyDashboard = dynamic(() => import("./study-dashboard").then((m) => m.StudyDashboard), {
+  ssr: false,
+  loading: () => <div className="h-[520px] w-full max-w-2xl animate-pulse rounded-2xl border border-white/10 bg-white/[0.03]" />,
+})
 
 export function Hero() {
   const { t } = useLanguage()

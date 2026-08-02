@@ -46,6 +46,7 @@ export function QuizDemo() {
       .from("questoes")
       .select("enunciado, opcoes, indice_correta, materia, opcoes_comentario")
       .eq("ativo", true)
+      .limit(60)
 
     if (error || !data || data.length === 0) {
       setLoadError(true)

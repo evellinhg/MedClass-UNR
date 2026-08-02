@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import { Check, Layers, Loader2, PlayCircle, Pencil, Plus, Search, Trash2, Upload, Video } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { enfileirarAviso } from "@/lib/avisos"
 import { AREAS } from "@/lib/quiz-config"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -245,6 +246,13 @@ export function AdminVideoaulasContent() {
       alert(`Erro ao salvar: ${error.message}`)
       return
     }
+
+    enfileirarAviso(
+      "videoaulas",
+      "Nova videoaula disponível",
+      `Adicionamos uma nova videoaula: "${payload.titulo}". Já está disponível pra assistir!`,
+      "/dashboard/materiais?tab=videoaulas"
+    )
 
     if (dialogKind === "propria") {
       // Mantém o dialog aberto para o admin subir os vídeos na sequência.

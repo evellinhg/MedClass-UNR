@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { FileText, Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { enfileirarAviso } from "@/lib/avisos"
 import { AREAS } from "@/lib/quiz-config"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -125,6 +126,7 @@ export function AdminResumosContent() {
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
     }
 
+    const isNew = !editingId
     const { error } = editingId
       ? await supabase.from("materiais_resumos").update(payload).eq("id", editingId)
       : await supabase.from("materiais_resumos").insert(payload)
@@ -133,6 +135,14 @@ export function AdminResumosContent() {
     if (error) {
       alert(`Erro ao salvar: ${error.message}`)
       return
+    }
+    if (isNew) {
+      enfileirarAviso(
+        "resumos",
+        "Novo resumo disponível",
+        `Adicionamos um novo resumo: "${payload.titulo}" (${payload.especialidade}). Já está disponível pra estudar!`,
+        "/dashboard/materiais?tab=resumos"
+      )
     }
     setDialogOpen(false)
     load()

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { enfileirarAviso } from "@/lib/avisos"
 import { AREAS } from "@/lib/quiz-config"
 import { getDesafioIcon, DESAFIO_SECAO_KEYS } from "@/lib/desafio-icons"
 import { translations } from "@/lib/i18n"
@@ -232,6 +233,7 @@ export function AdminDesafiosContent() {
         .filter((b) => b.titulo),
     }
 
+    const isNew = !editingId
     let desafioId = editingId
     if (editingId) {
       const { error } = await supabase.from("desafios_clinicos").update(desafioPayload).eq("id", editingId)
@@ -265,6 +267,14 @@ export function AdminDesafiosContent() {
     if (perguntasError) {
       alert(`Erro ao salvar perguntas: ${perguntasError.message}`)
       return
+    }
+    if (isNew) {
+      enfileirarAviso(
+        "desafios_clinicos",
+        "Novo desafio clínico disponível",
+        `Adicionamos um novo desafio clínico: "${desafioPayload.titulo}". Já está disponível pra treinar!`,
+        "/dashboard/desafios-clinicos"
+      )
     }
     setDialogOpen(false)
     load()

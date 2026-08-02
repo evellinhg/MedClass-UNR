@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { Layers, Loader2, Pencil, Plus, Search, Trash2, X } from "lucide-react"
 import { supabase, fetchAllFlashcardRefs } from "@/lib/supabase"
+import { enfileirarAviso } from "@/lib/avisos"
 import { translations } from "@/lib/i18n"
 import {
   ANO_KEYS,
@@ -199,6 +200,7 @@ export function AdminFlashcardsContent() {
       tags: form.tags.split(",").map((t) => t.trim()).filter(Boolean),
     }
 
+    const isNew = !editingId
     let deckId = editingId
     if (editingId) {
       const { error } = await supabase.from("materiais_flashcard_decks").update(deckPayload).eq("id", editingId)
@@ -225,6 +227,15 @@ export function AdminFlashcardsContent() {
     if (cardsError) {
       alert(`Erro ao salvar cartões: ${cardsError.message}`)
       return
+    }
+    if (isNew) {
+      const materia = materiaLabel[form.materia] ?? form.materia
+      enfileirarAviso(
+        "flashcards",
+        "Novos flashcards disponíveis",
+        `Adicionamos um novo baralho de flashcards: "${deckPayload.titulo}" (${materia}). Já dá pra estudar!`,
+        "/dashboard/materiais?tab=flashcards"
+      )
     }
     setDialogOpen(false)
     load()

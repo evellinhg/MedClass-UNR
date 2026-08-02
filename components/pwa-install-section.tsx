@@ -38,8 +38,14 @@ export function PwaInstallSection() {
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-3xl border border-[#c6ff3a]/25 bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-8 shadow-[0_20px_70px_-20px_rgba(198,255,58,0.25)] sm:p-12"
         >
-          <div className="pointer-events-none absolute -right-16 -top-20 h-72 w-72 rounded-full bg-[#c6ff3a]/10 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-16 h-72 w-72 rounded-full bg-[#84cc16]/10 blur-3xl" />
+          <div
+            className="pointer-events-none absolute -right-16 -top-20 h-72 w-72"
+            style={{ backgroundImage: "radial-gradient(circle, rgba(198,255,58,0.1) 0%, rgba(198,255,58,0) 70%)" }}
+          />
+          <div
+            className="pointer-events-none absolute -bottom-20 -left-16 h-72 w-72"
+            style={{ backgroundImage: "radial-gradient(circle, rgba(132,204,22,0.1) 0%, rgba(132,204,22,0) 70%)" }}
+          />
 
           <div className="relative grid items-center gap-10 lg:grid-cols-[auto_1fr_auto]">
             <div className="mx-auto flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] shadow-[0_0_40px_rgba(198,255,58,0.35)] lg:mx-0">

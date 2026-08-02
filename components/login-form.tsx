@@ -72,8 +72,9 @@ export function LoginForm({ initialError }: { initialError?: string }) {
           <Image
             src="/logo.png"
             alt="MedClass Logo"
-            width={2000}
-            height={562}
+            width={228}
+            height={64}
+            sizes="228px"
             className="h-16 w-auto object-contain"
             priority
           />

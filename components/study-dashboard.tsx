@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { AnimatePresence, motion } from "framer-motion"
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
@@ -393,13 +393,35 @@ export function StudyDashboard() {
 
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [inView, setInView] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Só gira o carrossel automaticamente quando o card está visível na tela
+  // e fora do mobile (onde o auto-rotate remontava o gráfico recharts a
+  // cada 6s independente do usuário estar olhando, pesando na GPU).
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 767px)")
+    setIsMobile(mql.matches)
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mql.addEventListener("change", onChange)
+    return () => mql.removeEventListener("change", onChange)
+  }, [])
 
   useEffect(() => {
-    if (paused) return
+    const el = containerRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0.3 })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (paused || !inView || isMobile) return
     const id = setInterval(() => setIndex((i) => (i + 1) % slides.length), 6000)
     return () => clearInterval(id)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [paused])
+  }, [paused, inView, isMobile])
 
   useEffect(() => {
     if (index >= slides.length) setIndex(0)
@@ -411,10 +433,11 @@ export function StudyDashboard() {
 
   return (
     <motion.div
+      ref={containerRef}
       layout
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      className="w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-2xl backdrop-blur-sm"
+      className="w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#181c14] shadow-2xl"
     >
       {/* Window chrome */}
       <div className="flex items-center gap-2 border-b border-white/5 bg-white/[0.02] px-4 py-3">

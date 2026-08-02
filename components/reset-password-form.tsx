@@ -58,7 +58,7 @@ export function ResetPasswordForm() {
     <div className="w-full max-w-sm">
       <div className="mb-8 text-center">
         <div className="mx-auto mt-4 mb-4 flex items-center justify-center">
-          <Image src="/logo.png" alt="MedClass Logo" width={2000} height={562} className="h-16 w-auto object-contain" priority />
+          <Image src="/logo.png" alt="MedClass Logo" width={228} height={64} sizes="228px" className="h-16 w-auto object-contain" priority />
         </div>
         <p className="mt-1 text-sm text-muted-foreground">Defina sua nova senha de acesso</p>
       </div>

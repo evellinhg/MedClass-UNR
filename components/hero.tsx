@@ -56,7 +56,7 @@ export function Hero() {
         >
           {/* Badge */}
           <motion.div 
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/80 backdrop-blur-sm"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1a1e15] px-4 py-1.5 text-sm text-white/80"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}

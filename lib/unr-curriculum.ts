@@ -15,6 +15,14 @@ export const MATERIA_KEYS_BY_ANO: Record<AnoKey, string[]> = {
 export const PARCIAL_KEYS = ["parcial1", "parcial2"] as const
 export type ParcialKey = (typeof PARCIAL_KEYS)[number]
 
+// Matérias do 4º ano que só têm um parcial (cursam em bloco único, não dividem
+// o conteúdo em dois parciais como as demais matérias da grade).
+const MATERIAS_APENAS_PARCIAL1 = ["oftalmologia", "otorrinolaringologia"]
+
+export function parciaisDaMateria(materiaKey: string): readonly ParcialKey[] {
+  return MATERIAS_APENAS_PARCIAL1.includes(materiaKey) ? (["parcial1"] as const) : PARCIAL_KEYS
+}
+
 // Ciências básicas — lista fixa e global, não depende do módulo/ano.
 // Rótulos de exibição em lib/i18n.tsx (t.cronograma.disciplinaBaseLabel).
 export const DISCIPLINA_BASE_KEYS = [

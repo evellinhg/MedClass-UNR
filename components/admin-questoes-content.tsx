@@ -20,6 +20,7 @@ import {
   ANO_KEYS,
   MATERIA_KEYS_BY_ANO,
   PARCIAL_KEYS,
+  parciaisDaMateria,
   DISCIPLINA_BASE_KEYS,
   anoDaMateria,
   type AnoKey,
@@ -209,7 +210,21 @@ export function AdminQuestoesContent() {
   }
 
   const handleAnoChange = (novoAno: AnoKey) => {
-    setForm((p) => ({ ...p, ano: novoAno, materia: MATERIA_KEYS_BY_ANO[novoAno][0] }))
+    const novaMateria = MATERIA_KEYS_BY_ANO[novoAno][0]
+    setForm((p) => ({
+      ...p,
+      ano: novoAno,
+      materia: novaMateria,
+      parcial: parciaisDaMateria(novaMateria).includes(p.parcial) ? p.parcial : parciaisDaMateria(novaMateria)[0],
+    }))
+  }
+
+  const handleMateriaChange = (novaMateria: string) => {
+    setForm((p) => ({
+      ...p,
+      materia: novaMateria,
+      parcial: parciaisDaMateria(novaMateria).includes(p.parcial) ? p.parcial : parciaisDaMateria(novaMateria)[0],
+    }))
   }
 
   const openEdit = (q: Questao) => {
@@ -396,7 +411,14 @@ export function AdminQuestoesContent() {
             className="pl-9"
           />
         </div>
-        <Select value={filterMateria} onValueChange={(v) => { setFilterMateria(v); setPage(1) }}>
+        <Select
+          value={filterMateria}
+          onValueChange={(v) => {
+            setFilterMateria(v)
+            if (!parciaisDaMateria(v === "todas" ? "" : v).includes(filterParcial as ParcialKey)) setFilterParcial("todas")
+            setPage(1)
+          }}
+        >
           <SelectTrigger className="w-[220px]">
             <SelectValue placeholder="Matéria" />
           </SelectTrigger>
@@ -415,7 +437,7 @@ export function AdminQuestoesContent() {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="todas">Todos os parciais</SelectItem>
-            {PARCIAL_KEYS.map((p) => (
+            {(filterMateria === "todas" ? PARCIAL_KEYS : parciaisDaMateria(filterMateria)).map((p) => (
               <SelectItem key={p} value={p}>
                 {parcialLabel[p]}
               </SelectItem>
@@ -667,7 +689,7 @@ export function AdminQuestoesContent() {
                 <Label>Matéria</Label>
                 <Select
                   value={form.materia}
-                  onValueChange={(v) => setForm((p) => ({ ...p, materia: v }))}
+                  onValueChange={handleMateriaChange}
                 >
                   <SelectTrigger className="w-full">
                     <SelectValue />
@@ -714,7 +736,7 @@ export function AdminQuestoesContent() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {PARCIAL_KEYS.map((p) => (
+                    {parciaisDaMateria(form.materia).map((p) => (
                       <SelectItem key={p} value={p}>
                         {parcialLabel[p]}
                       </SelectItem>

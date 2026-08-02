@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { DIFFICULTIES } from "@/lib/quiz-config"
-import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
@@ -85,12 +85,22 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           : []
 
   const toggleMateria = (materia: string) => {
-    setSelectedMaterias((prev) => (prev.includes(materia) ? prev.filter((m) => m !== materia) : [...prev, materia]))
+    setSelectedMaterias((prev) => {
+      const next = prev.includes(materia) ? prev.filter((m) => m !== materia) : [...prev, materia]
+      const disponiveis = next.length > 0 ? new Set(next.flatMap((m) => parciaisDaMateria(m))) : new Set(PARCIAL_KEYS)
+      if (parcial && !disponiveis.has(parcial)) setParcial("")
+      return next
+    })
     setAvailable(null)
   }
 
   const materiasFiltro = () =>
     selectedMaterias.length > 0 && selectedMaterias.length < ALL_MATERIAS.length ? selectedMaterias : undefined
+
+  const parciaisDisponiveis =
+    selectedMaterias.length > 0
+      ? PARCIAL_KEYS.filter((p) => selectedMaterias.some((m) => parciaisDaMateria(m).includes(p)))
+      : PARCIAL_KEYS
 
   const handleVerify = async () => {
     setChecking(true)
@@ -318,7 +328,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
                 >
                   {t.treinamentos.qualquer}
                 </button>
-                {PARCIAL_KEYS.map((p) => (
+                {parciaisDisponiveis.map((p) => (
                   <button
                     key={p}
                     onClick={() => setParcial(p)}

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Plus, Trash2, CalendarDays, Loader2, Route, LogIn, Play, ListChecks } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
+import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -101,7 +101,14 @@ export function CronogramaContent() {
 
   const handleAnoChange = (novoAno: AnoKey) => {
     setAno(novoAno)
-    setMateria(MATERIA_KEYS_BY_ANO[novoAno][0])
+    const novaMateria = MATERIA_KEYS_BY_ANO[novoAno][0]
+    setMateria(novaMateria)
+    if (!parciaisDaMateria(novaMateria).includes(parcial)) setParcial(parciaisDaMateria(novaMateria)[0])
+  }
+
+  const handleMateriaChange = (novaMateria: string) => {
+    setMateria(novaMateria)
+    if (!parciaisDaMateria(novaMateria).includes(parcial)) setParcial(parciaisDaMateria(novaMateria)[0])
   }
 
   const handleAddRoutine = async () => {
@@ -389,7 +396,7 @@ export function CronogramaContent() {
 
               <div>
                 <label className="text-sm font-medium text-foreground">{t.cronograma.area}</label>
-                <Select value={materia} onValueChange={setMateria}>
+                <Select value={materia} onValueChange={handleMateriaChange}>
                   <SelectTrigger className="mt-2 w-full">
                     <SelectValue />
                   </SelectTrigger>
@@ -410,7 +417,7 @@ export function CronogramaContent() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    {PARCIAL_KEYS.map((p) => (
+                    {parciaisDaMateria(materia).map((p) => (
                       <SelectItem key={p} value={p}>
                         {t.cronograma.parcialLabel[p] ?? p}
                       </SelectItem>

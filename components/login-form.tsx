@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { GoogleIcon, AppleIcon } from "@/components/social-icons"
 
-type Mode = "signin" | "signup"
+type Mode = "signin" | "signup" | "forgot"
 
 export function LoginForm({ initialError }: { initialError?: string }) {
   const router = useRouter()
@@ -40,6 +40,19 @@ export function LoginForm({ initialError }: { initialError?: string }) {
     setError(null)
     setInfo(null)
     setLoading("email")
+
+    if (mode === "forgot") {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      })
+      setLoading(null)
+      if (error) {
+        setError(error.message)
+        return
+      }
+      setInfo("Se houver uma conta com esse e-mail, enviamos um link para redefinir sua senha.")
+      return
+    }
 
     if (mode === "signin") {
       const { error } = await supabase.auth.signInWithPassword({ email, password })
@@ -82,38 +95,44 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         <p className="mt-1 text-sm text-muted-foreground">
           {mode === "signin"
             ? "Acesse seu painel de estudos"
-            : "Comece sua preparação para a residência"}
+            : mode === "signup"
+              ? "Comece sua preparação para a residência"
+              : "Informe seu e-mail para redefinir sua senha"}
         </p>
       </div>
 
-      <div className="space-y-3">
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full gap-2"
-          disabled={loading !== null}
-          onClick={() => handleOAuth("google")}
-        >
-          {loading === "google" ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
-          Continuar com Google
-        </Button>
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full gap-2"
-          disabled={loading !== null}
-          onClick={() => handleOAuth("apple")}
-        >
-          {loading === "apple" ? <Loader2 className="h-4 w-4 animate-spin" /> : <AppleIcon />}
-          Continuar com Apple
-        </Button>
-      </div>
+      {mode !== "forgot" && (
+        <>
+          <div className="space-y-3">
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full gap-2"
+              disabled={loading !== null}
+              onClick={() => handleOAuth("google")}
+            >
+              {loading === "google" ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
+              Continuar com Google
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full gap-2"
+              disabled={loading !== null}
+              onClick={() => handleOAuth("apple")}
+            >
+              {loading === "apple" ? <Loader2 className="h-4 w-4 animate-spin" /> : <AppleIcon />}
+              Continuar com Apple
+            </Button>
+          </div>
 
-      <div className="my-6 flex items-center gap-3">
-        <div className="h-px flex-1 bg-border" />
-        <span className="text-xs text-muted-foreground">ou continue com e-mail</span>
-        <div className="h-px flex-1 bg-border" />
-      </div>
+          <div className="my-6 flex items-center gap-3">
+            <div className="h-px flex-1 bg-border" />
+            <span className="text-xs text-muted-foreground">ou continue com e-mail</span>
+            <div className="h-px flex-1 bg-border" />
+          </div>
+        </>
+      )}
 
       <form onSubmit={handleEmailSubmit} className="space-y-4">
         <div className="space-y-2">
@@ -132,22 +151,39 @@ export function LoginForm({ initialError }: { initialError?: string }) {
           </div>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="password">Senha</Label>
-          <div className="relative">
-            <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input
-              id="password"
-              type="password"
-              required
-              minLength={6}
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="pl-9"
-            />
+        {mode !== "forgot" && (
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="password">Senha</Label>
+              {mode === "signin" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setMode("forgot")
+                    setError(null)
+                    setInfo(null)
+                  }}
+                  className="text-xs font-medium text-primary hover:underline"
+                >
+                  Esqueceu a senha?
+                </button>
+              )}
+            </div>
+            <div className="relative">
+              <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                id="password"
+                type="password"
+                required
+                minLength={6}
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="pl-9"
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         {error && (
           <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive">
@@ -167,25 +203,43 @@ export function LoginForm({ initialError }: { initialError?: string }) {
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : mode === "signin" ? (
             "Entrar"
-          ) : (
+          ) : mode === "signup" ? (
             "Criar conta"
+          ) : (
+            "Enviar link de redefinição"
           )}
         </Button>
       </form>
 
       <p className="mt-6 text-center text-sm text-muted-foreground">
-        {mode === "signin" ? "Ainda não tem conta?" : "Já tem uma conta?"}{" "}
-        <button
-          type="button"
-          onClick={() => {
-            setMode(mode === "signin" ? "signup" : "signin")
-            setError(null)
-            setInfo(null)
-          }}
-          className="font-medium text-primary hover:underline"
-        >
-          {mode === "signin" ? "Criar conta" : "Entrar"}
-        </button>
+        {mode === "forgot" ? (
+          <button
+            type="button"
+            onClick={() => {
+              setMode("signin")
+              setError(null)
+              setInfo(null)
+            }}
+            className="font-medium text-primary hover:underline"
+          >
+            Voltar para o login
+          </button>
+        ) : (
+          <>
+            {mode === "signin" ? "Ainda não tem conta?" : "Já tem uma conta?"}{" "}
+            <button
+              type="button"
+              onClick={() => {
+                setMode(mode === "signin" ? "signup" : "signin")
+                setError(null)
+                setInfo(null)
+              }}
+              className="font-medium text-primary hover:underline"
+            >
+              {mode === "signin" ? "Criar conta" : "Entrar"}
+            </button>
+          </>
+        )}
       </p>
     </div>
   )

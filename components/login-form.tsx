@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { GoogleIcon, AppleIcon } from "@/components/social-icons"
+import { GoogleIcon } from "@/components/social-icons"
 
 type Mode = "signin" | "signup" | "forgot"
 
@@ -17,11 +17,11 @@ export function LoginForm({ initialError }: { initialError?: string }) {
   const [mode, setMode] = useState<Mode>("signin")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [loading, setLoading] = useState<"google" | "apple" | "email" | null>(null)
+  const [loading, setLoading] = useState<"google" | "email" | null>(null)
   const [error, setError] = useState<string | null>(initialError ?? null)
   const [info, setInfo] = useState<string | null>(null)
 
-  const handleOAuth = async (provider: "google" | "apple") => {
+  const handleOAuth = async (provider: "google") => {
     setError(null)
     setLoading(provider)
     const { error } = await supabase.auth.signInWithOAuth({
@@ -113,16 +113,6 @@ export function LoginForm({ initialError }: { initialError?: string }) {
             >
               {loading === "google" ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
               Continuar con Google
-            </Button>
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full gap-2"
-              disabled={loading !== null}
-              onClick={() => handleOAuth("apple")}
-            >
-              {loading === "apple" ? <Loader2 className="h-4 w-4 animate-spin" /> : <AppleIcon />}
-              Continuar con Apple
             </Button>
           </div>
 

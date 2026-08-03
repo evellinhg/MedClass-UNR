@@ -23,6 +23,19 @@ export async function registrarAtividadeHoje(): Promise<void> {
     .then(() => {})
 }
 
+export async function garantirPrimeiroDia(userId: string): Promise<void> {
+  const { count } = await supabase
+    .from("atividade_diaria_log")
+    .select("id", { count: "exact", head: true })
+    .eq("user_id", userId)
+
+  if (count === 0) {
+    await supabase
+      .from("atividade_diaria_log")
+      .upsert({ user_id: userId, dia: getPlataformaHoje() }, { onConflict: "user_id,dia", ignoreDuplicates: true })
+  }
+}
+
 export interface DiaAtividade {
   dia: string
   feito: boolean
@@ -52,7 +65,7 @@ export async function getStreakAtual(userId: string): Promise<StreakInfo> {
     cursor = diaAnterior(cursor)
   }
 
-  const totalSlots = Math.max(streakAtual, 7) + 3
+  const totalSlots = Math.min(Math.max(streakAtual + 3, 10), 60)
   const dias: DiaAtividade[] = Array.from({ length: totalSlots }, (_, i) => ({
     dia: String(i + 1),
     feito: i < streakAtual,

@@ -13,6 +13,7 @@ import { getAreaIcon } from "@/lib/area-icons"
 import { getDisciplinaIcon } from "@/lib/disciplina-icons"
 import type { Flashcard, FlashcardDeck } from "@/lib/flashcards-types"
 import { trackEvent } from "@/lib/analytics"
+import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
 
 const NIVEL_COLORS: Record<number, string> = {
   0: "#EF4444",
@@ -106,6 +107,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
 
     const novoTotalRespondidos = cards.filter((c) => novoMap[c.id] !== undefined).length
     if (!jaTinhaResposta && novoTotalRespondidos === cards.length) {
+      registrarAtividadeHoje()
       setShowConcluido(true)
       return
     }

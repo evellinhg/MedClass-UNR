@@ -7,6 +7,7 @@ import { DesempenhoWidget } from "@/components/desempenho-widget"
 import { RankingWidget } from "@/components/ranking-widget"
 import { ComunidadeBanner } from "@/components/comunidade-banner"
 import { DailyTipHeader } from "@/components/daily-tip-header"
+import { DailyStreak } from "@/components/daily-streak"
 import { useLanguage } from "@/lib/i18n"
 
 export default function HomePage() {
@@ -15,6 +16,8 @@ export default function HomePage() {
     <DashboardLayout>
       <div className="space-y-8">
         <DailyTipHeader />
+
+        <DailyStreak />
 
         <div>
           <h2 className="text-2xl font-bold text-foreground mb-6">{t.dashboardNav.seuProgresso}</h2>

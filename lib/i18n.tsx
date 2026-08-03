@@ -69,6 +69,11 @@ const pt = {
     tempoDeEstudo: "Tempo de Estudo",
     simuladosSemana: "Simulados Esta Semana",
   },
+  atividadeDiaria: {
+    titulo: "Atividade Diária",
+    frase: "Você está em uma sequência de {count} dias sem falhar!",
+    fraseZerado: "Complete um treino hoje para começar sua sequência!",
+  },
   actionCards: {
     praticarTitulo: "Praticar Agora",
     praticarDescricao: "Resolva questões selecionadas para consolidar seu aprendizado.",
@@ -1051,6 +1056,11 @@ const es: typeof pt = {
     questoesFeitas: "Preguntas Resueltas",
     tempoDeEstudo: "Tiempo de Estudio",
     simuladosSemana: "Simulacros Esta Semana",
+  },
+  atividadeDiaria: {
+    titulo: "Actividad Diaria",
+    frase: "¡Estás en una racha de {count} días sin fallar!",
+    fraseZerado: "¡Completá un entrenamiento hoy para empezar tu racha!",
   },
   actionCards: {
     praticarTitulo: "Practicar Ahora",

@@ -21,6 +21,7 @@ import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type P
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
+import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
 import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -414,6 +415,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
           .update({ finished_at: new Date().toISOString(), progresso_index: null })
           .eq("id", config.simuladoId)
       }
+      registrarAtividadeHoje()
     }
     setSaving(false)
     setResult({ points, correct, wrong, answered: answeredCount })

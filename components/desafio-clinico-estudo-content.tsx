@@ -9,6 +9,7 @@ import confetti from "canvas-confetti"
 import { supabase } from "@/lib/supabase"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 import { trackEvent } from "@/lib/analytics"
+import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
@@ -150,6 +151,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
         total: perguntas.length,
         duracao_segundos: elapsed,
       })
+      registrarAtividadeHoje()
     }
     setSalvando(false)
     setFinalizado(true)

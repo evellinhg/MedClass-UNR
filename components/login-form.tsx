@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { AlertCircle, Loader2, Lock, Mail } from "lucide-react"
+import { AlertCircle, AlertTriangle, Loader2, Lock, Mail } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -195,6 +195,16 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         {info && (
           <div className="rounded-lg border border-success/30 bg-success/10 p-3 text-sm text-success">
             {info}
+          </div>
+        )}
+
+        {mode === "signup" && (
+          <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
+            <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+            <span>
+              O e-mail de confirmação pode cair na caixa de spam. Se não encontrar na caixa de
+              entrada, verifique essa aba no seu e-mail.
+            </span>
           </div>
         )}
 

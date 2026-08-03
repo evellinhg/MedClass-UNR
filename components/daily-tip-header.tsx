@@ -24,17 +24,11 @@ export function DailyTipHeader() {
   if (!tip) return null
 
   return (
-    <div className="relative overflow-hidden rounded-lg bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] p-5 shadow-sm sm:p-6">
-      <div className="absolute right-0 top-0 h-28 w-28 rounded-full bg-white/10 blur-2xl" />
-      <div className="relative flex items-start gap-3">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#0a1f00]/10">
-          <Lightbulb className="h-5 w-5 text-[#0a1f00]" />
-        </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-[#0a1f00]/70">{t.dailyTip.label}</p>
-          <p className="mt-1 text-sm font-medium leading-relaxed text-[#0a1f00] sm:text-base">{tip}</p>
-        </div>
-      </div>
+    <div className="flex items-center gap-2 text-sm">
+      <Lightbulb className="h-4 w-4 shrink-0 text-primary" />
+      <p className="leading-relaxed text-muted-foreground">
+        <span className="font-semibold text-primary">{t.dailyTip.label}:</span> {tip}
+      </p>
     </div>
   )
 }

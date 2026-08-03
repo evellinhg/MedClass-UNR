@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import { LoginForm } from "@/components/login-form"
 
 export const metadata: Metadata = {
-  title: "Entrar | MedClass",
-  description: "Acesse sua conta MedClass",
+  title: "Ingresar | MedClass",
+  description: "Accedé a tu cuenta de MedClass",
 }
 
 export default async function LoginPage({

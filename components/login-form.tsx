@@ -50,7 +50,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         setError(error.message)
         return
       }
-      setInfo("Se houver uma conta com esse e-mail, enviamos um link para redefinir sua senha.")
+      setInfo("Si existe una cuenta con ese e-mail, te enviamos un enlace para redefinir tu contraseña.")
       return
     }
 
@@ -74,7 +74,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
     if (data.session) {
       window.location.href = "/dashboard"
     } else {
-      setInfo("Conta criada! Verifique seu e-mail para confirmar o cadastro antes de entrar.")
+      setInfo("¡Cuenta creada! Revisá tu e-mail para confirmar el registro antes de ingresar.")
     }
   }
 
@@ -94,10 +94,10 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         </div>
         <p className="mt-1 text-sm text-muted-foreground">
           {mode === "signin"
-            ? "Acesse seu painel de estudos"
+            ? "Accedé a tu panel de estudio"
             : mode === "signup"
-              ? "Comece sua preparação para a residência"
-              : "Informe seu e-mail para redefinir sua senha"}
+              ? "Empezá tu preparación para los parciales y finales"
+              : "Ingresá tu e-mail para redefinir tu contraseña"}
         </p>
       </div>
 
@@ -112,7 +112,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
               onClick={() => handleOAuth("google")}
             >
               {loading === "google" ? <Loader2 className="h-4 w-4 animate-spin" /> : <GoogleIcon />}
-              Continuar com Google
+              Continuar con Google
             </Button>
             <Button
               type="button"
@@ -122,13 +122,13 @@ export function LoginForm({ initialError }: { initialError?: string }) {
               onClick={() => handleOAuth("apple")}
             >
               {loading === "apple" ? <Loader2 className="h-4 w-4 animate-spin" /> : <AppleIcon />}
-              Continuar com Apple
+              Continuar con Apple
             </Button>
           </div>
 
           <div className="my-6 flex items-center gap-3">
             <div className="h-px flex-1 bg-border" />
-            <span className="text-xs text-muted-foreground">ou continue com e-mail</span>
+            <span className="text-xs text-muted-foreground">o continuá con e-mail</span>
             <div className="h-px flex-1 bg-border" />
           </div>
         </>
@@ -143,7 +143,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
               id="email"
               type="email"
               required
-              placeholder="voce@exemplo.com"
+              placeholder="vos@ejemplo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="pl-9"
@@ -154,7 +154,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
         {mode !== "forgot" && (
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <Label htmlFor="password">Senha</Label>
+              <Label htmlFor="password">Contraseña</Label>
               {mode === "signin" && (
                 <button
                   type="button"
@@ -165,7 +165,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
                   }}
                   className="text-xs font-medium text-primary hover:underline"
                 >
-                  Esqueceu a senha?
+                  ¿Olvidaste tu contraseña?
                 </button>
               )}
             </div>
@@ -202,8 +202,8 @@ export function LoginForm({ initialError }: { initialError?: string }) {
           <div className="flex items-start gap-2 rounded-lg border border-warning/30 bg-warning/10 p-3 text-sm text-warning">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
             <span>
-              O e-mail de confirmação pode cair na caixa de spam. Se não encontrar na caixa de
-              entrada, verifique essa aba no seu e-mail.
+              El e-mail de confirmación puede llegar a la carpeta de spam. Si no lo encontrás en
+              la bandeja de entrada, revisá esa carpeta en tu correo.
             </span>
           </div>
         )}
@@ -212,11 +212,11 @@ export function LoginForm({ initialError }: { initialError?: string }) {
           {loading === "email" ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : mode === "signin" ? (
-            "Entrar"
+            "Ingresar"
           ) : mode === "signup" ? (
-            "Criar conta"
+            "Crear cuenta"
           ) : (
-            "Enviar link de redefinição"
+            "Enviar enlace de restablecimiento"
           )}
         </Button>
       </form>
@@ -232,11 +232,11 @@ export function LoginForm({ initialError }: { initialError?: string }) {
             }}
             className="font-medium text-primary hover:underline"
           >
-            Voltar para o login
+            Volver al inicio de sesión
           </button>
         ) : (
           <>
-            {mode === "signin" ? "Ainda não tem conta?" : "Já tem uma conta?"}{" "}
+            {mode === "signin" ? "¿Todavía no tenés cuenta?" : "¿Ya tenés una cuenta?"}{" "}
             <button
               type="button"
               onClick={() => {
@@ -246,7 +246,7 @@ export function LoginForm({ initialError }: { initialError?: string }) {
               }}
               className="font-medium text-primary hover:underline"
             >
-              {mode === "signin" ? "Criar conta" : "Entrar"}
+              {mode === "signin" ? "Crear cuenta" : "Ingresar"}
             </button>
           </>
         )}

@@ -20,11 +20,11 @@ export function ResetPasswordForm() {
     setError(null)
 
     if (password.length < 6) {
-      setError("A senha precisa ter ao menos 6 caracteres.")
+      setError("La contraseña debe tener al menos 6 caracteres.")
       return
     }
     if (password !== confirmPassword) {
-      setError("As senhas não coincidem.")
+      setError("Las contraseñas no coinciden.")
       return
     }
 
@@ -43,12 +43,12 @@ export function ResetPasswordForm() {
     return (
       <div className="w-full max-w-sm text-center">
         <CheckCircle2 className="mx-auto mb-4 h-12 w-12 text-success" />
-        <p className="text-lg font-medium text-foreground">Senha atualizada!</p>
+        <p className="text-lg font-medium text-foreground">¡Contraseña actualizada!</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Sua senha foi redefinida com sucesso. Você já pode acessar sua conta normalmente.
+          Tu contraseña se redefinió con éxito. Ya podés acceder a tu cuenta normalmente.
         </p>
         <Button asChild className="mt-6 w-full" variant="gradient">
-          <a href="/login">Ir para o login</a>
+          <a href="/login">Ir al inicio de sesión</a>
         </Button>
       </div>
     )
@@ -60,12 +60,12 @@ export function ResetPasswordForm() {
         <div className="mx-auto mt-4 mb-4 flex items-center justify-center">
           <Image src="/logo.png" alt="MedClass Logo" width={228} height={64} sizes="228px" className="h-16 w-auto object-contain" priority />
         </div>
-        <p className="mt-1 text-sm text-muted-foreground">Defina sua nova senha de acesso</p>
+        <p className="mt-1 text-sm text-muted-foreground">Definí tu nueva contraseña de acceso</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="password">Nova senha</Label>
+          <Label htmlFor="password">Nueva contraseña</Label>
           <div className="relative">
             <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
@@ -82,7 +82,7 @@ export function ResetPasswordForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="confirmPassword">Confirmar nova senha</Label>
+          <Label htmlFor="confirmPassword">Confirmar nueva contraseña</Label>
           <div className="relative">
             <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
@@ -106,7 +106,7 @@ export function ResetPasswordForm() {
         )}
 
         <Button type="submit" variant="gradient" className="w-full" disabled={loading}>
-          {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Salvar nova senha"}
+          {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Guardar nueva contraseña"}
         </Button>
       </form>
     </div>

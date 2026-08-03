@@ -52,6 +52,19 @@ const PLAN_LABEL: Record<string, string> = {
   vip: "VIP",
 }
 
+const PLAN_DURATION_DAYS: Record<string, number> = {
+  mensal: 30,
+  trimestral: 90,
+}
+
+function calcularExpiracaoPlano(plan: string): string {
+  const dias = PLAN_DURATION_DAYS[plan]
+  if (!dias) return ""
+  const expira = new Date()
+  expira.setDate(expira.getDate() + dias)
+  return toDatetimeLocalValue(expira.toISOString())
+}
+
 function toDatetimeLocalValue(iso: string | null): string {
   if (!iso) return ""
   const d = new Date(iso)
@@ -466,7 +479,11 @@ function UserDetailDialog({
                 value={plan}
                 onValueChange={(v) => {
                   setPlan(v)
-                  if (v === "vip") setAccessExpiresAt("")
+                  if (v === "vip") {
+                    setAccessExpiresAt("")
+                  } else if (v === "mensal" || v === "trimestral") {
+                    setAccessExpiresAt(calcularExpiracaoPlano(v))
+                  }
                 }}
                 disabled={isDeleted}
               >
@@ -481,7 +498,9 @@ function UserDetailDialog({
                 </SelectContent>
               </Select>
               <p className="text-xs text-muted-foreground">
-                VIP dá acesso completo e permanente, sem data de expiração.
+                Mensal e Trimestral preenchem a data de expiração automaticamente (30 e 90 dias a partir de hoje) —
+                você ainda pode ajustar essa data livremente logo abaixo. VIP dá acesso completo e permanente, sem
+                data de expiração.
               </p>
             </div>
 

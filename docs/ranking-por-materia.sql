@@ -10,6 +10,12 @@
 -- simulados.respostas é jsonb (array com null nas posições não respondidas,
 -- mesmo tamanho de questao_ids) -- por isso o pareamento usa
 -- unnest(...) WITH ORDINALITY dos dois lados, casado pelo índice.
+--
+-- Exclusão de admin: a lista fixa de e-mails do fundador (por baixo) so
+-- cobria essas 3 contas especificas -- qualquer outra conta promovida a
+-- role='admin' pelo painel /admin/usuarios continuava aparecendo no
+-- ranking. Adicionado tambem "coalesce(p.role, 'aluno') <> 'admin'" para
+-- excluir por role de verdade (guarda contra role NULL = trata como aluno).
 
 create or replace function public.get_ranking_por_materia(materia_filtro text default null, limite int default 5)
 returns table (
@@ -64,6 +70,7 @@ as $$
     join profiles p on p.id = a.user_id
     where a.total > 0
       and p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
+      and coalesce(p.role, 'aluno') <> 'admin'
   )
   select
     row_number() over (order by points desc, correct desc, total desc, display_name asc) as posicao,
@@ -127,6 +134,7 @@ as $$
     from agregado a
     join profiles p on p.id = a.user_id
     where p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
+      and coalesce(p.role, 'aluno') <> 'admin'
   ),
   posicionado as (
     select

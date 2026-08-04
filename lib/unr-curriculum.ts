@@ -17,7 +17,7 @@ export type ParcialKey = (typeof PARCIAL_KEYS)[number]
 
 // Matérias do 4º ano que só têm um parcial (cursam em bloco único, não dividem
 // o conteúdo em dois parciais como as demais matérias da grade).
-const MATERIAS_APENAS_PARCIAL1 = ["oftalmologia", "otorrinolaringologia", "cirurgia_5"]
+const MATERIAS_APENAS_PARCIAL1 = ["oftalmologia", "otorrinolaringologia"]
 
 export function parciaisDaMateria(materiaKey: string): readonly ParcialKey[] {
   return MATERIAS_APENAS_PARCIAL1.includes(materiaKey) ? (["parcial1"] as const) : PARCIAL_KEYS

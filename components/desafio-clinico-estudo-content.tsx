@@ -15,6 +15,7 @@ import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import { DesafioFeedbackDialog } from "@/components/desafio-feedback-dialog"
+import { UnderlineText } from "@/components/underline-text"
 import {
   desafioAnteriorObrigatorio,
   foiAprovado,
@@ -292,7 +293,8 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t.desafiosClinicos.descricaoCaso}
             </h2>
-            <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
+            <UnderlineText text={desafio.descricao_caso} className="text-sm leading-relaxed text-foreground" />
+            <p className="mt-1 text-xs text-muted-foreground">{t.desafiosClinicos.sublinharDica}</p>
             {desafio.imagem_url && (
               <button
                 type="button"

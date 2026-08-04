@@ -257,6 +257,7 @@ const pt = {
     feedbackDialogDescricao:
       "Encontrou uma questão errada, tem uma dúvida ou uma sugestão sobre este caso clínico? Conta pra gente.",
     descricaoCaso: "Descrição do caso",
+    sublinharDica: "Selecione um trecho do texto para sublinhar. Clique num trecho sublinhado para remover.",
     imagemCasoAlt: "Imagem do caso clínico",
     verImagemAnexa: "Ver imagem anexa",
     fecharImagem: "Fechar imagem",
@@ -1264,6 +1265,7 @@ const es: typeof pt = {
     feedbackDialogDescricao:
       "¿Encontraste una pregunta incorrecta, tenés una duda o una sugerencia sobre este caso clínico? Contanos.",
     descricaoCaso: "Descripción del caso",
+    sublinharDica: "Seleccioná una parte del texto para subrayar. Hacé clic en una parte subrayada para quitarlo.",
     imagemCasoAlt: "Imagen del caso clínico",
     verImagemAnexa: "Ver imagen adjunta",
     fecharImagem: "Cerrar imagen",

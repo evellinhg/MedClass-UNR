@@ -17,8 +17,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Pagination } from "@/components/pagination"
 
 type Row = Record<string, any>
+
+const ROWS_PER_PAGE = 50
 
 interface AdminDataTableProps {
   table: string
@@ -41,6 +44,8 @@ function formatCell(value: unknown) {
 
 export function AdminDataTable({ table, title, createSql }: AdminDataTableProps) {
   const [rows, setRows] = useState<Row[]>([])
+  const [totalCount, setTotalCount] = useState(0)
+  const [page, setPage] = useState(1)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [saving, setSaving] = useState(false)
@@ -48,16 +53,23 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
   const [formValues, setFormValues] = useState<Record<string, string>>({})
 
   const isMissing = error?.toLowerCase().includes("could not find the table")
+  const totalPages = Math.max(1, Math.ceil(totalCount / ROWS_PER_PAGE))
 
   const load = async () => {
     setLoading(true)
     setError(null)
-    const { data, error } = await supabase.from(table).select("*").limit(200)
+    const from = (page - 1) * ROWS_PER_PAGE
+    const { data, error, count } = await supabase
+      .from(table)
+      .select("*", { count: "exact" })
+      .range(from, from + ROWS_PER_PAGE - 1)
     if (error) {
       setError(error.message)
       setRows([])
+      setTotalCount(0)
     } else {
       setRows(data ?? [])
+      setTotalCount(count ?? 0)
     }
     setLoading(false)
   }
@@ -65,6 +77,10 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
   useEffect(() => {
     load()
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [table, page])
+
+  useEffect(() => {
+    setPage(1)
   }, [table])
 
   const columns = rows[0] ? Object.keys(rows[0]) : []
@@ -78,7 +94,7 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
       alert(`Erro ao excluir: ${error.message}`)
       return
     }
-    setRows((prev) => prev.filter((r) => r.id !== row.id))
+    load()
   }
 
   const handleCreate = async () => {
@@ -106,7 +122,11 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
         <div className="flex items-center gap-2">
           <h3 className="font-semibold text-foreground">{title}</h3>
           <Badge variant="secondary">{table}</Badge>
-          {!loading && !error && <span className="text-xs text-muted-foreground">{rows.length} registro(s)</span>}
+          {!loading && !error && (
+            <span className="text-xs text-muted-foreground">
+              {totalCount} registro(s) — página {page} de {totalPages}
+            </span>
+          )}
         </div>
         <div className="flex items-center gap-2">
           <Button size="icon-sm" variant="ghost" onClick={load} aria-label="Atualizar">
@@ -207,6 +227,12 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
             ))}
           </TableBody>
         </Table>
+      )}
+
+      {!loading && !error && !isMissing && totalPages > 1 && (
+        <div className="border-t border-border p-4">
+          <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
+        </div>
       )}
     </Card>
   )

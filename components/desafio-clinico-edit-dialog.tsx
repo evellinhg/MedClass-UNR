@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Loader2, Plus, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { enfileirarAviso } from "@/lib/avisos"
@@ -152,10 +152,10 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
     setCarregando(false)
   }
 
-  const handleOpenChange = (next: boolean) => {
-    onOpenChange(next)
-    if (next) carregarForm()
-  }
+  useEffect(() => {
+    if (open) carregarForm()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, desafio])
 
   // --- Bibliografia ---
   const addBibliografia = () => setForm((p) => ({ ...p, bibliografia: [...p.bibliografia, emptyBibliografia()] }))
@@ -272,7 +272,7 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
   }
 
   return (
-    <Dialog open={open} onOpenChange={handleOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle>{desafio ? "Editar Desafio Clínico" : "Novo Desafio Clínico"}</DialogTitle>

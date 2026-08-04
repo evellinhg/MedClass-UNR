@@ -61,6 +61,12 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ init_point: preferencia.init_point })
   } catch (err) {
-    return NextResponse.json({ error: err instanceof Error ? err.message : "Erro ao criar checkout." }, { status: 500 })
+    const mensagem =
+      err instanceof Error
+        ? err.message
+        : typeof err === "object" && err !== null && "message" in err
+          ? String((err as { message: unknown }).message)
+          : "Erro ao criar checkout."
+    return NextResponse.json({ error: mensagem }, { status: 500 })
   }
 }

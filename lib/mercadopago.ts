@@ -1,4 +1,4 @@
-const MP_API = "https://api.mercadopago.com"
+import { MercadoPagoConfig, Preference, Payment } from "mercadopago"
 
 export type PlanoPago = "mensal" | "trimestral"
 
@@ -17,10 +17,13 @@ export const PLANO_TITULO: Record<PlanoPago, string> = {
   trimestral: "MedClass UNR — Plano Trimestral",
 }
 
-function accessToken(): string {
-  const token = process.env.MERCADOPAGO_ACCESS_TOKEN
-  if (!token) throw new Error("MERCADOPAGO_ACCESS_TOKEN não configurado")
-  return token
+// Uma config por chamada (client-per-request) em vez de módulo compartilhado:
+// evita ler process.env.MERCADOPAGO_ACCESS_TOKEN antes de ele existir em
+// contextos de build/edge, e é o padrão recomendado pelo SDK oficial.
+function config(): MercadoPagoConfig {
+  const accessToken = process.env.MERCADOPAGO_ACCESS_TOKEN
+  if (!accessToken) throw new Error("MERCADOPAGO_ACCESS_TOKEN não configurado")
+  return new MercadoPagoConfig({ accessToken })
 }
 
 interface CriarPreferenciaParams {
@@ -45,15 +48,12 @@ export async function criarPreferencia({
   const [nome, ...resto] = nomeCompleto.trim().split(/\s+/)
   const sobrenome = resto.join(" ") || nome
 
-  const res = await fetch(`${MP_API}/checkout/preferences`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${accessToken()}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
+  const preference = new Preference(config())
+  const result = await preference.create({
+    body: {
       items: [
         {
+          id: plano,
           title: PLANO_TITULO[plano],
           quantity: 1,
           unit_price: PLANO_PRECO[plano],
@@ -75,30 +75,25 @@ export async function criarPreferencia({
       },
       auto_return: "approved",
       notification_url: `${origin}/api/webhooks/mercadopago`,
-    }),
+    },
   })
 
-  if (!res.ok) {
-    const body = await res.text()
-    throw new Error(`Erro ao criar preferência no Mercado Pago: ${res.status} ${body}`)
+  if (!result.id || !result.init_point) {
+    throw new Error("Mercado Pago não retornou id/init_point da preferência.")
   }
 
-  return res.json() as Promise<{ id: string; init_point: string; sandbox_init_point: string }>
+  return { id: result.id, init_point: result.init_point }
 }
 
 export async function buscarPagamento(paymentId: string) {
-  const res = await fetch(`${MP_API}/v1/payments/${paymentId}`, {
-    headers: { Authorization: `Bearer ${accessToken()}` },
-  })
-  if (!res.ok) {
-    const body = await res.text()
-    throw new Error(`Erro ao buscar pagamento no Mercado Pago: ${res.status} ${body}`)
+  const payment = new Payment(config())
+  const result = await payment.get({ id: paymentId })
+
+  return {
+    id: result.id ?? null,
+    status: result.status ?? null,
+    external_reference: result.external_reference ?? null,
+    transaction_amount: result.transaction_amount ?? null,
+    payer: { email: result.payer?.email ?? null },
   }
-  return res.json() as Promise<{
-    id: number
-    status: string
-    external_reference: string | null
-    transaction_amount: number
-    payer: { email: string | null }
-  }>
 }

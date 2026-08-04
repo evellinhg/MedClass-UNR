@@ -286,6 +286,11 @@ const pt = {
       "Escolha um desafio clínico para estudar: um caso de paciente seguido de perguntas de anamnese, exame físico, exames complementares, diagnóstico e conduta terapêutica.",
     nenhumDesafioDisponivel: "Nenhum desafio clínico disponível no momento.",
     estudarCta: "Estudar",
+    bloqueado: "Bloqueado",
+    casoBloqueadoCard: (tituloAnterior: string) => `Complete "${tituloAnterior}" com 60% de acerto para desbloquear`,
+    casoBloqueadoTitulo: "Caso bloqueado",
+    casoBloqueadoDescricao: (tituloAnterior: string) =>
+      `Você precisa concluir "${tituloAnterior}" com pelo menos 60% de acerto antes de acessar este caso.`,
     estudosAnteriores: "Estudos anteriores",
     semEstudosAnteriores: "Você ainda não estudou nenhum desafio clínico. Comece por um dos casos acima.",
     desafioRemovido: "Desafio removido",
@@ -1275,6 +1280,11 @@ const es: typeof pt = {
       "Elegí un desafío clínico para estudiar: un caso de paciente seguido de preguntas de anamnesis, examen físico, exámenes complementarios, diagnóstico y conducta terapéutica.",
     nenhumDesafioDisponivel: "No hay ningún desafío clínico disponible por el momento.",
     estudarCta: "Estudiar",
+    bloqueado: "Bloqueado",
+    casoBloqueadoCard: (tituloAnterior: string) => `Completá "${tituloAnterior}" con 60% de acierto para desbloquear`,
+    casoBloqueadoTitulo: "Caso bloqueado",
+    casoBloqueadoDescricao: (tituloAnterior: string) =>
+      `Necesitás completar "${tituloAnterior}" con al menos 60% de acierto antes de acceder a este caso.`,
     estudosAnteriores: "Estudios anteriores",
     semEstudosAnteriores: "Todavía no estudiaste ningún desafío clínico. Empezá por uno de los casos de arriba.",
     desafioRemovido: "Desafío eliminado",

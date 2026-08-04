@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState, type MouseEvent } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Loader2, CheckCircle2, XCircle, ChevronDown, ChevronUp, Pencil, Plus } from "lucide-react"
+import { Loader2, CheckCircle2, XCircle, ChevronDown, ChevronUp, Pencil, Plus, Lock } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
@@ -14,6 +14,7 @@ import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import type { DesafioClinico } from "@/lib/desafios-types"
 import { useLanguage } from "@/lib/i18n"
+import { desafioAnteriorObrigatorio, foiAprovado } from "@/lib/desafio-clinico-bloqueio"
 
 const SEM_CATEGORIA = "sem_categoria"
 
@@ -201,31 +202,57 @@ export function DesafiosClinicosContent() {
 
                 {isOpen && (
                   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {desafiosDaSecao.map((desafio) => (
-                      <Link
-                        key={desafio.id}
-                        href={`/dashboard/desafios-clinicos/${desafio.id}`}
-                        className="group relative overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/50"
-                      >
-                        {isEditor && (
-                          <button
-                            type="button"
-                            onClick={(e) => openEdit(desafio, e)}
-                            aria-label="Editar caso clínico"
-                            className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+                    {desafiosDaSecao.map((desafio) => {
+                      const anterior = desafioAnteriorObrigatorio(desafio, desafios)
+                      const bloqueado = !isEditor && !!anterior && !foiAprovado(anterior.id, historico)
+
+                      if (bloqueado) {
+                        return (
+                          <div
+                            key={desafio.id}
+                            title={t.desafiosClinicos.casoBloqueadoCard(anterior!.titulo)}
+                            className="relative cursor-not-allowed overflow-hidden rounded-lg border border-border bg-card opacity-60"
                           >
-                            <Pencil className="h-4 w-4" />
-                          </button>
-                        )}
-                        <DesafioCover desafio={desafio} />
-                        <div className="space-y-1 p-4">
-                          <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
-                          <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                            {t.desafiosClinicos.estudarCta} →
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
+                            <div className="relative">
+                              <DesafioCover desafio={desafio} />
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+                                <Lock className="h-8 w-8 text-white" />
+                              </div>
+                            </div>
+                            <div className="space-y-1 p-4">
+                              <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
+                              <p className="pt-1 text-xs text-muted-foreground">{t.desafiosClinicos.bloqueado}</p>
+                            </div>
+                          </div>
+                        )
+                      }
+
+                      return (
+                        <Link
+                          key={desafio.id}
+                          href={`/dashboard/desafios-clinicos/${desafio.id}`}
+                          className="group relative overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/50"
+                        >
+                          {isEditor && (
+                            <button
+                              type="button"
+                              onClick={(e) => openEdit(desafio, e)}
+                              aria-label="Editar caso clínico"
+                              className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+                            >
+                              <Pencil className="h-4 w-4" />
+                            </button>
+                          )}
+                          <DesafioCover desafio={desafio} />
+                          <div className="space-y-1 p-4">
+                            <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
+                            <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                              {t.desafiosClinicos.estudarCta} →
+                            </p>
+                          </div>
+                        </Link>
+                      )
+                    })}
                   </div>
                 )}
               </section>

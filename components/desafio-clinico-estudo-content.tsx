@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
-import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy, X, ZoomIn, Paperclip, Pencil } from "lucide-react"
+import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy, X, ZoomIn, Paperclip, Pencil, Lock } from "lucide-react"
 import confetti from "canvas-confetti"
 import { supabase } from "@/lib/supabase"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
@@ -14,6 +14,12 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
+import {
+  desafioAnteriorObrigatorio,
+  foiAprovado,
+  type DesafioParaBloqueio,
+  type HistoricoParaBloqueio,
+} from "@/lib/desafio-clinico-bloqueio"
 
 const NOTA_CORTE_APROVACAO = 60
 
@@ -45,6 +51,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const [finalizado, setFinalizado] = useState(false)
   const [salvando, setSalvando] = useState(false)
   const [editDialogOpen, setEditDialogOpen] = useState(false)
+  const [casoAnteriorObrigatorio, setCasoAnteriorObrigatorio] = useState<DesafioParaBloqueio | null>(null)
   const isEditor = useIsContentEditor()
   const startRef = useRef<number | null>(null)
 
@@ -57,16 +64,34 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   }
 
   async function loadDesafio() {
-    const [{ data: desafioData }, { data: perguntasData }] = await Promise.all([
-      supabase.from("desafios_clinicos").select("*").eq("id", desafioId).single(),
-      supabase
-        .from("desafios_clinicos_perguntas")
-        .select("*")
-        .eq("desafio_id", desafioId)
-        .order("ordem", { ascending: true }),
-    ])
-    setDesafio((desafioData as DesafioClinico) ?? null)
+    const { data: sessionData } = await supabase.auth.getSession()
+    const userId = sessionData.session?.user.id
+
+    const [{ data: desafioData }, { data: perguntasData }, { data: todosDesafiosData }, historicoRes] =
+      await Promise.all([
+        supabase.from("desafios_clinicos").select("*").eq("id", desafioId).single(),
+        supabase
+          .from("desafios_clinicos_perguntas")
+          .select("*")
+          .eq("desafio_id", desafioId)
+          .order("ordem", { ascending: true }),
+        supabase.from("desafios_clinicos").select("id, titulo, secao, area").eq("ativo", true),
+        userId
+          ? supabase
+              .from("desafios_clinicos_historico")
+              .select("acertos, total, desafio:desafios_clinicos(id)")
+              .eq("user_id", userId)
+          : Promise.resolve({ data: [] }),
+      ])
+    const desafioCarregado = (desafioData as DesafioClinico) ?? null
+    setDesafio(desafioCarregado)
     setPerguntas((perguntasData as DesafioClinicoPergunta[]) ?? [])
+
+    if (desafioCarregado) {
+      const anterior = desafioAnteriorObrigatorio(desafioCarregado, (todosDesafiosData as DesafioParaBloqueio[]) ?? [])
+      const historico = (historicoRes.data as unknown as HistoricoParaBloqueio[]) ?? []
+      setCasoAnteriorObrigatorio(anterior && !foiAprovado(anterior.id, historico) ? anterior : null)
+    }
   }
 
   useEffect(() => {
@@ -181,6 +206,23 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
       <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
         <p className="text-muted-foreground">{t.desafiosClinicos.desafioNaoEncontrado}</p>
         <Link href="/dashboard/desafios-clinicos" className="mt-3 inline-block text-sm text-primary">
+          {t.desafiosClinicos.voltarAosDesafios}
+        </Link>
+      </div>
+    )
+  }
+
+  if (casoAnteriorObrigatorio && !isEditor) {
+    return (
+      <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+          <Lock className="h-7 w-7 text-muted-foreground" />
+        </div>
+        <h1 className="mt-3 text-lg font-bold text-foreground">{t.desafiosClinicos.casoBloqueadoTitulo}</h1>
+        <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
+          {t.desafiosClinicos.casoBloqueadoDescricao(casoAnteriorObrigatorio.titulo)}
+        </p>
+        <Link href="/dashboard/desafios-clinicos" className="mt-4 inline-block text-sm text-primary">
           {t.desafiosClinicos.voltarAosDesafios}
         </Link>
       </div>

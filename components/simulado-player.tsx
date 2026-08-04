@@ -17,7 +17,7 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { calculatePoints } from "@/lib/scoring"
-import { getPlanStatus, incrementTrialUsage, FREE_SIMULADO_MAX_QUESTIONS, type PlanStatus } from "@/lib/plan-status"
+import { getPlanStatus, incrementTrialUsage, type PlanStatus } from "@/lib/plan-status"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
@@ -184,7 +184,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       setPhase(chosen.length === 0 ? "empty" : "playing")
 
       if (!skipTrialUsage && chosen.length > 0) {
-        incrementTrialUsage(mode === "simulado" ? "simulado" : "questao", mode === "simulado" ? 1 : chosen.length)
+        incrementTrialUsage(chosen.length)
       }
     }
 
@@ -223,10 +223,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       if (!status) return
 
       if (!status.hasFullAccess) {
-        const blocked =
-          status.isTrialExpired ||
-          (mode === "simulado" && status.simuladosRemaining <= 0) ||
-          (mode === "individual" && status.questoesRemaining <= 0)
+        const blocked = status.accessExpired || status.questoesRemaining <= 0
         if (blocked) {
           setBlockedStatus(status)
           setPhase("blocked")
@@ -234,11 +231,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
         }
       }
 
-      const effectiveCount = status.hasFullAccess
-        ? config.count
-        : mode === "simulado"
-          ? Math.min(config.count, FREE_SIMULADO_MAX_QUESTIONS)
-          : Math.min(config.count, status.questoesRemaining)
+      const effectiveCount = status.hasFullAccess ? config.count : Math.min(config.count, status.questoesRemaining)
 
       loadQuestions(effectiveCount, status.hasFullAccess)
     })
@@ -516,10 +509,10 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
         {phase === "blocked" && (
           <PlanRestrictedNotice
-            tone={blockedStatus?.isTrialExpired ? "expired" : "limit"}
-            title={blockedStatus?.isTrialExpired ? t.simuladoPlayer.tituloExpirado : t.simuladoPlayer.tituloLimite}
+            tone={blockedStatus?.accessExpired ? "expired" : "limit"}
+            title={blockedStatus?.accessExpired ? t.simuladoPlayer.tituloExpirado : t.simuladoPlayer.tituloLimite}
             description={
-              blockedStatus?.isTrialExpired
+              blockedStatus?.accessExpired
                 ? t.simuladoPlayer.descExpirado
                 : (config?.mode ?? "individual") === "simulado"
                   ? t.simuladoPlayer.descLimiteSimulado

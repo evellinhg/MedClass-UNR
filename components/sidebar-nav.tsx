@@ -21,14 +21,7 @@ function planLabel(status: PlanStatus, t: ReturnType<typeof useLanguage>["t"]["d
   if (status.plan === "vip") return t.planoVip
   if (status.plan === "mensal") return t.planoMensal
   if (status.plan === "trimestral") return t.planoTrimestral
-  if (status.isTrialExpired) return t.planoExpirado
-  if (status.trialExpiresAt) {
-    const hoursLeft = Math.max(
-      0,
-      Math.ceil((new Date(status.trialExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60))
-    )
-    return `${t.testeGratis} · ${hoursLeft}h ${t.horasRestantes}`
-  }
+  if (status.accessExpired) return t.planoExpirado
   return t.planoGratuito
 }
 
@@ -218,7 +211,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
               </p>
               <p
                 className={`truncate text-xs ${
-                  planStatus?.isTrialExpired ? "font-medium text-destructive" : "text-muted-foreground"
+                  planStatus?.accessExpired ? "font-medium text-destructive" : "text-muted-foreground"
                 }`}
               >
                 {planStatus ? planLabel(planStatus, t.dashboardNav) : t.dashboardNav.carregando}

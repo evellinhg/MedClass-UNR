@@ -200,9 +200,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           </div>
         ) : isBlocked ? (
           <PlanRestrictedNotice
-            tone={planStatus?.isTrialExpired ? "expired" : "limit"}
-            title={planStatus?.isTrialExpired ? t.practiceLauncher.planExpiradoTitulo : t.practiceLauncher.limiteAtingidoTitulo}
-            description={planStatus?.isTrialExpired ? t.practiceLauncher.planExpiradoDesc : t.practiceLauncher.limiteDesc}
+            tone={planStatus?.accessExpired ? "expired" : "limit"}
+            title={planStatus?.accessExpired ? t.practiceLauncher.planExpiradoTitulo : t.practiceLauncher.limiteAtingidoTitulo}
+            description={planStatus?.accessExpired ? t.practiceLauncher.planExpiradoDesc : t.practiceLauncher.limiteDesc}
           />
         ) : (
         <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto pr-1">

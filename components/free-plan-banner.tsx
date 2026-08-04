@@ -13,7 +13,7 @@ export function FreePlanBanner() {
   useEffect(() => {
     let active = true
     getPlanStatus().then((status) => {
-      if (active && status) setShowFree(!status.hasFullAccess && !status.isTrialExpired && !status.accessExpired)
+      if (active && status) setShowFree(!status.hasFullAccess && !status.accessExpired)
     })
     return () => {
       active = false

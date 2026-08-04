@@ -13,7 +13,7 @@ export function PlanExpiredBanner() {
   useEffect(() => {
     let active = true
     getPlanStatus().then((status) => {
-      if (active && status) setExpired(status.isTrialExpired)
+      if (active && status) setExpired(status.accessExpired)
     })
     return () => {
       active = false

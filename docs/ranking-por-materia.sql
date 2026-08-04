@@ -16,6 +16,11 @@
 -- role='admin' pelo painel /admin/usuarios continuava aparecendo no
 -- ranking. Adicionado tambem "coalesce(p.role, 'aluno') <> 'admin'" para
 -- excluir por role de verdade (guarda contra role NULL = trata como aluno).
+--
+-- Exclusão de plano gratuito: contas no plano "gratis" nao entram no
+-- ranking (regra de produto). "coalesce(p.plan, 'gratis') <> 'gratis'"
+-- trata plan NULL como gratuito tambem (mesmo default usado em
+-- lib/plan-status.ts).
 
 create or replace function public.get_ranking_por_materia(materia_filtro text default null, limite int default 5)
 returns table (
@@ -71,6 +76,7 @@ as $$
     where a.total > 0
       and p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
       and coalesce(p.role, 'aluno') <> 'admin'
+      and coalesce(p.plan, 'gratis') <> 'gratis'
   )
   select
     row_number() over (order by points desc, correct desc, total desc, display_name asc) as posicao,
@@ -135,6 +141,7 @@ as $$
     join profiles p on p.id = a.user_id
     where p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com')
       and coalesce(p.role, 'aluno') <> 'admin'
+      and coalesce(p.plan, 'gratis') <> 'gratis'
   ),
   posicionado as (
     select

@@ -42,7 +42,7 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   if (capaSecao) {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={capaSecao} alt="" fill className="object-contain" />
+        <Image src={capaSecao} alt="" fill className="object-cover object-top" />
       </div>
     )
   }
@@ -50,7 +50,7 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   if (desafio.area === "Clínica Médica") {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-contain" />
+        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-cover object-top" />
       </div>
     )
   }

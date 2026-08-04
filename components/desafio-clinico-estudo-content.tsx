@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
-import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy, X, ZoomIn, Pencil } from "lucide-react"
+import { ArrowLeft, CheckCircle2, XCircle, Loader2, RotateCcw, Trophy, X, ZoomIn, Paperclip, Pencil } from "lucide-react"
 import confetti from "canvas-confetti"
 import { supabase } from "@/lib/supabase"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
@@ -220,19 +220,25 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t.desafiosClinicos.descricaoCaso}
             </h2>
+            <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
             {desafio.imagem_url && (
               <button
                 type="button"
                 onClick={() => setImagemExpandida(true)}
-                className="group relative mx-auto mb-4 flex aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]"
+                className="group mt-4 flex items-center gap-3 rounded-lg border border-border bg-background/50 p-2 pr-4 transition-colors hover:border-primary/50"
               >
-                <Image src={desafio.imagem_url} alt={t.desafiosClinicos.imagemCasoAlt} fill className="object-contain" />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/40">
-                  <ZoomIn className="h-8 w-8 text-white opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-md border border-border bg-black">
+                  <Image src={desafio.imagem_url} alt={t.desafiosClinicos.imagemCasoAlt} fill className="object-cover" />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/50">
+                    <ZoomIn className="h-4 w-4 text-white opacity-0 transition-opacity group-hover:opacity-100" />
+                  </div>
                 </div>
+                <span className="flex items-center gap-1.5 text-sm font-medium text-foreground">
+                  <Paperclip className="h-4 w-4 text-muted-foreground" />
+                  {t.desafiosClinicos.verImagemAnexa}
+                </span>
               </button>
             )}
-            <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
           </div>
 
           {finalizado ? (

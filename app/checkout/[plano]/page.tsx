@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { AlertCircle, ArrowLeft, Loader2 } from "lucide-react"
+import { initMercadoPago, Wallet } from "@mercadopago/sdk-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,6 +18,10 @@ const PLANO_INFO: Record<PlanoPago, { nome: string; preco: string; periodo: stri
   trimestral: { nome: "Plano Trimestral", preco: "$ 18.000", periodo: "/trimestre" },
 }
 
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY
+
+let mpInicializado = false
+
 export default function CheckoutPage({ params }: { params: Promise<{ plano: string }> }) {
   const { plano: planoParam } = use(params)
   const plano = (planoParam === "mensal" || planoParam === "trimestral" ? planoParam : null) as PlanoPago | null
@@ -29,6 +34,7 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
   const [logado, setLogado] = useState(false)
   const [processando, setProcessando] = useState(false)
   const [erro, setErro] = useState<string | null>(null)
+  const [preferenceId, setPreferenceId] = useState<string | null>(null)
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -38,6 +44,13 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
       }
       setLoadingSessao(false)
     })
+  }, [])
+
+  useEffect(() => {
+    if (PUBLIC_KEY && !mpInicializado) {
+      initMercadoPago(PUBLIC_KEY, { locale: "es-AR" })
+      mpInicializado = true
+    }
   }, [])
 
   if (!plano) {
@@ -81,12 +94,12 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
       }),
     })
     const body = await res.json()
+    setProcessando(false)
     if (!res.ok) {
       setErro(body.error ?? "No se pudo iniciar el pago. Intentá de nuevo.")
-      setProcessando(false)
       return
     }
-    window.location.href = body.init_point
+    setPreferenceId(body.preferenceId)
   }
 
   return (
@@ -122,6 +135,14 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
             <div className="flex justify-center py-6">
               <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
             </div>
+          ) : preferenceId ? (
+            !PUBLIC_KEY ? (
+              <p className="text-sm text-destructive">
+                Falta configurar NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY.
+              </p>
+            ) : (
+              <Wallet initialization={{ preferenceId }} />
+            )
           ) : (
             <div className="space-y-4">
               <div className="space-y-1.5">

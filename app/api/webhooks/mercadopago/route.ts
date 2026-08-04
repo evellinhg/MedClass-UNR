@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createAdminClient } from "@/lib/supabase-admin"
-import { buscarPagamento, PLANO_DURACAO_DIAS, type PlanoPago } from "@/lib/mercadopago"
+import { buscarPagamento, validarAssinaturaWebhook, PLANO_DURACAO_DIAS, type PlanoPago } from "@/lib/mercadopago"
 
 // Mercado Pago chama essa rota (POST ou GET, conforme a integração) sempre
 // que o status de um pagamento muda. Nunca confiamos no corpo da notificação
@@ -81,6 +81,15 @@ export async function POST(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   let paymentId = searchParams.get("data.id") ?? searchParams.get("id")
 
+  const assinaturaValida = validarAssinaturaWebhook({
+    xSignature: request.headers.get("x-signature"),
+    xRequestId: request.headers.get("x-request-id"),
+    dataId: paymentId,
+  })
+  if (!assinaturaValida) {
+    return NextResponse.json({ error: "Assinatura inválida" }, { status: 401 })
+  }
+
   if (!paymentId) {
     try {
       const body = await request.json()
@@ -96,5 +105,15 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams
   const paymentId = searchParams.get("data.id") ?? searchParams.get("id")
+
+  const assinaturaValida = validarAssinaturaWebhook({
+    xSignature: request.headers.get("x-signature"),
+    xRequestId: request.headers.get("x-request-id"),
+    dataId: paymentId,
+  })
+  if (!assinaturaValida) {
+    return NextResponse.json({ error: "Assinatura inválida" }, { status: 401 })
+  }
+
   return processarNotificacao(paymentId)
 }

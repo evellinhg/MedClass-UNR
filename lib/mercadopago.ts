@@ -1,3 +1,4 @@
+import crypto from "crypto"
 import { MercadoPagoConfig, Preference, Payment } from "mercadopago"
 
 export type PlanoPago = "mensal" | "trimestral"
@@ -83,6 +84,40 @@ export async function criarPreferencia({
   }
 
   return { id: result.id, init_point: result.init_point }
+}
+
+interface ValidarAssinaturaParams {
+  xSignature: string | null
+  xRequestId: string | null
+  dataId: string | null
+}
+
+// Algoritmo oficial do MP: HMAC-SHA256 de "id:{data.id};request-id:{x-request-id};ts:{ts};"
+// usando a chave secreta configurada no painel de webhooks. Garante que a notificação
+// realmente veio do Mercado Pago, não de alguém forjando um POST pra essa rota.
+export function validarAssinaturaWebhook({ xSignature, xRequestId, dataId }: ValidarAssinaturaParams): boolean {
+  const secret = process.env.MERCADOPAGO_WEBHOOK_SECRET
+  if (!secret) return true
+  if (!xSignature || !xRequestId || !dataId) return false
+
+  const partes = Object.fromEntries(
+    xSignature.split(",").map((par) => {
+      const [chave, valor] = par.split("=").map((s) => s?.trim())
+      return [chave, valor]
+    })
+  )
+  const ts = partes.ts
+  const v1 = partes.v1
+  if (!ts || !v1) return false
+
+  const manifest = `id:${dataId.toLowerCase()};request-id:${xRequestId};ts:${ts};`
+  const hashCalculado = crypto.createHmac("sha256", secret).update(manifest).digest("hex")
+
+  const bufferCalculado = Buffer.from(hashCalculado, "hex")
+  const bufferRecebido = Buffer.from(v1, "hex")
+  if (bufferCalculado.length !== bufferRecebido.length) return false
+
+  return crypto.timingSafeEqual(bufferCalculado, bufferRecebido)
 }
 
 export async function buscarPagamento(paymentId: string) {

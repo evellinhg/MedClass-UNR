@@ -20,7 +20,7 @@ export function MateriaisContent() {
   const initialTab = VALID_TABS.includes(tabParam ?? "") ? (tabParam as string) : "videoaulas"
   const [activeTab, setActiveTab] = useState(initialTab)
   const [loading, setLoading] = useState(true)
-  const [locked, setLocked] = useState(false)
+  const [resumosLocked, setResumosLocked] = useState(false)
 
   useEffect(() => {
     if (tabParam && VALID_TABS.includes(tabParam)) setActiveTab(tabParam)
@@ -28,7 +28,10 @@ export function MateriaisContent() {
 
   useEffect(() => {
     getPlanStatus().then((status) => {
-      setLocked(!!status && !status.canAccessMateriais)
+      // Vídeos e flashcards ficam abertos a todos (flashcards limita as 2
+      // primeiras cartas de cada deck para quem é plano gratuito); só os
+      // resumos continuam exclusivos dos planos pagos.
+      setResumosLocked(!!status && !status.canAccessMateriais)
       setLoading(false)
     })
   }, [])
@@ -39,16 +42,6 @@ export function MateriaisContent() {
         <Loader2 className="h-4 w-4 animate-spin" />
         {t.materiais.carregando}
       </div>
-    )
-  }
-
-  if (locked) {
-    return (
-      <PlanRestrictedNotice
-        tone="locked"
-        title={t.planRestricted.materiaisTitulo}
-        description={t.planRestricted.materiaisDescricao}
-      />
     )
   }
 
@@ -65,7 +58,15 @@ export function MateriaisContent() {
       </TabsContent>
 
       <TabsContent value="resumos">
-        <ResumosGrid />
+        {resumosLocked ? (
+          <PlanRestrictedNotice
+            tone="locked"
+            title={t.planRestricted.materiaisTitulo}
+            description={t.planRestricted.materiaisDescricao}
+          />
+        ) : (
+          <ResumosGrid />
+        )}
       </TabsContent>
 
       <TabsContent value="flashcards">

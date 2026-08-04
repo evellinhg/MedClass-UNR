@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { AnimatePresence, motion } from "framer-motion"
-import { ChevronDown, ChevronLeft, ChevronRight, Loader2, PartyPopper, RotateCcw } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, Loader2, Lock, PartyPopper, RotateCcw } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -14,6 +14,9 @@ import { getDisciplinaIcon } from "@/lib/disciplina-icons"
 import type { Flashcard, FlashcardDeck } from "@/lib/flashcards-types"
 import { trackEvent } from "@/lib/analytics"
 import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
+import { getPlanStatus } from "@/lib/plan-status"
+
+const FREE_CARTAS_POR_DECK = 2
 
 const NIVEL_COLORS: Record<number, string> = {
   0: "#EF4444",
@@ -39,6 +42,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
   const [fontesOpen, setFontesOpen] = useState(false)
   const [showConcluido, setShowConcluido] = useState(false)
   const [saving, setSaving] = useState(false)
+  const [hasFullAccess, setHasFullAccess] = useState(true)
 
   useEffect(() => {
     const load = async () => {
@@ -46,10 +50,12 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
       const uid = userData.user?.id ?? null
       setUserId(uid)
 
-      const [{ data: deckData }, { data: cardsData }] = await Promise.all([
+      const [{ data: deckData }, { data: cardsData }, planStatus] = await Promise.all([
         supabase.from("materiais_flashcard_decks").select("*").eq("id", deckId).maybeSingle(),
         supabase.from("materiais_flashcards").select("*").eq("deck_id", deckId).order("ordem"),
+        getPlanStatus(),
       ])
+      setHasFullAccess(planStatus?.hasFullAccess ?? true)
 
       const cardsList = (cardsData as Flashcard[]) ?? []
       setDeck((deckData as FlashcardDeck) ?? null)
@@ -80,6 +86,8 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
 
   const respondidos = useMemo(() => cards.filter((c) => progressoMap[c.id] !== undefined).length, [cards, progressoMap])
   const currentCard = cards[currentIndex]
+  const limiteCartas = hasFullAccess ? cards.length : Math.min(FREE_CARTAS_POR_DECK, cards.length)
+  const cartaBloqueada = currentIndex >= limiteCartas
 
   const goTo = (index: number) => {
     if (index < 0 || index >= cards.length) return
@@ -89,7 +97,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
   }
 
   const handleRate = async (nivel: number) => {
-    if (!userId || !currentCard || saving) return
+    if (!userId || !currentCard || saving || cartaBloqueada) return
     setSaving(true)
     const jaTinhaResposta = progressoMap[currentCard.id] !== undefined
     await supabase
@@ -243,34 +251,49 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
         </button>
 
         <div className="min-h-72 flex-1" style={{ perspective: 1200 }}>
-          <motion.div
-            className="relative min-h-72 w-full cursor-pointer rounded-[24px] border border-border bg-card p-6 shadow-sm sm:p-10"
-            style={{ transformStyle: "preserve-3d" }}
-            animate={{ rotateY: flipped ? 180 : 0 }}
-            transition={{ duration: 0.5 }}
-            onClick={() => setFlipped((f) => !f)}
-          >
-            <div className="absolute right-6 top-6" style={{ backfaceVisibility: "hidden" }}>
-              <Badge variant="outline">Frente</Badge>
-            </div>
-            <div
-              className="flex min-h-60 flex-col items-center justify-center gap-3 text-center"
-              style={{ backfaceVisibility: "hidden" }}
-            >
-              <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">{currentCard.frente}</p>
-              {!flipped && <p className="text-sm text-muted-foreground">Toque para ver a resposta</p>}
-            </div>
-
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-[24px] bg-card p-6 text-center sm:p-10"
-              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-            >
-              <div className="absolute right-6 top-6">
-                <Badge>Verso</Badge>
+          {cartaBloqueada ? (
+            <div className="flex min-h-72 flex-col items-center justify-center gap-3 rounded-[24px] border border-border bg-card p-6 text-center sm:p-10">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
+                <Lock className="h-6 w-6 text-muted-foreground" />
               </div>
-              <p className="text-base leading-relaxed text-foreground sm:text-lg">{currentCard.verso}</p>
+              <p className="text-base font-semibold text-foreground">Disponível apenas nos planos pagos</p>
+              <p className="max-w-xs text-sm text-muted-foreground">
+                No plano gratuito você tem acesso às {FREE_CARTAS_POR_DECK} primeiras cartas de cada baralho.
+              </p>
+              <Button asChild size="sm" className="mt-1">
+                <Link href="/#pricing">Ver planos e continuar estudando</Link>
+              </Button>
             </div>
-          </motion.div>
+          ) : (
+            <motion.div
+              className="relative min-h-72 w-full cursor-pointer rounded-[24px] border border-border bg-card p-6 shadow-sm sm:p-10"
+              style={{ transformStyle: "preserve-3d" }}
+              animate={{ rotateY: flipped ? 180 : 0 }}
+              transition={{ duration: 0.5 }}
+              onClick={() => setFlipped((f) => !f)}
+            >
+              <div className="absolute right-6 top-6" style={{ backfaceVisibility: "hidden" }}>
+                <Badge variant="outline">Frente</Badge>
+              </div>
+              <div
+                className="flex min-h-60 flex-col items-center justify-center gap-3 text-center"
+                style={{ backfaceVisibility: "hidden" }}
+              >
+                <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">{currentCard.frente}</p>
+                {!flipped && <p className="text-sm text-muted-foreground">Toque para ver a resposta</p>}
+              </div>
+
+              <div
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-[24px] bg-card p-6 text-center sm:p-10"
+                style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+              >
+                <div className="absolute right-6 top-6">
+                  <Badge>Verso</Badge>
+                </div>
+                <p className="text-base leading-relaxed text-foreground sm:text-lg">{currentCard.verso}</p>
+              </div>
+            </motion.div>
+          )}
         </div>
 
         <button
@@ -284,35 +307,37 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
         </button>
       </div>
 
-      <Card className="rounded-[24px] border border-border bg-card p-5">
-        <p className="text-center text-sm font-medium text-foreground">
-          Qual nota você dá para seu conhecimento nesse assunto?
-        </p>
-        <div className="mt-3 flex justify-center gap-2">
-          {[0, 1, 2, 3, 4, 5].map((n) => {
-            const selecionado = progressoMap[currentCard.id] === n
-            return (
-              <button
-                key={n}
-                type="button"
-                disabled={saving}
-                onClick={() => handleRate(n)}
-                className="flex h-11 w-11 items-center justify-center rounded-full border text-sm font-semibold transition-transform hover:scale-105 disabled:opacity-50"
-                style={{
-                  borderColor: NIVEL_COLORS[n],
-                  backgroundColor: selecionado ? NIVEL_COLORS[n] : `${NIVEL_COLORS[n]}14`,
-                  color: selecionado ? "#fff" : NIVEL_COLORS[n],
-                }}
-              >
-                {n}
-              </button>
-            )
-          })}
-        </div>
-        <p className="mt-2 text-center text-xs text-muted-foreground">0 = Não sabia · 5 = Sei tudo</p>
-      </Card>
+      {!cartaBloqueada && (
+        <Card className="rounded-[24px] border border-border bg-card p-5">
+          <p className="text-center text-sm font-medium text-foreground">
+            Qual nota você dá para seu conhecimento nesse assunto?
+          </p>
+          <div className="mt-3 flex justify-center gap-2">
+            {[0, 1, 2, 3, 4, 5].map((n) => {
+              const selecionado = progressoMap[currentCard.id] === n
+              return (
+                <button
+                  key={n}
+                  type="button"
+                  disabled={saving}
+                  onClick={() => handleRate(n)}
+                  className="flex h-11 w-11 items-center justify-center rounded-full border text-sm font-semibold transition-transform hover:scale-105 disabled:opacity-50"
+                  style={{
+                    borderColor: NIVEL_COLORS[n],
+                    backgroundColor: selecionado ? NIVEL_COLORS[n] : `${NIVEL_COLORS[n]}14`,
+                    color: selecionado ? "#fff" : NIVEL_COLORS[n],
+                  }}
+                >
+                  {n}
+                </button>
+              )
+            })}
+          </div>
+          <p className="mt-2 text-center text-xs text-muted-foreground">0 = Não sabia · 5 = Sei tudo</p>
+        </Card>
+      )}
 
-      {currentCard.fontes.length > 0 && (
+      {!cartaBloqueada && currentCard.fontes.length > 0 && (
         <Collapsible open={fontesOpen} onOpenChange={setFontesOpen}>
           <Card className="rounded-[24px] border border-border bg-card p-4">
             <CollapsibleTrigger className="flex w-full items-center justify-between text-sm font-medium text-foreground">

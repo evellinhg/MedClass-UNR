@@ -4,13 +4,13 @@ const supabaseHostname = supabaseUrl ? new URL(supabaseUrl).hostname : ""
 
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com",
-  "style-src 'self' 'unsafe-inline'",
-  `img-src 'self' data: blob: ${supabaseUrl} https://*.ytimg.com`,
+  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://va.vercel-scripts.com https://sdk.mercadopago.com http://sdk.mercadopago.com https://http2.mlstatic.com",
+  "style-src 'self' 'unsafe-inline' https://sdk.mercadopago.com",
+  `img-src 'self' data: blob: ${supabaseUrl} https://*.ytimg.com https://http2.mlstatic.com https://www.mercadopago.com https://www.mercadopago.com.ar`,
   `media-src 'self' ${supabaseUrl}`,
-  "font-src 'self' data:",
-  `connect-src 'self' ${supabaseUrl} ${supabaseWs} https://va.vercel-scripts.com https://vitals.vercel-insights.com`,
-  "frame-src https://www.youtube-nocookie.com",
+  "font-src 'self' data: https://http2.mlstatic.com",
+  `connect-src 'self' ${supabaseUrl} ${supabaseWs} https://va.vercel-scripts.com https://vitals.vercel-insights.com https://api.mercadopago.com https://events.mercadopago.com https://http2.mlstatic.com https://www.mercadopago.com https://www.mercadopago.com.ar`,
+  "frame-src https://www.youtube-nocookie.com https://www.mercadopago.com https://www.mercadopago.com.ar https://bins.mercadopago.com",
   "object-src 'none'",
 ].join("; ")
 

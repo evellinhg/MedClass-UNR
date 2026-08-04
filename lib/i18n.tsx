@@ -252,6 +252,10 @@ const pt = {
     },
     voltar: "Voltar",
     tituloPagina: "Desafio Clínico",
+    enviarFeedbackCta: "Encontrou um erro ou tem uma dúvida?",
+    feedbackDialogTitulo: "Enviar feedback sobre este caso",
+    feedbackDialogDescricao:
+      "Encontrou uma questão errada, tem uma dúvida ou uma sugestão sobre este caso clínico? Conta pra gente.",
     descricaoCaso: "Descrição do caso",
     imagemCasoAlt: "Imagem do caso clínico",
     verImagemAnexa: "Ver imagem anexa",
@@ -1255,6 +1259,10 @@ const es: typeof pt = {
     },
     voltar: "Volver",
     tituloPagina: "Desafío Clínico",
+    enviarFeedbackCta: "¿Encontraste un error o tenés una duda?",
+    feedbackDialogTitulo: "Enviar feedback sobre este caso",
+    feedbackDialogDescricao:
+      "¿Encontraste una pregunta incorrecta, tenés una duda o una sugerencia sobre este caso clínico? Contanos.",
     descricaoCaso: "Descripción del caso",
     imagemCasoAlt: "Imagen del caso clínico",
     verImagemAnexa: "Ver imagen adjunta",

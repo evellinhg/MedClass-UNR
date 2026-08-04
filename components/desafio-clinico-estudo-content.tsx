@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
+import { DesafioFeedbackDialog } from "@/components/desafio-feedback-dialog"
 import {
   desafioAnteriorObrigatorio,
   foiAprovado,
@@ -280,6 +281,10 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <Pencil className="h-4 w-4" />
           </Button>
         )}
+      </div>
+
+      <div className="flex justify-end">
+        <DesafioFeedbackDialog desafioTitulo={desafio.titulo} />
       </div>
 
       <div className="space-y-6">

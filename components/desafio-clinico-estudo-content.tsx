@@ -17,9 +17,11 @@ import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dial
 import {
   desafioAnteriorObrigatorio,
   foiAprovado,
+  bloqueadoPorPlano,
   type DesafioParaBloqueio,
   type HistoricoParaBloqueio,
 } from "@/lib/desafio-clinico-bloqueio"
+import { getPlanStatus } from "@/lib/plan-status"
 
 const NOTA_CORTE_APROVACAO = 60
 
@@ -52,6 +54,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const [salvando, setSalvando] = useState(false)
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [casoAnteriorObrigatorio, setCasoAnteriorObrigatorio] = useState<DesafioParaBloqueio | null>(null)
+  const [bloqueadoPlanoGratuito, setBloqueadoPlanoGratuito] = useState(false)
   const isEditor = useIsContentEditor()
   const startRef = useRef<number | null>(null)
 
@@ -67,7 +70,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     const { data: sessionData } = await supabase.auth.getSession()
     const userId = sessionData.session?.user.id
 
-    const [{ data: desafioData }, { data: perguntasData }, { data: todosDesafiosData }, historicoRes] =
+    const [{ data: desafioData }, { data: perguntasData }, { data: todosDesafiosData }, historicoRes, planStatus] =
       await Promise.all([
         supabase.from("desafios_clinicos").select("*").eq("id", desafioId).single(),
         supabase
@@ -82,15 +85,24 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
               .select("acertos, total, desafio:desafios_clinicos(id)")
               .eq("user_id", userId)
           : Promise.resolve({ data: [] }),
+        getPlanStatus(),
       ])
     const desafioCarregado = (desafioData as DesafioClinico) ?? null
     setDesafio(desafioCarregado)
     setPerguntas((perguntasData as DesafioClinicoPergunta[]) ?? [])
 
     if (desafioCarregado) {
-      const anterior = desafioAnteriorObrigatorio(desafioCarregado, (todosDesafiosData as DesafioParaBloqueio[]) ?? [])
-      const historico = (historicoRes.data as unknown as HistoricoParaBloqueio[]) ?? []
-      setCasoAnteriorObrigatorio(anterior && !foiAprovado(anterior.id, historico) ? anterior : null)
+      const hasFullAccess = planStatus?.hasFullAccess ?? true
+      const bloqueioPlano = bloqueadoPorPlano(desafioCarregado, hasFullAccess)
+      setBloqueadoPlanoGratuito(bloqueioPlano)
+
+      if (bloqueioPlano) {
+        setCasoAnteriorObrigatorio(null)
+      } else {
+        const anterior = desafioAnteriorObrigatorio(desafioCarregado, (todosDesafiosData as DesafioParaBloqueio[]) ?? [])
+        const historico = (historicoRes.data as unknown as HistoricoParaBloqueio[]) ?? []
+        setCasoAnteriorObrigatorio(anterior && !foiAprovado(anterior.id, historico) ? anterior : null)
+      }
     }
   }
 
@@ -212,19 +224,32 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     )
   }
 
-  if (casoAnteriorObrigatorio && !isEditor) {
+  if ((bloqueadoPlanoGratuito || casoAnteriorObrigatorio) && !isEditor) {
     return (
       <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-muted">
           <Lock className="h-7 w-7 text-muted-foreground" />
         </div>
-        <h1 className="mt-3 text-lg font-bold text-foreground">{t.desafiosClinicos.casoBloqueadoTitulo}</h1>
+        <h1 className="mt-3 text-lg font-bold text-foreground">
+          {bloqueadoPlanoGratuito ? t.desafiosClinicos.casoBloqueadoPlanoTitulo : t.desafiosClinicos.casoBloqueadoTitulo}
+        </h1>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
-          {t.desafiosClinicos.casoBloqueadoDescricao(casoAnteriorObrigatorio.titulo)}
+          {bloqueadoPlanoGratuito
+            ? t.desafiosClinicos.casoBloqueadoPlanoDescricao
+            : t.desafiosClinicos.casoBloqueadoDescricao(casoAnteriorObrigatorio!.titulo)}
         </p>
-        <Link href="/dashboard/desafios-clinicos" className="mt-4 inline-block text-sm text-primary">
-          {t.desafiosClinicos.voltarAosDesafios}
-        </Link>
+        {bloqueadoPlanoGratuito ? (
+          <Link
+            href="/#pricing"
+            className="mt-4 inline-block rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
+          >
+            {t.planBanner.cta}
+          </Link>
+        ) : (
+          <Link href="/dashboard/desafios-clinicos" className="mt-4 inline-block text-sm text-primary">
+            {t.desafiosClinicos.voltarAosDesafios}
+          </Link>
+        )}
       </div>
     )
   }

@@ -13,9 +13,20 @@ export interface HistoricoParaBloqueio {
   desafio: { id: string } | null
 }
 
-function extrairNumeroCaso(titulo: string): number | null {
+export function extrairNumeroCaso(titulo: string): number | null {
   const m = titulo.match(/^Caso (\d+)/i)
   return m ? Number(m[1]) : null
+}
+
+/**
+ * Plano gratuito só acessa o primeiro caso ("Caso 1") de cada seção — não
+ * depende de aprovação, é um limite do plano em si (independente de
+ * `desafioAnteriorObrigatorio`, que trata do desbloqueio por progresso).
+ */
+export function bloqueadoPorPlano(desafio: DesafioParaBloqueio, hasFullAccess: boolean): boolean {
+  if (hasFullAccess || desafio.area === "Clínica Médica") return false
+  const numero = extrairNumeroCaso(desafio.titulo)
+  return numero !== null && numero > 1
 }
 
 function chaveSecao(desafio: DesafioParaBloqueio): string {

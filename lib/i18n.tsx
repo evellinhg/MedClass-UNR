@@ -289,6 +289,10 @@ const pt = {
     casoBloqueadoTitulo: "Caso bloqueado",
     casoBloqueadoDescricao: (tituloAnterior: string) =>
       `Você precisa concluir "${tituloAnterior}" com pelo menos 60% de acerto antes de acessar este caso.`,
+    casoBloqueadoPlanoCard: "Disponível apenas nos planos pagos",
+    casoBloqueadoPlanoTitulo: "Disponível apenas nos planos pagos",
+    casoBloqueadoPlanoDescricao:
+      "No plano gratuito você tem acesso ao primeiro caso de cada seção. Assine um plano pago para desbloquear todos os casos.",
     estudosAnteriores: "Estudos anteriores",
     semEstudosAnteriores: "Você ainda não estudou nenhum desafio clínico. Comece por um dos casos acima.",
     desafioRemovido: "Desafio removido",
@@ -1281,6 +1285,10 @@ const es: typeof pt = {
     casoBloqueadoTitulo: "Caso bloqueado",
     casoBloqueadoDescricao: (tituloAnterior: string) =>
       `Necesitás completar "${tituloAnterior}" con al menos 60% de acierto antes de acceder a este caso.`,
+    casoBloqueadoPlanoCard: "Disponible solo en los planes pagos",
+    casoBloqueadoPlanoTitulo: "Disponible solo en los planes pagos",
+    casoBloqueadoPlanoDescricao:
+      "En el plan gratuito tenés acceso al primer caso de cada sección. Suscribite a un plan pago para desbloquear todos los casos.",
     estudosAnteriores: "Estudios anteriores",
     semEstudosAnteriores: "Todavía no estudiaste ningún desafío clínico. Empezá por uno de los casos de arriba.",
     desafioRemovido: "Desafío eliminado",

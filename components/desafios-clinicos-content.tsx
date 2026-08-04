@@ -14,7 +14,8 @@ import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import type { DesafioClinico } from "@/lib/desafios-types"
 import { useLanguage } from "@/lib/i18n"
-import { desafioAnteriorObrigatorio, foiAprovado } from "@/lib/desafio-clinico-bloqueio"
+import { desafioAnteriorObrigatorio, foiAprovado, bloqueadoPorPlano } from "@/lib/desafio-clinico-bloqueio"
+import { getPlanStatus } from "@/lib/plan-status"
 
 const SEM_CATEGORIA = "sem_categoria"
 
@@ -78,12 +79,13 @@ export function DesafiosClinicosContent() {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [editingDesafio, setEditingDesafio] = useState<DesafioClinico | null>(null)
+  const [hasFullAccess, setHasFullAccess] = useState(true)
 
   const load = async () => {
     const { data: sessionData } = await supabase.auth.getSession()
     const userId = sessionData.session?.user.id
 
-    const [{ data: desafiosData }, historicoRes] = await Promise.all([
+    const [{ data: desafiosData }, historicoRes, planStatus] = await Promise.all([
       supabase.from("desafios_clinicos").select("*").eq("ativo", true).order("created_at", { ascending: true }),
       userId
         ?         supabase
@@ -92,6 +94,7 @@ export function DesafiosClinicosContent() {
             .eq("user_id", userId)
             .order("created_at", { ascending: false })
         : Promise.resolve({ data: [] }),
+      getPlanStatus(),
     ])
 
     const lista = (desafiosData as DesafioClinico[]) ?? []
@@ -100,6 +103,7 @@ export function DesafiosClinicosContent() {
       prev.size === 0 ? new Set(lista.map((d) => d.secao || d.area || SEM_CATEGORIA)) : prev
     )
     setHistorico((historicoRes.data as unknown as HistoricoItem[]) ?? [])
+    setHasFullAccess(planStatus?.hasFullAccess ?? true)
     setLoading(false)
   }
 
@@ -203,14 +207,19 @@ export function DesafiosClinicosContent() {
                 {isOpen && (
                   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     {desafiosDaSecao.map((desafio) => {
-                      const anterior = desafioAnteriorObrigatorio(desafio, desafios)
-                      const bloqueado = !isEditor && !!anterior && !foiAprovado(anterior.id, historico)
+                      const bloqueioPlano = !isEditor && bloqueadoPorPlano(desafio, hasFullAccess)
+                      const anterior = bloqueioPlano ? null : desafioAnteriorObrigatorio(desafio, desafios)
+                      const bloqueioProgresso = !isEditor && !!anterior && !foiAprovado(anterior.id, historico)
+                      const bloqueado = bloqueioPlano || bloqueioProgresso
 
                       if (bloqueado) {
+                        const tooltip = bloqueioPlano
+                          ? t.desafiosClinicos.casoBloqueadoPlanoCard
+                          : t.desafiosClinicos.casoBloqueadoCard(anterior!.titulo)
                         return (
                           <div
                             key={desafio.id}
-                            title={t.desafiosClinicos.casoBloqueadoCard(anterior!.titulo)}
+                            title={tooltip}
                             className="relative cursor-not-allowed overflow-hidden rounded-lg border border-border bg-card opacity-60"
                           >
                             <div className="relative">

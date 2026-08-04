@@ -563,10 +563,17 @@ const pt = {
     subtitle: "Cancele quando quiser, sem letras miúdas.",
     paymentNote: "Pagamento via Pix.",
     promo: {
-      badge: "Promoção de Lançamento",
-      title: "Período Gratuito",
-      description: "Aproveite o período gratuito para testar nossa plataforma.",
-      features: ["Acesso ilimitado durante o período gratuito", "Acesso a todo o conteúdo da plataforma"],
+      badge: "Plano Grátis",
+      title: "Comece sem pagar nada",
+      description: "Sem prazo de expiração — sua conta continua gratuita para sempre, a não ser que você escolha assinar um plano pago.",
+      features: [
+        "Até 60 questões para resolver",
+        "Primeiro caso de cada seção de Desafios Clínicos",
+        "As 2 primeiras cartas de cada baralho de Flashcards",
+        "Acesso livre a todas as videoaulas",
+        "Acesso às suas estatísticas de desempenho",
+        "Não entra no ranking (exclusivo dos planos pagos)",
+      ],
       cta: "Criar conta grátis",
     },
     plans: [
@@ -1559,10 +1566,17 @@ const es: typeof pt = {
     subtitle: "Cancelá cuando quieras, sin letra chica.",
     paymentNote: "Pago por transferencia (CBU/ALIAS).",
     promo: {
-      badge: "Promoción de Lanzamiento",
-      title: "Período Gratuito",
-      description: "Aprovechá el período gratuito para probar nuestra plataforma.",
-      features: ["Acceso ilimitado durante el período gratuito", "Acceso a todo el contenido de la plataforma"],
+      badge: "Plan Gratis",
+      title: "Empezá sin pagar nada",
+      description: "Sin fecha de vencimiento — tu cuenta sigue siendo gratuita para siempre, a menos que elijas suscribirte a un plan pago.",
+      features: [
+        "Hasta 60 preguntas para resolver",
+        "Primer caso de cada sección de Desafíos Clínicos",
+        "Las 2 primeras tarjetas de cada mazo de Flashcards",
+        "Acceso libre a todas las videoclases",
+        "Acceso a tus estadísticas de desempeño",
+        "No entra en el ranking (exclusivo de los planes pagos)",
+      ],
       cta: "Crear cuenta gratis",
     },
     plans: [

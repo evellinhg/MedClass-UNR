@@ -583,8 +583,9 @@ const pt = {
     },
     plans: [
       {
+        id: "mensal",
         name: "Plano Mensal",
-        price: "R$ 19,90",
+        price: "$ 8.000",
         period: "/mês",
         description: "Para quem quer testar a plataforma.",
         features: [
@@ -596,14 +597,15 @@ const pt = {
         cta: "Assinar Plano Mensal",
       },
       {
+        id: "trimestral",
         name: "Plano Trimestral",
-        price: "R$ 49,90",
+        price: "$ 18.000",
         period: "/trimestre",
         description: "Para quem quer estudar sem interrupção até a próxima final.",
         badge: "Melhor Custo-Benefício",
         features: [
           "Tudo do Plano Mensal",
-          "Desconto exclusivo (economize 15%)",
+          "Desconto exclusivo",
           "Prioridade em novas atualizações de conteúdo",
           "Suporte prioritário",
         ],
@@ -1591,8 +1593,9 @@ const es: typeof pt = {
     },
     plans: [
       {
+        id: "mensal",
         name: "Plan Mensual",
-        price: "$6.000 ARS",
+        price: "$ 8.000",
         period: "/mes",
         description: "Para quienes quieren probar la plataforma.",
         features: [
@@ -1604,14 +1607,15 @@ const es: typeof pt = {
         cta: "Suscribirse al Plan Mensual",
       },
       {
+        id: "trimestral",
         name: "Plan Trimestral",
-        price: "$15.000 ARS",
+        price: "$ 18.000",
         period: "/trimestre",
         description: "Para quienes quieren estudiar sin interrupciones hasta el próximo final.",
         badge: "Mejor Relación Precio-Beneficio",
         features: [
           "Todo lo del Plan Mensual",
-          "Descuento exclusivo (ahorrá 15%)",
+          "Descuento exclusivo",
           "Prioridad en nuevas actualizaciones de contenido",
           "Soporte prioritario",
         ],

@@ -104,7 +104,7 @@ export function Pricing() {
                       : "border border-white/10 bg-white/5 text-white hover:bg-white/10"
                   }`}
                 >
-                  <a href="/login">{plan.cta}</a>
+                  <a href={`/checkout/${plan.id}`}>{plan.cta}</a>
                 </Button>
               </div>
             )

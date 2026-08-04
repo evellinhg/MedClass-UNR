@@ -3,6 +3,7 @@ import { CollapsibleSidebar } from "@/components/collapsible-sidebar"
 import { DashboardHeader } from "@/components/dashboard-header"
 import { PlanExpiredBanner } from "@/components/plan-expired-banner"
 import { FreePlanBanner } from "@/components/free-plan-banner"
+import { ClaimPendingPayment } from "@/components/claim-pending-payment"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -15,6 +16,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
       {/* Main column */}
       <div className="min-w-0 flex-1">
+        <ClaimPendingPayment />
         <DashboardHeader />
         <PlanExpiredBanner />
         <FreePlanBanner />

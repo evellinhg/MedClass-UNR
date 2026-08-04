@@ -23,8 +23,12 @@ import {
   Medal,
   Stethoscope,
   ScanLine,
+  Activity,
 } from "lucide-react"
 import { useLanguage } from "@/lib/i18n"
+
+const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/desafio-capa-diagnostico-imagens.jpg"
+const CAPA_ELETROCARDIOGRAMA = "/desafios-clinicos/desafio-capa-eletrocardiograma.jpg"
 
 const evolution = [
   { label: "Sim. 1", score: 58 },
@@ -248,20 +252,33 @@ function RankingPanel({ dt }: { dt: DashboardT }) {
 
 function DesafiosPanel({ dt }: { dt: DashboardT }) {
   const d = dt.slides.desafios
+  const capas = [
+    { src: CAPA_DIAGNOSTICO_IMAGENS, Icon: ScanLine },
+    { src: CAPA_ELETROCARDIOGRAMA, Icon: Activity },
+  ]
 
   return (
-    <div className="overflow-hidden rounded-xl border border-white/5 bg-white/[0.02]">
-      <div className="relative h-36 w-full">
-        <Image src="/desafios-clinicos/caso-01.jpg" alt={d.tituloCaso} fill className="object-cover" />
-        <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-[10px] font-medium text-[#c6ff3a] backdrop-blur-sm">
-          <ScanLine className="h-3 w-3" />
-          {d.secaoLabel}
-        </span>
+    <div className="space-y-3">
+      <div className="grid grid-cols-2 gap-3">
+        {d.casos.map((caso, i) => {
+          const { src, Icon } = capas[i]
+          return (
+            <div key={caso.titulo} className="overflow-hidden rounded-xl border border-white/5 bg-white/[0.02]">
+              <div className="relative h-28 w-full">
+                <Image src={src} alt={caso.titulo} fill className="object-cover" />
+                <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-[10px] font-medium text-[#c6ff3a] backdrop-blur-sm">
+                  <Icon className="h-3 w-3" />
+                  {caso.secaoLabel}
+                </span>
+              </div>
+              <div className="p-2.5">
+                <p className="text-xs font-semibold leading-snug text-white/80">{caso.titulo}</p>
+              </div>
+            </div>
+          )
+        })}
       </div>
-      <div className="p-3">
-        <p className="text-xs font-semibold text-white/80">{d.tituloCaso}</p>
-        <p className="mt-0.5 text-[11px] text-white/40">{d.descricaoCaso}</p>
-      </div>
+      <p className="text-center text-[11px] text-white/40">{d.descricaoCaso}</p>
     </div>
   )
 }

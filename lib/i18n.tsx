@@ -825,8 +825,10 @@ const pt = {
       desafios: {
         subtitle: "Casos clínicos reais",
         badge: "Novo",
-        tituloCaso: "Caso 1 — Radiografia de Tórax",
-        secaoLabel: "Diagnóstico por Imagens",
+        casos: [
+          { titulo: "Caso 1 — Radiografia de Tórax", secaoLabel: "Diagnóstico por Imagens" },
+          { titulo: "Caso 3 — Traçado de ECG", secaoLabel: "Eletrocardiograma" },
+        ],
         descricaoCaso: "Interprete a imagem e responda às perguntas do caso.",
       },
     },
@@ -1836,8 +1838,10 @@ const es: typeof pt = {
       desafios: {
         subtitle: "Casos clínicos reales",
         badge: "Nuevo",
-        tituloCaso: "Caso 1 — Radiografía de Tórax",
-        secaoLabel: "Diagnóstico por Imágenes",
+        casos: [
+          { titulo: "Caso 1 — Radiografía de Tórax", secaoLabel: "Diagnóstico por Imágenes" },
+          { titulo: "Caso 3 — Trazado de ECG", secaoLabel: "Electrocardiograma" },
+        ],
         descricaoCaso: "Interpretá la imagen y respondé las preguntas del caso.",
       },
     },

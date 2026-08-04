@@ -55,6 +55,8 @@ const MATERIA_LABEL_TO_KEY = {
   "Pediatría de 5º año": "pediatria_5",
   "Clínica Médica do 5º ano": "clinica_medica_5",
   "Clínica Médica de 5º año": "clinica_medica_5",
+  "Ginecologia e Obstetrícia": "ginecologia_obstetricia",
+  "Ginecología y Obstetricia": "ginecologia_obstetricia",
 }
 
 const PARCIAL_LABEL_TO_KEY = {

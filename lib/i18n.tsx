@@ -179,6 +179,7 @@ const pt = {
       cirurgia_5: "Cirurgia do 5º ano",
       pediatria_5: "Pediatria do 5º ano",
       clinica_medica_5: "Clínica Médica do 5º ano",
+      ginecologia_obstetricia: "Ginecologia e Obstetrícia",
     } as Record<string, string>,
     disciplinaBase: "Disciplina Base",
     disciplinaBaseLabel: {
@@ -1189,6 +1190,7 @@ const es: typeof pt = {
       cirurgia_5: "Cirugía de 5º año",
       pediatria_5: "Pediatría de 5º año",
       clinica_medica_5: "Clínica Médica de 5º año",
+      ginecologia_obstetricia: "Ginecología y Obstetricia",
     } as Record<string, string>,
     disciplinaBase: "Disciplina Base",
     disciplinaBaseLabel: {

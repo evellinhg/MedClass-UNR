@@ -58,7 +58,7 @@ const MATERIA_LABEL_TO_KEY = {
 }
 
 const PARCIAL_LABEL_TO_KEY = {
-  "Primeira Parcial": "parcial1", "Primer Parcial": "parcial1",
+  "Primeira Parcial": "parcial1", "Primer Parcial": "parcial1", "Primeiro Parcial": "parcial1",
   "Segunda Parcial": "parcial2", "Segundo Parcial": "parcial2",
 }
 
@@ -112,10 +112,24 @@ const raw = JSON.parse(readFileSync(inputPath, "utf-8"))
 const lista = raw.preguntas ?? raw.questoes ?? raw
 const mapeadas = lista.map(mapQuestao)
 
-const { data: existentes, error: erroExistentes } = await supabase.from("questoes").select("materia, enunciado, opcoes")
-if (erroExistentes) {
-  console.error("Erro ao verificar questões existentes:", erroExistentes.message)
-  process.exit(1)
+// Busca só as matérias presentes no lote, paginando com .range() -- o
+// PostgREST corta em 1000 linhas por padrão, e a tabela já passa disso
+// no total. Sem isso a checagem de duplicata fica cega pra maior parte
+// da tabela (foi o que causou uma importação triplicada em produção).
+const materiasDoLote = [...new Set(mapeadas.map((q) => q.materia))]
+const existentes = []
+for (let from = 0; ; from += 1000) {
+  const { data, error } = await supabase
+    .from("questoes")
+    .select("materia, enunciado, opcoes")
+    .in("materia", materiasDoLote)
+    .range(from, from + 999)
+  if (error) {
+    console.error("Erro ao verificar questões existentes:", error.message)
+    process.exit(1)
+  }
+  existentes.push(...data)
+  if (data.length < 1000) break
 }
 
 // Chave inclui as alternativas: mesmo enunciado com respostas diferentes NÃO é duplicata,

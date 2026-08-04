@@ -200,6 +200,8 @@ const pt = {
     desafioSecaoLabel: {
       diagnostico_imagens: "Diagnóstico por Imagem",
       ciclo_basico_dx: "Ciclo Básico Dx",
+      historia_clinica_semiologia: "História Clínica e Semiologia",
+      eletrocardiograma: "Eletrocardiograma",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {
@@ -1186,6 +1188,8 @@ const es: typeof pt = {
     desafioSecaoLabel: {
       diagnostico_imagens: "Diagnóstico por Imágenes",
       ciclo_basico_dx: "Ciclo Básico Dx",
+      historia_clinica_semiologia: "Historia Clínica y Semiología",
+      eletrocardiograma: "Electrocardiograma",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {

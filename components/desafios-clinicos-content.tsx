@@ -19,6 +19,15 @@ const SEM_CATEGORIA = "sem_categoria"
 
 const CAPA_DIAGNOSTICO_IMAGENS = "/desafios-clinicos/desafio-capa-diagnostico-imagens.jpg"
 const CAPA_CLINICA_MEDICA = "/desafios-clinicos/desafio-capa-clinica-medica.jpg"
+const CAPA_HISTORIA_CLINICA_SEMIOLOGIA = "/desafios-clinicos/desafio-capa-historia-clinica-semiologia.jpg"
+const CAPA_ELETROCARDIOGRAMA = "/desafios-clinicos/desafio-capa-eletrocardiograma.jpg"
+
+const CAPA_POR_SECAO: Record<string, string> = {
+  diagnostico_imagens: CAPA_DIAGNOSTICO_IMAGENS,
+  ciclo_basico_dx: CAPA_DIAGNOSTICO_IMAGENS,
+  historia_clinica_semiologia: CAPA_HISTORIA_CLINICA_SEMIOLOGIA,
+  eletrocardiograma: CAPA_ELETROCARDIOGRAMA,
+}
 
 interface HistoricoItem {
   id: string
@@ -29,10 +38,11 @@ interface HistoricoItem {
 }
 
 function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
-  if (desafio.secao === "diagnostico_imagens" || desafio.secao === "ciclo_basico_dx") {
+  const capaSecao = desafio.secao ? CAPA_POR_SECAO[desafio.secao] : undefined
+  if (capaSecao) {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={CAPA_DIAGNOSTICO_IMAGENS} alt="" fill className="object-cover" />
+        <Image src={capaSecao} alt="" fill className="object-contain" />
       </div>
     )
   }
@@ -40,7 +50,7 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   if (desafio.area === "Clínica Médica") {
     return (
       <div className="relative h-40 w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-cover" />
+        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-contain" />
       </div>
     )
   }

@@ -220,12 +220,11 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t.desafiosClinicos.descricaoCaso}
             </h2>
-            <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
             {desafio.imagem_url && (
               <button
                 type="button"
                 onClick={() => setImagemExpandida(true)}
-                className="group relative mt-4 aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]"
+                className="group relative mx-auto mb-4 flex aspect-square w-full max-w-md overflow-hidden rounded-lg border border-border bg-black sm:aspect-[4/3]"
               >
                 <Image src={desafio.imagem_url} alt={t.desafiosClinicos.imagemCasoAlt} fill className="object-contain" />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/40">
@@ -233,6 +232,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                 </div>
               </button>
             )}
+            <p className="text-sm leading-relaxed text-foreground">{desafio.descricao_caso}</p>
           </div>
 
           {finalizado ? (

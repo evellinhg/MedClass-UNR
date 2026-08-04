@@ -22,6 +22,9 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
   const plano = (planoParam === "mensal" || planoParam === "trimestral" ? planoParam : null) as PlanoPago | null
 
   const [email, setEmail] = useState("")
+  const [nomeCompleto, setNomeCompleto] = useState("")
+  const [telefone, setTelefone] = useState("")
+  const [dni, setDni] = useState("")
   const [loadingSessao, setLoadingSessao] = useState(true)
   const [logado, setLogado] = useState(false)
   const [processando, setProcessando] = useState(false)
@@ -53,11 +56,29 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
       setErro("Ingresá un e-mail válido.")
       return
     }
+    if (!nomeCompleto.trim()) {
+      setErro("Ingresá tu nombre completo.")
+      return
+    }
+    if (!telefone.trim()) {
+      setErro("Ingresá tu número de teléfono.")
+      return
+    }
+    if (!dni.trim()) {
+      setErro("Ingresá tu DNI.")
+      return
+    }
     setProcessando(true)
     const res = await fetch("/api/checkout/mercadopago", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ plano, email }),
+      body: JSON.stringify({
+        plano,
+        email,
+        nomeCompleto: nomeCompleto.trim(),
+        telefone: telefone.trim(),
+        dni: dni.trim(),
+      }),
     })
     const body = await res.json()
     if (!res.ok) {
@@ -104,6 +125,17 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
           ) : (
             <div className="space-y-4">
               <div className="space-y-1.5">
+                <Label htmlFor="checkout-nome">Nombre completo</Label>
+                <Input
+                  id="checkout-nome"
+                  type="text"
+                  placeholder="Tu nombre y apellido"
+                  value={nomeCompleto}
+                  onChange={(e) => setNomeCompleto(e.target.value)}
+                />
+              </div>
+
+              <div className="space-y-1.5">
                 <Label htmlFor="checkout-email">E-mail</Label>
                 <Input
                   id="checkout-email"
@@ -118,6 +150,30 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
                     ? "Usaremos el e-mail de tu cuenta."
                     : "Usá el mismo e-mail con el que vas a crear (o ya tenés) tu cuenta en MedClass."}
                 </p>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-1.5">
+                  <Label htmlFor="checkout-telefone">Teléfono</Label>
+                  <Input
+                    id="checkout-telefone"
+                    type="tel"
+                    placeholder="+54 9 341..."
+                    value={telefone}
+                    onChange={(e) => setTelefone(e.target.value)}
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="checkout-dni">DNI</Label>
+                  <Input
+                    id="checkout-dni"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="12345678"
+                    value={dni}
+                    onChange={(e) => setDni(e.target.value)}
+                  />
+                </div>
               </div>
 
               {erro && (

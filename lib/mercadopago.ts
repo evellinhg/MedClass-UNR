@@ -26,11 +26,25 @@ function accessToken(): string {
 interface CriarPreferenciaParams {
   plano: PlanoPago
   email: string
+  nomeCompleto: string
+  telefone: string
+  dni: string
   externalReference: string
   origin: string
 }
 
-export async function criarPreferencia({ plano, email, externalReference, origin }: CriarPreferenciaParams) {
+export async function criarPreferencia({
+  plano,
+  email,
+  nomeCompleto,
+  telefone,
+  dni,
+  externalReference,
+  origin,
+}: CriarPreferenciaParams) {
+  const [nome, ...resto] = nomeCompleto.trim().split(/\s+/)
+  const sobrenome = resto.join(" ") || nome
+
   const res = await fetch(`${MP_API}/checkout/preferences`, {
     method: "POST",
     headers: {
@@ -46,7 +60,13 @@ export async function criarPreferencia({ plano, email, externalReference, origin
           currency_id: "ARS",
         },
       ],
-      payer: { email },
+      payer: {
+        email,
+        name: nome,
+        surname: sobrenome,
+        phone: { number: telefone },
+        identification: { type: "DNI", number: dni },
+      },
       external_reference: externalReference,
       back_urls: {
         success: `${origin}/checkout/sucesso`,

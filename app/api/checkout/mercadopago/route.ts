@@ -4,7 +4,13 @@ import { criarPreferencia, PLANO_PRECO, type PlanoPago } from "@/lib/mercadopago
 
 export async function POST(request: NextRequest) {
   const body = await request.json()
-  const { plano, email } = body as { plano?: string; email?: string }
+  const { plano, email, nomeCompleto, telefone, dni } = body as {
+    plano?: string
+    email?: string
+    nomeCompleto?: string
+    telefone?: string
+    dni?: string
+  }
 
   if (plano !== "mensal" && plano !== "trimestral") {
     return NextResponse.json({ error: "Plano inválido." }, { status: 400 })
@@ -12,13 +18,24 @@ export async function POST(request: NextRequest) {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "E-mail inválido." }, { status: 400 })
   }
+  if (!nomeCompleto?.trim() || !telefone?.trim() || !dni?.trim()) {
+    return NextResponse.json({ error: "Faltan datos obligatorios." }, { status: 400 })
+  }
 
   const planoValidado = plano as PlanoPago
   const supabase = createAdminClient()
 
   const { data: pagamento, error: insertError } = await supabase
     .from("pagamentos_mercadopago")
-    .insert({ email, plano: planoValidado, valor: PLANO_PRECO[planoValidado], status: "pendente" })
+    .insert({
+      email,
+      nome_completo: nomeCompleto.trim(),
+      telefone: telefone.trim(),
+      dni: dni.trim(),
+      plano: planoValidado,
+      valor: PLANO_PRECO[planoValidado],
+      status: "pendente",
+    })
     .select("id")
     .single()
 
@@ -30,6 +47,9 @@ export async function POST(request: NextRequest) {
     const preferencia = await criarPreferencia({
       plano: planoValidado,
       email,
+      nomeCompleto: nomeCompleto.trim(),
+      telefone: telefone.trim(),
+      dni: dni.trim(),
       externalReference: pagamento.id,
       origin: request.nextUrl.origin,
     })

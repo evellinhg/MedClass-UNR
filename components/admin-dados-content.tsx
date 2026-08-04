@@ -28,7 +28,12 @@ export function AdminDadosContent() {
         <TabsTrigger value="question">Question</TabsTrigger>
         <TabsTrigger value="simulado">Simulado</TabsTrigger>
         <TabsTrigger value="feedback">Feedback</TabsTrigger>
+        <TabsTrigger value="pagamentos">Pagamentos</TabsTrigger>
       </TabsList>
+
+      <TabsContent value="pagamentos">
+        <AdminDataTable table="pagamentos_mercadopago" title="Pagamentos (Mercado Pago)" />
+      </TabsContent>
 
       <TabsContent value="attempt">
         <AdminDataTable table="simulado_attempts" title="Attempt" />

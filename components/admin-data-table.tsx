@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { AlertTriangle, Loader2, Plus, RefreshCw, Trash2 } from "lucide-react"
+import { AlertTriangle, Download, Loader2, Plus, RefreshCw, Trash2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -51,6 +51,7 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
   const [saving, setSaving] = useState(false)
   const [formOpen, setFormOpen] = useState(false)
   const [formValues, setFormValues] = useState<Record<string, string>>({})
+  const [exporting, setExporting] = useState(false)
 
   const isMissing = error?.toLowerCase().includes("could not find the table")
   const totalPages = Math.max(1, Math.ceil(totalCount / ROWS_PER_PAGE))
@@ -97,6 +98,46 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
     load()
   }
 
+  const handleExport = async () => {
+    setExporting(true)
+    const todasAsLinhas: Row[] = []
+    for (let from = 0; ; from += 1000) {
+      const { data, error } = await supabase.from(table).select("*").range(from, from + 999)
+      if (error) {
+        alert(`Erro ao exportar: ${error.message}`)
+        setExporting(false)
+        return
+      }
+      todasAsLinhas.push(...(data ?? []))
+      if (!data || data.length < 1000) break
+    }
+    setExporting(false)
+
+    if (todasAsLinhas.length === 0) {
+      alert("Não há registros para exportar.")
+      return
+    }
+
+    const colunas = Object.keys(todasAsLinhas[0])
+    const escapar = (valor: unknown) => {
+      if (valor === null || valor === undefined) return ""
+      const texto = typeof valor === "object" ? JSON.stringify(valor) : String(valor)
+      return `"${texto.replace(/"/g, '""')}"`
+    }
+    const linhas = [
+      colunas.join(","),
+      ...todasAsLinhas.map((linha) => colunas.map((c) => escapar(linha[c])).join(",")),
+    ]
+    const csv = linhas.join("\n")
+    const blob = new Blob([`﻿${csv}`], { type: "text/csv;charset=utf-8;" })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement("a")
+    a.href = url
+    a.download = `${table}-${new Date().toISOString().slice(0, 10)}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   const handleCreate = async () => {
     setSaving(true)
     const payload: Row = {}
@@ -131,6 +172,16 @@ export function AdminDataTable({ table, title, createSql }: AdminDataTableProps)
         <div className="flex items-center gap-2">
           <Button size="icon-sm" variant="ghost" onClick={load} aria-label="Atualizar">
             <RefreshCw className="h-4 w-4" />
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            className="gap-1.5"
+            onClick={handleExport}
+            disabled={exporting || totalCount === 0}
+          >
+            {exporting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+            Exportar CSV
           </Button>
           <Dialog open={formOpen} onOpenChange={setFormOpen}>
             <DialogTrigger asChild>

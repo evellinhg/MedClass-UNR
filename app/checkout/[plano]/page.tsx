@@ -3,7 +3,7 @@
 import { use, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { ArrowLeft, ExternalLink, MessageCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -75,22 +75,36 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
             </div>
           </div>
 
-          <div className="space-y-5">
-            <a href={info.link} target="_blank" rel="noopener noreferrer">
-              <Button className="w-full gap-2">
-                <ExternalLink className="h-4 w-4" />
-                Pagar con Mercado Pago
-              </Button>
-            </a>
+          <div className="space-y-8">
+            <div>
+              <div className="mb-2.5 flex items-center gap-2">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  1
+                </span>
+                <p className="text-sm font-semibold text-foreground">Pagá con Mercado Pago</p>
+              </div>
+              <a href={info.link} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full gap-2">
+                  <ExternalLink className="h-4 w-4" />
+                  Pagar con Mercado Pago
+                </Button>
+              </a>
+            </div>
 
-            <div className="space-y-2 rounded-lg border border-primary/30 bg-primary/5 p-4">
-              <p className="text-sm font-medium text-foreground">Después de pagar</p>
-              <p className="text-xs text-muted-foreground">
+            <div className="rounded-xl border-2 border-amber-500/60 bg-amber-500/10 p-4 shadow-[0_0_24px_-6px_rgba(245,158,11,0.5)]">
+              <div className="mb-2 flex items-center gap-2">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500 text-xs font-bold text-white">
+                  2
+                </span>
+                <p className="text-sm font-bold text-foreground">¡No te olvides! Enviá el comprobante</p>
+              </div>
+              <p className="mb-3 text-xs text-muted-foreground">
                 Envianos el comprobante junto con tu <strong>nombre completo</strong> y{" "}
                 <strong>e-mail</strong> por WhatsApp para activar tu acceso. Solemos confirmar en poco tiempo.
               </p>
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
                 <Button className="w-full gap-2 bg-[#25D366] text-white hover:bg-[#1ebe5b]">
+                  <MessageCircle className="h-4 w-4" />
                   Enviar comprobante por WhatsApp
                 </Button>
               </a>

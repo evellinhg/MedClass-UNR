@@ -1,34 +1,84 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Camera, Lock } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
+import { Camera, Loader2, Lock } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useLanguage } from "@/lib/i18n"
 
+const FOTO_MAX_BYTES = 2 * 1024 * 1024
+const FOTO_ACCEPT = "image/png, image/jpeg"
+
 export function PerfilContent() {
   const { t } = useLanguage()
+  const fileInputRef = useRef<HTMLInputElement>(null)
+  const [userId, setUserId] = useState<string | null>(null)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [cutoffScore, setCutoffScore] = useState("70")
   const [saved, setSaved] = useState(false)
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
+  const [enviandoFoto, setEnviandoFoto] = useState(false)
+  const [erroFoto, setErroFoto] = useState<string | null>(null)
 
   useEffect(() => {
     supabase.auth.getSession().then(async ({ data }) => {
       const user = data.session?.user
       if (!user) return
+      setUserId(user.id)
       setEmail(user.email ?? "")
       const { data: profile } = await supabase
         .from("profiles")
-        .select("full_name")
+        .select("full_name, avatar_url")
         .eq("id", user.id)
         .maybeSingle()
       setName(profile?.full_name ?? user.user_metadata?.full_name ?? user.user_metadata?.name ?? "")
+      setAvatarUrl(profile?.avatar_url ?? null)
     })
   }, [])
+
+  const handleFotoChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null
+    e.target.value = ""
+    if (!file || !userId) return
+
+    setErroFoto(null)
+    if (file.size > FOTO_MAX_BYTES) {
+      setErroFoto(t.perfil.fotoErroTamanho)
+      return
+    }
+
+    setEnviandoFoto(true)
+    const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_")
+    const path = `${userId}/${crypto.randomUUID()}-${safeName}`
+    const { error: uploadError } = await supabase.storage
+      .from("avatares")
+      .upload(path, file, { contentType: file.type || undefined })
+
+    if (uploadError) {
+      setEnviandoFoto(false)
+      setErroFoto(t.perfil.fotoErroUpload)
+      return
+    }
+
+    const { data: publicUrlData } = supabase.storage.from("avatares").getPublicUrl(path)
+    const novaUrl = publicUrlData.publicUrl
+
+    const { error: updateError } = await supabase
+      .from("profiles")
+      .update({ avatar_url: novaUrl })
+      .eq("id", userId)
+
+    setEnviandoFoto(false)
+    if (updateError) {
+      setErroFoto(t.perfil.fotoErroUpload)
+      return
+    }
+    setAvatarUrl(novaUrl)
+  }
 
   const handleSave = () => {
     setSaved(true)
@@ -50,16 +100,31 @@ export function PerfilContent() {
         <h2 className="mb-6 text-lg font-semibold text-foreground">{t.perfil.fotoDePerfil}</h2>
         <div className="flex items-center gap-5">
           <Avatar className="h-20 w-20">
+            {avatarUrl && <AvatarImage src={avatarUrl} alt={name} />}
             <AvatarFallback className="bg-accent text-lg font-semibold text-accent-foreground">
               {initials || "?"}
             </AvatarFallback>
           </Avatar>
           <div>
-            <Button variant="outline" className="gap-2">
-              <Camera className="h-4 w-4" />
-              {t.perfil.alterarFoto}
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept={FOTO_ACCEPT}
+              onChange={handleFotoChange}
+              className="hidden"
+            />
+            <Button
+              type="button"
+              variant="outline"
+              className="gap-2"
+              disabled={enviandoFoto}
+              onClick={() => fileInputRef.current?.click()}
+            >
+              {enviandoFoto ? <Loader2 className="h-4 w-4 animate-spin" /> : <Camera className="h-4 w-4" />}
+              {enviandoFoto ? t.perfil.fotoEnviando : t.perfil.alterarFoto}
             </Button>
             <p className="mt-2 text-xs text-muted-foreground">{t.perfil.formatoFoto}</p>
+            {erroFoto && <p className="mt-1 text-xs text-destructive">{erroFoto}</p>}
           </div>
         </div>
       </Card>

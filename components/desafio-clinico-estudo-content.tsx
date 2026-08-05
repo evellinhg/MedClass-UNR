@@ -15,7 +15,7 @@ import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import { DesafioFeedbackDialog } from "@/components/desafio-feedback-dialog"
-import { UnderlineText } from "@/components/underline-text"
+import { HighlightText } from "@/components/highlight-text"
 import {
   desafioAnteriorObrigatorio,
   foiAprovado,
@@ -293,7 +293,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t.desafiosClinicos.descricaoCaso}
             </h2>
-            <UnderlineText text={desafio.descricao_caso} className="text-sm leading-relaxed text-foreground" />
+            <HighlightText text={desafio.descricao_caso} className="text-base leading-relaxed text-foreground sm:text-[17px]" />
             <p className="mt-1 text-xs text-muted-foreground">{t.desafiosClinicos.sublinharDica}</p>
             {desafio.imagem_url && (
               <button
@@ -434,7 +434,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                 </span>
               </div>
 
-              <p className="mb-4 text-sm font-medium leading-relaxed text-foreground">{perguntaAtual.enunciado}</p>
+              <p className="mb-4 text-base font-medium leading-relaxed text-foreground sm:text-[17px]">{perguntaAtual.enunciado}</p>
 
               <div className="space-y-2">
                 {perguntaAtual.alternativas.map((alt) => {
@@ -453,7 +453,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                       key={alt.id}
                       disabled={jaRespondida}
                       onClick={() => setSelecaoAtual(alt.id)}
-                      className={`flex w-full items-center justify-between rounded-lg border px-4 py-2.5 text-left text-sm transition-colors ${style}`}
+                      className={`flex w-full items-center justify-between rounded-lg border px-4 py-2.5 text-left text-sm transition-colors sm:text-base ${style}`}
                     >
                       <span>{alt.texto}</span>
                       {jaRespondida && alt.correta && <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />}

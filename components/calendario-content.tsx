@@ -538,18 +538,21 @@ export function CalendarioContent() {
                             onClick={() => handleToggleLembrete(evento.id)}
                             disabled={lembreteCarregando === evento.id}
                             title={lembreteAtivo ? t.calendario.lembreteRemover : t.calendario.lembreteCriar}
-                            className={`rounded-full p-1 transition-colors ${
+                            className={`flex items-center gap-1.5 rounded-full px-2 py-1 transition-colors ${
                               lembreteAtivo
                                 ? "text-primary hover:bg-primary/10"
-                                : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                                : "text-muted-foreground hover:bg-primary/10 hover:text-primary"
                             }`}
                           >
                             {lembreteCarregando === evento.id ? (
-                              <Loader2 className="h-4 w-4 animate-spin" />
+                              <Loader2 className="h-5 w-5 animate-spin" />
                             ) : lembreteAtivo ? (
-                              <BellRing className="h-4 w-4" />
+                              <BellRing className="h-5 w-5 text-primary" />
                             ) : (
-                              <Bell className="h-4 w-4" />
+                              <Bell className="h-5 w-5" />
+                            )}
+                            {!lembreteAtivo && (
+                              <span className="text-xs font-bold text-primary">{t.calendario.lembreteCriar}</span>
                             )}
                           </button>
                         )}

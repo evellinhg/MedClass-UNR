@@ -78,7 +78,7 @@ export function HighlightableText({ text }: { text: string }) {
       <p
         ref={containerRef}
         onMouseUp={handleMouseUp}
-        className={`select-text rounded-lg p-3 font-medium leading-relaxed text-foreground ${
+        className={`select-text rounded-lg p-3 text-base font-medium leading-relaxed text-foreground sm:text-[17px] ${
           active ? "cursor-text bg-accent/30 ring-1 ring-primary/40" : ""
         }`}
       >

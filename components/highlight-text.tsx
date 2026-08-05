@@ -1,0 +1,84 @@
+"use client"
+
+import { useRef, useState, type MouseEvent } from "react"
+import { Highlighter } from "lucide-react"
+
+interface Props {
+  text: string
+  className?: string
+}
+
+const CORES = [
+  { nome: "Amarillo", valor: "#fef08a" },
+  { nome: "Verde", valor: "#bbf7d0" },
+  { nome: "Rosa", valor: "#fbcfe8" },
+  { nome: "Celeste", valor: "#bfdbfe" },
+  { nome: "Naranja", valor: "#fed7aa" },
+]
+
+/**
+ * Parágrafo com marcador de texto manual: selecionar um trecho grifa com a
+ * cor ativa; clicar num trecho já grifado remove. Manipula o DOM diretamente
+ * via ref (fora do ciclo do React) e não persiste — some ao recarregar a página.
+ */
+export function HighlightText({ text, className }: Props) {
+  const ref = useRef<HTMLParagraphElement>(null)
+  const [corAtiva, setCorAtiva] = useState(CORES[0].valor)
+
+  const handleMouseUp = () => {
+    const selection = window.getSelection()
+    if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
+    const range = selection.getRangeAt(0)
+    if (!ref.current || !ref.current.contains(range.commonAncestorContainer)) return
+    if (range.toString().trim() === "") return
+
+    try {
+      const span = document.createElement("span")
+      span.style.backgroundColor = corAtiva
+      span.style.color = "#1f2937"
+      span.style.borderRadius = "3px"
+      span.style.padding = "0 1px"
+      span.className = "cursor-pointer"
+      range.surroundContents(span)
+      selection.removeAllRanges()
+    } catch {
+      // Seleção cruzando um trecho já marcado — ignora, tenta de novo com um trecho menor
+    }
+  }
+
+  const handleClick = (e: MouseEvent<HTMLParagraphElement>) => {
+    const target = e.target as HTMLElement
+    if (target.tagName !== "SPAN" || !target.parentElement) return
+    const parent = target.parentElement
+    while (target.firstChild) parent.insertBefore(target.firstChild, target)
+    parent.removeChild(target)
+    parent.normalize()
+  }
+
+  return (
+    <div>
+      <div className="mb-2.5 flex flex-wrap items-center gap-2.5">
+        <Highlighter className="h-4 w-4 text-muted-foreground" />
+        <span className="text-xs font-semibold text-muted-foreground">Marcador de texto</span>
+        <div className="flex items-center gap-1.5">
+          {CORES.map((cor) => (
+            <button
+              key={cor.valor}
+              type="button"
+              onClick={() => setCorAtiva(cor.valor)}
+              title={cor.nome}
+              aria-label={cor.nome}
+              className={`h-5 w-5 rounded-full border-2 transition-transform ${
+                corAtiva === cor.valor ? "scale-110 border-foreground" : "border-transparent hover:scale-105"
+              }`}
+              style={{ backgroundColor: cor.valor }}
+            />
+          ))}
+        </div>
+      </div>
+      <p ref={ref} onMouseUp={handleMouseUp} onClick={handleClick} className={className}>
+        {text}
+      </p>
+    </div>
+  )
+}

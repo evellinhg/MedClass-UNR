@@ -582,7 +582,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                       {t.simuladoPlayer.provaQueNaoFoiSorte}
                     </p>
-                    <p className="mt-1 text-sm font-medium text-foreground">{current.mecanismo_pergunta}</p>
+                    <p className="mt-1 text-base font-medium text-foreground sm:text-[17px]">{current.mecanismo_pergunta}</p>
                   </div>
                   <div className="space-y-2">
                     {current.mecanismo_opcoes.map((opcao, idx) => {
@@ -594,7 +594,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                           key={idx}
                           onClick={() => answerMechanism(idx)}
                           disabled={mechanismAnswer !== null}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-base ${
                             showState && isCorrectOption
                               ? "border-success bg-success/10 text-foreground"
                               : showState && isSelected
@@ -645,7 +645,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                         <div
                           key={idx}
                           onClick={() => selectPending(idx)}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors ${
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-base ${
                             readOnly ? "" : "cursor-pointer"
                           } ${
                             showState && isCorrectOption

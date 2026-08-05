@@ -8,7 +8,7 @@ import Image from "next/image"
 import { getNavigation } from "@/lib/navigation"
 import { supabase } from "@/lib/supabase"
 import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useLanguage } from "@/lib/i18n"
 
 interface SidebarNavProps {
@@ -200,6 +200,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
       <div className={`border-t border-sidebar-border ${compact ? "p-2" : "p-3"}`}>
         <div className={`flex items-center rounded-lg py-2 ${compact ? "flex-col gap-2 px-0" : "gap-3 px-3"}`}>
           <Avatar className="h-9 w-9 shrink-0">
+            {planStatus?.avatarUrl && <AvatarImage src={planStatus.avatarUrl} alt={planStatus.fullName ?? ""} />}
             <AvatarFallback className="bg-sidebar-accent text-sidebar-accent-foreground text-xs">
               {initials}
             </AvatarFallback>

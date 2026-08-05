@@ -19,6 +19,7 @@ export function DashboardHeader() {
   const [firstName, setFirstName] = useState("")
   const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
 
   useEffect(() => {
     getPlanStatus().then((status) => {
@@ -27,6 +28,7 @@ export function DashboardHeader() {
       setFullName(name)
       setFirstName(name.split(" ")[0] ?? "")
       setEmail(status.email ?? "")
+      setAvatarUrl(status.avatarUrl)
     })
   }, [])
 
@@ -62,7 +64,7 @@ export function DashboardHeader() {
         <NotificationsPanel />
 
         <div className="ml-1">
-          <UserDropdown name={fullName || t.dashboardNav.minhaConta} email={email} />
+          <UserDropdown name={fullName || t.dashboardNav.minhaConta} email={email} avatarUrl={avatarUrl} />
         </div>
       </div>
     </header>

@@ -2,7 +2,9 @@
 
 import { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
-import { CheckCheck, Bell, Info, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react"
+import { format } from "date-fns"
+import { ptBR, es } from "date-fns/locale"
+import { CheckCheck, Bell, BellRing, Info, CheckCircle2, AlertTriangle, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import {
   type Notificacao,
@@ -11,6 +13,9 @@ import {
   marcarComoLida,
   marcarTodasComoLidas,
 } from "@/lib/notifications"
+import { buscarLembretesAtivos } from "@/lib/calendario-lembretes"
+import { useLanguage } from "@/lib/i18n"
+import type { CalendarioLembreteAtivo } from "@/lib/calendario-types"
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
@@ -38,29 +43,36 @@ function timeAgo(iso: string) {
 }
 
 export function NotificationsPanel() {
+  const { t, lang } = useLanguage()
+  const localeDf = lang === "es" ? es : ptBR
   const [open, setOpen] = useState(false)
   const [notificacoes, setNotificacoes] = useState<Notificacao[]>([])
+  const [lembretes, setLembretes] = useState<CalendarioLembreteAtivo[]>([])
   const [naoLidas, setNaoLidas] = useState(0)
   const [loading, setLoading] = useState(false)
   const [userId, setUserId] = useState<string | null>(null)
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
+    supabase.auth.getUser().then(async ({ data }) => {
       if (!data.user) return
       setUserId(data.user.id)
-      contarNaoLidas(data.user.id).then(setNaoLidas)
+      const [count, ativos] = await Promise.all([contarNaoLidas(data.user.id), buscarLembretesAtivos(data.user.id)])
+      setLembretes(ativos)
+      setNaoLidas(count + ativos.length)
     })
   }, [])
 
   const loadNotificacoes = useCallback(async () => {
     if (!userId) return
     setLoading(true)
-    const [nots, count] = await Promise.all([
+    const [nots, count, ativos] = await Promise.all([
       buscarNotificacoes(userId, 20),
       contarNaoLidas(userId),
+      buscarLembretesAtivos(userId),
     ])
     setNotificacoes(nots)
-    setNaoLidas(count)
+    setLembretes(ativos)
+    setNaoLidas(count + ativos.length)
     setLoading(false)
   }, [userId])
 
@@ -94,7 +106,7 @@ export function NotificationsPanel() {
     if (!userId) return
     await marcarTodasComoLidas(userId)
     setNotificacoes((prev) => prev.map((n) => ({ ...n, lida: true })))
-    setNaoLidas(0)
+    setNaoLidas(lembretes.length)
   }
 
   return (
@@ -127,6 +139,29 @@ export function NotificationsPanel() {
             </button>
           )}
         </div>
+        {lembretes.length > 0 && (
+          <div className="border-b border-border">
+            <p className="px-4 pt-2.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+              {t.calendario.lembretePainelTitulo}
+            </p>
+            {lembretes.map((lembrete) => (
+              <Link
+                key={lembrete.id}
+                href="/dashboard/calendario"
+                onClick={() => setOpen(false)}
+                className="flex gap-3 border-b border-border bg-primary/5 px-4 py-3 transition-colors hover:bg-primary/10"
+              >
+                <BellRing className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-foreground">{lembrete.evento.titulo}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {format(new Date(`${lembrete.evento.data}T00:00:00`), "d 'de' MMMM", { locale: localeDf })}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
         <div className="max-h-80 overflow-y-auto">
           {loading ? (
             <div className="flex items-center justify-center py-8">

@@ -12,6 +12,24 @@ export interface CalendarioEvento {
   created_at: string
 }
 
+export interface CalendarioLembrete {
+  id: string
+  user_id: string
+  evento_id: string
+  created_at: string
+}
+
+export interface CalendarioLembreteAtivo {
+  id: string
+  evento: {
+    id: string
+    titulo: string
+    data: string
+    hora: string | null
+    tipo: CalendarioEventoTipo
+  }
+}
+
 export type CalendarioSugestaoStatus = "pendente" | "aprovado" | "rejeitado"
 
 export interface CalendarioSugestao {

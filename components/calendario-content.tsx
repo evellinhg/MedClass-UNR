@@ -17,7 +17,7 @@ import {
   subWeeks,
 } from "date-fns"
 import { ptBR, es } from "date-fns/locale"
-import { Loader2, ChevronLeft, ChevronRight, MessageSquarePlus, Check, Send, ExternalLink } from "lucide-react"
+import { Loader2, ChevronLeft, ChevronRight, MessageSquarePlus, Check, Send, ExternalLink, Bell, BellRing } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,6 +25,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useLanguage } from "@/lib/i18n"
 import type { CalendarioEvento, CalendarioEventoTipo } from "@/lib/calendario-types"
+import { buscarMeusLembretes, criarLembrete, removerLembrete } from "@/lib/calendario-lembretes"
 
 type Visao = "mes" | "semana"
 
@@ -46,6 +47,10 @@ export function CalendarioContent() {
   const [semanaAtual, setSemanaAtual] = useState(() => startOfWeek(new Date(), { weekStartsOn: 1 }))
   const [diaSelecionado, setDiaSelecionado] = useState<Date | null>(null)
 
+  const [userId, setUserId] = useState<string | null>(null)
+  const [meusLembretes, setMeusLembretes] = useState<Map<string, string>>(new Map())
+  const [lembreteCarregando, setLembreteCarregando] = useState<string | null>(null)
+
   const [sugestaoAberta, setSugestaoAberta] = useState(false)
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
@@ -63,10 +68,34 @@ export function CalendarioContent() {
       ])
       setEventos((eventosData as CalendarioEvento[]) ?? [])
       if (userData.user?.email) setEmail(userData.user.email)
+      if (userData.user?.id) {
+        setUserId(userData.user.id)
+        setMeusLembretes(await buscarMeusLembretes(userData.user.id))
+      }
       setLoading(false)
     }
     load()
   }, [])
+
+  const handleToggleLembrete = async (eventoId: string) => {
+    if (!userId) return
+    setLembreteCarregando(eventoId)
+    const lembreteId = meusLembretes.get(eventoId)
+    if (lembreteId) {
+      await removerLembrete(lembreteId)
+      setMeusLembretes((prev) => {
+        const next = new Map(prev)
+        next.delete(eventoId)
+        return next
+      })
+    } else {
+      const { data } = await criarLembrete(userId, eventoId)
+      if (data) {
+        setMeusLembretes((prev) => new Map(prev).set(eventoId, data.id))
+      }
+    }
+    setLembreteCarregando(null)
+  }
 
   const eventosPorDia = useMemo(() => {
     const map = new Map<string, CalendarioEvento[]>()
@@ -321,13 +350,37 @@ export function CalendarioContent() {
             <div className="max-h-[60vh] space-y-3 overflow-y-auto py-1">
               {eventosDoDiaSelecionado.map((evento) => {
                 const cor = TIPO_COR[evento.tipo]
+                const lembreteAtivo = meusLembretes.has(evento.id)
                 return (
                   <div key={evento.id} className={`rounded-lg border-l-4 ${cor.border} border-y border-r border-border bg-card p-3`}>
                     <div className="mb-1 flex items-center justify-between gap-2">
                       <span className={`rounded-full ${cor.badge} ${cor.text} px-2 py-0.5 text-[11px] font-medium`}>
                         {t.calendario.tipoLabel[evento.tipo]}
                       </span>
-                      {evento.hora && <span className="text-xs text-muted-foreground">{evento.hora}</span>}
+                      <div className="flex items-center gap-2">
+                        {evento.hora && <span className="text-xs text-muted-foreground">{evento.hora}</span>}
+                        {userId && (
+                          <button
+                            type="button"
+                            onClick={() => handleToggleLembrete(evento.id)}
+                            disabled={lembreteCarregando === evento.id}
+                            title={lembreteAtivo ? t.calendario.lembreteRemover : t.calendario.lembreteCriar}
+                            className={`rounded-full p-1 transition-colors ${
+                              lembreteAtivo
+                                ? "text-primary hover:bg-primary/10"
+                                : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                            }`}
+                          >
+                            {lembreteCarregando === evento.id ? (
+                              <Loader2 className="h-4 w-4 animate-spin" />
+                            ) : lembreteAtivo ? (
+                              <BellRing className="h-4 w-4" />
+                            ) : (
+                              <Bell className="h-4 w-4" />
+                            )}
+                          </button>
+                        )}
+                      </div>
                     </div>
                     <p className="text-sm font-semibold text-foreground">{evento.titulo}</p>
                     {evento.descricao && <p className="mt-1 text-sm text-muted-foreground">{evento.descricao}</p>}

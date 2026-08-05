@@ -276,6 +276,13 @@ const pt = {
     sugestaoMensagemObrigatoria: "Escreva sua sugestão antes de enviar.",
     voltar: "Voltar",
     cancelar: "Cancelar",
+    lembreteCriar: "Criar lembrete",
+    lembreteAtivo: "Lembrete ativo",
+    lembreteRemover: "Remover lembrete",
+    lembreteCriado: "Vamos te lembrar 2 dias antes dessa data.",
+    lembretePainelTitulo: "Lembretes de datas",
+    verNoCalendario: "Ver no calendário",
+    bannerLembrete: (titulo: string, data: string) => `Não esquece: ${titulo} — ${data}`,
   },
   desafiosClinicos: {
     categoria: {
@@ -1323,6 +1330,13 @@ const es: typeof pt = {
     sugestaoMensagemObrigatoria: "Escribí tu sugerencia antes de enviar.",
     voltar: "Volver",
     cancelar: "Cancelar",
+    lembreteCriar: "Crear recordatorio",
+    lembreteAtivo: "Recordatorio activo",
+    lembreteRemover: "Quitar recordatorio",
+    lembreteCriado: "Te vamos a recordar 2 días antes de esa fecha.",
+    lembretePainelTitulo: "Recordatorios de fechas",
+    verNoCalendario: "Ver en el calendario",
+    bannerLembrete: (titulo: string, data: string) => `No te olvides: ${titulo} — ${data}`,
   },
   desafiosClinicos: {
     categoria: {

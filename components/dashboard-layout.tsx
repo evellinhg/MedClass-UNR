@@ -4,6 +4,7 @@ import { DashboardHeader } from "@/components/dashboard-header"
 import { PlanExpiredBanner } from "@/components/plan-expired-banner"
 import { FreePlanBanner } from "@/components/free-plan-banner"
 import { ClaimPendingPayment } from "@/components/claim-pending-payment"
+import { CalendarioLembretesBanner } from "@/components/calendario-lembretes-banner"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -22,6 +23,7 @@ export function DashboardLayout({ children, fullWidth }: DashboardLayoutProps) {
         <DashboardHeader />
         <PlanExpiredBanner />
         <FreePlanBanner />
+        <CalendarioLembretesBanner />
         <main className={fullWidth ? "px-4 py-6 sm:px-6 lg:px-8" : "mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"}>
           {children}
         </main>

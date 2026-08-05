@@ -7,6 +7,7 @@ import { ArrowUpRight, BarChart3, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { MiniDonut } from "@/components/ui/mini-donut"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 interface Attempt {
@@ -57,8 +58,8 @@ export function DesempenhoWidget() {
   return (
     <Card className="border border-border bg-card p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="flex items-center gap-2 font-semibold text-foreground">
-          <BarChart3 className="h-5 w-5 text-primary" />
+        <h3 className="flex items-center gap-2.5 font-semibold text-foreground">
+          <IconChip icon={BarChart3} size="sm" className="bg-gradient-to-br from-lime-400 to-green-600 shadow-green-900/30" />
           {t.desempenhoWidget.titulo}
         </h3>
         <Link
@@ -110,7 +111,7 @@ export function DesempenhoWidget() {
             )}
           </div>
           <div className="flex flex-col items-center justify-center gap-1.5 rounded-lg bg-primary/10 p-3 text-center">
-            <BarChart3 className="h-4 w-4 text-primary" />
+            <IconChip icon={BarChart3} size="sm" className="bg-gradient-to-br from-lime-400 to-green-600 shadow-green-900/30" />
             <div>
               <p className="text-lg font-bold text-foreground">{totalPoints}</p>
               <p className="text-[11px] text-muted-foreground">{t.desempenhoWidget.pontos}</p>

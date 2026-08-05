@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { TrendingUp, BookOpen, Clock, Target } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 interface AttemptRow {
@@ -50,25 +51,29 @@ export function HomeStats() {
       label: t.homeStats.taxaAcerto,
       value: rows.length > 0 ? `${taxaAcerto}%` : "—",
       icon: Target,
-      bgColor: "bg-purple-500/10",
+      gradient: "from-violet-400 to-purple-600",
+      shadow: "shadow-purple-900/30",
     },
     {
       label: t.homeStats.questoesFeitas,
       value: String(totalQuestoes),
       icon: BookOpen,
-      bgColor: "bg-blue-500/10",
+      gradient: "from-sky-400 to-blue-600",
+      shadow: "shadow-blue-900/30",
     },
     {
       label: t.homeStats.tempoDeEstudo,
       value: formatDuracao(totalTempo),
       icon: Clock,
-      bgColor: "bg-pink-500/10",
+      gradient: "from-rose-400 to-pink-600",
+      shadow: "shadow-pink-900/30",
     },
     {
       label: t.homeStats.simuladosSemana,
       value: String(estaSemana),
       icon: TrendingUp,
-      bgColor: "bg-emerald-500/10",
+      gradient: "from-emerald-400 to-green-600",
+      shadow: "shadow-emerald-900/30",
     },
   ]
 
@@ -86,9 +91,7 @@ export function HomeStats() {
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{stat.label}</p>
                 <p className="mt-3 text-2xl font-bold text-foreground">{stat.value}</p>
               </div>
-              <div className={`rounded-lg ${stat.bgColor} p-3`}>
-                <Icon className="h-5 w-5 text-primary" />
-              </div>
+              <IconChip icon={Icon} className={`bg-gradient-to-br ${stat.gradient} ${stat.shadow}`} />
             </div>
           </div>
         )

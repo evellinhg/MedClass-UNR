@@ -111,13 +111,19 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                   onClick={() => toggleExpanded(item.name)}
                   aria-expanded={isOpen}
                   aria-current={isActive ? "page" : undefined}
-                  className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar ${
                     isActive
                       ? "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] shadow-sm"
                       : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                   }`}
                 >
-                  <item.icon className="h-[18px] w-[18px] shrink-0" />
+                  <span
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
+                      isActive ? "bg-[#0a1f00]/10" : "bg-sidebar-accent"
+                    }`}
+                  >
+                    <item.icon className="h-[17px] w-[17px] shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                  </span>
                   <span className="flex-1 text-left">{item.name}</span>
                   {item.name === t.dashboardNav.materiais && materiaisLocked && (
                     <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label={t.dashboardNav.recursoExclusivo} />
@@ -130,7 +136,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                   onClick={hasChildren ? undefined : onNavigate}
                   aria-current={isActive ? "page" : undefined}
                   title={compact ? item.name : undefined}
-                  className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar ${
                     compact ? "justify-center px-0" : "px-3"
                   } ${
                     isActive
@@ -138,7 +144,13 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                       : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                   }`}
                 >
-                  <item.icon className="h-[18px] w-[18px] shrink-0" />
+                  <span
+                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
+                      isActive ? "bg-[#0a1f00]/10" : "bg-sidebar-accent"
+                    }`}
+                  >
+                    <item.icon className="h-[17px] w-[17px] shrink-0" strokeWidth={1.75} aria-hidden="true" />
+                  </span>
                   {!compact && (
                     <>
                       <span className="flex-1">{item.name}</span>
@@ -182,7 +194,7 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
             onClick={onNavigate}
             aria-current={pathname.startsWith("/admin") ? "page" : undefined}
             title={compact ? t.dashboardNav.painelAdmin : undefined}
-            className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors ${
+            className={`flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar ${
               compact ? "justify-center px-0" : "px-3"
             } ${
               pathname.startsWith("/admin")
@@ -190,7 +202,13 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                 : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
             }`}
           >
-            <ShieldCheck className="h-[18px] w-[18px] shrink-0" />
+            <span
+              className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
+                pathname.startsWith("/admin") ? "bg-[#0a1f00]/10" : "bg-sidebar-accent"
+              }`}
+            >
+              <ShieldCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={1.75} aria-hidden="true" />
+            </span>
             {!compact && t.dashboardNav.painelAdmin}
           </Link>
         )}
@@ -223,9 +241,9 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
             aria-label={t.dashboardNav.sair}
             title={compact ? t.dashboardNav.sair : undefined}
             onClick={handleLogout}
-            className="rounded-md p-1.5 text-sidebar-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+            className="rounded-md p-1.5 text-sidebar-foreground transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-sidebar"
           >
-            <LogOut className="h-[18px] w-[18px]" />
+            <LogOut className="h-[18px] w-[18px]" aria-hidden="true" />
           </button>
         </div>
       </div>

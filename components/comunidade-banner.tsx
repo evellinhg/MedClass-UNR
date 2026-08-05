@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ArrowRight, Users } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 interface ComunidadeBannerProps {
@@ -15,9 +16,7 @@ export function ComunidadeBanner({ showCta = true }: ComunidadeBannerProps) {
     <div className="relative overflow-hidden rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card to-card p-6">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/15">
-            <Users className="h-5 w-5 text-primary" />
-          </div>
+          <IconChip icon={Users} className="bg-gradient-to-br from-lime-400 to-green-600 shadow-green-900/30" />
           <div>
             <h3 className="font-semibold text-foreground">{t.comunidadeBanner.titulo}</h3>
             <p className="mt-1 max-w-2xl text-sm text-muted-foreground">{t.comunidadeBanner.corpo}</p>

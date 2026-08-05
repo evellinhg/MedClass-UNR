@@ -6,6 +6,7 @@ import { ArrowUpRight, Crown, Loader2, Medal, Trophy } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 const TOP_N = 3
@@ -23,9 +24,9 @@ interface MinhaPosicao {
 }
 
 const positionStyles = [
-  { ring: "from-amber-400 to-yellow-500", icon: Crown, iconColor: "text-white" },
-  { ring: "from-slate-300 to-slate-400", icon: Medal, iconColor: "text-white" },
-  { ring: "from-amber-700 to-amber-800", icon: Medal, iconColor: "text-white" },
+  { ring: "from-amber-400 to-yellow-500", icon: Crown },
+  { ring: "from-slate-300 to-slate-400", icon: Medal },
+  { ring: "from-amber-700 to-amber-800", icon: Medal },
 ]
 
 export function RankingWidget() {
@@ -57,8 +58,8 @@ export function RankingWidget() {
   return (
     <Card className="border border-border bg-card p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="flex items-center gap-2 font-semibold text-foreground">
-          <Trophy className="h-5 w-5 text-primary" />
+        <h3 className="flex items-center gap-2.5 font-semibold text-foreground">
+          <IconChip icon={Trophy} size="sm" className="bg-gradient-to-br from-amber-400 to-yellow-600 shadow-amber-900/30" />
           {t.rankingWidget.titulo}
         </h3>
         <Link
@@ -89,11 +90,11 @@ export function RankingWidget() {
                   row.user_id === currentUserId ? "bg-primary/10" : "hover:bg-accent"
                 }`}
               >
-                <div
-                  className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-sm ${style?.ring ?? "from-muted to-muted"}`}
-                >
-                  <PositionIcon className={`h-4 w-4 ${style?.iconColor ?? "text-foreground"}`} strokeWidth={2.25} />
-                </div>
+                <IconChip
+                  icon={PositionIcon}
+                  size="sm"
+                  className={`bg-gradient-to-br ${style?.ring ?? "from-muted to-muted"} shadow-black/20`}
+                />
                 <p className="min-w-0 flex-1 truncate text-sm font-medium text-foreground">{row.display_name}</p>
                 <span className="text-sm font-bold text-foreground">{row.points}</span>
               </div>

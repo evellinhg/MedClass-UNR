@@ -55,8 +55,8 @@ export function Testimonials() {
             const Icon = icons[i]
             return (
               <motion.div
-                key={testimonial.author}
-                className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6"
+                key={testimonial.text}
+                className="relative flex flex-col items-center overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] p-6 text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -72,17 +72,8 @@ export function Testimonials() {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
 
-                <p className="relative mb-6 text-lg leading-relaxed text-white/70">
-                  &quot;{testimonial.quote}&quot;
-                </p>
-
-                <div className="flex items-center gap-3">
-                  <IconChip icon={Icon} className={`bg-gradient-to-br ${gradients[i]}`} />
-                  <div>
-                    <p className="font-medium text-white">{testimonial.author}</p>
-                    <p className="text-sm text-white/40">{testimonial.role}</p>
-                  </div>
-                </div>
+                <IconChip icon={Icon} className={`relative bg-gradient-to-br ${gradients[i]}`} />
+                <p className="relative mt-4 text-base leading-relaxed text-white/70">{testimonial.text}</p>
               </motion.div>
             )
           })}

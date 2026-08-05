@@ -582,26 +582,11 @@ const pt = {
     badge: "Depoimentos",
     titleLead: "Alunos da UNR que já estão",
     titleHighlight: "estudando diferente",
-    subtitle: "Depoimentos ilustrativos — em breve, histórias reais de quem já usa o MedClass UNR.",
+    subtitle: "Ainda não temos depoimentos por aqui — sua opinião pode ser uma das primeiras!",
     items: [
-      {
-        quote:
-          "Antes eu perdia horas traduzindo apostila em espanhol. Com os resumos do MedClass UNR, cortei esse tempo pela metade e ainda entendi melhor o conteúdo.",
-        author: "Ana Beatriz",
-        role: "4º ano, Medicina UNR",
-      },
-      {
-        quote:
-          "As questões comentadas foram o que mais me ajudou na parcial de Fisiologia. Consegui identificar exatamente onde eu errava e corrigir antes da prova.",
-        author: "Rafael Nogueira",
-        role: "2º ano, Medicina UNR",
-      },
-      {
-        quote:
-          "Finalmente um material que entende que sou brasileiro estudando na Argentina. Fez toda diferença na minha rotina de estudos.",
-        author: "Camila Duarte",
-        role: "3º ano, Medicina UNR",
-      },
+      { text: "Sua opinião importa. Já usou a plataforma? Conta pra gente como foi a experiência." },
+      { text: "Ajude outros alunos da UNR — avalie sua experiência com o MedClass UNR." },
+      { text: "Seja um dos primeiros a deixar seu depoimento aqui." },
     ],
     verTodos: "Ver todos os depoimentos",
     form: {
@@ -1674,26 +1659,11 @@ const es: typeof pt = {
     badge: "Testimonios",
     titleLead: "Estudiantes de la UNR que ya están",
     titleHighlight: "estudiando distinto",
-    subtitle: "Testimonios ilustrativos — pronto, historias reales de quienes ya usan MedClass UNR.",
+    subtitle: "Todavía no tenemos testimonios por acá — ¡tu opinión puede ser una de las primeras!",
     items: [
-      {
-        quote:
-          "Antes perdía horas buscando apuntes de compañeros. Con los resúmenes de MedClass UNR, organicé todo mi estudio y entendí mucho mejor cada tema.",
-        author: "Sofía Martínez",
-        role: "4º año, Medicina UNR",
-      },
-      {
-        quote:
-          "Las preguntas comentadas fueron lo que más me ayudó en el parcial de Fisiología. Pude identificar exactamente dónde me equivocaba y corregirlo antes del examen.",
-        author: "Tomás Ibarra",
-        role: "2º año, Medicina UNR",
-      },
-      {
-        quote:
-          "Por fin un material pensado para cómo realmente estudiamos en la UNR. Cambió por completo mi rutina de estudio.",
-        author: "Valentina Rojas",
-        role: "3º año, Medicina UNR",
-      },
+      { text: "Tu opinión importa. ¿Ya usaste la plataforma? Contanos cómo fue tu experiencia." },
+      { text: "Ayudá a otros estudiantes de la UNR — evaluá tu experiencia con MedClass UNR." },
+      { text: "Sé uno de los primeros en dejar tu testimonio acá." },
     ],
     verTodos: "Ver todos los testimonios",
     form: {

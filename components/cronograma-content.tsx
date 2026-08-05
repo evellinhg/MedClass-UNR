@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Plus, Trash2, CalendarDays, Loader2, Route, LogIn, Play, ListChecks } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { IconChip } from "@/components/ui/icon-chip"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, anoDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -337,8 +338,8 @@ export function CronogramaContent() {
     <div className="space-y-8">
       {trilhasDisponiveis.length > 0 && (
         <Card className="border border-primary/20 bg-gradient-to-br from-[#c6ff3a]/5 to-[#84cc16]/5 p-5">
-          <h2 className="mb-1 flex items-center gap-2 text-lg font-semibold text-foreground">
-            <Route className="h-5 w-5 text-primary" />
+          <h2 className="mb-1 flex items-center gap-2.5 text-lg font-semibold text-foreground">
+            <IconChip icon={Route} size="sm" className="bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] shadow-green-900/30" iconClassName="text-[#0a1f00]" />
             {t.cronograma.trilhasTitulo}
           </h2>
           <p className="mb-4 text-sm text-muted-foreground">{t.cronograma.trilhasSubtitulo}</p>
@@ -487,8 +488,8 @@ export function CronogramaContent() {
 
           <Card className="border border-border bg-card p-5">
             <div className="mb-4 flex items-center justify-between gap-2">
-              <h3 className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                <CalendarDays className="h-4 w-4 text-primary" />
+              <h3 className="flex items-center gap-2.5 text-sm font-semibold text-foreground">
+                <IconChip icon={CalendarDays} size="sm" className="bg-gradient-to-br from-sky-400 to-blue-600 shadow-blue-900/30" />
                 {t.cronograma.rotinaDeHoje}
               </h3>
               <Dialog>
@@ -550,8 +551,8 @@ export function CronogramaContent() {
 
           {tomorrowSessions.length > 0 && (
             <Card className="border border-border bg-card p-5">
-              <h3 className="mb-1 flex items-center gap-2 text-sm font-semibold text-foreground">
-                <CalendarDays className="h-4 w-4 text-primary" />
+              <h3 className="mb-1 flex items-center gap-2.5 text-sm font-semibold text-foreground">
+                <IconChip icon={CalendarDays} size="sm" className="bg-gradient-to-br from-sky-400 to-blue-600 shadow-blue-900/30" />
                 {t.cronograma.rotinaDeAmanha}
               </h3>
               <p className="mb-4 text-xs text-muted-foreground">{t.cronograma.rotinaDeAmanhaInfo}</p>
@@ -586,8 +587,8 @@ export function CronogramaContent() {
           </Card>
 
           <Card className="border border-border bg-card p-5">
-            <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold text-foreground">
-              <CalendarDays className="h-4 w-4 text-primary" />
+            <h3 className="mb-4 flex items-center gap-2.5 text-sm font-semibold text-foreground">
+              <IconChip icon={CalendarDays} size="sm" className="bg-gradient-to-br from-sky-400 to-blue-600 shadow-blue-900/30" />
               {t.cronograma.proximasSessoes}
             </h3>
             {upcomingSessions.length === 0 ? (

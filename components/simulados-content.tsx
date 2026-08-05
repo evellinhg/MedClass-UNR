@@ -14,6 +14,7 @@ import {
   Trash2,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { IconChip } from "@/components/ui/icon-chip"
 import { DIFFICULTIES } from "@/lib/quiz-config"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
@@ -273,9 +274,7 @@ export function SimuladosContent() {
       <div className="grid gap-4 md:grid-cols-2">
         <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
-              <BookOpen className="h-5 w-5" />
-            </div>
+            <IconChip icon={BookOpen} className="bg-[#0a1f00]/10" iconClassName="text-[#0a1f00]" />
             <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.treinamentoLivreTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.treinamentoLivreSubtitulo}</p>
             <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">
@@ -296,9 +295,7 @@ export function SimuladosContent() {
 
         <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
           <div>
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0a1f00]/10">
-              <Target className="h-5 w-5" />
-            </div>
+            <IconChip icon={Target} className="bg-[#0a1f00]/10" iconClassName="text-[#0a1f00]" />
             <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.simuladosTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.simuladosSubtitulo}</p>
             <ul className="mt-4 space-y-2 text-sm text-[#0a1f00]/80">

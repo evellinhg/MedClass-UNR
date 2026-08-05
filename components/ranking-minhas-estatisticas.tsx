@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { BookOpen, CheckCircle2, Clock3, Hourglass, ListChecks, XCircle } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 interface AttemptRow {
@@ -89,12 +90,12 @@ export function RankingMinhasEstatisticas() {
   const tempoMedio = attempts.length > 0 ? Math.round(totalTempo / attempts.length) : 0
 
   const stats = [
-    { label: t.ranking.minhasEstatisticas.questoesRespondidas, value: String(totalQuestoes), icon: BookOpen, bg: "bg-blue-500/10", color: "text-blue-500" },
-    { label: t.ranking.minhasEstatisticas.acertos, value: String(totalCorretas), icon: CheckCircle2, bg: "bg-emerald-500/10", color: "text-emerald-500" },
-    { label: t.ranking.minhasEstatisticas.erros, value: String(totalErradas), icon: XCircle, bg: "bg-red-500/10", color: "text-red-500" },
-    { label: t.ranking.minhasEstatisticas.treinamentosRealizados, value: String(attempts.length), icon: ListChecks, bg: "bg-purple-500/10", color: "text-purple-500" },
-    { label: t.ranking.minhasEstatisticas.tempoMedioTreino, value: formatDuracao(tempoMedio), icon: Clock3, bg: "bg-amber-500/10", color: "text-amber-500" },
-    { label: t.ranking.minhasEstatisticas.tempoTotalEstudo, value: formatDuracao(totalTempo), icon: Hourglass, bg: "bg-pink-500/10", color: "text-pink-500" },
+    { label: t.ranking.minhasEstatisticas.questoesRespondidas, value: String(totalQuestoes), icon: BookOpen, gradient: "from-sky-400 to-blue-600", shadow: "shadow-blue-900/30" },
+    { label: t.ranking.minhasEstatisticas.acertos, value: String(totalCorretas), icon: CheckCircle2, gradient: "from-emerald-400 to-green-600", shadow: "shadow-emerald-900/30" },
+    { label: t.ranking.minhasEstatisticas.erros, value: String(totalErradas), icon: XCircle, gradient: "from-red-400 to-rose-600", shadow: "shadow-red-900/30" },
+    { label: t.ranking.minhasEstatisticas.treinamentosRealizados, value: String(attempts.length), icon: ListChecks, gradient: "from-violet-400 to-purple-600", shadow: "shadow-purple-900/30" },
+    { label: t.ranking.minhasEstatisticas.tempoMedioTreino, value: formatDuracao(tempoMedio), icon: Clock3, gradient: "from-amber-400 to-orange-600", shadow: "shadow-amber-900/30" },
+    { label: t.ranking.minhasEstatisticas.tempoTotalEstudo, value: formatDuracao(totalTempo), icon: Hourglass, gradient: "from-fuchsia-400 to-pink-600", shadow: "shadow-pink-900/30" },
   ]
 
   return (
@@ -126,9 +127,7 @@ export function RankingMinhasEstatisticas() {
                       </p>
                       <p className="mt-2 text-xl font-bold text-foreground">{stat.value}</p>
                     </div>
-                    <div className={`shrink-0 rounded-lg ${stat.bg} p-2`}>
-                      <Icon className={`h-4 w-4 ${stat.color}`} />
-                    </div>
+                    <IconChip icon={Icon} size="sm" className={`bg-gradient-to-br ${stat.gradient} ${stat.shadow}`} />
                   </div>
                 </div>
               )

@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO } from "@/lib/unr-curriculum"
 import { RankingMinhasEstatisticas } from "@/components/ranking-minhas-estatisticas"
@@ -81,8 +82,8 @@ export function RankingContent() {
       <div className="space-y-5">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h1 className="flex items-center gap-2 text-xl font-bold text-foreground">
-              <Trophy className="h-5 w-5 text-primary" />
+            <h1 className="flex items-center gap-2.5 text-xl font-bold text-foreground">
+              <IconChip icon={Trophy} size="sm" className="bg-gradient-to-br from-amber-400 to-yellow-600 shadow-amber-900/30" />
               {t.ranking.titulo}
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">{t.ranking.subtitulo}</p>
@@ -129,11 +130,7 @@ export function RankingContent() {
                     }`}
                   >
                     {PosicaoIcon ? (
-                      <div
-                        className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br shadow-sm ${style.ring}`}
-                      >
-                        <PosicaoIcon className="h-4 w-4 text-white" strokeWidth={2.25} />
-                      </div>
+                      <IconChip icon={PosicaoIcon} size="sm" className={`bg-gradient-to-br ${style.ring} shadow-black/20`} />
                     ) : (
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-sm font-semibold text-muted-foreground">
                         {row.posicao}

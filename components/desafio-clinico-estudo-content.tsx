@@ -25,8 +25,6 @@ import {
 } from "@/lib/desafio-clinico-bloqueio"
 import { getPlanStatus } from "@/lib/plan-status"
 
-const NOTA_CORTE_APROVACAO = 60
-
 function formatTimer(totalSeconds: number): string {
   const h = Math.floor(totalSeconds / 3600)
   const m = Math.floor((totalSeconds % 3600) / 60)
@@ -57,6 +55,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [casoAnteriorObrigatorio, setCasoAnteriorObrigatorio] = useState<DesafioParaBloqueio | null>(null)
   const [bloqueadoPlanoGratuito, setBloqueadoPlanoGratuito] = useState(false)
+  const [notaCorte, setNotaCorte] = useState(60)
   const isEditor = useIsContentEditor()
   const startRef = useRef<number | null>(null)
 
@@ -92,6 +91,8 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
     const desafioCarregado = (desafioData as DesafioClinico) ?? null
     setDesafio(desafioCarregado)
     setPerguntas((perguntasData as DesafioClinicoPergunta[]) ?? [])
+
+    setNotaCorte(planStatus?.notaCorte ?? 60)
 
     if (desafioCarregado) {
       const hasFullAccess = planStatus?.hasFullAccess ?? true
@@ -150,7 +151,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
   }, [perguntas, respostas])
 
   const accuracy = perguntas.length > 0 ? Math.round((acertosAtuais / perguntas.length) * 100) : 0
-  const aprovado = accuracy >= NOTA_CORTE_APROVACAO
+  const aprovado = accuracy >= notaCorte
 
   useEffect(() => {
     if (!finalizado || !aprovado) return

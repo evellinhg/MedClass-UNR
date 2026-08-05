@@ -28,10 +28,12 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/lib/i18n"
 
 const SEM_CATEGORIA = "sem_categoria"
-const NOTA_CORTE = 60
+const NOTA_CORTE_PADRAO = 60
 
 interface DisciplinaStat {
   disciplina: string
@@ -166,15 +168,17 @@ function SubjectRow({
   expanded,
   onToggle,
   alwaysOpen = false,
+  notaCorte,
   t,
 }: {
   subject: ReturnType<typeof buildBySubject>[number]
   expanded: boolean
   onToggle: () => void
   alwaysOpen?: boolean
+  notaCorte: number
   t: ReturnType<typeof useLanguage>["t"]
 }) {
-  const aprovado = subject.percentage >= NOTA_CORTE
+  const aprovado = subject.percentage >= notaCorte
   const barClass = aprovado ? "bg-success" : "bg-destructive"
   const textClass = aprovado ? "text-success" : "text-destructive"
   const isOpen = alwaysOpen || expanded
@@ -221,7 +225,7 @@ function SubjectRow({
                 ? t.desempenhoEstatisticas.semCategoria
                 : t.cronograma.disciplinaBaseLabel[d.disciplina] ?? d.disciplina
             const pct = d.total > 0 ? Math.round((d.correct / d.total) * 100) : 0
-            const disciplinaAprovada = pct >= NOTA_CORTE
+            const disciplinaAprovada = pct >= notaCorte
             const dBarClass = disciplinaAprovada ? "bg-success" : "bg-destructive"
             const dTextClass = disciplinaAprovada ? "text-success" : "text-destructive"
             return (
@@ -270,19 +274,19 @@ function disciplinaPct(d: DisciplinaStat) {
 }
 
 // Uma mesma matéria pode aparecer nos dois lados: em "manda bem" só entram
-// as disciplinas com >=60% de acertos (e o percentual do cabeçalho reflete
-// só essas), em "precisa melhorar" só as com <60%. Matérias sem disciplina
+// as disciplinas com >= nota de corte (e o percentual do cabeçalho reflete
+// só essas), em "precisa melhorar" só as abaixo dela. Matérias sem disciplina
 // própria (sem_categoria) usam o percentual geral da matéria para decidir
 // o lado, já que não há o que separar.
-function splitBySide(bySubject: ReturnType<typeof buildBySubject>, side: "good" | "bad") {
+function splitBySide(bySubject: ReturnType<typeof buildBySubject>, side: "good" | "bad", notaCorte: number) {
   return bySubject.flatMap((subject) => {
     if (subject.disciplinas.length === 0) {
-      const belongs = side === "good" ? subject.percentage >= NOTA_CORTE : subject.percentage < NOTA_CORTE
+      const belongs = side === "good" ? subject.percentage >= notaCorte : subject.percentage < notaCorte
       return belongs ? [subject] : []
     }
 
     const filtered = subject.disciplinas.filter((d) =>
-      side === "good" ? disciplinaPct(d) >= NOTA_CORTE : disciplinaPct(d) < NOTA_CORTE
+      side === "good" ? disciplinaPct(d) >= notaCorte : disciplinaPct(d) < notaCorte
     )
     if (filtered.length === 0) return []
 
@@ -308,6 +312,11 @@ export function DesempenhoEstatisticasContent() {
   const [chartType, setChartType] = useState<ChartType>("line")
   const [groupBy, setGroupBy] = useState<GroupBy>("tentativa")
   const [activePieIndex, setActivePieIndex] = useState(0)
+  const [userId, setUserId] = useState<string | null>(null)
+  const [notaCorte, setNotaCorte] = useState(NOTA_CORTE_PADRAO)
+  const [editandoNotaCorte, setEditandoNotaCorte] = useState(false)
+  const [tempNotaCorte, setTempNotaCorte] = useState(String(NOTA_CORTE_PADRAO))
+  const [salvandoNotaCorte, setSalvandoNotaCorte] = useState(false)
 
   useEffect(() => {
     supabase.auth.getUser().then(async ({ data }) => {
@@ -315,8 +324,9 @@ export function DesempenhoEstatisticasContent() {
         setLoading(false)
         return
       }
+      setUserId(data.user.id)
 
-      const [{ data: attemptRows }, { data: simuladoRows }] = await Promise.all([
+      const [{ data: attemptRows }, { data: simuladoRows }, { data: profileRow }] = await Promise.all([
         supabase
           .from("simulado_attempts")
           .select("id, subject, total_questions, correct_count, wrong_count, points, created_at")
@@ -327,8 +337,12 @@ export function DesempenhoEstatisticasContent() {
           .select("questao_ids, respostas")
           .eq("user_id", data.user.id)
           .not("finished_at", "is", null),
+        supabase.from("profiles").select("nota_corte").eq("id", data.user.id).maybeSingle(),
       ])
       setAttempts((attemptRows as Attempt[]) ?? [])
+      const notaCorteAtual = (profileRow as { nota_corte: number } | null)?.nota_corte ?? NOTA_CORTE_PADRAO
+      setNotaCorte(notaCorteAtual)
+      setTempNotaCorte(String(notaCorteAtual))
 
       // Estatística por matéria é calculada questão a questão (join com a matéria real
       // de cada questão), em vez de usar o campo "subject" da tentativa — esse campo
@@ -452,8 +466,8 @@ export function DesempenhoEstatisticasContent() {
 
   const bySubject = useMemo(() => buildBySubject(materiaStats, t), [materiaStats, t])
 
-  const topSubjects = splitBySide(bySubject, "good")
-  const weakestSubjects = splitBySide(bySubject, "bad")
+  const topSubjects = splitBySide(bySubject, "good", notaCorte)
+  const weakestSubjects = splitBySide(bySubject, "bad", notaCorte)
 
   const [expandedMaterias, setExpandedMaterias] = useState<Set<string>>(new Set())
   const toggleMateria = (materia: string) =>
@@ -463,6 +477,20 @@ export function DesempenhoEstatisticasContent() {
       else next.add(materia)
       return next
     })
+
+  const handleSalvarNotaCorte = async () => {
+    if (!userId) return
+    const valor = Number(tempNotaCorte)
+    if (Number.isNaN(valor) || valor < 0 || valor > 100) return
+
+    setSalvandoNotaCorte(true)
+    const { error } = await supabase.from("profiles").update({ nota_corte: valor }).eq("id", userId)
+    setSalvandoNotaCorte(false)
+    if (error) return
+
+    setNotaCorte(valor)
+    setEditandoNotaCorte(false)
+  }
 
   if (loading) {
     return (
@@ -679,7 +707,48 @@ export function DesempenhoEstatisticasContent() {
         </Card>
       ) : (
         <>
-          <p className="text-center text-xs text-muted-foreground">{t.desempenhoEstatisticas.notaCorte}</p>
+          <Card className="border border-border bg-card p-4">
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {editandoNotaCorte ? (
+                <>
+                  <Input
+                    type="number"
+                    min="0"
+                    max="100"
+                    value={tempNotaCorte}
+                    onChange={(e) => setTempNotaCorte(e.target.value)}
+                    className="w-20 text-center"
+                  />
+                  <span className="text-xs text-muted-foreground">%</span>
+                  <Button size="sm" onClick={handleSalvarNotaCorte} disabled={salvandoNotaCorte}>
+                    {salvandoNotaCorte ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : t.desempenhoEstatisticas.notaCorteSalvar}
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => {
+                      setTempNotaCorte(String(notaCorte))
+                      setEditandoNotaCorte(false)
+                    }}
+                  >
+                    {t.desempenhoEstatisticas.notaCorteCancelar}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <p className="text-xs text-muted-foreground">{t.desempenhoEstatisticas.notaCorte(notaCorte)}</p>
+                  <button
+                    type="button"
+                    onClick={() => setEditandoNotaCorte(true)}
+                    className="text-xs font-medium text-primary hover:underline"
+                  >
+                    {t.desempenhoEstatisticas.notaCorteEditar}
+                  </button>
+                </>
+              )}
+            </div>
+          </Card>
+
           <div className="grid gap-6 lg:grid-cols-2">
             <Card className="border border-success/30 bg-success/5 p-6">
               <h3 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
@@ -687,7 +756,7 @@ export function DesempenhoEstatisticasContent() {
                 {t.desempenhoEstatisticas.mandaBem}
               </h3>
               {topSubjects.length === 0 ? (
-                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semAprovadas}</p>
+                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semAprovadas(notaCorte)}</p>
               ) : (
                 <div className="space-y-4">
                   {topSubjects.map((subject) => (
@@ -697,6 +766,7 @@ export function DesempenhoEstatisticasContent() {
                       expanded={expandedMaterias.has(subject.materia)}
                       onToggle={() => toggleMateria(subject.materia)}
                       alwaysOpen
+                      notaCorte={notaCorte}
                       t={t}
                     />
                   ))}
@@ -710,7 +780,7 @@ export function DesempenhoEstatisticasContent() {
                 {t.desempenhoEstatisticas.precisaMelhorar}
               </h3>
               {weakestSubjects.length === 0 ? (
-                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semPendencias}</p>
+                <p className="text-sm text-muted-foreground">{t.desempenhoEstatisticas.semPendencias(notaCorte)}</p>
               ) : (
                 <div className="space-y-4">
                   {weakestSubjects.map((subject) => (
@@ -720,6 +790,7 @@ export function DesempenhoEstatisticasContent() {
                       expanded={expandedMaterias.has(subject.materia)}
                       onToggle={() => toggleMateria(subject.materia)}
                       alwaysOpen
+                      notaCorte={notaCorte}
                       t={t}
                     />
                   ))}

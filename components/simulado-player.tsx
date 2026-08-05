@@ -97,7 +97,6 @@ type Phase = "loading" | "playing" | "empty" | "finished" | "blocked"
 
 const BONUS_POINTS = 10
 const TIMEOUT_SENTINEL = -1
-const NOTA_CORTE_APROVACAO = 60
 
 export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerProps) {
   const { t } = useLanguage()
@@ -134,6 +133,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
   )
   const [blockedStatus, setBlockedStatus] = useState<PlanStatus | null>(null)
   const [questionTimeLeft, setQuestionTimeLeft] = useState<number | null>(null)
+  const [notaCorte, setNotaCorte] = useState(60)
 
   const pendingAnswerRef = useRef<number | null>(null)
   const currentIndexRef = useRef(0)
@@ -236,6 +236,13 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
       loadQuestions(effectiveCount, status.hasFullAccess)
     })
   }, [open, config])
+
+  useEffect(() => {
+    if (!open) return
+    getPlanStatus().then((status) => {
+      if (status) setNotaCorte(status.notaCorte)
+    })
+  }, [open])
 
   useEffect(() => {
     if (!open || !config?.timerEnabled || phase !== "playing" || readOnly) return
@@ -447,7 +454,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     return Math.round((result.correct / result.answered) * 100)
   }, [result])
 
-  const aprovado = accuracy >= NOTA_CORTE_APROVACAO
+  const aprovado = accuracy >= notaCorte
 
   useEffect(() => {
     if (phase !== "finished" || !result || !aprovado) return

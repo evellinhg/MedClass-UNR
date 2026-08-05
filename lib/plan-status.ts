@@ -10,6 +10,7 @@ export interface PlanStatus {
   email: string | null
   fullName: string | null
   avatarUrl: string | null
+  notaCorte: number
   plan: string
   role: UserRole
   isAdmin: boolean
@@ -35,7 +36,7 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, full_name, avatar_url, trial_questoes_used, role, access_expires_at")
+    .select("plan, full_name, avatar_url, nota_corte, trial_questoes_used, role, access_expires_at")
     .eq("id", user.id)
     .maybeSingle()
 
@@ -58,6 +59,7 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
     email: user.email ?? null,
     fullName: profile?.full_name ?? user.user_metadata?.full_name ?? user.user_metadata?.name ?? null,
     avatarUrl: profile?.avatar_url ?? null,
+    notaCorte: profile?.nota_corte ?? 60,
     plan,
     role,
     isAdmin: admin,

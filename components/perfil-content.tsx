@@ -18,8 +18,10 @@ export function PerfilContent() {
   const [userId, setUserId] = useState<string | null>(null)
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
-  const [cutoffScore, setCutoffScore] = useState("70")
+  const [cutoffScore, setCutoffScore] = useState("60")
   const [saved, setSaved] = useState(false)
+  const [salvando, setSalvando] = useState(false)
+  const [erroSalvar, setErroSalvar] = useState<string | null>(null)
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
   const [enviandoFoto, setEnviandoFoto] = useState(false)
   const [erroFoto, setErroFoto] = useState<string | null>(null)
@@ -32,11 +34,12 @@ export function PerfilContent() {
       setEmail(user.email ?? "")
       const { data: profile } = await supabase
         .from("profiles")
-        .select("full_name, avatar_url")
+        .select("full_name, avatar_url, nota_corte")
         .eq("id", user.id)
         .maybeSingle()
       setName(profile?.full_name ?? user.user_metadata?.full_name ?? user.user_metadata?.name ?? "")
       setAvatarUrl(profile?.avatar_url ?? null)
+      setCutoffScore(String(profile?.nota_corte ?? 60))
     })
   }, [])
 
@@ -80,7 +83,27 @@ export function PerfilContent() {
     setAvatarUrl(novaUrl)
   }
 
-  const handleSave = () => {
+  const handleSave = async () => {
+    if (!userId) return
+    setErroSalvar(null)
+
+    const notaCorteValue = Number(cutoffScore)
+    if (!name.trim() || Number.isNaN(notaCorteValue) || notaCorteValue < 0 || notaCorteValue > 100) {
+      setErroSalvar(t.perfil.erroSalvar)
+      return
+    }
+
+    setSalvando(true)
+    const { error } = await supabase
+      .from("profiles")
+      .update({ full_name: name.trim(), nota_corte: notaCorteValue })
+      .eq("id", userId)
+    setSalvando(false)
+
+    if (error) {
+      setErroSalvar(t.perfil.erroSalvar)
+      return
+    }
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
   }
@@ -173,10 +196,11 @@ export function PerfilContent() {
       </Card>
 
       <div className="flex items-center gap-3">
-        <Button variant="gradient" onClick={handleSave}>
-          {t.perfil.salvarAlteracoes}
+        <Button variant="gradient" onClick={handleSave} disabled={salvando}>
+          {salvando ? <Loader2 className="h-4 w-4 animate-spin" /> : t.perfil.salvarAlteracoes}
         </Button>
         {saved && <span className="text-sm font-medium text-success">{t.perfil.alteracoesSalvas}</span>}
+        {erroSalvar && <span className="text-sm font-medium text-destructive">{erroSalvar}</span>}
       </div>
     </div>
   )

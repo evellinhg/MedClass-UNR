@@ -1,0 +1,218 @@
+[
+  {
+    "materia": "Crecimiento y Desarrollo",
+    "categoria": "SUR II",
+    "inscricao": "2026-02-02",
+    "inicio": "2026-02-09",
+    "fim": "2026-08-11",
+    "obs": "*Para estudantes recursantes"
+  },
+  {
+    "materia": "Sex., Género y Reprod.",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-13",
+    "inicio": "2026-03-19",
+    "fim": "2026-05-04",
+    "obs": null
+  },
+  {
+    "materia": "Injuria",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-13",
+    "inicio": "2026-03-19",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "Clínica Médica 4to",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-16",
+    "inicio": "2026-03-23",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Clínica Médica 5to",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-17",
+    "inicio": "2026-03-23",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Ingles",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-20",
+    "inicio": "2026-03-30",
+    "fim": "2026-11-13",
+    "obs": null
+  },
+  {
+    "materia": "Informática Educativa",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-20",
+    "inicio": "2026-03-30",
+    "fim": "2026-11-13",
+    "obs": null
+  },
+  {
+    "materia": "Electiva CDTyR",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-25",
+    "inicio": "2026-04-06",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Electiva CPE",
+    "categoria": "SUR II",
+    "inscricao": "2026-03-26",
+    "inicio": "2026-04-06",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Trabajo y Tiempo Libre",
+    "categoria": "SUR II",
+    "inscricao": "2026-05-11",
+    "inicio": "2026-05-18",
+    "fim": "2026-09-04",
+    "obs": null
+  },
+  {
+    "materia": "Defensa",
+    "categoria": "SUR II",
+    "inscricao": "2026-07-27",
+    "inicio": "2026-08-03",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Nutrición",
+    "categoria": "SUR II",
+    "inscricao": "2026-08-31",
+    "inicio": "2026-09-07",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "El Ser Humano y su Medio",
+    "categoria": "SUR II",
+    "inscricao": "2026-09-14",
+    "inicio": "2026-09-21",
+    "fim": "2026-11-17",
+    "obs": null
+  },
+  {
+    "materia": "CDTyR 4to",
+    "categoria": "1º Cuatrimestre",
+    "inscricao": "2026-03-16",
+    "inicio": "2026-03-23",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "CDTyR 5to",
+    "categoria": "1º Cuatrimestre",
+    "inscricao": "2026-03-17",
+    "inicio": "2026-03-23",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "Met. de la Inv. Científica",
+    "categoria": "1º Cuatrimestre",
+    "inscricao": "2026-03-20",
+    "inicio": "2026-03-30",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "Electivas CDTyR",
+    "categoria": "1º Cuatrimestre",
+    "inscricao": "2026-03-25",
+    "inicio": "2026-04-06",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "Electivas CPE",
+    "categoria": "1º Cuatrimestre",
+    "inscricao": "2026-03-26",
+    "inicio": "2026-04-06",
+    "fim": "2026-07-03",
+    "obs": null
+  },
+  {
+    "materia": "CDTyR 4to",
+    "categoria": "2º Cuatrimestre",
+    "inscricao": "2026-07-27",
+    "inicio": "2026-08-03",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "CDTyR 5to",
+    "categoria": "2º Cuatrimestre",
+    "inscricao": "2026-07-28",
+    "inicio": "2026-08-03",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Met. de la Inv. Científica",
+    "categoria": "2º Cuatrimestre",
+    "inscricao": "2026-08-03",
+    "inicio": "2026-08-10",
+    "fim": "2026-11-13",
+    "obs": null
+  },
+  {
+    "materia": "Electivas CDTyR",
+    "categoria": "2º Cuatrimestre",
+    "inscricao": "2026-08-10",
+    "inicio": "2026-08-17",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Electivas CPE",
+    "categoria": "2º Cuatrimestre",
+    "inscricao": "2026-08-11",
+    "inicio": "2026-08-17",
+    "fim": "2026-11-20",
+    "obs": null
+  },
+  {
+    "materia": "Cohorte 75",
+    "categoria": "Práctica Final",
+    "inscricao": "2026-04-30",
+    "inicio": "2026-05-11",
+    "fim": "2027-03-12",
+    "obs": null
+  },
+  {
+    "materia": "Cohorte 76",
+    "categoria": "Práctica Final",
+    "inscricao": "2026-08-06",
+    "inicio": "2026-08-17",
+    "fim": "2027-06-11",
+    "obs": null
+  },
+  {
+    "materia": "Cohorte 77",
+    "categoria": "Práctica Final",
+    "inscricao": "2026-11-02",
+    "inicio": "2026-11-16",
+    "fim": "2027-09-10",
+    "obs": null
+  },
+  {
+    "materia": "Cohorte 78",
+    "categoria": "Práctica Final",
+    "inscricao": "2027-02-01",
+    "inicio": "2027-02-08",
+    "fim": "2027-12-10",
+    "obs": null
+  }
+]

@@ -132,6 +132,7 @@ export function CalendarioEventoEditDialog({ open, onOpenChange, evento, onSaved
                 <SelectItem value="inscricao">Abertura de Inscrição</SelectItem>
                 <SelectItem value="prova">Data de Prova</SelectItem>
                 <SelectItem value="comunidade">Evento da Comunidade</SelectItem>
+                <SelectItem value="cursado">Período de Cursada</SelectItem>
               </SelectContent>
             </Select>
           </div>

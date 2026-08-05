@@ -10,7 +10,7 @@ create table public.calendario_eventos (
   descricao text,
   data date not null,
   hora time,
-  tipo text not null default 'comunidade' check (tipo in ('inscricao', 'prova', 'comunidade')),
+  tipo text not null default 'comunidade' check (tipo in ('inscricao', 'prova', 'comunidade', 'cursado')),
   link text,
   ativo boolean not null default true,
   created_at timestamptz not null default now()

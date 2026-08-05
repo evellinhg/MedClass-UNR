@@ -32,6 +32,7 @@ const TIPO_COR: Record<CalendarioEventoTipo, { dot: string; badge: string; text:
   inscricao: { dot: "bg-blue-500", badge: "bg-blue-500/15", text: "text-blue-600", border: "border-blue-500" },
   prova: { dot: "bg-red-500", badge: "bg-red-500/15", text: "text-red-600", border: "border-red-500" },
   comunidade: { dot: "bg-emerald-500", badge: "bg-emerald-500/15", text: "text-emerald-600", border: "border-emerald-500" },
+  cursado: { dot: "bg-amber-500", badge: "bg-amber-500/15", text: "text-amber-600", border: "border-amber-500" },
 }
 
 export function CalendarioContent() {

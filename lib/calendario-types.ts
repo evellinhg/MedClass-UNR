@@ -1,4 +1,4 @@
-export type CalendarioEventoTipo = "inscricao" | "prova" | "comunidade"
+export type CalendarioEventoTipo = "inscricao" | "prova" | "comunidade" | "cursado"
 
 export interface CalendarioEvento {
   id: string

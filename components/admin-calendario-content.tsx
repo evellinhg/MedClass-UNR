@@ -16,6 +16,7 @@ const TIPO_LABEL: Record<string, string> = {
   inscricao: "Inscrição",
   prova: "Prova",
   comunidade: "Comunidade",
+  cursado: "Cursada",
 }
 
 async function authedFetch(input: string, init: RequestInit = {}) {

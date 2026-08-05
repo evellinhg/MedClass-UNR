@@ -145,7 +145,7 @@ export function CalendarioContent() {
   const renderEventChip = (evento: CalendarioEvento) => (
     <span
       key={evento.id}
-      className={`block truncate rounded px-1.5 py-0.5 text-left text-[11px] font-medium leading-tight ${TIPO_COR[evento.tipo].badge} ${TIPO_COR[evento.tipo].text}`}
+      className={`block truncate rounded px-2 py-1 text-left text-sm font-medium leading-snug sm:text-[15px] ${TIPO_COR[evento.tipo].badge} ${TIPO_COR[evento.tipo].text}`}
     >
       {evento.hora ? `${evento.hora} · ` : ""}
       {evento.titulo}
@@ -183,10 +183,10 @@ export function CalendarioContent() {
       </div>
 
       {/* Legenda de tipos */}
-      <div className="mb-4 flex flex-wrap gap-x-4 gap-y-1.5">
+      <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2">
         {(Object.keys(TIPO_COR) as CalendarioEventoTipo[]).map((tipo) => (
-          <span key={tipo} className="flex items-center gap-1.5 text-xs text-muted-foreground">
-            <span className={`h-2 w-2 rounded-full ${TIPO_COR[tipo].dot}`} />
+          <span key={tipo} className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className={`h-2.5 w-2.5 rounded-full ${TIPO_COR[tipo].dot}`} />
             {t.calendario.tipoLabel[tipo]}
           </span>
         ))}
@@ -226,7 +226,7 @@ export function CalendarioContent() {
             {diasDaGrade.slice(0, 7).map((dia) => (
               <div
                 key={`cabecalho-${dia.toISOString()}`}
-                className="bg-muted/40 py-2.5 text-center text-xs font-semibold uppercase tracking-wide text-muted-foreground"
+                className="bg-muted/40 py-3 text-center text-sm font-semibold uppercase tracking-wide text-muted-foreground"
               >
                 {format(dia, "EEE", { locale: localeDf })}
               </div>
@@ -240,21 +240,21 @@ export function CalendarioContent() {
                   key={dia.toISOString()}
                   type="button"
                   onClick={() => setDiaSelecionado(dia)}
-                  className={`flex min-h-[110px] flex-col items-start gap-1 bg-card p-2 text-left transition-colors hover:bg-accent sm:min-h-[130px] sm:p-2.5 ${
+                  className={`flex min-h-[130px] flex-col items-start gap-1.5 bg-card p-2.5 text-left transition-colors hover:bg-accent sm:min-h-[150px] sm:p-3 ${
                     foraDoMes ? "opacity-40" : ""
                   }`}
                 >
                   <span
-                    className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-sm font-medium ${
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base font-medium ${
                       hoje ? "bg-primary text-primary-foreground" : "text-foreground"
                     }`}
                   >
                     {format(dia, "d")}
                   </span>
-                  <div className="flex w-full flex-col gap-1 overflow-hidden">
+                  <div className="flex w-full flex-col gap-1.5 overflow-hidden">
                     {doDia.slice(0, 2).map(renderEventChip)}
                     {doDia.length > 2 && (
-                      <span className="text-[11px] font-medium text-muted-foreground">+{doDia.length - 2}</span>
+                      <span className="text-xs font-medium text-muted-foreground">+{doDia.length - 2}</span>
                     )}
                   </div>
                 </button>
@@ -268,11 +268,11 @@ export function CalendarioContent() {
             {diasDaSemana.map((dia) => {
               const hoje = isSameDay(dia, new Date())
               return (
-                <div key={`cabecalho-${dia.toISOString()}`} className="bg-muted/40 py-2.5 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <div key={`cabecalho-${dia.toISOString()}`} className="bg-muted/40 py-3 text-center">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
                     {format(dia, "EEE", { locale: localeDf })}
                   </p>
-                  <p className={`text-sm font-semibold ${hoje ? "text-primary" : "text-foreground"}`}>{format(dia, "d")}</p>
+                  <p className={`text-base font-semibold ${hoje ? "text-primary" : "text-foreground"}`}>{format(dia, "d")}</p>
                 </div>
               )
             })}
@@ -283,10 +283,10 @@ export function CalendarioContent() {
                   key={dia.toISOString()}
                   type="button"
                   onClick={() => setDiaSelecionado(dia)}
-                  className="flex min-h-[320px] flex-col items-start gap-1.5 bg-card p-2 text-left transition-colors hover:bg-accent sm:p-2.5"
+                  className="flex min-h-[320px] flex-col items-start gap-2 bg-card p-2.5 text-left transition-colors hover:bg-accent sm:p-3"
                 >
                   {doDia.length === 0 ? (
-                    <span className="mt-2 w-full text-center text-xs text-muted-foreground/60">—</span>
+                    <span className="mt-2 w-full text-center text-sm text-muted-foreground/60">—</span>
                   ) : (
                     doDia.map(renderEventChip)
                   )}

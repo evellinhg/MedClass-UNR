@@ -2,9 +2,18 @@
 
 import { motion } from "framer-motion"
 import { BookOpen, Stethoscope, TrendingUp, CheckCircle, Brain, Award } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 const icons = [BookOpen, Stethoscope, TrendingUp, CheckCircle, Brain, Award]
+const gradients = [
+  "from-sky-400 to-blue-600 shadow-blue-900/30",
+  "from-red-400 to-rose-600 shadow-red-900/30",
+  "from-emerald-400 to-green-600 shadow-emerald-900/30",
+  "from-lime-400 to-green-600 shadow-green-900/30",
+  "from-violet-400 to-purple-600 shadow-purple-900/30",
+  "from-amber-400 to-orange-600 shadow-amber-900/30",
+]
 
 export function Features() {
   const { t } = useLanguage()
@@ -62,9 +71,7 @@ export function Features() {
                 </div>
 
                 <div className="relative">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#c6ff3a]/20 to-[#84cc16]/20">
-                    <Icon className="h-6 w-6 text-[#c6ff3a]" />
-                  </div>
+                  <IconChip icon={Icon} size="lg" className={`mb-4 bg-gradient-to-br ${gradients[i]}`} />
                   <h3 className="mb-2 text-lg font-semibold text-white">{feature.title}</h3>
                   <p className="text-sm leading-relaxed text-white/50">{feature.description}</p>
                 </div>

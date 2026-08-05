@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Clock, FolderX, Languages, UserX } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 
 const icons = [Languages, Clock, FolderX, UserX]
@@ -44,9 +45,7 @@ export function PainSection() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10">
-                  <Icon className="h-5 w-5 text-red-400" />
-                </div>
+                <IconChip icon={Icon} className="bg-gradient-to-br from-red-400 to-rose-600 shadow-red-900/30" />
                 <div>
                   <h3 className="mb-1.5 text-base font-semibold text-white">{item.title}</h3>
                   <p className="text-sm leading-relaxed text-white/50">{item.description}</p>

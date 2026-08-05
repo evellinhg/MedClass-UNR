@@ -3,15 +3,15 @@ import { cn } from "@/lib/utils"
 
 interface IconChipProps {
   icon: LucideIcon
-  size?: "sm" | "md" | "lg"
+  size?: "sm" | "md" | "lg" | "xl"
   className?: string
   iconClassName?: string
   glossy?: boolean
 }
 
-const SIZE_MAP = { sm: "h-8 w-8", md: "h-11 w-11", lg: "h-14 w-14" }
-const ICON_SIZE_MAP = { sm: "h-4 w-4", md: "h-5 w-5", lg: "h-7 w-7" }
-const RADIUS_MAP = { sm: "rounded-[9px]", md: "rounded-[12px]", lg: "rounded-[16px]" }
+const SIZE_MAP = { sm: "h-8 w-8", md: "h-11 w-11", lg: "h-14 w-14", xl: "h-20 w-20" }
+const ICON_SIZE_MAP = { sm: "h-4 w-4", md: "h-5 w-5", lg: "h-7 w-7", xl: "h-10 w-10" }
+const RADIUS_MAP = { sm: "rounded-[9px]", md: "rounded-[12px]", lg: "rounded-[16px]", xl: "rounded-[22px]" }
 
 /**
  * "App icon" style: squircle com gradiente, brilho no topo e sombra —

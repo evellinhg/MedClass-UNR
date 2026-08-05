@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Smartphone, Wifi, Bell, Zap } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 import { usePwaInstall } from "@/lib/use-pwa-install"
 import { PwaInstallInstructionsDialog } from "@/components/pwa-install-instructions-dialog"
@@ -48,8 +49,13 @@ export function PwaInstallSection() {
           />
 
           <div className="relative grid items-center gap-10 lg:grid-cols-[auto_1fr_auto]">
-            <div className="mx-auto flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] shadow-[0_0_40px_rgba(198,255,58,0.35)] lg:mx-0">
-              <Smartphone className="h-10 w-10 text-[#0a1f00]" />
+            <div className="mx-auto shrink-0 lg:mx-0">
+              <IconChip
+                icon={Smartphone}
+                size="xl"
+                className="bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] shadow-[0_0_40px_rgba(198,255,58,0.35)]"
+                iconClassName="text-[#0a1f00]"
+              />
             </div>
 
             <div className="text-center lg:text-left">

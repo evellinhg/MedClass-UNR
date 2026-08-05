@@ -3,10 +3,16 @@
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, Stethoscope, HeartPulse, Activity } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 import { DepoimentoForm } from "@/components/depoimento-form"
 
 const icons = [Stethoscope, HeartPulse, Activity]
+const gradients = [
+  "from-rose-400 to-red-600 shadow-red-900/30",
+  "from-pink-400 to-fuchsia-600 shadow-pink-900/30",
+  "from-sky-400 to-blue-600 shadow-blue-900/30",
+]
 
 export function Testimonials() {
   const { t } = useLanguage()
@@ -71,9 +77,7 @@ export function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[#c6ff3a]/20 bg-[#c6ff3a]/10 text-[#bef264]">
-                    <Icon className="h-5 w-5" />
-                  </div>
+                  <IconChip icon={Icon} className={`bg-gradient-to-br ${gradients[i]}`} />
                   <div>
                     <p className="font-medium text-white">{testimonial.author}</p>
                     <p className="text-sm text-white/40">{testimonial.role}</p>

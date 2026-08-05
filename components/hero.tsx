@@ -5,6 +5,7 @@ import Link from "next/link"
 import dynamic from "next/dynamic"
 import { motion } from "framer-motion"
 import { BookOpenCheck, Smartphone, Star } from "lucide-react"
+import { IconChip } from "@/components/ui/icon-chip"
 import { Button } from "@/components/ui/button"
 import { AmbientBackground } from "./ambient-background"
 import { useLanguage } from "@/lib/i18n"
@@ -150,9 +151,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#bef264]">
-              <BookOpenCheck className="h-4 w-4" />
-            </div>
+            <IconChip icon={BookOpenCheck} size="sm" className="bg-gradient-to-br from-[#c6ff3a] to-[#84cc16]" iconClassName="text-[#0a1f00]" />
             <span className="text-sm text-white/50">
               <span className="font-semibold text-white/80">{t.hero.socialProofStrong}</span> {t.hero.socialProof}
             </span>

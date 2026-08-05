@@ -1,4 +1,4 @@
-export type CalendarioEventoTipo = "inscricao" | "prova" | "comunidade" | "cursado"
+export type CalendarioEventoTipo = "inscricao" | "prova" | "comunidade" | "cursado" | "pessoal"
 
 export interface CalendarioEvento {
   id: string
@@ -10,6 +10,7 @@ export interface CalendarioEvento {
   link: string | null
   ativo: boolean
   created_at: string
+  user_id: string | null // preenchido = evento pessoal, visível só para o dono
 }
 
 export interface CalendarioLembrete {

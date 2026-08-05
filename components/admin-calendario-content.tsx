@@ -40,7 +40,11 @@ function EventosTab() {
 
   const load = async () => {
     setLoading(true)
-    const { data } = await supabase.from("calendario_eventos").select("*").order("data", { ascending: false })
+    const { data } = await supabase
+      .from("calendario_eventos")
+      .select("*")
+      .is("user_id", null)
+      .order("data", { ascending: false })
     setEventos((data as CalendarioEvento[]) ?? [])
     setLoading(false)
   }

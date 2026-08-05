@@ -17,7 +17,20 @@ import {
   subWeeks,
 } from "date-fns"
 import { ptBR, es } from "date-fns/locale"
-import { Loader2, ChevronLeft, ChevronRight, MessageSquarePlus, Check, Send, ExternalLink, Bell, BellRing } from "lucide-react"
+import {
+  Loader2,
+  ChevronLeft,
+  ChevronRight,
+  MessageSquarePlus,
+  Check,
+  Send,
+  ExternalLink,
+  Bell,
+  BellRing,
+  Plus,
+  Trash2,
+  Pencil,
+} from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -34,6 +47,7 @@ const TIPO_COR: Record<CalendarioEventoTipo, { dot: string; badge: string; text:
   prova: { dot: "bg-red-500", badge: "bg-red-500/15", text: "text-red-600", border: "border-red-500" },
   comunidade: { dot: "bg-emerald-500", badge: "bg-emerald-500/15", text: "text-emerald-600", border: "border-emerald-500" },
   cursado: { dot: "bg-amber-500", badge: "bg-amber-500/15", text: "text-amber-600", border: "border-amber-500" },
+  pessoal: { dot: "bg-violet-500", badge: "bg-violet-500/15", text: "text-violet-600", border: "border-violet-500" },
 }
 
 export function CalendarioContent() {
@@ -50,6 +64,14 @@ export function CalendarioContent() {
   const [userId, setUserId] = useState<string | null>(null)
   const [meusLembretes, setMeusLembretes] = useState<Map<string, string>>(new Map())
   const [lembreteCarregando, setLembreteCarregando] = useState<string | null>(null)
+
+  const [novoEventoAberto, setNovoEventoAberto] = useState(false)
+  const [editandoEventoId, setEditandoEventoId] = useState<string | null>(null)
+  const [novoTitulo, setNovoTitulo] = useState("")
+  const [novaHora, setNovaHora] = useState("")
+  const [novaDescricao, setNovaDescricao] = useState("")
+  const [salvandoEvento, setSalvandoEvento] = useState(false)
+  const [erroNovoEvento, setErroNovoEvento] = useState<string | null>(null)
 
   const [sugestaoAberta, setSugestaoAberta] = useState(false)
   const [nome, setNome] = useState("")
@@ -97,6 +119,92 @@ export function CalendarioContent() {
     setLembreteCarregando(null)
   }
 
+  const resetNovoEvento = () => {
+    setNovoEventoAberto(false)
+    setEditandoEventoId(null)
+    setNovoTitulo("")
+    setNovaHora("")
+    setNovaDescricao("")
+    setErroNovoEvento(null)
+  }
+
+  const abrirNovoEvento = () => {
+    setEditandoEventoId(null)
+    setNovoTitulo("")
+    setNovaHora("")
+    setNovaDescricao("")
+    setErroNovoEvento(null)
+    setNovoEventoAberto(true)
+  }
+
+  const abrirEdicaoEvento = (evento: CalendarioEvento) => {
+    setEditandoEventoId(evento.id)
+    setNovoTitulo(evento.titulo)
+    setNovaHora(evento.hora ?? "")
+    setNovaDescricao(evento.descricao ?? "")
+    setErroNovoEvento(null)
+    setNovoEventoAberto(true)
+  }
+
+  const handleSalvarEventoPessoal = async () => {
+    if (!userId || !diaSelecionado) return
+    if (!novoTitulo.trim()) {
+      setErroNovoEvento(t.calendario.novoEventoTituloObrigatorio)
+      return
+    }
+    setSalvandoEvento(true)
+    setErroNovoEvento(null)
+
+    if (editandoEventoId) {
+      const { data, error } = await supabase
+        .from("calendario_eventos")
+        .update({
+          titulo: novoTitulo.trim(),
+          descricao: novaDescricao.trim() || null,
+          hora: novaHora || null,
+        })
+        .eq("id", editandoEventoId)
+        .select("*")
+        .single()
+      setSalvandoEvento(false)
+      if (error || !data) {
+        setErroNovoEvento(t.calendario.novoEventoErro)
+        return
+      }
+      setEventos((prev) => prev.map((e) => (e.id === editandoEventoId ? (data as CalendarioEvento) : e)))
+      resetNovoEvento()
+      return
+    }
+
+    const { data, error } = await supabase
+      .from("calendario_eventos")
+      .insert({
+        user_id: userId,
+        titulo: novoTitulo.trim(),
+        descricao: novaDescricao.trim() || null,
+        data: format(diaSelecionado, "yyyy-MM-dd"),
+        hora: novaHora || null,
+        tipo: "pessoal",
+      })
+      .select("*")
+      .single()
+    setSalvandoEvento(false)
+
+    if (error || !data) {
+      setErroNovoEvento(t.calendario.novoEventoErro)
+      return
+    }
+    setEventos((prev) => [...prev, data as CalendarioEvento])
+    resetNovoEvento()
+  }
+
+  const handleExcluirEventoPessoal = async (eventoId: string) => {
+    if (!confirm(t.calendario.confirmarExcluirEvento)) return
+    const { error } = await supabase.from("calendario_eventos").delete().eq("id", eventoId)
+    if (error) return
+    setEventos((prev) => prev.filter((e) => e.id !== eventoId))
+  }
+
   const eventosPorDia = useMemo(() => {
     const map = new Map<string, CalendarioEvento[]>()
     for (const evento of eventos) {
@@ -111,6 +219,16 @@ export function CalendarioContent() {
     if (!diaSelecionado) return []
     return eventosPorDia.get(format(diaSelecionado, "yyyy-MM-dd")) ?? []
   }, [diaSelecionado, eventosPorDia])
+
+  const meusEventos = useMemo(() => {
+    if (!userId) return []
+    return eventos.filter((e) => e.user_id === userId).sort((a, b) => a.data.localeCompare(b.data))
+  }, [eventos, userId])
+
+  const handleEditarDaLista = (evento: CalendarioEvento) => {
+    setDiaSelecionado(new Date(`${evento.data}T00:00:00`))
+    abrirEdicaoEvento(evento)
+  }
 
   const diasDaSemana = useMemo(() => Array.from({ length: 7 }, (_, i) => addDays(semanaAtual, i)), [semanaAtual])
 
@@ -326,6 +444,53 @@ export function CalendarioContent() {
         </div>
       )}
 
+      {/* Meus eventos pessoais */}
+      {userId && meusEventos.length > 0 && (
+        <div className="mt-6">
+          <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+            {t.calendario.meusEventosTitulo}
+          </h3>
+          <div className="space-y-2">
+            {meusEventos.map((evento) => (
+              <div
+                key={evento.id}
+                className="flex items-center justify-between gap-3 rounded-lg border border-violet-500/30 bg-violet-500/5 p-3"
+              >
+                <button
+                  type="button"
+                  onClick={() => setDiaSelecionado(new Date(`${evento.data}T00:00:00`))}
+                  className="min-w-0 flex-1 text-left"
+                >
+                  <p className="text-sm font-medium text-foreground">{evento.titulo}</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    {format(new Date(`${evento.data}T00:00:00`), "d 'de' MMMM 'de' yyyy", { locale: localeDf })}
+                    {evento.hora ? ` · ${evento.hora}` : ""}
+                  </p>
+                </button>
+                <div className="flex shrink-0 items-center gap-1">
+                  <button
+                    type="button"
+                    onClick={() => handleEditarDaLista(evento)}
+                    title={t.calendario.editarEvento}
+                    className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                  >
+                    <Pencil className="h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleExcluirEventoPessoal(evento.id)}
+                    title={t.calendario.excluirEvento}
+                    className="rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Botão flutuante */}
       <button
         type="button"
@@ -337,7 +502,15 @@ export function CalendarioContent() {
       </button>
 
       {/* Modal do dia */}
-      <Dialog open={!!diaSelecionado} onOpenChange={(v) => !v && setDiaSelecionado(null)}>
+      <Dialog
+        open={!!diaSelecionado}
+        onOpenChange={(v) => {
+          if (!v) {
+            setDiaSelecionado(null)
+            resetNovoEvento()
+          }
+        }}
+      >
         <DialogContent className="max-w-md">
           <DialogHeader>
             <DialogTitle>
@@ -380,6 +553,26 @@ export function CalendarioContent() {
                             )}
                           </button>
                         )}
+                        {evento.user_id === userId && (
+                          <>
+                            <button
+                              type="button"
+                              onClick={() => abrirEdicaoEvento(evento)}
+                              title={t.calendario.editarEvento}
+                              className="rounded-full p-1 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+                            >
+                              <Pencil className="h-4 w-4" />
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => handleExcluirEventoPessoal(evento.id)}
+                              title={t.calendario.excluirEvento}
+                              className="rounded-full p-1 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </>
+                        )}
                       </div>
                     </div>
                     <p className="text-sm font-semibold text-foreground">{evento.titulo}</p>
@@ -400,6 +593,60 @@ export function CalendarioContent() {
               })}
             </div>
           )}
+
+          {userId && (
+            <div className="border-t border-border pt-3">
+              {novoEventoAberto ? (
+                <div className="space-y-3">
+                  <p className="text-sm font-medium text-foreground">
+                    {editandoEventoId ? t.calendario.editarEventoPessoal : t.calendario.novoEventoPessoal}
+                  </p>
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-foreground">{t.calendario.novoEventoTitulo}</label>
+                    <Input
+                      value={novoTitulo}
+                      onChange={(e) => setNovoTitulo(e.target.value)}
+                      placeholder={t.calendario.novoEventoTituloPlaceholder}
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-foreground">{t.calendario.novoEventoHora}</label>
+                    <Input type="time" value={novaHora} onChange={(e) => setNovaHora(e.target.value)} />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-sm font-medium text-foreground">{t.calendario.novoEventoDescricao}</label>
+                    <Textarea
+                      value={novaDescricao}
+                      onChange={(e) => setNovaDescricao(e.target.value)}
+                      className="min-h-16"
+                    />
+                  </div>
+                  {erroNovoEvento && <p className="text-sm text-destructive">{erroNovoEvento}</p>}
+                  <div className="flex items-center justify-end gap-2">
+                    <Button variant="outline" size="sm" onClick={resetNovoEvento}>
+                      {t.calendario.cancelar}
+                    </Button>
+                    <Button
+                      variant="gradient"
+                      size="sm"
+                      className="gap-1.5"
+                      onClick={handleSalvarEventoPessoal}
+                      disabled={salvandoEvento}
+                    >
+                      {salvandoEvento ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
+                      {salvandoEvento ? t.calendario.novoEventoSalvando : t.calendario.novoEventoSalvar}
+                    </Button>
+                  </div>
+                </div>
+              ) : (
+                <Button variant="outline" size="sm" className="gap-1.5" onClick={abrirNovoEvento}>
+                  <Plus className="h-4 w-4" />
+                  {t.calendario.novoEventoPessoal}
+                </Button>
+              )}
+            </div>
+          )}
+
           <DialogFooter>
             <Button variant="outline" onClick={() => setDiaSelecionado(null)}>
               {t.calendario.fechar}

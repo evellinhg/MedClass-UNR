@@ -29,6 +29,9 @@ const pt = {
     historico: "Histórico",
     estatisticas: "Estatísticas",
     desafiosClinicos: "Desafios Clínicos",
+    hospitalSimulacao: "Hospital de Simulação",
+    mesaOral: "Mesa Oral",
+    emBreve: "Em breve",
     estudar: "Estudar",
     ranking: "Ranking",
     medcoins: "MedCoins",
@@ -298,6 +301,16 @@ const pt = {
     confirmarExcluirEvento: "Excluir este evento pessoal? Essa ação não pode ser desfeita.",
     meusEventosTitulo: "Meus eventos",
     editarEventoPessoal: "Editar evento pessoal",
+  },
+  comingSoon: {
+    badge: "Em breve",
+    aviso: "Estamos preparando essa novidade. Volte em breve para conferir.",
+    hospitalSimulacaoTitulo: "Hospital de Simulação",
+    hospitalSimulacaoDescricao:
+      "Casos clínicos interativos num ambiente hospitalar simulado, pra você praticar decisões em tempo real como se estivesse no plantão.",
+    mesaOralTitulo: "Mesa Oral",
+    mesaOralDescricao:
+      "Simulação de banca de exame oral, com perguntas e feedback imediato pra você treinar antes da prova de verdade.",
   },
   desafiosClinicos: {
     categoria: {
@@ -1107,6 +1120,9 @@ const es: typeof pt = {
     historico: "Historial",
     estatisticas: "Estadísticas",
     desafiosClinicos: "Desafíos Clínicos",
+    hospitalSimulacao: "Hospital de Simulación",
+    mesaOral: "Mesa Oral",
+    emBreve: "Próximamente",
     estudar: "Estudiar",
     ranking: "Ranking",
     medcoins: "MedCoins",
@@ -1374,6 +1390,16 @@ const es: typeof pt = {
     confirmarExcluirEvento: "¿Eliminar este evento personal? Esta acción no se puede deshacer.",
     meusEventosTitulo: "Mis eventos",
     editarEventoPessoal: "Editar evento personal",
+  },
+  comingSoon: {
+    badge: "Próximamente",
+    aviso: "Estamos preparando esta novedad. Volvé pronto para verla.",
+    hospitalSimulacaoTitulo: "Hospital de Simulación",
+    hospitalSimulacaoDescricao:
+      "Casos clínicos interactivos en un ambiente hospitalario simulado, para que practiques decisiones en tiempo real como si estuvieras de guardia.",
+    mesaOralTitulo: "Mesa Oral",
+    mesaOralDescricao:
+      "Simulación de mesa examinadora oral, con preguntas y feedback inmediato para entrenar antes del examen real.",
   },
   desafiosClinicos: {
     categoria: {

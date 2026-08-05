@@ -8,6 +8,8 @@ import {
   MessageSquare,
   Stethoscope,
   Trophy,
+  Hospital,
+  Mic,
   type LucideIcon,
 } from "lucide-react"
 import type { translations } from "@/lib/i18n"
@@ -24,6 +26,7 @@ export interface NavItem {
   href: string
   icon: LucideIcon
   children?: NavChild[]
+  emBreve?: boolean
 }
 
 // MedCoins e Conquistas ficam ocultos do menu por enquanto (recursos não
@@ -47,6 +50,8 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
     },
     { name: t.treinamentos, href: "/dashboard/simulados", icon: ClipboardCheck },
     { name: t.desafiosClinicos, href: "/dashboard/desafios-clinicos", icon: Stethoscope },
+    { name: t.hospitalSimulacao, href: "/dashboard/hospital-simulacao", icon: Hospital, emBreve: true },
+    { name: t.mesaOral, href: "/dashboard/mesa-oral", icon: Mic, emBreve: true },
     {
       name: t.desempenho,
       href: "/dashboard/desempenho/estatisticas",

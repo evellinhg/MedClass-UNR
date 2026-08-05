@@ -154,6 +154,15 @@ export function SidebarNav({ onNavigate, compact = false }: SidebarNavProps) {
                   {!compact && (
                     <>
                       <span className="flex-1">{item.name}</span>
+                      {item.emBreve && (
+                        <span
+                          className={`shrink-0 rounded-full px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${
+                            isActive ? "bg-[#0a1f00]/15 text-[#0a1f00]" : "bg-amber-500/15 text-amber-500"
+                          }`}
+                        >
+                          {t.dashboardNav.emBreve}
+                        </span>
+                      )}
                       {item.name === t.dashboardNav.materiais && materiaisLocked && (
                         <Lock className="h-3.5 w-3.5 shrink-0 opacity-60" aria-label={t.dashboardNav.recursoExclusivo} />
                       )}

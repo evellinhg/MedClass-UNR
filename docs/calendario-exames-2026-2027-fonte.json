@@ -1,0 +1,688 @@
+[
+  {
+    "area": "Nutrición",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-04-28",
+    "exame": "2026-05-04"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-06",
+    "exame": "2026-05-11"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-04-29",
+    "exame": "2026-05-04"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-11",
+    "exame": "2026-05-14"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-13",
+    "exame": "2026-05-18"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-18",
+    "exame": "2026-05-21"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-14",
+    "exame": "2026-05-19"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Maio 2026",
+    "chamado": "Único",
+    "inscricao": "2026-05-21",
+    "exame": "2026-05-27"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-12",
+    "exame": "2026-08-17"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-05",
+    "exame": "2026-08-10"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-27",
+    "exame": "2026-07-30"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-22",
+    "exame": "2026-07-27"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-20",
+    "exame": "2026-07-23"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-22",
+    "exame": "2026-07-27"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-01",
+    "exame": "2026-07-20"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-20",
+    "exame": "2026-07-23"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-23",
+    "exame": "2026-07-27"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-01",
+    "exame": "2026-07-20"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-20",
+    "exame": "2026-07-22"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-06-25",
+    "exame": "2026-06-30"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-06-24",
+    "exame": "2026-06-29"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Julho/Agosto 2026",
+    "chamado": "Único",
+    "inscricao": "2026-07-20",
+    "exame": "2026-07-23"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-26",
+    "exame": "2026-08-31"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-19",
+    "exame": "2026-08-24"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-31",
+    "exame": "2026-09-03"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-07",
+    "exame": "2026-09-10"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-26",
+    "exame": "2026-08-31"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-07",
+    "exame": "2026-09-10"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-02",
+    "exame": "2026-09-07"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-09",
+    "exame": "2026-09-14"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-22",
+    "exame": "2026-09-28"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-03",
+    "exame": "2026-09-08"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-09-11",
+    "exame": "2026-09-16"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-27",
+    "exame": "2026-09-02"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-27",
+    "exame": "2026-09-01"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Setembro 2026",
+    "chamado": "Único",
+    "inscricao": "2026-08-27",
+    "exame": "2026-08-31"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-23"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-02",
+    "exame": "2026-12-07"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-25",
+    "exame": "2026-11-30"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-09",
+    "exame": "2026-12-14"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-23"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-02",
+    "exame": "2026-12-07"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-23",
+    "exame": "2026-11-26"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-07",
+    "exame": "2026-12-10"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-25",
+    "exame": "2026-11-30"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-09",
+    "exame": "2026-12-14"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-23"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-02",
+    "exame": "2026-12-07"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-25",
+    "exame": "2026-11-30"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-09",
+    "exame": "2026-12-14"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-25",
+    "exame": "2026-11-30"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-09",
+    "exame": "2026-12-14"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-25",
+    "exame": "2026-11-30"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-09",
+    "exame": "2026-12-14"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-23"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-02",
+    "exame": "2026-12-07"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-24"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-04",
+    "exame": "2026-12-09"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-18",
+    "exame": "2026-11-23"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-01",
+    "exame": "2026-12-04"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-16",
+    "exame": "2026-11-19"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-11-30",
+    "exame": "2026-12-03"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "1º Chamado",
+    "inscricao": "2026-11-19",
+    "exame": "2026-11-24"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Novembro/Dezembro 2026",
+    "chamado": "2º Chamado",
+    "inscricao": "2026-12-02",
+    "exame": "2026-12-07"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-04"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-18"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-05",
+    "exame": "2027-02-11"
+  },
+  {
+    "area": "Nutrición",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-22",
+    "exame": "2027-02-25"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-05",
+    "exame": "2027-02-11"
+  },
+  {
+    "area": "Sex., Género y Reprod.",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-22",
+    "exame": "2027-02-25"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-04"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-18"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-03",
+    "exame": "2027-02-10"
+  },
+  {
+    "area": "El Ser Humano y su Medio",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-17",
+    "exame": "2027-02-22"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-04"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-18"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-05",
+    "exame": "2027-02-11"
+  },
+  {
+    "area": "Defensa",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-22",
+    "exame": "2027-02-25"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-03",
+    "exame": "2027-02-10"
+  },
+  {
+    "area": "Gineco-Obstetricia",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-17",
+    "exame": "2027-02-22"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-05",
+    "exame": "2027-02-12"
+  },
+  {
+    "area": "Clínica Quirúrgica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-23",
+    "exame": "2027-02-26"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-04",
+    "exame": "2027-02-10"
+  },
+  {
+    "area": "Pediatría",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-18",
+    "exame": "2027-02-23"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-05",
+    "exame": "2027-02-10"
+  },
+  {
+    "area": "Clínica Médica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-19",
+    "exame": "2027-02-24"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-04"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-18"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-05"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-19"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "1º Chamado",
+    "inscricao": "2027-02-01",
+    "exame": "2027-02-04"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Fevereiro/Março 2027",
+    "chamado": "2º Chamado",
+    "inscricao": "2027-02-15",
+    "exame": "2027-02-18"
+  },
+  {
+    "area": "Crecimiento y Desarrollo",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-04"
+  },
+  {
+    "area": "Trabajo y Tiempo Libre",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-04"
+  },
+  {
+    "area": "Injuria",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-04"
+  },
+  {
+    "area": "Ingles",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-04"
+  },
+  {
+    "area": "Informática Educativa",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-05"
+  },
+  {
+    "area": "Met. de la Inv. Científica",
+    "periodo": "Março 2027",
+    "chamado": "Único",
+    "inscricao": "2027-03-01",
+    "exame": "2027-03-04"
+  }
+]

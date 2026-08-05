@@ -3,8 +3,8 @@
 import { use, useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { AlertCircle, ArrowLeft, Loader2 } from "lucide-react"
-import { initMercadoPago, Wallet } from "@mercadopago/sdk-react"
+import QRCode from "qrcode"
+import { AlertCircle, ArrowLeft, ExternalLink, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,9 +18,7 @@ const PLANO_INFO: Record<PlanoPago, { nome: string; preco: string; periodo: stri
   trimestral: { nome: "Plano Trimestral", preco: "$ 18.000", periodo: "/trimestre" },
 }
 
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY
-
-let mpInicializado = false
+const WHATSAPP_SUPORTE = "543412290349"
 
 export default function CheckoutPage({ params }: { params: Promise<{ plano: string }> }) {
   const { plano: planoParam } = use(params)
@@ -34,7 +32,9 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
   const [logado, setLogado] = useState(false)
   const [processando, setProcessando] = useState(false)
   const [erro, setErro] = useState<string | null>(null)
-  const [preferenceId, setPreferenceId] = useState<string | null>(null)
+  const [initPoint, setInitPoint] = useState<string | null>(null)
+  const [pagamentoId, setPagamentoId] = useState<string | null>(null)
+  const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null)
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
@@ -47,11 +47,9 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
   }, [])
 
   useEffect(() => {
-    if (PUBLIC_KEY && !mpInicializado) {
-      initMercadoPago(PUBLIC_KEY, { locale: "es-AR" })
-      mpInicializado = true
-    }
-  }, [])
+    if (!initPoint) return
+    QRCode.toDataURL(initPoint, { width: 240, margin: 1 }).then(setQrCodeUrl)
+  }, [initPoint])
 
   if (!plano) {
     return (
@@ -99,8 +97,12 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
       setErro(body.error ?? "No se pudo iniciar el pago. Intentá de nuevo.")
       return
     }
-    setPreferenceId(body.preferenceId)
+    setInitPoint(body.init_point)
+    setPagamentoId(body.pagamentoId)
   }
+
+  const mensagemWhatsapp = `Hola! Realicé el pago del ${info?.nome ?? ""} de MedClass UNR. Mi e-mail es ${email}. Referencia: ${pagamentoId}. Te envío el comprobante.`
+  const whatsappUrl = `https://wa.me/${WHATSAPP_SUPORTE}?text=${encodeURIComponent(mensagemWhatsapp)}`
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4 py-12">
@@ -135,14 +137,39 @@ export default function CheckoutPage({ params }: { params: Promise<{ plano: stri
             <div className="flex justify-center py-6">
               <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
             </div>
-          ) : preferenceId ? (
-            !PUBLIC_KEY ? (
-              <p className="text-sm text-destructive">
-                Falta configurar NEXT_PUBLIC_MERCADOPAGO_PUBLIC_KEY.
-              </p>
-            ) : (
-              <Wallet initialization={{ preferenceId }} />
-            )
+          ) : initPoint ? (
+            <div className="space-y-5">
+              <div className="flex flex-col items-center gap-3 rounded-lg border border-border bg-background p-4 text-center">
+                {qrCodeUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={qrCodeUrl} alt="Código QR de pago" className="h-48 w-48" />
+                ) : (
+                  <div className="flex h-48 w-48 items-center justify-center">
+                    <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+                  </div>
+                )}
+                <p className="text-xs text-muted-foreground">Escaneá el código con la app de Mercado Pago</p>
+              </div>
+
+              <a href={initPoint} target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" className="w-full gap-2">
+                  <ExternalLink className="h-4 w-4" />
+                  Abrir en Mercado Pago
+                </Button>
+              </a>
+
+              <div className="space-y-2 rounded-lg border border-primary/30 bg-primary/5 p-4">
+                <p className="text-sm font-medium text-foreground">Después de pagar</p>
+                <p className="text-xs text-muted-foreground">
+                  Envianos el comprobante por WhatsApp para activar tu acceso. Solemos confirmar en poco tiempo.
+                </p>
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full gap-2 bg-[#25D366] text-white hover:bg-[#1ebe5b]">
+                    Enviar comprobante por WhatsApp
+                  </Button>
+                </a>
+              </div>
+            </div>
           ) : (
             <div className="space-y-4">
               <div className="space-y-1.5">

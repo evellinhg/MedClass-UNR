@@ -74,7 +74,11 @@ export async function criarPreferencia({
         failure: `${origin}/checkout/erro`,
         pending: `${origin}/checkout/pendente`,
       },
-      auto_return: "approved",
+      // auto_return removido: nesse fluxo (QR code + confirmação manual por
+      // WhatsApp) o aluno não precisa ser redirecionado automaticamente de
+      // volta pro site depois de pagar. Também evita o erro "auto_return
+      // invalid. back_url.success must be defined" que o MP retorna quando
+      // `origin` não é uma URL https totalmente qualificada (ex: localhost).
       notification_url: `${origin}/api/webhooks/mercadopago`,
     },
   })

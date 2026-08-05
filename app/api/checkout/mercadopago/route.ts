@@ -59,7 +59,11 @@ export async function POST(request: NextRequest) {
       .update({ mp_preference_id: preferencia.id })
       .eq("id", pagamento.id)
 
-    return NextResponse.json({ preferenceId: preferencia.id, init_point: preferencia.init_point })
+    return NextResponse.json({
+      preferenceId: preferencia.id,
+      init_point: preferencia.init_point,
+      pagamentoId: pagamento.id,
+    })
   } catch (err) {
     const mensagem =
       err instanceof Error

@@ -7,9 +7,11 @@ import { ClaimPendingPayment } from "@/components/claim-pending-payment"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
+  /** Usa a largura toda da coluna de conteúdo, sem o limite de max-w-7xl (ex: calendário). */
+  fullWidth?: boolean
 }
 
-export function DashboardLayout({ children }: DashboardLayoutProps) {
+export function DashboardLayout({ children, fullWidth }: DashboardLayoutProps) {
   return (
     <div className="flex min-h-screen bg-background">
       <CollapsibleSidebar />
@@ -20,7 +22,9 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <DashboardHeader />
         <PlanExpiredBanner />
         <FreePlanBanner />
-        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{children}</main>
+        <main className={fullWidth ? "px-4 py-6 sm:px-6 lg:px-8" : "mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"}>
+          {children}
+        </main>
       </div>
     </div>
   )

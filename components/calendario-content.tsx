@@ -153,8 +153,8 @@ export function CalendarioContent() {
   )
 
   return (
-    // Escapa do container max-w-7xl do DashboardLayout pra ocupar a largura toda da tela.
-    <div className="relative left-1/2 right-1/2 -mx-[50vw] w-screen px-4 sm:px-8 lg:px-12">
+    // A largura total já vem do DashboardLayout com fullWidth (sem o max-w-7xl padrão).
+    <div>
       <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-2xl font-bold text-gradient-brand sm:text-3xl">{t.calendario.titulo}</h2>

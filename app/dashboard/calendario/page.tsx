@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function CalendarioPage() {
   return (
-    <DashboardLayout>
+    <DashboardLayout fullWidth>
       <CalendarioContent />
     </DashboardLayout>
   )

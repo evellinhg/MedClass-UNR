@@ -29,7 +29,7 @@ const pt = {
     historico: "Histórico",
     estatisticas: "Estatísticas",
     desafiosClinicos: "Desafios Clínicos",
-    hospitalSimulacao: "Hospital de Simulação",
+    hospitalSimulacao: "Hospital Simulação",
     mesaOral: "Mesa Oral",
     emBreve: "Em breve",
     estudar: "Estudar",
@@ -305,7 +305,7 @@ const pt = {
   comingSoon: {
     badge: "Em breve",
     aviso: "Estamos preparando essa novidade. Volte em breve para conferir.",
-    hospitalSimulacaoTitulo: "Hospital de Simulação",
+    hospitalSimulacaoTitulo: "Hospital Simulação",
     hospitalSimulacaoDescricao:
       "Casos clínicos interativos num ambiente hospitalar simulado, pra você praticar decisões em tempo real como se estivesse no plantão.",
     mesaOralTitulo: "Mesa Oral",
@@ -1120,7 +1120,7 @@ const es: typeof pt = {
     historico: "Historial",
     estatisticas: "Estadísticas",
     desafiosClinicos: "Desafíos Clínicos",
-    hospitalSimulacao: "Hospital de Simulación",
+    hospitalSimulacao: "Hospital Simulación",
     mesaOral: "Mesa Oral",
     emBreve: "Próximamente",
     estudar: "Estudiar",
@@ -1394,7 +1394,7 @@ const es: typeof pt = {
   comingSoon: {
     badge: "Próximamente",
     aviso: "Estamos preparando esta novedad. Volvé pronto para verla.",
-    hospitalSimulacaoTitulo: "Hospital de Simulación",
+    hospitalSimulacaoTitulo: "Hospital Simulación",
     hospitalSimulacaoDescricao:
       "Casos clínicos interactivos en un ambiente hospitalario simulado, para que practiques decisiones en tiempo real como si estuvieras de guardia.",
     mesaOralTitulo: "Mesa Oral",

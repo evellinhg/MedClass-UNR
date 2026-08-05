@@ -1,6 +1,7 @@
 import {
   Home,
   CalendarDays,
+  CalendarClock,
   BookOpen,
   ClipboardCheck,
   BarChart3,
@@ -33,6 +34,7 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
   return [
     { name: t.inicio, href: "/dashboard", icon: Home },
     { name: t.cronograma, href: "/dashboard/cronograma", icon: CalendarDays },
+    { name: t.calendario, href: "/dashboard/calendario", icon: CalendarClock },
     {
       name: t.materiais,
       href: "/dashboard/materiais",

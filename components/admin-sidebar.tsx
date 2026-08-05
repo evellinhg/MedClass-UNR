@@ -21,6 +21,7 @@ import {
   MessageSquare,
   Quote,
   Megaphone,
+  CalendarClock,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
@@ -37,6 +38,7 @@ const adminNavigation: AdminNavItem[] = [
   { name: "Feedbacks", href: "/admin/feedbacks", icon: MessageSquare },
   { name: "Depoimentos", href: "/admin/depoimentos", icon: Quote },
   { name: "Avisos", href: "/admin/avisos", icon: Megaphone },
+  { name: "Calendário", href: "/admin/calendario", icon: CalendarClock },
   { name: "Dados", href: "/admin/dados", icon: Database },
   { name: "Banco de Questões", href: "/admin/questoes", icon: BookOpen },
   { name: "MedCoins", href: "/admin/medcoins", icon: Coins },

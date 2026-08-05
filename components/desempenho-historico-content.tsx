@@ -91,7 +91,7 @@ export function DesempenhoHistoricoContent() {
               <SelectItem value={ALL_SUBJECTS}>{t.desempenhoHistorico.todas}</SelectItem>
               {subjects.map((s) => (
                 <SelectItem key={s} value={s}>
-                  {s}
+                  {t.cronograma.materiaLabel[s] ?? s}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -132,7 +132,9 @@ export function DesempenhoHistoricoContent() {
                         <TableCell className="text-muted-foreground">
                           {new Date(attempt.created_at).toLocaleDateString(t.desempenhoHistorico.localeData)}
                         </TableCell>
-                        <TableCell className="font-medium text-foreground">{attempt.subject ?? "—"}</TableCell>
+                        <TableCell className="font-medium text-foreground">
+                          {attempt.subject ? t.cronograma.materiaLabel[attempt.subject] ?? attempt.subject : "—"}
+                        </TableCell>
                         <TableCell className="text-right font-semibold text-success">
                           {attempt.correct_count}
                         </TableCell>

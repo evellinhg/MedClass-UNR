@@ -71,26 +71,6 @@ const PLANO_COR: Record<string, string> = { gratis: "#64748b", mensal: "#60a5fa"
 const DIFICULDADE_LABEL: Record<string, string> = { "fácil": "Fácil", "médio": "Médio", "difícil": "Difícil" }
 const DIFICULDADE_COR: Record<string, string> = { "fácil": "#10b981", "médio": "#f59e0b", "difícil": "#f43f5e" }
 
-function diaKey(iso: string) {
-  return iso.slice(0, 10)
-}
-
-function bucketPorDia(rows: { created_at: string }[], dias: number) {
-  const buckets = new Map<string, number>()
-  const hoje = new Date()
-  hoje.setHours(0, 0, 0, 0)
-  for (let i = dias - 1; i >= 0; i--) {
-    const d = new Date(hoje)
-    d.setDate(d.getDate() - i)
-    buckets.set(d.toISOString().slice(0, 10), 0)
-  }
-  for (const r of rows) {
-    const key = diaKey(r.created_at)
-    if (buckets.has(key)) buckets.set(key, (buckets.get(key) ?? 0) + 1)
-  }
-  return Array.from(buckets.entries()).map(([data, total]) => ({ data, total }))
-}
-
 function variacaoPercentual(serie: { total: number }[]) {
   const metade = Math.floor(serie.length / 2)
   const anterior = serie.slice(0, metade).reduce((s, x) => s + x.total, 0)
@@ -110,6 +90,18 @@ function SparklineTooltip({ active, payload }: any) {
   )
 }
 
+interface OverviewStats {
+  counts: Record<string, number>
+  depoimentos_pendentes: number
+  plano_dist: { chave: string; total: number }[]
+  dificuldade_dist: { chave: string; total: number }[]
+  serie_profiles: { data: string; total: number }[]
+  serie_simulado_attempts: { data: string; total: number }[]
+  serie_questoes: { data: string; total: number }[]
+  serie_simulados: { data: string; total: number }[]
+  recent_questoes: any[]
+}
+
 export function AdminOverviewContent() {
   const [counts, setCounts] = useState<Record<string, number | null>>({})
   const [recentQuestoes, setRecentQuestoes] = useState<any[]>([])
@@ -118,65 +110,56 @@ export function AdminOverviewContent() {
   const [planoDist, setPlanoDist] = useState<{ chave: string; total: number }[]>([])
   const [dificuldadeDist, setDificuldadeDist] = useState<{ chave: string; total: number }[]>([])
   const [loadingCharts, setLoadingCharts] = useState(true)
+  const [erro, setErro] = useState<string | null>(null)
+
+  const carregar = () => {
+    setErro(null)
+    setLoadingCharts(true)
+    let resolvida = false
+
+    // Uma única chamada (RPC admin_overview_stats) em vez de ~16 queries
+    // paralelas: em conexão de celular mais instável, várias requisições
+    // simultâneas podiam nunca resolver e a página ficava vazia pra sempre,
+    // sem nenhum erro visível. Se mesmo essa única chamada travar, o timeout
+    // abaixo garante que aparece um erro com botão de tentar de novo em vez
+    // de ficar carregando pra sempre.
+    const timeout = setTimeout(() => {
+      if (resolvida) return
+      resolvida = true
+      setErro("Tempo de espera esgotado. Verifique sua conexão.")
+      setLoadingCharts(false)
+    }, 15000)
+
+    supabase
+      .rpc("admin_overview_stats", { dias_tendencia: DIAS_TENDENCIA })
+      .then(({ data, error }) => {
+        if (resolvida) return
+        resolvida = true
+        clearTimeout(timeout)
+
+        if (error || !data) {
+          setErro(error?.message ?? "Não foi possível carregar os dados.")
+          setLoadingCharts(false)
+          return
+        }
+        const stats = data as OverviewStats
+        setCounts(stats.counts)
+        setRecentQuestoes(stats.recent_questoes)
+        setDepoimentosPendentes(stats.depoimentos_pendentes)
+        setPlanoDist(stats.plano_dist)
+        setDificuldadeDist(stats.dificuldade_dist)
+        setSeriesPorTabela({
+          profiles: stats.serie_profiles,
+          simulado_attempts: stats.serie_simulado_attempts,
+          questoes: stats.serie_questoes,
+          simulados: stats.serie_simulados,
+        })
+        setLoadingCharts(false)
+      })
+  }
 
   useEffect(() => {
-    supabase
-      .from("questoes")
-      .select("id, enunciado, materia, dificuldade, created_at")
-      .order("created_at", { ascending: false })
-      .limit(5)
-      .then(({ data }) => setRecentQuestoes(data ?? []))
-
-    const statsParaBuscar = [...STATS, ...CONTENT_STATS]
-    statsParaBuscar.forEach(async (stat) => {
-      const { count, error } = await supabase.from(stat.table).select("*", { count: "exact", head: true })
-      setCounts((prev) => ({ ...prev, [stat.table]: error ? null : count ?? 0 }))
-    })
-
-    supabase
-      .from("depoimentos")
-      .select("*", { count: "exact", head: true })
-      .eq("status", "pendente")
-      .then(({ count, error }) => setDepoimentosPendentes(error ? null : count ?? 0))
-
-    const desde = new Date()
-    desde.setDate(desde.getDate() - DIAS_TENDENCIA)
-    const desdeIso = desde.toISOString()
-
-    Promise.all(STATS.map((s) => supabase.from(s.table).select("created_at").gte("created_at", desdeIso))).then(
-      (resultados) => {
-        const series: Record<string, { data: string; total: number }[]> = {}
-        resultados.forEach((res, i) => {
-          series[STATS[i].table] = bucketPorDia((res.data as { created_at: string }[]) ?? [], DIAS_TENDENCIA)
-        })
-        setSeriesPorTabela(series)
-        setLoadingCharts(false)
-      }
-    )
-
-    supabase
-      .from("profiles")
-      .select("plan")
-      .then(({ data }) => {
-        const contagem = new Map<string, number>()
-        for (const row of (data as { plan: string | null }[] | null) ?? []) {
-          const chave = row.plan ?? "gratis"
-          contagem.set(chave, (contagem.get(chave) ?? 0) + 1)
-        }
-        setPlanoDist(Array.from(contagem.entries()).map(([chave, total]) => ({ chave, total })))
-      })
-
-    supabase
-      .from("questoes")
-      .select("dificuldade")
-      .then(({ data }) => {
-        const contagem = new Map<string, number>()
-        for (const row of (data as { dificuldade: string | null }[] | null) ?? []) {
-          const chave = row.dificuldade ?? "—"
-          contagem.set(chave, (contagem.get(chave) ?? 0) + 1)
-        }
-        setDificuldadeDist(Array.from(contagem.entries()).map(([chave, total]) => ({ chave, total })))
-      })
+    carregar()
   }, [])
 
   const tendenciaCombinada = useMemo(() => {
@@ -241,6 +224,21 @@ export function AdminOverviewContent() {
             <div className="h-full w-full bg-muted/20" />
           )}
         </div>
+      </Card>
+    )
+  }
+
+  if (erro) {
+    return (
+      <Card className="border border-destructive/30 bg-destructive/5 p-6 text-center">
+        <p className="text-sm text-destructive">Não foi possível carregar os dados: {erro}</p>
+        <button
+          type="button"
+          onClick={carregar}
+          className="mt-3 text-sm font-medium text-primary underline-offset-2 hover:underline"
+        >
+          Tentar de novo
+        </button>
       </Card>
     )
   }

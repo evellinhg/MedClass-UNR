@@ -60,7 +60,7 @@ const pt = {
   },
   planBanner: {
     freeText:
-      "Você está em uma conta gratuita e por isso tem acesso a até 60 questões, ao primeiro caso de cada seção de desafios clínicos e às 2 primeiras cartas de cada deck de flashcards. Para treinar sem limites, escolha um dos nossos planos disponíveis.",
+      "Você está em uma conta gratuita e por isso tem acesso a até 50 questões fixas por matéria, ao primeiro caso de cada seção de desafios clínicos e a 1 baralho de flashcards por matéria. Para treinar sem limites, escolha um dos nossos planos disponíveis.",
     expiredText:
       "Seu plano expirou. Para continuar treinando e seguir rumo à sua aprovação, renove um dos nossos planos disponíveis.",
     cta: "Ver planos e continuar estudando",
@@ -1143,7 +1143,7 @@ const es: typeof pt = {
   },
   planBanner: {
     freeText:
-      "Estás en una cuenta gratuita y por eso tenés acceso a hasta 60 preguntas, al primer caso de cada sección de desafíos clínicos y a las 2 primeras tarjetas de cada mazo de flashcards. Para entrenar sin límites, elegí uno de nuestros planes disponibles.",
+      "Estás en una cuenta gratuita y por eso tenés acceso a hasta 50 preguntas fijas por materia, al primer caso de cada sección de desafíos clínicos y a 1 mazo de flashcards por materia. Para entrenar sin límites, elegí uno de nuestros planes disponibles.",
     expiredText:
       "Tu plan venció. Para seguir entrenando y encaminarte hacia tu aprobación, renová uno de nuestros planes disponibles.",
     cta: "Ver planes y seguir estudiando",

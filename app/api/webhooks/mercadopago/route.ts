@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createAdminClient } from "@/lib/supabase-admin"
-import { buscarPagamento, validarAssinaturaWebhook, PLANO_DURACAO_DIAS, type PlanoPago } from "@/lib/mercadopago"
+import { buscarPagamento, validarAssinaturaWebhook, aplicarPlanoSeContaExistir, type PlanoPago } from "@/lib/mercadopago"
 
 // Mercado Pago chama essa rota (POST ou GET, conforme a integração) sempre
 // que o status de um pagamento muda. Nunca confiamos no corpo da notificação
@@ -49,32 +49,6 @@ async function processarNotificacao(paymentId: string | null) {
   }
 
   return NextResponse.json({ ok: true })
-}
-
-export async function aplicarPlanoSeContaExistir(
-  supabase: ReturnType<typeof createAdminClient>,
-  pagamentoId: string,
-  email: string,
-  plano: PlanoPago
-) {
-  const { data: usersData } = await supabase.auth.admin.listUsers({ perPage: 1000 })
-  const usuario = usersData?.users.find((u) => u.email?.toLowerCase() === email.toLowerCase())
-  if (!usuario) return false
-
-  const expira = new Date()
-  expira.setDate(expira.getDate() + PLANO_DURACAO_DIAS[plano])
-
-  await supabase
-    .from("profiles")
-    .update({ plan: plano, access_expires_at: expira.toISOString() })
-    .eq("id", usuario.id)
-
-  await supabase
-    .from("pagamentos_mercadopago")
-    .update({ aplicado_em: new Date().toISOString() })
-    .eq("id", pagamentoId)
-
-  return true
 }
 
 export async function POST(request: NextRequest) {

@@ -1,5 +1,6 @@
 import crypto from "crypto"
-import { MercadoPagoConfig, Preference, Payment } from "mercadopago"
+import { MercadoPagoConfig, Payment } from "mercadopago"
+import { createAdminClient } from "@/lib/supabase-admin"
 
 export type PlanoPago = "mensal" | "trimestral"
 
@@ -13,11 +14,6 @@ export const PLANO_DURACAO_DIAS: Record<PlanoPago, number> = {
   trimestral: 90,
 }
 
-export const PLANO_TITULO: Record<PlanoPago, string> = {
-  mensal: "MedClass UNR — Plano Mensal",
-  trimestral: "MedClass UNR — Plano Trimestral",
-}
-
 // Uma config por chamada (client-per-request) em vez de módulo compartilhado:
 // evita ler process.env.MERCADOPAGO_ACCESS_TOKEN antes de ele existir em
 // contextos de build/edge, e é o padrão recomendado pelo SDK oficial.
@@ -27,67 +23,36 @@ function config(): MercadoPagoConfig {
   return new MercadoPagoConfig({ accessToken })
 }
 
-interface CriarPreferenciaParams {
+// Aplica o plano (access_expires_at) na conta com esse e-mail, se ela já
+// existir. Usado tanto pelo webhook do Mercado Pago (pagamento aprovado
+// automaticamente) quanto pela ativação manual no painel admin (quando o
+// admin confere o pagamento direto no Mercado Pago e libera na mão). Se a
+// conta ainda não existir, fica pendente -- /api/pagamentos/reivindicar
+// aplica na primeira vez que essa pessoa logar com esse e-mail.
+export async function aplicarPlanoSeContaExistir(
+  supabase: ReturnType<typeof createAdminClient>,
+  pagamentoId: string,
+  email: string,
   plano: PlanoPago
-  email: string
-  nomeCompleto: string
-  telefone: string
-  dni: string
-  externalReference: string
-  origin: string
-}
+) {
+  const { data: usersData } = await supabase.auth.admin.listUsers({ perPage: 1000 })
+  const usuario = usersData?.users.find((u) => u.email?.toLowerCase() === email.toLowerCase())
+  if (!usuario) return false
 
-export async function criarPreferencia({
-  plano,
-  email,
-  nomeCompleto,
-  telefone,
-  dni,
-  externalReference,
-  origin,
-}: CriarPreferenciaParams) {
-  const [nome, ...resto] = nomeCompleto.trim().split(/\s+/)
-  const sobrenome = resto.join(" ") || nome
+  const expira = new Date()
+  expira.setDate(expira.getDate() + PLANO_DURACAO_DIAS[plano])
 
-  const preference = new Preference(config())
-  const result = await preference.create({
-    body: {
-      items: [
-        {
-          id: plano,
-          title: PLANO_TITULO[plano],
-          quantity: 1,
-          unit_price: PLANO_PRECO[plano],
-          currency_id: "ARS",
-        },
-      ],
-      payer: {
-        email,
-        name: nome,
-        surname: sobrenome,
-        phone: { number: telefone },
-        identification: { type: "DNI", number: dni },
-      },
-      external_reference: externalReference,
-      back_urls: {
-        success: `${origin}/checkout/sucesso`,
-        failure: `${origin}/checkout/erro`,
-        pending: `${origin}/checkout/pendente`,
-      },
-      // auto_return removido: nesse fluxo (QR code + confirmação manual por
-      // WhatsApp) o aluno não precisa ser redirecionado automaticamente de
-      // volta pro site depois de pagar. Também evita o erro "auto_return
-      // invalid. back_url.success must be defined" que o MP retorna quando
-      // `origin` não é uma URL https totalmente qualificada (ex: localhost).
-      notification_url: `${origin}/api/webhooks/mercadopago`,
-    },
-  })
+  await supabase
+    .from("profiles")
+    .update({ plan: plano, access_expires_at: expira.toISOString() })
+    .eq("id", usuario.id)
 
-  if (!result.id || !result.init_point) {
-    throw new Error("Mercado Pago não retornou id/init_point da preferência.")
-  }
+  await supabase
+    .from("pagamentos_mercadopago")
+    .update({ aplicado_em: new Date().toISOString() })
+    .eq("id", pagamentoId)
 
-  return { id: result.id, init_point: result.init_point }
+  return true
 }
 
 interface ValidarAssinaturaParams {

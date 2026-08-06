@@ -22,6 +22,7 @@ import {
   Quote,
   Megaphone,
   CalendarClock,
+  Wallet,
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 
@@ -34,6 +35,7 @@ interface AdminNavItem {
 const adminNavigation: AdminNavItem[] = [
   { name: "Visão Geral", href: "/admin", icon: LayoutDashboard },
   { name: "Usuários", href: "/admin/usuarios", icon: Users },
+  { name: "Pagamentos", href: "/admin/pagamentos", icon: Wallet },
   { name: "Relatórios", href: "/admin/relatorios", icon: BarChart3 },
   { name: "Feedbacks", href: "/admin/feedbacks", icon: MessageSquare },
   { name: "Depoimentos", href: "/admin/depoimentos", icon: Quote },

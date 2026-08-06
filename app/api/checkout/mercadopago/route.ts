@@ -1,15 +1,22 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createAdminClient } from "@/lib/supabase-admin"
-import { criarPreferencia, PLANO_PRECO, type PlanoPago } from "@/lib/mercadopago"
+import { PLANO_PRECO, type PlanoPago } from "@/lib/mercadopago"
 
+// Registra a intenção de pagamento (dados do aluno) ANTES de ele ser
+// redirecionado pro link fixo de pagamento do Mercado Pago. Não cria
+// preferência nem cobra nada aqui -- só deixa a linha em
+// pagamentos_mercadopago com status='pendente' pra aparecer no painel
+// admin (Pagamentos), onde o admin confere no próprio Mercado Pago e libera
+// o acesso manualmente, sem precisar esperar o aluno mandar o comprovante
+// por WhatsApp.
 export async function POST(request: NextRequest) {
   const body = await request.json()
-  const { plano, email, nomeCompleto, telefone, dni } = body as {
+  const { plano, email, nome, apellido, telefone } = body as {
     plano?: string
     email?: string
-    nomeCompleto?: string
+    nome?: string
+    apellido?: string
     telefone?: string
-    dni?: string
   }
 
   if (plano !== "mensal" && plano !== "trimestral") {
@@ -18,20 +25,19 @@ export async function POST(request: NextRequest) {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "E-mail inválido." }, { status: 400 })
   }
-  if (!nomeCompleto?.trim() || !telefone?.trim() || !dni?.trim()) {
+  if (!nome?.trim() || !apellido?.trim() || !telefone?.trim()) {
     return NextResponse.json({ error: "Faltan datos obligatorios." }, { status: 400 })
   }
 
   const planoValidado = plano as PlanoPago
   const supabase = createAdminClient()
 
-  const { data: pagamento, error: insertError } = await supabase
+  const { data: pagamento, error } = await supabase
     .from("pagamentos_mercadopago")
     .insert({
-      email,
-      nome_completo: nomeCompleto.trim(),
+      email: email.trim().toLowerCase(),
+      nome_completo: `${nome.trim()} ${apellido.trim()}`.trim(),
       telefone: telefone.trim(),
-      dni: dni.trim(),
       plano: planoValidado,
       valor: PLANO_PRECO[planoValidado],
       status: "pendente",
@@ -39,38 +45,9 @@ export async function POST(request: NextRequest) {
     .select("id")
     .single()
 
-  if (insertError || !pagamento) {
-    return NextResponse.json({ error: insertError?.message ?? "Erro ao registrar pagamento." }, { status: 500 })
+  if (error || !pagamento) {
+    return NextResponse.json({ error: error?.message ?? "Erro ao registrar pagamento." }, { status: 500 })
   }
 
-  try {
-    const preferencia = await criarPreferencia({
-      plano: planoValidado,
-      email,
-      nomeCompleto: nomeCompleto.trim(),
-      telefone: telefone.trim(),
-      dni: dni.trim(),
-      externalReference: pagamento.id,
-      origin: request.nextUrl.origin,
-    })
-
-    await supabase
-      .from("pagamentos_mercadopago")
-      .update({ mp_preference_id: preferencia.id })
-      .eq("id", pagamento.id)
-
-    return NextResponse.json({
-      preferenceId: preferencia.id,
-      init_point: preferencia.init_point,
-      pagamentoId: pagamento.id,
-    })
-  } catch (err) {
-    const mensagem =
-      err instanceof Error
-        ? err.message
-        : typeof err === "object" && err !== null && "message" in err
-          ? String((err as { message: unknown }).message)
-          : "Erro ao criar checkout."
-    return NextResponse.json({ error: mensagem }, { status: 500 })
-  }
+  return NextResponse.json({ ok: true, id: pagamento.id })
 }

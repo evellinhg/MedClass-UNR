@@ -23,19 +23,6 @@ export async function registrarAtividadeHoje(): Promise<void> {
     .then(() => {})
 }
 
-export async function garantirPrimeiroDia(userId: string): Promise<void> {
-  const { count } = await supabase
-    .from("atividade_diaria_log")
-    .select("id", { count: "exact", head: true })
-    .eq("user_id", userId)
-
-  if (count === 0) {
-    await supabase
-      .from("atividade_diaria_log")
-      .upsert({ user_id: userId, dia: getPlataformaHoje() }, { onConflict: "user_id,dia", ignoreDuplicates: true })
-  }
-}
-
 export interface DiaAtividade {
   dia: string
   feito: boolean
@@ -46,17 +33,8 @@ export interface StreakInfo {
   dias: DiaAtividade[]
 }
 
-export async function getStreakAtual(userId: string): Promise<StreakInfo> {
+function calcularStreak(diasFeitos: Set<string>): StreakInfo {
   const hoje = getPlataformaHoje()
-
-  const { data: rows } = await supabase
-    .from("atividade_diaria_log")
-    .select("dia")
-    .eq("user_id", userId)
-    .order("dia", { ascending: false })
-    .limit(60)
-
-  const diasFeitos = new Set((rows ?? []).map((r) => r.dia as string))
 
   let streakAtual = 0
   let cursor = diasFeitos.has(hoje) ? hoje : diaAnterior(hoje)
@@ -72,4 +50,37 @@ export async function getStreakAtual(userId: string): Promise<StreakInfo> {
   }))
 
   return { streakAtual, dias }
+}
+
+async function buscarDiasFeitos(userId: string): Promise<Set<string>> {
+  const { data: rows } = await supabase
+    .from("atividade_diaria_log")
+    .select("dia")
+    .eq("user_id", userId)
+    .order("dia", { ascending: false })
+    .limit(60)
+
+  return new Set((rows ?? []).map((r) => r.dia as string))
+}
+
+export async function getStreakAtual(userId: string): Promise<StreakInfo> {
+  return calcularStreak(await buscarDiasFeitos(userId))
+}
+
+// Se a sequência estiver zerada (nunca treinou ou quebrou a sequência), o
+// dia 1 acende sozinho quando o aluno entra no dashboard -- convite pra ele
+// treinar hoje e continuar. Não dá dias de graça além do 1: com a sequência
+// já ativa, só treinar de verdade (registrarAtividadeHoje, chamado ao
+// concluir simulado/desafio/deck de flashcards) acende o próximo dia.
+export async function garantirStreakAtivo(userId: string): Promise<StreakInfo> {
+  const diasFeitos = await buscarDiasFeitos(userId)
+  const streak = calcularStreak(diasFeitos)
+  if (streak.streakAtual > 0) return streak
+
+  await supabase
+    .from("atividade_diaria_log")
+    .upsert({ user_id: userId, dia: getPlataformaHoje() }, { onConflict: "user_id,dia", ignoreDuplicates: true })
+
+  diasFeitos.add(getPlataformaHoje())
+  return calcularStreak(diasFeitos)
 }

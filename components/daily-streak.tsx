@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { ChevronRight, Flame } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { useLanguage } from "@/lib/i18n"
-import { garantirPrimeiroDia, getStreakAtual, type DiaAtividade } from "@/lib/atividade-diaria"
+import { garantirStreakAtivo, type DiaAtividade } from "@/lib/atividade-diaria"
 
 const COR_FOGO = "#F97316"
 const PASSO_REVELAR = 3
@@ -23,8 +23,7 @@ export function DailyStreak() {
         setLoading(false)
         return
       }
-      await garantirPrimeiroDia(data.user.id)
-      const info = await getStreakAtual(data.user.id)
+      const info = await garantirStreakAtivo(data.user.id)
       setStreakAtual(info.streakAtual)
       setDias(info.dias)
       setVisiveis(Math.min(VISIVEIS_INICIAL, info.dias.length))

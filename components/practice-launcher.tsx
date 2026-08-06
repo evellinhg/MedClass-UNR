@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react"
 import { Loader2, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { DIFFICULTIES } from "@/lib/quiz-config"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
-import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds } from "@/lib/questoes-cache"
 import { filtrarPoolGratis, FREE_QUESTOES_POR_MATERIA } from "@/lib/questoes-gratis"
@@ -39,7 +37,7 @@ const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
   const { t } = useLanguage()
   const [starting, setStarting] = useState(false)
-  const [dificuldade, setDificuldade] = useState("aleatorio")
+  const dificuldade = "aleatorio"
   const [selectedMaterias, setSelectedMaterias] = useState<string[]>([])
   const [filtroAno, setFiltroAno] = useState<AnoKey | null>(null)
   const [parcial, setParcial] = useState<ParcialKey | "">("")
@@ -166,36 +164,6 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           />
         ) : (
         <div className="space-y-4 py-2 max-h-[70vh] overflow-y-auto pr-1">
-          <div className="space-y-2">
-            <Label>{t.treinamentos.nivel}</Label>
-            <div className="flex flex-wrap gap-2">
-              {DIFFICULTIES.map((d) => {
-                const cor = getDifficultyColor(d.value)
-                const ativo = dificuldade === d.value
-                const isEspecifica = d.value !== "aleatorio"
-                return (
-                  <button
-                    key={d.value}
-                    onClick={() => setDificuldade(d.value)}
-                    className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                      isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(198,255,58,0.45)]"
-                    } ${
-                      ativo
-                        ? isEspecifica
-                          ? `${cor.activeBg} border-transparent text-white`
-                          : "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
-                        : isEspecifica
-                          ? `${cor.borderSoft} text-foreground hover:bg-accent`
-                          : "border border-input text-foreground hover:bg-accent"
-                    }`}
-                  >
-                    {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
-                    {t.treinamentos.dificuldadeLabel[d.value] ?? d.label}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
 
           <div className="space-y-2">
             <Label>{t.practiceLauncher.materiaLabelTodas}</Label>

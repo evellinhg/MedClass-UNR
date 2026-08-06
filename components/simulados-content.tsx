@@ -15,10 +15,8 @@ import {
 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { IconChip } from "@/components/ui/icon-chip"
-import { DIFFICULTIES } from "@/lib/quiz-config"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
-import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { filtrarPoolGratis } from "@/lib/questoes-gratis"
@@ -390,38 +388,6 @@ export function SimuladosContent() {
                       })}
                     </div>
                   )}
-                </div>
-
-                <div>
-                  <label className="mb-2 block text-sm font-medium text-foreground">{t.treinamentos.nivel}</label>
-                  <div className="flex flex-wrap gap-2">
-                    {DIFFICULTIES.map((d) => {
-                      const cor = getDifficultyColor(d.value)
-                      const ativo = dificuldade === d.value
-                      const isEspecifica = d.value !== "aleatorio"
-                      return (
-                        <button
-                          key={d.value}
-                          type="button"
-                          onClick={() => setDificuldade(d.value)}
-                          className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-all ${
-                            isEspecifica ? cor.hoverGlow : "hover:shadow-[0_0_18px_rgba(198,255,58,0.45)]"
-                          } ${
-                            ativo
-                              ? isEspecifica
-                                ? `${cor.activeBg} border-transparent text-white`
-                                : "bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]"
-                              : isEspecifica
-                                ? `${cor.borderSoft} text-foreground hover:bg-accent`
-                                : "border-input text-foreground hover:bg-accent"
-                          }`}
-                        >
-                          {isEspecifica && <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${ativo ? "bg-white" : cor.dot}`} />}
-                          {t.treinamentos.dificuldadeLabel[d.value] ?? d.label}
-                        </button>
-                      )
-                    })}
-                  </div>
                 </div>
 
                 <div>

@@ -101,7 +101,7 @@ interface ValidarAssinaturaParams {
 // realmente veio do Mercado Pago, não de alguém forjando um POST pra essa rota.
 export function validarAssinaturaWebhook({ xSignature, xRequestId, dataId }: ValidarAssinaturaParams): boolean {
   const secret = process.env.MERCADOPAGO_WEBHOOK_SECRET
-  if (!secret) return true
+  if (!secret) return false
   if (!xSignature || !xRequestId || !dataId) return false
 
   const partes = Object.fromEntries(

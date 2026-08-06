@@ -1,6 +1,6 @@
 # MedClass UNR — Resumo do Projeto
 
-_Última atualização: 31/07/2026 (sessão 4)_
+_Última atualização: 06/08/2026 (sessão 5)_
 
 ## A ideia
 
@@ -129,3 +129,18 @@ Identidade visual: verde neon (`#c6ff3a` / `#84cc16`) sobre fundo cinza-esverdea
 7. Vermelho de alerta (banner de conta grátis, "Precisa Melhorar") trocado para `#ff3b3b` neon. Opção de 60 questões adicionada em Treinamento Livre e Simulado.
 
 6. **Gotcha de dev descoberto**: reiniciar o `next dev` (Turbopack) enquanto o navegador tem o **service worker do PWA** (`sw.js`, cache `medclass-v1`) ativo pode causar `ChunkLoadError`/tela de erro mesmo depois de hard reload (`cmd+shift+r`) — o service worker serve chunks antigos do cache. Solução: `navigator.serviceWorker.getRegistrations()` → `unregister()` + `caches.delete()` via devtools/console antes de recarregar. Isso só afeta o ambiente de desenvolvimento local; não é um bug de produção.
+
+### Sessão de 2026-08-06 — auditoria de segurança, painel de pagamentos, streak, e regras do plano gratuito
+
+1. **Auditoria de segurança completa**: webhook do Mercado Pago corrigido pra falhar fechado se o secret não estiver configurado; Next.js atualizado 16.1.6 → 16.3.0 (3 vulnerabilidades altas do `npm audit`); removidos e-mails hardcoded de ~42 políticas de RLS, trocados por checagem de `profiles.role = 'admin'` (`docs/rls-remove-hardcoded-emails.sql`). **Dar/tirar admin agora é só mudar `profiles.role`** (painel Admin → Usuários), não precisa mais editar SQL nem `ADMIN_EMAILS`.
+2. **Bug crítico causado pela migração acima e corrigido no mesmo dia**: as políticas "Admins can view/update all profiles" (na própria tabela `profiles`) ficaram com uma subquery inline na própria `profiles`, causando recursão infinita (Postgres `42P17`) — quebrou leitura de praticamente todo conteúdo (questões, desafios clínicos, videoaulas, flashcards) pra qualquer usuário. Corrigido com uma função `security definer` (`is_admin()`), ver `docs/rls-fix-infinite-recursion.sql`. **Lição registrada em memória**: nunca fazer uma policy em `profiles` consultar `profiles` diretamente — sempre via função `security definer`.
+3. **Painel admin de Pagamentos** (`/admin/pagamentos`, novo item no menu): checkout do aluno agora pede nombre/apellido/e-mail/telefone antes de liberar o botão de pagar (salvos em `pagamentos_mercadopago`, status `pendente`); admin vê a lista e pode "Ativar acesso"/"Rejeitar" na hora, sem depender do aluno mandar comprovante por WhatsApp primeiro (esse passo virou reforço, não é mais o único caminho).
+4. **Atividade Diária (streak) corrigida**: o "dia 1 de graça" só era concedido uma vez na vida da conta; se a sequência quebrasse (pulou um dia), o widget ficava com tudo apagado pra sempre. Agora reacende o dia 1 sempre que a sequência está zerada ao entrar no dashboard (`garantirStreakAtivo` em `lib/atividade-diaria.ts`).
+5. **Visão Geral do admin (`/admin`) reescrita**: disparava ~16 queries paralelas ao Supabase; numa conexão de celular mais instável (relatado via PWA) parte delas nunca resolvia e a tela ficava vazia pra sempre, sem erro. Trocado por uma função no banco (`admin_overview_stats`, `docs/admin-overview-stats-rpc.sql`) que devolve tudo numa única chamada, mais um timeout de 15s com botão de "tentar de novo".
+6. **Regras do plano gratuito redesenhadas** (pedido explícito do usuário, substitui qualquer menção anterior a "60 questões"/"2 cartas por baralho"):
+   - **Perguntas** (treinamento livre + criar simulado): até **50 perguntas fixas por matéria**, sempre as mesmas pra **toda** conta gratuita (ordenação determinística por id, não é sorteio nem varia por usuário/quando a conta foi criada) — `lib/questoes-gratis.ts`.
+   - **Flashcards**: **1 baralho inteiro liberado por matéria** (o de menor `ordem`, igual pra todo mundo) — não mais "2 primeiras cartas de cada baralho". Baralhos bloqueados aparecem na grade com cadeado. `lib/flashcards-gratis.ts`.
+   - **Resumos**: aparecem todos na grade com cadeado (antes a aba inteira virava um único aviso "assine um plano", escondendo a lista).
+   - **Desafios clínicos**: já seguia a regra (1 caso por seção) — só ganhou o alerta de clique.
+   - **Clicar em qualquer item bloqueado** mostra `alert()` pedindo pra assinar um plano (`t.planRestricted.conteudoBloqueadoAlerta`), em vez de só ficar com `cursor-not-allowed` silencioso.
+   - `lib/plan-status.ts` perdeu o contador global `questoesUsed`/`questoesRemaining`/`FREE_QUESTOES_LIMIT` — o limite agora é sempre por conteúdo (pool fixo), nunca por quantidade de uso acumulada.

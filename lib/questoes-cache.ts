@@ -1,3 +1,5 @@
+import { supabase } from "@/lib/supabase"
+
 export interface QuestaoCacheada {
   id: string
   enunciado: string
@@ -34,6 +36,33 @@ export function setCachedQuestoesAtivas(data: QuestaoCacheada[]) {
 
 export function invalidateQuestoesCache() {
   cache.clear()
+}
+
+const PAGE_SIZE = 1000
+
+// O REST do Supabase corta em 1000 linhas por padrão -- sem paginar aqui,
+// qualquer matéria cujas questões caíssem fora das primeiras 1000 (ordem
+// não garantida numa query sem order()) simplesmente sumia do pool pra
+// todo mundo, plano pago ou grátis (bug real encontrado com "injuria": das
+// 1288 questões ativas, 0 apareciam nas primeiras 1000 retornadas).
+export async function buscarQuestoesAtivas(): Promise<QuestaoCacheada[]> {
+  const cached = getCachedQuestoesAtivas()
+  if (cached) return cached
+
+  const todas: QuestaoCacheada[] = []
+  for (let from = 0; ; from += PAGE_SIZE) {
+    const { data, error } = await supabase
+      .from("questoes")
+      .select("*")
+      .eq("ativo", true)
+      .range(from, from + PAGE_SIZE - 1)
+    if (error) break
+    todas.push(...((data as QuestaoCacheada[] | null) ?? []))
+    if (!data || data.length < PAGE_SIZE) break
+  }
+
+  setCachedQuestoesAtivas(todas)
+  return todas
 }
 
 export function filtrarPoolIds(

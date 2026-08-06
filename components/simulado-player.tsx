@@ -22,7 +22,7 @@ import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
 import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
-import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Textarea } from "@/components/ui/textarea"
@@ -71,15 +71,6 @@ export interface SimuladoConfig {
 type FeedbackTipo = "erro" | "duvida" | "sugestao"
 
 const FEEDBACK_TIPOS: FeedbackTipo[] = ["erro", "duvida", "sugestao"]
-
-async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
-  const cached = getCachedQuestoesAtivas()
-  if (cached) return cached
-  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
-  const pool = (data as QuestaoCacheada[] | null) ?? []
-  setCachedQuestoesAtivas(pool)
-  return pool
-}
 
 function formatElapsed(seconds: number) {
   const m = Math.floor(seconds / 60)

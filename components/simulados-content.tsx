@@ -20,7 +20,7 @@ import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type An
 import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
-import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { filtrarPoolGratis } from "@/lib/questoes-gratis"
 import { getPlanStatus } from "@/lib/plan-status"
 import { shuffle } from "@/lib/utils"
@@ -63,15 +63,6 @@ const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
 function temProgresso(s: Simulado) {
   return (s.progresso_index ?? 0) > 0 || (s.respostas ?? []).some((a) => a !== null)
-}
-
-async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
-  const cached = getCachedQuestoesAtivas()
-  if (cached) return cached
-  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
-  const pool = (data as QuestaoCacheada[] | null) ?? []
-  setCachedQuestoesAtivas(pool)
-  return pool
 }
 
 export function SimuladosContent() {

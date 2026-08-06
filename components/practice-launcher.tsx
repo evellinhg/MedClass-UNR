@@ -1,14 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { CheckCircle2, Loader2, Search, Timer } from "lucide-react"
+import { Loader2, Timer } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { DIFFICULTIES } from "@/lib/quiz-config"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO, PARCIAL_KEYS, parciaisDaMateria, type AnoKey, type ParcialKey } from "@/lib/unr-curriculum"
 import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
-import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds } from "@/lib/questoes-cache"
 import { filtrarPoolGratis, FREE_QUESTOES_POR_MATERIA } from "@/lib/questoes-gratis"
 import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
 import { trackEvent } from "@/lib/analytics"
@@ -36,15 +36,6 @@ interface PracticeLauncherProps {
 const QUANTITIES = [5, 10, 20, 30, 50, 60]
 const ALL_MATERIAS = ANO_KEYS.flatMap((ano) => MATERIA_KEYS_BY_ANO[ano])
 
-async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
-  const cached = getCachedQuestoesAtivas()
-  if (cached) return cached
-  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
-  const pool = (data as QuestaoCacheada[] | null) ?? []
-  setCachedQuestoesAtivas(pool)
-  return pool
-}
-
 export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLauncherProps) {
   const { t } = useLanguage()
   const [starting, setStarting] = useState(false)
@@ -55,8 +46,6 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   const [count, setCount] = useState(10)
   const [timerEnabled, setTimerEnabled] = useState(false)
   const [apenasIneditas, setApenasIneditas] = useState(true)
-  const [available, setAvailable] = useState<number | null>(null)
-  const [checking, setChecking] = useState(false)
   const [planStatus, setPlanStatus] = useState<PlanStatus | null>(null)
   const [planLoading, setPlanLoading] = useState(false)
 
@@ -84,7 +73,6 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       if (parcial && !disponiveis.has(parcial)) setParcial("")
       return next
     })
-    setAvailable(null)
   }
 
   const materiasFiltro = () =>
@@ -94,33 +82,6 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     selectedMaterias.length > 0
       ? PARCIAL_KEYS.filter((p) => selectedMaterias.some((m) => parciaisDaMateria(m).includes(p)))
       : PARCIAL_KEYS
-
-  const handleVerify = async () => {
-    setChecking(true)
-    const pool = await getQuestoesAtivasPool()
-    let ids = filtrarPoolIds(pool, {
-      materias: materiasFiltro(),
-      dificuldade,
-      parcial: parcial || undefined,
-    })
-    if (apenasIneditas) {
-      const { data: userData } = await supabase.auth.getUser()
-      if (userData.user) {
-        const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
-        ids = ids.filter((id) => !jaRespondidas.has(id))
-      }
-    }
-    if (planStatus && !planStatus.hasFullAccess) {
-      ids = filtrarPoolGratis(pool, ids)
-    }
-
-    setAvailable(ids.length)
-    setChecking(false)
-  }
-
-  useEffect(() => {
-    setAvailable(null)
-  }, [dificuldade, parcial, apenasIneditas])
 
   const handleStart = async () => {
     const materiasSelecionadas = materiasFiltro()
@@ -375,19 +336,6 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
               </div>
             </div>
             <Switch checked={timerEnabled} onCheckedChange={setTimerEnabled} />
-          </div>
-
-          <div className="flex items-center gap-2">
-            <Button type="button" variant="outline" size="sm" className="gap-1.5" onClick={handleVerify} disabled={checking}>
-              {checking ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Search className="h-3.5 w-3.5" />}
-              {t.practiceLauncher.verificar}
-            </Button>
-            {available !== null && (
-              <span className="flex items-center gap-1.5 text-xs font-medium text-success">
-                <CheckCircle2 className="h-3.5 w-3.5" />
-                {t.practiceLauncher.questoesDisponiveis(available)}
-              </span>
-            )}
           </div>
         </div>
         )}

@@ -15,18 +15,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { TrilhaAtivaContent } from "@/components/trilha-ativa-content"
 import type { CronogramaRotina, CronogramaTrilha } from "@/lib/cronograma-types"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
-import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { shuffle } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
-
-async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
-  const cached = getCachedQuestoesAtivas()
-  if (cached) return cached
-  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
-  const pool = (data as QuestaoCacheada[] | null) ?? []
-  setCachedQuestoesAtivas(pool)
-  return pool
-}
 
 const QUANTIDADES = [10, 20, 30, 50]
 

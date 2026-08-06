@@ -6,7 +6,7 @@ import { Loader2, Stethoscope } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { getAreaIcon } from "@/lib/area-icons"
 import { shuffle } from "@/lib/utils"
-import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { TrilhaPath, type TrilhaPathUnidade } from "@/components/trilha-path"
@@ -23,15 +23,6 @@ interface UnidadeRow {
 
 interface EtapaComDesafio extends CronogramaTrilhaEtapa {
   desafio_clinico: { titulo: string; icone: string } | null
-}
-
-async function getQuestoesAtivasPool(): Promise<QuestaoCacheada[]> {
-  const cached = getCachedQuestoesAtivas()
-  if (cached) return cached
-  const { data } = await supabase.from("questoes").select("*").eq("ativo", true)
-  const pool = (data as QuestaoCacheada[] | null) ?? []
-  setCachedQuestoesAtivas(pool)
-  return pool
 }
 
 export function TrilhaAtivaContent({ trilhaId, onSair }: { trilhaId: string; onSair: () => void }) {

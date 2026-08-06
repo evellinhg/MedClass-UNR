@@ -1,27 +1,19 @@
 -- Rode isso no SQL Editor do Supabase (projeto MedClass UNR).
--- Funções que alimentam o Ranking por matéria: pontuação calculada
--- exclusivamente a partir das questões respondidas dentro da matéria
--- filtrada (ou de todas, se materia_filtro for null).
---
--- Rodam com security definer porque precisam agregar dados de TODOS os
--- usuários (leaderboard), não só do chamador -- RLS de simulados/profiles é
--- por user_id e bloquearia isso numa function normal (security invoker).
---
--- simulados.respostas é jsonb (array com null nas posições não respondidas,
--- mesmo tamanho de questao_ids) -- por isso o pareamento usa
--- unnest(...) WITH ORDINALITY dos dois lados, casado pelo índice.
---
--- Exclusão de admin: a lista fixa de e-mails do fundador (por baixo) so
--- cobria essas 3 contas especificas -- qualquer outra conta promovida a
--- role='admin' pelo painel /admin/usuarios continuava aparecendo no
--- ranking. Adicionado tambem "coalesce(p.role, 'aluno') <> 'admin'" para
--- excluir por role de verdade (guarda contra role NULL = trata como aluno).
---
--- Exclusão de plano gratuito: contas no plano "gratis" nao entram no
--- ranking (regra de produto). "coalesce(p.plan, 'gratis') <> 'gratis'"
--- trata plan NULL como gratuito tambem (mesmo default usado em
--- lib/plan-status.ts).
+-- Dá ao próprio aluno controle sobre aparecer ou não no Ranking, em vez de
+-- depender só da lista fixa de e-mails de admin/teste excluídos em
+-- ranking-por-materia.sql (que não cobre contas de teste "normais" nem dá
+-- opção de privacidade pra alunos de verdade).
 
+alter table public.profiles
+  add column if not exists ranking_visivel boolean not null default true;
+
+-- A policy "Users can update their own profile" já existente cobre esse
+-- update (não é um campo sensível tipo role/plan que precisa de checagem
+-- extra) -- nenhuma policy nova necessária.
+
+-- Filtra por ranking_visivel nas duas funções do ranking. Recriadas por
+-- inteiro aqui (não dá pra "alter function" só a cláusula where de dentro
+-- de um SQL function body).
 create or replace function public.get_ranking_por_materia(materia_filtro text default null, limite int default 5)
 returns table (
   posicao bigint,
@@ -87,8 +79,6 @@ as $$
   limit limite;
 $$;
 
--- Posição de um usuário específico (mesmo fora do Top 5), reaproveitando a
--- mesma agregação/pontuação/desempate da função acima.
 create or replace function public.get_minha_posicao_ranking(materia_filtro text default null, alvo_user_id uuid default auth.uid())
 returns table (
   posicao bigint,
@@ -143,6 +133,7 @@ as $$
     where p.email not in ('leonardoac.alves@gmail.com', 'leonardoac.alves2@gmail.com', 'medclassunr@gmail.com', 'teste.desempenho@medclassunr.dev')
       and coalesce(p.role, 'aluno') <> 'admin'
       and coalesce(p.plan, 'gratis') <> 'gratis'
+      and p.ranking_visivel
   ),
   posicionado as (
     select

@@ -112,6 +112,8 @@ const pt = {
     comoPontuarTitulo: "Como pontuar",
     comoPontuarTexto:
       "+10 pontos por acerto, -3 por erro, +1 por questão respondida. A pontuação é calculada só com as questões da matéria selecionada acima.",
+    visibilidadeTitulo: "Aparecer no ranking",
+    visibilidadeDescricao: "Desative pra ficar de fora do ranking público. Você continua vendo sua própria posição.",
     carregando: "Carregando ranking...",
     vazio: "Ninguém pontuou nesta matéria ainda. Resolva algumas questões para aparecer aqui!",
     voce: "Você",
@@ -1195,6 +1197,8 @@ const es: typeof pt = {
     comoPontuarTitulo: "Cómo puntuar",
     comoPontuarTexto:
       "+10 puntos por acierto, -3 por error, +1 por pregunta respondida. El puntaje se calcula solo con las preguntas de la materia seleccionada arriba.",
+    visibilidadeTitulo: "Aparecer en el ranking",
+    visibilidadeDescricao: "Desactivá para quedar fuera del ranking público. Seguís viendo tu propia posición.",
     carregando: "Cargando ranking...",
     vazio: "Todavía nadie sumó puntos en esta materia. ¡Resolvé algunas preguntas para aparecer acá!",
     voce: "Vos",

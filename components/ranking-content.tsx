@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Switch } from "@/components/ui/switch"
 import { IconChip } from "@/components/ui/icon-chip"
 import { useLanguage } from "@/lib/i18n"
 import { ANO_KEYS, MATERIA_KEYS_BY_ANO } from "@/lib/unr-curriculum"
@@ -46,6 +47,8 @@ export function RankingContent() {
   const [minhaPosicao, setMinhaPosicao] = useState<MinhaPosicao | null>(null)
   const [currentUserId, setCurrentUserId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
+  const [rankingVisivel, setRankingVisivel] = useState(true)
+  const [salvandoVisibilidade, setSalvandoVisibilidade] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -55,10 +58,13 @@ export function RankingContent() {
     supabase.auth.getUser().then(async ({ data: userData }) => {
       const userId = userData.user?.id ?? null
 
-      const [{ data: rankingData }, posicaoResult] = await Promise.all([
+      const [{ data: rankingData }, posicaoResult, perfilResult] = await Promise.all([
         supabase.rpc("get_ranking_por_materia", { materia_filtro: materiaParam, limite: TOP_N }),
         userId
           ? supabase.rpc("get_minha_posicao_ranking", { materia_filtro: materiaParam, alvo_user_id: userId })
+          : Promise.resolve({ data: null }),
+        userId
+          ? supabase.from("profiles").select("ranking_visivel").eq("id", userId).maybeSingle()
           : Promise.resolve({ data: null }),
       ])
 
@@ -67,6 +73,7 @@ export function RankingContent() {
       setRows((rankingData as RankingRow[]) ?? [])
       const posicaoData = (posicaoResult.data as MinhaPosicao[] | null) ?? []
       setMinhaPosicao(posicaoData[0] ?? null)
+      setRankingVisivel((perfilResult.data as { ranking_visivel: boolean } | null)?.ranking_visivel ?? true)
       setLoading(false)
     })
 
@@ -74,6 +81,14 @@ export function RankingContent() {
       cancelled = true
     }
   }, [materiaFiltro])
+
+  const toggleRankingVisivel = async (visivel: boolean) => {
+    if (!currentUserId) return
+    setRankingVisivel(visivel)
+    setSalvandoVisibilidade(true)
+    await supabase.from("profiles").update({ ranking_visivel: visivel }).eq("id", currentUserId)
+    setSalvandoVisibilidade(false)
+  }
 
   const estouNoTop = currentUserId ? rows.some((r) => r.user_id === currentUserId) : false
 
@@ -182,6 +197,20 @@ export function RankingContent() {
           <p className="font-medium text-foreground">{t.ranking.comoPontuarTitulo}</p>
           <p className="mt-1">{t.ranking.comoPontuarTexto}</p>
         </Card>
+
+        {!loading && currentUserId && (
+          <Card className="flex items-center justify-between gap-3 border border-border bg-card p-4">
+            <div>
+              <p className="text-sm font-medium text-foreground">{t.ranking.visibilidadeTitulo}</p>
+              <p className="text-xs text-muted-foreground">{t.ranking.visibilidadeDescricao}</p>
+            </div>
+            <Switch
+              checked={rankingVisivel}
+              onCheckedChange={toggleRankingVisivel}
+              disabled={salvandoVisibilidade}
+            />
+          </Card>
+        )}
       </div>
 
       <div className="lg:border-l lg:border-border lg:pl-8">

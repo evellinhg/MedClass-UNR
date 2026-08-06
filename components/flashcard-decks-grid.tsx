@@ -301,7 +301,7 @@ export function FlashcardDecksGrid() {
           if (!porSubsecao.has(key)) porSubsecao.set(key, [])
           porSubsecao.get(key)!.push(deck)
         }
-        const subsections = Array.from(porSubsecao.entries())
+        let subsections = Array.from(porSubsecao.entries())
           .map(([subsecaoKey, subsecaoDecks]) => ({
             subsecaoKey,
             decks: subsecaoDecks,
@@ -309,9 +309,30 @@ export function FlashcardDecksGrid() {
           }))
           .sort((a, b) => (a.subsecaoKey === null ? -1 : b.subsecaoKey === null ? 1 : a.minOrdem - b.minOrdem))
 
+        // O baralho liberado do plano gratuito (se houver) sempre aparece
+        // primeiro dentro da matéria -- reordena a subseção que o contém
+        // pra frente e o próprio baralho pra frente dentro dela, mesmo que
+        // a ordem curricular normal (disciplina/subseção) o colocasse
+        // depois de dezenas de baralhos bloqueados.
+        if (liberados) {
+          const idxComLiberado = subsections.findIndex((s) => s.decks.some((d) => liberados.has(d.id)))
+          if (idxComLiberado > 0) {
+            const [secaoComLiberado] = subsections.splice(idxComLiberado, 1)
+            subsections = [secaoComLiberado, ...subsections]
+          }
+          if (idxComLiberado !== -1) {
+            subsections[0] = {
+              ...subsections[0],
+              decks: [...subsections[0].decks].sort(
+                (a, b) => Number(liberados.has(b.id)) - Number(liberados.has(a.id))
+              ),
+            }
+          }
+        }
+
         return { materiaKey, subsections }
       })
-  }, [decks])
+  }, [decks, liberados])
 
   const toggleSection = (materiaKey: string) =>
     setCollapsed((prev) => {

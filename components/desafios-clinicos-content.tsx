@@ -220,6 +220,8 @@ export function DesafiosClinicosContent() {
                           <div
                             key={desafio.id}
                             title={tooltip}
+                            role={bloqueioPlano ? "button" : undefined}
+                            onClick={bloqueioPlano ? () => alert(t.planRestricted.conteudoBloqueadoAlerta) : undefined}
                             className="relative cursor-not-allowed overflow-hidden rounded-lg border border-border bg-card opacity-60"
                           >
                             <div className="relative">

@@ -21,6 +21,8 @@ import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { filtrarPoolGratis } from "@/lib/questoes-gratis"
+import { getPlanStatus } from "@/lib/plan-status"
 import { shuffle } from "@/lib/utils"
 import { trackEvent } from "@/lib/analytics"
 import { Badge } from "@/components/ui/badge"
@@ -212,6 +214,11 @@ export function SimuladosContent() {
     if (apenasIneditas) {
       const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
       poolIds = poolIds.filter((id) => !jaRespondidas.has(id))
+    }
+
+    const planStatus = await getPlanStatus()
+    if (planStatus && !planStatus.hasFullAccess) {
+      poolIds = filtrarPoolGratis(activePool, poolIds)
     }
 
     if (poolIds.length < quantidade) {

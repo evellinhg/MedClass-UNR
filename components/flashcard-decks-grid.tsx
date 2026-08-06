@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2, Pencil, Plus } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, Loader2, Lock, Pencil, Plus } from "lucide-react"
 import { supabase, fetchAllFlashcardRefs } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -18,6 +18,8 @@ import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useLanguage } from "@/lib/i18n"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { FlashcardDeckEditDialog } from "@/components/flashcard-deck-edit-dialog"
+import { getPlanStatus } from "@/lib/plan-status"
+import { decksLiberadosGratis } from "@/lib/flashcards-gratis"
 
 interface DeckWithProgress extends FlashcardDeck {
   total: number
@@ -33,11 +35,13 @@ function DeckCard({
   t,
   isEditor,
   onEdit,
+  bloqueado,
 }: {
   deck: DeckWithProgress
   t: ReturnType<typeof useLanguage>["t"]
   isEditor?: boolean
   onEdit?: (deck: DeckWithProgress) => void
+  bloqueado?: boolean
 }) {
   const Icon = deck.disciplina_base ? getDisciplinaIcon(deck.disciplina_base) : getAreaIcon(deck.especialidade)
   const cor = deck.disciplina_base ? getDisciplinaColor(deck.disciplina_base) : getAreaColor(deck.especialidade ?? "")
@@ -46,57 +50,85 @@ function DeckCard({
   const disciplinaLabel =
     deck.disciplina_base && (t.cronograma.disciplinaBaseLabel[deck.disciplina_base] ?? deck.disciplina_base)
 
+  const conteudo = (
+    <Card
+      className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${cor.borderSoft} bg-card ${
+        bloqueado ? "opacity-60" : `${cor.hoverBorder} ${cor.hoverGlow}`
+      }`}
+    >
+      {isEditor && onEdit && (
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            onEdit(deck)
+          }}
+          aria-label="Editar baralho"
+          className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+        >
+          <Pencil className="h-4 w-4" />
+        </button>
+      )}
+      <div className="flex items-start justify-between">
+        <div
+          className="flex h-11 w-11 items-center justify-center rounded-full transition-transform group-hover:scale-105"
+          style={{ backgroundColor: `${deck.cor_hex}1a` }}
+        >
+          <Icon className="h-5 w-5" style={{ color: deck.cor_hex }} />
+        </div>
+        {bloqueado ? (
+          <Lock className="h-4 w-4 text-muted-foreground" />
+        ) : (
+          concluido && (
+            <Badge className="bg-emerald-500 text-[10px] text-white hover:bg-emerald-500">{t.flashcardsGrid.concluido}</Badge>
+          )
+        )}
+      </div>
+
+      <div className="min-w-0 flex-1">
+        {disciplinaLabel && (
+          <span className="text-[11px] font-medium uppercase tracking-wide" style={{ color: deck.cor_hex }}>
+            {disciplinaLabel}
+          </span>
+        )}
+        <h3 className="mt-0.5 text-sm font-semibold leading-snug text-foreground">{deck.titulo}</h3>
+        {deck.descricao && <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{deck.descricao}</p>}
+      </div>
+
+      <div className="space-y-1.5">
+        {bloqueado ? (
+          <p className="text-xs text-muted-foreground">{t.flashcardsGrid.bloqueadoTooltip}</p>
+        ) : (
+          <>
+            <div className="flex items-center justify-between text-xs text-muted-foreground">
+              <span>{deck.total} {t.flashcardsGrid.cartoes}</span>
+              <span>
+                {deck.respondidos}/{deck.total} {t.flashcardsGrid.respondidos}
+              </span>
+            </div>
+            <Progress value={pct} className="h-1.5" style={{ ["--progress-color" as string]: deck.cor_hex }} />
+          </>
+        )}
+      </div>
+    </Card>
+  )
+
+  if (bloqueado) {
+    return (
+      <button
+        type="button"
+        onClick={() => alert(t.planRestricted.conteudoBloqueadoAlerta)}
+        className="relative w-64 shrink-0 text-left sm:w-72"
+      >
+        {conteudo}
+      </button>
+    )
+  }
+
   return (
     <Link href={`/dashboard/materiais/flashcards/${deck.id}`} className="relative w-64 shrink-0 sm:w-72">
-      <Card
-        className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${cor.borderSoft} bg-card ${cor.hoverBorder} ${cor.hoverGlow}`}
-      >
-        {isEditor && onEdit && (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              onEdit(deck)
-            }}
-            aria-label="Editar baralho"
-            className="absolute right-3 top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
-          >
-            <Pencil className="h-4 w-4" />
-          </button>
-        )}
-        <div className="flex items-start justify-between">
-          <div
-            className="flex h-11 w-11 items-center justify-center rounded-full transition-transform group-hover:scale-105"
-            style={{ backgroundColor: `${deck.cor_hex}1a` }}
-          >
-            <Icon className="h-5 w-5" style={{ color: deck.cor_hex }} />
-          </div>
-          {concluido && (
-            <Badge className="bg-emerald-500 text-[10px] text-white hover:bg-emerald-500">{t.flashcardsGrid.concluido}</Badge>
-          )}
-        </div>
-
-        <div className="min-w-0 flex-1">
-          {disciplinaLabel && (
-            <span className="text-[11px] font-medium uppercase tracking-wide" style={{ color: deck.cor_hex }}>
-              {disciplinaLabel}
-            </span>
-          )}
-          <h3 className="mt-0.5 text-sm font-semibold leading-snug text-foreground">{deck.titulo}</h3>
-          {deck.descricao && <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{deck.descricao}</p>}
-        </div>
-
-        <div className="space-y-1.5">
-          <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span>{deck.total} {t.flashcardsGrid.cartoes}</span>
-            <span>
-              {deck.respondidos}/{deck.total} {t.flashcardsGrid.respondidos}
-            </span>
-          </div>
-          <Progress value={pct} className="h-1.5" style={{ ["--progress-color" as string]: deck.cor_hex }} />
-        </div>
-      </Card>
+      {conteudo}
     </Link>
   )
 }
@@ -106,11 +138,13 @@ function DeckRow({
   t,
   isEditor,
   onEdit,
+  liberados,
 }: {
   decks: DeckWithProgress[]
   t: ReturnType<typeof useLanguage>["t"]
   isEditor?: boolean
   onEdit?: (deck: DeckWithProgress) => void
+  liberados: Set<string> | null
 }) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -150,7 +184,14 @@ function DeckRow({
         className="-mx-1 flex gap-4 overflow-x-auto scroll-smooth px-1 pb-2"
       >
         {decks.map((deck) => (
-          <DeckCard key={deck.id} deck={deck} t={t} isEditor={isEditor} onEdit={onEdit} />
+          <DeckCard
+            key={deck.id}
+            deck={deck}
+            t={t}
+            isEditor={isEditor}
+            onEdit={onEdit}
+            bloqueado={!isEditor && !!liberados && !liberados.has(deck.id)}
+          />
         ))}
       </div>
       {canScrollRight && (
@@ -175,14 +216,16 @@ export function FlashcardDecksGrid() {
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [editingDeck, setEditingDeck] = useState<FlashcardDeck | null>(null)
+  const [liberados, setLiberados] = useState<Set<string> | null>(null)
 
   const load = async () => {
     const { data: userData } = await supabase.auth.getUser()
     const userId = userData.user?.id
 
-    const [{ data: decksData }, cards] = await Promise.all([
+    const [{ data: decksData }, cards, planStatus] = await Promise.all([
       supabase.from("materiais_flashcard_decks").select("*").eq("ativo", true).order("ordem"),
       fetchAllFlashcardRefs(),
+      getPlanStatus(),
     ])
     let respondidoIds = new Set<string>()
     if (userId) {
@@ -192,6 +235,10 @@ export function FlashcardDecksGrid() {
         .eq("user_id", userId)
       respondidoIds = new Set(((progressoData as { flashcard_id: string }[]) ?? []).map((p) => p.flashcard_id))
     }
+
+    setLiberados(
+      planStatus && !planStatus.hasFullAccess ? decksLiberadosGratis((decksData as FlashcardDeck[]) ?? []) : null
+    )
 
     const decksComProgresso = ((decksData as FlashcardDeck[]) ?? []).map((deck) => {
       const cardsDoDeck = cards.filter((c) => c.deck_id === deck.id)
@@ -361,7 +408,7 @@ export function FlashcardDecksGrid() {
                         </Badge>
                       </h3>
                     )}
-                    <DeckRow decks={decksDaSubsecao} t={t} isEditor={isEditor} onEdit={openEdit} />
+                    <DeckRow decks={decksDaSubsecao} t={t} isEditor={isEditor} onEdit={openEdit} liberados={liberados} />
                   </div>
                 ))}
               </div>

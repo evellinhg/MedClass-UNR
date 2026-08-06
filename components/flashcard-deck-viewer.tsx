@@ -15,8 +15,7 @@ import type { Flashcard, FlashcardDeck } from "@/lib/flashcards-types"
 import { trackEvent } from "@/lib/analytics"
 import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
 import { getPlanStatus } from "@/lib/plan-status"
-
-const FREE_CARTAS_POR_DECK = 2
+import { decksLiberadosGratis } from "@/lib/flashcards-gratis"
 
 const NIVEL_COLORS: Record<number, string> = {
   0: "#EF4444",
@@ -43,6 +42,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
   const [showConcluido, setShowConcluido] = useState(false)
   const [saving, setSaving] = useState(false)
   const [hasFullAccess, setHasFullAccess] = useState(true)
+  const [deckDesbloqueado, setDeckDesbloqueado] = useState(true)
 
   useEffect(() => {
     const load = async () => {
@@ -55,10 +55,24 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
         supabase.from("materiais_flashcards").select("*").eq("deck_id", deckId).order("ordem"),
         getPlanStatus(),
       ])
-      setHasFullAccess(planStatus?.hasFullAccess ?? true)
+      const temAcessoTotal = planStatus?.hasFullAccess ?? true
+      setHasFullAccess(temAcessoTotal)
+
+      const deckAtual = (deckData as FlashcardDeck) ?? null
+      if (!temAcessoTotal && deckAtual) {
+        const { data: irmaos } = await supabase
+          .from("materiais_flashcard_decks")
+          .select("id, materia, ordem")
+          .eq("materia", deckAtual.materia)
+          .eq("ativo", true)
+        const liberados = decksLiberadosGratis((irmaos as { id: string; materia: string | null; ordem: number }[]) ?? [])
+        setDeckDesbloqueado(liberados.has(deckId))
+      } else {
+        setDeckDesbloqueado(true)
+      }
 
       const cardsList = (cardsData as Flashcard[]) ?? []
-      setDeck((deckData as FlashcardDeck) ?? null)
+      setDeck(deckAtual)
       setCards(cardsList)
 
       if (uid && cardsList.length > 0) {
@@ -86,7 +100,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
 
   const respondidos = useMemo(() => cards.filter((c) => progressoMap[c.id] !== undefined).length, [cards, progressoMap])
   const currentCard = cards[currentIndex]
-  const limiteCartas = hasFullAccess ? cards.length : Math.min(FREE_CARTAS_POR_DECK, cards.length)
+  const limiteCartas = hasFullAccess || deckDesbloqueado ? cards.length : 0
   const cartaBloqueada = currentIndex >= limiteCartas
 
   const goTo = (index: number) => {
@@ -258,7 +272,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
               </div>
               <p className="text-base font-semibold text-foreground">Disponível apenas nos planos pagos</p>
               <p className="max-w-xs text-sm text-muted-foreground">
-                No plano gratuito você tem acesso às {FREE_CARTAS_POR_DECK} primeiras cartas de cada baralho.
+                No plano gratuito você tem acesso a 1 baralho por matéria. Este não é o baralho liberado.
               </p>
               <Button asChild size="sm" className="mt-1">
                 <Link href="/#pricing">Ver planos e continuar estudando</Link>

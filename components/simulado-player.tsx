@@ -222,18 +222,18 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
     getPlanStatus().then((status) => {
       if (!status) return
 
-      if (!status.hasFullAccess) {
-        const blocked = status.accessExpired || status.questoesRemaining <= 0
-        if (blocked) {
-          setBlockedStatus(status)
-          setPhase("blocked")
-          return
-        }
+      // O pool de perguntas já foi montado no momento em que o simulado/
+      // treino foi criado (respeitando o limite fixo por matéria do plano
+      // gratuito, se for o caso) -- aqui só bloqueia plano pago vencido;
+      // não reaplica nenhum limite de quantidade em cima do que já foi
+      // definido.
+      if (status.accessExpired) {
+        setBlockedStatus(status)
+        setPhase("blocked")
+        return
       }
 
-      const effectiveCount = status.hasFullAccess ? config.count : Math.min(config.count, status.questoesRemaining)
-
-      loadQuestions(effectiveCount, status.hasFullAccess)
+      loadQuestions(config.count, status.hasFullAccess)
     })
   }, [open, config])
 

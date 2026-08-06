@@ -9,7 +9,8 @@ import { getMateriaColor } from "@/lib/materia-colors"
 import { getDifficultyColor } from "@/lib/difficulty-colors"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { getCachedQuestoesAtivas, setCachedQuestoesAtivas, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
-import { getPlanStatus, FREE_QUESTOES_LIMIT, type PlanStatus } from "@/lib/plan-status"
+import { filtrarPoolGratis, FREE_QUESTOES_POR_MATERIA } from "@/lib/questoes-gratis"
+import { getPlanStatus, type PlanStatus } from "@/lib/plan-status"
 import { trackEvent } from "@/lib/analytics"
 import { shuffle } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -65,24 +66,16 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
     getPlanStatus().then((status) => {
       setPlanStatus(status)
       setPlanLoading(false)
-      if (status && !status.hasFullAccess) {
-        const cap = Math.min(10, status.questoesRemaining || 10)
-        setCount((c) => Math.min(c, cap || 1))
-      }
     })
   }, [open])
 
-  const isBlocked = !!planStatus && !planStatus.canPracticeIndividual
-  const restrictedPresets =
-    planStatus && !planStatus.hasFullAccess ? QUANTITIES.filter((q) => q <= planStatus.questoesRemaining) : null
-  const quantityOptions =
-    restrictedPresets === null
-      ? QUANTITIES
-      : restrictedPresets.length > 0
-        ? restrictedPresets
-        : planStatus && planStatus.questoesRemaining > 0
-          ? [planStatus.questoesRemaining]
-          : []
+  // No plano gratuito o limite não é mais um contador global -- é um pool
+  // fixo de até FREE_QUESTOES_POR_MATERIA perguntas por matéria (sempre as
+  // mesmas, iguais pra toda conta gratuita). Só o plano pago expirado
+  // bloqueia o lançador inteiro; o plano gratuito sempre pode tentar --
+  // "Verificar" e o próprio envio já mostram quando o pool fixo acabar.
+  const isBlocked = !!planStatus && planStatus.accessExpired
+  const quantityOptions = QUANTITIES
 
   const toggleMateria = (materia: string) => {
     setSelectedMaterias((prev) => {
@@ -117,6 +110,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
         ids = ids.filter((id) => !jaRespondidas.has(id))
       }
     }
+    if (planStatus && !planStatus.hasFullAccess) {
+      ids = filtrarPoolGratis(pool, ids)
+    }
 
     setAvailable(ids.length)
     setChecking(false)
@@ -144,6 +140,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
       if (apenasIneditas) {
         const jaRespondidas = await getQuestoesJaRespondidas(userData.user.id)
         poolIds = poolIds.filter((id) => !jaRespondidas.has(id))
+      }
+      if (planStatus && !planStatus.hasFullAccess) {
+        poolIds = filtrarPoolGratis(pool, poolIds)
       }
       questionIds = shuffle(poolIds).slice(0, count)
 
@@ -362,7 +361,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
             </div>
             {planStatus && !planStatus.hasFullAccess && (
               <p className="text-xs text-muted-foreground">
-                {t.practiceLauncher.questoesPlanoGratuito(planStatus.questoesRemaining, FREE_QUESTOES_LIMIT)}
+                {t.practiceLauncher.questoesPlanoGratuito(FREE_QUESTOES_POR_MATERIA)}
               </p>
             )}
           </div>

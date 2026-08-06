@@ -387,6 +387,7 @@ const pt = {
     verPlanos: "Ver planos disponíveis",
     materiaisTitulo: "Materiais é exclusivo dos planos pagos",
     materiaisDescricao: "Videoaulas, resumos e flashcards ficam disponíveis para quem assina o plano mensal ou trimestral. Escolha um plano para desbloquear.",
+    conteudoBloqueadoAlerta: "Este conteúdo é exclusivo dos planos pagos. Adquira um dos nossos planos para ter acesso total.",
   },
   materiais: {
     carregando: "Carregando...",
@@ -400,6 +401,8 @@ const pt = {
     carregando: "Carregando...",
     vazio: "Nenhum resumo disponível no momento.",
     secoes: "seções",
+    bloqueado: "Bloqueado",
+    bloqueadoTooltip: "Disponível apenas nos planos pagos",
   },
   videoaulasGrid: {
     carregando: "Carregando...",
@@ -428,6 +431,7 @@ const pt = {
     cartoes: "cartões",
     respondidos: "respondidos",
     semCategoria: "Outros",
+    bloqueadoTooltip: "Disponível apenas nos planos pagos",
   },
   desempenhoHistorico: {
     carregando: "Carregando histórico...",
@@ -960,8 +964,8 @@ const pt = {
     planExpiradoDesc: "Para continuar treinando e seguir rumo à sua aprovação, escolha um dos nossos planos disponíveis.",
     limiteDesc: "O plano gratuito permite até 10 questões individuais. Assine um plano para praticar sem limites.",
     materiaLabelTodas: "Matéria (nenhuma selecionada = todas)",
-    questoesPlanoGratuito: (remaining: number, limit: number) =>
-      `Plano gratuito: ${remaining} de ${limit} questões individuais restantes.`,
+    questoesPlanoGratuito: (limit: number) =>
+      `Plano gratuito: até ${limit} questões fixas por matéria (as mesmas para todas as contas gratuitas).`,
     cronometro: "Cronômetro",
     cronometroDesc: "Mostra o tempo decorrido durante o treino",
     verificar: "Verificar",
@@ -1464,6 +1468,7 @@ const es: typeof pt = {
     verPlanos: "Ver planes disponibles",
     materiaisTitulo: "Materiales es exclusivo de los planes pagos",
     materiaisDescricao: "Videoclases, resúmenes y flashcards están disponibles para quienes se suscriben al plan mensual o trimestral. Elegí un plan para desbloquear.",
+    conteudoBloqueadoAlerta: "Este contenido es exclusivo de los planes pagos. Adquirí uno de nuestros planes para tener acceso total.",
   },
   materiais: {
     carregando: "Cargando...",
@@ -1477,6 +1482,8 @@ const es: typeof pt = {
     carregando: "Cargando...",
     vazio: "No hay ningún resumen disponible por el momento.",
     secoes: "secciones",
+    bloqueado: "Bloqueado",
+    bloqueadoTooltip: "Disponible solo en los planes pagos",
   },
   videoaulasGrid: {
     carregando: "Cargando...",
@@ -1505,6 +1512,7 @@ const es: typeof pt = {
     cartoes: "tarjetas",
     respondidos: "respondidas",
     semCategoria: "Otros",
+    bloqueadoTooltip: "Disponible solo en los planes pagos",
   },
   desempenhoHistorico: {
     carregando: "Cargando historial...",
@@ -2037,8 +2045,8 @@ const es: typeof pt = {
     planExpiradoDesc: "Para seguir entrenando y avanzar hacia tu aprobación, elegí uno de nuestros planes disponibles.",
     limiteDesc: "El plan gratuito permite hasta 10 preguntas individuales. Suscribite a un plan para practicar sin límites.",
     materiaLabelTodas: "Materia (ninguna seleccionada = todas)",
-    questoesPlanoGratuito: (remaining: number, limit: number) =>
-      `Plan gratuito: ${remaining} de ${limit} preguntas individuales restantes.`,
+    questoesPlanoGratuito: (limit: number) =>
+      `Plan gratuito: hasta ${limit} preguntas fijas por materia (las mismas para todas las cuentas gratuitas).`,
     cronometro: "Cronómetro",
     cronometroDesc: "Muestra el tiempo transcurrido durante el entrenamiento",
     verificar: "Verificar",

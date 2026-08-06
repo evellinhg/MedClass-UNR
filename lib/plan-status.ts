@@ -1,8 +1,6 @@
 import { supabase } from "@/lib/supabase"
 import { isAdminEmail } from "@/lib/admin-config"
 
-export const FREE_QUESTOES_LIMIT = 60
-
 export type UserRole = "admin" | "aluno" | "colaborador"
 
 export interface PlanStatus {
@@ -18,17 +16,18 @@ export interface PlanStatus {
   hasFullAccess: boolean
   accessExpiresAt: string | null
   accessExpired: boolean
-  questoesUsed: number
-  questoesRemaining: number
   canAccessMateriais: boolean
   canStartSimulado: boolean
   canPracticeIndividual: boolean
 }
 
-// Plano gratuito nunca expira por tempo: fica valendo indefinidamente até o
-// aluno esgotar as 60 questões vitalícias (simulado + prática avulsa somadas)
-// ou até assinar um plano pago. `accessExpired` é so para planos PAGOS cuja
-// data de expiração (access_expires_at) já passou.
+// Plano gratuito nunca expira por tempo: fica valendo indefinidamente. O
+// limite não é mais um contador global de perguntas usadas -- é um pool
+// fixo de conteúdo por matéria (ver lib/questoes-gratis.ts e
+// lib/flashcards-gratis.ts), então start/practice ficam sempre liberados
+// pra plano gratuito; quem bloqueia é o próprio pool de conteúdo ficando
+// vazio. `accessExpired` é só pra planos PAGOS cuja data de expiração
+// (access_expires_at) já passou.
 export async function getPlanStatus(): Promise<PlanStatus | null> {
   const { data: sessionData } = await supabase.auth.getSession()
   const user = sessionData.session?.user
@@ -36,7 +35,7 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("plan, full_name, avatar_url, nota_corte, trial_questoes_used, role, access_expires_at")
+    .select("plan, full_name, avatar_url, nota_corte, role, access_expires_at")
     .eq("id", user.id)
     .maybeSingle()
 
@@ -51,9 +50,6 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
   const isPaid = plan === "mensal" || plan === "trimestral" || plan === "vip"
   const hasFullAccess = !accessExpired && (admin || isColaborador || isPaid)
 
-  const questoesUsed = profile?.trial_questoes_used ?? 0
-  const questoesRemaining = Math.max(0, FREE_QUESTOES_LIMIT - questoesUsed)
-
   return {
     userId: user.id,
     email: user.email ?? null,
@@ -67,11 +63,9 @@ export async function getPlanStatus(): Promise<PlanStatus | null> {
     hasFullAccess,
     accessExpiresAt,
     accessExpired,
-    questoesUsed,
-    questoesRemaining,
     canAccessMateriais: hasFullAccess,
-    canStartSimulado: !accessExpired && (hasFullAccess || questoesRemaining > 0),
-    canPracticeIndividual: !accessExpired && (hasFullAccess || questoesRemaining > 0),
+    canStartSimulado: !accessExpired,
+    canPracticeIndividual: !accessExpired,
   }
 }
 

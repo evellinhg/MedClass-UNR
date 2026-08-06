@@ -630,7 +630,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                 </div>
               ) : (
                 <>
-                  <HighlightableText text={current.enunciado} />
+                  <HighlightableText key={current.id} text={current.enunciado} />
 
                   <div className="space-y-2">
                     {current.opcoes.map((opcao, idx) => {

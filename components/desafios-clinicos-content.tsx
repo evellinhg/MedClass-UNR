@@ -238,11 +238,15 @@ export function DesafiosClinicosContent() {
                         )
                       }
 
+                      const gratuito = !isEditor && !hasFullAccess
+
                       return (
                         <Link
                           key={desafio.id}
                           href={`/dashboard/desafios-clinicos/${desafio.id}`}
-                          className="group relative overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-primary/50"
+                          className={`group relative overflow-hidden rounded-lg border bg-card transition-colors hover:border-primary/50 ${
+                            gratuito ? "border-2 border-primary shadow-[0_0_0_3px_rgba(198,255,58,0.15)]" : "border-border"
+                          }`}
                         >
                           {isEditor && (
                             <button
@@ -254,7 +258,14 @@ export function DesafiosClinicosContent() {
                               <Pencil className="h-4 w-4" />
                             </button>
                           )}
-                          <DesafioCover desafio={desafio} />
+                          <div className="relative">
+                            <DesafioCover desafio={desafio} />
+                            {gratuito && (
+                              <Badge className="absolute right-2 top-2 bg-primary text-[10px] text-primary-foreground hover:bg-primary">
+                                {t.desafiosClinicos.gratis}
+                              </Badge>
+                            )}
+                          </div>
                           <div className="space-y-1 p-4">
                             <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
                             <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">

@@ -36,12 +36,14 @@ function DeckCard({
   isEditor,
   onEdit,
   bloqueado,
+  gratuito,
 }: {
   deck: DeckWithProgress
   t: ReturnType<typeof useLanguage>["t"]
   isEditor?: boolean
   onEdit?: (deck: DeckWithProgress) => void
   bloqueado?: boolean
+  gratuito?: boolean
 }) {
   const Icon = deck.disciplina_base ? getDisciplinaIcon(deck.disciplina_base) : getAreaIcon(deck.especialidade)
   const cor = deck.disciplina_base ? getDisciplinaColor(deck.disciplina_base) : getAreaColor(deck.especialidade ?? "")
@@ -52,9 +54,9 @@ function DeckCard({
 
   const conteudo = (
     <Card
-      className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${cor.borderSoft} bg-card ${
-        bloqueado ? "opacity-60" : `${cor.hoverBorder} ${cor.hoverGlow}`
-      }`}
+      className={`group flex h-full flex-col gap-3 rounded-[24px] border p-5 transition-all ${
+        gratuito ? "border-2 border-primary shadow-[0_0_0_3px_rgba(198,255,58,0.15)]" : cor.borderSoft
+      } bg-card ${bloqueado ? "opacity-60" : `${cor.hoverBorder} ${cor.hoverGlow}`}`}
     >
       {isEditor && onEdit && (
         <button
@@ -79,6 +81,8 @@ function DeckCard({
         </div>
         {bloqueado ? (
           <Lock className="h-4 w-4 text-muted-foreground" />
+        ) : gratuito ? (
+          <Badge className="bg-primary text-[10px] text-primary-foreground hover:bg-primary">{t.flashcardsGrid.gratis}</Badge>
         ) : (
           concluido && (
             <Badge className="bg-emerald-500 text-[10px] text-white hover:bg-emerald-500">{t.flashcardsGrid.concluido}</Badge>
@@ -191,6 +195,7 @@ function DeckRow({
             isEditor={isEditor}
             onEdit={onEdit}
             bloqueado={!isEditor && !!liberados && !liberados.has(deck.id)}
+            gratuito={!isEditor && !!liberados && liberados.has(deck.id)}
           />
         ))}
       </div>

@@ -361,6 +361,7 @@ const pt = {
       "Escolha um desafio clínico para estudar: um caso de paciente seguido de perguntas de anamnese, exame físico, exames complementares, diagnóstico e conduta terapêutica.",
     nenhumDesafioDisponivel: "Nenhum desafio clínico disponível no momento.",
     estudarCta: "Estudar",
+    gratis: "Grátis",
     bloqueado: "Bloqueado",
     casoBloqueadoCard: (tituloAnterior: string) => `Complete "${tituloAnterior}" com 60% de acerto para desbloquear`,
     casoBloqueadoTitulo: "Caso bloqueado",
@@ -434,6 +435,7 @@ const pt = {
     respondidos: "respondidos",
     semCategoria: "Outros",
     bloqueadoTooltip: "Disponível apenas nos planos pagos",
+    gratis: "Grátis",
   },
   desempenhoHistorico: {
     carregando: "Carregando histórico...",
@@ -1444,6 +1446,7 @@ const es: typeof pt = {
       "Elegí un desafío clínico para estudiar: un caso de paciente seguido de preguntas de anamnesis, examen físico, exámenes complementarios, diagnóstico y conducta terapéutica.",
     nenhumDesafioDisponivel: "No hay ningún desafío clínico disponible por el momento.",
     estudarCta: "Estudiar",
+    gratis: "Gratis",
     bloqueado: "Bloqueado",
     casoBloqueadoCard: (tituloAnterior: string) => `Completá "${tituloAnterior}" con 60% de acierto para desbloquear`,
     casoBloqueadoTitulo: "Caso bloqueado",
@@ -1517,6 +1520,7 @@ const es: typeof pt = {
     respondidos: "respondidas",
     semCategoria: "Otros",
     bloqueadoTooltip: "Disponible solo en los planes pagos",
+    gratis: "Gratis",
   },
   desempenhoHistorico: {
     carregando: "Cargando historial...",

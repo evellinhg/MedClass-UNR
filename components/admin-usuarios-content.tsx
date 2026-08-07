@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { AlertTriangle, Check, KeyRound, Loader2, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
+import { AlertTriangle, Check, KeyRound, Loader2, Plus, Trash2, RotateCcw, ClipboardList, MessageSquareWarning, Coins, Swords } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
@@ -716,6 +716,139 @@ function UsersTable({
   )
 }
 
+// Pré-cadastro de plano: o admin já configura o plano pra um e-mail antes
+// mesmo da pessoa criar conta. Se a conta já existir, aplica na hora; se
+// não, fica pendente em Pagamentos e é aplicado sozinho no primeiro login
+// dessa pessoa com esse e-mail (mesmo mecanismo de "reivindicar" que já
+// existe pra pagamentos reais do Mercado Pago).
+function CreateAccountDialog({
+  open,
+  onOpenChange,
+  onCreated,
+}: {
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  onCreated: () => void
+}) {
+  const [nome, setNome] = useState("")
+  const [apellido, setApellido] = useState("")
+  const [email, setEmail] = useState("")
+  const [telefone, setTelefone] = useState("")
+  const [plano, setPlano] = useState("mensal")
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [resultado, setResultado] = useState<{ planoAplicado: boolean } | null>(null)
+
+  const resetForm = () => {
+    setNome("")
+    setApellido("")
+    setEmail("")
+    setTelefone("")
+    setPlano("mensal")
+    setError(null)
+    setResultado(null)
+  }
+
+  const handleClose = (v: boolean) => {
+    if (!v) resetForm()
+    onOpenChange(v)
+  }
+
+  const handleSubmit = async () => {
+    if (!nome.trim() || !email.trim()) return
+    setSaving(true)
+    setError(null)
+    const res = await authedFetch("/api/admin/pagamentos", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email.trim(),
+        nomeCompleto: `${nome.trim()} ${apellido.trim()}`.trim(),
+        telefone: telefone.trim() || undefined,
+        plano,
+      }),
+    })
+    setSaving(false)
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}))
+      setError(body.error ?? "Erro ao criar pré-cadastro.")
+      return
+    }
+    const body = await res.json()
+    setResultado({ planoAplicado: !!body.planoAplicado })
+    onCreated()
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={handleClose}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle>Criar conta / pré-cadastrar plano</DialogTitle>
+        </DialogHeader>
+
+        {resultado ? (
+          <div className="space-y-3 py-2">
+            <div className="flex items-start gap-2 rounded-lg border border-primary/30 bg-primary/5 p-3 text-sm text-foreground">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <span>
+                {resultado.planoAplicado
+                  ? "Conta já existia — o plano foi aplicado agora mesmo."
+                  : "Pré-cadastro criado. Assim que essa pessoa criar a conta (ou logar) com esse e-mail, o plano é aplicado automaticamente."}
+              </span>
+            </div>
+            <DialogFooter>
+              <Button onClick={() => handleClose(false)}>Fechar</Button>
+            </DialogFooter>
+          </div>
+        ) : (
+          <>
+            <div className="space-y-3 py-2">
+              <div className="grid grid-cols-2 gap-2">
+                <div className="space-y-1.5">
+                  <Label htmlFor="ca-nome">Nome</Label>
+                  <Input id="ca-nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="ca-apellido">Apellido</Label>
+                  <Input id="ca-apellido" value={apellido} onChange={(e) => setApellido(e.target.value)} />
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="ca-email">E-mail</Label>
+                <Input id="ca-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="ca-telefone">Telefone (opcional)</Label>
+                <Input id="ca-telefone" type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+              </div>
+              <div className="space-y-1.5">
+                <Label>Plano</Label>
+                <Select value={plano} onValueChange={setPlano}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="mensal">Mensal</SelectItem>
+                    <SelectItem value="trimestral">Trimestral</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              {error && <p className="text-xs text-destructive">{error}</p>}
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => handleClose(false)}>
+                Cancelar
+              </Button>
+              <Button variant="gradient" onClick={handleSubmit} disabled={saving || !nome.trim() || !email.trim()}>
+                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Criar"}
+              </Button>
+            </DialogFooter>
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
+  )
+}
+
 export function AdminUsuariosContent() {
   const [users, setUsers] = useState<AdminUser[]>([])
   const [loading, setLoading] = useState(true)
@@ -728,6 +861,7 @@ export function AdminUsuariosContent() {
   const [bulkDeleting, setBulkDeleting] = useState(false)
   const [confirmingBulkDelete, setConfirmingBulkDelete] = useState(false)
   const [bulkError, setBulkError] = useState<string | null>(null)
+  const [createOpen, setCreateOpen] = useState(false)
 
   const load = async () => {
     setLoading(true)
@@ -819,6 +953,10 @@ export function AdminUsuariosContent() {
   return (
     <>
       <div className="flex flex-wrap items-center justify-end gap-3">
+        <Button size="sm" variant="gradient" className="mr-auto gap-1.5" onClick={() => setCreateOpen(true)}>
+          <Plus className="h-4 w-4" />
+          Criar conta
+        </Button>
         <Select value={planFilter} onValueChange={setPlanFilter}>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Plano" />
@@ -930,6 +1068,7 @@ export function AdminUsuariosContent() {
       </Tabs>
 
       <UserDetailDialog user={selected} open={dialogOpen} onOpenChange={setDialogOpen} onSaved={load} />
+      <CreateAccountDialog open={createOpen} onOpenChange={setCreateOpen} onCreated={load} />
     </>
   )
 }

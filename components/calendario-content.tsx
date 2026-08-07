@@ -329,6 +329,19 @@ export function CalendarioContent() {
         </div>
       </div>
 
+      {/* Aviso: criar eventos próprios + ativar notificações */}
+      <div className="relative mb-5 overflow-hidden rounded-2xl border border-[#c6ff3a]/40 bg-[#c6ff3a]/[0.04] p-5 shadow-[0_0_24px_-8px_rgba(198,255,58,0.35)]">
+        <div className="flex items-start gap-3">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#c6ff3a]/40 bg-[#c6ff3a]/10 text-[#bef264]">
+            <Bell className="h-5 w-5" />
+          </div>
+          <div className="space-y-1">
+            <p className="font-semibold text-foreground">{t.calendario.avisoTitulo}</p>
+            <p className="text-sm text-muted-foreground">{t.calendario.avisoTexto}</p>
+          </div>
+        </div>
+      </div>
+
       {/* Legenda de tipos */}
       <div className="mb-4 flex flex-wrap gap-x-5 gap-y-2">
         {(Object.keys(TIPO_COR) as CalendarioEventoTipo[]).map((tipo) => (

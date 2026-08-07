@@ -252,6 +252,9 @@ const pt = {
   calendario: {
     titulo: "Calendário de Estudos",
     subtitulo: "Datas importantes: inscrições, provas e eventos da comunidade.",
+    avisoTitulo: "Personalize seu calendário",
+    avisoTexto:
+      "Você pode criar seus próprios eventos e clicar no sininho de qualquer evento — criado por você ou já existente no calendário — para ativar as notificações.",
     localeData: "pt-BR",
     carregando: "Carregando calendário...",
     visaoMes: "Mês",
@@ -1337,6 +1340,9 @@ const es: typeof pt = {
   calendario: {
     titulo: "Calendario de Estudio",
     subtitulo: "Fechas importantes: inscripciones, exámenes y eventos de la comunidad.",
+    avisoTitulo: "Personalizá tu calendario",
+    avisoTexto:
+      "Podés crear tus propios eventos y hacer clic en la campanita de cualquier evento — creado por vos o ya existente en el calendario — para activar las notificaciones.",
     localeData: "es-AR",
     carregando: "Cargando calendario...",
     visaoMes: "Mes",

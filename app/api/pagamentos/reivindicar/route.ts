@@ -21,6 +21,16 @@ export async function POST(request: NextRequest) {
   const email = userData.user.email
   const supabase = createAdminClient()
 
+  const { data: perfil } = await supabase
+    .from("profiles")
+    .select("status")
+    .eq("id", userData.user.id)
+    .maybeSingle()
+
+  if (perfil?.status === "pending") {
+    await supabase.from("profiles").update({ status: "active" }).eq("id", userData.user.id)
+  }
+
   const { data: pagamento } = await supabase
     .from("pagamentos_mercadopago")
     .select("id, plano")

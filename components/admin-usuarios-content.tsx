@@ -716,11 +716,11 @@ function UsersTable({
   )
 }
 
-// Pré-cadastro de plano: o admin já configura o plano pra um e-mail antes
-// mesmo da pessoa criar conta. Se a conta já existir, aplica na hora; se
-// não, fica pendente em Pagamentos e é aplicado sozinho no primeiro login
-// dessa pessoa com esse e-mail (mesmo mecanismo de "reivindicar" que já
-// existe pra pagamentos reais do Mercado Pago).
+// Pré-cadastro: cria a conta de verdade (auth.users + profiles) já com
+// papel/plano/expiração configurados e status "pending" -- aparece na aba
+// Pendentes imediatamente. Quando a pessoa logar pela primeira vez com
+// esse e-mail (Google ou e-mail/senha), o Supabase reconhece a conta já
+// existente com esses valores em vez de criar uma nova com os padrões.
 function CreateAccountDialog({
   open,
   onOpenChange,
@@ -731,22 +731,20 @@ function CreateAccountDialog({
   onCreated: () => void
 }) {
   const [nome, setNome] = useState("")
-  const [apellido, setApellido] = useState("")
   const [email, setEmail] = useState("")
-  const [telefone, setTelefone] = useState("")
   const [plano, setPlano] = useState("mensal")
+  const [role, setRole] = useState("aluno")
+  const [accessExpiresAt, setAccessExpiresAt] = useState(calcularExpiracaoPlano("mensal"))
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [resultado, setResultado] = useState<{ planoAplicado: boolean } | null>(null)
 
   const resetForm = () => {
     setNome("")
-    setApellido("")
     setEmail("")
-    setTelefone("")
     setPlano("mensal")
+    setRole("aluno")
+    setAccessExpiresAt(calcularExpiracaoPlano("mensal"))
     setError(null)
-    setResultado(null)
   }
 
   const handleClose = (v: boolean) => {
@@ -758,92 +756,99 @@ function CreateAccountDialog({
     if (!nome.trim() || !email.trim()) return
     setSaving(true)
     setError(null)
-    const res = await authedFetch("/api/admin/pagamentos", {
+    const res = await authedFetch("/api/admin/users", {
       method: "POST",
       body: JSON.stringify({
         email: email.trim(),
-        nomeCompleto: `${nome.trim()} ${apellido.trim()}`.trim(),
-        telefone: telefone.trim() || undefined,
-        plano,
+        full_name: nome.trim(),
+        plan: plano,
+        role,
+        access_expires_at: accessExpiresAt ? new Date(accessExpiresAt).toISOString() : null,
       }),
     })
     setSaving(false)
     if (!res.ok) {
       const body = await res.json().catch(() => ({}))
-      setError(body.error ?? "Erro ao criar pré-cadastro.")
+      setError(body.error ?? "Erro ao criar conta.")
       return
     }
-    const body = await res.json()
-    setResultado({ planoAplicado: !!body.planoAplicado })
     onCreated()
+    handleClose(false)
   }
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Criar conta / pré-cadastrar plano</DialogTitle>
+          <DialogTitle>Criar conta</DialogTitle>
         </DialogHeader>
 
-        {resultado ? (
-          <div className="space-y-3 py-2">
-            <div className="flex items-start gap-2 rounded-lg border border-primary/30 bg-primary/5 p-3 text-sm text-foreground">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <span>
-                {resultado.planoAplicado
-                  ? "Conta já existia — o plano foi aplicado agora mesmo."
-                  : "Pré-cadastro criado. Assim que essa pessoa criar a conta (ou logar) com esse e-mail, o plano é aplicado automaticamente."}
-              </span>
-            </div>
-            <DialogFooter>
-              <Button onClick={() => handleClose(false)}>Fechar</Button>
-            </DialogFooter>
+        <div className="space-y-3 py-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="ca-nome">Nome completo</Label>
+            <Input id="ca-nome" value={nome} onChange={(e) => setNome(e.target.value)} />
           </div>
-        ) : (
-          <>
-            <div className="space-y-3 py-2">
-              <div className="grid grid-cols-2 gap-2">
-                <div className="space-y-1.5">
-                  <Label htmlFor="ca-nome">Nome</Label>
-                  <Input id="ca-nome" value={nome} onChange={(e) => setNome(e.target.value)} />
-                </div>
-                <div className="space-y-1.5">
-                  <Label htmlFor="ca-apellido">Apellido</Label>
-                  <Input id="ca-apellido" value={apellido} onChange={(e) => setApellido(e.target.value)} />
-                </div>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="ca-email">E-mail</Label>
-                <Input id="ca-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="ca-telefone">Telefone (opcional)</Label>
-                <Input id="ca-telefone" type="tel" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
-              </div>
-              <div className="space-y-1.5">
-                <Label>Plano</Label>
-                <Select value={plano} onValueChange={setPlano}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="mensal">Mensal</SelectItem>
-                    <SelectItem value="trimestral">Trimestral</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              {error && <p className="text-xs text-destructive">{error}</p>}
-            </div>
-            <DialogFooter>
-              <Button variant="outline" onClick={() => handleClose(false)}>
-                Cancelar
-              </Button>
-              <Button variant="gradient" onClick={handleSubmit} disabled={saving || !nome.trim() || !email.trim()}>
-                {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Criar"}
-              </Button>
-            </DialogFooter>
-          </>
-        )}
+          <div className="space-y-1.5">
+            <Label htmlFor="ca-email">E-mail</Label>
+            <Input id="ca-email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+          </div>
+          <div className="space-y-1.5">
+            <Label>Plano</Label>
+            <Select
+              value={plano}
+              onValueChange={(v) => {
+                setPlano(v)
+                if (v === "vip") setAccessExpiresAt("")
+                else if (v === "mensal" || v === "trimestral") setAccessExpiresAt(calcularExpiracaoPlano(v))
+              }}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="gratis">Gratuito (teste 24h)</SelectItem>
+                <SelectItem value="mensal">Mensal</SelectItem>
+                <SelectItem value="trimestral">Trimestral</SelectItem>
+                <SelectItem value="vip">VIP (sem expiração)</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-1.5">
+            <Label>Papel da conta</Label>
+            <Select value={role} onValueChange={setRole}>
+              <SelectTrigger className="w-full">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="aluno">Aluno</SelectItem>
+                <SelectItem value="colaborador">Colaborador</SelectItem>
+                <SelectItem value="admin">Admin</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-1.5">
+            <Label>Data de expiração do acesso</Label>
+            <Input
+              type="datetime-local"
+              value={accessExpiresAt}
+              onChange={(e) => setAccessExpiresAt(e.target.value)}
+              disabled={plano === "vip"}
+            />
+            <p className="text-xs text-muted-foreground">
+              Preenchida automaticamente pro plano escolhido (30/90 dias) — pode ajustar livremente. Deixe em branco
+              pra não expirar. VIP nunca expira.
+            </p>
+          </div>
+          {error && <p className="text-xs text-destructive">{error}</p>}
+        </div>
+        <DialogFooter>
+          <Button variant="outline" onClick={() => handleClose(false)}>
+            Cancelar
+          </Button>
+          <Button variant="gradient" onClick={handleSubmit} disabled={saving || !nome.trim() || !email.trim()}>
+            {saving ? <Loader2 className="h-4 w-4 animate-spin" /> : "Criar"}
+          </Button>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   )

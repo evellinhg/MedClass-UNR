@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState, type MouseEvent } from "react"
+import { useEffect, useRef, useState, type MouseEvent } from "react"
 import { Highlighter } from "lucide-react"
 
 interface Props {
@@ -24,34 +24,49 @@ const CORES = [
 export function HighlightText({ text, className }: Props) {
   const ref = useRef<HTMLParagraphElement>(null)
   const [corAtiva, setCorAtiva] = useState(CORES[0].valor)
+  const corAtivaRef = useRef(corAtiva)
+  corAtivaRef.current = corAtiva
 
-  const aplicarSelecao = () => {
-    const selection = window.getSelection()
-    if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
-    const range = selection.getRangeAt(0)
-    if (!ref.current || !ref.current.contains(range.commonAncestorContainer)) return
-    if (range.toString().trim() === "") return
+  // No celular a seleção de texto é feita arrastando as alças nativas do
+  // navegador -- o toque final quase sempre acontece na alça (UI nativa,
+  // fora do nosso DOM), então mouseup/touchend no parágrafo não são
+  // confiáveis. selectionchange no document dispara em qualquer dispositivo;
+  // aplicamos com um debounce pra só marcar quando a seleção parar de mudar.
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout> | null = null
 
-    try {
-      const span = document.createElement("span")
-      span.style.backgroundColor = corAtiva
-      span.style.color = "#1f2937"
-      span.style.borderRadius = "3px"
-      span.style.padding = "0 1px"
-      span.className = "cursor-pointer"
-      range.surroundContents(span)
-      selection.removeAllRanges()
-    } catch {
-      // Seleção cruzando um trecho já marcado — ignora, tenta de novo com um trecho menor
+    const aplicarSelecao = () => {
+      const selection = window.getSelection()
+      if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
+      const range = selection.getRangeAt(0)
+      if (!ref.current || !ref.current.contains(range.commonAncestorContainer)) return
+      if (range.toString().trim() === "") return
+
+      try {
+        const span = document.createElement("span")
+        span.style.backgroundColor = corAtivaRef.current
+        span.style.color = "#1f2937"
+        span.style.borderRadius = "3px"
+        span.style.padding = "0 1px"
+        span.className = "cursor-pointer"
+        range.surroundContents(span)
+        selection.removeAllRanges()
+      } catch {
+        // Seleção cruzando um trecho já marcado — ignora, tenta de novo com um trecho menor
+      }
     }
-  }
 
-  const handleMouseUp = () => aplicarSelecao()
+    const onSelectionChange = () => {
+      if (timeout) clearTimeout(timeout)
+      timeout = setTimeout(aplicarSelecao, 350)
+    }
 
-  // No celular a seleção é feita com o dedo, não com mouseup -- sem isso o
-  // marcador simplesmente não reagia no app. A seleção só fica definitiva
-  // um instante depois do touchend, daí o setTimeout.
-  const handleTouchEnd = () => setTimeout(aplicarSelecao, 0)
+    document.addEventListener("selectionchange", onSelectionChange)
+    return () => {
+      document.removeEventListener("selectionchange", onSelectionChange)
+      if (timeout) clearTimeout(timeout)
+    }
+  }, [])
 
   const handleClick = (e: MouseEvent<HTMLParagraphElement>) => {
     const target = e.target as HTMLElement
@@ -83,7 +98,12 @@ export function HighlightText({ text, className }: Props) {
           ))}
         </div>
       </div>
-      <p ref={ref} onMouseUp={handleMouseUp} onTouchEnd={handleTouchEnd} onClick={handleClick} className={className}>
+      <p
+        ref={ref}
+        onClick={handleClick}
+        className={className}
+        style={{ WebkitUserSelect: "text", WebkitTouchCallout: "default" } as React.CSSProperties}
+      >
         {text}
       </p>
     </div>

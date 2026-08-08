@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Highlighter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -28,32 +28,49 @@ export function HighlightableText({ text }: { text: string }) {
   const [active, setActive] = useState(false)
   const [ranges, setRanges] = useState<TextRange[]>([])
 
-  const aplicarSelecao = () => {
-    if (!active || !containerRef.current) return
-    const selection = window.getSelection()
-    if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
-    const range = selection.getRangeAt(0)
-    if (!containerRef.current.contains(range.commonAncestorContainer)) return
+  // No celular a seleção é feita com o dedo, arrastando as alças nativas do
+  // navegador -- mouseup/touchend na maioria das vezes nem chegam a disparar
+  // no nosso elemento, porque quem recebe o toque final é a alça da seleção
+  // (UI nativa do navegador, fora do nosso DOM). selectionchange no
+  // document é o único evento que dispara de forma confiável em qualquer
+  // dispositivo, então observamos ele e aplicamos a marcação com um pequeno
+  // debounce (só quando a seleção parar de mudar por 350ms, senão dispararia
+  // a cada milímetro de arraste).
+  useEffect(() => {
+    if (!active) return
+    let timeout: ReturnType<typeof setTimeout> | null = null
 
-    const preRange = document.createRange()
-    preRange.selectNodeContents(containerRef.current)
-    preRange.setEnd(range.startContainer, range.startOffset)
-    const start = preRange.toString().length
-    const end = start + range.toString().length
+    const aplicarSelecao = () => {
+      const container = containerRef.current
+      if (!container) return
+      const selection = window.getSelection()
+      if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
+      const range = selection.getRangeAt(0)
+      if (!container.contains(range.commonAncestorContainer)) return
 
-    if (end > start) {
-      setRanges((prev) => mergeRanges([...prev, { start, end }]))
+      const preRange = document.createRange()
+      preRange.selectNodeContents(container)
+      preRange.setEnd(range.startContainer, range.startOffset)
+      const start = preRange.toString().length
+      const end = start + range.toString().length
+
+      if (end > start) {
+        setRanges((prev) => mergeRanges([...prev, { start, end }]))
+      }
+      selection.removeAllRanges()
     }
-    selection.removeAllRanges()
-  }
 
-  const handleMouseUp = () => aplicarSelecao()
+    const onSelectionChange = () => {
+      if (timeout) clearTimeout(timeout)
+      timeout = setTimeout(aplicarSelecao, 350)
+    }
 
-  // No celular a seleção é feita com o dedo (toque + arraste), não com
-  // mouseup -- sem isso o marca-texto simplesmente não reagia no app.
-  // A seleção do navegador só fica definitiva um instante depois do
-  // touchend, por isso o setTimeout antes de ler window.getSelection().
-  const handleTouchEnd = () => setTimeout(aplicarSelecao, 0)
+    document.addEventListener("selectionchange", onSelectionChange)
+    return () => {
+      document.removeEventListener("selectionchange", onSelectionChange)
+      if (timeout) clearTimeout(timeout)
+    }
+  }, [active])
 
   const segments: { text: string; highlighted: boolean }[] = []
   let cursor = 0
@@ -85,11 +102,10 @@ export function HighlightableText({ text }: { text: string }) {
       </div>
       <p
         ref={containerRef}
-        onMouseUp={handleMouseUp}
-        onTouchEnd={handleTouchEnd}
         className={`select-text rounded-lg p-3 text-base font-medium leading-relaxed text-foreground sm:text-[17px] ${
           active ? "cursor-text bg-accent/30 ring-1 ring-primary/40" : ""
         }`}
+        style={{ WebkitUserSelect: "text", WebkitTouchCallout: "default" }}
       >
         {segments.map((seg, i) =>
           seg.highlighted ? (

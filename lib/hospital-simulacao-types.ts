@@ -14,12 +14,14 @@ export interface HospitalSimulacaoVitalDelta {
   fc: number
   pas: number
   spo2: number
+  fr: number
 }
 
 export interface HospitalSimulacaoOpcao {
   texto: string
   impacto_bp: number
   deltas_vitais: HospitalSimulacaoVitalDelta
+  alvos_vitais: HospitalSimulacaoVitalDelta
   feedback: string
   proxima_etapa: string
 }
@@ -34,16 +36,12 @@ export interface HospitalSimulacaoEtapa {
 
 export interface HospitalSimulacaoDesenlaceInfo {
   titulo: string
-  descricao_detalhada: string
-  bp_faixa: [number, number]
-  sucesso: boolean
-  camino?: number
+  mensagem: string
+  vivo: boolean
+  miocardio_salvavel: number
 }
 
-export interface HospitalSimulacaoDesenlaces {
-  desenlace_obito: HospitalSimulacaoDesenlaceInfo
-  desenlace_vivo: Record<string, HospitalSimulacaoDesenlaceInfo>
-}
+export type HospitalSimulacaoDesenlaces = Record<string, HospitalSimulacaoDesenlaceInfo>
 
 export interface HospitalSimulacaoRegrasGlobais {
   custo_tempo_segundo: HospitalSimulacaoVitalDelta
@@ -52,6 +50,8 @@ export interface HospitalSimulacaoRegrasGlobais {
     spo2_menor_que: number
     fc_maior_que: number
     fc_menor_que: number
+    fr_maior_que: number
+    fr_menor_que: number
     bp_menor_ou_igual_a: number
   }
 }
@@ -68,6 +68,7 @@ export interface HospitalSimulacaoConteudo {
 }
 
 export const HOSPITAL_SIMULACAO_ETAPA_INICIAL = "triagem"
+export const HOSPITAL_SIMULACAO_ETAPA_FIM = "fim"
 
 export interface SimuladorResultado {
   caso: string

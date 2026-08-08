@@ -7,8 +7,8 @@ import { Clock, Heart, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
-import type { HospitalSimulacaoCaso } from "@/lib/hospital-simulacao-types"
-import { CASO1_VITAIS_DELTAS, VITAIS_BASE, clampVitais } from "@/lib/hospital-simulacao-caso1-vitais"
+import type { HospitalSimulacaoCaso, HospitalSimulacaoDesenlaceInfo } from "@/lib/hospital-simulacao-types"
+import { HOSPITAL_SIMULACAO_ETAPA_INICIAL } from "@/lib/hospital-simulacao-types"
 import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
 
 interface HospitalSimulacaoJogoProps {
@@ -16,66 +16,72 @@ interface HospitalSimulacaoJogoProps {
 }
 
 interface RespostaHistorico {
-  etapa: number
+  etapa: string
   letra: string
   impacto_bp: number
 }
 
+const TOTAL_ETAPAS_REFERENCIA = 19
+
+function clampVital(v: number, min: number, max: number) {
+  return Math.max(min, Math.min(max, v))
+}
+
 export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   const conteudo = caso.conteudo!
-  const [etapaIndex, setEtapaIndex] = useState(0)
+  const { regras_globais: regras } = conteudo
+
+  const [etapaId, setEtapaId] = useState(HOSPITAL_SIMULACAO_ETAPA_INICIAL)
   const [bp, setBp] = useState(conteudo.puntos_biologicos_iniciales)
-  const [vitais, setVitais] = useState(VITAIS_BASE)
+  const [vitais, setVitais] = useState({ fc: conteudo.vitais_base.fc, pas: conteudo.vitais_base.pas, spo2: conteudo.vitais_base.spo2 })
   const [historico, setHistorico] = useState<RespostaHistorico[]>([])
   const [letraEscolhida, setLetraEscolhida] = useState<string | null>(null)
-  const [obito, setObito] = useState(false)
+  const [desfecho, setDesfecho] = useState<{ info: HospitalSimulacaoDesenlaceInfo; falecido: boolean } | null>(null)
   const [salvando, setSalvando] = useState(false)
   const [salvo, setSalvo] = useState(false)
   const [segundosNaEtapa, setSegundosNaEtapa] = useState(0)
 
-  const etapa = conteudo.etapas[etapaIndex]
-  const finalizado = obito || etapaIndex >= conteudo.etapas.length
+  const etapa = conteudo.etapas[etapaId]
+  const finalizado = !!desfecho
 
   // Enquanto o aluno delibera (sem responder ainda), o quadro do paciente
-  // continua se deteriorando levemente a cada segundo -- tempo de decisao
-  // tem custo clinico real, igual numa guardia de verdade. Reseta a cada
-  // etapa nova; para assim que a alternativa e escolhida.
+  // continua se deteriorando -- tempo de decisao tem custo clinico real,
+  // igual numa guardia de verdade. Reseta a cada etapa nova; para assim que
+  // a alternativa e escolhida. Os coeficientes vem do proprio conteudo do
+  // caso (regras_globais.custo_tempo_segundo), nao sao fixos no codigo.
   useEffect(() => {
     if (finalizado || letraEscolhida) return
     const intervalo = setInterval(() => {
       setSegundosNaEtapa((s) => s + 1)
-      setVitais((v) => clampVitais({ fc: v.fc + 0.6, pas: v.pas - 0.5, spo2: v.spo2 - 0.08 }))
+      setVitais((v) => ({
+        fc: clampVital(v.fc + regras.custo_tempo_segundo.fc, 30, 180),
+        pas: clampVital(v.pas + regras.custo_tempo_segundo.pas, 40, 180),
+        spo2: clampVital(v.spo2 + regras.custo_tempo_segundo.spo2, 60, 100),
+      }))
     }, 1000)
     return () => clearInterval(intervalo)
-  }, [finalizado, letraEscolhida, etapaIndex])
+  }, [finalizado, letraEscolhida, etapaId, regras.custo_tempo_segundo])
 
   useEffect(() => {
     setSegundosNaEtapa(0)
-  }, [etapaIndex])
+  }, [etapaId])
 
-  // ST elevado enquanto o quadro nao foi resolvido/estabilizado -- some
-  // gradualmente conforme o BP se recupera acima de 85 (reperfusao/melhora).
   const stElevacao = Math.max(0, Math.min(1, (85 - bp) / 85))
-  const critico = vitais.pas < 80 || vitais.spo2 < 90 || vitais.fc > 130 || vitais.fc < 45 || bp <= 30
+  const g = regras.gatilho_alarme_critico
+  const critico =
+    vitais.pas < g.pas_menor_que || vitais.spo2 < g.spo2_menor_que || vitais.fc > g.fc_maior_que || vitais.fc < g.fc_menor_que || bp <= g.bp_menor_ou_igual_a
 
-  const desenlace = useMemo(() => {
-    if (!finalizado) return null
-    if (bp <= 0) return conteudo.desenlaces_finales.camino_4
-    if (bp <= 49) return conteudo.desenlaces_finales.camino_3
-    if (bp <= 84) return conteudo.desenlaces_finales.camino_2
-    return conteudo.desenlaces_finales.camino_1
-  }, [finalizado, bp, conteudo.desenlaces_finales])
-
-  const salvarTentativa = async (bpFinal: number, historicoFinal: RespostaHistorico[], desenlaceTitulo: string) => {
+  const salvarTentativa = async (bpFinal: number, historicoFinal: RespostaHistorico[], info: HospitalSimulacaoDesenlaceInfo, falecido: boolean) => {
     setSalvando(true)
     const { data: userData } = await supabase.auth.getUser()
     if (userData.user) {
       await supabase.from("hospital_simulacao_tentativas").insert({
         user_id: userData.user.id,
         caso_id: caso.id,
-        desenlace: desenlaceTitulo,
+        desenlace: info.titulo,
+        camino: info.camino ?? null,
         bp_final: bpFinal,
-        falecido: bpFinal <= 0,
+        falecido,
         dificuldade: 1,
         registro: historicoFinal,
         finalizado_em: new Date().toISOString(),
@@ -83,6 +89,24 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     }
     setSalvando(false)
     setSalvo(true)
+  }
+
+  const resolverDesfecho = (proximaEtapa: string, bpAtual: number, historicoFinal: RespostaHistorico[]) => {
+    if (proximaEtapa === "desenlace_obito") {
+      const info = conteudo.desenlaces_finales.desenlace_obito
+      setDesfecho({ info, falecido: true })
+      salvarTentativa(bpAtual, historicoFinal, info, true)
+      return true
+    }
+    if (proximaEtapa === "desenlace_vivo") {
+      const opcoes = Object.values(conteudo.desenlaces_finales.desenlace_vivo)
+      const info =
+        opcoes.find((o) => bpAtual >= o.bp_faixa[0] && bpAtual <= o.bp_faixa[1]) ?? opcoes[opcoes.length - 1]
+      setDesfecho({ info, falecido: false })
+      salvarTentativa(bpAtual, historicoFinal, info, false)
+      return true
+    }
+    return false
   }
 
   const escolher = (letra: string) => {
@@ -94,44 +118,29 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     if (!letraEscolhida) return
     const opcao = etapa.opciones[letraEscolhida]
     const novoBp = Math.max(0, Math.min(100, bp + opcao.impacto_bp))
-    const novoHistorico = [...historico, { etapa: etapa.numero, letra: letraEscolhida, impacto_bp: opcao.impacto_bp }]
+    const novoHistorico = [...historico, { etapa: etapaId, letra: letraEscolhida, impacto_bp: opcao.impacto_bp }]
     setHistorico(novoHistorico)
     setBp(novoBp)
-
-    const delta = CASO1_VITAIS_DELTAS[etapa.numero]?.[letraEscolhida] ?? { fc: 0, pas: 0, spo2: 0 }
-    const novosVitais = clampVitais({
-      fc: vitais.fc + delta.fc,
-      pas: vitais.pas + delta.pas,
-      spo2: vitais.spo2 + delta.spo2,
-    })
-    setVitais(novosVitais)
+    setVitais((v) => ({
+      fc: clampVital(v.fc + opcao.deltas_vitais.fc, 30, 180),
+      pas: clampVital(v.pas + opcao.deltas_vitais.pas, 40, 180),
+      spo2: clampVital(v.spo2 + opcao.deltas_vitais.spo2, 60, 100),
+    }))
     setLetraEscolhida(null)
 
-    if (novoBp <= 0) {
-      setObito(true)
-      salvarTentativa(novoBp, novoHistorico, conteudo.desenlaces_finales.camino_4.titulo)
-      return
-    }
-
-    const proximoIndex = etapaIndex + 1
-    setEtapaIndex(proximoIndex)
-    if (proximoIndex >= conteudo.etapas.length) {
-      const rango = novoBp > 85 ? "camino_1" : novoBp >= 50 ? "camino_2" : "camino_3"
-      salvarTentativa(novoBp, novoHistorico, conteudo.desenlaces_finales[rango].titulo)
-    }
+    if (resolverDesfecho(opcao.proxima_etapa, novoBp, novoHistorico)) return
+    setEtapaId(opcao.proxima_etapa)
   }
 
-  if (finalizado && desenlace) {
+  const progresso = useMemo(() => Math.min(100, Math.round((etapa.numero / TOTAL_ETAPAS_REFERENCIA) * 100)), [etapa.numero])
+
+  if (finalizado && desfecho) {
     return (
       <Card className="flex flex-col items-center gap-4 rounded-[24px] border border-border bg-card p-8 text-center sm:p-10">
-        {bp <= 0 ? (
-          <Skull className="h-12 w-12 text-red-500" />
-        ) : (
-          <Heart className="h-12 w-12 text-primary" />
-        )}
+        {desfecho.falecido ? <Skull className="h-12 w-12 text-red-500" /> : <Heart className="h-12 w-12 text-primary" />}
         <div>
-          <p className="text-xl font-bold text-foreground">{desenlace.titulo}</p>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{desenlace.descripcion}</p>
+          <p className="text-xl font-bold text-foreground">{desfecho.info.titulo}</p>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{desfecho.info.descricao_detalhada}</p>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm">
           <p className="text-xs text-muted-foreground">Pontuação Biológica final</p>
@@ -161,7 +170,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
 
       <div className="flex items-center justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          Etapa {etapa.numero}/{conteudo.etapas.length} · {etapa.fase}
+          {etapa.fase} · {etapa.titulo} ({progresso}%)
         </p>
         <div className="flex items-center gap-2">
           {!letraEscolhida && (
@@ -187,7 +196,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={etapa.numero}
+          key={etapaId}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}

@@ -10,33 +10,64 @@ export interface HospitalSimulacaoCaso {
   created_at: string
 }
 
+export interface HospitalSimulacaoVitalDelta {
+  fc: number
+  pas: number
+  spo2: number
+}
+
 export interface HospitalSimulacaoOpcao {
   texto: string
   impacto_bp: number
+  deltas_vitais: HospitalSimulacaoVitalDelta
   feedback: string
+  proxima_etapa: string
 }
 
 export interface HospitalSimulacaoEtapa {
   numero: number
   fase: string
+  titulo: string
   descripcion_clinica: string
   opciones: Record<string, HospitalSimulacaoOpcao>
 }
 
-export interface HospitalSimulacaoDesenlace {
-  rango: string
+export interface HospitalSimulacaoDesenlaceInfo {
   titulo: string
-  descripcion: string
+  descricao_detalhada: string
+  bp_faixa: [number, number]
+  sucesso: boolean
+  camino?: number
+}
+
+export interface HospitalSimulacaoDesenlaces {
+  desenlace_obito: HospitalSimulacaoDesenlaceInfo
+  desenlace_vivo: Record<string, HospitalSimulacaoDesenlaceInfo>
+}
+
+export interface HospitalSimulacaoRegrasGlobais {
+  custo_tempo_segundo: HospitalSimulacaoVitalDelta
+  gatilho_alarme_critico: {
+    pas_menor_que: number
+    spo2_menor_que: number
+    fc_maior_que: number
+    fc_menor_que: number
+    bp_menor_ou_igual_a: number
+  }
 }
 
 export interface HospitalSimulacaoConteudo {
-  caso_id: number
+  caso_id: string
   titulo: string
-  descripcion_general: string
+  descricao_general: string
   puntos_biologicos_iniciales: number
-  etapas: HospitalSimulacaoEtapa[]
-  desenlaces_finales: Record<string, HospitalSimulacaoDesenlace>
+  vitais_base: HospitalSimulacaoVitalDelta & { st_inicial: number }
+  regras_globais: HospitalSimulacaoRegrasGlobais
+  etapas: Record<string, HospitalSimulacaoEtapa>
+  desenlaces_finales: HospitalSimulacaoDesenlaces
 }
+
+export const HOSPITAL_SIMULACAO_ETAPA_INICIAL = "triagem"
 
 export interface SimuladorResultado {
   caso: string

@@ -1,9 +1,9 @@
 "use client"
 
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Heart, Skull } from "lucide-react"
+import { Clock, Heart, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
@@ -31,9 +31,27 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   const [obito, setObito] = useState(false)
   const [salvando, setSalvando] = useState(false)
   const [salvo, setSalvo] = useState(false)
+  const [segundosNaEtapa, setSegundosNaEtapa] = useState(0)
 
   const etapa = conteudo.etapas[etapaIndex]
   const finalizado = obito || etapaIndex >= conteudo.etapas.length
+
+  // Enquanto o aluno delibera (sem responder ainda), o quadro do paciente
+  // continua se deteriorando levemente a cada segundo -- tempo de decisao
+  // tem custo clinico real, igual numa guardia de verdade. Reseta a cada
+  // etapa nova; para assim que a alternativa e escolhida.
+  useEffect(() => {
+    if (finalizado || letraEscolhida) return
+    const intervalo = setInterval(() => {
+      setSegundosNaEtapa((s) => s + 1)
+      setVitais((v) => clampVitais({ fc: v.fc + 0.6, pas: v.pas - 0.5, spo2: v.spo2 - 0.08 }))
+    }, 1000)
+    return () => clearInterval(intervalo)
+  }, [finalizado, letraEscolhida, etapaIndex])
+
+  useEffect(() => {
+    setSegundosNaEtapa(0)
+  }, [etapaIndex])
 
   // ST elevado enquanto o quadro nao foi resolvido/estabilizado -- some
   // gradualmente conforme o BP se recupera acima de 85 (reperfusao/melhora).
@@ -141,17 +159,30 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
         critico={critico}
       />
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Etapa {etapa.numero}/{conteudo.etapas.length} · {etapa.fase}
         </p>
-        <span
-          className={`rounded-full px-3 py-1 text-xs font-bold ${
-            bp > 70 ? "bg-emerald-500/15 text-emerald-500" : bp > 40 ? "bg-amber-500/15 text-amber-500" : "bg-red-500/15 text-red-500"
-          }`}
-        >
-          BP {bp}/100
-        </span>
+        <div className="flex items-center gap-2">
+          {!letraEscolhida && (
+            <span
+              className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold tabular-nums ${
+                segundosNaEtapa > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
+              }`}
+              title="Tempo decidindo -- o paciente segue descompensando enquanto você delibera"
+            >
+              <Clock className="h-3 w-3" />
+              {Math.floor(segundosNaEtapa / 60)}:{String(segundosNaEtapa % 60).padStart(2, "0")}
+            </span>
+          )}
+          <span
+            className={`rounded-full px-3 py-1 text-xs font-bold ${
+              bp > 70 ? "bg-emerald-500/15 text-emerald-500" : bp > 40 ? "bg-amber-500/15 text-amber-500" : "bg-red-500/15 text-red-500"
+            }`}
+          >
+            BP {bp}/100
+          </span>
+        </div>
       </div>
 
       <AnimatePresence mode="wait">

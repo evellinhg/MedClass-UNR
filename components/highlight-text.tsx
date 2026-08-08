@@ -25,7 +25,7 @@ export function HighlightText({ text, className }: Props) {
   const ref = useRef<HTMLParagraphElement>(null)
   const [corAtiva, setCorAtiva] = useState(CORES[0].valor)
 
-  const handleMouseUp = () => {
+  const aplicarSelecao = () => {
     const selection = window.getSelection()
     if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
     const range = selection.getRangeAt(0)
@@ -45,6 +45,13 @@ export function HighlightText({ text, className }: Props) {
       // Seleção cruzando um trecho já marcado — ignora, tenta de novo com um trecho menor
     }
   }
+
+  const handleMouseUp = () => aplicarSelecao()
+
+  // No celular a seleção é feita com o dedo, não com mouseup -- sem isso o
+  // marcador simplesmente não reagia no app. A seleção só fica definitiva
+  // um instante depois do touchend, daí o setTimeout.
+  const handleTouchEnd = () => setTimeout(aplicarSelecao, 0)
 
   const handleClick = (e: MouseEvent<HTMLParagraphElement>) => {
     const target = e.target as HTMLElement
@@ -76,7 +83,7 @@ export function HighlightText({ text, className }: Props) {
           ))}
         </div>
       </div>
-      <p ref={ref} onMouseUp={handleMouseUp} onClick={handleClick} className={className}>
+      <p ref={ref} onMouseUp={handleMouseUp} onTouchEnd={handleTouchEnd} onClick={handleClick} className={className}>
         {text}
       </p>
     </div>

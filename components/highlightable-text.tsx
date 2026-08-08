@@ -28,7 +28,7 @@ export function HighlightableText({ text }: { text: string }) {
   const [active, setActive] = useState(false)
   const [ranges, setRanges] = useState<TextRange[]>([])
 
-  const handleMouseUp = () => {
+  const aplicarSelecao = () => {
     if (!active || !containerRef.current) return
     const selection = window.getSelection()
     if (!selection || selection.isCollapsed || selection.rangeCount === 0) return
@@ -46,6 +46,14 @@ export function HighlightableText({ text }: { text: string }) {
     }
     selection.removeAllRanges()
   }
+
+  const handleMouseUp = () => aplicarSelecao()
+
+  // No celular a seleção é feita com o dedo (toque + arraste), não com
+  // mouseup -- sem isso o marca-texto simplesmente não reagia no app.
+  // A seleção do navegador só fica definitiva um instante depois do
+  // touchend, por isso o setTimeout antes de ler window.getSelection().
+  const handleTouchEnd = () => setTimeout(aplicarSelecao, 0)
 
   const segments: { text: string; highlighted: boolean }[] = []
   let cursor = 0
@@ -78,6 +86,7 @@ export function HighlightableText({ text }: { text: string }) {
       <p
         ref={containerRef}
         onMouseUp={handleMouseUp}
+        onTouchEnd={handleTouchEnd}
         className={`select-text rounded-lg p-3 text-base font-medium leading-relaxed text-foreground sm:text-[17px] ${
           active ? "cursor-text bg-accent/30 ring-1 ring-primary/40" : ""
         }`}

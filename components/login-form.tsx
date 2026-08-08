@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { AlertCircle, AlertTriangle, Loader2, Lock, Mail } from "lucide-react"
+import { AlertCircle, AlertTriangle, Loader2, Lock, Mail, Sparkles } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -103,6 +103,13 @@ export function LoginForm({ initialError }: { initialError?: string }) {
 
       {mode !== "forgot" && (
         <>
+          <div className="mb-4 flex items-start gap-2 rounded-lg border border-primary/40 bg-primary/10 p-3 text-sm text-foreground">
+            <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+            <span>
+              <strong>¿Es tu primera vez acá?</strong> Crear tu cuenta es muy fácil: solo tenés que tocar{" "}
+              <strong>&quot;Continuar con Google&quot;</strong> y tu cuenta se crea automáticamente. ¡No hace falta completar ningún formulario!
+            </span>
+          </div>
           <div className="space-y-3">
             <Button
               type="button"

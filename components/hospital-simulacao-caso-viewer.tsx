@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card"
 import type { HospitalSimulacaoCaso, SimuladorResultado } from "@/lib/hospital-simulacao-types"
 import { useLanguage } from "@/lib/i18n"
 import { getPlanStatus } from "@/lib/plan-status"
+import { HospitalSimulacaoJogo } from "@/components/hospital-simulacao-jogo"
 
 interface HospitalSimulacaoCasoViewerProps {
   casoId: string
@@ -117,14 +118,18 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
         <h1 className="text-sm font-semibold text-foreground">{caso.titulo}</h1>
       </div>
 
-      <div className="overflow-hidden rounded-[24px] border border-border">
-        <iframe
-          src={caso.arquivo_html}
-          className="h-[900px] w-full border-0"
-          title={caso.titulo}
-          allow="autoplay"
-        />
-      </div>
+      {caso.tipo === "perguntas" && caso.conteudo ? (
+        <HospitalSimulacaoJogo caso={caso} />
+      ) : (
+        <div className="overflow-hidden rounded-[24px] border border-border">
+          <iframe
+            src={caso.arquivo_html ?? undefined}
+            className="h-[900px] w-full border-0"
+            title={caso.titulo}
+            allow="autoplay"
+          />
+        </div>
+      )}
     </div>
   )
 }

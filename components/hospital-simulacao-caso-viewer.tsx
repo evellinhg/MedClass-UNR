@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Loader2 } from "lucide-react"
+import { ArrowLeft, Loader2, Lock } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import type { HospitalSimulacaoCaso, SimuladorResultado } from "@/lib/hospital-simulacao-types"
 import { useLanguage } from "@/lib/i18n"
+import { getPlanStatus } from "@/lib/plan-status"
 
 interface HospitalSimulacaoCasoViewerProps {
   casoId: string
@@ -16,18 +17,18 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
   const { t } = useLanguage()
   const [loading, setLoading] = useState(true)
   const [caso, setCaso] = useState<HospitalSimulacaoCaso | null>(null)
+  const [isAdmin, setIsAdmin] = useState(false)
   const salvouRef = useRef(false)
 
   useEffect(() => {
-    supabase
-      .from("hospital_simulacao_casos")
-      .select("*")
-      .eq("id", casoId)
-      .maybeSingle()
-      .then(({ data }) => {
-        setCaso((data as HospitalSimulacaoCaso) ?? null)
-        setLoading(false)
-      })
+    Promise.all([
+      supabase.from("hospital_simulacao_casos").select("*").eq("id", casoId).maybeSingle(),
+      getPlanStatus(),
+    ]).then(([{ data }, planStatus]) => {
+      setCaso((data as HospitalSimulacaoCaso) ?? null)
+      setIsAdmin(planStatus?.isAdmin ?? false)
+      setLoading(false)
+    })
   }, [casoId])
 
   useEffect(() => {
@@ -85,6 +86,21 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
           {t.hospitalSimulacaoViewer.voltar}
         </Link>
       </Card>
+    )
+  }
+
+  if (!isAdmin) {
+    return (
+      <div className="flex flex-col items-center gap-3 rounded-[24px] border border-border bg-card p-10 text-center">
+        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
+          <Lock className="h-6 w-6 text-muted-foreground" />
+        </div>
+        <p className="text-base font-semibold text-foreground">{t.hospitalSimulacaoViewer.acessoRestritoTitulo}</p>
+        <p className="max-w-xs text-sm text-muted-foreground">{t.hospitalSimulacaoViewer.acessoRestritoDescricao}</p>
+        <Link href="/dashboard/hospital-simulacao" className="mt-1 text-sm font-medium text-primary hover:underline">
+          {t.hospitalSimulacaoViewer.voltar}
+        </Link>
+      </div>
     )
   }
 

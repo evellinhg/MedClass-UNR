@@ -50,7 +50,7 @@ export function getNavigation(t: DashboardNavLabels): NavItem[] {
     },
     { name: t.treinamentos, href: "/dashboard/simulados", icon: ClipboardCheck },
     { name: t.desafiosClinicos, href: "/dashboard/desafios-clinicos", icon: Stethoscope },
-    { name: t.hospitalSimulacao, href: "/dashboard/hospital-simulacao", icon: Hospital },
+    { name: t.hospitalSimulacao, href: "/dashboard/hospital-simulacao", icon: Hospital, emBreve: true },
     { name: t.mesaOral, href: "/dashboard/mesa-oral", icon: Mic, emBreve: true },
     {
       name: t.desempenho,

@@ -123,6 +123,52 @@ canvas{display:block;width:100%;height:352px}
 .fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
 .c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
 
+/* ---- ETAPA CLÍNICA: vinheta + opciones A-E ---- */
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin-top:6px;padding:11px 13px 13px}
+.stage .num{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pleth);font-weight:700}
+.stage h3{margin:3px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px;color:#e9f1f9;line-height:1.15}
+.stage .vig{font-size:12.5px;line-height:1.58;color:#aebfcf;margin-bottom:11px;white-space:pre-line}
+.stage .opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:3px;padding:9px 11px;cursor:pointer;color:var(--txt);font:400 12.5px/1.42 'IBM Plex Sans Condensed',sans-serif;width:100%}
+.opt:hover:not(:disabled){border-color:var(--pleth);background:#141e2a}
+.opt .letter{flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:#1b2a3a;border:1px solid #2c4157;
+  display:flex;align-items:center;justify-content:center;font:700 10.5px 'IBM Plex Mono',monospace;color:#cfe0ff;margin-top:1px}
+.opt:disabled{opacity:.38;cursor:default}
+.stage .feedback{margin-top:11px;padding:10px 12px;border-radius:3px;font-size:12.5px;line-height:1.52;display:none}
+.stage .feedback.show{display:block}
+.feedback.good{background:#0f2b1c;border-left:3px solid var(--ok);color:#bfe9cf}
+.feedback.warn{background:#2e2410;border-left:3px solid var(--md);color:#f0dfa8}
+.feedback.bad{background:#2e1013;border-left:3px solid var(--hi);color:#ffc0c5}
+.feedback .fscore{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;display:block;margin-bottom:4px}
+#stgNext{display:none;margin-top:11px}
+.stage.done{opacity:.55}
+
+/* ---- historia clínica y registro de impresos (menú lateral) ---- */
+.hist{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:8px 10px}
+.hist h2{margin:0 0 5px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);font-weight:700}
+.hist dl{margin:0;font-size:11px;line-height:1.55}
+.hist dt{color:#4a7a92;font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-top:6px;font-weight:700}
+.hist dt:first-child{margin-top:0}
+.hist dd{margin:0;color:#b7c4d1}
+
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.printouts h2{margin:0;padding:7px 10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);
+  border-bottom:1px solid var(--line);font-weight:700;display:flex;justify-content:space-between}
+.printouts .list{max-height:150px;overflow-y:auto;padding:4px}
+.printouts .empty{padding:9px 10px;font-size:10.5px;color:#3d4f61;font-style:italic}
+.pitem{display:flex;justify-content:space-between;gap:6px;padding:6px 8px;border-radius:2px;cursor:pointer;font-size:11.5px;color:var(--txt);width:100%;
+  background:transparent;border:0;text-align:left}
+.pitem:hover{background:#141e2a}
+.pitem .tag2{font-size:8.5px;letter-spacing:1px;color:var(--dim);font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+/* ---- modal de impreso (laudo) ---- */
+.modal-lab{max-width:520px}
+.modal-lab .stamp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:11px}
+.modal-lab pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.62;color:#cfe0ff;
+  background:#070b11;border:1px solid var(--line);border-radius:3px;padding:11px 13px;margin:0}
+
 /* ---- VENTILADOR ---- */
 .vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
 .vent.on{display:block}
@@ -362,9 +408,19 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
         <span>FiO₂ <b id="vFiO2">100</b>%</span><span>P. meseta <b id="vPlat">18</b> cmH₂O</span>
       </div>
     </div>
+
+    <!-- ================= ETAPA CLÍNICA (pregunta activa) ================= -->
+    <div class="stage" id="stage">
+      <div class="num" id="stgNum">Etapa 1 / 20</div>
+      <h3 id="stgTitle">—</h3>
+      <div class="vig" id="stgVig">—</div>
+      <div class="opts" id="stgOpts"></div>
+      <div class="feedback" id="stgFeedback"></div>
+      <button class="btn" id="stgNext" style="display:none">Continuar →</button>
+    </div>
   </div>
 
-  <!-- ================= MENÚ LATERAL ================= -->
+  <!-- ================= MENÚ LATERAL (información, no acciones) ================= -->
   <div class="side">
     <div class="score">
       <div class="r"><span>Puntos biológicos</span><span class="bpn" id="vBPs">100</span></div>
@@ -376,22 +432,39 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
       </div>
     </div>
 
-    <div class="menu">
-      <h2>Menú de acciones médicas</h2>
-      <div class="srch"><input id="q" placeholder="Buscar acción, fármaco o estudio…" autocomplete="off"></div>
-      <div class="cats" id="cats"></div>
+    <div class="hist">
+      <h2>Historia clínica resumida</h2>
+      <dl>
+        <dt>Paciente</dt><dd>Ramón Alcázar Ibáñez · 58 años · 78 kg · 1,72 m · albañil</dd>
+        <dt>Motivo de consulta</dt><dd>Dolor retroesternal opresivo desde las 03:12, irradiado a mandíbula y brazo izquierdo, con náuseas y diaforesis</dd>
+        <dt>Antecedentes</dt><dd>HTA (mala adherencia) · DM2 · dislipidemia sin tratar · tabaquismo 30 p/a · padre fallecido de IAM a los 54 años</dd>
+        <dt>Sin</dt><dd>Sangrado previo · ACV · anticoagulación · alergias · uso de PDE5</dd>
+        <dt>Logística de la guardia</dt><dd>Un solo ECG (compartido) · hemodinamia con guardia pasiva (~28 min) · una bioquímica de turno</dd>
+      </dl>
+    </div>
+
+    <div class="printouts">
+      <h2><span>Impresos y resultados</span><span id="pcount">0</span></h2>
+      <div class="list" id="plist"><div class="empty">Todavía no hay estudios liberados</div></div>
+    </div>
+
+    <div class="log">
+      <h2><span>Registro clínico</span><span id="logn">0</span></h2>
+      <div class="b" id="logb"></div>
       <div class="ctrls">
         <button id="bSpeed">×4</button><button id="bSound">🔊</button>
         <button id="bPause">⏸</button><button id="bCase">📄 Caso</button>
         <button class="fin" id="bEnd">Finalizar</button>
       </div>
     </div>
-
-    <div class="log"><h2><span>Registro clínico</span><span id="logn">0</span></h2><div class="b" id="logb"></div></div>
   </div>
 </div>
 
 <div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
+
+<!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
+<div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
+
 
 <div class="ov" id="ovIntro"><div class="card">
   <div class="kick">Caso 1 · IAMCEST · Panel completo</div>
@@ -526,12 +599,16 @@ const CONFIG = {
   velocidadInicial : 4,      // 1, 4 o 10 — multiplicador del reloj clínico
   sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
   saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
-  mostrarExpediente: false,  // false = oculta el botón "📄 Caso" al estudiante
+  mostrarExpediente: true,   // false = oculta el botón "📄 Caso" al estudiante
   autoIniciar      : true,   // false = el simulador espera a window.SimuladorIAMCEST.iniciar()
 
   // Dificultad: multiplica el drenaje de puntos por tiempo.
   // 0.6 = indulgente (pregrado) · 1 = estándar · 1.5 = exigente (residencia)
   dificultad       : 1.0,
+
+  // Frecuencia del brazalete de PA (real: ~300s). Se acorta a propósito para
+  // que el efecto de cada decisión sea visible en el monitor en segundos.
+  cicloPANIsegundos: 8,
 
   // Se dispara al terminar el caso. Recibe el objeto de resultados.
   alFinalizar      : null,   // ej.: r => fetch('/api/resultados',{method:'POST',body:JSON.stringify(r)})
@@ -555,12 +632,13 @@ const S={
  rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
  arterial:false,cvc:false,foley:false,
  airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
- aas:false,p2y12:false,heparin:false,
- nitrateT:null,morphBig:null,volume:0,volumeT:null,dobu:false,nora:false,
+  aas:false,p2y12:false,daptOK:false,heparin:false,lytic:false,
+  nitrateT:null,morphBig:null,adrT:null,volume:0,volumeT:null,dobu:false,nora:false,
  atroT:null,betaIV:false,furoT:null,sedated:false,
- vdKnown:false,ecgDone:false,labDrawn:false,examDone:false,anamDone:false,
+  vdKnown:false,ecgDone:false,labDrawn:false,examDone:false,anamDone:false,killipI:false,
  cathCalled:null,atCath:false,reperfused:false,reperfT:null,
- vfPending:null,vfStart:null,cpr:false,pads:false,
+  vfPending:null,vfStart:null,cpr:false,pads:false,
+  stentThromb:null,stentThrombFired:false,reoccl:false,reocclFired:false,daptStop:null,daptStopFired:false,hyperK:null,hyperKFired:false,
  avAt:96*60, vdHypoAt:null,vdHypoFired:false,
  dead:false,ended:false,doing:null,log:[]
 };
@@ -583,352 +661,350 @@ function nada(t,p){log(t,'warn');if(p)sc(p,'Estudio sin rendimiento diagnóstico
    Cada categoría lista TODO lo disponible en un servicio real.
    Los grupos sin indicación en este caso quedan explícitamente vacíos.
    ========================================================================== */
-const MENU=[
+/* ==========================================================================
+   ETAPAS CLÍNICAS — flujo lineal de 20 preguntas (anamnesis → alta)
+   r: 'good' | 'warn' | 'omit' | 'bad'
+     good = correcto · warn = subóptimo (sin marca) · omit = omisión de
+     acción obligatoria (suma a S.omis) · bad = iatrogenia (suma a S.iatro)
+   fx()  = efecto fisiológico aplicado (si corresponde) tras el tiempo (min)
+   printouts = [] de laudos que se archivan en el menú lateral si corresponde
+   ========================================================================== */
+const STAGES=[
 
-/* ---------- 1 ---------- */
-{t:'Anamnesis e historia',g:[
- {n:'Interrogatorio',i:[
-  {l:'Anamnesis dirigida (dolor + factores de riesgo)',m:3,f(){
-    if(S.anamDone)return log('Ya realizada','warn');S.anamDone=true;
-    sc(10,'Anamnesis dirigida, en paralelo a la estabilización');
-    info('Dolor opresivo retroesternal desde las 03:12, irradiado a mandíbula y brazo izquierdo, en reposo');
-    info('HTA (mala adherencia) · DM2 · dislipidemia sin tratar · tabaquismo 30 p/a · padre IAM a los 54');}},
-  {l:'Hora exacta de inicio del dolor',m:1,f(){sc(10,'Hora de inicio establecida: 03:12 (ancla la ventana de reperfusión)');}},
-  {l:'Contraindicaciones a antitrombóticos',m:1,f(){
-    sc(10,'Descarta sangrado digestivo, ACV, cirugía reciente y anticoagulación');
-    info('Sin alergias. Sin sildenafilo/tadalafilo en 48 h.');}},
-  {l:'Historia completa por aparatos y sistemas',m:20,f(){S.anamDone=true;sc(-10,'Exhaustividad fuera de tiempo: 20 min de músculo perdido');}},
-  {l:'Verificar comprensión del alta (teach-back)',m:5,f(){
-    if(!S.reperfused)return log('El paciente está en fase aguda','warn');
-    sc(10,'Teach-back: repite qué pasa si suspende el ticagrelor');}}]},
- {n:'Antecedentes obstétricos',i:[]},
- {n:'Historia de viajes y exposición epidemiológica',i:[]}
-]},
+/* 1 · TRIAJE ------------------------------------------------------------ */
+{t:'Triaje', time:'⏱ 04:02 · T+50 min', med:false,
+ vig:`Varón de 58 años, pálido y diaforético, con el puño cerrado sobre el esternón (signo de Levine). Dolor opresivo 8/10 desde hace 50 minutos, irradiado a mandíbula y brazo izquierdo.\nTA 148/92 · FC 88 · FR 22 · SpO₂ 96% · Glucemia 168 mg/dL.\nLa enfermera avisa: "el electrocardiógrafo está ocupado en el consultorio 2".`,
+  opts:[
+   {l:'Triaje ROJO (Nivel I): sala de reanimación ya, interrumpir el otro uso del ECG.',r:'good',bp:15,min:3,fx(){S.pain=Math.min(10,S.pain-1);info('Triaje ROJO: box de reanimación y ECG con prioridad absoluta.');},
+    fb:'Correcto. El ECG en ≤10 min del primer contacto es un indicador de calidad Clase I: no es un examen complementario, es el examen diagnóstico. Interrumpir un uso no urgente para priorizarlo es gestión real de un recurso escaso. Notá que al no perder tiempo, la FC y la FR se mantienen estables en el monitor.'},
+   {l:'Triaje AMARILLO (Nivel III): sala de espera, ECG cuando se desocupe el aparato.',r:'warn',bp:-10,min:22,fx(){S.pain=Math.min(10,S.pain+1);},
+    fb:'El paciente espera 22 minutos. Cada 30 minutos de retraso en el IAMCEST se asocia a ≈7,5% más de mortalidad al año. Mirá el monitor: la taquicardia y la taquipnea se acentúan por la persistencia del dolor isquémico.'},
+   {l:'Antiácido oral y reevaluar en 30 minutos (refiere náuseas, "puede ser el asado de anoche").',r:'bad',bp:-30,min:30,fx(){S.pain=Math.min(10,S.pain+2);},
+    fb:'Sesgo de anclaje grave. La "prueba terapéutica" con antiácido NO descarta origen coronario. Es causa clásica de alta indebida y muerte evitable en dolor torácico. La FC sube y el paciente se descompensa en el monitor mientras espera.'}
+  ]},
 
-/* ---------- 2 ---------- */
-{t:'Exploración física',g:[
- {n:'Evaluación general',i:[
-  {l:'Inspección general y signos vitales completos',m:2,f(){
-    info('Diaforético, pálido, piel fría. Relleno capilar 2 s. Consciente y orientado, Glasgow 15.');
-    sc(5,'Evaluación general documentada');}},
-  {l:'Escala de dolor (EVA) y caracterización',m:1,f(){info('EVA 8/10, opresivo, sin cambios con la respiración ni la posición');S.painMeasured=true;}}]},
- {n:'Cardiovascular',i:[
-  {l:'Auscultación cardíaca',m:1,f(){info('R1-R2 rítmicos, sin soplos, sin R3 ni R4');}},
-  {l:'TA en ambos brazos',m:2,f(){sc(10,'TA bilateral: 142/88 vs 138/86 — sin diferencia significativa');
-    info('Argumenta contra disección aórtica antes de anticoagular');}},
-  {l:'Pulsos periféricos y perfusión distal',m:1,f(){info('Pulsos simétricos, presentes. Extremidades frías. Relleno capilar 2 s.');}},
-  {l:'Presión venosa yugular',m:1,f(){
-    if(S.vdHypoFired){info('YUGULARES INGURGITADAS a 45°');sc(8,'Hallazgo clave: ingurgitación con campos limpios');}
-    else info('Yugulares no ingurgitadas a 45°');}}]},
- {n:'Respiratorio',i:[
-  {l:'Auscultación pulmonar + clasificación Killip',m:2,f(){
-    S.examDone=true;
-    if(S.vdHypoFired){info('Campos pulmonares LIMPIOS pese a la hipotensión — no es congestión izquierda');sc(10,'Killip I con hipotensión: apunta al VD, no al VI');}
-    else{info('MV conservado, sin crepitantes → KILLIP I');sc(10,'Killip documentado: base pronóstica');}}}]},
- {n:'Abdomen, neurológico y extremidades',i:[
-  {l:'Palpación abdominal (masa pulsátil)',m:1,f(){info('Abdomen blando, sin masa pulsátil, sin dolor');}},
-  {l:'Examen neurológico básico',m:2,f(){info('Glasgow 15, sin focalidad, pupilas isocóricas reactivas');}},
-  {l:'Miembros inferiores (edema, TVP)',m:1,f(){info('Sin edemas, sin signos de trombosis venosa profunda');}}]},
- {n:'Exploración obstétrica y ginecológica',i:[]}
-]},
+/* 2 · ANAMNESIS ---------------------------------------------------------- */
+{t:'Anamnesis dirigida', time:'⏱ 04:05 · T+53 min', med:false,
+ vig:`En sala de reanimación. Dolor 8/10, sigue diaforético. TA 145/90 · FC 84 · SpO₂ 96%.\nEl hijo pregunta: "¿es un infarto? Mi abuelo se murió de eso."`,
+  opts:[
+   {l:'Anamnesis dirigida (hora exacta de inicio, factores de riesgo, contraindicaciones a antitrombóticos) EN PARALELO a la estabilización.',r:'good',bp:20,min:3,fx(){S.anamDone=true;S.pain=Math.min(10,S.pain-1);},
+    fb:'Hora de inicio: 03:12 (dato clave para la ventana de reperfusión). HTA con mala adherencia · DM2 · dislipidemia sin tratar · tabaquismo 30 p/a · padre fallecido de IAM a los 54 años. Sin sangrado, ACV, cirugía reciente ni uso de PDE5 en 48 h. Con esta información, los pasos siguientes son seguros: sabés que no hay contraindicación para antitrombóticos ni riesgo de interacción con nitratos.'},
+   {l:'Historia completa por aparatos y sistemas (20 minutos) antes de cualquier conducta.',r:'warn',bp:-10,min:20,fx(){S.anamDone=true;S.pain=Math.min(10,S.pain+1);},
+    fb:'Exhaustividad fuera de tiempo: 20 minutos de músculo perdidos por una anamnesis que debía ser paralela, no previa. La FC sigue en ascenso por el dolor: cada minuto cuenta.'},
+   {l:'Saltear la anamnesis: "el ECG va a decir todo" y empezar a medicar directamente.',r:'omit',bp:-15,min:1,fx(){S.anamDone=false;S.pain=Math.min(10,S.pain+2);},
+    fb:'Sin conocer contraindicaciones (sangrado, ACV previo, inhibidores de PDE5) se prescribe a ciegas en los próximos pasos. ADVERTENCIA: si más adelante indicás nitratos sin saber si el paciente usó sildenafil, la caída de PA puede ser catastrófica e irreversible.'}
+  ]},
 
-/* ---------- 3 ---------- */
-{t:'Laboratorio',g:[
- {n:'Marcadores cardíacos',i:[
-  {l:'Troponina T ultrasensible (extraer y seguir)',m:2,f(){
-    if(S.labDrawn)return log('Ya extraída','warn');S.labDrawn=true;
-    sc(10,'Extracción sin frenar la reperfusión');
-    setTimeout(()=>{if(!S.ended)info('LAB 05:10 · Troponina T us 0,42 ng/mL (VN <0,014)');},1600);}},
-  {l:'Esperar el resultado antes de decidir',m:55,f(){
-    S.labDrawn=true;S.omis++;sc(-25,'55 min de necrosis esperando un dato que no cambia la conducta');}},
-  {l:'CK-MB y mioglobina',m:2,f(){nada('CK-MB 42 U/L. Marcadores de generación previa: no aportan sobre la troponina.',-3);}},
-  {l:'BNP / NT-proBNP',m:2,f(){info('NT-proBNP 480 pg/mL. Útil para insuficiencia cardíaca, no para decidir reperfusión.');}}]},
- {n:'Bioquímica y hematología',i:[
-  {l:'Función renal (creatinina, urea, TFG)',m:2,f(){sc(5,'Función renal antes del contraste: Cr 1,1 · TFG 74');}},
-  {l:'Ionograma (K⁺, Na⁺, Mg²⁺)',m:2,f(){sc(5,'K⁺ 4,1 · Na⁺ 139 · Mg²⁺ 2,0 — sin sustrato arrítmico');}},
-  {l:'Hemograma completo',m:2,f(){info('Hb 14,8 · Hto 44% · Plaquetas 245.000 · GB 11.200');}},
-  {l:'Coagulograma (TP/INR, TTPa)',m:2,f(){info('INR 1,0 · TTPa 30 s — sin coagulopatía previa a la anticoagulación');}},
-  {l:'Glucemia, HbA1c y perfil lipídico',m:2,f(){info('Glucemia 171 · HbA1c 8,2% · LDL 168 mg/dL');}},
-  {l:'Grupo sanguíneo y factor',m:2,f(){info('Grupo 0 Rh+ — previsión ante sangrado bajo antitrombóticos');}}]},
- {n:'Gasometría y perfusión',i:[
-  {l:'Gasometría arterial',m:5,f(){
-    const s=S.sbp<85;info(`pH ${s?'7,28':'7,38'} · pCO₂ ${s?'32':'38'} · HCO₃ ${s?'17':'23'} · Lactato ${S.lac.toFixed(1)}`);
-    if(s)sc(5,'Gasometría documenta acidosis láctica por hipoperfusión');}},
-  {l:'Lactato sérico seriado',m:2,f(){S.lacShown=true;info('Lactato '+S.lac.toFixed(1)+' mmol/L — se activa el seguimiento');}}]},
- {n:'Microbiología y cultivos',i:[]},
- {n:'Toxicología y screening de drogas',i:[]},
- {n:'Autoinmunidad y reumatología',i:[]}
-]},
+/* 3 · EXAMEN FÍSICO ------------------------------------------------------ */
+{t:'Exploración física', time:'⏱ 04:08 · T+56 min', med:false,
+ vig:`TA 142/88 · FC 82 · FR 22 · SpO₂ 96%. Dolor 8/10.`,
+  opts:[
+   {l:'Examen dirigido completo: TA en ambos brazos, auscultación cardíaca y pulmonar, yugulares, Killip.',r:'good',bp:15,min:3,fx(){S.examDone=true;S.killipI=true;},
+    fb:'TA 142/88 (brazo derecho) vs 138/86 (izquierdo): sin diferencia significativa, argumenta contra disección antes de anticoagular. MV conservado, sin crepitantes → KILLIP I. Sin soplos, sin R3/R4. Yugulares no ingurgitadas. Recordá este dato: pulmones limpios + hipotensión + yugulares ingurgitadas, más adelante, significa compromiso del VD, NO congestión izquierda.'},
+   {l:'Auscultar solo el corazón y continuar.',r:'warn',bp:-10,min:1,fx(){S.examDone=true;S.killipI=false;},
+    fb:'Sin auscultación pulmonar no hay clasificación de Killip: se pierde la base pronóstica para comparar más adelante. No sabés si los pulmones están limpios, y eso te va a costar interpretar la hipotensión del final del día.'},
+   {l:'Omitir el examen: "el ECG y la troponina son objetivos, esto no cambia la conducta".',r:'omit',bp:-15,min:1,fx(){S.examDone=false;S.killipI=false;},
+    fb:'El examen físico es el filtro de seguridad antes de antiagregar y anticoagular, y define Killip. Omitirlo cuesta la estratificación pronóstica: vas a navegar a ciegas el resto del caso.'}
+  ]},
 
-/* ---------- 4 ---------- */
-{t:'ECG y monitorización',g:[
- {n:'Electrocardiograma',i:[
-  {l:'ECG de 12 derivaciones',m:3,f(){
-    if(S.ecgDone)return log('Repetición: sin cambios respecto al previo','warn');
-    S.ecgDone=true;const late=S.simT-50*60;
-    if(late<=600)sc(10,`ECG en ${Math.round(late/60)} min del primer contacto (meta ≤10)`);
-    else sc(-10,`ECG a los ${Math.round(late/60)} min: fuera del estándar`);
-    info('ST↑ DII +3 · DIII +5 · aVF +4 · especular DI/aVL · DIII>DII · Q incipiente en DIII');}},
-  {l:'Derivaciones derechas V3R–V4R',m:2,f(){
-    if(!S.ecgDone)return log('Primero el ECG de 12 derivaciones','warn');
-    if(S.vdKnown)return log('Ya realizadas','warn');S.vdKnown=true;
-    sc(10,'Derivaciones derechas solicitadas');sc(10,'Razonamiento DIII>DII ⇒ CD proximal ⇒ descartar VD');
-    info('V4R: ST +2 mm → INFARTO DE VENTRÍCULO DERECHO CONFIRMADO');}},
-  {l:'Derivaciones posteriores V7–V9',m:2,f(){info('V7–V9 sin supradesnivel: sin extensión posterior');sc(5,'Territorio caracterizado por completo');}},
-  {l:'ECG seriado de control',m:2,f(){
-    info(S.reperfused?'Resolución del ST >70% en cara inferior':'Persiste el supradesnivel: la arteria sigue ocluida');}}]},
- {n:'Sensores y monitorización continua',i:[
-  {l:'Monitor multiparamétrico (ECG continuo)',m:2,f(){
-    if(S.monitored)return log('Ya conectado','warn');S.monitored=true;
-    sc(10,'Monitorización electrocardiográfica continua');bed();}},
-  {l:'Oximetría de pulso',m:1,f(){S.sat_probe=true;info('Sensor de SpO₂ colocado');bed();}},
-  {l:'Presión arterial no invasiva automática (q5min)',m:1,f(){S.nibp=true;S.lastNIBP=S.simT;info('Manguito de PANI programado cada 5 min');bed();}},
-  {l:'Monitorización del segmento ST continua',m:2,f(){sc(5,'Vigilancia continua del ST: detecta reoclusión precoz');}},
-  {l:'Capnografía',m:2,f(){S.capno=true;info('Capnografía conectada');bed();}},
-  {l:'Catéter arterial (PA invasiva)',m:12,f(){
-    if(S.sbp>100&&!S.vent)return sc(-5,'Procedimiento invasivo sin inestabilidad que lo justifique','warn');
-    S.arterial=true;sc(8,'Línea arterial en paciente inestable: PA latido a latido');bed();}},
-  {l:'Vía venosa central (PVC)',m:15,f(){S.cvc=true;
-    info('PVC '+(VD&&(S.vdHypoFired||S.nitrateT)?'16':'8')+' mmHg');
-    if(VD&&S.vdHypoFired)sc(8,'PVC elevada con campos limpios: confirma fallo derecho');bed();}},
-  {l:'Sonda vesical (diuresis horaria)',m:5,f(){S.foley=true;sc(5,'Diuresis horaria: marcador de perfusión en tiempo real');bed();}}]},
- {n:'Estudios electrofisiológicos',i:[]}
-]},
+/* 4 · ECG ----------------------------------------------------------------- */
+{t:'Electrocardiograma', time:'⏱ 04:09 · T+57 min', med:false,
+ vig:`Llega el electrocardiógrafo. Se registra el trazado de 12 derivaciones.`,
+ opts:[
+  {l:'Solicitar el ECG de 12 derivaciones, diagnosticar IAMCEST inferior, activar el Código Infarto Y pedir derivaciones derechas V3R–V4R.',r:'good',bp:30,min:5,fx(){S.ecgDone=true;S.vdKnown=true;S.cathCalled=S.simT;},
+   printouts:[
+    {tipo:'ECG · 12 derivaciones',titulo:'Electrocardiograma inicial (04:09 h)',cuerpo:
+`Ritmo sinusal · FC 80 lpm · Eje +70° · PR 180 ms · QRS 90 ms · QTc 410 ms
 
-/* ---------- 5 ---------- */
-{t:'Estudios de imagen',g:[
- {n:'Con rendimiento en este caso',i:[
-  {l:'Ecocardiograma transtorácico',m:10,f(){
-    if(!S.reperfused){S.vdKnown=true;sc(5,'ETT precoz: VD dilatado, VCI no colapsable');
-      info('ETT: hipocinesia inferior · VD dilatado · TAPSE 14 mm · sin derrame');return;}
-    sc(10,'ETT en las primeras 24 h');sc(5,'Evalúa VD y descarta complicaciones mecánicas');
-    info('ETT: FEVI 48% · hipocinesia inferobasal · TAPSE 15 mm · sin CIV · sin trombo');}},
-  {l:'Ecografía a pie de cama (VCI + pulmonar)',m:5,f(){
-    info('VCI dilatada, no colapsable · Perfil A pulmonar (sin líneas B) → no hay congestión izquierda');
-    sc(8,'POCUS: distingue fallo derecho de edema pulmonar en 5 minutos');}},
-  {l:'Coronariografía + angioplastia primaria',m:35,f(){
-    if(!S.atCath)return log('El paciente no está en la sala de hemodinamia','warn');
-    if(S.reperfused)return log('Ya revascularizado','warn');doPCI();}},
-  {l:'Radiografía de tórax portátil',m:8,f(){
-    info('Rx: ICT normal, sin redistribución, mediastino de calibre normal');
-    if(!S.reperfused)sc(-5,'Rx antes de reperfundir: 8 min que no cambian la conducta','warn');}}]},
- {n:'Disponibles, sin rendimiento aquí',i:[
-  {l:'AngioTC de tórax (TEP / disección)',m:25,f(){nada('AngioTC: sin TEP ni disección. 25 min y 100 mL de contraste extra en un diagnóstico ya establecido por ECG.',-10);}},
-  {l:'Resonancia cardíaca',m:45,f(){nada('RM: no disponible en agudo, no se hace a pie de cama. Estudio diferido para viabilidad.',-15);}},
-  {l:'Ecografía abdominal',m:15,f(){nada('Ecografía abdominal sin hallazgos. El dolor epigástrico era isquémico.',-8);}},
-  {l:'Cámara gamma / SPECT de perfusión',m:60,f(){nada('Estudio de perfusión: no tiene lugar en el IAMCEST agudo.',-15);}}]},
- {n:'Neuroimagen',i:[]},
- {n:'Imagen musculoesquelética',i:[]}
-]},
+DII    ST +3 mm (convexo)
+DIII   ST +5 mm (convexo)   ← mayor que DII
+aVF    ST +4 mm
+DI     ST −3 mm (especular)
+aVL    ST −3 mm (especular)
+V1–V3  ST levemente descendido
+Onda Q incipiente en DIII
 
-/* ---------- 6 ---------- */
-{t:'Vía aérea y ventilación',g:[
- {n:'Oxigenoterapia (dispositivos)',i:[
-  {l:'Cánula nasal 2–4 L/min (FiO₂ ~0,28)',m:1,f(){air('cánula nasal',0.28);}},
-  {l:'Máscara facial simple 6–8 L (FiO₂ ~0,40)',m:1,f(){air('máscara simple',0.40);}},
-  {l:'Máscara Venturi 35% (FiO₂ controlada)',m:2,f(){air('Venturi 35%',0.35);}},
-  {l:'Máscara con reservorio 15 L (FiO₂ ~0,85)',m:1,f(){air('máscara con reservorio',0.85);}},
-  {l:'Cánula nasal de alto flujo (CNAF)',m:5,f(){air('CNAF 50 L/min',0.60);}},
-  {l:'Retirar el oxígeno suplementario',m:1,f(){
-    if(S.airway==='aire')return log('Ya está en aire ambiente','warn');
-    air('aire',0.21);sc(5,'Retira el oxígeno innecesario: evita hiperoxia');}}]},
- {n:'Soporte no invasivo',i:[
-  {l:'VNI · CPAP 8 cmH₂O',m:5,f(){
-    if(VD&&!S.reperfused){sc(-15,'Presión positiva en fallo derecho: reduce aún más la precarga');S.iatro++;}
-    else sc(5,'CPAP en congestión pulmonar');air('CPAP',0.50);}},
-  {l:'VNI · BiPAP 14/6',m:5,f(){
-    if(S.spo2>92)sc(-10,'VNI sin insuficiencia respiratoria');else sc(5,'BiPAP por fatiga respiratoria');
-    air('BiPAP',0.50);}},
-  {l:'Bolsa-válvula-máscara (ventilación manual)',m:1,f(){
-    if(S.rhythm==='vf'||S.rhythm==='asystole'){sc(5,'Ventilación con BVM durante la reanimación');air('BVM',1.0);}
-    else sc(-10,'Ventilación manual en paciente con respiración espontánea eficaz');}}]},
- {n:'Manejo avanzado de la vía aérea',i:[
-  {l:'Cánula orofaríngea (Guedel)',m:1,f(){
-    if(S.gcs<9){sc(5,'Cánula orofaríngea con Glasgow bajo');}else sc(-5,'Guedel en paciente consciente: provoca vómito');}},
-  {l:'Aspiración de secreciones',m:2,f(){info('Aspiración de orofaringe realizada');}},
-  {l:'Dispositivo supraglótico (máscara laríngea)',m:3,f(){
-    if(S.rhythm==='vf'||S.rhythm==='asystole')sc(5,'Vía aérea supraglótica durante el paro');
-    else sc(-10,'Dispositivo supraglótico sin indicación');}},
-  {l:'Intubación orotraqueal + ventilación mecánica',m:12,f(){
-    if(S.rhythm==='asystole'||S.gcs<9||S.spo2<85||(S.sbp<70&&S.sbp>0)){
-      S.vent=true;S.sedated=true;air('ARM',1.0);sc(10,'IOT indicada por deterioro neurológico/hemodinámico');
-      info('IOT con secuencia rápida. ARM: VC-AC · Vt 420 mL (6 mL/kg PI) · FR 16 · PEEP 5 · FiO₂ 100%');}
-    else{S.vent=true;S.sedated=true;air('ARM',1.0);sc(-25,'Intubación de un paciente consciente, con Glasgow 15 y ventilación eficaz');S.iatro++;
-      info('La sedación e inducción provocan caída adicional de la precarga');S.morphBig=S.simT;}
-    bed();}},
-  {l:'Ajustar ARM: PEEP 5 · FiO₂ 40% (protectora)',m:2,f(){
-    if(!S.vent)return log('El paciente no está en ventilación mecánica','warn');
-    S.peep=5;S.ventFiO2=0.40;S.fio2=0.40;
-    sc(10,'Ventilación protectora con PEEP baja: respeta la precarga del VD');}},
-  {l:'Ajustar ARM: PEEP 12 (reclutamiento)',m:2,f(){
-    if(!S.vent)return log('El paciente no está en ventilación mecánica','warn');
-    S.peep=12;
-    if(VD){sc(-20,'PEEP alta en infarto de VD: colapsa el retorno venoso');S.iatro++;}
-    else sc(-5,'PEEP alta sin hipoxemia refractaria');}},
-  {l:'Extubar',m:5,f(){
-    if(!S.vent)return log('No está intubado','warn');
-    if(S.sbp<90||S.gcs<14)return sc(-15,'Extubación sin criterios de destete');
-    S.vent=false;S.sedated=false;air('aire',0.21);sc(8,'Destete y extubación con criterios cumplidos');bed();}}]},
- {n:'Traqueostomía y vía aérea quirúrgica',i:[]}
-]},
+IMPRESIÓN: elevación del ST en cara inferior con patrón especular
+en DI/aVL. ST DIII > DII sugiere oclusión de la coronaria derecha
+PROXIMAL. Se solicitan derivaciones derechas.`},
+    {tipo:'ECG · derivaciones derechas',titulo:'V3R–V4R y V7–V9',cuerpo:
+`V4R: supradesnivel del ST +2 mm
+V3R: supradesnivel del ST +1,5 mm
+V7–V9: sin supradesnivel significativo
 
-/* ---------- 7 ---------- */
-{t:'Medicamentos',g:[
- {n:'Antiagregantes',i:[
-  {l:'AAS 300 mg masticable',m:1,f(){if(S.aas)return log('Ya administrado','warn');S.aas=true;
-    sc(10,'AAS 300 mg de carga');sc(5,'Masticable: inhibición plaquetaria en ~15 min');}},
-  {l:'AAS 100 mg deglutido entero',m:1,f(){S.aas=true;sc(-10,'Dosis subterapéutica y absorción lenta para la fase aguda');}},
-  {l:'Ticagrelor 180 mg (carga)',m:1,f(){if(S.p2y12)return log('Ya administrado','warn');S.p2y12=true;
-    sc(10,'Inhibidor P2Y12 en dosis de carga');if(S.aas)sc(5,'Doble antiagregación completa antes de la sala');}},
-  {l:'Clopidogrel 600 mg (8 comprimidos, carga)',m:1,f(){if(S.p2y12)return log('Ya administrado','warn');S.p2y12=true;
-    sc(10,'Carga de clopidogrel correcta');}},
-  {l:'Clopidogrel 75 mg',m:1,f(){S.p2y12=true;sc(-15,'75 mg es mantenimiento, no carga: antiagregación insuficiente para ICP');}},
-  {l:'Prasugrel 60 mg (carga)',m:1,f(){S.p2y12=true;sc(8,'Prasugrel de carga: válido sin ACV previo');}},
-  {l:'Inhibidor IIb/IIIa (tirofibán)',m:3,f(){
-    if(S.atCath)sc(5,'Anti-IIb/IIIa de rescate por alta carga trombótica');
-    else sc(-10,'Anti-IIb/IIIa de rutina antes de la sala: aumenta el sangrado sin beneficio');}}]},
- {n:'Anticoagulantes',i:[
-  {l:'Heparina no fraccionada 6.000 UI IV (bolo)',m:1,f(){if(S.heparin)return log('Ya administrada','warn');S.heparin=true;
-    sc(10,'HNF 80 UI/kg IV en bolo');sc(5,'Dosis calculada por peso: 1,2 mL del frasco de 25.000/5 mL');}},
-  {l:'Enoxaparina 0,5 mg/kg IV (39 mg)',m:1,f(){S.heparin=true;sc(8,'Enoxaparina IV: alternativa válida para ICP primaria');}},
-  {l:'Enoxaparina 1 mg/kg subcutánea',m:1,f(){S.heparin=true;sc(-10,'Dosis y vía de SCASEST médico, no de ICP primaria');}},
-  {l:'Fondaparinux 2,5 mg',m:1,f(){S.heparin=true;sc(-15,'Fondaparinux solo en ICP: riesgo de trombosis del catéter');}}]},
- {n:'Fibrinolíticos',i:[
-  {l:'Tenecteplasa 40 mg (8.000 U) IV',m:5,f(){
-    if(S.reperfused)return log('Ya reperfundido','warn');
-    if(S.cathCalled&&!S.atCath)sc(-20,'Fibrinólisis con ICP disponible en <120 min');
-    else sc(5,'Fibrinólisis como estrategia de reperfusión disponible');
-    S.reperfused=true;S.reperfT=S.simT;info('Tenecteplasa administrada. Resolución del ST ~50% a los 60 min.');}}]},
- {n:'Nitratos y antianginosos',i:[
-  {l:'Nitroglicerina sublingual 0,4 mg',m:1,f(){S.nitrateT=S.simT;
-    if(VD){sc(-30,'NITRATO EN IAM DE VD: colapso de la precarga');S.iatro++;
-      log('⚠ La presión empieza a caer. El VD isquémico no tolera venodilatación.','bad');}
-    else sc(-5,'Nitrato sin indicación clara');}},
-  {l:'Nitroglicerina en infusión IV',m:3,f(){S.nitrateT=S.simT;
-    if(VD){sc(-30,'Infusión de nitrato en fallo derecho: peor que el bolo sublingual');S.iatro++;}
-    else sc(-5,'Infusión sin indicación');}}]},
- {n:'Analgesia y sedación',i:[
-  {l:'Morfina 2 mg IV titulada (diluida a 1 mg/mL)',m:2,f(){sc(5,'Analgesia titulada, con volumen previo');S.pain=Math.max(2,S.pain-3);}},
-  {l:'Morfina 10 mg IV en bolo',m:1,f(){S.morphBig=S.simT;S.pain=1;
-    sc(-20,'Sobredosis: hipotensión, vómitos y ↓absorción del inhibidor P2Y12');S.iatro++;}},
-  {l:'Fentanilo 50 µg IV',m:1,f(){sc(5,'Opioide de elección en inestabilidad: menor efecto hemodinámico');S.pain=Math.max(2,S.pain-3);}},
-  {l:'Midazolam 2 mg IV',m:1,f(){
-    if(S.vent)sc(5,'Sedación durante la ventilación mecánica');
-    else sc(-10,'Sedación de un paciente que necesita estar despierto y evaluable');}},
-  {l:'AINE (ketorolaco)',m:1,f(){sc(-15,'AINE en el IAM: aumenta el riesgo de rotura y eventos');S.iatro++;}}]},
- {n:'Fluidos',i:[
-  {l:'Solución fisiológica 0,9% · bolo 250 mL',m:5,f(){
-    S.volume=Math.min(4,S.volume+1);S.volumeT=S.simT;
-    if(VD&&(S.nitrateT||S.furoT||S.vdHypoFired))sc(10,'Carga de volumen: el VD es precarga-dependiente');
-    else sc(5,'Volumen prudente');info('Se reausculta tras el bolo: campos pulmonares limpios');}},
-  {l:'Ringer lactato 500 mL',m:5,f(){S.volume=Math.min(4,S.volume+1);S.volumeT=S.simT;sc(5,'Cristaloide balanceado');}},
-  {l:'Dextrosa 5% de mantenimiento',m:3,f(){info('Plan de mantenimiento iniciado');}}]},
- {n:'Vasoactivos e inotrópicos',i:[
-  {l:'Dobutamina 5 µg/kg/min',m:3,f(){
-    if(S.sbp>110)return sc(-5,'Inotrópico sin hipoperfusión','warn');
-    S.dobu=true;sc(10,'Inotrópico tras optimizar la precarga');
-    info('Ampolla 250 mg/20 mL en 250 mL D5% = 1.000 µg/mL → 23,4 mL/h para 78 kg');}},
-  {l:'Noradrenalina 0,1 µg/kg/min',m:2,f(){S.nora=true;
-    if(S.volume===0)sc(-10,'Vasopresor sin corregir primero la precarga');else sc(5,'Vasopresor de rescate');}},
-  {l:'Adrenalina 1 mg IV',m:1,f(){
-    if(S.rhythm==='asystole')sc(8,'Adrenalina en asistolia');
-    else if(S.rhythm==='vf'){sc(-25,'Fármaco antes de la descarga en ritmo desfibrilable');S.iatro++;}
-    else sc(-15,'Adrenalina sin indicación');}},
-  {l:'Levosimendán',m:5,f(){nada('Sin lugar en la fase hiperaguda del IAMCEST.',-8);}}]},
- {n:'Antiarrítmicos y cronotrópicos',i:[
-  {l:'Atropina 1 mg IV',m:1,f(){
-    if(S.rhythm!=='avblock')return sc(-5,'Atropina sin bradicardia','warn');
-    S.atroT=S.simT;sc(10,'Atropina en bloqueo AV sintomático');}},
-  {l:'Amiodarona 300 mg IV',m:3,f(){
-    if(S.rhythm==='vf'&&S.vfStart&&S.simT-S.vfStart>180)sc(5,'Amiodarona tras descargas fallidas');
-    else sc(-15,'Antiarrítmico que no reemplaza a la desfibrilación');}},
-  {l:'Lidocaína 100 mg IV',m:1,f(){sc(-10,'Profilaxis antiarrítmica de rutina: abandonada, aumenta la mortalidad');}},
-  {l:'Metoprolol 5 mg IV',m:1,f(){S.betaIV=true;
-    if(S.rhythm==='avblock'||S.hr<60||S.sbp<100){
-      sc(-30,'Betabloqueante IV con bradicardia, bloqueo o hipotensión');S.iatro++;
-      S.rhythm='asystole';S.vfStart=S.simT;log('🚨 FC 38 → 22 → ASISTOLIA','bad');}
-    else sc(-10,'Betabloqueante IV precoz sin estabilidad sostenida (lección de COMMIT)');}}]},
- {n:'Diuréticos',i:[
-  {l:'Furosemida 40 mg IV',m:1,f(){S.furoT=S.simT;
-    if(VD){sc(-25,'Diurético en hipotensión por VD: vacía un ventrículo precarga-dependiente');S.iatro++;}
-    else sc(-10,'Diurético sin congestión demostrada');}}]},
- {n:'Prevención secundaria (fase hospitalaria)',i:[
-  {l:'Atorvastatina 80 mg VO',m:1,f(){
-    if(!S.reperfused)return log('Prioridad actual: reperfusión','warn');
-    sc(10,'Estatina de alta intensidad en las primeras 24 h');}},
-  {l:'Enalapril 2,5 mg c/12 h VO',m:1,f(){
-    if(!S.reperfused)return log('Prioridad actual: reperfusión','warn');
-    if(S.sbp<100)return sc(-10,'IECA con hipotensión');
-    sc(10,'IECA precoz: limita el remodelado ventricular');}},
-  {l:'Bisoprolol 1,25 mg/día VO (titulable)',m:1,f(){
-    if(!S.reperfused)return sc(-10,'Betabloqueante antes de reperfundir');
-    if(S.sbp<100||S.hr<60)return sc(-15,'Betabloqueante con inestabilidad hemodinámica');
-    sc(10,'Betabloqueante VO en dosis baja con paciente estable');sc(10,'Estrategia de titulación progresiva');}},
-  {l:'Eplerenona 25 mg/día VO',m:1,f(){
-    if(!S.reperfused)return log('Fase inadecuada','warn');
-    sc(10,'Antialdosterónico con K⁺ 4,1 y TFG 74 verificados');}},
-  {l:'Inhibidor de bomba de protones',m:1,f(){sc(5,'Protección gástrica bajo doble antiagregación');}},
-  {l:'Terapia sustitutiva de nicotina',m:2,f(){sc(8,'Cesación tabáquica farmacológica iniciada en internación');}}]},
- {n:'Antibióticos',i:[]},
- {n:'Hemoderivados y transfusión',i:[]},
- {n:'Antídotos y tóxicos',i:[]}
-]},
+IMPRESIÓN: INFARTO DE VENTRÍCULO DERECHO CONFIRMADO.
+Sin extensión posterior. Este hallazgo es fugaz: puede desaparecer
+en 10–12 horas si no se documenta ahora.`}],
+   fb:'Diagnóstico y activación son simultáneos: no se espera la troponina. El razonamiento DIII>DII ⇒ coronaria derecha proximal ⇒ buscar VD es la competencia central de este caso.'},
+   {l:'Diagnosticar IAMCEST inferior y activar el código, SIN pedir derivaciones derechas.',r:'omit',bp:-20,min:3,fx(){S.ecgDone=true;S.cathCalled=S.simT;S.vdKnown=false;},
+    printouts:[{tipo:'ECG · 12 derivaciones',titulo:'Electrocardiograma inicial (04:09 h)',cuerpo:
+`Ritmo sinusal · FC 80 lpm
+DII +3 mm · DIII +5 mm · aVF +4 mm (convexos)
+DI y aVL con descenso especular −3 mm
 
-/* ---------- 8 ---------- */
-{t:'Procedimientos e intervenciones',g:[
- {n:'Preparación y logística',i:[
-  {l:'Monitor + 2 vías 18G + desfibrilador a la cabecera',m:3,f(){
-    if(S.monitored&&S.defibNear)return log('Ya instalado','warn');
-    S.monitored=S.sat_probe=S.nibp=S.defibNear=true;S.lastNIBP=S.simT;
-    sc(10,'Monitorización completa, dos accesos y desfibrilador junto a la cama');
-    if(S.airway==='aire')sc(5,'No administra O₂ con SatO₂ ≥90%');bed();}},
-  {l:'Activar Código Infarto (llamar hemodinamia)',m:2,f(){
-    if(S.cathCalled)return log('Ya activado','warn');S.cathCalled=S.simT;
-    sc(10,'Código Infarto activado');sc(5,'Consentimiento tramitado en paralelo');
-    info('Hemodinamista: "salgo de casa, 25–30 minutos". Sala en preparación.');}},
-  {l:'Trasladar a la sala de hemodinamia',m:8,f(){
-    if(!S.cathCalled)return log('Nadie fue convocado a la sala','warn');
-    if(S.simT<S.cathCalled+28*60)return log('El equipo aún no llegó. Faltan ~'+Math.ceil((S.cathCalled+28*60-S.simT)/60)+' min','warn');
-    S.atCath=true;sc(8,'Traslado a hemodinamia');bed();}},
-  {l:'Ingreso a unidad coronaria',m:10,f(){
-    if(!S.reperfused)return sc(-20,'Ingreso a UCO sin reperfundir: la arteria sigue ocluida');
-    sc(10,'Ingreso a UCO con monitorización continua');bed();}}]},
- {n:'Reanimación y arritmias',i:[
-  {l:'⚡ Desfibrilar 200 J (no sincronizada)',m:.3,f(){
-    if(S.rhythm!=='vf')return sc(-15,'Descarga en ritmo no desfibrilable');
-    const d=S.simT-S.vfStart;S.rhythm='sinus';S.vfStart=null;S.hr=88;S.sbp=96;S.gcs=15;
-    if(d<=60){sc(10,`Desfibrilación en ${Math.round(d)} s`);sc(10,'Compresiones reanudadas de inmediato');}
-    else sc(-10,`Desfibrilación tardía (${Math.round(d)} s)`);
-    info('Descarga 200 J → ritmo sinusal con pulso');}},
-  {l:'Cardioversión sincronizada 100 J',m:.5,f(){
-    if(S.rhythm==='vf'){sc(-25,'El equipo no descarga: no hay onda R que sincronizar');S.iatro++;
-      log('⚠ "Sincronizando…" — el desfibrilador no dispara. Tiempo perdido.','bad');}
-    else sc(-10,'Cardioversión sin indicación');}},
-  {l:'RCP de alta calidad',m:2,f(){
-    if(S.rhythm!=='vf'&&S.rhythm!=='asystole')return sc(-10,'RCP en paciente con pulso');
-    S.cpr=true;sc(5,'Compresiones torácicas en curso');}},
-  {l:'Parches de marcapasos transcutáneo (stand-by)',m:2,f(){S.pads=true;
-    sc(8,'Parches colocados: puente ante bloqueo refractario a atropina');}},
-  {l:'Marcapasos transcutáneo (capturar)',m:2,f(){
-    if(S.rhythm!=='avblock')return sc(-5,'Estimulación sin bradicardia','warn');
-    if(!S.pads)return log('Primero hay que colocar los parches','warn');
-    S.atroT=S.simT;sc(8,'Captura a 70 mA, FC 70 lpm');}},
-  {l:'Marcapasos transvenoso definitivo (en Urgencias)',m:35,f(){
-    sc(-25,'35 minutos de reperfusión perdidos: el transcutáneo puentea el problema');S.omis++;}}]},
- {n:'Soporte circulatorio avanzado',i:[
-  {l:'Balón de contrapulsación intraaórtico',m:25,f(){
-    if(S.sbp<75&&S.reperfused)sc(5,'BCIA como puente en shock refractario');
-    else sc(-15,'Dispositivo invasivo sin shock refractario que lo justifique');}}]},
- {n:'Derivación y seguimiento',i:[
-  {l:'Derivar a rehabilitación cardíaca + cesación tabáquica',m:5,f(){
-    if(!S.reperfused)return log('Prioridad actual: reperfusión','warn');
-    sc(10,'Rehabilitación supervisada y programa de cesación con seguimiento');
-    sc(10,'Aborda la barrera laboral real del paciente');}},
-  {l:'Interconsulta a cirugía cardiovascular',m:15,f(){
-    nada('Cirugía: sin enfermedad de tronco ni complicación mecánica. No hay indicación quirúrgica.',-8);}}]},
- {n:'Pericardiocentesis y drenajes',i:[]},
- {n:'Terapia de reemplazo renal',i:[]}
-]}
+IMPRESIÓN: IAMCEST de cara inferior.`}],
+    fb:'Diagnóstico correcto, caracterización incompleta. El compromiso del ventrículo derecho queda invisible: esta omisión va a condicionar las próximas decisiones sobre nitratos y diuréticos. Recordá: no pedir V3R–V4R en un IAM inferior es la puerta de entrada a las dos trampas que vienen.'},
+   {l:'"Cambios inespecíficos": pedir troponina y repetir el ECG en 3 horas.',r:'bad',bp:-30,min:3,fx(){S.ecgDone=false;S.cathCalled=null;S.pain=Math.min(10,S.pain+2);},
+    fb:'Elevación del ST ≥1 mm en dos derivaciones contiguas del mismo territorio ES un IAMCEST. Nunca se espera la troponina para reperfundir. Sin tratamiento, el dolor aumenta, la FC sube y el miocardio salvable sigue cayendo en el contador del monitor.'}
+  ]},
+
+/* 5 · OXIGENOTERAPIA -------------------------------------------------------- */
+{t:'Medidas generales · oxígeno', time:'⏱ 04:12 · T+60 min', med:true,
+ vig:`Monitor, dos vías 18G y desfibrilador ya están junto a la cama. TA 138/84 · FC 78 · SpO₂ 96% en aire ambiente.\nLa enfermera pregunta: "¿le pongo oxígeno con reservorio, doctor? Es un infarto."`,
+ opts:[
+  {l:'No administrar oxígeno suplementario (SpO₂ 96%).',r:'good',bp:15,min:1,
+   fb:'Correcto. Con SpO₂ ≥90% el oxígeno de rutina no beneficia y puede aumentar el tamaño del infarto por vasoconstricción coronaria (DETO2X-AMI, AVOID).'},
+  {l:'Máscara con reservorio a 15 L/min, "protocolo MONA".',r:'bad',bp:-15,min:1,fx(){air('máscara con reservorio',0.85);S.iatro++;},
+   fb:'Hiperoxia con SpO₂ ≥94%: vasoconstricción coronaria y mayor extensión del infarto. El mnemotécnico MONA está desactualizado en este punto.'},
+   {l:'Cánula nasal 2 L/min "por si acaso".',r:'warn',bp:-8,min:1,fx(){air('cánula nasal',0.28);},
+    fb:'Oxígeno sin hipoxemia demostrada: efecto leve e innecesario con SpO₂ 96%. Además, la cánula de 2 L entrega FiO₂ ~28%, insuficiente si más adelante el paciente se deteriora: en ese escenario la SpO₂ va a caer igual en el monitor y el oxígeno de bajo flujo no va a alcanzar para sostenerla.'}
+  ]},
+
+/* 6 · ANTIAGREGACIÓN (panel de medicamentos) -------------------------------- */
+{t:'Antiagregación dual', time:'⏱ 04:15 · T+63 min', med:true,
+ vig:`TA 138/85 · FC 78 · SpO₂ 96%. Dolor 8/10.\nFarmacia informa: hay ticagrelor y clopidogrel disponibles. No hay prasugrel.`,
+  opts:[
+   {l:'AAS 300 mg masticado (3 comp. de 100 mg) + Ticagrelor 180 mg de carga (2 comp. de 90 mg).',r:'good',bp:25,min:2,fx(){S.aas=true;S.p2y12=true;S.daptOK=true;},
+    fb:'Óptimo. Masticar el AAS acelera la inhibición plaquetaria a ~15 min (vs 60 min si se deglute entero). Doble antiagregación de carga completa antes de la sala. Es la clave para evitar la trombosis del stent que vas a colocar en la angioplastia.'},
+   {l:'Clopidogrel 600 mg de carga (8 comprimidos de 75 mg) + AAS 300 mg masticado.',r:'good',bp:18,min:2,fx(){S.aas=true;S.p2y12=true;S.daptOK=true;},
+    fb:'Alternativa correcta cuando no hay ticagrelor/prasugrel disponibles o hay indicación de anticoagulación oral concomitante.'},
+   {l:'AAS 100 mg deglutido entero, sin inhibidor P2Y12: "que decida el hemodinamista".',r:'warn',bp:-10,min:1,fx(){S.aas=true;S.daptOK=false;},
+    fb:'Dosis subterapéutica para la fase aguda y demora la inhibición del receptor P2Y12, que debía iniciarse ya. Con monoterapia, el stent que vas a colocar queda sin protección antiplaquetaria.'},
+   {l:'Clopidogrel 75 mg (dosis de mantenimiento).',r:'bad',bp:-15,min:1,fx(){S.p2y12=true;S.daptOK=false;S.iatro++;},
+    fb:'75 mg es dosis de mantenimiento, no de carga (600 mg). Antiagregación insuficiente para una angioplastia primaria: alto riesgo de trombosis aguda del stent.'},
+   {l:'Iniciar heparina y dejar la antiagregación para después de la coronariografía.',r:'bad',bp:-15,min:1,fx(){S.iatro++;S.daptOK=false;},
+    fb:'Anticoagular sin antiagregar es incoherente: el trombo coronario agudo es predominantemente plaquetario. El stent, al implantarse, expone colágeno: sin doble antiagregación previa va a trombosar.'}
+  ]},
+
+/* 7 · LABORATORIO ----------------------------------------------------------- */
+{t:'Laboratorio', time:'⏱ 04:18 · T+66 min', med:false,
+ vig:`TA 136/84 · FC 80. Dolor 7/10.\nEl laboratorio informa: "la troponina ultrasensible tarda 50-60 minutos, hay una sola bioquímica de turno".`,
+ opts:[
+  {l:'Extraer el panel completo (troponina, función renal, ionograma, coagulograma, glucemia) Y trasladar sin esperar el resultado.',r:'good',bp:15,min:2,fx(){S.labDrawn=true;},
+   printouts:[{tipo:'Laboratorio',titulo:'Panel bioquímico y hematológico (05:10 h)',cuerpo:
+`Troponina T ultrasensible ... 0,42 ng/mL  (VN <0,014)  ↑↑
+Hemoglobina ................. 14,8 g/dL
+Hematocrito .................. 44%
+Plaquetas .................... 245.000/mm³
+Leucocitos ................... 11.200/mm³
+Creatinina .................... 1,1 mg/dL (TFG 74 mL/min/1,73m²)
+Potasio ....................... 4,1 mEq/L · Sodio 139 · Magnesio 2,0
+INR ........................... 1,0 · TTPa 30 s
+Glucemia ...................... 171 mg/dL
+LDL ........................... 168 mg/dL · HbA1c 8,2%
+
+INTERPRETACIÓN: troponina positiva, confirma necrosis miocárdica
+(no la produce: el ECG ya había indicado reperfundir). Función renal
+apta para contraste. Sin trombocitopenia, coagulopatía ni disionía
+que contraindiquen el tratamiento.`}],
+   fb:'Correcto: el diagnóstico de IAMCEST es electrocardiográfico. La troponina confirma y da pronóstico, nunca condiciona la reperfusión.'},
+  {l:'Esperar el resultado de troponina en el box antes de decidir el traslado.',r:'bad',bp:-25,min:55,fx(){S.labDrawn=true;S.iatro++;},
+   fb:'55 minutos de necrosis regalados por un dato que no iba a cambiar la conducta: una troponina normal a esta hora tampoco descartaría nada, la curva recién está subiendo.'},
+  {l:'No pedir laboratorio: "el ECG ya hizo el diagnóstico".',r:'omit',bp:-10,min:1,
+   fb:'Sin función renal ni potasio no se puede prever el riesgo de nefropatía por contraste ni el riesgo arrítmico antes de instrumentar.'}
+ ]},
+
+/* 8 · ANALGESIA Y NITRATOS — trampa del VD nº1 (panel de medicamentos) ------ */
+{t:'Analgesia', time:'⏱ 04:22 · T+70 min', med:true,
+ vig:`Dolor persistente 7/10. TA 128/78 · FC 76 · SpO₂ 96%.\nLa enfermera, con la ampolla en la mano: "¿le doy la nitroglicerina sublingual? Todavía tiene dolor."`,
+ opts:[
+  {l:'NO dar nitratos. Bolo de solución fisiológica 250 mL, reevaluando TA y auscultación tras la carga.',r:'good',bp:20,min:5,fx(){S.volume=Math.min(4,S.volume+1);S.volumeT=S.simT;},
+   fb:'Correcto: la reperfusión es la analgesia definitiva. En el IAM de VD el gasto cardíaco depende de la precarga; el volumen es tratamiento, no un relleno de espera.'},
+   {l:'Fentanilo 50 µg IV (menor efecto hemodinámico que la morfina).',r:'good',bp:10,min:2,fx(){S.pain=Math.max(2,S.pain-3);},
+    fb:'Opción razonable de analgesia con menor impacto hemodinámico, aunque no trata la causa del dolor. Mirá el monitor: al bajar la EVA de dolor, la FC y la FR descienden por la menor descarga simpática.'},
+  {l:'Nitroglicerina sublingual 0,4 mg + morfina 4 mg IV, "protocolo estándar de dolor torácico".',r:'bad',bp:-30,min:2,fx(){S.nitrateT=S.simT;S.iatro++;},
+   fb:'NITRATO EN IAM DE VENTRÍCULO DERECHO. En segundos vas a ver la presión caer en el monitor: el VD isquémico no tolera la venodilatación, se vacía y colapsa.'},
+  {l:'Morfina 10 mg IV en bolo único, "para eliminar el dolor por completo".',r:'bad',bp:-20,min:1,fx(){S.morphBig=S.simT;S.pain=1;S.iatro++;},
+   fb:'Sobredosis: hipotensión, vómitos y reducción demostrada de la absorción del inhibidor P2Y12 que ya administraste.'}
+ ]},
+
+/* 9 · ESTRATEGIA DE REPERFUSIÓN --------------------------------------------- */
+{t:'Estrategia de reperfusión', time:'⏱ 04:25 · T+73 min', med:false,
+ vig:`TA 132/80 · FC 78 · SpO₂ 96%. Dolor 6/10 tras el volumen.\nHemodinamia tiene guardia PASIVA: el hemodinamista, por teléfono, dice "salgo de casa, 25-30 minutos". Hay tenecteplasa disponible en farmacia.`,
+  opts:[
+   {l:'ICP primaria: sostener la activación y preparar el traslado interno mientras llega el equipo.',r:'good',bp:15,min:2,fx(){if(!S.cathCalled)S.cathCalled=S.simT;},
+    fb:'Correcto. Con el balón alcanzable dentro de los 120 minutos desde el diagnóstico, la angioplastia primaria es superior a la fibrinólisis en mortalidad, reinfarto y ACV — incluso con guardia pasiva. La reperfusión mecánica se va a ver en el monitor como resolución del ST y caída del dolor.'},
+   {l:'Fibrinólisis con tenecteplasa ahora, "para ganar tiempo", y coronariografía después.',r:'warn',bp:-20,min:5,fx(){S.reperfused=true;S.reperfT=S.simT;S.lytic=true;S.sbp=Math.min(S.sbp,138);},
+    fb:'Estrategia inferior cuando la ICP es alcanzable en <120 min: expone a riesgo hemorrágico (incluida hemorragia intracraneal) sin necesidad. Además, la fibrinólisis es menos efectiva para restaurar flujo TIMI 3: la recanalización suele ser parcial, el ST puede no resolverse del todo y el riesgo de reoclusión sigue presente.'},
+   {l:'Ingresar a UCO con tratamiento médico y coronariografía "programada para la mañana".',r:'bad',bp:-30,min:5,fx(){S.iatro++;S.pain=Math.min(10,S.pain+2);},
+    fb:'La omisión más grave del caso: la arteria sigue ocluida y el miocardio sigue muriendo mientras el paciente "espera cama". En el monitor el ST permanece elevado, el dolor y la FC suben, y el contador de miocardio salvable no deja de caer.'}
+  ]},
+
+/* 10 · ANTICOAGULACIÓN PERIPROCEDIMIENTO (panel de medicamentos) ----------- */
+{t:'Anticoagulación periprocedimiento', time:'⏱ 04:34 · T+82 min', med:true,
+ vig:`Paciente en camilla, listo para bajar a hemodinamia. TA 130/80 · FC 76.\nFrasco disponible: heparina sódica 25.000 UI en 5 mL (5.000 UI/mL).`,
+ opts:[
+  {l:'Heparina no fraccionada 6.000 UI IV en bolo (≈80 UI/kg para 78 kg = 1,2 mL del frasco).',r:'good',bp:15,min:1,fx(){S.heparin=true;},
+   fb:'Correcto, con el cálculo hecho por peso y expresado en mL de la presentación real disponible.'},
+  {l:'Enoxaparina 0,5 mg/kg IV en bolo (39 mg).',r:'good',bp:10,min:1,fx(){S.heparin=true;},
+   fb:'Alternativa válida para ICP primaria por vía intravenosa.'},
+  {l:'Enoxaparina 1 mg/kg subcutánea.',r:'warn',bp:-10,min:1,fx(){S.heparin=true;},
+   fb:'Dosis y vía de un síndrome coronario sin elevación del ST manejado médicamente. Para ICP primaria se necesita la vía IV.'},
+   {l:'No anticoagular: "que lo haga el hemodinamista en la sala".',r:'omit',bp:-20,min:1,fx(){S.heparin=false;},
+    fb:'Avanzar sin garantizar la anticoagulación deja al paciente sin cobertura durante el traslado y la punción arterial. En la sala vas a ver trombosis sobre el catéter y el alambre guía, y mayor riesgo de trombosis aguda del stent.'}
+ ]},
+
+/* 11 · BLOQUEO AV COMPLETO EN EL TRASLADO (panel de medicamentos) --------- */
+{t:'Bloqueo AV completo en el traslado', time:'⏱ 04:48 · T+96 min', med:true,
+ vig:`En el ascensor, camino a hemodinamia. El monitor de transporte alarma:\nBAV completo · QRS de escape a 38 lpm · TA 84/52 · paciente somnoliento, responde a la voz, piel marmórea.`,
+ opts:[
+  {l:'Atropina 1 mg IV + bolo de SF 250 mL + parches de marcapasos transcutáneo en stand-by, SIN detener el traslado.',r:'good',bp:20,min:2,fx(){S.atroT=S.simT;S.volume=Math.min(4,S.volume+1);S.volumeT=S.simT;S.pads=true;},
+   fb:'Correcto. La atropina puede dar respuesta parcial en 60 s y completa en 2 min, pero puede fallar en bloqueo infranodal — por eso los parches quedan puestos como puente, sin frenar la reperfusión, que es el tratamiento definitivo.'},
+  {l:'Solo atropina 1 mg IV, sin volumen ni parches.',r:'warn',bp:-8,min:1,fx(){S.atroT=S.simT;},
+   fb:'Puede responder, pero sin el puente del marcapasos transcutáneo y sin volumen, la ventana de seguridad es más estrecha.'},
+  {l:'Conducta expectante: "es transitorio, se resuelve con la reperfusión".',r:'warn',bp:-15,min:3,
+   fb:'El razonamiento fisiopatológico es correcto, pero TA 84/52 con sensorio alterado es hipoperfusión activa que exige tratamiento inmediato, no solo esperar.'},
+  {l:'Detener el traslado para colocar un marcapasos transvenoso definitivo en Urgencias.',r:'bad',bp:-25,min:35,fx(){S.iatro++;},
+   fb:'35 minutos de reperfusión perdidos. El bloqueo del IAM inferior es isquémico y transitorio: el transcutáneo puentea el problema sin frenar el traslado.'},
+  {l:'Metoprolol 5 mg IV, "todo IAM lleva betabloqueante".',r:'bad',bp:-30,min:1,fx(){S.betaIV=true;S.rhythm='asystole';S.vfStart=S.simT;S.iatro++;log('🚨 FC 38 → 22 → ASISTOLIA','bad');},
+   fb:'Betabloqueante IV con bradicardia y bloqueo: el paciente cae en asistolia frente a tus ojos en el monitor.'}
+ ]},
+
+/* 12 · ANGIOPLASTIA PRIMARIA --------------------------------------------- */
+{t:'Coronariografía y angioplastia primaria', time:'⏱ 05:05 · T+113 min', med:false,
+ vig:`Mesa de hemodinamia. TA 112/70 · FC 66 (ritmo sinusal recuperado) · SpO₂ 97%.\nEl hemodinamista pregunta: "¿radial o femoral? ¿Y qué hago con la lesión del 40% en la descendente anterior?"`,
+ opts:[
+  {l:'Acceso radial. ICP de la arteria culpable (coronaria derecha) con tromboaspiración y stent farmacoactivo. No tocar la DA del 40%.',r:'good',bp:30,min:15,fx(){doPCI();},
+   printouts:[{tipo:'Cateterismo',titulo:'Informe de coronariografía y angioplastia',cuerpo:
+`Acceso: radial derecho
+Coronaria derecha: OCLUSIÓN TOTAL proximal — flujo TIMI 0
+                    Gran carga trombótica. Dominancia derecha.
+Descendente anterior: lesión 40% en segmento medio (no significativa)
+Circunfleja: sin lesiones significativas
+
+PROCEDIMIENTO: tromboaspiración + stent farmacoactivo 3,5×24 mm en
+coronaria derecha proximal. Resultado final: flujo TIMI 3.
+Contraste: 145 mL · Fluoroscopia: 11 min.`}],
+   fb:'Acceso radial: menor sangrado y menor mortalidad que el femoral (MATRIX, RIVAL). La lesión del 40% no es significativa: tratarla en agudo sería riesgo sin beneficio.'},
+  {l:'Acceso radial. Revascularización completa en el mismo acto: culpable + stent en la DA del 40%.',r:'warn',bp:-15,min:20,fx(){doPCI();},
+   fb:'La arteria culpable quedó bien tratada, pero stentear una lesión no significativa añade riesgo (disección, contraste, tiempo) sin beneficio demostrado en agudo.'},
+   {l:'Angioplastia con balón solo, sin stent, "para evitar la doble antiagregación prolongada".',r:'warn',bp:-15,min:15,fx(){S.reperfused=true;S.reperfT=S.simT;S.reoccl=true;if(VD)S.vdHypoAt=S.simT+6*3600;},
+    fb:'Mayor tasa de reoclusión y reestenosis frente al stent farmacoactivo. El flujo restaurado puede volver a caer en cualquier momento: el ST puede re-elevarse y el dolor reaparecer en el monitor.'}
+ ]},
+
+/* 13 · FV DE REPERFUSIÓN --------------------------------------------------- */
+{t:'Fibrilación ventricular de reperfusión', time:'⏱ 05:22 · T+130 min', med:false,
+ vig:`Segundos después de restablecer el flujo, el monitor alarma:\nFIBRILACIÓN VENTRICULAR · paciente inconsciente, sin pulso, apnea. El desfibrilador está a un metro, encendido, con los parches puestos.`,
+ opts:[
+  {l:'Desfibrilar 200 J no sincronizados YA, reanudar compresiones inmediatamente después de la descarga.',r:'good',bp:20,min:.5,fx(){
+     if(S.rhythm==='vf'){const d=S.simT-S.vfStart;S.rhythm='sinus';S.vfStart=null;S.hr=88;S.sbp=96;S.gcs=15;
+       if(d>60)sc(-10,'Desfibrilación algo tardía','warn');info('Descarga 200 J → ritmo sinusal con pulso');}
+   },
+   fb:'La FV de reperfusión ocurre en 5-10% de las angioplastias primarias y tiene excelente pronóstico si se desfibrila en segundos. El desfibrilador ya estaba ahí por esta razón exacta.'},
+  {l:'Iniciar RCP y dar adrenalina 1 mg IV, desfibrilar recién a los 4 minutos.',r:'bad',bp:-25,min:4,fx(){S.iatro++;S.adrT=S.simT;
+     if(S.rhythm==='vf'){S.rhythm='sinus';S.vfStart=null;S.hr=88;S.sbp=90;}},
+   fb:'En un ritmo desfibrilable presenciado y monitorizado, la descarga es la prioridad absoluta. Cada minuto de retraso reduce la supervivencia 7-10%.'},
+  {l:'Cardioversión SINCRONIZADA a 100 J.',r:'bad',bp:-25,min:1,fx(){S.iatro++;log('⚠ "Sincronizando…" — el desfibrilador no dispara: no hay onda R que sincronizar en la FV. Tiempo perdido.','bad');},
+   fb:'Error conceptual grave: el equipo no descarga en modo sincronizado sobre una FV, porque no detecta un complejo QRS para disparar.'}
+ ]},
+
+/* 14 · INGRESO A UCO Y ECOCARDIOGRAMA -------------------------------------- */
+{t:'Ingreso a Unidad Coronaria', time:'⏱ 06:30 · Día 0', med:false,
+ vig:`TA 104/64 · FC 70 · SpO₂ 97% · Diuresis 60 mL/h. Sin dolor, consciente y orientado.\nEl jefe de sala: "¿lo dejamos en UCO o lo mandás a piso? Tengo una sola cama monitoreada libre."`,
+ opts:[
+  {l:'UCO con monitorización continua + ecocardiograma transtorácico en las primeras 24 h.',r:'good',bp:15,min:15,fx(){S.foley=true;},
+   printouts:[{tipo:'Ecocardiograma',titulo:'Ecocardiograma transtorácico (24 h)',cuerpo:
+`FEVI: 48% (Simpson biplano) — levemente deprimida
+Motilidad: hipocinesia inferior e inferoseptal basal
+Ventrículo derecho: dilatación leve, TAPSE 15 mm (disfunción leve)
+Válvula mitral: insuficiencia leve funcional
+Pericardio: sin derrame · Cavidades: sin trombo
+Vena cava inferior: no dilatada, colapsable
+
+IMPRESIÓN: disfunción sistólica leve del VI de causa isquémica.
+Compromiso leve del VD, en recuperación. Sin complicaciones mecánicas.`}],
+   fb:'Las primeras 24-48 h post-ICP concentran el riesgo de arritmias, reoclusión y complicaciones mecánicas: el monitoreo continuo es obligatorio, y el ecocardiograma establece la línea de base del VD.'},
+  {l:'Sala general de cardiología sin monitor continuo: "ya está reperfundido".',r:'bad',bp:-20,min:10,fx(){S.iatro++;},
+   fb:'Sin monitor continuo, una arritmia periinfarto puede no detectarse a tiempo justo en la ventana de mayor riesgo.'},
+  {l:'Resonancia cardíaca de urgencia en lugar del ecocardiograma.',r:'warn',bp:-10,min:45,
+   fb:'Valiosa para viabilidad, pero no es primera línea en agudo: lenta, poco disponible y no se hace a pie de cama.'}
+ ]},
+
+/* 15 · HIPOTENSIÓN A LAS 6 HORAS — trampa del VD nº2 (panel medicamentos) -- */
+{t:'Hipotensión a las 6 horas', time:'⏱ 12:15 · Día 0', med:true,
+ vig:`La enfermera de UCO llama: TA 82/54 · FC 96 · SpO₂ 95% · diuresis 15 mL/h en la última hora · lactato 2,6.\nYUGULARES INGURGITADAS a 45°. CAMPOS PULMONARES LIMPIOS. Extremidades frías. Sin dolor torácico. ECG sin nuevo supradesnivel.`,
+ opts:[
+   {l:'Reevaluar y dar volumen controlado (SF 250 mL, reauscultando tras cada bolo); si persiste, dobutamina.',r:'good',bp:20,min:15,fx(){S.volume=Math.min(4,S.volume+1);S.volumeT=S.simT;if(S.vdHypoFired)S.dobu=true;},
+    fb:'Tríada clave: hipotensión + yugulares ingurgitadas + pulmones limpios = disfunción del ventrículo derecho, NO congestión izquierda. Se guía por diuresis y lactato, no por diurético. Mirá el monitor: con la carga de volumen la PA recupera, la diuresis vuelve a subir y el lactato empieza a bajar.'},
+  {l:'Noradrenalina en dosis crecientes como primera medida, sin volumen.',r:'warn',bp:-10,min:5,fx(){S.nora=true;},
+   fb:'Sube la presión pero aumenta la poscarga del ventrículo isquémico sin corregir la precarga insuficiente, que es el problema de fondo.'},
+  {l:'Furosemida 40 mg IV, "signos de insuficiencia cardíaca congestiva" por las yugulares ingurgitadas.',r:'bad',bp:-25,min:2,fx(){S.furoT=S.simT;S.iatro++;},
+   fb:'Diurético en un ventrículo derecho precarga-dependiente: lo estás vaciando todavía más. Vas a ver el colapso en el monitor.'},
+  {l:'No actuar: "esperemos, tal vez se recupera solo".',r:'omit',bp:-20,min:10,
+   fb:'TA 82/54 con oliguria y lactato en ascenso es hipoperfusión activa. La inacción tiene el mismo costo fisiológico que un tratamiento equivocado.'}
+ ]},
+
+/* 16 · DÍA 1 — ESTATINA E IECA (panel de medicamentos) --------------------- */
+{t:'Terapia médica óptima (I)', time:'⏱ Día 1 · 09:00', med:true,
+ vig:`TA 118/72 · FC 68 · SpO₂ 97% · diuresis 70 mL/h. Sin inotrópicos hace 6 h. Killip I, sin dolor.`,
+ opts:[
+  {l:'Atorvastatina 80 mg + enalapril 2,5 mg c/12h + continuar la DAPT + IBP. Betabloqueante diferido.',r:'good',bp:20,min:2,
+   fb:'Estatina de alta intensidad en las primeras 24 h (independiente del LDL basal) e IECA precoz que limita el remodelado ventricular. El betabloqueante se difiere a estabilidad sostenida.'},
+  {l:'Todo el paquete de golpe hoy mismo: estatina + IECA + metoprolol 50 mg/12h + espironolactona.',r:'warn',bp:-10,min:2,fx(){S.betaIV=false;},
+   fb:'La secuencia importa tanto como la lista: introducir betabloqueante y antialdosterónico el mismo día de una hipotensión reciente aumenta el riesgo de recaída hemodinámica.'},
+  {l:'Diferir estatina e IECA a la consulta ambulatoria: "primero que se estabilice".',r:'omit',bp:-15,min:1,
+   fb:'La estatina precoz reduce eventos; el IECA precoz limita el remodelado. Diferirlos sin causa pierde ese beneficio.'},
+   {l:'Suspender la doble antiagregación "por el episodio de hipotensión".',r:'bad',bp:-25,min:1,fx(){S.iatro++;S.daptStop=S.simT+15*60;},
+    fb:'Suspender la DAPT antes de los 12 meses puede causar trombosis aguda del stent, con mortalidad cercana al 40%. En el monitor vas a verlo venir: el ST empieza a re-elevarse en los próximos minutos.'}
+ ]},
+
+/* 17 · DÍA 2 — BETABLOQUEANTE Y EPLERENONA (panel de medicamentos) -------- */
+{t:'Terapia médica óptima (II)', time:'⏱ Día 2 · 10:00', med:true,
+ vig:`TA 124/76 · FC 74 · SpO₂ 98%. Sin inotrópicos hace 24 h. K⁺ 4,3 · Creatinina 1,0 · TFG 78.\nEl residente pregunta: "pero hizo un bloqueo AV completo, ¿no está contraindicado el betabloqueante de por vida?"`,
+ opts:[
+  {l:'Bisoprolol 1,25 mg/día (titulable) + eplerenona 25 mg/día, con K⁺ y TFG ya verificados.',r:'good',bp:20,min:2,
+   fb:'El BAV del IAM inferior fue isquémico y transitorio, resuelto al reperfundir. Con ritmo sinusal estable a 74 lpm, el betabloqueante está indicado y reduce mortalidad. La eplerenona es segura con este K⁺ y esta TFG.'},
+  {l:'Metoprolol 100 mg/12h desde hoy, "para proteger al máximo".',r:'warn',bp:-10,min:1,
+   fb:'Lección del ensayo COMMIT: el betabloqueo agresivo de inicio aumenta el riesgo de shock cardiogénico. Se empieza bajo y se titula.'},
+  {l:'No indicar betabloqueante nunca, por el antecedente de bloqueo AV.',r:'bad',bp:-15,min:1,fx(){S.iatro++;},
+   fb:'Contraindicación permanente injustificada: el bloqueo fue transitorio. Esta decisión le cuesta al paciente el fármaco con mayor impacto en mortalidad post-IAM.'},
+   {l:'Eplerenona 25 mg/día sin verificar potasio ni función renal.',r:'bad',bp:-15,min:1,fx(){S.iatro++;S.hyperK=S.simT+20*60;},
+    fb:'Riesgo de hiperpotasemia grave al prescribir un antialdosterónico sin los controles previos. En el monitor vas a ver el patrón clásico: ondas T picudas, bradicardia progresiva y ensanchamiento del QRS.'}
+ ]},
+
+/* 18 · ESTRATIFICACIÓN PRE-ALTA --------------------------------------------- */
+{t:'Estratificación pre-alta', time:'⏱ Día 4', med:false,
+ vig:`TA 122/74 · FC 66 · SpO₂ 98%. Asintomático, camina 100 m sin disnea ni angina.`,
+ opts:[
+  {l:'Ecocardiograma de control + escala GRACE + reevaluación de FEVI programada a los 40-90 días.',r:'good',bp:20,min:10,
+   printouts:[{tipo:'Ecocardiograma',titulo:'Ecocardiograma de control (día 4)',cuerpo:
+`FEVI: 52% (mejoría respecto al 48% inicial)
+Motilidad: hipocinesia inferobasal residual leve
+Ventrículo derecho: función normalizada, TAPSE 19 mm
+Sin complicaciones mecánicas. Sin trombo intracavitario.
+
+IMPRESIÓN: recuperación parcial de la función sistólica. Se sugiere
+reevaluar la FEVI a los 40-90 días antes de definir dispositivos.`}],
+   fb:'La FEVI del día 0 mide músculo aturdido, no músculo muerto. Reevaluar más adelante evita indicaciones prematuras de dispositivos.'},
+  {l:'Coronariografía de control de rutina, sin síntomas ni isquemia demostrada.',r:'warn',bp:-10,min:20,
+   fb:'Estudio invasivo sin indicación: nefropatía por contraste y complicaciones vasculares sin beneficio esperado.'},
+  {l:'Indicar un desfibrilador implantable (DAI) ahora, basándose en la FEVI del día 0 (48%).',r:'bad',bp:-15,min:5,fx(){S.iatro++;},
+   fb:'Sin beneficio demostrado: se requiere esperar la recuperación del aturdimiento miocárdico antes de decidir un dispositivo definitivo.'}
+ ]},
+
+/* 19 · PREVENCIÓN SECUNDARIA Y REHABILITACIÓN ------------------------------ */
+{t:'Prevención secundaria', time:'⏱ Día 5', med:false,
+ vig:`TA 120/74 · FC 64 · SpO₂ 98%. Asintomático.\nEl paciente, con el hijo presente: "doctor, ¿cuándo puedo volver a la obra? Somos changas, si no laburo no cobro. Y sinceramente, ¿puedo fumar uno solo por día? Uno solo no hace nada, ¿no?"`,
+ opts:[
+  {l:'Derivar a rehabilitación cardíaca + terapia sustitutiva de nicotina con seguimiento + plan de reincorporación laboral progresiva tras evaluación funcional.',r:'good',bp:20,min:5,
+   fb:'No existe un umbral seguro de cigarrillos: incluso 1-4 por día mantienen gran parte del exceso de riesgo cardiovascular. La cesación completa reduce la mortalidad post-IAM ~35-40%, más que casi cualquier fármaco de la receta. Abordar la barrera laboral real (changas, sin obra social) también es un dato clínico.'},
+  {l:'Entregar una hoja impresa con recomendaciones generales y citar en 3 meses.',r:'warn',bp:-10,min:2,
+   fb:'La información pasiva tiene baja adherencia frente a un programa estructurado con seguimiento.'},
+  {l:'Autorizar el regreso a la obra (trabajo físico pesado) al día siguiente del alta.',r:'bad',bp:-20,min:1,fx(){S.iatro++;},
+   fb:'Reincorporación sin evaluación funcional en un paciente con stent reciente y FEVI 52%: riesgo de isquemia recurrente.'}
+ ]},
+
+/* 20 · ALTA HOSPITALARIA ---------------------------------------------------- */
+{t:'Alta hospitalaria', time:'⏱ Día 6', med:false,
+ vig:`TA 118/72 · FC 64 · SpO₂ 98% · Killip I. Sin angina. Deambula sin limitación.`,
+ opts:[
+  {l:'Receta completa con los 5 pilares (AAS, ticagrelor, atorvastatina, bisoprolol, enalapril) + citas de control + verificación de comprensión (teach-back).',r:'good',bp:20,min:5,
+   fb:'Teach-back: el paciente repite con sus palabras qué pasa si suspende el ticagrelor y qué hacer si vuelve el dolor. Control cardiológico en 7 días, laboratorio en 72 h, perfil lipídico en 4-6 semanas, ETT a los 40-90 días.'},
+  {l:'Receta incompleta, sin el betabloqueante ("no le gustó al residente").',r:'warn',bp:-10,min:1,
+   fb:'Cada pilar omitido de la receta de alta se traduce en más eventos cardiovasculares al año.'},
+  {l:'Alta sin receta escrita ni seguimiento programado, "ya sabe lo que tiene que tomar".',r:'bad',bp:-20,min:1,fx(){S.iatro++;},
+   fb:'Sin receta escrita ni citas programadas, el abandono del tratamiento en el primer mes es la principal causa evitable de reinfarto y trombosis del stent.'}
+ ]}
 ];
 
 /* ==========================================================================
@@ -960,6 +1036,8 @@ function doPCI(){
   info('Tromboaspiración + stent farmacoactivo 3,5×24 mm · flujo TIMI 3 · contraste 145 mL');
   if(d2b<=90*60)sc(10,`Puerta-balón ${Math.round(d2b/60)} min (meta <90)`);
   else sc(-10,`Puerta-balón ${Math.round(d2b/60)} min: fuera de meta`);
+  if(!S.daptOK){S.stentThromb=400;log('⚠ Sin doble antiagregación previa: el stent queda expuesto y vulnerable a trombosis.','bad');}
+  if(!S.heparin){sc(-15,'Sin anticoagulación periprocedimiento: trombosis intraprocedimiento y mayor riesgo de complicaciones','bad');S.stentThromb=300;}
   S.vfPending=S.simT+70;
   if(VD)S.vdHypoAt=S.simT+6*3600;
 }
@@ -974,14 +1052,28 @@ function physics(dt){
 
  if(!S.reperfused)S.salv=Math.max(0,S.salv-(S.simT<7200?0.55:0.30)*dt/60);
  if(S.fio2>0.6&&S.rhythm==='sinus'&&!S.reperfused)S.salv=Math.max(0,S.salv-0.05*dt/60);
- S.st+=((S.reperfused?0.4:5.0)-S.st)*Math.min(1,dt/240);
+  S.st+=((S.reperfused?(S.lytic?1.6:0.4):5.0)-S.st)*Math.min(1,dt/240);
 
  /* eventos */
  if(!S.reperfused&&S.rhythm==='sinus'&&S.simT>=S.avAt){S.rhythm='avblock';log('🚨 BAV COMPLETO · QRS de escape a 38 lpm','bad');}
  if(S.rhythm==='avblock'&&(S.reperfused||(S.atroT&&S.simT-S.atroT>90))){
    S.rhythm='sinus';log(S.reperfused?'BAV resuelto tras reperfundir la CD':'Respuesta cronotrópica obtenida','evt');}
- if(S.vfPending&&S.simT>=S.vfPending){S.vfPending=null;S.rhythm='vf';S.vfStart=S.simT;
-   log('🚨🚨 FIBRILACIÓN VENTRICULAR DE REPERFUSIÓN','bad');}
+  if(S.vfPending&&S.simT>=S.vfPending){S.vfPending=null;S.rhythm='vf';S.vfStart=S.simT;
+    log('🚨🚨 FIBRILACIÓN VENTRICULAR DE REPERFUSIÓN','bad');}
+  if(S.stentThromb&&S.simT>=S.stentThromb&&!S.stentThrombFired){S.stentThrombFired=true;
+    S.st=Math.max(S.st,3.2);S.pain=Math.min(10,S.pain+3);
+    log('🚨 ST re-elevado + dolor recurrente: TROMBOSIS AGUDA DEL STENT por falta de doble antiagregación','bad');}
+  if(S.reoccl&&!S.reocclFired&&S.simT>=S.reperfT+12*60){S.reocclFired=true;
+    S.st=Math.max(S.st,3.4);S.pain=Math.min(10,S.pain+3);S.vfPending=S.simT+8*60;
+    log('🚨 ST re-elevado + dolor recurrente: RECLUSIÓN AGUDA por angioplastia sin stent — el flujo vuelve a caer','bad');}
+  if(S.stentThrombFired)S.st=Math.max(S.st,2.6);
+  if(S.reocclFired)S.st=Math.max(S.st,2.6);
+  if(S.daptStop&&S.simT>=S.daptStop&&!S.daptStopFired){S.daptStopFired=true;
+    S.st=Math.max(S.st,3.0);S.pain=Math.min(10,S.pain+3);
+    log('🚨 ST re-elevado + dolor: TROMBOSIS AGUDA DEL STENT por suspensión de la DAPT','bad');}
+  if(S.hyperK&&S.simT>=S.hyperK&&!S.hyperKFired){S.hyperKFired=true;
+    S.hr=Math.max(30,S.hr-22);S.sbp=Math.max(70,S.sbp-14);
+    log('⚠ Ondas T picudas + QRS ancho + bradicardia: HIPERPOTASEMIA por eplerenona sin control de K⁺','bad');}
  if(S.vdHypoAt&&S.simT>=S.vdHypoAt&&!S.vdHypoFired){S.vdHypoFired=true;
    log('⚠ UCO: caída tensional, oliguria y ascenso del lactato','bad');}
  if(S.rhythm==='vf'&&S.simT-S.vfStart>360)die('FV no desfibrilada');
@@ -989,34 +1081,42 @@ function physics(dt){
 
  /* hemodinamia */
  let sbp=148-0.28*(100-S.salv);
- if(S.nitrateT){const e=S.simT-S.nitrateT,mg=VD?68:14;
-   sbp-=mg*clamp(e/90,0,1)*(e>1200?Math.max(0,1-(e-1200)/900):1);}
+  if(S.nitrateT){const e=S.simT-S.nitrateT,mg=VD?68:14;
+    sbp-=mg*clamp(e/30,0,1)*(e>1200?Math.max(0,1-(e-1200)/900):1);
+    if(!S.anamDone&&VD)sbp-=26*clamp(e/30,0,1);}   // PDE5 desconocido + VD: caída profunda
  if(S.morphBig)sbp-=14*Math.max(0,1-(S.simT-S.morphBig)/1500);
  if(S.furoT&&VD)sbp-=30*Math.max(0,1-(S.simT-S.furoT)/2700);
  if(S.vdHypoFired)sbp-=42;
  if(S.rhythm==='avblock')sbp-=44;
- if(S.volumeT)sbp+=Math.min(36,12*S.volume)*Math.max(0,1-(S.simT-S.volumeT)/2400);
- if(S.dobu)sbp+=20; if(S.nora)sbp+=26;
- if(S.vent&&VD)sbp-=(S.peep>=10?18:5);          // presión positiva vs precarga del VD
- if(S.rhythm==='vf'||S.rhythm==='asystole')sbp=S.cpr?46:0;
- S.sbp+=(clamp(sbp,0,190)-S.sbp)*Math.min(1,dt/12);
+  if(S.volumeT)sbp+=Math.min(36,12*S.volume)*Math.max(0,1-(S.simT-S.volumeT)/2400);
+  if(S.dobu)sbp+=20; if(S.nora)sbp+=26;
+  if(S.adrT){const e=S.simT-S.adrT; if(e<600)sbp+=34*Math.max(0,1-e/600);}
+  if(S.vent&&VD)sbp-=(S.peep>=10?18:5);          // presión positiva vs precarga del VD
+  if(S.rhythm==='vf'||S.rhythm==='asystole')sbp=S.cpr?46:0;
+  S.sbp+=(clamp(sbp,0,190)-S.sbp)*Math.min(1,dt/12);
  S.dbp=Math.round(S.sbp*0.62); S.map=Math.round((S.sbp+2*S.dbp)/3);
 
  /* FC */
  let hr;
  if(S.rhythm==='vf'||S.rhythm==='asystole')hr=0;
  else if(S.rhythm==='avblock')hr=38;
- else{hr=80+clamp((110-S.sbp)*0.55,0,42);if(S.reperfused)hr-=8;if(S.betaIV)hr-=14;
-      if(S.atroT&&S.simT-S.atroT<1800)hr+=6;}
- S.hr+=(hr-S.hr)*Math.min(1,dt/8);
+   else{hr=80+clamp((110-S.sbp)*0.55,0,42)+clamp((S.pain-4)*1.5,0,15);if(S.reperfused)hr-=8;if(S.betaIV)hr-=14;
+        if(S.atroT&&S.simT-S.atroT<1800)hr+=6;
+        if(S.adrT&&S.simT-S.adrT<600)hr+=18*Math.max(0,1-(S.simT-S.adrT)/600);}
+  S.hr+=(hr-S.hr)*Math.min(1,dt/8);
 
- /* respiratorio */
- let sat=88+(S.fio2-0.21)*36+8;                  // curva simplificada FiO2→SpO2
- sat=clamp(sat,80,100);
- if(S.sbp<75)sat-=7;else if(S.sbp<90)sat-=3;
- if(S.rhythm==='vf'||S.rhythm==='asystole')sat=Math.max(55,S.spo2-dt*0.9);
- S.spo2+=(clamp(sat,50,100)-S.spo2)*Math.min(1,dt/10);
- const rrT=S.vent?S.setRR:((S.reperfused?17:22)+(S.sbp<85?6:0));
+  /* respiratorio — SpO2 con tendencia a desaturar si la isquemia no se
+     revierte; el O2 compensa según la FiO2 real del dispositivo */
+  let hyp=0;
+  if(!S.reperfused)hyp=clamp((S.simT-50*60-30*60)/3600,0,1);
+  if(S.sbp<75)hyp=Math.max(hyp,0.7);else if(S.sbp<90)hyp=Math.max(hyp,0.4);
+  if(S.rhythm==='vf'||S.rhythm==='asystole')hyp=1;
+  const o2sup=clamp((S.fio2-0.21)/0.6,0,1);   // aire=0 · cánula 2L≈0.12 · reservorio=1
+  let sat=96-hyp*10*(1-o2sup);
+  sat=clamp(sat,50,100);
+  if(S.rhythm==='vf'||S.rhythm==='asystole')sat=Math.max(45,S.spo2-dt*1.5);
+  S.spo2+=(clamp(sat,50,100)-S.spo2)*Math.min(1,dt/3);
+ const rrT=S.vent?S.setRR:((S.reperfused?17:22)+clamp((S.pain-4)*0.7,0,7)+(S.sbp<85?6:0));
  S.rr+=(rrT-S.rr)*Math.min(1,dt/20);
  S.etco2=(S.capno||S.vent)?(S.rhythm==='vf'||S.rhythm==='asystole'?(S.cpr?14:5):clamp(38-(110-S.sbp)*0.12,12,45)):null;
 
@@ -1030,7 +1130,7 @@ function physics(dt){
  S.gcs=(S.rhythm==='vf'||S.rhythm==='asystole')?3:S.sedated?3:(S.sbp<70?11:S.sbp<85?14:15);
  S.pain=S.reperfused?Math.max(0,S.pain-dt/600):S.pain;
  S.pvc=S.cvc?(VD&&(S.vdHypoFired||S.nitrateT||S.rhythm==='avblock')?16:8):null;
- if(S.nibp&&S.simT-S.lastNIBP>=300){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+ if(S.nibp&&S.simT-S.lastNIBP>=CONFIG.cicloPANIsegundos){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
  if(S.arterial){S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
 
  /* drenaje de BP por tiempo — el núcleo del modelo de demora */
@@ -1281,34 +1381,78 @@ function loop(ts){
   if(S.doing.left<=0){const f=S.doing.f;S.doing=null;$('doing').className='doing';f();}}
  ui();
 }
-function run(a){
+/* ==========================================================================
+   MOTOR DE ETAPAS — reemplaza el menú libre por el flujo lineal de 20
+   preguntas. Reutiliza S.doing (definido en el loop) para representar el
+   tiempo clínico consumido por cada respuesta antes de resolverla.
+   ========================================================================== */
+S.stageIx=0; S.printouts=[];
+const LETRAS=['A','B','C','D','E'];
+
+function renderStage(){
+ const st=STAGES[S.stageIx];
+ if(!st){finish();return;}
+ if(S.stageIx>=11&&!S.atCath){S.atCath=true;bed();}   // desde la Etapa 12 el paciente está en hemodinamia
+ $('stgNum').textContent='Etapa '+(S.stageIx+1)+' / '+STAGES.length+'  ·  '+st.time;
+ $('stgTitle').textContent=(st.med?'💊 ':'🩺 ')+st.t;
+ $('stgVig').textContent=st.vig;
+ $('stgOpts').innerHTML=st.opts.map((o,i)=>
+   `<button class="opt" data-i="${i}"><span class="letter">${LETRAS[i]}</span><span>${o.l}</span></button>`).join('');
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(st,+b.dataset.i));
+ $('stgFeedback').className='feedback';$('stgFeedback').innerHTML='';
+ $('stgNext').style.display='none';
+ $('stage').classList.remove('done');
+}
+
+function choose(st,i){
  if(S.dead||S.ended||S.doing)return;
- S.lastAction=S.simT;const s=a.m*60;
- if(s>20){S.doing={left:s,total:s,f:a.f.bind(a)};
-  $('doingT').textContent='Ejecutando: '+a.l+' · '+a.m+' min';
-  $('doingB').style.width='0';$('doing').className='doing on';}
- else a.f();
+ const opt=st.opts[i];
+ S.lastAction=S.simT;
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.disabled=true);
+ $('doingT').textContent='Transcurriendo: '+(opt.min<1?'<1':opt.min)+' min clínicos…';
+ $('doingB').style.width='0';$('doing').className='doing on';
+ /* pausa visual breve y fija (no escala con los minutos: evita que el efecto
+    fisiológico quede "enterrado" detrás de una espera larga antes de empezar
+    a manifestarse) */
+ S.doing={left:0.6,total:0.6,f:()=>resolveOption(st,opt)};
 }
-function buildMenu(filter){
- const q=(filter||'').toLowerCase();
- $('cats').innerHTML=MENU.map((c,ci)=>{
-  const groups=c.g.map(gr=>{
-   const items=gr.i.filter(it=>!q||it.l.toLowerCase().includes(q));
-   if(q&&!items.length)return '';
-   const body=gr.i.length===0
-     ? `<div class="empty">Sin opciones para este paciente</div>`
-     : items.map((it,ii)=>`<button class="act" data-c="${ci}" data-g="${c.g.indexOf(gr)}" data-i="${gr.i.indexOf(it)}"><span>${it.l}</span><span class="t">${it.m<1?'<1':it.m}′</span></button>`).join('');
-   return `<div class="gp">${gr.n}</div>${body}`;
-  }).join('');
-  if(q&&!groups.replace(/<div class="gp">.*?<\/div>/g,'').trim())return '';
-  return `<div class="cat${q?' open':''}" data-i="${ci}">
-    <button class="head"><span>${c.t}</span><span class="ix">[${ci+1}]</span></button>
-    <div class="acts">${groups}</div></div>`;
- }).join('');
- $('cats').querySelectorAll('.head').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
- $('cats').querySelectorAll('.act').forEach(b=>b.onclick=()=>{
-  const it=MENU[+b.dataset.c].g[+b.dataset.g].i[+b.dataset.i];run(it);b.classList.add('used');});
+
+function resolveOption(st,opt){
+ const cls=opt.r==='good'?'good':opt.r==='bad'?'bad':'warn';
+ if(opt.r==='omit')S.omis++;
+ if(opt.r==='bad')S.iatro++;
+ S.simT+=(opt.min||0)*60;                 // el reloj clínico avanza ya
+ sc(opt.bp,null);                         // aplica el puntaje sin línea propia; el detalle va en el feedback
+ if(typeof opt.fx==='function'){try{opt.fx();}catch(e){console.error(e);}}  // fx() marca timestamps AHORA: la rampa empieza a correr ya
+ if(opt.printouts)opt.printouts.forEach(p=>archivarImpreso(p));
+ log((opt.bp>0?'+':'')+opt.bp+' BP · '+st.t,cls);
+
+ const fb=$('stgFeedback');
+ fb.className='feedback show '+cls;
+ fb.innerHTML=`<span class="fscore">${opt.bp>0?'+':''}${opt.bp} BP</span>${opt.fb}`+
+   (opt.printouts&&opt.printouts.length?`<div style="margin-top:8px;font-size:11px;color:var(--dim)">📄 Impreso archivado en el menú lateral.</div>`:'')+
+   `<div style="margin-top:8px;font-size:11px;color:var(--dim)">Observá el monitor: la respuesta fisiológica sigue corriendo mientras leés esto.</div>`;
+ $('stage').classList.add('done');
+ $('stgNext').style.display='inline-block';
+ $('stgNext').onclick=()=>{S.stageIx++;renderStage();};
 }
+
+function archivarImpreso(p){
+ S.printouts.push({...p,hora:hhmm(S.simT)});
+ const list=$('plist');
+ $('pcount').textContent=S.printouts.length;
+ list.innerHTML=S.printouts.map((pr,ix)=>
+   `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
+ list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+}
+function abrirImpreso(p){
+ $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
+  <div class="kick">${p.tipo}</div><h1>${p.titulo}</h1>
+  <div class="stamp">Alcázar Ibáñez, Ramón · 58 a · liberado a las ${p.hora}</div>
+  <pre>${p.cuerpo}</pre>`;
+ $('ovPrint').className='ov';
+}
+
 function finish(){
  if(S.ended)return;S.ended=true;S.running=false;alarmTone(false);
  const d2b=S.reperfT?Math.round((S.reperfT-50*60)/60):null;
@@ -1319,9 +1463,14 @@ function finish(){
   t='Reperfusión dentro de la ventana, sin omisiones ni iatrogenia. FEVI 48% → 58% a los 3 meses. NYHA I, sin angina residual. Reincorporación laboral completa a las 8 semanas. Mortalidad estimada al año <2%.';}
  else if(S.bp>=50){p='CAMINO 2 · VICTORIA PARCIAL (CON SECUELA)';c='var(--md)';
   t='Sobrevive gracias a correcciones oportunas, pero los retrasos costaron músculo. FEVI 38–40%. Insuficiencia cardíaca con FE reducida, NYHA II, diurético crónico. Reevaluación a los 40 días para eventual DAI. Mortalidad estimada al año 8–12%.';}
- else{p='CAMINO 3 · EVOLUCIÓN SEVERA';c='var(--hi)';
-  t='Shock cardiogénico, ventilación mecánica prolongada, lesión renal aguda con diálisis. FEVI final 25% con aneurisma inferobasal. NYHA III–IV, dependiente para actividades básicas. Mortalidad estimada al año 40–50%.';}
- $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div><h1 style="color:${c}">${p}</h1><p>${t}</p>
+  else{p='CAMINO 3 · EVOLUCIÓN SEVERA';c='var(--hi)';
+   t='Shock cardiogénico, ventilación mecánica prolongada, lesión renal aguda con diálisis. FEVI final 25% con aneurisma inferobasal. NYHA III–IV, dependiente para actividades básicas. Mortalidad estimada al año 40–50%.';}
+  const veredicto=S.dead
+    ?{txt:'FALLECIDO',col:'var(--hi)'}
+    :(S.bp>=50?{txt:'VIVO · SOBREVIVE AL CASO',col:'var(--ok)'}:{txt:'VIVO · CRÍTICO, DEPENDIENTE',col:'var(--md)'});
+  $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div>
+  <div style="font-size:34px;font-weight:800;letter-spacing:2px;color:${veredicto.col};margin:2px 0 6px">${veredicto.txt}</div>
+  <h1 style="color:${c}">${p}</h1><p>${t}</p>
   <table>
    <tr><td>Puntos biológicos finales</td><td>${Math.round(S.bp)} / 100</td></tr>
    <tr><td>Reserva de excelencia (PE)</td><td>${Math.round(S.pe)}</td></tr>
@@ -1362,15 +1511,18 @@ $('bSound').onclick=()=>{S.sound=!S.sound;$('bSound').classList.toggle('on',S.so
 $('bPause').onclick=()=>{S.paused=!S.paused;$('bPause').textContent=S.paused?'▶':'⏸';
  $('bPause').classList.toggle('on',S.paused);if(S.paused)alarmTone(false);};
 $('bEnd').onclick=finish;
-$('q').oninput=e=>buildMenu(e.target.value);
 $('bCase').onclick=()=>{$('ovCase').className='ov';if(S.running&&!S.paused)$('bPause').click();};
 $('closeCase').onclick=()=>{$('ovCase').className='ov hide';};
-document.addEventListener('keydown',e=>{if(e.key==='Escape')$('ovCase').className='ov hide';});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ovCase').className='ov hide';$('ovPrint').className='ov hide';}});
 
 function iniciar(vel){
  S.speed=vel||CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
  $('ovIntro').className='ov hide';S.running=true;last=performance.now();
- log('Ingreso a Urgencias. Dolor torácico de 50 minutos de evolución.','evt');
+ /* el monitor multiparamétrico se conecta al ingreso: la narrativa lo instala, no el alumno */
+ S.monitored=true;S.sat_probe=true;S.nibp=true;S.lastNIBP=S.simT;S.defibNear=true;
+ bed();
+ log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
+ renderStage();
 }
 document.querySelectorAll('.spd button').forEach(b=>b.onclick=()=>iniciar(+b.dataset.s));
 setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
@@ -1385,7 +1537,7 @@ window.SimuladorIAMCEST={
  reanudar:()=>{S.paused=false;last=performance.now();$('bPause').textContent='⏸';},
  verExpediente:()=>{$('ovCase').className='ov';},
  estado:()=>({bp:Math.round(S.bp),pe:Math.round(S.pe),minuto:Math.floor(S.simT/60),
-   reperfundido:S.reperfused,ritmo:S.rhythm,omisiones:S.omis,iatrogenias:S.iatro}),
+   etapa:S.stageIx+1,reperfundido:S.reperfused,ritmo:S.rhythm,omisiones:S.omis,iatrogenias:S.iatro}),
  reiniciar:()=>location.reload(),
  config:CONFIG
 };
@@ -1394,8 +1546,9 @@ window.SimuladorIAMCEST={
 S.speed=CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
 S.sound=!!CONFIG.sonidoInicial;$('bSound').classList.toggle('on',S.sound);
 if(!CONFIG.mostrarExpediente)$('bCase').style.display='none';
-buildMenu();resize();requestAnimationFrame(loop);
+resize();requestAnimationFrame(loop);
 if(CONFIG.saltarIntro&&CONFIG.autoIniciar)iniciar();
 </script>
 </body>
 </html>
+

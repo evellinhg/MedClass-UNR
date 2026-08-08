@@ -317,6 +317,21 @@ const pt = {
     mesaOralDescricao:
       "Simulação de banca de exame oral, com perguntas e feedback imediato pra você treinar antes da prova de verdade.",
   },
+  hospitalSimulacaoGrid: {
+    titulo: "Hospital Simulação",
+    subtitulo: "Casos clínicos interativos em tempo real, com física e pontuação próprias — como um plantão de verdade.",
+    carregando: "Carregando casos...",
+    vazio: "Nenhum caso disponível no momento.",
+    abrirCaso: "Abrir caso",
+    avisoEducativo: "Material educativo e de simulação. Paciente e cenário fictícios — não substitui os protocolos institucionais vigentes.",
+  },
+  hospitalSimulacaoViewer: {
+    voltar: "Voltar para Hospital Simulação",
+    carregando: "Carregando simulador...",
+    naoEncontrado: "Caso não encontrado.",
+    tentativaSalva: "Desempenho registrado com sucesso.",
+    tentativaErro: "Não foi possível salvar seu desempenho desta vez.",
+  },
   desafiosClinicos: {
     categoria: {
       anamnese: "Anamnese",
@@ -1404,6 +1419,21 @@ const es: typeof pt = {
     mesaOralTitulo: "Mesa Oral",
     mesaOralDescricao:
       "Simulación de mesa examinadora oral, con preguntas y feedback inmediato para entrenar antes del examen real.",
+  },
+  hospitalSimulacaoGrid: {
+    titulo: "Hospital Simulación",
+    subtitulo: "Casos clínicos interactivos en tiempo real, con física y puntuación propias — como una guardia de verdad.",
+    carregando: "Cargando casos...",
+    vazio: "No hay casos disponibles por el momento.",
+    abrirCaso: "Abrir caso",
+    avisoEducativo: "Material educativo y de simulación. Paciente y escenario ficticios — no sustituye los protocolos institucionales vigentes.",
+  },
+  hospitalSimulacaoViewer: {
+    voltar: "Volver a Hospital Simulación",
+    carregando: "Cargando simulador...",
+    naoEncontrado: "Caso no encontrado.",
+    tentativaSalva: "Desempeño registrado con éxito.",
+    tentativaErro: "No se pudo guardar tu desempeño esta vez.",
   },
   desafiosClinicos: {
     categoria: {

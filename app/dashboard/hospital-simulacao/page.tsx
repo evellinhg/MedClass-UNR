@@ -1,5 +1,5 @@
 import { DashboardLayout } from "@/components/dashboard-layout"
-import { ComingSoonContent } from "@/components/coming-soon-content"
+import { HospitalSimulacaoGrid } from "@/components/hospital-simulacao-grid"
 
 export const metadata = {
   title: "Hospital Simulação | MedClass",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function HospitalSimulacaoPage() {
   return (
     <DashboardLayout>
-      <ComingSoonContent feature="hospitalSimulacao" />
+      <HospitalSimulacaoGrid />
     </DashboardLayout>
   )
 }

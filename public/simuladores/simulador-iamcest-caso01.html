@@ -39,30 +39,89 @@ body{padding:8px}
 .grid{display:grid;grid-template-columns:1fr 300px;gap:6px;align-items:start}
 @media(max-width:900px){.grid{grid-template-columns:1fr}}
 
-.waves{background:#000;border:1px solid var(--line);border-radius:3px;position:relative;overflow:hidden}
-canvas{display:block;width:100%;height:300px}
-@media(max-width:760px){canvas{height:230px}}
-.leadtag{position:absolute;left:8px;font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.8px;pointer-events:none}
-.sweepnote{position:absolute;right:8px;bottom:4px;font-size:9px;color:#2c3d4f;font-family:'IBM Plex Mono',monospace}
+/* ==========================================================================
+   MONITOR — réplica de Mindray uMEC12 (el equipo más frecuente en UCI y
+   guardia de Argentina y Brasil). Distribución, colores de canal, jerarquía
+   tipográfica de los parámetros y cadenas de texto tomadas del equipo real.
+   ========================================================================== */
+.bezel{background:linear-gradient(#d8dade,#b6b9bf);border-radius:14px;padding:19px 46px 20px 18px;
+  box-shadow:0 2px 0 #8f949b inset,0 10px 26px rgba(0,0,0,.5);position:relative}
+.bezel .brand{position:absolute;top:5px;left:22px;font:700 12px 'IBM Plex Sans Condensed',sans-serif;color:#3c4148;letter-spacing:.4px}
+.bezel .model{position:absolute;top:3px;right:18px;font:600 13px 'IBM Plex Sans Condensed',sans-serif;color:#4a5057}
+.bezel .keys{position:absolute;right:11px;top:62px;display:flex;flex-direction:column;gap:9px}
+.bezel .keys i{width:23px;height:16px;border-radius:3px;background:#c6c9ce;box-shadow:0 1px 0 #9aa0a7,0 0 0 1px #abb0b6 inset;display:block}
+.bezel .keys i.amber{background:#e8a33a;box-shadow:0 1px 0 #b57c22}
+.bezel .knob{position:absolute;right:5px;bottom:12px;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e3e5e8,#9ca1a8);box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.screen{background:#000;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px #23262b}
 
-/* ---- PARQUES DE SIGNOS VITALES ---- */
-.vitals{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:6px}
-@media(max-width:640px){.vitals{grid-template-columns:repeat(2,1fr)}}
-.pk{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px 6px}
-.pk .hd{display:flex;justify-content:space-between;align-items:baseline}
-.pk .k{font-size:9.5px;letter-spacing:1.4px;font-weight:700;text-transform:uppercase}
-.pk .u{font-size:9px;color:var(--dim);font-family:'IBM Plex Mono',monospace}
-.pk .n{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:40px;line-height:.95;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
-.pk .nt{font-size:9.5px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-top:1px;min-height:12px}
-.pk.crit{border-color:var(--hi)} .pk.crit .n{animation:fl .55s steps(1,end) infinite}
-.pk.off .n{color:#2c3d4f}
-.mini{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-top:5px}
-@media(max-width:900px){.mini{grid-template-columns:repeat(3,1fr)}}
-.mk{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:4px 7px 5px}
-.mk .k{font-size:8.5px;letter-spacing:1.1px;color:var(--dim);text-transform:uppercase;font-weight:700}
-.mk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px;line-height:1.05;font-variant-numeric:tabular-nums}
-.mk .nt{font-size:8.5px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
-.c-ecg{color:var(--ecg)}.c-sat{color:var(--pleth)}.c-abp{color:var(--abp)}.c-resp{color:var(--resp)}.c-co2{color:var(--co2)}
+/* ---- barra de estado superior ---- */
+.mtop{display:flex;align-items:center;gap:13px;padding:3px 8px;font-size:10.5px;
+  font-family:'IBM Plex Sans Condensed',sans-serif;border-bottom:1px solid #1c1c1c}
+.mtop .bed{color:#7fd0ff;font-weight:700;letter-spacing:.3px}
+.mtop .adu{color:#ffd24a;font-weight:700}
+.mtop .dt{color:#c8d0d8;font-family:'IBM Plex Mono',monospace;font-size:9.5px}
+.mtop .tech{color:#93a0ac}
+.mtop .banner{margin-left:auto;background:#2fd15c;color:#04210c;font-weight:700;letter-spacing:.3px;
+  padding:2px 28px 2px 11px;border-radius:2px;min-width:184px;font-size:11px}
+.mtop .banner.hi{background:#ff2323;color:#fff;animation:fl .5s steps(1,end) infinite}
+.mtop .banner.md{background:#ffd24a;color:#2a1e00}
+.mtop .banner.none{background:#0c3a19;color:#5ecd82}
+
+/* ---- cuerpo: trazados + columna de parámetros ---- */
+.mbody{display:grid;grid-template-columns:1fr 212px}
+@media(max-width:820px){.mbody{grid-template-columns:1fr 164px}}
+.wavebox{position:relative;background:#000;min-width:0}
+canvas{display:block;width:100%;height:352px}
+@media(max-width:760px){canvas{height:292px}}
+.wl{position:absolute;left:5px;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:.2px;pointer-events:none;line-height:1.22}
+.wl s{display:block;font-weight:400;font-size:8.5px;text-decoration:none;opacity:.75}
+.wsc{position:absolute;right:4px;font-family:'IBM Plex Mono',monospace;font-size:8px;color:#787878;
+  pointer-events:none;text-align:right;line-height:1.35}
+
+/* ---- parámetros numéricos ---- */
+.pcol{border-left:1px solid #242424;display:flex;flex-direction:column}
+.pz{border-bottom:1px solid #242424;padding:1px 6px 2px;display:flex;gap:4px;flex:1;min-height:0;align-items:stretch}
+.pz .lft{flex:1;min-width:0;display:flex;flex-direction:column}
+.pz .lbl{font:700 11px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.2px;line-height:1.05}
+.pz .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.2;margin-top:1px}
+.pz .big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:47px;line-height:.8;
+  font-variant-numeric:tabular-nums;letter-spacing:-1px;text-align:right;margin-top:auto}
+.pz .big.s{font-size:33px} .pz .big.xs{font-size:25px}
+.pz .rgt{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:1px}
+.pz .sub{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#a4aeb8;text-align:right;line-height:1.25;white-space:nowrap}
+.pz .sub b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px}
+.pz.sel{outline:1px solid #fff;outline-offset:-2px}
+.pz.alarm .big{animation:fl .5s steps(1,end) infinite}
+.pz.off .big{color:#3a3a3a}
+.hbeat{display:inline-block;color:#ff3b47;font-size:11px}
+.hbeat.on{animation:pulse .9s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}60%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
+
+/* ---- barra inferior ---- */
+.mbot{display:flex;align-items:center;gap:16px;padding:3px 8px;border-top:1px solid #242424;font-size:10px;flex-wrap:wrap}
+.mbot .grp{display:flex;align-items:flex-end;gap:5px}
+.mbot .k{font:700 10px 'IBM Plex Sans Condensed',sans-serif;color:#c8d0d8}
+.mbot .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.15}
+.mbot .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:25px;line-height:.88;color:#e6ebef}
+.mbot .v.pni{font-size:19px;color:#ff8a92}
+.mbot .st{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#93a0ac}
+.mbot .cfg{margin-left:auto;color:#93a0ac;font-size:9.5px}
+.mbot .sbtn{background:#1b3a6b;border:1px solid #2f5c9e;color:#cfe0ff;border-radius:9px;
+  padding:2px 9px;font:600 9.5px 'IBM Plex Sans Condensed',sans-serif}
+.batt{width:21px;height:10px;border:1px solid #6fbf7f;border-radius:1px;position:relative;display:inline-block}
+.batt i{display:block;height:100%;background:#3fd06a;width:72%}
+.batt:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#6fbf7f}
+
+/* ---- ficha clínica: datos que un monitor real NO muestra ---- */
+.ficha{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+@media(max-width:900px){.ficha{grid-template-columns:repeat(4,1fr)}}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:3px 6px 4px}
+.fk .k{font-size:8px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;font-weight:700}
+.fk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
+.c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
 
 /* ---- VENTILADOR ---- */
 .vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
@@ -180,41 +239,118 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
 
 <div class="grid">
   <div>
-    <div class="waves">
-      <canvas id="cv"></canvas>
-      <div class="leadtag c-ecg" style="top:5px">II · 25 mm/s · 10 mm/mV</div>
-      <div class="leadtag c-ecg" id="tagV" style="opacity:.75">V5</div>
-      <div class="leadtag c-sat" id="tagP">PLETH</div>
-      <div class="leadtag c-resp" id="tagR">RESP · impedancia</div>
-      <div class="sweepnote" id="sweepnote">ondas en tiempo real · reloj clínico ×4</div>
+    <!-- ============ MONITOR MINDRAY uMEC12 ============ -->
+    <div class="bezel">
+      <span class="brand">mindray</span><span class="model">uMEC12</span>
+      <div class="keys"><i class="amber"></i><i></i><i></i><i></i><i></i></div>
+      <div class="knob"></div>
+
+      <div class="screen">
+        <!-- barra de estado -->
+        <div class="mtop">
+          <span class="bed" id="mBed">▣ URG-1</span>
+          <span class="adu">Adulto</span>
+          <span class="dt" id="mDT">08-08-2026 04:02:00</span>
+          <span class="tech" id="mTech">No se puede analizar QT</span>
+          <span class="banner none" id="mBanner">Sin alarmas</span>
+        </div>
+
+        <!-- trazados -->
+        <div class="mbody">
+          <div class="wavebox">
+            <canvas id="cv"></canvas>
+            <div class="wl c-ecg" id="wl1">II<s>×1 &nbsp;Monitor</s></div>
+            <div class="wl c-co2" id="wl2">CO2<s>mmHg</s></div>
+            <div class="wsc c-co2" id="ws2">50<br>25<br>0</div>
+            <div class="wl c-sat" id="wl3">Plet</div>
+            <div class="wl c-resp" id="wl4">Imped.<s>×2</s></div>
+            <div class="wl c-abp" id="wl5">Art<s>mmHg</s></div>
+            <div class="wsc c-abp" id="ws5">180<br>90<br>0</div>
+          </div>
+
+          <!-- columna de parámetros -->
+          <div class="pcol">
+            <div class="pz" id="pzECG">
+              <div class="lft">
+                <div class="lbl c-ecg">ECG</div>
+                <div class="lim" id="limECG">120<br>50</div>
+                <div class="big c-ecg" id="vHR">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub"><span class="hbeat" id="beat">♥</span></div>
+                <div class="sub c-abp" id="subPVC">PVC <b>---</b></div>
+                <div class="sub" id="subST">ST desact.</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzCO2">
+              <div class="lft">
+                <div class="lbl c-co2">CO2<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">50<br>25</div>
+                <div class="big c-co2" id="vCO2">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-resp">FRm <b id="subFRm">--</b></div>
+                <div class="sub c-resp">R <b id="subR">0</b></div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzSat">
+              <div class="lft">
+                <div class="lbl c-sat">SpO2</div>
+                <div class="lim">100<br>90</div>
+                <div class="big c-sat" id="vSat">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-sat">PR <b id="subPR">---</b></div>
+                <div class="sub" id="subPI">IP ---</div>
+                <div class="sub">Origen SpO2</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzResp">
+              <div class="lft">
+                <div class="lbl c-resp">Resp</div>
+                <div class="lim">26<br>9</div>
+                <div class="big c-resp s" id="vRR">--</div>
+              </div>
+              <div class="rgt"><div class="sub" id="subOrigen">Origen Imped.</div></div>
+            </div>
+
+            <div class="pz sel" id="pzArt">
+              <div class="lft">
+                <div class="lbl c-abp" id="lblArt">PANI<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">161<br>121</div>
+                <div class="big c-abp s" id="vBP">---/---</div>
+              </div>
+              <div class="rgt"><div class="sub c-abp" id="subMAP">(--)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- barra inferior -->
+        <div class="mbot">
+          <div class="grp"><span class="k">Temp</span><span class="lim">37,9<br>35,2</span>
+            <span class="v" id="vT">--,-</span><span class="st">T2</span></div>
+          <div class="grp"><span class="k">PNI</span><span class="lim">100<br>90</span>
+            <span class="v pni" id="vPNI">---/---</span><span class="st" id="stPNI">Medición terminada</span></div>
+          <span class="batt"><i></i></span>
+          <span class="cfg">Configuración actual:Predet.</span>
+          <span class="sbtn">◀ Ajuste alarma</span><span class="sbtn">Menú principal</span>
+        </div>
+      </div>
     </div>
 
-    <!-- SIGNOS VITALES PRINCIPALES -->
-    <div class="vitals">
-      <div class="pk off" id="pHR"><div class="hd"><span class="k c-ecg">FC</span><span class="u">lpm</span></div>
-        <div class="n c-ecg" id="vHR">—</div><div class="nt" id="nHR">sin señal</div></div>
-      <div class="pk off" id="pBP"><div class="hd"><span class="k c-abp" id="kBP">PANI</span><span class="u">mmHg</span></div>
-        <div class="n c-abp" id="vBP" style="font-size:32px">—/—</div><div class="nt" id="nBP">sin manguito</div></div>
-      <div class="pk off" id="pSat"><div class="hd"><span class="k c-sat">SpO₂</span><span class="u">%</span></div>
-        <div class="n c-sat" id="vSat">—</div><div class="nt" id="nSat">aire ambiente · FiO₂ 21%</div></div>
-      <div class="pk off" id="pRR"><div class="hd"><span class="k c-resp">FR</span><span class="u">rpm</span></div>
-        <div class="n c-resp" id="vRR">—</div><div class="nt" id="nRR">espontánea</div></div>
-    </div>
-
-    <!-- SIGNOS SECUNDARIOS -->
-    <div class="mini">
-      <div class="mk"><div class="k">ST II</div><div class="n c-ecg" id="vST">—</div><div class="nt">mm</div></div>
-      <div class="mk"><div class="k">PAM</div><div class="n c-abp" id="vMAP">—</div><div class="nt">mmHg</div></div>
-      <div class="mk"><div class="k">EtCO₂</div><div class="n c-co2" id="vCO2">—</div><div class="nt" id="nCO2">sin capnografía</div></div>
-      <div class="mk"><div class="k">Temp</div><div class="n" id="vT">—</div><div class="nt">°C axilar</div></div>
-      <div class="mk"><div class="k">Glucemia</div><div class="n" id="vGlu">—</div><div class="nt">mg/dL</div></div>
-      <div class="mk"><div class="k">Lactato</div><div class="n" id="vLac">—</div><div class="nt">mmol/L</div></div>
-      <div class="mk"><div class="k">Diuresis</div><div class="n" id="vDiu">—</div><div class="nt" id="nDiu">sin sonda</div></div>
-      <div class="mk"><div class="k">PVC</div><div class="n" id="vPVC">—</div><div class="nt" id="nPVC">sin vía central</div></div>
-      <div class="mk"><div class="k">Glasgow</div><div class="n" id="vGCS">—</div><div class="nt">/15</div></div>
-      <div class="mk"><div class="k">Dolor EVA</div><div class="n" id="vPain">—</div><div class="nt">/10</div></div>
-      <div class="mk"><div class="k">Relleno cap.</div><div class="n" id="vCRT">—</div><div class="nt">seg</div></div>
-      <div class="mk"><div class="k">Killip</div><div class="n" id="vKil">—</div><div class="nt" id="nKil">clase</div></div>
+    <!-- FICHA CLÍNICA: parámetros que un monitor real no muestra -->
+    <div class="ficha">
+      <div class="fk"><div class="k">ST II</div><div class="n c-ecg" id="fST">—</div><div class="u">mm</div></div>
+      <div class="fk"><div class="k">Glucemia</div><div class="n" id="fGlu">—</div><div class="u">mg/dL</div></div>
+      <div class="fk"><div class="k">Lactato</div><div class="n" id="fLac">—</div><div class="u">mmol/L</div></div>
+      <div class="fk"><div class="k">Diuresis</div><div class="n" id="fDiu">—</div><div class="u" id="fDiuU">sin sonda</div></div>
+      <div class="fk"><div class="k">Glasgow</div><div class="n" id="fGCS">—</div><div class="u">/15</div></div>
+      <div class="fk"><div class="k">Dolor EVA</div><div class="n" id="fPain">—</div><div class="u">/10</div></div>
+      <div class="fk"><div class="k">Relleno cap.</div><div class="n" id="fCRT">—</div><div class="u">seg</div></div>
+      <div class="fk"><div class="k">Killip</div><div class="n" id="fKil">—</div><div class="u" id="fKilU">sin examinar</div></div>
     </div>
 
     <!-- VENTILADOR -->
@@ -915,82 +1051,97 @@ function physics(dt){
    ONDAS
    ========================================================================== */
 const cv=$('cv'),ctx=cv.getContext('2d');
-let W=0,H=0,px=0,lastY=[null,null,null,null],LANES=4;
+let W=0,H=0,px=0,LANES=5,lastY=[null,null,null,null,null];
+/* orden de canales igual al del uMEC12: ECG · CO2 · Plet · Imped. · Art */
 function resize(){
  const dpr=window.devicePixelRatio||1;
  W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
- ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null];
+ ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null,null];
  const l=H/LANES;
- $('tagV').style.top=(l+4)+'px';$('tagP').style.top=(2*l+4)+'px';$('tagR').style.top=(3*l+4)+'px';
+ for(let k=1;k<=5;k++){const el=$('wl'+k);if(el)el.style.top=((k-1)*l+3)+'px';}
+ $('ws2').style.top=(l+3)+'px';
+ $('ws5').style.top=(4*l+3)+'px';
 }
 const g=(t,c,w,a)=>a*Math.exp(-Math.pow((t-c)/w,2));
-function ecgAt(t,lead){
+function ecgAt(t){
  const r=S.rhythm;
  if(r==='vf')return 0.42*(Math.sin(t*36.1)+0.7*Math.sin(t*23.7+1.1)+0.5*Math.sin(t*51.3+2.2))/2.2;
  if(r==='asystole')return (Math.random()-0.5)*0.03+(S.cpr?0.25*Math.sin(t*11.5):0);
- const inf=lead===0?1:-0.45;                       // V5 muestra el especular
  if(r==='avblock'){
   const P=60/78,L=60/38,tp=t%P,tq=t%L;
-  let v=g(tp,0.10,0.028,0.16*Math.abs(inf));
-  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0*(lead===0?1:0.7))+g(tq,0.33,0.028,-0.22);
-  v+=g(tq,0.57,0.078,0.28);
-  if(tq>0.37&&tq<0.49)v+=S.st*0.075*inf;
+  let v=g(tp,0.10,0.028,0.16);
+  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0)+g(tq,0.33,0.028,-0.22)+g(tq,0.57,0.078,0.28);
+  if(tq>0.37&&tq<0.49)v+=S.st*0.075;
   return v;
  }
  const L=60/clamp(S.hr,30,180),tt=t%L;
  let v=g(tt,0.11,0.022,0.15);
- v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,lead===0?1.15:0.85)+g(tt,0.268,0.013,-0.24);
- const st=S.st*0.075*inf;
+ v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,1.15)+g(tt,0.268,0.013,-0.24);
+ const st=S.st*0.075;
  if(tt>0.28&&tt<0.40)v+=st;
  v+=g(tt,0.455,0.055,0.30+st*0.5);
  return v;
 }
+/* capnograma: rampa, meseta alveolar e inspiración — morfología del uMEC12 */
+function co2At(t){
+ if(S.etco2===null)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L,a=clamp(S.etco2/50,0.04,1);
+ if(p<0.06)return a*Math.max(0,1-p/0.06)*0.15;
+ if(p<0.14)return a*((p-0.06)/0.08)*0.93;
+ if(p<0.62)return a*(0.93+0.07*((p-0.14)/0.48));
+ if(p<0.68)return a*Math.max(0,1-(p-0.62)/0.06);
+ return 0.01;
+}
 function plethAt(t){
- if(!S.sat_probe)return 0;
+ if(!S.sat_probe)return null;
  if(S.rhythm==='vf'||S.rhythm==='asystole')return (Math.random()-0.5)*0.05;
  const L=60/clamp(S.hr,30,180),tt=(t%L)/L,amp=clamp(S.sbp/120,0.12,1);
  return amp*(Math.exp(-Math.pow((tt-0.22)/0.13,2))+0.42*Math.exp(-Math.pow((tt-0.46)/0.11,2)))*0.9;
 }
-function ch4At(t){
+function impedAt(t){
+ if(!S.monitored)return null;
  const L=60/clamp(S.rr,6,40),p=(t%L)/L;
- if(S.capno||S.vent){                              // capnograma con meseta
-  if(S.etco2===null)return 0;
-  const a=clamp(S.etco2/45,0.05,1);
-  if(p<0.30)return 0.02;
-  if(p<0.40)return a*((p-0.30)/0.10);
-  if(p<0.75)return a*(0.92+0.08*((p-0.40)/0.35));
-  return a*Math.max(0,1-(p-0.75)/0.08);
- }
- return 0.55*Math.sin(2*Math.PI*p);
+ return 0.5*Math.sin(2*Math.PI*p)+0.06*Math.sin(2*Math.PI*p*3);
+}
+/* curva arterial: ascenso rápido, muesca dicrótica y descenso diastólico */
+function artAt(t){
+ if(!S.arterial)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return S.cpr?0.18*Math.sin(t*11.5)+0.2:0.05;
+ const L=60/clamp(S.hr,30,180),p=(t%L)/L;
+ const pp=clamp((S.sbp-S.dbp)/70,0.25,1.2), base=clamp(S.dbp/90,0.1,1)*0.28;
+ let v;
+ if(p<0.13)v=Math.pow(p/0.13,0.55);
+ else if(p<0.30)v=1-0.42*((p-0.13)/0.17);
+ else if(p<0.36)v=0.58+0.10*Math.sin((p-0.30)/0.06*Math.PI);  // muesca dicrótica
+ else v=0.58*Math.exp(-(p-0.36)*2.6);
+ return base+v*pp*0.62;
 }
 let beatIx=-1;
 function draw(dt){
- const adv=(W/8)*dt, lane=H/LANES;
- const mid=[lane*.60,lane*1.60,lane*2.60,lane*3.60];
- const gain=[lane*.30,lane*.26,lane*.24,lane*.24];
- const col=['#26e07f','#26e07f','#31d6f2',(S.capno||S.vent)?'#c98bff':'#f4d03f'];
+ const adv=(W/6.4)*dt, lane=H/LANES;   // barrido ~25 mm/s
+ const mid=[lane*.55,lane*1.75,lane*2.55,lane*3.55,lane*4.72];
+ const gain=[lane*.32,lane*.62,lane*.26,lane*.24,lane*.62];
+ const col=['#2fe36f','#ffe14a','#39d7ff','#e8eef5','#ff5a63'];
  const steps=Math.max(1,Math.round(adv));
  for(let i=0;i<steps;i++){
   const t0=S.waveT+(i/steps)*dt, x=px+(i/steps)*adv, xi=Math.floor(x)%W;
-  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,14,H);
-  ctx.strokeStyle='#101822';ctx.lineWidth=1;
-  for(let k=1;k<LANES;k++){ctx.beginPath();ctx.moveTo(xi+1,k*lane);ctx.lineTo(xi+15,k*lane);ctx.stroke();}
-  const v=[S.monitored?ecgAt(t0,0):0, S.monitored?ecgAt(t0,1):0, plethAt(t0), S.monitored?ch4At(t0):0];
+  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,13,H);
+  const v=[S.monitored?ecgAt(t0):null, co2At(t0), plethAt(t0), impedAt(t0), artAt(t0)];
   for(let l=0;l<LANES;l++){
+   if(v[l]===null){lastY[l]=null;continue;}
    const y=mid[l]-v[l]*gain[l];
-   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.3;ctx.beginPath();
+   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.25;ctx.beginPath();
      ctx.moveTo(xi-1,lastY[l]);ctx.lineTo(xi,y);ctx.stroke();}
    lastY[l]=y;
   }
-  if(xi<2)lastY=[null,null,null,null];
+  if(xi<2)lastY=[null,null,null,null,null];
  }
  px=(px+adv)%W;S.waveT+=dt;
  if(S.monitored&&(S.rhythm==='sinus'||S.rhythm==='avblock')){
   const L=S.rhythm==='avblock'?60/38:60/clamp(S.hr,30,180);
-  const ix=Math.floor(S.waveT/L);if(ix!==beatIx){beatIx=ix;beep();}
+  const ix=Math.floor(S.waveT/L);
+  if(ix!==beatIx){beatIx=ix;beep();const b=$('beat');if(b){b.classList.remove('on');void b.offsetWidth;b.classList.add('on');}}
  }
- $('tagR').textContent=(S.capno||S.vent)?'CO₂ · capnografía':'RESP · impedancia';
- $('tagR').className='leadtag '+((S.capno||S.vent)?'c-co2':'c-resp');
 }
 let AC=null,alOsc=null;
 function beep(){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
@@ -1009,6 +1160,7 @@ function alarmTone(on){if(!S.sound){if(alOsc){try{alOsc.stop()}catch(e){}alOsc=n
    RENDER
    ========================================================================== */
 function ui(){
+ /* ---- relojes externos al monitor ---- */
  $('wall').textContent=hhmm(S.simT);
  $('tplus').textContent=Math.floor(S.simT/60)+'′';
  $('clkIsq').className='clk'+(!S.reperfused&&S.simT>120*60?' crit':(!S.reperfused&&S.simT>90*60?' hot':''));
@@ -1018,65 +1170,103 @@ function ui(){
  $('salv').textContent=Math.round(S.salv)+'%';
 
  const arrest=S.rhythm==='vf'||S.rhythm==='asystole';
- set('pHR','vHR',S.monitored,arrest?(S.rhythm==='vf'?'--':'0'):Math.round(S.hr),
-   S.monitored?({sinus:'ritmo sinusal',avblock:'BAV COMPLETO',vf:'FIBRILACIÓN VENTRICULAR',asystole:'ASISTOLIA'})[S.rhythm]:'sin señal',
-   S.monitored&&(arrest||S.hr<50));
- set('pBP','vBP',S.nibp||S.arterial,arrest?'--/--':S.sbpShow+'/'+S.dbpShow,
-   S.arterial?'invasiva · continua':(S.nibp?'auto q5min · última '+hhmm(S.lastNIBP):'sin manguito'),
-   (S.nibp||S.arterial)&&S.sbpShow<90);
- $('kBP').textContent=S.arterial?'PAI':'PANI';
- set('pSat','vSat',S.sat_probe,Math.round(S.spo2),
-   S.airway+' · FiO₂ '+Math.round(S.fio2*100)+'%',S.sat_probe&&S.spo2<90);
- set('pRR','vRR',S.monitored,Math.round(S.rr),S.vent?'controlada (ARM)':'espontánea',S.monitored&&(S.rr>28||S.rr<8));
 
- $('vST').textContent=S.monitored?S.st.toFixed(1):'—';
- $('vMAP').textContent=(S.nibp||S.arterial)&&!arrest?S.map:'—';
- $('vCO2').textContent=S.etco2!==null?Math.round(S.etco2):'—';
- $('nCO2').textContent=S.etco2!==null?'mmHg':'sin capnografía';
- $('vT').textContent=S.temp.toFixed(1);
- $('vGlu').textContent=Math.round(S.glu);
- $('vLac').textContent=S.lac.toFixed(1);
- $('vDiu').textContent=S.foley?Math.round(S.diuresis):'—';
- $('nDiu').textContent=S.foley?'mL/h':'sin sonda';
- $('vPVC').textContent=S.pvc!==null?S.pvc:'—';
- $('nPVC').textContent=S.pvc!==null?'mmHg':'sin vía central';
- $('vGCS').textContent=S.gcs;$('vPain').textContent=Math.round(S.pain);$('vCRT').textContent=S.crt;
- const kil=S.vdHypoFired?'I':(S.sbp<90?'III':'I');
- $('vKil').textContent=S.examDone?kil:'—';
- $('nKil').textContent=S.examDone?(S.sbp<90&&S.vdHypoFired?'hipotensión sin congestión':'sin crepitantes'):'sin examinar';
+ /* ---- barra de estado del monitor ---- */
+ $('mBed').textContent=(S.atCath?'▣ HEMO-1':'▣ URG-1');
+ const t=(S.wallStart+S.simT)%86400;
+ $('mDT').textContent='08-08-2026 '+String(Math.floor(t/3600)).padStart(2,'0')+':'+
+   String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');
+ $('mTech').textContent=(S.monitored?(S.st>3?'Análisis de ST activo':'No se puede analizar QT'):'Derivación desconectada')+'  ·  reloj ×'+S.speed;
 
+ /* ---- ECG ---- */
+ zone('pzECG','vHR',S.monitored,arrest?(S.rhythm==='vf'?'---':'0'):Math.round(S.hr),
+   S.monitored&&(arrest||S.hr<50||S.hr>120));
+ $('beat').style.visibility=(S.monitored&&!arrest)?'visible':'hidden';
+ $('subPVC').innerHTML='PVC <b>'+(S.pvc!==null?S.pvc:'---')+'</b>';
+ $('subST').textContent=S.monitored?(S.st>1?'ST II '+S.st.toFixed(1)+' mm':'ST 0,0 mm'):'ST desact.';
+ $('subST').style.color=S.monitored&&S.st>3?'#ff5a63':'#a4aeb8';
+ $('limECG').innerHTML=(S.rhythm==='avblock'?'120<br>50':'120<br>50');
+
+ /* ---- CO2 ---- */
+ zone('pzCO2','vCO2',S.etco2!==null,S.etco2!==null?Math.round(S.etco2):'---',
+   S.etco2!==null&&(S.etco2<25||S.etco2>50));
+ $('subFRm').textContent=S.monitored?Math.round(S.rr):'--';
+ $('subR').textContent=S.vent?Math.round(S.rr):'0';
+
+ /* ---- SpO2 ---- */
+ zone('pzSat','vSat',S.sat_probe,Math.round(S.spo2),S.sat_probe&&S.spo2<90);
+ $('subPR').textContent=S.sat_probe&&!arrest?Math.round(S.hr):'---';
+ $('subPI').textContent=S.sat_probe?('IP '+clamp(S.sbp/70,0.2,4).toFixed(2)):'IP ---';
+
+ /* ---- Resp ---- */
+ zone('pzResp','vRR',S.monitored,Math.round(S.rr),S.monitored&&(S.rr>26||S.rr<9));
+ $('subOrigen').textContent=(S.capno||S.vent)?'Origen CO2':'Origen Imped.';
+
+ /* ---- presión arterial: PANI intermitente o Art invasiva continua ---- */
+ const bpOn=S.nibp||S.arterial;
+ $('lblArt').innerHTML=(S.arterial?'Art':'PANI')+'<span style="font-weight:400;font-size:8.5px"> mmHg</span>';
+ zone('pzArt','vBP',bpOn,arrest?'---/---':S.sbpShow+'/'+S.dbpShow,bpOn&&S.sbpShow<90&&!arrest);
+ $('subMAP').textContent=bpOn&&!arrest?'('+S.map+')':'(--)';
+ $('pzArt').classList.toggle('sel',S.arterial);
+ $('wl5').style.display=S.arterial?'block':'none';
+ $('ws5').style.display=S.arterial?'block':'none';
+ $('wl2').style.display=(S.etco2!==null)?'block':'none';
+ $('ws2').style.display=(S.etco2!==null)?'block':'none';
+ $('wl3').style.display=S.sat_probe?'block':'none';
+ $('wl4').style.display=S.monitored?'block':'none';
+ $('wl1').style.display=S.monitored?'block':'none';
+
+ /* ---- barra inferior ---- */
+ $('vT').textContent=S.monitored?S.temp.toFixed(1).replace('.',','):'--,-';
+ if(S.nibp&&!S.arterial){$('vPNI').textContent=S.sbpShow+'/'+S.dbpShow;
+   $('stPNI').textContent='Medición terminada '+hhmm(S.lastNIBP);}
+ else{$('vPNI').textContent='---/---';$('stPNI').textContent=S.arterial?'PANI en espera':'Medición manual';}
+
+ /* ---- banner de alarma (texto y jerarquía del equipo real) ---- */
+ let cls='none',txt='Sin alarmas';
+ if(!S.monitored){cls='none';txt='Sin monitorización';}
+ else if(S.rhythm==='vf'){cls='hi';txt='*** FIB VENT';}
+ else if(S.rhythm==='asystole'){cls='hi';txt='*** ASISTOLIA';}
+ else if(bpOn&&S.sbpShow<80&&!arrest){cls='hi';txt='*** PANI SIS muy baja';}
+ else if(S.rhythm==='avblock'){cls='hi';txt='*** FC muy baja';}
+ else if(S.sat_probe&&S.spo2<90){cls='md';txt='** SpO2 baja';}
+ else if(S.foley&&S.diuresis<25){cls='md';txt='** Diuresis baja';}
+ else if(S.st>3){cls='md';txt='** ST II elevado';}
+ else if(S.hr>120){cls='md';txt='** FC alta';}
+ else if(!S.reperfused&&S.simT>90*60){cls='md';txt='** Isquemia prolongada';}
+ else{cls='';txt='Sin alarmas';}
+ const b=$('mBanner');b.className='banner '+(cls||'');b.textContent=txt;
+ alarmTone(cls==='hi');
+ const a=$('alarm');
+ a.className='alarmbar '+(cls==='hi'?'hi':cls==='md'?'md':'');
+ a.textContent=!S.monitored?'monitorización no iniciada':
+   cls==='hi'?'⚠ '+txt.replace(/\*/g,'').trim():cls==='md'?txt.replace(/\*/g,'').trim():'sin alarmas activas';
+
+ /* ---- ficha clínica ---- */
+ $('fST').textContent=S.monitored?S.st.toFixed(1):'—';
+ $('fGlu').textContent=Math.round(S.glu);
+ $('fLac').textContent=S.lac.toFixed(1);
+ $('fDiu').textContent=S.foley?Math.round(S.diuresis):'—';
+ $('fDiuU').textContent=S.foley?'mL/h':'sin sonda';
+ $('fGCS').textContent=S.gcs;$('fPain').textContent=Math.round(S.pain);$('fCRT').textContent=S.crt;
+ $('fKil').textContent=S.examDone?(S.vdHypoFired?'I':(S.sbp<90?'III':'I')):'—';
+ $('fKilU').textContent=S.examDone?(S.sbp<90&&S.vdHypoFired?'sin congestión':'sin crepitantes'):'sin examinar';
+
+ /* ---- ventilador ---- */
  $('ventPanel').className='vent'+(S.vent?' on':'');
  if(S.vent){$('vPEEP').textContent=S.peep;$('vFiO2').textContent=Math.round(S.ventFiO2*100);
   $('vPlat').textContent=S.peep>=10?24:18;}
 
- let cls='',t='';
- if(!S.monitored)t='monitorización no iniciada';
- else if(S.rhythm==='vf'){cls='hi';t='⚠ fibrilación ventricular — desfibrilar';}
- else if(S.rhythm==='asystole'){cls='hi';t='⚠ asistolia';}
- else if(S.sbp<80){cls='hi';t='⚠ hipotensión grave · PAS '+Math.round(S.sbp)+' · PAM '+S.map;}
- else if(S.rhythm==='avblock'){cls='hi';t='⚠ bloqueo AV completo · FC 38';}
- else if(S.spo2<90){cls='md';t='saturación baja · '+Math.round(S.spo2)+'%';}
- else if(S.foley&&S.diuresis<25){cls='md';t='oliguria · '+Math.round(S.diuresis)+' mL/h';}
- else if(S.st>3){cls='md';t='elevación del ST en II · '+S.st.toFixed(1)+' mm';}
- else if(!S.reperfused&&S.simT>90*60){cls='md';t='isquemia prolongada sin reperfusión';}
- else t='sin alarmas activas';
- const a=$('alarm');a.className='alarmbar '+cls;a.textContent=t;alarmTone(cls==='hi');
-
+ /* ---- score ---- */
  $('vBPs').textContent=Math.round(S.bp);$('bpbar').style.width=S.bp+'%';
  const c=S.bp>70?'var(--ok)':S.bp>40?'var(--md)':'var(--hi)';
  $('bpbar').style.background=c;$('vBPs').style.color=c;
  $('vPE').textContent=Math.round(S.pe);$('vOm').textContent=S.omis;$('vIa').textContent=S.iatro;
- $('sweepnote').textContent='ondas en tiempo real · reloj clínico ×'+S.speed;
 }
-function set(pk,el,on,val,note,crit){
- $(el).textContent=on?val:'—';
- $(pk).className='pk'+(on?'':' off')+(crit?' crit':'');
- $(pk).querySelector('.nt').textContent=note;
+function zone(pz,el,on,val,alarm){
+ $(el).textContent=on?val:(String(val).includes('/')?'---/---':'---');
+ $(pz).className='pz'+(on?'':' off')+(alarm?' alarm':'')+($(pz).classList.contains('sel')&&pz==='pzArt'?' sel':'');
 }
-
-/* ==========================================================================
-   BUCLE Y CONTROLES
-   ========================================================================== */
 let last=0;
 function loop(ts){
  requestAnimationFrame(loop);

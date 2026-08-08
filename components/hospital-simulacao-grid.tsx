@@ -13,7 +13,7 @@ import { getPlanStatus } from "@/lib/plan-status"
 export function HospitalSimulacaoGrid() {
   const { t } = useLanguage()
   const [casos, setCasos] = useState<HospitalSimulacaoCaso[]>([])
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [podeAcessar, setPodeAcessar] = useState(false)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function HospitalSimulacaoGrid() {
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCasos((data as HospitalSimulacaoCaso[]) ?? [])
-      setIsAdmin(planStatus?.isAdmin ?? false)
+      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || false)
       setLoading(false)
     })
   }, [])
@@ -53,7 +53,7 @@ export function HospitalSimulacaoGrid() {
             const cardContent = (
               <Card
                 className={`group flex h-full flex-col overflow-hidden rounded-[24px] border border-border bg-card transition-all ${
-                  isAdmin ? "hover:border-red-500/50 hover:shadow-[0_0_24px_-8px_rgba(220,38,38,0.35)]" : "opacity-60"
+                  podeAcessar ? "hover:border-red-500/50 hover:shadow-[0_0_24px_-8px_rgba(220,38,38,0.35)]" : "opacity-60"
                 }`}
               >
                 <div className="relative h-36 w-full overflow-hidden">
@@ -61,9 +61,9 @@ export function HospitalSimulacaoGrid() {
                     src="/hospital-simulacao-capa.png"
                     alt=""
                     fill
-                    className={`object-cover transition-transform ${isAdmin ? "group-hover:scale-105" : ""}`}
+                    className={`object-cover transition-transform ${podeAcessar ? "group-hover:scale-105" : ""}`}
                   />
-                  {!isAdmin && (
+                  {!podeAcessar && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/60">
                       <Lock className="h-8 w-8 text-white" />
                     </div>
@@ -72,7 +72,7 @@ export function HospitalSimulacaoGrid() {
                 <div className="flex flex-1 flex-col gap-2 p-5">
                   <h3 className="text-sm font-semibold leading-snug text-foreground">{caso.titulo}</h3>
                   {caso.descricao && <p className="line-clamp-2 text-xs text-muted-foreground">{caso.descricao}</p>}
-                  {isAdmin ? (
+                  {podeAcessar ? (
                     <span className="mt-auto flex items-center gap-1.5 pt-2 text-xs font-medium text-red-500">
                       <PlayCircle className="h-4 w-4" />
                       {t.hospitalSimulacaoGrid.abrirCaso}
@@ -84,7 +84,7 @@ export function HospitalSimulacaoGrid() {
               </Card>
             )
 
-            if (!isAdmin) {
+            if (!podeAcessar) {
               return (
                 <button
                   key={caso.id}

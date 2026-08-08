@@ -18,7 +18,7 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
   const { t } = useLanguage()
   const [loading, setLoading] = useState(true)
   const [caso, setCaso] = useState<HospitalSimulacaoCaso | null>(null)
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [podeAcessar, setPodeAcessar] = useState(false)
   const salvouRef = useRef(false)
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCaso((data as HospitalSimulacaoCaso) ?? null)
-      setIsAdmin(planStatus?.isAdmin ?? false)
+      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || false)
       setLoading(false)
     })
   }, [casoId])
@@ -90,7 +90,7 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
     )
   }
 
-  if (!isAdmin) {
+  if (!podeAcessar) {
     return (
       <div className="flex flex-col items-center gap-3 rounded-[24px] border border-border bg-card p-10 text-center">
         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">

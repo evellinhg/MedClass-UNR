@@ -3,11 +3,13 @@
 import { useMemo, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Activity, Heart, Skull, Wind } from "lucide-react"
+import { Heart, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
 import type { HospitalSimulacaoCaso } from "@/lib/hospital-simulacao-types"
+import { CASO1_VITAIS_DELTAS, VITAIS_BASE, clampVitais } from "@/lib/hospital-simulacao-caso1-vitais"
+import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
 
 interface HospitalSimulacaoJogoProps {
   caso: HospitalSimulacaoCaso
@@ -19,22 +21,11 @@ interface RespostaHistorico {
   impacto_bp: number
 }
 
-// Vitais derivados do BP (0-100) pra dar feedback visual em tempo real sem
-// exigir dado clinico granular por opcao (o conteudo so tem impacto_bp).
-// Direcao clinicamente coerente pra um paciente coronariano descompensando:
-// BP caindo -> taquicardia, queda de PA sistolica e de SatO2.
-function vitaisDoBp(bp: number) {
-  const clamped = Math.max(0, Math.min(100, bp))
-  const fc = Math.round(70 + (100 - clamped) * 0.6) // 70 -> 130 bpm
-  const pas = Math.round(70 + clamped * 0.6) // 70 -> 130 mmHg
-  const sat = Math.round(80 + clamped * 0.19) // 80 -> 99%
-  return { fc, pas, sat }
-}
-
 export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   const conteudo = caso.conteudo!
   const [etapaIndex, setEtapaIndex] = useState(0)
   const [bp, setBp] = useState(conteudo.puntos_biologicos_iniciales)
+  const [vitais, setVitais] = useState(VITAIS_BASE)
   const [historico, setHistorico] = useState<RespostaHistorico[]>([])
   const [letraEscolhida, setLetraEscolhida] = useState<string | null>(null)
   const [obito, setObito] = useState(false)
@@ -43,7 +34,11 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
 
   const etapa = conteudo.etapas[etapaIndex]
   const finalizado = obito || etapaIndex >= conteudo.etapas.length
-  const vitais = vitaisDoBp(bp)
+
+  // ST elevado enquanto o quadro nao foi resolvido/estabilizado -- some
+  // gradualmente conforme o BP se recupera acima de 85 (reperfusao/melhora).
+  const stElevacao = Math.max(0, Math.min(1, (85 - bp) / 85))
+  const critico = vitais.pas < 80 || vitais.spo2 < 90 || vitais.fc > 130 || vitais.fc < 45 || bp <= 30
 
   const desenlace = useMemo(() => {
     if (!finalizado) return null
@@ -84,6 +79,14 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     const novoHistorico = [...historico, { etapa: etapa.numero, letra: letraEscolhida, impacto_bp: opcao.impacto_bp }]
     setHistorico(novoHistorico)
     setBp(novoBp)
+
+    const delta = CASO1_VITAIS_DELTAS[etapa.numero]?.[letraEscolhida] ?? { fc: 0, pas: 0, spo2: 0 }
+    const novosVitais = clampVitais({
+      fc: vitais.fc + delta.fc,
+      pas: vitais.pas + delta.pas,
+      spo2: vitais.spo2 + delta.spo2,
+    })
+    setVitais(novosVitais)
     setLetraEscolhida(null)
 
     if (novoBp <= 0) {
@@ -127,38 +130,29 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
 
   return (
     <div className="space-y-4">
-      {/* Monitor de sinais vitais, reage em tempo real ao BP acumulado */}
-      <Card className="rounded-[24px] border border-border bg-card p-5">
-        <div className="mb-3 flex items-center justify-between">
-          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Etapa {etapa.numero}/{conteudo.etapas.length} · {etapa.fase}
-          </p>
-          <span
-            className={`rounded-full px-3 py-1 text-xs font-bold ${
-              bp > 70 ? "bg-emerald-500/15 text-emerald-500" : bp > 40 ? "bg-amber-500/15 text-amber-500" : "bg-red-500/15 text-red-500"
-            }`}
-          >
-            BP {bp}/100
-          </span>
-        </div>
-        <div className="grid grid-cols-3 gap-3 text-center">
-          <div className="rounded-xl border border-border p-3">
-            <Heart className="mx-auto h-4 w-4 text-red-500" />
-            <p className="mt-1 text-lg font-bold tabular-nums text-foreground">{vitais.fc}</p>
-            <p className="text-[10px] text-muted-foreground">FC bpm</p>
-          </div>
-          <div className="rounded-xl border border-border p-3">
-            <Activity className="mx-auto h-4 w-4 text-blue-500" />
-            <p className="mt-1 text-lg font-bold tabular-nums text-foreground">{vitais.pas}</p>
-            <p className="text-[10px] text-muted-foreground">PA sist. mmHg</p>
-          </div>
-          <div className="rounded-xl border border-border p-3">
-            <Wind className="mx-auto h-4 w-4 text-cyan-500" />
-            <p className="mt-1 text-lg font-bold tabular-nums text-foreground">{vitais.sat}%</p>
-            <p className="text-[10px] text-muted-foreground">SatO₂</p>
-          </div>
-        </div>
-      </Card>
+      <HospitalSimulacaoMonitor
+        nome="Paciente, Masculino"
+        idade={58}
+        fc={vitais.fc}
+        pas={vitais.pas}
+        pad={Math.round(vitais.pas * 0.64)}
+        spo2={vitais.spo2}
+        stElevacao={stElevacao}
+        critico={critico}
+      />
+
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+          Etapa {etapa.numero}/{conteudo.etapas.length} · {etapa.fase}
+        </p>
+        <span
+          className={`rounded-full px-3 py-1 text-xs font-bold ${
+            bp > 70 ? "bg-emerald-500/15 text-emerald-500" : bp > 40 ? "bg-amber-500/15 text-amber-500" : "bg-red-500/15 text-red-500"
+          }`}
+        >
+          BP {bp}/100
+        </span>
+      </div>
 
       <AnimatePresence mode="wait">
         <motion.div

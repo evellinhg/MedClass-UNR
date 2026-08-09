@@ -102,7 +102,7 @@ export function HighlightableText({ text }: { text: string }) {
       </div>
       <p
         ref={containerRef}
-        className={`select-text rounded-lg p-3 text-base font-medium leading-relaxed text-foreground sm:text-[17px] ${
+        className={`select-text rounded-lg p-3 text-base font-medium leading-relaxed text-foreground sm:text-[19px] ${
           active ? "cursor-text bg-accent/30 ring-1 ring-primary/40" : ""
         }`}
         style={{ WebkitUserSelect: "text", WebkitTouchCallout: "default" }}

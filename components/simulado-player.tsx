@@ -466,7 +466,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[88vh] flex-col overflow-hidden sm:max-w-xl">
+      <DialogContent className="flex max-h-[92vh] flex-col overflow-hidden sm:max-w-3xl">
         <DialogHeader className="shrink-0">
           <div className="flex items-center justify-between gap-3">
             <DialogTitle className="flex items-center gap-2">
@@ -527,7 +527,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
         {phase === "playing" && current && (
           <div className="flex min-h-0 flex-1 flex-col gap-4">
-            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto pr-1">
+            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-1">
               {/* Navigator */}
               <div className="flex flex-wrap gap-1.5">
                 {questions.map((q, i) => {
@@ -592,7 +592,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                           key={idx}
                           onClick={() => answerMechanism(idx)}
                           disabled={mechanismAnswer !== null}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-base ${
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-[17px] ${
                             showState && isCorrectOption
                               ? "border-success bg-success/10 text-foreground"
                               : showState && isSelected
@@ -643,7 +643,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                         <div
                           key={idx}
                           onClick={() => selectPending(idx)}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-base ${
+                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-[17px] ${
                             readOnly ? "" : "cursor-pointer"
                           } ${
                             showState && isCorrectOption

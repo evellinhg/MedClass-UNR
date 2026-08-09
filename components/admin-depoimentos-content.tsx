@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { StarRating } from "@/components/star-rating"
+import { translations } from "@/lib/i18n"
 
 interface DepoimentoRow {
   id: string
@@ -177,7 +178,9 @@ export function AdminDepoimentosContent() {
                 )}
                 <div className="min-w-0 flex-1">
                   <p className="font-medium text-foreground">{d.nome}</p>
-                  <p className="text-xs text-muted-foreground">{d.ano_cursado}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {translations.es.cronograma.anoLabel[d.ano_cursado] ?? d.ano_cursado}
+                  </p>
                   {d.nota && <StarRating value={d.nota} readOnly size={16} />}
                   <p className="mt-1.5 text-sm text-foreground">{d.comentario}</p>
                 </div>

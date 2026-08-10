@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { AlertTriangle, Clock, Heart, Skull } from "lucide-react"
+import { AlertTriangle, ChevronDown, Clock, FileImage, Heart, Lock, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { supabase } from "@/lib/supabase"
-import type { HospitalSimulacaoCaso, HospitalSimulacaoEstadoPaciente } from "@/lib/hospital-simulacao-types"
+import type { HospitalSimulacaoCaso, HospitalSimulacaoEstadoPaciente, HospitalSimulacaoImpreso } from "@/lib/hospital-simulacao-types"
 import { HOSPITAL_SIMULACAO_NODO_INICIAL } from "@/lib/hospital-simulacao-types"
 import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
 
@@ -55,9 +57,16 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   const [salvando, setSalvando] = useState(false)
   const [salvo, setSalvo] = useState(false)
   const [segundosNoNodo, setSegundosNoNodo] = useState(0)
+  const [impresos, setImpresos] = useState<HospitalSimulacaoImpreso[]>([])
+  const [impresosAberto, setImpresosAberto] = useState(false)
+  const [impresoEmFoco, setImpresoEmFoco] = useState<HospitalSimulacaoImpreso | null>(null)
 
   const nodo = conteudo.nodos[nodoId]
   const finalizado = nodo.opciones.length === 0
+  const totalImpresos = Object.values(conteudo.nodos).reduce(
+    (total, n) => total + n.opciones.filter((o) => o.impreso).length,
+    0
+  )
 
   useEffect(() => {
     if (finalizado || opcaoEscolhida !== null) return
@@ -121,6 +130,11 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     const novosPontos = clamp(estado.puntos_actuales + opcao.puntos_afectados, 0, 100)
     const novoEstado = mergeEstado({ ...estado, puntos_actuales: novosPontos }, opcao.cambio_estado_paciente)
     const novoHistorico = [...historico, { nodo: nodoId, opcao: opcao.texto.slice(0, 2), puntos_afectados: opcao.puntos_afectados }]
+
+    if (opcao.impreso) {
+      const impreso = opcao.impreso
+      setImpresos((prev) => (prev.some((i) => i.imagem === impreso.imagem) ? prev : [...prev, impreso]))
+    }
 
     setEstado(novoEstado)
     setHistorico(novoHistorico)
@@ -200,6 +214,67 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
             Dolor {estado.escala_dolor}/10
           </span>
         </div>
+
+        <Collapsible open={impresosAberto} onOpenChange={setImpresosAberto}>
+          <CollapsibleTrigger asChild>
+            <button
+              type="button"
+              className="flex w-full items-center justify-between gap-2 rounded-2xl border-2 bg-card px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-[#39ff88] transition-shadow"
+              style={{
+                borderColor: "#39ff88",
+                boxShadow: "0 0 10px rgba(57,255,136,.45), inset 0 0 10px rgba(57,255,136,.12)",
+              }}
+            >
+              <span className="flex items-center gap-2">
+                <FileImage className="h-4 w-4" />
+                Impresos
+                {totalImpresos > 0 && (
+                  <span className="rounded-full bg-[#39ff88]/15 px-2 py-0.5 text-[10px] tabular-nums">
+                    {impresos.length}/{totalImpresos}
+                  </span>
+                )}
+              </span>
+              <ChevronDown className={`h-4 w-4 transition-transform ${impresosAberto ? "rotate-180" : ""}`} />
+            </button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="mt-2">
+            {totalImpresos === 0 ? (
+              <p className="rounded-xl border border-dashed border-border p-4 text-center text-xs text-muted-foreground">
+                Este caso todavía no tiene impresos disponibles.
+              </p>
+            ) : (
+              <div className="grid grid-cols-3 gap-2">
+                {Array.from({ length: totalImpresos }).map((_, i) => {
+                  const item = impresos[i]
+                  if (!item) {
+                    return (
+                      <div
+                        key={i}
+                        className="flex aspect-square flex-col items-center justify-center gap-1 rounded-lg border border-dashed border-border bg-muted/30 text-muted-foreground/50"
+                      >
+                        <Lock className="h-4 w-4" />
+                      </div>
+                    )
+                  }
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setImpresoEmFoco(item)}
+                      className="group overflow-hidden rounded-lg border border-border"
+                    >
+                      <img
+                        src={item.imagem}
+                        alt={item.titulo}
+                        className="aspect-square w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    </button>
+                  )
+                })}
+              </div>
+            )}
+          </CollapsibleContent>
+        </Collapsible>
       </div>
 
       <div className="space-y-4">
@@ -284,6 +359,15 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
           </motion.div>
         </AnimatePresence>
       </div>
+
+      <Dialog open={impresoEmFoco !== null} onOpenChange={(open) => !open && setImpresoEmFoco(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>{impresoEmFoco?.titulo}</DialogTitle>
+          </DialogHeader>
+          {impresoEmFoco && <img src={impresoEmFoco.imagem} alt={impresoEmFoco.titulo} className="w-full rounded-lg" />}
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

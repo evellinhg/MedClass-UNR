@@ -23,6 +23,14 @@ export interface HospitalSimulacaoEstadoPaciente {
   puntos_actuales?: number
 }
 
+// Impreso (ECG, laboratorio, etc.) que se desbloquea solo si el alumno elige
+// exactamente esta opcion -- no se desbloquea por acertar el nodo de otra
+// forma, ni aparece antes de tiempo.
+export interface HospitalSimulacaoImpreso {
+  titulo: string
+  imagem: string
+}
+
 export interface HospitalSimulacaoOpcao {
   texto: string
   destino: string
@@ -30,6 +38,7 @@ export interface HospitalSimulacaoOpcao {
   puntos_afectados: number
   cambio_estado_paciente: HospitalSimulacaoEstadoPaciente
   feedback_detallado: string
+  impreso?: HospitalSimulacaoImpreso
 }
 
 export interface HospitalSimulacaoNodo {

@@ -20,6 +20,7 @@ interface HospitalSimulacaoMonitorProps {
   fr: number
   stElevacao: number // 0-1, desvia o segmento ST do traçado (maior = pior)
   critico: boolean
+  ritmo?: string // rótulo textual do ritmo (ex: "Ritmo Sinusal", "Fibrilación Ventricular")
 }
 
 function gauss(t: number, mu: number, sigma: number, amp: number) {
@@ -44,7 +45,7 @@ function plethAt(t: number, hr: number, pas: number) {
   return amp * (Math.exp(-(((tt - 0.22) / 0.13) ** 2)) + 0.42 * Math.exp(-(((tt - 0.46) / 0.11) ** 2))) * 0.9
 }
 
-export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, stElevacao, critico }: HospitalSimulacaoMonitorProps) {
+export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, stElevacao, critico, ritmo }: HospitalSimulacaoMonitorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const stateRef = useRef({ fc, pas, spo2, stElevacao })
   stateRef.current = { fc, pas, spo2, stElevacao }
@@ -142,8 +143,13 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, 
         <div className="grid grid-cols-[1fr_150px]">
           <div className="relative min-w-0" style={{ background: "#000" }}>
             <canvas ref={canvasRef} className="block h-[180px] w-full sm:h-[220px]" />
-            <span className="absolute left-1 top-1 text-[10px] font-bold" style={{ color: "#2fe36f" }}>
+            <span className="absolute left-1 top-1 flex items-center gap-2 text-[10px] font-bold" style={{ color: "#2fe36f" }}>
               ECG
+              {ritmo && (
+                <span className="rounded-[2px] px-1.5 py-0.5" style={{ background: critico ? "#ff2323" : "#0c3a19", color: critico ? "#fff" : "#5ecd82" }}>
+                  {ritmo}
+                </span>
+              )}
             </span>
             <span className="absolute bottom-1 left-1 text-[10px] font-bold" style={{ color: "#31d6f2" }}>
               PLETH

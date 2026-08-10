@@ -1,14 +1,14 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Clock, Heart, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
-import type { HospitalSimulacaoCaso, HospitalSimulacaoDesenlaceInfo } from "@/lib/hospital-simulacao-types"
-import { HOSPITAL_SIMULACAO_ETAPA_FIM, HOSPITAL_SIMULACAO_ETAPA_INICIAL } from "@/lib/hospital-simulacao-types"
+import type { HospitalSimulacaoCaso, HospitalSimulacaoEstadoPaciente } from "@/lib/hospital-simulacao-types"
+import { HOSPITAL_SIMULACAO_NODO_EXITO, HOSPITAL_SIMULACAO_NODO_INICIAL } from "@/lib/hospital-simulacao-types"
 import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
 
 interface HospitalSimulacaoJogoProps {
@@ -16,113 +16,91 @@ interface HospitalSimulacaoJogoProps {
 }
 
 interface RespostaHistorico {
-  etapa: string
-  letra: string
-  impacto_bp: number
+  nodo: string
+  opcao: string
+  puntos_afectados: number
 }
 
-interface Vitais {
-  fc: number
-  pas: number
-  spo2: number
-  fr: number
+// O conteudo desse caso nao trouxe regras_globais de decaimento por tempo
+// (formato mais simples que o anterior) -- mantem o mesmo mecanismo de
+// pressao de tempo ja validado com o usuario, com valores default
+// razoaveis, em vez de remover a funcionalidade.
+const CUSTO_TEMPO_SEGUNDO = { fc: 0.6, pas: -0.5, spo2: -0.08, fr: 0.1 }
+
+const RITMOS_CRITICOS = /fibrilaci[oó]n|asistolia|taquicardia ventricular|paro card/i
+
+function parsePresion(str: string | undefined): { pas: number; pad: number } {
+  const [pas, pad] = (str ?? "0/0").split("/").map((n) => Number.parseInt(n, 10) || 0)
+  return { pas, pad }
 }
 
-const TOTAL_ETAPAS_REFERENCIA = 20
-// Ordem das faixas de BP pro desenlace final -- o conteudo nao traz mais
-// bp_faixa explicito (so titulo/mensagem/vivo/miocardio_salvavel por
-// camino_N), entao os limiares seguem a mesma convencao usada em todo o
-// caso: >85 vitoria perfeita, 50-84 com sequela leve, 1-49 sequela grave,
-// <=0 obito.
-const CAMINHOS_POR_BP: { chave: string; min: number }[] = [
-  { chave: "camino_1", min: 85 },
-  { chave: "camino_2", min: 50 },
-  { chave: "camino_3", min: 1 },
-  { chave: "camino_4", min: -Infinity },
-]
-
-function clampVital(v: number, min: number, max: number) {
+function clamp(v: number, min: number, max: number) {
   return Math.max(min, Math.min(max, v))
 }
 
-function clampVitais(v: Vitais): Vitais {
-  return {
-    fc: clampVital(v.fc, 20, 200),
-    pas: clampVital(v.pas, 0, 200),
-    spo2: clampVital(v.spo2, 0, 100),
-    fr: clampVital(v.fr, 0, 40),
-  }
+function mergeEstado(
+  atual: Required<HospitalSimulacaoEstadoPaciente>,
+  mudanca: HospitalSimulacaoEstadoPaciente
+): Required<HospitalSimulacaoEstadoPaciente> {
+  return { ...atual, ...mudanca }
 }
 
 export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   const conteudo = caso.conteudo!
-  const { regras_globais: regras } = conteudo
 
-  const [etapaId, setEtapaId] = useState(HOSPITAL_SIMULACAO_ETAPA_INICIAL)
-  const [bp, setBp] = useState(conteudo.puntos_biologicos_iniciales)
-  const [vitais, setVitais] = useState<Vitais>({
-    fc: conteudo.vitais_base.fc,
-    pas: conteudo.vitais_base.pas,
-    spo2: conteudo.vitais_base.spo2,
-    fr: conteudo.vitais_base.fr,
-  })
+  const [nodoId, setNodoId] = useState(HOSPITAL_SIMULACAO_NODO_INICIAL)
+  const [estado, setEstado] = useState(conteudo.estado_inicial)
   const [historico, setHistorico] = useState<RespostaHistorico[]>([])
-  const [letraEscolhida, setLetraEscolhida] = useState<string | null>(null)
-  const [desfecho, setDesfecho] = useState<{ info: HospitalSimulacaoDesenlaceInfo; camino: number } | null>(null)
+  const [opcaoEscolhida, setOpcaoEscolhida] = useState<number | null>(null)
   const [salvando, setSalvando] = useState(false)
   const [salvo, setSalvo] = useState(false)
-  const [segundosNaEtapa, setSegundosNaEtapa] = useState(0)
+  const [segundosNoNodo, setSegundosNoNodo] = useState(0)
 
-  const etapa = conteudo.etapas[etapaId]
-  const finalizado = !!desfecho
+  const nodo = conteudo.nodos[nodoId]
+  const finalizado = nodo.opciones.length === 0
 
-  // Enquanto o aluno delibera (sem responder ainda), o quadro do paciente
-  // continua se deteriorando -- tempo de decisao tem custo clinico real,
-  // igual numa guardia de verdade. Reseta a cada etapa nova; para assim que
-  // a alternativa e escolhida. Os coeficientes vem do proprio conteudo do
-  // caso (regras_globais.custo_tempo_segundo), nao sao fixos no codigo.
   useEffect(() => {
-    if (finalizado || letraEscolhida) return
+    if (finalizado || opcaoEscolhida !== null) return
     const intervalo = setInterval(() => {
-      setSegundosNaEtapa((s) => s + 1)
-      setVitais((v) =>
-        clampVitais({
-          fc: v.fc + regras.custo_tempo_segundo.fc,
-          pas: v.pas + regras.custo_tempo_segundo.pas,
-          spo2: v.spo2 + regras.custo_tempo_segundo.spo2,
-          fr: v.fr + regras.custo_tempo_segundo.fr,
-        })
-      )
+      setSegundosNoNodo((s) => s + 1)
+      setEstado((e) => {
+        const { pas, pad } = parsePresion(e.presion_arterial_mmhg)
+        return {
+          ...e,
+          frecuencia_cardiaca_lpm: clamp(e.frecuencia_cardiaca_lpm + CUSTO_TEMPO_SEGUNDO.fc, 20, 200),
+          presion_arterial_mmhg: `${clamp(pas + CUSTO_TEMPO_SEGUNDO.pas, 0, 200)}/${pad}`,
+          saturacion_oxigeno_pct: clamp(e.saturacion_oxigeno_pct + CUSTO_TEMPO_SEGUNDO.spo2, 0, 100),
+          frecuencia_respiratoria_rpm: clamp(e.frecuencia_respiratoria_rpm + CUSTO_TEMPO_SEGUNDO.fr, 0, 40),
+        }
+      })
     }, 1000)
     return () => clearInterval(intervalo)
-  }, [finalizado, letraEscolhida, etapaId, regras.custo_tempo_segundo])
+  }, [finalizado, opcaoEscolhida, nodoId])
 
   useEffect(() => {
-    setSegundosNaEtapa(0)
-  }, [etapaId])
+    setSegundosNoNodo(0)
+  }, [nodoId])
 
-  const stElevacao = Math.max(0, Math.min(1, (85 - bp) / 85))
-  const g = regras.gatilho_alarme_critico
+  const { pas, pad } = parsePresion(estado.presion_arterial_mmhg)
+  const stElevacao = Math.max(0, Math.min(1, (85 - estado.puntos_actuales) / 85))
   const critico =
-    vitais.pas < g.pas_menor_que ||
-    vitais.spo2 < g.spo2_menor_que ||
-    vitais.fc > g.fc_maior_que ||
-    vitais.fc < g.fc_menor_que ||
-    vitais.fr > g.fr_maior_que ||
-    vitais.fr < g.fr_menor_que ||
-    bp <= g.bp_menor_ou_igual_a
+    RITMOS_CRITICOS.test(estado.ritmo_monitoreo_ecg) ||
+    pas < 80 ||
+    estado.saturacion_oxigeno_pct < 90 ||
+    estado.frecuencia_cardiaca_lpm > 130 ||
+    estado.frecuencia_cardiaca_lpm < 45 ||
+    estado.puntos_actuales <= 30
 
-  const salvarTentativa = async (bpFinal: number, historicoFinal: RespostaHistorico[], info: HospitalSimulacaoDesenlaceInfo, camino: number) => {
+  const salvarTentativa = async (pontosFinal: number, historicoFinal: RespostaHistorico[], venceu: boolean) => {
     setSalvando(true)
     const { data: userData } = await supabase.auth.getUser()
     if (userData.user) {
       await supabase.from("hospital_simulacao_tentativas").insert({
         user_id: userData.user.id,
         caso_id: caso.id,
-        desenlace: info.titulo,
-        camino,
-        bp_final: bpFinal,
-        falecido: !info.vivo,
+        desenlace: nodo.etapa,
+        bp_final: pontosFinal,
+        falecido: !venceu,
         dificuldade: 1,
         registro: historicoFinal,
         finalizado_em: new Date().toISOString(),
@@ -132,56 +110,42 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     setSalvo(true)
   }
 
-  const escolher = (letra: string) => {
-    if (letraEscolhida) return
-    setLetraEscolhida(letra)
+  const escolher = (idx: number) => {
+    if (opcaoEscolhida !== null) return
+    setOpcaoEscolhida(idx)
   }
 
   const continuar = () => {
-    if (!letraEscolhida) return
-    const opcao = etapa.opciones[letraEscolhida]
-    const novoBp = Math.max(0, Math.min(100, bp + opcao.impacto_bp))
-    const novoHistorico = [...historico, { etapa: etapaId, letra: letraEscolhida, impacto_bp: opcao.impacto_bp }]
+    if (opcaoEscolhida === null) return
+    const opcao = nodo.opciones[opcaoEscolhida]
+    const novosPontos = clamp(estado.puntos_actuales + opcao.puntos_afectados, 0, 100)
+    const novoEstado = mergeEstado({ ...estado, puntos_actuales: novosPontos }, opcao.cambio_estado_paciente)
+    const novoHistorico = [...historico, { nodo: nodoId, opcao: opcao.texto.slice(0, 2), puntos_afectados: opcao.puntos_afectados }]
+
+    setEstado(novoEstado)
     setHistorico(novoHistorico)
-    setBp(novoBp)
-    // Usa o alvo absoluto de vitais da propria opcao (nao soma delta sobre o
-    // estado atual): o conteudo ja calcula exatamente onde o paciente deve
-    // estar apos essa conduta especifica, evitando qualquer desvio entre o
-    // que a etapa narra (ex: "FC cai pra 32") e o estado acumulado do jogo.
-    setVitais(clampVitais(opcao.alvos_vitais))
-    setLetraEscolhida(null)
+    setOpcaoEscolhida(null)
+    setNodoId(opcao.destino)
 
-    if (opcao.proxima_etapa === HOSPITAL_SIMULACAO_ETAPA_FIM) {
-      const alvo = CAMINHOS_POR_BP.find((c) => novoBp >= c.min)!
-      const info = conteudo.desenlaces_finales[alvo.chave]
-      const caminoNumero = Number(alvo.chave.split("_")[1])
-      setDesfecho({ info, camino: caminoNumero })
-      salvarTentativa(novoBp, novoHistorico, info, caminoNumero)
-      return
+    const proximoNodo = conteudo.nodos[opcao.destino]
+    if (proximoNodo.opciones.length === 0) {
+      const venceu = opcao.destino === HOSPITAL_SIMULACAO_NODO_EXITO
+      salvarTentativa(novosPontos, novoHistorico, venceu)
     }
-
-    setEtapaId(opcao.proxima_etapa)
   }
 
-  const progresso = useMemo(() => Math.min(100, Math.round((etapa.numero / TOTAL_ETAPAS_REFERENCIA) * 100)), [etapa.numero])
-
-  if (finalizado && desfecho) {
+  if (finalizado) {
+    const venceu = nodoId === HOSPITAL_SIMULACAO_NODO_EXITO
     return (
       <Card className="flex flex-col items-center gap-4 rounded-[24px] border border-border bg-card p-8 text-center sm:p-10">
-        {!desfecho.info.vivo ? <Skull className="h-12 w-12 text-red-500" /> : <Heart className="h-12 w-12 text-primary" />}
+        {!venceu ? <Skull className="h-12 w-12 text-red-500" /> : <Heart className="h-12 w-12 text-primary" />}
         <div>
-          <p className="text-xl font-bold text-foreground">{desfecho.info.titulo}</p>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{desfecho.info.mensagem}</p>
+          <p className="text-xl font-bold text-foreground">{nodo.etapa}</p>
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{nodo.descripcion_situación}</p>
         </div>
-        <div className="grid grid-cols-2 gap-3 text-sm">
-          <div className="rounded-xl border border-border p-4">
-            <p className="text-xs text-muted-foreground">Pontuação Biológica final</p>
-            <p className="text-2xl font-bold text-foreground">{bp} / 100</p>
-          </div>
-          <div className="rounded-xl border border-border p-4">
-            <p className="text-xs text-muted-foreground">Miocárdio salvável</p>
-            <p className="text-2xl font-bold text-foreground">{desfecho.info.miocardio_salvavel}%</p>
-          </div>
+        <div className="rounded-xl border border-border p-4 text-sm">
+          <p className="text-xs text-muted-foreground">Puntuación final</p>
+          <p className="text-2xl font-bold text-foreground">{estado.puntos_actuales} / 100</p>
         </div>
         {salvando && <p className="text-xs text-muted-foreground">Salvando desempenho...</p>}
         {salvo && <p className="text-xs text-emerald-500">Desempenho registrado.</p>}
@@ -197,79 +161,96 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
       <HospitalSimulacaoMonitor
         nome="Paciente, Masculino"
         idade={58}
-        fc={vitais.fc}
-        pas={vitais.pas}
-        pad={Math.round(vitais.pas * 0.64)}
-        spo2={vitais.spo2}
-        fr={vitais.fr}
+        fc={estado.frecuencia_cardiaca_lpm}
+        pas={pas}
+        pad={pad}
+        spo2={estado.saturacion_oxigeno_pct}
+        fr={estado.frecuencia_respiratoria_rpm}
         stElevacao={stElevacao}
         critico={critico}
+        ritmo={estado.ritmo_monitoreo_ecg}
       />
 
+      <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-2">
+        <span
+          className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-bold ${
+            estado.escala_dolor >= 7
+              ? "bg-red-500/15 text-red-500"
+              : estado.escala_dolor >= 4
+                ? "bg-amber-500/15 text-amber-500"
+                : "bg-emerald-500/15 text-emerald-500"
+          }`}
+        >
+          Dor {estado.escala_dolor}/10
+        </span>
+        <p className="text-sm italic text-muted-foreground">{estado.estado_clinico}</p>
+      </div>
+
       <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-          {etapa.fase} · {etapa.titulo} ({progresso}%)
-        </p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{nodo.etapa}</p>
         <div className="flex items-center gap-2">
-          {!letraEscolhida && (
+          {opcaoEscolhida === null && (
             <span
               className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold tabular-nums ${
-                segundosNaEtapa > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
+                segundosNoNodo > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
               }`}
               title="Tempo decidindo -- o paciente segue descompensando enquanto você delibera"
             >
               <Clock className="h-3 w-3" />
-              {Math.floor(segundosNaEtapa / 60)}:{String(segundosNaEtapa % 60).padStart(2, "0")}
+              {Math.floor(segundosNoNodo / 60)}:{String(segundosNoNodo % 60).padStart(2, "0")}
             </span>
           )}
           <span
             className={`rounded-full px-3 py-1 text-xs font-bold ${
-              bp > 70 ? "bg-emerald-500/15 text-emerald-500" : bp > 40 ? "bg-amber-500/15 text-amber-500" : "bg-red-500/15 text-red-500"
+              estado.puntos_actuales > 70
+                ? "bg-emerald-500/15 text-emerald-500"
+                : estado.puntos_actuales > 40
+                  ? "bg-amber-500/15 text-amber-500"
+                  : "bg-red-500/15 text-red-500"
             }`}
           >
-            BP {bp}/100
+            {estado.puntos_actuales}/100
           </span>
         </div>
       </div>
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={etapaId}
+          key={nodoId}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
         >
           <Card className="rounded-[24px] border border-border bg-card p-6 sm:p-8">
-            <p className="text-base leading-relaxed text-foreground">{etapa.descripcion_clinica}</p>
+            <p className="text-base leading-relaxed text-foreground">{nodo.descripcion_situación}</p>
 
             <div className="mt-6 space-y-3">
-              {Object.entries(etapa.opciones).map(([letra, opcao]) => {
-                const selecionada = letraEscolhida === letra
-                const desabilitado = !!letraEscolhida && !selecionada
+              {nodo.opciones.map((opcao, idx) => {
+                const selecionada = opcaoEscolhida === idx
+                const desabilitado = opcaoEscolhida !== null && !selecionada
                 return (
                   <button
-                    key={letra}
+                    key={idx}
                     type="button"
-                    disabled={!!letraEscolhida}
-                    onClick={() => escolher(letra)}
-                    className={`w-full rounded-xl border p-4 text-left text-sm transition-colors ${
+                    disabled={opcaoEscolhida !== null}
+                    onClick={() => escolher(idx)}
+                    className={`w-full rounded-xl border p-4 text-left text-sm transition-colors sm:text-[17px] ${
                       selecionada
-                        ? opcao.impacto_bp >= 0
+                        ? opcao.puntos_afectados >= 0
                           ? "border-emerald-500 bg-emerald-500/10"
                           : "border-red-500 bg-red-500/10"
                         : "border-border hover:bg-secondary"
                     } ${desabilitado ? "opacity-40" : ""}`}
                   >
-                    <span className="font-semibold text-foreground">{letra}) </span>
                     <span className="text-foreground">{opcao.texto}</span>
                     {selecionada && (
                       <div className="mt-3 space-y-1 border-t border-border/60 pt-3">
-                        <p className={`text-xs font-bold ${opcao.impacto_bp >= 0 ? "text-emerald-500" : "text-red-500"}`}>
-                          {opcao.impacto_bp >= 0 ? "+" : ""}
-                          {opcao.impacto_bp} BP
+                        <p className={`text-xs font-bold ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>
+                          {opcao.puntos_afectados >= 0 ? "+" : ""}
+                          {opcao.puntos_afectados} pts
                         </p>
-                        <p className="text-xs text-muted-foreground">{opcao.feedback}</p>
+                        <p className="text-xs text-muted-foreground">{opcao.feedback_detallado}</p>
                       </div>
                     )}
                   </button>
@@ -277,7 +258,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
               })}
             </div>
 
-            {letraEscolhida && (
+            {opcaoEscolhida !== null && (
               <div className="mt-6 flex justify-end">
                 <Button onClick={continuar}>Continuar</Button>
               </div>

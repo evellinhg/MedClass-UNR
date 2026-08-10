@@ -10,66 +10,57 @@ export interface HospitalSimulacaoCaso {
   created_at: string
 }
 
-export interface HospitalSimulacaoVitalDelta {
-  fc: number
-  pas: number
-  spo2: number
-  fr: number
+// Estado do paciente -- cada campo e opcional porque cambio_estado_paciente
+// so traz os campos que realmente mudaram naquela decisao (o motor faz
+// merge sobre o estado anterior, nao substitui tudo).
+export interface HospitalSimulacaoEstadoPaciente {
+  frecuencia_cardiaca_lpm?: number
+  presion_arterial_mmhg?: string // "140/90"
+  saturacion_oxigeno_pct?: number
+  frecuencia_respiratoria_rpm?: number
+  escala_dolor?: number
+  ritmo_monitoreo_ecg?: string
+  estado_clinico?: string
+  puntos_actuales?: number
 }
 
 export interface HospitalSimulacaoOpcao {
   texto: string
-  impacto_bp: number
-  deltas_vitais: HospitalSimulacaoVitalDelta
-  alvos_vitais: HospitalSimulacaoVitalDelta
-  feedback: string
-  proxima_etapa: string
+  destino: string
+  es_correcta: boolean
+  puntos_afectados: number
+  cambio_estado_paciente: HospitalSimulacaoEstadoPaciente
+  feedback_detallado: string
 }
 
-export interface HospitalSimulacaoEtapa {
-  numero: number
-  fase: string
-  titulo: string
-  descripcion_clinica: string
-  opciones: Record<string, HospitalSimulacaoOpcao>
+export interface HospitalSimulacaoNodo {
+  id: string
+  etapa: string
+  descripcion_situación: string
+  opciones: HospitalSimulacaoOpcao[]
 }
 
-export interface HospitalSimulacaoDesenlaceInfo {
-  titulo: string
-  mensagem: string
-  vivo: boolean
-  miocardio_salvavel: number
-}
-
-export type HospitalSimulacaoDesenlaces = Record<string, HospitalSimulacaoDesenlaceInfo>
-
-export interface HospitalSimulacaoRegrasGlobais {
-  custo_tempo_segundo: HospitalSimulacaoVitalDelta
-  gatilho_alarme_critico: {
-    pas_menor_que: number
-    spo2_menor_que: number
-    fc_maior_que: number
-    fc_menor_que: number
-    fr_maior_que: number
-    fr_menor_que: number
-    bp_menor_ou_igual_a: number
-  }
+export interface HospitalSimulacaoSistemaPuntos {
+  puntos_iniciales: number
+  penalizacion_error_leve: number
+  penalizacion_error_grave: number
+  penalizacion_error_fatal: number
 }
 
 export interface HospitalSimulacaoConteudo {
-  caso_id: string
-  titulo: string
-  descricao_general: string
-  puntos_biologicos_iniciales: number
-  vitais_base: HospitalSimulacaoVitalDelta & { st_inicial: number }
-  regras_globais: HospitalSimulacaoRegrasGlobais
-  etapas: Record<string, HospitalSimulacaoEtapa>
-  desenlaces_finales: HospitalSimulacaoDesenlaces
+  titulo_juego: string
+  descripcion: string
+  sistema_puntos: HospitalSimulacaoSistemaPuntos
+  estado_inicial: Required<HospitalSimulacaoEstadoPaciente>
+  nodos: Record<string, HospitalSimulacaoNodo>
 }
 
-export const HOSPITAL_SIMULACAO_ETAPA_INICIAL = "triagem"
-export const HOSPITAL_SIMULACAO_ETAPA_FIM = "fim"
+export const HOSPITAL_SIMULACAO_NODO_INICIAL = "ingreso_paciente"
+export const HOSPITAL_SIMULACAO_NODO_EXITO = "caso_exitoso"
 
+// Protocolo do modo "iframe" (simulador vendor autocontido, postMessage ao
+// finalizar) -- mantido pro tipo HospitalSimulacaoCaso.tipo === "iframe",
+// independente do formato de conteudo do modo "perguntas" acima.
 export interface SimuladorResultado {
   caso: string
   version: string

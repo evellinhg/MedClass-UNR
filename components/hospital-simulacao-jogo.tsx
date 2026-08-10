@@ -174,112 +174,116 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
   }
 
   return (
-    <div className="space-y-4">
-      <HospitalSimulacaoMonitor
-        nome="Paciente, Masculino"
-        idade={58}
-        fc={estado.frecuencia_cardiaca_lpm}
-        pas={pas}
-        pad={pad}
-        spo2={estado.saturacion_oxigeno_pct}
-        stElevacao={stElevacao}
-        critico={critico}
-      />
+    <div className="grid gap-4 lg:grid-cols-2 lg:items-start lg:gap-6">
+      <div className="space-y-4 lg:sticky lg:top-4">
+        <HospitalSimulacaoMonitor
+          nome="Paciente, Masculino"
+          idade={58}
+          fc={estado.frecuencia_cardiaca_lpm}
+          pas={pas}
+          pad={pad}
+          spo2={estado.saturacion_oxigeno_pct}
+          stElevacao={stElevacao}
+          critico={critico}
+        />
 
-      <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-2">
-        <span
-          className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-bold ${
-            estado.escala_dolor >= 7
-              ? "bg-red-500/15 text-red-500"
-              : estado.escala_dolor >= 4
-                ? "bg-amber-500/15 text-amber-500"
-                : "bg-emerald-500/15 text-emerald-500"
-          }`}
-        >
-          Dolor {estado.escala_dolor}/10
-        </span>
-      </div>
-
-      <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{nodo.etapa}</p>
-        <div className="flex items-center gap-2">
-          {opcaoEscolhida === null && (
-            <span
-              className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold tabular-nums ${
-                segundosNoNodo > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
-              }`}
-              title="Tiempo decidiendo -- el paciente sigue descompensando mientras decidís"
-            >
-              <Clock className="h-3 w-3" />
-              {Math.floor(segundosNoNodo / 60)}:{String(segundosNoNodo % 60).padStart(2, "0")}
-            </span>
-          )}
+        <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-2">
           <span
-            className={`rounded-full px-3 py-1 text-xs font-bold ${
-              estado.puntos_actuales > 70
-                ? "bg-emerald-500/15 text-emerald-500"
-                : estado.puntos_actuales > 40
+            className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-bold ${
+              estado.escala_dolor >= 7
+                ? "bg-red-500/15 text-red-500"
+                : estado.escala_dolor >= 4
                   ? "bg-amber-500/15 text-amber-500"
-                  : "bg-red-500/15 text-red-500"
+                  : "bg-emerald-500/15 text-emerald-500"
             }`}
           >
-            {estado.puntos_actuales}/100
+            Dolor {estado.escala_dolor}/10
           </span>
         </div>
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={nodoId}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -8 }}
-          transition={{ duration: 0.25 }}
-        >
-          <Card className="rounded-[24px] border border-border bg-card p-6 sm:p-8">
-            <p className="text-base leading-relaxed text-foreground">{nodo.descripcion_situación}</p>
-
-            <div className="mt-6 space-y-3">
-              {nodo.opciones.map((opcao, idx) => {
-                const selecionada = opcaoEscolhida === idx
-                const desabilitado = opcaoEscolhida !== null && !selecionada
-                return (
-                  <button
-                    key={idx}
-                    type="button"
-                    disabled={opcaoEscolhida !== null}
-                    onClick={() => escolher(idx)}
-                    className={`w-full rounded-xl border p-4 text-left text-sm transition-colors sm:text-[17px] ${
-                      selecionada
-                        ? opcao.puntos_afectados >= 0
-                          ? "border-emerald-500 bg-emerald-500/10"
-                          : "border-red-500 bg-red-500/10"
-                        : "border-border hover:bg-secondary"
-                    } ${desabilitado ? "opacity-40" : ""}`}
-                  >
-                    <span className="text-foreground">{opcao.texto}</span>
-                    {selecionada && (
-                      <div className="mt-3 space-y-1 border-t border-border/60 pt-3">
-                        <p className={`text-xs font-bold ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>
-                          {opcao.puntos_afectados >= 0 ? "+" : ""}
-                          {opcao.puntos_afectados} pts
-                        </p>
-                        <p className="text-xs text-muted-foreground">{opcao.feedback_detallado}</p>
-                      </div>
-                    )}
-                  </button>
-                )
-              })}
-            </div>
-
-            {opcaoEscolhida !== null && (
-              <div className="mt-6 flex justify-end">
-                <Button onClick={continuar}>Continuar</Button>
-              </div>
+      <div className="space-y-4">
+        <div className="flex items-center justify-between gap-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{nodo.etapa}</p>
+          <div className="flex items-center gap-2">
+            {opcaoEscolhida === null && (
+              <span
+                className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold tabular-nums ${
+                  segundosNoNodo > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
+                }`}
+                title="Tiempo decidiendo -- el paciente sigue descompensando mientras decidís"
+              >
+                <Clock className="h-3 w-3" />
+                {Math.floor(segundosNoNodo / 60)}:{String(segundosNoNodo % 60).padStart(2, "0")}
+              </span>
             )}
-          </Card>
-        </motion.div>
-      </AnimatePresence>
+            <span
+              className={`rounded-full px-3 py-1 text-xs font-bold ${
+                estado.puntos_actuales > 70
+                  ? "bg-emerald-500/15 text-emerald-500"
+                  : estado.puntos_actuales > 40
+                    ? "bg-amber-500/15 text-amber-500"
+                    : "bg-red-500/15 text-red-500"
+              }`}
+            >
+              {estado.puntos_actuales}/100
+            </span>
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={nodoId}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
+          >
+            <Card className="rounded-[24px] border border-border bg-card p-6 sm:p-8">
+              <p className="text-base leading-relaxed text-foreground">{nodo.descripcion_situación}</p>
+
+              <div className="mt-6 space-y-3">
+                {nodo.opciones.map((opcao, idx) => {
+                  const selecionada = opcaoEscolhida === idx
+                  const desabilitado = opcaoEscolhida !== null && !selecionada
+                  return (
+                    <button
+                      key={idx}
+                      type="button"
+                      disabled={opcaoEscolhida !== null}
+                      onClick={() => escolher(idx)}
+                      className={`w-full rounded-xl border p-4 text-left text-sm transition-colors sm:text-[17px] ${
+                        selecionada
+                          ? opcao.puntos_afectados >= 0
+                            ? "border-emerald-500 bg-emerald-500/10"
+                            : "border-red-500 bg-red-500/10"
+                          : "border-border hover:bg-secondary"
+                      } ${desabilitado ? "opacity-40" : ""}`}
+                    >
+                      <span className="text-foreground">{opcao.texto}</span>
+                      {selecionada && (
+                        <div className="mt-3 space-y-1 border-t border-border/60 pt-3">
+                          <p className={`text-xs font-bold ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>
+                            {opcao.puntos_afectados >= 0 ? "+" : ""}
+                            {opcao.puntos_afectados} pts
+                          </p>
+                          <p className="text-xs text-muted-foreground">{opcao.feedback_detallado}</p>
+                        </div>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+
+              {opcaoEscolhida !== null && (
+                <div className="mt-6 flex justify-end">
+                  <Button onClick={continuar}>Continuar</Button>
+                </div>
+              )}
+            </Card>
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }

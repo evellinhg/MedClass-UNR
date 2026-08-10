@@ -20,7 +20,6 @@ export interface HospitalSimulacaoEstadoPaciente {
   frecuencia_respiratoria_rpm?: number
   escala_dolor?: number
   ritmo_monitoreo_ecg?: string
-  estado_clinico?: string
   puntos_actuales?: number
 }
 
@@ -55,8 +54,8 @@ export interface HospitalSimulacaoConteudo {
   nodos: Record<string, HospitalSimulacaoNodo>
 }
 
-export const HOSPITAL_SIMULACAO_NODO_INICIAL = "ingreso_paciente"
-export const HOSPITAL_SIMULACAO_NODO_EXITO = "caso_exitoso"
+export const HOSPITAL_SIMULACAO_NODO_INICIAL = "fase_1_admissao"
+export const HOSPITAL_SIMULACAO_NODO_EXITO = "sucesso_conclusao"
 
 // Protocolo do modo "iframe" (simulador vendor autocontido, postMessage ao
 // finalizar) -- mantido pro tipo HospitalSimulacaoCaso.tipo === "iframe",

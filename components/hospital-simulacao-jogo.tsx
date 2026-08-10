@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Clock, Heart, Skull } from "lucide-react"
+import { AlertTriangle, Clock, Heart, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase"
 import type { HospitalSimulacaoCaso, HospitalSimulacaoEstadoPaciente } from "@/lib/hospital-simulacao-types"
-import { HOSPITAL_SIMULACAO_NODO_EXITO, HOSPITAL_SIMULACAO_NODO_INICIAL } from "@/lib/hospital-simulacao-types"
+import { HOSPITAL_SIMULACAO_NODO_INICIAL } from "@/lib/hospital-simulacao-types"
 import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
 
 interface HospitalSimulacaoJogoProps {
@@ -129,28 +129,45 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
 
     const proximoNodo = conteudo.nodos[opcao.destino]
     if (proximoNodo.opciones.length === 0) {
-      const venceu = opcao.destino === HOSPITAL_SIMULACAO_NODO_EXITO
-      salvarTentativa(novosPontos, novoHistorico, venceu)
+      salvarTentativa(novosPontos, novoHistorico, novosPontos >= 40)
     }
   }
 
   if (finalizado) {
-    const venceu = nodoId === HOSPITAL_SIMULACAO_NODO_EXITO
+    // El caso siempre converge al mismo nodo final (sucesso_conclusao) -- a
+    // diferencia de versiones anteriores del caso, acá no hay un nodo de
+    // "muerte" separado. El desenlace real se refleja en la puntuación final
+    // acumulada, no en a qué nodo se llegó.
+    const puntosFinal = estado.puntos_actuales
+    const resultado = puntosFinal >= 70 ? "exito" : puntosFinal >= 40 ? "regular" : "critico"
+
     return (
       <Card className="flex flex-col items-center gap-4 rounded-[24px] border border-border bg-card p-8 text-center sm:p-10">
-        {!venceu ? <Skull className="h-12 w-12 text-red-500" /> : <Heart className="h-12 w-12 text-primary" />}
+        {resultado === "critico" ? (
+          <Skull className="h-12 w-12 text-red-500" />
+        ) : resultado === "regular" ? (
+          <AlertTriangle className="h-12 w-12 text-amber-500" />
+        ) : (
+          <Heart className="h-12 w-12 text-primary" />
+        )}
         <div>
-          <p className="text-xl font-bold text-foreground">{nodo.etapa}</p>
+          <p className="text-xl font-bold text-foreground">
+            {resultado === "critico"
+              ? "Desenlace Crítico"
+              : resultado === "regular"
+                ? "Paciente Estabilizado con Secuelas"
+                : nodo.etapa}
+          </p>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">{nodo.descripcion_situación}</p>
         </div>
         <div className="rounded-xl border border-border p-4 text-sm">
           <p className="text-xs text-muted-foreground">Puntuación final</p>
-          <p className="text-2xl font-bold text-foreground">{estado.puntos_actuales} / 100</p>
+          <p className="text-2xl font-bold text-foreground">{puntosFinal} / 100</p>
         </div>
-        {salvando && <p className="text-xs text-muted-foreground">Salvando desempenho...</p>}
-        {salvo && <p className="text-xs text-emerald-500">Desempenho registrado.</p>}
+        {salvando && <p className="text-xs text-muted-foreground">Guardando desempeño...</p>}
+        {salvo && <p className="text-xs text-emerald-500">Desempeño registrado.</p>}
         <Link href="/dashboard/hospital-simulacao" className="text-sm font-medium text-primary hover:underline">
-          Voltar para Hospital Simulação
+          Volver a Hospital Simulación
         </Link>
       </Card>
     )
@@ -179,9 +196,8 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
                 : "bg-emerald-500/15 text-emerald-500"
           }`}
         >
-          Dor {estado.escala_dolor}/10
+          Dolor {estado.escala_dolor}/10
         </span>
-        <p className="text-sm italic text-muted-foreground">{estado.estado_clinico}</p>
       </div>
 
       <div className="flex items-center justify-between gap-2">
@@ -192,7 +208,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
               className={`flex items-center gap-1 rounded-full px-3 py-1 text-xs font-bold tabular-nums ${
                 segundosNoNodo > 30 ? "bg-red-500/15 text-red-500" : "bg-muted text-muted-foreground"
               }`}
-              title="Tempo decidindo -- o paciente segue descompensando enquanto você delibera"
+              title="Tiempo decidiendo -- el paciente sigue descompensando mientras decidís"
             >
               <Clock className="h-3 w-3" />
               {Math.floor(segundosNoNodo / 60)}:{String(segundosNoNodo % 60).padStart(2, "0")}

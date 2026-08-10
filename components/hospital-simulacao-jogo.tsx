@@ -165,10 +165,8 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
         pas={pas}
         pad={pad}
         spo2={estado.saturacion_oxigeno_pct}
-        fr={estado.frecuencia_respiratoria_rpm}
         stElevacao={stElevacao}
         critico={critico}
-        ritmo={estado.ritmo_monitoreo_ecg}
       />
 
       <div className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-2">

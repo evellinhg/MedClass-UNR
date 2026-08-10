@@ -17,10 +17,8 @@ interface HospitalSimulacaoMonitorProps {
   pas: number
   pad: number
   spo2: number
-  fr: number
   stElevacao: number // 0-1, desvia o segmento ST do traçado (maior = pior)
   critico: boolean
-  ritmo?: string // rótulo textual do ritmo (ex: "Ritmo Sinusal", "Fibrilación Ventricular")
 }
 
 function gauss(t: number, mu: number, sigma: number, amp: number) {
@@ -45,7 +43,7 @@ function plethAt(t: number, hr: number, pas: number) {
   return amp * (Math.exp(-(((tt - 0.22) / 0.13) ** 2)) + 0.42 * Math.exp(-(((tt - 0.46) / 0.11) ** 2))) * 0.9
 }
 
-export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, stElevacao, critico, ritmo }: HospitalSimulacaoMonitorProps) {
+export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, stElevacao, critico }: HospitalSimulacaoMonitorProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const stateRef = useRef({ fc, pas, spo2, stElevacao })
   stateRef.current = { fc, pas, spo2, stElevacao }
@@ -143,13 +141,8 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, 
         <div className="grid grid-cols-[1fr_150px]">
           <div className="relative min-w-0" style={{ background: "#000" }}>
             <canvas ref={canvasRef} className="block h-[180px] w-full sm:h-[220px]" />
-            <span className="absolute left-1 top-1 flex items-center gap-2 text-[10px] font-bold" style={{ color: "#2fe36f" }}>
+            <span className="absolute left-1 top-1 text-[10px] font-bold" style={{ color: "#2fe36f" }}>
               ECG
-              {ritmo && (
-                <span className="rounded-[2px] px-1.5 py-0.5" style={{ background: critico ? "#ff2323" : "#0c3a19", color: critico ? "#fff" : "#5ecd82" }}>
-                  {ritmo}
-                </span>
-              )}
             </span>
             <span className="absolute bottom-1 left-1 text-[10px] font-bold" style={{ color: "#31d6f2" }}>
               PLETH
@@ -163,7 +156,7 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, 
               </p>
               <p
                 className="text-right font-bold tabular-nums"
-                style={{ color: "#2fe36f", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 32, lineHeight: 0.85 }}
+                style={{ color: "#2fe36f", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 40, lineHeight: 0.85 }}
               >
                 {Math.round(fc)}
               </p>
@@ -177,7 +170,7 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, 
               </p>
               <p
                 className="text-right font-bold tabular-nums"
-                style={{ color: "#ff8a92", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 24, lineHeight: 0.85 }}
+                style={{ color: "#ff8a92", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 30, lineHeight: 0.85 }}
               >
                 {Math.round(pas)}/{Math.round(pad)}
               </p>
@@ -185,32 +178,18 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, fr, 
                 mmHg
               </p>
             </div>
-            <div className="flex flex-1 flex-col justify-center border-b px-2 py-1" style={{ borderColor: "#242424" }}>
+            <div className="flex flex-1 flex-col justify-center px-2 py-1">
               <p className="font-bold" style={{ color: "#31d6f2", fontSize: 11 }}>
                 SpO₂
               </p>
               <p
                 className="text-right font-bold tabular-nums"
-                style={{ color: "#31d6f2", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 32, lineHeight: 0.85 }}
+                style={{ color: "#31d6f2", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 40, lineHeight: 0.85 }}
               >
                 {Math.round(spo2)}
               </p>
               <p className="text-right" style={{ color: "#8a8a8a", fontSize: 9 }}>
                 %
-              </p>
-            </div>
-            <div className="flex flex-1 flex-col justify-center px-2 py-1">
-              <p className="font-bold" style={{ color: "#f4d03f", fontSize: 11 }}>
-                FR
-              </p>
-              <p
-                className="text-right font-bold tabular-nums"
-                style={{ color: "#f4d03f", fontFamily: "'Barlow Condensed',sans-serif", fontSize: 24, lineHeight: 0.85 }}
-              >
-                {Math.round(fr)}
-              </p>
-              <p className="text-right" style={{ color: "#8a8a8a", fontSize: 9 }}>
-                rpm
               </p>
             </div>
           </div>

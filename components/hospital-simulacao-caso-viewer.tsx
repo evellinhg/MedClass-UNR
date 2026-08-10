@@ -27,7 +27,7 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCaso((data as HospitalSimulacaoCaso) ?? null)
-      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || false)
+      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || planStatus?.plan === "vip" || false)
       setLoading(false)
     })
   }, [casoId])

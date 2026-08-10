@@ -22,7 +22,7 @@ export function HospitalSimulacaoGrid() {
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCasos((data as HospitalSimulacaoCaso[]) ?? [])
-      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || false)
+      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || planStatus?.plan === "vip" || false)
       setLoading(false)
     })
   }, [])

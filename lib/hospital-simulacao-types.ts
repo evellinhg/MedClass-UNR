@@ -26,9 +26,15 @@ export interface HospitalSimulacaoEstadoPaciente {
 // Impreso (ECG, laboratorio, etc.) que se desbloquea solo si el alumno elige
 // exactamente esta opcion -- no se desbloquea por acertar el nodo de otra
 // forma, ni aparece antes de tiempo.
+// "imagem" es para exhibiciones fijas (ej: diagrama de ECG de 12 derivaciones).
+// "ritmoMonitor" renderiza un trazado de monitor generado por codigo (mismo
+// lenguaje visual del monitor en vivo) en vez de una foto/imagen generada por
+// IA -- mas fiel medicamente y sin riesgo de derechos de autor de fotos de
+// monitores reales de fabricantes.
 export interface HospitalSimulacaoImpreso {
   titulo: string
-  imagem: string
+  imagem?: string
+  ritmoMonitor?: "fv"
 }
 
 export interface HospitalSimulacaoOpcao {

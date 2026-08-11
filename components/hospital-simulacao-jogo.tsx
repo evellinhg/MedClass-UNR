@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { AlertTriangle, ChevronDown, Clock, FileImage, Heart, Lock, Skull } from "lucide-react"
+import { Activity, AlertTriangle, ChevronDown, Clock, FileImage, Heart, Lock, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
@@ -12,6 +12,7 @@ import { supabase } from "@/lib/supabase"
 import type { HospitalSimulacaoCaso, HospitalSimulacaoEstadoPaciente, HospitalSimulacaoImpreso } from "@/lib/hospital-simulacao-types"
 import { HOSPITAL_SIMULACAO_NODO_INICIAL } from "@/lib/hospital-simulacao-types"
 import { HospitalSimulacaoMonitor } from "@/components/hospital-simulacao-monitor"
+import { HospitalSimulacaoImpresoMonitor } from "@/components/hospital-simulacao-impreso-monitor"
 
 interface HospitalSimulacaoJogoProps {
   caso: HospitalSimulacaoCaso
@@ -263,11 +264,18 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
                       onClick={() => setImpresoEmFoco(item)}
                       className="group overflow-hidden rounded-lg border border-border"
                     >
-                      <img
-                        src={item.imagem}
-                        alt={item.titulo}
-                        className="aspect-square w-full object-cover transition-transform group-hover:scale-105"
-                      />
+                      {item.ritmoMonitor ? (
+                        <div className="flex aspect-square w-full flex-col items-center justify-center gap-1 bg-black transition-transform group-hover:scale-105">
+                          <Activity className="h-6 w-6 text-[#2fe36f]" />
+                          <span className="px-1 text-center text-[9px] font-bold uppercase text-[#2fe36f]">Monitor</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={item.imagem}
+                          alt={item.titulo}
+                          className="aspect-square w-full object-cover transition-transform group-hover:scale-105"
+                        />
+                      )}
                     </button>
                   )
                 })}
@@ -365,7 +373,12 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
           <DialogHeader>
             <DialogTitle>{impresoEmFoco?.titulo}</DialogTitle>
           </DialogHeader>
-          {impresoEmFoco && <img src={impresoEmFoco.imagem} alt={impresoEmFoco.titulo} className="w-full rounded-lg" />}
+          {impresoEmFoco &&
+            (impresoEmFoco.ritmoMonitor ? (
+              <HospitalSimulacaoImpresoMonitor ritmo={impresoEmFoco.ritmoMonitor} />
+            ) : (
+              <img src={impresoEmFoco.imagem} alt={impresoEmFoco.titulo} className="w-full rounded-lg" />
+            ))}
         </DialogContent>
       </Dialog>
     </div>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { Activity, AlertTriangle, ChevronDown, Clock, FileImage, Heart, Lock, Skull } from "lucide-react"
+import { Activity, AlertTriangle, ChevronDown, Clock, FileImage, FileText, Heart, ListChecks, Lock, Skull } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
@@ -19,7 +19,7 @@ interface HospitalSimulacaoJogoProps {
 }
 
 interface RespostaHistorico {
-  nodo: string
+  etapa: string
   opcao: string
   puntos_afectados: number
 }
@@ -130,7 +130,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
     const opcao = nodo.opciones[opcaoEscolhida]
     const novosPontos = clamp(estado.puntos_actuales + opcao.puntos_afectados, 0, 100)
     const novoEstado = mergeEstado({ ...estado, puntos_actuales: novosPontos }, opcao.cambio_estado_paciente)
-    const novoHistorico = [...historico, { nodo: nodoId, opcao: opcao.texto.slice(0, 2), puntos_afectados: opcao.puntos_afectados }]
+    const novoHistorico = [...historico, { etapa: nodo.etapa, opcao: opcao.texto, puntos_afectados: opcao.puntos_afectados }]
 
     if (opcao.impreso) {
       const impreso = opcao.impreso
@@ -284,6 +284,49 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
             )}
           </CollapsibleContent>
         </Collapsible>
+
+        <div className="rounded-2xl border border-border bg-card p-4">
+          <p className="mb-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+            <FileText className="h-3.5 w-3.5" />
+            Historia clínica resumida
+          </p>
+          <p className="text-sm leading-relaxed text-foreground">{conteudo.descripcion}</p>
+        </div>
+
+        <div className="rounded-2xl border border-border bg-card p-4">
+          <p className="mb-2 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+            <ListChecks className="h-3.5 w-3.5" />
+            Registro clínico
+            {historico.length > 0 && (
+              <span className="ml-auto rounded-full bg-muted px-2 py-0.5 text-[10px] tabular-nums text-muted-foreground">
+                {historico.length}
+              </span>
+            )}
+          </p>
+          {historico.length === 0 ? (
+            <p className="text-xs text-muted-foreground">Todavía no hay conductas registradas.</p>
+          ) : (
+            <div className="max-h-64 space-y-2 overflow-y-auto pr-1">
+              {historico
+                .map((h, i) => ({ ...h, i }))
+                .reverse()
+                .map((h) => (
+                  <div key={h.i} className="rounded-lg border border-border/60 bg-background/40 p-2.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">{h.etapa}</p>
+                      <span
+                        className={`shrink-0 text-[10px] font-bold ${h.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}
+                      >
+                        {h.puntos_afectados >= 0 ? "+" : ""}
+                        {h.puntos_afectados} pts
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-foreground">{h.opcao}</p>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="space-y-4">

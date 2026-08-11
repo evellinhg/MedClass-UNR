@@ -152,11 +152,25 @@ canvas{display:block;width:100%;height:352px}
 .hist dt:first-child{margin-top:0}
 .hist dd{margin:0;color:#b7c4d1}
 
-.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px;transition:box-shadow .3s,border-color .3s}
 .printouts h2{margin:0;padding:7px 10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);
   border-bottom:1px solid var(--line);font-weight:700;display:flex;justify-content:space-between}
 .printouts .list{max-height:150px;overflow-y:auto;padding:4px}
 .printouts .empty{padding:9px 10px;font-size:10.5px;color:#3d4f61;font-style:italic}
+.printouts.nuevo{border-color:var(--pleth);box-shadow:0 0 0 2px rgba(49,214,242,.35),0 0 18px rgba(49,214,242,.45);animation:pnew 1s ease-in-out 3}
+@keyframes pnew{50%{box-shadow:0 0 0 3px rgba(49,214,242,.55),0 0 26px rgba(49,214,242,.7)}}
+#pcount{border-radius:8px;padding:0 6px;transition:background .3s,color .3s}
+#pcount.nuevo{background:var(--pleth);color:#04222b;font-weight:800;animation:pcnew .6s ease-in-out 3}
+@keyframes pcnew{50%{transform:scale(1.35)}}
+.toast-impreso{position:fixed;top:14px;right:14px;z-index:70;background:var(--panel);border:1px solid var(--pleth);
+  border-radius:4px;padding:10px 14px;max-width:280px;box-shadow:0 0 22px rgba(49,214,242,.45),0 8px 20px rgba(0,0,0,.5);
+  display:flex;gap:9px;align-items:flex-start;opacity:0;transform:translateY(-10px);
+  transition:opacity .25s,transform .25s;pointer-events:none}
+.toast-impreso.on{opacity:1;transform:translateY(0)}
+.toast-impreso .ic{font-size:19px;line-height:1}
+.toast-impreso .tt{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:2px}
+.toast-impreso .bd{font-size:12px;line-height:1.4;color:var(--txt)}
+@media(prefers-reduced-motion:reduce){.printouts.nuevo,#pcount.nuevo{animation:none}}
 .pitem{display:flex;justify-content:space-between;gap:6px;padding:6px 8px;border-radius:2px;cursor:pointer;font-size:11.5px;color:var(--txt);width:100%;
   background:transparent;border:0;text-align:left}
 .pitem:hover{background:#141e2a}
@@ -459,6 +473,8 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
 
 <div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
 
+<div class="toast-impreso" id="toastImpreso"><span class="ic">📄</span><div><div class="tt">Nuevo impreso liberado</div><div class="bd" id="toastImpresoTxt"></div></div></div>
+
 <!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
 <div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
 
@@ -474,9 +490,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
     <li>El desenlace final depende de la puntuación acumulada, no de un único camino fijo.</li>
   </ul>
   <div class="spd">
-    <button data-s="1"><b>×1</b>tiempo real</button>
-    <button data-s="4"><b>×4</b>recomendado</button>
-    <button data-s="10"><b>×10</b>rápido</button>
+    <button id="bComenzar"><b>▶</b>Comenzar</button>
   </div>
   <p style="font-size:11px;color:#3d4f61;margin-top:12px">Simulación educativa. Paciente ficticio. No sustituye protocolos institucionales ni juicio clínico.</p>
 </div></div>
@@ -522,7 +536,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
    Editá este bloque para adaptar el simulador sin tocar el motor.
    ========================================================================== */
 const CONFIG = {
-  velocidadInicial : 4,      // 1, 4 o 10 — multiplicador del reloj clínico
+  velocidadInicial : 2,      // multiplicador fijo del reloj clínico -- sin selector para el alumno
   sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
   saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
   mostrarExpediente: true,   // false = oculta el botón "📄 Caso" al estudiante
@@ -1022,6 +1036,23 @@ function resolveOption(nodo,opt){
  $('stgNext').onclick=()=>{S.nodoId=opt.destino;renderStage();};
 }
 
+let toastImpresoT=null;
+function alertarImpreso(p){
+ // pulso visual en el panel lateral + contador, mas un toast temporal en la
+ // esquina superior -- para que el alumno note el impreso nuevo aunque no
+ // esté mirando la barra lateral en ese momento.
+ const panel=document.querySelector('.printouts');
+ panel.classList.remove('nuevo');void panel.offsetWidth;panel.classList.add('nuevo');
+ const cnt=$('pcount');
+ cnt.classList.remove('nuevo');void cnt.offsetWidth;cnt.classList.add('nuevo');
+ setTimeout(()=>{panel.classList.remove('nuevo');cnt.classList.remove('nuevo');},3200);
+
+ $('toastImpresoTxt').textContent=p.titulo;
+ const t=$('toastImpreso');
+ t.classList.add('on');
+ if(toastImpresoT)clearTimeout(toastImpresoT);
+ toastImpresoT=setTimeout(()=>t.classList.remove('on'),4200);
+}
 function archivarImpreso(p){
  S.printouts.push({...p,hora:hhmm(S.simT)});
  const list=$('plist');
@@ -1029,6 +1060,7 @@ function archivarImpreso(p){
  list.innerHTML=S.printouts.map((pr,ix)=>
    `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
  list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+ alertarImpreso(p);
 }
 function abrirImpreso(p){
  $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
@@ -1100,7 +1132,7 @@ function iniciar(vel){
  log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
  renderStage();
 }
-document.querySelectorAll('.spd button').forEach(b=>b.onclick=()=>iniciar(+b.dataset.s));
+$('bComenzar').onclick=()=>iniciar();
 setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
 window.addEventListener('resize',resize);
 

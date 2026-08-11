@@ -198,6 +198,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
           pas={pas}
           pad={pad}
           spo2={estado.saturacion_oxigeno_pct}
+          fr={estado.frecuencia_respiratoria_rpm}
           stElevacao={stElevacao}
           critico={critico}
         />

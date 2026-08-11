@@ -25,7 +25,7 @@ function checkRateLimit(ip: string, limit: number = 100, windowMs: number = 6000
   return true
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown"
 
   if (!checkRateLimit(ip)) {

@@ -99,6 +99,7 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, stEl
     let last = performance.now()
     let waveT = 0
     let px = 0
+    const lastY: (number | null)[] = [null, null]
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect()
@@ -136,12 +137,32 @@ export function HospitalSimulacaoMonitor({ nome, idade, fc, pas, pad, spo2, stEl
         const v = [ecgAt(t0, fcNow, stNow), plethAt(t0, fcNow, pasNow) * (spo2Now / 100)]
         for (let l = 0; l < lanes; l++) {
           const y = mid[l] - v[l] * gain[l]
+          const yc = Math.max(0, Math.min(H - 1, y))
           ctx.fillStyle = col[l]
-          ctx.fillRect(xi, Math.max(0, Math.min(H - 1, y)), 2, 2)
+          const prevY = lastY[l]
+          // preenche o segmento vertical entre o ponto anterior e o atual em
+          // vez de so um ponto 2x2 -- sem isso, saltos rapidos da onda (pico
+          // do QRS, subida do pulso) ficam com espacos entre colunas e a
+          // linha parece pontilhada em vez de continua.
+          if (prevY === null || Math.abs(prevY - yc) < 2) {
+            ctx.fillRect(xi, yc, 2, 2)
+          } else {
+            const y0 = Math.min(prevY, yc)
+            const y1 = Math.max(prevY, yc)
+            ctx.fillRect(xi, y0, 2, y1 - y0 + 2)
+          }
+          lastY[l] = yc
         }
       }
       waveT += dt
-      px = (px + adv) % W
+      const novoPx = (px + adv) % W
+      if (novoPx < px) {
+        // o traçado deu a volta na tela -- reseta a continuidade pra nao
+        // desenhar uma linha ligando a borda direita de volta a esquerda
+        lastY[0] = null
+        lastY[1] = null
+      }
+      px = novoPx
       raf = requestAnimationFrame(loop)
     }
     raf = requestAnimationFrame(loop)

@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador IAMCEST v4 · Panel completo en tiempo real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Colores de canal según convención de cabecera clínica, no decisión estética */
+  --bg:#04060a; --panel:#0a0f16; --panel2:#0e151e; --line:#1a2532;
+  --ecg:#26e07f; --pleth:#31d6f2; --abp:#ff5a63; --resp:#f4d03f; --co2:#c98bff;
+  --txt:#c6d4e2; --dim:#5a6e80; --hi:#ff2d3f; --md:#ffb020; --ok:#26e07f; --grid:#101822;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'IBM Plex Sans Condensed','Roboto Condensed',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:8px}
+
+.topbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.pat{flex:1 1 240px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 10px}
+.pat .nm{font-weight:700;font-size:14px;color:#e6eef7;letter-spacing:.3px}
+.pat .sub{font-size:10.5px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-top:2px}
+.clocks{display:flex;gap:5px;flex:2 1 460px}
+.clk{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px;min-width:84px}
+.clk .lab{font-size:9px;letter-spacing:1.3px;color:var(--dim);text-transform:uppercase}
+.clk .val{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1;margin-top:1px;color:#e6eef7;font-variant-numeric:tabular-nums}
+.clk.hot .val{color:var(--md)} .clk.crit .val{color:var(--hi)}
+
+.alarmbar{height:24px;border-radius:3px;display:flex;align-items:center;gap:14px;padding:0 10px;
+  font-size:11.5px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;margin-bottom:6px;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);overflow:hidden}
+.alarmbar.hi{background:var(--hi);color:#fff;border-color:var(--hi);animation:fl .55s steps(1,end) infinite}
+.alarmbar.md{background:var(--md);color:#111;border-color:var(--md)}
+@keyframes fl{50%{opacity:.3}}
+
+.grid{display:grid;grid-template-columns:1fr 300px;gap:6px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   MONITOR — réplica de Mindray uMEC12 (el equipo más frecuente en UCI y
+   guardia de Argentina y Brasil). Distribución, colores de canal, jerarquía
+   tipográfica de los parámetros y cadenas de texto tomadas del equipo real.
+   ========================================================================== */
+.bezel{background:linear-gradient(#d8dade,#b6b9bf);border-radius:14px;padding:19px 46px 20px 18px;
+  box-shadow:0 2px 0 #8f949b inset,0 10px 26px rgba(0,0,0,.5);position:relative}
+.bezel .brand{position:absolute;top:5px;left:22px;font:700 12px 'IBM Plex Sans Condensed',sans-serif;color:#3c4148;letter-spacing:.4px}
+.bezel .model{position:absolute;top:3px;right:18px;font:600 13px 'IBM Plex Sans Condensed',sans-serif;color:#4a5057}
+.bezel .keys{position:absolute;right:11px;top:62px;display:flex;flex-direction:column;gap:9px}
+.bezel .keys i{width:23px;height:16px;border-radius:3px;background:#c6c9ce;box-shadow:0 1px 0 #9aa0a7,0 0 0 1px #abb0b6 inset;display:block}
+.bezel .keys i.amber{background:#e8a33a;box-shadow:0 1px 0 #b57c22}
+.bezel .knob{position:absolute;right:5px;bottom:12px;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e3e5e8,#9ca1a8);box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.screen{background:#000;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px #23262b}
+
+/* ---- barra de estado superior ---- */
+.mtop{display:flex;align-items:center;gap:13px;padding:3px 8px;font-size:10.5px;
+  font-family:'IBM Plex Sans Condensed',sans-serif;border-bottom:1px solid #1c1c1c}
+.mtop .bed{color:#7fd0ff;font-weight:700;letter-spacing:.3px}
+.mtop .adu{color:#ffd24a;font-weight:700}
+.mtop .dt{color:#c8d0d8;font-family:'IBM Plex Mono',monospace;font-size:9.5px}
+.mtop .tech{color:#93a0ac}
+.mtop .banner{margin-left:auto;background:#2fd15c;color:#04210c;font-weight:700;letter-spacing:.3px;
+  padding:2px 28px 2px 11px;border-radius:2px;min-width:184px;font-size:11px}
+.mtop .banner.hi{background:#ff2323;color:#fff;animation:fl .5s steps(1,end) infinite}
+.mtop .banner.md{background:#ffd24a;color:#2a1e00}
+.mtop .banner.none{background:#0c3a19;color:#5ecd82}
+
+/* ---- cuerpo: trazados + columna de parámetros ---- */
+.mbody{display:grid;grid-template-columns:1fr 212px}
+@media(max-width:820px){.mbody{grid-template-columns:1fr 164px}}
+.wavebox{position:relative;background:#000;min-width:0}
+canvas{display:block;width:100%;height:352px}
+@media(max-width:760px){canvas{height:292px}}
+.wl{position:absolute;left:5px;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:.2px;pointer-events:none;line-height:1.22}
+.wl s{display:block;font-weight:400;font-size:8.5px;text-decoration:none;opacity:.75}
+.wsc{position:absolute;right:4px;font-family:'IBM Plex Mono',monospace;font-size:8px;color:#787878;
+  pointer-events:none;text-align:right;line-height:1.35}
+
+/* ---- parámetros numéricos ---- */
+.pcol{border-left:1px solid #242424;display:flex;flex-direction:column}
+.pz{border-bottom:1px solid #242424;padding:1px 6px 2px;display:flex;gap:4px;flex:1;min-height:0;align-items:stretch}
+.pz .lft{flex:1;min-width:0;display:flex;flex-direction:column}
+.pz .lbl{font:700 11px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.2px;line-height:1.05}
+.pz .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.2;margin-top:1px}
+.pz .big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:47px;line-height:.8;
+  font-variant-numeric:tabular-nums;letter-spacing:-1px;text-align:right;margin-top:auto}
+.pz .big.s{font-size:33px} .pz .big.xs{font-size:25px}
+.pz .rgt{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:1px}
+.pz .sub{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#a4aeb8;text-align:right;line-height:1.25;white-space:nowrap}
+.pz .sub b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px}
+.pz.sel{outline:1px solid #fff;outline-offset:-2px}
+.pz.alarm .big{animation:fl .5s steps(1,end) infinite}
+.pz.off .big{color:#3a3a3a}
+.hbeat{display:inline-block;color:#ff3b47;font-size:11px}
+.hbeat.on{animation:pulse .9s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}60%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
+
+/* ---- barra inferior ---- */
+.mbot{display:flex;align-items:center;gap:16px;padding:3px 8px;border-top:1px solid #242424;font-size:10px;flex-wrap:wrap}
+.mbot .grp{display:flex;align-items:flex-end;gap:5px}
+.mbot .k{font:700 10px 'IBM Plex Sans Condensed',sans-serif;color:#c8d0d8}
+.mbot .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.15}
+.mbot .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:25px;line-height:.88;color:#e6ebef}
+.mbot .v.pni{font-size:19px;color:#ff8a92}
+.mbot .st{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#93a0ac}
+.mbot .cfg{margin-left:auto;color:#93a0ac;font-size:9.5px}
+.mbot .sbtn{background:#1b3a6b;border:1px solid #2f5c9e;color:#cfe0ff;border-radius:9px;
+  padding:2px 9px;font:600 9.5px 'IBM Plex Sans Condensed',sans-serif}
+.batt{width:21px;height:10px;border:1px solid #6fbf7f;border-radius:1px;position:relative;display:inline-block}
+.batt i{display:block;height:100%;background:#3fd06a;width:72%}
+.batt:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#6fbf7f}
+
+/* ---- ficha clínica: datos que un monitor real NO muestra ---- */
+.ficha{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+@media(max-width:900px){.ficha{grid-template-columns:repeat(4,1fr)}}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:3px 6px 4px}
+.fk .k{font-size:8px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;font-weight:700}
+.fk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
+.c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
+
+/* ---- ETAPA CLÍNICA: vinheta + opciones A-E ---- */
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin-top:6px;padding:11px 13px 13px}
+.stage .num{font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pleth);font-weight:700}
+.stage h3{margin:3px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:22px;color:#e9f1f9;line-height:1.15}
+.stage .vig{font-size:12.5px;line-height:1.58;color:#aebfcf;margin-bottom:11px;white-space:pre-line}
+.stage .opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:3px;padding:9px 11px;cursor:pointer;color:var(--txt);font:400 12.5px/1.42 'IBM Plex Sans Condensed',sans-serif;width:100%}
+.opt:hover:not(:disabled){border-color:var(--pleth);background:#141e2a}
+.opt .letter{flex:0 0 auto;width:21px;height:21px;border-radius:50%;background:#1b2a3a;border:1px solid #2c4157;
+  display:flex;align-items:center;justify-content:center;font:700 10.5px 'IBM Plex Mono',monospace;color:#cfe0ff;margin-top:1px}
+.opt:disabled{opacity:.38;cursor:default}
+.stage .feedback{margin-top:11px;padding:10px 12px;border-radius:3px;font-size:12.5px;line-height:1.52;display:none}
+.stage .feedback.show{display:block}
+.feedback.good{background:#0f2b1c;border-left:3px solid var(--ok);color:#bfe9cf}
+.feedback.warn{background:#2e2410;border-left:3px solid var(--md);color:#f0dfa8}
+.feedback.bad{background:#2e1013;border-left:3px solid var(--hi);color:#ffc0c5}
+.feedback .fscore{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;display:block;margin-bottom:4px}
+#stgNext{display:none;margin-top:11px}
+.stage.done{opacity:.55}
+
+/* ---- historia clínica y registro de impresos (menú lateral) ---- */
+.hist{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:8px 10px}
+.hist h2{margin:0 0 5px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);font-weight:700}
+.hist dl{margin:0;font-size:11px;line-height:1.55}
+.hist dt{color:#4a7a92;font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-top:6px;font-weight:700}
+.hist dt:first-child{margin-top:0}
+.hist dd{margin:0;color:#b7c4d1}
+
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.printouts h2{margin:0;padding:7px 10px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);
+  border-bottom:1px solid var(--line);font-weight:700;display:flex;justify-content:space-between}
+.printouts .list{max-height:150px;overflow-y:auto;padding:4px}
+.printouts .empty{padding:9px 10px;font-size:10.5px;color:#3d4f61;font-style:italic}
+.pitem{display:flex;justify-content:space-between;gap:6px;padding:6px 8px;border-radius:2px;cursor:pointer;font-size:11.5px;color:var(--txt);width:100%;
+  background:transparent;border:0;text-align:left}
+.pitem:hover{background:#141e2a}
+.pitem .tag2{font-size:8.5px;letter-spacing:1px;color:var(--dim);font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+/* ---- modal de impreso (laudo) ---- */
+.modal-lab{max-width:520px}
+.modal-lab .stamp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:11px}
+.modal-lab pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.62;color:#cfe0ff;
+  background:#070b11;border:1px solid var(--line);border-radius:3px;padding:11px 13px;margin:0}
+
+/* ---- VENTILADOR ---- */
+.vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
+.vent.on{display:block}
+.vent h3{margin:0 0 4px;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#7fd39b;font-weight:700}
+.vent .row{display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11px}
+.vent .row b{color:#e6eef7;font-weight:600}
+
+/* ---- MENÚ ---- */
+.side{display:flex;flex-direction:column;gap:6px;position:sticky;top:8px}
+.score{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 10px 9px}
+.score .r{display:flex;justify-content:space-between;align-items:baseline;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:var(--dim);font-weight:700}
+.bpn{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1;color:var(--ok);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:#101822;border-radius:2px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--ok);transition:width .35s}
+.sm3{display:flex;gap:5px;margin-top:6px}
+.sm3 div{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:2px;padding:3px 6px}
+.sm3 .l{font-size:8.5px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.sm3 .v{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;line-height:1.1}
+
+.menu{background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}
+.menu h2{margin:0;padding:8px 10px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);font-weight:700}
+.srch{padding:6px 8px;border-bottom:1px solid var(--line)}
+.srch input{width:100%;background:#070b11;border:1px solid var(--line);border-radius:2px;color:var(--txt);
+  padding:5px 7px;font:400 12px 'IBM Plex Sans Condensed',sans-serif}
+.srch input::placeholder{color:#3d4f61}
+.cats{max-height:56vh;overflow-y:auto}
+@media(max-width:900px){.cats{max-height:none}}
+.cat>button.head{width:100%;text-align:left;background:var(--panel2);border:0;border-bottom:1px solid var(--line);
+  color:#dbe6f2;padding:8px 10px;font:600 12px/1.2 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.cat>button.head:hover{background:#131d29}
+.cat>button.head .ix{font-family:'IBM Plex Mono',monospace;color:var(--dim);font-size:10px}
+.acts{display:none;border-bottom:1px solid var(--line);padding:2px 0 5px}
+.cat.open .acts{display:block}
+.gp{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#3d4f61;padding:6px 10px 3px;font-weight:700}
+.act{width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:2px;color:var(--txt);
+  padding:5px 9px;font:400 11.5px/1.25 'IBM Plex Sans Condensed',sans-serif;cursor:pointer;display:flex;justify-content:space-between;gap:7px;align-items:baseline}
+.act:hover{background:#141e2a;border-color:#22303f}
+.act .t{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--dim);white-space:nowrap}
+.act.used{opacity:.38}
+.empty{padding:8px 10px;font-size:10.5px;color:#3d4f61;font-family:'IBM Plex Mono',monospace;font-style:italic;
+  border-left:2px solid #1a2532;margin:2px 8px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-offset:1px}
+
+.ctrls{display:flex;gap:5px;padding:7px;border-top:1px solid var(--line);flex-wrap:wrap}
+.ctrls button{flex:1;min-width:58px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:5px;border-radius:2px;font:600 10.5px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer}
+.ctrls button:hover{background:#141e2a} .ctrls button.on{background:#1b2a3a;border-color:#2c4157;color:#fff}
+.ctrls button.fin{background:#381015;border-color:#5a1a21;color:#ffb7bd}
+
+.log{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.log h2{margin:0;padding:7px 10px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);font-weight:700;display:flex;justify-content:space-between}
+.log .b{max-height:180px;overflow-y:auto;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:10.5px}
+.log .e{padding:2px 10px;display:flex;gap:7px;border-left:2px solid transparent}
+.log .e .h{color:var(--dim);white-space:nowrap}
+.log .e.good{border-left-color:var(--ok)}.log .e.bad{border-left-color:var(--hi)}
+.log .e.warn{border-left-color:var(--md)}.log .e.evt{border-left-color:var(--pleth)}
+
+.doing{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:var(--panel);border:1px solid #2c4157;border-radius:3px;padding:8px 15px;min-width:270px;display:none;z-index:40}
+.doing.on{display:block}
+.doing .b{height:3px;background:#101822;margin-top:5px;border-radius:2px;overflow:hidden}
+.doing .b i{display:block;height:100%;width:0;background:var(--pleth)}
+
+.ov{position:fixed;inset:0;background:rgba(2,4,7,.95);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60;overflow-y:auto}
+.ov.hide{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;max-width:680px;width:100%;padding:22px 24px}
+.card h1{font-family:'Barlow Condensed',sans-serif;font-size:32px;margin:0 0 4px;line-height:1;color:#e9f1f9}
+.card .kick{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.6;color:#a2b6c8} .card ul{font-size:12.5px;line-height:1.55;color:#a2b6c8;padding-left:17px}
+.spd{display:flex;gap:7px;margin:14px 0 4px;flex-wrap:wrap}
+.spd button{flex:1;min-width:104px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:10px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+.spd button:hover{border-color:var(--pleth);background:#141e2a}
+.spd button b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:20px;color:#e9f1f9}
+.outcome table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.outcome td{padding:4px 0;border-bottom:1px solid var(--line);color:#a2b6c8}
+.outcome td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;color:#e9f1f9}
+.btn{display:inline-block;margin-top:14px;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;padding:9px 18px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+/* ---- EXPEDIENTE DEL CASO (documento embebido) ---- */
+.doc{max-width:860px;max-height:88vh;overflow-y:auto}
+.doc h2{font-family:'Barlow Condensed',sans-serif;font-size:21px;margin:22px 0 6px;color:#e9f1f9;letter-spacing:.3px;
+  border-bottom:1px solid var(--line);padding-bottom:4px}
+.doc h3{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);margin:16px 0 5px;font-weight:700}
+.doc p,.doc li{font-size:12.5px;line-height:1.6;color:#a2b6c8}
+.doc table{width:100%;border-collapse:collapse;font-size:11.5px;margin:8px 0}
+.doc th{text-align:left;color:var(--dim);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+  padding:4px 6px;border-bottom:1px solid var(--line)}
+.doc td{padding:5px 6px;border-bottom:1px solid #141d27;color:#a2b6c8;vertical-align:top}
+.doc td:first-child{color:#e9f1f9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;white-space:nowrap}
+.doc .tag{display:inline-block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
+  padding:1px 6px;border-radius:2px;margin-right:5px}
+.tag.ok{background:#0f2b1c;color:var(--ok)} .tag.bad{background:#2e1013;color:#ff8a92}
+.tag.warn{background:#2e2410;color:var(--md)}
+.doc .box{border-left:2px solid var(--pleth);background:#0b131c;padding:8px 12px;margin:10px 0;font-size:12px;line-height:1.55;color:#a2b6c8}
+.doc .box b{color:#e9f1f9}
+.doc .close{position:sticky;top:0;float:right;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;
+  padding:5px 12px;border-radius:2px;cursor:pointer;font:600 11px 'IBM Plex Sans Condensed',sans-serif;z-index:2}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pat">
+    <div class="nm">PACIENTE, MASCULINO · 58 a</div>
+    <div class="sub" id="bedinfo">SALA ROJA · sin monitorizar · sin accesos</div>
+  </div>
+  <div class="clocks">
+    <div class="clk"><div class="lab">Tiempo de caso</div><div class="val" id="wall">00:00</div></div>
+    <div class="clk" id="clkIsq"><div class="lab">Isquemia T+</div><div class="val" id="tplus">0′</div></div>
+    <div class="clk" id="clkIdle"><div class="lab">Sin actuar</div><div class="val" id="idle">0:00</div></div>
+    <div class="clk"><div class="lab">Puntuación</div><div class="val" id="salv">100</div></div>
+  </div>
+</div>
+
+<div class="alarmbar" id="alarm">monitorización no iniciada</div>
+
+<div class="grid">
+  <div>
+    <!-- ============ MONITOR MINDRAY uMEC12 ============ -->
+    <div class="bezel">
+      <span class="brand">mindray</span><span class="model">uMEC12</span>
+      <div class="keys"><i class="amber"></i><i></i><i></i><i></i><i></i></div>
+      <div class="knob"></div>
+
+      <div class="screen">
+        <!-- barra de estado -->
+        <div class="mtop">
+          <span class="bed" id="mBed">▣ URG-1</span>
+          <span class="adu">Adulto</span>
+          <span class="dt" id="mDT">08-08-2026 04:02:00</span>
+          <span class="tech" id="mTech">No se puede analizar QT</span>
+          <span class="banner none" id="mBanner">Sin alarmas</span>
+        </div>
+
+        <!-- trazados -->
+        <div class="mbody">
+          <div class="wavebox">
+            <canvas id="cv"></canvas>
+            <div class="wl c-ecg" id="wl1">II<s>×1 &nbsp;Monitor</s></div>
+            <div class="wl c-co2" id="wl2">CO2<s>mmHg</s></div>
+            <div class="wsc c-co2" id="ws2">50<br>25<br>0</div>
+            <div class="wl c-sat" id="wl3">Plet</div>
+            <div class="wl c-resp" id="wl4">Imped.<s>×2</s></div>
+            <div class="wl c-abp" id="wl5">Art<s>mmHg</s></div>
+            <div class="wsc c-abp" id="ws5">180<br>90<br>0</div>
+          </div>
+
+          <!-- columna de parámetros -->
+          <div class="pcol">
+            <div class="pz" id="pzECG">
+              <div class="lft">
+                <div class="lbl c-ecg">ECG</div>
+                <div class="lim" id="limECG">120<br>50</div>
+                <div class="big c-ecg" id="vHR">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub"><span class="hbeat" id="beat">♥</span></div>
+                <div class="sub c-abp" id="subPVC">PVC <b>---</b></div>
+                <div class="sub" id="subST">ST desact.</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzCO2">
+              <div class="lft">
+                <div class="lbl c-co2">CO2<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">50<br>25</div>
+                <div class="big c-co2" id="vCO2">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-resp">FRm <b id="subFRm">--</b></div>
+                <div class="sub c-resp">R <b id="subR">0</b></div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzSat">
+              <div class="lft">
+                <div class="lbl c-sat">SpO2</div>
+                <div class="lim">100<br>90</div>
+                <div class="big c-sat" id="vSat">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-sat">PR <b id="subPR">---</b></div>
+                <div class="sub" id="subPI">IP ---</div>
+                <div class="sub">Origen SpO2</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzResp">
+              <div class="lft">
+                <div class="lbl c-resp">Resp</div>
+                <div class="lim">26<br>9</div>
+                <div class="big c-resp s" id="vRR">--</div>
+              </div>
+              <div class="rgt"><div class="sub" id="subOrigen">Origen Imped.</div></div>
+            </div>
+
+            <div class="pz sel" id="pzArt">
+              <div class="lft">
+                <div class="lbl c-abp" id="lblArt">PANI<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">161<br>121</div>
+                <div class="big c-abp s" id="vBP">---/---</div>
+              </div>
+              <div class="rgt"><div class="sub c-abp" id="subMAP">(--)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- barra inferior -->
+        <div class="mbot">
+          <div class="grp"><span class="k">Temp</span><span class="lim">37,9<br>35,2</span>
+            <span class="v" id="vT">--,-</span><span class="st">T2</span></div>
+          <div class="grp"><span class="k">PNI</span><span class="lim">100<br>90</span>
+            <span class="v pni" id="vPNI">---/---</span><span class="st" id="stPNI">Medición terminada</span></div>
+          <span class="batt"><i></i></span>
+          <span class="cfg">Configuración actual:Predet.</span>
+          <span class="sbtn">◀ Ajuste alarma</span><span class="sbtn">Menú principal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA CLÍNICA: parámetros que un monitor real no muestra -->
+    <div class="ficha">
+      <div class="fk"><div class="k">ST II</div><div class="n c-ecg" id="fST">—</div><div class="u">mm</div></div>
+      <div class="fk"><div class="k">Glucemia</div><div class="n" id="fGlu">—</div><div class="u">mg/dL</div></div>
+      <div class="fk"><div class="k">Lactato</div><div class="n" id="fLac">—</div><div class="u">mmol/L</div></div>
+      <div class="fk"><div class="k">Diuresis</div><div class="n" id="fDiu">—</div><div class="u" id="fDiuU">sin sonda</div></div>
+      <div class="fk"><div class="k">Glasgow</div><div class="n" id="fGCS">—</div><div class="u">/15</div></div>
+      <div class="fk"><div class="k">Dolor EVA</div><div class="n" id="fPain">—</div><div class="u">/10</div></div>
+      <div class="fk"><div class="k">Relleno cap.</div><div class="n" id="fCRT">—</div><div class="u">seg</div></div>
+      <div class="fk"><div class="k">Killip</div><div class="n" id="fKil">—</div><div class="u" id="fKilU">sin examinar</div></div>
+    </div>
+
+    <!-- VENTILADOR -->
+    <div class="vent" id="ventPanel">
+      <h3>Ventilación mecánica invasiva</h3>
+      <div class="row">
+        <span>Modo <b id="vMode">VC-AC</b></span><span>Vt <b id="vVt">420</b> mL (6 mL/kg PI)</span>
+        <span>FR <b id="vSetRR">16</b></span><span>PEEP <b id="vPEEP">5</b> cmH₂O</span>
+        <span>FiO₂ <b id="vFiO2">100</b>%</span><span>P. meseta <b id="vPlat">18</b> cmH₂O</span>
+      </div>
+    </div>
+
+    <!-- ================= ETAPA CLÍNICA (pregunta activa) ================= -->
+    <div class="stage" id="stage">
+      <div class="num" id="stgNum">Etapa 1 / 20</div>
+      <h3 id="stgTitle">—</h3>
+      <div class="vig" id="stgVig">—</div>
+      <div class="opts" id="stgOpts"></div>
+      <div class="feedback" id="stgFeedback"></div>
+      <button class="btn" id="stgNext" style="display:none">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- ================= MENÚ LATERAL (información, no acciones) ================= -->
+  <div class="side">
+    <div class="score">
+      <div class="r"><span>Puntos biológicos</span><span class="bpn" id="vBPs">100</span></div>
+      <div class="bar"><i id="bpbar" style="width:100%"></i></div>
+      <div class="sm3">
+        <div><div class="l">Excelencia</div><div class="v" id="vPE">0</div></div>
+        <div><div class="l">Omisiones</div><div class="v" id="vOm">0</div></div>
+        <div><div class="l">Iatrogenias</div><div class="v" id="vIa">0</div></div>
+      </div>
+    </div>
+
+    <div class="hist">
+      <h2>Historia clínica resumida</h2>
+      <dl>
+        <dt>Paciente</dt><dd>Paciente, masculino · 58 años</dd>
+        <dt>Motivo de consulta</dt><dd id="histMotivo">—</dd>
+      </dl>
+    </div>
+
+    <div class="printouts">
+      <h2><span>Impresos y resultados</span><span id="pcount">0</span></h2>
+      <div class="list" id="plist"><div class="empty">Todavía no hay estudios liberados</div></div>
+    </div>
+
+    <div class="log">
+      <h2><span>Registro clínico</span><span id="logn">0</span></h2>
+      <div class="b" id="logb"></div>
+      <div class="ctrls">
+        <button id="bSpeed">×4</button><button id="bSound">🔊</button>
+        <button id="bPause">⏸</button><button id="bCase">📄 Caso</button>
+        <button class="fin" id="bEnd">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
+
+<!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
+<div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
+
+
+<div class="ov" id="ovIntro"><div class="card">
+  <div class="kick">Caso 1 · IAMCEST · Línea de tiempo dinámica</div>
+  <h1 id="introTitulo">Simulador Clínico de Emergencia</h1>
+  <p id="introDescripcion"></p>
+  <p style="color:#e9f1f9"><b>El monitor no te espera.</b> Mientras deliberás sin responder, el paciente sigue descompensando en tiempo real.</p>
+  <ul>
+    <li>Cada decisión errada puede abrir una sub-fase de rescate: hay que reestabilizar antes de volver a la línea principal.</li>
+    <li>Las secciones sin dato real en este caso figuran <b>vacías (—)</b>, no ocultas.</li>
+    <li>El desenlace final depende de la puntuación acumulada, no de un único camino fijo.</li>
+  </ul>
+  <div class="spd">
+    <button data-s="1"><b>×1</b>tiempo real</button>
+    <button data-s="4"><b>×4</b>recomendado</button>
+    <button data-s="10"><b>×10</b>rápido</button>
+  </div>
+  <p style="font-size:11px;color:#3d4f61;margin-top:12px">Simulación educativa. Paciente ficticio. No sustituye protocolos institucionales ni juicio clínico.</p>
+</div></div>
+
+<div class="ov hide" id="ovEnd"><div class="card outcome" id="endCard"></div></div>
+
+<!-- ==========================================================================
+     EXPEDIENTE DEL CASO — documento docente embebido
+     ========================================================================== -->
+<div class="ov hide" id="ovCase"><div class="card doc">
+<button class="close" id="closeCase">Cerrar ✕</button>
+<div class="kick">Expediente docente · uso del instructor</div>
+<h1 style="margin-bottom:2px" id="docTitulo">Caso 1 · IAMCEST</h1>
+<p style="color:#5a6e80;font-family:'IBM Plex Mono',monospace;font-size:11px">Estructura ramificada · fases principales con sub-fases de rescate · puntuación inicial 100/100</p>
+
+<div class="box"><b>Advertencia para el instructor:</b> este documento contiene las respuestas. Si se muestra al estudiante antes de jugar, el caso pierde su valor.</div>
+
+<h2>1 · Escenario</h2>
+<p id="docDescripcion"></p>
+
+<h2>2 · Estructura del caso</h2>
+<p>El caso avanza por fases principales (Admisión, Estabilización, Reperfusión, Post-reperfusión). Cada opción incorrecta puede abrir una <b>sub-fase de rescate</b> específica para esa complicación (ej.: congestión pulmonar, choque, hemorragia, falla de trombólisis, reinfarto) — el alumno debe resolverla antes de volver a la línea principal. No hay un único camino: la puntuación final refleja la calidad acumulada de las decisiones.</p>
+
+<h2>3 · Motor de puntuación</h2>
+<table>
+<tr><th>Puntuación final</th><th>Desenlace</th></tr>
+<tr><td>≥ 70 / 100</td><td>Éxito pleno</td></tr>
+<tr><td>40–69 / 100</td><td>Estabilizado con secuelas</td></tr>
+<tr><td>&lt; 40 / 100</td><td>Desenlace crítico</td></tr>
+</table>
+<p>Cada opción define explícitamente su impacto en la puntuación y en los signos vitales (FC, PA, SpO₂, FR, ritmo). Mientras el alumno delibera sin responder, los signos vitales se degradan gradualmente (presión de tiempo real).</p>
+
+<div class="box" style="margin-top:20px;border-left-color:#ff5a63">
+<b>Aviso de uso.</b> Material educativo y de simulación. Paciente y escenario ficticios. No sustituye los protocolos institucionales vigentes ni el juicio clínico.
+</div>
+</div></div>
+
+<script>
+"use strict";
+
+/* ==========================================================================
+   CONFIGURACIÓN PÚBLICA
+   Editá este bloque para adaptar el simulador sin tocar el motor.
+   ========================================================================== */
+const CONFIG = {
+  velocidadInicial : 4,      // 1, 4 o 10 — multiplicador del reloj clínico
+  sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
+  saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
+  mostrarExpediente: true,   // false = oculta el botón "📄 Caso" al estudiante
+  autoIniciar      : true,   // false = el simulador espera a window.SimuladorIAMCEST.iniciar()
+
+  // Dificultad: multiplica el drenaje de puntos por tiempo.
+  // 0.6 = indulgente (pregrado) · 1 = estándar · 1.5 = exigente (residencia)
+  dificultad       : 1.0,
+
+  // Frecuencia del brazalete de PA (real: ~300s). Se acorta a propósito para
+  // que el efecto de cada decisión sea visible en el monitor en segundos.
+  cicloPANIsegundos: 8,
+
+  // Se dispara al terminar el caso. Recibe el objeto de resultados.
+  alFinalizar      : null,   // ej.: r => fetch('/api/resultados',{method:'POST',body:JSON.stringify(r)})
+
+  // Emite el resultado al sitio contenedor vía postMessage (útil en iframe).
+  emitirPostMessage: true,
+  origenPermitido  : '*'     // reemplazar por 'https://tusitio.com' en producción
+};
+
+/* ==========================================================================
+   ESTADO
+   ========================================================================== */
+const S={
+ running:false,paused:false,speed:4,sound:false,
+ simT:0, wallStart:0, waveT:0, lastAction:0, lostTime:0,
+ bp:100,pe:0,omis:0,iatro:0, st:0,
+ hr:88,sbp:140,dbp:90,map:110,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
+ diuresis:null,pvc:null,gcs:15,pain:8,crt:null,etco2:null,
+ sbpShow:140,dbpShow:90,lastNIBP:0,
+ rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
+ arterial:false,cvc:false,foley:false,
+ airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
+ examDone:false,killipI:false,
+ dead:false,ended:false,doing:null,log:[]
+};
+// alvos de sinais vitais definidos pela opcao escolhida (novos_sinais_vitales
+// do caso v4) -- a fisica so faz o traçado convergir suavemente ate eles,
+// nao ha modelo farmacocinetico proprio deste caso.
+const ALVO={hr:88,sbp:140,dbp:90,spo2:95,rr:18};
+S.nodoId=null;S.printouts=[];
+const $=i=>document.getElementById(i), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const hhmm=s=>{const t=(S.wallStart+s)%86400;return String(Math.floor(t/3600)).padStart(2,'0')+':'+String(Math.floor(t%3600/60)).padStart(2,'0')};
+const mmss=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+
+function log(t,c){S.log.unshift({h:hhmm(S.simT),t,c:c||''});if(S.log.length>110)S.log.pop();
+ $('logb').innerHTML=S.log.map(e=>`<div class="e ${e.c}"><span class="h">${e.h}</span><span>${e.t}</span></div>`).join('');
+ $('logn').textContent=S.log.length;}
+function sc(d,t,c){
+ if(d>0){const r=100-S.bp,g=Math.min(r,d);S.bp+=g;S.pe+=d-g;}else S.bp=Math.max(0,S.bp+d);
+ if(t)log(`${d>0?'+':''}${d} BP · ${t}`,c||(d>0?'good':'bad'));
+ if(S.bp<=0&&!S.dead)die('Puntos biológicos agotados');}
+function info(t){log(t,'evt');}
+function nada(t,p){log(t,'warn');if(p)sc(p,'Estudio sin rendimiento diagnóstico en este cuadro','warn');}
+
+/* ==========================================================================
+   CASO CLÍNICO V4 — estructura ramificada (grafo de nodos), no lineal.
+   Cada nodo tiene "opciones"; cada opción define destino (id del próximo
+   nodo), si es correcta, impacto en la puntuación, el nuevo estado de
+   signos vitales (reemplazo completo, no delta) y el feedback. Una opción
+   incorrecta puede llevar a un nodo de "resgate" (subfase de rescate) que
+   vuelve a converger a la línea principal.
+   ========================================================================== */
+const NODO_INICIAL='fase_1_admissao', NODO_EXITO='sucesso_conclusao';
+const CASO_V4={
+"titulo_juego":"Simulador Clínico de Emergencia: Código IAMCEST - Línea de Tiempo Dinámica",
+"descripcion":"Sos el médico de guardia de la Sala Roja de un hospital secundario (sin servicio de hemodinamia). El centro de referencia con hemodinamia más cercano está a 3 horas de distancia (180 minutos). Un paciente de 58 años, sexo masculino, llega quejándose de dolor retroesternal opresivo muy intenso desde hace 1 hora, irradiado al brazo izquierdo, acompañado de sudoración fría. Tu deber es estabilizar al paciente y realizar la reperfusión coronaria de forma segura siguiendo las guías oficiales.",
+"estado_inicial":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"140/90","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":8,"ritmo_monitoreo_ecg":"Ritmo Sinusal","puntos_actuales":100},
+"nodos":{
+"fase_1_admissao":{"id":"fase_1_admissao","etapa":"Fase 1: Admisión y Diagnóstico Electrocardiográfico","descripcion_situación":"El paciente acaba de ingresar a la Sala Roja. Está pálido, con dolor intenso en el pecho (8/10), sudoración fría, y visiblemente ansioso. Sus signos vitales iniciales son: FC 88 lpm, PA 140/90 mmHg, SpO2 95% en aire ambiente. ¿Cuál es tu primera conducta inmediata para este paciente?","opciones":[
+{"texto":"Solicitar electrocardiograma (ECG) de 12 derivaciones inmediatamente (meta <= 10 min), monitorización cardíaca continua y colocar el desfibrilador al lado de la cama.","destino":"fase_2_estabilizacao","es_correcta":true,"puntos_afectados":0,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":90,"presion_arterial_mmhg":"138/88","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":8,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Excelente! Esta es la conducta estándar de oro (Clase I). El ECG de 12 derivaciones debe obtenerse e interpretarse por un médico en un máximo de 10 minutos. El desfibrilador al lado de la cama es crucial por el altísimo riesgo de arritmias ventriculares fatales (como FV o TV) en las primeras horas de oclusión coronaria.",
+"printouts":[{"tipo":"ECG · 12 derivaciones","titulo":"Electrocardiograma inicial","cuerpo":"Ritmo sinusal · FC 90 lpm · Eje +65° · PR 170 ms · QRS 88 ms · QTc 405 ms\n\nDII    ST +3 mm (convexo)\nDIII   ST +4 mm (convexo)   ← mayor que DII\naVF    ST +3 mm\nDI     ST −2 mm (especular)\naVL    ST −2 mm (especular)\nV1–V3  sin cambios significativos\n\nIMPRESIÓN: elevación del ST en cara inferior (DII, DIII, aVF) con\ndescenso especular en DI/aVL. Compatible con IAMCEST inferior por\noclusión de la arteria coronaria derecha."}]},
+{"texto":"Solicitar ECG de 12 derivaciones, monitorización y accesos venosos, pero omitir la anamnesis dirigida (SAMPLA) enfocada en contraindicaciones y medicamentos previos.","destino":"fase_2_estabilizacao","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"145/92","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":19,"escala_dolor":8,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Camino semicorrecto! Realizaste el ECG en el tiempo correcto y diagnosticaste el IAMCEST, pero saltarte la historia clínica dirigida (SAMPLA) retrasará decisiones terapéuticas críticas más adelante (como chequear contraindicaciones de fibrinolíticos o el uso de sildenafilo/tadalafilo). El paciente sigue con dolor estable, pero la FC sube levemente por ansiedad."},
+{"texto":"Solicitar ECG de 12 derivaciones, pero también ordenar un ecocardiograma transtorácico completo a pie de cama y esperar el informe para iniciar cualquier conducta.","destino":"fase_1_resgate_congestao","es_correcta":false,"puntos_afectados":-20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"155/95","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":24,"escala_dolor":9,"ritmo_monitoreo_ecg":"Taquicardia Sinusal con Isquemia"},"feedback_detallado":"¡Camino semierrado! Ningún estudio de imagen o marcador de laboratorio debe postergar la terapia de reperfusión ni las medidas iniciales en el IAMCEST. Esperar el ecocardiograma retrasó la atención 25 minutos. La isquemia miocárdica avanzó, el estrés adrenérgico aumentó la PA y la FC, y el paciente empieza a mostrar signos de congestión pulmonar leve (caída de la SpO2 y aumento de la frecuencia respiratoria)."},
+{"texto":"Derivar al paciente a la fila de triaje común de la recepción para esperar atención médica estándar debido a la alta ocupación de la guardia.","destino":"fase_1_resgate_parada","es_correcta":false,"puntos_afectados":-45,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":10,"ritmo_monitoreo_ecg":"Fibrilación Ventricular (FV)"},"feedback_detallado":"¡Camino totalmente errado! Dolor torácico típico con sospecha de infarto es una emergencia absoluta que exige derivación directa a la Sala Roja. Al dejarlo sin monitorización en la sala de espera, la oclusión coronaria total desencadenó una Fibrilación Ventricular (FV) por inestabilidad eléctrica miocárdica. ¡El paciente colapsa en el piso sin pulso!",
+"printouts":[{"tipo":"Monitor · tira de ritmo","titulo":"Trazado durante el paro","cuerpo":"Trazado de monitor · derivación II\n\nActividad eléctrica caótica, sin complejos QRS discernibles, sin\nlínea de base identificable, amplitud y frecuencia irregulares.\n\nFC: no determinable · SpO₂: sin señal · PA: no registrable\n\nIMPRESIÓN: Fibrilación ventricular. Paciente sin pulso."}]}
+]},
+"fase_1_resgate_congestao":{"id":"fase_1_resgate_congestao","etapa":"Subfase de Rescate: Tratamiento de Congestión Pulmonar Iatrogénica","descripcion_situación":"La demora en realizar el ecocardiograma hizo que el paciente evolucionara con disnea y estertores crepitantes en los tercios inferiores pulmonares. Está taquipneico y su saturación cayó a 91%. Necesitás reestabilizarlo de inmediato. ¿Cómo reestabilizás al paciente ahora para volver a la línea de tratamiento?","opciones":[
+{"texto":"Aplicar ventilación no invasiva (VNI) con CPAP, administrar furosemida 20-40mg IV y obtener el ECG de 12 derivaciones de inmediato.","destino":"fase_2_estabilizacao","es_correcta":true,"puntos_afectados":15,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":94,"presion_arterial_mmhg":"130/80","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":8,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Excelente maniobra de rescate! La furosemida y el soporte presórico con VNI mejoraron la distensibilidad pulmonar, reduciendo la precarga y redistribuyendo el líquido alveolar. La saturación sube a 95% y la frecuencia respiratoria se normaliza. Con el ECG finalmente obtenido, visualizás el supradesnivel del ST y volvés a la línea de tiempo semicorrecta."},
+{"texto":"Mantener al paciente en observación y solo aplicar oxígeno por cánula de alto flujo sin intervenir sobre la sobrecarga de volumen.","destino":"fase_1_resgate_congestao","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"160/100","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":26,"escala_dolor":9,"ritmo_monitoreo_ecg":"Taquicardia Sinusal con Congestión Avanzada"},"feedback_detallado":"¡Falla en el rescate! Solo dar oxígeno sin tratar la sobrecarga hemodinámica con diuréticos y presión positiva no resuelve la congestión. El líquido sigue acumulándose en los alvéolos, empeorando la hipoxia. ¡Corregí tu conducta con VNI y diuréticos de inmediato!"}
+]},
+"fase_1_resgate_parada":{"id":"fase_1_resgate_parada","etapa":"Subfase de Rescate: Reanimación Cardiopulmonar (PCR en FV)","descripcion_situación":"El paciente está en paro cardiorrespiratorio en ritmo de Fibrilación Ventricular (FV) en la sala de espera común. Fue traído a las corridas a la cama de trauma. Debés reanimarlo y sacarlo del PCR. ¿Cuál es tu conducta de emergencia inmediata?","opciones":[
+{"texto":"Realizar desfibrilación eléctrica inmediata con choque de 200 Julios (bifásico), seguida de RCP inmediata por 2 minutos y realización del ECG de 12 derivaciones apenas se logre el RCE (Retorno de la Circulación Espontánea).","destino":"fase_2_estabilizacao","es_correcta":true,"puntos_afectados":25,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"105/65","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":20,"escala_dolor":8,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Excelente maniobra de rescate! La desfibrilación precoz en ritmos desfibrilables (FV/TV sin pulso) es la conducta que salva vidas. El paciente vuelve a ritmo sinusal estable tras un ciclo de RCP de alta calidad. Con el pulso restablecido, el ECG se realiza de inmediato y confirma el supradesnivel del ST. Estabilizaste al paciente y volviste a la línea de tratamiento."},
+{"texto":"Realizar masaje cardíaco, aplicar una dosis de adrenalina 1mg IV de inmediato y solicitar análisis de sangre sin desfibrilar.","destino":"fase_1_resgate_parada","es_correcta":false,"puntos_afectados":-15,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":10,"ritmo_monitoreo_ecg":"Asistolia / Actividad Eléctrica Sin Pulso"},"feedback_detallado":"¡Falla crítica de rescate! El ritmo de paro es Fibrilación Ventricular (desfibrilable). El tratamiento de elección absoluto y prioritario es la desfibrilación eléctrica. La adrenalina sin choque y la espera por análisis solo prolongan el tiempo de anoxia cerebral y miocárdica, haciendo que la FV degenere en asistolia. ¡Aplicá el choque de 200J de inmediato!"}
+]},
+"fase_2_estabilizacao":{"id":"fase_2_estabilizacao","etapa":"Fase 2: Medidas Terapéuticas Iniciales y Oxigenoterapia","descripcion_situación":"El diagnóstico de IAMCEST anterior está confirmado (ST ↑ en V1-V4). El paciente está monitorizado y presenta dolor opresivo intenso (8/10). Su saturación basal es estable en 95% en aire ambiente. ¿Cuál es tu prescripción terapéutica inicial para el dolor, el control plaquetario y el oxígeno?","opciones":[
+{"texto":"Mantener al paciente en aire ambiente (sin O2 suplementario), administrar AAS 300 mg para masticar y evaluar Nitroglicerina sublingual tras chequear contraindicaciones.","destino":"fase_3_reperfusaodecisaograndecaminho","es_correcta":true,"puntos_afectados":0,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":84,"presion_arterial_mmhg":"125/80","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":16,"escala_dolor":5,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Excelente conducta basada en evidencia! 1) El oxígeno en pacientes normoxémicos (SpO2 >= 90%) está contraindicado (Clase III), porque la hiperoxia genera vasoconstricción coronaria y aumenta el área infartada. 2) El AAS debe masticarse para lograr un efecto antiplaquetario ultrarrápido. 3) Los nitratos reducen el dolor y la precarga de forma segura si no hay uso de inhibidores de la PDE-5 ni infarto de VD (pared inferior). ¡El dolor bajó a 5/10 y los parámetros hemodinámicos mejoraron!"},
+{"texto":"Ofrecer oxígeno de forma selectiva a 2L/min por cánula nasal, administrar AAS 300 mg masticable y Nitroglicerina SL, pero sin preguntar sobre el uso de sildenafilo o tadalafilo.","destino":"fase_3_reperfusaodecisaograndecaminho","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":86,"presion_arterial_mmhg":"115/75","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":17,"escala_dolor":6,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Camino semicorrecto! El AAS masticable fue correcto y la cánula nasal de O2 en bajo flujo generó poca repercusión de vasoconstricción. Sin embargo, administrar Nitroglicerina sublingual sin descartar activamente el uso reciente de inhibidores de la fosfodiesterasa-5 (como sildenafilo) es un riesgo grave de seguridad farmacológica. Por suerte, en este caso, el paciente no había usado esas sustancias y la PA se mantuvo en el límite."},
+{"texto":"Administrar AAS 300 mg entero por vía oral (comprimido con recubrimiento entérico), colocar máscara de oxígeno con reservorio a 12 L/min y administrar Nitroglicerina SL.","destino":"fase_2_resgate_hiperoxia","es_correcta":false,"puntos_afectados":-20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"145/90","saturacion_oxigeno_pct":100,"frecuencia_respiratoria_rpm":20,"escala_dolor":9,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Camino semierrado! Dos errores fisiopatológicos importantes: 1) El AAS con recubrimiento entérico tragado entero tarda hasta 2 horas en alcanzar el pico de antiagregación plaquetaria. 2) La máscara de oxígeno a 12 L/min generó hiperoxia innecesaria (ya que el paciente saturaba 95% basal), causando vasoconstricción coronaria refleja. Como resultado, el dolor torácico paradójicamente empeoró de 8/10 a 9/10 y el estrés reactivo aumentó la FC y la PA."},
+{"texto":"Iniciar infusión continua de Nitroglicerina intravenosa en dosis alta de inmediato y administrar Metoprolol 5mg IV rápido para reducir la frecuencia cardíaca del paciente.","destino":"fase_2_resgate_choque","es_correcta":false,"puntos_afectados":-35,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":54,"presion_arterial_mmhg":"78/42","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":22,"escala_dolor":8,"ritmo_monitoreo_ecg":"Bradicardia Sinusal / Shock"},"feedback_detallado":"¡Camino totalmente errado! Administrar betabloqueante intravenoso (Metoprolol) en la fase aguda del infarto a un paciente que todavía no está plenamente estabilizado, y asociarlo a una infusión agresiva de nitrato, provocó una caída drástica del gasto cardíaco y de la presión de perfusión coronaria. El paciente evoluciona rápidamente con bradicardia marcada e hipotensión grave (shock cardiogénico/farmacológico inducido)."}
+]},
+"fase_2_resgate_hiperoxia":{"id":"fase_2_resgate_hiperoxia","etapa":"Subfase de Rescate: Corrección de Hiperoxia y Antiagregación Lenta","descripcion_situación":"El paciente se queja de que el dolor aumentó a 9/10 después de la máscara de oxígeno de alto flujo, y el AAS entérico todavía no actuó sobre el trombo activo. ¿Cómo reestabilizás al paciente y acelerás la terapéutica?","opciones":[
+{"texto":"Retirar de inmediato la máscara de oxígeno dejando al paciente en aire ambiente (la SpO2 vuelve al normal de 95%) y administrar AAS 300mg simple y SIN recubrimiento para que el paciente lo mastique de inmediato.","destino":"fase_3_reperfusaodecisaograndecaminho","es_correcta":true,"puntos_afectados":15,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":85,"presion_arterial_mmhg":"128/82","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":17,"escala_dolor":6,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel del ST"},"feedback_detallado":"¡Maniobra de rescate perfecta! Retirar el exceso de oxígeno revirtió la vasoconstricción coronaria inducida por la hiperoxia. Al hacer que el paciente mastique un AAS simple sin recubrimiento, garantizaste la inhibición plaquetaria inmediata mediante el bloqueo rápido del tromboxano A2. El dolor bajó de 9/10 a 6/10 y el paciente volvió a la línea de tiempo estable."},
+{"texto":"Mantener la máscara de oxígeno e inyectar una dosis alta de morfina (10mg IV directo) para forzar el alivio del dolor del paciente.","destino":"fase_2_resgate_hiperoxia","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":80,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":99,"frecuencia_respiratoria_rpm":10,"escala_dolor":9,"ritmo_monitoreo_ecg":"Depresión Respiratoria por Opioide"},"feedback_detallado":"¡Falla en el rescate! Dar morfina en dosis excesiva sin eliminar la causa fisiológica del empeoramiento del dolor (hiperoxia), y con el AAS ineficaz, llevó a depresión respiratoria (la FR cae a 10 rpm) y no resolvió el sufrimiento miocárdico. ¡Suspendé el oxígeno y hacé el AAS masticable correcto!"}
+]},
+"fase_2_resgate_choque":{"id":"fase_2_resgate_choque","etapa":"Subfase de Rescate: Tratamiento de Shock Inducido","descripcion_situación":"El paciente colapsó en hipotensión profunda (PA 78/42 mmHg) y bradicardia (FC 54 lpm) debido al uso combinado e inadecuado de Metoprolol IV y Nitroglicerina en dosis alta. La perfusión cerebral y coronaria está críticamente reducida. ¿Qué conducta de reestabilización inmediata adoptás?","opciones":[
+{"texto":"Suspender de inmediato la infusión de Nitroglicerina, administrar Atropina 0.5mg IV en bolo para revertir el efecto vagotónico/betabloqueante y realizar infusión rápida de 250ml de suero fisiológico.","destino":"fase_3_reperfusaodecisaograndecaminho","es_correcta":true,"puntos_afectados":20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":76,"presion_arterial_mmhg":"108/68","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":18,"escala_dolor":7,"ritmo_monitoreo_ecg":"Ritmo Sinusal"},"feedback_detallado":"¡Excelente maniobra de rescate! Al suspender el nitrato vasodilatador, administrar atropina para elevar la frecuencia cardíaca y expandir moderadamente el volumen intravascular con suero, restauraste el gasto cardíaco y elevaste la presión de perfusión miocárdica de forma rápida y segura. El paciente está reestabilizado y el caso vuelve a la línea de tiempo."},
+{"texto":"Iniciar de inmediato infusión continua de Adrenalina en dosis alta sin suspender la nitroglicerina ni expandir volumen.","destino":"fase_2_resgate_choque","es_correcta":false,"puntos_afectados":-15,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"70/40","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":10,"ritmo_monitoreo_ecg":"Taquicardia Ventricular Sostenida (TVS)"},"feedback_detallado":"¡Falla en el rescate! La adrenalina en dosis alta sobre un miocardio gravemente isquémico, bajo el efecto de un nitrato vasodilatador activo que drena el volumen central, eleva el consumo de oxígeno al extremo y precipita arritmias ventriculares malignas (TVS en el monitor). ¡Suspendé el nitrato y usá volumen y Atropina primero!"}
+]},
+"fase_3_reperfusaodecisaograndecaminho":{"id":"fase_3_reperfusaodecisaograndecaminho","etapa":"Fase 3: Elección de Estrategia de Reperfusión y Adyuvantes","descripcion_situación":"El paciente está estabilizado. Te encontrás en un hospital de segundo nivel sin hemodinamia. El hospital de referencia con hemodinamia activa más cercano está a 3 horas de distancia (180 minutos). El tiempo de inicio del dolor es de 1 hora. ¿Cuál es tu decisión respecto a la reperfusión coronaria y al segundo antiagregante?","opciones":[
+{"texto":"Fibrinólisis inmediata en la sala de emergencias (meta <= 10 min) con Tenecteplase (TNK) ajustado por peso, asociada a Clopidogrel 300 mg como segundo antiagregante y Enoxaparina como anticoagulante.","destino":"fase_4_posreperfusaomonitorizacao","es_correcta":true,"puntos_afectados":0,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":78,"presion_arterial_mmhg":"118/74","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":16,"escala_dolor":3,"ritmo_monitoreo_ecg":"Ritmo Sinusal con disminución del Supradesnivel"},"feedback_detallado":"¡Excelente! Esta es la elección perfecta basada estrictamente en las guías (Clase I). Como el tiempo estimado hasta la apertura del balón en el centro de referencia supera los 120 minutos (son 180 min de traslado), la fibrinólisis inmediata debe realizarse en el hospital de origen en un máximo de 10 minutos. Para la fibrinólisis, el Clopidogrel (300 mg) es el único antiagregante P2Y12 indicado para evitar sangrado cerebral. La arteria empieza a desobstruirse y el dolor baja a 3/10."},
+{"texto":"Fibrinólisis inmediata con TNK y Enoxaparina, pero prescribir Clopidogrel en dosis de solo 75 mg por vía oral, sin dosis de carga.","destino":"fase_4_posreperfusaomonitorizacao","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":84,"presion_arterial_mmhg":"122/78","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":5,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Supradesnivel Persistente"},"feedback_detallado":"¡Camino semicorrecto! Elegiste la vía de reperfusión correcta (trombólisis química debido al tiempo de traslado de 3 horas), pero administrar solo 75 mg de Clopidogrel a un paciente de 58 años (menor de 75 años) es una subdosis. Los pacientes menores de 75 años deben recibir obligatoriamente la dosis de carga de 300 mg para garantizar una antiagregación plaquetaria eficaz. La reperfusión ocurrirá de forma más lenta e incompleta."},
+{"texto":"Fibrinólisis inmediata con TNK y Enoxaparina, pero administrar Prasugrel 60 mg (o Ticagrelor 180 mg) como segundo antiagregante potente para maximizar la apertura de la arteria.","destino":"fase_3_resgate_sangramento","es_correcta":false,"puntos_afectados":-25,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"85/50","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":22,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal / Shock Hemorrágico"},"feedback_detallado":"¡Camino semierrado! El uso de inhibidores potentes del P2Y12 (Prasugrel o Ticagrelor) está formalmente contraindicado si la estrategia de reperfusión elegida es la fibrinólisis química, por el altísimo riesgo de sangrado mayor. La asociación de estos agentes con el Tenecteplase provocó una hemorragia digestiva masiva y sangrado de vías urinarias en el paciente. Desarrolla shock hemorrágico con caída de la PA y taquicardia compensatoria."},
+{"texto":"Ignorar la fibrinólisis química y colocar al paciente de inmediato en una ambulancia común para trasladarlo al hospital con hemodinamia a 3 horas de distancia.","destino":"fase_3_resgate_congestaotransporte","es_correcta":false,"puntos_afectados":-40,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"80/45","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":28,"escala_dolor":10,"ritmo_monitoreo_ecg":"Taquicardia Sinusal con Isquemia Crítica"},"feedback_detallado":"¡Camino totalmente errado! Intentar trasladar al paciente durante 3 horas sin realizar reperfusión inmediata es un error grave que viola la regla de oro de los 120 minutos. En el camino, la arteria coronaria ocluida provocó necrosis transmural masiva, llevando a una falla aguda del Ventrículo Izquierdo. El paciente desarrolla Edema Agudo de Pulmón y shock cardiogénico a bordo de la ambulancia."}
+]},
+"fase_3_resgate_sangramento":{"id":"fase_3_resgate_sangramento","etapa":"Subfase de Rescate: Tratamiento de Hemorragia Grave Iatrogénica","descripcion_situación":"El paciente presenta sangrado activo profuso en encías, hematuria y caída de la PA (85/50 mmHg) debido al uso indebido de Prasugrel combinado con el trombolítico TNK. Necesitás detener el sangrado y restaurar la volemia. ¿Qué conducta inmediata adoptás para reestabilizar al paciente?","opciones":[
+{"texto":"Suspender de inmediato la infusión de nuevos anticoagulantes/antiagregantes, realizar compresión local, tipificación sanguínea con reserva de concentrado de glóbulos rojos, y realizar infusión moderada de cristaloides.","destino":"fase_4_posreperfusaomonitorizacao","es_correcta":true,"puntos_afectados":20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":90,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":3,"ritmo_monitoreo_ecg":"Ritmo Sinusal"},"feedback_detallado":"¡Excelente maniobra de rescate! Al suspender nuevos factores antitrombóticos, preparar soporte transfusional de emergencia y restaurar la volemia con volumen controlado, estabilizaste hemodinámicamente al paciente sin reocluir la coronaria. El sangrado fue controlado y el paciente vuelve estable a la línea de tiempo del posinfarto."},
+{"texto":"Administrar de inmediato ácido tranexámico (antifibrinolítico) en dosis alta por vía intravenosa directa para revertir totalmente la trombólisis.","destino":"fase_3_resgate_sangramento","es_correcta":false,"puntos_afectados":-15,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"130/85","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":20,"escala_dolor":10,"ritmo_monitoreo_ecg":"Taquicardia Sinusal con Dolor Refractario / Reoclusión"},"feedback_detallado":"¡Falla en el rescate! El uso intempestivo de antifibrinolíticos sistémicos revierte completamente el efecto del Tenecteplase, causando una reoclusión coronaria abrupta e hiperaguda. El dolor torácico vuelve a 10/10 y el infarto se expande. El control del sangrado debe ser de soporte y local, reservando los antifibrinolíticos para hemorragias con riesgo de vida inminente."}
+]},
+"fase_3_resgate_congestaotransporte":{"id":"fase_3_resgate_congestaotransporte","etapa":"Subfase de Rescate: Edema Agudo y Shock en Tránsito","descripcion_situación":"El paciente está en la ambulancia, a hora y media de viaje de la hemodinamia. Está cianótico, saturando 85%, con estertores en todos los campos pulmonares y PA en el límite de 80/45 mmHg. ¿Cómo intervenís de emergencia ante esta grave falla de planificación?","opciones":[
+{"texto":"Detener la ambulancia en el centro de salud más cercano, aplicar soporte de ventilación no invasiva (VNI), administrar un bolo de Tenecteplase (TNK) de inmediato en el lugar para abrir la arteria y revertir la falla del ventrículo.","destino":"fase_4_posreperfusaomonitorizacao","es_correcta":true,"puntos_afectados":25,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":92,"presion_arterial_mmhg":"100/60","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":19,"escala_dolor":4,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Caída del Supradesnivel"},"feedback_detallado":"¡Excelente y decisivo rescate! La única forma de salvar el miocardio y revertir la insuficiencia cardíaca hiperaguda era desobstruir la arteria coronaria con el trombolítico químico. El TNK y la ventilación positiva restauraron la oxigenación y el gasto cardíaco del paciente, reestabilizando sus signos y permitiendo un traslado posterior mucho más seguro. Salvaste al paciente y volviste a la línea de tiempo."},
+{"texto":"Aumentar la velocidad de la ambulancia para llegar más rápido al destino e inyectar Dobutamina intravenosa sin trombolisar al paciente.","destino":"fase_3_resgate_congestaotransporte","es_correcta":false,"puntos_afectados":-20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":140,"presion_arterial_mmhg":"65/35","saturacion_oxigeno_pct":80,"frecuencia_respiratoria_rpm":32,"escala_dolor":10,"ritmo_monitoreo_ecg":"Taquicardia Ventricular / Paro Inminente"},"feedback_detallado":"¡Falla de rescate gravísima! Administrar Dobutamina (inotrópico que aumenta el consumo de O2) en un miocardio con la arteria 100% cerrada, sin realizar la apertura mecánica o química del vaso, acelera la muerte de las células musculares cardíacas y desencadena arritmias ventriculares fatales por agotamiento isquémico. ¡El paciente está al borde de la muerte!"}
+]},
+"fase_4_posreperfusaomonitorizacao":{"id":"fase_4_posreperfusaomonitorizacao","etapa":"Fase 4: Evaluación del Éxito de la Reperfusión y Derivación","descripcion_situación":"El paciente completó la fibrinólisis hace 75 minutos. Está monitorizado en la Sala Roja. Necesitás evaluar si la terapia tuvo éxito y determinar el plan de cuidados definitivo. ¿Qué conducta clínica y plan de derivación definís para el paciente?","opciones":[
+{"texto":"Evaluar criterios de reperfusión (reducción del supradesnivel del ST > 50% en 60-90 min, mejora del dolor y arritmias benignas) y, si se confirman, programar el traslado del paciente para cateterismo de rutina entre 2 y 24 horas (Estrategia Farmacoinvasiva).","destino":"sucesso_conclusao","es_correcta":true,"puntos_afectados":0,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":72,"presion_arterial_mmhg":"120/75","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":14,"escala_dolor":1,"ritmo_monitoreo_ecg":"Ritmo Sinusal con ST normalizado / RIVA transitorio"},"feedback_detallado":"¡Felicitaciones! Alcanzaste la excelencia clínica máxima. Evaluar rigurosamente los criterios de reperfusión de 60-90 minutos es obligatorio. Si hay éxito, la estrategia recomendada por las guías internacionales (ESC 2023) es la farmacoinvasiva: realizar el cateterismo de rutina entre 2 y 24 horas. ¡El paciente tiene el dolor resuelto (1/10) y está hemodinámicamente estable!"},
+{"texto":"Confirmar que el dolor disminuyó y el supradesnivel se redujo > 50%, pero mantener al paciente internado en la UCI de tu hospital secundario por 48 horas en reposo absoluto, sin programar el traslado para cateterismo.","destino":"sucesso_conclusao","es_correcta":false,"puntos_afectados":-10,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":74,"presion_arterial_mmhg":"120/78","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":15,"escala_dolor":2,"ritmo_monitoreo_ecg":"Ritmo Sinusal Estable"},"feedback_detallado":"¡Camino semicorrecto! El tratamiento de soporte y la evaluación inicial fueron adecuados, pero no programar el cateterismo dentro de las 24 horas posteriores a una fibrinólisis exitosa expone al paciente al riesgo de reoclusión de la placa aterosclerótica inestable. Aunque se mantuvo estable por suerte clínica, las guías de 2023 recomiendan la realización obligatoria del estudio invasivo en la ventana de 2 a 24 horas."},
+{"texto":"Verificar que el paciente sigue con dolor intenso (8/10) y sin caída del supradesnivel del ST tras 90 minutos (trombólisis fallida), y prescribir una segunda dosis de Tenecteplase (TNK) para intentar desobstruir la arteria.","destino":"fase_4_resgate_falhatrombose","es_correcta":false,"puntos_afectados":-25,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"80/40","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":22,"escala_dolor":8,"ritmo_monitoreo_ecg":"Taquicardia Sinusal / Shock con Sangrado Intracraneal"},"feedback_detallado":"¡Camino semierrado! Ante una fibrinólisis fallida (trombólisis ineficaz), está formalmente prohibido repetir la dosis del trombolítico por el riesgo catastrófico de hemorragia intracraneal. El paciente evoluciona con disminución del nivel de conciencia por sangrado cerebral masivo y shock. La conducta correcta inmediata ante la falla de reperfusión es derivar al paciente de inmediato a una Intervención Coronaria Percutánea (ICP) de Rescate en el centro de referencia."},
+{"texto":"Como el dolor desapareció totalmente y el supradesnivel se redujo, dar el alta hospitalaria directa al paciente desde la sala de emergencias para seguimiento ambulatorio la semana próxima.","destino":"fase_4_resgate_reinfarto","es_correcta":false,"puntos_afectados":-45,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":10,"ritmo_monitoreo_ecg":"Asistolia por Paro Cardíaco Tardío"},"feedback_detallado":"¡Camino totalmente errado! Nunca se da de alta a un paciente que acaba de sufrir un IAMCEST en las primeras horas de evolución. El riesgo de reoclusión coronaria aguda por inestabilidad de la placa es altísimo. Pocas horas después, camino a su casa, la arteria se cerró de nuevo de forma hiperaguda, desencadenando arritmia ventricular y colapso cardíaco domiciliario."}
+]},
+"fase_4_resgate_falhatrombose":{"id":"fase_4_resgate_falhatrombose","etapa":"Subfase de Rescate: Falla de Trombólisis y Sangrado Cerebral","descripcion_situación":"El paciente desarrolló signos de sangrado intracraneal iatrogénico por exceso de dosis de TNK, con anisocoria y disminución de la conciencia, asociada a la no reperfusión de la coronaria. ¿Cómo intervenís con urgencia para estabilizar e intentar revertir este escenario?","opciones":[
+{"texto":"Suspender de inmediato cualquier antitrombótico, garantizar protección de la vía aérea (intubación si es necesario), solicitar traslado aéreo/ambulancia de UCI para ICP de Rescate en el centro de referencia y contactar a neurocirugía.","destino":"sucesso_conclusao","es_correcta":true,"puntos_afectados":20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":14,"escala_dolor":2,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Isquemia Controlada"},"feedback_detallado":"¡Excelente y avanzado rescate! La protección de la vía aérea resguardó la ventilación cerebral del paciente en el contexto de sangrado del sistema nervioso central. La suspensión total de antiagregantes y la activación inmediata del traslado para ICP de Rescate es la única medida que puede, al mismo tiempo, salvar el miocardio bajo isquemia sin aumentar el sangrado cerebral de forma letal. El paciente fue reestabilizado y trasladado."},
+{"texto":"Administrar dosis estándar de Heparina No Fraccionada intravenosa continua para evitar nuevos coágulos en la coronaria e ignorar el déficit neurológico.","destino":"fase_4_resgate_falhatrombose","es_correcta":false,"puntos_afectados":-20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":10,"ritmo_monitoreo_ecg":"Muerte Encefálica / Asistolia"},"feedback_detallado":"¡Falla de rescate crítica! Dar más heparina a un paciente con hemorragia intracraneal activa agrava el sangrado a niveles cerebrales fatales, culminando en hernia cerebral y muerte encefálica. ¡Suspendé todos los anticoagulantes de inmediato!"}
+]},
+"fase_4_resgate_reinfarto":{"id":"fase_4_resgate_reinfarto","etapa":"Subfase de Rescate: Reanimación por Reinfarto por Alta Precoz","descripcion_situación":"El paciente colapsó en la vía pública debido a la reoclusión coronaria aguda tras el alta precoz, volviendo al hospital en fibrilación ventricular refractaria. ¿Cómo lo reanimás y resolvés la causa raíz de su paro cardíaco?","opciones":[
+{"texto":"Realizar desfibrilación secuencial de alta energía (200J), iniciar RCP avanzada, aplicar Heparina y Amiodarona, y activar traslado inmediato con prioridad máxima para ICP de urgencia absoluta.","destino":"sucesso_conclusao","es_correcta":true,"puntos_afectados":25,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"100/60","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Ritmo Sinusal con Infradesnivel residual"},"feedback_detallado":"¡Maniobra de rescate excepcional! Aunque el alta fue un error grave, lo corregiste de forma brillante con protocolo de PCR avanzado para ritmos desfibrilables y activación de la angioplastia de urgencia extrema para abrir la arteria reocluida de forma mecánica. El paciente recupera el pulso espontáneo y es trasladado. El caso converge de vuelta."},
+{"texto":"Realizar solo compresiones torácicas por 10 minutos sin desfibrilar y esperar que el ritmo se normalice espontáneamente.","destino":"fase_4_resgate_reinfarto","es_correcta":false,"puntos_afectados":-20,"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":10,"ritmo_monitoreo_ecg":"Línea Isoeléctrica Completa"},"feedback_detallado":"¡Falla en el rescate! La FV no revierte espontáneamente sin desfibrilación precoz. Solo masajear sin aplicar los choques de 200J genera muerte miocárdica irreversible por agotamiento y falla de la bomba celular. ¡Desfibrilen al paciente de inmediato!"}
+]},
+"sucesso_conclusao":{"id":"sucesso_conclusao","etapa":"Fin del Caso Clínico: Caso Concluido","descripcion_situación":"El paciente fue derivado con éxito y de forma segura para la realización del cateterismo coronario, con las arterias permeables y el miocardio preservado. Completaste el simulador clínico de emergencia según las guías oficiales de la ESC (2023) y AHA/ACC (2025).","opciones":[]}
+}
+};
+
+/* ==========================================================================
+   FUNCIONES DE APOYO
+   ========================================================================== */
+function air(name,fio2){
+  const wasHyper=fio2>0.4&&S.spo2>=94&&S.rhythm==='sinus';
+  S.airway=name;S.fio2=fio2;
+  if(wasHyper&&name!=='ARM'&&name!=='BVM'){sc(-15,'Hiperoxia con SatO₂ ≥94%: vasoconstricción coronaria y mayor tamaño del infarto');S.iatro++;}
+  else if(fio2>0.21&&S.spo2<90)sc(8,'Oxígeno indicado por hipoxemia real');
+  info('Dispositivo: '+name+' · FiO₂ '+Math.round(fio2*100)+'%');bed();
+}
+function bed(){
+  const p=[];
+  p.push('SALA ROJA');
+  p.push(S.monitored?'monitorizado':'sin monitorizar');
+  p.push(S.airway==='aire'?'aire ambiente':S.airway);
+  if(S.vent)p.push('ARM');
+  if(S.arterial)p.push('PA invasiva');if(S.cvc)p.push('VVC');if(S.foley)p.push('sonda vesical');
+  $('bedinfo').textContent=p.join(' · ');
+}
+function die(r){S.dead=true;S.rhythm='asystole';S.bp=0;log('☠ FALLECIMIENTO — '+r,'bad');setTimeout(finish,1800);}
+
+/* ==========================================================================
+   FÍSICA
+   ========================================================================== */
+// Fisica simplificada dirigida por los datos del caso v4: cada opcion define
+// un ALVO explicito de signos vitales (novos_sinais_vitales), y esta funcion
+// solo hace que el trazado converja suavemente hacia ese alvo -- no hay
+// modelo farmacocinetico propio (nitratos, adrenalina, etc.) porque el caso
+// v4 no lo especifica. Mientras el alumno delibera sin responder (S.doing
+// vacio y el caso no termino), los signos vitales se degradan gradualmente
+// -- misma presion de tiempo ya validada en la version React del motor.
+const DERIVA_ESPERA={hr:0.6,sbp:-0.5,spo2:-0.08,rr:0.1};
+function physics(dt){
+ if(S.dead)return;
+ S.simT+=dt;
+
+ if(!S.ended&&!S.doing){
+   ALVO.hr=clamp(ALVO.hr+DERIVA_ESPERA.hr*dt,20,200);
+   ALVO.sbp=clamp(ALVO.sbp+DERIVA_ESPERA.sbp*dt,0,220);
+   ALVO.spo2=clamp(ALVO.spo2+DERIVA_ESPERA.spo2*dt,0,100);
+   ALVO.rr=clamp(ALVO.rr+DERIVA_ESPERA.rr*dt,0,45);
+ }
+
+ S.st=clamp((85-S.bp)/85,0,1)*5;
+
+ if(S.rhythm==='vf'||S.rhythm==='asystole'){S.hr=0;S.sbp=0;S.dbp=0;S.spo2=Math.max(0,S.spo2-dt*2);}
+ else{
+   S.hr+=(ALVO.hr-S.hr)*Math.min(1,dt/4);
+   S.sbp+=(ALVO.sbp-S.sbp)*Math.min(1,dt/4);
+   S.dbp+=(ALVO.dbp-S.dbp)*Math.min(1,dt/4);
+   S.spo2+=(ALVO.spo2-S.spo2)*Math.min(1,dt/4);
+ }
+ S.map=Math.round((S.sbp+2*S.dbp)/3);
+ S.rr+=(ALVO.rr-S.rr)*Math.min(1,dt/4);
+ if(S.nibp&&S.simT-S.lastNIBP>=CONFIG.cicloPANIsegundos){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+ if(S.arterial){S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+}
+
+/* ==========================================================================
+   ONDAS
+   ========================================================================== */
+const cv=$('cv'),ctx=cv.getContext('2d');
+let W=0,H=0,px=0,LANES=5,lastY=[null,null,null,null,null];
+/* orden de canales igual al del uMEC12: ECG · CO2 · Plet · Imped. · Art */
+function resize(){
+ const dpr=window.devicePixelRatio||1;
+ W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null,null];
+ const l=H/LANES;
+ for(let k=1;k<=5;k++){const el=$('wl'+k);if(el)el.style.top=((k-1)*l+3)+'px';}
+ $('ws2').style.top=(l+3)+'px';
+ $('ws5').style.top=(4*l+3)+'px';
+}
+const g=(t,c,w,a)=>a*Math.exp(-Math.pow((t-c)/w,2));
+function ecgAt(t){
+ const r=S.rhythm;
+ if(r==='vf')return 0.42*(Math.sin(t*36.1)+0.7*Math.sin(t*23.7+1.1)+0.5*Math.sin(t*51.3+2.2))/2.2;
+ if(r==='asystole')return (Math.random()-0.5)*0.03+(S.cpr?0.25*Math.sin(t*11.5):0);
+ if(r==='avblock'){
+  const P=60/78,L=60/38,tp=t%P,tq=t%L;
+  let v=g(tp,0.10,0.028,0.16);
+  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0)+g(tq,0.33,0.028,-0.22)+g(tq,0.57,0.078,0.28);
+  if(tq>0.37&&tq<0.49)v+=S.st*0.075;
+  return v;
+ }
+ const L=60/clamp(S.hr,30,180),tt=t%L;
+ let v=g(tt,0.11,0.022,0.15);
+ v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,1.15)+g(tt,0.268,0.013,-0.24);
+ const st=S.st*0.075;
+ if(tt>0.28&&tt<0.40)v+=st;
+ v+=g(tt,0.455,0.055,0.30+st*0.5);
+ return v;
+}
+/* capnograma: rampa, meseta alveolar e inspiración — morfología del uMEC12 */
+function co2At(t){
+ if(S.etco2===null)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L,a=clamp(S.etco2/50,0.04,1);
+ if(p<0.06)return a*Math.max(0,1-p/0.06)*0.15;
+ if(p<0.14)return a*((p-0.06)/0.08)*0.93;
+ if(p<0.62)return a*(0.93+0.07*((p-0.14)/0.48));
+ if(p<0.68)return a*Math.max(0,1-(p-0.62)/0.06);
+ return 0.01;
+}
+function plethAt(t){
+ if(!S.sat_probe)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return (Math.random()-0.5)*0.05;
+ const L=60/clamp(S.hr,30,180),tt=(t%L)/L,amp=clamp(S.sbp/120,0.12,1);
+ return amp*(Math.exp(-Math.pow((tt-0.22)/0.13,2))+0.42*Math.exp(-Math.pow((tt-0.46)/0.11,2)))*0.9;
+}
+function impedAt(t){
+ if(!S.monitored)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L;
+ return 0.5*Math.sin(2*Math.PI*p)+0.06*Math.sin(2*Math.PI*p*3);
+}
+/* curva arterial: ascenso rápido, muesca dicrótica y descenso diastólico */
+function artAt(t){
+ if(!S.arterial)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return S.cpr?0.18*Math.sin(t*11.5)+0.2:0.05;
+ const L=60/clamp(S.hr,30,180),p=(t%L)/L;
+ const pp=clamp((S.sbp-S.dbp)/70,0.25,1.2), base=clamp(S.dbp/90,0.1,1)*0.28;
+ let v;
+ if(p<0.13)v=Math.pow(p/0.13,0.55);
+ else if(p<0.30)v=1-0.42*((p-0.13)/0.17);
+ else if(p<0.36)v=0.58+0.10*Math.sin((p-0.30)/0.06*Math.PI);  // muesca dicrótica
+ else v=0.58*Math.exp(-(p-0.36)*2.6);
+ return base+v*pp*0.62;
+}
+let beatIx=-1;
+function draw(dt){
+ const adv=(W/6.4)*dt, lane=H/LANES;   // barrido ~25 mm/s
+ const mid=[lane*.55,lane*1.75,lane*2.55,lane*3.55,lane*4.72];
+ const gain=[lane*.32,lane*.62,lane*.26,lane*.24,lane*.62];
+ const col=['#2fe36f','#ffe14a','#39d7ff','#e8eef5','#ff5a63'];
+ const steps=Math.max(1,Math.round(adv));
+ for(let i=0;i<steps;i++){
+  const t0=S.waveT+(i/steps)*dt, x=px+(i/steps)*adv, xi=Math.floor(x)%W;
+  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,13,H);
+  const v=[S.monitored?ecgAt(t0):null, co2At(t0), plethAt(t0), impedAt(t0), artAt(t0)];
+  for(let l=0;l<LANES;l++){
+   if(v[l]===null){lastY[l]=null;continue;}
+   const y=mid[l]-v[l]*gain[l];
+   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.25;ctx.beginPath();
+     ctx.moveTo(xi-1,lastY[l]);ctx.lineTo(xi,y);ctx.stroke();}
+   lastY[l]=y;
+  }
+  if(xi<2)lastY=[null,null,null,null,null];
+ }
+ px=(px+adv)%W;S.waveT+=dt;
+ if(S.monitored&&(S.rhythm==='sinus'||S.rhythm==='avblock')){
+  const L=S.rhythm==='avblock'?60/38:60/clamp(S.hr,30,180);
+  const ix=Math.floor(S.waveT/L);
+  if(ix!==beatIx){beatIx=ix;beep();const b=$('beat');if(b){b.classList.remove('on');void b.offsetWidth;b.classList.add('on');}}
+ }
+}
+let AC=null,alOsc=null;
+function beep(){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ const o=AC.createOscillator(),g2=AC.createGain();
+ o.frequency.value=S.spo2>=95?880:S.spo2>=90?740:560;
+ g2.gain.setValueAtTime(.045,AC.currentTime);g2.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.09);
+ o.connect(g2).connect(AC.destination);o.start();o.stop(AC.currentTime+.1);}catch(e){}}
+function alarmTone(on){if(!S.sound){if(alOsc){try{alOsc.stop()}catch(e){}alOsc=null}return;}
+ try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ if(on&&!alOsc){alOsc=AC.createOscillator();const g2=AC.createGain();
+  alOsc.type='square';alOsc.frequency.value=1046;g2.gain.value=.026;
+  alOsc.connect(g2).connect(AC.destination);alOsc.start();}
+ else if(!on&&alOsc){alOsc.stop();alOsc=null;}}catch(e){}}
+
+/* ==========================================================================
+   RENDER
+   ========================================================================== */
+function ui(){
+ /* ---- relojes externos al monitor ---- */
+ $('wall').textContent=hhmm(S.simT);
+ $('tplus').textContent=Math.floor(S.simT/60)+'′';
+ $('clkIsq').className='clk'+(S.bp<40?' crit':S.bp<70?' hot':'');
+ const idle=S.simT-S.lastAction;
+ $('idle').textContent=mmss(idle);
+ $('clkIdle').className='clk'+(idle>300?' crit':idle>150?' hot':'');
+ $('salv').textContent=Math.round(S.bp);
+
+ const arrest=S.rhythm==='vf'||S.rhythm==='asystole';
+
+ /* ---- barra de estado del monitor ---- */
+ $('mBed').textContent='▣ SALA ROJA';
+ const t=(S.wallStart+S.simT)%86400;
+ $('mDT').textContent='08-08-2026 '+String(Math.floor(t/3600)).padStart(2,'0')+':'+
+   String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');
+ $('mTech').textContent=(S.monitored?(S.st>3?'Análisis de ST activo':'No se puede analizar QT'):'Derivación desconectada')+'  ·  reloj ×'+S.speed;
+
+ /* ---- ECG ---- */
+ zone('pzECG','vHR',S.monitored,arrest?(S.rhythm==='vf'?'---':'0'):Math.round(S.hr),
+   S.monitored&&(arrest||S.hr<50||S.hr>120));
+ $('beat').style.visibility=(S.monitored&&!arrest)?'visible':'hidden';
+ $('subPVC').innerHTML='PVC <b>'+(S.pvc!==null?S.pvc:'---')+'</b>';
+ $('subST').textContent=S.monitored?(S.st>1?'ST II '+S.st.toFixed(1)+' mm':'ST 0,0 mm'):'ST desact.';
+ $('subST').style.color=S.monitored&&S.st>3?'#ff5a63':'#a4aeb8';
+ $('limECG').innerHTML=(S.rhythm==='avblock'?'120<br>50':'120<br>50');
+
+ /* ---- CO2 ---- */
+ zone('pzCO2','vCO2',S.etco2!==null,S.etco2!==null?Math.round(S.etco2):'---',
+   S.etco2!==null&&(S.etco2<25||S.etco2>50));
+ $('subFRm').textContent=S.monitored?Math.round(S.rr):'--';
+ $('subR').textContent=S.vent?Math.round(S.rr):'0';
+
+ /* ---- SpO2 ---- */
+ zone('pzSat','vSat',S.sat_probe,Math.round(S.spo2),S.sat_probe&&S.spo2<90);
+ $('subPR').textContent=S.sat_probe&&!arrest?Math.round(S.hr):'---';
+ $('subPI').textContent=S.sat_probe?('IP '+clamp(S.sbp/70,0.2,4).toFixed(2)):'IP ---';
+
+ /* ---- Resp ---- */
+ zone('pzResp','vRR',S.monitored,Math.round(S.rr),S.monitored&&(S.rr>26||S.rr<9));
+ $('subOrigen').textContent=(S.capno||S.vent)?'Origen CO2':'Origen Imped.';
+
+ /* ---- presión arterial: PANI intermitente o Art invasiva continua ---- */
+ const bpOn=S.nibp||S.arterial;
+ $('lblArt').innerHTML=(S.arterial?'Art':'PANI')+'<span style="font-weight:400;font-size:8.5px"> mmHg</span>';
+ zone('pzArt','vBP',bpOn,arrest?'---/---':S.sbpShow+'/'+S.dbpShow,bpOn&&S.sbpShow<90&&!arrest);
+ $('subMAP').textContent=bpOn&&!arrest?'('+S.map+')':'(--)';
+ $('pzArt').classList.toggle('sel',S.arterial);
+ $('wl5').style.display=S.arterial?'block':'none';
+ $('ws5').style.display=S.arterial?'block':'none';
+ $('wl2').style.display=(S.etco2!==null)?'block':'none';
+ $('ws2').style.display=(S.etco2!==null)?'block':'none';
+ $('wl3').style.display=S.sat_probe?'block':'none';
+ $('wl4').style.display=S.monitored?'block':'none';
+ $('wl1').style.display=S.monitored?'block':'none';
+
+ /* ---- barra inferior ---- */
+ $('vT').textContent=S.monitored?S.temp.toFixed(1).replace('.',','):'--,-';
+ if(S.nibp&&!S.arterial){$('vPNI').textContent=S.sbpShow+'/'+S.dbpShow;
+   $('stPNI').textContent='Medición terminada '+hhmm(S.lastNIBP);}
+ else{$('vPNI').textContent='---/---';$('stPNI').textContent=S.arterial?'PANI en espera':'Medición manual';}
+
+ /* ---- banner de alarma (texto y jerarquía del equipo real) ---- */
+ let cls='none',txt='Sin alarmas';
+ if(!S.monitored){cls='none';txt='Sin monitorización';}
+ else if(S.rhythm==='vf'){cls='hi';txt='*** FIB VENT';}
+ else if(S.rhythm==='asystole'){cls='hi';txt='*** ASISTOLIA';}
+ else if(bpOn&&S.sbpShow<80&&!arrest){cls='hi';txt='*** PANI SIS muy baja';}
+ else if(S.rhythm==='avblock'){cls='hi';txt='*** FC muy baja';}
+ else if(S.sat_probe&&S.spo2<90){cls='md';txt='** SpO2 baja';}
+ else if(S.foley&&S.diuresis<25){cls='md';txt='** Diuresis baja';}
+ else if(S.st>3){cls='md';txt='** ST II elevado';}
+ else if(S.hr>120){cls='md';txt='** FC alta';}
+ else if(S.bp<70){cls='md';txt='** Puntuación en descenso';}
+ else{cls='';txt='Sin alarmas';}
+ const b=$('mBanner');b.className='banner '+(cls||'');b.textContent=txt;
+ alarmTone(cls==='hi');
+ const a=$('alarm');
+ a.className='alarmbar '+(cls==='hi'?'hi':cls==='md'?'md':'');
+ a.textContent=!S.monitored?'monitorización no iniciada':
+   cls==='hi'?'⚠ '+txt.replace(/\*/g,'').trim():cls==='md'?txt.replace(/\*/g,'').trim():'sin alarmas activas';
+
+ /* ---- ficha clínica -- campos sin dato real en este caso quedan "—" ---- */
+ $('fST').textContent=S.monitored?S.st.toFixed(1):'—';
+ $('fGlu').textContent=S.glu!=null?Math.round(S.glu):'—';
+ $('fLac').textContent=S.lac!=null?S.lac.toFixed(1):'—';
+ $('fDiu').textContent=S.diuresis!=null?Math.round(S.diuresis):'—';
+ $('fDiuU').textContent='sin sonda';
+ $('fGCS').textContent='—';$('fPain').textContent=Math.round(S.pain);$('fCRT').textContent=S.crt!=null?S.crt:'—';
+ $('fKil').textContent=S.examDone?(S.sbp<90?'III':'I'):'—';
+ $('fKilU').textContent=S.examDone?'sin crepitantes':'sin examinar';
+
+ /* ---- ventilador ---- */
+ $('ventPanel').className='vent'+(S.vent?' on':'');
+ if(S.vent){$('vPEEP').textContent=S.peep;$('vFiO2').textContent=Math.round(S.ventFiO2*100);
+  $('vPlat').textContent=S.peep>=10?24:18;}
+
+ /* ---- score ---- */
+ $('vBPs').textContent=Math.round(S.bp);$('bpbar').style.width=S.bp+'%';
+ const c=S.bp>70?'var(--ok)':S.bp>40?'var(--md)':'var(--hi)';
+ $('bpbar').style.background=c;$('vBPs').style.color=c;
+ $('vPE').textContent=Math.round(S.pe);$('vOm').textContent=S.omis;$('vIa').textContent=S.iatro;
+}
+function zone(pz,el,on,val,alarm){
+ $(el).textContent=on?val:(String(val).includes('/')?'---/---':'---');
+ $(pz).className='pz'+(on?'':' off')+(alarm?' alarm':'')+($(pz).classList.contains('sel')&&pz==='pzArt'?' sel':'');
+}
+let last=0;
+function loop(ts){
+ requestAnimationFrame(loop);
+ if(!S.running)return;
+ const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+ if(S.paused)return;
+ draw(dt);
+ let mult=S.doing?S.speed*6:S.speed;
+ physics(dt*mult);
+ if(S.doing){S.doing.left-=dt*mult;
+  $('doingB').style.width=(100*(1-S.doing.left/S.doing.total))+'%';
+  if(S.doing.left<=0){const f=S.doing.f;S.doing=null;$('doing').className='doing';f();}}
+ ui();
+}
+/* ==========================================================================
+   MOTOR DE NODOS — navega el grafo ramificado del caso v4 (no es más un
+   array lineal: cada opción define su propio "destino" por id, así que una
+   opción incorrecta puede llevar a una sub-fase de rescate que después
+   converge de vuelta a la línea principal). Reutiliza S.doing (definido en
+   el loop) para representar el tiempo clínico consumido por cada respuesta.
+   ========================================================================== */
+S.nodoId=NODO_INICIAL; S.printouts=[];
+const LETRAS=['A','B','C','D','E'];
+// clasifica el rigor de la opción para el color del feedback -- v4 no trae
+// una categoría r:'good'|'warn'|'bad' explícita, se deriva del puntaje.
+function clasificar(opt){
+  if(opt.es_correcta)return'good';
+  if(opt.puntos_afectados<=-30)return'bad';
+  return'warn';
+}
+// clasifica el ritmo de ECG en el enum que usan las funciones de onda/alarma
+function clasificarRitmo(txt){
+  const t=(txt||'').toLowerCase();
+  if(t.includes('fibrilación ventricular')||t.includes('taquicardia ventricular'))return'vf';
+  if(t.includes('asistolia')||t.includes('muerte encefálica')||t.includes('línea isoeléctrica'))return'asystole';
+  return'sinus';
+}
+function aplicarVitales(cambio){
+  if(!cambio)return;
+  if(cambio.frecuencia_cardiaca_lpm!=null)ALVO.hr=cambio.frecuencia_cardiaca_lpm;
+  if(cambio.presion_arterial_mmhg){const[s,d]=cambio.presion_arterial_mmhg.split('/').map(Number);ALVO.sbp=s||0;ALVO.dbp=d||0;}
+  if(cambio.saturacion_oxigeno_pct!=null)ALVO.spo2=cambio.saturacion_oxigeno_pct;
+  if(cambio.frecuencia_respiratoria_rpm!=null)ALVO.rr=cambio.frecuencia_respiratoria_rpm;
+  if(cambio.escala_dolor!=null)S.pain=cambio.escala_dolor;
+  if(cambio.ritmo_monitoreo_ecg)S.rhythm=clasificarRitmo(cambio.ritmo_monitoreo_ecg);
+}
+
+function renderStage(){
+ const nodo=CASO_V4.nodos[S.nodoId];
+ if(!nodo||nodo.opciones.length===0){finish();return;}
+ $('stgNum').textContent=nodo.etapa;
+ $('stgTitle').textContent='🩺 '+nodo.etapa.replace(/^(Fase \d+|Subfase de Rescate):?\s*/,'');
+ $('stgVig').textContent=nodo.descripcion_situación;
+ $('stgOpts').innerHTML=nodo.opciones.map((o,i)=>
+   `<button class="opt" data-i="${i}"><span class="letter">${LETRAS[i]||i+1}</span><span>${o.texto}</span></button>`).join('');
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(nodo,+b.dataset.i));
+ $('stgFeedback').className='feedback';$('stgFeedback').innerHTML='';
+ $('stgNext').style.display='none';
+ $('stage').classList.remove('done');
+}
+
+function choose(nodo,i){
+ if(S.dead||S.ended||S.doing)return;
+ const opt=nodo.opciones[i];
+ S.lastAction=S.simT;
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.disabled=true);
+ $('doingT').textContent='Aplicando conducta…';
+ $('doingB').style.width='0';$('doing').className='doing on';
+ S.doing={left:0.6,total:0.6,f:()=>resolveOption(nodo,opt)};
+}
+
+function resolveOption(nodo,opt){
+ const cls=clasificar(opt);
+ S.simT+=3*60;                            // avance nominal del reloj clínico por decisión
+ S.lastAction=S.simT;                     // recién actuó -- no cuenta como tiempo ocioso
+ sc(opt.puntos_afectados,null);           // aplica el puntaje sin línea propia; el detalle va en el feedback
+ aplicarVitales(opt.cambio_estado_paciente);
+ if(opt.printouts)opt.printouts.forEach(p=>archivarImpreso(p));
+ log((opt.puntos_afectados>0?'+':'')+opt.puntos_afectados+' pts · '+nodo.etapa,cls);
+
+ const fb=$('stgFeedback');
+ fb.className='feedback show '+cls;
+ fb.innerHTML=`<span class="fscore">${opt.puntos_afectados>0?'+':''}${opt.puntos_afectados} pts</span>${opt.feedback_detallado}`+
+   (opt.printouts&&opt.printouts.length?`<div style="margin-top:8px;font-size:11px;color:var(--dim)">📄 Impreso archivado en el menú lateral.</div>`:'');
+ $('stage').classList.add('done');
+ $('stgNext').style.display='inline-block';
+ $('stgNext').onclick=()=>{S.nodoId=opt.destino;renderStage();};
+}
+
+function archivarImpreso(p){
+ S.printouts.push({...p,hora:hhmm(S.simT)});
+ const list=$('plist');
+ $('pcount').textContent=S.printouts.length;
+ list.innerHTML=S.printouts.map((pr,ix)=>
+   `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
+ list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+}
+function abrirImpreso(p){
+ $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
+  <div class="kick">${p.tipo}</div><h1>${p.titulo}</h1>
+  <div class="stamp">Paciente, masculino · 58 a · liberado a las ${p.hora}</div>
+  <pre>${p.cuerpo}</pre>`;
+ $('ovPrint').className='ov';
+}
+
+function finish(){
+ if(S.ended)return;S.ended=true;S.running=false;alarmTone(false);
+ // El caso v4 no tiene un nodo de "muerte" separado: todos los caminos
+ // convergen al mismo nodo final (sucesso_conclusao). El desenlace real se
+ // refleja en la puntuación acumulada, no en a qué nodo se llegó.
+ const nodoFinal=CASO_V4.nodos[S.nodoId]||CASO_V4.nodos[NODO_EXITO];
+ const bp=Math.round(S.bp);
+ let p,c,t;
+ if(bp>=70){p='ÉXITO PLENO';c='var(--ok)';t=nodoFinal.descripcion_situación;}
+ else if(bp>=40){p='ESTABILIZADO CON SECUELAS';c='var(--md)';t=nodoFinal.descripcion_situación;}
+ else{p='DESENLACE CRÍTICO';c='var(--hi)';t=nodoFinal.descripcion_situación;}
+ const veredicto=bp>=70?{txt:'ÉXITO PLENO',col:'var(--ok)'}:bp>=40?{txt:'ESTABILIZADO CON SECUELAS',col:'var(--md)'}:{txt:'DESENLACE CRÍTICO',col:'var(--hi)'};
+ $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div>
+ <div style="font-size:34px;font-weight:800;letter-spacing:2px;color:${veredicto.col};margin:2px 0 6px">${veredicto.txt}</div>
+ <h1 style="color:${c}">${p}</h1><p>${t}</p>
+ <table>
+  <tr><td>Puntuación final</td><td>${bp} / 100</td></tr>
+  <tr><td>Tiempo total de caso</td><td>${Math.floor(S.simT/60)} min</td></tr>
+ </table><button class="btn" onclick="location.reload()">Reiniciar el caso</button>`;
+ $('ovEnd').className='ov';
+
+ /* ---- resultado exportable al sitio contenedor (mismo contrato del tipo
+    "iframe" ya consumido por hospital-simulacao-caso-viewer.tsx) ---- */
+ const resultado={
+  caso:'IAMCEST-01', version:'4.0',
+  desenlace:p, camino:bp>=70?1:(bp>=40?2:3),
+  bpFinal:bp, reservaExcelencia:Math.round(S.pe),
+  omisiones:0, iatrogenias:0,
+  isquemiaTotalMin:Math.floor(S.simT/60),
+  puertaBalonMin:null, miocardioSalvable:null,
+  vdIdentificado:false, reperfundido:bp>=40,
+  soporteVentilatorio:S.airway,
+  tiempoPerdidoMin:Math.round(S.lostTime/60),
+  fallecido:bp<40, dificultad:CONFIG.dificultad,
+  registro:S.log.slice().reverse(),
+  finalizadoEn:new Date().toISOString()
+ };
+ window.SimuladorIAMCEST.resultado=resultado;
+ if(typeof CONFIG.alFinalizar==='function'){try{CONFIG.alFinalizar(resultado);}catch(e){console.error(e);}}
+ if(CONFIG.emitirPostMessage&&window.parent!==window){
+  try{window.parent.postMessage({tipo:'simulador-iamcest:finalizado',resultado},CONFIG.origenPermitido);}catch(e){}
+ }
+ document.dispatchEvent(new CustomEvent('simulador-iamcest:finalizado',{detail:resultado}));
+}
+$('bSpeed').onclick=()=>{S.speed=S.speed===1?4:S.speed===4?10:1;$('bSpeed').textContent='×'+S.speed;};
+$('bSound').onclick=()=>{S.sound=!S.sound;$('bSound').classList.toggle('on',S.sound);if(!S.sound)alarmTone(false);};
+$('bPause').onclick=()=>{S.paused=!S.paused;$('bPause').textContent=S.paused?'▶':'⏸';
+ $('bPause').classList.toggle('on',S.paused);if(S.paused)alarmTone(false);};
+$('bEnd').onclick=finish;
+$('bCase').onclick=()=>{$('ovCase').className='ov';if(S.running&&!S.paused)$('bPause').click();};
+$('closeCase').onclick=()=>{$('ovCase').className='ov hide';};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ovCase').className='ov hide';$('ovPrint').className='ov hide';}});
+
+function iniciar(vel){
+ S.speed=vel||CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+ $('ovIntro').className='ov hide';S.running=true;last=performance.now();
+ /* el monitor multiparamétrico se conecta al ingreso: la narrativa lo instala, no el alumno */
+ S.monitored=true;S.sat_probe=true;S.nibp=true;S.lastNIBP=S.simT;S.defibNear=true;
+ bed();
+ log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
+ renderStage();
+}
+document.querySelectorAll('.spd button').forEach(b=>b.onclick=()=>iniciar(+b.dataset.s));
+setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
+window.addEventListener('resize',resize);
+
+/* ==========================================================================
+   API PÚBLICA — el sitio contenedor puede controlar el simulador
+   ========================================================================== */
+window.SimuladorIAMCEST={
+ iniciar, finalizar:finish, resultado:null,
+ pausar:()=>{S.paused=true;alarmTone(false);$('bPause').textContent='▶';},
+ reanudar:()=>{S.paused=false;last=performance.now();$('bPause').textContent='⏸';},
+ verExpediente:()=>{$('ovCase').className='ov';},
+ estado:()=>({bp:Math.round(S.bp),pe:Math.round(S.pe),minuto:Math.floor(S.simT/60),
+   nodo:S.nodoId,ritmo:S.rhythm}),
+ reiniciar:()=>location.reload(),
+ config:CONFIG
+};
+
+/* ---- arranque ---- */
+$('introTitulo').textContent=CASO_V4.titulo_juego;
+$('introDescripcion').textContent=CASO_V4.descripcion;
+$('histMotivo').textContent=CASO_V4.descripcion;
+$('docTitulo').textContent='Caso 1 · '+CASO_V4.titulo_juego;
+$('docDescripcion').textContent=CASO_V4.descripcion;
+S.speed=CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+S.sound=!!CONFIG.sonidoInicial;$('bSound').classList.toggle('on',S.sound);
+if(!CONFIG.mostrarExpediente)$('bCase').style.display='none';
+resize();requestAnimationFrame(loop);
+if(CONFIG.saltarIntro&&CONFIG.autoIniciar)iniciar();
+</script>
+</body>
+</html>
+

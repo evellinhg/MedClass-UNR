@@ -1,0 +1,787 @@
+{
+  "backup_info": {
+    "descripcion": "Backup completo del Caso 1 de Hospital Simulação (MedClass UNR) — contenido clínico + documentación exhaustiva del motor que lo ejecuta.",
+    "fuente_original": "public/simuladores/caso1-iamcest-v4.html (motor + contenido en un único archivo HTML autocontido, sin dependencias de build)",
+    "fila_supabase": {
+      "tabla": "hospital_simulacao_casos",
+      "id": "948c4bc5-3573-498c-916a-1ee4c9038021",
+      "titulo": "Caso 1 - IAMCEST",
+      "tipo": "iframe",
+      "arquivo_html": "/simuladores/caso1-iamcest-v4.html",
+      "ordem": 1,
+      "ativo": true,
+      "nota": "La columna 'conteudo' de esta fila tiene un JSON residual de una versión anterior (modo React 'perguntas', components/hospital-simulacao-jogo.tsx) que ya NO se usa — el motor real y único activo hoy es el HTML autocontido referenciado por arquivo_html."
+    },
+    "generado_en": "2026-08-14"
+  },
+
+  "documentacion_motor": {
+    "resumen": "Un único archivo HTML/CSS/JS sin build ni dependencias externas (salvo Google Fonts, con fallback a fuentes de sistema). Se sirve como estático en /public/simuladores/ y se embebe en la app Next.js vía <iframe>. Toda la lógica del caso clínico (ramas, puntuación, signos vitales) está en un objeto de datos (CASO_V4) que el motor interpreta — el motor en sí es 100% genérico y reutilizable para cualquier caso nuevo.",
+
+    "integracion_con_la_app": {
+      "componente_padre": "components/hospital-simulacao-caso-viewer.tsx",
+      "como_se_embebe": "<iframe src={caso.arquivo_html} className=\"h-[900px] w-full border-0\" allow=\"autoplay\" />",
+      "como_vuelve_el_resultado": "El HTML hace window.parent.postMessage({tipo:'simulador-iamcest:finalizado', resultado}, origenPermitido). El viewer escucha 'message', valida event.origin === window.location.origin, y hace supabase.from('hospital_simulacao_tentativas').insert({...}) mapeando cada campo de 'resultado'.",
+      "control_de_acceso": "La tabla se lee con RLS abierta si ativo=true, pero el viewer además exige podeAcessar (admin, colaborador o plan 'vip' via getPlanStatus()) antes de renderizar el iframe — quien no tiene acceso ve una pantalla de bloqueo, nunca llega a cargar el HTML."
+    },
+
+    "config_bloque_publico": {
+      "descripcion": "Bloque const CONFIG al inicio del <script>, pensado para tocarse sin modificar el motor.",
+      "valores_actuales_caso1": {
+        "velocidadInicial": 2,
+        "sonidoInicial": false,
+        "saltarIntro": false,
+        "mostrarExpediente": true,
+        "autoIniciar": true,
+        "dificultad": 1.0,
+        "cicloPANIsegundos": 8,
+        "alFinalizar": null,
+        "emitirPostMessage": true,
+        "origenPermitido": "*"
+      },
+      "notas_por_campo": {
+        "velocidadInicial": "Multiplicador fijo del reloj clínico al arrancar (no hay selector visible al alumno en v4 — se quitó a propósito, ver commit 6c08b2b).",
+        "mostrarExpediente": "true = muestra el botón '📄 Caso' que abre el documento docente con TODAS las respuestas correctas. Debe ponerse false en una versión 100% cara al estudiante si se quiere evitar que espíe.",
+        "dificultad": "Se exporta en el resultado final pero en v4 NO multiplica ningún drenaje de puntos por tiempo (ese mecanismo de la v3/README quedó reemplazado por la deriva de ALVO, ver 'motor_de_fisica'). Queda como campo informativo/legacy.",
+        "cicloPANIsegundos": "Cada cuántos segundos de simulación se refresca la lectura de PANI (presión no invasiva) en el monitor, si S.nibp está activo.",
+        "origenPermitido": "Debería reemplazarse por el dominio real en producción; hoy es '*' (abierto)."
+      }
+    },
+
+    "estructura_de_datos_del_caso": {
+      "variable": "const CASO_V4 = { titulo_juego, descripcion, estado_inicial, nodos }",
+      "titulo_juego": "string — se muestra en la pantalla de intro y en el expediente docente.",
+      "descripcion": "string — resumen del escenario; se reutiliza en 3 lugares: intro, 'Historia clínica resumida' del panel lateral, y expediente docente.",
+      "estado_inicial": "objeto con los signos vitales de arranque: frecuencia_cardiaca_lpm (number), presion_arterial_mmhg (string 'SIS/DIA'), saturacion_oxigeno_pct (number), frecuencia_respiratoria_rpm (number), escala_dolor (0-10), ritmo_monitoreo_ecg (string libre), puntos_actuales (siempre 100 al inicio).",
+      "nodos": "Record<string, Nodo> — el caso es un GRAFO, no una lista lineal. La clave es el id del nodo.",
+      "nodo": {
+        "id": "string — debe coincidir con la clave del diccionario 'nodos'.",
+        "etapa": "string — título de la fase/subfase, se muestra arriba de la viñeta (ej. 'Fase 1: Admisión y Diagnóstico Electrocardiográfico' o 'Subfase de Rescate: ...').",
+        "descripcion_situación": "string — la viñeta clínica que lee el alumno antes de elegir. OJO: el nombre del campo lleva tilde ('situación'), hay que respetarlo tal cual porque el motor lo lee por ese nombre exacto.",
+        "opciones": "array de Opcion. Si está vacío ([]), el motor interpreta que el caso TERMINÓ al llegar a ese nodo (ver 'reglas_de_desenlace')."
+      },
+      "opcion": {
+        "texto": "string — texto del botón (se antepone automáticamente una letra A/B/C/D/E según la posición).",
+        "destino": "string — id del próximo nodo. Puede ser: (a) el siguiente nodo hacia adelante en la línea principal, (b) el id de un nodo '..._resgate_...' si el error es grave y abre una subfase de rescate, o (c) el MISMO id del nodo actual, para un 'reintentá hasta acertar' en preguntas de pura interpretación (ver 'patron_autoloop').",
+        "es_correcta": "boolean — sólo se usa para decidir el color del feedback (ver 'clasificacion_de_feedback'), no bloquea ni desbloquea nada por sí sola.",
+        "puntos_afectados": "number (puede ser 0) — delta aplicado al puntaje vía sc(). Obligatorio en toda opción, incluso si es 0.",
+        "cambio_estado_paciente": "objeto con el snapshot COMPLETO de los signos vitales tras elegir esta opción (no es un delta parcial en la práctica — cada opción de caso1 siempre manda las 6 claves). Mismas claves que estado_inicial menos puntos_actuales.",
+        "feedback_detallado": "string largo — la explicación clínica que se muestra tras elegir, con el razonamiento fisiopatológico/guideline. Es el corazón educativo del caso.",
+        "printouts": "array opcional de {tipo, titulo, cuerpo} — ver 'reglas_de_impresos'."
+      },
+      "constantes_de_arranque": {
+        "NODO_INICIAL": "'fase_1_admissao' — el motor arranca SIEMPRE en este id.",
+        "NODO_EXITO": "'sucesso_conclusao' — nombre convencional del nodo final único; el motor lo usa sólo como fallback si S.nodoId quedara inválido, no fuerza que todos los caminos converjan ahí (aunque en la práctica, en v4, todos convergen)."
+      }
+    },
+
+    "motor_de_fisica": {
+      "principio": "Los signos vitales visibles en el monitor (S.hr, S.sbp, S.dbp, S.spo2, S.rr) NO saltan instantáneamente al valor de cambio_estado_paciente. Convergen exponencialmente hacia un objetivo ALVO con velocidad Math.min(1, dt/4) por frame — un 'suavizado' de ~4 segundos de constante de tiempo.",
+      "quien_mueve_el_alvo": "aplicarVitales(cambio) — se llama una sola vez, al resolver la opción elegida (resolveOption). Copia cada campo presente de cambio_estado_paciente directamente a ALVO.hr / ALVO.sbp / ALVO.dbp / ALVO.spo2 / ALVO.rr. El dolor (S.pain) y el ritmo (S.rhythm, vía clasificarRitmo) se aplican de forma inmediata, no convergen.",
+      "deriva_por_indecision": "Mientras el alumno NO eligió todavía una opción en el nodo actual (S.doing vacío, caso no terminado), el propio ALVO se degrada solo, cada frame: hr +0.6/s, sbp −0.5/s, spo2 −0.08/s, rr +0.1/s (constantes DERIVA_ESPERA). Es la 'presión de tiempo real' — cuanto más tarda el alumno en decidir, peor está el paciente cuando por fin actúa.",
+      "elevacion_st_visual": "S.st = clamp((85 - S.bp) / 85, 0, 1) * 5 (en mm). O sea: el supradesnivel de ST que se VE en el trazado y en la ficha lateral ('ST II') es una función pura del puntaje acumulado, no de la fisiopatología real del caso — a peor puntaje, más ST elevado y alarmas más agresivas.",
+      "reloj_clinico": "S.simT avanza dt*multiplicador cada frame. El multiplicador es S.speed normalmente (botón ×1/×4/×10), pero se multiplica x6 extra mientras corre la animación de 'Aplicando conducta…' (S.doing) tras elegir una opción. Además, resolveOption() suma manualmente +3*60 segundos de tiempo simulado por cada decisión tomada (representa el tiempo clínico que 'cuesta' actuar), independientemente de la física de deriva."
+    },
+
+    "reglas_de_puntuacion": {
+      "funcion": "sc(delta, texto, clase)",
+      "comportamiento": "Si delta > 0: lo que cabe hasta llegar a 100 se suma a S.bp (puntaje visible 0-100); el excedente (si el puntaje ya estaba en 100 o el delta lo superaría) se acumula aparte en S.pe ('reserva de excelencia', un contador de bonus que no tiene techo). Si delta <= 0: se resta directo de S.bp, sin bajar de 0.",
+      "muerte_automatica": "Si S.bp llega a 0 (y el paciente no estaba ya muerto), se dispara die() automáticamente: fuerza ritmo asystole, log de fallecimiento, y a los 1.8s llama a finish(). No existe un nodo de 'muerte' explícito en el grafo — la muerte es 100% una consecuencia del puntaje, nunca de elegir una opción específica por sí sola (aunque una opción puede acercar tanto el puntaje a 0 que la siguiente mala decisión mate)."
+    },
+
+    "clasificacion_de_feedback": {
+      "funcion": "clasificar(opcion)",
+      "regla": "es_correcta === true → 'good' (verde). Si no, y puntos_afectados <= -30 → 'bad' (rojo). Cualquier otro caso → 'warn' (ámbar). El color decide tanto el estilo de la caja de feedback como el borde del botón elegido."
+    },
+
+    "clasificacion_de_ritmo_ecg": {
+      "funcion": "clasificarRitmo(texto) — hace match case-insensitive sobre el string libre 'ritmo_monitoreo_ecg' de cambio_estado_paciente",
+      "reglas": [
+        "Si el texto contiene 'fibrilación ventricular' o 'taquicardia ventricular' → rhythm interno 'vf' (trazado caótico, alarma roja '*** FIB VENT', sin FC numérica).",
+        "Si contiene 'asistolia', 'muerte encefálica' o 'línea isoeléctrica' → rhythm interno 'asystole' (línea plana, alarma roja '*** ASISTOLIA').",
+        "Cualquier otro texto → 'sinus' (ECG normal generado a partir de S.hr; el string se muestra tal cual como etiqueta pero no cambia la morfología del trazado más allá de eso)."
+      ],
+      "implicancia_para_casos_nuevos": "Para que una opción dispare visualmente un paro (FV o asistolia) en el monitor, el texto de ritmo_monitoreo_ecg DEBE contener literalmente una de esas palabras clave — no basta con describir la gravedad en el feedback."
+    },
+
+    "reglas_de_impresos": {
+      "que_son": "Estudios/documentos que el alumno 'obtiene' al elegir una opción que trae un array printouts. Cada uno es {tipo, titulo, cuerpo} donde 'cuerpo' es texto plano/preformateado (monoespaciado) — no son imágenes, son laudos de texto.",
+      "cuando_aparecen": "Se archivan automáticamente (archivarImpreso) en el momento en que se resuelve la opción, no requieren una acción separada del alumno para 'pedir el estudio' — pedir el estudio ES elegir esa opción.",
+      "efecto_visual": "El panel lateral 'Impresos y resultados' se ilumina con un borde animado + un contador que hace pulso, y aparece un toast temporal arriba a la derecha, para que el alumno note el impreso nuevo aunque no esté mirando el panel.",
+      "no_gatea_nada": "El motor NO exige haber abierto/leído un impreso para poder avanzar — es puramente informativo/de inmersión y de debriefing posterior (queda todo archivado con hora de liberación)."
+    },
+
+    "patron_autoloop_y_subfases_de_rescate": {
+      "autoloop": "Cuando una opción pone destino = su propio id de nodo, el motor simplemente vuelve a renderizar el mismo nodo (mismo texto, mismas opciones) tras aplicar la penalización. Se usa en preguntas de pura interpretación (ej. '¿cuál es el hallazgo primario del ECG?') donde no tiene sentido narrativo avanzar con una lectura incorrecta — el alumno reintenta hasta acertar.",
+      "subfase_de_rescate": "Cuando el error tiene una consecuencia fisiológica real (ej. hipotensión, PCR, sangrado), destino apunta a un nodo dedicado '<fase>_resgate_<complicacion>' que narra el deterioro y exige una conducta correctiva. Ese nodo de rescate puede a su vez tener una opción cuyo destino es el MISMO nodo de rescate (si la corrección fue mal hecha, se repite el intento) y otra opción cuyo destino reconecta con la línea principal (siguiente 'fase_N') una vez resuelta la complicación.",
+      "por_que_no_hay_nodo_de_muerte_separado": "Todos los caminos de caso1 v4 convergen al mismo nodo final único (sucesso_conclusao). No hay una rama estructural de 'game over' — la letalidad se mide exclusivamente por si el puntaje llegó a 0 en el camino (ver 'reglas_de_puntuacion')."
+    },
+
+    "reglas_de_desenlace": {
+      "disparadores_de_fin": [
+        "El alumno elige una opción cuyo destino apunta a un nodo con opciones: [] (nodo terminal).",
+        "El alumno hace click manual en el botón 'Finalizar' (llama finish() directo).",
+        "die() se dispara por puntaje 0 (llama finish() 1.8s después)."
+      ],
+      "tiers_por_puntaje_final_bp": {
+        "bp >= 70": "'ÉXITO PLENO'",
+        "40 <= bp < 70": "'ESTABILIZADO CON SECUELAS'",
+        "bp < 40": "'DESENLACE CRÍTICO'"
+      },
+      "texto_mostrado": "El párrafo de desenlace que ve el alumno es literalmente nodo.descripcion_situación del nodo en el que terminó — el tier (color/título arriba) sale del puntaje, pero el texto narrativo sale del nodo final alcanzado."
+    },
+
+    "resultado_exportado_al_finalizar": {
+      "objeto": {
+        "caso": "'IAMCEST-01' (string fijo por caso — hay que cambiarlo en cada caso nuevo)",
+        "version": "'4.0'",
+        "desenlace": "el tier ('ÉXITO PLENO' | 'ESTABILIZADO CON SECUELAS' | 'DESENLACE CRÍTICO')",
+        "camino": "1 (bp>=70) | 2 (bp>=40) | 3 (bp<40)",
+        "bpFinal": "puntaje final redondeado 0-100",
+        "reservaExcelencia": "S.pe redondeado — puntos de bonus por encima del techo de 100",
+        "omisiones": "0 — placeholder, NO se trackea realmente en v4 pese a existir en el contrato de datos",
+        "iatrogenias": "0 — mismo caso que omisiones: placeholder sin trackeo real en v4 (a diferencia de S.iatro interno, que sí se usa en pantalla pero no se exporta)",
+        "isquemiaTotalMin": "Math.floor(S.simT/60) — minutos totales de caso simulado",
+        "puertaBalonMin": "null en v4",
+        "miocardioSalvable": "null en v4",
+        "vdIdentificado": "false hardcodeado en v4 (residual del contrato original pensado para un caso con ventrículo derecho — caso1 v4 no lo usa)",
+        "reperfundido": "bp >= 40",
+        "soporteVentilatorio": "S.airway ('aire' por defecto salvo que el caso lo cambie)",
+        "tiempoPerdidoMin": "Math.round(S.lostTime/60) — minutos acumulados de inactividad >120s sin actuar",
+        "fallecido": "bp < 40",
+        "dificultad": "CONFIG.dificultad",
+        "registro": "copia del log completo (S.log), en orden cronológico, cada entrada {h:'HH:MM', t:'texto', c:'good|bad|warn|evt'}",
+        "finalizadoEn": "timestamp ISO"
+      },
+      "canales_de_salida": [
+        "window.SimuladorIAMCEST.resultado = resultado",
+        "CONFIG.alFinalizar(resultado) si está definido como función",
+        "window.parent.postMessage({tipo:'simulador-iamcest:finalizado', resultado}, CONFIG.origenPermitido) — sólo si window.parent !== window (o sea, sólo tiene efecto real dentro de un iframe)",
+        "document.dispatchEvent(new CustomEvent('simulador-iamcest:finalizado', {detail: resultado}))"
+      ]
+    },
+
+    "api_publica_window_SimuladorIAMCEST": {
+      "iniciar(velocidad)": "arranca el caso (se llama sola al cargar si CONFIG.autoIniciar/saltarIntro, o al click en 'Comenzar')",
+      "finalizar": "alias de finish() — fuerza el desenlace ya",
+      "pausar / reanudar": "pausan/reanudan el loop de física y dibujo",
+      "verExpediente": "abre el documento docente con las respuestas (#ovCase)",
+      "estado()": "devuelve snapshot liviano {bp, pe, minuto, nodo, ritmo} — útil para un panel de seguimiento externo en vivo",
+      "reiniciar": "location.reload()",
+      "resultado": "null hasta que termine el caso, después el objeto completo descrito arriba",
+      "config": "referencia directa al objeto CONFIG"
+    },
+
+    "checklist_para_crear_un_caso_nuevo_con_este_motor": [
+      "1. Duplicar el archivo HTML completo (motor genérico, no requiere tocar nada del <script> salvo el bloque de datos).",
+      "2. Reemplazar CASO_V4 (o renombrar la constante) con el nuevo titulo_juego, descripcion y estado_inicial.",
+      "3. Construir el grafo de 'nodos': cada fase principal 'fase_N_...', cada complicación abre 'fase_N_resgate_...'. El nodo final (todas las líneas deben converger ahí) debe tener opciones: [].",
+      "4. Cada opción SIEMPRE debe traer: texto, destino, es_correcta, puntos_afectados (aunque sea 0), cambio_estado_paciente completo (las 6 claves), feedback_detallado. printouts es opcional.",
+      "5. Si se quiere un paro visual (FV/asistolia), el texto de ritmo_monitoreo_ecg debe contener literalmente 'fibrilación ventricular'/'taquicardia ventricular' (FV) o 'asistolia'/'muerte encefálica'/'línea isoeléctrica' (asistolia).",
+      "6. Actualizar los literales estáticos fuera del objeto de datos: nombre/edad del paciente en el topbar (.pat .nm) y en el stamp del modal de impreso (abrirImpreso()), el <title>, el 'kick' de la intro, el prefijo 'Caso N ·' del expediente docente, y el campo 'caso' del objeto resultado exportado (ej. 'IAMCEST-02').",
+      "7. Dar de alta la fila en hospital_simulacao_casos (tipo='iframe', arquivo_html apuntando al nuevo archivo, ordem siguiente, ativo=true)."
+    ]
+  },
+
+  "caso_1_contenido": {
+    "NODO_INICIAL": "fase_1_admissao",
+    "NODO_EXITO": "sucesso_conclusao",
+    "titulo_juego": "Simulador Clínico de Emergencia: Código IAMCEST - Línea de Tiempo Dinámica",
+    "descripcion": "Sos el médico de guardia de la Sala Roja de un hospital secundario (sin servicio de hemodinamia). El centro de referencia con hemodinamia más cercano está a 3 horas de distancia (180 minutos). Un paciente de 58 años, sexo masculino, llega quejándose de dolor retroesternal opresivo muy intenso desde hace 1 hora, irradiado al brazo izquierdo, acompañado de sudoración fría. Tu deber es estabilizar al paciente y realizar la reperfusión coronaria de forma segura siguiendo las guías oficiales.",
+    "estado_inicial": {
+      "frecuencia_cardiaca_lpm": 88,
+      "presion_arterial_mmhg": "140/90",
+      "saturacion_oxigeno_pct": 95,
+      "frecuencia_respiratoria_rpm": 18,
+      "escala_dolor": 8,
+      "ritmo_monitoreo_ecg": "Ritmo Sinusal",
+      "puntos_actuales": 100
+    },
+    "nodos": {
+      "fase_1_admissao": {
+        "id": "fase_1_admissao",
+        "etapa": "Fase 1: Admisión y Diagnóstico Electrocardiográfico",
+        "descripcion_situación": "El paciente acaba de ingresar a la Sala Roja. Está pálido, con dolor intenso en el pecho (8/10), sudoración fría, y visiblemente ansioso. Sus signos vitales iniciales son: FC 88 lpm, PA 140/90 mmHg, SpO2 95% en aire ambiente. ¿Cuál es tu primera conducta inmediata para este paciente?",
+        "opciones": [
+          {
+            "texto": "Solicitar electrocardiograma (ECG) de 12 derivaciones inmediatamente (meta <= 10 min), monitorización cardíaca continua y colocar el desfibrilador al lado de la cama.",
+            "destino": "fase_2_estabilizacao",
+            "es_correcta": true,
+            "puntos_afectados": 0,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 90,
+              "presion_arterial_mmhg": "138/88",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Excelente! Esta es la conducta estándar de oro (Clase I). El ECG de 12 derivaciones debe obtenerse e interpretarse por un médico en un máximo de 10 minutos. El desfibrilador al lado de la cama es crucial por el altísimo riesgo de arritmias ventriculares fatales (como FV o TV) en las primeras horas de oclusión coronaria.",
+            "printouts": [
+              {
+                "tipo": "ECG · 12 derivaciones",
+                "titulo": "Electrocardiograma inicial",
+                "cuerpo": "Ritmo sinusal · FC 90 lpm · Eje +65° · PR 170 ms · QRS 88 ms · QTc 405 ms\n\nDII    ST +3 mm (convexo)\nDIII   ST +4 mm (convexo)   ← mayor que DII\naVF    ST +3 mm\nDI     ST −2 mm (especular)\naVL    ST −2 mm (especular)\nV1–V3  sin cambios significativos\n\nIMPRESIÓN: elevación del ST en cara inferior (DII, DIII, aVF) con\ndescenso especular en DI/aVL. Compatible con IAMCEST inferior por\noclusión de la arteria coronaria derecha."
+              }
+            ]
+          },
+          {
+            "texto": "Solicitar ECG de 12 derivaciones, monitorización y accesos venosos, pero omitir la anamnesis dirigida (SAMPLA) enfocada en contraindicaciones y medicamentos previos.",
+            "destino": "fase_2_estabilizacao",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 96,
+              "presion_arterial_mmhg": "145/92",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 19,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Camino semicorrecto! Realizaste el ECG en el tiempo correcto y diagnosticaste el IAMCEST, pero saltarte la historia clínica dirigida (SAMPLA) retrasará decisiones terapéuticas críticas más adelante (como chequear contraindicaciones de fibrinolíticos o el uso de sildenafilo/tadalafilo). El paciente sigue con dolor estable, pero la FC sube levemente por ansiedad."
+          },
+          {
+            "texto": "Solicitar ECG de 12 derivaciones, pero también ordenar un ecocardiograma transtorácico completo a pie de cama y esperar el informe para iniciar cualquier conducta.",
+            "destino": "fase_1_resgate_congestao",
+            "es_correcta": false,
+            "puntos_afectados": -20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 105,
+              "presion_arterial_mmhg": "155/95",
+              "saturacion_oxigeno_pct": 91,
+              "frecuencia_respiratoria_rpm": 24,
+              "escala_dolor": 9,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal con Isquemia"
+            },
+            "feedback_detallado": "¡Camino semierrado! Ningún estudio de imagen o marcador de laboratorio debe postergar la terapia de reperfusión ni las medidas iniciales en el IAMCEST. Esperar el ecocardiograma retrasó la atención 25 minutos. La isquemia miocárdica avanzó, el estrés adrenérgico aumentó la PA y la FC, y el paciente empieza a mostrar signos de congestión pulmonar leve (caída de la SpO2 y aumento de la frecuencia respiratoria)."
+          },
+          {
+            "texto": "Derivar al paciente a la fila de triaje común de la recepción para esperar atención médica estándar debido a la alta ocupación de la guardia.",
+            "destino": "fase_1_resgate_parada",
+            "es_correcta": false,
+            "puntos_afectados": -45,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 0,
+              "presion_arterial_mmhg": "0/0",
+              "saturacion_oxigeno_pct": 0,
+              "frecuencia_respiratoria_rpm": 0,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Fibrilación Ventricular (FV)"
+            },
+            "feedback_detallado": "¡Camino totalmente errado! Dolor torácico típico con sospecha de infarto es una emergencia absoluta que exige derivación directa a la Sala Roja. Al dejarlo sin monitorización en la sala de espera, la oclusión coronaria total desencadenó una Fibrilación Ventricular (FV) por inestabilidad eléctrica miocárdica. ¡El paciente colapsa en el piso sin pulso!",
+            "printouts": [
+              {
+                "tipo": "Monitor · tira de ritmo",
+                "titulo": "Trazado durante el paro",
+                "cuerpo": "Trazado de monitor · derivación II\n\nActividad eléctrica caótica, sin complejos QRS discernibles, sin\nlínea de base identificable, amplitud y frecuencia irregulares.\n\nFC: no determinable · SpO₂: sin señal · PA: no registrable\n\nIMPRESIÓN: Fibrilación ventricular. Paciente sin pulso."
+              }
+            ]
+          }
+        ]
+      },
+      "fase_1_resgate_congestao": {
+        "id": "fase_1_resgate_congestao",
+        "etapa": "Subfase de Rescate: Tratamiento de Congestión Pulmonar Iatrogénica",
+        "descripcion_situación": "La demora en realizar el ecocardiograma hizo que el paciente evolucionara con disnea y estertores crepitantes en los tercios inferiores pulmonares. Está taquipneico y su saturación cayó a 91%. Necesitás reestabilizarlo de inmediato. ¿Cómo reestabilizás al paciente ahora para volver a la línea de tratamiento?",
+        "opciones": [
+          {
+            "texto": "Aplicar ventilación no invasiva (VNI) con CPAP, administrar furosemida 20-40mg IV y obtener el ECG de 12 derivaciones de inmediato.",
+            "destino": "fase_2_estabilizacao",
+            "es_correcta": true,
+            "puntos_afectados": 15,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 94,
+              "presion_arterial_mmhg": "130/80",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Excelente maniobra de rescate! La furosemida y el soporte presórico con VNI mejoraron la distensibilidad pulmonar, reduciendo la precarga y redistribuyendo el líquido alveolar. La saturación sube a 95% y la frecuencia respiratoria se normaliza. Con el ECG finalmente obtenido, visualizás el supradesnivel del ST y volvés a la línea de tiempo semicorrecta."
+          },
+          {
+            "texto": "Mantener al paciente en observación y solo aplicar oxígeno por cánula de alto flujo sin intervenir sobre la sobrecarga de volumen.",
+            "destino": "fase_1_resgate_congestao",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 110,
+              "presion_arterial_mmhg": "160/100",
+              "saturacion_oxigeno_pct": 89,
+              "frecuencia_respiratoria_rpm": 26,
+              "escala_dolor": 9,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal con Congestión Avanzada"
+            },
+            "feedback_detallado": "¡Falla en el rescate! Solo dar oxígeno sin tratar la sobrecarga hemodinámica con diuréticos y presión positiva no resuelve la congestión. El líquido sigue acumulándose en los alvéolos, empeorando la hipoxia. ¡Corregí tu conducta con VNI y diuréticos de inmediato!"
+          }
+        ]
+      },
+      "fase_1_resgate_parada": {
+        "id": "fase_1_resgate_parada",
+        "etapa": "Subfase de Rescate: Reanimación Cardiopulmonar (PCR en FV)",
+        "descripcion_situación": "El paciente está en paro cardiorrespiratorio en ritmo de Fibrilación Ventricular (FV) en la sala de espera común. Fue traído a las corridas a la cama de trauma. Debés reanimarlo y sacarlo del PCR. ¿Cuál es tu conducta de emergencia inmediata?",
+        "opciones": [
+          {
+            "texto": "Realizar desfibrilación eléctrica inmediata con choque de 200 Julios (bifásico), seguida de RCP inmediata por 2 minutos y realización del ECG de 12 derivaciones apenas se logre el RCE (Retorno de la Circulación Espontánea).",
+            "destino": "fase_2_estabilizacao",
+            "es_correcta": true,
+            "puntos_afectados": 25,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 110,
+              "presion_arterial_mmhg": "105/65",
+              "saturacion_oxigeno_pct": 94,
+              "frecuencia_respiratoria_rpm": 20,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Excelente maniobra de rescate! La desfibrilación precoz en ritmos desfibrilables (FV/TV sin pulso) es la conducta que salva vidas. El paciente vuelve a ritmo sinusal estable tras un ciclo de RCP de alta calidad. Con el pulso restablecido, el ECG se realiza de inmediato y confirma el supradesnivel del ST. Estabilizaste al paciente y volviste a la línea de tratamiento."
+          },
+          {
+            "texto": "Realizar masaje cardíaco, aplicar una dosis de adrenalina 1mg IV de inmediato y solicitar análisis de sangre sin desfibrilar.",
+            "destino": "fase_1_resgate_parada",
+            "es_correcta": false,
+            "puntos_afectados": -15,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 0,
+              "presion_arterial_mmhg": "0/0",
+              "saturacion_oxigeno_pct": 0,
+              "frecuencia_respiratoria_rpm": 0,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Asistolia / Actividad Eléctrica Sin Pulso"
+            },
+            "feedback_detallado": "¡Falla crítica de rescate! El ritmo de paro es Fibrilación Ventricular (desfibrilable). El tratamiento de elección absoluto y prioritario es la desfibrilación eléctrica. La adrenalina sin choque y la espera por análisis solo prolongan el tiempo de anoxia cerebral y miocárdica, haciendo que la FV degenere en asistolia. ¡Aplicá el choque de 200J de inmediato!"
+          }
+        ]
+      },
+      "fase_2_estabilizacao": {
+        "id": "fase_2_estabilizacao",
+        "etapa": "Fase 2: Medidas Terapéuticas Iniciales y Oxigenoterapia",
+        "descripcion_situación": "El diagnóstico de IAMCEST anterior está confirmado (ST ↑ en V1-V4). El paciente está monitorizado y presenta dolor opresivo intenso (8/10). Su saturación basal es estable en 95% en aire ambiente. ¿Cuál es tu prescripción terapéutica inicial para el dolor, el control plaquetario y el oxígeno?",
+        "opciones": [
+          {
+            "texto": "Mantener al paciente en aire ambiente (sin O2 suplementario), administrar AAS 300 mg para masticar y evaluar Nitroglicerina sublingual tras chequear contraindicaciones.",
+            "destino": "fase_3_reperfusaodecisaograndecaminho",
+            "es_correcta": true,
+            "puntos_afectados": 0,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 84,
+              "presion_arterial_mmhg": "125/80",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 16,
+              "escala_dolor": 5,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Excelente conducta basada en evidencia! 1) El oxígeno en pacientes normoxémicos (SpO2 >= 90%) está contraindicado (Clase III), porque la hiperoxia genera vasoconstricción coronaria y aumenta el área infartada. 2) El AAS debe masticarse para lograr un efecto antiplaquetario ultrarrápido. 3) Los nitratos reducen el dolor y la precarga de forma segura si no hay uso de inhibidores de la PDE-5 ni infarto de VD (pared inferior). ¡El dolor bajó a 5/10 y los parámetros hemodinámicos mejoraron!"
+          },
+          {
+            "texto": "Ofrecer oxígeno de forma selectiva a 2L/min por cánula nasal, administrar AAS 300 mg masticable y Nitroglicerina SL, pero sin preguntar sobre el uso de sildenafilo o tadalafilo.",
+            "destino": "fase_3_reperfusaodecisaograndecaminho",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 86,
+              "presion_arterial_mmhg": "115/75",
+              "saturacion_oxigeno_pct": 98,
+              "frecuencia_respiratoria_rpm": 17,
+              "escala_dolor": 6,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Camino semicorrecto! El AAS masticable fue correcto y la cánula nasal de O2 en bajo flujo generó poca repercusión de vasoconstricción. Sin embargo, administrar Nitroglicerina sublingual sin descartar activamente el uso reciente de inhibidores de la fosfodiesterasa-5 (como sildenafilo) es un riesgo grave de seguridad farmacológica. Por suerte, en este caso, el paciente no había usado esas sustancias y la PA se mantuvo en el límite."
+          },
+          {
+            "texto": "Administrar AAS 300 mg entero por vía oral (comprimido con recubrimiento entérico), colocar máscara de oxígeno con reservorio a 12 L/min y administrar Nitroglicerina SL.",
+            "destino": "fase_2_resgate_hiperoxia",
+            "es_correcta": false,
+            "puntos_afectados": -20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 96,
+              "presion_arterial_mmhg": "145/90",
+              "saturacion_oxigeno_pct": 100,
+              "frecuencia_respiratoria_rpm": 20,
+              "escala_dolor": 9,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Camino semierrado! Dos errores fisiopatológicos importantes: 1) El AAS con recubrimiento entérico tragado entero tarda hasta 2 horas en alcanzar el pico de antiagregación plaquetaria. 2) La máscara de oxígeno a 12 L/min generó hiperoxia innecesaria (ya que el paciente saturaba 95% basal), causando vasoconstricción coronaria refleja. Como resultado, el dolor torácico paradójicamente empeoró de 8/10 a 9/10 y el estrés reactivo aumentó la FC y la PA."
+          },
+          {
+            "texto": "Iniciar infusión continua de Nitroglicerina intravenosa en dosis alta de inmediato y administrar Metoprolol 5mg IV rápido para reducir la frecuencia cardíaca del paciente.",
+            "destino": "fase_2_resgate_choque",
+            "es_correcta": false,
+            "puntos_afectados": -35,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 54,
+              "presion_arterial_mmhg": "78/42",
+              "saturacion_oxigeno_pct": 92,
+              "frecuencia_respiratoria_rpm": 22,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Bradicardia Sinusal / Shock"
+            },
+            "feedback_detallado": "¡Camino totalmente errado! Administrar betabloqueante intravenoso (Metoprolol) en la fase aguda del infarto a un paciente que todavía no está plenamente estabilizado, y asociarlo a una infusión agresiva de nitrato, provocó una caída drástica del gasto cardíaco y de la presión de perfusión coronaria. El paciente evoluciona rápidamente con bradicardia marcada e hipotensión grave (shock cardiogénico/farmacológico inducido)."
+          }
+        ]
+      },
+      "fase_2_resgate_hiperoxia": {
+        "id": "fase_2_resgate_hiperoxia",
+        "etapa": "Subfase de Rescate: Corrección de Hiperoxia y Antiagregación Lenta",
+        "descripcion_situación": "El paciente se queja de que el dolor aumentó a 9/10 después de la máscara de oxígeno de alto flujo, y el AAS entérico todavía no actuó sobre el trombo activo. ¿Cómo reestabilizás al paciente y acelerás la terapéutica?",
+        "opciones": [
+          {
+            "texto": "Retirar de inmediato la máscara de oxígeno dejando al paciente en aire ambiente (la SpO2 vuelve al normal de 95%) y administrar AAS 300mg simple y SIN recubrimiento para que el paciente lo mastique de inmediato.",
+            "destino": "fase_3_reperfusaodecisaograndecaminho",
+            "es_correcta": true,
+            "puntos_afectados": 15,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 85,
+              "presion_arterial_mmhg": "128/82",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 17,
+              "escala_dolor": 6,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel del ST"
+            },
+            "feedback_detallado": "¡Maniobra de rescate perfecta! Retirar el exceso de oxígeno revirtió la vasoconstricción coronaria inducida por la hiperoxia. Al hacer que el paciente mastique un AAS simple sin recubrimiento, garantizaste la inhibición plaquetaria inmediata mediante el bloqueo rápido del tromboxano A2. El dolor bajó de 9/10 a 6/10 y el paciente volvió a la línea de tiempo estable."
+          },
+          {
+            "texto": "Mantener la máscara de oxígeno e inyectar una dosis alta de morfina (10mg IV directo) para forzar el alivio del dolor del paciente.",
+            "destino": "fase_2_resgate_hiperoxia",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 80,
+              "presion_arterial_mmhg": "110/70",
+              "saturacion_oxigeno_pct": 99,
+              "frecuencia_respiratoria_rpm": 10,
+              "escala_dolor": 9,
+              "ritmo_monitoreo_ecg": "Depresión Respiratoria por Opioide"
+            },
+            "feedback_detallado": "¡Falla en el rescate! Dar morfina en dosis excesiva sin eliminar la causa fisiológica del empeoramiento del dolor (hiperoxia), y con el AAS ineficaz, llevó a depresión respiratoria (la FR cae a 10 rpm) y no resolvió el sufrimiento miocárdico. ¡Suspendé el oxígeno y hacé el AAS masticable correcto!"
+          }
+        ]
+      },
+      "fase_2_resgate_choque": {
+        "id": "fase_2_resgate_choque",
+        "etapa": "Subfase de Rescate: Tratamiento de Shock Inducido",
+        "descripcion_situación": "El paciente colapsó en hipotensión profunda (PA 78/42 mmHg) y bradicardia (FC 54 lpm) debido al uso combinado e inadecuado de Metoprolol IV y Nitroglicerina en dosis alta. La perfusión cerebral y coronaria está críticamente reducida. ¿Qué conducta de reestabilización inmediata adoptás?",
+        "opciones": [
+          {
+            "texto": "Suspender de inmediato la infusión de Nitroglicerina, administrar Atropina 0.5mg IV en bolo para revertir el efecto vagotónico/betabloqueante y realizar infusión rápida de 250ml de suero fisiológico.",
+            "destino": "fase_3_reperfusaodecisaograndecaminho",
+            "es_correcta": true,
+            "puntos_afectados": 20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 76,
+              "presion_arterial_mmhg": "108/68",
+              "saturacion_oxigeno_pct": 94,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 7,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal"
+            },
+            "feedback_detallado": "¡Excelente maniobra de rescate! Al suspender el nitrato vasodilatador, administrar atropina para elevar la frecuencia cardíaca y expandir moderadamente el volumen intravascular con suero, restauraste el gasto cardíaco y elevaste la presión de perfusión miocárdica de forma rápida y segura. El paciente está reestabilizado y el caso vuelve a la línea de tiempo."
+          },
+          {
+            "texto": "Iniciar de inmediato infusión continua de Adrenalina en dosis alta sin suspender la nitroglicerina ni expandir volumen.",
+            "destino": "fase_2_resgate_choque",
+            "es_correcta": false,
+            "puntos_afectados": -15,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 130,
+              "presion_arterial_mmhg": "70/40",
+              "saturacion_oxigeno_pct": 90,
+              "frecuencia_respiratoria_rpm": 24,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Taquicardia Ventricular Sostenida (TVS)"
+            },
+            "feedback_detallado": "¡Falla en el rescate! La adrenalina en dosis alta sobre un miocardio gravemente isquémico, bajo el efecto de un nitrato vasodilatador activo que drena el volumen central, eleva el consumo de oxígeno al extremo y precipita arritmias ventriculares malignas (TVS en el monitor). ¡Suspendé el nitrato y usá volumen y Atropina primero!"
+          }
+        ]
+      },
+      "fase_3_reperfusaodecisaograndecaminho": {
+        "id": "fase_3_reperfusaodecisaograndecaminho",
+        "etapa": "Fase 3: Elección de Estrategia de Reperfusión y Adyuvantes",
+        "descripcion_situación": "El paciente está estabilizado. Te encontrás en un hospital de segundo nivel sin hemodinamia. El hospital de referencia con hemodinamia activa más cercano está a 3 horas de distancia (180 minutos). El tiempo de inicio del dolor es de 1 hora. ¿Cuál es tu decisión respecto a la reperfusión coronaria y al segundo antiagregante?",
+        "opciones": [
+          {
+            "texto": "Fibrinólisis inmediata en la sala de emergencias (meta <= 10 min) con Tenecteplase (TNK) ajustado por peso, asociada a Clopidogrel 300 mg como segundo antiagregante y Enoxaparina como anticoagulante.",
+            "destino": "fase_4_posreperfusaomonitorizacao",
+            "es_correcta": true,
+            "puntos_afectados": 0,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 78,
+              "presion_arterial_mmhg": "118/74",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 16,
+              "escala_dolor": 3,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con disminución del Supradesnivel"
+            },
+            "feedback_detallado": "¡Excelente! Esta es la elección perfecta basada estrictamente en las guías (Clase I). Como el tiempo estimado hasta la apertura del balón en el centro de referencia supera los 120 minutos (son 180 min de traslado), la fibrinólisis inmediata debe realizarse en el hospital de origen en un máximo de 10 minutos. Para la fibrinólisis, el Clopidogrel (300 mg) es el único antiagregante P2Y12 indicado para evitar sangrado cerebral. La arteria empieza a desobstruirse y el dolor baja a 3/10."
+          },
+          {
+            "texto": "Fibrinólisis inmediata con TNK y Enoxaparina, pero prescribir Clopidogrel en dosis de solo 75 mg por vía oral, sin dosis de carga.",
+            "destino": "fase_4_posreperfusaomonitorizacao",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 84,
+              "presion_arterial_mmhg": "122/78",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 5,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Supradesnivel Persistente"
+            },
+            "feedback_detallado": "¡Camino semicorrecto! Elegiste la vía de reperfusión correcta (trombólisis química debido al tiempo de traslado de 3 horas), pero administrar solo 75 mg de Clopidogrel a un paciente de 58 años (menor de 75 años) es una subdosis. Los pacientes menores de 75 años deben recibir obligatoriamente la dosis de carga de 300 mg para garantizar una antiagregación plaquetaria eficaz. La reperfusión ocurrirá de forma más lenta e incompleta."
+          },
+          {
+            "texto": "Fibrinólisis inmediata con TNK y Enoxaparina, pero administrar Prasugrel 60 mg (o Ticagrelor 180 mg) como segundo antiagregante potente para maximizar la apertura de la arteria.",
+            "destino": "fase_3_resgate_sangramento",
+            "es_correcta": false,
+            "puntos_afectados": -25,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 110,
+              "presion_arterial_mmhg": "85/50",
+              "saturacion_oxigeno_pct": 92,
+              "frecuencia_respiratoria_rpm": 22,
+              "escala_dolor": 3,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal / Shock Hemorrágico"
+            },
+            "feedback_detallado": "¡Camino semierrado! El uso de inhibidores potentes del P2Y12 (Prasugrel o Ticagrelor) está formalmente contraindicado si la estrategia de reperfusión elegida es la fibrinólisis química, por el altísimo riesgo de sangrado mayor. La asociación de estos agentes con el Tenecteplase provocó una hemorragia digestiva masiva y sangrado de vías urinarias en el paciente. Desarrolla shock hemorrágico con caída de la PA y taquicardia compensatoria."
+          },
+          {
+            "texto": "Ignorar la fibrinólisis química y colocar al paciente de inmediato en una ambulancia común para trasladarlo al hospital con hemodinamia a 3 horas de distancia.",
+            "destino": "fase_3_resgate_congestaotransporte",
+            "es_correcta": false,
+            "puntos_afectados": -40,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 118,
+              "presion_arterial_mmhg": "80/45",
+              "saturacion_oxigeno_pct": 85,
+              "frecuencia_respiratoria_rpm": 28,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal con Isquemia Crítica"
+            },
+            "feedback_detallado": "¡Camino totalmente errado! Intentar trasladar al paciente durante 3 horas sin realizar reperfusión inmediata es un error grave que viola la regla de oro de los 120 minutos. En el camino, la arteria coronaria ocluida provocó necrosis transmural masiva, llevando a una falla aguda del Ventrículo Izquierdo. El paciente desarrolla Edema Agudo de Pulmón y shock cardiogénico a bordo de la ambulancia."
+          }
+        ]
+      },
+      "fase_3_resgate_sangramento": {
+        "id": "fase_3_resgate_sangramento",
+        "etapa": "Subfase de Rescate: Tratamiento de Hemorragia Grave Iatrogénica",
+        "descripcion_situación": "El paciente presenta sangrado activo profuso en encías, hematuria y caída de la PA (85/50 mmHg) debido al uso indebido de Prasugrel combinado con el trombolítico TNK. Necesitás detener el sangrado y restaurar la volemia. ¿Qué conducta inmediata adoptás para reestabilizar al paciente?",
+        "opciones": [
+          {
+            "texto": "Suspender de inmediato la infusión de nuevos anticoagulantes/antiagregantes, realizar compresión local, tipificación sanguínea con reserva de concentrado de glóbulos rojos, y realizar infusión moderada de cristaloides.",
+            "destino": "fase_4_posreperfusaomonitorizacao",
+            "es_correcta": true,
+            "puntos_afectados": 20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 90,
+              "presion_arterial_mmhg": "110/70",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 3,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal"
+            },
+            "feedback_detallado": "¡Excelente maniobra de rescate! Al suspender nuevos factores antitrombóticos, preparar soporte transfusional de emergencia y restaurar la volemia con volumen controlado, estabilizaste hemodinámicamente al paciente sin reocluir la coronaria. El sangrado fue controlado y el paciente vuelve estable a la línea de tiempo del posinfarto."
+          },
+          {
+            "texto": "Administrar de inmediato ácido tranexámico (antifibrinolítico) en dosis alta por vía intravenosa directa para revertir totalmente la trombólisis.",
+            "destino": "fase_3_resgate_sangramento",
+            "es_correcta": false,
+            "puntos_afectados": -15,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 120,
+              "presion_arterial_mmhg": "130/85",
+              "saturacion_oxigeno_pct": 92,
+              "frecuencia_respiratoria_rpm": 20,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal con Dolor Refractario / Reoclusión"
+            },
+            "feedback_detallado": "¡Falla en el rescate! El uso intempestivo de antifibrinolíticos sistémicos revierte completamente el efecto del Tenecteplase, causando una reoclusión coronaria abrupta e hiperaguda. El dolor torácico vuelve a 10/10 y el infarto se expande. El control del sangrado debe ser de soporte y local, reservando los antifibrinolíticos para hemorragias con riesgo de vida inminente."
+          }
+        ]
+      },
+      "fase_3_resgate_congestaotransporte": {
+        "id": "fase_3_resgate_congestaotransporte",
+        "etapa": "Subfase de Rescate: Edema Agudo y Shock en Tránsito",
+        "descripcion_situación": "El paciente está en la ambulancia, a hora y media de viaje de la hemodinamia. Está cianótico, saturando 85%, con estertores en todos los campos pulmonares y PA en el límite de 80/45 mmHg. ¿Cómo intervenís de emergencia ante esta grave falla de planificación?",
+        "opciones": [
+          {
+            "texto": "Detener la ambulancia en el centro de salud más cercano, aplicar soporte de ventilación no invasiva (VNI), administrar un bolo de Tenecteplase (TNK) de inmediato en el lugar para abrir la arteria y revertir la falla del ventrículo.",
+            "destino": "fase_4_posreperfusaomonitorizacao",
+            "es_correcta": true,
+            "puntos_afectados": 25,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 92,
+              "presion_arterial_mmhg": "100/60",
+              "saturacion_oxigeno_pct": 93,
+              "frecuencia_respiratoria_rpm": 19,
+              "escala_dolor": 4,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Caída del Supradesnivel"
+            },
+            "feedback_detallado": "¡Excelente y decisivo rescate! La única forma de salvar el miocardio y revertir la insuficiencia cardíaca hiperaguda era desobstruir la arteria coronaria con el trombolítico químico. El TNK y la ventilación positiva restauraron la oxigenación y el gasto cardíaco del paciente, reestabilizando sus signos y permitiendo un traslado posterior mucho más seguro. Salvaste al paciente y volviste a la línea de tiempo."
+          },
+          {
+            "texto": "Aumentar la velocidad de la ambulancia para llegar más rápido al destino e inyectar Dobutamina intravenosa sin trombolisar al paciente.",
+            "destino": "fase_3_resgate_congestaotransporte",
+            "es_correcta": false,
+            "puntos_afectados": -20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 140,
+              "presion_arterial_mmhg": "65/35",
+              "saturacion_oxigeno_pct": 80,
+              "frecuencia_respiratoria_rpm": 32,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Taquicardia Ventricular / Paro Inminente"
+            },
+            "feedback_detallado": "¡Falla de rescate gravísima! Administrar Dobutamina (inotrópico que aumenta el consumo de O2) en un miocardio con la arteria 100% cerrada, sin realizar la apertura mecánica o química del vaso, acelera la muerte de las células musculares cardíacas y desencadena arritmias ventriculares fatales por agotamiento isquémico. ¡El paciente está al borde de la muerte!"
+          }
+        ]
+      },
+      "fase_4_posreperfusaomonitorizacao": {
+        "id": "fase_4_posreperfusaomonitorizacao",
+        "etapa": "Fase 4: Evaluación del Éxito de la Reperfusión y Derivación",
+        "descripcion_situación": "El paciente completó la fibrinólisis hace 75 minutos. Está monitorizado en la Sala Roja. Necesitás evaluar si la terapia tuvo éxito y determinar el plan de cuidados definitivo. ¿Qué conducta clínica y plan de derivación definís para el paciente?",
+        "opciones": [
+          {
+            "texto": "Evaluar criterios de reperfusión (reducción del supradesnivel del ST > 50% en 60-90 min, mejora del dolor y arritmias benignas) y, si se confirman, programar el traslado del paciente para cateterismo de rutina entre 2 y 24 horas (Estrategia Farmacoinvasiva).",
+            "destino": "sucesso_conclusao",
+            "es_correcta": true,
+            "puntos_afectados": 0,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 72,
+              "presion_arterial_mmhg": "120/75",
+              "saturacion_oxigeno_pct": 96,
+              "frecuencia_respiratoria_rpm": 14,
+              "escala_dolor": 1,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con ST normalizado / RIVA transitorio"
+            },
+            "feedback_detallado": "¡Felicitaciones! Alcanzaste la excelencia clínica máxima. Evaluar rigurosamente los criterios de reperfusión de 60-90 minutos es obligatorio. Si hay éxito, la estrategia recomendada por las guías internacionales (ESC 2023) es la farmacoinvasiva: realizar el cateterismo de rutina entre 2 y 24 horas. ¡El paciente tiene el dolor resuelto (1/10) y está hemodinámicamente estable!"
+          },
+          {
+            "texto": "Confirmar que el dolor disminuyó y el supradesnivel se redujo > 50%, pero mantener al paciente internado en la UCI de tu hospital secundario por 48 horas en reposo absoluto, sin programar el traslado para cateterismo.",
+            "destino": "sucesso_conclusao",
+            "es_correcta": false,
+            "puntos_afectados": -10,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 74,
+              "presion_arterial_mmhg": "120/78",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 15,
+              "escala_dolor": 2,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal Estable"
+            },
+            "feedback_detallado": "¡Camino semicorrecto! El tratamiento de soporte y la evaluación inicial fueron adecuados, pero no programar el cateterismo dentro de las 24 horas posteriores a una fibrinólisis exitosa expone al paciente al riesgo de reoclusión de la placa aterosclerótica inestable. Aunque se mantuvo estable por suerte clínica, las guías de 2023 recomiendan la realización obligatoria del estudio invasivo en la ventana de 2 a 24 horas."
+          },
+          {
+            "texto": "Verificar que el paciente sigue con dolor intenso (8/10) y sin caída del supradesnivel del ST tras 90 minutos (trombólisis fallida), y prescribir una segunda dosis de Tenecteplase (TNK) para intentar desobstruir la arteria.",
+            "destino": "fase_4_resgate_falhatrombose",
+            "es_correcta": false,
+            "puntos_afectados": -25,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 105,
+              "presion_arterial_mmhg": "80/40",
+              "saturacion_oxigeno_pct": 91,
+              "frecuencia_respiratoria_rpm": 22,
+              "escala_dolor": 8,
+              "ritmo_monitoreo_ecg": "Taquicardia Sinusal / Shock con Sangrado Intracraneal"
+            },
+            "feedback_detallado": "¡Camino semierrado! Ante una fibrinólisis fallida (trombólisis ineficaz), está formalmente prohibido repetir la dosis del trombolítico por el riesgo catastrófico de hemorragia intracraneal. El paciente evoluciona con disminución del nivel de conciencia por sangrado cerebral masivo y shock. La conducta correcta inmediata ante la falla de reperfusión es derivar al paciente de inmediato a una Intervención Coronaria Percutánea (ICP) de Rescate en el centro de referencia."
+          },
+          {
+            "texto": "Como el dolor desapareció totalmente y el supradesnivel se redujo, dar el alta hospitalaria directa al paciente desde la sala de emergencias para seguimiento ambulatorio la semana próxima.",
+            "destino": "fase_4_resgate_reinfarto",
+            "es_correcta": false,
+            "puntos_afectados": -45,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 0,
+              "presion_arterial_mmhg": "0/0",
+              "saturacion_oxigeno_pct": 0,
+              "frecuencia_respiratoria_rpm": 0,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Asistolia por Paro Cardíaco Tardío"
+            },
+            "feedback_detallado": "¡Camino totalmente errado! Nunca se da de alta a un paciente que acaba de sufrir un IAMCEST en las primeras horas de evolución. El riesgo de reoclusión coronaria aguda por inestabilidad de la placa es altísimo. Pocas horas después, camino a su casa, la arteria se cerró de nuevo de forma hiperaguda, desencadenando arritmia ventricular y colapso cardíaco domiciliario."
+          }
+        ]
+      },
+      "fase_4_resgate_falhatrombose": {
+        "id": "fase_4_resgate_falhatrombose",
+        "etapa": "Subfase de Rescate: Falla de Trombólisis y Sangrado Cerebral",
+        "descripcion_situación": "El paciente desarrolló signos de sangrado intracraneal iatrogénico por exceso de dosis de TNK, con anisocoria y disminución de la conciencia, asociada a la no reperfusión de la coronaria. ¿Cómo intervenís con urgencia para estabilizar e intentar revertir este escenario?",
+        "opciones": [
+          {
+            "texto": "Suspender de inmediato cualquier antitrombótico, garantizar protección de la vía aérea (intubación si es necesario), solicitar traslado aéreo/ambulancia de UCI para ICP de Rescate en el centro de referencia y contactar a neurocirugía.",
+            "destino": "sucesso_conclusao",
+            "es_correcta": true,
+            "puntos_afectados": 20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 88,
+              "presion_arterial_mmhg": "110/70",
+              "saturacion_oxigeno_pct": 95,
+              "frecuencia_respiratoria_rpm": 14,
+              "escala_dolor": 2,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Isquemia Controlada"
+            },
+            "feedback_detallado": "¡Excelente y avanzado rescate! La protección de la vía aérea resguardó la ventilación cerebral del paciente en el contexto de sangrado del sistema nervioso central. La suspensión total de antiagregantes y la activación inmediata del traslado para ICP de Rescate es la única medida que puede, al mismo tiempo, salvar el miocardio bajo isquemia sin aumentar el sangrado cerebral de forma letal. El paciente fue reestabilizado y trasladado."
+          },
+          {
+            "texto": "Administrar dosis estándar de Heparina No Fraccionada intravenosa continua para evitar nuevos coágulos en la coronaria e ignorar el déficit neurológico.",
+            "destino": "fase_4_resgate_falhatrombose",
+            "es_correcta": false,
+            "puntos_afectados": -20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 0,
+              "presion_arterial_mmhg": "0/0",
+              "saturacion_oxigeno_pct": 0,
+              "frecuencia_respiratoria_rpm": 0,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Muerte Encefálica / Asistolia"
+            },
+            "feedback_detallado": "¡Falla de rescate crítica! Dar más heparina a un paciente con hemorragia intracraneal activa agrava el sangrado a niveles cerebrales fatales, culminando en hernia cerebral y muerte encefálica. ¡Suspendé todos los anticoagulantes de inmediato!"
+          }
+        ]
+      },
+      "fase_4_resgate_reinfarto": {
+        "id": "fase_4_resgate_reinfarto",
+        "etapa": "Subfase de Rescate: Reanimación por Reinfarto por Alta Precoz",
+        "descripcion_situación": "El paciente colapsó en la vía pública debido a la reoclusión coronaria aguda tras el alta precoz, volviendo al hospital en fibrilación ventricular refractaria. ¿Cómo lo reanimás y resolvés la causa raíz de su paro cardíaco?",
+        "opciones": [
+          {
+            "texto": "Realizar desfibrilación secuencial de alta energía (200J), iniciar RCP avanzada, aplicar Heparina y Amiodarona, y activar traslado inmediato con prioridad máxima para ICP de urgencia absoluta.",
+            "destino": "sucesso_conclusao",
+            "es_correcta": true,
+            "puntos_afectados": 25,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 98,
+              "presion_arterial_mmhg": "100/60",
+              "saturacion_oxigeno_pct": 94,
+              "frecuencia_respiratoria_rpm": 18,
+              "escala_dolor": 2,
+              "ritmo_monitoreo_ecg": "Ritmo Sinusal con Infradesnivel residual"
+            },
+            "feedback_detallado": "¡Maniobra de rescate excepcional! Aunque el alta fue un error grave, lo corregiste de forma brillante con protocolo de PCR avanzado para ritmos desfibrilables y activación de la angioplastia de urgencia extrema para abrir la arteria reocluida de forma mecánica. El paciente recupera el pulso espontáneo y es trasladado. El caso converge de vuelta."
+          },
+          {
+            "texto": "Realizar solo compresiones torácicas por 10 minutos sin desfibrilar y esperar que el ritmo se normalice espontáneamente.",
+            "destino": "fase_4_resgate_reinfarto",
+            "es_correcta": false,
+            "puntos_afectados": -20,
+            "cambio_estado_paciente": {
+              "frecuencia_cardiaca_lpm": 0,
+              "presion_arterial_mmhg": "0/0",
+              "saturacion_oxigeno_pct": 0,
+              "frecuencia_respiratoria_rpm": 0,
+              "escala_dolor": 10,
+              "ritmo_monitoreo_ecg": "Línea Isoeléctrica Completa"
+            },
+            "feedback_detallado": "¡Falla en el rescate! La FV no revierte espontáneamente sin desfibrilación precoz. Solo masajear sin aplicar los choques de 200J genera muerte miocárdica irreversible por agotamiento y falla de la bomba celular. ¡Desfibrilen al paciente de inmediato!"
+          }
+        ]
+      },
+      "sucesso_conclusao": {
+        "id": "sucesso_conclusao",
+        "etapa": "Fin del Caso Clínico: Caso Concluido",
+        "descripcion_situación": "El paciente fue derivado con éxito y de forma segura para la realización del cateterismo coronario, con las arterias permeables y el miocardio preservado. Completaste el simulador clínico de emergencia según las guías oficiales de la ESC (2023) y AHA/ACC (2025).",
+        "opciones": []
+      }
+    }
+  }
+}

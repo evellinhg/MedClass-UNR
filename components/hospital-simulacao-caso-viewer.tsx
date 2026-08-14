@@ -19,7 +19,9 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
   const [loading, setLoading] = useState(true)
   const [caso, setCaso] = useState<HospitalSimulacaoCaso | null>(null)
   const [podeAcessar, setPodeAcessar] = useState(false)
+  const [isDocente, setIsDocente] = useState(false)
   const salvouRef = useRef(false)
+  const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
     Promise.all([
@@ -28,6 +30,9 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
     ]).then(([{ data }, planStatus]) => {
       setCaso((data as HospitalSimulacaoCaso) ?? null)
       setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || planStatus?.plan === "vip" || false)
+      // Só admin/colaborador (nunca vip comum) recebe o expediente docente
+      // com as respostas -- ver CONFIG.mostrarExpediente no motor v5.
+      setIsDocente(planStatus?.isAdmin || planStatus?.isColaborador || false)
       setLoading(false)
     })
   }, [casoId])
@@ -35,6 +40,10 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
   useEffect(() => {
     const handleMessage = async (event: MessageEvent) => {
       if (event.origin !== window.location.origin) return
+      // M-07: además del origin, exige que el mensaje venga del iframe que
+      // efectivamente renderizamos -- evita que otro frame de la misma
+      // página inyecte un resultado falso.
+      if (event.source !== iframeRef.current?.contentWindow) return
       if (!event.data || event.data.tipo !== "simulador-iamcest:finalizado") return
       if (salvouRef.current) return
       salvouRef.current = true
@@ -123,7 +132,8 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
       ) : (
         <div className="overflow-hidden rounded-[24px] border border-border">
           <iframe
-            src={caso.arquivo_html ?? undefined}
+            ref={iframeRef}
+            src={caso.arquivo_html ? (isDocente ? `${caso.arquivo_html}?modo=docente` : caso.arquivo_html) : undefined}
             className="h-[900px] w-full border-0"
             title={caso.titulo}
             allow="autoplay"

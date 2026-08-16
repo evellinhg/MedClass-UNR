@@ -22,6 +22,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { PlanRestrictedNotice } from "@/components/plan-restricted-notice"
+import { GeneratingOverlay } from "@/components/generating-overlay"
 import type { SimuladoConfig } from "@/components/simulado-player"
 import { useLanguage } from "@/lib/i18n"
 
@@ -146,7 +147,9 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
   }
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <>
+      {starting && <GeneratingOverlay message={t.practiceLauncher.gerando} />}
+      <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle>{t.practiceLauncher.dialogTitulo}</DialogTitle>
@@ -320,6 +323,7 @@ export function PracticeLauncher({ open, onOpenChange, onStart }: PracticeLaunch
           )}
         </DialogFooter>
       </DialogContent>
-    </Dialog>
+      </Dialog>
+    </>
   )
 }

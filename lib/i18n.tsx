@@ -982,6 +982,7 @@ const pt = {
     ariaVerCorrecao: "Ver correção",
     ariaIniciar: "Iniciar treinamento",
     ariaExcluir: "Excluir treinamento",
+    gerandoSimulado: "Gerando simulado...",
   },
   practiceLauncher: {
     dialogTitulo: "Configurar Treinamento Livre",
@@ -999,6 +1000,7 @@ const pt = {
     fechar: "Fechar",
     iniciarTreino: "Iniciar Treinamento Livre",
     labelAleatorias: "Questões aleatórias",
+    gerando: "Gerando treinamento...",
   },
   simuladoPlayer: {
     somenteLeitura: "Somente leitura",
@@ -2089,6 +2091,7 @@ const es: typeof pt = {
     ariaVerCorrecao: "Ver corrección",
     ariaIniciar: "Iniciar entrenamiento",
     ariaExcluir: "Eliminar entrenamiento",
+    gerandoSimulado: "Generando simulacro...",
   },
   practiceLauncher: {
     dialogTitulo: "Configurar Entrenamiento Libre",
@@ -2106,6 +2109,7 @@ const es: typeof pt = {
     fechar: "Cerrar",
     iniciarTreino: "Iniciar Entrenamiento Libre",
     labelAleatorias: "Preguntas aleatorias",
+    gerando: "Generando entrenamiento...",
   },
   simuladoPlayer: {
     somenteLeitura: "Solo lectura",

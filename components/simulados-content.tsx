@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/dialog"
 import { SimuladoPlayer, type SimuladoConfig } from "@/components/simulado-player"
 import { PracticeLauncher } from "@/components/practice-launcher"
+import { GeneratingOverlay } from "@/components/generating-overlay"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import { useLanguage } from "@/lib/i18n"
 
@@ -260,6 +261,7 @@ export function SimuladosContent() {
 
   return (
     <div className="space-y-6">
+      {creating && <GeneratingOverlay message={t.treinamentos.gerandoSimulado} />}
       {/* Header */}
       <div>
         <h2 className="text-2xl font-bold text-gradient-brand">{t.treinamentos.headerTitulo}</h2>

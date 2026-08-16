@@ -265,6 +265,9 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
 .outcome td{padding:4px 0;border-bottom:1px solid var(--line);color:#a2b6c8}
 .outcome td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;color:#e9f1f9}
 .btn{display:inline-block;margin-top:14px;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;padding:9px 18px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+#stgNext{background:linear-gradient(135deg,#c6ff3a,#84cc16);border-color:transparent;color:#0a1f00;font-weight:800;box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55);animation:stgNextPulse 1.6s ease-in-out infinite}
+#stgNext:hover{background:linear-gradient(135deg,#d4ff6b,#9ee034);box-shadow:0 0 14px rgba(198,255,58,.9),0 0 34px rgba(132,204,22,.7)}
+@keyframes stgNextPulse{0%,100%{box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55)}50%{box-shadow:0 0 16px rgba(198,255,58,1),0 0 40px rgba(132,204,22,.8)}}
 /* ---- EXPEDIENTE DEL CASO (documento embebido) ---- */
 .doc{max-width:860px;max-height:88vh;overflow-y:auto}
 .doc h2{font-family:'Barlow Condensed',sans-serif;font-size:21px;margin:22px 0 6px;color:#e9f1f9;letter-spacing:.3px;

@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador IAMCEST v5 · Panel completo en tiempo real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Colores de canal según convención de cabecera clínica, no decisión estética */
+  --bg:#04060a; --panel:#0a0f16; --panel2:#0e151e; --line:#1a2532;
+  --ecg:#26e07f; --pleth:#31d6f2; --abp:#ff5a63; --resp:#f4d03f; --co2:#c98bff;
+  --txt:#c6d4e2; --dim:#5a6e80; --hi:#ff2d3f; --md:#ffb020; --ok:#26e07f; --grid:#101822;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'IBM Plex Sans Condensed','Roboto Condensed',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:8px}
+
+.topbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.pat{flex:1 1 240px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 10px}
+.pat .nm{font-weight:700;font-size:14px;color:#e6eef7;letter-spacing:.3px}
+.pat .sub{font-size:10.5px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-top:2px}
+.clocks{display:flex;gap:5px;flex:2 1 460px}
+.clk{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px;min-width:84px}
+.clk .lab{font-size:9px;letter-spacing:1.3px;color:var(--dim);text-transform:uppercase}
+.clk .val{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1;margin-top:1px;color:#e6eef7;font-variant-numeric:tabular-nums}
+.clk.hot .val{color:var(--md)} .clk.crit .val{color:var(--hi)}
+
+.alarmbar{height:24px;border-radius:3px;display:flex;align-items:center;gap:14px;padding:0 10px;
+  font-size:11.5px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;margin-bottom:6px;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);overflow:hidden}
+.alarmbar.hi{background:var(--hi);color:#fff;border-color:var(--hi);animation:fl .55s steps(1,end) infinite}
+.alarmbar.md{background:var(--md);color:#111;border-color:var(--md)}
+@keyframes fl{50%{opacity:.3}}
+
+.grid{display:grid;grid-template-columns:1fr 300px;gap:6px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   MONITOR — réplica de Mindray uMEC12 (el equipo más frecuente en UCI y
+   guardia de Argentina y Brasil). Distribución, colores de canal, jerarquía
+   tipográfica de los parámetros y cadenas de texto tomadas del equipo real.
+   ========================================================================== */
+.bezel{background:linear-gradient(#d8dade,#b6b9bf);border-radius:14px;padding:19px 46px 20px 18px;
+  box-shadow:0 2px 0 #8f949b inset,0 10px 26px rgba(0,0,0,.5);position:relative}
+.bezel .brand{position:absolute;top:5px;left:22px;font:700 12px 'IBM Plex Sans Condensed',sans-serif;color:#3c4148;letter-spacing:.4px}
+.bezel .model{position:absolute;top:3px;right:18px;font:600 13px 'IBM Plex Sans Condensed',sans-serif;color:#4a5057}
+.bezel .keys{position:absolute;right:11px;top:62px;display:flex;flex-direction:column;gap:9px}
+.bezel .keys i{width:23px;height:16px;border-radius:3px;background:#c6c9ce;box-shadow:0 1px 0 #9aa0a7,0 0 0 1px #abb0b6 inset;display:block}
+.bezel .keys i.amber{background:#e8a33a;box-shadow:0 1px 0 #b57c22}
+.bezel .knob{position:absolute;right:5px;bottom:12px;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e3e5e8,#9ca1a8);box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.screen{background:#000;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px #23262b}
+
+/* ---- barra de estado superior ---- */
+.mtop{display:flex;align-items:center;gap:13px;padding:3px 8px;font-size:10.5px;
+  font-family:'IBM Plex Sans Condensed',sans-serif;border-bottom:1px solid #1c1c1c}
+.mtop .bed{color:#7fd0ff;font-weight:700;letter-spacing:.3px}
+.mtop .adu{color:#ffd24a;font-weight:700}
+.mtop .dt{color:#c8d0d8;font-family:'IBM Plex Mono',monospace;font-size:9.5px}
+.mtop .tech{color:#93a0ac}
+.mtop .banner{margin-left:auto;background:#2fd15c;color:#04210c;font-weight:700;letter-spacing:.3px;
+  padding:2px 28px 2px 11px;border-radius:2px;min-width:184px;font-size:11px}
+.mtop .banner.hi{background:#ff2323;color:#fff;animation:fl .5s steps(1,end) infinite}
+.mtop .banner.md{background:#ffd24a;color:#2a1e00}
+.mtop .banner.none{background:#0c3a19;color:#5ecd82}
+
+/* ---- cuerpo: trazados + columna de parámetros ---- */
+.mbody{display:grid;grid-template-columns:1fr 212px}
+@media(max-width:820px){.mbody{grid-template-columns:1fr 164px}}
+.wavebox{position:relative;background:#000;min-width:0}
+canvas{display:block;width:100%;height:352px}
+@media(max-width:760px){canvas{height:292px}}
+.wl{position:absolute;left:5px;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:.2px;pointer-events:none;line-height:1.22}
+.wl s{display:block;font-weight:400;font-size:8.5px;text-decoration:none;opacity:.75}
+.wsc{position:absolute;right:4px;font-family:'IBM Plex Mono',monospace;font-size:8px;color:#787878;
+  pointer-events:none;text-align:right;line-height:1.35}
+
+/* ---- parámetros numéricos ---- */
+.pcol{border-left:1px solid #242424;display:flex;flex-direction:column}
+.pz{border-bottom:1px solid #242424;padding:1px 6px 2px;display:flex;gap:4px;flex:1;min-height:0;align-items:stretch}
+.pz .lft{flex:1;min-width:0;display:flex;flex-direction:column}
+.pz .lbl{font:700 11px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.2px;line-height:1.05}
+.pz .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.2;margin-top:1px}
+.pz .big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:47px;line-height:.8;
+  font-variant-numeric:tabular-nums;letter-spacing:-1px;text-align:right;margin-top:auto}
+.pz .big.s{font-size:33px} .pz .big.xs{font-size:25px}
+.pz .rgt{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:1px}
+.pz .sub{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#a4aeb8;text-align:right;line-height:1.25;white-space:nowrap}
+.pz .sub b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px}
+.pz.sel{outline:1px solid #fff;outline-offset:-2px}
+.pz.alarm .big{animation:fl .5s steps(1,end) infinite}
+.pz.off .big{color:#3a3a3a}
+.hbeat{display:inline-block;color:#ff3b47;font-size:11px}
+.hbeat.on{animation:pulse .9s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}60%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
+
+/* ---- barra inferior ---- */
+.mbot{display:flex;align-items:center;gap:16px;padding:3px 8px;border-top:1px solid #242424;font-size:10px;flex-wrap:wrap}
+.mbot .grp{display:flex;align-items:flex-end;gap:5px}
+.mbot .k{font:700 10px 'IBM Plex Sans Condensed',sans-serif;color:#c8d0d8}
+.mbot .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.15}
+.mbot .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:25px;line-height:.88;color:#e6ebef}
+.mbot .v.pni{font-size:19px;color:#ff8a92}
+.mbot .st{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#93a0ac}
+.mbot .cfg{margin-left:auto;color:#93a0ac;font-size:9.5px}
+.mbot .sbtn{background:#1b3a6b;border:1px solid #2f5c9e;color:#cfe0ff;border-radius:9px;
+  padding:2px 9px;font:600 9.5px 'IBM Plex Sans Condensed',sans-serif}
+.batt{width:21px;height:10px;border:1px solid #6fbf7f;border-radius:1px;position:relative;display:inline-block}
+.batt i{display:block;height:100%;background:#3fd06a;width:72%}
+.batt:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#6fbf7f}
+
+/* ---- ficha clínica: datos que un monitor real NO muestra ---- */
+.ficha{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+@media(max-width:900px){.ficha{grid-template-columns:repeat(4,1fr)}}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:3px 6px 4px}
+.fk .k{font-size:8px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;font-weight:700}
+.fk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
+.c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
+
+/* ---- ETAPA CLÍNICA: vinheta + opciones A-E ---- */
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin-top:6px;padding:11px 13px 13px}
+.stage .num{font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;
+  padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* M-05: cronómetro de nodos criticidad:"letal" con tiempo_limite_segundos -- sólo visible en esos nodos */
+.stgTimer{font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;font-size:12px;font-weight:800;
+  background:#2e1013;color:#ff8a92;border:1px solid #5a1a21;border-radius:10px;padding:1px 9px;display:none}
+.stgTimer.on{display:inline-block}
+.stgTimer.crit{animation:fl .5s steps(1,end) infinite}
+.stage h3{margin:3px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;color:#e9f1f9;line-height:1.15}
+.stage .vig{font-size:14px;line-height:1.58;color:#aebfcf;margin-bottom:11px;white-space:pre-line}
+.stage .opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:3px;padding:9px 11px;cursor:pointer;color:var(--txt);font:400 14px/1.48 'IBM Plex Sans Condensed',sans-serif;width:100%}
+.opt:hover:not(:disabled){border-color:var(--pleth);background:#141e2a}
+.opt .letter{flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#1b2a3a;border:1px solid #2c4157;
+  display:flex;align-items:center;justify-content:center;font:700 11.5px 'IBM Plex Mono',monospace;color:#cfe0ff;margin-top:1px}
+.opt:disabled{opacity:.38;cursor:default}
+.stage .feedback{margin-top:11px;padding:10px 12px;border-radius:3px;font-size:14px;line-height:1.55;display:none}
+.stage .feedback.show{display:block}
+.feedback.good{background:#0f2b1c;border-left:3px solid var(--ok);color:#bfe9cf}
+.feedback.warn{background:#2e2410;border-left:3px solid var(--md);color:#f0dfa8}
+.feedback.bad{background:#2e1013;border-left:3px solid var(--hi);color:#ffc0c5}
+.feedback .fscore{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;display:block;margin-bottom:4px}
+#stgNext{display:none;margin-top:11px}
+.stage.done{opacity:.55}
+
+/* ---- historia clínica y registro de impresos (menú lateral) ---- */
+.hist{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 11px}
+.hist h2{margin:0 0 7px;padding-bottom:6px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--pleth);font-weight:800;border-bottom:1px solid var(--line)}
+.hist dl{margin:0;font-size:12.5px;line-height:1.6}
+.hist dt{color:#5ea6c4;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;margin-top:7px;font-weight:700}
+.hist dt:first-child{margin-top:0}
+.hist dd{margin:0;color:#cfdbe6}
+
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px;transition:box-shadow .3s,border-color .3s}
+.printouts h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);
+  border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.printouts .list{max-height:150px;overflow-y:auto;padding:4px}
+.printouts .empty{padding:9px 10px;font-size:11.5px;color:#3d4f61;font-style:italic}
+.printouts.nuevo{border-color:var(--pleth);box-shadow:0 0 0 2px rgba(49,214,242,.35),0 0 18px rgba(49,214,242,.45);animation:pnew 1s ease-in-out 3}
+@keyframes pnew{50%{box-shadow:0 0 0 3px rgba(49,214,242,.55),0 0 26px rgba(49,214,242,.7)}}
+#pcount{border-radius:8px;padding:0 6px;transition:background .3s,color .3s}
+#pcount.nuevo{background:var(--pleth);color:#04222b;font-weight:800;animation:pcnew .6s ease-in-out 3}
+@keyframes pcnew{50%{transform:scale(1.35)}}
+.toast-impreso{position:fixed;top:14px;right:14px;z-index:70;background:var(--panel);border:1px solid var(--pleth);
+  border-radius:4px;padding:10px 14px;max-width:280px;box-shadow:0 0 22px rgba(49,214,242,.45),0 8px 20px rgba(0,0,0,.5);
+  display:flex;gap:9px;align-items:flex-start;opacity:0;transform:translateY(-10px);
+  transition:opacity .25s,transform .25s;pointer-events:none}
+.toast-impreso.on{opacity:1;transform:translateY(0)}
+.toast-impreso .ic{font-size:19px;line-height:1}
+.toast-impreso .tt{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:2px}
+.toast-impreso .bd{font-size:12px;line-height:1.4;color:var(--txt)}
+@media(prefers-reduced-motion:reduce){.printouts.nuevo,#pcount.nuevo{animation:none}}
+.pitem{display:flex;justify-content:space-between;gap:6px;padding:7px 8px;border-radius:2px;cursor:pointer;font-size:13px;color:var(--txt);width:100%;
+  background:transparent;border:0;text-align:left}
+.pitem:hover{background:#141e2a}
+.pitem .tag2{font-size:9.5px;letter-spacing:1px;color:var(--dim);font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+/* ---- modal de impreso (laudo) ---- */
+.modal-lab{max-width:520px}
+.modal-lab .stamp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:11px}
+.modal-lab pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.62;color:#cfe0ff;
+  background:#070b11;border:1px solid var(--line);border-radius:3px;padding:11px 13px;margin:0}
+
+/* ---- VENTILADOR ---- */
+.vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
+.vent.on{display:block}
+.vent h3{margin:0 0 4px;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#7fd39b;font-weight:700}
+.vent .row{display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11px}
+.vent .row b{color:#e6eef7;font-weight:600}
+
+/* ---- MENÚ ---- */
+.side{display:flex;flex-direction:column;gap:6px;position:sticky;top:8px}
+.score{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 10px 9px}
+.score .r{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--pleth);font-weight:800}
+.bpn{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1;color:var(--ok);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:#101822;border-radius:2px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--ok);transition:width .35s}
+.sm3{display:flex;gap:5px;margin-top:6px}
+.sm3 div{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:2px;padding:3px 6px}
+.sm3 .l{font-size:8.5px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.sm3 .v{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;line-height:1.1}
+
+.menu{background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}
+.menu h2{margin:0;padding:8px 10px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);font-weight:700}
+.srch{padding:6px 8px;border-bottom:1px solid var(--line)}
+.srch input{width:100%;background:#070b11;border:1px solid var(--line);border-radius:2px;color:var(--txt);
+  padding:5px 7px;font:400 12px 'IBM Plex Sans Condensed',sans-serif}
+.srch input::placeholder{color:#3d4f61}
+.cats{max-height:56vh;overflow-y:auto}
+@media(max-width:900px){.cats{max-height:none}}
+.cat>button.head{width:100%;text-align:left;background:var(--panel2);border:0;border-bottom:1px solid var(--line);
+  color:#dbe6f2;padding:8px 10px;font:600 12px/1.2 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.cat>button.head:hover{background:#131d29}
+.cat>button.head .ix{font-family:'IBM Plex Mono',monospace;color:var(--dim);font-size:10px}
+.acts{display:none;border-bottom:1px solid var(--line);padding:2px 0 5px}
+.cat.open .acts{display:block}
+.gp{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#3d4f61;padding:6px 10px 3px;font-weight:700}
+.act{width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:2px;color:var(--txt);
+  padding:5px 9px;font:400 11.5px/1.25 'IBM Plex Sans Condensed',sans-serif;cursor:pointer;display:flex;justify-content:space-between;gap:7px;align-items:baseline}
+.act:hover{background:#141e2a;border-color:#22303f}
+.act .t{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--dim);white-space:nowrap}
+.act.used{opacity:.38}
+.empty{padding:8px 10px;font-size:10.5px;color:#3d4f61;font-family:'IBM Plex Mono',monospace;font-style:italic;
+  border-left:2px solid #1a2532;margin:2px 8px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-offset:1px}
+
+.ctrls{display:flex;gap:5px;padding:7px;border-top:1px solid var(--line);flex-wrap:wrap}
+.ctrls button{flex:1;min-width:58px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:5px;border-radius:2px;font:600 10.5px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer}
+.ctrls button:hover{background:#141e2a} .ctrls button.on{background:#1b2a3a;border-color:#2c4157;color:#fff}
+.ctrls button.fin{background:#381015;border-color:#5a1a21;color:#ffb7bd}
+
+.log{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.log h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.log .b{max-height:180px;overflow-y:auto;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+.log .e{padding:2px 10px;display:flex;gap:7px;border-left:2px solid transparent}
+.log .e .h{color:var(--dim);white-space:nowrap}
+.log .e.good{border-left-color:var(--ok)}.log .e.bad{border-left-color:var(--hi)}
+.log .e.warn{border-left-color:var(--md)}.log .e.evt{border-left-color:var(--pleth)}
+
+.doing{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:var(--panel);border:1px solid #2c4157;border-radius:3px;padding:8px 15px;min-width:270px;display:none;z-index:40}
+.doing.on{display:block}
+.doing .b{height:3px;background:#101822;margin-top:5px;border-radius:2px;overflow:hidden}
+.doing .b i{display:block;height:100%;width:0;background:var(--pleth)}
+
+.ov{position:fixed;inset:0;background:rgba(2,4,7,.95);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60;overflow-y:auto}
+.ov.hide{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;max-width:680px;width:100%;padding:22px 24px}
+.card h1{font-family:'Barlow Condensed',sans-serif;font-size:32px;margin:0 0 4px;line-height:1;color:#e9f1f9}
+.card .kick{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.6;color:#a2b6c8} .card ul{font-size:12.5px;line-height:1.55;color:#a2b6c8;padding-left:17px}
+.spd{display:flex;gap:7px;margin:14px 0 4px;flex-wrap:wrap}
+.spd button{flex:1;min-width:104px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:10px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+.spd button:hover{border-color:var(--pleth);background:#141e2a}
+.spd button b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:20px;color:#e9f1f9}
+.outcome table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.outcome td{padding:4px 0;border-bottom:1px solid var(--line);color:#a2b6c8}
+.outcome td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;color:#e9f1f9}
+.btn{display:inline-block;margin-top:14px;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;padding:9px 18px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+#stgNext{background:linear-gradient(135deg,#c6ff3a,#84cc16);border-color:transparent;color:#0a1f00;font-weight:800;box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55);animation:stgNextPulse 1.6s ease-in-out infinite}
+#stgNext:hover{background:linear-gradient(135deg,#d4ff6b,#9ee034);box-shadow:0 0 14px rgba(198,255,58,.9),0 0 34px rgba(132,204,22,.7)}
+@keyframes stgNextPulse{0%,100%{box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55)}50%{box-shadow:0 0 16px rgba(198,255,58,1),0 0 40px rgba(132,204,22,.8)}}
+/* ---- EXPEDIENTE DEL CASO (documento embebido) ---- */
+.doc{max-width:860px;max-height:88vh;overflow-y:auto}
+.doc h2{font-family:'Barlow Condensed',sans-serif;font-size:21px;margin:22px 0 6px;color:#e9f1f9;letter-spacing:.3px;
+  border-bottom:1px solid var(--line);padding-bottom:4px}
+.doc h3{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);margin:16px 0 5px;font-weight:700}
+.doc p,.doc li{font-size:12.5px;line-height:1.6;color:#a2b6c8}
+.doc table{width:100%;border-collapse:collapse;font-size:11.5px;margin:8px 0}
+.doc th{text-align:left;color:var(--dim);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+  padding:4px 6px;border-bottom:1px solid var(--line)}
+.doc td{padding:5px 6px;border-bottom:1px solid #141d27;color:#a2b6c8;vertical-align:top}
+.doc td:first-child{color:#e9f1f9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;white-space:nowrap}
+.doc .tag{display:inline-block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
+  padding:1px 6px;border-radius:2px;margin-right:5px}
+.tag.ok{background:#0f2b1c;color:var(--ok)} .tag.bad{background:#2e1013;color:#ff8a92}
+.tag.warn{background:#2e2410;color:var(--md)}
+.doc .box{border-left:2px solid var(--pleth);background:#0b131c;padding:8px 12px;margin:10px 0;font-size:12px;line-height:1.55;color:#a2b6c8}
+.doc .box b{color:#e9f1f9}
+.doc .close{position:sticky;top:0;float:right;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;
+  padding:5px 12px;border-radius:2px;cursor:pointer;font:600 11px 'IBM Plex Sans Condensed',sans-serif;z-index:2}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pat">
+    <div class="nm">PACIENTE, MASCULINO · 58 a</div>
+    <div class="sub" id="bedinfo">SALA ROJA · sin monitorizar · sin accesos</div>
+  </div>
+  <div class="clocks">
+    <div class="clk"><div class="lab">Tiempo de caso</div><div class="val" id="wall">00:00</div></div>
+    <div class="clk" id="clkIsq"><div class="lab">Isquemia T+</div><div class="val" id="tplus">0′</div></div>
+    <div class="clk" id="clkIdle"><div class="lab">Sin actuar</div><div class="val" id="idle">0:00</div></div>
+    <div class="clk"><div class="lab">Puntuación</div><div class="val" id="salv">100</div></div>
+  </div>
+</div>
+
+<div class="alarmbar" id="alarm">monitorización no iniciada</div>
+
+<div class="grid">
+  <div>
+    <!-- ============ MONITOR MINDRAY uMEC12 ============ -->
+    <div class="bezel">
+      <span class="brand">mindray</span><span class="model">uMEC12</span>
+      <div class="keys"><i class="amber"></i><i></i><i></i><i></i><i></i></div>
+      <div class="knob"></div>
+
+      <div class="screen">
+        <!-- barra de estado -->
+        <div class="mtop">
+          <span class="bed" id="mBed">▣ URG-1</span>
+          <span class="adu">Adulto</span>
+          <span class="dt" id="mDT">08-08-2026 04:02:00</span>
+          <span class="tech" id="mTech">No se puede analizar QT</span>
+          <span class="banner none" id="mBanner">Sin alarmas</span>
+        </div>
+
+        <!-- trazados -->
+        <div class="mbody">
+          <div class="wavebox">
+            <canvas id="cv"></canvas>
+            <div class="wl c-ecg" id="wl1">II<s>×1 &nbsp;Monitor</s></div>
+            <div class="wl c-co2" id="wl2">CO2<s>mmHg</s></div>
+            <div class="wsc c-co2" id="ws2">50<br>25<br>0</div>
+            <div class="wl c-sat" id="wl3">Plet</div>
+            <div class="wl c-resp" id="wl4">Imped.<s>×2</s></div>
+            <div class="wl c-abp" id="wl5">Art<s>mmHg</s></div>
+            <div class="wsc c-abp" id="ws5">180<br>90<br>0</div>
+          </div>
+
+          <!-- columna de parámetros -->
+          <div class="pcol">
+            <div class="pz" id="pzECG">
+              <div class="lft">
+                <div class="lbl c-ecg">ECG</div>
+                <div class="lim" id="limECG">120<br>50</div>
+                <div class="big c-ecg" id="vHR">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub"><span class="hbeat" id="beat">♥</span></div>
+                <div class="sub c-abp" id="subPVC">PVC <b>---</b></div>
+                <div class="sub" id="subST">ST desact.</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzCO2">
+              <div class="lft">
+                <div class="lbl c-co2">CO2<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">50<br>25</div>
+                <div class="big c-co2" id="vCO2">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-resp">FRm <b id="subFRm">--</b></div>
+                <div class="sub c-resp">R <b id="subR">0</b></div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzSat">
+              <div class="lft">
+                <div class="lbl c-sat">SpO2</div>
+                <div class="lim">100<br>90</div>
+                <div class="big c-sat" id="vSat">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-sat">PR <b id="subPR">---</b></div>
+                <div class="sub" id="subPI">IP ---</div>
+                <div class="sub">Origen SpO2</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzResp">
+              <div class="lft">
+                <div class="lbl c-resp">Resp</div>
+                <div class="lim">26<br>9</div>
+                <div class="big c-resp s" id="vRR">--</div>
+              </div>
+              <div class="rgt"><div class="sub" id="subOrigen">Origen Imped.</div></div>
+            </div>
+
+            <div class="pz sel" id="pzArt">
+              <div class="lft">
+                <div class="lbl c-abp" id="lblArt">PANI<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">161<br>121</div>
+                <div class="big c-abp s" id="vBP">---/---</div>
+              </div>
+              <div class="rgt"><div class="sub c-abp" id="subMAP">(--)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- barra inferior -->
+        <div class="mbot">
+          <div class="grp"><span class="k">Temp</span><span class="lim">37,9<br>35,2</span>
+            <span class="v" id="vT">--,-</span><span class="st">T2</span></div>
+          <div class="grp"><span class="k">PNI</span><span class="lim">100<br>90</span>
+            <span class="v pni" id="vPNI">---/---</span><span class="st" id="stPNI">Medición terminada</span></div>
+          <span class="batt"><i></i></span>
+          <span class="cfg">Configuración actual:Predet.</span>
+          <span class="sbtn">◀ Ajuste alarma</span><span class="sbtn">Menú principal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA CLÍNICA: parámetros que un monitor real no muestra -->
+    <div class="ficha">
+      <div class="fk"><div class="k">ST II</div><div class="n c-ecg" id="fST">—</div><div class="u">mm</div></div>
+      <div class="fk"><div class="k">Glucemia</div><div class="n" id="fGlu">—</div><div class="u">mg/dL</div></div>
+      <div class="fk"><div class="k">Lactato</div><div class="n" id="fLac">—</div><div class="u">mmol/L</div></div>
+      <div class="fk"><div class="k">Diuresis</div><div class="n" id="fDiu">—</div><div class="u" id="fDiuU">sin sonda</div></div>
+      <div class="fk"><div class="k">Glasgow</div><div class="n" id="fGCS">—</div><div class="u">/15</div></div>
+      <div class="fk"><div class="k">Dolor EVA</div><div class="n" id="fPain">—</div><div class="u">/10</div></div>
+      <div class="fk"><div class="k">Relleno cap.</div><div class="n" id="fCRT">—</div><div class="u">seg</div></div>
+      <div class="fk"><div class="k">Killip</div><div class="n" id="fKil">—</div><div class="u" id="fKilU">sin examinar</div></div>
+    </div>
+
+    <!-- VENTILADOR -->
+    <div class="vent" id="ventPanel">
+      <h3>Ventilación mecánica invasiva</h3>
+      <div class="row">
+        <span>Modo <b id="vMode">VC-AC</b></span><span>Vt <b id="vVt">420</b> mL (6 mL/kg PI)</span>
+        <span>FR <b id="vSetRR">16</b></span><span>PEEP <b id="vPEEP">5</b> cmH₂O</span>
+        <span>FiO₂ <b id="vFiO2">100</b>%</span><span>P. meseta <b id="vPlat">18</b> cmH₂O</span>
+      </div>
+    </div>
+
+    <!-- ================= ETAPA CLÍNICA (pregunta activa) ================= -->
+    <div class="stage" id="stage">
+      <div class="num"><span id="stgNum">Etapa 1 / 20</span><span class="stgTimer" id="stgTimer"></span></div>
+      <h3 id="stgTitle">—</h3>
+      <div class="vig" id="stgVig">—</div>
+      <div class="opts" id="stgOpts"></div>
+      <div class="feedback" id="stgFeedback"></div>
+      <button class="btn" id="stgNext" style="display:none">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- ================= MENÚ LATERAL (información, no acciones) ================= -->
+  <div class="side">
+    <div class="score">
+      <div class="r"><span>Puntos biológicos</span><span class="bpn" id="vBPs">100</span></div>
+      <div class="bar"><i id="bpbar" style="width:100%"></i></div>
+      <div class="sm3">
+        <div><div class="l">Excelencia</div><div class="v" id="vPE">0</div></div>
+        <div><div class="l">Omisiones</div><div class="v" id="vOm">0</div></div>
+        <div><div class="l">Iatrogenias</div><div class="v" id="vIa">0</div></div>
+      </div>
+    </div>
+
+    <div class="hist">
+      <h2>Historia clínica resumida</h2>
+      <dl>
+        <dt>Paciente</dt><dd>Paciente, masculino · 58 años</dd>
+        <dt>Motivo de consulta</dt><dd id="histMotivo">—</dd>
+      </dl>
+    </div>
+
+    <div class="printouts">
+      <h2><span>Impresos y resultados</span><span id="pcount">0</span></h2>
+      <div class="list" id="plist"><div class="empty">Todavía no hay estudios liberados</div></div>
+    </div>
+
+    <div class="log">
+      <h2><span>Registro clínico</span><span id="logn">0</span></h2>
+      <div class="b" id="logb"></div>
+      <div class="ctrls">
+        <button id="bSpeed">×4</button><button id="bSound">🔊</button>
+        <button id="bPause">⏸</button><button id="bCase">📄 Caso</button>
+        <button class="fin" id="bEnd">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
+
+<div class="toast-impreso" id="toastImpreso"><span class="ic">📄</span><div><div class="tt">Nuevo impreso liberado</div><div class="bd" id="toastImpresoTxt"></div></div></div>
+
+<!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
+<div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
+
+
+<div class="ov" id="ovIntro"><div class="card">
+  <div class="kick">Caso 2 · Emergencia · Línea de tiempo dinámica</div>
+  <h1 id="introTitulo">Simulador Clínico de Emergencia</h1>
+  <p id="introDescripcion"></p>
+  <p style="color:#e9f1f9"><b>El monitor no te espera.</b> Mientras deliberás sin responder, el paciente sigue descompensando en tiempo real.</p>
+  <ul>
+    <li>Cada decisión errada puede abrir una sub-fase de rescate: hay que reestabilizar antes de volver a la línea principal.</li>
+    <li>Las secciones sin dato real en este caso figuran <b>vacías (—)</b>, no ocultas.</li>
+    <li>El desenlace final depende de la puntuación acumulada, no de un único camino fijo.</li>
+  </ul>
+  <div class="spd">
+    <button id="bComenzar"><b>▶</b>Comenzar</button>
+  </div>
+  <p style="font-size:11px;color:#3d4f61;margin-top:12px">Simulación educativa. Paciente ficticio. No sustituye protocolos institucionales ni juicio clínico.</p>
+</div></div>
+
+<div class="ov hide" id="ovEnd"><div class="card outcome" id="endCard"></div></div>
+
+<!-- ==========================================================================
+     EXPEDIENTE DEL CASO — documento docente embebido
+     ========================================================================== -->
+<div class="ov hide" id="ovCase"><div class="card doc">
+<button class="close" id="closeCase">Cerrar ✕</button>
+<div class="kick">Expediente docente · uso del instructor</div>
+<h1 style="margin-bottom:2px" id="docTitulo">Caso 2</h1>
+<p style="color:#5a6e80;font-family:'IBM Plex Mono',monospace;font-size:11px">Estructura ramificada · fases principales con sub-fases de rescate · puntuación inicial 100/100</p>
+
+<div class="box"><b>Advertencia para el instructor:</b> este documento contiene las respuestas. Si se muestra al estudiante antes de jugar, el caso pierde su valor.</div>
+
+<h2>1 · Escenario</h2>
+<p id="docDescripcion"></p>
+
+<h2>2 · Estructura del caso</h2>
+<p>El caso avanza por fases principales (Admisión, Estabilización, Reperfusión, Post-reperfusión). Cada opción incorrecta puede abrir una <b>sub-fase de rescate</b> específica para esa complicación (ej.: congestión pulmonar, choque, hemorragia, falla de trombólisis, reinfarto) — el alumno debe resolverla antes de volver a la línea principal. No hay un único camino: la puntuación final refleja la calidad acumulada de las decisiones.</p>
+
+<h2>3 · Motor de puntuación</h2>
+<table>
+<tr><th>Puntuación final</th><th>Desenlace</th></tr>
+<tr><td>≥ 70 / 100</td><td>Éxito pleno</td></tr>
+<tr><td>40–69 / 100</td><td>Estabilizado con secuelas</td></tr>
+<tr><td>&lt; 40 / 100</td><td>Desenlace crítico</td></tr>
+</table>
+<p>Cada opción define explícitamente su impacto en la puntuación y en los signos vitales (FC, PA, SpO₂, FR, ritmo). Mientras el alumno delibera sin responder, los signos vitales se degradan gradualmente (presión de tiempo real).</p>
+
+<div class="box" style="margin-top:20px;border-left-color:#ff5a63">
+<b>Aviso de uso.</b> Material educativo y de simulación. Paciente y escenario ficticios. No sustituye los protocolos institucionales vigentes ni el juicio clínico.
+</div>
+</div></div>
+
+<script>
+"use strict";
+
+/* ==========================================================================
+   CONFIGURACIÓN PÚBLICA
+   Editá este bloque para adaptar el simulador sin tocar el motor.
+   ========================================================================== */
+const CONFIG = {
+  velocidadInicial : 2,      // multiplicador fijo del reloj clínico -- sin selector para el alumno
+  sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
+  saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
+  // M-08: el expediente contiene TODAS las respuestas correctas -- por defecto
+  // queda oculto al alumno. El viewer sólo agrega ?modo=docente a la URL del
+  // iframe cuando el usuario logueado es admin/colaborador (ver
+  // hospital-simulacao-caso-viewer.tsx). No es autenticación real -- un
+  // alumno que edite la URL a mano igual podría activarlo -- pero saca el
+  // botón de la vista por defecto de cualquiera con acceso al caso, que es
+  // el problema crítico que reportó la auditoría (DJ-01).
+  mostrarExpediente: new URLSearchParams(location.search).get('modo') === 'docente',
+  autoIniciar      : true,   // false = el simulador espera a window.SimuladorIAMCEST.iniciar()
+
+  // Dificultad: multiplica el drenaje de puntos por tiempo.
+  // 0.6 = indulgente (pregrado) · 1 = estándar · 1.5 = exigente (residencia)
+  dificultad       : 1.0,
+
+  // Frecuencia del brazalete de PA (real: ~300s). Se acorta a propósito para
+  // que el efecto de cada decisión sea visible en el monitor en segundos.
+  cicloPANIsegundos: 8,
+
+  // Se dispara al terminar el caso. Recibe el objeto de resultados.
+  alFinalizar      : null,   // ej.: r => fetch('/api/resultados',{method:'POST',body:JSON.stringify(r)})
+
+  // Emite el resultado al sitio contenedor vía postMessage (útil en iframe).
+  emitirPostMessage: true,
+  // M-07: este HTML siempre se sirve estático desde el mismo origen que la
+  // app (arquivo_html es una ruta relativa tipo /simuladores/xxx.html), así
+  // que el propio origen del iframe YA ES el origen correcto del padre. Fijar
+  // location.origin en vez de '*' evita que el resultado (con el log
+  // completo del intento del alumno) se filtre a un origen que embeba este
+  // iframe desde otro dominio.
+  origenPermitido  : location.origin
+};
+
+/* ==========================================================================
+   ESTADO
+   ========================================================================== */
+const S={
+ running:false,paused:false,speed:4,sound:false,
+ simT:0, wallStart:0, waveT:0, lastAction:0, lostTime:0,
+ bp:100,pe:0,omis:0,iatro:0, st:0,
+ hr:88,sbp:140,dbp:90,map:110,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
+ diuresis:null,pvc:null,gcs:15,pain:8,crt:null,etco2:null,
+ sbpShow:140,dbpShow:90,lastNIBP:0,
+ rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
+ arterial:false,cvc:false,foley:false,
+ airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
+ examDone:false,killipI:false,
+ dead:false,ended:false,doing:null,log:[],
+ // M-01/M-05/M-09: seguimiento por nodo (cuándo se entró, si ya se decidió,
+ // si el timeout de ese nodo ya se aplicó, y el snapshot de ALVO al entrar
+ // -- usado para topear la deriva por indecisión).
+ nodoEnteredAt:0, decidido:false, nodoTimeoutApplied:false, nodoBase:null, nodosVisitados:[],
+ // M-02: S.omis/S.iatro ahora se acumulan de verdad (sumando opcion.flags de
+ // cada decisión, ver resolveOption) en vez de quedar en 0 fijo como en v4.
+ // reperfusionFlag/vdIdentificadoFlag/secuelas también alimentan el
+ // resultado exportado con datos reales en vez de valores hardcodeados.
+ reperfusionFlag:false, vdIdentificadoFlag:false, secuelas:[]
+};
+// alvos de sinais vitais definidos pela opcao escolhida (novos_sinais_vitales
+// do caso v4) -- a fisica so faz o traçado convergir suavemente ate eles,
+// nao ha modelo farmacocinetico proprio deste caso.
+const ALVO={hr:88,sbp:140,dbp:90,spo2:95,rr:18,st:0};
+S.nodoId=null;S.printouts=[];
+const $=i=>document.getElementById(i), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const hhmm=s=>{const t=(S.wallStart+s)%86400;return String(Math.floor(t/3600)).padStart(2,'0')+':'+String(Math.floor(t%3600/60)).padStart(2,'0')};
+const mmss=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+
+function log(t,c){S.log.unshift({h:hhmm(S.simT),t,c:c||''});if(S.log.length>110)S.log.pop();
+ $('logb').innerHTML=S.log.map(e=>`<div class="e ${e.c}"><span class="h">${e.h}</span><span>${e.t}</span></div>`).join('');
+ $('logn').textContent=S.log.length;}
+function sc(d,t,c){
+ if(d>0){const r=100-S.bp,g=Math.min(r,d);S.bp+=g;S.pe+=d-g;}else S.bp=Math.max(0,S.bp+d);
+ if(t)log(`${d>0?'+':''}${d} BP · ${t}`,c||(d>0?'good':'bad'));
+ if(S.bp<=0&&!S.dead)die('Puntos biológicos agotados');}
+function info(t){log(t,'evt');}
+function nada(t,p){log(t,'warn');if(p)sc(p,'Estudio sin rendimiento diagnóstico en este cuadro','warn');}
+
+/* ==========================================================================
+   CASO CLÍNICO V4 — estructura ramificada (grafo de nodos), no lineal.
+   Cada nodo tiene "opciones"; cada opción define destino (id del próximo
+   nodo), si es correcta, impacto en la puntuación, el nuevo estado de
+   signos vitales (reemplazo completo, no delta) y el feedback. Una opción
+   incorrecta puede llevar a un nodo de "resgate" (subfase de rescate) que
+   vuelve a converger a la línea principal.
+   ========================================================================== */
+const NODO_INICIAL="fase_1_admision", NODO_EXITO="fase_exito";
+const CASO_V4={"titulo_juego":"Shock Mixto: El Desafío de Carlos en el Shockroom","descripcion":"Carlos, 67 años, ingresa al shockroom derivado por emergencias. Hace 48 horas recibió una angioplastia con stent por un infarto agudo de miocardio anterior. Vuelve con astenia marcada, disnea progresiva, hipotensión, perfusión periférica fría, estertores crepitantes en ambas bases y fiebre de 38.2 °C. Estás de guardia en un hospital de mediana complejidad SIN unidad de hemodinamia: tenés ECG, radiografía portátil, ecografía POCUS, laboratorio de urgencia y bombas de infusión, pero cualquier procedimiento invasivo exige derivación. El desafío del caso es reconocer que no se trata de un shock puro sino MIXTO —disfunción miocárdica severa sumada a un foco séptico— y que las recetas estándar de cada uno por separado se contradicen entre sí.","estado_inicial":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"82/48","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":26,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0,"puntos_actuales":100},"nodos":{"fase_1_admision":{"id":"fase_1_admision","etapa":"Fase 1: Admisión en Shockroom","descripcion_situación":"Ingresa Carlos, de 67 años, derivado por el servicio de emergencias. Vos sos el médico de guardia en el shockroom de un hospital de mediana complejidad. Su familia refiere que tiene antecedentes de un infarto agudo de miocardio (IAM) anterior con angioplastia y stent hace 48 horas. Refiere astenia marcada y disnea progresiva que empeoró en las últimas horas. Al examen físico lo encontrás obnubilado, con perfusión periférica fría, sudoración profusa (diaforesis) y estertores crepitantes húmedos en ambas bases pulmonares. También registra una temperatura axilar de 38.2 °C. El monitor ya está conectado y muestra hipotensión y taquicardia. ¿Cuál es tu primera conducta médica inmediata?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Colocar oxígeno suplementario con máscara de reservorio a 10 L/min, asegurar dos accesos venosos periféricos gruesos (14G o 16G) y mantener el monitoreo continuo.","destino":"fase_2_diagnostico_inicial","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":22,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión! Ante un paciente con shock clínico (hipotensión, perfusión fría, alteración del sensorio) y signos de congestión pulmonar (crepitantes), el abordaje inicial debe asegurar la oxigenación celular y la estabilidad de accesos. La máscara de reservorio es adecuada porque el paciente presenta una saturación del 90% con aumento del trabajo respiratorio. Canalizar dos vías periféricas gruesas es mandatorio para la administración rápida de fármacos o fluidos si se requiere, evitando demoras de vías centrales complejas en el minuto cero. La frecuencia cardíaca disminuye levemente a 110 lpm y la saturación de oxígeno mejora a 94% gracias al soporte ventilatorio."},{"texto":"Iniciar oxígeno por cánula nasal a 3 L/min, colocar una vía periférica fina y pedir el laboratorio completo de urgencia con enzimas cardíacas.","destino":"fase_2_diagnostico_inicial","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"82/48","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste un soporte de oxígeno y accesos insuficiente. La premisa de estabilizar la vía aérea y el oxígeno es correcta, pero la cánula nasal a 3 L/min no aporta suficiente fracción inspirada de oxígeno (FiO2) para un paciente con insuficiencia respiratoria franca por crepitantes y saturación de 90%. Además, una sola vía periférica fina limita la capacidad de infundir vasopresores o volumen simultáneamente. Pedir el laboratorio es necesario, pero no debe retrasar la optimización hemodinámica inicial. El monitor muestra que la saturación apenas sube al 91% y el esfuerzo respiratorio sigue elevado."},{"texto":"Pasar una carga rápida de 1500 ml de Ringer Lactato a chorro para revertir la hipotensión arterial marcada.","destino":"fase_1_rescate_edema","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"78/42","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":32,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Administrar una gran carga de volumen (1500 ml) de forma indiscriminada a un paciente con antecedentes recientes de IAM y estertores crepitantes es peligroso. El ventrículo izquierdo tiene una fracción de eyección comprometida y no tolerará la sobrecarga hidrostática, lo que precipitará un edema agudo de pulmón masivo. Observá el monitor: la saturación cayó bruscamente al 82%, la frecuencia respiratoria trepó a 32 rpm y el paciente presenta un distrés respiratorio catastrófico por inundación alveolar. Debés actuar de urgencia para rescatarlo."},{"texto":"Indicar inmediatamente un bolo de 40 mg de Furosemida endovenosa por sospecha de insuficiencia cardíaca descompensada.","destino":"fase_1_rescate_furosemida","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"70/40","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":26,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. Aunque sospechás congestión pulmonar por los crepitantes, administrar diuréticos de asa endovenosos como primera medida en un paciente hipotenso (presión arterial de 82/48 mmHg) empeorará drásticamente la perfusión sistémica. La furosemida tiene un efecto venodilatador inicial que puede desplomar la precarga en un ventrículo derecho o izquierdo sensible, sumado al efecto diurético posterior que agravará la hipotensión si existe un componente hipovolémico o distributivo asociado. Mirá el monitor: la presión arterial cayó a 70/40 mmHg y la perfusión está aún más comprometida."}]},"fase_2_diagnostico_inicial":{"id":"fase_2_diagnostico_inicial","etapa":"Fase 2: Estrategia Diagnóstica","descripcion_situación":"Con Carlos más oxigenado y con vías periféricas permeables, necesitás definir el fenotipo del shock y confirmar tus sospechas diagnósticas sin demorar el soporte hemodinámico. ¿Cuál es el paquete de estudios complementarios más adecuado para realizar de manera inmediata a la cabecera del paciente?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Realizar de inmediato un Electrocardiograma (ECG) de 12 derivaciones, una Radiografía de tórax portátil y una ecografía POCUS en el shockroom.","destino":"fase_3_evaluacion_pocus","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":108,"presion_arterial_mmhg":"85/50","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":22,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente elección! Para establecer el fenotipo de shock de forma rápida y segura, la tríada de ECG, radiografía de tórax portátil y POCUS (ultrasonido a pie de cama) es el estándar de oro en el shockroom. Estos estudios se realizan a la cabecera del paciente en pocos minutos y diferencian causas cardiogénicas, obstructivas (taponamiento, TEP, neumotórax) o pleuropulmonares sin requerir traslados peligrosos. El ECG te muestra la secuela del IAM, la radiografía confirma la congestión pulmonar y el POCUS revela una FEVI muy deprimida (28%) compatible con shock cardiogénico, además de descartar taponamiento pericárdico. Los signos vitales se mantienen estables.","printouts":[{"tipo":"ecg","titulo":"Electrocardiograma de 12 Derivaciones","cuerpo":"Ritmo: Taquicardia sinusal a 110 lpm.\nEje: Desviado a la izquierda.\nSegmento ST: Secuelas de infarto anterior con persistencia de supradesnivel del ST de 1.5 mm en V2-V4 (compatible con aneurisma ventricular o isquemia residual, sin cambios hiperagudos de las últimas horas).\nIntervalo QT: Normal (410 ms)."},{"tipo":"rx","titulo":"Radiografía de Tórax de Cabecera (Portátil)","cuerpo":"Silueta cardíaca: Moderadamente agrandada (índice cardiotorácico 0.58).\nCampos pulmonares: Congestión hiliar bilateral, líneas B de Kerley incipientes en ambas bases pulmonares. No se observa neumotórax ni derrame pleural masivo."},{"tipo":"pocus","titulo":"Ultrasonido a Pie de Cama (POCUS)","cuerpo":"Ecocardiograma rápido:\n- Fracción de Eyección del Ventrículo Izquierdo (FEVI): Estimada en 28-30% con hipocinesia severa de la pared anterior y apical.\n- Ventrículo Derecho: Diámetro y contractilidad conservados.\n- Derrame pericárdico: Ausente.\n- Vena Cava Inferior (VCI): Diámetro de 18 mm con colapso respiratorio menor al 30% (congestión sistémica moderada).\n- Pulmón: Presencia de múltiples líneas B bilaterales en zonas dependientes (perfil B de congestión alveolar/intersticial)."}]},{"texto":"Solicitar laboratorios urgentes (incluyendo troponinas seriadas, lactato y gasometría), realizar un ECG básico y esperar los resultados en el shockroom para tomar decisiones.","destino":"fase_2_rescate_demora","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"76/44","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":25,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Decisión semicorrecta. Aunque el laboratorio, la gasometría y el lactato son fundamentales para medir la perfusión y guiar la reanimación, demorar el diagnóstico de soporte esperando los resultados analíticos es un error que puede ser fatal en fases inestables del shock. Debés usar herramientas inmediatas de cabecera como la radiografía y el POCUS para tipificar el shock y no basarte únicamente en análisis demorados. Observá cómo la presión arterial cayó a 76/44 mmHg por la hipoperfusión sostenida mientras esperás los informes."},{"texto":"Trasladar inmediatamente al paciente al tomógrafo para realizar una AngioTAC de tórax por alta sospecha de Tromboembolismo Pulmonar (TEP).","destino":"fase_2_rescate_demora","es_correcta":false,"puntos_afectados":-30,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"68/38","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":28,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave! Trasladar a un paciente hemodinámicamente inestable con shock franco fuera del shockroom para estudios complejos como una AngioTAC es una de las causas más frecuentes de eventos catastróficos y muerte prevenible. Además, su clínica de crepitantes bilaterales y antecedentes de IAM orientan fuertemente a shock cardiogénico, lo que hace que el traslado sea innecesario y altamente peligroso. Durante el intento de movilización, la presión arterial de Carlos se desploma a 68/38 mmHg y la desaturación empeora a 85% por la falta de monitorización estrecha y soporte adecuado."},{"texto":"Llamar al cardiólogo de guardia de inmediato para que realice un ecocardiograma formal y postergar las intervenciones diagnósticas hasta que llegue.","destino":"fase_2_rescate_demora","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"72/42","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":25,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. Es excelente involucrar a Cardiología de forma temprana, pero delegar o demorar la evaluación diagnóstica y el ecocardiograma en el shockroom esperando al especialista es incorrecto. El médico a cargo debe realizar un POCUS rápido de cabecera para definir la conducta terapéutica inicial de soporte, ya que el retraso en el inicio del tratamiento aumenta la disfunción multiorgánica. Carlos continúa deteriorándose: su presión arterial sistólica es de 72 mmHg."}]},"fase_3_evaluacion_pocus":{"id":"fase_3_evaluacion_pocus","etapa":"Fase 3: Evaluación de Volumen","descripcion_situación":"Los resultados de la ecografía POCUS muestran una FEVI disminuida (28%) compatible con un componente de disfunción miocárdica (cardiogénico), pero el colapso de la Vena Cava Inferior y los parámetros clínicos sugieren que también podría haber una leve hipovolemia relativa asociada (shock mixto por la fiebre de 38.2 °C). Necesitás evaluar si el paciente tolera una pequeña carga de volumen. ¿Cómo procedés?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Administrar un bolo prudente de 250 ml de solución fisiológica (NaCl 0.9%) a pasar en 15 minutos, evaluando estrechamente la respuesta clínica, los crepitantes y la saturación.","destino":"fase_4_descompensacion_volumen","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":23,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Decisión impecable! Ante la sospecha de un shock cardiogénico o mixto con posible componente de hipovolemia relativa (por fiebre u otras causas), se recomienda un enfoque de reanimación extremadamente cauto. El abordaje incluye un 'bolo de prueba' muy pequeño, típicamente de 250 ml de cristaloide, evaluando estrechamente al paciente después de infundirlo. Grandes volúmenes precipitarían edema pulmonar, pero un bolo muy controlado permite ver si hay respuesta hemodinámica favorable sin correr riesgos severos. Carlos tolera la carga inicial de 250 ml, pero debés reevaluarlo de inmediato debido al riesgo de sobrecarga."},{"texto":"Administrar un bolo de 100 ml de albúmina al 20% endovenosa de forma lenta para evaluar respuesta sin sobrecargar el volumen intravascular.","destino":"fase_4_descompensacion_volumen","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":111,"presion_arterial_mmhg":"83/49","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":24,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste una opción de reanimación semicorrecta. Si bien la albúmina limita la extravasación de líquido, las guías clínicas actuales no respaldan su uso como expansor inicial en el shock de origen cardíaco o séptico sobre los cristaloides balanceados o la solución fisiológica. Además, aunque la cantidad es pequeña, puede provocar un aumento de la presión oncótica capilar pulmonar y empeorar la congestión si hay disfunción severa del ventrículo izquierdo. Los signos vitales se mantienen en rangos similares, requiriendo reevaluación estricta."},{"texto":"Pasar un bolo de 1000 ml de solución fisiológica (NaCl 0.9%) a chorro para optimizar rápidamente la precarga ventricular según guías de sepsis.","destino":"fase_3_rescate_sobrecarga","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"80/46","saturacion_oxigeno_pct":84,"frecuencia_respiratoria_rpm":30,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Confundir el manejo de un shock séptico puro (que requiere grandes volúmenes de cristaloides, 30 ml/kg) con un shock mixto donde predomina la disfunción cardíaca severa (FEVI 28%) es un error conceptual crítico. Inyectar 1000 ml de líquido de forma rápida superará por completo la capacidad de eyección del ventrículo izquierdo sobrecargado, generando una rápida acumulación retrógrada en la circulación pulmonar. El resultado es catastrófico: Carlos presenta distrés respiratorio agudo por edema pulmonar, su saturación cae al 84% y la frecuencia cardíaca sube a 120 lpm. Debés suspender la infusión y rescatarlo."},{"texto":"Iniciar de forma inmediata infusión de Dobutamina a dosis altas (15 mcg/kg/min) por vía periférica sin realizar ninguna prueba de volumen previa.","destino":"fase_5_vasopresor","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":132,"presion_arterial_mmhg":"72/38","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":25,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. Iniciar dobutamina a dosis altas directamente sin evaluar el estado de volumen y en un paciente marcadamente hipotenso (sistólica de 82 mmHg) es peligroso. La dobutamina posee efectos estimulantes beta-2 adrenérgicos que producen vasodilatación sistémica. Si el lecho arterial no está estabilizado con un vasopresor como la noradrenalina o si existe hipovolemia relativa, la dobutamina desplomará aún más la presión arterial sistólica y diastólica, comprometiendo gravemente la perfusión coronaria y cerebral, además de provocar taquiarritmias severas. Mirá el monitor: la presión cayó a 72/38 mmHg y la frecuencia cardíaca subió a 132 lpm."}]},"fase_4_descompensacion_volumen":{"id":"fase_4_descompensacion_volumen","etapa":"Fase 4: Descompensación Pulmonar","descripcion_situación":"Inmediatamente después de terminar la prueba de volumen que indicaste, reevaluás a Carlos. Su saturación desciende bruscamente de 93% a 87%, la disnea se intensifica con aleteo nasal, y los rales crepitantes húmedos ascendieron hasta la mitad de ambos campos pulmonares. Cualquiera haya sido el expansor elegido, el ventrículo no toleró la carga: Carlos está en edema agudo de pulmón. ¿Cuál es tu siguiente acción inmediata?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender de inmediato toda expansión de volumen, iniciar ventilación no invasiva (VNI) en modo CPAP con presión al final de la espiración (PEEP) de 8 cmH2O y titular FiO2 para mantener saturación > 92%.","destino":"fase_5_vasopresor","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"82/48","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":20,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión! Esta es una conducta de alta calidad y excelencia terapéutica. El modo CPAP (presión positiva continua en la vía aérea) es el tratamiento de elección en el edema agudo de pulmón cardiogénico con insuficiencia respiratoria. La presión positiva intratorácica reduce la precarga ventricular (disminuyendo el retorno venoso al corazón derecho, aliviando la congestión pulmonar) y reduce la poscarga del ventrículo izquierdo, además de reclutar alvéolos colapsados por el líquido. Suspender las expansiones de inmediato detiene el aporte hídrico nocivo. Carlos responde muy favorablemente al soporte: la saturación sube a 95%, la disnea cede notablemente y la frecuencia respiratoria baja a 20 rpm."},{"texto":"Administrar un bolo endovenoso de 20 mg de Furosemida, mantener el aporte de oxígeno por máscara de reservorio y observar la evolución pulmonar.","destino":"fase_5_vasopresor","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"80/46","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste una opción de manejo subóptima (semicorrecta). La administración de furosemida es correcta para forzar la diuresis y generar venodilatación pulmonar rápida, pero en el contexto de un edema agudo de pulmón severo con hipoxia severa (saturación de 87%), el aporte pasivo de oxígeno por máscara de reservorio es insuficiente para resolver el colapso alveolar y disminuir el trabajo respiratorio agobiante. Faltó iniciar soporte de presión positiva (VNI), que reduce drásticamente el esfuerzo respiratorio y mejora el gasto cardíaco. La respuesta clínica es lenta, el paciente sigue fatigado y la saturación apenas roza el 90%."},{"texto":"Proceder de forma inmediata a la intubación orotraqueal (IOT) y conexión a asistencia respiratoria mecánica por insuficiencia respiratoria refractaria.","destino":"fase_4_rescate_intubacion_precoz","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":138,"presion_arterial_mmhg":"58/30","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error irreversible! Intentar una intubación orotraqueal en un paciente con shock profundo e inestabilidad hemodinámica sin antes agotar la ventilación no invasiva (VNI) o sin un estricto soporte vasoactivo previo es un error letal. Los fármacos inductores sedantes suprimen el tono simpático y la presión intratorácica positiva de la ventilación mecánica reduce drásticamente el retorno venoso (precarga) en un ventrículo derecho e izquierdo ya colapsados. Esto provoca un colapso cardiovascular completo o parada cardíaca inmediata en el momento de la inducción. El monitor muestra asistolia, indicando un paro cardíaco por hipoxia y colapso de la precarga. Debés iniciar reanimación urgente.","secuela":"Paro por intubación en shock no compensado: injuria hipóxica adicional."},{"texto":"Indicar otra infusión de 500 ml de solución fisiológica para determinar de forma concluyente si se trata de un componente hipovolémico refractario.","destino":"fase_4_rescate_sobrecarga_repetida","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"75/40","saturacion_oxigeno_pct":80,"frecuencia_respiratoria_rpm":34,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Si el paciente ya descompensó pulmonarmente ante 250 ml de líquido (rales ascendentes y desaturación del 87%), infundir más volumen empeorará severamente la congestión hiliar. Continuar con la expansión es una negligencia fisiopatológica que puede causar asfixia por inundación de los alvéolos pulmonares. El paciente presenta una caída severa del gasto cardíaco y signos de fatiga muscular respiratoria con saturación en descenso. Debés actuar de urgencia.","secuela":"Inundación alveolar por expansión insistida sobre un ventrículo sin reserva."}]},"fase_5_vasopresor":{"id":"fase_5_vasopresor","etapa":"Fase 5: Estabilización de la Presión Arterial","descripcion_situación":"Carlos está acoplado a la ventilación no invasiva (CPAP) y más oxigenado (SpO2 95%), pero su presión arterial persiste marcadamente baja (82/48 mmHg, con una Presión Arterial Media - PAM de 59 mmHg, por debajo del objetivo crítico de 65 mmHg) debido al componente de hipoperfusión. ¿Cuál es el soporte farmacológico más adecuado para estabilizar su presión arterial en esta fase?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar una infusión endovenosa continua de Noradrenalina por bomba de infusión a dosis de 0.05 a 0.1 mcg/kg/min por una de las vías periféricas gruesas, titulando hasta lograr una PAM > 65 mmHg.","destino":"fase_6_foco_infeccioso","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"92/58","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente elección! La noradrenalina es el vasopresor de primera línea recomendado por las guías de shock cardiogénico y séptico (mixto) para restaurar la presión de perfusión coronaria y sistémica. Su efecto alfa-1 adrenérgico predominante produce vasoconstricción sistémica, aumentando la PAM y asegurando el flujo sanguíneo a órganos vitales y al propio miocardio sin generar la taquicardia excesiva asociada a otros agentes como la dopamina. Es seguro iniciarla de forma transitoria por una vía periférica gruesa bien posicionada mientras se planifica una vía central. La PAM sube a 69 mmHg (presión arterial 92/58 mmHg) y la frecuencia cardíaca disminuye levemente a 98 lpm al mejorar el volumen sistólico."},{"texto":"Iniciar una infusión endovenosa continua de Dobutamina sola a dosis bajas de 2.5 mcg/kg/min por vía periférica para mejorar el gasto cardíaco.","destino":"fase_5_rescate_dobutamina_sola","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"72/42","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste una opción de soporte inotrópico de alto riesgo en este momento (semicorrecta). Iniciar un inotrópico con efecto vasodilatador como la dobutamina sola en un paciente con una PAM por debajo del umbral crítico de 65 mmHg es peligroso. El ventrículo izquierdo se beneficia del soporte inotrópico, pero la vasodilatación sistémica resultante disminuirá severamente la presión diastólica, la cual es determinante para el flujo sanguíneo coronario en un miocardio con isquemia o infarto reciente. Debés asociar un vasopresor (noradrenalina) primero o en conjunto. Observá que la presión arterial cayó a 72/42 mmHg y el paciente descompensó."},{"texto":"Administrar de inmediato un bolo directo de 1 mg de Adrenalina por vía periférica para aumentar la frecuencia cardíaca y la contractilidad.","destino":"fase_5_rescate_dobutamina_sola","es_correcta":false,"puntos_afectados":-30,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":145,"presion_arterial_mmhg":"130/70","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":26,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Administrar un bolo de 1 mg de adrenalina endovenosa a un paciente que conserva pulso y gasto cardíaco está estrictamente contraindicado, excepto en situaciones de parada cardiorrespiratoria inminente o anafilaxia severa. Este bolo masivo genera una estimulación simpática extrema que provocará crisis hipertensivas, taquiarritmias ventriculares fatales (como FV) e isquemia miocárdica masiva al aumentar exponencialmente el consumo de oxígeno de las fibras cardíacas en un ventrículo con infarto reciente. El monitor muestra una taquicardia severa a 145 lpm con elevación del ST, y el paciente está en alto riesgo de fibrilar."},{"texto":"Iniciar infusión endovenosa continua de Dopamina a dosis de 15 mcg/kg/min para lograr estimulación alfa y beta simultáneamente.","destino":"fase_5_rescate_dobutamina_sola","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"80/44","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":25,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. La dopamina se asocia a un incremento significativo del riesgo de arritmias ventriculares fatales y mayor mortalidad en pacientes con shock cardiogénico en comparación con la noradrenalina. Su uso ha sido relegado por las principales sociedades internacionales. En Carlos (con infarto agudo de miocardio reciente), la dosis arritmogénica de dopamina puede precipitar taquicardia severa y un aumento desmedido del consumo de oxígeno cardíaco. El monitor muestra taquicardia sinusal a 128 lpm e inestabilidad hemodinámica persistente."}]},"fase_6_foco_infeccioso":{"id":"fase_6_foco_infeccioso","etapa":"Fase 6: Abordaje del Foco Infeccioso","descripcion_situación":"Con la PAM estabilizada transitoriamente sobre 65 mmHg con la infusión de noradrenalina, debés atender la temperatura axilar de 38.2 °C y sospechar un componente séptico (shock mixto). Al mismo tiempo, el laboratorio que solicitaste en Fase 2 está listo e informa: Leucocitos 18.500/mm3 (85% neutrófilos), Creatinina 1.8 mg/dL (daño renal agudo) y Ácido Láctico de 3.5 mmol/L (hiperlactatemia severa). El sedimento urinario muestra abundantes leucocitos y bacterias con nitritos positivos. ¿Cuál es tu manejo terapéutico inmediato para esta complicación?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Tomar de inmediato dos juegos de hemocultivos y urocultivo, e iniciar inmediatamente tratamiento antibiótico empírico endovenoso de amplio espectro (Ceftriaxona 2 g EV o Piperacilina/Tazobactam 4.5 g EV) en la primera hora.","destino":"fase_7_adicion_inotropico","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"94/60","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Decisión excepcional! Se trata de una conducta de alta calidad médica. Ante la sospecha fundada de sepsis urinaria (leucocitosis, nitritos y bacterias positivas, lactato elevado de 3.5) que se superpone a la disfunción miocárdica (provocando un shock mixto), iniciar antibióticos de amplio espectro dentro de la primera hora disminuye de forma contundente la mortalidad del shock séptico. Obtener los cultivos de inmediato permite identificar el germen y desescalar la terapia después, sin que la recolección de muestras deba retrasar la administración del fármaco. Carlos tolera perfectamente la dosis del antibiótico y la noradrenalina mantiene su presión media en rangos seguros (sistólica de 94 mmHg).","printouts":[{"tipo":"lab","titulo":"Resultados del Laboratorio de Urgencia (Shockroom)","cuerpo":"HEMOGRAMA:\n- Leucocitos: 18.500 /mm3 (VR: 4.500-11.000) [ALTO] con 85% de Neutrófilos.\n- Hemoglobina: 12.8 g/dL (VR: 13.0-17.0).\n- Plaquetas: 198.000 /mm3 (VR: 150.000-400.000).\n\nQUÍMICA Y METABÓLICO:\n- Creatinina: 1.8 mg/dL (VR: 0.7-1.2) [ALTO - Daño Renal Agudo].\n- Urea: 65 mg/dL (VR: 15-45).\n- Ionograma: Na+ 138 mEq/L, K+ 4.2 mEq/L, Cl- 101 mEq/L.\n- Glucemia: 145 mg/dL.\n- Ácido Láctico: 3.5 mmol/L (VR: < 2.0) [ALTO - Hipoperfusión tisular].\n- Troponina T Ultrasensible: 450 pg/mL (VR: < 14) [ALTO - Consistente con secuela de IAM anterior].\n\nORINA COMPLETA:\n- Aspecto: Turbio.\n- Nitritos: Positivos.\n- Leucocitos: Abundantes (campo cubierto).\n- Bacterias: Abundantes."}]},{"texto":"Iniciar el antibiótico endovenoso de amplio espectro de forma inmediata sin demorarte en tomar muestras para hemocultivos o urocultivo.","destino":"fase_7_adicion_inotropico","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"92/58","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":19,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste una opción de manejo terapéutico subóptima (semicorrecta). Priorizar el antibiótico en la primera hora es una excelente medida terapéutica que salva vidas en la sepsis, pero omitir o saltear la toma de hemocultivos y urocultivos antes de infundir el fármaco es un error clínico que limitará críticamente la capacidad del equipo de infectología de aislar el microorganismo y realizar un antibiograma guiado. Esto favorecerá la resistencia bacteriana y prolongará el uso de esquemas empíricos tóxicos. El paciente responde al fármaco, pero su diagnóstico microbiológico quedó comprometido.","printouts":[{"tipo":"lab","titulo":"Resultados del Laboratorio de Urgencia (Shockroom)","cuerpo":"HEMOGRAMA:\n- Leucocitos: 18.500 /mm3 (VR: 4.500-11.000) [ALTO] con 85% de Neutrófilos.\n- Hemoglobina: 12.8 g/dL (VR: 13.0-17.0).\n- Plaquetas: 198.000 /mm3 (VR: 150.000-400.000).\n\nQUÍMICA Y METABÓLICO:\n- Creatinina: 1.8 mg/dL (VR: 0.7-1.2) [ALTO - Daño Renal Agudo].\n- Urea: 65 mg/dL (VR: 15-45).\n- Ionograma: Na+ 138 mEq/L, K+ 4.2 mEq/L, Cl- 101 mEq/L.\n- Glucemia: 145 mg/dL.\n- Ácido Láctico: 3.5 mmol/L (VR: < 2.0) [ALTO - Hipoperfusión tisular].\n- Troponina T Ultrasensible: 450 pg/mL (VR: < 14) [ALTO - Consistente con secuela de IAM anterior].\n\nORINA COMPLETA:\n- Aspecto: Turbio.\n- Nitritos: Positivos.\n- Leucocitos: Abundantes (campo cubierto).\n- Bacterias: Abundantes."}]},{"texto":"Iniciar inmediatamente una infusión rápida de solución fisiológica a dosis de 30 ml/kg (aproximadamente 2000 ml) para cumplir con las guías de campaña para la Sepsis.","destino":"fase_6_rescate_sobrecarga_sepsis","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"80/45","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":28,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Este es uno de los deslices conceptuales más peligrosos en pacientes con shock mixto. Las guías de sepsis (Surviving Sepsis Campaign) recomiendan una expansión agresiva de 30 ml/kg con cristaloides, pero aclaran explícitamente que esta conducta está fuertemente contraindicada en pacientes con disfunción cardíaca severa (cardiogénica primaria o FEVI 28%) y signos francos de sobrecarga pulmonar activa. Seguir ciegamente las guías de sepsis en Carlos provocará un colapso cardíaco y asfixia respiratoria severa. El monitor muestra que su saturación volvió a caer bruscamente al 82% con gran tiraje intercostal. Debés rescatarlo.","printouts":[{"tipo":"lab","titulo":"Resultados del Laboratorio de Urgencia (Shockroom)","cuerpo":"HEMOGRAMA:\n- Leucocitos: 18.500 /mm3 (VR: 4.500-11.000) [ALTO] con 85% de Neutrófilos.\n- Hemoglobina: 12.8 g/dL (VR: 13.0-17.0).\n- Plaquetas: 198.000 /mm3 (VR: 150.000-400.000).\n\nQUÍMICA Y METABÓLICO:\n- Creatinina: 1.8 mg/dL (VR: 0.7-1.2) [ALTO - Daño Renal Agudo].\n- Urea: 65 mg/dL (VR: 15-45).\n- Ionograma: Na+ 138 mEq/L, K+ 4.2 mEq/L, Cl- 101 mEq/L.\n- Glucemia: 145 mg/dL.\n- Ácido Láctico: 3.5 mmol/L (VR: < 2.0) [ALTO - Hipoperfusión tisular].\n- Troponina T Ultrasensible: 450 pg/mL (VR: < 14) [ALTO - Consistente con secuela de IAM anterior].\n\nORINA COMPLETA:\n- Aspecto: Turbio.\n- Nitritos: Positivos.\n- Leucocitos: Abundantes (campo cubierto).\n- Bacterias: Abundantes."}]},{"texto":"Indicar laboratorios de bacteriología formales y esperar a que los hemocultivos sean procesados durante 24-48 horas en internación antes de iniciar antibióticos.","destino":"fase_6_rescate_sepsis_retraso","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"75/40","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. Retrasar la administración de terapia antibiótica empírica en un shock séptico establecido en espera de los resultados analíticos o microbiológicos es una de las causas más directas de falla multiorgánica refractaria y muerte de origen infeccioso. Cada hora de demora en los antibióticos incrementa la mortalidad de forma lineal por la persistencia de mediadores inflamatorios humorales sistémicos y lisis bacteriana descontrolada. El monitor muestra hipotensión progresiva refractaria a la noradrenalina debido a la vasodilatación acentuada por la sepsis sin tratar.","printouts":[{"tipo":"lab","titulo":"Resultados del Laboratorio de Urgencia (Shockroom)","cuerpo":"HEMOGRAMA:\n- Leucocitos: 18.500 /mm3 (VR: 4.500-11.000) [ALTO] con 85% de Neutrófilos.\n- Hemoglobina: 12.8 g/dL (VR: 13.0-17.0).\n- Plaquetas: 198.000 /mm3 (VR: 150.000-400.000).\n\nQUÍMICA Y METABÓLICO:\n- Creatinina: 1.8 mg/dL (VR: 0.7-1.2) [ALTO - Daño Renal Agudo].\n- Urea: 65 mg/dL (VR: 15-45).\n- Ionograma: Na+ 138 mEq/L, K+ 4.2 mEq/L, Cl- 101 mEq/L.\n- Glucemia: 145 mg/dL.\n- Ácido Láctico: 3.5 mmol/L (VR: < 2.0) [ALTO - Hipoperfusión tisular].\n- Troponina T Ultrasensible: 450 pg/mL (VR: < 14) [ALTO - Consistente con secuela de IAM anterior].\n\nORINA COMPLETA:\n- Aspecto: Turbio.\n- Nitritos: Positivos.\n- Leucocitos: Abundantes (campo cubierto).\n- Bacterias: Abundantes."}]}]},"fase_7_adicion_inotropico":{"id":"fase_7_adicion_inotropico","etapa":"Fase 7: Optimización del Gasto Cardíaco","descripcion_situación":"Carlos se encuentra con una PAM de 67 mmHg gracias a la noradrenalina, pero continúa con signos evidentes de hipoperfusión tisular distal: piel fría y moteada (livedo reticularis en rodillas), un relleno capilar muy lento de 5 segundos, oliguria marcada y un lactato que persiste elevado (3.5 mmol/L). Tu diagnóstico final es un shock mixto con un fuerte componente cardiogénico (FEVI de 28% y bajo índice cardíaco). ¿Cuál es tu siguiente paso terapéutico para restaurar la perfusión sistémica?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Agregar infusión endovenosa continua de Dobutamina a dosis de 2.5 a 5 mcg/kg/min por bomba de infusión para mejorar la contractilidad miocárdica y el volumen sistólico.","destino":"fase_8_arritmia_complicacion","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":195,"presion_arterial_mmhg":"60/30","saturacion_oxigeno_pct":88,"frecuencia_respiratoria_rpm":28,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Ventricular monomórfica con pulso","st_mm":0},"feedback_detallado":"¡Elección acertada! El agregado de un agente inotrópico como la dobutamina es la indicación de elección cuando el shock cardiogénico o mixto presenta signos de hipoperfusión tisular distal persistente y bajo gasto cardíaco, una vez que la presión de perfusión sistémica mínima (PAM > 65 mmHg) ya ha sido asegurada con noradrenalina. La dobutamina estimula los receptores beta-1 aumentando el volumen sistólico y optimizando el transporte de oxígeno (DO2) a los tejidos, reduciendo la acidosis láctica progresivamente. El monitor muestra mejoría de la perfusión periférica, el relleno capilar desciende a 3 segundos, la presión arterial se estabiliza en 98/62 mmHg y la frecuencia cardíaca se modera a 90 lpm. ATENCIÓN AL MONITOR: la dobutamina era la indicación correcta y la perfusión empezaba a mejorar, pero sobre un miocardio isquémico de 48 horas cualquier estímulo beta-adrenérgico es potencialmente arritmogénico. Acaba de aparecer una taquicardia ventricular monomórfica con pulso a 195 lpm y la presión se desplomó. Esto NO invalida tu decisión: es la complicación esperable del inotrópico en este sustrato, y saber anticiparla es parte del tratamiento."},{"texto":"Aumentar significativamente la dosis de Noradrenalina a 0.25 mcg/kg/min para forzar un incremento de la presión arterial y mejorar la perfusión tisular.","destino":"fase_7_rescate_norepinefrina_alta","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"110/68","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":20,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Decisión semicorrecta pero con un riesgo fisiológico alto. Si bien aumentar la noradrenalina elevará la presión de perfusión sistémica (PAM) en el monitor, esto incrementará drásticamente la resistencia vascular sistémica (poscarga ventricular). En un corazón con una FEVI muy comprometida (28%), el ventrículo izquierdo será incapaz de eyectar contra esa poscarga aumentada, provocando una caída refleja del gasto cardíaco y empeorando la perfusión tisular microvascular de los órganos terminales, además de elevar las presiones de llenado pulmonares. Observá cómo sube la presión en el monitor, pero la acidosis láctica y la hipoperfusión tisular empeoraron."},{"texto":"Agregar infusión de Milrinona con un bolo inicial de carga de 50 mcg/kg para mejorar la contractilidad y disminuir la poscarga cardíaca.","destino":"fase_7_rescate_norepinefrina_alta","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"65/38","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":22,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. La milrinona es un inotrópico excelente en ciertas situaciones, pero su dosis de carga endovenosa directa e infusión sin la debida precaución hemodinámica en un paciente con insuficiencia renal aguda (Creatinina 1.8) e inestabilidad hemodinámica latente está fuertemente desaconsejada. La milrinona posee una vida media prolongada y una eliminación renal estricta, por lo que su acumulación provocará una vasodilatación arterial periférica profunda difícil de revertir y arritmias ventriculares graves. Carlos presenta hipotensión arterial severa refractaria (65/38 mmHg) tras el bolo."},{"texto":"Indicar una infusión rápida de 500 ml de solución coloidal (Gelatina o Albúmina al 5%) para mejorar el retorno venoso y el volumen minuto cardíaco.","destino":"fase_7_rescate_coloide","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"78/44","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":26,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Tratar de resolver la hipoperfusión terminal y el bajo gasto de origen cardíaco mediante expansiones reiteradas de volumen es extremadamente nocivo. Carlos ya descompensó previamente a nivel pulmonar ante aportes hídricos mínimos (Fase 4). Insistir con soluciones coloides aumentará el edema intersticial miocárdico y pulmonar por congestión retrógrada masiva. El monitor muestra un franco distress respiratorio con una saturación del 82% en el monitor, y el paciente está exhausto por el esfuerzo ventilatorio. Debés interrumpir y actuar.","secuela":"Sobrecarga hídrica adicional con deterioro renal en curso."}]},"fase_8_arritmia_complicacion":{"id":"fase_8_arritmia_complicacion","etapa":"Fase 8: Complicación Arrítmica Fatal","descripcion_situación":"Mientras estabilizás a Carlos con noradrenalina y dobutamina, de repente el monitor multiparamétrico comienza a sonar de manera estridente con una alarma de color rojo. Observás un trazado de complejos QRS anchos, monomórficos y regulares, a una frecuencia cardíaca extrema de 195 lpm. El paciente pierde rápidamente la lucidez, balbucea incoherencias, y su presión arterial sistólica se desploma a 60/30 mmHg. Verificás que el paciente presenta pulso carotídeo palpable débil. ¿Cuál es la terapia eléctrica inmediata recomendada para esta arritmia inestable?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Administrar de inmediato Cardioversión Eléctrica Sincronizada a 100-200 Joules utilizando el desfibrilador en modo sincrónico, previa sedación ultrarrápida del paciente con Fentanilo.","destino":"fase_9_paro_cardiaco","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Decisión sumamente correcta! El paciente presenta una Taquicardia Ventricular (TV) monomórfica con pulso pero inestable hemodinámicamente (hipotensión severa de 60/30 mmHg y alteración del sensorio). El algoritmo de soporte vital avanzado (ACLS) indica que ante cualquier arritmia con pulso que condicione inestabilidad hemodinámica, la terapia de elección es la cardioversión eléctrica sincronizada inmediata. Asegurar que el equipo esté en modo 'Sincrónico' (SYNC) evita que la descarga caiga sobre la onda T cardíaca, lo que prevendría la precipitación de una fibrilación ventricular letal. La descarga de 150 J revierte el ritmo de forma exitosa y Carlos retorna inmediatamente a taquicardia sinusal a 85 lpm, recuperando el estado de alerta. ATENCIÓN AL MONITOR: la cardioversión sincronizada era exactamente lo indicado y revirtió la taquicardia ventricular, pero el miocardio isquémico siguió deteriorándose y Carlos degeneró en fibrilación ventricular sin pulso. Es la evolución natural de un ventrículo con fracción de eyección del 28% en shock, no una consecuencia de tu elección."},{"texto":"Preparar de inmediato una infusión de 150 mg de Amiodarona endovenosa para infundir en 10 minutos y retrasar la cardioversión eléctrica por seguridad.","destino":"fase_8_rescate_amiodarona_lenta","es_correcta":false,"puntos_afectados":-10,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":198,"presion_arterial_mmhg":"42/20","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Ventricular monomórfica con pulso","st_mm":0},"feedback_detallado":"Elegiste una opción de manejo farmacológico errónea ante la inestabilidad (semicorrecta). La amiodarona es el antiarrítmico de elección para la TV monomórfica estable, pero está terminantemente prohibido demorar la terapia eléctrica mediante infusiones de fármacos cuando el paciente presenta shock profundo, hipotensión crítica (60/30 mmHg) y pérdida del sensorio activa. La amiodarona tardará demasiado en actuar, y además el vehículo solvente del fármaco posee efectos vasodilatadores que deprimirán aún más la presión arterial, induciendo paro cardíaco. Observá el monitor: Carlos perdió el pulso y cayó en paro cardíaco por TV sin pulso."},{"texto":"Colocar las paletas del desfibrilador, seleccionar 200 Joules en modo Asincrónico (Desfibrilación) y entregar una descarga inmediata sin activar el sincronismo.","destino":"fase_8_rescate_desfibrilacion_sin_sincronismo","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Grave error irreversible! Este es uno de los fallos técnicos más temidos y letales en la terapia de arritmias. Administrar una descarga eléctrica de alta energía a un paciente con una arritmia ventricular organizada y con pulso (como la TV monomórfica) sin activar la función de sincronismo (SYNC) del equipo hará que el choque eléctrico caiga de forma aleatoria, con alta probabilidad de impactar sobre la fase vulnerable de la repolarización ventricular (la rama ascendente de la onda T). Esto produce el fenómeno de 'R sobre T', que precipita inmediatamente Fibrilación Ventricular (FV) y paro cardiorrespiratorio inmediato. El monitor muestra un trazado caótico compatible con FV, el paciente ya no tiene pulso ni respira.","secuela":"Fibrilación ventricular inducida por choque no sincronizado (fenómeno R sobre T)."},{"texto":"Indicar maniobras vagales agresivas como el masaje del seno carotídeo de forma bilateral para disminuir rápidamente la frecuencia cardíaca.","destino":"fase_8_rescate_amiodarona_lenta","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":195,"presion_arterial_mmhg":"50/25","saturacion_oxigeno_pct":87,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Ventricular monomórfica con pulso","st_mm":0},"feedback_detallado":"Error moderado. Las maniobras vagales como el masaje del seno carotídeo o la maniobra de Valsalva modificado están absolutamente contraindicadas e ineficaces en taquiarritmias de origen ventricular (TV), y no se deben realizar bajo ninguna circunstancia en pacientes hemodinámicamente inestables. Además, el masaje bilateral del seno carotídeo puede provocar síncope y oclusión del flujo carotídeo, induciendo un accidente cerebrovascular o bradicardia severa con parada de forma refleja. Carlos se deteriora de forma acelerada, perdiendo la perfusión cerebral activa."}]},"fase_9_paro_cardiaco":{"id":"fase_9_paro_cardiaco","etapa":"Fase 9: Colapso y Reanimación Cardiopulmonar","descripcion_situación":"A pesar de tus mejores esfuerzos por mantener el equilibrio hemodinámico, Carlos de repente entra en una Fibrilación Ventricular (FV) secundaria a la isquemia progresiva y la hipoxia tisular. El paciente se encuentra inconsciente, arrefléxico, sin pulso carotídeo palpable y sin movimientos respiratorios (gasping agónico). El monitor muestra la palabra de advertencia de ritmos caóticos. ¿Cuál es tu protocolo de reanimación cardiopulmonar (RCP) inmediata?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Iniciar compresiones torácicas externas de alta calidad de forma inmediata, cargar el desfibrilador a 200 Joules en modo Asincrónico (Desfibrilación) y aplicar una descarga eléctrica asincrónica inmediata, reanudando las compresiones de inmediato tras el choque.","destino":"fase_10_estabilizacion_y_derivacion","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":14,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente ejecución del protocolo ACLS! Ante un paro cardiorrespiratorio en ritmo desfibrilable (Fibrilación Ventricular o Taquicardia Ventricular sin pulso), el factor pronóstico más determinante para la sobrevida del paciente es el tiempo que transcurre hasta la desfibrilación eléctrica de alta energía. Iniciar compresiones de alta calidad mientras se carga el equipo mantiene una mínima presión de perfusión coronaria y cerebral. La descarga asincrónica de 200 J (bifásica) despolariza masivamente el miocardio, permitiendo que el marcapasos natural retome el control. Carlos recupera el retorno de la circulación espontánea (RCE) tras la descarga y un ciclo de RCP, con presión de 90/55 mmHg."},{"texto":"Indicar que se detengan las maniobras de compresión torácica para proceder a la intubación orotraqueal del paciente antes de aplicar cualquier descarga.","destino":"fase_9_rescate_intubacion_demora","es_correcta":false,"puntos_afectados":-10,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"Elegiste un error procedimental severo (semicorrecta). Si bien asegurar la vía aérea avanzada es un componente del soporte vital, priorizar la intubación orotraqueal y demorar la desfibrilación eléctrica ante una fibrilación ventricular es incorrecto y contradice directamente los algoritmos internacionales de RCP. Cada minuto de retraso en la desfibrilación disminuye la tasa de supervivencia un 7-10%, conduciendo rápidamente a asistolia refractaria irreversible por hipoxia y agotamiento de reservas de ATP del miocardio. Carlos permanece en paro cardíaco prolongado sin respuesta."},{"texto":"Preparar e inyectar un bolo directo de 300 mg de Amiodarona endovenosa antes de realizar compresiones o desfibrilar al paciente.","destino":"fase_9_rescate_intubacion_demora","es_correcta":false,"puntos_afectados":-30,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error! El uso de fármacos antiarrítmicos como la amiodarona en el paro cardíaco en ritmo desfibrilable está indicado únicamente después de la tercera descarga de desfibrilación que haya resultado ineficaz, y siempre en conjunto con compresiones torácicas continuas y adrenalina. Administrar medicamentos como primera medida sin realizar RCP básica ni desfibrilar es una negligencia que anula cualquier posibilidad de revertir la fibrilación ventricular, condenando al paciente a muerte cerebral y asistolia por isquemia. El monitor muestra asistolia persistente y muerte miocárdica."},{"texto":"Cargar el desfibrilador a 200 Joules, activar el modo Sincrónico (SYNC) y presionar el botón de descarga para revertir la fibrilación ventricular.","destino":"fase_9_rescate_intubacion_demora","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"Error moderado y técnico crítico. El modo sincrónico (SYNC) busca la presencia de la onda R para entregar la descarga de forma segura. En la fibrilación ventricular, las ondas de despolarización miocárdica son caóticas, irregulares y carecen de un complejo QRS u onda R identificable. Si activás el modo sincrónico en este ritmo de paro, el desfibrilador se quedará esperando de forma indefinida un complejo que nunca llegará, y el equipo NO disparará la descarga, retrasando de forma letal el tratamiento eléctrico. El paciente permanece sin flujo y su miocardio se deteriora rápidamente."}]},"fase_10_estabilizacion_y_derivacion":{"id":"fase_10_estabilizacion_y_derivacion","etapa":"Fase 10: Estabilización Post-Paro y Derivación","descripcion_situación":"¡Carlos ha recuperado el ritmo sinusal de forma estable (Retorno de la Circulación Espontánea - RCE)! Su presión arterial se mantiene en 90/55 mmHg con infusión activa de noradrenalina a 0.12 mcg/kg/min y dobutamina a 5 mcg/kg/min, con soporte de ventilación mecánica invasiva post-paro. Vos sabés que este hospital no posee unidad de hemodinamia de alta complejidad y Carlos debe ser transferido de forma urgente a una Unidad de Cuidados Coronarios (UCO) para tratamiento definitivo de su shock mixto y potencial reestudio hemodinámico. ¿Cuál es tu plan de derivación final?","criticidad":"media","tiempo_limite_segundos":420,"penalizacion_por_timeout":-10,"opciones":[{"texto":"Mantener las infusiones de noradrenalina y dobutamina por bomba de infusión, continuar el monitoreo multiparamétrico estricto y coordinar el traslado urgente en una ambulancia de alta complejidad (U.T.I.M.) acompañado por un médico intensivista.","destino":"fase_exito","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":14,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente resolución del caso problema! El manejo de un paciente inestable en shock que ha sobrevivido a un paro cardíaco requiere un traslado interinstitucional altamente planificado y seguro. Suspender las bombas de soporte vasoactivo o derivarlo en condiciones subóptimas anularía la estabilización y precipitaría una nueva parada. Coordinar el transporte con monitoreo continuo, soporte ventilatorio activo y un médico intensivista para guiar las dosis del fármaco durante el traslado garantiza una transferencia segura hacia el centro receptor. Carlos ingresa a la Unidad Coronaria estable para su revascularización de urgencia."},{"texto":"Coordinar el traslado de Carlos en ambulancia de alta complejidad de forma inmediata, manteniendo el soporte pero delegando el monitoreo al personal de enfermería y paramédicos de traslado sin médico presencial.","destino":"fase_exito","es_correcta":false,"puntos_afectados":-8,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"80/48","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste una opción de derivación semicorrecta. Aunque aseguraste el equipo de traslado adecuado, delegar el cuidado clínico directo de un paciente con shock mixto inestable y propenso a arritmias graves al personal paramédico sin la presencia física del médico es una omisión de cuidado importante. Cualquier cambio en los requerimientos vasoactivos o una recidiva arrítmica durante el viaje no podrán ser abordados con el mismo nivel de maniobra médica compleja. Carlos llega al hospital de destino con hipotensión y leve descompensación, pero sobrevive."},{"texto":"Suspender transitoriamente las infusiones de Noradrenalina y Dobutamina para evaluar si el paciente es capaz de sostener su presión por sí mismo antes de iniciar el traslado.","destino":"fase_10_rescate_alta_precoz","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"55/30","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":22,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error! Retirar bruscamente el soporte de aminas vasoactivas y vasopresores en un paciente que acaba de salir de un paro cardíaco y que se encuentra en shock profundo es una negligencia. Su reserva miocárdica está exhausta y requiere apoyo inotrópico y vasoconstrictor continuo para mantener la presión de perfusión tisular básica de los órganos nobles y coronarias. Suspender los fármacos provocará una recaída hemodinámica severa, isquemia cerebral generalizada y muerte inminente. Carlos presenta un shock cardiogénico profundo refractario y se descompensó de inmediato."},{"texto":"Coordinar de inmediato el traslado de Carlos en la primera ambulancia estándar disponible que se encuentre en el hospital de forma rápida para evitar demoras.","destino":"fase_10_rescate_alta_precoz","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"60/35","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":24,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error moderado. Intentar trasladar a un paciente en shock profundo post-paro en una unidad de transporte estándar (no equipada con monitor multiparamétrico, respirador portátil ni bombas de infusión continua) es un error crítico. Si el paciente experimenta una nueva parada cardíaca o insuficiencia ventilatoria severa durante el viaje, el equipo de traslado no contará con las herramientas mínimas de reanimación avanzada para actuar. Carlos sufre una grave desaturación e hipotensión refractaria durante el trayecto, obligando a retornar de emergencia."}]},"fase_exito":{"id":"fase_exito","etapa":"Caso Clínico Finalizado","descripcion_situación":"Felicitaciones por haber concluido el caso clínico interactivo de Carlos. Este simulador evalúa las competencias y destrezas cognitivas requeridas para el diagnóstico diferencial de shock mixto y el manejo crítico de complicaciones cardiovasculares y sépticas a pie de cama. Acordate de que la toma de decisiones clínicas oportuna y basada en la fisiopatología, junto al trabajo coordinado en el shockroom, es el pilar para mejorar la sobrevida del paciente inestable.","criticidad":"media","opciones":[],"texto_por_tier":{"exito":"¡Lograste un Éxito Pleno! Manejaste el caso clínico de Carlos con un nivel de excelencia impecable, reconociendo el shock mixto y evitando sobrecargas de volumen catastróficas. Felicitaciones.","secuelas":"Caso Estabilizado con Secuelas. Aunque el paciente sobrevivió y lograste derivarlo, el retraso terapéutico o las decisiones inapropiadas previas le causaron daño prolongado por isquemia miocárdica o hipoxia tisular.","critico":"Desenlace Crítico. Las intervenciones fueron insuficientes o tardías, resultando en un colapso cardiovascular y daño orgánico irreversible para Carlos. Volvé a intentarlo."}},"fase_1_rescate_edema":{"id":"fase_1_rescate_edema","etapa":"Fase 1 Rescate: Edema Agudo de Pulmón Severo","descripcion_situación":"La gran sobrecarga de fluidos (1500 ml) generó un edema agudo de pulmón masivo en el ventrículo izquierdo con baja contractilidad de Carlos. El paciente está cianótico, con tiraje intercostal generalizado y su saturación se desploma al 82% en el monitor. ¿Cómo revertís de urgencia esta complicación hemodinámica?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender de inmediato toda expansión de líquidos, colocar ventilación no invasiva (VNI) con CPAP de alta FiO2 y administrar un bolo endovenoso de 40 mg de Furosemida de forma urgente.","destino":"fase_2_diagnostico_inicial","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":22,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate muy bien ejecutado! La conducta adecuada combina suspender la causa de sobrecarga (fluidos), reclutar alvéolos mediante presión positiva (VNI) y forzar la diuresis farmacológicamente con diuréticos de asa endovenosos como la furosemida. Esto revierte el exceso de presión hidrostática capilar pulmonar y devuelve a Carlos a su estado de saturación basal segura (93%), permitiendo continuar con el algoritmo diagnóstico inicial. El detalle que separa quien sabe de quien repite protocolo es entender POR QUÉ falló el volumen: un ventrículo con fracción de eyección deprimida trabaja en la porción plana de la curva de Frank-Starling, donde agregar precarga ya no produce volumen sistólico y sólo genera presión hidrostática retrógrada hacia el capilar pulmonar. Si la presión no mejora tras esta corrección, el paso siguiente NO es más líquido: es vasopresor. Acordate de este episodio cuando llegue el momento de decidir la expansión."},{"texto":"Aplicar una infusión rápida de 500 ml de solución salina hipertónica para desplazar el líquido alveolar hacia el espacio intravascular y observar.","destino":"fase_1_rescate_edema","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"75/40","saturacion_oxigeno_pct":75,"frecuencia_respiratoria_rpm":34,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! El aporte de solución hipertónica incrementará bruscamente el volumen plasmático circulante, sobrecargando masivamente las cavidades izquierdas incompetentes del paciente y asfixiándolo aún más por edema retrógrado refractario. Observá el monitor: Carlos presenta cianosis severa e hipoxia extrema (saturación de 75%), con riesgo inminente de paro cardíaco por hipoxia. Volvé a intentarlo de urgencia."}]},"fase_1_rescate_furosemida":{"id":"fase_1_rescate_furosemida","etapa":"Fase 1 Rescate: Hipotensión Inducida por Diuréticos","descripcion_situación":"La administración prematura de furosemida endovenosa en un paciente inestable sin soporte previo provocó una venodilatación excesiva, desplomando su presión arterial sistólica a 70/40 mmHg y comprometiendo críticamente la perfusión coronaria de Carlos. ¿Cómo estabilizás su presión de forma urgente?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Infundir un bolo controlado de 250 ml de solución fisiológica en 10 minutos y preparar el inicio inmediato de soporte vasopresor con noradrenalina por bomba.","destino":"fase_2_diagnostico_inicial","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":22,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rescate hemodinámico! Para revertir la caída de presión inducida por venodilatación masiva sin soporte, un bolo de prueba muy controlado de 250 ml de solución salina fisiológica restituye el volumen intravascular mínimo requerido para mantener el gasto cardíaco, complementado con la preparación del vasopresor. Carlos mejora su presión arterial media sobre los rangos de seguridad (84/50 mmHg), volviendo a la línea principal. Fijate en el orden correcto, porque es lo que más se equivoca: en un paciente congestivo PERO hipotenso, primero se sostiene la presión de perfusión y sólo después se deplecionan volumen. La furosemida sobre una presión arterial media por debajo de 65 mmHg empeora el flujo renal y coronario justo cuando más se los necesita. El diurético no está prohibido en este caso: está mal cronometrado."},{"texto":"Indicar otra ampolla de 40 mg de Furosemida endovenosa para acelerar la diuresis del volumen retenido.","destino":"fase_1_rescate_furosemida","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"58/32","saturacion_oxigeno_pct":88,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Insistir con diuréticos de asa cuando el paciente ya se encuentra marcadamente hipotenso (sistólica de 70 mmHg) empeorará severamente el shock hemodinámico debido a la reducción continua del volumen circulante efectivo y la hipotensión sistémica terminal. La presión arterial cae a 58/32 mmHg. Volvé a intentarlo de inmediato."}]},"fase_2_rescate_demora":{"id":"fase_2_rescate_demora","etapa":"Fase 2 Rescate: Demora en la Definición de Shock","descripcion_situación":"La demora en la realización de estudios diagnósticos de cabecera en el shockroom provocó que Carlos permanezca en shock profundo prolongado y sin un soporte óptimo. Su presión arterial sistólica cae a 72 mmHg y la hipoperfusión tisular cerebral se acentúa. ¿Cuál es tu acción diagnóstica de rescate inmediata?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender de inmediato la espera o el traslado, y realizar de forma urgente una evaluación ecográfica POCUS a pie de cama y un ECG en el shockroom.","destino":"fase_3_evaluacion_pocus","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":23,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión de rescate! Detener los traslados peligrosos u omisiones terapéuticas y realizar de inmediato la ecografía y el ECG a pie de cama permite tipificar el shock (FEVI 28% con congestión, sin taponamiento) de forma rápida y segura en el shockroom. El paciente vuelve a estar monitoreado y controlado de forma continua, estabilizándose levemente su presión y oxigenación para avanzar en el algoritmo. El principio general vale para todo shock: los estudios que se hacen a la cabecera y en minutos (ECG, radiografía portátil, POCUS) tienen prioridad sobre cualquier estudio que exija esperar o trasladar. El laboratorio sigue siendo necesario para el lactato y la función renal, pero corre en paralelo y no condiciona las primeras decisiones. Perdiste tiempo, no el caso."},{"texto":"Insistir en el traslado al tomógrafo para completar la AngioTAC o esperar a los bioquímicos clínicos en el shockroom por al menos 15 minutos adicionales.","destino":"fase_2_rescate_demora","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"58/35","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":28,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Insistir en la espera prolongada o el traslado no seguro de un paciente en shock inestable provocará un daño isquémico celular generalizado e irreversible, conduciendo a parada cardiorrespiratoria por hipoxia. El monitor muestra hipotensión severa extrema (sistólica de 58 mmHg) y colapso circulatorio inminente. Volvé a intentarlo de inmediato."}]},"fase_3_rescate_sobrecarga":{"id":"fase_3_rescate_sobrecarga","etapa":"Fase 3 Rescate: Inundación Alveolar Aguda","descripcion_situación":"La administración desmedida de grandes volúmenes de cristaloides (1000 ml) a chorro superó la capacidad ventricular izquierda incompetente de Carlos, provocando una congestión pulmonar retrógrada catastrófica. La saturación cae a 84%, el paciente presenta tiraje universal y esputo rosado espumoso. ¿Cómo intervenís de urgencia?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender toda expansión, acoplar de inmediato a ventilación no invasiva (VNI) en modo CPAP con FiO2 al 100% y administrar un bolo endovenoso de 40 mg de Furosemida.","destino":"fase_4_descompensacion_volumen","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"84/50","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":23,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rescate de sobrecarga pulmonar! El manejo correcto combina detener la sobrecarga (fluidos), reclutar alvéolos mediante presión de CPAP y disminuir la congestión capilar retrógrada con diuréticos de asa endovenosos como la furosemida de forma inmediata. Carlos mejora su oxigenación alveolar a 93% y cede levemente el esfuerzo ventilatorio, retornando a la línea principal. Guardá el concepto central de este caso: en el shock mixto las recetas de sus dos componentes se contradicen. La sepsis pide volumen generoso; la disfunción miocárdica severa lo prohíbe. Cuando ambos coexisten, manda el ventrículo — se expande de a 250 ml y se reevalúa, porque el pulmón avisa mucho antes que la presión. La saturación empezó a recuperarse tras suspender la carga."},{"texto":"Infundir otra dosis de 500 ml de albúmina para intentar aumentar la presión oncótica intersticial rápidamente y reevaluar en 10 minutos.","destino":"fase_3_rescate_sobrecarga","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"72/38","saturacion_oxigeno_pct":74,"frecuencia_respiratoria_rpm":36,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Seguir infundiendo fluidos (inclusive coloides como la albúmina) en un pulmón inundado por congestión retrógrada aguda empeorará de forma catastrófica la asfixia celular por ocupación alveolar refractaria. Observá el monitor: la saturación desciende al 74%, con tiraje marcado y cianosis central severa. Volvé a intentarlo inmediatamente."}]},"fase_4_rescate_intubacion_precoz":{"id":"fase_4_rescate_intubacion_precoz","etapa":"Fase 4 Rescate: RCP por Parada en la Inducción","descripcion_situación":"La intubación orotraqueal acelerada sin estabilización previa eliminó el tono simpático basal de Carlos y redujo drásticamente su precarga ventricular por presión intratorácica positiva de la ventilación mecánica, provocando un colapso cardiovascular y parada cardíaca en asistolia. ¿Cuál es tu protocolo de reanimación cardiopulmonar de inmediato?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Iniciar de inmediato compresiones torácicas de alta calidad de forma continua, administrar 1 mg de Adrenalina endovenosa cada 3 minutos, y optimizar el volumen intravascular con un bolo controlado de 250 ml para restaurar la precarga.","destino":"fase_5_vasopresor","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"82/48","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente ejecución del rescate en parada! El manejo adecuado de la Actividad Eléctrica Sin Pulso (AESP) o Asistolia inducida por colapso de precarga exige compresiones torácicas inmediatas y de calidad, administración de adrenalina precoz de 1 mg y una prudente expansión de volumen de soporte para restaurar la precarga mínima del ventrículo colapsado. Carlos recupera el retorno de la circulación espontánea tras el protocolo, con presión arterial sistólica estable de 82 mmHg y saturación de 95%. El punto clave que este rescate enseña: la intubación no es una intervención hemodinámicamente neutra. La inducción suprime el tono simpático que sostenía la presión, y la ventilación con presión positiva reduce el retorno venoso. En un paciente en shock, eso puede precipitar el paro en el propio laringoscopio. Si es inevitable intubar, primero se optimiza la presión con vasopresor y se elige un inductor hemodinámicamente estable, nunca al revés."},{"texto":"Aplicar una descarga eléctrica inmediata de 200 Joules utilizando el desfibrilador en modo asincrónico y administrar un bolo de Amiodarona.","destino":"fase_4_rescate_intubacion_precoz","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Descargar con un desfibrilador eléctrico a un paciente que se encuentra en asistolia o actividad eléctrica sin pulso no está indicado, ya que no existe un circuito arrítmico organizado que despolarizar y esto provocará daño térmico directo en el miocardio. El algoritmo de RCP exige compresiones continuas y adrenalina. El paciente permanece sin pulso en el monitor. Volvé a intentarlo de inmediato."}]},"fase_5_rescate_dobutamina_sola":{"id":"fase_5_rescate_dobutamina_sola","etapa":"Fase 5 Rescate: Hipotensión Severa por Vasodilatación","descripcion_situación":"El inicio de un fármaco inotrópico o estimulante sin un vasopresor de base para mantener el tono arterial periférico en Carlos provocó una vasodilatación marcada, descendiendo la presión arterial sistólica a 72/42 mmHg y comprometiendo gravemente la presión de perfusión de las coronarias. ¿Cómo intervenís de urgencia?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Disminuir o suspender la dobutamina e iniciar de inmediato una infusión endovenosa continua de Noradrenalina a dosis de 0.1 mcg/kg/min por bomba de infusión, titulando hasta lograr una PAM > 65 mmHg.","destino":"fase_6_foco_infeccioso","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"92/58","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rescate hemodinámico! Reconocer de inmediato que el componente de vasoplejía periférica exige un soporte vasoconstrictor con noradrenalina y suspender las aminas puras de contractilidad de alta dosis es una medida fisiopatológicamente correcta. Esto revierte la vasodilatación excesiva y estabiliza su presión arterial sistólica a 92/58 mmHg, permitiendo retornar a la línea principal de manejo. El orden importa y tiene una explicación fisiológica precisa: la perfusión coronaria ocurre en diástole y depende de la presión diastólica. La dobutamina vasodilata y baja justamente esa presión, de modo que sobre un ventrículo isquémico sin vasopresor previo empeora la isquemia que intenta tratar. Primero noradrenalina para asegurar la presión de perfusión, después el inotrópico para el gasto."},{"texto":"Aumentar aún más la dosis de dobutamina o inyectar otro bolo de adrenalina endovenosa para forzar un incremento de la contractilidad miocárdica.","destino":"fase_5_rescate_dobutamina_sola","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":142,"presion_arterial_mmhg":"60/32","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Incrementar la infusión de dobutamina u otros estimulantes miocárdicos agudizará el consumo celular de oxígeno cardíaco y empeorará la vasodilatación beta-2 sistémica periférica, acelerando el shock profundo y precipitando arritmias ventriculares letales. Observá el monitor: la frecuencia es extrema de 142 lpm y la presión bajó a 60/32 mmHg. Volvé a intentarlo de inmediato."}]},"fase_6_rescate_sobrecarga_sepsis":{"id":"fase_6_rescate_sobrecarga_sepsis","etapa":"Fase 6 Rescate: Congestión Pulmonar Severa en Sepsis","descripcion_situación":"La expansión indiscriminada de fluidos bajo guías de sepsis (30 ml/kg) en un paciente con insuficiencia cardíaca severa (FEVI 28%) descompensó de inmediato a Carlos por edema agudo de pulmón retrógrado masivo. Su saturación cayó al 82% en el monitor. ¿Cómo revertís de urgencia esta complicación?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Interrumpir de forma urgente toda expansión de volumen, iniciar soporte ventilatorio de presión positiva no invasiva (CPAP) y administrar 40 mg de Furosemida endovenosa.","destino":"fase_7_adicion_inotropico","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"94/60","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente y oportuno rescate! Comprender que el edema pulmonar agudo cardiogénico provocado por sobrecarga de fluidos en el contexto de sepsis debe priorizar la optimización pulmonar y la diuresis forzada endovenosa sobre las metas generales de sepsis es fisiológicamente correcto. Carlos mejora su oxigenación a 95% y los rales basales disminuyen significativamente, retornando a la línea principal. Este es el nudo conceptual del caso entero: el objetivo de 30 ml/kg de la campaña de sepsis asume un ventrículo capaz de manejar ese volumen. Con una fracción de eyección del 28% y rales ya presentes, ese mismo objetivo se vuelve iatrogénico. Las propias guías lo aclaran, pero la cifra se repite de memoria sin la advertencia. En el shock mixto el foco infeccioso se trata con antibiótico y control del foco, no con volumen a ciegas."},{"texto":"Administrar otra infusión de 500 ml de solución coloidal para forzar la diuresis del volumen retenido y mantener el aporte de O2 pasivo.","destino":"fase_6_rescate_sobrecarga_sepsis","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"78/42","saturacion_oxigeno_pct":72,"frecuencia_respiratoria_rpm":32,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Seguir infundiendo líquidos a un pulmón inundado empeorará severamente la barrera hematogaseosa de los capilares, asfixiándolo irreversiblemente. El monitor muestra cianosis extrema con saturación de 72%. Volvé a intentarlo de inmediato."}]},"fase_6_rescate_sepsis_retraso":{"id":"fase_6_rescate_sepsis_retraso","etapa":"Fase 6 Rescate: Progresión del Shock Séptico","descripcion_situación":"La postergación en el inicio de la terapia antibiótica empírica en un shock mixed establecido permitió la progresión de la sepsis bacteriana, acentuando la vasodilatación periférica inflamatoria. La presión sistólica desciende a 75/40 mmHg y la acidosis láctica se incrementa. ¿Cómo intervenís de urgencia?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Tomar de inmediato hemocultivos y urocultivo, e iniciar inmediatamente tratamiento antibiótico empírico endovenoso de amplio espectro (Ceftriaxona o Piperacilina/Tazobactam) de forma urgente.","destino":"fase_7_adicion_inotropico","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"94/60","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":18,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rescate de la sepsis! Reconocer que suspender la demora de antibióticos y tomarlos de forma urgente en la primera hora salva vidas en el shock mixed/séptico es una conducta adecuada. Carlos responde al fármaco, controlando progresivamente la vasodilatación inflamatoria periférica y estabilizando su presión arterial sistólica a 94/60 mmHg para regresar a la línea de manejo. Retené el número, porque es de los pocos que conviene saber de memoria: cada hora de demora en el antibiótico empírico aumenta la mortalidad del shock séptico de forma medible. Los hemocultivos se toman antes SI eso no demora la primera dosis; si demoran, se administra el antibiótico igual. El cultivo sirve para desescalar después, no para decidir ahora."},{"texto":"Postergar nuevamente los antibióticos endovenosos y esperar los resultados microbiológicos para evitar la toxicidad bacteriológica.","destino":"fase_6_rescate_sepsis_retraso","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"62/34","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":24,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Demorar la administración de antibióticos en un shock mixto con componente infeccioso activo (sepsis bacteriana sistémica) progresará el daño multiorgánico de los tejidos y conducirá a parada cardíaca refractaria. La presión cae a 62/34 mmHg. Volvé a intentarlo de inmediato."}]},"fase_7_rescate_norepinefrina_alta":{"id":"fase_7_rescate_norepinefrina_alta","etapa":"Fase 7 Rescate: Falla de Bomba por Poscarga Excesiva","descripcion_situación":"El incremento masivo de la noradrenalina o el uso inadecuado de milrinona en Carlos provocó un aumento desmedido de la poscarga ventricular o vasodilatación extrema incontrolada, descendiendo el volumen sistólico y acentuando la acidosis láctica periférica severa. El monitor muestra isquemia y taquicardia. ¿Cómo equilibrás la perfusión tisular?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar de inmediato infusión de Dobutamina a dosis bajas de 2.5 mcg/kg/min por bomba de infusión y ajustar la dosis de Noradrenalina de base para mantener la PAM en 65 mmHg.","destino":"fase_8_arritmia_complicacion","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":195,"presion_arterial_mmhg":"60/30","saturacion_oxigeno_pct":88,"frecuencia_respiratoria_rpm":28,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Ventricular monomórfica con pulso","st_mm":0},"feedback_detallado":"¡Excelente rescate hemodinámico! Entender que Carlos requería equilibrar el soporte de fuerza contráctil (dobutamina) y resistencia periférica (noradrenalina) en lugar de forzar dosis unilaterales que sobrecarguen el miocardio es fisiopatológicamente correcto. El volumen sistólico mejora, el relleno capilar se normaliza a 3 segundos y regresa a la línea principal. El razonamiento a corregir es el más frecuente en la guardia: subir el vasopresor eleva el número de la presión pero no resuelve el problema, que es un gasto cardíaco insuficiente. Peor, la vasoconstricción excesiva aumenta la poscarga contra la que este ventrículo debilitado tiene que eyectar, reduciendo aún más el volumen sistólico. Cuando la presión mejora pero la perfusión no —piel fría, oliguria, lactato alto—, lo que falta es inotrópico, no más alfa."},{"texto":"Aumentar aún más la dosis de Noradrenalina por encima de 0.5 mcg/kg/min para contrarrestar la debilidad ventricular.","destino":"fase_7_rescate_norepinefrina_alta","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"115/65","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":2,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Seguir aumentando la noradrenalina someterá al miocardio isquémico anterior a una poscarga infranqueable, colapsando por completo el gasto cardíaco retrógrado pulmonar e induciendo arritmias malignas. El monitor muestra taquicardia severa a 128 lpm. Volvé a intentarlo de inmediato."}]},"fase_8_rescate_amiodarona_lenta":{"id":"fase_8_rescate_amiodarona_lenta","etapa":"Fase 8 Rescate: Desfibrilación por TV sin Pulso","descripcion_situación":"La demora en la cardioversión eléctrica mediante maniobras erróneas o infusiones de amiodarona lenta provocó que Carlos pierda el pulso y caiga en una Taquicardia Ventricular Sin Pulso (TVSP) / Paro Cardiorrespiratorio en el monitor. ¿Cómo procedés de inmediato?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Iniciar compresiones torácicas externas de alta calidad, cargar de inmediato el desfibrilador a 200 Joules en modo Asincrónico (Desfibrilación) y aplicar una descarga de alta energía asincrónica de urgencia.","destino":"fase_9_paro_cardiaco","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Excelente y oportuno rescate! La TV sin pulso se maneja exactamente como la fibrilación ventricular: desfibrilación eléctrica asincrónica inmediata a alta energía (200 J bifásica) y compresiones torácicas continuas. Carlos revierte con éxito la arritmia de paro tras la descarga, recuperando pulso carotídeo palpable basal de forma segura en el shockroom. La regla general de las taquiarritmias vale para toda la medicina de urgencia: si hay inestabilidad hemodinámica —hipotensión, alteración del sensorio, dolor isquémico o falla cardíaca—, la terapia es eléctrica e inmediata, no farmacológica. La amiodarona tiene su lugar en la arritmia estable o después de la cardioversión para prevenir recurrencias, pero nunca como reemplazo de la electricidad en un paciente que se está descompensando."},{"texto":"Preparar un bolo adicional de Lidocaína o amiodarona endovenosa e infundir de forma lenta por 5 minutos antes de descargar al paciente.","destino":"fase_8_rescate_amiodarona_lenta","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Demorar la desfibrilación de un ritmo de paro de origen ventricular sin pulso (como la TVSP) mediante fármacos endovenosos lenta está prohibido y conducirá irreversiblemente a asistolia refractaria y muerte cerebral. El monitor muestra asistolia persistente. Volvé a intentarlo de inmediato."}]},"fase_8_rescate_desfibrilacion_sin_sincronismo":{"id":"fase_8_rescate_desfibrilacion_sin_sincronismo","etapa":"Fase 8 Rescate: Fibrilación Ventricular Inducida por R sobre T","descripcion_situación":"La descarga de alta energía no sincronizada cayó accidentalmente sobre la onda T cardíaca, provocando el fenómeno de 'R sobre T' y desencadenando una Fibrilación Ventricular (FV) letal en Carlos. El paciente está en paro cardiorrespiratorio inminente. ¿Cuál é tu terapia eléctrica de rescate de inmediato?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Iniciar compresiones torácicas continuas de alta calidad, cargar de inmediato el desfibrilador en modo Asincrónico (Desfibrilación) a 200 Joules y aplicar una descarga asincrónica de forma inmediata, retomando la RCP tras el choque.","destino":"fase_9_paro_cardiaco","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Excelente y coordinado rescate en paro! La FV inducida mecánicamente debe desfibrilarse de forma asincrónica e inmediata con alta energía (200 J bifásica) junto a compresiones torácicas continuas. Carlos responde al choque eléctrico de rescate, revirtiendo de forma exitosa a taquicardia sinusal con pulso palpable, estabilizando sus parámetros. Entendé el mecanismo, no memorices la regla: en modo asincrónico la descarga puede caer sobre la onda T, durante el período vulnerable de la repolarización ventricular, y precipitar fibrilación ventricular. Es el fenómeno R sobre T. Por eso, mientras haya pulso y complejos organizados, el modo SYNC es obligatorio; el asincrónico se reserva para la fibrilación ventricular y la taquicardia ventricular sin pulso, donde no hay onda R que sincronizar."},{"texto":"Administrar un choque sincronizado de baja energía (50 Joules) para regularizar el trazo caótico y evitar daño mecánico miocárdico.","destino":"fase_8_rescate_desfibrilacion_sin_sincronismo","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Un choque de baja energía o sincronizado está absolutamente contraindicado e ineficaz en la fibrilación ventricular, ya que no existe onda R visible que sensar y el desfibrilador se quedará esperando sin descargar. Esto prolongará de forma letal la parada cardiorrespiratoria celular. El monitor muestra asistolia. Volvé a intentarlo."}]},"fase_9_rescate_intubacion_demora":{"id":"fase_9_rescate_intubacion_demora","etapa":"Fase 9 Rescate: Reanimación Eléctrica Precoz en FV","descripcion_situación":"La demora en la desfibrilación de Carlos por intentar asegurar la vía aérea u otras conductas erróneas provocó que la fibrilación ventricular evolucione a un trazo plano compatible con Asistolia refractaria en el monitor por hipoxia miocárdica terminal. ¿Cómo procedés de inmediato?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Detener toda maniobra avanzada de vía aérea, priorizar compresiones torácicas de alta calidad de forma continua, optimizar ventilaciones efectivas con bolsa-válvula-máscara (Ambú) con O2 al 100% y administrar 1 mg de Adrenalina endovenosa de inmediato.","destino":"fase_10_estabilizacion_y_derivacion","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":14,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente y protocolizado rescate en parada cardíaca! Ante la asistolia prolongada derivada de un retraso terapéutico, se debe suspender la intubación compleja, reanudar compresiones torácicas continuas de calidad de forma inmediata y priorizar el aporte farmacológico con adrenalina endovenosa de 1 mg, manteniendo ventilación básica. Carlos responde de forma favorable tras dos ciclos de RCP avanzada. Fijate en la jerarquía del paro con ritmo desfibrilable: la desfibrilación precoz y las compresiones de alta calidad son las dos únicas intervenciones con impacto demostrado en la supervivencia. La vía aérea avanzada y los fármacos vienen después y nunca justifican interrumpir compresiones ni retrasar la descarga. En los primeros minutos de un paro súbito la sangre todavía está oxigenada: lo que falta es circulación, no oxígeno."},{"texto":"Insistir en la inserción del tubo endotraqueal de forma prolongada por otros 2 minutos y administrar un bolo endovenoso de Amiodarona.","destino":"fase_9_rescate_intubacion_demora","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Demorar o interrumpir la reanimación básica e insistsir en maniobras complejas de vía aérea endotraqueal prolongará de forma crítica la hipoxia miocárdica y cerebral refractaria, con daño neurológico permanente y asistolia terminal sin retorno. El paciente permanece sin pulso en el monitor. Volvé a intentarlo."}]},"fase_10_rescate_alta_precoz":{"id":"fase_10_rescate_alta_precoz","etapa":"Fase 10 Rescate: Recaída de Perfusión por Retiro Hemodinámico","descripcion_situación":"La suspensión de las aminas vasoactivas o el transporte en ambulancia estándar inadecuado provocó un desplome de la presión arterial de Carlos a 55/30 mmHg en el shockroom, con alteración del sensorio profunda y perfusión fría generalizada. ¿Cómo revertís esta complicación urgente?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Reinstalar de forma inmediata las infusiones continuas de Noradrenalina y Dobutamina por bombas de infusión de alta precisión, y coordinar de forma exclusiva el traslado en ambulancia de terapia intensiva de alta complejidad (U.T.I.M.) con médico presencial.","destino":"fase_exito","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":14,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate ejecutado de forma sumamente correcta! Restituir de forma inmediata el soporte inotrópico y vasoconstrictor para mantener las presiones de perfusión miocárdica y coordinar de manera exclusiva la ambulancia de terapia intensiva de alta complejidad asegura que el paciente esté monitoreado y controlado de forma continua durante la derivación interinstitucional. Regresás de forma exitosa. El principio final del caso: un paciente sostenido por infusiones vasoactivas no se prueba ni se destete en la puerta de la ambulancia. La suspensión de la noradrenalina en un shock que todavía depende de ella provoca una caída de la presión de perfusión que el miocardio recién reanimado no tolera. El destete se hace en la unidad de destino, con monitoreo invasivo, y de forma gradual."},{"texto":"Indicar una gran carga de volumen de 1000 ml de solución salina para contrarrestar la hipotensión profunda y posponer la derivación indefinidamente.","destino":"fase_10_rescate_alta_precoz","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"50/28","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":24,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error de rescate! Reemplazar el soporte de aminas vasoactivas con sobrecarga de cristaloides en un paciente en shock cardiogénico pos-paro provocará de forma inmediata una falla de bomba aguda por congestión masiva hiliar y distrés respiratorio terminal. Observá el monitor: la saturación desciende al 82% y la hipotensión es extrema. Volvé a intentarlo de inmediato."}]},"fase_4_rescate_sobrecarga_repetida":{"id":"fase_4_rescate_sobrecarga_repetida","etapa":"Subfase de rescate: inundación alveolar por expansión insistida","descripcion_situación":"Los 500 ml adicionales terminaron de inundar los alvéolos. Carlos tiene rales crepitantes en la totalidad de ambos campos pulmonares, expectoración asalmonada, saturación de 80% con máscara de reservorio y respiración agónica con tiraje universal. La presión sigue en 75/40 mmHg. Es un edema agudo de pulmón grave que provocaste vos. ¿Cómo lo revertís?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender de forma definitiva toda expansión de volumen, iniciar ventilación no invasiva en CPAP con PEEP de 8-10 cmH2O y FiO2 al 100%, y administrar un bolo de Furosemida 20-40 mg EV una vez que la presión esté sostenida por noradrenalina.","destino":"fase_5_vasopresor","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":102,"presion_arterial_mmhg":"86/52","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":20,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Rescate correcto y en el orden correcto. La presión positiva del CPAP hace dos cosas a la vez que ningún fármaco logra tan rápido: reduce el retorno venoso, descargando el ventrículo izquierdo, y recluta alvéolos colapsados, mejorando el intercambio gaseoso. Recién con la presión sostenida por el vasopresor tiene sentido el diurético — al revés, la furosemida sobre un paciente hipotenso profundiza la hipoperfusión. Fijate en el orden que aplicaste: primero la presión positiva, después el vasopresor, y sólo al final la depleción de volumen. Invertir esa secuencia es lo que mata a estos pacientes. La saturación empezó a recuperarse y los rales descendieron."},{"texto":"Insistir con una tercera carga de volumen de 500 ml, argumentando que la hipotensión persistente indica que el paciente todavía está hipovolémico.","destino":"fase_4_rescate_sobrecarga_repetida","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":132,"presion_arterial_mmhg":"70/38","saturacion_oxigeno_pct":74,"frecuencia_respiratoria_rpm":38,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Rescate fallido y peligroso. Ya tenés la respuesta a la prueba de volumen: el paciente descompensó con 250 ml y empeoró con otros 500 ml. Un ventrículo con fracción de eyección del 28% no tiene reserva de precarga — cada mililitro adicional se acumula retrógradamente en el capilar pulmonar en lugar de convertirse en gasto cardíaco. La hipotensión de Carlos no es por falta de volumen, es por falla de bomba, y el tratamiento de la falla de bomba es vasopresor más inotrópico, nunca más líquido. Mirá el monitor: la saturación cayó a 74% y la frecuencia respiratoria se desplomó por fatiga muscular. Suspendé el volumen ahora y aplicá presión positiva."}]},"fase_7_rescate_coloide":{"id":"fase_7_rescate_coloide","etapa":"Subfase de rescate: coloide en un ventrículo sin reserva de precarga","descripcion_situación":"Los 500 ml de coloide no mejoraron la perfusión: Carlos volvió a desaturar a 84%, los rales reaparecieron en ambas bases y la piel sigue fría y moteada. El lactato subió a 4.2 mmol/L. El problema nunca fue el volumen — era el gasto cardíaco. ¿Cómo corregís el rumbo?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender la expansión, reforzar el CPAP y agregar Dobutamina en infusión continua a 2.5-5 mcg/kg/min sobre la noradrenalina ya en curso, titulando por perfusión periférica, diuresis y lactato.","destino":"fase_8_arritmia_complicacion","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"96/60","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":19,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Rescate correcto. Volviste al razonamiento fisiopatológico: con la presión arterial media ya sostenida por noradrenalina y una fracción de eyección del 28%, lo que falta no es precarga sino contractilidad. La dobutamina es un agonista beta-1 que aumenta el volumen sistólico sin la carga de volumen que este ventrículo no tolera. El detalle que hace la diferencia es la titulación: no se busca un número de presión, se busca perfusión — relleno capilar, diuresis horaria y descenso del lactato son los objetivos reales. Y siempre sobre el vasopresor, nunca antes, porque la dobutamina vasodilata y sola derrumbaría la presión diastólica. La perfusión periférica empezó a mejorar."},{"texto":"Administrar otros 500 ml de coloide más rápido, asumiendo que la dosis anterior fue insuficiente para reclutar la precarga.","destino":"fase_7_rescate_coloide","es_correcta":false,"puntos_afectados":-18,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"72/40","saturacion_oxigeno_pct":78,"frecuencia_respiratoria_rpm":30,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Rescate fallido. Estás repitiendo la conducta que acaba de fracasar, con la expectativa de un resultado distinto. Un ventrículo con fracción de eyección del 28% está en la porción plana de la curva de Frank-Starling: agregar precarga ya no genera volumen sistólico, sólo presión hidrostática retrógrada hacia el pulmón. Además, los coloides sintéticos se asocian a mayor daño renal en pacientes críticos, y Carlos ya tiene una creatinina de 1.8 mg/dL. Mirá el monitor: la saturación cayó a 78% y la frecuencia subió a 130. Suspendé el volumen y pasá a soporte inotrópico."}]}}};
+
+/* ==========================================================================
+   FUNCIONES DE APOYO
+   ========================================================================== */
+function air(name,fio2){
+  const wasHyper=fio2>0.4&&S.spo2>=94&&S.rhythm==='sinus';
+  S.airway=name;S.fio2=fio2;
+  if(wasHyper&&name!=='ARM'&&name!=='BVM'){sc(-15,'Hiperoxia con SatO₂ ≥94%: vasoconstricción coronaria y mayor tamaño del infarto');S.iatro++;}
+  else if(fio2>0.21&&S.spo2<90)sc(8,'Oxígeno indicado por hipoxemia real');
+  info('Dispositivo: '+name+' · FiO₂ '+Math.round(fio2*100)+'%');bed();
+}
+function bed(){
+  const p=[];
+  p.push('SALA ROJA');
+  p.push(S.monitored?'monitorizado':'sin monitorizar');
+  p.push(S.airway==='aire'?'aire ambiente':S.airway);
+  if(S.vent)p.push('ARM');
+  if(S.arterial)p.push('PA invasiva');if(S.cvc)p.push('VVC');if(S.foley)p.push('sonda vesical');
+  $('bedinfo').textContent=p.join(' · ');
+}
+function die(r){S.dead=true;S.rhythm='asystole';S.bp=0;log('☠ FALLECIMIENTO — '+r,'bad');setTimeout(finish,1800);}
+
+/* ==========================================================================
+   FÍSICA
+   ========================================================================== */
+// Fisica simplificada dirigida por los datos del caso v4: cada opcion define
+// un ALVO explicito de signos vitales (novos_sinais_vitales), y esta funcion
+// solo hace que el trazado converja suavemente hacia ese alvo -- no hay
+// modelo farmacocinetico propio (nitratos, adrenalina, etc.) porque el caso
+// v4 no lo especifica. Mientras el alumno delibera sin responder (S.doing
+// vacio y el caso no termino), los signos vitales se degradan gradualmente
+// -- misma presion de tiempo ya validada en la version React del motor.
+// M-01: constantes originales divididas por 6 -- la v4 castigaba VELOCIDAD DE
+// LECTURA, no indecisión clínica (una vinieta de 1000 caracteres a
+// velocidadInicial=2 hacía perder 72 lpm y 60 mmHg sólo por leerla).
+const DERIVA_ESPERA={hr:0.6/6,sbp:-0.5/6,spo2:-0.08/6,rr:0.1/6};
+// M-03: si el caso trae st_mm en estado_inicial, el ST del monitor converge
+// hacia ese dato (fisiología real del caso) en vez de derivarse del puntaje.
+// Fallback a la fórmula vieja sólo si el caso no provee st_mm.
+const CASO_TIENE_ST_MM = typeof CASO_V4.estado_inicial.st_mm === 'number';
+if (CASO_TIENE_ST_MM) ALVO.st = CASO_V4.estado_inicial.st_mm;
+function physics(dt){
+ if(S.dead)return;
+ S.simT+=dt;
+
+ if(!S.ended&&!S.doing&&!S.decidido){
+   // M-01: período de gracia de lectura -- escala con lo que hay para leer
+   // en el nodo actual (viñeta + las 5 opciones). Mientras dure, no hay
+   // deriva: el alumno puede leer sin que el paciente se descompense solo.
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const gracia=nodoActual?30+((nodoActual.descripcion_situación.length+nodoActual.opciones.reduce((a,o)=>a+o.texto.length,0))/25):30;
+   const tEnNodo=S.simT-S.nodoEnteredAt;
+   if(tEnNodo>gracia){
+     // Tope por nodo: ningún nodo puede por sí solo, sólo por demora en
+     // decidir, arrastrar los signos vitales más de un 25% desde el valor
+     // con el que se entró a ese nodo.
+     const base=S.nodoBase||{hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+     ALVO.hr=clamp(clamp(ALVO.hr+DERIVA_ESPERA.hr*dt,20,200),base.hr*0.75,base.hr*1.25);
+     ALVO.sbp=clamp(clamp(ALVO.sbp+DERIVA_ESPERA.sbp*dt,0,220),base.sbp*0.75,base.sbp*1.25);
+     ALVO.spo2=clamp(clamp(ALVO.spo2+DERIVA_ESPERA.spo2*dt,0,100),base.spo2*0.75,base.spo2*1.25);
+     ALVO.rr=clamp(clamp(ALVO.rr+DERIVA_ESPERA.rr*dt,0,45),base.rr*0.75,base.rr*1.25);
+   }
+ }
+
+ // M-05: nodos criticidad:"letal" con tiempo_limite_segundos -- si el
+ // alumno no decide a tiempo, se aplica la penalización del nodo y, si es
+ // letal, se dispara la muerte (igual que insistir en la conducta errada).
+ if(!S.ended&&!S.doing&&!S.decidido&&!S.nodoTimeoutApplied){
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&(S.simT-S.nodoEnteredAt)>nodoActual.tiempo_limite_segundos){
+     S.nodoTimeoutApplied=true;
+     sc(nodoActual.penalizacion_por_timeout||0,'Tiempo agotado en «'+nodoActual.etapa+'» -- la indecisión también es una conducta','bad');
+     if(nodoActual.criticidad==='letal'&&!S.dead)die('Tiempo agotado en situación crítica: «'+nodoActual.etapa+'»');
+   }
+ }
+
+ if(CASO_TIENE_ST_MM)S.st+=(ALVO.st-S.st)*Math.min(1,dt/4);
+ else S.st=clamp((85-S.bp)/85,0,1)*5;
+
+ if(S.rhythm==='vf'||S.rhythm==='asystole'){S.hr=0;S.sbp=0;S.dbp=0;S.spo2=Math.max(0,S.spo2-dt*2);}
+ else{
+   S.hr+=(ALVO.hr-S.hr)*Math.min(1,dt/4);
+   S.sbp+=(ALVO.sbp-S.sbp)*Math.min(1,dt/4);
+   S.dbp+=(ALVO.dbp-S.dbp)*Math.min(1,dt/4);
+   S.spo2+=(ALVO.spo2-S.spo2)*Math.min(1,dt/4);
+ }
+ S.map=Math.round((S.sbp+2*S.dbp)/3);
+ S.rr+=(ALVO.rr-S.rr)*Math.min(1,dt/4);
+ if(S.nibp&&S.simT-S.lastNIBP>=CONFIG.cicloPANIsegundos){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+ if(S.arterial){S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+}
+
+/* ==========================================================================
+   ONDAS
+   ========================================================================== */
+const cv=$('cv'),ctx=cv.getContext('2d');
+let W=0,H=0,px=0,LANES=5,lastY=[null,null,null,null,null];
+/* orden de canales igual al del uMEC12: ECG · CO2 · Plet · Imped. · Art */
+function resize(){
+ const dpr=window.devicePixelRatio||1;
+ W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null,null];
+ const l=H/LANES;
+ for(let k=1;k<=5;k++){const el=$('wl'+k);if(el)el.style.top=((k-1)*l+3)+'px';}
+ $('ws2').style.top=(l+3)+'px';
+ $('ws5').style.top=(4*l+3)+'px';
+}
+const g=(t,c,w,a)=>a*Math.exp(-Math.pow((t-c)/w,2));
+function ecgAt(t){
+ const r=S.rhythm;
+ if(r==='vf')return 0.42*(Math.sin(t*36.1)+0.7*Math.sin(t*23.7+1.1)+0.5*Math.sin(t*51.3+2.2))/2.2;
+ if(r==='asystole')return (Math.random()-0.5)*0.03+(S.cpr?0.25*Math.sin(t*11.5):0);
+ if(r==='avblock'){
+  const P=60/78,L=60/38,tp=t%P,tq=t%L;
+  let v=g(tp,0.10,0.028,0.16);
+  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0)+g(tq,0.33,0.028,-0.22)+g(tq,0.57,0.078,0.28);
+  if(tq>0.37&&tq<0.49)v+=S.st*0.075;
+  return v;
+ }
+ const L=60/clamp(S.hr,30,180),tt=t%L;
+ let v=g(tt,0.11,0.022,0.15);
+ v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,1.15)+g(tt,0.268,0.013,-0.24);
+ const st=S.st*0.075;
+ if(tt>0.28&&tt<0.40)v+=st;
+ v+=g(tt,0.455,0.055,0.30+st*0.5);
+ return v;
+}
+/* capnograma: rampa, meseta alveolar e inspiración — morfología del uMEC12 */
+function co2At(t){
+ if(S.etco2===null)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L,a=clamp(S.etco2/50,0.04,1);
+ if(p<0.06)return a*Math.max(0,1-p/0.06)*0.15;
+ if(p<0.14)return a*((p-0.06)/0.08)*0.93;
+ if(p<0.62)return a*(0.93+0.07*((p-0.14)/0.48));
+ if(p<0.68)return a*Math.max(0,1-(p-0.62)/0.06);
+ return 0.01;
+}
+function plethAt(t){
+ if(!S.sat_probe)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return (Math.random()-0.5)*0.05;
+ const L=60/clamp(S.hr,30,180),tt=(t%L)/L,amp=clamp(S.sbp/120,0.12,1);
+ return amp*(Math.exp(-Math.pow((tt-0.22)/0.13,2))+0.42*Math.exp(-Math.pow((tt-0.46)/0.11,2)))*0.9;
+}
+function impedAt(t){
+ if(!S.monitored)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L;
+ return 0.5*Math.sin(2*Math.PI*p)+0.06*Math.sin(2*Math.PI*p*3);
+}
+/* curva arterial: ascenso rápido, muesca dicrótica y descenso diastólico */
+function artAt(t){
+ if(!S.arterial)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return S.cpr?0.18*Math.sin(t*11.5)+0.2:0.05;
+ const L=60/clamp(S.hr,30,180),p=(t%L)/L;
+ const pp=clamp((S.sbp-S.dbp)/70,0.25,1.2), base=clamp(S.dbp/90,0.1,1)*0.28;
+ let v;
+ if(p<0.13)v=Math.pow(p/0.13,0.55);
+ else if(p<0.30)v=1-0.42*((p-0.13)/0.17);
+ else if(p<0.36)v=0.58+0.10*Math.sin((p-0.30)/0.06*Math.PI);  // muesca dicrótica
+ else v=0.58*Math.exp(-(p-0.36)*2.6);
+ return base+v*pp*0.62;
+}
+let beatIx=-1;
+function draw(dt){
+ const adv=(W/6.4)*dt, lane=H/LANES;   // barrido ~25 mm/s
+ const mid=[lane*.55,lane*1.75,lane*2.55,lane*3.55,lane*4.72];
+ const gain=[lane*.32,lane*.62,lane*.26,lane*.24,lane*.62];
+ const col=['#2fe36f','#ffe14a','#39d7ff','#e8eef5','#ff5a63'];
+ const steps=Math.max(1,Math.round(adv));
+ for(let i=0;i<steps;i++){
+  const t0=S.waveT+(i/steps)*dt, x=px+(i/steps)*adv, xi=Math.floor(x)%W;
+  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,13,H);
+  const v=[S.monitored?ecgAt(t0):null, co2At(t0), plethAt(t0), impedAt(t0), artAt(t0)];
+  for(let l=0;l<LANES;l++){
+   if(v[l]===null){lastY[l]=null;continue;}
+   const y=mid[l]-v[l]*gain[l];
+   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.25;ctx.beginPath();
+     ctx.moveTo(xi-1,lastY[l]);ctx.lineTo(xi,y);ctx.stroke();}
+   lastY[l]=y;
+  }
+  if(xi<2)lastY=[null,null,null,null,null];
+ }
+ px=(px+adv)%W;S.waveT+=dt;
+ if(S.monitored&&(S.rhythm==='sinus'||S.rhythm==='avblock')){
+  const L=S.rhythm==='avblock'?60/38:60/clamp(S.hr,30,180);
+  const ix=Math.floor(S.waveT/L);
+  if(ix!==beatIx){beatIx=ix;beep();const b=$('beat');if(b){b.classList.remove('on');void b.offsetWidth;b.classList.add('on');}}
+ }
+}
+let AC=null,alOsc=null;
+function beep(){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ const o=AC.createOscillator(),g2=AC.createGain();
+ o.frequency.value=S.spo2>=95?880:S.spo2>=90?740:560;
+ g2.gain.setValueAtTime(.045,AC.currentTime);g2.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.09);
+ o.connect(g2).connect(AC.destination);o.start();o.stop(AC.currentTime+.1);}catch(e){}}
+function alarmTone(on){if(!S.sound){if(alOsc){try{alOsc.stop()}catch(e){}alOsc=null}return;}
+ try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ if(on&&!alOsc){alOsc=AC.createOscillator();const g2=AC.createGain();
+  alOsc.type='square';alOsc.frequency.value=1046;g2.gain.value=.026;
+  alOsc.connect(g2).connect(AC.destination);alOsc.start();}
+ else if(!on&&alOsc){alOsc.stop();alOsc=null;}}catch(e){}}
+
+/* ==========================================================================
+   RENDER
+   ========================================================================== */
+function ui(){
+ /* ---- relojes externos al monitor ---- */
+ $('wall').textContent=hhmm(S.simT);
+ $('tplus').textContent=Math.floor(S.simT/60)+'′';
+ $('clkIsq').className='clk'+(S.bp<40?' crit':S.bp<70?' hot':'');
+ const idle=S.simT-S.lastAction;
+ $('idle').textContent=mmss(idle);
+ $('clkIdle').className='clk'+(idle>300?' crit':idle>150?' hot':'');
+ $('salv').textContent=Math.round(S.bp);
+
+ const arrest=S.rhythm==='vf'||S.rhythm==='asystole';
+
+ // M-05: cronómetro visible sólo en nodos con tiempo_limite_segundos, y
+ // sólo mientras el alumno todavía no decidió en ese nodo.
+ {
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const timerEl=$('stgTimer');
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&!S.decidido&&!S.ended){
+     const restante=Math.max(0,Math.round(nodoActual.tiempo_limite_segundos-(S.simT-S.nodoEnteredAt)));
+     timerEl.textContent='⏱ '+mmss(restante);
+     timerEl.className='stgTimer on'+(restante<30?' crit':'');
+   } else {
+     timerEl.className='stgTimer';
+   }
+ }
+
+ /* ---- barra de estado del monitor ---- */
+ $('mBed').textContent='▣ SALA ROJA';
+ const t=(S.wallStart+S.simT)%86400;
+ $('mDT').textContent='08-08-2026 '+String(Math.floor(t/3600)).padStart(2,'0')+':'+
+   String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');
+ $('mTech').textContent=(S.monitored?(S.st>3?'Análisis de ST activo':'No se puede analizar QT'):'Derivación desconectada')+'  ·  reloj ×'+S.speed;
+
+ /* ---- ECG ---- */
+ zone('pzECG','vHR',S.monitored,arrest?(S.rhythm==='vf'?'---':'0'):Math.round(S.hr),
+   S.monitored&&(arrest||S.hr<50||S.hr>120));
+ $('beat').style.visibility=(S.monitored&&!arrest)?'visible':'hidden';
+ $('subPVC').innerHTML='PVC <b>'+(S.pvc!==null?S.pvc:'---')+'</b>';
+ $('subST').textContent=S.monitored?(S.st>1?'ST II '+S.st.toFixed(1)+' mm':'ST 0,0 mm'):'ST desact.';
+ $('subST').style.color=S.monitored&&S.st>3?'#ff5a63':'#a4aeb8';
+ $('limECG').innerHTML=(S.rhythm==='avblock'?'120<br>50':'120<br>50');
+
+ /* ---- CO2 ---- */
+ zone('pzCO2','vCO2',S.etco2!==null,S.etco2!==null?Math.round(S.etco2):'---',
+   S.etco2!==null&&(S.etco2<25||S.etco2>50));
+ $('subFRm').textContent=S.monitored?Math.round(S.rr):'--';
+ $('subR').textContent=S.vent?Math.round(S.rr):'0';
+
+ /* ---- SpO2 ---- */
+ zone('pzSat','vSat',S.sat_probe,Math.round(S.spo2),S.sat_probe&&S.spo2<90);
+ $('subPR').textContent=S.sat_probe&&!arrest?Math.round(S.hr):'---';
+ $('subPI').textContent=S.sat_probe?('IP '+clamp(S.sbp/70,0.2,4).toFixed(2)):'IP ---';
+
+ /* ---- Resp ---- */
+ zone('pzResp','vRR',S.monitored,Math.round(S.rr),S.monitored&&(S.rr>26||S.rr<9));
+ $('subOrigen').textContent=(S.capno||S.vent)?'Origen CO2':'Origen Imped.';
+
+ /* ---- presión arterial: PANI intermitente o Art invasiva continua ---- */
+ const bpOn=S.nibp||S.arterial;
+ $('lblArt').innerHTML=(S.arterial?'Art':'PANI')+'<span style="font-weight:400;font-size:8.5px"> mmHg</span>';
+ zone('pzArt','vBP',bpOn,arrest?'---/---':S.sbpShow+'/'+S.dbpShow,bpOn&&S.sbpShow<90&&!arrest);
+ $('subMAP').textContent=bpOn&&!arrest?'('+S.map+')':'(--)';
+ $('pzArt').classList.toggle('sel',S.arterial);
+ $('wl5').style.display=S.arterial?'block':'none';
+ $('ws5').style.display=S.arterial?'block':'none';
+ $('wl2').style.display=(S.etco2!==null)?'block':'none';
+ $('ws2').style.display=(S.etco2!==null)?'block':'none';
+ $('wl3').style.display=S.sat_probe?'block':'none';
+ $('wl4').style.display=S.monitored?'block':'none';
+ $('wl1').style.display=S.monitored?'block':'none';
+
+ /* ---- barra inferior ---- */
+ $('vT').textContent=S.monitored?S.temp.toFixed(1).replace('.',','):'--,-';
+ if(S.nibp&&!S.arterial){$('vPNI').textContent=S.sbpShow+'/'+S.dbpShow;
+   $('stPNI').textContent='Medición terminada '+hhmm(S.lastNIBP);}
+ else{$('vPNI').textContent='---/---';$('stPNI').textContent=S.arterial?'PANI en espera':'Medición manual';}
+
+ /* ---- banner de alarma (texto y jerarquía del equipo real) ---- */
+ let cls='none',txt='Sin alarmas';
+ if(!S.monitored){cls='none';txt='Sin monitorización';}
+ else if(S.rhythm==='vf'){cls='hi';txt='*** FIB VENT';}
+ else if(S.rhythm==='asystole'){cls='hi';txt='*** ASISTOLIA';}
+ else if(bpOn&&S.sbpShow<80&&!arrest){cls='hi';txt='*** PANI SIS muy baja';}
+ else if(S.rhythm==='avblock'){cls='hi';txt='*** FC muy baja';}
+ // M-04: el RIVA es un signo BUENO de reperfusión, no una arritmia peligrosa
+ // -- alarma informativa (ámbar), nunca roja, para no enseñar al alumno a
+ // "tratarlo" como si fuera una taquiarritmia maligna.
+ else if(S.rhythm==='riva'){cls='md';txt='** RIVA -- signo de reperfusión, no tratar';}
+ else if(S.sat_probe&&S.spo2<90){cls='md';txt='** SpO2 baja';}
+ else if(S.foley&&S.diuresis<25){cls='md';txt='** Diuresis baja';}
+ else if(S.st>3){cls='md';txt='** ST II elevado';}
+ else if(S.hr>120){cls='md';txt='** FC alta';}
+ else if(S.bp<70){cls='md';txt='** Puntuación en descenso';}
+ else{cls='';txt='Sin alarmas';}
+ const b=$('mBanner');b.className='banner '+(cls||'');b.textContent=txt;
+ alarmTone(cls==='hi');
+ const a=$('alarm');
+ a.className='alarmbar '+(cls==='hi'?'hi':cls==='md'?'md':'');
+ a.textContent=!S.monitored?'monitorización no iniciada':
+   cls==='hi'?'⚠ '+txt.replace(/\*/g,'').trim():cls==='md'?txt.replace(/\*/g,'').trim():'sin alarmas activas';
+
+ /* ---- ficha clínica -- campos sin dato real en este caso quedan "—" ---- */
+ $('fST').textContent=S.monitored?S.st.toFixed(1):'—';
+ $('fGlu').textContent=S.glu!=null?Math.round(S.glu):'—';
+ $('fLac').textContent=S.lac!=null?S.lac.toFixed(1):'—';
+ $('fDiu').textContent=S.diuresis!=null?Math.round(S.diuresis):'—';
+ $('fDiuU').textContent='sin sonda';
+ $('fGCS').textContent='—';$('fPain').textContent=Math.round(S.pain);$('fCRT').textContent=S.crt!=null?S.crt:'—';
+ $('fKil').textContent=S.examDone?(S.sbp<90?'III':'I'):'—';
+ $('fKilU').textContent=S.examDone?'sin crepitantes':'sin examinar';
+
+ /* ---- ventilador ---- */
+ $('ventPanel').className='vent'+(S.vent?' on':'');
+ if(S.vent){$('vPEEP').textContent=S.peep;$('vFiO2').textContent=Math.round(S.ventFiO2*100);
+  $('vPlat').textContent=S.peep>=10?24:18;}
+
+ /* ---- score ---- */
+ $('vBPs').textContent=Math.round(S.bp);$('bpbar').style.width=S.bp+'%';
+ const c=S.bp>70?'var(--ok)':S.bp>40?'var(--md)':'var(--hi)';
+ $('bpbar').style.background=c;$('vBPs').style.color=c;
+ $('vPE').textContent=Math.round(S.pe);$('vOm').textContent=S.omis;$('vIa').textContent=S.iatro;
+}
+function zone(pz,el,on,val,alarm){
+ $(el).textContent=on?val:(String(val).includes('/')?'---/---':'---');
+ $(pz).className='pz'+(on?'':' off')+(alarm?' alarm':'')+($(pz).classList.contains('sel')&&pz==='pzArt'?' sel':'');
+}
+let last=0;
+function loop(ts){
+ requestAnimationFrame(loop);
+ if(!S.running)return;
+ const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+ if(S.paused)return;
+ draw(dt);
+ let mult=S.doing?S.speed*6:S.speed;
+ physics(dt*mult);
+ if(S.doing){S.doing.left-=dt*mult;
+  $('doingB').style.width=(100*(1-S.doing.left/S.doing.total))+'%';
+  if(S.doing.left<=0){const f=S.doing.f;S.doing=null;$('doing').className='doing';f();}}
+ ui();
+}
+/* ==========================================================================
+   MOTOR DE NODOS — navega el grafo ramificado del caso v4 (no es más un
+   array lineal: cada opción define su propio "destino" por id, así que una
+   opción incorrecta puede llevar a una sub-fase de rescate que después
+   converge de vuelta a la línea principal). Reutiliza S.doing (definido en
+   el loop) para representar el tiempo clínico consumido por cada respuesta.
+   ========================================================================== */
+S.nodoId=NODO_INICIAL; S.printouts=[];
+const LETRAS=['A','B','C','D','E'];
+// clasifica el rigor de la opción para el color del feedback -- v4 no trae
+// una categoría r:'good'|'warn'|'bad' explícita, se deriva del puntaje.
+function clasificar(opt){
+  if(opt.es_correcta)return'good';
+  if(opt.puntos_afectados<=-30)return'bad';
+  return'warn';
+}
+// clasifica el ritmo de ECG en el enum que usan las funciones de onda/alarma
+function clasificarRitmo(txt){
+  const t=(txt||'').toLowerCase();
+  if(t.includes('fibrilación ventricular')||t.includes('taquicardia ventricular'))return'vf';
+  if(t.includes('asistolia')||t.includes('muerte encefálica')||t.includes('línea isoeléctrica'))return'asystole';
+  // M-04: antes caían en 'sinus' -- un bloqueo AV completo se dibujaba como
+  // un sinusal lento (el motor ya sabe dibujar 'avblock', sólo faltaba
+  // clasificarlo) y un RIVA post-reperfusión no tenía ninguna lectura propia.
+  if(t.includes('bloqueo av')||t.includes('bloqueo auriculoventricular'))return'avblock';
+  if(t.includes('ritmo idioventricular')||t.includes('riva'))return'riva';
+  return'sinus';
+}
+function aplicarVitales(cambio){
+  if(!cambio)return;
+  if(cambio.frecuencia_cardiaca_lpm!=null)ALVO.hr=cambio.frecuencia_cardiaca_lpm;
+  if(cambio.presion_arterial_mmhg){const[s,d]=cambio.presion_arterial_mmhg.split('/').map(Number);ALVO.sbp=s||0;ALVO.dbp=d||0;}
+  if(cambio.saturacion_oxigeno_pct!=null)ALVO.spo2=cambio.saturacion_oxigeno_pct;
+  if(cambio.frecuencia_respiratoria_rpm!=null)ALVO.rr=cambio.frecuencia_respiratoria_rpm;
+  if(cambio.escala_dolor!=null)S.pain=cambio.escala_dolor;
+  if(cambio.ritmo_monitoreo_ecg)S.rhythm=clasificarRitmo(cambio.ritmo_monitoreo_ecg);
+  if(CASO_TIENE_ST_MM&&cambio.st_mm!=null)ALVO.st=cambio.st_mm; // M-03
+}
+
+function renderStage(){
+ const nodo=CASO_V4.nodos[S.nodoId];
+ if(!nodo||nodo.opciones.length===0){finish();return;}
+ // M-01/M-05/M-09: reinicia el seguimiento del nodo nuevo -- momento de
+ // entrada (para gracia de lectura y timeout), snapshot de ALVO (tope de
+ // deriva), y registra la entrada en el log y en la traza de nodos visitados.
+ S.nodoEnteredAt=S.simT;S.decidido=false;S.nodoTimeoutApplied=false;
+ S.nodoBase={hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+ S.nodosVisitados.push(nodo.id);
+ log('→ '+nodo.etapa,'evt');
+ $('stgNum').textContent=nodo.etapa;
+ $('stgTitle').textContent='🩺 '+nodo.etapa.replace(/^(Fase \d+|Subfase de Rescate):?\s*/,'');
+ $('stgVig').textContent=nodo.descripcion_situación;
+ $('stgOpts').innerHTML=nodo.opciones.map((o,i)=>
+   `<button class="opt" data-i="${i}"><span class="letter">${LETRAS[i]||i+1}</span><span>${o.texto}</span></button>`).join('');
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(nodo,+b.dataset.i));
+ $('stgFeedback').className='feedback';$('stgFeedback').innerHTML='';
+ $('stgNext').style.display='none';
+ $('stage').classList.remove('done');
+}
+
+function choose(nodo,i){
+ if(S.dead||S.ended||S.doing)return;
+ const opt=nodo.opciones[i];
+ S.decidido=true; // M-01/M-05: a partir de acá no corre más gracia/timeout de este nodo
+ S.lastAction=S.simT;
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.disabled=true);
+ $('doingT').textContent='Aplicando conducta…';
+ $('doingB').style.width='0';$('doing').className='doing on';
+ S.doing={left:0.6,total:0.6,f:()=>resolveOption(nodo,opt)};
+}
+
+function resolveOption(nodo,opt){
+ const cls=clasificar(opt);
+ S.simT+=3*60;                            // avance nominal del reloj clínico por decisión
+ S.lastAction=S.simT;                     // recién actuó -- no cuenta como tiempo ocioso
+ sc(opt.puntos_afectados,null);           // aplica el puntaje sin línea propia; el detalle va en el feedback
+ aplicarVitales(opt.cambio_estado_paciente);
+ // M-02: acumuladores reales para el resultado exportado, a partir de los
+ // flags que trae cada opción del caso v5 (en vez de quedar en 0 fijo).
+ if(opt.flags){
+   S.omis+=opt.flags.omision||0;
+   S.iatro+=opt.flags.iatrogenia||0;
+   if(opt.flags.reperfusion)S.reperfusionFlag=true;
+   if(opt.flags.vd_identificado)S.vdIdentificadoFlag=true;
+ }
+ if(opt.secuela)S.secuelas.push(opt.secuela);
+ if(opt.printouts)opt.printouts.forEach(p=>archivarImpreso(p));
+ log((opt.puntos_afectados>0?'+':'')+opt.puntos_afectados+' pts · '+nodo.etapa,cls);
+
+ const fb=$('stgFeedback');
+ fb.className='feedback show '+cls;
+ fb.innerHTML=`<span class="fscore">${opt.puntos_afectados>0?'+':''}${opt.puntos_afectados} pts</span>${opt.feedback_detallado}`+
+   (opt.printouts&&opt.printouts.length?`<div style="margin-top:8px;font-size:11px;color:var(--dim)">📄 Impreso archivado en el menú lateral.</div>`:'');
+ $('stage').classList.add('done');
+ $('stgNext').style.display='inline-block';
+ $('stgNext').onclick=()=>{S.nodoId=opt.destino;renderStage();};
+}
+
+let toastImpresoT=null;
+function alertarImpreso(p){
+ // pulso visual en el panel lateral + contador, mas un toast temporal en la
+ // esquina superior -- para que el alumno note el impreso nuevo aunque no
+ // esté mirando la barra lateral en ese momento.
+ const panel=document.querySelector('.printouts');
+ panel.classList.remove('nuevo');void panel.offsetWidth;panel.classList.add('nuevo');
+ const cnt=$('pcount');
+ cnt.classList.remove('nuevo');void cnt.offsetWidth;cnt.classList.add('nuevo');
+ setTimeout(()=>{panel.classList.remove('nuevo');cnt.classList.remove('nuevo');},3200);
+
+ $('toastImpresoTxt').textContent=p.titulo;
+ const t=$('toastImpreso');
+ t.classList.add('on');
+ if(toastImpresoT)clearTimeout(toastImpresoT);
+ toastImpresoT=setTimeout(()=>t.classList.remove('on'),4200);
+}
+function archivarImpreso(p){
+ S.printouts.push({...p,hora:hhmm(S.simT)});
+ const list=$('plist');
+ $('pcount').textContent=S.printouts.length;
+ list.innerHTML=S.printouts.map((pr,ix)=>
+   `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
+ list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+ alertarImpreso(p);
+}
+function abrirImpreso(p){
+ $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
+  <div class="kick">${p.tipo}</div><h1>${p.titulo}</h1>
+  <div class="stamp">Paciente, masculino · 58 a · liberado a las ${p.hora}</div>
+  <pre>${p.cuerpo}</pre>`;
+ $('ovPrint').className='ov';
+}
+
+function finish(){
+ if(S.ended)return;S.ended=true;S.running=false;alarmTone(false);
+ // El caso v4 no tiene un nodo de "muerte" separado: todos los caminos
+ // convergen al mismo nodo final (sucesso_conclusao). El desenlace real se
+ // refleja en la puntuación acumulada, no en a qué nodo se llegó.
+ const nodoFinal=CASO_V4.nodos[S.nodoId]||CASO_V4.nodos[NODO_EXITO];
+ const bp=Math.round(S.bp);
+ // M-06: si el nodo final trae texto_por_tier, se usa el texto específico
+ // del tier (exito/secuelas/critico) en vez de mostrar siempre el mismo
+ // descripcion_situación sin importar el desenlace.
+ const tier=bp>=70?'exito':bp>=40?'secuelas':'critico';
+ const textoTier=nodoFinal.texto_por_tier&&nodoFinal.texto_por_tier[tier];
+ let p,c,t;
+ if(bp>=70){p='ÉXITO PLENO';c='var(--ok)';t=textoTier||nodoFinal.descripcion_situación;}
+ else if(bp>=40){p='ESTABILIZADO CON SECUELAS';c='var(--md)';t=textoTier||nodoFinal.descripcion_situación;}
+ else{p='DESENLACE CRÍTICO';c='var(--hi)';t=textoTier||nodoFinal.descripcion_situación;}
+ const veredicto=bp>=70?{txt:'ÉXITO PLENO',col:'var(--ok)'}:bp>=40?{txt:'ESTABILIZADO CON SECUELAS',col:'var(--md)'}:{txt:'DESENLACE CRÍTICO',col:'var(--hi)'};
+ $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div>
+ <div style="font-size:34px;font-weight:800;letter-spacing:2px;color:${veredicto.col};margin:2px 0 6px">${veredicto.txt}</div>
+ <h1 style="color:${c}">${p}</h1><p>${t}</p>
+ <table>
+  <tr><td>Puntuación final</td><td>${bp} / 100</td></tr>
+  <tr><td>Tiempo total de caso</td><td>${Math.floor(S.simT/60)} min</td></tr>
+ </table><button class="btn" onclick="location.reload()">Reiniciar el caso</button>`;
+ $('ovEnd').className='ov';
+
+ /* ---- resultado exportable al sitio contenedor (mismo contrato del tipo
+    "iframe" ya consumido por hospital-simulacao-caso-viewer.tsx) ---- */
+ // M-02: campos reales en vez de hardcodeados/derivados incorrectamente.
+ // fallecido usa la bandera real que setea die() (no bp<40, que confundía
+ // "estabilizado con secuelas" con "paciente fallecido"); reperfundido y
+ // vdIdentificado salen de si el alumno efectivamente pasó por una opción
+ // con ese flag; omisiones/iatrogenias son la suma real de S.omis/S.iatro.
+ const resultado={
+  caso:'IAMCEST-01', version:'5.0',
+  desenlace:p, camino:bp>=70?1:(bp>=40?2:3),
+  bpFinal:bp, reservaExcelencia:Math.round(S.pe),
+  omisiones:S.omis, iatrogenias:S.iatro,
+  isquemiaTotalMin:Math.floor(S.simT/60),
+  puertaBalonMin:null, miocardioSalvable:null,
+  vdIdentificado:S.vdIdentificadoFlag, reperfundido:S.reperfusionFlag,
+  soporteVentilatorio:S.airway,
+  tiempoPerdidoMin:Math.round(S.lostTime/60),
+  fallecido:S.dead, dificultad:CONFIG.dificultad,
+  secuelas:S.secuelas.slice(), nodosVisitados:S.nodosVisitados.slice(),
+  registro:S.log.slice().reverse(),
+  finalizadoEn:new Date().toISOString()
+ };
+ window.SimuladorIAMCEST.resultado=resultado;
+ if(typeof CONFIG.alFinalizar==='function'){try{CONFIG.alFinalizar(resultado);}catch(e){console.error(e);}}
+ if(CONFIG.emitirPostMessage&&window.parent!==window){
+  try{window.parent.postMessage({tipo:'simulador-iamcest:finalizado',resultado},CONFIG.origenPermitido);}catch(e){}
+ }
+ document.dispatchEvent(new CustomEvent('simulador-iamcest:finalizado',{detail:resultado}));
+}
+$('bSpeed').onclick=()=>{S.speed=S.speed===1?4:S.speed===4?10:1;$('bSpeed').textContent='×'+S.speed;};
+$('bSound').onclick=()=>{S.sound=!S.sound;$('bSound').classList.toggle('on',S.sound);if(!S.sound)alarmTone(false);};
+$('bPause').onclick=()=>{S.paused=!S.paused;$('bPause').textContent=S.paused?'▶':'⏸';
+ $('bPause').classList.toggle('on',S.paused);if(S.paused)alarmTone(false);};
+$('bEnd').onclick=finish;
+$('bCase').onclick=()=>{$('ovCase').className='ov';if(S.running&&!S.paused)$('bPause').click();};
+$('closeCase').onclick=()=>{$('ovCase').className='ov hide';};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ovCase').className='ov hide';$('ovPrint').className='ov hide';}});
+
+function iniciar(vel){
+ S.speed=vel||CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+ $('ovIntro').className='ov hide';S.running=true;last=performance.now();
+ /* el monitor multiparamétrico se conecta al ingreso: la narrativa lo instala, no el alumno */
+ S.monitored=true;S.sat_probe=true;S.nibp=true;S.lastNIBP=S.simT;S.defibNear=true;
+ bed();
+ log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
+ renderStage();
+}
+$('bComenzar').onclick=()=>iniciar();
+setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
+window.addEventListener('resize',resize);
+
+/* ==========================================================================
+   API PÚBLICA — el sitio contenedor puede controlar el simulador
+   ========================================================================== */
+window.SimuladorIAMCEST={
+ iniciar, finalizar:finish, resultado:null,
+ pausar:()=>{S.paused=true;alarmTone(false);$('bPause').textContent='▶';},
+ reanudar:()=>{S.paused=false;last=performance.now();$('bPause').textContent='⏸';},
+ verExpediente:()=>{$('ovCase').className='ov';},
+ estado:()=>({bp:Math.round(S.bp),pe:Math.round(S.pe),minuto:Math.floor(S.simT/60),
+   nodo:S.nodoId,ritmo:S.rhythm}),
+ reiniciar:()=>location.reload(),
+ config:CONFIG
+};
+
+/* ---- arranque ---- */
+$('introTitulo').textContent='Caso 2';
+$('introDescripcion').textContent=CASO_V4.descripcion;
+$('histMotivo').textContent=CASO_V4.descripcion;
+$('docTitulo').textContent='Caso 2 · '+CASO_V4.titulo_juego;
+$('docDescripcion').textContent=CASO_V4.descripcion;
+S.speed=CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+S.sound=!!CONFIG.sonidoInicial;$('bSound').classList.toggle('on',S.sound);
+if(!CONFIG.mostrarExpediente)$('bCase').style.display='none';
+resize();requestAnimationFrame(loop);
+if(CONFIG.saltarIntro&&CONFIG.autoIniciar)iniciar();
+</script>
+</body>
+</html>
+

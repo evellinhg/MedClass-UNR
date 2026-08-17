@@ -16,6 +16,7 @@ import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import { DesafioFeedbackDialog } from "@/components/desafio-feedback-dialog"
 import { HighlightText } from "@/components/highlight-text"
+import { FormattedText } from "@/components/formatted-text"
 import {
   desafioAnteriorObrigatorio,
   foiAprovado,
@@ -294,7 +295,7 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
             <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
               {t.desafiosClinicos.descricaoCaso}
             </h2>
-            <HighlightText text={desafio.descricao_caso} className="text-base leading-relaxed text-foreground sm:text-[17px]" />
+            <HighlightText text={desafio.descricao_caso} className="text-lg leading-relaxed text-foreground sm:text-[19px]" />
             <p className="mt-1 text-xs text-muted-foreground">{t.desafiosClinicos.sublinharDica}</p>
             {desafio.imagem_url && (
               <button
@@ -388,9 +389,10 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                           )}
                         </div>
                         {pergunta.explicacao && (
-                          <p className="mt-2 rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground">
-                            {pergunta.explicacao}
-                          </p>
+                          <FormattedText
+                            text={pergunta.explicacao}
+                            className="mt-2 rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground"
+                          />
                         )}
                       </div>
                     )
@@ -435,7 +437,10 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                 </span>
               </div>
 
-              <p className="mb-4 text-base font-medium leading-relaxed text-foreground sm:text-[17px]">{perguntaAtual.enunciado}</p>
+              <FormattedText
+                text={perguntaAtual.enunciado}
+                className="mb-4 text-lg font-medium leading-relaxed text-foreground sm:text-[19px]"
+              />
 
               <div className="space-y-2">
                 {perguntaAtual.alternativas.map((alt) => {
@@ -467,9 +472,10 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
               </div>
 
               {jaRespondida && perguntaAtual.explicacao && (
-                <div className="mt-4 rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground">
-                  {perguntaAtual.explicacao}
-                </div>
+                <FormattedText
+                  text={perguntaAtual.explicacao}
+                  className="mt-4 rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground"
+                />
               )}
 
               <div className="mt-5 flex items-center justify-between">

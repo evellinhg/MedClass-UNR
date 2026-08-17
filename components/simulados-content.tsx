@@ -219,18 +219,22 @@ export function SimuladosContent() {
 
     const questaoIds = shuffle(poolIds).slice(0, quantidade)
 
-    const { error } = await supabase.from("simulados").insert({
-      user_id: userData.user.id,
-      nome: nome.trim(),
-      areas: selectedMaterias,
-      dificuldade: dificuldade !== "aleatorio" ? dificuldade : null,
-      parcial: parcial || null,
-      quantidade_questoes: quantidade,
-      questao_ids: questaoIds,
-      modo: "simulado",
-      modo_estrito: true,
-      timer_segundos_por_questao: tempoPorQuestao,
-    })
+    const { data: novoSimulado, error } = await supabase
+      .from("simulados")
+      .insert({
+        user_id: userData.user.id,
+        nome: nome.trim(),
+        areas: selectedMaterias,
+        dificuldade: dificuldade !== "aleatorio" ? dificuldade : null,
+        parcial: parcial || null,
+        quantidade_questoes: quantidade,
+        questao_ids: questaoIds,
+        modo: "simulado",
+        modo_estrito: true,
+        timer_segundos_por_questao: tempoPorQuestao,
+      })
+      .select()
+      .single()
 
     if (!error) {
       trackEvent("simulado_iniciado", {
@@ -242,7 +246,7 @@ export function SimuladosContent() {
     }
 
     setCreating(false)
-    if (error) {
+    if (error || !novoSimulado) {
       setCreateError(t.treinamentos.criarErro)
       return
     }
@@ -250,6 +254,7 @@ export function SimuladosContent() {
     resetForm()
     setOpen(false)
     loadSimulados()
+    playSimulado(novoSimulado as Simulado)
   }
 
   const handleDelete = async (id: string) => {

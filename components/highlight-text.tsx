@@ -21,8 +21,19 @@ const CORES = [
  * cor ativa; clicar num trecho já grifado remove. Manipula o DOM diretamente
  * via ref (fora do ciclo do React) e não persiste — some ao recarregar a página.
  */
+function renderNegrito(linha: string, keyPrefix: string) {
+  const partes = linha.split(/(\*[^*]+\*)/g).filter((p) => p !== "")
+  return partes.map((parte, i) =>
+    parte.startsWith("*") && parte.endsWith("*") && parte.length > 2 ? (
+      <strong key={`${keyPrefix}-${i}`}>{parte.slice(1, -1)}</strong>
+    ) : (
+      <span key={`${keyPrefix}-${i}`}>{parte}</span>
+    )
+  )
+}
+
 export function HighlightText({ text, className }: Props) {
-  const ref = useRef<HTMLParagraphElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
   const [corAtiva, setCorAtiva] = useState(CORES[0].valor)
   const corAtivaRef = useRef(corAtiva)
   corAtivaRef.current = corAtiva
@@ -68,7 +79,7 @@ export function HighlightText({ text, className }: Props) {
     }
   }, [])
 
-  const handleClick = (e: MouseEvent<HTMLParagraphElement>) => {
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement
     if (target.tagName !== "SPAN" || !target.parentElement) return
     const parent = target.parentElement
@@ -98,14 +109,22 @@ export function HighlightText({ text, className }: Props) {
           ))}
         </div>
       </div>
-      <p
+      <div
         ref={ref}
         onClick={handleClick}
         className={className}
         style={{ WebkitUserSelect: "text", WebkitTouchCallout: "default" } as React.CSSProperties}
       >
-        {text}
-      </p>
+        {text
+          .split(/\n+/)
+          .map((p) => p.trim())
+          .filter((p) => p !== "")
+          .map((p, i) => (
+            <p key={i} className={i > 0 ? "mt-3" : undefined}>
+              {renderNegrito(p, `p${i}`)}
+            </p>
+          ))}
+      </div>
     </div>
   )
 }

@@ -119,9 +119,19 @@ export function HospitalSimulacaoGrid() {
       </div>
 
       <Tabs defaultValue="ano4" className="gap-6">
-        <TabsList>
-          <TabsTrigger value="ano4">{t.hospitalSimulacaoGrid.abaAno4}</TabsTrigger>
-          <TabsTrigger value="ano5">{t.hospitalSimulacaoGrid.abaAno5}</TabsTrigger>
+        <TabsList className="border border-border bg-card p-1">
+          <TabsTrigger
+            value="ano4"
+            className="font-semibold text-muted-foreground/50 transition-all data-[state=active]:border-red-500/60 data-[state=active]:bg-red-500/10 data-[state=active]:text-red-400 data-[state=active]:shadow-[0_0_10px_rgba(239,68,68,0.6),0_0_24px_rgba(239,68,68,0.35)]"
+          >
+            {t.hospitalSimulacaoGrid.abaAno4}
+          </TabsTrigger>
+          <TabsTrigger
+            value="ano5"
+            className="font-semibold text-muted-foreground/50 transition-all data-[state=active]:border-red-500/60 data-[state=active]:bg-red-500/10 data-[state=active]:text-red-400 data-[state=active]:shadow-[0_0_10px_rgba(239,68,68,0.6),0_0_24px_rgba(239,68,68,0.35)]"
+          >
+            {t.hospitalSimulacaoGrid.abaAno5}
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="ano4">

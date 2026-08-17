@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Loader2, Plus, Trash2, X } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { enfileirarAviso } from "@/lib/avisos"
@@ -14,6 +14,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "@/components/ui/switch"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { TextFormattingToolbar } from "@/components/text-formatting-toolbar"
 import type { DesafioClinico, DesafioClinicoPergunta, DesafioCategoria } from "@/lib/desafios-types"
 
 export const DESAFIO_ICONES = [
@@ -116,6 +117,9 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
   const [saving, setSaving] = useState(false)
   const [carregando, setCarregando] = useState(false)
   const [form, setForm] = useState<DesafioForm>(emptyForm())
+  const descricaoRef = useRef<HTMLTextAreaElement>(null)
+  const enunciadoRefs = useRef<(HTMLTextAreaElement | null)[]>([])
+  const explicacaoRefs = useRef<(HTMLTextAreaElement | null)[]>([])
 
   const carregarForm = async () => {
     if (!desafio) {
@@ -372,14 +376,25 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="descricao">Descrição do caso (apresentado ao aluno)</Label>
+                  <div className="flex items-center justify-between gap-2">
+                    <Label htmlFor="descricao">Descrição do caso (apresentado ao aluno)</Label>
+                    <TextFormattingToolbar
+                      textareaRef={descricaoRef}
+                      value={form.descricao_caso}
+                      onChange={(v) => setForm((p) => ({ ...p, descricao_caso: v }))}
+                    />
+                  </div>
                   <Textarea
                     id="descricao"
+                    ref={descricaoRef}
                     value={form.descricao_caso}
                     onChange={(e) => setForm((p) => ({ ...p, descricao_caso: e.target.value }))}
                     placeholder="Contexto clínico do paciente..."
                     className="min-h-28"
                   />
+                  <p className="text-[11px] text-muted-foreground">
+                    Cada linha vira um parágrafo. Use *palavra* para deixar em negrito.
+                  </p>
                 </div>
 
                 <div className="space-y-2">
@@ -443,8 +458,18 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
                     </div>
 
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-muted-foreground">Enunciado</Label>
+                      <div className="flex items-center justify-between gap-2">
+                        <Label className="text-xs text-muted-foreground">Enunciado</Label>
+                        <TextFormattingToolbar
+                          textareaRef={{ current: enunciadoRefs.current[idx] ?? null }}
+                          value={pergunta.enunciado}
+                          onChange={(v) => updatePergunta(idx, "enunciado", v)}
+                        />
+                      </div>
                       <Textarea
+                        ref={(el) => {
+                          enunciadoRefs.current[idx] = el
+                        }}
                         value={pergunta.enunciado}
                         onChange={(e) => updatePergunta(idx, "enunciado", e.target.value)}
                         placeholder="Pergunta feita ao aluno..."
@@ -478,8 +503,18 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
                     </div>
 
                     <div className="space-y-1.5">
-                      <Label className="text-xs text-muted-foreground">Explicação (mostrada após responder)</Label>
+                      <div className="flex items-center justify-between gap-2">
+                        <Label className="text-xs text-muted-foreground">Explicação (mostrada após responder)</Label>
+                        <TextFormattingToolbar
+                          textareaRef={{ current: explicacaoRefs.current[idx] ?? null }}
+                          value={pergunta.explicacao}
+                          onChange={(v) => updatePergunta(idx, "explicacao", v)}
+                        />
+                      </div>
                       <Textarea
+                        ref={(el) => {
+                          explicacaoRefs.current[idx] = el
+                        }}
                         value={pergunta.explicacao}
                         onChange={(e) => updatePergunta(idx, "explicacao", e.target.value)}
                         placeholder="Por que essa é a resposta correta..."

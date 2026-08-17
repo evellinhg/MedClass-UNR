@@ -71,9 +71,8 @@ export function DesafioFeedbackDialog({ desafioTitulo }: Props) {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <Button
         type="button"
-        variant="outline"
         size="sm"
-        className="gap-1.5"
+        className="gap-1.5 border-0 bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] shadow-[0_0_10px_rgba(198,255,58,0.55),0_0_22px_rgba(132,204,22,0.35)] transition-shadow hover:shadow-[0_0_14px_rgba(198,255,58,0.8),0_0_30px_rgba(132,204,22,0.55)]"
         onClick={() => setOpen(true)}
       >
         <MessageSquareWarning className="h-3.5 w-3.5" />

@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador IAMCEST v5 · Panel completo en tiempo real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Colores de canal según convención de cabecera clínica, no decisión estética */
+  --bg:#04060a; --panel:#0a0f16; --panel2:#0e151e; --line:#1a2532;
+  --ecg:#26e07f; --pleth:#31d6f2; --abp:#ff5a63; --resp:#f4d03f; --co2:#c98bff;
+  --txt:#c6d4e2; --dim:#5a6e80; --hi:#ff2d3f; --md:#ffb020; --ok:#26e07f; --grid:#101822;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'IBM Plex Sans Condensed','Roboto Condensed',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:8px}
+
+.topbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.pat{flex:1 1 240px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 10px}
+.pat .nm{font-weight:700;font-size:14px;color:#e6eef7;letter-spacing:.3px}
+.pat .sub{font-size:10.5px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-top:2px}
+.clocks{display:flex;gap:5px;flex:2 1 460px}
+.clk{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px;min-width:84px}
+.clk .lab{font-size:9px;letter-spacing:1.3px;color:var(--dim);text-transform:uppercase}
+.clk .val{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1;margin-top:1px;color:#e6eef7;font-variant-numeric:tabular-nums}
+.clk.hot .val{color:var(--md)} .clk.crit .val{color:var(--hi)}
+
+.alarmbar{height:24px;border-radius:3px;display:flex;align-items:center;gap:14px;padding:0 10px;
+  font-size:11.5px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;margin-bottom:6px;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);overflow:hidden}
+.alarmbar.hi{background:var(--hi);color:#fff;border-color:var(--hi);animation:fl .55s steps(1,end) infinite}
+.alarmbar.md{background:var(--md);color:#111;border-color:var(--md)}
+@keyframes fl{50%{opacity:.3}}
+
+.grid{display:grid;grid-template-columns:1fr 300px;gap:6px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   MONITOR — réplica de Mindray uMEC12 (el equipo más frecuente en UCI y
+   guardia de Argentina y Brasil). Distribución, colores de canal, jerarquía
+   tipográfica de los parámetros y cadenas de texto tomadas del equipo real.
+   ========================================================================== */
+.bezel{background:linear-gradient(#d8dade,#b6b9bf);border-radius:14px;padding:19px 46px 20px 18px;
+  box-shadow:0 2px 0 #8f949b inset,0 10px 26px rgba(0,0,0,.5);position:relative}
+.bezel .brand{position:absolute;top:5px;left:22px;font:700 12px 'IBM Plex Sans Condensed',sans-serif;color:#3c4148;letter-spacing:.4px}
+.bezel .model{position:absolute;top:3px;right:18px;font:600 13px 'IBM Plex Sans Condensed',sans-serif;color:#4a5057}
+.bezel .keys{position:absolute;right:11px;top:62px;display:flex;flex-direction:column;gap:9px}
+.bezel .keys i{width:23px;height:16px;border-radius:3px;background:#c6c9ce;box-shadow:0 1px 0 #9aa0a7,0 0 0 1px #abb0b6 inset;display:block}
+.bezel .keys i.amber{background:#e8a33a;box-shadow:0 1px 0 #b57c22}
+.bezel .knob{position:absolute;right:5px;bottom:12px;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e3e5e8,#9ca1a8);box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.screen{background:#000;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px #23262b}
+
+/* ---- barra de estado superior ---- */
+.mtop{display:flex;align-items:center;gap:13px;padding:3px 8px;font-size:10.5px;
+  font-family:'IBM Plex Sans Condensed',sans-serif;border-bottom:1px solid #1c1c1c}
+.mtop .bed{color:#7fd0ff;font-weight:700;letter-spacing:.3px}
+.mtop .adu{color:#ffd24a;font-weight:700}
+.mtop .dt{color:#c8d0d8;font-family:'IBM Plex Mono',monospace;font-size:9.5px}
+.mtop .tech{color:#93a0ac}
+.mtop .banner{margin-left:auto;background:#2fd15c;color:#04210c;font-weight:700;letter-spacing:.3px;
+  padding:2px 28px 2px 11px;border-radius:2px;min-width:184px;font-size:11px}
+.mtop .banner.hi{background:#ff2323;color:#fff;animation:fl .5s steps(1,end) infinite}
+.mtop .banner.md{background:#ffd24a;color:#2a1e00}
+.mtop .banner.none{background:#0c3a19;color:#5ecd82}
+
+/* ---- cuerpo: trazados + columna de parámetros ---- */
+.mbody{display:grid;grid-template-columns:1fr 212px}
+@media(max-width:820px){.mbody{grid-template-columns:1fr 164px}}
+.wavebox{position:relative;background:#000;min-width:0}
+canvas{display:block;width:100%;height:352px}
+@media(max-width:760px){canvas{height:292px}}
+.wl{position:absolute;left:5px;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:.2px;pointer-events:none;line-height:1.22}
+.wl s{display:block;font-weight:400;font-size:8.5px;text-decoration:none;opacity:.75}
+.wsc{position:absolute;right:4px;font-family:'IBM Plex Mono',monospace;font-size:8px;color:#787878;
+  pointer-events:none;text-align:right;line-height:1.35}
+
+/* ---- parámetros numéricos ---- */
+.pcol{border-left:1px solid #242424;display:flex;flex-direction:column}
+.pz{border-bottom:1px solid #242424;padding:1px 6px 2px;display:flex;gap:4px;flex:1;min-height:0;align-items:stretch}
+.pz .lft{flex:1;min-width:0;display:flex;flex-direction:column}
+.pz .lbl{font:700 11px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.2px;line-height:1.05}
+.pz .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.2;margin-top:1px}
+.pz .big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:47px;line-height:.8;
+  font-variant-numeric:tabular-nums;letter-spacing:-1px;text-align:right;margin-top:auto}
+.pz .big.s{font-size:33px} .pz .big.xs{font-size:25px}
+.pz .rgt{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:1px}
+.pz .sub{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#a4aeb8;text-align:right;line-height:1.25;white-space:nowrap}
+.pz .sub b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px}
+.pz.sel{outline:1px solid #fff;outline-offset:-2px}
+.pz.alarm .big{animation:fl .5s steps(1,end) infinite}
+.pz.off .big{color:#3a3a3a}
+.hbeat{display:inline-block;color:#ff3b47;font-size:11px}
+.hbeat.on{animation:pulse .9s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}60%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
+
+/* ---- barra inferior ---- */
+.mbot{display:flex;align-items:center;gap:16px;padding:3px 8px;border-top:1px solid #242424;font-size:10px;flex-wrap:wrap}
+.mbot .grp{display:flex;align-items:flex-end;gap:5px}
+.mbot .k{font:700 10px 'IBM Plex Sans Condensed',sans-serif;color:#c8d0d8}
+.mbot .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.15}
+.mbot .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:25px;line-height:.88;color:#e6ebef}
+.mbot .v.pni{font-size:19px;color:#ff8a92}
+.mbot .st{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#93a0ac}
+.mbot .cfg{margin-left:auto;color:#93a0ac;font-size:9.5px}
+.mbot .sbtn{background:#1b3a6b;border:1px solid #2f5c9e;color:#cfe0ff;border-radius:9px;
+  padding:2px 9px;font:600 9.5px 'IBM Plex Sans Condensed',sans-serif}
+.batt{width:21px;height:10px;border:1px solid #6fbf7f;border-radius:1px;position:relative;display:inline-block}
+.batt i{display:block;height:100%;background:#3fd06a;width:72%}
+.batt:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#6fbf7f}
+
+/* ---- ficha clínica: datos que un monitor real NO muestra ---- */
+.ficha{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+@media(max-width:900px){.ficha{grid-template-columns:repeat(4,1fr)}}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:3px 6px 4px}
+.fk .k{font-size:8px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;font-weight:700}
+.fk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
+.c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
+
+/* ---- ETAPA CLÍNICA: vinheta + opciones A-E ---- */
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin-top:6px;padding:11px 13px 13px}
+.stage .num{font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;
+  padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* M-05: cronómetro de nodos criticidad:"letal" con tiempo_limite_segundos -- sólo visible en esos nodos */
+.stgTimer{font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;font-size:12px;font-weight:800;
+  background:#2e1013;color:#ff8a92;border:1px solid #5a1a21;border-radius:10px;padding:1px 9px;display:none}
+.stgTimer.on{display:inline-block}
+.stgTimer.crit{animation:fl .5s steps(1,end) infinite}
+.stage h3{margin:3px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;color:#e9f1f9;line-height:1.15}
+.stage .vig{font-size:14px;line-height:1.58;color:#aebfcf;margin-bottom:11px;white-space:pre-line}
+.stage .opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:3px;padding:9px 11px;cursor:pointer;color:var(--txt);font:400 14px/1.48 'IBM Plex Sans Condensed',sans-serif;width:100%}
+.opt:hover:not(:disabled){border-color:var(--pleth);background:#141e2a}
+.opt .letter{flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#1b2a3a;border:1px solid #2c4157;
+  display:flex;align-items:center;justify-content:center;font:700 11.5px 'IBM Plex Mono',monospace;color:#cfe0ff;margin-top:1px}
+.opt:disabled{opacity:.38;cursor:default}
+.stage .feedback{margin-top:11px;padding:10px 12px;border-radius:3px;font-size:14px;line-height:1.55;display:none}
+.stage .feedback.show{display:block}
+.feedback.good{background:#0f2b1c;border-left:3px solid var(--ok);color:#bfe9cf}
+.feedback.warn{background:#2e2410;border-left:3px solid var(--md);color:#f0dfa8}
+.feedback.bad{background:#2e1013;border-left:3px solid var(--hi);color:#ffc0c5}
+.feedback .fscore{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;display:block;margin-bottom:4px}
+#stgNext{display:none;margin-top:11px}
+.stage.done{opacity:.55}
+
+/* ---- historia clínica y registro de impresos (menú lateral) ---- */
+.hist{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 11px}
+.hist h2{margin:0 0 7px;padding-bottom:6px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--pleth);font-weight:800;border-bottom:1px solid var(--line)}
+.hist dl{margin:0;font-size:12.5px;line-height:1.6}
+.hist dt{color:#5ea6c4;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;margin-top:7px;font-weight:700}
+.hist dt:first-child{margin-top:0}
+.hist dd{margin:0;color:#cfdbe6}
+
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px;transition:box-shadow .3s,border-color .3s}
+.printouts h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);
+  border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.printouts .list{max-height:150px;overflow-y:auto;padding:4px}
+.printouts .empty{padding:9px 10px;font-size:11.5px;color:#3d4f61;font-style:italic}
+.printouts.nuevo{border-color:var(--pleth);box-shadow:0 0 0 2px rgba(49,214,242,.35),0 0 18px rgba(49,214,242,.45);animation:pnew 1s ease-in-out 3}
+@keyframes pnew{50%{box-shadow:0 0 0 3px rgba(49,214,242,.55),0 0 26px rgba(49,214,242,.7)}}
+#pcount{border-radius:8px;padding:0 6px;transition:background .3s,color .3s}
+#pcount.nuevo{background:var(--pleth);color:#04222b;font-weight:800;animation:pcnew .6s ease-in-out 3}
+@keyframes pcnew{50%{transform:scale(1.35)}}
+.toast-impreso{position:fixed;top:14px;right:14px;z-index:70;background:var(--panel);border:1px solid var(--pleth);
+  border-radius:4px;padding:10px 14px;max-width:280px;box-shadow:0 0 22px rgba(49,214,242,.45),0 8px 20px rgba(0,0,0,.5);
+  display:flex;gap:9px;align-items:flex-start;opacity:0;transform:translateY(-10px);
+  transition:opacity .25s,transform .25s;pointer-events:none}
+.toast-impreso.on{opacity:1;transform:translateY(0)}
+.toast-impreso .ic{font-size:19px;line-height:1}
+.toast-impreso .tt{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:2px}
+.toast-impreso .bd{font-size:12px;line-height:1.4;color:var(--txt)}
+@media(prefers-reduced-motion:reduce){.printouts.nuevo,#pcount.nuevo{animation:none}}
+.pitem{display:flex;justify-content:space-between;gap:6px;padding:7px 8px;border-radius:2px;cursor:pointer;font-size:13px;color:var(--txt);width:100%;
+  background:transparent;border:0;text-align:left}
+.pitem:hover{background:#141e2a}
+.pitem .tag2{font-size:9.5px;letter-spacing:1px;color:var(--dim);font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+/* ---- modal de impreso (laudo) ---- */
+.modal-lab{max-width:520px}
+.modal-lab .stamp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:11px}
+.modal-lab pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.62;color:#cfe0ff;
+  background:#070b11;border:1px solid var(--line);border-radius:3px;padding:11px 13px;margin:0}
+
+/* ---- VENTILADOR ---- */
+.vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
+.vent.on{display:block}
+.vent h3{margin:0 0 4px;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#7fd39b;font-weight:700}
+.vent .row{display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11px}
+.vent .row b{color:#e6eef7;font-weight:600}
+
+/* ---- MENÚ ---- */
+.side{display:flex;flex-direction:column;gap:6px;position:sticky;top:8px}
+.score{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 10px 9px}
+.score .r{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--pleth);font-weight:800}
+.bpn{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1;color:var(--ok);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:#101822;border-radius:2px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--ok);transition:width .35s}
+.sm3{display:flex;gap:5px;margin-top:6px}
+.sm3 div{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:2px;padding:3px 6px}
+.sm3 .l{font-size:8.5px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.sm3 .v{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;line-height:1.1}
+
+.menu{background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}
+.menu h2{margin:0;padding:8px 10px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);font-weight:700}
+.srch{padding:6px 8px;border-bottom:1px solid var(--line)}
+.srch input{width:100%;background:#070b11;border:1px solid var(--line);border-radius:2px;color:var(--txt);
+  padding:5px 7px;font:400 12px 'IBM Plex Sans Condensed',sans-serif}
+.srch input::placeholder{color:#3d4f61}
+.cats{max-height:56vh;overflow-y:auto}
+@media(max-width:900px){.cats{max-height:none}}
+.cat>button.head{width:100%;text-align:left;background:var(--panel2);border:0;border-bottom:1px solid var(--line);
+  color:#dbe6f2;padding:8px 10px;font:600 12px/1.2 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.cat>button.head:hover{background:#131d29}
+.cat>button.head .ix{font-family:'IBM Plex Mono',monospace;color:var(--dim);font-size:10px}
+.acts{display:none;border-bottom:1px solid var(--line);padding:2px 0 5px}
+.cat.open .acts{display:block}
+.gp{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#3d4f61;padding:6px 10px 3px;font-weight:700}
+.act{width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:2px;color:var(--txt);
+  padding:5px 9px;font:400 11.5px/1.25 'IBM Plex Sans Condensed',sans-serif;cursor:pointer;display:flex;justify-content:space-between;gap:7px;align-items:baseline}
+.act:hover{background:#141e2a;border-color:#22303f}
+.act .t{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--dim);white-space:nowrap}
+.act.used{opacity:.38}
+.empty{padding:8px 10px;font-size:10.5px;color:#3d4f61;font-family:'IBM Plex Mono',monospace;font-style:italic;
+  border-left:2px solid #1a2532;margin:2px 8px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-offset:1px}
+
+.ctrls{display:flex;gap:5px;padding:7px;border-top:1px solid var(--line);flex-wrap:wrap}
+.ctrls button{flex:1;min-width:58px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:5px;border-radius:2px;font:600 10.5px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer}
+.ctrls button:hover{background:#141e2a} .ctrls button.on{background:#1b2a3a;border-color:#2c4157;color:#fff}
+.ctrls button.fin{background:#381015;border-color:#5a1a21;color:#ffb7bd}
+
+.log{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.log h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.log .b{max-height:180px;overflow-y:auto;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+.log .e{padding:2px 10px;display:flex;gap:7px;border-left:2px solid transparent}
+.log .e .h{color:var(--dim);white-space:nowrap}
+.log .e.good{border-left-color:var(--ok)}.log .e.bad{border-left-color:var(--hi)}
+.log .e.warn{border-left-color:var(--md)}.log .e.evt{border-left-color:var(--pleth)}
+
+.doing{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:var(--panel);border:1px solid #2c4157;border-radius:3px;padding:8px 15px;min-width:270px;display:none;z-index:40}
+.doing.on{display:block}
+.doing .b{height:3px;background:#101822;margin-top:5px;border-radius:2px;overflow:hidden}
+.doing .b i{display:block;height:100%;width:0;background:var(--pleth)}
+
+.ov{position:fixed;inset:0;background:rgba(2,4,7,.95);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60;overflow-y:auto}
+.ov.hide{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;max-width:680px;width:100%;padding:22px 24px}
+.card h1{font-family:'Barlow Condensed',sans-serif;font-size:32px;margin:0 0 4px;line-height:1;color:#e9f1f9}
+.card .kick{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.6;color:#a2b6c8} .card ul{font-size:12.5px;line-height:1.55;color:#a2b6c8;padding-left:17px}
+.spd{display:flex;gap:7px;margin:14px 0 4px;flex-wrap:wrap}
+.spd button{flex:1;min-width:104px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:10px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+.spd button:hover{border-color:var(--pleth);background:#141e2a}
+.spd button b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:20px;color:#e9f1f9}
+.outcome table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.outcome td{padding:4px 0;border-bottom:1px solid var(--line);color:#a2b6c8}
+.outcome td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;color:#e9f1f9}
+.btn{display:inline-block;margin-top:14px;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;padding:9px 18px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+#stgNext{background:linear-gradient(135deg,#c6ff3a,#84cc16);border-color:transparent;color:#0a1f00;font-weight:800;box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55);animation:stgNextPulse 1.6s ease-in-out infinite}
+#stgNext:hover{background:linear-gradient(135deg,#d4ff6b,#9ee034);box-shadow:0 0 14px rgba(198,255,58,.9),0 0 34px rgba(132,204,22,.7)}
+@keyframes stgNextPulse{0%,100%{box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55)}50%{box-shadow:0 0 16px rgba(198,255,58,1),0 0 40px rgba(132,204,22,.8)}}
+/* ---- EXPEDIENTE DEL CASO (documento embebido) ---- */
+.doc{max-width:860px;max-height:88vh;overflow-y:auto}
+.doc h2{font-family:'Barlow Condensed',sans-serif;font-size:21px;margin:22px 0 6px;color:#e9f1f9;letter-spacing:.3px;
+  border-bottom:1px solid var(--line);padding-bottom:4px}
+.doc h3{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);margin:16px 0 5px;font-weight:700}
+.doc p,.doc li{font-size:12.5px;line-height:1.6;color:#a2b6c8}
+.doc table{width:100%;border-collapse:collapse;font-size:11.5px;margin:8px 0}
+.doc th{text-align:left;color:var(--dim);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+  padding:4px 6px;border-bottom:1px solid var(--line)}
+.doc td{padding:5px 6px;border-bottom:1px solid #141d27;color:#a2b6c8;vertical-align:top}
+.doc td:first-child{color:#e9f1f9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;white-space:nowrap}
+.doc .tag{display:inline-block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
+  padding:1px 6px;border-radius:2px;margin-right:5px}
+.tag.ok{background:#0f2b1c;color:var(--ok)} .tag.bad{background:#2e1013;color:#ff8a92}
+.tag.warn{background:#2e2410;color:var(--md)}
+.doc .box{border-left:2px solid var(--pleth);background:#0b131c;padding:8px 12px;margin:10px 0;font-size:12px;line-height:1.55;color:#a2b6c8}
+.doc .box b{color:#e9f1f9}
+.doc .close{position:sticky;top:0;float:right;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;
+  padding:5px 12px;border-radius:2px;cursor:pointer;font:600 11px 'IBM Plex Sans Condensed',sans-serif;z-index:2}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pat">
+    <div class="nm">PACIENTE, MASCULINO · 58 a</div>
+    <div class="sub" id="bedinfo">SALA ROJA · sin monitorizar · sin accesos</div>
+  </div>
+  <div class="clocks">
+    <div class="clk"><div class="lab">Tiempo de caso</div><div class="val" id="wall">00:00</div></div>
+    <div class="clk" id="clkIsq"><div class="lab">Isquemia T+</div><div class="val" id="tplus">0′</div></div>
+    <div class="clk" id="clkIdle"><div class="lab">Sin actuar</div><div class="val" id="idle">0:00</div></div>
+    <div class="clk"><div class="lab">Puntuación</div><div class="val" id="salv">100</div></div>
+  </div>
+</div>
+
+<div class="alarmbar" id="alarm">monitorización no iniciada</div>
+
+<div class="grid">
+  <div>
+    <!-- ============ MONITOR MINDRAY uMEC12 ============ -->
+    <div class="bezel">
+      <span class="brand">mindray</span><span class="model">uMEC12</span>
+      <div class="keys"><i class="amber"></i><i></i><i></i><i></i><i></i></div>
+      <div class="knob"></div>
+
+      <div class="screen">
+        <!-- barra de estado -->
+        <div class="mtop">
+          <span class="bed" id="mBed">▣ URG-1</span>
+          <span class="adu">Adulto</span>
+          <span class="dt" id="mDT">08-08-2026 04:02:00</span>
+          <span class="tech" id="mTech">No se puede analizar QT</span>
+          <span class="banner none" id="mBanner">Sin alarmas</span>
+        </div>
+
+        <!-- trazados -->
+        <div class="mbody">
+          <div class="wavebox">
+            <canvas id="cv"></canvas>
+            <div class="wl c-ecg" id="wl1">II<s>×1 &nbsp;Monitor</s></div>
+            <div class="wl c-co2" id="wl2">CO2<s>mmHg</s></div>
+            <div class="wsc c-co2" id="ws2">50<br>25<br>0</div>
+            <div class="wl c-sat" id="wl3">Plet</div>
+            <div class="wl c-resp" id="wl4">Imped.<s>×2</s></div>
+            <div class="wl c-abp" id="wl5">Art<s>mmHg</s></div>
+            <div class="wsc c-abp" id="ws5">180<br>90<br>0</div>
+          </div>
+
+          <!-- columna de parámetros -->
+          <div class="pcol">
+            <div class="pz" id="pzECG">
+              <div class="lft">
+                <div class="lbl c-ecg">ECG</div>
+                <div class="lim" id="limECG">120<br>50</div>
+                <div class="big c-ecg" id="vHR">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub"><span class="hbeat" id="beat">♥</span></div>
+                <div class="sub c-abp" id="subPVC">PVC <b>---</b></div>
+                <div class="sub" id="subST">ST desact.</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzCO2">
+              <div class="lft">
+                <div class="lbl c-co2">CO2<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">50<br>25</div>
+                <div class="big c-co2" id="vCO2">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-resp">FRm <b id="subFRm">--</b></div>
+                <div class="sub c-resp">R <b id="subR">0</b></div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzSat">
+              <div class="lft">
+                <div class="lbl c-sat">SpO2</div>
+                <div class="lim">100<br>90</div>
+                <div class="big c-sat" id="vSat">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-sat">PR <b id="subPR">---</b></div>
+                <div class="sub" id="subPI">IP ---</div>
+                <div class="sub">Origen SpO2</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzResp">
+              <div class="lft">
+                <div class="lbl c-resp">Resp</div>
+                <div class="lim">26<br>9</div>
+                <div class="big c-resp s" id="vRR">--</div>
+              </div>
+              <div class="rgt"><div class="sub" id="subOrigen">Origen Imped.</div></div>
+            </div>
+
+            <div class="pz sel" id="pzArt">
+              <div class="lft">
+                <div class="lbl c-abp" id="lblArt">PANI<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">161<br>121</div>
+                <div class="big c-abp s" id="vBP">---/---</div>
+              </div>
+              <div class="rgt"><div class="sub c-abp" id="subMAP">(--)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- barra inferior -->
+        <div class="mbot">
+          <div class="grp"><span class="k">Temp</span><span class="lim">37,9<br>35,2</span>
+            <span class="v" id="vT">--,-</span><span class="st">T2</span></div>
+          <div class="grp"><span class="k">PNI</span><span class="lim">100<br>90</span>
+            <span class="v pni" id="vPNI">---/---</span><span class="st" id="stPNI">Medición terminada</span></div>
+          <span class="batt"><i></i></span>
+          <span class="cfg">Configuración actual:Predet.</span>
+          <span class="sbtn">◀ Ajuste alarma</span><span class="sbtn">Menú principal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA CLÍNICA: parámetros que un monitor real no muestra -->
+    <div class="ficha">
+      <div class="fk"><div class="k">ST II</div><div class="n c-ecg" id="fST">—</div><div class="u">mm</div></div>
+      <div class="fk"><div class="k">Glucemia</div><div class="n" id="fGlu">—</div><div class="u">mg/dL</div></div>
+      <div class="fk"><div class="k">Lactato</div><div class="n" id="fLac">—</div><div class="u">mmol/L</div></div>
+      <div class="fk"><div class="k">Diuresis</div><div class="n" id="fDiu">—</div><div class="u" id="fDiuU">sin sonda</div></div>
+      <div class="fk"><div class="k">Glasgow</div><div class="n" id="fGCS">—</div><div class="u">/15</div></div>
+      <div class="fk"><div class="k">Dolor EVA</div><div class="n" id="fPain">—</div><div class="u">/10</div></div>
+      <div class="fk"><div class="k">Relleno cap.</div><div class="n" id="fCRT">—</div><div class="u">seg</div></div>
+      <div class="fk"><div class="k">Killip</div><div class="n" id="fKil">—</div><div class="u" id="fKilU">sin examinar</div></div>
+    </div>
+
+    <!-- VENTILADOR -->
+    <div class="vent" id="ventPanel">
+      <h3>Ventilación mecánica invasiva</h3>
+      <div class="row">
+        <span>Modo <b id="vMode">VC-AC</b></span><span>Vt <b id="vVt">420</b> mL (6 mL/kg PI)</span>
+        <span>FR <b id="vSetRR">16</b></span><span>PEEP <b id="vPEEP">5</b> cmH₂O</span>
+        <span>FiO₂ <b id="vFiO2">100</b>%</span><span>P. meseta <b id="vPlat">18</b> cmH₂O</span>
+      </div>
+    </div>
+
+    <!-- ================= ETAPA CLÍNICA (pregunta activa) ================= -->
+    <div class="stage" id="stage">
+      <div class="num"><span id="stgNum">Etapa 1 / 20</span><span class="stgTimer" id="stgTimer"></span></div>
+      <h3 id="stgTitle">—</h3>
+      <div class="vig" id="stgVig">—</div>
+      <div class="opts" id="stgOpts"></div>
+      <div class="feedback" id="stgFeedback"></div>
+      <button class="btn" id="stgNext" style="display:none">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- ================= MENÚ LATERAL (información, no acciones) ================= -->
+  <div class="side">
+    <div class="score">
+      <div class="r"><span>Puntos biológicos</span><span class="bpn" id="vBPs">100</span></div>
+      <div class="bar"><i id="bpbar" style="width:100%"></i></div>
+      <div class="sm3">
+        <div><div class="l">Excelencia</div><div class="v" id="vPE">0</div></div>
+        <div><div class="l">Omisiones</div><div class="v" id="vOm">0</div></div>
+        <div><div class="l">Iatrogenias</div><div class="v" id="vIa">0</div></div>
+      </div>
+    </div>
+
+    <div class="hist">
+      <h2>Historia clínica resumida</h2>
+      <dl>
+        <dt>Paciente</dt><dd>Paciente, masculino · 58 años</dd>
+        <dt>Motivo de consulta</dt><dd id="histMotivo">—</dd>
+      </dl>
+    </div>
+
+    <div class="printouts">
+      <h2><span>Impresos y resultados</span><span id="pcount">0</span></h2>
+      <div class="list" id="plist"><div class="empty">Todavía no hay estudios liberados</div></div>
+    </div>
+
+    <div class="log">
+      <h2><span>Registro clínico</span><span id="logn">0</span></h2>
+      <div class="b" id="logb"></div>
+      <div class="ctrls">
+        <button id="bSpeed">×4</button><button id="bSound">🔊</button>
+        <button id="bPause">⏸</button><button id="bCase">📄 Caso</button>
+        <button class="fin" id="bEnd">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
+
+<div class="toast-impreso" id="toastImpreso"><span class="ic">📄</span><div><div class="tt">Nuevo impreso liberado</div><div class="bd" id="toastImpresoTxt"></div></div></div>
+
+<!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
+<div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
+
+
+<div class="ov" id="ovIntro"><div class="card">
+  <div class="kick">Caso 6 · Emergencia · Línea de tiempo dinámica</div>
+  <h1 id="introTitulo">Simulador Clínico de Emergencia</h1>
+  <p id="introDescripcion"></p>
+  <p style="color:#e9f1f9"><b>El monitor no te espera.</b> Mientras deliberás sin responder, el paciente sigue descompensando en tiempo real.</p>
+  <ul>
+    <li>Cada decisión errada puede abrir una sub-fase de rescate: hay que reestabilizar antes de volver a la línea principal.</li>
+    <li>Las secciones sin dato real en este caso figuran <b>vacías (—)</b>, no ocultas.</li>
+    <li>El desenlace final depende de la puntuación acumulada, no de un único camino fijo.</li>
+  </ul>
+  <div class="spd">
+    <button id="bComenzar"><b>▶</b>Comenzar</button>
+  </div>
+  <p style="font-size:11px;color:#3d4f61;margin-top:12px">Simulación educativa. Paciente ficticio. No sustituye protocolos institucionales ni juicio clínico.</p>
+</div></div>
+
+<div class="ov hide" id="ovEnd"><div class="card outcome" id="endCard"></div></div>
+
+<!-- ==========================================================================
+     EXPEDIENTE DEL CASO — documento docente embebido
+     ========================================================================== -->
+<div class="ov hide" id="ovCase"><div class="card doc">
+<button class="close" id="closeCase">Cerrar ✕</button>
+<div class="kick">Expediente docente · uso del instructor</div>
+<h1 style="margin-bottom:2px" id="docTitulo">Caso 6</h1>
+<p style="color:#5a6e80;font-family:'IBM Plex Mono',monospace;font-size:11px">Estructura ramificada · fases principales con sub-fases de rescate · puntuación inicial 100/100</p>
+
+<div class="box"><b>Advertencia para el instructor:</b> este documento contiene las respuestas. Si se muestra al estudiante antes de jugar, el caso pierde su valor.</div>
+
+<h2>1 · Escenario</h2>
+<p id="docDescripcion"></p>
+
+<h2>2 · Estructura del caso</h2>
+<p>El caso avanza por fases principales (Admisión, Estabilización, Reperfusión, Post-reperfusión). Cada opción incorrecta puede abrir una <b>sub-fase de rescate</b> específica para esa complicación (ej.: congestión pulmonar, choque, hemorragia, falla de trombólisis, reinfarto) — el alumno debe resolverla antes de volver a la línea principal. No hay un único camino: la puntuación final refleja la calidad acumulada de las decisiones.</p>
+
+<h2>3 · Motor de puntuación</h2>
+<table>
+<tr><th>Puntuación final</th><th>Desenlace</th></tr>
+<tr><td>≥ 70 / 100</td><td>Éxito pleno</td></tr>
+<tr><td>40–69 / 100</td><td>Estabilizado con secuelas</td></tr>
+<tr><td>&lt; 40 / 100</td><td>Desenlace crítico</td></tr>
+</table>
+<p>Cada opción define explícitamente su impacto en la puntuación y en los signos vitales (FC, PA, SpO₂, FR, ritmo). Mientras el alumno delibera sin responder, los signos vitales se degradan gradualmente (presión de tiempo real).</p>
+
+<div class="box" style="margin-top:20px;border-left-color:#ff5a63">
+<b>Aviso de uso.</b> Material educativo y de simulación. Paciente y escenario ficticios. No sustituye los protocolos institucionales vigentes ni el juicio clínico.
+</div>
+</div></div>
+
+<script>
+"use strict";
+
+/* ==========================================================================
+   CONFIGURACIÓN PÚBLICA
+   Editá este bloque para adaptar el simulador sin tocar el motor.
+   ========================================================================== */
+const CONFIG = {
+  velocidadInicial : 2,      // multiplicador fijo del reloj clínico -- sin selector para el alumno
+  sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
+  saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
+  // M-08: el expediente contiene TODAS las respuestas correctas -- por defecto
+  // queda oculto al alumno. El viewer sólo agrega ?modo=docente a la URL del
+  // iframe cuando el usuario logueado es admin/colaborador (ver
+  // hospital-simulacao-caso-viewer.tsx). No es autenticación real -- un
+  // alumno que edite la URL a mano igual podría activarlo -- pero saca el
+  // botón de la vista por defecto de cualquiera con acceso al caso, que es
+  // el problema crítico que reportó la auditoría (DJ-01).
+  mostrarExpediente: new URLSearchParams(location.search).get('modo') === 'docente',
+  autoIniciar      : true,   // false = el simulador espera a window.SimuladorIAMCEST.iniciar()
+
+  // Dificultad: multiplica el drenaje de puntos por tiempo.
+  // 0.6 = indulgente (pregrado) · 1 = estándar · 1.5 = exigente (residencia)
+  dificultad       : 1.0,
+
+  // Frecuencia del brazalete de PA (real: ~300s). Se acorta a propósito para
+  // que el efecto de cada decisión sea visible en el monitor en segundos.
+  cicloPANIsegundos: 8,
+
+  // Se dispara al terminar el caso. Recibe el objeto de resultados.
+  alFinalizar      : null,   // ej.: r => fetch('/api/resultados',{method:'POST',body:JSON.stringify(r)})
+
+  // Emite el resultado al sitio contenedor vía postMessage (útil en iframe).
+  emitirPostMessage: true,
+  // M-07: este HTML siempre se sirve estático desde el mismo origen que la
+  // app (arquivo_html es una ruta relativa tipo /simuladores/xxx.html), así
+  // que el propio origen del iframe YA ES el origen correcto del padre. Fijar
+  // location.origin en vez de '*' evita que el resultado (con el log
+  // completo del intento del alumno) se filtre a un origen que embeba este
+  // iframe desde otro dominio.
+  origenPermitido  : location.origin
+};
+
+/* ==========================================================================
+   ESTADO
+   ========================================================================== */
+const S={
+ running:false,paused:false,speed:4,sound:false,
+ simT:0, wallStart:0, waveT:0, lastAction:0, lostTime:0,
+ bp:100,pe:0,omis:0,iatro:0, st:0,
+ hr:88,sbp:140,dbp:90,map:110,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
+ diuresis:null,pvc:null,gcs:15,pain:8,crt:null,etco2:null,
+ sbpShow:140,dbpShow:90,lastNIBP:0,
+ rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
+ arterial:false,cvc:false,foley:false,
+ airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
+ examDone:false,killipI:false,
+ dead:false,ended:false,doing:null,log:[],
+ // M-01/M-05/M-09: seguimiento por nodo (cuándo se entró, si ya se decidió,
+ // si el timeout de ese nodo ya se aplicó, y el snapshot de ALVO al entrar
+ // -- usado para topear la deriva por indecisión).
+ nodoEnteredAt:0, decidido:false, nodoTimeoutApplied:false, nodoBase:null, nodosVisitados:[],
+ // M-02: S.omis/S.iatro ahora se acumulan de verdad (sumando opcion.flags de
+ // cada decisión, ver resolveOption) en vez de quedar en 0 fijo como en v4.
+ // reperfusionFlag/vdIdentificadoFlag/secuelas también alimentan el
+ // resultado exportado con datos reales en vez de valores hardcodeados.
+ reperfusionFlag:false, vdIdentificadoFlag:false, secuelas:[]
+};
+// alvos de sinais vitais definidos pela opcao escolhida (novos_sinais_vitales
+// do caso v4) -- a fisica so faz o traçado convergir suavemente ate eles,
+// nao ha modelo farmacocinetico proprio deste caso.
+const ALVO={hr:88,sbp:140,dbp:90,spo2:95,rr:18,st:0};
+S.nodoId=null;S.printouts=[];
+const $=i=>document.getElementById(i), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const hhmm=s=>{const t=(S.wallStart+s)%86400;return String(Math.floor(t/3600)).padStart(2,'0')+':'+String(Math.floor(t%3600/60)).padStart(2,'0')};
+const mmss=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+
+function log(t,c){S.log.unshift({h:hhmm(S.simT),t,c:c||''});if(S.log.length>110)S.log.pop();
+ $('logb').innerHTML=S.log.map(e=>`<div class="e ${e.c}"><span class="h">${e.h}</span><span>${e.t}</span></div>`).join('');
+ $('logn').textContent=S.log.length;}
+function sc(d,t,c){
+ if(d>0){const r=100-S.bp,g=Math.min(r,d);S.bp+=g;S.pe+=d-g;}else S.bp=Math.max(0,S.bp+d);
+ if(t)log(`${d>0?'+':''}${d} BP · ${t}`,c||(d>0?'good':'bad'));
+ if(S.bp<=0&&!S.dead)die('Puntos biológicos agotados');}
+function info(t){log(t,'evt');}
+function nada(t,p){log(t,'warn');if(p)sc(p,'Estudio sin rendimiento diagnóstico en este cuadro','warn');}
+
+/* ==========================================================================
+   CASO CLÍNICO V4 — estructura ramificada (grafo de nodos), no lineal.
+   Cada nodo tiene "opciones"; cada opción define destino (id del próximo
+   nodo), si es correcta, impacto en la puntuación, el nuevo estado de
+   signos vitales (reemplazo completo, no delta) y el feedback. Una opción
+   incorrecta puede llevar a un nodo de "resgate" (subfase de rescate) que
+   vuelve a converger a la línea principal.
+   ========================================================================== */
+const NODO_INICIAL="fase_1_evaluacion_inicial", NODO_EXITO="fase_final";
+const CASO_V4={"titulo_juego":"Insuficiencia Respiratoria Aguda: El caso de Don Aurelio","descripcion":"Don Aurelio, 68 años, 70 kg de peso ideal, ingresa a la sala de emergencias con disnea de reposo de tres días, tos con expectoración purulenta y fiebre. Tiene EPOC severo conocido. Al examen está confuso, taquipneico, sudoroso y usa marcadamente los músculos accesorios; satura 83% al aire ambiente. Estás en un hospital general con gasometría, radiografía portátil, laboratorio de urgencia, equipo de ventilación no invasiva, respirador y camas de terapia intensiva en el mismo edificio. El desafío del caso es que en la insuficiencia respiratoria hipercápnica el oxígeno es a la vez el tratamiento y el veneno: darlo de más produce narcosis por CO2, darlo de menos mata por hipoxemia, y todo el manejo posterior —ventilación no invasiva, intubación, parámetros del respirador— se juega en ese mismo equilibrio estrecho.","estado_inicial":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"145/92","saturacion_oxigeno_pct":83,"frecuencia_respiratoria_rpm":29,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0,"puntos_actuales":100},"nodos":{"fase_1_evaluacion_inicial":{"id":"fase_1_evaluacion_inicial","etapa":"Fase 1: Evaluación Inicial y Oxigenoterapia","descripcion_situación":"Te encontrás en la sala de emergencias. Acaba de ingresar Don Aurelio, un paciente de 68 años con diagnóstico de EPOC severo, que presenta disnea de reposo de 3 días, tos con expectoración purulenta y fiebre. Al examen físico se lo nota confuso, taquipneico, sudoroso y utilizando de forma marcada los músculos accesorios. Su saturación inicial es de 83% al aire ambiente. Debés estabilizarlo hemodinámicamente y optimizar su oxigenación sin causarle daño.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar oxigenoterapia controlada con cánula nasal a 2 L/min, buscando una saturación objetivo de 88-92%, y monitorizar estrechamente.","destino":"fase_2_gasometria_y_lab","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"140/90","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":27,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión clínica! En pacientes con EPOC reagudizado, la oxigenoterapia debe ser estrictamente titrada para alcanzar una saturación objetivo de 88-92%. El aporte controlado evita el lavado del impulso respiratorio hipóxico y disminuye el riesgo de hipercapnia refractaria y acidosis severa. Lograste estabilizar la saturación en 89% de manera segura y sin deprimir el centro respiratorio del paciente. Ahora el paciente se encuentra estable para continuar con la evaluación y solicitar los estudios complementarios pertinentes. Un detalle que conviene incorporar: si tenés máscara de Venturi disponible, al 24-28% es el dispositivo preferido sobre la cánula nasal, porque entrega una FiO2 fija que no depende del patrón respiratorio — y este paciente respira a 29 rpm. La cánula a 1-2 L/min es la alternativa válida y aceptada cuando no hay Venturi, o una vez que el paciente está estable y se prioriza su comodidad. Lo que nunca cambia es el objetivo: 88-92%."},{"texto":"Colocar una máscara de Venturi al 40% con flujo de 8 L/min, buscando normalizar la saturación a 96% para revertir la hipoxemia lo antes posible.","destino":"fase_2_gasometria_y_lab","es_correcta":false,"puntos_afectados":-10,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":108,"presion_arterial_mmhg":"142/91","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":21,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"La elección del dispositivo es la mejor del menú y conviene que lo sepas: la máscara de Venturi entrega una FiO2 precisa e independiente del patrón respiratorio del paciente, y por eso es el dispositivo de primera línea en la exacerbación hipercápnica de EPOC — con una frecuencia de 29 rpm, la cánula nasal entrega una FiO2 que varía respiración a respiración. El problema es la graduación: al 40% y con objetivo de 96% estás dando mucho más oxígeno del que este paciente tolera. El objetivo en EPOC es 88-92%, y la evidencia es dura al respecto: la mortalidad es menor en esa franja y aumenta incluso con elevaciones modestas a 93-96%. Mirá el monitor: la saturación subió a 96% pero la frecuencia respiratoria empezó a bajar, que es el primer signo de que la CO2 está subiendo. Bajá la FiO2 al 24-28% y volvé al objetivo de 88-92%: el dispositivo estaba bien elegido, la dosis no.","secuela":"Ascenso inicial de la PaCO2 por FiO2 excesiva, corregido antes de la narcosis."},{"texto":"Administrar oxígeno a alto fluxo mediante máscara con reservorio a 15 L/min para revertir la hipoxia de inmediato.","destino":"fase_1_rescate_hipercapnia","es_correcta":false,"puntos_afectados":-40,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"135/85","saturacion_oxigeno_pct":99,"frecuencia_respiratoria_rpm":10,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Cuidado! Este es un error clásico y muy peligroso en pacientes con EPOC severo. El aporte masivo de oxígeno desactiva el quimiorreceptor periférico que regula el impulso respiratorio, el cual depende de la hipoxia crónica en estos pacientes. Esto provoca hipoventilación alveolar, aumento de la relación ventilación/perfusión por pérdida de vasoconstricción pulmonar hipóxica y un severo atrapamiento de CO2. Mirá el monitor: la saturación subió a 99% pero la frecuencia respiratoria cayó peligrosamente a 10 rpm y el paciente se encuentra sumamente somnoliento. Debés rescatar al paciente de inmediato antes de que entre en paro respiratorio.","secuela":"Narcosis hipercápnica por FiO2 excesiva, con depresión del centro respiratorio."},{"texto":"Iniciar nebulizaciones continuas con salbutamol a dosis máximas, sin administrar oxígeno suplementario previo.","destino":"fase_2_gasometria_y_lab","es_correcta":false,"puntos_afectados":-10,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"150/95","saturacion_oxigeno_pct":80,"frecuencia_respiratoria_rpm":32,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"La administración de agonistas beta-2 como salbutamol sin corregir la hipoxia es inadecuada y aumenta la taquicardia refleja y el consumo miocárdico de oxígeno. Los betamiméticos también pueden empeorar transitoriamente la hipoxia al provocar vasodilatación en zonas pulmonares mal ventiladas (alteración V/Q). Mirá el monitor: la frecuencia cardíaca subió a 125 lpm y la saturación cayó a 80%, aumentando la disnea y la agitación de Don Aurelio. Siempre debés asegurar un aporte de oxígeno seguro de manera simultánea o previa a la terapia broncodilatadora. Corregí el manejo ventilatorio de inmediato."}]},"fase_1_rescate_hipercapnia":{"id":"fase_1_rescate_hipercapnia","etapa":"Rescate: Narcosis por CO2","descripcion_situación":"El paciente se encuentra estuporoso y con respiración superficial tras recibir oxígeno a alto flujo. No responde a estímulos verbales y su frecuencia respiratoria es de 10 rpm. La gasometría de control urgente revela una acidosis respiratoria severa (pH 7.15, pCO2 88 mmHg, pO2 110 mmHg). Debés actuar inmediatamente para barrer el CO2 acumulado.","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender la máscara de reservorio, colocar cánula nasal a 2 L/min y preparar de inmediato el equipo de Ventilación No Invasiva (VNI).","destino":"fase_2_gasometria_y_lab","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"138/88","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rescate! Reconociste el mecanismo de narcosis por CO2 inducida por hiperoxia. Al retirar el aporte masivo de oxígeno, restablecés parcialmente el estímulo respiratorio hipóxico y la ventilación mecánica no invasiva es la herramienta de elección para asistir los músculos fatigados y barrer el exceso de dióxido de carbono. El paciente comienza a responder lentamente y su frecuencia respiratoria sube a 24 rpm. Recordá siempre que la hiperoxia en el EPOC reagudizado es deletérea. Continuemos con la evaluación diagnóstica obligatoria."},{"texto":"Mantener la máscara con reservorio para asegurar la oxigenación y administrar un bolo endovenoso de Naloxona.","destino":"fase_1_rescate_hipercapnia","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"130/80","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":8,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa decisión es incorrecta y sumamente peligrosa. La naloxona es un antagonista opioide y no tiene ningún efecto benéfico en la narcosis por CO2 secundaria a oxigenoterapia excesiva, ya que el paciente no consumió estupefacientes. Mantener la máscara con reservorio agrava la hipoventilación y la acidosis respiratoria, poniendo en riesgo la vida del paciente. Fijate en el monitor: la frecuencia respiratoria sigue bajando y se sitúa en 8 rpm, mientras el paciente entra en un coma hipercápnico profundo. Modificá tu conducta de inmediato."}]},"fase_2_gasometria_y_lab":{"id":"fase_2_gasometria_y_lab","etapa":"Fase 2: Exámenes Complementarios","descripcion_situación":"El paciente se encuentra recibiendo oxígeno controlado por cánula nasal a 2 L/min. Clínicamente persiste con taquipnea y uso moderado de músculos accesorios, pero se encuentra orientado y colaborador. Para definir el tratamiento etiológico y el soporte de su insuficiencia respiratoria, debés solicitar los estudios correspondientes.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Solicitar gasometría arterial inmediata, hemograma completo, función renal, electrolitos, PCR y radiografía de tórax portátil.","destino":"fase_3_inicio_vni","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":108,"presion_arterial_mmhg":"138/88","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":26,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Correcto! Esta es la batería de exámenes inicial para el manejo de una insuficiencia respiratoria aguda hipercápnica. La gasometría arterial confirmará la gravedad de la acidosis respiratoria y el nivel de pCO2, que guiarán la necesidad de soporte ventilatorio. La radiografía de tórax portátil permite diagnosticar neumonía u otras complicaciones sin movilizar al paciente críticamente enfermo. Los cultivos y laboratorios orientarán la terapia antimicrobiana y el equilibrio metabólico. Los resultados están disponibles y confirman una neumonía de la base derecha y acidosis respiratoria moderada.","printouts":[{"tipo":"Laboratorio","titulo":"Gasometría Arterial e Informe de Laboratorio Inicial","cuerpo":"ESTADO ÁCIDO-BASE (FiO2 28%):\n- pH: 7.26  (V.R. 7.35-7.45) [✗ Acidosis severa]\n- pCO2: 62 mmHg  (V.R. 35-45) [✗ Hipercapnia marcada]\n- pO2: 58 mmHg  (V.R. 80-100) [✗ Hipoxemia]\n- HCO3-: 28 mEq/L  (V.R. 22-26) [✓ Compensación renal parcial]\n- Exceso de Base: +1.5 mEq/L\n- SatO2: 88%\n\nHEMOGRAMA Y BIOQUÍMICA:\n- Blancos: 14.500 /mm3  (V.R. 4.000-10.000) [✗ Leucocitosis]\n- Neutrófilos: 85%  (V.R. 55-70%)\n- Urea: 48 mg/dL  (V.R. 15-40)\n- Creatinina: 0.95 mg/dL  (V.R. 0.70-1.20)\n- Na+: 138 mEq/L  |  K+: 3.9 mEq/L\n- PCR: 85 mg/L  (V.R. < 5) [✗ Inflamación aguda]\n\nIMPRESIÓN DIAGNÓSTICA:\n- Acidosis respiratoria aguda descompensada secundaria a neumonía lobar derecha y reagudización de EPOC.\n- Indicada optimización inmediata de la ventilación."},{"tipo":"Imagen","titulo":"Radiografía de Tórax Portátil","cuerpo":"INFORME RADIOLÓGICO:\n- Campos pulmonares: Infiltrado alveolar homogéneo con broncograma aéreo en el lóbulo inferior derecho, compatible con proceso neumónico agudo.\n- Silueta cardíaca: Conservada en tamaño, sin signos de congestión venocapilar.\n- Estructuras óseas: Signos de hiperinsuflación pulmonar generalizada, horizontalización de costillas y aplanamiento diafragmático bilaterales, consistentes con antecedentes de EPOC.\n\nIMPRESIÓN DIAGNÓSTICA:\n- Neumonía aguda de la base derecha asociada a signos radiológicos de EPOC severo."}]},{"texto":"Solicitar únicamente gasometría arterial y radiografía de tórax portátil, postergando el laboratorio general y los electrolitos.","destino":"fase_3_inicio_vni","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":108,"presion_arterial_mmhg":"138/88","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":26,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta opción es aceptable pero incompleta. Si bien la gasometría arterial y la radiografía de tórax portátil son prioritarias para el diagnóstico del tipo de insuficiencia respiratoria y la etiología pulmonar, postergar el laboratorio general impide evaluar la función renal y el nivel de potasio sérico. El potasio es fundamental antes de iniciar broncodilatadores nebulizados continuos, ya que estos inducen hipopotasemia por translocación intracelular. Aunque podés avanzar con estos exámenes, debés recordar solicitar el resto del laboratorio general a la brevedad. El paciente mantiene sus parámetros actuales sin cambios agudos.","printouts":[{"tipo":"Laboratorio","titulo":"Gasometría Arterial Parcial","cuerpo":"ESTADO ÁCIDO-BASE (FiO2 28%):\n- pH: 7.26 (V.R. 7.35-7.45) [Acidosis descompensada]\n- pCO2: 62 mmHg (V.R. 35-45) [Hipercapnia]\n- pO2: 58 mmHg (V.R. 80-100) [Hipoxemia]\n- HCO3-: 28 mEq/L (V.R. 22-26)\n- SatO2: 88%"}]},{"texto":"Trasladar de inmediato al paciente para realizar una tomografía computarizada de tórax de alta resolución (TACAR) con protocolo para TEP.","destino":"fase_2_rescate_transporte","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"130/80","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":32,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave de seguridad! El paciente se encuentra hemodinámicamente inestable desde el punto de vista respiratorio, fatigado y sin soporte ventilatorio adecuado. Trasladar a un paciente con acidosis respiratoria severa y trabajo respiratorio marcado fuera del área de urgencias (sin monitoreo estricto) aumenta drásticamente el riesgo de colapso respiratorio e intubación no planificada en el tomógrafo. Además, no hay signos clínicos ni electrocardiográficos de embolia pulmonar que justifiquen este riesgo inicial de forma urgente. Detené el traslado y estabilizá al paciente en la sala de reanimación."}]},"fase_2_rescate_transporte":{"id":"fase_2_rescate_transporte","etapa":"Rescate: Desestabilización en Traslado","descripcion_situación":"Durante el traslado a la sala de tomografía, Don Aurelio presentó un marcado aumento del trabajo respiratorio, diaforesis y agitación psicomotriz. La saturación cayó rápidamente al 78% y el paciente no logra sostener la posición supina. Se suspende el estudio y debés regresarlo inmediatamente a la guardia de shock room.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Estabilizar en la cama de la guardia, reajustar el aporte de oxígeno y prioritariamente realizar gasometría y radiografía portátil.","destino":"fase_3_inicio_vni","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"135/85","saturacion_oxigeno_pct":89,"frecuencia_respiratoria_rpm":27,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rectificación! Comprendiste que la seguridad del paciente crítico reside en evitar traslados innecesarios y optimizar el manejo en un ambiente controlado. Al retornar a la guardia, lograste mejorar su oxigenación con la cánula nasal portátil y se obtuvieron los exámenes necesarios al lado de la cama del paciente. La gasometría revela una acidosis respiratoria que requiere manejo urgente. Continuá con las decisiones de soporte ventilatorio pertinentes basados en el pH y la pCO2 obtenidos."},{"texto":"Aumentar el flujo de oxígeno a 15 L/min con máscara con reservorio y forzar la realización de la tomografía en el resonador.","destino":"fase_2_rescate_transporte","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"130/75","saturacion_oxigeno_pct":80,"frecuencia_respiratoria_rpm":10,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa conducta es incorrecta y representa una negligencia grave. El paciente está en insuficiencia respiratoria extrema y el empeoramiento de su estado clínico prohíbe cualquier estudio que requiera apnea o inmovilización prolongada en salas alejadas de la reanimación. Además, el aporte masivo de oxígeno con reservorio volverá a suprimir su impulso ventilatorio, acelerando el paro cardiorrespiratorio en un área no preparada para la intubación de emergencia. Regresá inmediatamente al shock room y suspendé el tomógrafo."}]},"fase_3_inicio_vni":{"id":"fase_3_inicio_vni","etapa":"Fase 3: Soporte Ventilatorio Inicial","descripcion_situación":"Tenés los resultados de los exámenes: pH 7.26, pCO2 62 mmHg, pO2 58 mmHg, HCO3 28 mEq/L. El paciente se encuentra con trabajo respiratorio severo, taquipneico a 28 rpm, lúcido y colaborador, sin contraindicaciones para ventilación no invasiva. ¿Cuál es la estrategia de soporte ventilatorio indicada?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar Ventilación No Invasiva (VNI) en modo Bilevel (BiPAP) con IPAP de 10 cmH2O, EPAP de 4 cmH2O y FiO2 ajustada para SpO2 de 88-92%.","destino":"fase_4_ajuste_vni","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":102,"presion_arterial_mmhg":"130/82","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":22,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Elección excelente y altamente grounded! La ventilación no invasiva (VNI) con doble nivel de presión (Bilevel) es la terapia estándar de oro (Recomendación Grado IA) para pacientes con exacerbación de EPOC y acidosis respiratoria moderada-severa (pH < 7.35, pCO2 > 45 mmHg). La presión inspiratoria (IPAP) asiste a los músculos respiratorios fatigados, disminuyendo el trabajo respiratorio y aumentando el volumen corriente. La presión espiratoria (EPAP) ayuda a contrarrestar la auto-PEEP, previniendo el colapso de la vía aérea en espiración. El paciente tolera adecuadamente la interfaz y su frecuencia respiratoria descendió notablemente a 22 rpm."},{"texto":"Iniciar VNI en modo de Presión Continua en la Vía Aérea (CPAP) a 6 cmH2O constantes con FiO2 al 35%.","destino":"fase_4_ajuste_vni","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":106,"presion_arterial_mmhg":"134/86","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta opción es subóptima. El modo CPAP proporciona una presión positiva continua durante todo el ciclo respiratorio, lo cual es excelente para reclutar alvéolos en el edema agudo de pulmón cardiogénico, pero no proporciona presión de soporte (IPAP - EPAP) para ayudar activamente en el trabajo inspiratorio ni aliviar la fatiga muscular en la hipercapnia del EPOC. Aunque el paciente tolera la CPAP, no es tan efectiva para barrer CO2 y reducir la acidosis respiratoria severa como el modo Bilevel. Prosigamos para monitorizar estrechamente y realizar los ajustes finos necesarios."},{"texto":"Proceder de inmediato a la Intubación Orotraqueal (IOT) directa y conexión a Asistencia Respiratoria Mecánica.","destino":"fase_3_rescate_intubacion_precoz","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":88,"frecuencia_respiratoria_rpm":28,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave de juicio! Decidiste intubar de forma precoz y agresiva a un paciente que se encuentra lúcido, cooperador, hemodinámicamente estable y que tiene criterios de primera línea para el uso de ventilación no invasiva (pH entre 7.25 y 7.35). La intubación orotraqueal innecesaria en pacientes con EPOC severo está asociada a múltiples complicaciones graves como neumonía asociada a ventilador, dificultad extrema para el destete y barotrauma. Esta decisión somete al paciente a riesgos severos evitables y causará secuelas pulmonares directas. Debés estabilizar las complicaciones inmediatas de este procedimiento.","secuela":"Vía aérea instrumentada de forma evitable, con riesgo de neumonía asociada al respirador y destete prolongado."},{"texto":"Mantener la cánula de oxígeno a bajo flujo y administrar sulfato de magnesio endovenoso como broncodilatador de primera línea.","destino":"fase_3_rescate_demora","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"118/72","saturacion_oxigeno_pct":84,"frecuencia_respiratoria_rpm":30,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error de priorización terapéutica! El paciente presenta acidosis respiratoria aguda descompensada (pH 7.26, pCO2 62 mmHg). Tratar la crisis obstructiva severa únicamente con sulfato de magnesio sin ofrecer soporte ventilatorio de presión positiva (VNI) prolonga la fatiga diafragmática y expone al paciente al riesgo inminente de parada respiratoria por agotamiento. El sulfato de magnesio es una terapia coadyuvante de segunda línea y no reemplaza la indicación formal de asistencia respiratoria mecánica no invasiva. Fijate en el monitor: la frecuencia respiratoria sigue elevada y la saturación desciende. Actuá de inmediato."}]},"fase_3_rescate_intubacion_precoz":{"id":"fase_3_rescate_intubacion_precoz","etapa":"Rescate: Complicaciones de Intubación Precoz","descripcion_situación":"Durante tu intento de intubación orotraqueal precoz sin una adecuada secuencia de sedoanalgesia y parálisis neuromuscular, el paciente presentó un laringoespasmo reflejo severo, con desaturación extrema (Sat 72%) y arritmias hiperadrenérgicas debido a la estimulación vagal sin control. Debés resolver esta urgencia de vía aérea.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Administrar un bloqueante neuromuscular de acción rápida (Succinilcolina 1.5 mg/kg EV) para romper el laringoespasmo, ventilar con bolsa-válvula-máscara al 100%, intubar de inmediato, y arrancar en paralelo la farmacoterapia de la exacerbación: broncodilatadores, corticoides sistémicos y antibióticos.","destino":"fase_8_confirmacion_tubo","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"125/80","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":14,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Rescate exitoso! Al administrar un bloqueante de acción rápida como la succinilcolina lograste vencer el laringoespasmo de forma inmediata, permitiendo la ventilación con presión positiva con bolsa-válvula-máscara (BVM) para recuperar la saturación a 95% y asegurar la vía aérea mediante intubación orotraqueal directa bajo visión. El paciente se encuentra ahora acoplado al ventilador mecánico en modo protector, aunque la intubación innecesaria ya provocó un aumento del riesgo de secuelas ventilatorias. Continuemos ahora con la terapia farmacológica de base. Dos cosas más para cerrar el episodio. Primera: el laringoespasmo reflejo se rompe con parálisis, no con más intentos de laringoscopia ni retirando el equipo — insistir sobre una glotis cerrada sólo profundiza la desaturación. Segunda, y es la lección de fondo: este paciente era un candidato ideal a ventilación no invasiva, lúcido, colaborador y con pH de 7.26. Ahora tiene una vía aérea instrumentada que no necesitaba, con el riesgo de neumonía asociada al respirador y de destete prolongado que eso trae. La intubación no era el error de ejecución: era el error de indicación."},{"texto":"Suspender el procedimiento, retirar el laringoscopio y colocar una máscara laríngea de emergencia sin administrar medicamentos adicionales.","destino":"fase_3_rescate_intubacion_precoz","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":140,"presion_arterial_mmhg":"170/110","saturacion_oxigeno_pct":70,"frecuencia_respiratoria_rpm":32,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa conducta es incorrecta y sumamente peligrosa. Retirar el instrumental sin resolver el laringoespasmo con bloqueantes neuromusculares prolonga la asfixia del paciente. Colocar una máscara laríngea con reflejos protectores de la vía aérea conservados provoca mayor laringoespasmo, regurgitación gástrica y aspiración de contenido gástrico, además de que la ventilación a través de supraglóticos es ineficaz debido a la altísima resistencia respiratoria del paciente con EPOC severo. Mirá el monitor: la frecuencia cardíaca subió a 140 lpm y la saturación cayó a 70%. Modificá tu conducta ya."}]},"fase_3_rescate_demora":{"id":"fase_3_rescate_demora","etapa":"Rescate: Fatiga Muscular Inminente","descripcion_situación":"Don Aurelio continúa con bajo flujo de oxígeno y sulfato de magnesio. Clínicamente se observa sumamente agotado, con respiración paradojal abdominal, diaforesis profusa e incapacidad para sostener la cabeza. Su nivel de conciencia se deteriora rápidamente debido a la encefalopatía hipercápnica severa. El tiempo corre.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar VNI Bilevel de rescate de inmediato con IPAP 12 cmH2O y EPAP 5 cmH2O, vigilando estrechamente el nivel de conciencia y tolerancia.","destino":"fase_4_ajuste_vni","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"132/84","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":23,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate oportuno! Lograste comprender que el retraso en la ventilación mecánica no invasiva estaba empujando al paciente a un paro respiratorio definitivo. Al colocar la máscara Bilevel con presiones adecuadas, se disminuye de inmediato el esfuerzo diafragmático del paciente, estabilizando el patrón ventilatorio y facilitando el lavado de CO2. El paciente comienza a aclimatarse y a recuperar un patrón más coordinado. Procedamos de inmediato para optimizar los parámetros ventilatorios y evaluar la respuesta clínica fina."},{"texto":"Cambiar el dispositivo a máscara con reservorio de oxígeno a 10 L/min esperando mejoría parcial de los signos vitales.","destino":"fase_3_rescate_demora","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"110/65","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta opción es incorrecta y letal. Colocar una máscara de reservorio a un paciente inestable en fase de fatiga muscular severa y acidosis hipercápnica extrema agrava de forma crítica la retención de CO2 y la hipoventilación. La elevación ficticia de la saturación de oxígeno a 95% en el monitor enmascara un estado de coma por acidosis respiratoria y apnea obstructiva inminente. Mirá el monitor: la frecuencia respiratoria está cayendo peligrosamente a 12 rpm debido a la depresión central de la respiración. ¡Iniciá VNI Bilevel ahora mismo!"}]},"fase_4_ajuste_vni":{"id":"fase_4_ajuste_vni","etapa":"Fase 4: Optimización de Parámetros de VNI","descripcion_situación":"El paciente se encuentra recibiendo VNI en modo Bilevel (IPAP 10, EPAP 4, FiO2 35%). Se observa una fuga de aire moderada alrededor de la máscara por desalineación de las correas, y el volumen corriente espirado registrado es bajo (320 ml, siendo su peso ideal estimado de 70 kg, lo que requiere un objetivo de volumen corriente de 420-450 ml). Sigue taquipneico a 24 rpm. ¿Cómo optimizás los parámetros de la ventilación?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Ajustar las correas del arnés para eliminar las fugas de la interfaz e incrementar la IPAP a 12 cmH2O manteniendo la EPAP en 4-5 cmH2O.","destino":"fase_5_broncodilatadores_corticoides","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"128/80","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":19,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Excelente manejo técnico! En ventilación no invasiva, el ajuste correcto de la máscara es el primer paso ante fugas y volumen corriente bajo, ya que las pérdidas impiden alcanzar las presiones inspiratorias programadas. Incrementar la IPAP a 12 cmH2O aumenta la presión de soporte real (de 6 a 8 cmH2O), lo cual optimiza el volumen corriente espirado hacia el rango protector del paciente (aproximadamente 430 ml). Esto disminuye la carga de trabajo de los músculos respiratorios, traduciéndose en un descenso de la frecuencia respiratoria a 19 rpm y logrando un ritmo cardíaco más stable."},{"texto":"Aumentar la EPAP a 8 cmH2O de forma aislada, sin modificar la IPAP ni ajustar el arnés de la máscara.","destino":"fase_5_broncodilatadores_corticoides","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":100,"presion_arterial_mmhg":"124/78","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":22,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta medida es incorrecta. Al aumentar la EPAP a 8 cmH2O manteniendo la IPAP inalterada en 10 cmH2O, redujiste la presión de soporte real de 6 a solo 2 cmH2O (Presión de Soporte = IPAP - EPAP). La reducción del soporte ventilatorio aumenta drásticamente el trabajo respiratorio del paciente, dificultando el barrido del CO2 y promoviendo la fatiga muscular. Además, no corregir las fugas del arnés perpetúa la ineficacia de la VNI. El paciente mantiene parámetros aceptables pero el esfuerzo diafragmático no se ha reducido óptimamente. Corregí la terapia a la brevedad."},{"texto":"Sedar al paciente con un bolo de Midazolam 5 mg EV rápido para optimizar la tolerancia a la interfaz y reducir la agitación.","destino":"fase_4_rescate_depresion","es_correcta":false,"puntos_afectados":-40,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":88,"presion_arterial_mmhg":"105/65","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":9,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Error sumamente crítico! La administración de sedantes benzodiacepínicos (como el midazolam) en bolo rápido a un paciente hipercapnico bajo ventilación no invasiva está formalmente contraindicada. Los benzodiacepinas deprimen el centro respiratorio central, suprimen el esfuerzo inspiratorio espontáneo (indispensable para ciclar la VNI) y abuelan los reflejos de protección de la vía aérea. Esto aumenta exponencialmente el riesgo de aspiración, coma por CO2 y muerte. Mirá el monitor: la frecuencia respiratoria colapsó a 9 rpm y el paciente perdió la conciencia. Actuá con urgencia médica.","secuela":"Coma farmacológico con intubación iatrogénica evitable."}]},"fase_4_rescate_depresion":{"id":"fase_4_rescate_depresion","etapa":"Rescate: Depresión Respiratoria Iatrogénica","descripcion_situación":"El paciente se encuentra inconsciente (Glasgow 6/15), sin reflejos protectores de vía aérea y con una desaturación progresiva severa (Sat 82%) bajo el soporte de la VNI tras recibir midazolam. Está en coma farmacológico y con un patrón respiratorio ineficaz y agónico. Debés asegurar la oxigenación y vía aérea.","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Retirar la VNI, ventilar activamente con bolsa-válvula-máscara al 100%, preparar de inmediato la secuencia de intubación rápida, y no olvidar la farmacoterapia de la exacerbación en paralelo: broncodilatadores, corticoides sistémicos y antibióticos para la neumonía.","destino":"fase_7_secuencia_intubacion","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"115/70","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate excelente! Al reconocer la pérdida irreversible de la vía aérea por sobredosificación farmacológica, procediste de forma impecable al suspender el dispositivo no invasivo (que ahora ponía en riesgo al paciente de broncoaspiración) para oxigenar de forma manual mediante bolsa-válvula-máscara (BVM). Esto permitió recuperar de manera transitoria la oxigenación periférica y preparar el equipamiento para una intubación orotraqueal indispensable de urgencia. Procedamos a realizar la inducción para la secuencia de intubación rápida de forma segura."},{"texto":"Administrar Flumazenil 0.2 mg EV en bolo directo e incrementar las presiones de la VNI (IPAP a 16) para compensar la hipoventilación.","destino":"fase_4_rescate_depresion","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"98/55","saturacion_oxigeno_pct":78,"frecuencia_respiratoria_rpm":6,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa conducta es incorrecta e inefectiva. El flumazenil puede revertir parcialmente la sedación, pero en el contexto clínico de un paciente con EPOC severo en acidosis respiratoria crítica, su administración puede desencadenar convulsiones severas difíciles de controlar o arritmias por abstinencia aguda. Forzar presiones altas de VNI en un paciente que no respira por sí mismo y que carece de protección de vía aérea no compensará la hipoventilación y generará una insuflación gástrica masiva, con inminente broncoaspiración de contenido estomacal. Retirá la interfaz e intubá de inmediato."}]},"fase_5_broncodilatadores_corticoides":{"id":"fase_5_broncodilatadores_corticoides","etapa":"Fase 5: Tratamiento Farmacológico Integral","descripcion_situación":"Con el soporte ventilatorio adecuado ya establecido y estable, es imperativo iniciar de inmediato la terapia farmacológica dirigida para la exacerbación del EPOC severo y la neumonía sospechada según los hallazgos radiológicos y analíticos de laboratorio. ¿Qué esquema terapéutico inicial es el indicado?","criticidad":"media","tiempo_limite_segundos":420,"penalizacion_por_timeout":-10,"opciones":[{"texto":"Indicar nebulizaciones con Bromuro de Ipratropio + Salbutamol (o inhaladores espaciados), Hidrocortisona 100 mg EV e iniciar Ceftriaxona 1g más Azitromicina 500 mg EV.","destino":"fase_6_deterioro_clinico","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":92,"presion_arterial_mmhg":"124/78","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Excelente elección de esquema farmacológico! Esta combinación aborda de forma integral la de la fisiopatología de Don Aurelio. Los broncodilatadores de acción corta (combinación de anticolinérgico y beta-agonista) reducen el broncoespasmo de forma sinérgica. Los corticoides sistémicos aceleran la resolución de la inflamación bronquial y mejoran la función pulmonar a corto plazo. La cobertura antibiótica con Ceftriaxona y Azitromicina está alineada con las guías internacionales para el manejo de neumonías comunitarias moderadas-severas en pacientes con factores de riesgo asociados (EPOC severo). El paciente muestra una adecuada tolerancia clínica."},{"texto":"Indicar nebulizaciones con Salbutamol más Budesonida inhalada, y postergar el inicio de antibióticos sistémicos hasta contar con cultivos microbiológicos positivos de esputo.","destino":"fase_6_deterioro_clinico","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":94,"presion_arterial_mmhg":"125/79","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":19,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Esta opción terapéutica es parcial y presenta deficiencias. El retraso del inicio del tratamiento antibiótico sistémico en un paciente con EPOC severo reagudizado por neumonía de la base pulmonar se asocia directamente a una mayor tasa de fracaso terapéutico y prolongación de la insuficiencia respiratoria. La indicación de antibioterapia es obligatoria y empírica ante la presencia de esputo purulento, disnea aumentada y leucocitosis (criterios de Anthonisen). El uso de budesonida inhalada aislada no reemplaza el rol de los corticoides sistémicos en el episodio agudo severo. Continuemos monitoreando."},{"texto":"Indicar una infusión continua de Aminofilina endovenosa a dosis plenas, y Dexametasona 20 mg EV cada 6 horas.","destino":"fase_6_deterioro_clinico","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":138,"presion_arterial_mmhg":"135/82","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":20,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Cuidado con esa indicación! La aminofilina es una metilxantina con un estrecho margen terapéutico que no se recomienda como primera línea en exacerbaciones de EPOC debido a su alta toxicidad cardíaca, la cual provoca taquiarritmias severas (como fibrilación auricular rápida) e hipopotasemia. El uso de dosis de dexametasona tan elevadas no aporta mayor beneficio antiinflamatorio que las dosis estándar de metilprednisolona o hidrocortisona, e induce efectos adversos sistémicos severos como hiperglucemia extrema y miopatía esteroidea aguda. Mirá el monitor: la frecuencia cardíaca subió peligrosamente a 138 lpm. Cambiá el esquema terapéutico."}]},"fase_6_deterioro_clinico":{"id":"fase_6_deterioro_clinico","etapa":"Fase 6: Deterioro Clínico y Fracaso de VNI","descripcion_situación":"ATENCIÓN AL MONITOR: Transcurridas 2 horas de tratamiento con VNI y farmacoterapia, la enfermera te llama con urgencia. El paciente se encuentra obnubilado, con escala de Glasgow de 11/15, sudoración profusa y un patrón de respiración abdominal asincrónica. El monitor registra una taquipnea persistente y una caída progresiva en la saturación. Se realiza una nueva gasometría de control inmediato que revela un severo empeoramiento del equilibrio ácido-base. Debés evaluar si persistir con la VNI o tomar otra conducta.","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Reconocer el fracaso de la VNI por fatiga muscular progresiva y encefalopatía hipercápnica, y decidir la Intubación Orotraqueal (IOT) inmediata.","destino":"fase_7_secuencia_intubacion","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"138/84","saturacion_oxigeno_pct":84,"frecuencia_respiratoria_rpm":28,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Elegiste correctamente. El paciente presentaba criterios formales de fracaso de la VNI (somnolencia, acidosis severa persistente y fatiga muscular). Demorar la intubación aumentaba drásticamente la mortalidad. ATENCIÓN AL MONITOR: la conducta era exactamente la indicada, pero el agotamiento diafragmático del paciente es severo. Acaba de desaturar y está con marcado apremio respiratorio. Esto NO invalida tu decisión: es la evolución esperable de este sustrato, y anticiparla es parte del tratamiento.","printouts":[{"tipo":"Laboratorio","titulo":"Gasometría Arterial de Control (Tras 2 Horas de VNI)","cuerpo":"ESTADO ÁCIDO-BASE DE CONTROL (FiO2 35%):\n- pH: 7.18 (V.R. 7.35-7.45) [✗ Acidosis severa progresiva]\n- pCO2: 79 mmHg (V.R. 35-45) [✗ Acidosis hipercápnica crítica]\n- pO2: 50 mmHg (V.R. 80-100) [✗ Hipoxemia severa]\n- HCO3-: 28.5 mEq/L (V.R. 22-26)\n- SatO2: 83%\n\nIMPRESIÓN DIAGNÓSTICA:\n- Acidosis respiratoria severa y persistente, compatible con fracaso secundario de la Ventilación No Invasiva por fatiga diafragmática progresiva."}]},{"texto":"Incrementar las presiones de la VNI (IPAP a 16 cmH2O, EPAP a 6 cmH2O) y esperar 30 minutos más para repetir la gasometría arterial.","destino":"fase_6_rescate_demora_iot","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"138/84","saturacion_oxigeno_pct":84,"frecuencia_respiratoria_rpm":28,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa conducta es incorrecta. Persistir con la ventilación no invasiva en un paciente que ha desarrollado encefalopatía hipercápnica (Glasgow 11/15) y fatiga muscular franca es un error clínico de alta gravedad. La pérdida progresiva de la conciencia anula los reflejos protectores de la vía aérea y aumenta significativamente el riesgo de broncoaspiración masiva e hipoxia refractaria. Incrementar la IPAP a 16 cmH2O en un paciente sin capacidad de cooperar puede causar aerofagia severa y distensión gástrica. El paciente continúa deteriorándose progresivamente y requiere manejo invasivo inmediato.","printouts":[{"tipo":"Laboratorio","titulo":"Gasometría Arterial de Control (Sin cambios)","cuerpo":"ESTADO ÁCIDO-BASE DE CONTROL (FiO2 35%):\n- pH: 7.18 (V.R. 7.35-7.45)\n- pCO2: 79 mmHg (V.R. 35-45)\n- pO2: 50 mmHg (V.R. 80-100)\n- SatO2: 83%"}]},{"texto":"Retirar la VNI y colocar una Cánula Nasal de Alto Flujo (CNAF) a un flujo de 60 L/min con una FiO2 de 50%.","destino":"fase_6_rescate_demora_iot","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"138/84","saturacion_oxigeno_pct":84,"frecuencia_respiratoria_rpm":28,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave de estrategia ventilatoria! La cánula nasal de alto flujo (CNAF) es de enorme utilidad en la insuficiencia respiratoria hipoxémica pura, pero en el fallo hipercápnico descompensado con fatiga diafragmática severa y acidosis respiratoria con pH < 7.20, su capacidad para disminuir el trabajo inspiratorio y barrer CO2 es absolutamente insuficiente en comparación con la VNI Bilevel. Retirar el soporte de presión positiva empuja al paciente directo al colapso respiratorio por fatiga diafragmática refleja. Debés suspender esta técnica de manera inmediata y prepararte para el rescate invasivo."}]},"fase_6_rescate_demora_iot":{"id":"fase_6_rescate_demora_iot","etapa":"Rescate: Agotamiento Respiratorio Severo","descripcion_situación":"Debido a la demora en asegurar la vía aérea, Don Aurelio entra en coma hipercápnico profundo (Glasgow 4/15) y presenta un patrón respiratorio ineficaz tipo gasping a 8 rpm, acompañado de una desaturación extrema (Sat 68%). El paciente se encuentra al borde de la parada respiratoria por hipoxia refractaria. ¡Debés actuar ya!","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Proceder de inmediato a realizar la intubación orotraqueal de emergencia por laringoscopia directa asistida.","destino":"fase_7_secuencia_intubacion","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"110/60","saturacion_oxigeno_pct":75,"frecuencia_respiratoria_rpm":8,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate desesperado pero correcto! Al darte cuenta de que la inminente parada respiratoria era inevitable, avanzaste de forma inmediata a la laringoscopia directa para intubar al paciente. Aunque las condiciones de intubación de emergencia extrema son subóptimas y aumentan los riesgos hemodinámicos y la morbimortalidad, lograste pasar el tubo orotraqueal en el primer intento. El paciente requiere ahora soporte manual y estabilización hemodinámica inmediata antes de iniciar el acople del respirador mecánico."},{"texto":"Colocar una máscara de reservorio de oxígeno a 15 L/min y solicitar una interconsulta urgente al neumonólogo de guardia.","destino":"fase_6_rescate_demora_iot","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"¡Conducta catastrófica! El paciente está en insuficiencia respiratoria terminal y apnea inminente, por lo que solicitar interconsultas o colocar dispositivos pasivos de oxígeno en lugar de asegurar la vía aérea condena al paciente a una parada cardiorrespiratoria inmediata. Mirá el monitor: Don Aurelio ha dejado de respirar, su ritmo cardíaco degeneró en una asistolia y se encuentra clínicamente en parada cardiorrespiratoria por hipoxia extrema y acidosis respiratoria refractaria. Iniciá maniobras de RCP avanzadas de rescate inmediatamente."}]},"fase_7_secuencia_intubacion":{"id":"fase_7_secuencia_intubacion","etapa":"Fase 7: Secuencia de Intubación Rápida","descripcion_situación":"El paciente requiere intubación orotraqueal inmediata. Debido a la gravedad del cuadro pulmonar y la descarga adrenérgica secundaria, se encuentra en un estado hemodinámico frágil, pero con taquicardia sinusal refleja. Para lograr condiciones de laringoscopia óptimas minimizando la hipotensión secundaria, debés realizar una inducción farmacológica adecuada. ¿Qué agentes elegís para la inducción y el bloqueo neuromuscular?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Administrar Etomidato 0.3 mg/kg EV por su perfil de estabilidad cardiovascular, seguido de Succinilcolina 1.5 mg/kg EV como bloqueante neuromuscular de acción ultracorta.","destino":"fase_8_confirmacion_tubo","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"115/75","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Elección farmacológica excelente! El etomidato es un sedante ideal para pacientes hemodinámicamente frágiles con patología respiratoria, ya que tiene un impacto insignificante sobre la presión arterial sistémica y no induce la vasodilatación que producen otros agentes. La succinilcolina brinda un bloqueo rápido y profundo en 45-60 segundos, permitiendo una visualización de cuerdas vocales óptima para un procedimiento exitoso sin demoras. Lograste intubar al paciente sin colapso circulatorio reflejo. El monitor registra una adecuada estabilización inicial de los parámetros vitales para comenzar la asistencia respiratoria invasiva."},{"texto":"Administrar Propofol 1.5 mg/kg EV por su rápido inicio de acción, seguido de Rocuronio 1.2 mg/kg EV como bloqueante no despolarizante.","destino":"fase_8_confirmacion_tubo","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":90,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Esta opción presenta un riesgo de seguridad moderado. El propofol es un excelente agente de inducción en pacientes estables, pero es un potente vasodilatador y depresor miocárdico directo que induce hipotensión severa en pacientes críticamente enfermos, especialmente en aquellos con EPOC deshidratados por fever u obstrucción severa. Aunque el rocuronio es una alternativa excelente a la succinilcolina por su perfil de seguridad, la marcada caída de la presión arterial (que se redujo a 90/55 mmHg) requiere expansión rápida con volumen cristaloides para evitar un shock refractario post-inducción. Debés vigilar estrechamente el tono simpático y tener vasopresores listos al lado de la cama. Esto te permitirá responder rápidamente si la presión continúa disminuyendo tras la infusión."},{"texto":"Inducir con un bolo endovenoso directo de Midazolam 10 mg más Fentanilo 150 mcg de forma rápida, sin asociar bloqueantes neuromusculares.","destino":"fase_7_rescate_induccion_fallida","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"85/50","saturacion_oxigeno_pct":80,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Grave error farmacológico y técnico! El fentanilo a dosis altas administrado en bolo rápido puede provocar el síndrome de 'tórax leñoso', caracterizado por una rigidez muscular extrema de la pared torácica que imposibilita la ventilación manual con bolsa-válvula-máscara. Adicionalmente, el midazolam a dosis altas en bolo rápido induce un severo colapso hemodinámico. No utilizar bloqueantes neuromusculares prolonga drásticamente el tiempo de laringoscopia y el riesgo de laringoespasmo reflejo. Mirá el monitor: la presión arterial cayó severamente a 85/50 mmHg y el paciente presenta hipoxia severa sin poder ser ventilado de manera eficaz."}]},"fase_7_rescate_induccion_fallida":{"id":"fase_7_rescate_induccion_fallida","etapa":"Rescate: Rigidez Torácica e Hipoxia","descripcion_situación":"Tras administrar fentanilo y midazolam en bolo, el paciente presenta un tórax rígido (síndrome de tórax leñoso) y un espasmo laringeo completo. La ventilación con bolsa-válvula-máscara es ineficaz debido a la resistencia de la vía aérea. El paciente no respira y la saturación cayó al 65%. Debés resolver esto.","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Administrar un bolo de Succinilcolina 1.5 mg/kg EV de forma inmediata para revertir la rigidez muscular, ventilar de inmediato y colocar el tubo.","destino":"fase_8_confirmacion_tubo","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente rectificación de emergencia! Comprendiste de forma fisiológica que la administración inmediata de un bloqueante neuromuscular despolarizante (Succinilcolina) vence de forma instantánea la rigidez muscular intercostal inducida por el fentanilo y abre las cuerdas vocales espásticas. Al recuperar la elasticidad de la caja torácica, lograste ventilar manualmente al paciente y re-establecer una adecuada oxigenación antes de colocar con éxito el tubo orotraqueal. Continuemos con la confirmación de la colocación de la vía aérea."},{"texto":"Realizar de forma inmediata una cricotiroidotomía con aguja ante la imposibilidad técnica de intubar al paciente.","destino":"fase_7_rescate_induccion_fallida","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":135,"presion_arterial_mmhg":"75/40","saturacion_oxigeno_pct":55,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta conducta es incorrecta e innecesariamente agresiva. La cricotiroidotomía es un procedimiento invasivo reservado estrictamente para escenarios de 'no puedo intubar, no puedo oxigenar' después de haber optimizado la parálisis neuromuscular. Realizarla sin haber intentado revertir la rigidez glótica y muscular con succinilcolina constituye un grave error de juicio que expone al paciente a hemorragias severas de cuello e hipoxia crítica sostenida. Mirá el monitor: la saturación desciende progresivamente a 55% y el paciente está en riesgo inminente de paro."}]},"fase_8_confirmacion_tubo":{"id":"fase_8_confirmacion_tubo","etapa":"Fase 8: Confirmación y Programación de ARM","descripcion_situación":"Has completado la colocación del tubo orotraqueal. Ahora te encontrás en el momento crítico de confirmar de forma inequívoca la correcta colocación intra-traqueal del tubo y programar el ventilador mecánico con parámetros protectores específicos para un paciente obstructivo grave con EPOC severo. ¿Cuál es el paso correcto?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Confirmar por capnografía de onda (EtCO2), auscultar bilateralmente y programar modo Volumen Control, Vt 6 ml/kg (420 ml), FR 12 rpm, PEEP 4 cmH2O, y un flujo inspiratorio de 60 L/min.","destino":"fase_9_ajuste_ventilador","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":94,"presion_arterial_mmhg":"118/76","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Programación impecable! La capnografía de onda es el estándar de oro absoluto para confirmar que el tubo está en la tráquea. En la patología obstructiva severa, los parámetros de ARM deben estar estrictamente diseñados para evitar el atrapamiento aéreo (hiperinsuflación dinámica). Un volumen corriente bajo de 6 ml/kg evita el barotrauma. Un flujo inspiratorio alto (60 L/min) genera una entrega rápida del aire que recorta el tiempo inspiratorio, permitiendo así una espiración prolongada gracias a una frecuencia respiratoria baja de 12 rpm. La PEEP extrínseca de 4 cmH2O estabiliza los alvéolos sin exacerbar la auto-PEEP."},{"texto":"Confirmar auscultando el estómago y ambos pulmones, y programar modo Volumen Control, Vt de 8 ml/kg (560 ml), FR 16 rpm, PEEP de 8 cmH2O y flujo de 40 L/min.","destino":"fase_9_ajuste_ventilador","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":102,"presion_arterial_mmhg":"110/68","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta programación es riesgosa para Don Aurelio. En un paciente con EPOC grave con obstrucción bronquial extrema, ventilar a una frecuencia de 16 rpm con un volumen corriente alto (560 ml) y un flujo inspiratorio bajo (40 L/min) reduce críticamente el tiempo disponible para la espiración pasiva. Esto promueve que parte del aire inspirado se quede atrapado en cada ciclo, acumulando una peligrosa presión llamada auto-PEEP. Además, una PEEP extrínseca inicial de 8 cmH2O es elevada y empeora este fenómeno, provocando colapso del retorno venoso y taquicardia sinusal refleja en el monitor."},{"texto":"Iniciar ventilación mecánica manual vigorosa con bolsa de reanimación (Ambú) a 24 rpm conectada directamente al tubo sin auscultación previa ni capnografía.","destino":"fase_8_rescate_insuflacion","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":135,"presion_arterial_mmhg":"88/50","saturacion_oxigeno_pct":90,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave de manejo! Ventilar manualmente a un paciente con obstrucción respiratoria a una frecuencia tan elevada como 24 rpm, sin haber auscultado ni monitorizado con capnografía, impide de forma fisiológica que se complete la espiración pulmonar pasiva. El aire queda atrapado en el parénquima pulmonar hiperinsuflado, generando una presión intratorácica positiva sumamente elevada (auto-PEEP crítica). Esto comprime mecánicamente la vena cava, reduciendo el retorno venoso cardíaco y provocando hipotensión arterial refractaria extrema y shock obstructivo directo. Modificá tu conducta."}]},"fase_8_rescate_insuflacion":{"id":"fase_8_rescate_insuflacion","etapa":"Rescate: Atrapamiento Aéreo y Shock","descripcion_situación":"Debido a la ventilación manual rápida a 24 rpm, el paciente ha desarrollado un atrapamiento aéreo masivo. El monitor muestra una caída dramática de la presión arterial a 78/42 mmHg, con taquicardia severa a 135 lpm. El tórax se encuentra distendido y rígido. Debés resolver de inmediato este colapso obstructivo.","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Desconectar transitoriamente el tubo del respirador/bolsa por 10 segundos, comprimir suavemente el tórax de forma pasiva, y reiniciar ventilación controlada a 10 rpm.","destino":"fase_9_ajuste_ventilador","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"115/72","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Excelente y rápido rescate! Al desconectar el ventilador/bolsa, permitiste la descompresión pasiva inmediata del aire atrapado bajo presión, lo cual redujo la presión intratorácica y restableció instantáneamente el retorno venoso al corazón. Mirá el monitor: la presión arterial se recuperó a 115/72 mmHg y la frecuencia cardíaca disminuyó a un ritmo sinusal controlado. Esta maniobra descompresiva es una técnica obligatoria en la reanimación de pacientes obstructivos con colapso cardiovascular agudo secundario a ventilación vigorosa."},{"texto":"Iniciar de forma inmediata una infusión rápida de Solución Fisiológica 1000 ml EV para tratar el shock distributivo y aumentar la frecuencia de ventilación a 28 rpm.","destino":"fase_8_rescate_insuflacion","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":145,"presion_arterial_mmhg":"65/35","saturacion_oxigeno_pct":82,"frecuencia_respiratoria_rpm":26,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esta conducta es incorrecta y agrava críticamente el cuadro. La hipotensión no es secundaria a un shock distributivo o hipovolémico, sino a un shock de origen puramente obstructivo por compresión cardíaca intratorácica (auto-PEEP). Administrar volumen no resolverá la causa fisiopatológica primaria y puede sobrecargar el ventrículo derecho. Aumentar aún más el ritmo de ventilación manual agravará la hiperinsuflación dinámica, empujando al paciente a una inminente parada cardiorrespiratoria por colapso circulatorio total. Desconectá el tubo del ventilador de inmediato."}]},"fase_9_ajuste_ventilador":{"id":"fase_9_ajuste_ventilador","etapa":"Fase 9: Ajustes Finos en Asistencia Mecánica","descripcion_situación":"El paciente se encuentra conectado a la ventilación mecánica. Súbitamente, el respirador comienza a sonar por una alarma de alta presión de la vía aérea. El monitor registra una Presión de Pico elevada de 42 cmH2O y se realiza una pausa inspiratoria donde se mide una Presión de Meseta (Platón) de 24 cmH2O. La diferencia marcada (Pico - Meseta > 10 cmH2O) confirma una elevada resistencia respiratoria, clásica del patrón obstructivo severo del EPOC en fase aguda descompensada. ¿Cuál es el ajuste correcto?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Mantener volumen corriente en 6 ml/kg (420 ml), aumentar el flujo inspiratorio (a 65 L/min) para recortar el tiempo de inspiración y prolongar la espiración pasiva, y realizar aspiración de secreciones seguida de broncodilatación en aerosol.","destino":"fase_10_estabilizacion_pase","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":90,"presion_arterial_mmhg":"120/75","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Ajuste fino impecable! Supiste interpretar la de la fisiología de las presiones de la vía aérea. Una presión de pico alta con una presión de meseta normal refleja un aumento de la resistencia al flujo de aire (problema puramente bronquial, no del parénquima). Al mantener un volumen protector y aumentar el flujo inspiratorio, disminuís el tiempo que el respirador tarda en meter el aire, maximizando el tiempo disponible para la espiración pasiva. La aspiración de secreciones gruesas y las nebulizaciones directas al circuito alivian de inmediato el broncoespasmo severo, reduciendo de forma segura las presiones del sistema."},{"texto":"Disminuir la PEEP programada a 0 cmH2O para asegurar un completo reposo de la vía aérea e incrementar el volumen corriente a 8 ml/kg (560 ml) para vencer la obstrucción.","destino":"fase_10_estabilizacion_pase","es_correcta":false,"puntos_afectados":-12,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"112/70","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Esta opción de ajuste es inadecuada y peligrosa. Eliminar por completo la PEEP (PEEP cero) favorece el colapso espiratorio de los bronquiolos terminales enfermos, lo cual paradójicamente atrapa más aire en los alvéolos y aumenta la resistencia al flujo. Por otro lado, incrementar el volumen corriente a 560 ml sobrecarga de manera innecesaria la capacidad pulmonar e incrementa de forma directa las presiones alveolares, elevando el riesgo de barotrauma (neumotórax). Aunque el paciente se mantiene estable por ahora, esta configuración no es protectora."},{"texto":"Incrementar la PEEP extrínseca a 12 cmH2O y aumentar la Frecuencia Respiratoria del ventilador a 22 rpm para 'barrer' el CO2 remanente en la sangre.","destino":"fase_9_rescate_paro_auto_peep","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Actividad Eléctrica Sin Pulso que degenera en Asistolia","st_mm":0},"feedback_detallado":"¡Error crítico y potencialmente fatal! En pacientes asmáticos u obstructivos severos bajo ARM, programar una PEEP de 12 cmH2O y una frecuencia cardíaca/respiratoria tan elevada como 22 rpm acelera dramáticamente la hiperinsuflación dinámica (atrapamiento aéreo). Al respirar tan rápido, el pulmón no tiene tiempo material de vaciarse, elevando la auto-PEEP de forma catastrófica. Esto comprime los vasos intratorácicos, bloquea por completo el retorno venoso y provoca arritmias malignas por isquemia miocárdica refractaria y un colapso cardiovascular inmediato. El paciente ha ingresado en paro cardiorrespiratorio.","secuela":"Paro cardiorrespiratorio por atrapamiento aéreo masivo, con tiempo de bajo flujo."}]},"fase_9_rescate_paro_auto_peep":{"id":"fase_9_rescate_paro_auto_peep","etapa":"Rescate: Parada Cardiorrespiratoria por Atrapamiento Aéreo","descripcion_situación":"¡ATENCIÓN AL MONITOR! Las presiones intratorácicas extremas comprimieron las cavidades derechas y bloquearon el retorno venoso: Don Aurelio se quedó sin pulso palpable. El monitor muestra complejos QRS organizados pero anchos y cada vez más lentos, SIN pulso central que los acompañe — actividad eléctrica sin pulso — que en los últimos segundos empezó a aplanarse hacia asistolia. No hay fibrilación ventricular: el corazón sigue despolarizándose, lo que no logra es llenarse. Es un paro por atrapamiento aéreo masivo, obstructivo y reversible. ¿Cuál es tu primera maniobra?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Desconectar de inmediato el tubo del respirador para descompresión pulmonar pasiva, iniciar compresiones cardíacas (RCP de alta calidad) y administrar Adrenalina 1 mg EV.","destino":"fase_10_estabilizacion_pase","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"105/65","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":10,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Rescate de altísimo nivel y de acuerdo a guías internacionales! Ante una parada cardiorrespiratoria en un paciente obstructivo crítico bajo ARM, la primera medida fisiológica obligatoria es la desconexión inmediata del circuito del respirador. Esto permite la salida libre y rápida del aire retenido a alta presión en los pulmones, eliminando de golpe la auto-PEEP extrema y restaurando el retorno de sangre al corazón. Al asociar RCP de alta calidad y la administración de adrenalina, lograste el retorno a la circulación espontánea del paciente con una presión de 105/65 mmHg. Se debe programar el ventilador con un esquema protector de forma urgente. Retené la jerarquía, porque es contraintuitiva: en el paro por atrapamiento aéreo la primera maniobra no es un fármaco ni una descarga, es DESCONECTAR el tubo. El tórax se vacía de forma pasiva en 20 a 30 segundos y el retorno venoso se restablece solo. Es uno de los pocos paros que se revierten retirando un tratamiento en lugar de agregando otro, y por eso se olvida: todo el entrenamiento de reanimación empuja a hacer algo, cuando acá hay que dejar de hacer."},{"texto":"Desfibrilar inmediatamente con un choque monofásico de 360 Joules sin desconectar el ventilador, asumiendo un infarto de miocardio agudo como causa del paro.","destino":"fase_9_rescate_paro_auto_peep","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Asistolia","st_mm":0},"feedback_detallado":"Rescate fallido, y el razonamiento hay que corregirlo de raíz. Este ritmo NO es desfibrilable: hay complejos QRS organizados sin pulso, es decir actividad eléctrica sin pulso, y la desfibrilación no tiene ninguna indicación ahí — sólo retrasa lo único que sirve. Además elegiste 360 J monofásicos, una energía de equipos que ya casi no existen, sobre un paciente cuyo problema no es eléctrico sino mecánico: el pulmón hiperinsuflado está comprimiendo las cavidades derechas y no dejando entrar sangre al corazón. Mientras el ventilador siga insuflando, ninguna maniobra de reanimación va a generar gasto cardíaco, porque no hay precarga que eyectar. La primera acción en el paro por atrapamiento aéreo es siempre la misma y no requiere ningún fármaco: DESCONECTAR el tubo del respirador y dejar que el tórax se vacíe solo. Mirá el monitor: el trazado ya se aplanó a asistolia. Desconectá ahora."}]},"fase_10_estabilizacion_pase":{"id":"fase_10_estabilizacion_pase","etapa":"Fase 10: Estabilización Hemodinámica y Traslado","descripcion_situación":"El paciente Don Aurelio ha retornado a un estado de estabilidad relativa. Se encuentra adecuadamente acoplado al respirador mecánico bajo parámetros pulmonares protectores, con una adecuada oxigenación del 94%, normotenso y con una adecuada perfusión tisular periférica tras completar la fase de reanimación y de farmacoterapia inicial de su neumonía y crisis obstructiva severa. Es momento de decidir el plan de internación definitivo del paciente.","criticidad":"media","tiempo_limite_segundos":420,"penalizacion_por_timeout":-10,"opciones":[{"texto":"Coordinar el traslado inmediato del paciente bajo monitorización continua a la Unidad de Terapia Intensiva (UTI), manteniendo una infusión de sedoanalgesia protectora continua.","destino":"fase_final","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":85,"presion_arterial_mmhg":"115/72","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Decisión correcta y segura! Un paciente con EPOC severo reagudizado, que cursó con insuficiencia respiratoria hipercápnica crítica y requirió intubación orotraqueal e inicio de asistencia respiratoria mecánica invasiva, requiere de manera mandatoria e indiscutible un monitoreo hemodinámico e invasivo continuo en la Unidad de Terapia Intensiva (UTI). Mantener un plano de sedoanalgesia óptimo y seguro mediante infusión continua evita el desacople ventilatorio secundario a la de la estimulación dolorosa del tubo o disnea, estabilizando el consumo energético sistémico. La monitorización en cuidados críticos permitirá iniciar el destete ventilatorio una vez que remita el proceso infeccioso agudo."},{"texto":"Trasladar de inmediato al paciente a la sala común de clínica médica general bajo vigilancia estricta del personal de enfermería de guardia.","destino":"fase_final","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"110/68","saturacion_oxigeno_pct":91,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Esta opción de traslado es altamente inadecuada e imprudente para la seguridad del paciente. Las salas comunes de clínica médica general no disponen del equipamiento tecnológico, la monitorización continua invasiva multiparamétrica ni la relación del personal de enfermería especializado por cama para dar soporte a un paciente recientemente intubado y ventilado de forma invasiva. Esta decisión expone a Don Aurelio a riesgos extremos evitables como extubaciones accidentales, colapsos circulatorios desapercibidos o asincronías respiratorias letales. Debés suspender esta orden y gestionar de inmediato una cama en la unidad de terapia intensiva. El paciente requiere cuidados críticos continuos para garantizar su supervivencia."},{"texto":"Extubar de forma precoz al paciente en el shock room de la guardia para evitar las complicaciones laringeas del tubo, y trasladarlo a sala común con máscara de Venturi al 35%.","destino":"fase_10_rescate_extubacion_fallida","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"135/85","saturacion_oxigeno_pct":85,"frecuencia_respiratoria_rpm":26,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave de destete ventilatorio! Extubar de manera prematura e impulsiva en el área de emergencias a un paciente con EPOC severo reagudizado, que se encuentra cursando una neumonía lobar derecha en fase aguda, sin cumplir los estrictos criterios de destete (como resolución de la causa primaria, prueba de respiración espontánea superada y estabilidad clínica) provoca el colapso inmediato de su vía aérea, fatiga muscular recurrente y edema laríngeo agudo. El paciente desatura rápidamente y requiere ser rescatado de inmediato para evitar la muerte por asfixia. La extubación planificada debe realizarse únicamente en un ambiente controlado tras resolver la neumonía subyacente. Prepará el material para restablecer la vía aérea de forma urgente.","secuela":"Fracaso de extubación con necesidad de reintubación."}]},"fase_10_rescate_extubacion_fallida":{"id":"fase_10_rescate_extubacion_fallida","etapa":"Rescate: Fallo Expiratorio por Extubación Precoz","descripcion_situación":"Tras la extubación prematura en la guardia, Don Aurelio desarrolla estridor respiratorio marcado por edema glótico agudo, con retracción intercostal severa y sudoración profusa. Su saturación de oxígeno desciende progresivamente a 81% y el nivel de conciencia decae. El paciente se encuentra en fallo respiratorio agudo agónico.","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Re-intubar inmediatamente por secuencia de inducción rápida, re-establecer el esquema de ventilación protectora y gestionar cama de UTI con urgencia.","destino":"fase_final","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":90,"presion_arterial_mmhg":"118/74","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Rescate correcto de una situación sumamente crítica! Lograste reconocer de forma inmediata que la re-intubación orotraqueal es la única medida terapéutica eficaz para salvar la vida del paciente ante un fallo de extubación catastrófico por fatiga pulmonar y edema glótico reflejo. Al re-intubarlo de forma segura y volver a programar la ventilación mecánica pulmonar protectora, se logra restablecer la oxigenación y la estabilidad ventilatoria general de Don Aurelio antes de su traslado prioritario a cuidados intensivos. Recordá que el edema glótico puede requerir además la administración de corticoides sistémicos como la metilprednisolona para facilitar futuros intentos de destete. El paciente ahora se encuentra estable para ser derivado."},{"texto":"Colocar de forma urgente una interfaz de VNI con presiones máximas para intentar evitar la necesidad de una nueva intubación orotraqueal.","destino":"fase_10_rescate_extubacion_fallida","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"140/90","saturacion_oxigeno_pct":78,"frecuencia_respiratoria_rpm":32,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Esa conducta es incorrecta e incrementa el riesgo vital. El uso de ventilación no invasiva (VNI) está estrictamente contraindicado en casos de fallo ventilatorio post-extubación agudo provocado por estridor laríngeo o edema de glotis, ya que la presión positiva de aire agrava mecánicamente la obstrucción de la vía aérea superior y posterga de manera riesgosa una re-intubación de emergencia ineludible. Mirá el monitor: la saturación desciende al 78% y la fatiga muscular es extrema, con riesgo inminente de paro respiratorio in situ. No debés retrasar más el acceso invasivo a la vía aérea de Don Aurelio. Procedé de inmediato a la laringoscopia directa y re-intubación."}]},"fase_final":{"id":"fase_final","etapa":"Fin de la Simulación","descripcion_situación":"El caso clínico ha finalizado. Lograste atravesar las fases críticas del manejo de Don Aurelio, quien ingresó a la sala de emergencias con una insuficiencia respiratoria aguda hipercápnica secundaria a una reagudización de EPOC y neumonía bacteriana lobar derecha. La evolución post-reanimación inmediata y la magnitud de las secuelas pulmonares o neurológicas se derivarán de la precisión, seguridad y rapidez de tu abordaje terapéutico.","criticidad":"media","opciones":[],"texto_por_tier":{"exito":"¡Felicitaciones! Has completado el caso con éxito pleno, demostrando un excelente dominio de las guías terapéuticas basadas en evidencia científica para el EPOC, la titulación de oxígeno, el inicio seguro de la VNI Bilevel y los parámetros protectores finos de la ARM en el paciente obstructivo crítico, previniendo el atrapamiento aéreo y preservando la vida de Don Aurelio sin complicaciones permanentes.","secuelas":"El paciente ha logrado ser estabilizado e ingresado a la Unidad de Terapia Intensiva, pero debido a de decisiones suboptimales tomadas durante la simulación (tales como demoras en la ventilación, problemas de interfases o inducción farmacológica inadecuada con episodios de hipotensión prolongada o atrapamiento aéreo), Don Aurelio sufrió lesiones o hipoxia transitorias que incrementan la posibilidad de secuelas ventilatorias o una estancia hospitalaria extendida.","critico":"El paciente Don Aurelio ha experimentado un desenlace crítico. El manejo inadecuado de la oxigenoterapia masiva inicial, los retrasos graves en la instauración de soporte ventilatorio mecánico invasivo o la programación errática del ventilador con PEEP extrema y frecuencias respiratorias elevadas que bloquearon el retorno venoso, provocaron episodios recurrentes de shock obstructivo severo o paradas cardiorrespiratorias, determinando un desenlace desfavorable y evitable."}}}};
+
+/* ==========================================================================
+   FUNCIONES DE APOYO
+   ========================================================================== */
+function air(name,fio2){
+  const wasHyper=fio2>0.4&&S.spo2>=94&&S.rhythm==='sinus';
+  S.airway=name;S.fio2=fio2;
+  if(wasHyper&&name!=='ARM'&&name!=='BVM'){sc(-15,'Hiperoxia con SatO₂ ≥94%: vasoconstricción coronaria y mayor tamaño del infarto');S.iatro++;}
+  else if(fio2>0.21&&S.spo2<90)sc(8,'Oxígeno indicado por hipoxemia real');
+  info('Dispositivo: '+name+' · FiO₂ '+Math.round(fio2*100)+'%');bed();
+}
+function bed(){
+  const p=[];
+  p.push('SALA ROJA');
+  p.push(S.monitored?'monitorizado':'sin monitorizar');
+  p.push(S.airway==='aire'?'aire ambiente':S.airway);
+  if(S.vent)p.push('ARM');
+  if(S.arterial)p.push('PA invasiva');if(S.cvc)p.push('VVC');if(S.foley)p.push('sonda vesical');
+  $('bedinfo').textContent=p.join(' · ');
+}
+function die(r){S.dead=true;S.rhythm='asystole';S.bp=0;log('☠ FALLECIMIENTO — '+r,'bad');setTimeout(finish,1800);}
+
+/* ==========================================================================
+   FÍSICA
+   ========================================================================== */
+// Fisica simplificada dirigida por los datos del caso v4: cada opcion define
+// un ALVO explicito de signos vitales (novos_sinais_vitales), y esta funcion
+// solo hace que el trazado converja suavemente hacia ese alvo -- no hay
+// modelo farmacocinetico propio (nitratos, adrenalina, etc.) porque el caso
+// v4 no lo especifica. Mientras el alumno delibera sin responder (S.doing
+// vacio y el caso no termino), los signos vitales se degradan gradualmente
+// -- misma presion de tiempo ya validada en la version React del motor.
+// M-01: constantes originales divididas por 6 -- la v4 castigaba VELOCIDAD DE
+// LECTURA, no indecisión clínica (una vinieta de 1000 caracteres a
+// velocidadInicial=2 hacía perder 72 lpm y 60 mmHg sólo por leerla).
+const DERIVA_ESPERA={hr:0.6/6,sbp:-0.5/6,spo2:-0.08/6,rr:0.1/6};
+// M-03: si el caso trae st_mm en estado_inicial, el ST del monitor converge
+// hacia ese dato (fisiología real del caso) en vez de derivarse del puntaje.
+// Fallback a la fórmula vieja sólo si el caso no provee st_mm.
+const CASO_TIENE_ST_MM = typeof CASO_V4.estado_inicial.st_mm === 'number';
+if (CASO_TIENE_ST_MM) ALVO.st = CASO_V4.estado_inicial.st_mm;
+function physics(dt){
+ if(S.dead)return;
+ S.simT+=dt;
+
+ if(!S.ended&&!S.doing&&!S.decidido){
+   // M-01: período de gracia de lectura -- escala con lo que hay para leer
+   // en el nodo actual (viñeta + las 5 opciones). Mientras dure, no hay
+   // deriva: el alumno puede leer sin que el paciente se descompense solo.
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const gracia=nodoActual?30+((nodoActual.descripcion_situación.length+nodoActual.opciones.reduce((a,o)=>a+o.texto.length,0))/25):30;
+   const tEnNodo=S.simT-S.nodoEnteredAt;
+   if(tEnNodo>gracia){
+     // Tope por nodo: ningún nodo puede por sí solo, sólo por demora en
+     // decidir, arrastrar los signos vitales más de un 25% desde el valor
+     // con el que se entró a ese nodo.
+     const base=S.nodoBase||{hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+     ALVO.hr=clamp(clamp(ALVO.hr+DERIVA_ESPERA.hr*dt,20,200),base.hr*0.75,base.hr*1.25);
+     ALVO.sbp=clamp(clamp(ALVO.sbp+DERIVA_ESPERA.sbp*dt,0,220),base.sbp*0.75,base.sbp*1.25);
+     ALVO.spo2=clamp(clamp(ALVO.spo2+DERIVA_ESPERA.spo2*dt,0,100),base.spo2*0.75,base.spo2*1.25);
+     ALVO.rr=clamp(clamp(ALVO.rr+DERIVA_ESPERA.rr*dt,0,45),base.rr*0.75,base.rr*1.25);
+   }
+ }
+
+ // M-05: nodos criticidad:"letal" con tiempo_limite_segundos -- si el
+ // alumno no decide a tiempo, se aplica la penalización del nodo y, si es
+ // letal, se dispara la muerte (igual que insistir en la conducta errada).
+ if(!S.ended&&!S.doing&&!S.decidido&&!S.nodoTimeoutApplied){
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&(S.simT-S.nodoEnteredAt)>nodoActual.tiempo_limite_segundos){
+     S.nodoTimeoutApplied=true;
+     sc(nodoActual.penalizacion_por_timeout||0,'Tiempo agotado en «'+nodoActual.etapa+'» -- la indecisión también es una conducta','bad');
+     if(nodoActual.criticidad==='letal'&&!S.dead)die('Tiempo agotado en situación crítica: «'+nodoActual.etapa+'»');
+   }
+ }
+
+ if(CASO_TIENE_ST_MM)S.st+=(ALVO.st-S.st)*Math.min(1,dt/4);
+ else S.st=clamp((85-S.bp)/85,0,1)*5;
+
+ if(S.rhythm==='vf'||S.rhythm==='asystole'){S.hr=0;S.sbp=0;S.dbp=0;S.spo2=Math.max(0,S.spo2-dt*2);}
+ else{
+   S.hr+=(ALVO.hr-S.hr)*Math.min(1,dt/4);
+   S.sbp+=(ALVO.sbp-S.sbp)*Math.min(1,dt/4);
+   S.dbp+=(ALVO.dbp-S.dbp)*Math.min(1,dt/4);
+   S.spo2+=(ALVO.spo2-S.spo2)*Math.min(1,dt/4);
+ }
+ S.map=Math.round((S.sbp+2*S.dbp)/3);
+ S.rr+=(ALVO.rr-S.rr)*Math.min(1,dt/4);
+ if(S.nibp&&S.simT-S.lastNIBP>=CONFIG.cicloPANIsegundos){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+ if(S.arterial){S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+}
+
+/* ==========================================================================
+   ONDAS
+   ========================================================================== */
+const cv=$('cv'),ctx=cv.getContext('2d');
+let W=0,H=0,px=0,LANES=5,lastY=[null,null,null,null,null];
+/* orden de canales igual al del uMEC12: ECG · CO2 · Plet · Imped. · Art */
+function resize(){
+ const dpr=window.devicePixelRatio||1;
+ W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null,null];
+ const l=H/LANES;
+ for(let k=1;k<=5;k++){const el=$('wl'+k);if(el)el.style.top=((k-1)*l+3)+'px';}
+ $('ws2').style.top=(l+3)+'px';
+ $('ws5').style.top=(4*l+3)+'px';
+}
+const g=(t,c,w,a)=>a*Math.exp(-Math.pow((t-c)/w,2));
+function ecgAt(t){
+ const r=S.rhythm;
+ if(r==='vf')return 0.42*(Math.sin(t*36.1)+0.7*Math.sin(t*23.7+1.1)+0.5*Math.sin(t*51.3+2.2))/2.2;
+ if(r==='asystole')return (Math.random()-0.5)*0.03+(S.cpr?0.25*Math.sin(t*11.5):0);
+ if(r==='avblock'){
+  const P=60/78,L=60/38,tp=t%P,tq=t%L;
+  let v=g(tp,0.10,0.028,0.16);
+  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0)+g(tq,0.33,0.028,-0.22)+g(tq,0.57,0.078,0.28);
+  if(tq>0.37&&tq<0.49)v+=S.st*0.075;
+  return v;
+ }
+ const L=60/clamp(S.hr,30,180),tt=t%L;
+ let v=g(tt,0.11,0.022,0.15);
+ v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,1.15)+g(tt,0.268,0.013,-0.24);
+ const st=S.st*0.075;
+ if(tt>0.28&&tt<0.40)v+=st;
+ v+=g(tt,0.455,0.055,0.30+st*0.5);
+ return v;
+}
+/* capnograma: rampa, meseta alveolar e inspiración — morfología del uMEC12 */
+function co2At(t){
+ if(S.etco2===null)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L,a=clamp(S.etco2/50,0.04,1);
+ if(p<0.06)return a*Math.max(0,1-p/0.06)*0.15;
+ if(p<0.14)return a*((p-0.06)/0.08)*0.93;
+ if(p<0.62)return a*(0.93+0.07*((p-0.14)/0.48));
+ if(p<0.68)return a*Math.max(0,1-(p-0.62)/0.06);
+ return 0.01;
+}
+function plethAt(t){
+ if(!S.sat_probe)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return (Math.random()-0.5)*0.05;
+ const L=60/clamp(S.hr,30,180),tt=(t%L)/L,amp=clamp(S.sbp/120,0.12,1);
+ return amp*(Math.exp(-Math.pow((tt-0.22)/0.13,2))+0.42*Math.exp(-Math.pow((tt-0.46)/0.11,2)))*0.9;
+}
+function impedAt(t){
+ if(!S.monitored)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L;
+ return 0.5*Math.sin(2*Math.PI*p)+0.06*Math.sin(2*Math.PI*p*3);
+}
+/* curva arterial: ascenso rápido, muesca dicrótica y descenso diastólico */
+function artAt(t){
+ if(!S.arterial)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return S.cpr?0.18*Math.sin(t*11.5)+0.2:0.05;
+ const L=60/clamp(S.hr,30,180),p=(t%L)/L;
+ const pp=clamp((S.sbp-S.dbp)/70,0.25,1.2), base=clamp(S.dbp/90,0.1,1)*0.28;
+ let v;
+ if(p<0.13)v=Math.pow(p/0.13,0.55);
+ else if(p<0.30)v=1-0.42*((p-0.13)/0.17);
+ else if(p<0.36)v=0.58+0.10*Math.sin((p-0.30)/0.06*Math.PI);  // muesca dicrótica
+ else v=0.58*Math.exp(-(p-0.36)*2.6);
+ return base+v*pp*0.62;
+}
+let beatIx=-1;
+function draw(dt){
+ const adv=(W/6.4)*dt, lane=H/LANES;   // barrido ~25 mm/s
+ const mid=[lane*.55,lane*1.75,lane*2.55,lane*3.55,lane*4.72];
+ const gain=[lane*.32,lane*.62,lane*.26,lane*.24,lane*.62];
+ const col=['#2fe36f','#ffe14a','#39d7ff','#e8eef5','#ff5a63'];
+ const steps=Math.max(1,Math.round(adv));
+ for(let i=0;i<steps;i++){
+  const t0=S.waveT+(i/steps)*dt, x=px+(i/steps)*adv, xi=Math.floor(x)%W;
+  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,13,H);
+  const v=[S.monitored?ecgAt(t0):null, co2At(t0), plethAt(t0), impedAt(t0), artAt(t0)];
+  for(let l=0;l<LANES;l++){
+   if(v[l]===null){lastY[l]=null;continue;}
+   const y=mid[l]-v[l]*gain[l];
+   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.25;ctx.beginPath();
+     ctx.moveTo(xi-1,lastY[l]);ctx.lineTo(xi,y);ctx.stroke();}
+   lastY[l]=y;
+  }
+  if(xi<2)lastY=[null,null,null,null,null];
+ }
+ px=(px+adv)%W;S.waveT+=dt;
+ if(S.monitored&&(S.rhythm==='sinus'||S.rhythm==='avblock')){
+  const L=S.rhythm==='avblock'?60/38:60/clamp(S.hr,30,180);
+  const ix=Math.floor(S.waveT/L);
+  if(ix!==beatIx){beatIx=ix;beep();const b=$('beat');if(b){b.classList.remove('on');void b.offsetWidth;b.classList.add('on');}}
+ }
+}
+let AC=null,alOsc=null;
+function beep(){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ const o=AC.createOscillator(),g2=AC.createGain();
+ o.frequency.value=S.spo2>=95?880:S.spo2>=90?740:560;
+ g2.gain.setValueAtTime(.045,AC.currentTime);g2.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.09);
+ o.connect(g2).connect(AC.destination);o.start();o.stop(AC.currentTime+.1);}catch(e){}}
+function alarmTone(on){if(!S.sound){if(alOsc){try{alOsc.stop()}catch(e){}alOsc=null}return;}
+ try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ if(on&&!alOsc){alOsc=AC.createOscillator();const g2=AC.createGain();
+  alOsc.type='square';alOsc.frequency.value=1046;g2.gain.value=.026;
+  alOsc.connect(g2).connect(AC.destination);alOsc.start();}
+ else if(!on&&alOsc){alOsc.stop();alOsc=null;}}catch(e){}}
+
+/* ==========================================================================
+   RENDER
+   ========================================================================== */
+function ui(){
+ /* ---- relojes externos al monitor ---- */
+ $('wall').textContent=hhmm(S.simT);
+ $('tplus').textContent=Math.floor(S.simT/60)+'′';
+ $('clkIsq').className='clk'+(S.bp<40?' crit':S.bp<70?' hot':'');
+ const idle=S.simT-S.lastAction;
+ $('idle').textContent=mmss(idle);
+ $('clkIdle').className='clk'+(idle>300?' crit':idle>150?' hot':'');
+ $('salv').textContent=Math.round(S.bp);
+
+ const arrest=S.rhythm==='vf'||S.rhythm==='asystole';
+
+ // M-05: cronómetro visible sólo en nodos con tiempo_limite_segundos, y
+ // sólo mientras el alumno todavía no decidió en ese nodo.
+ {
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const timerEl=$('stgTimer');
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&!S.decidido&&!S.ended){
+     const restante=Math.max(0,Math.round(nodoActual.tiempo_limite_segundos-(S.simT-S.nodoEnteredAt)));
+     timerEl.textContent='⏱ '+mmss(restante);
+     timerEl.className='stgTimer on'+(restante<30?' crit':'');
+   } else {
+     timerEl.className='stgTimer';
+   }
+ }
+
+ /* ---- barra de estado del monitor ---- */
+ $('mBed').textContent='▣ SALA ROJA';
+ const t=(S.wallStart+S.simT)%86400;
+ $('mDT').textContent='08-08-2026 '+String(Math.floor(t/3600)).padStart(2,'0')+':'+
+   String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');
+ $('mTech').textContent=(S.monitored?(S.st>3?'Análisis de ST activo':'No se puede analizar QT'):'Derivación desconectada')+'  ·  reloj ×'+S.speed;
+
+ /* ---- ECG ---- */
+ zone('pzECG','vHR',S.monitored,arrest?(S.rhythm==='vf'?'---':'0'):Math.round(S.hr),
+   S.monitored&&(arrest||S.hr<50||S.hr>120));
+ $('beat').style.visibility=(S.monitored&&!arrest)?'visible':'hidden';
+ $('subPVC').innerHTML='PVC <b>'+(S.pvc!==null?S.pvc:'---')+'</b>';
+ $('subST').textContent=S.monitored?(S.st>1?'ST II '+S.st.toFixed(1)+' mm':'ST 0,0 mm'):'ST desact.';
+ $('subST').style.color=S.monitored&&S.st>3?'#ff5a63':'#a4aeb8';
+ $('limECG').innerHTML=(S.rhythm==='avblock'?'120<br>50':'120<br>50');
+
+ /* ---- CO2 ---- */
+ zone('pzCO2','vCO2',S.etco2!==null,S.etco2!==null?Math.round(S.etco2):'---',
+   S.etco2!==null&&(S.etco2<25||S.etco2>50));
+ $('subFRm').textContent=S.monitored?Math.round(S.rr):'--';
+ $('subR').textContent=S.vent?Math.round(S.rr):'0';
+
+ /* ---- SpO2 ---- */
+ zone('pzSat','vSat',S.sat_probe,Math.round(S.spo2),S.sat_probe&&S.spo2<90);
+ $('subPR').textContent=S.sat_probe&&!arrest?Math.round(S.hr):'---';
+ $('subPI').textContent=S.sat_probe?('IP '+clamp(S.sbp/70,0.2,4).toFixed(2)):'IP ---';
+
+ /* ---- Resp ---- */
+ zone('pzResp','vRR',S.monitored,Math.round(S.rr),S.monitored&&(S.rr>26||S.rr<9));
+ $('subOrigen').textContent=(S.capno||S.vent)?'Origen CO2':'Origen Imped.';
+
+ /* ---- presión arterial: PANI intermitente o Art invasiva continua ---- */
+ const bpOn=S.nibp||S.arterial;
+ $('lblArt').innerHTML=(S.arterial?'Art':'PANI')+'<span style="font-weight:400;font-size:8.5px"> mmHg</span>';
+ zone('pzArt','vBP',bpOn,arrest?'---/---':S.sbpShow+'/'+S.dbpShow,bpOn&&S.sbpShow<90&&!arrest);
+ $('subMAP').textContent=bpOn&&!arrest?'('+S.map+')':'(--)';
+ $('pzArt').classList.toggle('sel',S.arterial);
+ $('wl5').style.display=S.arterial?'block':'none';
+ $('ws5').style.display=S.arterial?'block':'none';
+ $('wl2').style.display=(S.etco2!==null)?'block':'none';
+ $('ws2').style.display=(S.etco2!==null)?'block':'none';
+ $('wl3').style.display=S.sat_probe?'block':'none';
+ $('wl4').style.display=S.monitored?'block':'none';
+ $('wl1').style.display=S.monitored?'block':'none';
+
+ /* ---- barra inferior ---- */
+ $('vT').textContent=S.monitored?S.temp.toFixed(1).replace('.',','):'--,-';
+ if(S.nibp&&!S.arterial){$('vPNI').textContent=S.sbpShow+'/'+S.dbpShow;
+   $('stPNI').textContent='Medición terminada '+hhmm(S.lastNIBP);}
+ else{$('vPNI').textContent='---/---';$('stPNI').textContent=S.arterial?'PANI en espera':'Medición manual';}
+
+ /* ---- banner de alarma (texto y jerarquía del equipo real) ---- */
+ let cls='none',txt='Sin alarmas';
+ if(!S.monitored){cls='none';txt='Sin monitorización';}
+ else if(S.rhythm==='vf'){cls='hi';txt='*** FIB VENT';}
+ else if(S.rhythm==='asystole'){cls='hi';txt='*** ASISTOLIA';}
+ else if(bpOn&&S.sbpShow<80&&!arrest){cls='hi';txt='*** PANI SIS muy baja';}
+ else if(S.rhythm==='avblock'){cls='hi';txt='*** FC muy baja';}
+ // M-04: el RIVA es un signo BUENO de reperfusión, no una arritmia peligrosa
+ // -- alarma informativa (ámbar), nunca roja, para no enseñar al alumno a
+ // "tratarlo" como si fuera una taquiarritmia maligna.
+ else if(S.rhythm==='riva'){cls='md';txt='** RIVA -- signo de reperfusión, no tratar';}
+ else if(S.sat_probe&&S.spo2<90){cls='md';txt='** SpO2 baja';}
+ else if(S.foley&&S.diuresis<25){cls='md';txt='** Diuresis baja';}
+ else if(S.st>3){cls='md';txt='** ST II elevado';}
+ else if(S.hr>120){cls='md';txt='** FC alta';}
+ else if(S.bp<70){cls='md';txt='** Puntuación en descenso';}
+ else{cls='';txt='Sin alarmas';}
+ const b=$('mBanner');b.className='banner '+(cls||'');b.textContent=txt;
+ alarmTone(cls==='hi');
+ const a=$('alarm');
+ a.className='alarmbar '+(cls==='hi'?'hi':cls==='md'?'md':'');
+ a.textContent=!S.monitored?'monitorización no iniciada':
+   cls==='hi'?'⚠ '+txt.replace(/\*/g,'').trim():cls==='md'?txt.replace(/\*/g,'').trim():'sin alarmas activas';
+
+ /* ---- ficha clínica -- campos sin dato real en este caso quedan "—" ---- */
+ $('fST').textContent=S.monitored?S.st.toFixed(1):'—';
+ $('fGlu').textContent=S.glu!=null?Math.round(S.glu):'—';
+ $('fLac').textContent=S.lac!=null?S.lac.toFixed(1):'—';
+ $('fDiu').textContent=S.diuresis!=null?Math.round(S.diuresis):'—';
+ $('fDiuU').textContent='sin sonda';
+ $('fGCS').textContent='—';$('fPain').textContent=Math.round(S.pain);$('fCRT').textContent=S.crt!=null?S.crt:'—';
+ $('fKil').textContent=S.examDone?(S.sbp<90?'III':'I'):'—';
+ $('fKilU').textContent=S.examDone?'sin crepitantes':'sin examinar';
+
+ /* ---- ventilador ---- */
+ $('ventPanel').className='vent'+(S.vent?' on':'');
+ if(S.vent){$('vPEEP').textContent=S.peep;$('vFiO2').textContent=Math.round(S.ventFiO2*100);
+  $('vPlat').textContent=S.peep>=10?24:18;}
+
+ /* ---- score ---- */
+ $('vBPs').textContent=Math.round(S.bp);$('bpbar').style.width=S.bp+'%';
+ const c=S.bp>70?'var(--ok)':S.bp>40?'var(--md)':'var(--hi)';
+ $('bpbar').style.background=c;$('vBPs').style.color=c;
+ $('vPE').textContent=Math.round(S.pe);$('vOm').textContent=S.omis;$('vIa').textContent=S.iatro;
+}
+function zone(pz,el,on,val,alarm){
+ $(el).textContent=on?val:(String(val).includes('/')?'---/---':'---');
+ $(pz).className='pz'+(on?'':' off')+(alarm?' alarm':'')+($(pz).classList.contains('sel')&&pz==='pzArt'?' sel':'');
+}
+let last=0;
+function loop(ts){
+ requestAnimationFrame(loop);
+ if(!S.running)return;
+ const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+ if(S.paused)return;
+ draw(dt);
+ let mult=S.doing?S.speed*6:S.speed;
+ physics(dt*mult);
+ if(S.doing){S.doing.left-=dt*mult;
+  $('doingB').style.width=(100*(1-S.doing.left/S.doing.total))+'%';
+  if(S.doing.left<=0){const f=S.doing.f;S.doing=null;$('doing').className='doing';f();}}
+ ui();
+}
+/* ==========================================================================
+   MOTOR DE NODOS — navega el grafo ramificado del caso v4 (no es más un
+   array lineal: cada opción define su propio "destino" por id, así que una
+   opción incorrecta puede llevar a una sub-fase de rescate que después
+   converge de vuelta a la línea principal). Reutiliza S.doing (definido en
+   el loop) para representar el tiempo clínico consumido por cada respuesta.
+   ========================================================================== */
+S.nodoId=NODO_INICIAL; S.printouts=[];
+const LETRAS=['A','B','C','D','E'];
+// clasifica el rigor de la opción para el color del feedback -- v4 no trae
+// una categoría r:'good'|'warn'|'bad' explícita, se deriva del puntaje.
+function clasificar(opt){
+  if(opt.es_correcta)return'good';
+  if(opt.puntos_afectados<=-30)return'bad';
+  return'warn';
+}
+// clasifica el ritmo de ECG en el enum que usan las funciones de onda/alarma
+function clasificarRitmo(txt){
+  const t=(txt||'').toLowerCase();
+  if(t.includes('fibrilación ventricular')||t.includes('taquicardia ventricular'))return'vf';
+  if(t.includes('asistolia')||t.includes('muerte encefálica')||t.includes('línea isoeléctrica'))return'asystole';
+  // M-04: antes caían en 'sinus' -- un bloqueo AV completo se dibujaba como
+  // un sinusal lento (el motor ya sabe dibujar 'avblock', sólo faltaba
+  // clasificarlo) y un RIVA post-reperfusión no tenía ninguna lectura propia.
+  if(t.includes('bloqueo av')||t.includes('bloqueo auriculoventricular'))return'avblock';
+  if(t.includes('ritmo idioventricular')||t.includes('riva'))return'riva';
+  return'sinus';
+}
+function aplicarVitales(cambio){
+  if(!cambio)return;
+  if(cambio.frecuencia_cardiaca_lpm!=null)ALVO.hr=cambio.frecuencia_cardiaca_lpm;
+  if(cambio.presion_arterial_mmhg){const[s,d]=cambio.presion_arterial_mmhg.split('/').map(Number);ALVO.sbp=s||0;ALVO.dbp=d||0;}
+  if(cambio.saturacion_oxigeno_pct!=null)ALVO.spo2=cambio.saturacion_oxigeno_pct;
+  if(cambio.frecuencia_respiratoria_rpm!=null)ALVO.rr=cambio.frecuencia_respiratoria_rpm;
+  if(cambio.escala_dolor!=null)S.pain=cambio.escala_dolor;
+  if(cambio.ritmo_monitoreo_ecg)S.rhythm=clasificarRitmo(cambio.ritmo_monitoreo_ecg);
+  if(CASO_TIENE_ST_MM&&cambio.st_mm!=null)ALVO.st=cambio.st_mm; // M-03
+}
+
+function renderStage(){
+ const nodo=CASO_V4.nodos[S.nodoId];
+ if(!nodo||nodo.opciones.length===0){finish();return;}
+ // M-01/M-05/M-09: reinicia el seguimiento del nodo nuevo -- momento de
+ // entrada (para gracia de lectura y timeout), snapshot de ALVO (tope de
+ // deriva), y registra la entrada en el log y en la traza de nodos visitados.
+ S.nodoEnteredAt=S.simT;S.decidido=false;S.nodoTimeoutApplied=false;
+ S.nodoBase={hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+ S.nodosVisitados.push(nodo.id);
+ log('→ '+nodo.etapa,'evt');
+ $('stgNum').textContent=nodo.etapa;
+ $('stgTitle').textContent='🩺 '+nodo.etapa.replace(/^(Fase \d+|Subfase de Rescate):?\s*/,'');
+ $('stgVig').textContent=nodo.descripcion_situación;
+ $('stgOpts').innerHTML=nodo.opciones.map((o,i)=>
+   `<button class="opt" data-i="${i}"><span class="letter">${LETRAS[i]||i+1}</span><span>${o.texto}</span></button>`).join('');
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(nodo,+b.dataset.i));
+ $('stgFeedback').className='feedback';$('stgFeedback').innerHTML='';
+ $('stgNext').style.display='none';
+ $('stage').classList.remove('done');
+}
+
+function choose(nodo,i){
+ if(S.dead||S.ended||S.doing)return;
+ const opt=nodo.opciones[i];
+ S.decidido=true; // M-01/M-05: a partir de acá no corre más gracia/timeout de este nodo
+ S.lastAction=S.simT;
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.disabled=true);
+ $('doingT').textContent='Aplicando conducta…';
+ $('doingB').style.width='0';$('doing').className='doing on';
+ S.doing={left:0.6,total:0.6,f:()=>resolveOption(nodo,opt)};
+}
+
+function resolveOption(nodo,opt){
+ const cls=clasificar(opt);
+ S.simT+=3*60;                            // avance nominal del reloj clínico por decisión
+ S.lastAction=S.simT;                     // recién actuó -- no cuenta como tiempo ocioso
+ sc(opt.puntos_afectados,null);           // aplica el puntaje sin línea propia; el detalle va en el feedback
+ aplicarVitales(opt.cambio_estado_paciente);
+ // M-02: acumuladores reales para el resultado exportado, a partir de los
+ // flags que trae cada opción del caso v5 (en vez de quedar en 0 fijo).
+ if(opt.flags){
+   S.omis+=opt.flags.omision||0;
+   S.iatro+=opt.flags.iatrogenia||0;
+   if(opt.flags.reperfusion)S.reperfusionFlag=true;
+   if(opt.flags.vd_identificado)S.vdIdentificadoFlag=true;
+ }
+ if(opt.secuela)S.secuelas.push(opt.secuela);
+ if(opt.printouts)opt.printouts.forEach(p=>archivarImpreso(p));
+ log((opt.puntos_afectados>0?'+':'')+opt.puntos_afectados+' pts · '+nodo.etapa,cls);
+
+ const fb=$('stgFeedback');
+ fb.className='feedback show '+cls;
+ fb.innerHTML=`<span class="fscore">${opt.puntos_afectados>0?'+':''}${opt.puntos_afectados} pts</span>${opt.feedback_detallado}`+
+   (opt.printouts&&opt.printouts.length?`<div style="margin-top:8px;font-size:11px;color:var(--dim)">📄 Impreso archivado en el menú lateral.</div>`:'');
+ $('stage').classList.add('done');
+ $('stgNext').style.display='inline-block';
+ $('stgNext').onclick=()=>{S.nodoId=opt.destino;renderStage();};
+}
+
+let toastImpresoT=null;
+function alertarImpreso(p){
+ // pulso visual en el panel lateral + contador, mas un toast temporal en la
+ // esquina superior -- para que el alumno note el impreso nuevo aunque no
+ // esté mirando la barra lateral en ese momento.
+ const panel=document.querySelector('.printouts');
+ panel.classList.remove('nuevo');void panel.offsetWidth;panel.classList.add('nuevo');
+ const cnt=$('pcount');
+ cnt.classList.remove('nuevo');void cnt.offsetWidth;cnt.classList.add('nuevo');
+ setTimeout(()=>{panel.classList.remove('nuevo');cnt.classList.remove('nuevo');},3200);
+
+ $('toastImpresoTxt').textContent=p.titulo;
+ const t=$('toastImpreso');
+ t.classList.add('on');
+ if(toastImpresoT)clearTimeout(toastImpresoT);
+ toastImpresoT=setTimeout(()=>t.classList.remove('on'),4200);
+}
+function archivarImpreso(p){
+ S.printouts.push({...p,hora:hhmm(S.simT)});
+ const list=$('plist');
+ $('pcount').textContent=S.printouts.length;
+ list.innerHTML=S.printouts.map((pr,ix)=>
+   `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
+ list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+ alertarImpreso(p);
+}
+function abrirImpreso(p){
+ $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
+  <div class="kick">${p.tipo}</div><h1>${p.titulo}</h1>
+  <div class="stamp">Paciente, masculino · 58 a · liberado a las ${p.hora}</div>
+  <pre>${p.cuerpo}</pre>`;
+ $('ovPrint').className='ov';
+}
+
+function finish(){
+ if(S.ended)return;S.ended=true;S.running=false;alarmTone(false);
+ // El caso v4 no tiene un nodo de "muerte" separado: todos los caminos
+ // convergen al mismo nodo final (sucesso_conclusao). El desenlace real se
+ // refleja en la puntuación acumulada, no en a qué nodo se llegó.
+ const nodoFinal=CASO_V4.nodos[S.nodoId]||CASO_V4.nodos[NODO_EXITO];
+ const bp=Math.round(S.bp);
+ // M-06: si el nodo final trae texto_por_tier, se usa el texto específico
+ // del tier (exito/secuelas/critico) en vez de mostrar siempre el mismo
+ // descripcion_situación sin importar el desenlace.
+ const tier=bp>=70?'exito':bp>=40?'secuelas':'critico';
+ const textoTier=nodoFinal.texto_por_tier&&nodoFinal.texto_por_tier[tier];
+ let p,c,t;
+ if(bp>=70){p='ÉXITO PLENO';c='var(--ok)';t=textoTier||nodoFinal.descripcion_situación;}
+ else if(bp>=40){p='ESTABILIZADO CON SECUELAS';c='var(--md)';t=textoTier||nodoFinal.descripcion_situación;}
+ else{p='DESENLACE CRÍTICO';c='var(--hi)';t=textoTier||nodoFinal.descripcion_situación;}
+ const veredicto=bp>=70?{txt:'ÉXITO PLENO',col:'var(--ok)'}:bp>=40?{txt:'ESTABILIZADO CON SECUELAS',col:'var(--md)'}:{txt:'DESENLACE CRÍTICO',col:'var(--hi)'};
+ $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div>
+ <div style="font-size:34px;font-weight:800;letter-spacing:2px;color:${veredicto.col};margin:2px 0 6px">${veredicto.txt}</div>
+ <h1 style="color:${c}">${p}</h1><p>${t}</p>
+ <table>
+  <tr><td>Puntuación final</td><td>${bp} / 100</td></tr>
+  <tr><td>Tiempo total de caso</td><td>${Math.floor(S.simT/60)} min</td></tr>
+ </table><button class="btn" onclick="location.reload()">Reiniciar el caso</button>`;
+ $('ovEnd').className='ov';
+
+ /* ---- resultado exportable al sitio contenedor (mismo contrato del tipo
+    "iframe" ya consumido por hospital-simulacao-caso-viewer.tsx) ---- */
+ // M-02: campos reales en vez de hardcodeados/derivados incorrectamente.
+ // fallecido usa la bandera real que setea die() (no bp<40, que confundía
+ // "estabilizado con secuelas" con "paciente fallecido"); reperfundido y
+ // vdIdentificado salen de si el alumno efectivamente pasó por una opción
+ // con ese flag; omisiones/iatrogenias son la suma real de S.omis/S.iatro.
+ const resultado={
+  caso:'IAMCEST-01', version:'5.0',
+  desenlace:p, camino:bp>=70?1:(bp>=40?2:3),
+  bpFinal:bp, reservaExcelencia:Math.round(S.pe),
+  omisiones:S.omis, iatrogenias:S.iatro,
+  isquemiaTotalMin:Math.floor(S.simT/60),
+  puertaBalonMin:null, miocardioSalvable:null,
+  vdIdentificado:S.vdIdentificadoFlag, reperfundido:S.reperfusionFlag,
+  soporteVentilatorio:S.airway,
+  tiempoPerdidoMin:Math.round(S.lostTime/60),
+  fallecido:S.dead, dificultad:CONFIG.dificultad,
+  secuelas:S.secuelas.slice(), nodosVisitados:S.nodosVisitados.slice(),
+  registro:S.log.slice().reverse(),
+  finalizadoEn:new Date().toISOString()
+ };
+ window.SimuladorIAMCEST.resultado=resultado;
+ if(typeof CONFIG.alFinalizar==='function'){try{CONFIG.alFinalizar(resultado);}catch(e){console.error(e);}}
+ if(CONFIG.emitirPostMessage&&window.parent!==window){
+  try{window.parent.postMessage({tipo:'simulador-iamcest:finalizado',resultado},CONFIG.origenPermitido);}catch(e){}
+ }
+ document.dispatchEvent(new CustomEvent('simulador-iamcest:finalizado',{detail:resultado}));
+}
+$('bSpeed').onclick=()=>{S.speed=S.speed===1?4:S.speed===4?10:1;$('bSpeed').textContent='×'+S.speed;};
+$('bSound').onclick=()=>{S.sound=!S.sound;$('bSound').classList.toggle('on',S.sound);if(!S.sound)alarmTone(false);};
+$('bPause').onclick=()=>{S.paused=!S.paused;$('bPause').textContent=S.paused?'▶':'⏸';
+ $('bPause').classList.toggle('on',S.paused);if(S.paused)alarmTone(false);};
+$('bEnd').onclick=finish;
+$('bCase').onclick=()=>{$('ovCase').className='ov';if(S.running&&!S.paused)$('bPause').click();};
+$('closeCase').onclick=()=>{$('ovCase').className='ov hide';};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ovCase').className='ov hide';$('ovPrint').className='ov hide';}});
+
+function iniciar(vel){
+ S.speed=vel||CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+ $('ovIntro').className='ov hide';S.running=true;last=performance.now();
+ /* el monitor multiparamétrico se conecta al ingreso: la narrativa lo instala, no el alumno */
+ S.monitored=true;S.sat_probe=true;S.nibp=true;S.lastNIBP=S.simT;S.defibNear=true;
+ bed();
+ log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
+ renderStage();
+}
+$('bComenzar').onclick=()=>iniciar();
+setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
+window.addEventListener('resize',resize);
+
+/* ==========================================================================
+   API PÚBLICA — el sitio contenedor puede controlar el simulador
+   ========================================================================== */
+window.SimuladorIAMCEST={
+ iniciar, finalizar:finish, resultado:null,
+ pausar:()=>{S.paused=true;alarmTone(false);$('bPause').textContent='▶';},
+ reanudar:()=>{S.paused=false;last=performance.now();$('bPause').textContent='⏸';},
+ verExpediente:()=>{$('ovCase').className='ov';},
+ estado:()=>({bp:Math.round(S.bp),pe:Math.round(S.pe),minuto:Math.floor(S.simT/60),
+   nodo:S.nodoId,ritmo:S.rhythm}),
+ reiniciar:()=>location.reload(),
+ config:CONFIG
+};
+
+/* ---- arranque ---- */
+$('introTitulo').textContent='Caso 6';
+$('introDescripcion').textContent=CASO_V4.descripcion;
+$('histMotivo').textContent=CASO_V4.descripcion;
+$('docTitulo').textContent='Caso 6 · '+CASO_V4.titulo_juego;
+$('docDescripcion').textContent=CASO_V4.descripcion;
+S.speed=CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+S.sound=!!CONFIG.sonidoInicial;$('bSound').classList.toggle('on',S.sound);
+if(!CONFIG.mostrarExpediente)$('bCase').style.display='none';
+resize();requestAnimationFrame(loop);
+if(CONFIG.saltarIntro&&CONFIG.autoIniciar)iniciar();
+</script>
+</body>
+</html>
+

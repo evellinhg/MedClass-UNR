@@ -7,6 +7,9 @@ export interface HospitalSimulacaoCaso {
   conteudo: HospitalSimulacaoConteudo | null
   ordem: number
   ativo: boolean
+  // Chave canônica ano4/ano5 (igual ao resto do currículo, ver ANO_KEYS em
+  // lib/unr-curriculum.ts) -- separa os casos em abas por ano na grade.
+  ano: string | null
   created_at: string
 }
 

@@ -490,7 +490,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
 
 
 <div class="ov" id="ovIntro"><div class="card">
-  <div class="kick">Caso 2 · Emergencia · Línea de tiempo dinámica</div>
+  <div class="kick">Caso 1 · Emergencia · Línea de tiempo dinámica</div>
   <h1 id="introTitulo">Simulador Clínico de Emergencia</h1>
   <p id="introDescripcion"></p>
   <p style="color:#e9f1f9"><b>El monitor no te espera.</b> Mientras deliberás sin responder, el paciente sigue descompensando en tiempo real.</p>
@@ -513,7 +513,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-
 <div class="ov hide" id="ovCase"><div class="card doc">
 <button class="close" id="closeCase">Cerrar ✕</button>
 <div class="kick">Expediente docente · uso del instructor</div>
-<h1 style="margin-bottom:2px" id="docTitulo">Caso 2</h1>
+<h1 style="margin-bottom:2px" id="docTitulo">Caso 1</h1>
 <p style="color:#5a6e80;font-family:'IBM Plex Mono',monospace;font-size:11px">Estructura ramificada · fases principales con sub-fases de rescate · puntuación inicial 100/100</p>
 
 <div class="box"><b>Advertencia para el instructor:</b> este documento contiene las respuestas. Si se muestra al estudiante antes de jugar, el caso pierde su valor.</div>
@@ -588,9 +588,9 @@ const S={
  running:false,paused:false,speed:4,sound:false,
  simT:0, wallStart:0, waveT:0, lastAction:0, lostTime:0,
  bp:100,pe:0,omis:0,iatro:0, st:0,
- hr:88,sbp:140,dbp:90,map:110,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
+ hr:110,sbp:90,dbp:60,map:70,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
  diuresis:null,pvc:null,gcs:15,pain:8,crt:null,etco2:null,
- sbpShow:140,dbpShow:90,lastNIBP:0,
+ sbpShow:90,dbpShow:60,lastNIBP:0,
  rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
  arterial:false,cvc:false,foley:false,
  airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
@@ -609,7 +609,7 @@ const S={
 // alvos de sinais vitais definidos pela opcao escolhida (novos_sinais_vitales
 // do caso v4) -- a fisica so faz o traçado convergir suavemente ate eles,
 // nao ha modelo farmacocinetico proprio deste caso.
-const ALVO={hr:88,sbp:140,dbp:90,spo2:95,rr:18,st:0};
+const ALVO={hr:110,sbp:90,dbp:60,spo2:95,rr:18,st:0};
 S.nodoId=null;S.printouts=[];
 const $=i=>document.getElementById(i), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const hhmm=s=>{const t=(S.wallStart+s)%86400;return String(Math.floor(t/3600)).padStart(2,'0')+':'+String(Math.floor(t%3600/60)).padStart(2,'0')};

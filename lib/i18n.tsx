@@ -326,6 +326,8 @@ const pt = {
     avisoEducativo: "Material educativo e de simulação. Paciente e cenário fictícios — não substitui os protocolos institucionais vigentes.",
     bloqueadoCard: "Em breve para todos os alunos",
     acessoRestritoAlerta: "Hospital Simulação ainda está em testes internos — disponível apenas para a equipe da MedClass por enquanto.",
+    abaAno4: "Cenários 4º Ano",
+    abaAno5: "Cenários 5º Ano",
   },
   hospitalSimulacaoViewer: {
     voltar: "Voltar para Hospital Simulação",
@@ -1435,6 +1437,8 @@ const es: typeof pt = {
     avisoEducativo: "Material educativo y de simulación. Paciente y escenario ficticios — no sustituye los protocolos institucionales vigentes.",
     bloqueadoCard: "Próximamente para todos los alumnos",
     acessoRestritoAlerta: "Hospital Simulación todavía está en pruebas internas — disponible solo para el equipo de MedClass por el momento.",
+    abaAno4: "Escenarios 4to Año",
+    abaAno5: "Escenarios 5to Año",
   },
   hospitalSimulacaoViewer: {
     voltar: "Volver a Hospital Simulación",

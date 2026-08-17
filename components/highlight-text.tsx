@@ -121,11 +121,19 @@ export function HighlightText({ text, className }: Props) {
           .split(/\n+/)
           .map((p) => p.trim())
           .filter((p) => p !== "")
-          .map((p, i) => (
-            <p key={i} className={i > 0 ? "mt-3" : undefined}>
-              {renderNegrito(p, `p${i}`)}
-            </p>
-          ))}
+          .map((p, i) => {
+            const isTitulo = p.startsWith("# ")
+            const conteudo = isTitulo ? p.slice(2).trim() : p
+            return isTitulo ? (
+              <h3 key={i} className={`text-[1.05em] font-bold ${i > 0 ? "mt-4" : ""}`}>
+                {renderNegrito(conteudo, `p${i}`)}
+              </h3>
+            ) : (
+              <p key={i} className={i > 0 ? "mt-3" : undefined}>
+                {renderNegrito(conteudo, `p${i}`)}
+              </p>
+            )
+          })}
       </div>
     </div>
   )

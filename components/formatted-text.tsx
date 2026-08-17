@@ -16,7 +16,7 @@ interface Props {
   className?: string
 }
 
-/** Parágrafos separados por quebra de linha e *palavra* -> negrito. */
+/** Parágrafos separados por quebra de linha, *palavra* -> negrito, _palavra_ -> itálico, # Título -> subtítulo. */
 export function FormattedText({ text, className }: Props) {
   const paragrafos = text
     .split(/\n+/)
@@ -24,11 +24,19 @@ export function FormattedText({ text, className }: Props) {
     .filter((p) => p !== "")
   return (
     <div className={className}>
-      {paragrafos.map((p, i) => (
-        <p key={i} className={i > 0 ? "mt-3" : undefined}>
-          {renderNegrito(p, `p${i}`)}
-        </p>
-      ))}
+      {paragrafos.map((p, i) => {
+        const isTitulo = p.startsWith("# ")
+        const conteudo = isTitulo ? p.slice(2).trim() : p
+        return isTitulo ? (
+          <h3 key={i} className={`text-[1.05em] font-bold ${i > 0 ? "mt-4" : ""}`}>
+            {renderNegrito(conteudo, `p${i}`)}
+          </h3>
+        ) : (
+          <p key={i} className={i > 0 ? "mt-3" : undefined}>
+            {renderNegrito(conteudo, `p${i}`)}
+          </p>
+        )
+      })}
     </div>
   )
 }

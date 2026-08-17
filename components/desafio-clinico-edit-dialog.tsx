@@ -393,7 +393,8 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
                     className="min-h-28"
                   />
                   <p className="text-[11px] text-muted-foreground">
-                    Cada linha vira um parágrafo. Use *palavra* para negrito e _palavra_ para itálico.
+                    Cada linha vira um parágrafo. Use *palavra* para negrito, _palavra_ para itálico e # Título no
+                    início da linha para um subtítulo de seção.
                   </p>
                 </div>
 

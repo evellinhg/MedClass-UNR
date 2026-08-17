@@ -1,12 +1,14 @@
 function renderNegrito(linha: string, keyPrefix: string) {
-  const partes = linha.split(/(\*[^*]+\*)/g).filter((p) => p !== "")
-  return partes.map((parte, i) =>
-    parte.startsWith("*") && parte.endsWith("*") && parte.length > 2 ? (
-      <strong key={`${keyPrefix}-${i}`}>{parte.slice(1, -1)}</strong>
-    ) : (
-      <span key={`${keyPrefix}-${i}`}>{parte}</span>
-    )
-  )
+  const partes = linha.split(/(\*[^*]+\*|_[^_]+_)/g).filter((p) => p !== "")
+  return partes.map((parte, i) => {
+    if (parte.startsWith("*") && parte.endsWith("*") && parte.length > 2) {
+      return <strong key={`${keyPrefix}-${i}`}>{parte.slice(1, -1)}</strong>
+    }
+    if (parte.startsWith("_") && parte.endsWith("_") && parte.length > 2) {
+      return <em key={`${keyPrefix}-${i}`}>{parte.slice(1, -1)}</em>
+    }
+    return <span key={`${keyPrefix}-${i}`}>{parte}</span>
+  })
 }
 
 interface Props {

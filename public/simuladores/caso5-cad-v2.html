@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador IAMCEST v5 · Panel completo en tiempo real</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Colores de canal según convención de cabecera clínica, no decisión estética */
+  --bg:#04060a; --panel:#0a0f16; --panel2:#0e151e; --line:#1a2532;
+  --ecg:#26e07f; --pleth:#31d6f2; --abp:#ff5a63; --resp:#f4d03f; --co2:#c98bff;
+  --txt:#c6d4e2; --dim:#5a6e80; --hi:#ff2d3f; --md:#ffb020; --ok:#26e07f; --grid:#101822;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);
+  font-family:'IBM Plex Sans Condensed','Roboto Condensed',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{padding:8px}
+
+.topbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.pat{flex:1 1 240px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 10px}
+.pat .nm{font-weight:700;font-size:14px;color:#e6eef7;letter-spacing:.3px}
+.pat .sub{font-size:10.5px;color:var(--dim);font-family:'IBM Plex Mono',monospace;margin-top:2px}
+.clocks{display:flex;gap:5px;flex:2 1 460px}
+.clk{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px;min-width:84px}
+.clk .lab{font-size:9px;letter-spacing:1.3px;color:var(--dim);text-transform:uppercase}
+.clk .val{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;line-height:1;margin-top:1px;color:#e6eef7;font-variant-numeric:tabular-nums}
+.clk.hot .val{color:var(--md)} .clk.crit .val{color:var(--hi)}
+
+.alarmbar{height:24px;border-radius:3px;display:flex;align-items:center;gap:14px;padding:0 10px;
+  font-size:11.5px;letter-spacing:1.8px;font-weight:700;text-transform:uppercase;margin-bottom:6px;
+  background:var(--panel);border:1px solid var(--line);color:var(--dim);overflow:hidden}
+.alarmbar.hi{background:var(--hi);color:#fff;border-color:var(--hi);animation:fl .55s steps(1,end) infinite}
+.alarmbar.md{background:var(--md);color:#111;border-color:var(--md)}
+@keyframes fl{50%{opacity:.3}}
+
+.grid{display:grid;grid-template-columns:1fr 300px;gap:6px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   MONITOR — réplica de Mindray uMEC12 (el equipo más frecuente en UCI y
+   guardia de Argentina y Brasil). Distribución, colores de canal, jerarquía
+   tipográfica de los parámetros y cadenas de texto tomadas del equipo real.
+   ========================================================================== */
+.bezel{background:linear-gradient(#d8dade,#b6b9bf);border-radius:14px;padding:19px 46px 20px 18px;
+  box-shadow:0 2px 0 #8f949b inset,0 10px 26px rgba(0,0,0,.5);position:relative}
+.bezel .brand{position:absolute;top:5px;left:22px;font:700 12px 'IBM Plex Sans Condensed',sans-serif;color:#3c4148;letter-spacing:.4px}
+.bezel .model{position:absolute;top:3px;right:18px;font:600 13px 'IBM Plex Sans Condensed',sans-serif;color:#4a5057}
+.bezel .keys{position:absolute;right:11px;top:62px;display:flex;flex-direction:column;gap:9px}
+.bezel .keys i{width:23px;height:16px;border-radius:3px;background:#c6c9ce;box-shadow:0 1px 0 #9aa0a7,0 0 0 1px #abb0b6 inset;display:block}
+.bezel .keys i.amber{background:#e8a33a;box-shadow:0 1px 0 #b57c22}
+.bezel .knob{position:absolute;right:5px;bottom:12px;width:32px;height:32px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#e3e5e8,#9ca1a8);box-shadow:0 2px 4px rgba(0,0,0,.4)}
+.screen{background:#000;border-radius:3px;overflow:hidden;box-shadow:0 0 0 2px #23262b}
+
+/* ---- barra de estado superior ---- */
+.mtop{display:flex;align-items:center;gap:13px;padding:3px 8px;font-size:10.5px;
+  font-family:'IBM Plex Sans Condensed',sans-serif;border-bottom:1px solid #1c1c1c}
+.mtop .bed{color:#7fd0ff;font-weight:700;letter-spacing:.3px}
+.mtop .adu{color:#ffd24a;font-weight:700}
+.mtop .dt{color:#c8d0d8;font-family:'IBM Plex Mono',monospace;font-size:9.5px}
+.mtop .tech{color:#93a0ac}
+.mtop .banner{margin-left:auto;background:#2fd15c;color:#04210c;font-weight:700;letter-spacing:.3px;
+  padding:2px 28px 2px 11px;border-radius:2px;min-width:184px;font-size:11px}
+.mtop .banner.hi{background:#ff2323;color:#fff;animation:fl .5s steps(1,end) infinite}
+.mtop .banner.md{background:#ffd24a;color:#2a1e00}
+.mtop .banner.none{background:#0c3a19;color:#5ecd82}
+
+/* ---- cuerpo: trazados + columna de parámetros ---- */
+.mbody{display:grid;grid-template-columns:1fr 212px}
+@media(max-width:820px){.mbody{grid-template-columns:1fr 164px}}
+.wavebox{position:relative;background:#000;min-width:0}
+canvas{display:block;width:100%;height:352px}
+@media(max-width:760px){canvas{height:292px}}
+.wl{position:absolute;left:5px;font-family:'IBM Plex Sans Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:.2px;pointer-events:none;line-height:1.22}
+.wl s{display:block;font-weight:400;font-size:8.5px;text-decoration:none;opacity:.75}
+.wsc{position:absolute;right:4px;font-family:'IBM Plex Mono',monospace;font-size:8px;color:#787878;
+  pointer-events:none;text-align:right;line-height:1.35}
+
+/* ---- parámetros numéricos ---- */
+.pcol{border-left:1px solid #242424;display:flex;flex-direction:column}
+.pz{border-bottom:1px solid #242424;padding:1px 6px 2px;display:flex;gap:4px;flex:1;min-height:0;align-items:stretch}
+.pz .lft{flex:1;min-width:0;display:flex;flex-direction:column}
+.pz .lbl{font:700 11px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.2px;line-height:1.05}
+.pz .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.2;margin-top:1px}
+.pz .big{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:47px;line-height:.8;
+  font-variant-numeric:tabular-nums;letter-spacing:-1px;text-align:right;margin-top:auto}
+.pz .big.s{font-size:33px} .pz .big.xs{font-size:25px}
+.pz .rgt{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:1px}
+.pz .sub{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#a4aeb8;text-align:right;line-height:1.25;white-space:nowrap}
+.pz .sub b{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px}
+.pz.sel{outline:1px solid #fff;outline-offset:-2px}
+.pz.alarm .big{animation:fl .5s steps(1,end) infinite}
+.pz.off .big{color:#3a3a3a}
+.hbeat{display:inline-block;color:#ff3b47;font-size:11px}
+.hbeat.on{animation:pulse .9s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:1}60%{transform:scale(1.3);opacity:.5}100%{transform:scale(1);opacity:1}}
+
+/* ---- barra inferior ---- */
+.mbot{display:flex;align-items:center;gap:16px;padding:3px 8px;border-top:1px solid #242424;font-size:10px;flex-wrap:wrap}
+.mbot .grp{display:flex;align-items:flex-end;gap:5px}
+.mbot .k{font:700 10px 'IBM Plex Sans Condensed',sans-serif;color:#c8d0d8}
+.mbot .lim{font:400 8.5px 'IBM Plex Mono',monospace;color:#8a8a8a;line-height:1.15}
+.mbot .v{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:25px;line-height:.88;color:#e6ebef}
+.mbot .v.pni{font-size:19px;color:#ff8a92}
+.mbot .st{font:400 9px 'IBM Plex Sans Condensed',sans-serif;color:#93a0ac}
+.mbot .cfg{margin-left:auto;color:#93a0ac;font-size:9.5px}
+.mbot .sbtn{background:#1b3a6b;border:1px solid #2f5c9e;color:#cfe0ff;border-radius:9px;
+  padding:2px 9px;font:600 9.5px 'IBM Plex Sans Condensed',sans-serif}
+.batt{width:21px;height:10px;border:1px solid #6fbf7f;border-radius:1px;position:relative;display:inline-block}
+.batt i{display:block;height:100%;background:#3fd06a;width:72%}
+.batt:after{content:'';position:absolute;right:-3px;top:2px;width:2px;height:4px;background:#6fbf7f}
+
+/* ---- ficha clínica: datos que un monitor real NO muestra ---- */
+.ficha{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px}
+@media(max-width:900px){.ficha{grid-template-columns:repeat(4,1fr)}}
+.fk{background:var(--panel);border:1px solid var(--line);border-radius:2px;padding:3px 6px 4px}
+.fk .k{font-size:8px;letter-spacing:1px;color:var(--dim);text-transform:uppercase;font-weight:700}
+.fk .n{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:20px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fk .u{font-size:8px;color:#3d4f61;font-family:'IBM Plex Mono',monospace}
+.c-ecg{color:#2fe36f}.c-sat{color:#39d7ff}.c-abp{color:#ff5a63}.c-resp{color:#e8eef5}.c-co2{color:#ffe14a}
+
+/* ---- ETAPA CLÍNICA: vinheta + opciones A-E ---- */
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:3px;margin-top:6px;padding:11px 13px 13px}
+.stage .num{font-size:12px;letter-spacing:2.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;
+  padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+/* M-05: cronómetro de nodos criticidad:"letal" con tiempo_limite_segundos -- sólo visible en esos nodos */
+.stgTimer{font-family:'IBM Plex Mono',monospace;letter-spacing:.5px;font-size:12px;font-weight:800;
+  background:#2e1013;color:#ff8a92;border:1px solid #5a1a21;border-radius:10px;padding:1px 9px;display:none}
+.stgTimer.on{display:inline-block}
+.stgTimer.crit{animation:fl .5s steps(1,end) infinite}
+.stage h3{margin:3px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:24px;color:#e9f1f9;line-height:1.15}
+.stage .vig{font-size:14px;line-height:1.58;color:#aebfcf;margin-bottom:11px;white-space:pre-line}
+.stage .opts{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--panel2);border:1px solid var(--line);
+  border-radius:3px;padding:9px 11px;cursor:pointer;color:var(--txt);font:400 14px/1.48 'IBM Plex Sans Condensed',sans-serif;width:100%}
+.opt:hover:not(:disabled){border-color:var(--pleth);background:#141e2a}
+.opt .letter{flex:0 0 auto;width:23px;height:23px;border-radius:50%;background:#1b2a3a;border:1px solid #2c4157;
+  display:flex;align-items:center;justify-content:center;font:700 11.5px 'IBM Plex Mono',monospace;color:#cfe0ff;margin-top:1px}
+.opt:disabled{opacity:.38;cursor:default}
+.stage .feedback{margin-top:11px;padding:10px 12px;border-radius:3px;font-size:14px;line-height:1.55;display:none}
+.stage .feedback.show{display:block}
+.feedback.good{background:#0f2b1c;border-left:3px solid var(--ok);color:#bfe9cf}
+.feedback.warn{background:#2e2410;border-left:3px solid var(--md);color:#f0dfa8}
+.feedback.bad{background:#2e1013;border-left:3px solid var(--hi);color:#ffc0c5}
+.feedback .fscore{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;display:block;margin-bottom:4px}
+#stgNext{display:none;margin-top:11px}
+.stage.done{opacity:.55}
+
+/* ---- historia clínica y registro de impresos (menú lateral) ---- */
+.hist{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 11px}
+.hist h2{margin:0 0 7px;padding-bottom:6px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;
+  color:var(--pleth);font-weight:800;border-bottom:1px solid var(--line)}
+.hist dl{margin:0;font-size:12.5px;line-height:1.6}
+.hist dt{color:#5ea6c4;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;margin-top:7px;font-weight:700}
+.hist dt:first-child{margin-top:0}
+.hist dd{margin:0;color:#cfdbe6}
+
+.printouts{background:var(--panel);border:1px solid var(--line);border-radius:3px;transition:box-shadow .3s,border-color .3s}
+.printouts h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);
+  border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.printouts .list{max-height:150px;overflow-y:auto;padding:4px}
+.printouts .empty{padding:9px 10px;font-size:11.5px;color:#3d4f61;font-style:italic}
+.printouts.nuevo{border-color:var(--pleth);box-shadow:0 0 0 2px rgba(49,214,242,.35),0 0 18px rgba(49,214,242,.45);animation:pnew 1s ease-in-out 3}
+@keyframes pnew{50%{box-shadow:0 0 0 3px rgba(49,214,242,.55),0 0 26px rgba(49,214,242,.7)}}
+#pcount{border-radius:8px;padding:0 6px;transition:background .3s,color .3s}
+#pcount.nuevo{background:var(--pleth);color:#04222b;font-weight:800;animation:pcnew .6s ease-in-out 3}
+@keyframes pcnew{50%{transform:scale(1.35)}}
+.toast-impreso{position:fixed;top:14px;right:14px;z-index:70;background:var(--panel);border:1px solid var(--pleth);
+  border-radius:4px;padding:10px 14px;max-width:280px;box-shadow:0 0 22px rgba(49,214,242,.45),0 8px 20px rgba(0,0,0,.5);
+  display:flex;gap:9px;align-items:flex-start;opacity:0;transform:translateY(-10px);
+  transition:opacity .25s,transform .25s;pointer-events:none}
+.toast-impreso.on{opacity:1;transform:translateY(0)}
+.toast-impreso .ic{font-size:19px;line-height:1}
+.toast-impreso .tt{font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:2px}
+.toast-impreso .bd{font-size:12px;line-height:1.4;color:var(--txt)}
+@media(prefers-reduced-motion:reduce){.printouts.nuevo,#pcount.nuevo{animation:none}}
+.pitem{display:flex;justify-content:space-between;gap:6px;padding:7px 8px;border-radius:2px;cursor:pointer;font-size:13px;color:var(--txt);width:100%;
+  background:transparent;border:0;text-align:left}
+.pitem:hover{background:#141e2a}
+.pitem .tag2{font-size:9.5px;letter-spacing:1px;color:var(--dim);font-family:'IBM Plex Mono',monospace;white-space:nowrap}
+
+/* ---- modal de impreso (laudo) ---- */
+.modal-lab{max-width:520px}
+.modal-lab .stamp{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);
+  border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:11px}
+.modal-lab pre{white-space:pre-wrap;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.62;color:#cfe0ff;
+  background:#070b11;border:1px solid var(--line);border-radius:3px;padding:11px 13px;margin:0}
+
+/* ---- VENTILADOR ---- */
+.vent{background:var(--panel);border:1px solid #2a3f2f;border-radius:3px;margin-top:5px;padding:6px 9px;display:none}
+.vent.on{display:block}
+.vent h3{margin:0 0 4px;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#7fd39b;font-weight:700}
+.vent .row{display:flex;flex-wrap:wrap;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:11px}
+.vent .row b{color:#e6eef7;font-weight:600}
+
+/* ---- MENÚ ---- */
+.side{display:flex;flex-direction:column;gap:6px;position:sticky;top:8px}
+.score{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 10px 9px}
+.score .r{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--pleth);font-weight:800}
+.bpn{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:700;line-height:1;color:var(--ok);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:#101822;border-radius:2px;overflow:hidden;margin-top:4px}
+.bar i{display:block;height:100%;background:var(--ok);transition:width .35s}
+.sm3{display:flex;gap:5px;margin-top:6px}
+.sm3 div{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:2px;padding:3px 6px}
+.sm3 .l{font-size:8.5px;letter-spacing:1px;color:var(--dim);text-transform:uppercase}
+.sm3 .v{font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:600;line-height:1.1}
+
+.menu{background:var(--panel);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column}
+.menu h2{margin:0;padding:8px 10px;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--dim);border-bottom:1px solid var(--line);font-weight:700}
+.srch{padding:6px 8px;border-bottom:1px solid var(--line)}
+.srch input{width:100%;background:#070b11;border:1px solid var(--line);border-radius:2px;color:var(--txt);
+  padding:5px 7px;font:400 12px 'IBM Plex Sans Condensed',sans-serif}
+.srch input::placeholder{color:#3d4f61}
+.cats{max-height:56vh;overflow-y:auto}
+@media(max-width:900px){.cats{max-height:none}}
+.cat>button.head{width:100%;text-align:left;background:var(--panel2);border:0;border-bottom:1px solid var(--line);
+  color:#dbe6f2;padding:8px 10px;font:600 12px/1.2 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer;display:flex;justify-content:space-between;gap:6px;align-items:center}
+.cat>button.head:hover{background:#131d29}
+.cat>button.head .ix{font-family:'IBM Plex Mono',monospace;color:var(--dim);font-size:10px}
+.acts{display:none;border-bottom:1px solid var(--line);padding:2px 0 5px}
+.cat.open .acts{display:block}
+.gp{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#3d4f61;padding:6px 10px 3px;font-weight:700}
+.act{width:100%;text-align:left;background:transparent;border:1px solid transparent;border-radius:2px;color:var(--txt);
+  padding:5px 9px;font:400 11.5px/1.25 'IBM Plex Sans Condensed',sans-serif;cursor:pointer;display:flex;justify-content:space-between;gap:7px;align-items:baseline}
+.act:hover{background:#141e2a;border-color:#22303f}
+.act .t{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--dim);white-space:nowrap}
+.act.used{opacity:.38}
+.empty{padding:8px 10px;font-size:10.5px;color:#3d4f61;font-family:'IBM Plex Mono',monospace;font-style:italic;
+  border-left:2px solid #1a2532;margin:2px 8px}
+button:focus-visible,input:focus-visible{outline:2px solid var(--pleth);outline-offset:1px}
+
+.ctrls{display:flex;gap:5px;padding:7px;border-top:1px solid var(--line);flex-wrap:wrap}
+.ctrls button{flex:1;min-width:58px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:5px;border-radius:2px;font:600 10.5px 'IBM Plex Sans Condensed',sans-serif;letter-spacing:.4px;cursor:pointer}
+.ctrls button:hover{background:#141e2a} .ctrls button.on{background:#1b2a3a;border-color:#2c4157;color:#fff}
+.ctrls button.fin{background:#381015;border-color:#5a1a21;color:#ffb7bd}
+
+.log{background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.log h2{margin:0;padding:8px 11px;font-size:12.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);border-bottom:1px solid var(--line);font-weight:800;display:flex;justify-content:space-between}
+.log .b{max-height:180px;overflow-y:auto;padding:4px 0;font-family:'IBM Plex Mono',monospace;font-size:11.5px}
+.log .e{padding:2px 10px;display:flex;gap:7px;border-left:2px solid transparent}
+.log .e .h{color:var(--dim);white-space:nowrap}
+.log .e.good{border-left-color:var(--ok)}.log .e.bad{border-left-color:var(--hi)}
+.log .e.warn{border-left-color:var(--md)}.log .e.evt{border-left-color:var(--pleth)}
+
+.doing{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);background:var(--panel);border:1px solid #2c4157;border-radius:3px;padding:8px 15px;min-width:270px;display:none;z-index:40}
+.doing.on{display:block}
+.doing .b{height:3px;background:#101822;margin-top:5px;border-radius:2px;overflow:hidden}
+.doing .b i{display:block;height:100%;width:0;background:var(--pleth)}
+
+.ov{position:fixed;inset:0;background:rgba(2,4,7,.95);display:flex;align-items:center;justify-content:center;padding:18px;z-index:60;overflow-y:auto}
+.ov.hide{display:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:4px;max-width:680px;width:100%;padding:22px 24px}
+.card h1{font-family:'Barlow Condensed',sans-serif;font-size:32px;margin:0 0 4px;line-height:1;color:#e9f1f9}
+.card .kick{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--pleth);font-weight:700;margin-bottom:8px}
+.card p{font-size:13px;line-height:1.6;color:#a2b6c8} .card ul{font-size:12.5px;line-height:1.55;color:#a2b6c8;padding-left:17px}
+.spd{display:flex;gap:7px;margin:14px 0 4px;flex-wrap:wrap}
+.spd button{flex:1;min-width:104px;background:var(--panel2);border:1px solid var(--line);color:var(--txt);padding:10px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+.spd button:hover{border-color:var(--pleth);background:#141e2a}
+.spd button b{display:block;font-family:'Barlow Condensed',sans-serif;font-size:20px;color:#e9f1f9}
+.outcome table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}
+.outcome td{padding:4px 0;border-bottom:1px solid var(--line);color:#a2b6c8}
+.outcome td:last-child{text-align:right;font-family:'IBM Plex Mono',monospace;color:#e9f1f9}
+.btn{display:inline-block;margin-top:14px;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;padding:9px 18px;border-radius:3px;cursor:pointer;font:600 12.5px 'IBM Plex Sans Condensed',sans-serif}
+#stgNext{background:linear-gradient(135deg,#c6ff3a,#84cc16);border-color:transparent;color:#0a1f00;font-weight:800;box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55);animation:stgNextPulse 1.6s ease-in-out infinite}
+#stgNext:hover{background:linear-gradient(135deg,#d4ff6b,#9ee034);box-shadow:0 0 14px rgba(198,255,58,.9),0 0 34px rgba(132,204,22,.7)}
+@keyframes stgNextPulse{0%,100%{box-shadow:0 0 10px rgba(198,255,58,.7),0 0 26px rgba(132,204,22,.55)}50%{box-shadow:0 0 16px rgba(198,255,58,1),0 0 40px rgba(132,204,22,.8)}}
+/* ---- EXPEDIENTE DEL CASO (documento embebido) ---- */
+.doc{max-width:860px;max-height:88vh;overflow-y:auto}
+.doc h2{font-family:'Barlow Condensed',sans-serif;font-size:21px;margin:22px 0 6px;color:#e9f1f9;letter-spacing:.3px;
+  border-bottom:1px solid var(--line);padding-bottom:4px}
+.doc h3{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--pleth);margin:16px 0 5px;font-weight:700}
+.doc p,.doc li{font-size:12.5px;line-height:1.6;color:#a2b6c8}
+.doc table{width:100%;border-collapse:collapse;font-size:11.5px;margin:8px 0}
+.doc th{text-align:left;color:var(--dim);font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;
+  padding:4px 6px;border-bottom:1px solid var(--line)}
+.doc td{padding:5px 6px;border-bottom:1px solid #141d27;color:#a2b6c8;vertical-align:top}
+.doc td:first-child{color:#e9f1f9;font-family:'IBM Plex Mono',monospace;font-size:10.5px;white-space:nowrap}
+.doc .tag{display:inline-block;font-size:9.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;
+  padding:1px 6px;border-radius:2px;margin-right:5px}
+.tag.ok{background:#0f2b1c;color:var(--ok)} .tag.bad{background:#2e1013;color:#ff8a92}
+.tag.warn{background:#2e2410;color:var(--md)}
+.doc .box{border-left:2px solid var(--pleth);background:#0b131c;padding:8px 12px;margin:10px 0;font-size:12px;line-height:1.55;color:#a2b6c8}
+.doc .box b{color:#e9f1f9}
+.doc .close{position:sticky;top:0;float:right;background:#141e2a;border:1px solid #2c4157;color:#e9f1f9;
+  padding:5px 12px;border-radius:2px;cursor:pointer;font:600 11px 'IBM Plex Sans Condensed',sans-serif;z-index:2}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pat">
+    <div class="nm">PACIENTE, MASCULINO · 58 a</div>
+    <div class="sub" id="bedinfo">SALA ROJA · sin monitorizar · sin accesos</div>
+  </div>
+  <div class="clocks">
+    <div class="clk"><div class="lab">Tiempo de caso</div><div class="val" id="wall">00:00</div></div>
+    <div class="clk" id="clkIsq"><div class="lab">Isquemia T+</div><div class="val" id="tplus">0′</div></div>
+    <div class="clk" id="clkIdle"><div class="lab">Sin actuar</div><div class="val" id="idle">0:00</div></div>
+    <div class="clk"><div class="lab">Puntuación</div><div class="val" id="salv">100</div></div>
+  </div>
+</div>
+
+<div class="alarmbar" id="alarm">monitorización no iniciada</div>
+
+<div class="grid">
+  <div>
+    <!-- ============ MONITOR MINDRAY uMEC12 ============ -->
+    <div class="bezel">
+      <span class="brand">mindray</span><span class="model">uMEC12</span>
+      <div class="keys"><i class="amber"></i><i></i><i></i><i></i><i></i></div>
+      <div class="knob"></div>
+
+      <div class="screen">
+        <!-- barra de estado -->
+        <div class="mtop">
+          <span class="bed" id="mBed">▣ URG-1</span>
+          <span class="adu">Adulto</span>
+          <span class="dt" id="mDT">08-08-2026 04:02:00</span>
+          <span class="tech" id="mTech">No se puede analizar QT</span>
+          <span class="banner none" id="mBanner">Sin alarmas</span>
+        </div>
+
+        <!-- trazados -->
+        <div class="mbody">
+          <div class="wavebox">
+            <canvas id="cv"></canvas>
+            <div class="wl c-ecg" id="wl1">II<s>×1 &nbsp;Monitor</s></div>
+            <div class="wl c-co2" id="wl2">CO2<s>mmHg</s></div>
+            <div class="wsc c-co2" id="ws2">50<br>25<br>0</div>
+            <div class="wl c-sat" id="wl3">Plet</div>
+            <div class="wl c-resp" id="wl4">Imped.<s>×2</s></div>
+            <div class="wl c-abp" id="wl5">Art<s>mmHg</s></div>
+            <div class="wsc c-abp" id="ws5">180<br>90<br>0</div>
+          </div>
+
+          <!-- columna de parámetros -->
+          <div class="pcol">
+            <div class="pz" id="pzECG">
+              <div class="lft">
+                <div class="lbl c-ecg">ECG</div>
+                <div class="lim" id="limECG">120<br>50</div>
+                <div class="big c-ecg" id="vHR">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub"><span class="hbeat" id="beat">♥</span></div>
+                <div class="sub c-abp" id="subPVC">PVC <b>---</b></div>
+                <div class="sub" id="subST">ST desact.</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzCO2">
+              <div class="lft">
+                <div class="lbl c-co2">CO2<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">50<br>25</div>
+                <div class="big c-co2" id="vCO2">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-resp">FRm <b id="subFRm">--</b></div>
+                <div class="sub c-resp">R <b id="subR">0</b></div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzSat">
+              <div class="lft">
+                <div class="lbl c-sat">SpO2</div>
+                <div class="lim">100<br>90</div>
+                <div class="big c-sat" id="vSat">---</div>
+              </div>
+              <div class="rgt">
+                <div class="sub c-sat">PR <b id="subPR">---</b></div>
+                <div class="sub" id="subPI">IP ---</div>
+                <div class="sub">Origen SpO2</div>
+              </div>
+            </div>
+
+            <div class="pz" id="pzResp">
+              <div class="lft">
+                <div class="lbl c-resp">Resp</div>
+                <div class="lim">26<br>9</div>
+                <div class="big c-resp s" id="vRR">--</div>
+              </div>
+              <div class="rgt"><div class="sub" id="subOrigen">Origen Imped.</div></div>
+            </div>
+
+            <div class="pz sel" id="pzArt">
+              <div class="lft">
+                <div class="lbl c-abp" id="lblArt">PANI<span style="font-weight:400;font-size:8.5px"> mmHg</span></div>
+                <div class="lim">161<br>121</div>
+                <div class="big c-abp s" id="vBP">---/---</div>
+              </div>
+              <div class="rgt"><div class="sub c-abp" id="subMAP">(--)</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- barra inferior -->
+        <div class="mbot">
+          <div class="grp"><span class="k">Temp</span><span class="lim">37,9<br>35,2</span>
+            <span class="v" id="vT">--,-</span><span class="st">T2</span></div>
+          <div class="grp"><span class="k">PNI</span><span class="lim">100<br>90</span>
+            <span class="v pni" id="vPNI">---/---</span><span class="st" id="stPNI">Medición terminada</span></div>
+          <span class="batt"><i></i></span>
+          <span class="cfg">Configuración actual:Predet.</span>
+          <span class="sbtn">◀ Ajuste alarma</span><span class="sbtn">Menú principal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA CLÍNICA: parámetros que un monitor real no muestra -->
+    <div class="ficha">
+      <div class="fk"><div class="k">ST II</div><div class="n c-ecg" id="fST">—</div><div class="u">mm</div></div>
+      <div class="fk"><div class="k">Glucemia</div><div class="n" id="fGlu">—</div><div class="u">mg/dL</div></div>
+      <div class="fk"><div class="k">Lactato</div><div class="n" id="fLac">—</div><div class="u">mmol/L</div></div>
+      <div class="fk"><div class="k">Diuresis</div><div class="n" id="fDiu">—</div><div class="u" id="fDiuU">sin sonda</div></div>
+      <div class="fk"><div class="k">Glasgow</div><div class="n" id="fGCS">—</div><div class="u">/15</div></div>
+      <div class="fk"><div class="k">Dolor EVA</div><div class="n" id="fPain">—</div><div class="u">/10</div></div>
+      <div class="fk"><div class="k">Relleno cap.</div><div class="n" id="fCRT">—</div><div class="u">seg</div></div>
+      <div class="fk"><div class="k">Killip</div><div class="n" id="fKil">—</div><div class="u" id="fKilU">sin examinar</div></div>
+    </div>
+
+    <!-- VENTILADOR -->
+    <div class="vent" id="ventPanel">
+      <h3>Ventilación mecánica invasiva</h3>
+      <div class="row">
+        <span>Modo <b id="vMode">VC-AC</b></span><span>Vt <b id="vVt">420</b> mL (6 mL/kg PI)</span>
+        <span>FR <b id="vSetRR">16</b></span><span>PEEP <b id="vPEEP">5</b> cmH₂O</span>
+        <span>FiO₂ <b id="vFiO2">100</b>%</span><span>P. meseta <b id="vPlat">18</b> cmH₂O</span>
+      </div>
+    </div>
+
+    <!-- ================= ETAPA CLÍNICA (pregunta activa) ================= -->
+    <div class="stage" id="stage">
+      <div class="num"><span id="stgNum">Etapa 1 / 20</span><span class="stgTimer" id="stgTimer"></span></div>
+      <h3 id="stgTitle">—</h3>
+      <div class="vig" id="stgVig">—</div>
+      <div class="opts" id="stgOpts"></div>
+      <div class="feedback" id="stgFeedback"></div>
+      <button class="btn" id="stgNext" style="display:none">Continuar →</button>
+    </div>
+  </div>
+
+  <!-- ================= MENÚ LATERAL (información, no acciones) ================= -->
+  <div class="side">
+    <div class="score">
+      <div class="r"><span>Puntos biológicos</span><span class="bpn" id="vBPs">100</span></div>
+      <div class="bar"><i id="bpbar" style="width:100%"></i></div>
+      <div class="sm3">
+        <div><div class="l">Excelencia</div><div class="v" id="vPE">0</div></div>
+        <div><div class="l">Omisiones</div><div class="v" id="vOm">0</div></div>
+        <div><div class="l">Iatrogenias</div><div class="v" id="vIa">0</div></div>
+      </div>
+    </div>
+
+    <div class="hist">
+      <h2>Historia clínica resumida</h2>
+      <dl>
+        <dt>Paciente</dt><dd>Paciente, masculino · 58 años</dd>
+        <dt>Motivo de consulta</dt><dd id="histMotivo">—</dd>
+      </dl>
+    </div>
+
+    <div class="printouts">
+      <h2><span>Impresos y resultados</span><span id="pcount">0</span></h2>
+      <div class="list" id="plist"><div class="empty">Todavía no hay estudios liberados</div></div>
+    </div>
+
+    <div class="log">
+      <h2><span>Registro clínico</span><span id="logn">0</span></h2>
+      <div class="b" id="logb"></div>
+      <div class="ctrls">
+        <button id="bSpeed">×4</button><button id="bSound">🔊</button>
+        <button id="bPause">⏸</button><button id="bCase">📄 Caso</button>
+        <button class="fin" id="bEnd">Finalizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="doing" id="doing"><div id="doingT" style="font-size:11.5px"></div><div class="b"><i id="doingB"></i></div></div>
+
+<div class="toast-impreso" id="toastImpreso"><span class="ic">📄</span><div><div class="tt">Nuevo impreso liberado</div><div class="bd" id="toastImpresoTxt"></div></div></div>
+
+<!-- ================= MODAL DE IMPRESO (ECG / laboratorio / imagen) ================= -->
+<div class="ov hide" id="ovPrint"><div class="card modal-lab" id="printCard"></div></div>
+
+
+<div class="ov" id="ovIntro"><div class="card">
+  <div class="kick">Caso 5 · Emergencia · Línea de tiempo dinámica</div>
+  <h1 id="introTitulo">Simulador Clínico de Emergencia</h1>
+  <p id="introDescripcion"></p>
+  <p style="color:#e9f1f9"><b>El monitor no te espera.</b> Mientras deliberás sin responder, el paciente sigue descompensando en tiempo real.</p>
+  <ul>
+    <li>Cada decisión errada puede abrir una sub-fase de rescate: hay que reestabilizar antes de volver a la línea principal.</li>
+    <li>Las secciones sin dato real en este caso figuran <b>vacías (—)</b>, no ocultas.</li>
+    <li>El desenlace final depende de la puntuación acumulada, no de un único camino fijo.</li>
+  </ul>
+  <div class="spd">
+    <button id="bComenzar"><b>▶</b>Comenzar</button>
+  </div>
+  <p style="font-size:11px;color:#3d4f61;margin-top:12px">Simulación educativa. Paciente ficticio. No sustituye protocolos institucionales ni juicio clínico.</p>
+</div></div>
+
+<div class="ov hide" id="ovEnd"><div class="card outcome" id="endCard"></div></div>
+
+<!-- ==========================================================================
+     EXPEDIENTE DEL CASO — documento docente embebido
+     ========================================================================== -->
+<div class="ov hide" id="ovCase"><div class="card doc">
+<button class="close" id="closeCase">Cerrar ✕</button>
+<div class="kick">Expediente docente · uso del instructor</div>
+<h1 style="margin-bottom:2px" id="docTitulo">Caso 5</h1>
+<p style="color:#5a6e80;font-family:'IBM Plex Mono',monospace;font-size:11px">Estructura ramificada · fases principales con sub-fases de rescate · puntuación inicial 100/100</p>
+
+<div class="box"><b>Advertencia para el instructor:</b> este documento contiene las respuestas. Si se muestra al estudiante antes de jugar, el caso pierde su valor.</div>
+
+<h2>1 · Escenario</h2>
+<p id="docDescripcion"></p>
+
+<h2>2 · Estructura del caso</h2>
+<p>El caso avanza por fases principales (Admisión, Estabilización, Reperfusión, Post-reperfusión). Cada opción incorrecta puede abrir una <b>sub-fase de rescate</b> específica para esa complicación (ej.: congestión pulmonar, choque, hemorragia, falla de trombólisis, reinfarto) — el alumno debe resolverla antes de volver a la línea principal. No hay un único camino: la puntuación final refleja la calidad acumulada de las decisiones.</p>
+
+<h2>3 · Motor de puntuación</h2>
+<table>
+<tr><th>Puntuación final</th><th>Desenlace</th></tr>
+<tr><td>≥ 70 / 100</td><td>Éxito pleno</td></tr>
+<tr><td>40–69 / 100</td><td>Estabilizado con secuelas</td></tr>
+<tr><td>&lt; 40 / 100</td><td>Desenlace crítico</td></tr>
+</table>
+<p>Cada opción define explícitamente su impacto en la puntuación y en los signos vitales (FC, PA, SpO₂, FR, ritmo). Mientras el alumno delibera sin responder, los signos vitales se degradan gradualmente (presión de tiempo real).</p>
+
+<div class="box" style="margin-top:20px;border-left-color:#ff5a63">
+<b>Aviso de uso.</b> Material educativo y de simulación. Paciente y escenario ficticios. No sustituye los protocolos institucionales vigentes ni el juicio clínico.
+</div>
+</div></div>
+
+<script>
+"use strict";
+
+/* ==========================================================================
+   CONFIGURACIÓN PÚBLICA
+   Editá este bloque para adaptar el simulador sin tocar el motor.
+   ========================================================================== */
+const CONFIG = {
+  velocidadInicial : 2,      // multiplicador fijo del reloj clínico -- sin selector para el alumno
+  sonidoInicial    : false,  // los navegadores exigen un clic antes de reproducir audio
+  saltarIntro      : false,  // true = arranca directo, sin pantalla de bienvenida
+  // M-08: el expediente contiene TODAS las respuestas correctas -- por defecto
+  // queda oculto al alumno. El viewer sólo agrega ?modo=docente a la URL del
+  // iframe cuando el usuario logueado es admin/colaborador (ver
+  // hospital-simulacao-caso-viewer.tsx). No es autenticación real -- un
+  // alumno que edite la URL a mano igual podría activarlo -- pero saca el
+  // botón de la vista por defecto de cualquiera con acceso al caso, que es
+  // el problema crítico que reportó la auditoría (DJ-01).
+  mostrarExpediente: new URLSearchParams(location.search).get('modo') === 'docente',
+  autoIniciar      : true,   // false = el simulador espera a window.SimuladorIAMCEST.iniciar()
+
+  // Dificultad: multiplica el drenaje de puntos por tiempo.
+  // 0.6 = indulgente (pregrado) · 1 = estándar · 1.5 = exigente (residencia)
+  dificultad       : 1.0,
+
+  // Frecuencia del brazalete de PA (real: ~300s). Se acorta a propósito para
+  // que el efecto de cada decisión sea visible en el monitor en segundos.
+  cicloPANIsegundos: 8,
+
+  // Se dispara al terminar el caso. Recibe el objeto de resultados.
+  alFinalizar      : null,   // ej.: r => fetch('/api/resultados',{method:'POST',body:JSON.stringify(r)})
+
+  // Emite el resultado al sitio contenedor vía postMessage (útil en iframe).
+  emitirPostMessage: true,
+  // M-07: este HTML siempre se sirve estático desde el mismo origen que la
+  // app (arquivo_html es una ruta relativa tipo /simuladores/xxx.html), así
+  // que el propio origen del iframe YA ES el origen correcto del padre. Fijar
+  // location.origin en vez de '*' evita que el resultado (con el log
+  // completo del intento del alumno) se filtre a un origen que embeba este
+  // iframe desde otro dominio.
+  origenPermitido  : location.origin
+};
+
+/* ==========================================================================
+   ESTADO
+   ========================================================================== */
+const S={
+ running:false,paused:false,speed:4,sound:false,
+ simT:0, wallStart:0, waveT:0, lastAction:0, lostTime:0,
+ bp:100,pe:0,omis:0,iatro:0, st:0,
+ hr:88,sbp:140,dbp:90,map:110,spo2:95,rr:18,temp:36.4,glu:null,lac:null,
+ diuresis:null,pvc:null,gcs:15,pain:8,crt:null,etco2:null,
+ sbpShow:140,dbpShow:90,lastNIBP:0,
+ rhythm:'sinus', monitored:false,sat_probe:false,nibp:false,capno:false,
+ arterial:false,cvc:false,foley:false,
+ airway:'aire', fio2:0.21, vent:false, peep:5, setRR:16, vt:420, ventFiO2:1.0,
+ examDone:false,killipI:false,
+ dead:false,ended:false,doing:null,log:[],
+ // M-01/M-05/M-09: seguimiento por nodo (cuándo se entró, si ya se decidió,
+ // si el timeout de ese nodo ya se aplicó, y el snapshot de ALVO al entrar
+ // -- usado para topear la deriva por indecisión).
+ nodoEnteredAt:0, decidido:false, nodoTimeoutApplied:false, nodoBase:null, nodosVisitados:[],
+ // M-02: S.omis/S.iatro ahora se acumulan de verdad (sumando opcion.flags de
+ // cada decisión, ver resolveOption) en vez de quedar en 0 fijo como en v4.
+ // reperfusionFlag/vdIdentificadoFlag/secuelas también alimentan el
+ // resultado exportado con datos reales en vez de valores hardcodeados.
+ reperfusionFlag:false, vdIdentificadoFlag:false, secuelas:[]
+};
+// alvos de sinais vitais definidos pela opcao escolhida (novos_sinais_vitales
+// do caso v4) -- a fisica so faz o traçado convergir suavemente ate eles,
+// nao ha modelo farmacocinetico proprio deste caso.
+const ALVO={hr:88,sbp:140,dbp:90,spo2:95,rr:18,st:0};
+S.nodoId=null;S.printouts=[];
+const $=i=>document.getElementById(i), clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const hhmm=s=>{const t=(S.wallStart+s)%86400;return String(Math.floor(t/3600)).padStart(2,'0')+':'+String(Math.floor(t%3600/60)).padStart(2,'0')};
+const mmss=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+
+function log(t,c){S.log.unshift({h:hhmm(S.simT),t,c:c||''});if(S.log.length>110)S.log.pop();
+ $('logb').innerHTML=S.log.map(e=>`<div class="e ${e.c}"><span class="h">${e.h}</span><span>${e.t}</span></div>`).join('');
+ $('logn').textContent=S.log.length;}
+function sc(d,t,c){
+ if(d>0){const r=100-S.bp,g=Math.min(r,d);S.bp+=g;S.pe+=d-g;}else S.bp=Math.max(0,S.bp+d);
+ if(t)log(`${d>0?'+':''}${d} BP · ${t}`,c||(d>0?'good':'bad'));
+ if(S.bp<=0&&!S.dead)die('Puntos biológicos agotados');}
+function info(t){log(t,'evt');}
+function nada(t,p){log(t,'warn');if(p)sc(p,'Estudio sin rendimiento diagnóstico en este cuadro','warn');}
+
+/* ==========================================================================
+   CASO CLÍNICO V4 — estructura ramificada (grafo de nodos), no lineal.
+   Cada nodo tiene "opciones"; cada opción define destino (id del próximo
+   nodo), si es correcta, impacto en la puntuación, el nuevo estado de
+   signos vitales (reemplazo completo, no delta) y el feedback. Una opción
+   incorrecta puede llevar a un nodo de "resgate" (subfase de rescate) que
+   vuelve a converger a la línea principal.
+   ========================================================================== */
+const NODO_INICIAL="fase_1_admision", NODO_EXITO="fase_final_derivacion";
+const CASO_V4={"titulo_juego":"Mateo Rossi: Cetoacidosis Diabética en la Guardia","descripcion":"Mateo Rossi, 21 años, 70 kg, llega a la guardia traído por su madre. Hace tres días con polidipsia, poliuria y dolor abdominal; hoy sumó vómitos y somnolencia. Respira rápido y profundo, tiene aliento frutal y un Glasgow de 14/15. No tenía diagnóstico previo de diabetes: esto es un debut. Estás en la guardia de un hospital general con laboratorio de urgencia, ECG, bombas de infusión y camas de observación; la terapia intensiva está en el mismo edificio. El desafío del caso es que la cetoacidosis diabética se trata en un ORDEN preciso —volumen, después potasio, después insulina— y que invertir ese orden, o corregir demasiado rápido, es lo que mata a estos pacientes, no la hiperglucemia en sí.","estado_inicial":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0,"puntos_actuales":100},"nodos":{"fase_1_admision":{"id":"fase_1_admision","etapa":"Fase 1: Admisión y ABCDE","descripcion_situación":"Ingresa a la guardia Mateo Rossi, un joven de 21 años, traído por su madre. Lo ves muy decaído, pálido, con respiraciones rápidas y profundas. Su madre te dice: 'Hace tres días que está con mucha sed, va al baño a cada rato, tiene dolor de panza y hoy empezó con vómitos y está medio dormido'. Al examen físico, constatás un aliento frutal intenso y somnolencia (abre los ojos al llamado, responde con monosílabos, Glasgow 14/15). ¿Cuál es tu primera conducta diagnóstica y terapéutica?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Evaluar vía aérea, ventilación con oximetría, colocar dos accesos venosos periféricos cortos y gruesos, tomar signos vitales y realizar un hemoglucotest inmediato.","destino":"fase_2_solicitud_laboratorio","es_correcta":false,"puntos_afectados":-4,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta correcta pero incompleta. Todo lo que indicaste está bien y nada de eso daña al paciente: el problema es lo que falta. Al no pesar al paciente ni medir diuresis horaria, te quedás sin las variables que después vas a necesitar para decidir. En la cetoacidosis diabética el peso manda la dosis de insulina y de potasio, y la diuresis horaria es el primer indicador de que la reanimación con volumen está funcionando. Excelente decisión. El enfoque sistemático ABCDE es la regla de oro en el paciente crítico. Evaluás la permeabilidad de la vía aérea y la ventilación, asegurás accesos venosos para la hidratación indispensable y obtenés un hemoglucotest inmediato para confirmar la sospecha de una crisis hiperglucémica. La rapidez en estas medidas iniciales salva vidas y evita complicaciones mayores."},{"texto":"Priorizar el ABCDE: evaluar vía aérea, ventilación, colocar accesos periféricos, controlar signos vitales, realizar hemoglucotest, pesar al paciente (70 kg) y colocar sonda vesical para medir la diuresis horaria.","destino":"fase_2_solicitud_laboratorio","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Brillante elección! Este es un manejo de excelencia médica. No solo realizás el ABCDE completo y confirmás la sospecha clínica, sino que además registrás el peso exacto del paciente (70 kg), que es crucial para calcular con precisión la infusión de insulina y los aportes hídricos posteriores. La colocación de la sonda vesical te permitirá medir la diuresis horaria, que es el mejor indicador indirecto de la perfusión tisular y de la respuesta a la fluidoterapia."},{"texto":"Realizar una anamnesis minuciosa sobre antecedentes de diabetes en la familia y derivar al paciente directamente a una sala de internación general para su evaluación por clínica médica.","destino":"fase_2_solicitud_laboratorio","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"90/55","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Cuidado. El paciente se encuentra hemodinámicamente inestable (hipotenso y taquicárdico) y deshidratado en la guardia. Retrasar la evaluación inicial y la reanimación hídrica para hacer un interrogatorio familiar extenso o trasladarlo a sala general es un error menor que expone al paciente a un empeoramiento de su shock hipovolémico. Mirá cómo su presión cayó a 90/55 mmHg y la frecuencia cardíaca subió a 115 lpm por la deshidratación progresiva."},{"texto":"Indicar de inmediato un bolo endovenoso de 10 UI de insulina corriente para frenar la cetogénesis, sin esperar accesos venosos seguros ni controlar signos vitales.","destino":"fase_1_rescate_shock_insulina","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"70/40","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":32,"escala_dolor":7,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error sumamente peligroso! Administrar insulina a un paciente con cetoacidosis diabética severamente deshidratado sin haber iniciado la reposición de volumen intravascular es una de las peores decisiones posibles. La insulina introduce glucosa y agua al espacio intracelular, lo que agota drásticamente el ya depletado volumen intravascular y precipita un colapso cardiovascular. Mirá el monitor: el paciente entra en shock profundo, con PA de 70/40 mmHg y FC de 130 lpm.","secuela":"Colapso hemodinámico por insulina antes de la reposición de volumen."}]},"fase_1_rescate_shock_insulina":{"id":"fase_1_rescate_shock_insulina","etapa":"Rescate: Shock por Insulina Prematura","descripcion_situación":"ATENCIÓN: Al administrar insulina corriente sin hidratación previa, el agua se desplazó al compartimento intracelular de forma masiva. Mateo se descompensa rápidamente: está inconsciente, no responde a estímulos, la piel está fría, sudorosa y con un llenado capilar enlentecido de 4 segundos. El monitor cardíaco muestra una taquicardia extrema y la presión arterial cae a niveles críticos. ¿Qué hacés para rescatar al paciente?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender de inmediato la bomba de insulina si estuviera conectada e iniciar una expansión agresiva con Solución Fisiológica al 0,9% administrando un bolo de 1000 mL en 15 a 20 minutos por ambas vías periféricas.","destino":"fase_2_solicitud_laboratorio","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"92/56","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate. El pilar fundamental en este momento es restaurar el volumen intravascular de manera urgente. Suspender la acción de la insulina libre y expandir con solución fisiológica al 0,9% (cristaloide isotónico) permite aumentar la presión de perfusión tisular y salvar al paciente de un paro cardiorrespiratorio por shock hipovolémico distributivo. Recordá siempre que en la cetoacidosis diabética, la hidratación con cristaloides precede obligatoriamente a cualquier terapia con insulina."},{"texto":"Colocar una máscara de reservorio de oxígeno a 15 L/min e iniciar infusión continua de noradrenalina por vía periférica para recuperar la presión arterial.","destino":"fase_1_rescate_shock_insulina","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":140,"presion_arterial_mmhg":"65/35","saturacion_oxigeno_pct":92,"frecuencia_respiratoria_rpm":34,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"No es correcto. El uso de vasopresores como la noradrenalina en un paciente con shock puramente hipovolémico (depleción de volumen severa por diuresis osmótica y desplazamiento hídrico) está contraindicado como medida inicial sin una adecuada carga de volumen. Los vasopresores empeorarán la vasoconstricción periférica e isquemia tisular sin resolver la causa subyacente. El paciente requiere cristaloides con urgencia. Volvé a intentarlo."}]},"fase_2_solicitud_laboratorio":{"id":"fase_2_solicitud_laboratorio","etapa":"Fase 2: Estudios Complementarios","descripcion_situación":"Con el paciente monitorizado y los accesos venosos asegurados, el hemoglucotest capilar inicial en la guardia indica 'HIGH' (glucemia superior al límite de lectura del dispositivo, >500 mg/dL). El paciente continúa somnoliento, con respiración profunda de Kussmaul a 28 rpm. ¿Qué batería de estudios complementarios de laboratorio y gabinete indicás de inmediato?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Solicitar laboratorio completo: hemograma, glucemia, ionograma (sodio, potasio, cloro), estado ácido-base (pH, bicarbonato, exceso de bases), función renal (urea, creatinina), cetonemia y orina completa; junto con un ECG de 12 derivaciones.","destino":"fase_3_fluidoterapia_inicial","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":112,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente. Para confirmar los criterios diagnósticos de Cetoacidosis Diabética (glicemia >250 mg/dL, pH <7.30, bicarbonato <18 mEq/L y cuerpos cetónicos positivos en sangre o orina) necesitás exactamente este conjunto de exámenes. El ionograma es vital para valorar el potasio antes de iniciar insulina, y el ECG te permite buscar repercusiones miocárdicas de los trastornos electrolíticos de inmediato. El laboratorio reporta un alarmante potasio de 3.2 mEq/L.","printouts":[{"tipo":"Laboratorio","titulo":"Resultados de Laboratorio de Ingreso - Mateo Rossi","cuerpo":"=== LAB DE INGRESO ===\nGlucemia: 480 mg/dL (VR: 70-110 mg/dL)\npH plasmático: 7.15 (VR: 7.35-7.45)\nBicarbonato (HCO3-): 11.0 mEq/L (VR: 22-26 mEq/L)\nCetonas plasmáticas: 4.8 mmol/L (VR: < 0.6 mmol/L)\nSodio (Na+): 132 mEq/L (VR: 135-145 mEq/L)\nPotasio (K+): 3.2 mEq/L (VR: 3.5-5.0 mEq/L) [!] ALERTA\nCloro (Cl-): 101 mEq/L (VR: 98-106 mEq/L)\nCreatinina: 1.4 mg/dL (VR: 0.7-1.2 mg/dL)\nUrea: 55 mg/dL (VR: 20-40 mg/dL)\nHemograma: Leucocitos 14.500/mm3 (sin desvío a la izquierda), Hb 15.2 g/dL\nOrina completa: Glucosuria (++++), Cetonuria (+++), Densidad 1.035, pH 5.0\nPeso estimado: 70 kg\n======================="},{"tipo":"ECG","titulo":"Electrocardiograma de 12 derivaciones","cuerpo":"=== ECG DE INGRESO ===\nRitmo: Taquicardia Sinusal a 112 lpm.\nIntervalo PR: 0.16s, QRS: 0.08s.\nSegmento ST: Isoeléctrico, sin signos de isquemia aguda.\nOndas T: Aplanadas de forma difusa.\nPresencia de Ondas U discretas en derivaciones precordiales.\nIMPRESIÓN: Ritmo sinusal rápido con signos electrocardiográficos compatibles con hipopotasemia moderada.\n======================="}]},{"texto":"Solicitar únicamente controles de glicemia capilar horaria, orina completa para verificar cetonuria y una ecografía abdominal de urgencia para descartar un cuadro de apendicitis por el dolor abdominal.","destino":"fase_3_fluidoterapia_inicial","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"90/54","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":28,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Si bien el dolor abdominal es un síntoma frecuente en la cetoacidosis diabética (a menudo imitando un abdomen agudo debido a la acidosis y deshidratación), retrasar la toma de una analítica sanguínea formal (especialmente electrolitos y estado ácido-base) para realizar una ecografía abdominal te impide diagnosticar la gravedad del cuadro metabólico. No sabrás el nivel de pH, bicarbonato ni potasio, lo cual es crítico antes de indicar cualquier tratamiento farmacológico. El error acá es de completitud, no de dirección: pedir glucemia y cetonas confirma el diagnóstico, pero sin ionograma no podés decidir lo más importante que viene a continuación, que es si la insulina está habilitada o prohibida. Y sin gasometría no tenés forma de medir la gravedad ni de calcular el anión gap, que es la variable que después va a decirte cuándo la cetoacidosis se resolvió de verdad. Pedí el laboratorio completo de una vez: pedirlo en dos tandas duplica el tiempo de espera."},{"texto":"Indicar el traslado inmediato de Mateo al servicio de Tomografía Computada (TC) de abdomen y pelvis con contraste para descartar causas quirúrgicas de su dolor abdominal agudo.","destino":"fase_2_rescate_retraso_diagnostico","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"86/52","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":7,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error de priorización grave. El paciente tiene una sospecha clínica altísima de cetoacidosis diabética grave, está deshidratado e inestable. Trasladarlo fuera de la sala de emergencias para una TC de abdomen sin antes estabilizarlo hemodinámicamente, obtener un laboratorio básico o iniciar la fluidoterapia inicial es una conducta peligrosa que retrasa el diagnóstico metabólico y expone al paciente a un shock profundo. Mirá cómo su presión cae a 86/52 mmHg durante el traslado."}]},"fase_2_rescate_retraso_diagnostico":{"id":"fase_2_rescate_retraso_diagnostico","etapa":"Rescate: Retraso Diagnóstico por Estudios Inadecuados","descripcion_situación":"ATENCIÓN: Mateo se encuentra en la sala de TC. Su dolor abdominal empeoró, la somnolencia es más profunda y comienza a respirar de forma sumamente ruidosa y rápida (respiración de Kussmaul). El enfermero te advierte que la presión arterial cayó a 86/52 mmHg y que la camilla de la TC no cuenta con monitoreo continuo. ¿Cómo rescatás la situación de inmediato?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender de inmediato el estudio tomográfico, retornar de urgencia al paciente al shock room de la guardia, extraer sangre para el laboratorio completo y realizar un ECG, e iniciar fluidoterapia agresiva.","destino":"fase_3_fluidoterapia_inicial","es_correcta":true,"puntos_afectados":6,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"92/56","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate. Reconocés el error y priorizás la seguridad del paciente. Un cuadro de shock metabólico no se diagnostica ni se trata en un tomógrafo. Al traerlo de regreso al shock room, podés monitorizarlo, obtener las moquetas esenciales y comenzar la infusión de fluidos para sacarlo del estado hipotensivo. El dolor de panza se debe a la propia cetoacidosis y resolverá con el tratamiento del trastorno de base."},{"texto":"Continuar con el estudio tomográfico lo más rápido posible, solicitar al radiólogo que agilice la lectura y pedir que le pasen un bolo de 500 mL de agua destilada por el acceso venoso.","destino":"fase_2_rescate_retraso_diagnostico","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":130,"presion_arterial_mmhg":"78/42","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":32,"escala_dolor":8,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta incorrecta y de altísimo riesgo. Insistir en la tomografía con un paciente inestable es una imprudencia grave. Para colmo, indicar infusión de agua destilada libre endovenosa está absolutamente contraindicado, ya que provoca hemólisis masiva y edema cerebral agudo por hipotonicidad extrema. El paciente requiere hidratación isotónica urgente en el shock room. Reevaluá la situación."}]},"fase_3_fluidoterapia_inicial":{"id":"fase_3_fluidoterapia_inicial","etapa":"Fase 3: Fluidoterapia de Reanimación","descripcion_situación":"Mateo Rossi presenta signos marcados de deshidratación severa (mucosas muy secas, signo del pliegue cutáneo marcadamente positivo, pulsos periféricos débiles). Su presión arterial inicial es de 94/58 mmHg con una frecuencia cardíaca de 112 lpm. ¿Qué tipo de fluido y a qué ritmo de infusión decidís indicarle en esta primera hora?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Infundir Solución Fisiológica al 0,9% (NaCl) a razón de 1000 mL en la primera hora (aproximadamente 15-20 mL/kg).","destino":"fase_4_interpretacion_potasio","es_correcta":false,"puntos_afectados":-4,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"100/62","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":26,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta correcta pero incompleta. Todo lo que indicaste está bien y nada de eso daña al paciente: el problema es lo que falta. Al no fijar controles seriados ni medir diuresis, te quedás sin las variables que después vas a necesitar para decidir. En la cetoacidosis diabética el peso manda la dosis de insulina y de potasio, y la diuresis horaria es el primer indicador de que la reanimación con volumen está funcionando. Muy bien. La fluidoterapia con cristaloides isotónicos (como la Solución Fisiológica al 0,9%) es la primera medida terapéutica y la más importante en las primeras horas del tratamiento de la cetoacidosis diabética. Permite restaurar el volumen intravascular depletado por la diuresis osmótica, mejorando la perfusión renal e incrementando la excreción urinaria de glucosa. El ritmo estándar para un adulto joven con deshidratación severa sin comorbilidades cardíacas es de 1000 mL en la primera hora (15-20 mL/kg)."},{"texto":"Infundir Solución Fisiológica al 0,9% (NaCl) a 1000 mL/h en la primera hora, realizando monitoreo clínico estricto (PA, FC, FR) cada 15 minutos y midiendo de forma rigurosa la diuresis horaria.","destino":"fase_4_interpretacion_potasio","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"102/64","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":26,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente manejo de nivel experto! La reanimación hídrica rápida es fundamental, pero siempre debe ir acompañada de un monitoreo clínico estrecho. Evaluar los signos vitales cada 15 minutos y medir la diuresis te permite verificar de forma objetiva la respuesta a la fluidoterapia y adelantarte a complicaciones mecánicas como la sobrecarga hídrica (especialmente importante si hubiese disfunción miocárdica subyacente). Tu paciente responde favorablemente: la presión subió a 102/64 mmHg y la FC bajó a 105 lpm."},{"texto":"Infundir Solución Fisiológica al 0,9% a un goteo lento de mantenimiento de 100 mL/h para evitar el riesgo de un descenso brusco de la osmolaridad y mitigar el edema cerebral de entrada.","destino":"fase_4_interpretacion_potasio","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"88/54","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"No es adecuado. Si bien el edema cerebral es una complicación temida (principalmente en pacientes pediátricos por descenso brusco de la glucemia), un goteo de mantenimiento de 100 mL/h in un adulto joven con deshidratación grave y signos de shock leve es críticamente insuficiente. Prolongarás el estado de hipoperfusión tisular, empeorando la acidosis láctica y la función renal. Mirá cómo la PA disminuyó a 88/54 mmHg y la taquicardia aumentó a 118 lpm por falta de volumen."},{"texto":"Administrar un bolo de 1000 mL de Dextrosa al 5% en 30 minutos para forzar la diuresis celular y evitar la deshidratación del parénquima cerebral.","destino":"fase_3_rescate_hidratacion_erronea","es_correcta":false,"puntos_afectados":-30,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":128,"presion_arterial_mmhg":"76/44","saturacion_oxigeno_pct":95,"frecuencia_respiratoria_rpm":30,"escala_dolor":7,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error grave! Administrar una infusión hipotónica de Dextrosa al 5% en un paciente que ingresa con hiperglucemia extrema (>480 mg/dL) es fisiopatológicamente devastador. Esto exacerbará la diuresis osmótica renal de forma drástica, empeorando severamente la pérdida de agua libre y electrolitos por orina. Además, el paciente requiere reanimación isotónica del espacio intravascular para recuperar la perfusión. Mateo entra en shock severo por depleción hídrica extrema."}]},"fase_3_rescate_hidratacion_erronea":{"id":"fase_3_rescate_hidratacion_erronea","etapa":"Rescate: Deshidratación Exacerbada por Soluciones Hipotónicas","descripcion_situación":"Al recibir la infusión de Dextrosa, la glucemia capilar trepa y la diuresis se vuelve masiva (poliuria osmótica descontrolada). Mateo se deteriora: sus mucosas están completamente agrietadas, su sensorio está muy deprimido, la presión arterial cae a 76/44 mmHg y la frecuencia cardíaca se dispara a 128 lpm. ¿Cómo intervenís de urgencia para estabilizarlo?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender de inmediato la Dextrosa al 5% y cambiar a Solución Fisiológica al 0,9% infundiendo un bolo rápido de 1000 mL en 20 minutos, controlando la presión arterial.","destino":"fase_4_interpretacion_potasio","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"100/62","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":26,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate clínico. Reconocés que el paciente se encuentra en shock hipovolémico severo y reponés de forma enérgica con cristaloides isotónicos (SF 0,9%). Al suspender la dextrosa, frenás el estímulo osmótico de deshidratación y lográs expandir efectivamente el lecho vascular, lo que se traduce en una mejoría inmediata de la presión arterial a 100/62 mmHg y descenso de la taquicardia refleja. Fijate en el mecanismo del daño que estás revirtiendo: la dextrosa al 5% es agua libre desde el punto de vista osmótico, y en un paciente con hiperosmolaridad plasmática severa esa agua difunde hacia el intracelular en lugar de expandir el espacio vascular. Resultado doble: no corregís la hipovolemia y sumás riesgo de edema cerebral por descenso brusco de la osmolaridad. El expansor de la cetoacidosis es siempre cristaloide isotónico; la dextrosa entra recién más adelante, y como acompañante de la insulina, nunca como reanimador."},{"texto":"Iniciar una bomba de infusión de insulina corriente a dosis de 0.2 UI/kg/h para descender la glucemia drásticamente, manteniendo el aporte hídrico actual.","destino":"fase_3_rescate_hidratacion_erronea","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":140,"presion_arterial_mmhg":"68/38","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":34,"escala_dolor":8,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta sumamente inadecuada. Colocar una infusión de insulina a dosis alta en un paciente deshidratado y gravemente hipotenso acentuará el colapso del volumen intravascular, empujándolo al shock refractario o al paro cardiorrespiratorio. Primero debés restablecer la volemia mediante infusión de Solución Fisiológica al 0,9%. Volvé a intentarlo."}]},"fase_4_interpretacion_potasio":{"id":"fase_4_interpretacion_potasio","etapa":"Fase 4: Análisis del Potasio Plasmático","descripcion_situación":"El paciente ha recibido su primer litro de Solución Fisiológica al 0,9%. Clínicamente se lo nota levemente más reactivo y su presión arterial es de 100/62 mmHg con FC de 105 lpm. Te entregan el informe detallado del laboratorio de ingreso (ver impreso). El resultado de electrolitos revela un **potasio plasmático de 3.2 mEq/L**. ¿Cuál es tu decisión inmediata con respecto a la insulinoterapia y el potasio?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender temporalmente el inicio de la insulinoterapia. Indicar la reposición endovenosa de potasio (Cloruro de Potasio a razón de 20-30 mEq/h) y reprogramar un control de potasio sanguíneo urgente para iniciar la insulina solo cuando el potasio sea superior a 3.5 mEq/L.","destino":"fase_5_reposicion_potasio_insulina","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":102,"presion_arterial_mmhg":"100/62","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":24,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión! Has demostrado un criterio fisiopatológico impecable. La insulina estimula la bomba Na+/K+ ATPasa, desplazando el potasio extracelular hacia el interior de las células de forma masiva. Si iniciás la infusión de insulina con un potasio basal menor a 3.5 mEq/L, provocarás una hipopotasemia severa extrema (<3.0 mEq/L), lo cual predispone a arritmias ventriculares letales, parálisis respiratoria y muerte. La regla absoluta es: si el potasio es <3.5 mEq/L, se repone el potasio y se difiere el inicio de la insulina. Un detalle práctico que conviene fijar: ritmos de reposición mayores a 10-15 mEq/h requieren vía central y monitorización electrocardiográfica continua, porque el bolo de potasio periférico rápido es doloroso, esclerosa la vena y puede generar arritmias por pico local. Si sólo contás con vía periférica, repartí el aporte en dos accesos y no superes los 10 mEq/h por vía."},{"texto":"Iniciar de inmediato la infusión continua de insulina corriente a 0.1 UI/kg/h, ya que la prioridad absoluta es frenar la cetogénesis y la acidosis metabólica grave, y aportar potasio a dosis estándar (10 mEq/h) por otra vía periférica.","destino":"fase_4_rescate_arritmia_hipopotasiemia","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Error grave e irreversible! El apuro por corregir la glucemia o la acidosis metabólica te hizo pasar por alto un principio fisiológico elemental. El potasio total de Mateo está muy depletado. Al iniciar la bomba de insulina con un potasio de 3.2 mEq/L (incluso aportando una cantidad baja de potasio), la infusión arrastra velozmente el remanente de potasio circulante al interior celular. Su potasio cae a 2.6 mEq/L. En el monitor cardíaco aparece un ritmo caótico e inconsciencia inmediata.","secuela":"Paro por arritmia hipopotasémica inducida por insulina."},{"texto":"Indicar de inmediato un bolo endovenoso de 100 mEq de Bicarbonato de Sodio al 8,4% para corregir la acidosis plasmática (pH 7.15) e iniciar simultáneamente la infusión de insulina corriente.","destino":"fase_4_rescate_arritmia_hipopotasiemia","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"Fibrilación Ventricular","st_mm":0},"feedback_detallado":"¡Error sumamente crítico e irreversible! El uso de bicarbonato de sodio en la cetoacidosis diabética está formalmente proscrito a menos que el pH sea menor a 6.90. Administrar bicarbonato a un pH de 7.15 con un potasio ya bajo (3.2 mEq/L) desencadena un desastre metabólico: alcaliniza el plasma, lo que empeora drásticamente la hipopotasemia al meter más potasio a las células, reduce el aporte de oxígeno a los tejidos por desviación de la curva de disociación de la Hb, y aumenta la producción de CO2. El paciente sufre una parada cardiorrespiratoria por arritmia ventricular.","secuela":"Paro por arritmia hipopotasémica agravada por bicarbonato."}]},"fase_4_rescate_arritmia_hipopotasiemia":{"id":"fase_4_rescate_arritmia_hipopotasiemia","etapa":"Rescate: Paro Cardiorrespiratorio por Hipopotasemia Grave","descripcion_situación":"¡ALERTA ROJA EN EL MONITOR! El paciente presenta pérdida súbita de la conciencia, el monitor de signos vitales emite un sonido ensordecedor y la línea de ECG se vuelve completamente caótica, sin pulso palpable. El arrastre del potasio hacia las células provocado por tu conducta precipitó una Fibrilación Ventricular. ¿Cómo actuás de inmediato?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Suspender de inmediato la infusión de insulina si se inició, iniciar maniobras de RCP de alta calidad, desfibrilar inmediatamente con un choque bifásico de 200 Joules y administrar una ampolla de Cloruro de Potasio endovenoso diluido de forma rápida.","destino":"fase_5_reposicion_potasio_insulina","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate ante una situación crítica extrema. Frente a un ritmo de paro desfibrilable (Fibrilación Ventricular) como consecuencia de la hipopotasemia severa inducida, el tratamiento inmediato es la desfibrilación eléctrica junto con RCP de calidad y la suspensión de la insulina que provocó la caída electrolítica. La reposición endovenosa vigilada de potasio estabiliza la membrana miocárdica y permite restablecer el ritmo sinusal. El paciente recupera el pulso, pero el daño miocárdico e hipóxico transitorio dejará secuelas."},{"texto":"Administrar un bolo de 300 mg de Amiodarona endovenosa e indicar un goteo de infusión rápida de Lidocaína al 2%, manteniendo la infusión de insulina.","destino":"fase_4_rescate_arritmia_hipopotasiemia","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":0,"presion_arterial_mmhg":"0/0","saturacion_oxigeno_pct":0,"frecuencia_respiratoria_rpm":0,"escala_dolor":0,"ritmo_monitoreo_ecg":"asistolia","st_mm":0},"feedback_detallado":"Inadecuado e ineficaz. La amiodarona es un antiarrítmico que no reemplaza a la desfibrilación eléctrica inmediata en un paro cardíaco por Fibrilación Ventricular (ritmo desfibrilable por excelencia). Mantener la infusión de insulina continúa disminuyendo el potasio extracelular, lo que perpetúa la inestabilidad de la membrana y hace que la arritmia sea refractaria a los fármacos. El paciente no sobrevive y el monitor evoluciona a asistolia. Reevaluá tu conducta de inmediato."}]},"fase_5_reposicion_potasio_insulina":{"id":"fase_5_reposicion_potasio_insulina","etapa":"Fase 5: Estabilización y Comienzo de Insulina","descripcion_situación":"Has infundido Cloruro de Potasio endovenoso junto con Solución Fisiológica. Tras dos horas de reposición activa, realizás un control urgente de electrolitos rápidos. El ionograma reporta ahora un **potasio plasmático de 4.1 mEq/L** y una glicemia capilar de 410 mg/dL. El paciente se muestra estable, respirando espontáneamente con patrón de Kussmaul a 24 rpm, y su diuresis es de 120 mL en la última hora. ¿Qué conducta tomás ahora?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Iniciar la bomba de infusión continua de insulina corriente a una dosis de 0.1 UI/kg/h y agregar Cloruro de Potasio (20 mEq/L) en los sueros de hidratación de Solución Fisiológica para mantener el potasio en rango seguro.","destino":"fase_6_preparacion_bomba_insulina","es_correcta":false,"puntos_afectados":-4,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"104/64","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":22,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta correcta pero incompleta. Todo lo que indicaste está bien y nada de eso daña al paciente: el problema es lo que falta. Al no programar los controles seriados de glucemia e ionograma, te quedás sin las variables que después vas a necesitar para decidir. En la cetoacidosis diabética el peso manda la dosis de insulina y de potasio, y la diuresis horaria es el primer indicador de que la reanimación con volumen está funcionando. Excelente conducta. Ahora que el potasio se encuentra en un rango seguro (entre 3.5 y 5.0 mEq/L), podés y debés iniciar de forma segura la insulinoterapia con insulina corriente a 0.1 UI/kg/h. Como sabés que la insulina provocará un nuevo arrastre de potasio al compartimento intracelular, la recomendación de las guías es infundir potasio (20 a 30 mEq/L de fluido) de forma simultánea para evitar que los niveles vuelvan a descender por debajo de los valores normales."},{"texto":"Iniciar la infusión continua de insulina corriente a 0.1 UI/kg/h (para sus 70 kg, 7 UI/h) y mantener la hidratación con Solución Fisiológica agregando 20 mEq/L de Cloruro de Potasio, planificando controles de glucemia capilar horaria e ionograma cada 2 horas.","destino":"fase_6_preparacion_bomba_insulina","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"106/66","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":22,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Soberbia decisión! Aplicás la dosis exacta calculada para el peso de tu paciente (70 kg * 0.1 UI/kg/h = 7 UI/h) junto con el aporte preventivo de potasio (20 mEq/L) para contrarrestar el arrastre intracelular de la insulina. Tu planificación de realizar controles de glucemia capilar horaria e ionograma con estado ácido-base cada 2 horas representa la mejor práctica de cuidados críticos, permitiendo detectar de forma precoz cualquier desviación metabólica.","printouts":[{"tipo":"Laboratorio · control seriado","titulo":"Ionograma y glucemia de control — 2 h de reposición de potasio","cuerpo":"=== CONTROL A LAS 2 HORAS ===\nPaciente: Mateo Rossi · 70 kg · Debut diabético\n\n  Potasio (K+) ...... 4.1 mEq/L   (VR 3.5-5.0)   ← corregido, seguro\n  Glucemia capilar .. 410 mg/dL   (ingreso: 480)\n  Sodio (Na+) ....... 138 mEq/L   (VR 135-145)\n  pH ................ 7.19        (ingreso: 7.15)\n  Bicarbonato ....... 12 mEq/L    (ingreso: 11.0)\n  Cetonas plasm. .... 4.2 mmol/L  (ingreso: 4.8)\n  Diuresis .......... 120 mL en la última hora\n\nSODIO CORREGIDO POR HIPERGLUCEMIA\n  Na+ corregido = Na+ medido + 1.6 x [(glucemia - 100) / 100]\n                = 138 + 1.6 x 3.1 = 143 mEq/L\n  ← el sodio medido subestima el real; corregilo siempre antes de\n    juzgar si hay hiponatremia verdadera.\n\nANIÓN GAP = Na+ - (Cl- + HCO3-) = 138 - (104 + 12) = 22 mEq/L\n  (VR 8-12) ← sigue elevado: la cetosis NO está resuelta todavía.\n\nIMPRESIÓN: potasio ya en rango seguro (> 3.5 mEq/L).\n✓ HABILITADO el inicio de la infusión de insulina.\n✓ Mantener aporte de 20-30 mEq/L de KCl en los sueros mientras corre\n  la insulina, porque el potasio va a volver a caer al entrar a la célula.\nNOTA: la glucemia baja antes que la acidosis. El objetivo del tratamiento\nno es normalizar la glucemia, es cerrar el anión gap."}]},{"texto":"Iniciar la bomba de infusión continua de insulina corriente a 0.1 UI/kg/h pero suspender por completo el aporte de potasio endovenoso, ya que el potasio se encuentra en valor normal de 4.1 mEq/L.","destino":"fase_6_preparacion_bomba_insulina","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":108,"presion_arterial_mmhg":"100/60","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":24,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Suspender el aporte de potasio porque el nivel plasmático se normalizó a 4.1 mEq/L es un error conceptual frecuente. Al iniciar la infusión de insulina, el potasio ingresará masivamente a las células. Si no mantenés un aporte continuo de potasio en la hidratación (20-30 mEq/L) con un potasio basal entre 3.5 y 5.0, el nivel volverá a caer rápidamente en los próximos controles, obligándote a suspender la insulina más tarde. Mirá cómo su frecuencia cardíaca tiende a subir nuevamente."},{"texto":"Indicar una dosis de 10 UI de insulina NPH subcutánea en el muslo del paciente para aportar insulina basal, manteniendo la hidratación con Solución Fisiológica simple sin potasio.","destino":"fase_5_rescate_nph_erronea","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"92/56","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":26,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error en el manejo. El uso de insulina de acción intermedia (NPH) por vía subcutánea está contraindicado en la fase aguda del tratamiento de la cetoacidosis diabética. La absorción de la insulina subcutánea es muy errática e impredecible en un paciente deshidratado con vasoconstricción periférica. El estándar de manejo exige una bomba de infusión continua de insulina corriente endovenosa, ya que tiene un inicio de acción inmediato y permite una titulación precisa hora a hora."}]},"fase_5_rescate_nph_erronea":{"id":"fase_5_rescate_nph_erronea","etapa":"Rescate: Manejo Inadecuado con Insulina Subcutánea","descripcion_situación":"Al administrar insulina NPH subcutánea, la absorción es lenta y errática por la deshidratación. Mateo no mejora: la glucemia capilar sigue en 415 mg/dL tras 2 horas, la acidosis no corrige (pH 7.16) y el paciente se muestra más aletargado y con náuseas. El monitor sigue mostrando taquicardia sinusal. ¿Cómo corrigís el esquema terapéutico de inmediato?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender cualquier otra aplicación subcutánea e iniciar una Bomba de Infusión Continua (BIC) de insulina corriente a 0.1 UI/kg/h (7 UI/h) por vía endovenosa, sumando aporte hídrico adecuado con potasio.","destino":"fase_6_preparacion_bomba_insulina","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":98,"presion_arterial_mmhg":"104/64","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":22,"escala_dolor":4,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate. Reconocés que el paciente con cetoacidosis requiere imperativamente una bomba de infusión de insulina corriente endovenosa para bloquear de forma rápida y constante la lipólisis y la cetogénesis en el hígado. El cambio al esquema endovenoso asegura una biodisponibilidad del 100% y permite retomar el control metabólico metabólico efectivo del cuadro. El punto que este rescate enseña es de farmacocinética: la insulina NPH tiene un inicio de acción de 1 a 2 horas, un pico entre las 4 y 8 horas, y no se puede titular ni suspender una vez aplicada. En una cetoacidosis necesitás exactamente lo contrario: efecto inmediato y control minuto a minuto, porque la glucemia y el potasio se mueven rápido. Por eso el tratamiento es insulina corriente en infusión continua. La NPH tiene su lugar, pero recién en la transición a subcutánea, cuando la cetoacidosis ya se resolvió."},{"texto":"Aplicar un bolo subcutáneo adicional de 10 UI de insulina rápida (corriente) y aumentar la velocidad de goteo de la solución fisiológica pura a 500 mL/h.","destino":"fase_5_rescate_nph_erronea","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"88/52","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Insistir en la vía subcutánea con bolos adicionales de insulina corriente no soluciona el problema de absorción tisular impredecible y prolonga innecesariamente el estado de acidosis grave del paciente. Además, la infusión de solución fisiológica sin reponer potasio provocará un descenso de sus niveles plasmáticos. Debés iniciar la bomba endovenosa. Volvé a intentarlo."}]},"fase_6_preparacion_bomba_insulina":{"id":"fase_6_preparacion_bomba_insulina","etapa":"Fase 6: Dilución y Programación de la Bomba","descripcion_situación":"Te disponés a indicarle al enfermero la preparación exacta de la Bomba de Infusión Continua (BIC) de insulina corriente para Mateo (70 kg). Buscás una dilución práctica, segura y fácil de calcular para evitar errores de programación. ¿Cómo le indicás preparar e infundir la bomba?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Preparar 50 UI de insulina corriente en 50 mL de Solución Fisiológica al 0,9% (concentración de 1 UI = 1 mL) e infundir a un ritmo de 7 mL/h (equivalente a 0.1 UI/kg/h).","destino":"fase_7_monitoreo_glicemia","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":94,"presion_arterial_mmhg":"106/66","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":20,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente decisión. Esta es la dilución práctica estándar más recomendada y segura en los servicios de emergencias y terapia intensiva. Preparar 50 UI de insulina en 50 mL de Solución Fisiológica (o 100 UI en 100 mL) otorga una relación idéntica de 1 UI por cada 1 mL de volumen. Esto simplifica enormemente la programación de la bomba de infusión: infundir a 7 mL/h equivale exactamente a administrar 7 UI/h, lo que minimiza drásticamente el riesgo de un error humano de cálculo."},{"texto":"Preparar 100 UI de insulina corriente en 100 mL de Solución Fisiológica e infundir a un ritmo de 10 mL/h (0.14 UI/kg/h) para lograr un descenso más rápido de la glucemia y acortar la internación.","destino":"fase_7_monitoreo_glicemia","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":100,"presion_arterial_mmhg":"104/64","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":22,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Aunque la preparación es matemáticamente correcta (1 UI/mL), infundir la bomba a un ritmo de 10 mL/h (10 UI/h) en un paciente de 70 kg representa una dosis elevada de 0.14 UI/kg/h. Las guías internacionales recomiendan firmemente no superar la dosis estándar de 0.1 UI/kg/h (7 UI/h en este caso) en la fase inicial, ya que un ritmo excesivamente rápido puede provocar descensos bruscos de la glucemia (>100 mg/dL por hora), aumentando el riesgo de hipoglucemia y desequilibrio osmótico cerebral."},{"texto":"Diluir 100 UI de insulina corriente en un sachet de 500 mL de Dextrosa al 5% e infundir a un ritmo de 35 mL/h para aportar hidratación, glucosa e insulina de forma balanceada.","destino":"fase_6_rescate_dilucion_peligrosa","es_correcta":false,"puntos_afectados":-35,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"88/54","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error sumamente grave! Jamás debe prepararse la infusión continua de insulina dentro de un sachet de solución dextrosada en el inicio del tratamiento de la cetoacidosis diabética. La glucosa exógena en este momento, con una glucemia plasmática inicial superior a 400 mg/dL, exacerbará de forma dramática la diuresis osmótica y la hiperglucemia, impidiendo la rehidratación adecuada del paciente. La bomba de insulina debe estar separada y prepararse únicamente con Solución Fisiológica isotónica."}]},"fase_6_rescate_dilucion_peligrosa":{"id":"fase_6_rescate_dilucion_peligrosa","etapa":"Rescate: Hiperglucemia Extrema por Aporte Prematuro de Dextrosa","descripcion_situación":"Al recibir la infusión de Dextrosa, la glucemia capilar del paciente se dispara nuevamente a rangos incontables por el dispositivo ('HIGH') y Mateo orina de forma descontrolada (1500 mL en 2 horas). Presenta signos de shock clínico, con hipotensión (88/54 mmHg) y taquicardia. ¿Cómo actúas con urgencia?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Apagar inmediatamente la bomba errónea, descartar el sachet, preparar una nueva BIC con 50 UI de insulina corriente en 50 mL de Solución Fisiológica al 0,9% para pasar a 7 mL/h, e infundir un bolo de 1000 mL de Solución Fisiológica pura.","destino":"fase_7_monitoreo_glicemia","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":94,"presion_arterial_mmhg":"106/66","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":20,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate. Descartar la preparación errónea y reinstaurar la infusión de insulina separada en solución fisiológica permite controlar de forma real la dosis de insulina que recibe Mateo sin aportar carga de glucosa innecesaria en esta etapa. El bolo de cristaloides isotónicos repara el volumen intravascular perdido por la diuresis osmótica inducida por el error previa, estabilizando la PA. Retené los dos motivos por los que la dilución anterior era peligrosa, porque son independientes. Primero, preparar insulina en dextrosa significa infundir glucosa a un ritmo que vos no elegiste y que no podés separar del ritmo de la insulina: si necesitás bajar una, bajás la otra. Segundo, una concentración de 0.2 UI/mL en un sachet de 500 mL vuelve el cálculo poco intuitivo y multiplica el riesgo de error de programación. La dilución 1 UI = 1 mL existe justamente para que el ritmo en mL/h sea igual a la dosis en UI/h, sin cuentas intermedias."},{"texto":"Aumentar el ritmo de la infusión actual a 70 mL/h para pasar más insulina y compensar el exceso de glucosa con la velocidad de goteo.","destino":"fase_6_rescate_dilucion_peligrosa","es_correcta":false,"puntos_afectados":-18,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":135,"presion_arterial_mmhg":"74/40","saturacion_oxigeno_pct":94,"frecuencia_respiratoria_rpm":30,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado y sumamente peligroso. Aumentar el ritmo de infusión de una solución que contiene Dextrosa incrementará aún más la carga total de glucosa infundida, empeorando el círculo vicioso de hiperglucemia, deshidratación y shock. Debés separar la insulina de la glucosa de inmediato. Volvé a intentarlo."}]},"fase_7_monitoreo_glicemia":{"id":"fase_7_monitoreo_glicemia","etapa":"Fase 7: Evaluación de la Respuesta al Tratamiento","descripcion_situación":"Llevás 3 horas con la BIC de insulina corriente a 7 mL/h y un aporte de Solución Fisiológica al 0,9% a 250 mL/h con potasio. Mateo se encuentra clínicamente mucho mejor: está bien despierto, responde de forma coherente (Glasgow 15/15), el dolor de panza casi desapareció y la diuresis se sostiene en 100 mL/h. Realizás un control de glicemia capilar y arroja **230 mg/dL** (mostrando un descenso constante de unos 80 mg/dL por hora). El laboratorio de control informa: pH 7.24, HCO3 14 mEq/L, Na+ 136 mEq/L, K+ 3.8 mEq/L. ¿Cuál es el siguiente paso terapéutico fundamental?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Reducir la infusión de la BIC de insulina a la mitad (0.05 UI/kg/h, es decir, 3.5 mL/h) y cambiar la hidratación endovenosa agregando Dextrosa al 5% en Solución Fisiológica al 0.9%, buscando mantener la glucemia en un rango de 150-200 mg/dL hasta lograr la resolución total de la acidosis.","destino":"fase_8_transicion_mantenimiento","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":84,"presion_arterial_mmhg":"112/70","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":18,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Impecable! Esta es la conducta exacta recomendada por los consensos internacionales. Cuando la glucemia cae por debajo de 250 mg/dL, la insulina corriente endovenosa ya no se debe infundir a dosis plena (0.1 UI/kg/h) para evitar la hipoglucemia y un descenso excesivamente brusco de la osmolaridad. Sin embargo, **NUNCA se debe suspender la infusión de insulina**, ya que todavía persiste la cetoacidosis (bicarbonato 14, pH 7.24). Reducir la infusión a 0.05 UI/kg/h y aportar glucosa exógena (Dextrosa al 5%) permite seguir bloqueando la cetogénesis en el hígado de forma segura, manteniendo la glucemia en un rango seguro de 150-200 mg/dL.","printouts":[{"tipo":"Laboratorio · control seriado","titulo":"Curva de glucemia y estado ácido-base — 3 h de infusión de insulina","cuerpo":"=== CURVA HORARIA DE GLUCEMIA CAPILAR ===\n  Hora 0 ...... 480 mg/dL   (ingreso)\n  Hora 1 ...... 410 mg/dL\n  Hora 2 ...... 330 mg/dL      descenso ~80 mg/dL/h\n  Hora 3 ...... 230 mg/dL   ← ACTUAL\n\n  Ritmo de descenso: 80 mg/dL/h\n  Rango recomendado: 50-75 mg/dL/h\n  ← levemente rápido; es justamente el motivo para reducir la infusión\n    ahora y no esperar a que la glucemia caiga más.\n\n=== ESTADO ÁCIDO-BASE Y ELECTROLITOS ===\n  pH ................ 7.24       (ingreso 7.15)   mejorando\n  Bicarbonato ....... 14 mEq/L   (ingreso 11.0)   mejorando\n  Sodio (Na+) ....... 136 mEq/L\n  Potasio (K+) ...... 3.8 mEq/L  ← bajó de 4.1: la insulina lo mete\n                                   a la célula. Sostener el aporte.\n  Cloro (Cl-) ....... 108 mEq/L\n  Cetonas plasm. .... 2.6 mmol/L (ingreso 4.8)\n\nANIÓN GAP = 136 - (108 + 14) = 14 mEq/L   (ingreso 22)\n  ← descendiendo, pero TODAVÍA POR ENCIMA DE 12: la cetoacidosis\n    sigue activa aunque la glucemia ya esté casi normal.\n\nCRITERIOS DE RESOLUCIÓN DE LA CAD — aún NO se cumplen\n  Glucemia < 200 mg/dL ................ NO (230)\n  Bicarbonato ≥ 15 mEq/L .............. NO (14)\n  pH > 7.30 ........................... NO (7.24)\n  Anión gap ≤ 12 mEq/L ................ NO (14)\n\nIMPRESIÓN: buena respuesta al tratamiento, pero la CAD NO está resuelta.\n✗ SUSPENDER la insulina ahora reabriría la cetogénesis.\n✓ REDUCIR la infusión a la mitad y AGREGAR dextrosa, para poder sostener\n  la insulina hasta cerrar el anión gap sin provocar hipoglucemia."}]},{"texto":"Mantener la bomba de infusión de insulina corriente a dosis completa (0.1 UI/kg/h) e aportar agua libre por sonda nasogástrica, buscando normalizar la glucemia por debajo de 100 mg/dL de forma rápida para revertir la acidosis.","destino":"fase_7_rescate_edema_cerebral","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":48,"presion_arterial_mmhg":"150/90","saturacion_oxigeno_pct":93,"frecuencia_respiratoria_rpm":12,"escala_dolor":0,"ritmo_monitoreo_ecg":"Bradicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error crítico y extremadamente peligroso! Mantener la insulina a dosis plena cuando la glucemia capilar ya cayó por debajo de 250 mg/dL, sin aportar glucosa exógena, precipita una caída estrepitosa de la glucemia y de la osmolaridad plasmática. El agua libre entra masivamente al parénquima cerebral por gradiente osmótico, desencadenando un **Edema Cerebral Agudo**. Mateo se deteriora neurológicamente de golpe, entra en coma y el monitor cardíaco acusa una bradicardia severa con hipertensión arterial (Reflejo de Cushing por hipertensión endocraneana).","secuela":"Edema cerebral agudo con secuela neurológica potencialmente permanente."},{"texto":"Suspender por completo la bomba de infusión de insulina corriente dado que la glicemia capilar ya está por debajo del rango crítico de 250 mg/dL, y pasar al paciente a un esquema de corrección subcutánea con insulina corriente según escala móvil cada 6 horas.","destino":"fase_7_rescate_acidosis_recurrente","es_correcta":false,"puntos_afectados":-25,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":118,"presion_arterial_mmhg":"94/58","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":26,"escala_dolor":5,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error conceptual grave. Suspender la infusión continua de insulina cuando la glucemia es menor a 250 mg/dL basándote solo en el valor de la glucosa es un error clásico de consecuencias metabólicas severas. La glucemia corrige mucho antes de que se resuelva la acidosis y se bloquee la cetogénesis. Al apagar la bomba sin haber normalizado el bicarbonato ni el pH, la lipólisis se reactiva inmediatamente, los cuerpos cetónicos vuelven a acumularse en plasma y el paciente descompensa rápidamente con recidiva de la acidosis metabólica."},{"texto":"Reducir la infusión de la BIC de insulina a la mitad (3.5 mL/h) pero continuar hidratando al paciente únicamente con Solución Fisiológica al 0,9%, postergando el goteo de Dextrosa hasta que la glicemia capilar caiga por debajo de 150 mg/dL.","destino":"fase_8_transicion_mantenimiento","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":95,"presion_arterial_mmhg":"104/64","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":20,"escala_dolor":3,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Si bien redujiste la dosis de la BIC a la mitad, continuar la infusión de insulina sin agregar Dextrosa al 5% en este punto provocará que en la próxima hora la glucemia descienda a valores de hipoglucemia severa. La adición de dextrosa es imperiosa cuando la glucemia es <250 mg/dL para dar un sustrato energético exógeno que permita continuar con la insulina (que es la que bloquea la cetoacidosis) de forma segura. Lo que indicaste no daña al paciente, pero te deja sin margen. Al reducir la insulina sin aportar glucosa, la glucemia va a seguir cayendo por debajo de 150 mg/dL en la próxima hora y vas a tener que suspender la infusión — justo cuando el anión gap todavía está abierto y la cetogénesis sigue activa. La dextrosa no se agrega para tratar una hipoglucemia que ya ocurrió: se agrega de forma anticipada para poder SOSTENER la insulina el tiempo necesario hasta cerrar el anión gap. Es el concepto central de esta fase."}]},"fase_7_rescate_edema_cerebral":{"id":"fase_7_rescate_edema_cerebral","etapa":"Rescate: Edema Cerebral por Descenso Osmótico Brusco","descripcion_situación":"Mateo presenta midriasis de la pupila derecha, bradicardia extrema de 48 lpm, presión arterial elevada de 150/90 mmHg y respiraciones irregulares (Tríada de Cushing clásica). Está en coma profundo por herniación cerebral inminente debida al edema cerebral agudo por descenso veloz de la glucosa. ¿Cómo procedés de urgencia absoluta?","criticidad":"letal","tiempo_limite_segundos":240,"penalizacion_por_timeout":-20,"opciones":[{"texto":"Elevar la cabecera del paciente a 30 grados, administrar un bolo endovenoso rápido de Manitol al 20% (0.5 a 1.0 g/kg) o Solución Salina Hipertónica al 3% de forma inmediata, disminuir la velocidad de infusión de fluidos y asegurar la vía aérea.","destino":"fase_8_transicion_mantenimiento","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":84,"presion_arterial_mmhg":"112/70","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente y desesperado rescate. El edema cerebral es la causa más común de muerte en las crisis hiperglucémicas. Elevar la cabecera optimiza el retorno venoso, y el uso urgente de Manitol o salina hipertónica al 3% genera un gradiente osmótico inverso que extrae agua del parénquima cerebral hinchado hacia el espacio intravascular, disminuyendo la presión intracraneana. Mateo recupera la reactividad pupilar y mejora el sensorio, pero el daño cerebral por hipoxia transitoria dejará secuelas permanentes."},{"texto":"Indicar una expansión rápida con Solución Fisiológica de 1000 mL para reponer volumen urinario e inyectar un bolo de Metilprednisolona de 500 mg para desinflamar el cerebro.","destino":"fase_7_rescate_edema_cerebral","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":34,"presion_arterial_mmhg":"170/100","saturacion_oxigeno_pct":88,"frecuencia_respiratoria_rpm":8,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error fatal. Expandir con más volumen a un paciente con hipertensión endocraneana descontrolada y edema cerebral agudo empeorará la congestión y acelerará la herniación cerebral. Asimismo, los corticoides como la metilprednisolona no tienen ninguna utilidad demostrada en el edema cerebral por cetoacidosis diabética. El paciente requiere terapias hiperosmolares como Manitol. Volvé a intentarlo."}]},"fase_7_rescate_acidosis_recurrente":{"id":"fase_7_rescate_acidosis_recurrente","etapa":"Rescate: Recidiva de Cetoacidosis por Suspensión de Insulina","descripcion_situación":"Al suspender la bomba de insulina, Mateo vuelve a descompensarse. Su respiración de Kussmaul se vuelve a acentuar a 26 rpm, el dolor abdominal regresa con fuerza y el laboratorio de control a las 2 horas reporta un pH de 7.10 con bicarbonato de 9 mEq/L. Su glucemia capilar subió a 320 mg/dL. ¿Cómo rescatás el cuadro inmediatamente?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Reiniciar de inmediato la Bomba de Infusión Continua de insulina corriente (0.05 a 0.1 UI/kg/h) e iniciar hidratación combinando Solución Fisiológica con Dextrosa al 5% para bloquear la cetogénesis de forma segura sin inducir hipoglucemia.","destino":"fase_8_transicion_mantenimiento","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":84,"presion_arterial_mmhg":"112/70","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":18,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate. Comprendés que el verdadero motor de la cetoacidosis es la deficiencia absoluta de insulina, no la glucemia. Al reiniciar la bomba endovenosa y aportar dextrosa de manera combinada, aportás la insulina necesaria para bloquear la cetogénesis hepática mientras protegés al paciente de la hipoglucemia. Mateo estabiliza nuevamente su medio interno."},{"texto":"Indicar dosis repetidas subcutáneas de insulina aspart o lispro según escala móvil horaria y mantener la hidratación con solución fisiológica pura.","destino":"fase_7_rescate_acidosis_recurrente","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":122,"presion_arterial_mmhg":"90/54","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":28,"escala_dolor":6,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta incorrecta. Los esquemas de corrección subcutánea móvil no tienen lugar en el tratamiento de una cetoacidosis diabética activa y recurrente en la guardia. Solo la infusión continua endovenosa asegura niveles plasmáticos estables para bloquear la lipólisis celular. El paciente continuará en acidosis progresiva si insistís con la vía subcutánea móvil. Volvé a intentarlo."}]},"fase_8_transicion_mantenimiento":{"id":"fase_8_transicion_mantenimiento","etapa":"Fase 8: Criterios de Resolución e Hidratación de Mantenimiento","descripcion_situación":"Bajo el esquema de la BIC de insulina a 3.5 mL/h (0.05 UI/kg/h) and el aporte hídrico combinado (Solución Fisiológica al 0.9% y Dextrosa al 5% a razón de 150 mL/h total), la glucemia capilar de Mateo se ha mantenido estable en un rango seguro de 150-180 mg/dL. Tras 4 horas de estabilidad, realizás un laboratorio completo que arroja: glucemia de 165 mg/dL, pH de 7.32, bicarbonato de 17 mEq/L, Anion Gap de 11 mmol/L y cetonas en sangre de 0.2 mmol/L. El paciente se encuentra despierto, lúcido, con hambre y sin dolor de panza. ¿Qué conducta decidís tomar?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Mantener el esquema actual de infusión continua de insulina corriente e hidratación endovenosa combinada con dextrosa por unas horas más, evaluando la tolerancia a la vía oral con una dieta blanda antes de suspender la bomba de insulina.","destino":"fase_9_busqueda_desencadenante","es_correcta":false,"puntos_afectados":-4,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":80,"presion_arterial_mmhg":"114/72","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Conducta correcta pero incompleta. Todo lo que indicaste está bien y nada de eso daña al paciente: el problema es lo que falta. Al no explicitar el plan de controles, te quedás sin las variables que después vas a necesitar para decidir. En la cetoacidosis diabética el peso manda la dosis de insulina y de potasio, y la diuresis horaria es el primer indicador de que la reanimación con volumen está funcionando. Excelente decisión. Mateo cumple con los criterios de resolución de la cetoacidosis diabética (glicemia <200 mg/dL, pH >7.30, bicarbonato >15 mEq/L, y Anion Gap normal <12 mmol/L). Sin embargo, el paso inmediato antes de suspender la bomba de insulina es asegurar que el paciente tolere la vía oral y se encuentre clínicamente listo. Mantener la infusión mientras come su primera comida previene una recaída metabólica y permite planificar la transición de manera sumamente segura."},{"texto":"Mantener la bomba de insulina corriente, ofrecer una colación liviana o dieta blanda para evaluar la tolerancia oral y, de ser adecuada, indicar una dosis de insulina basal subcutánea (NPH o Glargina) para realizar la transición, apagando la bomba exactamente 2 horas después de dicha dosis.","destino":"fase_9_busqueda_desencadenante","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":78,"presion_arterial_mmhg":"116/74","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Brillante manejo clínico de alta complejidad! No solo identificás que se han cumplido los criterios de resolución de la cetoacidosis diabética y constatás la tolerancia oral, sino que además planificás de forma perfecta la transición al esquema subcutáneo. Administrar la dosis de insulina basal (como Glargina o NPH) con una ventana de 2 horas de superposición antes de apagar la bomba de infusión continua endovenosa es el pilar para evitar la hiperglucemia de rebote y la reaparición de cuerpos cetónicos por déficit transitorio de insulina circulante. La conducta va en la dirección correcta y el paciente no corre riesgo inmediato, pero el plan queda incompleto. En esta etapa el objetivo ya no es la glucemia sino el cierre del anión gap y la normalización del bicarbonato, y eso exige controles seriados explícitos, no reevaluación informal. Escribir el plan de monitoreo en la indicación es lo que permite que el turno siguiente continúe el tratamiento sin reinterpretar tu criterio."},{"texto":"Apagar inmediatamente la bomba de infusión de insulina y suspender los sueros endovenosos, dado que los criterios de resolución se han cumplido con creces (pH 7.32, bicarbonato 17), e indicarle al paciente que ya puede comer de forma libre.","destino":"fase_9_busqueda_desencadenante","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":96,"presion_arterial_mmhg":"108/68","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":18,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Apagar la bomba de infusión continua de forma inmediata sin haber administrado previamente una dosis de insulina subcutánea (basal) es un error metodológico frecuente que expone al paciente a una recaída de la hiperglucemia y la cetosis en las horas posteriores. La insulina corriente endovenosa tiene una vida media ultracorta de apenas unos minutos en plasma. Si la apagás 'en seco' sin superponer una insulina basal subcutánea 2 horas antes, Mateo quedará con un déficit absoluto de insulina rápidamente."},{"texto":"Duplicar la dosis actual de la bomba de insulina a 7 mL/h (0.1 UI/kg/h) y suspender la infusión de Dextrosa al 5%, buscando normalizar la glucemia por debajo de 100 mg/dL antes de darle el alta definitiva.","destino":"fase_8_rescate_hipoglucemia","es_correcta":false,"puntos_afectados":-20,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":120,"presion_arterial_mmhg":"110/70","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Error clínico peligroso. Intentar normalizar la glucemia capilar a rangos fisiológicos estrictos (<100 mg/dL) en un paciente que está saliendo de una cetoacidosis diabética es innecesario y de alto riesgo. Al suspender la dextrosa y duplicar la dosis de insulina, provocarás un descenso brusco de la glucosa circulante que inevitablemente llevará al paciente a una hipoglucemia severa sintomática. El objetivo en esta fase de transición es sostener valores estables entre 150 y 200 mg/dL."}]},"fase_8_rescate_hipoglucemia":{"id":"fase_8_rescate_hipoglucemia","etapa":"Rescate: Hipoglucemia Grave por Insulina Excesiva","descripcion_situación":"Tras duplicar la dosis de insulina sin dextrosa, Mateo se descompensa a los 45 minutos: presenta sudoración fría profusa, temblores generalizados, palpitaciones fuertes, confusión severa y somnolencia progresiva. La glucemia capilar acusa **45 mg/dL**. ¿Cómo actúas de urgencia para rescatarlo?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Administrar un bolo endovenoso directo de 50 mL de Dextrosa al 33% (o al 50%), disminuir la infusión de la BIC de insulina a 1.4 mL/h (0.02 UI/kg/h) temporalmente y reinstaurar el aporte de hidratación con D5% en SF.","destino":"fase_9_busqueda_desencadenante","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":80,"presion_arterial_mmhg":"114/72","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Excelente y rápido rescate. Frente a una hipoglucemia grave sintomática con compromiso del sensorio, la indicación absoluta es el aporte rápido de glucosa hipertónica endovenosa (bolo de D33% o D50%). Esto revierte de inmediato los síntomas neuroglucopénicos. Es fundamental destacar que **no debés suspender la bomba de insulina por completo** si persiste la cetoacidosis o si aún no completó la transición basal, sino reducirla al mínimo para evitar que rebote la cetosis."},{"texto":"Apagar la bomba de insulina por completo durante las próximas 4 horas para asegurar que limpie el fármaco del plasma, e infundir Solución Fisiológica al 0,9% simple a un goteo rápido.","destino":"fase_8_rescate_hipoglucemia","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":125,"presion_arterial_mmhg":"100/60","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":20,"escala_dolor":1,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta inadecuada. Apagar la bomba por un lapso tan prolongado de 4 horas sin un aporte basal de insulina subcutánea previo reactivará la lipólisis y la generación de cuerpos cetónicos en el hígado en menos de una hora, provocando una severa recidiva de la cetoacidosis. Debés aportar glucosa endovenosa y sostener una dosis mínima de insulina en bomba. Volvé a intentarlo."}]},"fase_9_busqueda_desencadenante":{"id":"fase_9_busqueda_desencadenante","etapa":"Fase 9: Búsqueda del Factor Gatillo","descripcion_situación":"Mateo Rossi se encuentra clínicamente muy estable, bien hidratado y tolerando el aporte oral. No obstante, sabés que una crisis de cetoacidosis diabética siempre es desencadenada por un factor gatillo subyacente que debés identificar y tratar de inmediato para evitar recidivas graves. Al revisar la planilla de enfermería, constatás que Mateo presentó un registro de febrícula de **38.1 °C** en la última hora. ¿Cómo enfocás la búsqueda diagnóstica?","criticidad":"media","tiempo_limite_segundos":420,"penalizacion_por_timeout":-10,"opciones":[{"texto":"Realizar un interrogatorio clínico detallado (adherencia al tratamiento, síntomas respiratorios o urinarios), examinar físicamente al paciente y solicitar estudios específicos orientados: sedimento urinario, radiografía de tórax y dos sets de hemocultivos si sospechás foco infeccioso.","destino":"fase_10_transicion_subcutanea","es_correcta":false,"puntos_afectados":-4,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":80,"presion_arterial_mmhg":"114/72","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Conducta correcta pero incompleta. Todo lo que indicaste está bien y nada de eso daña al paciente: el problema es lo que falta. Al no completar la búsqueda sistemática, te quedás sin las variables que después vas a necesitar para decidir. En la cetoacidosis diabética el peso manda la dosis de insulina y de potasio, y la diuresis horaria es el primer indicador de que la reanimación con volumen está funcionando. Muy bien. Los desencadenantes más comunes de la cetoacidosis diabética son las infecciones (urinarias, neumonías, infecciones de piel) y la mala adherencia al tratamiento insulínico previo (abandono o dosis omitidas). Ante la presencia de fiebre o febrícula, la búsqueda sistemática de un foco clínico mediante anamnesis, examen físico minucioso (sitios de inyección, pulmón, abdomen) y estudios complementarios dirigidos representa la conducta estándar correcta. Encontrás que Mateo tiene un sedimento urinario normal, pero en el examen físico relata ardor al orinar previo y la madre confirma que no tenía dinero para comprar la insulina Glargina en las últimas semanas."},{"texto":"Interrogar minuciosamente al paciente y su madre sobre adherencia, revisar los sitios de inyección buscando signos de infección o lipodistrofia, y realizar de forma sistemática: radiografía de tórax, sedimento de orina con urocultivo, dos sets de hemocultivos ante la febrícula de 38.1°C, e iniciar antibioticoterapia dirigida si se confirma foco bacteriano latente.","destino":"fase_10_transicion_subcutanea","es_correcta":true,"puntos_afectados":2,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":78,"presion_arterial_mmhg":"116/74","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Brillante elección! Este enfoque proactivo y sumamente minucioso representa la excelencia en la atención médica de guardia. No solo buscás de forma dirigida la causa infecciosa más frecuente (infección urinaria oculta, muy común en diabéticos descompensados) mediante cultivos antes de cualquier conducta empírica, sino que además inspeccionás los sitios de inyección buscando abscesos o distrofias tisulares que alteren la absorción. El interrogatorio empático revela que Mateo abandonó el tratamiento de forma involuntaria por motivos socioeconómicos (falta de cobertura médica), lo cual te permitirá involucrar al servicio social para asegurar su tratamiento al alta."},{"texto":"Asumir que el cuadro clínico actual se debe únicamente a un debut diabético clásico de su edad, restar importancia al registro aislado de febrícula de 38.1°C atribuyéndolo a la deshidratación resuelta, y omitir la toma de muestras de cultivos o estudios infecciosos.","destino":"fase_10_transicion_subcutanea","es_correcta":false,"puntos_afectados":-5,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":85,"presion_arterial_mmhg":"112/70","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":17,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Si bien la propia deshidratación grave y la inflamación sistémica de la cetoacidosis pueden provocar febrícula transitoria, asumir esto como diagnóstico de descarte sin realizar un examen físico completo ni interrogar de forma dirigida es una conducta imprudente. Las infecciones bacterianas ocultas son un desencadenante sumamente frecuente y potencialmente letal de sepsis si no se diagnostican y tratan a tiempo en un paciente diabético recién descompensado. El razonamiento tiene una parte correcta: en un debut diabético el desencadenante puede ser el propio déficit absoluto de insulina, sin ningún factor externo. Pero eso se concluye DESPUÉS de descartar los desencadenantes tratables, no antes. La leucocitosis de 14.500 sin desviación a la izquierda es esperable en la cetoacidosis por hemoconcentración y estrés, así que no confirma infección — pero tampoco la descarta. Un foco infeccioso no buscado es la causa más frecuente de cetoacidosis que no responde al tratamiento estándar."},{"texto":"Indicar de forma inmediata la administración de un esquema de antibioticoterapia empírica de amplio espectro con Piperacilina-Tazobactam endovenosa de forma profiláctica, argumentando el riesgo de sepsis inminente por la febrícula.","destino":"fase_9_rescate_antibiograma_ciego","es_correcta":false,"puntos_afectados":-18,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":102,"presion_arterial_mmhg":"104/66","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta incorrecta y desproporcionada. Administrar antibióticos de amplio espectro de forma empírica y profiláctica en un paciente con febrícula aislada, sin haber buscado un foco clínico claro, tomado muestras previas de cultivos (urocultivo, hemocultivos) o evaluado la presencia de signos de respuesta inflamatoria sistémica verdadera es un error terapéutico importante. Fomenta la resistencia antimicrobiana, expone al paciente a nefrotoxicidad innecesaria y prolonga la internación. Acá el problema no es buscar el foco, que está bien, sino tratar a ciegas sin haber tomado los cultivos y sin ningún dato que oriente. En un paciente sin fiebre, sin foco clínico evidente y con una leucocitosis explicable por la propia cetoacidosis, el antibiótico empírico de amplio espectro no aporta beneficio y sí selecciona resistencia. La conducta correcta es completar la búsqueda dirigida —hemocultivos, orina, radiografía de tórax, examen de pies y piel— y decidir con esos datos."}]},"fase_9_rescate_antibiograma_ciego":{"id":"fase_9_rescate_antibiograma_ciego","etapa":"Rescate: Uso Inadecuado de Antibióticos de Amplio Espectro","descripcion_situación":"Al recibir Piperacilina-Tazobactam de forma ciega y sin cultivos previos, Mateo presenta una reacción alérgica cutánea leve (rash urticariforme difuso) y la febrícula de 38 °C persiste sin que conozcas el verdadero germen causante ni su sensibilidad antibiótica. El laboratorio informa leucocitosis reactiva. ¿Cómo corrigís esta situación de inmediato?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Suspender de forma inmediata la Piperacilina-Tazobactam, indicar un antihistamínico endovenoso, recolectar urocultivo y hemocultivos de urgencia, y realizar una radiografía de tórax para buscar un foco infeccioso real antes de rotar el esquema.","destino":"fase_10_transicion_subcutanea","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":80,"presion_arterial_mmhg":"114/72","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate clínico. Reconocés el error del uso empírico ciego e injustificado de antibióticos y actuás de manera segura: suspendés el fármaco alergénico, tratás la reacción de hipersensibilidad y procedés a la toma de muestras biológicas y radiológicas para realizar un diagnóstico bacteriológico de certeza y dirigir la terapia de forma racional. El principio general que este rescate deja: la búsqueda del desencadenante en la cetoacidosis es sistemática y barata, y se hace en paralelo al tratamiento, nunca en lugar de él. Los cinco sospechosos habituales son infección, omisión de la insulina, debut diabético, evento cardiovascular agudo y fármacos como corticoides. En un joven de 21 años sin diagnóstico previo, el debut es el desencadenante más probable, pero eso se afirma sólo después de descartar los demás. Suspender el antibiótico que no tenía indicación y completar los cultivos es exactamente lo correcto."},{"texto":"Mantener la infusión de Piperacilina-Tazobactam agregando corticoides para la alergia, y sumar Vancomicina endovenosa de forma empírica para cubrir gérmenes grampositivos de piel.","destino":"fase_9_rescate_antibiograma_ciego","es_correcta":false,"puntos_afectados":-15,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":105,"presion_arterial_mmhg":"100/62","saturacion_oxigeno_pct":97,"frecuencia_respiratoria_rpm":18,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta sumamente errónea. Continuar infundiendo un antibiótico que provocó una reacción de hipersensibilidad y agregar otro fármaco nefrotóxico de amplio espectro de manera ciega agrava el riesgo de nefrotoxicidad aguda en un paciente que se está recuperando de una deshidratación renal severa. Debés suspender el goteo de inmediato. Volvé a intentarlo."}]},"fase_10_transicion_subcutanea":{"id":"fase_10_transicion_subcutanea","etapa":"Fase 10: Transición al Esquema Subcutáneo","descripcion_situación":"Los resultados analíticos finales confirman la resolución total de la cetoacidosis diabética de Mateo: pH de 7.36, bicarbonato de 20 mEq/L, Anion Gap de 9 mmol/L, y cetonemia negativa. El paciente tolera perfectamente la vía oral y ha cenado sin presentar síntomas. Es momento de realizar la transición de la bomba de infusión continua de insulina corriente (BIC) al esquema subcutáneo basal-bolo para su internación en sala general. ¿Cómo debés proceder de forma segura?","criticidad":"media","tiempo_limite_segundos":420,"penalizacion_por_timeout":-10,"opciones":[{"texto":"Calcular la dosis de insulina basal de acción prolongada (Glargina a dosis de 0.2-0.3 UI/kg subcutánea, es decir, 14-20 UI), administrar la dosis subcutánea y apagar la bomba de infusión continua de insulina corriente exactamente 2 horas después de la inyección.","destino":"fase_final_derivacion","es_correcta":true,"puntos_afectados":0,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":76,"presion_arterial_mmhg":"118/76","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"¡Excelente decisión! El pilar fundamental y más crítico de la transición es superponer la insulina basal subcutánea con la bomba de infusión continua durante un período de 2 horas. La insulina corriente endovenosa desaparece del plasma en cuestión de minutos (vida media de 5-10 minutos). Si apagaras la bomba inmediatamente al colocar la Glargina, se produciría un bache de insulinemia severo de casi 2 horas (tiempo que tarda la Glargina subcutánea en comenzar su acción y lograr niveles plasmáticos eficaces), lo cual volvería a gatillar la lipólisis y la cetogénesis.","printouts":[{"tipo":"Laboratorio · criterios de resolución","titulo":"Control previo al pase a insulina subcutánea","cuerpo":"=== CONTROL A LAS 12 HORAS DE TRATAMIENTO ===\n  Glucemia capilar .. 168 mg/dL\n  pH ................ 7.36       (VR 7.35-7.45)\n  Bicarbonato ....... 19 mEq/L   (VR 22-26)\n  Sodio (Na+) ....... 139 mEq/L\n  Potasio (K+) ...... 4.2 mEq/L\n  Cloro (Cl-) ....... 110 mEq/L\n  Cetonas plasm. .... 0.5 mmol/L (VR < 0.6)\n  Diuresis .......... 90 mL/h · paciente lúcido, tolera vía oral\n\nANIÓN GAP = 139 - (110 + 19) = 10 mEq/L   (VR 8-12)  ← CERRADO\n\nCRITERIOS DE RESOLUCIÓN DE LA CAD — se cumplen los cuatro\n  Glucemia < 200 mg/dL ................ SÍ (168)\n  Bicarbonato ≥ 15 mEq/L .............. SÍ (19)\n  pH > 7.30 ........................... SÍ (7.36)\n  Anión gap ≤ 12 mEq/L ................ SÍ (10)\n\nIMPRESIÓN: cetoacidosis RESUELTA. Habilitado el pase a insulina\nsubcutánea.\n\n⚠ REGLA DEL SOLAPAMIENTO: la insulina corriente endovenosa tiene una\nvida media de 5 a 7 minutos. Si cortás la bomba en el mismo momento en\nque aplicás la subcutánea, el paciente queda SIN insulina circulante\ndurante 1 a 2 horas y la cetoacidosis recurre.\n  → Aplicar la insulina basal subcutánea y mantener la bomba corriendo\n    entre 1 y 2 horas más, recién después suspenderla.\n\nNOTA: el bicarbonato de 19 y el cloro de 110 reflejan una acidosis\nhiperclorémica por el volumen de fisiológica infundido. Es esperable,\nbenigna y se corrige sola: no es cetoacidosis persistente."}]},{"texto":"Apagar la bomba de infusión continua de insulina de inmediato y, en ese mismo instante, administrar una dosis de insulina subcutánea de acción prolongada (Glargina 14 UI) junto con un esquema de corrección rápida subcutánea con insulina aspart según controles capilares.","destino":"fase_final_derivacion","es_correcta":false,"puntos_afectados":-6,"flags":{"omision":1,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":82,"presion_arterial_mmhg":"114/72","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Inadecuado. Apagar la bomba de infusión continua de forma simultánea con la administración de la insulina Glargina subcutánea es un error técnico de transición. Dado que la insulina Glargina requiere entre 1 y 2 horas para absorberse del tejido celular subcutáneo y alcanzar concentraciones terapéuticas plasmáticas estables, Mateo quedará desprovisto de insulina activa circulante durante ese bache de tiempo. Esto suele provocar un rebote moderado de la hiperglucemia y retrasar la recuperación metabólica completa."},{"texto":"Apagar la bomba de infusión continua de insulina corriente antes de acostarse para evitar el riesgo de hipoglucemia nocturna, no administrar ninguna dosis de insulina subcutánea basal, y esperar al control capilar de la mañana para calcular la dosis de mantenimiento.","destino":"fase_10_rescate_rebote_cetoacidosis","es_correcta":false,"puntos_afectados":-45,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":110,"presion_arterial_mmhg":"96/60","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":22,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"¡Error sumamente grave y peligroso! Dejar a un paciente con antecedente de cetoacidosis diabética activa sin ningún aporte de insulina (ni endovenosa ni subcutánea basal) durante toda la noche es una conducta temeraria. En ausencia absoluta de insulina circulante, las hormonas contrarreguladoras (glucagón, cortisol, catecolaminas) se disparan sin oposición, reactivando de inmediato la beta-oxidación de ácidos grasos y la cetogénesis hepática. Mateo sufrirá un severo rebote de acidosis metabólica y deshidratación durante la noche.","secuela":"Recurrencia de la cetoacidosis por suspensión precoz de la infusión."}]},"fase_10_rescate_rebote_cetoacidosis":{"id":"fase_10_rescate_rebote_cetoacidosis","etapa":"Rescate: Recidiva Severa de Acidosis por Omisión de Insulina Basal","descripcion_situación":"A las 3:00 AM, el enfermero te llama alarmado: Mateo despertó con náuseas intensas, dolor abdominal generalizado y respiración agitada. Realizás un control de urgencia: la glucemia capilar acusa 360 mg/dL y los gases muestran un pH de 7.18 con un bicarbonato de 12 mEq/L. El paciente recayó gravemente en cetoacidosis. ¿Cómo actuás de inmediato?","criticidad":"alta","tiempo_limite_segundos":360,"penalizacion_por_timeout":-14,"opciones":[{"texto":"Reiniciar inmediatamente la rehidratación con Solución Fisiológica al 0,9% y reinstaurar la Bomba de Infusión Continua de insulina corriente a 0.05-0.1 UI/kg/h hasta lograr nuevamente los criterios de resolución metabólica, planificando una transición adecuada posterior.","destino":"fase_final_derivacion","es_correcta":true,"puntos_afectados":8,"flags":{"omision":0,"iatrogenia":0},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":76,"presion_arterial_mmhg":"118/76","saturacion_oxigeno_pct":98,"frecuencia_respiratoria_rpm":16,"escala_dolor":0,"ritmo_monitoreo_ecg":"Ritmo Sinusal","st_mm":0},"feedback_detallado":"Excelente rescate médico. Frente a la recidiva severa del cuadro de cetoacidosis diabética, no hay lugar para tratamientos a medias. Debés retornar de forma inmediata al esquema terapéutico inicial: hidratación activa endovenosa con cristaloides y una bomba de infusión continua de insulina corriente para frenar y revertir la cetogénesis descontrolada. Una vez lograda la estabilidad metabólica por segunda vez, deberás realizar la transición obligatoria con Glargina superponiendo los esquemas por 2 horas."},{"texto":"Indicar una dosis subcutánea urgente de 20 UI de insulina NPH en el muslo del paciente y administrar un bolo endovenoso de 100 mEq de bicarbonato de sodio para calmar las náuseas y la acidosis.","destino":"fase_10_rescate_rebote_cetoacidosis","es_correcta":false,"puntos_afectados":-18,"flags":{"omision":1,"iatrogenia":1},"cambio_estado_paciente":{"frecuencia_cardiaca_lpm":115,"presion_arterial_mmhg":"92/56","saturacion_oxigeno_pct":96,"frecuencia_respiratoria_rpm":24,"escala_dolor":0,"ritmo_monitoreo_ecg":"Taquicardia Sinusal","st_mm":0},"feedback_detallado":"Conducta sumamente errónea y peligrosa. La insulina NPH subcutánea tiene un tiempo de inicio de acción demasiado prolongado (2 a 4 horas) como para tratar una cetoacidosis activa descompensada en fase aguda. Asimismo, el uso de bicarbonato endovenoso en esta instancia empeorará de forma severa la acidosis intracelular y provocará desequilibrios electrolíticos letales. Debés reinstaurar el goteo de insulina corriente endovenosa de inmediato. Volvé a intentarlo."}]},"fase_final_derivacion":{"id":"fase_final_derivacion","etapa":"Resolución del Caso Clínico","descripcion_situación":"Se ha completado el período de observación y estabilización de Mateo Rossi en la guardia médica de emergencias. El paciente se encuentra lúcido, hemodinámicamente estable, tolerando de forma excelente la vía oral y con parámetros metabólicos y ácido-base completamente corregidos. El servicio de Endocrinología y Nutrición ha evaluado al paciente en conjunto con Trabajo Social para garantizar la provisión gratuita de los análogos de insulina Glargina y Aspártica al alta, y se programa su seguimiento ambulatorio prioritario en consultorios externos de Diabetología. Este escenario clínico demuestra de forma contundente que el éxito terapéutico en las crisis hiperglucémicas severas depende del estricto respeto por la secuencia fisiopatológica y de un monitoreo metabólico continuo.","criticidad":"media","opciones":[]}}};
+
+/* ==========================================================================
+   FUNCIONES DE APOYO
+   ========================================================================== */
+function air(name,fio2){
+  const wasHyper=fio2>0.4&&S.spo2>=94&&S.rhythm==='sinus';
+  S.airway=name;S.fio2=fio2;
+  if(wasHyper&&name!=='ARM'&&name!=='BVM'){sc(-15,'Hiperoxia con SatO₂ ≥94%: vasoconstricción coronaria y mayor tamaño del infarto');S.iatro++;}
+  else if(fio2>0.21&&S.spo2<90)sc(8,'Oxígeno indicado por hipoxemia real');
+  info('Dispositivo: '+name+' · FiO₂ '+Math.round(fio2*100)+'%');bed();
+}
+function bed(){
+  const p=[];
+  p.push('SALA ROJA');
+  p.push(S.monitored?'monitorizado':'sin monitorizar');
+  p.push(S.airway==='aire'?'aire ambiente':S.airway);
+  if(S.vent)p.push('ARM');
+  if(S.arterial)p.push('PA invasiva');if(S.cvc)p.push('VVC');if(S.foley)p.push('sonda vesical');
+  $('bedinfo').textContent=p.join(' · ');
+}
+function die(r){S.dead=true;S.rhythm='asystole';S.bp=0;log('☠ FALLECIMIENTO — '+r,'bad');setTimeout(finish,1800);}
+
+/* ==========================================================================
+   FÍSICA
+   ========================================================================== */
+// Fisica simplificada dirigida por los datos del caso v4: cada opcion define
+// un ALVO explicito de signos vitales (novos_sinais_vitales), y esta funcion
+// solo hace que el trazado converja suavemente hacia ese alvo -- no hay
+// modelo farmacocinetico propio (nitratos, adrenalina, etc.) porque el caso
+// v4 no lo especifica. Mientras el alumno delibera sin responder (S.doing
+// vacio y el caso no termino), los signos vitales se degradan gradualmente
+// -- misma presion de tiempo ya validada en la version React del motor.
+// M-01: constantes originales divididas por 6 -- la v4 castigaba VELOCIDAD DE
+// LECTURA, no indecisión clínica (una vinieta de 1000 caracteres a
+// velocidadInicial=2 hacía perder 72 lpm y 60 mmHg sólo por leerla).
+const DERIVA_ESPERA={hr:0.6/6,sbp:-0.5/6,spo2:-0.08/6,rr:0.1/6};
+// M-03: si el caso trae st_mm en estado_inicial, el ST del monitor converge
+// hacia ese dato (fisiología real del caso) en vez de derivarse del puntaje.
+// Fallback a la fórmula vieja sólo si el caso no provee st_mm.
+const CASO_TIENE_ST_MM = typeof CASO_V4.estado_inicial.st_mm === 'number';
+if (CASO_TIENE_ST_MM) ALVO.st = CASO_V4.estado_inicial.st_mm;
+function physics(dt){
+ if(S.dead)return;
+ S.simT+=dt;
+
+ if(!S.ended&&!S.doing&&!S.decidido){
+   // M-01: período de gracia de lectura -- escala con lo que hay para leer
+   // en el nodo actual (viñeta + las 5 opciones). Mientras dure, no hay
+   // deriva: el alumno puede leer sin que el paciente se descompense solo.
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const gracia=nodoActual?30+((nodoActual.descripcion_situación.length+nodoActual.opciones.reduce((a,o)=>a+o.texto.length,0))/25):30;
+   const tEnNodo=S.simT-S.nodoEnteredAt;
+   if(tEnNodo>gracia){
+     // Tope por nodo: ningún nodo puede por sí solo, sólo por demora en
+     // decidir, arrastrar los signos vitales más de un 25% desde el valor
+     // con el que se entró a ese nodo.
+     const base=S.nodoBase||{hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+     ALVO.hr=clamp(clamp(ALVO.hr+DERIVA_ESPERA.hr*dt,20,200),base.hr*0.75,base.hr*1.25);
+     ALVO.sbp=clamp(clamp(ALVO.sbp+DERIVA_ESPERA.sbp*dt,0,220),base.sbp*0.75,base.sbp*1.25);
+     ALVO.spo2=clamp(clamp(ALVO.spo2+DERIVA_ESPERA.spo2*dt,0,100),base.spo2*0.75,base.spo2*1.25);
+     ALVO.rr=clamp(clamp(ALVO.rr+DERIVA_ESPERA.rr*dt,0,45),base.rr*0.75,base.rr*1.25);
+   }
+ }
+
+ // M-05: nodos criticidad:"letal" con tiempo_limite_segundos -- si el
+ // alumno no decide a tiempo, se aplica la penalización del nodo y, si es
+ // letal, se dispara la muerte (igual que insistir en la conducta errada).
+ if(!S.ended&&!S.doing&&!S.decidido&&!S.nodoTimeoutApplied){
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&(S.simT-S.nodoEnteredAt)>nodoActual.tiempo_limite_segundos){
+     S.nodoTimeoutApplied=true;
+     sc(nodoActual.penalizacion_por_timeout||0,'Tiempo agotado en «'+nodoActual.etapa+'» -- la indecisión también es una conducta','bad');
+     if(nodoActual.criticidad==='letal'&&!S.dead)die('Tiempo agotado en situación crítica: «'+nodoActual.etapa+'»');
+   }
+ }
+
+ if(CASO_TIENE_ST_MM)S.st+=(ALVO.st-S.st)*Math.min(1,dt/4);
+ else S.st=clamp((85-S.bp)/85,0,1)*5;
+
+ if(S.rhythm==='vf'||S.rhythm==='asystole'){S.hr=0;S.sbp=0;S.dbp=0;S.spo2=Math.max(0,S.spo2-dt*2);}
+ else{
+   S.hr+=(ALVO.hr-S.hr)*Math.min(1,dt/4);
+   S.sbp+=(ALVO.sbp-S.sbp)*Math.min(1,dt/4);
+   S.dbp+=(ALVO.dbp-S.dbp)*Math.min(1,dt/4);
+   S.spo2+=(ALVO.spo2-S.spo2)*Math.min(1,dt/4);
+ }
+ S.map=Math.round((S.sbp+2*S.dbp)/3);
+ S.rr+=(ALVO.rr-S.rr)*Math.min(1,dt/4);
+ if(S.nibp&&S.simT-S.lastNIBP>=CONFIG.cicloPANIsegundos){S.lastNIBP=S.simT;S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+ if(S.arterial){S.sbpShow=Math.round(S.sbp);S.dbpShow=Math.round(S.dbp);}
+}
+
+/* ==========================================================================
+   ONDAS
+   ========================================================================== */
+const cv=$('cv'),ctx=cv.getContext('2d');
+let W=0,H=0,px=0,LANES=5,lastY=[null,null,null,null,null];
+/* orden de canales igual al del uMEC12: ECG · CO2 · Plet · Imped. · Art */
+function resize(){
+ const dpr=window.devicePixelRatio||1;
+ W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);px=0;lastY=[null,null,null,null,null];
+ const l=H/LANES;
+ for(let k=1;k<=5;k++){const el=$('wl'+k);if(el)el.style.top=((k-1)*l+3)+'px';}
+ $('ws2').style.top=(l+3)+'px';
+ $('ws5').style.top=(4*l+3)+'px';
+}
+const g=(t,c,w,a)=>a*Math.exp(-Math.pow((t-c)/w,2));
+function ecgAt(t){
+ const r=S.rhythm;
+ if(r==='vf')return 0.42*(Math.sin(t*36.1)+0.7*Math.sin(t*23.7+1.1)+0.5*Math.sin(t*51.3+2.2))/2.2;
+ if(r==='asystole')return (Math.random()-0.5)*0.03+(S.cpr?0.25*Math.sin(t*11.5):0);
+ if(r==='avblock'){
+  const P=60/78,L=60/38,tp=t%P,tq=t%L;
+  let v=g(tp,0.10,0.028,0.16);
+  v+=g(tq,0.20,0.020,-0.14)+g(tq,0.255,0.030,1.0)+g(tq,0.33,0.028,-0.22)+g(tq,0.57,0.078,0.28);
+  if(tq>0.37&&tq<0.49)v+=S.st*0.075;
+  return v;
+ }
+ const L=60/clamp(S.hr,30,180),tt=t%L;
+ let v=g(tt,0.11,0.022,0.15);
+ v+=g(tt,0.205,0.011,-0.10)+g(tt,0.235,0.012,1.15)+g(tt,0.268,0.013,-0.24);
+ const st=S.st*0.075;
+ if(tt>0.28&&tt<0.40)v+=st;
+ v+=g(tt,0.455,0.055,0.30+st*0.5);
+ return v;
+}
+/* capnograma: rampa, meseta alveolar e inspiración — morfología del uMEC12 */
+function co2At(t){
+ if(S.etco2===null)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L,a=clamp(S.etco2/50,0.04,1);
+ if(p<0.06)return a*Math.max(0,1-p/0.06)*0.15;
+ if(p<0.14)return a*((p-0.06)/0.08)*0.93;
+ if(p<0.62)return a*(0.93+0.07*((p-0.14)/0.48));
+ if(p<0.68)return a*Math.max(0,1-(p-0.62)/0.06);
+ return 0.01;
+}
+function plethAt(t){
+ if(!S.sat_probe)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return (Math.random()-0.5)*0.05;
+ const L=60/clamp(S.hr,30,180),tt=(t%L)/L,amp=clamp(S.sbp/120,0.12,1);
+ return amp*(Math.exp(-Math.pow((tt-0.22)/0.13,2))+0.42*Math.exp(-Math.pow((tt-0.46)/0.11,2)))*0.9;
+}
+function impedAt(t){
+ if(!S.monitored)return null;
+ const L=60/clamp(S.rr,6,40),p=(t%L)/L;
+ return 0.5*Math.sin(2*Math.PI*p)+0.06*Math.sin(2*Math.PI*p*3);
+}
+/* curva arterial: ascenso rápido, muesca dicrótica y descenso diastólico */
+function artAt(t){
+ if(!S.arterial)return null;
+ if(S.rhythm==='vf'||S.rhythm==='asystole')return S.cpr?0.18*Math.sin(t*11.5)+0.2:0.05;
+ const L=60/clamp(S.hr,30,180),p=(t%L)/L;
+ const pp=clamp((S.sbp-S.dbp)/70,0.25,1.2), base=clamp(S.dbp/90,0.1,1)*0.28;
+ let v;
+ if(p<0.13)v=Math.pow(p/0.13,0.55);
+ else if(p<0.30)v=1-0.42*((p-0.13)/0.17);
+ else if(p<0.36)v=0.58+0.10*Math.sin((p-0.30)/0.06*Math.PI);  // muesca dicrótica
+ else v=0.58*Math.exp(-(p-0.36)*2.6);
+ return base+v*pp*0.62;
+}
+let beatIx=-1;
+function draw(dt){
+ const adv=(W/6.4)*dt, lane=H/LANES;   // barrido ~25 mm/s
+ const mid=[lane*.55,lane*1.75,lane*2.55,lane*3.55,lane*4.72];
+ const gain=[lane*.32,lane*.62,lane*.26,lane*.24,lane*.62];
+ const col=['#2fe36f','#ffe14a','#39d7ff','#e8eef5','#ff5a63'];
+ const steps=Math.max(1,Math.round(adv));
+ for(let i=0;i<steps;i++){
+  const t0=S.waveT+(i/steps)*dt, x=px+(i/steps)*adv, xi=Math.floor(x)%W;
+  ctx.fillStyle='#000';ctx.fillRect(xi+1,0,13,H);
+  const v=[S.monitored?ecgAt(t0):null, co2At(t0), plethAt(t0), impedAt(t0), artAt(t0)];
+  for(let l=0;l<LANES;l++){
+   if(v[l]===null){lastY[l]=null;continue;}
+   const y=mid[l]-v[l]*gain[l];
+   if(lastY[l]!==null&&xi>0){ctx.strokeStyle=col[l];ctx.lineWidth=1.25;ctx.beginPath();
+     ctx.moveTo(xi-1,lastY[l]);ctx.lineTo(xi,y);ctx.stroke();}
+   lastY[l]=y;
+  }
+  if(xi<2)lastY=[null,null,null,null,null];
+ }
+ px=(px+adv)%W;S.waveT+=dt;
+ if(S.monitored&&(S.rhythm==='sinus'||S.rhythm==='avblock')){
+  const L=S.rhythm==='avblock'?60/38:60/clamp(S.hr,30,180);
+  const ix=Math.floor(S.waveT/L);
+  if(ix!==beatIx){beatIx=ix;beep();const b=$('beat');if(b){b.classList.remove('on');void b.offsetWidth;b.classList.add('on');}}
+ }
+}
+let AC=null,alOsc=null;
+function beep(){if(!S.sound)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ const o=AC.createOscillator(),g2=AC.createGain();
+ o.frequency.value=S.spo2>=95?880:S.spo2>=90?740:560;
+ g2.gain.setValueAtTime(.045,AC.currentTime);g2.gain.exponentialRampToValueAtTime(.0001,AC.currentTime+.09);
+ o.connect(g2).connect(AC.destination);o.start();o.stop(AC.currentTime+.1);}catch(e){}}
+function alarmTone(on){if(!S.sound){if(alOsc){try{alOsc.stop()}catch(e){}alOsc=null}return;}
+ try{AC=AC||new(window.AudioContext||window.webkitAudioContext)();
+ if(on&&!alOsc){alOsc=AC.createOscillator();const g2=AC.createGain();
+  alOsc.type='square';alOsc.frequency.value=1046;g2.gain.value=.026;
+  alOsc.connect(g2).connect(AC.destination);alOsc.start();}
+ else if(!on&&alOsc){alOsc.stop();alOsc=null;}}catch(e){}}
+
+/* ==========================================================================
+   RENDER
+   ========================================================================== */
+function ui(){
+ /* ---- relojes externos al monitor ---- */
+ $('wall').textContent=hhmm(S.simT);
+ $('tplus').textContent=Math.floor(S.simT/60)+'′';
+ $('clkIsq').className='clk'+(S.bp<40?' crit':S.bp<70?' hot':'');
+ const idle=S.simT-S.lastAction;
+ $('idle').textContent=mmss(idle);
+ $('clkIdle').className='clk'+(idle>300?' crit':idle>150?' hot':'');
+ $('salv').textContent=Math.round(S.bp);
+
+ const arrest=S.rhythm==='vf'||S.rhythm==='asystole';
+
+ // M-05: cronómetro visible sólo en nodos con tiempo_limite_segundos, y
+ // sólo mientras el alumno todavía no decidió en ese nodo.
+ {
+   const nodoActual=CASO_V4.nodos[S.nodoId];
+   const timerEl=$('stgTimer');
+   if(nodoActual&&nodoActual.tiempo_limite_segundos&&!S.decidido&&!S.ended){
+     const restante=Math.max(0,Math.round(nodoActual.tiempo_limite_segundos-(S.simT-S.nodoEnteredAt)));
+     timerEl.textContent='⏱ '+mmss(restante);
+     timerEl.className='stgTimer on'+(restante<30?' crit':'');
+   } else {
+     timerEl.className='stgTimer';
+   }
+ }
+
+ /* ---- barra de estado del monitor ---- */
+ $('mBed').textContent='▣ SALA ROJA';
+ const t=(S.wallStart+S.simT)%86400;
+ $('mDT').textContent='08-08-2026 '+String(Math.floor(t/3600)).padStart(2,'0')+':'+
+   String(Math.floor(t%3600/60)).padStart(2,'0')+':'+String(Math.floor(t%60)).padStart(2,'0');
+ $('mTech').textContent=(S.monitored?(S.st>3?'Análisis de ST activo':'No se puede analizar QT'):'Derivación desconectada')+'  ·  reloj ×'+S.speed;
+
+ /* ---- ECG ---- */
+ zone('pzECG','vHR',S.monitored,arrest?(S.rhythm==='vf'?'---':'0'):Math.round(S.hr),
+   S.monitored&&(arrest||S.hr<50||S.hr>120));
+ $('beat').style.visibility=(S.monitored&&!arrest)?'visible':'hidden';
+ $('subPVC').innerHTML='PVC <b>'+(S.pvc!==null?S.pvc:'---')+'</b>';
+ $('subST').textContent=S.monitored?(S.st>1?'ST II '+S.st.toFixed(1)+' mm':'ST 0,0 mm'):'ST desact.';
+ $('subST').style.color=S.monitored&&S.st>3?'#ff5a63':'#a4aeb8';
+ $('limECG').innerHTML=(S.rhythm==='avblock'?'120<br>50':'120<br>50');
+
+ /* ---- CO2 ---- */
+ zone('pzCO2','vCO2',S.etco2!==null,S.etco2!==null?Math.round(S.etco2):'---',
+   S.etco2!==null&&(S.etco2<25||S.etco2>50));
+ $('subFRm').textContent=S.monitored?Math.round(S.rr):'--';
+ $('subR').textContent=S.vent?Math.round(S.rr):'0';
+
+ /* ---- SpO2 ---- */
+ zone('pzSat','vSat',S.sat_probe,Math.round(S.spo2),S.sat_probe&&S.spo2<90);
+ $('subPR').textContent=S.sat_probe&&!arrest?Math.round(S.hr):'---';
+ $('subPI').textContent=S.sat_probe?('IP '+clamp(S.sbp/70,0.2,4).toFixed(2)):'IP ---';
+
+ /* ---- Resp ---- */
+ zone('pzResp','vRR',S.monitored,Math.round(S.rr),S.monitored&&(S.rr>26||S.rr<9));
+ $('subOrigen').textContent=(S.capno||S.vent)?'Origen CO2':'Origen Imped.';
+
+ /* ---- presión arterial: PANI intermitente o Art invasiva continua ---- */
+ const bpOn=S.nibp||S.arterial;
+ $('lblArt').innerHTML=(S.arterial?'Art':'PANI')+'<span style="font-weight:400;font-size:8.5px"> mmHg</span>';
+ zone('pzArt','vBP',bpOn,arrest?'---/---':S.sbpShow+'/'+S.dbpShow,bpOn&&S.sbpShow<90&&!arrest);
+ $('subMAP').textContent=bpOn&&!arrest?'('+S.map+')':'(--)';
+ $('pzArt').classList.toggle('sel',S.arterial);
+ $('wl5').style.display=S.arterial?'block':'none';
+ $('ws5').style.display=S.arterial?'block':'none';
+ $('wl2').style.display=(S.etco2!==null)?'block':'none';
+ $('ws2').style.display=(S.etco2!==null)?'block':'none';
+ $('wl3').style.display=S.sat_probe?'block':'none';
+ $('wl4').style.display=S.monitored?'block':'none';
+ $('wl1').style.display=S.monitored?'block':'none';
+
+ /* ---- barra inferior ---- */
+ $('vT').textContent=S.monitored?S.temp.toFixed(1).replace('.',','):'--,-';
+ if(S.nibp&&!S.arterial){$('vPNI').textContent=S.sbpShow+'/'+S.dbpShow;
+   $('stPNI').textContent='Medición terminada '+hhmm(S.lastNIBP);}
+ else{$('vPNI').textContent='---/---';$('stPNI').textContent=S.arterial?'PANI en espera':'Medición manual';}
+
+ /* ---- banner de alarma (texto y jerarquía del equipo real) ---- */
+ let cls='none',txt='Sin alarmas';
+ if(!S.monitored){cls='none';txt='Sin monitorización';}
+ else if(S.rhythm==='vf'){cls='hi';txt='*** FIB VENT';}
+ else if(S.rhythm==='asystole'){cls='hi';txt='*** ASISTOLIA';}
+ else if(bpOn&&S.sbpShow<80&&!arrest){cls='hi';txt='*** PANI SIS muy baja';}
+ else if(S.rhythm==='avblock'){cls='hi';txt='*** FC muy baja';}
+ // M-04: el RIVA es un signo BUENO de reperfusión, no una arritmia peligrosa
+ // -- alarma informativa (ámbar), nunca roja, para no enseñar al alumno a
+ // "tratarlo" como si fuera una taquiarritmia maligna.
+ else if(S.rhythm==='riva'){cls='md';txt='** RIVA -- signo de reperfusión, no tratar';}
+ else if(S.sat_probe&&S.spo2<90){cls='md';txt='** SpO2 baja';}
+ else if(S.foley&&S.diuresis<25){cls='md';txt='** Diuresis baja';}
+ else if(S.st>3){cls='md';txt='** ST II elevado';}
+ else if(S.hr>120){cls='md';txt='** FC alta';}
+ else if(S.bp<70){cls='md';txt='** Puntuación en descenso';}
+ else{cls='';txt='Sin alarmas';}
+ const b=$('mBanner');b.className='banner '+(cls||'');b.textContent=txt;
+ alarmTone(cls==='hi');
+ const a=$('alarm');
+ a.className='alarmbar '+(cls==='hi'?'hi':cls==='md'?'md':'');
+ a.textContent=!S.monitored?'monitorización no iniciada':
+   cls==='hi'?'⚠ '+txt.replace(/\*/g,'').trim():cls==='md'?txt.replace(/\*/g,'').trim():'sin alarmas activas';
+
+ /* ---- ficha clínica -- campos sin dato real en este caso quedan "—" ---- */
+ $('fST').textContent=S.monitored?S.st.toFixed(1):'—';
+ $('fGlu').textContent=S.glu!=null?Math.round(S.glu):'—';
+ $('fLac').textContent=S.lac!=null?S.lac.toFixed(1):'—';
+ $('fDiu').textContent=S.diuresis!=null?Math.round(S.diuresis):'—';
+ $('fDiuU').textContent='sin sonda';
+ $('fGCS').textContent='—';$('fPain').textContent=Math.round(S.pain);$('fCRT').textContent=S.crt!=null?S.crt:'—';
+ $('fKil').textContent=S.examDone?(S.sbp<90?'III':'I'):'—';
+ $('fKilU').textContent=S.examDone?'sin crepitantes':'sin examinar';
+
+ /* ---- ventilador ---- */
+ $('ventPanel').className='vent'+(S.vent?' on':'');
+ if(S.vent){$('vPEEP').textContent=S.peep;$('vFiO2').textContent=Math.round(S.ventFiO2*100);
+  $('vPlat').textContent=S.peep>=10?24:18;}
+
+ /* ---- score ---- */
+ $('vBPs').textContent=Math.round(S.bp);$('bpbar').style.width=S.bp+'%';
+ const c=S.bp>70?'var(--ok)':S.bp>40?'var(--md)':'var(--hi)';
+ $('bpbar').style.background=c;$('vBPs').style.color=c;
+ $('vPE').textContent=Math.round(S.pe);$('vOm').textContent=S.omis;$('vIa').textContent=S.iatro;
+}
+function zone(pz,el,on,val,alarm){
+ $(el).textContent=on?val:(String(val).includes('/')?'---/---':'---');
+ $(pz).className='pz'+(on?'':' off')+(alarm?' alarm':'')+($(pz).classList.contains('sel')&&pz==='pzArt'?' sel':'');
+}
+let last=0;
+function loop(ts){
+ requestAnimationFrame(loop);
+ if(!S.running)return;
+ const dt=Math.min(.05,(ts-last)/1000||0);last=ts;
+ if(S.paused)return;
+ draw(dt);
+ let mult=S.doing?S.speed*6:S.speed;
+ physics(dt*mult);
+ if(S.doing){S.doing.left-=dt*mult;
+  $('doingB').style.width=(100*(1-S.doing.left/S.doing.total))+'%';
+  if(S.doing.left<=0){const f=S.doing.f;S.doing=null;$('doing').className='doing';f();}}
+ ui();
+}
+/* ==========================================================================
+   MOTOR DE NODOS — navega el grafo ramificado del caso v4 (no es más un
+   array lineal: cada opción define su propio "destino" por id, así que una
+   opción incorrecta puede llevar a una sub-fase de rescate que después
+   converge de vuelta a la línea principal). Reutiliza S.doing (definido en
+   el loop) para representar el tiempo clínico consumido por cada respuesta.
+   ========================================================================== */
+S.nodoId=NODO_INICIAL; S.printouts=[];
+const LETRAS=['A','B','C','D','E'];
+// clasifica el rigor de la opción para el color del feedback -- v4 no trae
+// una categoría r:'good'|'warn'|'bad' explícita, se deriva del puntaje.
+function clasificar(opt){
+  if(opt.es_correcta)return'good';
+  if(opt.puntos_afectados<=-30)return'bad';
+  return'warn';
+}
+// clasifica el ritmo de ECG en el enum que usan las funciones de onda/alarma
+function clasificarRitmo(txt){
+  const t=(txt||'').toLowerCase();
+  if(t.includes('fibrilación ventricular')||t.includes('taquicardia ventricular'))return'vf';
+  if(t.includes('asistolia')||t.includes('muerte encefálica')||t.includes('línea isoeléctrica'))return'asystole';
+  // M-04: antes caían en 'sinus' -- un bloqueo AV completo se dibujaba como
+  // un sinusal lento (el motor ya sabe dibujar 'avblock', sólo faltaba
+  // clasificarlo) y un RIVA post-reperfusión no tenía ninguna lectura propia.
+  if(t.includes('bloqueo av')||t.includes('bloqueo auriculoventricular'))return'avblock';
+  if(t.includes('ritmo idioventricular')||t.includes('riva'))return'riva';
+  return'sinus';
+}
+function aplicarVitales(cambio){
+  if(!cambio)return;
+  if(cambio.frecuencia_cardiaca_lpm!=null)ALVO.hr=cambio.frecuencia_cardiaca_lpm;
+  if(cambio.presion_arterial_mmhg){const[s,d]=cambio.presion_arterial_mmhg.split('/').map(Number);ALVO.sbp=s||0;ALVO.dbp=d||0;}
+  if(cambio.saturacion_oxigeno_pct!=null)ALVO.spo2=cambio.saturacion_oxigeno_pct;
+  if(cambio.frecuencia_respiratoria_rpm!=null)ALVO.rr=cambio.frecuencia_respiratoria_rpm;
+  if(cambio.escala_dolor!=null)S.pain=cambio.escala_dolor;
+  if(cambio.ritmo_monitoreo_ecg)S.rhythm=clasificarRitmo(cambio.ritmo_monitoreo_ecg);
+  if(CASO_TIENE_ST_MM&&cambio.st_mm!=null)ALVO.st=cambio.st_mm; // M-03
+}
+
+function renderStage(){
+ const nodo=CASO_V4.nodos[S.nodoId];
+ if(!nodo||nodo.opciones.length===0){finish();return;}
+ // M-01/M-05/M-09: reinicia el seguimiento del nodo nuevo -- momento de
+ // entrada (para gracia de lectura y timeout), snapshot de ALVO (tope de
+ // deriva), y registra la entrada en el log y en la traza de nodos visitados.
+ S.nodoEnteredAt=S.simT;S.decidido=false;S.nodoTimeoutApplied=false;
+ S.nodoBase={hr:ALVO.hr,sbp:ALVO.sbp,spo2:ALVO.spo2,rr:ALVO.rr};
+ S.nodosVisitados.push(nodo.id);
+ log('→ '+nodo.etapa,'evt');
+ $('stgNum').textContent=nodo.etapa;
+ $('stgTitle').textContent='🩺 '+nodo.etapa.replace(/^(Fase \d+|Subfase de Rescate):?\s*/,'');
+ $('stgVig').textContent=nodo.descripcion_situación;
+ $('stgOpts').innerHTML=nodo.opciones.map((o,i)=>
+   `<button class="opt" data-i="${i}"><span class="letter">${LETRAS[i]||i+1}</span><span>${o.texto}</span></button>`).join('');
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(nodo,+b.dataset.i));
+ $('stgFeedback').className='feedback';$('stgFeedback').innerHTML='';
+ $('stgNext').style.display='none';
+ $('stage').classList.remove('done');
+}
+
+function choose(nodo,i){
+ if(S.dead||S.ended||S.doing)return;
+ const opt=nodo.opciones[i];
+ S.decidido=true; // M-01/M-05: a partir de acá no corre más gracia/timeout de este nodo
+ S.lastAction=S.simT;
+ $('stgOpts').querySelectorAll('.opt').forEach(b=>b.disabled=true);
+ $('doingT').textContent='Aplicando conducta…';
+ $('doingB').style.width='0';$('doing').className='doing on';
+ S.doing={left:0.6,total:0.6,f:()=>resolveOption(nodo,opt)};
+}
+
+function resolveOption(nodo,opt){
+ const cls=clasificar(opt);
+ S.simT+=3*60;                            // avance nominal del reloj clínico por decisión
+ S.lastAction=S.simT;                     // recién actuó -- no cuenta como tiempo ocioso
+ sc(opt.puntos_afectados,null);           // aplica el puntaje sin línea propia; el detalle va en el feedback
+ aplicarVitales(opt.cambio_estado_paciente);
+ // M-02: acumuladores reales para el resultado exportado, a partir de los
+ // flags que trae cada opción del caso v5 (en vez de quedar en 0 fijo).
+ if(opt.flags){
+   S.omis+=opt.flags.omision||0;
+   S.iatro+=opt.flags.iatrogenia||0;
+   if(opt.flags.reperfusion)S.reperfusionFlag=true;
+   if(opt.flags.vd_identificado)S.vdIdentificadoFlag=true;
+ }
+ if(opt.secuela)S.secuelas.push(opt.secuela);
+ if(opt.printouts)opt.printouts.forEach(p=>archivarImpreso(p));
+ log((opt.puntos_afectados>0?'+':'')+opt.puntos_afectados+' pts · '+nodo.etapa,cls);
+
+ const fb=$('stgFeedback');
+ fb.className='feedback show '+cls;
+ fb.innerHTML=`<span class="fscore">${opt.puntos_afectados>0?'+':''}${opt.puntos_afectados} pts</span>${opt.feedback_detallado}`+
+   (opt.printouts&&opt.printouts.length?`<div style="margin-top:8px;font-size:11px;color:var(--dim)">📄 Impreso archivado en el menú lateral.</div>`:'');
+ $('stage').classList.add('done');
+ $('stgNext').style.display='inline-block';
+ $('stgNext').onclick=()=>{S.nodoId=opt.destino;renderStage();};
+}
+
+let toastImpresoT=null;
+function alertarImpreso(p){
+ // pulso visual en el panel lateral + contador, mas un toast temporal en la
+ // esquina superior -- para que el alumno note el impreso nuevo aunque no
+ // esté mirando la barra lateral en ese momento.
+ const panel=document.querySelector('.printouts');
+ panel.classList.remove('nuevo');void panel.offsetWidth;panel.classList.add('nuevo');
+ const cnt=$('pcount');
+ cnt.classList.remove('nuevo');void cnt.offsetWidth;cnt.classList.add('nuevo');
+ setTimeout(()=>{panel.classList.remove('nuevo');cnt.classList.remove('nuevo');},3200);
+
+ $('toastImpresoTxt').textContent=p.titulo;
+ const t=$('toastImpreso');
+ t.classList.add('on');
+ if(toastImpresoT)clearTimeout(toastImpresoT);
+ toastImpresoT=setTimeout(()=>t.classList.remove('on'),4200);
+}
+function archivarImpreso(p){
+ S.printouts.push({...p,hora:hhmm(S.simT)});
+ const list=$('plist');
+ $('pcount').textContent=S.printouts.length;
+ list.innerHTML=S.printouts.map((pr,ix)=>
+   `<button class="pitem" data-ix="${ix}"><span>${pr.titulo}</span><span class="tag2">${pr.tipo} · ${pr.hora}</span></button>`).join('');
+ list.querySelectorAll('.pitem').forEach(b=>b.onclick=()=>abrirImpreso(S.printouts[+b.dataset.ix]));
+ alertarImpreso(p);
+}
+function abrirImpreso(p){
+ $('printCard').innerHTML=`<button class="close" onclick="document.getElementById('ovPrint').className='ov hide'">Cerrar ✕</button>
+  <div class="kick">${p.tipo}</div><h1>${p.titulo}</h1>
+  <div class="stamp">Paciente, masculino · 58 a · liberado a las ${p.hora}</div>
+  <pre>${p.cuerpo}</pre>`;
+ $('ovPrint').className='ov';
+}
+
+function finish(){
+ if(S.ended)return;S.ended=true;S.running=false;alarmTone(false);
+ // El caso v4 no tiene un nodo de "muerte" separado: todos los caminos
+ // convergen al mismo nodo final (sucesso_conclusao). El desenlace real se
+ // refleja en la puntuación acumulada, no en a qué nodo se llegó.
+ const nodoFinal=CASO_V4.nodos[S.nodoId]||CASO_V4.nodos[NODO_EXITO];
+ const bp=Math.round(S.bp);
+ // M-06: si el nodo final trae texto_por_tier, se usa el texto específico
+ // del tier (exito/secuelas/critico) en vez de mostrar siempre el mismo
+ // descripcion_situación sin importar el desenlace.
+ const tier=bp>=70?'exito':bp>=40?'secuelas':'critico';
+ const textoTier=nodoFinal.texto_por_tier&&nodoFinal.texto_por_tier[tier];
+ let p,c,t;
+ if(bp>=70){p='ÉXITO PLENO';c='var(--ok)';t=textoTier||nodoFinal.descripcion_situación;}
+ else if(bp>=40){p='ESTABILIZADO CON SECUELAS';c='var(--md)';t=textoTier||nodoFinal.descripcion_situación;}
+ else{p='DESENLACE CRÍTICO';c='var(--hi)';t=textoTier||nodoFinal.descripcion_situación;}
+ const veredicto=bp>=70?{txt:'ÉXITO PLENO',col:'var(--ok)'}:bp>=40?{txt:'ESTABILIZADO CON SECUELAS',col:'var(--md)'}:{txt:'DESENLACE CRÍTICO',col:'var(--hi)'};
+ $('endCard').innerHTML=`<div class="kick" style="color:${c}">Desenlace</div>
+ <div style="font-size:34px;font-weight:800;letter-spacing:2px;color:${veredicto.col};margin:2px 0 6px">${veredicto.txt}</div>
+ <h1 style="color:${c}">${p}</h1><p>${t}</p>
+ <table>
+  <tr><td>Puntuación final</td><td>${bp} / 100</td></tr>
+  <tr><td>Tiempo total de caso</td><td>${Math.floor(S.simT/60)} min</td></tr>
+ </table><button class="btn" onclick="location.reload()">Reiniciar el caso</button>`;
+ $('ovEnd').className='ov';
+
+ /* ---- resultado exportable al sitio contenedor (mismo contrato del tipo
+    "iframe" ya consumido por hospital-simulacao-caso-viewer.tsx) ---- */
+ // M-02: campos reales en vez de hardcodeados/derivados incorrectamente.
+ // fallecido usa la bandera real que setea die() (no bp<40, que confundía
+ // "estabilizado con secuelas" con "paciente fallecido"); reperfundido y
+ // vdIdentificado salen de si el alumno efectivamente pasó por una opción
+ // con ese flag; omisiones/iatrogenias son la suma real de S.omis/S.iatro.
+ const resultado={
+  caso:'IAMCEST-01', version:'5.0',
+  desenlace:p, camino:bp>=70?1:(bp>=40?2:3),
+  bpFinal:bp, reservaExcelencia:Math.round(S.pe),
+  omisiones:S.omis, iatrogenias:S.iatro,
+  isquemiaTotalMin:Math.floor(S.simT/60),
+  puertaBalonMin:null, miocardioSalvable:null,
+  vdIdentificado:S.vdIdentificadoFlag, reperfundido:S.reperfusionFlag,
+  soporteVentilatorio:S.airway,
+  tiempoPerdidoMin:Math.round(S.lostTime/60),
+  fallecido:S.dead, dificultad:CONFIG.dificultad,
+  secuelas:S.secuelas.slice(), nodosVisitados:S.nodosVisitados.slice(),
+  registro:S.log.slice().reverse(),
+  finalizadoEn:new Date().toISOString()
+ };
+ window.SimuladorIAMCEST.resultado=resultado;
+ if(typeof CONFIG.alFinalizar==='function'){try{CONFIG.alFinalizar(resultado);}catch(e){console.error(e);}}
+ if(CONFIG.emitirPostMessage&&window.parent!==window){
+  try{window.parent.postMessage({tipo:'simulador-iamcest:finalizado',resultado},CONFIG.origenPermitido);}catch(e){}
+ }
+ document.dispatchEvent(new CustomEvent('simulador-iamcest:finalizado',{detail:resultado}));
+}
+$('bSpeed').onclick=()=>{S.speed=S.speed===1?4:S.speed===4?10:1;$('bSpeed').textContent='×'+S.speed;};
+$('bSound').onclick=()=>{S.sound=!S.sound;$('bSound').classList.toggle('on',S.sound);if(!S.sound)alarmTone(false);};
+$('bPause').onclick=()=>{S.paused=!S.paused;$('bPause').textContent=S.paused?'▶':'⏸';
+ $('bPause').classList.toggle('on',S.paused);if(S.paused)alarmTone(false);};
+$('bEnd').onclick=finish;
+$('bCase').onclick=()=>{$('ovCase').className='ov';if(S.running&&!S.paused)$('bPause').click();};
+$('closeCase').onclick=()=>{$('ovCase').className='ov hide';};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('ovCase').className='ov hide';$('ovPrint').className='ov hide';}});
+
+function iniciar(vel){
+ S.speed=vel||CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+ $('ovIntro').className='ov hide';S.running=true;last=performance.now();
+ /* el monitor multiparamétrico se conecta al ingreso: la narrativa lo instala, no el alumno */
+ S.monitored=true;S.sat_probe=true;S.nibp=true;S.lastNIBP=S.simT;S.defibNear=true;
+ bed();
+ log('Ingreso a Urgencias. Monitor multiparamétrico, oxímetro y manguito de PANI colocados.','evt');
+ renderStage();
+}
+$('bComenzar').onclick=()=>iniciar();
+setInterval(()=>{if(S.running&&!S.paused&&!S.dead){const i=S.simT-S.lastAction;if(i>120)S.lostTime+=S.speed;}},1000);
+window.addEventListener('resize',resize);
+
+/* ==========================================================================
+   API PÚBLICA — el sitio contenedor puede controlar el simulador
+   ========================================================================== */
+window.SimuladorIAMCEST={
+ iniciar, finalizar:finish, resultado:null,
+ pausar:()=>{S.paused=true;alarmTone(false);$('bPause').textContent='▶';},
+ reanudar:()=>{S.paused=false;last=performance.now();$('bPause').textContent='⏸';},
+ verExpediente:()=>{$('ovCase').className='ov';},
+ estado:()=>({bp:Math.round(S.bp),pe:Math.round(S.pe),minuto:Math.floor(S.simT/60),
+   nodo:S.nodoId,ritmo:S.rhythm}),
+ reiniciar:()=>location.reload(),
+ config:CONFIG
+};
+
+/* ---- arranque ---- */
+$('introTitulo').textContent='Caso 5';
+$('introDescripcion').textContent=CASO_V4.descripcion;
+$('histMotivo').textContent=CASO_V4.descripcion;
+$('docTitulo').textContent='Caso 5 · '+CASO_V4.titulo_juego;
+$('docDescripcion').textContent=CASO_V4.descripcion;
+S.speed=CONFIG.velocidadInicial;$('bSpeed').textContent='×'+S.speed;
+S.sound=!!CONFIG.sonidoInicial;$('bSound').classList.toggle('on',S.sound);
+if(!CONFIG.mostrarExpediente)$('bCase').style.display='none';
+resize();requestAnimationFrame(loop);
+if(CONFIG.saltarIntro&&CONFIG.autoIniciar)iniciar();
+</script>
+</body>
+</html>
+

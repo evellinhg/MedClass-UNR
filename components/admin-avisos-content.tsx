@@ -1,14 +1,15 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import { Check, Loader2, Send, Trash2 } from "lucide-react"
+import { Check, Loader2, Plus, Send, Trash2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import type { AvisoConteudo } from "@/lib/avisos"
+import { AVISO_DESTINO_LABEL, criarAvisoManual, type AvisoConteudo, type AvisoDestino } from "@/lib/avisos"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 import {
   Select,
   SelectContent,
@@ -16,13 +17,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
 const TIPO_LABEL: Record<string, string> = {
   flashcards: "Flashcards",
   videoaulas: "Videoaula",
   resumos: "Resumo",
   desafios_clinicos: "Desafio Clínico",
+  manual: "Comunicado",
 }
+
+const DESTINO_OPCOES = Object.entries(AVISO_DESTINO_LABEL) as [AvisoDestino, string][]
 
 function formatDate(value: string) {
   return new Date(value).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" })
@@ -47,6 +52,11 @@ export function AdminAvisosContent() {
   const [filterStatus, setFilterStatus] = useState<string>("pendente")
   const [processandoId, setProcessandoId] = useState<string | null>(null)
   const [edits, setEdits] = useState<Record<string, { titulo: string; mensagem: string }>>({})
+  const [destinos, setDestinos] = useState<Record<string, AvisoDestino>>({})
+  const [criarOpen, setCriarOpen] = useState(false)
+  const [novoTitulo, setNovoTitulo] = useState("")
+  const [novoMensagem, setNovoMensagem] = useState("")
+  const [criando, setCriando] = useState(false)
 
   const load = async () => {
     setLoading(true)
@@ -71,6 +81,7 @@ export function AdminAvisosContent() {
   }, [avisos])
 
   const getEdit = (aviso: AvisoConteudo) => edits[aviso.id] ?? { titulo: aviso.titulo, mensagem: aviso.mensagem }
+  const getDestino = (aviso: AvisoConteudo): AvisoDestino => destinos[aviso.id] ?? aviso.destino ?? "todas"
 
   const updateEdit = (id: string, field: "titulo" | "mensagem", value: string) => {
     setEdits((prev) => {
@@ -79,18 +90,40 @@ export function AdminAvisosContent() {
     })
   }
 
+  const handleCriar = async () => {
+    if (!novoTitulo.trim() || !novoMensagem.trim()) {
+      alert("Preencha o título e a mensagem do aviso.")
+      return
+    }
+    setCriando(true)
+    const { data, error } = await criarAvisoManual(novoTitulo.trim(), novoMensagem.trim())
+    setCriando(false)
+
+    if (error || !data) {
+      alert(`Erro ao criar aviso: ${error?.message ?? "erro desconhecido"}`)
+      return
+    }
+
+    setAvisos((prev) => [data as AvisoConteudo, ...prev])
+    setFilterStatus("pendente")
+    setNovoTitulo("")
+    setNovoMensagem("")
+    setCriarOpen(false)
+  }
+
   const handleEnviar = async (aviso: AvisoConteudo) => {
     const edit = getEdit(aviso)
+    const destino = getDestino(aviso)
     if (!edit.titulo.trim() || !edit.mensagem.trim()) {
       alert("Preencha o título e a mensagem do aviso.")
       return
     }
-    if (!confirm("Enviar esse aviso para todos os alunos agora?")) return
+    if (!confirm(`Enviar esse aviso para: ${AVISO_DESTINO_LABEL[destino]}?`)) return
 
     setProcessandoId(aviso.id)
     const res = await authedFetch(`/api/admin/avisos/${aviso.id}/enviar`, {
       method: "POST",
-      body: JSON.stringify({ titulo: edit.titulo.trim(), mensagem: edit.mensagem.trim() }),
+      body: JSON.stringify({ titulo: edit.titulo.trim(), mensagem: edit.mensagem.trim(), destino }),
     })
     setProcessandoId(null)
 
@@ -126,22 +159,69 @@ export function AdminAvisosContent() {
             {stats.total} avisos · {stats.pendentes} pendentes
           </p>
         </div>
-        <Select value={filterStatus} onValueChange={setFilterStatus}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Status" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="todos">Todos ({avisos.length})</SelectItem>
-            <SelectItem value="pendente">
-              Pendentes ({avisos.filter((a) => a.status === "pendente").length})
-            </SelectItem>
-            <SelectItem value="enviado">Enviados ({avisos.filter((a) => a.status === "enviado").length})</SelectItem>
-            <SelectItem value="descartado">
-              Descartados ({avisos.filter((a) => a.status === "descartado").length})
-            </SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="flex items-center gap-2">
+          <Button size="sm" variant="gradient" className="gap-1.5" onClick={() => setCriarOpen(true)}>
+            <Plus className="h-4 w-4" />
+            Criar novo aviso
+          </Button>
+          <Select value={filterStatus} onValueChange={setFilterStatus}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Status" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="todos">Todos ({avisos.length})</SelectItem>
+              <SelectItem value="pendente">
+                Pendentes ({avisos.filter((a) => a.status === "pendente").length})
+              </SelectItem>
+              <SelectItem value="enviado">Enviados ({avisos.filter((a) => a.status === "enviado").length})</SelectItem>
+              <SelectItem value="descartado">
+                Descartados ({avisos.filter((a) => a.status === "descartado").length})
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
+
+      <Dialog open={criarOpen} onOpenChange={setCriarOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Criar novo aviso</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-3 py-1">
+            <div className="space-y-1.5">
+              <Label htmlFor="novo-titulo">Título</Label>
+              <Input
+                id="novo-titulo"
+                value={novoTitulo}
+                onChange={(e) => setNovoTitulo(e.target.value)}
+                placeholder="Título do aviso"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="novo-mensagem">Mensagem</Label>
+              <Textarea
+                id="novo-mensagem"
+                value={novoMensagem}
+                onChange={(e) => setNovoMensagem(e.target.value)}
+                placeholder="Mensagem do aviso"
+                className="min-h-[100px]"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              O aviso é salvo como pendente. Escolha o público-alvo na hora de enviar.
+            </p>
+          </div>
+          <DialogFooter>
+            <Button variant="outline" onClick={() => setCriarOpen(false)}>
+              Cancelar
+            </Button>
+            <Button variant="gradient" onClick={handleCriar} disabled={criando}>
+              {criando && <Loader2 className="h-4 w-4 animate-spin" />}
+              Criar aviso
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
 
       {loading ? (
         <div className="flex items-center justify-center gap-2 p-10 text-sm text-muted-foreground">
@@ -187,11 +267,34 @@ export function AdminAvisosContent() {
                       placeholder="Mensagem do aviso"
                       className="min-h-[70px] text-sm"
                     />
+                    <div className="space-y-1.5">
+                      <Label className="text-xs text-muted-foreground">Enviar para</Label>
+                      <Select
+                        value={getDestino(aviso)}
+                        onValueChange={(v) => setDestinos((prev) => ({ ...prev, [aviso.id]: v as AvisoDestino }))}
+                      >
+                        <SelectTrigger className="w-full sm:w-64">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {DESTINO_OPCOES.map(([value, label]) => (
+                            <SelectItem key={value} value={value}>
+                              {label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
                 ) : (
                   <div>
                     <p className="font-medium text-foreground">{aviso.titulo}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{aviso.mensagem}</p>
+                    {aviso.status === "enviado" && (
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        Enviado para: {AVISO_DESTINO_LABEL[aviso.destino ?? "todas"]}
+                      </p>
+                    )}
                   </div>
                 )}
 
@@ -209,7 +312,7 @@ export function AdminAvisosContent() {
                       ) : (
                         <Send className="h-4 w-4" />
                       )}
-                      Enviar para todos os alunos
+                      Enviar
                     </Button>
                     <Button
                       size="sm"
@@ -226,7 +329,7 @@ export function AdminAvisosContent() {
                 {aviso.status === "enviado" && (
                   <div className="mt-2 flex items-center gap-1.5 text-xs text-success">
                     <Check className="h-3.5 w-3.5" />
-                    Enviado para todos os alunos
+                    Enviado
                   </div>
                 )}
               </Card>

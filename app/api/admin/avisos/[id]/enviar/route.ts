@@ -12,6 +12,8 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
   const body = await request.json()
   const titulo = typeof body.titulo === 'string' ? body.titulo.trim() : ''
   const mensagem = typeof body.mensagem === 'string' ? body.mensagem.trim() : ''
+  const destinosValidos = ['todas', 'premium', 'vip', 'colaboradores', 'gratis']
+  const destino = destinosValidos.includes(body.destino) ? body.destino : 'todas'
 
   if (!titulo || !mensagem) {
     return NextResponse.json({ error: 'Título e mensagem são obrigatórios.' }, { status: 400 })
@@ -35,7 +37,13 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
     return NextResponse.json({ error: 'Esse aviso já foi processado.' }, { status: 409 })
   }
 
-  const { data: profiles, error: profilesError } = await supabase.from('profiles').select('id')
+  let profilesQuery = supabase.from('profiles').select('id')
+  if (destino === 'premium') profilesQuery = profilesQuery.in('plan', ['mensal', 'trimestral'])
+  else if (destino === 'vip') profilesQuery = profilesQuery.eq('plan', 'vip')
+  else if (destino === 'colaboradores') profilesQuery = profilesQuery.eq('role', 'colaborador')
+  else if (destino === 'gratis') profilesQuery = profilesQuery.eq('plan', 'gratis')
+
+  const { data: profiles, error: profilesError } = await profilesQuery
   if (profilesError) {
     return NextResponse.json({ error: profilesError.message }, { status: 500 })
   }
@@ -57,7 +65,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
 
   const { data: updated, error: updateError } = await supabase
     .from('avisos_conteudo')
-    .update({ titulo, mensagem, status: 'enviado', enviado_em: new Date().toISOString() })
+    .update({ titulo, mensagem, destino, status: 'enviado', enviado_em: new Date().toISOString() })
     .eq('id', id)
     .select()
     .maybeSingle()

@@ -324,8 +324,7 @@ const pt = {
     vazio: "Nenhum caso disponível no momento.",
     abrirCaso: "Abrir caso",
     avisoEducativo: "Material educativo e de simulação. Paciente e cenário fictícios — não substitui os protocolos institucionais vigentes.",
-    bloqueadoCard: "Em breve para todos os alunos",
-    acessoRestritoAlerta: "Hospital Simulação ainda está em testes internos — disponível apenas para a equipe da MedClass por enquanto.",
+    bloqueadoCard: "Disponível apenas nos planos pagos",
     abaAno4: "Cenários 4º Ano",
     abaAno5: "Cenários 5º Ano",
   },
@@ -335,8 +334,8 @@ const pt = {
     naoEncontrado: "Caso não encontrado.",
     tentativaSalva: "Desempenho registrado com sucesso.",
     tentativaErro: "Não foi possível salvar seu desempenho desta vez.",
-    acessoRestritoTitulo: "Disponível em breve",
-    acessoRestritoDescricao: "Hospital Simulação ainda está em testes internos e por enquanto é visível apenas para a equipe da MedClass.",
+    acessoRestritoTitulo: "Disponível apenas para assinantes",
+    acessoRestritoDescricao: "Conteúdo disponível apenas para assinantes. Adquira já o seu plano e não perca mais tempo de estudo!",
   },
   desafiosClinicos: {
     categoria: {
@@ -1435,8 +1434,7 @@ const es: typeof pt = {
     vazio: "No hay casos disponibles por el momento.",
     abrirCaso: "Abrir caso",
     avisoEducativo: "Material educativo y de simulación. Paciente y escenario ficticios — no sustituye los protocolos institucionales vigentes.",
-    bloqueadoCard: "Próximamente para todos los alumnos",
-    acessoRestritoAlerta: "Hospital Simulación todavía está en pruebas internas — disponible solo para el equipo de MedClass por el momento.",
+    bloqueadoCard: "Disponible solo en los planes pagos",
     abaAno4: "Escenarios 4to Año",
     abaAno5: "Escenarios 5to Año",
   },
@@ -1446,8 +1444,8 @@ const es: typeof pt = {
     naoEncontrado: "Caso no encontrado.",
     tentativaSalva: "Desempeño registrado con éxito.",
     tentativaErro: "No se pudo guardar tu desempeño esta vez.",
-    acessoRestritoTitulo: "Disponible próximamente",
-    acessoRestritoDescricao: "Hospital Simulación todavía está en pruebas internas y por el momento es visible solo para el equipo de MedClass.",
+    acessoRestritoTitulo: "Disponible solo para suscriptores",
+    acessoRestritoDescricao: "Contenido disponible solo para suscriptores. ¡Adquirí ya tu plan y no pierdas más tiempo de estudio!",
   },
   desafiosClinicos: {
     categoria: {

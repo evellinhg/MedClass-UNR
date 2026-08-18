@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Loader2, Lock } from "lucide-react"
+import { ArrowLeft, Loader2 } from "lucide-react"
 import { supabase } from "@/lib/supabase"
 import { Card } from "@/components/ui/card"
 import type { HospitalSimulacaoCaso, SimuladorResultado } from "@/lib/hospital-simulacao-types"
 import { useLanguage } from "@/lib/i18n"
 import { getPlanStatus } from "@/lib/plan-status"
 import { HospitalSimulacaoJogo } from "@/components/hospital-simulacao-jogo"
+import { PlanRestrictedNotice } from "@/components/plan-restricted-notice"
 
 interface HospitalSimulacaoCasoViewerProps {
   casoId: string
@@ -29,7 +30,7 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCaso((data as HospitalSimulacaoCaso) ?? null)
-      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || planStatus?.plan === "vip" || false)
+      setPodeAcessar(planStatus?.hasFullAccess ?? false)
       // Só admin/colaborador (nunca vip comum) recebe o expediente docente
       // com as respostas -- ver CONFIG.mostrarExpediente no motor v5.
       setIsDocente(planStatus?.isAdmin || planStatus?.isColaborador || false)
@@ -101,15 +102,17 @@ export function HospitalSimulacaoCasoViewer({ casoId }: HospitalSimulacaoCasoVie
 
   if (!podeAcessar) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-[24px] border border-border bg-card p-10 text-center">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
-          <Lock className="h-6 w-6 text-muted-foreground" />
+      <div className="mx-auto mt-6 max-w-lg space-y-4">
+        <PlanRestrictedNotice
+          tone="locked"
+          title={t.hospitalSimulacaoViewer.acessoRestritoTitulo}
+          description={t.hospitalSimulacaoViewer.acessoRestritoDescricao}
+        />
+        <div className="text-center">
+          <Link href="/dashboard/hospital-simulacao" className="text-sm font-medium text-primary hover:underline">
+            {t.hospitalSimulacaoViewer.voltar}
+          </Link>
         </div>
-        <p className="text-base font-semibold text-foreground">{t.hospitalSimulacaoViewer.acessoRestritoTitulo}</p>
-        <p className="max-w-xs text-sm text-muted-foreground">{t.hospitalSimulacaoViewer.acessoRestritoDescricao}</p>
-        <Link href="/dashboard/hospital-simulacao" className="mt-1 text-sm font-medium text-primary hover:underline">
-          {t.hospitalSimulacaoViewer.voltar}
-        </Link>
       </div>
     )
   }

@@ -59,19 +59,6 @@ function GradeCasos({ casos, podeAcessar, vazioLabel }: { casos: HospitalSimulac
           </Card>
         )
 
-        if (!podeAcessar) {
-          return (
-            <button
-              key={caso.id}
-              type="button"
-              onClick={() => alert(t.hospitalSimulacaoGrid.acessoRestritoAlerta)}
-              className="cursor-not-allowed text-left"
-            >
-              {cardContent}
-            </button>
-          )
-        }
-
         return (
           <Link key={caso.id} href={`/dashboard/hospital-simulacao/${caso.id}`}>
             {cardContent}
@@ -94,7 +81,7 @@ export function HospitalSimulacaoGrid() {
       getPlanStatus(),
     ]).then(([{ data }, planStatus]) => {
       setCasos((data as HospitalSimulacaoCaso[]) ?? [])
-      setPodeAcessar(planStatus?.isAdmin || planStatus?.isColaborador || planStatus?.plan === "vip" || false)
+      setPodeAcessar(planStatus?.hasFullAccess ?? false)
       setLoading(false)
     })
   }, [])

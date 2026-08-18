@@ -24,7 +24,7 @@ const COLABORADOR_ALLOWED_PREFIXES = [
   "/admin/videoaulas",
   "/admin/resumos",
   "/admin/desafios",
-  "/admin/trilhas",
+  "/admin/acessos",
 ]
 
 function colaboradorPodeAcessar(pathname: string) {

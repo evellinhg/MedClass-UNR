@@ -12,9 +12,15 @@ import { GoogleIcon } from "@/components/social-icons"
 
 type Mode = "signin" | "signup" | "forgot"
 
-export function LoginForm({ initialError }: { initialError?: string }) {
+export function LoginForm({
+  initialError,
+  initialMode = "signin",
+}: {
+  initialError?: string
+  initialMode?: Mode
+}) {
   const router = useRouter()
-  const [mode, setMode] = useState<Mode>("signin")
+  const [mode, setMode] = useState<Mode>(initialMode)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loading, setLoading] = useState<"google" | "email" | null>(null)

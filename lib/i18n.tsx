@@ -15,6 +15,7 @@ const pt = {
       faq: "Dúvidas",
     },
     entrar: "Entrar",
+    criarConta: "Criar conta",
   },
   dashboardNav: {
     inicio: "Início",
@@ -1127,6 +1128,7 @@ const es: typeof pt = {
       faq: "Preguntas",
     },
     entrar: "Ingresar",
+    criarConta: "Crear cuenta",
   },
   dashboardNav: {
     inicio: "Inicio",

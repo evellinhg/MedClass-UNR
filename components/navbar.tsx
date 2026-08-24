@@ -64,6 +64,13 @@ export function Navbar() {
         <div className="hidden items-center gap-2 md:flex">
           <NavbarSocialIcons />
           <LanguageSwitcher />
+          <Button
+            asChild
+            variant="outline"
+            className="rounded-full border-white/20 bg-transparent text-white/80 hover:bg-white/5 hover:text-white"
+          >
+            <a href="/login?mode=signup">{t.nav.criarConta}</a>
+          </Button>
           <Button asChild className="rounded-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00] hover:from-[#a3e635] hover:to-[#65a30d]">
             <a href="/login">{t.nav.entrar}</a>
           </Button>
@@ -107,6 +114,13 @@ export function Navbar() {
             <div className="flex flex-col gap-2 border-t border-white/5 pt-4">
               <Button asChild className="w-full bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] text-[#0a1f00]">
                 <a href="/login" onClick={() => setMobileOpen(false)}>{t.nav.entrar}</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="w-full border-white/20 bg-transparent text-white/80 hover:bg-white/5 hover:text-white"
+              >
+                <a href="/login?mode=signup" onClick={() => setMobileOpen(false)}>{t.nav.criarConta}</a>
               </Button>
             </div>
           </div>

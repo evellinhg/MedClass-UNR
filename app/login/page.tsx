@@ -9,12 +9,15 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>
+  searchParams: Promise<{ error?: string; mode?: string }>
 }) {
   const params = await searchParams
   return (
     <div className="relative flex min-h-screen items-center justify-center bg-background px-4 py-12">
-      <LoginForm initialError={params?.error} />
+      <LoginForm
+        initialError={params?.error}
+        initialMode={params?.mode === "signup" ? "signup" : "signin"}
+      />
     </div>
   )
 }

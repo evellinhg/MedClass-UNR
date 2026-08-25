@@ -47,6 +47,7 @@ const LETRAS = ["a", "b", "c", "d"]
 interface AlternativaForm {
   texto: string
   correta: boolean
+  feedback: string
 }
 
 interface PerguntaForm {
@@ -78,10 +79,10 @@ const SEM_AREA = "none"
 const SEM_SECAO = "none"
 
 const emptyAlternativas = (): AlternativaForm[] => [
-  { texto: "", correta: true },
-  { texto: "", correta: false },
-  { texto: "", correta: false },
-  { texto: "", correta: false },
+  { texto: "", correta: true, feedback: "" },
+  { texto: "", correta: false, feedback: "" },
+  { texto: "", correta: false, feedback: "" },
+  { texto: "", correta: false, feedback: "" },
 ]
 
 const emptyPergunta = (): PerguntaForm => ({
@@ -148,7 +149,7 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
             id: p.id,
             categoria: p.categoria,
             enunciado: p.enunciado,
-            alternativas: p.alternativas.map((a) => ({ texto: a.texto, correta: a.correta })),
+            alternativas: p.alternativas.map((a) => ({ texto: a.texto, correta: a.correta, feedback: a.feedback ?? "" })),
             explicacao: p.explicacao ?? "",
           }))
         : [emptyPergunta()],
@@ -195,6 +196,15 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
           : q
       ),
     }))
+  const updateAlternativaFeedback = (perguntaIdx: number, altIdx: number, feedback: string) =>
+    setForm((p) => ({
+      ...p,
+      perguntas: p.perguntas.map((q, i) =>
+        i === perguntaIdx
+          ? { ...q, alternativas: q.alternativas.map((a, j) => (j === altIdx ? { ...a, feedback } : a)) }
+          : q
+      ),
+    }))
 
   const handleSave = async () => {
     if (!form.titulo.trim()) {
@@ -206,7 +216,7 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
         ...q,
         enunciado: q.enunciado.trim(),
         explicacao: q.explicacao.trim(),
-        alternativas: q.alternativas.map((a) => ({ ...a, texto: a.texto.trim() })),
+        alternativas: q.alternativas.map((a) => ({ ...a, texto: a.texto.trim(), feedback: a.feedback.trim() })),
       }))
       .filter((q) => q.enunciado && q.alternativas.every((a) => a.texto) && q.alternativas.some((a) => a.correta))
     if (perguntasLimpa.length === 0) {
@@ -254,7 +264,12 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
       categoria: q.categoria,
       enunciado: q.enunciado,
       explicacao: q.explicacao || null,
-      alternativas: q.alternativas.map((a, i) => ({ id: LETRAS[i], texto: a.texto, correta: a.correta })),
+      alternativas: q.alternativas.map((a, i) => ({
+        id: LETRAS[i],
+        texto: a.texto,
+        correta: a.correta,
+        feedback: a.correta ? null : a.feedback || null,
+      })),
     }))
     const { error: perguntasError } = await supabase.from("desafios_clinicos_perguntas").insert(perguntasPayload)
 
@@ -480,32 +495,44 @@ export function DesafioClinicoEditDialog({ open, onOpenChange, desafio, onSaved 
                     <div className="space-y-1.5">
                       <Label className="text-xs text-muted-foreground">Alternativas (marque a correta)</Label>
                       {pergunta.alternativas.map((alt, altIdx) => (
-                        <div key={altIdx} className="flex items-center gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setAlternativaCorreta(idx, altIdx)}
-                            className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold uppercase transition-colors ${
-                              alt.correta
-                                ? "border-emerald-500 bg-emerald-500 text-white"
-                                : "border-border text-muted-foreground hover:border-emerald-500/50"
-                            }`}
-                            aria-label={`Marcar alternativa ${LETRAS[altIdx]} como correta`}
-                          >
-                            {LETRAS[altIdx]}
-                          </button>
-                          <Input
-                            value={alt.texto}
-                            onChange={(e) => updateAlternativaTexto(idx, altIdx, e.target.value)}
-                            placeholder={`Alternativa ${LETRAS[altIdx].toUpperCase()}`}
-                            className="flex-1"
-                          />
+                        <div key={altIdx} className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <button
+                              type="button"
+                              onClick={() => setAlternativaCorreta(idx, altIdx)}
+                              className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-semibold uppercase transition-colors ${
+                                alt.correta
+                                  ? "border-emerald-500 bg-emerald-500 text-white"
+                                  : "border-border text-muted-foreground hover:border-emerald-500/50"
+                              }`}
+                              aria-label={`Marcar alternativa ${LETRAS[altIdx]} como correta`}
+                            >
+                              {LETRAS[altIdx]}
+                            </button>
+                            <Input
+                              value={alt.texto}
+                              onChange={(e) => updateAlternativaTexto(idx, altIdx, e.target.value)}
+                              placeholder={`Alternativa ${LETRAS[altIdx].toUpperCase()}`}
+                              className="flex-1"
+                            />
+                          </div>
+                          {!alt.correta && (
+                            <Input
+                              value={alt.feedback}
+                              onChange={(e) => updateAlternativaFeedback(idx, altIdx, e.target.value)}
+                              placeholder={`Por que a alternativa ${LETRAS[altIdx].toUpperCase()} está errada (opcional)`}
+                              className="ml-10 flex-1 text-xs"
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
 
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between gap-2">
-                        <Label className="text-xs text-muted-foreground">Explicação (mostrada após responder)</Label>
+                        <Label className="text-xs text-muted-foreground">
+                          Explicação da resposta correta (mostrada após responder)
+                        </Label>
                         <TextFormattingToolbar
                           textareaRef={{ current: explicacaoRefs.current[idx] ?? null }}
                           value={pergunta.explicacao}

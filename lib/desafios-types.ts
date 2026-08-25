@@ -22,6 +22,7 @@ export interface DesafioAlternativa {
   id: string
   texto: string
   correta: boolean
+  feedback?: string | null
 }
 
 export interface DesafioClinicoPergunta {

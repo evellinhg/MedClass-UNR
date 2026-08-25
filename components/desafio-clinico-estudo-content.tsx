@@ -358,9 +358,8 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                   {perguntas.map((pergunta, index) => {
                     const respostaId = respostas[pergunta.id]
                     const respostaCorreta = pergunta.alternativas.find((a) => a.correta)
-                    const acertou = respostaId
-                      ? pergunta.alternativas.find((a) => a.id === respostaId)?.correta
-                      : false
+                    const altSelecionada = pergunta.alternativas.find((a) => a.id === respostaId)
+                    const acertou = respostaId ? altSelecionada?.correta : false
                     return (
                       <div key={pergunta.id} className="border-t border-border pt-4 first:border-t-0 first:pt-0">
                         <div className="mb-2 flex items-center gap-2">
@@ -388,6 +387,12 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                             </p>
                           )}
                         </div>
+                        {!acertou && altSelecionada?.feedback && (
+                          <FormattedText
+                            text={altSelecionada.feedback}
+                            className="mt-2 rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-xs leading-relaxed text-foreground"
+                          />
+                        )}
                         {pergunta.explicacao && (
                           <FormattedText
                             text={pergunta.explicacao}
@@ -471,11 +476,27 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                 })}
               </div>
 
-              {jaRespondida && perguntaAtual.explicacao && (
-                <FormattedText
-                  text={perguntaAtual.explicacao}
-                  className="mt-4 rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground"
-                />
+              {jaRespondida && (
+                <div className="mt-4 space-y-2">
+                  {(() => {
+                    const altSelecionada = perguntaAtual.alternativas.find((a) => a.id === selecaoAtual)
+                    if (altSelecionada && !altSelecionada.correta && altSelecionada.feedback) {
+                      return (
+                        <FormattedText
+                          text={altSelecionada.feedback}
+                          className="rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-xs leading-relaxed text-foreground"
+                        />
+                      )
+                    }
+                    return null
+                  })()}
+                  {perguntaAtual.explicacao && (
+                    <FormattedText
+                      text={perguntaAtual.explicacao}
+                      className="rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground"
+                    />
+                  )}
+                </div>
               )}
 
               <div className="mt-5 flex items-center justify-between">

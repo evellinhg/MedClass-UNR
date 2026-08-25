@@ -1,10 +1,11 @@
 "use client"
 
 import { useLanguage, type Lang } from "@/lib/i18n"
+import { BrazilFlag, ArgentinaFlag } from "@/components/flag-icons"
 
-const OPTIONS: { code: Lang; flag: string; label: string }[] = [
-  { code: "pt", flag: "🇧🇷", label: "PT" },
-  { code: "es", flag: "🇦🇷", label: "ES" },
+const OPTIONS: { code: Lang; Flag: typeof BrazilFlag; label: string }[] = [
+  { code: "pt", Flag: BrazilFlag, label: "PT" },
+  { code: "es", Flag: ArgentinaFlag, label: "ES" },
 ]
 
 export function LanguageSwitcher() {
@@ -23,7 +24,7 @@ export function LanguageSwitcher() {
               : "text-white/40 hover:bg-white/5 hover:text-white/70"
           }`}
         >
-          <span>{option.flag}</span>
+          <option.Flag className="shrink-0 rounded-[2px]" />
           <span className="hidden sm:inline">{option.label}</span>
         </button>
       ))}

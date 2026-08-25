@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Loader2, CheckCircle2, XCircle, ChevronDown, ChevronUp, Pencil, Plus, Lock } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { getDesafioIcon, coverGradientFor } from "@/lib/desafio-icons"
+import { getDesafioIcon, coverGradientFor, DESAFIO_SECAO_ANO } from "@/lib/desafio-icons"
 import { Pagination, PAGE_SIZE } from "@/components/pagination"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -13,6 +13,7 @@ import { NEON_COLORS, hexToRgba } from "@/lib/neon-colors"
 import { useIsContentEditor } from "@/lib/use-content-editor"
 import { DesafioClinicoEditDialog } from "@/components/desafio-clinico-edit-dialog"
 import type { DesafioClinico } from "@/lib/desafios-types"
+import type { AnoKey } from "@/lib/unr-curriculum"
 import { useLanguage } from "@/lib/i18n"
 import { desafioAnteriorObrigatorio, foiAprovado, bloqueadoPorPlano } from "@/lib/desafio-clinico-bloqueio"
 import { getPlanStatus } from "@/lib/plan-status"
@@ -69,6 +70,84 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   )
 }
 
+interface DesafioCardProps {
+  desafio: DesafioClinico
+  todosDesafios: DesafioClinico[]
+  historico: HistoricoItem[]
+  hasFullAccess: boolean
+  isEditor: boolean
+  onEdit: (desafio: DesafioClinico, e: MouseEvent) => void
+  t: ReturnType<typeof useLanguage>["t"]
+}
+
+function DesafioCard({ desafio, todosDesafios, historico, hasFullAccess, isEditor, onEdit, t }: DesafioCardProps) {
+  const bloqueioPlano = !isEditor && bloqueadoPorPlano(desafio, hasFullAccess)
+  const anterior = bloqueioPlano ? null : desafioAnteriorObrigatorio(desafio, todosDesafios)
+  const bloqueioProgresso = !isEditor && !!anterior && !foiAprovado(anterior.id, historico)
+  const bloqueado = bloqueioPlano || bloqueioProgresso
+
+  if (bloqueado) {
+    const tooltip = bloqueioPlano
+      ? t.desafiosClinicos.casoBloqueadoPlanoCard
+      : t.desafiosClinicos.casoBloqueadoCard(anterior!.titulo)
+    return (
+      <div
+        title={tooltip}
+        role={bloqueioPlano ? "button" : undefined}
+        onClick={bloqueioPlano ? () => alert(t.planRestricted.conteudoBloqueadoAlerta) : undefined}
+        className="relative cursor-not-allowed overflow-hidden rounded-lg border border-border bg-card opacity-60"
+      >
+        <div className="relative">
+          <DesafioCover desafio={desafio} />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+            <Lock className="h-8 w-8 text-white" />
+          </div>
+        </div>
+        <div className="space-y-1 p-4">
+          <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
+          <p className="pt-1 text-xs text-muted-foreground">{t.desafiosClinicos.bloqueado}</p>
+        </div>
+      </div>
+    )
+  }
+
+  const gratuito = !isEditor && !hasFullAccess
+
+  return (
+    <Link
+      href={`/dashboard/desafios-clinicos/${desafio.id}`}
+      className={`group relative overflow-hidden rounded-lg border bg-card transition-colors hover:border-primary/50 ${
+        gratuito ? "border-2 border-primary shadow-[0_0_0_3px_rgba(198,255,58,0.15)]" : "border-border"
+      }`}
+    >
+      {isEditor && (
+        <button
+          type="button"
+          onClick={(e) => onEdit(desafio, e)}
+          aria-label="Editar caso clínico"
+          className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
+        >
+          <Pencil className="h-4 w-4" />
+        </button>
+      )}
+      <div className="relative">
+        <DesafioCover desafio={desafio} />
+        {gratuito && (
+          <Badge className="absolute right-2 top-2 bg-primary text-[10px] text-primary-foreground hover:bg-primary">
+            {t.desafiosClinicos.gratis}
+          </Badge>
+        )}
+      </div>
+      <div className="space-y-1 p-4">
+        <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
+        <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
+          {t.desafiosClinicos.estudarCta} →
+        </p>
+      </div>
+    </Link>
+  )
+}
+
 export function DesafiosClinicosContent() {
   const { t } = useLanguage()
   const isEditor = useIsContentEditor()
@@ -80,6 +159,8 @@ export function DesafiosClinicosContent() {
   const [editDialogOpen, setEditDialogOpen] = useState(false)
   const [editingDesafio, setEditingDesafio] = useState<DesafioClinico | null>(null)
   const [hasFullAccess, setHasFullAccess] = useState(true)
+  const [selectedAno, setSelectedAno] = useState<AnoKey | null>(null)
+  const [selectedSecaoPorAno, setSelectedSecaoPorAno] = useState<string | null>(null)
 
   const load = async () => {
     const { data: sessionData } = await supabase.auth.getSession()
@@ -123,15 +204,45 @@ export function DesafiosClinicosContent() {
     setEditDialogOpen(true)
   }
 
+  // Desafios cuja seção pertence a um ano letivo (ex: pediatria_5) saem da
+  // lista plana de sempre e viram abas "Ano > Matéria" separadas — o resto
+  // do conteúdo (pré-existente) continua exatamente como sempre foi.
+  const desafiosSemAno = useMemo(
+    () => desafios.filter((d) => !d.secao || !DESAFIO_SECAO_ANO[d.secao as keyof typeof DESAFIO_SECAO_ANO]),
+    [desafios]
+  )
+
+  const porAno = useMemo(() => {
+    const mapa = new Map<AnoKey, Map<string, DesafioClinico[]>>()
+    for (const desafio of desafios) {
+      const ano = desafio.secao ? DESAFIO_SECAO_ANO[desafio.secao as keyof typeof DESAFIO_SECAO_ANO] : undefined
+      if (!ano) continue
+      if (!mapa.has(ano)) mapa.set(ano, new Map())
+      const porSecao = mapa.get(ano)!
+      const secaoKey = desafio.secao!
+      if (!porSecao.has(secaoKey)) porSecao.set(secaoKey, [])
+      porSecao.get(secaoKey)!.push(desafio)
+    }
+    return mapa
+  }, [desafios])
+
+  const anosDisponiveis = useMemo(() => Array.from(porAno.keys()), [porAno])
+
+  const anoAtivo = selectedAno && porAno.has(selectedAno) ? selectedAno : anosDisponiveis[0]
+  const secoesDoAnoAtivo = anoAtivo ? Array.from(porAno.get(anoAtivo)!.keys()) : []
+  const secaoAtiva =
+    selectedSecaoPorAno && secoesDoAnoAtivo.includes(selectedSecaoPorAno) ? selectedSecaoPorAno : secoesDoAnoAtivo[0]
+  const desafiosDaSecaoAtiva = anoAtivo && secaoAtiva ? porAno.get(anoAtivo)!.get(secaoAtiva)! : []
+
   const bySection = useMemo(() => {
     const porSecao = new Map<string, DesafioClinico[]>()
-    for (const desafio of desafios) {
+    for (const desafio of desafiosSemAno) {
       const key = desafio.secao || desafio.area || SEM_CATEGORIA
       if (!porSecao.has(key)) porSecao.set(key, [])
       porSecao.get(key)!.push(desafio)
     }
     return Array.from(porSecao.entries())
-  }, [desafios])
+  }, [desafiosSemAno])
 
   const toggleSection = (key: string) =>
     setCollapsed((prev) => {
@@ -164,6 +275,64 @@ export function DesafiosClinicosContent() {
           </Button>
         )}
       </div>
+
+      {anoAtivo && (
+        <div className="space-y-4">
+          <div className="flex flex-wrap gap-2">
+            {anosDisponiveis.map((ano) => (
+              <button
+                key={ano}
+                type="button"
+                onClick={() => {
+                  setSelectedAno(ano)
+                  setSelectedSecaoPorAno(null)
+                }}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
+                  ano === anoAtivo
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                }`}
+              >
+                {t.cronograma.anoLabel[ano] ?? ano}
+              </button>
+            ))}
+          </div>
+
+          {secoesDoAnoAtivo.length > 1 && (
+            <div className="flex flex-wrap gap-2">
+              {secoesDoAnoAtivo.map((secao) => (
+                <button
+                  key={secao}
+                  type="button"
+                  onClick={() => setSelectedSecaoPorAno(secao)}
+                  className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                    secao === secaoAtiva
+                      ? "border-accent-foreground/50 bg-accent text-accent-foreground"
+                      : "border-border text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {t.cronograma.desafioSecaoLabel[secao] ?? secao}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {desafiosDaSecaoAtiva.map((desafio) => (
+              <DesafioCard
+                key={desafio.id}
+                desafio={desafio}
+                todosDesafios={desafios}
+                historico={historico}
+                hasFullAccess={hasFullAccess}
+                isEditor={isEditor}
+                onEdit={openEdit}
+                t={t}
+              />
+            ))}
+          </div>
+        </div>
+      )}
 
       {desafios.length === 0 ? (
         <div className="rounded-lg border border-border bg-card/50 p-8 text-center">
@@ -206,75 +375,18 @@ export function DesafiosClinicosContent() {
 
                 {isOpen && (
                   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {desafiosDaSecao.map((desafio) => {
-                      const bloqueioPlano = !isEditor && bloqueadoPorPlano(desafio, hasFullAccess)
-                      const anterior = bloqueioPlano ? null : desafioAnteriorObrigatorio(desafio, desafios)
-                      const bloqueioProgresso = !isEditor && !!anterior && !foiAprovado(anterior.id, historico)
-                      const bloqueado = bloqueioPlano || bloqueioProgresso
-
-                      if (bloqueado) {
-                        const tooltip = bloqueioPlano
-                          ? t.desafiosClinicos.casoBloqueadoPlanoCard
-                          : t.desafiosClinicos.casoBloqueadoCard(anterior!.titulo)
-                        return (
-                          <div
-                            key={desafio.id}
-                            title={tooltip}
-                            role={bloqueioPlano ? "button" : undefined}
-                            onClick={bloqueioPlano ? () => alert(t.planRestricted.conteudoBloqueadoAlerta) : undefined}
-                            className="relative cursor-not-allowed overflow-hidden rounded-lg border border-border bg-card opacity-60"
-                          >
-                            <div className="relative">
-                              <DesafioCover desafio={desafio} />
-                              <div className="absolute inset-0 flex items-center justify-center bg-black/60">
-                                <Lock className="h-8 w-8 text-white" />
-                              </div>
-                            </div>
-                            <div className="space-y-1 p-4">
-                              <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
-                              <p className="pt-1 text-xs text-muted-foreground">{t.desafiosClinicos.bloqueado}</p>
-                            </div>
-                          </div>
-                        )
-                      }
-
-                      const gratuito = !isEditor && !hasFullAccess
-
-                      return (
-                        <Link
-                          key={desafio.id}
-                          href={`/dashboard/desafios-clinicos/${desafio.id}`}
-                          className={`group relative overflow-hidden rounded-lg border bg-card transition-colors hover:border-primary/50 ${
-                            gratuito ? "border-2 border-primary shadow-[0_0_0_3px_rgba(198,255,58,0.15)]" : "border-border"
-                          }`}
-                        >
-                          {isEditor && (
-                            <button
-                              type="button"
-                              onClick={(e) => openEdit(desafio, e)}
-                              aria-label="Editar caso clínico"
-                              className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity hover:bg-black/80 group-hover:opacity-100"
-                            >
-                              <Pencil className="h-4 w-4" />
-                            </button>
-                          )}
-                          <div className="relative">
-                            <DesafioCover desafio={desafio} />
-                            {gratuito && (
-                              <Badge className="absolute right-2 top-2 bg-primary text-[10px] text-primary-foreground hover:bg-primary">
-                                {t.desafiosClinicos.gratis}
-                              </Badge>
-                            )}
-                          </div>
-                          <div className="space-y-1 p-4">
-                            <h3 className="font-semibold leading-snug text-foreground">{desafio.titulo}</h3>
-                            <p className="pt-1 text-xs text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                              {t.desafiosClinicos.estudarCta} →
-                            </p>
-                          </div>
-                        </Link>
-                      )
-                    })}
+                    {desafiosDaSecao.map((desafio) => (
+                      <DesafioCard
+                        key={desafio.id}
+                        desafio={desafio}
+                        todosDesafios={desafios}
+                        historico={historico}
+                        hasFullAccess={hasFullAccess}
+                        isEditor={isEditor}
+                        onEdit={openEdit}
+                        t={t}
+                      />
+                    ))}
                   </div>
                 )}
               </section>

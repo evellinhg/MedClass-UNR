@@ -13,6 +13,7 @@ import {
   Microscope,
   type LucideIcon,
 } from "lucide-react"
+import type { AnoKey } from "@/lib/unr-curriculum"
 
 const DESAFIO_ICONS: Record<string, LucideIcon> = {
   HeartPulse,
@@ -42,8 +43,17 @@ export const DESAFIO_SECAO_KEYS = [
   "ciclo_basico_dx",
   "historia_clinica_semiologia",
   "eletrocardiograma",
+  "pediatria_5",
 ] as const
 export type DesafioSecaoKey = (typeof DESAFIO_SECAO_KEYS)[number]
+
+// Seções que pertencem a um ano letivo específico. Usadas só para agrupar a
+// tela de Desafios Clínicos em abas "Ano > Matéria" — seções fora deste mapa
+// (todo o conteúdo pré-existente) continuam na lista plana de sempre, sem
+// nenhuma mudança de comportamento.
+export const DESAFIO_SECAO_ANO: Partial<Record<DesafioSecaoKey, AnoKey>> = {
+  pediatria_5: "ano5",
+}
 
 const COVER_GRADIENTS = [
   "from-rose-500 to-orange-400",

@@ -18,6 +18,7 @@ import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
 import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
 import { shuffle } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
+import { ptBR, es as esLocale } from "date-fns/locale"
 
 const QUANTIDADES = [10, 20, 30, 50]
 
@@ -42,7 +43,7 @@ function colorForArea(area: string) {
 }
 
 export function CronogramaContent() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
   const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [trilhaAtivaId, setTrilhaAtivaId] = useState<string | null>(null)
@@ -561,6 +562,7 @@ export function CronogramaContent() {
               className="mx-auto"
               modifiers={modifiers}
               modifiersClassNames={modifiersClassNames}
+              locale={lang === "pt" ? ptBR : esLocale}
             />
             {areasUsadas.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-x-3 gap-y-1.5 border-t border-border pt-3">

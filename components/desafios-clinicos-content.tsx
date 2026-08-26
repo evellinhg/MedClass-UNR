@@ -45,16 +45,16 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   const capaSecao = desafio.secao ? CAPA_POR_SECAO[desafio.secao] : undefined
   if (capaSecao) {
     return (
-      <div className="relative aspect-square w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={capaSecao} alt="" fill className="object-contain" />
+      <div className="relative aspect-video w-full overflow-hidden rounded-t-lg bg-black">
+        <Image src={capaSecao} alt="" fill className="object-cover" />
       </div>
     )
   }
 
   if (desafio.area === "Clínica Médica") {
     return (
-      <div className="relative aspect-square w-full overflow-hidden rounded-t-lg bg-black">
-        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-contain" />
+      <div className="relative aspect-video w-full overflow-hidden rounded-t-lg bg-black">
+        <Image src={CAPA_CLINICA_MEDICA} alt="" fill className="object-cover" />
       </div>
     )
   }
@@ -62,7 +62,7 @@ function DesafioCover({ desafio }: { desafio: DesafioClinico }) {
   const Icon = getDesafioIcon(desafio.icone)
   return (
     <div
-      className={`flex aspect-square w-full items-center justify-center rounded-t-lg bg-gradient-to-br ${coverGradientFor(
+      className={`flex aspect-video w-full items-center justify-center rounded-t-lg bg-gradient-to-br ${coverGradientFor(
         desafio.id
       )}`}
     >

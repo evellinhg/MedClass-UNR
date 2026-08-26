@@ -208,7 +208,7 @@ const pt = {
       ciclo_basico_dx: "Ciclo Básico Dx",
       historia_clinica_semiologia: "História Clínica e Semiologia",
       eletrocardiograma: "Eletrocardiograma",
-      pediatria_5: "Pediatria (5º Ano)",
+      pediatria_5: "Pediatria - 5º Ano",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {
@@ -1341,7 +1341,7 @@ const es: typeof pt = {
       ciclo_basico_dx: "Ciclo Básico Dx",
       historia_clinica_semiologia: "Historia Clínica y Semiología",
       eletrocardiograma: "Electrocardiograma",
-      pediatria_5: "Pediatría (5º Año)",
+      pediatria_5: "Pediatría - 5º Año",
     } as Record<string, string>,
     parcial: "Parcial",
     parcialLabel: {

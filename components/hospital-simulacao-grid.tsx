@@ -31,12 +31,12 @@ function GradeCasos({ casos, podeAcessar, vazioLabel }: { casos: HospitalSimulac
               podeAcessar ? "hover:border-red-500/50 hover:shadow-[0_0_24px_-8px_rgba(220,38,38,0.35)]" : "opacity-60"
             }`}
           >
-            <div className="relative h-36 w-full overflow-hidden">
+            <div className="relative aspect-square w-full overflow-hidden bg-black">
               <Image
                 src="/hospital-simulacao-capa.png"
                 alt=""
                 fill
-                className={`object-cover transition-transform ${podeAcessar ? "group-hover:scale-105" : ""}`}
+                className={`object-contain transition-transform ${podeAcessar ? "group-hover:scale-105" : ""}`}
               />
               {!podeAcessar && (
                 <div className="absolute inset-0 flex items-center justify-center bg-black/60">

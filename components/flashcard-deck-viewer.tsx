@@ -16,6 +16,7 @@ import { trackEvent } from "@/lib/analytics"
 import { registrarAtividadeHoje } from "@/lib/atividade-diaria"
 import { getPlanStatus } from "@/lib/plan-status"
 import { decksLiberadosGratis } from "@/lib/flashcards-gratis"
+import { useLanguage } from "@/lib/i18n"
 
 const NIVEL_COLORS: Record<number, string> = {
   0: "#EF4444",
@@ -31,6 +32,7 @@ interface FlashcardDeckViewerProps {
 }
 
 export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
+  const { t } = useLanguage()
   const [loading, setLoading] = useState(true)
   const [userId, setUserId] = useState<string | null>(null)
   const [deck, setDeck] = useState<FlashcardDeck | null>(null)
@@ -151,7 +153,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
     return (
       <div className="flex items-center justify-center gap-2 py-16 text-sm text-muted-foreground">
         <Loader2 className="h-4 w-4 animate-spin" />
-        Carregando...
+        {t.flashcardsGrid.carregando}
       </div>
     )
   }
@@ -159,12 +161,12 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
   if (!deck || cards.length === 0) {
     return (
       <Card className="border border-border bg-card p-8 text-center">
-        <p className="text-muted-foreground">Baralho não encontrado.</p>
+        <p className="text-muted-foreground">{t.flashcardsGrid.naoEncontrado}</p>
         <Link
           href="/dashboard/materiais?tab=flashcards"
           className="mt-2 inline-block text-sm font-medium text-primary hover:underline"
         >
-          Voltar para Flashcards
+          {t.flashcardsGrid.voltarParaFlashcards}
         </Link>
       </Card>
     )
@@ -186,28 +188,28 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
           <PartyPopper className="h-12 w-12 text-primary" />
         </motion.div>
         <div>
-          <p className="text-xl font-bold text-foreground">Baralho concluído!</p>
+          <p className="text-xl font-bold text-foreground">{t.flashcardsGrid.baralhoConcluidoTitulo}</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            Você respondeu todos os {cards.length} cartões de {deck.titulo}.
+            {t.flashcardsGrid.respondeuTodos(cards.length, deck.titulo)}
           </p>
         </div>
         <div className="grid grid-cols-2 gap-3 text-sm">
           <div className="rounded-xl border border-border p-3">
-            <p className="text-xs text-muted-foreground">Cartões respondidos</p>
+            <p className="text-xs text-muted-foreground">{t.flashcardsGrid.cartoesRespondidos}</p>
             <p className="font-semibold text-foreground">{cards.length}</p>
           </div>
           <div className="rounded-xl border border-border p-3">
-            <p className="text-xs text-muted-foreground">Autoavaliação média</p>
+            <p className="text-xs text-muted-foreground">{t.flashcardsGrid.autoavaliacaoMedia}</p>
             <p className="font-semibold text-foreground">{media.toFixed(1)} / 5</p>
           </div>
         </div>
         <div className="flex gap-2">
           <Button variant="outline" className="gap-2" onClick={handleRefazer}>
             <RotateCcw className="h-4 w-4" />
-            Refazer baralho
+            {t.flashcardsGrid.refazerBaralho}
           </Button>
           <Button asChild>
-            <Link href="/dashboard/materiais?tab=flashcards">Ver outros baralhos</Link>
+            <Link href="/dashboard/materiais?tab=flashcards">{t.flashcardsGrid.verOutrosBaralhos}</Link>
           </Button>
         </div>
       </Card>
@@ -226,13 +228,13 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
           </div>
           <div>
             <p className="text-xs text-muted-foreground">
-              {currentIndex + 1} de {cards.length} · {respondidos}/{cards.length} respondidos
+              {t.flashcardsGrid.progressoLabel(currentIndex + 1, cards.length, respondidos)}
             </p>
             <h2 className="text-lg font-bold text-foreground">{deck.titulo}</h2>
           </div>
         </div>
         <Badge variant={respondidos === cards.length ? "default" : "secondary"}>
-          {respondidos === cards.length ? "Concluído" : "Em andamento"}
+          {respondidos === cards.length ? t.flashcardsGrid.concluido : t.flashcardsGrid.emAndamento}
         </Badge>
       </div>
 
@@ -259,7 +261,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
           onClick={() => goTo(currentIndex - 1)}
           disabled={currentIndex === 0}
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary disabled:opacity-30"
-          aria-label="Cartão anterior"
+          aria-label={t.flashcardsGrid.cartaoAnterior}
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
@@ -270,12 +272,10 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
                 <Lock className="h-6 w-6 text-muted-foreground" />
               </div>
-              <p className="text-base font-semibold text-foreground">Disponível apenas nos planos pagos</p>
-              <p className="max-w-xs text-sm text-muted-foreground">
-                No plano gratuito você tem acesso a 1 baralho por matéria. Este não é o baralho liberado.
-              </p>
+              <p className="text-base font-semibold text-foreground">{t.flashcardsGrid.bloqueadoTooltip}</p>
+              <p className="max-w-xs text-sm text-muted-foreground">{t.flashcardsGrid.bloqueadoDescricao}</p>
               <Button asChild size="sm" className="mt-1">
-                <Link href="/#pricing">Ver planos e continuar estudando</Link>
+                <Link href="/#pricing">{t.flashcardsGrid.verPlanosContinuar}</Link>
               </Button>
             </div>
           ) : (
@@ -287,14 +287,14 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
               onClick={() => setFlipped((f) => !f)}
             >
               <div className="absolute right-6 top-6" style={{ backfaceVisibility: "hidden" }}>
-                <Badge variant="outline">Frente</Badge>
+                <Badge variant="outline">{t.flashcardsGrid.frenteCartao}</Badge>
               </div>
               <div
                 className="flex min-h-60 flex-col items-center justify-center gap-3 text-center"
                 style={{ backfaceVisibility: "hidden" }}
               >
                 <p className="text-lg font-medium leading-relaxed text-foreground sm:text-xl">{currentCard.frente}</p>
-                {!flipped && <p className="text-sm text-muted-foreground">Toque para ver a resposta</p>}
+                {!flipped && <p className="text-sm text-muted-foreground">{t.flashcardsGrid.toqueVerResposta}</p>}
               </div>
 
               <div
@@ -302,7 +302,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
                 style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
               >
                 <div className="absolute right-6 top-6">
-                  <Badge>Verso</Badge>
+                  <Badge>{t.flashcardsGrid.versoCartao}</Badge>
                 </div>
                 <p className="text-base leading-relaxed text-foreground sm:text-lg">{currentCard.verso}</p>
               </div>
@@ -315,7 +315,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
           onClick={() => goTo(currentIndex + 1)}
           disabled={currentIndex === cards.length - 1}
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-secondary disabled:opacity-30"
-          aria-label="Próximo cartão"
+          aria-label={t.flashcardsGrid.proximoCartao}
         >
           <ChevronRight className="h-4 w-4" />
         </button>
@@ -323,9 +323,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
 
       {!cartaBloqueada && (
         <Card className="rounded-[24px] border border-border bg-card p-5">
-          <p className="text-center text-sm font-medium text-foreground">
-            Qual nota você dá para seu conhecimento nesse assunto?
-          </p>
+          <p className="text-center text-sm font-medium text-foreground">{t.flashcardsGrid.notaConhecimento}</p>
           <div className="mt-3 flex justify-center gap-2">
             {[0, 1, 2, 3, 4, 5].map((n) => {
               const selecionado = progressoMap[currentCard.id] === n
@@ -347,7 +345,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
               )
             })}
           </div>
-          <p className="mt-2 text-center text-xs text-muted-foreground">0 = Não sabia · 5 = Sei tudo</p>
+          <p className="mt-2 text-center text-xs text-muted-foreground">{t.flashcardsGrid.escalaNotas}</p>
         </Card>
       )}
 
@@ -356,7 +354,7 @@ export function FlashcardDeckViewer({ deckId }: FlashcardDeckViewerProps) {
           <Card className="rounded-[24px] border border-border bg-card p-4">
             <CollapsibleTrigger className="flex w-full items-center justify-between text-sm font-medium text-foreground">
               <span className="flex items-center gap-2">
-                Fontes
+                {t.flashcardsGrid.fontes}
                 <Badge variant="secondary">{currentCard.fontes.length}</Badge>
               </span>
               <ChevronDown className={`h-4 w-4 text-muted-foreground transition-transform ${fontesOpen ? "rotate-180" : ""}`} />

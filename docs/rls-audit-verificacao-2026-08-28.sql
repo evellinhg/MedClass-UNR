@@ -1,0 +1,59 @@
+-- Registro de verificação (não é um script pra rodar de novo).
+--
+-- Contexto: a auditoria de segurança (AppSec) de 2026-08-28 apontou como
+-- CRÍTICO que várias tabelas lidas/escritas direto pelo client (via
+-- supabase.from(...), sem passar por rota /api/admin/**) não tinham
+-- NENHUMA policy de RLS versionada neste repositório -- incluindo
+-- `questoes`, logo depois de importarmos 756 questões novas de Cirurgia.
+-- A proteção em components/admin-layout.tsx é só client-side (JS); a
+-- única barreira real contra um aluno chamando a API do Supabase direto
+-- (mesma anon key + o próprio JWT) é a RLS do Postgres.
+--
+-- Rodamos a verificação abaixo direto no SQL Editor do Supabase (projeto
+-- MedClass UNR, banco "principal") e confirmamos que TODAS as 7 tabelas
+-- checadas JÁ TÊM RLS habilitada com policies corretas -- só não estavam
+-- documentadas neste repo. Ou seja: o gap era de documentação, não de
+-- proteção real em produção. Não é necessário (e seria contraproducente)
+-- rodar CREATE POLICY em cima delas -- criaria policies duplicadas com
+-- nomes diferentes das existentes, sem substituir nada.
+--
+-- Query de verificação usada:
+--
+--   select c.relname as tabela, c.relrowsecurity as rls_habilitado,
+--          count(p.policyname) as qtd_policies,
+--          array_agg(p.policyname) filter (where p.policyname is not null) as policies
+--   from pg_class c
+--   left join pg_policies p on p.tablename = c.relname
+--   where c.relname in ('questoes','medcoins_wallets','user_analytics',
+--     'question_feedback','simulado_attempts','metas',
+--     'cronograma_trilhas_unidades','cronograma_trilhas_etapas')
+--     and c.relkind = 'r'
+--   group by c.relname, c.relrowsecurity
+--   order by c.relname;
+--
+-- Resultado (2026-08-28):
+--
+--   questoes                      | rls=true | 2 policies: questoes_admin_write (ALL, role admin/colaborador),
+--                                                            questoes_select (SELECT, ativo=true OR role admin/colaborador)
+--   medcoins_wallets               | rls=true | 2 policies: medcoins_wallets_admin_all (ALL, role admin),
+--                                                            medcoins_wallets_select_own (SELECT, user_id = auth.uid())
+--   user_analytics                 | rls=true | 2 policies: "A função de serviço insere análises",
+--                                                            "Os usuários veem suas próprias análises"
+--   question_feedback              | rls=true | 4 policies: admins update/view all, users insert/view own
+--   simulado_attempts              | rls=true | 3 policies: admins view all, users insert/view own
+--   cronograma_trilhas_unidades    | rls=true | 2 policies: admin_write, select
+--   cronograma_trilhas_etapas      | rls=true | 2 policies: admin_write, select
+--   metas                          | (tabela não existe em pg_class -- não há o que proteger)
+--
+-- Conferido também o texto completo (qual/with_check) de questoes_select
+-- e das duas policies de medcoins_wallets pra garantir que não são
+-- permissivas demais (ex: `using (true)`) -- ambas batem com o padrão
+-- esperado (leitura pública só do conteúdo ativo ou dono da linha,
+-- escrita só admin/colaborador).
+--
+-- Conclusão: o item CRÍTICO do relatório de 2026-08-28 foi rebaixado --
+-- em produção já estava protegido; a ação necessária era só documentar
+-- aqui, o que este arquivo faz. Os outros achados do mesmo relatório
+-- (proxy.ts morto, checkout sem rate limit, e-mails admin vazando no
+-- bundle client, avisos-conteudo.sql desatualizado) continuam válidos e
+-- já foram corrigidos em código (commit b4b141d).

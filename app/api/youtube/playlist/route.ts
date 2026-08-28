@@ -20,8 +20,8 @@ function decodeXmlEntities(text: string) {
 // playlist por esse feed (geralmente até ~15).
 export async function GET(request: NextRequest) {
   const listId = request.nextUrl.searchParams.get("list")
-  if (!listId) {
-    return NextResponse.json({ error: "Parâmetro 'list' obrigatório." }, { status: 400 })
+  if (!listId || !/^[a-zA-Z0-9_-]{10,64}$/.test(listId)) {
+    return NextResponse.json({ error: "Parâmetro 'list' inválido." }, { status: 400 })
   }
 
   const feedUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${encodeURIComponent(listId)}`

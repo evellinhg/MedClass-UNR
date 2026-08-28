@@ -18,9 +18,29 @@ create table if not exists public.avisos_conteudo (
 
 alter table public.avisos_conteudo enable row level security;
 
+-- Checagem por profiles.role (não por e-mail hardcoded): ver
+-- docs/rls-remove-hardcoded-emails.sql, rodado em 2026-08-06, que já
+-- migrou a policy live desta tabela pra este padrão. Este CREATE TABLE
+-- só existia com a cláusula antiga porque era o script original de
+-- criação da tabela, de antes dessa migração -- mantido desatualizado
+-- em relação ao banco ao vivo até esta correção (2026-08-28).
 drop policy if exists "avisos_conteudo_admin_all" on public.avisos_conteudo;
 create policy "avisos_conteudo_admin_all"
   on public.avisos_conteudo for all
   to authenticated
-  using ((auth.jwt() ->> 'email'::text) = ANY (ARRAY['leonardoac.alves@gmail.com'::text, 'leonardoac.alves2@gmail.com'::text, 'medclassunr@gmail.com'::text]))
-  with check ((auth.jwt() ->> 'email'::text) = ANY (ARRAY['leonardoac.alves@gmail.com'::text, 'leonardoac.alves2@gmail.com'::text, 'medclassunr@gmail.com'::text]));
+  using (
+    exists (
+      select 1 from profiles
+      where profiles.id = auth.uid()
+        and profiles.role = 'admin'
+        and (profiles.access_expires_at is null or profiles.access_expires_at > now())
+    )
+  )
+  with check (
+    exists (
+      select 1 from profiles
+      where profiles.id = auth.uid()
+        and profiles.role = 'admin'
+        and (profiles.access_expires_at is null or profiles.access_expires_at > now())
+    )
+  );

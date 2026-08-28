@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { createAdminClient } from "@/lib/supabase-admin"
 import { PLANO_PRECO, type PlanoPago } from "@/lib/mercadopago"
+import { checkRateLimit, getClientIp } from "@/lib/rate-limit"
 
 // Registra a intenção de pagamento (dados do aluno) ANTES de ele ser
 // redirecionado pro link fixo de pagamento do Mercado Pago. Não cria
@@ -10,6 +11,15 @@ import { PLANO_PRECO, type PlanoPago } from "@/lib/mercadopago"
 // o acesso manualmente, sem precisar esperar o aluno mandar o comprovante
 // por WhatsApp.
 export async function POST(request: NextRequest) {
+  // Endpoint público (sem auth por design -- captura intenção de pagamento
+  // antes do aluno ter conta). Rate limit por IP pra impedir flood de
+  // linhas "pendente" na tabela, já que a escrita usa a service-role key
+  // (ignora RLS) e não depende de sessão.
+  const ip = getClientIp(request)
+  if (!checkRateLimit(`checkout:${ip}`, 5, 10 * 60_000)) {
+    return NextResponse.json({ error: "Muitas tentativas. Tente novamente em alguns minutos." }, { status: 429 })
+  }
+
   const body = await request.json()
   const { plano, email, nome, apellido, telefone } = body as {
     plano?: string

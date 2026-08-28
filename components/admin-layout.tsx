@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { Loader2, ShieldAlert } from "lucide-react"
 import { supabase } from "@/lib/supabase"
-import { isAdminEmail } from "@/lib/admin-config"
 import { Button } from "@/components/ui/button"
 import { AdminSidebar } from "@/components/admin-sidebar"
 import { AdminHeader } from "@/components/admin-header"
@@ -40,7 +39,7 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
   useEffect(() => {
     let active = true
 
-    const evaluate = async (userId?: string, email?: string | null, hasSession?: boolean) => {
+    const evaluate = async (userId?: string, hasSession?: boolean) => {
       if (!active) return
       if (!hasSession || !userId) {
         setStatus("unauthenticated")
@@ -62,7 +61,7 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
         return
       }
 
-      const isAdmin = profile?.role === "admin" || isAdminEmail(email)
+      const isAdmin = profile?.role === "admin"
       const isColaborador = profile?.role === "colaborador"
 
       if (isAdmin) {
@@ -79,11 +78,11 @@ export function AdminLayout({ children, title }: AdminLayoutProps) {
     }
 
     supabase.auth.getSession().then(({ data }) => {
-      evaluate(data.session?.user.id, data.session?.user.email, !!data.session)
+      evaluate(data.session?.user.id, !!data.session)
     })
 
     const { data: subscription } = supabase.auth.onAuthStateChange((_event, session) => {
-      evaluate(session?.user.id, session?.user.email, !!session)
+      evaluate(session?.user.id, !!session)
     })
 
     return () => {

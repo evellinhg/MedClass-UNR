@@ -709,36 +709,23 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                     </div>
                   )}
 
-                  {showingExplanation && current.opcoes_comentario && current.opcoes_comentario.length > 0 && (
+                  {showingExplanation && currentAnswer !== null && current.opcoes_comentario?.[currentAnswer] && (
                     <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
                       <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                         {t.simuladoPlayer.comentariosPorAlternativa}
                       </p>
-                      {current.opcoes.map((opcao, idx) => {
-                        const comentario = current.opcoes_comentario?.[idx]
-                        if (!comentario) return null
-                        const isCorrectOption = idx === current.indice_correta
-                        const isSelected = currentAnswer === idx
-                        return (
-                          <div
-                            key={idx}
-                            className={`rounded-md border p-2 text-xs ${
-                              isCorrectOption
-                                ? "border-success/40 bg-success/5"
-                                : isSelected && !isCorrectOption
-                                  ? "border-destructive/40 bg-destructive/5"
-                                  : "border-border bg-card"
-                            }`}
-                          >
-                            <div className="flex items-start gap-2">
-                              <span className={`mt-0.5 shrink-0 font-semibold ${isCorrectOption ? "text-success" : isSelected ? "text-destructive" : "text-muted-foreground"}`}>
-                                {String.fromCharCode(65 + idx)}.
-                              </span>
-                              <p className="text-muted-foreground">{comentario}</p>
-                            </div>
-                          </div>
-                        )
-                      })}
+                      <div
+                        className={`rounded-md border p-2 text-xs ${
+                          isCorrect ? "border-success/40 bg-success/5" : "border-destructive/40 bg-destructive/5"
+                        }`}
+                      >
+                        <div className="flex items-start gap-2">
+                          <span className={`mt-0.5 shrink-0 font-semibold ${isCorrect ? "text-success" : "text-destructive"}`}>
+                            {String.fromCharCode(65 + currentAnswer)}.
+                          </span>
+                          <p className="text-muted-foreground">{current.opcoes_comentario[currentAnswer]}</p>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </>

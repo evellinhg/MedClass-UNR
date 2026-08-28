@@ -1,4 +1,4 @@
-import type { QuestaoCacheada } from "@/lib/questoes-cache"
+import type { QuestaoPoolLeve } from "@/lib/questoes-cache"
 
 // Conta gratuita: até 50 perguntas fixas por matéria, sempre as mesmas pra
 // todo mundo (ordenação determinística por id -- não é sorteio nem depende
@@ -8,7 +8,7 @@ export const FREE_QUESTOES_POR_MATERIA = 50
 // Recebe o pool completo de questões ativas e uma lista de ids já filtrada
 // (por matéria/dificuldade/parcial/inéditas) e devolve só os ids que caem
 // dentro do conjunto fixo gratuito de cada matéria presente na lista.
-export function filtrarPoolGratis(pool: QuestaoCacheada[], poolIds: string[]): string[] {
+export function filtrarPoolGratis(pool: QuestaoPoolLeve[], poolIds: string[]): string[] {
   const idsCandidatos = new Set(poolIds)
   const porMateria = new Map<string, string[]>()
 

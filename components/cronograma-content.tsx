@@ -15,7 +15,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { TrilhaAtivaContent } from "@/components/trilha-ativa-content"
 import type { CronogramaRotina, CronogramaTrilha } from "@/lib/cronograma-types"
 import { getQuestoesJaRespondidas } from "@/lib/questoes-ja-respondidas"
-import { buscarQuestoesAtivas as getQuestoesAtivasPool, filtrarPoolIds, type QuestaoCacheada } from "@/lib/questoes-cache"
+import { buscarQuestoesAtivasLeve as getQuestoesAtivasPool, filtrarPoolIds } from "@/lib/questoes-cache"
 import { shuffle } from "@/lib/utils"
 import { useLanguage } from "@/lib/i18n"
 import { ptBR, es as esLocale } from "date-fns/locale"

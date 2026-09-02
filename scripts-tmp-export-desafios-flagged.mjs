@@ -20,7 +20,7 @@ for (let from = 0; from < count; from += PAGE) {
 }
 console.log(`Lidas ${todas.length} perguntas de desafios_clinicos_perguntas.`)
 
-const SCRATCH = "/private/tmp/claude-502/-Users-Evelllin-Desktop-MedClass-UNR/e8738065-244a-47ab-81ef-ae2d583df7cf/scratchpad"
+const SCRATCH = "/private/tmp/claude-502/-Users-Evelllin-Desktop-MedClass-UNR/46eaa718-f387-470f-972a-3cb953d5cb2e/scratchpad"
 
 // normaliza id da alternativa pra maiuscula (A/B/C/D), corrige a inconsistencia
 // de minusculas encontrada na analise (a/b/c/d) sem mexer no conteudo

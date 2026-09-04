@@ -1,0 +1,395 @@
+{
+  "81fff2e6-1612-4932-939c-9ecc40d62b59": {
+    "0": "Hiperparatiroidismo primario agudo, que típicamente cursa con hipercalcemia, poliuria y deshidratación, pero no con hipoglucemia, hiperpotasemia ni hiperpigmentación mucosa.",
+    "1": "Cetoacidosis diabética incipiente, que se presenta con hiperglucemia marcada (>250 mg/dL), glucosuria y acidosis metabólica con deshidratación, en contraste con la hipoglucemia de 58 mg/dL de este paciente.",
+    "3": "Síndrome de Conn descompensado, entidad producida por exceso de aldosterona que se manifiesta con hipertensión arterial e hipopotasemia, un cuadro opuesto a la hipotensión y la hiperpotasemia observadas en este paciente."
+  },
+  "40c52c34-0fbc-489a-8459-ff11333ab155": {
+    "0": "El tipo hapteno da un Coombs directo positivo exclusivamente para complemento (C3d), ya que el fármaco fijaría complemento de forma directa sobre la membrana eritrocitaria sin necesidad de anticuerpo unido; en cambio el espectador inocente daría positivo solo para anticuerpos IgA libres adsorbidos de forma inespecífica sobre la superficie del hematíe, sin activación relevante del complemento.",
+    "2": "Ambos mecanismos activarían de manera idéntica un supuesto aclaramiento basófilo renal de los eritrocitos sensibilizados, proceso que ocurriría de forma silente sin depósito de inmunoglobulinas ni de complemento en la membrana, por lo que el Coombs directo sería invariablemente negativo en ambos casos, sin valor diagnóstico alguno.",
+    "3": "El tipo hapteno destruiría selectivamente las plaquetas en lugar de los eritrocitos, mediante la fijación del fármaco a la membrana plaquetaria y la generación de anticuerpos antifármaco dirigidos contra ese complejo, dando como resultado un Coombs indirecto negativo de forma sistemática por tratarse de una línea celular distinta a la roja."
+  },
+  "4d29b0f3-3445-47b0-a702-befd97144284": {
+    "0": "Insuficiencia cardíaca congestiva en fase terminal secundaria a miocardiopatía chagásica dilatada con deterioro severo de la fracción de eyección, clase funcional IV refractaria a tratamiento médico óptimo; requiere de inmediato inclusión prioritaria en lista nacional de trasplante hepático continuo de rescate como medida de sostén vital.",
+    "2": "Infección latente autolimitada curada de forma espontánea por la respuesta inmune del huésped, similar a lo que ocurre en otras parasitosis con resolución natural; se le indica el alta definitiva de la consulta médica sin necesidad de repetir estudios en el futuro por no existir riesgo evolutivo hacia daño cardíaco o digestivo.",
+    "3": "Fase crónica con patología demostrada, asumiendo que la sola positividad serológica confirma per se compromiso miocárdico estructural subclínico no detectado por los métodos habituales; se le indica colocación profiláctica de un cardiodesfibrilador implantable (CDI) de urgencia y reposo absoluto en cama por riesgo inminente de muerte súbita arrítmica."
+  },
+  "c724447b-526c-4f14-8448-60418b19d120": {
+    "0": "Test de fragilidad capilar de lazo (Rumpel-Leede); define la fragilidad capilar pericollateral profunda mediante la aparición de petequias tras la insuflación sostenida de un manguito de presión, reflejando alteraciones de la hemostasia primaria cutánea, sin relación con el defecto de membrana eritrocitaria de la HPN.",
+    "2": "Prueba de hemólisis con sacarosa o test de Ham clásico positivo, que evidencian la lisis del eritrocito deficiente en proteínas reguladoras del complemento al exponerlo a un medio de baja fuerza iónica o a suero acidificado, considerándose el único criterio absoluto moderno para el diagnóstico.",
+    "3": "Biopsia de médula ósea con tinción azul de Prusia (Perls); revela sideroblastos en anillo multinucleados por acumulación patológica de hierro mitocondrial perinuclear, hallazgo considerado diagnóstico de certeza para confirmar el cuadro clonal de este paciente."
+  },
+  "13989465-8138-4a67-9f35-9f5581e10293": {
+    "0": "Fallo diurético por hiperpotasemia inducida por la espironolactona a dosis máximas, que limitaría la posibilidad de continuar escalando el tratamiento diurético; se trata mediante diálisis peritoneal continua ambulatoria de por vida como método sustitutivo definitivo de depuración de volumen y electrolitos.",
+    "2": "Síndrome de Budd-Chiari crónico, secundario a la obstrucción del flujo venoso suprahepático que perpetuaría la hipertensión portal y la ascitis refractaria a diuréticos; se trata mediante bypass aorto-hepático quirúrgico de urgencia para restablecer el drenaje venoso hepático.",
+    "3": "Ascitis Grado 1 refractaria, catalogada así pese a la tensión abdominal evidente; se trata mediante la duplicación de la dosis de diuréticos hasta alcanzar espironolactona 800 mg/día, en un intento de forzar la natriuresis pese a haberse alcanzado ya la dosis máxima tolerada."
+  },
+  "069b2b9f-4f90-4a45-8c51-ff2b2c730419": {
+    "0": "El cultivo del líquido sinovial revela de forma constante Staphylococcus aureus meticilino-resistente (SAMR), germen grampositivo típico de las artritis sépticas no gonocócicas, y los hemocultivos revelan Pseudomonas, un bacilo gramnegativo asociado a huéspedes inmunocomprometidos o usuarios de drogas endovenosas.",
+    "1": "El cultivo de líquido sinovial sería positivo en el 100% de los casos por tratarse de una artritis séptica purulenta clásica desde el inicio, y los hemocultivos serían negativos de por vida al no existir bacteriemia; se debe realizar cultivo de esputo para descartar un foco respiratorio concomitante."
+  },
+  "4c77e65f-dc17-4bde-a04e-a7bd13b8db2d": {
+    "2": "Deriva de un adenoma hipofisario productor de TSH (tirotropinoma) estimulado de forma retrógrada por la acumulación tisular de amiodarona y su metabolito yodado, generando una hipersecreción central autónoma de TSH; se trata con agonistas dopaminérgicos que inhiben la secreción hipofisaria.",
+    "3": "Es una reacción autoinmune idiopática desencadenada por la aparición de novo de anticuerpos estimulantes del receptor de TSH (TRAb), similar al mecanismo de la enfermedad de Graves; requiere tiroidectomía de urgencia sin preparación farmacológica previa dado el riesgo de progresión hiperfuncional."
+  },
+  "1bcd3b55-1a6f-495e-819a-a371dbc5d189": {
+    "0": "El recto superior drenaría directamente a través de los vasos linfáticos que siguen el trayecto de la arteria mesentérica superior, en lugar de la inferior, hacia los ganglios inguinales profundos, saltando el territorio mesorrectal habitual descrito para este segmento.",
+    "1": "Es una vía aberrante de drenaje linfático que se establecería de forma secundaria a una anastomosis esplenorrenal previa, comunicación vascular portosistémica que redirigiría de forma anómala el flujo linfático regional hacia el territorio inguinal.",
+    "3": "La metástasis inguinal se produciría por una siembra peritoneal directa de células tumorales exfoliadas que descienden por gravedad hasta el receso de Douglas, desde donde migrarían de forma retrógrada a través de los canales linfáticos parietales hasta la región inguinal."
+  },
+  "1247e99f-d842-4d76-9358-c9d961cfacaf": {
+    "0": "Administrar un bolo de heparina no fraccionada endovenosa para prevenir la trombosis de la vena femoral secundaria a la compresión muscular ejercida por el hematoma del psoas, asumiendo que el riesgo trombótico local superaría al riesgo hemorrágico basal del paciente hemofílico.",
+    "1": "Prescribir reposo absoluto en cama y administración intramuscular profunda de analgésicos de tipo AINE (Aspirina a dosis altas), buscando un efecto antiinflamatorio y analgésico rápido sobre la articulación y el músculo comprometidos por el sangrado agudo.",
+    "2": "Realizar una punción articular evacuadora (artrocentesis) inmediata en la rodilla para aliviar la presión intraarticular de forma diagnóstica y terapéutica, sin administrar previamente factor VIII plasmático, priorizando el drenaje mecánico del hemartrosis sobre la corrección del déficit de factor."
+  },
+  "ab009281-b128-438f-a429-187fcf1d905b": {
+    "0": "Polidipsia psicógena por estrés oncológico, en la cual la ingesta compulsiva de agua libre superaría la capacidad excretora renal generando dilución del sodio plasmático; requiere infusión de solución salina hipertónica al 3% de forma aislada para corregir la hiponatremia dilucional resultante.",
+    "2": "Hiponatremia hipervolémica por insuficiencia cardíaca congestiva subclínica, con activación neurohormonal del eje renina-angiotensina-aldosterona y de la ADH no osmótica que favorecería la retención de agua libre; requiere diuréticos de asa y restricción de sodio estricta.",
+    "3": "Hiponatremia por pérdida renal de sodio secundaria a nefropatía tubular por cisplatino, fármaco nefrotóxico que induce natriuresis excesiva y deshidratación con hipovolemia efectiva; requiere infusión rápida de solución fisiológica al 0.9% para restituir el volumen y el sodio perdidos."
+  },
+  "05e01be0-c6cd-42f8-8171-a929c79d6b84": {
+    "0": "Diabetes Insípida Nefrogénica, secundaria a una alteración del receptor V2 o de las acuaporinas del túbulo colector; se caracteriza por la refractariedad celular tubular completa a la estimulación por desmopresina, con osmolaridad urinaria que permanecería baja pese a la administración del análogo de ADH.",
+    "1": "Polidipsia Primaria, trastorno psicógeno de ingesta compulsiva de agua con eje hipotálamo-hipofisario íntegro; se caracteriza por la retención renal compensadora refleja inmediata ante la restricción hídrica y una supresión solo parcial de la ADH endógena residual.",
+    "3": "Síndrome de secreción inadecuada de ADH (SIADH) secundario a nefropatía intersticial crónica por abuso de analgésicos, en el cual la liberación no osmótica y sostenida de ADH generaría retención de agua libre y concentración inapropiada de la orina."
+  },
+  "7ec3c3f0-f1e0-405d-8f46-6e738f992030": {
+    "1": "Ligadura quirúrgica directa de la arteria esplénica, procedimiento que reduciría el flujo esplácnico aferente al sistema porta disminuyendo indirectamente la presión portal; su complicación principal es el desarrollo de pancreatitis crónica por compromiso isquémico de la vascularización pancreática adyacente.",
+    "2": "Trasplante hepático ortotópico emergente inmediato en las primeras 2 horas, priorizando la resolución curativa definitiva de la hepatopatía de base sobre las medidas de rescate endoscópico o radiológico; con riesgo de rechazo hiperagudo mediado por anticuerpos preformados del receptor."
+  },
+  "5d4f1943-b151-491a-affd-2dc3a6d1be2e": {
+    "0": "D-penicilamina y Fenitoína, fármacos inductores de lupus que producen anticuerpos antihistona sin anti-ADNds.",
+    "1": "Hidralazina e Isoniacida, los inductores clásicos de lupus farmacológico con patrón antihistona puro.",
+    "2": "Procainamida y Clorpromacina, asociadas al lupus inducido convencional con anti-ADNds negativo."
+  },
+  "2d34aa91-5920-4068-b120-ce736d5b28eb": {
+    "0": "Hemofilia A hereditaria descompensada, que cursaría con un déficit congénito del factor VIII de inicio en la infancia.",
+    "1": "Déficit congénito severo de fibrinógeno (Afibrinogenemia), que alteraría de forma global la fase final común de la coagulación.",
+    "3": "Púrpura Trombocitopénica Trombótica refractaria, microangiopatía que cursaría con trombocitopenia y hemólisis mecánica."
+  },
+  "4a62519d-611e-4aba-bdaa-9a989aa3c15d": {
+    "0": "Obstrucción linfática de origen neoplásico por linfoma gástrico primario, que generaría un bloqueo del drenaje quilífero intestinal con fuga proteica hacia la luz digestiva y edema secundario de origen tumoral.",
+    "1": "Retención salina selectiva mediada por hiperaldosteronismo primario secundario a un adenoma adrenal unilateral, que expandiría el volumen extracelular por reabsorción excesiva de sodio a nivel del túbulo colector renal.",
+    "3": "Aumento de la síntesis de colágeno por toxicidad directa del etanol sobre los fibroblastos dérmicos, generando fibrosis intersticial que alteraría la permeabilidad capilar y favorecería la extravasación de líquido."
+  },
+  "a50d2228-df8f-4187-92ec-0e9b5dd48c31": {
+    "0": "Reacción alérgica inespecífica a los excipientes de la jeringa, mecanismo de hipersensibilidad local sin significado inmunológico frente al bacilo tuberculoso; no requiere seguimiento ni profilaxis medicamentosa alguna.",
+    "2": "Tuberculosis pulmonar activa bacilífera altamente contagiosa, asumiendo que la induración cutánea de 12 mm certifica por sí sola la presencia de bacilos viables en replicación pulmonar; requiere aislamiento respiratorio estricto en habitación con presión negativa por 3 meses.",
+    "3": "Tuberculosis extrapulmonar latente ganglionar, entidad que se presume por la magnitud de la induración cutánea aun sin adenopatías palpables demostrables; requiere iniciar de forma inmediata el esquema de inducción cuádruple con 4 drogas propio de la enfermedad activa."
+  },
+  "5033849d-8129-44e3-b375-2af7267eabd2": {
+    "0": "Criterios de Duke modificados, sistema que combina hallazgos ecocardiográficos (vegetaciones valvulares), hemocultivos positivos y criterios clínicos menores; evalúan la presencia de vegetaciones en la válvula tricúspide como posible foco embólico séptico desencadenante de la tirotoxicosis.",
+    "1": "Score de Wells pulmonar, escala clínica que pondera signos de trombosis venosa profunda, taquicardia e inmovilización reciente; evalúa la probabilidad de un embolismo pulmonar graso masivo que desencadenaría la liberación de tiroglobulina libre a la circulación.",
+    "2": "Score de Maddrey, índice discriminante calculado a partir de la bilirrubina y la prolongación del tiempo de protrombina; el cual evaluaría de forma prioritaria estos parámetros para predecir la necrosis tiroidea activa y la mortalidad asociada."
+  },
+  "1d967e76-82a3-4de6-9c6e-ba3799b008aa": {
+    "0": "Síndrome paraneoplásico hipercalcémico con infiltración tumoral directa de las glándulas salivales submandibulares, que generaría secreción ectópica de proteína relacionada con la parathormona (PTHrP) y compresión regional de estructuras cervicales adyacentes.",
+    "1": "Reacción cruzada por el consumo de antagonistas del receptor de estrógenos, que inhibirían la organificación del yoduro a nivel del tirocito y alterarían de forma secundaria la retroalimentación hipotálamo-hipófiso-tiroidea, generando hiperfunción glandular compensatoria.",
+    "3": "Destrucción autoinmune difusa de la glándula inducida por el depósito masivo de proteínas amiloides en el estroma tiroideo, proceso infiltrativo que alteraría de forma global la arquitectura folicular y la capacidad de captación del yodo radiactivo."
+  },
+  "248a374d-c0f8-44ba-886f-c9b7b13b2995": {
+    "0": "Polimiositis autoinmune asociada, miopatía inflamatoria mediada por infiltrado linfocitario endomisial; se caracteriza por presentar electromiograma completamente normal sin signos de denervación activa pese al proceso inflamatorio muscular subyacente.",
+    "1": "Miopatía lúpica inflamatoria activa, secundaria a infiltración inflamatoria autoinmune directa del tejido muscular esquelético en el contexto de actividad sistémica del LES; se diferencia por presentar CPK normal y atrofia muscular marcada de instalación precoz.",
+    "3": "Miositis por cuerpos de inclusión, miopatía inflamatoria crónica con depósito de agregados proteicos intracelulares e inclusiones vacuoladas en la biopsia muscular; caracterizada por ser asimétrica y comprometer predominantemente la musculatura distal de las manos y los flexores de los dedos."
+  },
+  "8444616f-61da-427f-ad34-a75b752f132c": {
+    "1": "Auscultar con el estetoscopio directamente sobre la fosa ilíaca derecha buscando un soplo sistólico de reposo, maniobra orientada a detectar turbulencia de flujo por estenosis proximal de la arteria ilíaca que podría condicionar de forma secundaria la amplitud del pulso poplíteo distal.",
+    "2": "Palpar el latido con el dedo índice de una mano sobre el dorso del antepié en bipedestación activa, técnica que buscaría el trayecto superficial de la arteria dorsal del pie lateral al tendón extensor largo del hallux.",
+    "3": "Palpar la arteria tibial posterior inmediatamente por encima del maleolo externo del tobillo con el paciente caminando, buscando el trayecto retromaleolar del vaso durante la fase de apoyo de la marcha."
+  },
+  "dd8fa44b-a7e7-463b-9fb9-8e7b11450114": {
+    "0": "Ácido acetilsalicílico (Aspirina) a dosis altas de 1 g cada 6 horas, asumiendo un efecto antiinflamatorio potente sobre la sinovitis gotosa; no altera la función renal y bloquearía competitivamente la precipitación de cristales de urato monosódico en la articulación.",
+    "2": "Inhibidores de bomba de protones combinados con alopurinol endovenoso en dosis única de rescate, buscando reducir de forma rápida la uricemia sérica y con ello frenar la inflamación articular aguda en curso.",
+    "3": "Colchicina a dosis máxima tolerada de 1 mg cada 2 horas de forma indefinida hasta la desaparición total de los signos inflamatorios, por su reconocido efecto inhibitorio sobre la migración leucocitaria y la fagocitosis de los cristales de urato."
+  },
+  "6e03e41a-e275-40ff-86e6-4116c0020c15": {
+    "0": "Administrar dosis altas de naloxona intramuscular para suprimir los efectos depresores centrales autonómicos, asumiendo un mecanismo opioide-símil de la depresión respiratoria mediado por receptores mu a nivel del tronco encefálico.",
+    "2": "Realizar lavado gástrico vigoroso con carbón activado independientemente del nivel de conciencia y tiempo de ingesta, con el objetivo de disminuir la absorción digestiva residual de etanol y limitar la profundización del coma.",
+    "3": "Iniciar infusión de flumazenil endovenoso continuo para desplazar de forma competitiva al etanol del receptor GABA_A, revirtiendo así la potenciación inhibitoria central que produciría la sedación y la depresión respiratoria."
+  },
+  "6b7b805a-68bf-4814-b105-651876cde52a": {
+    "0": "Angina inestable, cuadro isquémico sin necrosis miocárdica demostrable por marcadores; requiere fibrinólisis inmediata con tenecteplasa (tPA) para disolver el trombo coronario responsable del infradesnivel del ST.",
+    "1": "Espasmo coronario (Angina de Prinzmetal), producido por vasoconstricción coronaria transitoria de origen autonómico; requiere betabloqueantes a dosis altas de inmediato para disminuir la demanda miocárdica de oxígeno."
+  },
+  "fc3dd303-2299-4fbf-b6d0-25a861954ec6": {
+    "2": "Un valor de hematocrito aislado superior al 50% en hombres, considerado por sí solo suficiente para certificar el diagnóstico sin necesidad de estudios adicionales de EPO o mutación JAK2.",
+    "3": "Presencia de un frotis de sangre periférica con abundantes esquistocitos y policromasia, hallazgos que reflejarían fragmentación eritrocitaria mecánica y regeneración medular reactiva compensatoria."
+  },
+  "d6aa0254-9c7a-4ca0-8b28-aa42def9c1bd": {
+    "0": "Es una psicosis lúpica paraneoplásica aguda mediada por autoanticuerpos contra el receptor NMDA central, que alterarían la neurotransmisión glutamatérgica y desencadenarían alucinaciones y alteraciones conductuales agudas del comportamiento.",
+    "1": "Es consecuencia directa de la hipocalcemia severa por hipoparatiroidismo subclínico autoinmune, trastorno que alteraría la excitabilidad neuronal y generaría manifestaciones neuropsiquiátricas asociadas a la irritabilidad del sistema nervioso central.",
+    "2": "Se trata de un efecto adverso neurológico benigno directo por toxicidad mitocondrial cerebral transitoria del litio, fármaco que en niveles séricos elevados podría inducir alteraciones conductuales y del juicio de forma reversible."
+  },
+  "80bfadfd-a519-47c4-ac81-a31c38cbcc61": {
+    "0": "Etambutol; causaría toxicidad directa por depósito intracelular de complejos de cobre en los axones periféricos, alterando la conducción nerviosa distal; se previene con aporte de zinc endovenoso como quelante competitivo.",
+    "1": "Rifampicina; inhibiría la síntesis de ácidos grasos de cadena larga necesarios para la formación de la vaina de mielina periférica, comprometiendo la conducción nerviosa; se previene con suplementación de vitamina B12.",
+    "2": "Pirazinamida; induciría hiperuricemia significativa por competencia con el aclaramiento tubular renal del ácido úrico, precipitando cristales de urato de forma directa en las vainas de mielina de los axones del nervio ciático y generando neuropatía dolorosa."
+  },
+  "21ceb28a-3df4-4566-9c3c-dec706fc713a": {
+    "0": "Corticoides orales en dosis bajas (prednisona < 7.5 mg/día) asociados a metotrexato oral con ácido fólico, esquema de baja intensidad inmunosupresora habitualmente reservado para el compromiso articular leve del lupus.",
+    "1": "Hidroxicloroquina a dosis bajas de forma aislada combinada con dieta baja en proteínas, estrategia conservadora orientada a reducir la carga de filtrado glomerular sin inmunosupresión adicional.",
+    "2": "Anticoagulación sistémica indefinida con warfarina y administración de Belimumab en monoterapia, buscando prevenir fenómenos trombóticos glomerulares y modular la producción de autoanticuerpos mediante el bloqueo de BLyS."
+  },
+  "09dd5ca2-91e0-4774-982b-698c3433eb9c": {
+    "0": "Actuar como sustituto directo del cese del tabaquismo en pacientes que se niegan a dejar de fumar, sustituyendo el impacto biológico del humo de tabaco por el acondicionamiento físico supervisado.",
+    "2": "Lograr una mejoría espirométrica permanente con reversión total del enfisema pulmonar, restaurando de forma estructural el parénquima alveolar destruido mediante el reacondicionamiento muscular respiratorio.",
+    "3": "Suprimir de forma absoluta el requerimiento de broncodilatadores de acción prolongada diarios, al optimizar la mecánica ventilatoria y la fuerza muscular respiratoria hasta un punto que tornaría innecesaria la broncodilatación farmacológica de mantenimiento."
+  },
+  "964932bb-1431-4eaf-97c7-85a1fb564b1f": {
+    "0": "Crisis tirotóxica aguda desencadenada por el estrés quirúrgico-traumático de la fractura; se monitoriza por el test de Werner; el tratamiento de primera línea sería la levotiroxina endovenosa para restablecer el eje hormonal tiroideo.",
+    "2": "Intoxicación aguda por propilenglicol contenido en soluciones farmacológicas administradas durante la internación; se monitoriza mediante la escala de Glasgow; el tratamiento consiste en la inyección de atropina EV para contrarrestar el efecto colinérgico del solvente.",
+    "3": "Encefalopatía lúpica activa desencadenada por el estrés inflamatorio sistémico del traumatismo; se monitoriza mediante el título de anticuerpos anti-Sm; el tratamiento es con pulsos de metilprednisolona para controlar la actividad autoinmune del sistema nervioso central."
+  },
+  "950290e2-6a47-4e35-a93b-bcb2dc24ae13": {
+    "1": "Inducir hipotermia controlada para retardar la absorción intestinal de sodio, disminuyendo el metabolismo celular y el transporte activo de electrolitos a través de la mucosa digestiva.",
+    "2": "Infundir solución fisiológica al 0.9% en bolo rápido a razón de 2 L/h, buscando diluir de forma aguda la concentración plasmática de sodio mediante la expansión del volumen extracelular."
+  },
+  "0d74362f-2213-4b47-924f-d190fbcab18c": {
+    "0": "Tiroiditis subaguda destructiva de De Quervain, proceso inflamatorio doloroso que liberaría hormonas preformadas hacia la circulación de forma pasiva; requiere uso inmediato de metimazol a altas dosis para bloquear la síntesis hormonal excesiva.",
+    "1": "Resistencia celular periférica al receptor TR-alfa, trastorno congénito que alteraría la sensibilidad tisular a la hormona tiroidea circulante; se trata con dosis inmunosupresoras de dexametasona para modular la respuesta inflamatoria del receptor.",
+    "3": "Hipotiroidismo hipofisario agudo; se produciría por necrosis hipofisaria hemorrágica secundaria al bajo flujo del shock cardiogénico, comprometiendo la secreción de TSH; requiere infusión intravenosa rápida de levotiroxina para restituir el eje hormonal deficitario."
+  },
+  "b894077d-3406-4611-9405-38d897465c91": {
+    "0": "Trombosis venosa profunda bilateral de venas subclavias inducida por un catéter de diálisis infectado por S. aureus, que generaría oclusión mecánica progresiva del retorno venoso y una respuesta inflamatoria séptica local sobreañadida.",
+    "1": "Insuficiencia cardíaca congestiva descompensada de alto gasto; etiología por beriberi húmedo, con vasodilatación periférica extrema y sobrecarga de volumen que generaría congestión venosa sistémica generalizada.",
+    "2": "Taponamiento cardíaco por derrame pericárdico masivo lúpico; etiología autoinmune, con elevación aguda de la presión intrapericárdica que comprometería el llenado diastólico y elevaría de forma retrógrada la presión venosa central."
+  },
+  "ad24717f-fd5c-49e3-8bab-2a8260eafe0e": {
+    "0": "Infiltración intratecal intermitente con cisplatino guiada por punción lumbar quincenal profiláctica, buscando alcanzar concentraciones citotóxicas directas en el líquido cefalorraquídeo para eliminar posibles células tumorales residuales del sistema nervioso central.",
+    "1": "Neumonectomía total izquierda profiláctica de intervalo para erradicar cualquier clon residual microscópico, tratando la enfermedad como si fuera una lesión estrictamente localizada susceptible de resección quirúrgica completa.",
+    "2": "Inicio de inmunoterapia de mantenimiento con inmunoglobulina subcutánea por un periodo indefinido de 5 años, con el objetivo de reforzar la inmunidad humoral y prevenir infecciones oportunistas asociadas al estado de inmunosupresión postquimioterapia."
+  },
+  "494d0081-a071-4051-b0bc-16b46d61a16d": {
+    "0": "Repetir el mismo esquema de primera línea por 14 días adicionales agregando probióticos orales, con el fin de restaurar la microbiota gástrica y potenciar la erradicación con la misma combinación antibiótica ya utilizada.",
+    "1": "Suspender el uso de antibióticos y programar una gastrectomía distal profiláctica de rescate, considerando el fracaso terapéutico farmacológico repetido como indicación quirúrgica definitiva de la úlcera persistente.",
+    "2": "Esquema triple con IBP, claritromicina y doxiciclina por 7 días, manteniendo la claritromicina bajo el supuesto de que una segunda exposición todavía sería eficaz frente a la cepa persistente."
+  },
+  "dd86583d-d2aa-4cc8-bc51-fd9262a708dc": {
+    "1": "Administrar un bolo de heparina no fraccionada y aspirina para estabilizar la luz falsa, buscando prevenir la formación de trombo mural en el sitio del desgarro íntimo y limitar la extensión de la disección.",
+    "2": "Iniciar infusión de nitroprusiato de sodio de inmediato para lograr una TA sistólica < 100 mmHg, sin importar la frecuencia cardíaca, priorizando la reducción rápida de la poscarga sobre el control previo de la fuerza de eyección ventricular.",
+    "3": "Administrar propranolol vía oral en dosis baja y suspender cualquier aporte de oxígeno por riesgo de hiperoxia parietal, asumiendo que la vía oral sería suficiente para el control agudo de la frecuencia cardíaca en este contexto crítico."
+  },
+  "1047275f-6bf9-4f0c-9f99-c521c8824eed": {
+    "0": "Enfermedad de Kawasaki; compromete grandes vasos coronarios mediante un proceso inflamatorio sistémico febril y se caracteriza por depósitos densos de IgE en la pared vascular durante la fase aguda.",
+    "3": "Vasculitis crioglobulinémica; compromete medianos vasos por precipitación de complejos de crioglobulinas con la temperatura y se caracteriza por depósitos de IgM monoclonal con actividad de factor reumatoide en la pared vascular."
+  },
+  "c9f0119c-2e58-428f-8f7b-94af5441e1db": {
+    "0": "Miocardiopatía hipertrófica inducida por progesterona plasmática, que generaría un engrosamiento reactivo del miocardio ventricular tras el embarazo; requiere recambio valvular aórtico urgente para aliviar la obstrucción funcional al tracto de salida.",
+    "2": "Miocarditis chagásica aguda connatal transmitida por vía transplacentaria a la madre durante la gestación; requiere tratamiento con benznidazol endovenoso continuo de forma indefinida para erradicar el parásito circulante.",
+    "3": "Miocardiopatía periparto; se autolimitaría siempre en las primeras 2 semanas por la reversión espontánea del estrés hemodinámico gestacional, y no presentaría riesgo de recidiva en embarazos posteriores al normalizarse la función ventricular de base."
+  },
+  "854fc4fe-7cc9-4c9b-9195-a4a3b625ceaf": {
+    "1": "Tuberculosis pleural activa, producida por la reacción de hipersensibilidad retardada frente a antígenos micobacterianos en el espacio pleural; se caracteriza por presentar glucosa normal con ADA menor a 5 UI/L y ausencia de linfocitos en el líquido.",
+    "2": "Empiema bacteriano agudo por Streptococcus pneumoniae, con invasión purulenta directa del espacio pleural por el neumococo; se caracteriza por niveles elevados de glucosa por arriba de los plasmáticos debido al elevado consumo de sustratos por las bacterias en replicación activa.",
+    "3": "Quilotórax paraneoplásico por linfoma, secundario a la obstrucción y rotura del conducto torácico por infiltración ganglionar tumoral; se caracteriza por la presencia masiva de cristales de urato monosódico de birrefringencia débil en el líquido pleural."
+  },
+  "196e9f3d-0296-4838-86f2-e58311550000": {
+    "1": "Iniciar inmediatamente quimioterapia sistémica adyuvante con doxorrubicina endovenosa continua, buscando un efecto antifibrótico hepático directo que mejoraría de forma indirecta la hemodinamia portal del paciente cirrótico.",
+    "2": "Suspender toda forma de betabloqueantes e indicar de inmediato colecistectomía total profiláctica en las primeras 12 horas, asumiendo que el origen del sangrado varicoso estaría vinculado a patología biliar concomitante no diagnosticada.",
+    "3": "Realizar ligadura endoscópica profiláctica diaria repetida durante las primeras 72 horas, con la intención de erradicar de forma acelerada la totalidad de los cordones varicosos remanentes antes del alta."
+  },
+  "8adf065e-9870-4faf-9211-130da965f339": {
+    "0": "Representa una respuesta puramente humoral con síntesis de anticuerpos monoclonales IgG dirigidos contra antígenos de pared micobacteriana, los cuales formarían inmunocomplejos que ocluirían los capilares alveolares de forma difusa, generando la necrosis observada.",
+    "2": "Se produciría por la activación de la vía clásica del complemento, con formación del complejo de ataque a la membrana (MAC) que lisaría directamente la pared micobacteriana rica en lípidos, induciendo una necrosis tisular por licuefacción de tipo gástrico en el foco pulmonar.",
+    "3": "Se generaría por una reacción de hipersensibilidad tipo I mediada por IgE específica antimicobacteriana y degranulación masiva de mastocitos tisulares, liberando mediadores vasoactivos que provocarían isquemia microvascular localizada y necrosis secundaria del parénquima."
+  },
+  "02b5f6dd-9176-4485-9b7e-a3560ce8019b": {
+    "0": "Rai Estadio IV (alto riesgo); Binet Estadio C, categorías reservadas para pacientes con citopenias severas asociadas por infiltración medular extensa.",
+    "1": "Rai Estadio 0 (bajo riesgo); Binet Estadio A, estadios definidos exclusivamente por linfocitosis aislada sin compromiso ganglionar ni visceral demostrable.",
+    "2": "Rai Estadio I (riesgo intermedio); Binet Estadio A, correspondientes a linfocitosis con adenopatías pero sin compromiso esplénico ni de otras áreas linfáticas adicionales."
+  },
+  "4e641ad4-9c20-4bf3-a7b0-a152ccd291df": {
+    "0": "Se debería a la excreción renal acelerada de macroglobulinas de prolactina de alto peso molecular hacia la orina, disminuyendo artificialmente su concentración sérica medible; requiere la recolección de orina de 24 horas y electroforesis inmunológica para cuantificar la fracción eliminada.",
+    "1": "Se produciría porque el depósito de sustancia amiloide dentro del propio tumor secuestraría la prolactina circulante en los vasos intratumorales, impidiendo su detección plasmática habitual; requiere punción transesfenoidal urgente del adenoma para dosaje intracelular directo del contenido hormonal secuestrado.",
+    "2": "Derivaría de la síntesis de un receptor truncado de dopamina tipo 2 en la superficie tumoral, capaz de degradar de forma enzimática la prolactina circulante liberada; requiere gammagrafía con octreótido para caracterizar la expresión de receptores de somatostatina del tumor."
+  },
+  "fdb7b8d9-29b7-467a-bb90-4127c944754e": {
+    "0": "Es provocada por la liberación de amilasa pancreática directa hacia el mediastino posterior, generando un proceso inflamatorio químico local que se traduciría en la elevación sistémica de los reactantes de fase aguda.",
+    "2": "Indicaría una neumonitis atípica secundaria a aspiración de contenido gástrico durante la maniobra de Valsalva provocada por el dolor agudo, generando una respuesta inflamatoria pulmonar química que elevaría los reactantes de fase aguda.",
+    "3": "Se asociaría a la diseminación bacteriana de una peritonitis bacteriana espontánea concomitante en un paciente con ascitis de base, cuya translocación bacteriana explicaría la elevación de los reactantes de fase aguda observados."
+  },
+  "f3824ae5-33c4-453d-ad84-daf636d0f43c": {
+    "1": "Presencia de hipercalcemia marcada por liberación masiva de calcio intracelular tumoral, hipopotasemia moderada por redistribución celular y acidosis respiratoria persistente secundaria al catabolismo tumoral acelerado.",
+    "2": "Plaquetopenia menor de 10.000/mm³ secundaria a la destrucción medular por el propio proceso citotóxico, asociada de forma obligatoria a una elevación de amilasas séricas por encima del percentilo 99 como marcador de daño tisular difuso.",
+    "3": "Aumento del sodio urinario por encima de 150 mEq/L secundario a la natriuresis inducida por la lisis celular masiva, en presencia de una osmolaridad urinaria disminuida de forma refractaria por la sobrecarga osmótica tubular."
+  },
+  "b31e08ca-9fc3-4d57-82e5-4867dacccbad": {
+    "0": "La degradación selectiva de las plaquetas activas mediada por un aumento del aclaramiento portal hepático, que reduciría la vida media plaquetaria circulante y alteraría de forma secundaria la hemostasia primaria.",
+    "1": "La síntesis de una molécula de protrombina disfuncional y deficiente, con menor actividad catalítica, que bloquearía el inicio de la vía extrínseca de la coagulación al no poder activarse correctamente en presencia del factor tisular.",
+    "3": "La inactivación irreversible del activador tisular del plasminógeno (t-PA) mediada por un aumento en su degradación plasmática, con abolición total de la fibrinólisis fisiológica y consecuente predominio del estado protrombótico."
+  },
+  "95a5d9b0-1e52-478d-aef7-f25bdd6f97a7": {
+    "0": "Xantomas tuberosos, formados por macrófagos espumosos cargados de ésteres de colesterol depositados en dermis y tendones en el contexto de dislipidemias familiares graves; muestran radiográficamente pinzamiento articular simétrico con esclerosis subcondral asociado.",
+    "1": "Calcinosis cutánea, con depósitos amorfos de hidroxiapatita cálcica en tejido subcutáneo y periarticular propios de la esclerosis sistémica o el lupus crónico; muestran radiográficamente sindesmofitos marginales simétricos a lo largo de la columna.",
+    "2": "Nódulos reumatoides, formados por histiocitos dispuestos en empalizada alrededor de un centro de necrosis fibrinoide, típicos de la artritis reumatoide grave de larga evolución; muestran una radiografía con osteopenia generalizada difusa sin erosiones focales."
+  },
+  "e4e74e45-e892-4d7c-b806-a3e3d4d56dc0": {
+    "0": "El desarrollo selectivo de un síndrome de Fanconi con acidosis tubular proximal de tipo I de herencia autosómica recesiva, secundario al depósito tubular de cadenas ligeras monoclonales que dañarían de forma directa el epitelio del túbulo contorneado proximal.",
+    "2": "Un recuento de blastos en la médula ósea superior al 45% con bastones de Auer abundantes en el frotis, reflejando una transformación aguda de la clona linfoplasmocítica hacia un fenotipo blástico de alto grado.",
+    "3": "La presencia de lesiones osteolíticas en sacabocados en cráneo por activación osteoclástica local, hipercalcemia severa secundaria a la resorción ósea y elevación exclusiva de IgA sérica como paraproteína monoclonal predominante."
+  },
+  "de19525c-babc-40f3-857b-8a82e32eba81": {
+    "0": "Un gradiente portal de 2 mmHg se asociaría de forma constante con sangrado arterial activo por fragilidad de la mucosa gástrica; un gradiente mayor a 5 mmHg actuaría como protector al favorecer el desarrollo de colaterales de baja resistencia.",
+    "2": "El gradiente de presión portal no guardaría ninguna relación con la formación de várices o ascitis, dependiendo estas complicaciones exclusivamente de fenómenos compresivos extrínsecos como el bocio endotorácico sobre el retorno venoso mediastínico.",
+    "3": "Un gradiente portal <3 mmHg se asociaría de forma característica a ascitis masiva refractaria a diuréticos, por una teórica hipersensibilidad peritoneal a mínimos incrementos de presión hidrostática sinusoidal."
+  },
+  "b1c76f5e-6022-459e-b0d9-8bdeea9395de": {
+    "0": "Son deformidades de carácter reversible explicadas por una miopatía reactiva localizada de los músculos interóseos, sin compromiso estructural articular subyacente ni destrucción del cartílago o hueso subcondral.",
+    "2": "Son consecuencia directa de la isquemia distal digital inducida por anticuerpos antihistona, que generarían vasoespasmo microvascular sostenido con daño isquémico secundario de los tejidos periarticulares.",
+    "3": "Se deben puramente a la hiperlaxitud ligamentosa difusa de origen inflamatorio crónico, sin compromiso óseo destructivo demostrable en los estudios radiográficos seriados."
+  },
+  "0b297339-5076-4de1-ba91-d56a9d815dd5": {
+    "0": "Hipoparatiroidismo autoinmune asociado a la enfermedad celíaca, en el cual la destrucción linfocitaria de la glándula paratiroides explicaría la caída de la PTH plasmática y la consecuente hipocalcemia por déficit hormonal primario.",
+    "2": "Osteogénesis imperfecta tardía por mutación del gen del colágeno tipo I, que alteraría la matriz ósea orgánica y predispondría a fracturas patológicas con dolor óseo difuso de aparición en la vida adulta.",
+    "3": "Hiperparatiroidismo primario por adenoma secretor autónomo de PTH, cuya hipersecreción hormonal descontrolada destruiría de forma directa el enterocito e induciría el cuadro malabsortivo asociado."
+  },
+  "9a279a64-d588-4630-8ff5-f10dbcf782ab": {
+    "0": "Edema de origen linfático (linfedema); por obstrucción micótica del conducto torácico principal, que impediría el drenaje linfático normal y generaría acumulación de líquido rico en proteínas en el intersticio.",
+    "1": "Edema farmacológico; por bloqueo de los canales de potasio en las células intercaladas del túbulo colector, alterando el intercambio iónico tubular y favoreciendo la retención secundaria de sodio y agua.",
+    "2": "Síndrome Nefrótico; por hipoalbuminemia severa debida a pérdida urinaria masiva de proteínas, que disminuiría la presión oncótica del plasma y favorecería la extravasación de líquido hacia el intersticio."
+  },
+  "3908d36a-3891-4474-b231-791aace511b0": {
+    "1": "Obstrucción de los túbulos colectores por cristales de ácido úrico insolubles inducida por el fármaco, que precipitarían en la luz tubular y generarían un componente obstructivo agudo con retención secundaria de líquido.",
+    "2": "Aumento directo de la síntesis hepática de albúmina que elevaría la presión oncótica de forma sistémica, desplazando de forma paradójica líquido desde el intersticio hacia el compartimento intravascular con sobrecarga secundaria.",
+    "3": "Inhibición de los canales de calcio dihidropiridínicos que induciría vasodilatación arteriolar selectiva precapilar, aumentando la presión hidrostática capilar y favoreciendo la extravasación de líquido hacia el tejido intersticial."
+  },
+  "0416b29c-2c6a-4bc6-8bd5-93d6b8411497": {
+    "1": "Estenosis aórtica valvular, con obstrucción fija del tracto de salida ventricular por calcificación o fusión de las valvas; la maniobra de Valsalva aumentaría el retorno venoso, incrementando el flujo por la válvula estenótica y la intensidad del soplo.",
+    "2": "Insuficiencia mitral por prolapso o degeneración mixomatosa de la valva mitral; la bipedestación disminuiría el soplo por la caída del gasto cardíaco y de la fracción regurgitante hacia la aurícula izquierda.",
+    "3": "Estenosis pulmonar congénita por fusión valvar de origen embrionario; el soplo aumentaría con la espiración por el mayor retorno venoso a cavidades derechas y disminuiría de forma difusa con la maniobra de Valsalva."
+  },
+  "a689c5be-5305-4cc3-9ded-7828323c1e54": {
+    "0": "Vender la unidad de sangre a centros de investigación dermatológica, aprovechando su valor biológico residual para estudios in vitro, y omitir informar al paciente para evitar causarle un daño psicológico o estigma social innecesario.",
+    "1": "Indicar de forma inmediata al donante tratamiento con quimioterapia adyuvante con doxorrubicina por vía sistémica continua, asumiendo un mecanismo citotóxico capaz de eliminar al parásito circulante de forma directa.",
+    "2": "Utilizar la sangre de forma normal dado que el paciente se encuentra asintomático clínicamente, asumiendo que en la fase crónica indeterminada la parasitemia circulante sería indetectable y el riesgo de transmisión transfusional sería de 0%."
+  },
+  "5f21f8bc-4198-4757-9fc7-0f315222bfb3": {
+    "0": "Aspergilosis broncopulmonar alérgica (ABPA), reacción de hipersensibilidad al hongo Aspergillus fumigatus en la vía aérea de pacientes asmáticos; la afectación más común sería el esófago medio y cursaría con depósitos densos de IgG de tipo 4 en la mucosa.",
+    "2": "Poliangeítis microscópica, vasculitis necrotizante pauciinmune de pequeño vaso asociada a p-ANCA; la afectación más común sería la mucosa oral ulcerativa y cursaría con ausencia total de eosinófilos en los infiltrados tisulares.",
+    "3": "Lupus eritematoso sistémico activo, enfermedad autoinmune multisistémica mediada por inmunocomplejos; la afectación característica sería el rash malar y cursaría con necrosis licuefactiva dérmica profunda de la unión dermoepidérmica."
+  },
+  "04aa1427-fd7a-4af3-8a62-67f769a5c9c1": {
+    "0": "Divertículos y Angiodisplasia: sangrados dolorosos tipo cólico derecho, atribuibles a la distensión mecánica del segmento colónico afectado. Colitis isquémica: sangrado indoloro y masivo por necrosis mucosa extensa de instalación abrupta.",
+    "1": "Fisura anal y úlcera rectal solitaria: sangrado masivo sin repercusión anal local ni dolor, atribuible a la erosión progresiva y silente de la mucosa anorrectal expuesta.",
+    "3": "Divertículo de Meckel: cursaría obligatoriamente con dolor constante en el hipocondrio izquierdo por irritación peritoneal local y vómitos biliosos fecaloideos secundarios a la obstrucción intestinal asociada."
+  },
+  "ba6542cb-8039-4a7a-bcbd-256241a11abf": {
+    "1": "La prótesis mecánica no requeriría ningún control de laboratorio periódico al ser un material biológicamente inerte; la biológica, en cambio, requeriría dosis altas de heparina endovenosa continua por su mayor tendencia intrínseca a la trombosis del tejido animal.",
+    "2": "La prótesis biológica está contraindicada en pacientes jóvenes por el riesgo de inducir rechazo hiperagudo mediado por linfocitos T CD4+, al tratarse de tejido xenogénico porcino o bovino con potencial antigénico conservado pese al procesamiento industrial.",
+    "3": "La prótesis biológica duraría toda la vida sin desgastarse gracias a la estabilización química de sus velos; si se elige la mecánica se requeriría anticoagulación de por vida con aspirina únicamente, por su efecto antiagregante sobre la superficie protésica."
+  },
+  "43a1733d-680e-4fe7-bdcc-694f3485baa4": {
+    "0": "Ambas formas tendrían idéntica proporción celular y humoral de modo constante, independientemente de la velocidad de flujo o del territorio vascular comprometido, y se tratarían indistintamente con hemostáticos tópicos de aplicación local.",
+    "1": "Trombos arteriales: compuestos predominantemente por hematíes y agua libre atrapada por la alta presión de perfusión; se beneficiarían de diuréticos. Trombos venosos: compuestos por colágeno puro depositado por el endotelio dañado; se beneficiarían de corticoides antiinflamatorios.",
+    "2": "Trombos arteriales: ricos en eosinófilos reclutados por el daño endotelial de la placa; se tratarían con antihistamínicos para frenar la respuesta alérgica local. Trombos venosos: ricos en megacariocitos residentes del estasis venoso; se tratarían con cladribina por su efecto mielosupresor selectivo."
+  },
+  "0a5f41f8-b6e0-4812-8a5f-5f82104dd604": {
+    "0": "Suprimir de forma absoluta la síntesis de vitamina K colónica bacteriana para enlentecer de forma deliberada la coagulación y así favorecer la hemostasia local del sitio sangrante; se utiliza neomicina oral por su acción antibacteriana entérica no absorbible.",
+    "1": "Tratar profilácticamente la pancreatitis aguda inducida por el aumento de presión en el colédoco distal secundario al sangrado activo; se utiliza metronidazol endovenoso por su cobertura contra anaerobios biliares.",
+    "2": "Prevenir la colonización fúngica de las úlceras esofágicas secundarias a la ligadura con bandas, sitio propicio para la sobreinfección por Candida; se utiliza anfotericina B deoxicolato oral por 3 semanas dada su pobre absorción sistémica y acción tópica digestiva."
+  },
+  "80fe52c7-a633-4e4e-90dc-30ed9e9edc28": {
+    "1": "Inducción anestésica con benzodiacepinas para disminuir el tono simpático central y de forma directa la vasodilatación aferente renal, potenciando así el tono inhibitorio GABAérgico sobre los centros vasomotores bulbares.",
+    "2": "Realización inmediata de hemodiálisis convencional diaria en sala general sin fármacos vasoactivos, buscando depurar directamente las toxinas urémicas circulantes responsables de la vasoconstricción renal sostenida.",
+    "3": "Administración de dosis altas de diuréticos de asa (furosemida endovenosa continua) asociados a dopamina a dosis dopaminérgicas, buscando forzar la natriuresis tubular y aumentar de forma selectiva el flujo sanguíneo renal por vasodilatación dopaminérgica."
+  },
+  "27dd2d8b-4d93-47b4-bdca-e1a22a3fd803": {
+    "0": "La rifampicina no requeriría ningún control hepático ni biliar dado su perfil de eliminación predominantemente biliar sin acumulación sistémica relevante; todos los fármacos se administrarían a dosis triple diaria continua de rutina sin necesidad de ajuste.",
+    "2": "El etambutol sería la droga más hepatotóxica del esquema por su metabolización hepática dosis-dependiente; la isoniacida debería duplicarse de dosis diaria por vía subcutánea de rescate para compensar la reducción de su absorción entérica.",
+    "3": "La estreptomicina sería el fármaco de elección prioritario de mantenimiento diario en la insuficiencia renal crónica severa terminal, por su presunta eliminación hepática compensatoria que evitaría la acumulación tóxica renal."
+  },
+  "29b0ad56-30c2-4112-917d-e11ed5cc3625": {
+    "0": "Mieloperoxidasa (MPO) fuertemente positiva y PAS negativa en la LLA, reflejando la presencia de gránulos primarios enzimáticos en los linfoblastos; MPO negativa en la LAM al carecer los mieloblastos de esta actividad enzimática.",
+    "1": "Esterasa inespecífica positiva en la LLA común, marcador que reflejaría actividad enzimática lisosomal linfoide; Fosfatasa ácida positiva en la variante mieloide megacarioblástica por la actividad hidrolítica característica de los megacarioblastos.",
+    "3": "Tinción de Rojo de Congo positiva con birrefringencia verde manzana en la LAM, por el supuesto depósito de material amiloide en los gránulos mieloides; coloración de tinta china reactiva en la LLA al visualizar la cápsula polisacárida de los linfoblastos."
+  },
+  "13a411f4-d5f9-4a8c-b3ee-dd2e65b5387c": {
+    "0": "La elevación de enzimas cardíacas (troponina y CPK-MB) en la pericarditis urémica únicamente, reflejando el compromiso miocárdico directo inducido por las toxinas urémicas circulantes acumuladas en la falla renal.",
+    "1": "La presencia de fiebre alta, dolores articulares generalizados de manos y eosinofilia sérica extrema, hallazgos que orientarían hacia un proceso inflamatorio sistémico capaz de discriminar entre ambas etiologías pericárdicas.",
+    "2": "La respuesta inmediata del frote pericárdico al tratamiento con anticoagulantes orales, que reduciría el depósito de fibrina pericárdica y permitiría diferenciar de forma terapéutica el origen tuberculoso del urémico."
+  },
+  "f8e7878c-bbff-400e-a669-c84729d54e8e": {
+    "0": "La ventilación se evaluaría por el pH arterial de forma aislada, reflejo directo del componente respiratorio agudo; la oxigenación se mediría por el exceso de bases como indicador de la disponibilidad tisular de oxígeno.",
+    "2": "Ambos procesos se medirían de forma conjunta mediante el volumen corriente obtenido por espirometría manual, asumiendo que el volumen movilizado refleja de forma directa el intercambio gaseoso alveolo-capilar.",
+    "3": "La ventilación se evaluaría por la PaO2, considerándola un reflejo del trabajo respiratorio global; la oxigenación se evaluaría exclusivamente por el bicarbonato plasmático como marcador indirecto de la disponibilidad tisular de oxígeno."
+  },
+  "341348e9-9039-454b-96cf-cff96f638ee3": {
+    "1": "La colonoscopia carecería por completo de utilidad diagnóstica o terapéutica en la HDB aguda, dado que la presencia de sangre en la luz colónica impediría cualquier visualización útil, debiendo derivarse de entrada a todos los pacientes a colectomía subtotal profiláctica.",
+    "2": "Debería posponerse de forma indefinida por al menos 3 semanas, permitiendo que la mucosa colónica inflamada por el sangrado se regenere; debido a que el colon inflamado presentaría un riesgo de perforación superior al 95% si se realiza antes de ese plazo.",
+    "3": "Debería realizarse de forma inmediata en los primeros 10 minutos sin ninguna preparación del colon, ya que la presencia de materia fecal residual facilitaría la adherencia de las pinzas de biopsia y aceleraría la toma de muestras diagnósticas."
+  },
+  "900edd48-52d6-4b38-80b7-8c1258e26160": {
+    "1": "El Síndrome de Rotor cursaría con depósito de pigmento negro de lipofuscina en la biopsia hepática, secundario a la acumulación de metabolitos derivados de catecolaminas no excretados; mientras que el de Dubin-Johnson mostraría histología hepática completamente normal al no existir alteración estructural del hepatocito.",
+    "2": "El Síndrome de Dubin-Johnson se caracterizaría por un aclaramiento normal del test de la bromosulfaleína (BSF) al conservar intacta la captación sinusoidal del colorante, mientras que el de Rotor mostraría retención masiva a los 45 minutos sin segundo pico por el defecto primario de recaptación hepatocitaria.",
+    "3": "El de Dubin-Johnson respondería espectacularmente a la administración de ácido ursodesoxicólico disminuyendo la ictericia al facilitar la excreción canalicular alternativa de bilirrubina conjugada, mientras que el Rotor requeriría plasmaféresis periódica para depurar el exceso de pigmento biliar circulante."
+  },
+  "b13d920e-5190-4e8a-b9e5-cc6979aa364f": {
+    "0": "La fosforilación del residuo terminal de serina mediada por una quinasa hepática dependiente de vitamina K, lo que les permitiría unirse a la haptocorrina sérica protectora y prolongar su vida media plasmática activa.",
+    "1": "La metilación directa de residuos de glutamato mediada por cobalamina como cofactor enzimático hepático, impidiendo de manera selectiva la polimerización prematura del fibrinógeno circulante antes de la activación de la cascada.",
+    "3": "La desaminación oxidativa de residuos de tirosina a nivel hepático mediada por una oxidasa dependiente de vitamina K, que estimularía el aclaramiento biliar pasivo de los factores una vez activados en la cascada de coagulación."
+  },
+  "913211fd-0f0f-4998-b35e-5d6fead2fd67": {
+    "0": "Invasión tumoral neoplásica benigna de células foliculares tiroideas aberrantes que migrarían de forma ectópica hacia el tejido conectivo extraocular y dérmico, proliferando localmente y generando el engrosamiento tisular característico.",
+    "2": "Infiltración directa por neutrófilos activados por la vía clásica del complemento, que liberarían enzimas proteolíticas degranulantes sobre las fibras elásticas de los músculos extraoculares y el tejido conectivo pretibial.",
+    "3": "Depósito de complejos inmunes solubles circulantes de IgG-tiroglobulina que se impactarían en los capilares arteriales de la órbita y de las extremidades inferiores, induciendo una vasculitis necrotizante focal con daño isquémico secundario del tejido conectivo."
+  },
+  "80b4db64-2f4f-4c26-bc49-1af082c838ba": {
+    "0": "El dolor del mieloma asociaría a parestesias localizadas en la punta de los dedos de la mano que se exacerbarían al consumir agua helada, atribuibles a un fenómeno vasoespástico inducido por las paraproteínas monoclonales circulantes.",
+    "1": "El dolor por metástasis óseas remitiría de forma completa en menos de 48 horas al recibir dosis bajas de antiagregantes plaquetarios, por un supuesto efecto antiinflamatorio directo sobre la interfase tumoral-ósea.",
+    "2": "El dolor del mieloma sería de carácter sordo constante y de predominio nocturno, atribuible a la congestión venosa medular en decúbito, mejorando de forma notable con la deambulación activa al favorecer el drenaje venoso local."
+  },
+  "339dadd8-828f-41ac-abc1-75ab98ffc18e": {
+    "0": "Ambas fases mostrarían una densidad homogénea de toda la luz vascular, ya que el hematoma se mezclaría de forma completa con la sangre circulante, lo que impediría diferenciar su presencia incluso con el protocolo bifásico.",
+    "2": "La pared del hematoma captaría ávidamente el contraste yodado por su rica vascularización de neoformación, por lo que se observaría hiperdensa respecto a la luz en la fase contrastada.",
+    "3": "El hematoma desaparecería de forma instantánea al pasar el contraste, debido a que el bolo yodado arrastraría y lavaría por completo los eritrocitos extravasados acumulados en la capa media."
+  },
+  "ccce02ab-965c-47ac-a6c8-eae42d0aa7b2": {
+    "1": "Insuficiencia suprarrenal primaria (Enfermedad de Addison), producida por la destrucción autoinmune o infecciosa directa de toda la corteza suprarrenal; cursaría sin hiperpotasemia porque la aldosterona sería secretada de forma compensadora por la hipófisis posterior ante el fallo glandular periférico.",
+    "2": "Síndrome de secreción inadecuada de aldosterona secundaria, desencadenado por la supresión brusca del corticoide exógeno sobre el eje renina-angiotensina; caracterizada por hiperactividad tubular distal mediada por receptores mineralocorticoides quiméricos de expresión aberrante.",
+    "3": "Hiperplasia suprarrenal adquirida tardía por autoanticuerpos estimulantes dirigidos contra la glándula pineal anterior, que alterarían de forma retrógrada la secreción rítmica de ACTH y la respuesta suprarrenal al estrés."
+  },
+  "5c92b888-d4ca-462e-86a8-2de31e8a79f5": {
+    "0": "En la tipo I la unión esofagogástrica permanecería en su posición intraabdominal normal preservando la competencia del esfínter esofágico inferior, sin riesgo de reflujo, mientras que en la tipo II migraría al tórax alterando dicha barrera antirreflujo y causaría pirosis intratable.",
+    "2": "La hernia paraesofágica (tipo II) sería puramente transitoria y autolimitada, resolviéndose de forma espontánea con los cambios posturales del paciente, mientras que la de deslizamiento requeriría colectomía profiláctica obligatoria para prevenir su progresión.",
+    "3": "Ambos tipos de hernias representarían la misma alteración anatómica exacta del hiato esofágico y se tratarían de forma idéntica con cirugía correctora sistemática antes de los 40 años, independientemente de la presencia de síntomas."
+  },
+  "c9382e4f-89a5-4098-9fc0-1eea8a60ba3b": {
+    "1": "La úlcera venosa sería causada por desnutrición calórico-proteica severa aislada que debilitaría la pared capilar cutánea; la arterial se asociaría de forma exclusiva a una mutación hereditaria del gen de la protrombina G20210A que favorecería la trombosis microvascular distal.",
+    "2": "Ambas úlceras presentarían exactamente la misma semiología de bordes, fondo y localización clínica, diferenciándose únicamente mediante el estudio histológico con tinción de PAS que revelaría el depósito de glucógeno específico de cada etiología.",
+    "3": "La úlcera arterial sería superficial, indolora, localizada en la región peri-maleolar medial y asociaría pulsos periféricos normales por preservación del flujo distal; la venosa sería profunda, de bordes en sacabocados y muy dolorosa por el compromiso isquémico del lecho ulceroso."
+  },
+  "1abe5271-1c02-484f-982d-d56b50b170bc": {
+    "0": "Inhibición exclusiva de receptores beta-1 cardíacos a nivel del nodo sinusal y el miocardio, disminuyendo la presión venosa central mediante una vasodilatación pulmonar masiva secundaria a la bradicardia inducida.",
+    "1": "Inhibición de la síntesis de colágeno intrahepático mediada por el bloqueo beta-adrenérgico sobre las células estrelladas hepáticas, normalizando de forma directa el diámetro sinusoidal fibrótico.",
+    "2": "Estimulación de receptores dopaminérgicos esplácnicos por parte del propranolol, que promoverían la relajación directa de la musculatura lisa de la vena porta y una caída pasiva de la resistencia vascular portal."
+  },
+  "a06b2225-61b0-4fc6-9ccf-103f12f9178d": {
+    "0": "La hepatocelular cursaría con aumento aislado de bilirrubina indirecta libre por el fallo de conjugación hepatocitaria; la colestásica presentaría un aumento de la fracción indirecta corregido por volumen, reflejando la obstrucción del flujo biliar distal.",
+    "2": "La hepatocelular se diagnosticaría de forma exclusiva mediante el aumento de la albúmina sérica como reactante de fase aguda hepática; la colestásica por una caída brusca de la pseudocolinesterasa secundaria a la disfunción sintética canalicular.",
+    "3": "La hepatocelular presentaría elevación marcada de la fosfatasa alcalina (>10 veces) por inducción enzimática de membrana con GGT normal; la colestásica presentaría transaminasas >2000 U/L por la necrosis hepatocitaria secundaria a la retención biliar."
+  },
+  "53b571d2-b644-4b7f-be6c-ac213b10e2e9": {
+    "1": "Anticuerpos anti-ribosomales de tipo P, dirigidos contra proteínas ribosomales citoplasmáticas; son específicos del síndrome de activación macrofágica sistémica infantil y su hiperinflamación citoquínica asociada.",
+    "2": "Anticuerpos antipéptidos desaminados de gliadina (DGP), generados frente a fragmentos proteicos alimentarios modificados enzimáticamente; presentan especificidad para la artritis séptica crónica por Brucella en pacientes expuestos a productos lácteos no pasteurizados.",
+    "3": "Anticuerpos anti-mieloperoxidasa (anti-MPO), dirigidos contra una enzima de los gránulos azurófilos neutrofílicos; presentan especificidad para el diagnóstico de esclerosis sistémica difusa progresiva y su compromiso fibrótico cutáneo asociado."
+  },
+  "156477ff-d21c-4f58-a9c5-5405e6b6534e": {
+    "0": "El complejo de hepcidina-ferroportina, regulador central del tráfico de hierro corporal; desplazaría de forma selectiva el calcio de la vía mitocondrial eritroide, modificando indirectamente la afinidad de la hemoglobina por el oxígeno.",
+    "1": "El ácido láctico gástrico, producido por la fermentación anaeróbica de la mucosa digestiva; se generaría por vía biliar e induciría un aumento irreversible de la afinidad de la hemoglobina por el monóxido de carbono circulante.",
+    "3": "La haptocorrina salival, proteína transportadora de cobalaminas de origen glandular; se generaría por vía de la pepsina gástrica e induciría una desviación masiva de la curva de disociación hacia la izquierda."
+  },
+  "be9852e5-c75b-47b3-a41e-de9e17f4f92c": {
+    "0": "Son autoanticuerpos IgA fijadores de crioaglutininas que precipitarían a bajas temperaturas ocluyendo la microcirculación; el bypass consistiría en evitar la exposición a temperaturas corporales bajas para prevenir la agregación del complejo inmune.",
+    "1": "Son complejos de ferritina gástrica que degradarían la ferroportina intestinal, alterando la absorción de hierro necesario para la síntesis de factores de coagulación; el tratamiento de urgencia sería el ácido fólico oral para estimular la eritropoyesis compensadora.",
+    "2": "Son receptores de transferrina medulares mutados que alterarían la maduración de los megacariocitos productores de factores plasmáticos; el bypass consistiría en la transfusión masiva de plaquetas lavadas para restituir la función hemostática primaria."
+  },
+  "b984684d-6f84-49a6-be17-6855e935e95b": {
+    "0": "Iniciar inmediatamente Levotiroxina a dosis plenas para corregir con rapidez el hipotiroidismo sintomático, y postergar el tratamiento sustitutivo con hidrocortisona hasta estabilizar de forma previa el peso corporal y el pulso cardíaco de la paciente.",
+    "1": "Efectuar radioterapia selar masiva fraccionada para reducir el volumen tumoral residual, e iniciar estrógenos conjugados orales como monoterapia exclusiva de reemplazo hormonal sustitutivo.",
+    "3": "Administrar conjuntamente levotiroxina y fludrocortisona a altas dosis, omitiendo el aporte de hidrocortisona para evitar el desarrollo de un síndrome de Cushing iatrogénico, asumiendo que el mineralocorticoide compensaría el déficit glucocorticoide subyacente."
+  },
+  "0aa09d60-f8d2-42f5-8b80-3d659792377c": {
+    "0": "Síntesis excesiva de anticuerpos bloqueadores del receptor de TSH (TBAb) que, al ocupar el receptor de forma antagónica, inducirían paradójicamente una proliferación celular compensadora de los tirocitos remanentes no bloqueados.",
+    "1": "Producción ectópica e incontrolada de TSH por parte de un adenoma hipofisario productor de tirotropina (tirotropinoma), que estimularía de forma sostenida y autónoma a múltiples clones foliculares tiroideos generando el patrón multinodular hipercaptante.",
+    "3": "Deficiencia nutricional extrema de yodo que induciría una captación compensadora acelerada por up-regulation generalizada de los transportadores de yoduro sódico (NIS) en toda la glándula, generando hiperfunción difusa autónoma."
+  }
+}

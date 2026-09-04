@@ -466,7 +466,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="flex max-h-[92vh] flex-col overflow-hidden sm:max-w-3xl">
+      <DialogContent className="flex max-h-[92vh] flex-col overflow-hidden sm:max-w-4xl">
         <DialogHeader className="shrink-0">
           <div className="flex items-center justify-between gap-3">
             <DialogTitle className="flex items-center gap-2">
@@ -527,7 +527,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
 
         {phase === "playing" && current && (
           <div className="flex min-h-0 flex-1 flex-col gap-4">
-            <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-1">
+            <div className="min-h-0 flex-1 space-y-5 overflow-y-auto p-1">
               {/* Navigator */}
               <div className="flex flex-wrap gap-1.5">
                 {questions.map((q, i) => {
@@ -580,9 +580,9 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                     <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                       {t.simuladoPlayer.provaQueNaoFoiSorte}
                     </p>
-                    <p className="mt-1 text-base font-medium text-foreground sm:text-[17px]">{current.mecanismo_pergunta}</p>
+                    <p className="mt-1 text-base font-medium leading-relaxed text-foreground sm:text-[19px] sm:leading-[1.6]">{current.mecanismo_pergunta}</p>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {current.mecanismo_opcoes.map((opcao, idx) => {
                       const isSelected = mechanismAnswer === idx
                       const isCorrectOption = idx === current.mecanismo_indice_correta
@@ -592,7 +592,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                           key={idx}
                           onClick={() => answerMechanism(idx)}
                           disabled={mechanismAnswer !== null}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-[17px] ${
+                          className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${
                             showState && isCorrectOption
                               ? "border-success bg-success/10 text-foreground"
                               : showState && isSelected
@@ -600,8 +600,13 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                                 : "border-border bg-card hover:bg-accent"
                           }`}
                         >
-                          <span>{opcao}</span>
-                          {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 shrink-0 text-success" />}
+                          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                              {String.fromCharCode(65 + idx)}
+                            </span>
+                            <span>{opcao}</span>
+                          </div>
+                          {showState && isCorrectOption && <CheckCircle2 className="h-5 w-5 shrink-0 text-success" />}
                         </button>
                       )
                     })}
@@ -632,7 +637,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                 <>
                   <HighlightableText key={current.id} text={current.enunciado} />
 
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {current.opcoes.map((opcao, idx) => {
                       const isPending = pendingAnswer === idx
                       const isSelected = currentAnswer === idx
@@ -643,7 +648,7 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                         <div
                           key={idx}
                           onClick={() => selectPending(idx)}
-                          className={`flex w-full items-center justify-between gap-2 rounded-lg border p-3 text-left text-sm transition-colors sm:text-[17px] ${
+                          className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${
                             readOnly ? "" : "cursor-pointer"
                           } ${
                             showState && isCorrectOption
@@ -657,11 +662,16 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                                     : "border-border hover:bg-accent"
                           } ${currentAnswer !== null ? "cursor-default" : ""}`}
                         >
-                          <span className={isElim ? "line-through" : ""}>{opcao}</span>
+                          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                              {String.fromCharCode(65 + idx)}
+                            </span>
+                            <span className={isElim ? "line-through" : ""}>{opcao}</span>
+                          </div>
                           <div className="flex shrink-0 items-center gap-1.5">
-                            {showState && isCorrectOption && <CheckCircle2 className="h-4 w-4 text-success" />}
+                            {showState && isCorrectOption && <CheckCircle2 className="h-5 w-5 text-success" />}
                             {showState && isSelected && !isCorrectOption && (
-                              <XCircle className="h-4 w-4 text-destructive" />
+                              <XCircle className="h-5 w-5 text-destructive" />
                             )}
                             {!showState && !readOnly && (
                               <button

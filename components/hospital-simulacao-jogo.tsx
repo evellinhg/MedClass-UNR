@@ -367,7 +367,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
             transition={{ duration: 0.25 }}
           >
             <Card className="rounded-[24px] border border-border bg-card p-6 sm:p-8">
-              <p className="text-base leading-relaxed text-foreground">{nodo.descripcion_situación}</p>
+              <p className="text-base leading-loose text-foreground sm:text-[19px] sm:leading-[1.7]">{nodo.descripcion_situación}</p>
 
               <div className="mt-6 space-y-3">
                 {nodo.opciones.map((opcao, idx) => {
@@ -379,7 +379,7 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
                       type="button"
                       disabled={opcaoEscolhida !== null}
                       onClick={() => escolher(idx)}
-                      className={`w-full rounded-xl border p-4 text-left text-sm transition-colors sm:text-[17px] ${
+                      className={`w-full rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${
                         selecionada
                           ? opcao.puntos_afectados >= 0
                             ? "border-emerald-500 bg-emerald-500/10"
@@ -387,7 +387,12 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
                           : "border-border hover:bg-secondary"
                       } ${desabilitado ? "opacity-40" : ""}`}
                     >
-                      <span className="text-foreground">{opcao.texto}</span>
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                          {String.fromCharCode(65 + idx)}
+                        </span>
+                        <span className="text-foreground">{opcao.texto}</span>
+                      </div>
                       {selecionada && (
                         <div className="mt-3 space-y-1 border-t border-border/60 pt-3">
                           <p className={`text-xs font-bold ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>

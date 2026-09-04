@@ -444,11 +444,11 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
 
               <FormattedText
                 text={perguntaAtual.enunciado}
-                className="mb-4 text-lg font-medium leading-relaxed text-foreground sm:text-[19px]"
+                className="mb-5 text-lg font-medium leading-loose text-foreground sm:text-[20px] sm:leading-[1.7]"
               />
 
-              <div className="space-y-2">
-                {perguntaAtual.alternativas.map((alt) => {
+              <div className="space-y-3">
+                {perguntaAtual.alternativas.map((alt, idx) => {
                   const selecionada = selecaoAtual === alt.id
                   let style =
                     "border-input hover:border-primary/50 text-foreground"
@@ -464,12 +464,17 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                       key={alt.id}
                       disabled={jaRespondida}
                       onClick={() => setSelecaoAtual(alt.id)}
-                      className={`flex w-full items-center justify-between rounded-lg border px-4 py-2.5 text-left text-sm transition-colors sm:text-base ${style}`}
+                      className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${style}`}
                     >
-                      <span>{alt.texto}</span>
-                      {jaRespondida && alt.correta && <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />}
+                      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                          {String.fromCharCode(65 + idx)}
+                        </span>
+                        <span>{alt.texto}</span>
+                      </div>
+                      {jaRespondida && alt.correta && <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />}
                       {jaRespondida && !alt.correta && selecionada && (
-                        <XCircle className="h-4 w-4 shrink-0 text-red-500" />
+                        <XCircle className="h-5 w-5 shrink-0 text-red-500" />
                       )}
                     </button>
                   )

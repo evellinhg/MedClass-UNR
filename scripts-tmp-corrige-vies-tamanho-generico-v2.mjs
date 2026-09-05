@@ -25,7 +25,7 @@ if (!materia) { console.error("uso: node scripts-tmp-corrige-vies-tamanho-generi
 
 function limpar(comentario) {
   if (!comentario) return null
-  let t = comentario.replace(/^Incorrecto\.?\s*/i, "").trim()
+  let t = comentario.replace(/^Incorrect[oa][.:]?\s*/i, "").trim()
   if (/opci[oó]n correcta|respuesta correcta|es correcta\b/i.test(t)) return null
   return t
 }

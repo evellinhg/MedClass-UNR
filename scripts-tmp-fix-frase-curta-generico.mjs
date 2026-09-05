@@ -20,6 +20,8 @@ const IGNORAR = new Set([
   "43fa072e-8940-4527-8aa3-7f93e672a31b:1",
   "5656624a-bbc0-4bf6-9f38-8b3118d668b9:0",
   "01481aea-1e63-411c-8412-4fcce46610dd:3",
+  "da360346-4ba8-4c0f-886a-6ca9d406256d:2",
+  "da360346-4ba8-4c0f-886a-6ca9d406256d:3",
 ])
 
 function dividirFrases(texto) {

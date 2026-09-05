@@ -24,6 +24,22 @@ const IGNORAR = new Set([
   "da360346-4ba8-4c0f-886a-6ca9d406256d:3",
   "87db6449-0b53-4fae-89a9-8b4e42de7c75:1",
   "87db6449-0b53-4fae-89a9-8b4e42de7c75:2",
+  "b4c64d4d-1588-428a-b3fb-598111d10a60:0",
+  "abccc030-8b20-4b12-881d-dff7fac4b662:0",
+  "abccc030-8b20-4b12-881d-dff7fac4b662:2",
+  "720b7156-fd39-4817-86e7-df6be2b6a4ce:0",
+  "1f6fe777-d0bc-4be1-bfdd-ab85df5472de:0",
+  "5b3de5d9-8593-4de4-a979-77a5da8f7707:2",
+  "a1a3a68c-d284-4463-a1ee-ef30de4c9e93:0",
+  "c425b9f4-1573-4c3d-92a6-dd318f647503:2",
+  "5c4d0c64-98a3-446f-aaae-8c7e335c20e2:0",
+  "5c4d0c64-98a3-446f-aaae-8c7e335c20e2:1",
+  "b5a0fd9d-0ec1-4aa5-b212-e4fa662ee7ec:1",
+  "b5a0fd9d-0ec1-4aa5-b212-e4fa662ee7ec:2",
+  "2be9fb0a-78b3-41ca-abc4-163bbcc0c8a3:0",
+  "2be9fb0a-78b3-41ca-abc4-163bbcc0c8a3:1",
+  "fbf4c0a0-d187-4e8c-9851-8c259466c313:1",
+  "d8d6916b-f934-4a77-b5b9-540613e18092:1",
 ])
 
 function dividirFrases(texto) {
@@ -61,7 +77,15 @@ for (const [id, itens] of Object.entries(porQuestao)) {
   for (const item of itens) {
     if (item.idx === q.indice_correta) { console.error("BLOQUEADO: correta", id, item.idx); continue }
     const frases = dividirFrases(novasOpcoes[item.idx])
-    novasOpcoes[item.idx] = frases[0] // mantém apenas a primeira frase, descarta a corrompida/redundante
+    // dividirFrases também quebra em abreviações com ponto (ex: "(ej."), então frases[0]
+    // sozinha pode deixar parênteses abertos; nesse caso junta frases seguintes até fechar.
+    let mantida = frases[0]
+    let i = 1
+    while (i < frases.length && (mantida.match(/\(/g) || []).length !== (mantida.match(/\)/g) || []).length) {
+      mantida += frases[i]
+      i++
+    }
+    novasOpcoes[item.idx] = mantida // mantém apenas a primeira frase (completa), descarta a corrompida/redundante
   }
   const { error: err2 } = await supabase.from("questoes").update({ opcoes: novasOpcoes }).eq("id", id)
   if (err2) { console.error("erro update", id, err2); continue }

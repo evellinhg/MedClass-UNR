@@ -21,7 +21,7 @@ export function ResumoCorpo({ texto }: { texto: string }) {
 
         if (ehLista) {
           return (
-            <ul key={i} className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-foreground/90">
+            <ul key={i} className="mt-2 list-disc space-y-1.5 pl-5 text-base leading-relaxed text-foreground/90 sm:text-[17px] sm:leading-loose">
               {linhas.map((linha, j) => (
                 <li key={j}>{renderInline(linha.trim().slice(2))}</li>
               ))}
@@ -30,7 +30,7 @@ export function ResumoCorpo({ texto }: { texto: string }) {
         }
 
         return (
-          <p key={i} className="mt-2 text-sm leading-relaxed text-foreground/90 first:mt-0">
+          <p key={i} className="mt-2 text-base leading-relaxed text-foreground/90 first:mt-0 sm:text-[17px] sm:leading-loose">
             {linhas.map((linha, j) => (
               <Fragment key={j}>
                 {j > 0 && <br />}

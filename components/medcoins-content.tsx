@@ -73,14 +73,14 @@ export function MedCoinsContent() {
       <Card className="border border-border bg-gradient-to-r from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
         <div className="flex items-center justify-between">
           <div>
-            <p className="flex items-center gap-2 text-sm font-medium text-white/80">
+            <p className="flex items-center gap-2 text-sm font-medium text-[#0a1f00]/70">
               <Coins className="h-4 w-4" />
               Saldo disponível
             </p>
             <p className="mt-1 text-4xl font-bold">{(wallet?.saldo ?? 0).toFixed(0)}</p>
           </div>
           <div className="text-right">
-            <p className="text-sm text-white/80">Total acumulado</p>
+            <p className="text-sm text-[#0a1f00]/70">Total acumulado</p>
             <p className="mt-1 text-lg font-semibold">{(wallet?.total_acumulado ?? 0).toFixed(0)}</p>
           </div>
         </div>

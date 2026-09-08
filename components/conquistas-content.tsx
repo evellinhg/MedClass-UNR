@@ -77,7 +77,7 @@ export function ConquistasContent() {
             <p className="text-3xl font-bold">
               {totalConquistadas} / {medalhas.length}
             </p>
-            <p className="text-sm text-white/80">medalhas conquistadas</p>
+            <p className="text-sm text-[#0a1f00]/70">medalhas conquistadas</p>
           </div>
         </div>
       </Card>

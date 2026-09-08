@@ -4,49 +4,51 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Tema único cinza-esverdeado (sem alternância claro/escuro) */
-  --background: #12140f;
-  --foreground: #f1f5ec;
-  --card: #1a1e15;
-  --card-foreground: #f1f5ec;
-  --popover: #1a1e15;
-  --popover-foreground: #f1f5ec;
-  --primary: #c6ff3a;
+  /* Tema claro alternativo -- mesma paleta de marca (verde-lima) sobre fundo
+     claro, para quem prefere mais contraste/luminosidade lendo questões.
+     O tema escuro (.dark, abaixo) continua sendo o padrão da plataforma. */
+  --background: #f6f9f0;
+  --foreground: #14170f;
+  --card: #ffffff;
+  --card-foreground: #14170f;
+  --popover: #ffffff;
+  --popover-foreground: #14170f;
+  --primary: #84cc16;
   --primary-foreground: #0a1f00;
-  --secondary: #20241a;
-  --secondary-foreground: #f1f5ec;
-  --muted: #20241a;
-  --muted-foreground: #9ba68e;
-  --accent: #1e2e14;
-  --accent-foreground: #bef264;
-  --destructive: #ff3b3b;
+  --secondary: #eef3e2;
+  --secondary-foreground: #14170f;
+  --muted: #eef3e2;
+  --muted-foreground: #5b6350;
+  --accent: #e7f5cf;
+  --accent-foreground: #365314;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --success: #22c55e;
-  --success-foreground: #052e16;
-  --warning: #f59e0b;
-  --warning-foreground: #451a03;
-  --border: #2a2f22;
-  --input: #2a2f22;
-  --ring: #c6ff3a;
-  --chart-1: #d9f99d;
-  --chart-2: #a3e635;
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
+  --success: #16a34a;
+  --success-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --border: #e1e7d4;
+  --input: #e1e7d4;
+  --ring: #84cc16;
+  --chart-1: #65a30d;
+  --chart-2: #4d7c0f;
+  --chart-3: oklch(0.646 0.222 41.116);
+  --chart-4: oklch(0.6 0.25 303.9);
+  --chart-5: oklch(0.577 0.245 27.325);
   --radius: 0.625rem;
-  --sidebar: #14170f;
-  --sidebar-foreground: #c9d1bc;
-  --sidebar-primary: #c6ff3a;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2b2f22;
+  --sidebar-primary: #84cc16;
   --sidebar-primary-foreground: #0a1f00;
-  --sidebar-accent: #20241a;
-  --sidebar-accent-foreground: #bef264;
-  --sidebar-border: #262b1f;
-  --sidebar-ring: #c6ff3a;
+  --sidebar-accent: #eef3e2;
+  --sidebar-accent-foreground: #365314;
+  --sidebar-border: #e1e7d4;
+  --sidebar-ring: #84cc16;
 }
 
-/* Tema fixo: sem alternância claro/escuro, mas mantido como .dark também
-   para que utilitários Tailwind dark:* (usados em vários componentes)
-   continuem funcionando normalmente. */
+/* Tema escuro (padrão da plataforma). Alternância controlada por
+   next-themes (ver components/theme-provider.tsx / theme-toggle.tsx),
+   guardada em localStorage por usuário/navegador. */
 .dark {
   --background: #12140f;
   --foreground: #f1f5ec;

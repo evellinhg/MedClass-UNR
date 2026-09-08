@@ -275,8 +275,9 @@ export function SimuladosContent() {
 
       {/* Entry points: Treinamento Livre x Simulados */}
       <div className="grid gap-4 md:grid-cols-2">
-        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
-          <div>
+        <Card className="relative flex flex-col justify-between overflow-hidden border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
+          <BookOpen className="pointer-events-none absolute -bottom-6 -right-6 h-40 w-40 rotate-[-12deg] text-[#0a1f00]/10" strokeWidth={1.5} />
+          <div className="relative">
             <IconChip icon={BookOpen} className="bg-[#0a1f00]/10" iconClassName="text-[#0a1f00]" />
             <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.treinamentoLivreTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.treinamentoLivreSubtitulo}</p>
@@ -288,7 +289,7 @@ export function SimuladosContent() {
           </div>
           <Button
             variant="secondary"
-            className="mt-6 w-full justify-between bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15"
+            className="relative mt-6 w-full justify-between rounded-full bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15"
             onClick={() => setPracticeOpen(true)}
           >
             {t.treinamentos.iniciarTreinamentoLivre}
@@ -296,8 +297,9 @@ export function SimuladosContent() {
           </Button>
         </Card>
 
-        <Card className="flex flex-col justify-between border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
-          <div>
+        <Card className="relative flex flex-col justify-between overflow-hidden border-0 bg-gradient-to-br from-[#c6ff3a] to-[#84cc16] p-6 text-[#0a1f00]">
+          <Target className="pointer-events-none absolute -bottom-6 -right-6 h-40 w-40 rotate-[12deg] text-[#0a1f00]/10" strokeWidth={1.5} />
+          <div className="relative">
             <IconChip icon={Target} className="bg-[#0a1f00]/10" iconClassName="text-[#0a1f00]" />
             <h3 className="mt-4 text-2xl font-bold">{t.treinamentos.simuladosTitulo}</h3>
             <p className="text-sm text-[#0a1f00]/70">{t.treinamentos.simuladosSubtitulo}</p>
@@ -315,7 +317,7 @@ export function SimuladosContent() {
             }}
           >
             <DialogTrigger asChild>
-              <Button variant="secondary" className="mt-6 w-full justify-between bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15">
+              <Button variant="secondary" className="relative mt-6 w-full justify-between rounded-full bg-[#0a1f00]/10 text-[#0a1f00] hover:bg-[#0a1f00]/15">
                 {t.treinamentos.criarSimulado}
                 <ArrowRight className="h-4 w-4" />
               </Button>

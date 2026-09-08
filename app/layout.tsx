@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ServiceWorkerRegistration } from '@/components/service-worker-registration'
+import { ThemeProvider } from '@/components/theme-provider'
 import { LanguageProvider } from '@/lib/i18n'
 import './globals.css'
 
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#12140f',
+  themeColor: '#f6f9f0',
 }
 
 export default function RootLayout({
@@ -31,11 +32,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="dark" translate="no">
+    <html lang="es" translate="no" suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <LanguageProvider>{children}</LanguageProvider>
-        <ServiceWorkerRegistration />
-        <Analytics />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <LanguageProvider>{children}</LanguageProvider>
+          <ServiceWorkerRegistration />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )

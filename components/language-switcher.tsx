@@ -12,7 +12,7 @@ export function LanguageSwitcher() {
   const { lang, setLang } = useLanguage()
 
   return (
-    <div className="flex items-center gap-0.5 rounded-full border border-white/10 bg-white/[0.03] p-0.5">
+    <div className="flex items-center gap-0.5 rounded-full border border-border bg-foreground/[0.03] p-0.5">
       {OPTIONS.map((option) => (
         <button
           key={option.code}
@@ -20,8 +20,8 @@ export function LanguageSwitcher() {
           aria-label={option.label}
           className={`flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium transition-colors ${
             lang === option.code
-              ? "bg-[#c6ff3a]/20 text-[#c6ff3a]"
-              : "text-white/40 hover:bg-white/5 hover:text-white/70"
+              ? "bg-primary/20 text-primary"
+              : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground/70"
           }`}
         >
           <option.Flag className="shrink-0 rounded-[2px]" />

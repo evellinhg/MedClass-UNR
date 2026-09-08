@@ -644,11 +644,12 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                       const isCorrectOption = idx === current.indice_correta
                       const showState = currentAnswer !== null
                       const isElim = currentEliminated.has(idx)
+                      const comentario = current.opcoes_comentario?.[idx]
                       return (
                         <div
                           key={idx}
                           onClick={() => selectPending(idx)}
-                          className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${
+                          className={`flex w-full flex-col gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${
                             readOnly ? "" : "cursor-pointer"
                           } ${
                             showState && isCorrectOption
@@ -662,31 +663,46 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                                     : "border-border hover:bg-accent"
                           } ${currentAnswer !== null ? "cursor-default" : ""}`}
                         >
-                          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
-                              {String.fromCharCode(65 + idx)}
-                            </span>
-                            <span className={isElim ? "line-through" : ""}>{opcao}</span>
+                          <div className="flex w-full items-center justify-between gap-3">
+                            <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                                {String.fromCharCode(65 + idx)}
+                              </span>
+                              <span className={isElim ? "line-through" : ""}>{opcao}</span>
+                            </div>
+                            <div className="flex shrink-0 items-center gap-1.5">
+                              {showState && isCorrectOption && <CheckCircle2 className="h-5 w-5 text-success" />}
+                              {showState && isSelected && !isCorrectOption && (
+                                <XCircle className="h-5 w-5 text-destructive" />
+                              )}
+                              {!showState && !readOnly && (
+                                <button
+                                  onClick={(e) => toggleEliminate(idx, e)}
+                                  aria-label={t.simuladoPlayer.riscarAlternativa}
+                                  className={`rounded-md border p-1.5 transition-colors ${
+                                    isElim
+                                      ? "border-destructive/50 text-destructive"
+                                      : "border-border text-muted-foreground hover:bg-accent"
+                                  }`}
+                                >
+                                  <Strikethrough className="h-3.5 w-3.5" />
+                                </button>
+                              )}
+                            </div>
                           </div>
-                          <div className="flex shrink-0 items-center gap-1.5">
-                            {showState && isCorrectOption && <CheckCircle2 className="h-5 w-5 text-success" />}
-                            {showState && isSelected && !isCorrectOption && (
-                              <XCircle className="h-5 w-5 text-destructive" />
-                            )}
-                            {!showState && !readOnly && (
-                              <button
-                                onClick={(e) => toggleEliminate(idx, e)}
-                                aria-label={t.simuladoPlayer.riscarAlternativa}
-                                className={`rounded-md border p-1.5 transition-colors ${
-                                  isElim
-                                    ? "border-destructive/50 text-destructive"
-                                    : "border-border text-muted-foreground hover:bg-accent"
-                                }`}
-                              >
-                                <Strikethrough className="h-3.5 w-3.5" />
-                              </button>
-                            )}
-                          </div>
+                          {showState && comentario && (
+                            <p
+                              className={`border-t pt-3 text-sm leading-relaxed sm:text-base ${
+                                isCorrectOption
+                                  ? "border-success/30 text-foreground/90"
+                                  : isSelected
+                                    ? "border-destructive/30 text-foreground/90"
+                                    : "border-border/60 text-muted-foreground"
+                              }`}
+                            >
+                              {comentario}
+                            </p>
+                          )}
                         </div>
                       )
                     })}
@@ -719,25 +735,6 @@ export function SimuladoPlayer({ open, onOpenChange, config }: SimuladoPlayerPro
                     </div>
                   )}
 
-                  {showingExplanation && currentAnswer !== null && current.opcoes_comentario?.[currentAnswer] && (
-                    <div className="space-y-2 rounded-lg border border-border bg-muted/30 p-3">
-                      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                        {t.simuladoPlayer.comentariosPorAlternativa}
-                      </p>
-                      <div
-                        className={`rounded-md border p-2 text-xs ${
-                          isCorrect ? "border-success/40 bg-success/5" : "border-destructive/40 bg-destructive/5"
-                        }`}
-                      >
-                        <div className="flex items-start gap-2">
-                          <span className={`mt-0.5 shrink-0 font-semibold ${isCorrect ? "text-success" : "text-destructive"}`}>
-                            {String.fromCharCode(65 + currentAnswer)}.
-                          </span>
-                          <p className="text-muted-foreground">{current.opcoes_comentario[currentAnswer]}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )}
                 </>
               )}
 

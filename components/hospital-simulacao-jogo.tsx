@@ -393,13 +393,15 @@ export function HospitalSimulacaoJogo({ caso }: HospitalSimulacaoJogoProps) {
                         </span>
                         <span className="text-foreground">{opcao.texto}</span>
                       </div>
-                      {selecionada && (
-                        <div className="mt-3 space-y-1 border-t border-border/60 pt-3">
-                          <p className={`text-xs font-bold ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>
-                            {opcao.puntos_afectados >= 0 ? "+" : ""}
-                            {opcao.puntos_afectados} pts
-                          </p>
-                          <p className="text-xs text-muted-foreground">{opcao.feedback_detallado}</p>
+                      {opcaoEscolhida !== null && (
+                        <div className="mt-3 space-y-1.5 border-t border-border/60 pt-3">
+                          {selecionada && (
+                            <p className={`text-sm font-bold sm:text-base ${opcao.puntos_afectados >= 0 ? "text-emerald-500" : "text-red-500"}`}>
+                              {opcao.puntos_afectados >= 0 ? "+" : ""}
+                              {opcao.puntos_afectados} pts
+                            </p>
+                          )}
+                          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{opcao.feedback_detallado}</p>
                         </div>
                       )}
                     </button>

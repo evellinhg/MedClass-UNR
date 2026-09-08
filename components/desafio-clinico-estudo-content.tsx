@@ -459,50 +459,39 @@ export function DesafioClinicoEstudoContent({ desafioId }: Props) {
                   } else if (selecionada) {
                     style = "border-primary bg-primary/10 text-foreground"
                   }
+                  const textoFeedback = jaRespondida ? (alt.correta ? perguntaAtual.explicacao : alt.feedback) : null
                   return (
-                    <button
+                    <div
                       key={alt.id}
-                      disabled={jaRespondida}
-                      onClick={() => setSelecaoAtual(alt.id)}
-                      className={`flex w-full items-center justify-between gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${style}`}
+                      className={`flex w-full flex-col gap-3 rounded-xl border p-4 text-left text-sm transition-colors sm:p-5 sm:text-[18px] ${style} ${
+                        jaRespondida ? "" : "cursor-pointer"
+                      }`}
+                      onClick={() => !jaRespondida && setSelecaoAtual(alt.id)}
                     >
-                      <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
-                          {String.fromCharCode(65 + idx)}
-                        </span>
-                        <span>{alt.texto}</span>
+                      <div className="flex w-full items-center justify-between gap-3">
+                        <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-border bg-background text-xs font-semibold text-foreground sm:h-9 sm:w-9 sm:text-base">
+                            {String.fromCharCode(65 + idx)}
+                          </span>
+                          <span>{alt.texto}</span>
+                        </div>
+                        {jaRespondida && alt.correta && <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />}
+                        {jaRespondida && !alt.correta && selecionada && (
+                          <XCircle className="h-5 w-5 shrink-0 text-red-500" />
+                        )}
                       </div>
-                      {jaRespondida && alt.correta && <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-500" />}
-                      {jaRespondida && !alt.correta && selecionada && (
-                        <XCircle className="h-5 w-5 shrink-0 text-red-500" />
+                      {textoFeedback && (
+                        <FormattedText
+                          text={textoFeedback}
+                          className={`border-t pt-3 text-sm leading-relaxed sm:text-base ${
+                            alt.correta ? "border-emerald-500/30 text-foreground/90" : "border-red-500/30 text-foreground/90"
+                          }`}
+                        />
                       )}
-                    </button>
+                    </div>
                   )
                 })}
               </div>
-
-              {jaRespondida && (
-                <div className="mt-4 space-y-2">
-                  {(() => {
-                    const altSelecionada = perguntaAtual.alternativas.find((a) => a.id === selecaoAtual)
-                    if (altSelecionada && !altSelecionada.correta && altSelecionada.feedback) {
-                      return (
-                        <FormattedText
-                          text={altSelecionada.feedback}
-                          className="rounded-lg border border-red-500/20 bg-red-500/10 p-3 text-xs leading-relaxed text-foreground"
-                        />
-                      )
-                    }
-                    return null
-                  })()}
-                  {perguntaAtual.explicacao && (
-                    <FormattedText
-                      text={perguntaAtual.explicacao}
-                      className="rounded-lg bg-secondary/50 p-3 text-xs leading-relaxed text-muted-foreground"
-                    />
-                  )}
-                </div>
-              )}
 
               <div className="mt-5 flex items-center justify-between">
                 <Button
